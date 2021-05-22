@@ -39,7 +39,7 @@ instance PC_L3(NPC_DEFAULT)
 	attribute[ATR_MANA] = 10;
 	attribute[ATR_HITPOINTS_MAX] = 76;
 	attribute[ATR_HITPOINTS] = 76;
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_PLAYER,BODYTEX_N,4845);
+	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_PLAYER,BODYTEX_N,NO_ARMOR);
 	b_addfightskill(self,NPC_TALENT_1H,30,FALSE);
 	b_addfightskill(self,NPC_TALENT_2H,10,FALSE);
 	b_addfightskill(self,NPC_TALENT_BOW,10,FALSE);
@@ -68,7 +68,7 @@ instance PC_L9(NPC_DEFAULT)
 	attribute[ATR_MANA] = 10;
 	attribute[ATR_HITPOINTS_MAX] = 148;
 	attribute[ATR_HITPOINTS] = 148;
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_PLAYER,BODYTEX_N,4826);
+	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_PLAYER,BODYTEX_N,NO_ARMOR);
 	b_addfightskill(self,NPC_TALENT_1H,30,FALSE);
 	b_addfightskill(self,NPC_TALENT_2H,10,FALSE);
 	b_addfightskill(self,NPC_TALENT_BOW,30,FALSE);
@@ -97,7 +97,7 @@ instance PC_L19(NPC_DEFAULT)
 	attribute[ATR_MANA] = 10;
 	attribute[ATR_HITPOINTS_MAX] = 148;
 	attribute[ATR_HITPOINTS] = 148;
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_PLAYER,BODYTEX_N,4828);
+	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_PLAYER,BODYTEX_N,NO_ARMOR);
 	b_addfightskill(self,NPC_TALENT_1H,60,FALSE);
 	b_addfightskill(self,NPC_TALENT_2H,30,FALSE);
 	b_addfightskill(self,NPC_TALENT_BOW,30,FALSE);
@@ -130,7 +130,7 @@ instance PC_L25(NPC_DEFAULT)
 	attribute[ATR_MANA] = 20;
 	attribute[ATR_HITPOINTS_MAX] = 290;
 	attribute[ATR_HITPOINTS] = 290;
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_PLAYER,BODYTEX_N,4839);
+	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_PLAYER,BODYTEX_N,NO_ARMOR);
 	b_addfightskill(self,NPC_TALENT_1H,70,FALSE);
 	b_addfightskill(self,NPC_TALENT_2H,30,FALSE);
 	b_addfightskill(self,NPC_TALENT_BOW,50,FALSE);
@@ -165,7 +165,7 @@ instance PC_L31(NPC_DEFAULT)
 	attribute[ATR_MANA] = 40;
 	attribute[ATR_HITPOINTS_MAX] = 412;
 	attribute[ATR_HITPOINTS] = 412;
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_PLAYER,BODYTEX_N,4829);
+	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_PLAYER,BODYTEX_N,NO_ARMOR);
 	b_addfightskill(self,NPC_TALENT_1H,50,FALSE);
 	b_addfightskill(self,NPC_TALENT_2H,80,FALSE);
 	b_addfightskill(self,NPC_TALENT_BOW,30,FALSE);
@@ -201,7 +201,7 @@ instance PC_E3MAGE(NPC_DEFAULT)
 	attribute[ATR_MANA] = 200;
 	attribute[ATR_HITPOINTS_MAX] = 500;
 	attribute[ATR_HITPOINTS] = 500;
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_PLAYER,BODYTEX_N,4844);
+	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_PLAYER,BODYTEX_N,NO_ARMOR);
 	b_addfightskill(self,NPC_TALENT_1H,40,FALSE);
 	b_addfightskill(self,NPC_TALENT_2H,30,FALSE);
 	b_addfightskill(self,NPC_TALENT_BOW,20,FALSE);
@@ -335,7 +335,7 @@ instance PC_E3PALADIN(NPC_DEFAULT)
 	attribute[ATR_MANA] = 50;
 	attribute[ATR_HITPOINTS_MAX] = 500;
 	attribute[ATR_HITPOINTS] = 500;
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_PLAYER,BODYTEX_N,4829);
+	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_PLAYER,BODYTEX_N,NO_ARMOR);
 	b_addfightskill(self,NPC_TALENT_1H,100,FALSE);
 	b_addfightskill(self,NPC_TALENT_2H,90,FALSE);
 	b_addfightskill(self,NPC_TALENT_BOW,80,FALSE);

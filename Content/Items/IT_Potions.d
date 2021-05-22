@@ -24,6 +24,8 @@ const int STRORDEX_MEGADRINK = 5;
 const int VALUE_SPEED = 200;
 const int TIME_SPEED = 300000;
 
+const int TOXICITY_ESSENZ = 10;
+
 instance ITPO_MANA_01(C_ITEM)
 {
 	name = NAME_TRANK;
@@ -37,6 +39,8 @@ instance ITPO_MANA_01(C_ITEM)
 	description = "Esencja Many";
 	text[1] = NAME_BONUS_MANA;
 	count[1] = MANA_ESSENZ;
+	text[2] = NAME_TOXICITY;
+	count[2] = TOXICITY_ESSENZ;
 	text[5] = NAME_VALUE;
 	count[5] = VALUE_MANAESSENZ;
 };

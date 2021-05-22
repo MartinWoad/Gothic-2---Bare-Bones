@@ -443,6 +443,7 @@ const string NAME_BONUS_HPMAX = "Premia do maks. punktów trafieñ:";
 const string NAME_BONUS_MANAMAX = "Premia do maks. many:";
 const string NAME_BONUS_DEX = "Premia do zrêcznoœci:";
 const string NAME_BONUS_STR = "Premia do si³y:";
+const string NAME_TOXICITY = "Toksycznoœæ:";
 const string NAME_ONEHANDED = "Broñ jednorêczna";
 const string NAME_TWOHANDED = "Broñ dwurêczna";
 const string NAME_COMBATSKILL_WARRIOR = "Wymagana zdolnoœci walki na poziomie: Wojownik";

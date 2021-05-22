@@ -324,7 +324,7 @@ instance MENU_ITEM_ARMOR_3_TITLE(C_MENU_ITEM_DEF)
 {
 	posx = STAT_A_X1;
 	posy = STAT_ARM_Y + (STAT_DY * 2);
-	text[0] = "Smoczy ogieñ";
+	text[0] = "Ogieñ";
 	fontname = STAT_FONT_DEFAULT;
 	flags = flags & ~IT_SELECTABLE;
 };
