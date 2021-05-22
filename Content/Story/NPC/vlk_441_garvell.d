@@ -1,31 +1,31 @@
 
-instance VLK_441_GARVELL(NPC_DEFAULT)
+instance VLK_441_Garvell(Npc_Default)
 {
 	name[0] = "Garvell";
 	guild = GIL_VLK;
 	id = 441;
 	voice = 4;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	aivar[AIV_ToughGuy] = TRUE;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_vlk_axe);
-	b_createambientinv(self);
-	CreateInvItems(self,itse_goldpocket25,1);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_LEFTY,BODYTEX_N,4820);
+	EquipItem(self,ItMw_1h_Vlk_Axe);
+	B_CreateAmbientInv(self);
+	CreateInvItems(self,ItSe_GoldPocket25,1);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Lefty,BodyTex_N,ITAR_Vlk_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Tired.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_441;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_441;
 };
 
 
-func void rtn_start_441()
+func void Rtn_Start_441()
 {
-	ta_stand_drinking(4,50,19,11,"NW_CITY_HABOUR_07");
-	ta_smalltalk(19,11,0,1,"NW_CITY_HABOUR_TAVERN01_SMALLTALK_01");
-	ta_stand_drinking(0,1,4,50,"NW_CITY_HABOUR_TAVERN01_STAND_01");
+	TA_Stand_Drinking(4,50,19,11,"NW_CITY_HABOUR_07");
+	TA_Smalltalk(19,11,0,1,"NW_CITY_HABOUR_TAVERN01_SMALLTALK_01");
+	TA_Stand_Drinking(0,1,4,50,"NW_CITY_HABOUR_TAVERN01_STAND_01");
 };
 

@@ -1,17 +1,17 @@
 
-func void b_announce_herold()
+func void B_Announce_Herold()
 {
 	var int randy;
-	if(c_bodystatecontains(self,BS_SIT))
+	if(C_BodyStateContains(self,BS_SIT))
 	{
 		AI_Standup(self);
-		b_turntonpc(self,hero);
+		B_TurnToNpc(self,hero);
 	};
 	AI_RemoveWeapon(self);
-	CreateInvItem(self,fakescroll);
-	AI_UseItemToState(self,fakescroll,1);
+	CreateInvItem(self,Fakescroll);
+	AI_UseItemToState(self,Fakescroll,1);
 	AI_Output(self,self,"DIA_Herold_Announce_04_00");	//S³uchajcie, s³uchajcie, mieszkañcy Khorinis! Na rozkaz wielmo¿nego Lorda Hagena, og³asza siê, co nastêpuje!
-	if(KAPITEL <= 2)
+	if(Kapitel <= 2)
 	{
 		randy = Hlp_Random(5);
 		if(randy == 0)
@@ -42,9 +42,9 @@ func void b_announce_herold()
 			AI_Output(self,self,"DIA_Herold_Announce_04_12");	//Dotyczy to zaopatrzenia siê w odpowiedni¹ zbrojê i orê¿, a tak¿e natychmiastowego rozpoczêcia treningu bojowego.
 		};
 	}
-	else if(KAPITEL == 3)
+	else if(Kapitel == 3)
 	{
-		if(MIS_RESCUEBENNET != LOG_SUCCESS)
+		if(MIS_RescueBennet != LOG_SUCCESS)
 		{
 			AI_Output(self,self,"DIA_Herold_Announce_04_13");	//Najemnik Bennet, który podstêpnie zamordowa³ paladyna Lothara, zosta³ os¹dzony w imiê Innosa.
 			AI_Output(self,self,"DIA_Herold_Announce_04_14");	//Wyrok: œmieræ przez powieszenie. Egzekucja odbêdzie siê za parê dni, a jej dok³adny termin zostanie wkrótce og³oszony.
@@ -54,7 +54,7 @@ func void b_announce_herold()
 			AI_Output(self,self,"DIA_Herold_Announce_04_15");	//Kowal Bennet zosta³ oczyszczony z wszelkich zarzutów przez jednego z doradców Lorda Hagena.
 		};
 	}
-	else if(KAPITEL == 4)
+	else if(Kapitel == 4)
 	{
 		AI_Output(self,self,"DIA_Herold_Announce_04_16");	//Pog³oski o pojawieniu siê smoków w Górniczej Dolinie s¹ nieprawdziwe.
 		AI_Output(self,self,"DIA_Herold_Announce_04_17");	//Plotki te rozsiewane s¹ przez wroga, który w ten sposób pragnie zasiaæ strach i trwogê w sercach dzielnego ludu Myrtany.
@@ -74,6 +74,6 @@ func void b_announce_herold()
 			AI_Output(self,self,"DIA_Herold_Announce_04_22");	//Lord Hagen oznajmi³, ¿e osobiœcie uda siê do Górniczej Doliny, aby kontrolowaæ za³adunek magicznej rudy na swój statek.
 		};
 	};
-	AI_UseItemToState(self,fakescroll,-1);
+	AI_UseItemToState(self,Fakescroll,-1);
 };
 

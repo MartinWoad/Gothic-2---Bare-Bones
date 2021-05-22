@@ -1,28 +1,28 @@
 
-instance PAL_210_TORWACHE(NPC_DEFAULT)
+instance Pal_210_Torwache(Npc_Default)
 {
-	name[0] = NAME_RITTER;
+	name[0] = NAME_Ritter;
 	guild = GIL_PAL;
 	id = 210;
 	voice = 4;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,4);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_2h_pal_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_WEAK_ASGHAN,BODYTEX_N,4828);
+	EquipItem(self,ItMw_2h_Pal_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Weak_Asghan,BodyTex_N,ItAr_PAL_M);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,55);
-	daily_routine = rtn_start_210;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,55);
+	daily_routine = Rtn_Start_210;
 };
 
 
-func void rtn_start_210()
+func void Rtn_Start_210()
 {
-	ta_stand_guarding(8,0,23,0,"NW_CITY_CITYHALL_ENTRY_01");
-	ta_stand_guarding(23,0,8,0,"NW_CITY_CITYHALL_ENTRY_01");
+	TA_Stand_Guarding(8,0,23,0,"NW_CITY_CITYHALL_ENTRY_01");
+	TA_Stand_Guarding(23,0,8,0,"NW_CITY_CITYHALL_ENTRY_01");
 };
 

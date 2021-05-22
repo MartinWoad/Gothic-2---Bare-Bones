@@ -1,38 +1,38 @@
 
-instance SLD_801_TORLOF_DI(NPC_DEFAULT)
+instance SLD_801_Torlof_DI(Npc_Default)
 {
 	name[0] = "Torlof";
 	guild = GIL_SLD;
 	id = 8010;
 	voice = 1;
-	npctype = NPCTYPE_MAIN;
+	npcType = npctype_main;
 	aivar[AIV_PARTYMEMBER] = TRUE;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	aivar[AIV_TOUGHGUYNEWSOVERRIDE] = TRUE;
-	b_setattributestochapter(self,5);
+	aivar[AIV_ToughGuy] = TRUE;
+	aivar[AIV_ToughGuyNewsOverride] = TRUE;
+	B_SetAttributesToChapter(self,5);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_2h_sld_sword);
-	EquipItem(self,itrw_sld_bow);
-	CreateInvItems(self,itrw_arrow,63);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_TORLOF,BODYTEX_N,4836);
+	EquipItem(self,ItMw_2h_Sld_Sword);
+	EquipItem(self,ItRw_Sld_Bow);
+	CreateInvItems(self,ItRw_Arrow,63);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Pony",Face_N_Torlof,BodyTex_N,ItAr_Sld_H);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,40);
-	daily_routine = rtn_start_8010;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,40);
+	daily_routine = Rtn_Start_8010;
 };
 
 
-func void rtn_start_8010()
+func void Rtn_Start_8010()
 {
-	ta_stand_wp(8,0,23,0,"SHIP_CREW_CAPTAIN");
-	ta_sleep(23,0,8,0,"SHIP_IN_06");
+	TA_Stand_WP(8,0,23,0,"SHIP_CREW_CAPTAIN");
+	TA_Sleep(23,0,8,0,"SHIP_IN_06");
 };
 
-func void rtn_orksturmdi_8010()
+func void Rtn_OrkSturmDI_8010()
 {
-	ta_stand_wp(8,0,23,0,"DI_SHIP_03");
-	ta_stand_wp(23,0,8,0,"DI_SHIP_03");
+	TA_Stand_WP(8,0,23,0,"DI_SHIP_03");
+	TA_Stand_WP(23,0,8,0,"DI_SHIP_03");
 };
 

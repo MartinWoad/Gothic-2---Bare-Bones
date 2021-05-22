@@ -1,56 +1,56 @@
 
-func void zs_unconscious()
+func void ZS_Unconscious()
 {
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
-	if(c_bodystatecontains(self,BS_SWIM) || c_bodystatecontains(self,BS_DIVE))
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
+	if(C_BodyStateContains(self,BS_SWIM) || C_BodyStateContains(self,BS_DIVE))
 	{
 		Npc_ClearAIQueue(self);
-		b_clearperceptions(self);
-		AI_StartState(self,zs_dead,0,"");
+		B_ClearPerceptions(self);
+		AI_StartState(self,ZS_Dead,0,"");
 		return;
 	};
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_NONE;
+	self.aivar[AIV_Guardpassage_Status] = GP_NONE;
 	Npc_SetRefuseTalk(self,0);
 	Npc_SetTempAttitude(self,Npc_GetPermAttitude(self,hero));
-	b_stoplookat(self);
+	B_StopLookAt(self);
 	AI_StopPointAt(self);
 	if((self.guild < GIL_SEPERATOR_HUM) && Npc_IsPlayer(other))
 	{
-		self.aivar[AIV_DEFEATEDBYPLAYER] = TRUE;
-		self.aivar[AIV_LASTFIGHTAGAINSTPLAYER] = FIGHT_LOST;
-		if((self.aivar[AIV_LASTPLAYERAR] == AR_NONE) && (self.aivar[AIV_DUELLOST] == FALSE) && (self.guild == GIL_SLD))
+		self.aivar[AIV_DefeatedByPlayer] = TRUE;
+		self.aivar[AIV_LastFightAgainstPlayer] = FIGHT_LOST;
+		if((self.aivar[AIV_LastPlayerAR] == AR_NONE) && (self.aivar[AIV_DuelLost] == FALSE) && (self.guild == GIL_SLD))
 		{
-			SLD_DUELLE_GEWONNEN = SLD_DUELLE_GEWONNEN + 1;
-			self.aivar[AIV_DUELLOST] = TRUE;
+			Sld_Duelle_gewonnen = Sld_Duelle_gewonnen + 1;
+			self.aivar[AIV_DuelLost] = TRUE;
 		};
-		if(self.aivar[AIV_ARENAFIGHT] == AF_RUNNING)
+		if(self.aivar[AIV_ArenaFight] == AF_RUNNING)
 		{
-			self.aivar[AIV_ARENAFIGHT] = AF_AFTER;
+			self.aivar[AIV_ArenaFight] = AF_AFTER;
 		};
 	};
 	if(Npc_IsPlayer(self))
 	{
-		other.aivar[AIV_LASTFIGHTAGAINSTPLAYER] = FIGHT_WON;
-		if(other.aivar[AIV_ARENAFIGHT] == AF_RUNNING)
+		other.aivar[AIV_LastFightAgainstPlayer] = FIGHT_WON;
+		if(other.aivar[AIV_ArenaFight] == AF_RUNNING)
 		{
-			other.aivar[AIV_ARENAFIGHT] = AF_AFTER;
+			other.aivar[AIV_ArenaFight] = AF_AFTER;
 		};
 	};
-	b_givetradeinv(self);
-	b_clearruneinv(self);
-	if(Npc_IsPlayer(other) && (self.aivar[AIV_VICTORYXPGIVEN] == FALSE))
+	B_GiveTradeInv(self);
+	B_ClearRuneInv(self);
+	if(Npc_IsPlayer(other) && (self.aivar[AIV_VictoryXPGiven] == FALSE))
 	{
-		b_giveplayerxp(self.level * XP_PER_VICTORY);
-		self.aivar[AIV_VICTORYXPGIVEN] = TRUE;
+		B_GivePlayerXP(self.level * XP_PER_VICTORY);
+		self.aivar[AIV_VictoryXPGiven] = TRUE;
 	};
 	AI_UnequipWeapons(self);
-	if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(dar)) && (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(cipher)))
+	if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Dar)) && (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(Cipher)))
 	{
-		DAR_LOSTAGAINSTCIPHER = TRUE;
+		Dar_LostAgainstCipher = TRUE;
 	};
 };
 
-func int zs_unconscious_loop()
+func int ZS_Unconscious_Loop()
 {
 	if(Npc_GetStateTime(self) < HAI_TIME_UNCONSCIOUS)
 	{
@@ -62,7 +62,7 @@ func int zs_unconscious_loop()
 	};
 };
 
-func void zs_unconscious_end()
+func void ZS_Unconscious_End()
 {
 	self.aivar[AIV_RANSACKED] = FALSE;
 	AI_Standup(self);
@@ -72,14 +72,14 @@ func void zs_unconscious_end()
 	};
 	if(Npc_CanSeeNpcFreeLOS(self,other) && (Npc_GetDistToNpc(self,other) < PERC_DIST_INTERMEDIAT))
 	{
-		b_turntonpc(self,other);
-		if(c_npcistoughguy(self) && (Npc_GetPermAttitude(self,other) != ATT_HOSTILE) && (self.npctype != NPCTYPE_FRIEND))
+		B_TurnToNpc(self,other);
+		if(C_NpcIsToughGuy(self) && (Npc_GetPermAttitude(self,other) != ATT_HOSTILE) && (self.npcType != NPCTYPE_FRIEND))
 		{
-			b_say(self,other,"$NEXTTIMEYOUREINFORIT");
+			B_Say(self,other,"$NEXTTIMEYOUREINFORIT");
 		}
 		else
 		{
-			b_say(self,other,"$OHMYHEAD");
+			B_Say(self,other,"$OHMYHEAD");
 		};
 	};
 	Npc_PerceiveAll(self);
@@ -95,6 +95,6 @@ func void zs_unconscious_end()
 	};
 	AI_EquipBestMeleeWeapon(self);
 	AI_EquipBestRangedWeapon(self);
-	AI_StartState(self,zs_healself,0,"");
+	AI_StartState(self,ZS_HealSelf,0,"");
 };
 

@@ -1,21 +1,21 @@
 
-func void b_useitem(var C_NPC slf,var int itminstance)
+func void B_UseItem(var C_Npc slf,var int itmInstance)
 {
-	var C_NPC target;
-	if(c_bodystatecontains(slf,BS_SIT))
+	var C_Npc target;
+	if(C_BodyStateContains(slf,BS_SIT))
 	{
 		return;
 	};
 	target = Npc_GetLookAtTarget(slf);
 	if(Hlp_IsValidNpc(target))
 	{
-		b_stoplookat(slf);
-		AI_UseItem(slf,itminstance);
-		b_lookatnpc(slf,target);
+		B_StopLookAt(slf);
+		AI_UseItem(slf,itmInstance);
+		B_LookAtNpc(slf,target);
 	}
 	else
 	{
-		AI_UseItem(slf,itminstance);
+		AI_UseItem(slf,itmInstance);
 	};
 };
 

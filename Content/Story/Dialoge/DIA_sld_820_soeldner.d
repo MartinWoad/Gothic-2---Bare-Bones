@@ -1,38 +1,38 @@
 
-instance DIA_SLD_820_EXIT(C_INFO)
+instance DIA_Sld_820_EXIT(C_Info)
 {
-	npc = sld_820_soeldner;
+	npc = SLD_820_Soeldner;
 	nr = 999;
-	condition = dia_sld_820_exit_condition;
-	information = dia_sld_820_exit_info;
+	condition = DIA_Sld_820_EXIT_Condition;
+	information = DIA_Sld_820_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_sld_820_exit_condition()
+func int DIA_Sld_820_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_sld_820_exit_info()
+func void DIA_Sld_820_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SLD_820_HALT(C_INFO)
+instance DIA_Sld_820_Halt(C_Info)
 {
-	npc = sld_820_soeldner;
+	npc = SLD_820_Soeldner;
 	nr = 1;
-	condition = dia_sld_820_halt_condition;
-	information = dia_sld_820_halt_info;
+	condition = DIA_Sld_820_Halt_Condition;
+	information = DIA_Sld_820_Halt_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_sld_820_halt_condition()
+func int DIA_Sld_820_Halt_Condition()
 {
 	if((other.guild != GIL_SLD) && (other.guild != GIL_DJG))
 	{
@@ -40,7 +40,7 @@ func int dia_sld_820_halt_condition()
 	};
 };
 
-func void dia_sld_820_halt_info()
+func void DIA_Sld_820_Halt_Info()
 {
 	AI_Output(self,other,"DIA_Sld_820_Halt_07_00");	//A ty gdzie leziesz?
 	AI_Output(other,self,"DIA_Sld_820_Halt_15_01");	//Do domu, oczywiœcie.
@@ -51,54 +51,54 @@ func void dia_sld_820_halt_info()
 	};
 	AI_Output(other,self,"DIA_Sld_820_Halt_15_04");	//Chcê pogadaæ z Lee!
 	AI_Output(self,other,"DIA_Sld_820_Halt_07_05");	//Czego od niego chcesz?
-	Info_ClearChoices(dia_sld_820_halt);
-	Info_AddChoice(dia_sld_820_halt,"On i ja znamy siê od dawna...",dia_sld_820_halt_kennelee);
+	Info_ClearChoices(DIA_Sld_820_Halt);
+	Info_AddChoice(DIA_Sld_820_Halt,"On i ja znamy siê od dawna...",DIA_Sld_820_Halt_KenneLee);
 	if(other.guild == GIL_NONE)
 	{
-		Info_AddChoice(dia_sld_820_halt,"Chcê siê przy³¹czyæ do najemników. Masz coœ przeciwko temu?",dia_sld_820_halt_wannajoin);
+		Info_AddChoice(DIA_Sld_820_Halt,"Chcê siê przy³¹czyæ do najemników. Masz coœ przeciwko temu?",DIA_Sld_820_Halt_WannaJoin);
 	};
 };
 
-func void b_sld_820_leeisright()
+func void B_Sld_820_LeeIsRight()
 {
 	AI_Output(self,other,"B_Sld_820_LeeIsRight_07_00");	//Lee jest w prawym skrzydle. Nawet nie myœl o wa³êsaniu siê gdzie indziej!
 };
 
-func void dia_sld_820_halt_wannajoin()
+func void DIA_Sld_820_Halt_WannaJoin()
 {
 	AI_Output(other,self,"DIA_Sld_820_Halt_WannaJoin_15_00");	//Chcê siê przy³¹czyæ do najemników. Masz coœ przeciwko temu?
 	AI_Output(self,other,"DIA_Sld_820_Halt_WannaJoin_07_01");	//Ach, œwie¿e miêso armatnie! WchodŸ, wchodŸ do œrodka.
-	b_sld_820_leeisright();
+	B_Sld_820_LeeIsRight();
 	AI_Output(self,other,"DIA_Sld_820_Halt_WannaJoin_07_02");	//Ale pamiêtaj, trzymaj siê z daleka od Onara! Nie lubi, kiedy ktokolwiek siê do niego odzywa, tym bardziej bez pytania. Szczególnie zaœ nie lubi takich jak ty.
 	AI_StopProcessInfos(self);
 };
 
-func void dia_sld_820_halt_kennelee()
+func void DIA_Sld_820_Halt_KenneLee()
 {
 	AI_Output(other,self,"DIA_Sld_820_Halt_KenneLee_15_00");	//On i ja znamy siê od dawna...
 	AI_Output(self,other,"DIA_Sld_820_Halt_KenneLee_07_01");	//JESTEŒ kumplem Lee? Nie wierzê! Ale wchodŸ, jeœli Lee ciê nie pozna, od razu siê domyœlisz...
-	b_sld_820_leeisright();
+	B_Sld_820_LeeIsRight();
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SLD_820_PERM(C_INFO)
+instance DIA_Sld_820_PERM(C_Info)
 {
-	npc = sld_820_soeldner;
+	npc = SLD_820_Soeldner;
 	nr = 1;
-	condition = dia_sld_820_perm_condition;
-	information = dia_sld_820_perm_info;
+	condition = DIA_Sld_820_PERM_Condition;
+	information = DIA_Sld_820_PERM_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_sld_820_perm_condition()
+func int DIA_Sld_820_PERM_Condition()
 {
 	return TRUE;
 };
 
-func void dia_sld_820_perm_info()
+func void DIA_Sld_820_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Sld_820_PERM_15_00");	//Jak leci?
 	AI_Output(self,other,"DIA_Sld_820_PERM_07_01");	//WejdŸ, jeœli chcesz, ale nie odzywaj siê do mnie.

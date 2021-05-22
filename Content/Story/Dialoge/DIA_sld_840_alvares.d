@@ -1,93 +1,93 @@
 
-instance DIA_ALVARES_EXIT(C_INFO)
+instance DIA_Alvares_EXIT(C_Info)
 {
-	npc = sld_840_alvares;
+	npc = SLD_840_Alvares;
 	nr = 999;
-	condition = dia_alvares_exit_condition;
-	information = dia_alvares_exit_info;
+	condition = DIA_Alvares_EXIT_Condition;
+	information = DIA_Alvares_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_alvares_exit_condition()
+func int DIA_Alvares_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_alvares_exit_info()
+func void DIA_Alvares_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ALVARES_HAUAB(C_INFO)
+instance DIA_Alvares_HAUAB(C_Info)
 {
-	npc = sld_840_alvares;
+	npc = SLD_840_Alvares;
 	nr = 4;
-	condition = dia_alvares_hauab_condition;
-	information = dia_alvares_hauab_info;
+	condition = DIA_Alvares_HAUAB_Condition;
+	information = DIA_Alvares_HAUAB_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_alvares_hauab_condition()
+func int DIA_Alvares_HAUAB_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_alvares_hauab_info()
+func void DIA_Alvares_HAUAB_Info()
 {
-	AKILS_SLDSTILLTHERE = TRUE;
+	Akils_SLDStillthere = TRUE;
 	AI_Output(self,other,"DIA_Alvares_HAUAB_11_00");	//Nie wiem, co ciê tu przygna³o, ale lepiej zapomnij o tym i ruszaj w dalsz¹ drogê.
-	Log_CreateTopic(TOPIC_AKILSSLDSTILLTHERE,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_AKILSSLDSTILLTHERE,LOG_RUNNING);
-	b_logentry(TOPIC_AKILSSLDSTILLTHERE,"Farmie Akila zagra¿aj¹ najemnicy.");
+	Log_CreateTopic(TOPIC_AkilsSLDStillthere,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_AkilsSLDStillthere,LOG_Running);
+	B_LogEntry(TOPIC_AkilsSLDStillthere,"Farmie Akila zagra¿aj¹ najemnicy.");
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ALVARES_ATTACK(C_INFO)
+instance DIA_Alvares_ATTACK(C_Info)
 {
-	npc = sld_840_alvares;
+	npc = SLD_840_Alvares;
 	nr = 6;
-	condition = dia_alvares_attack_condition;
-	information = dia_alvares_attack_info;
+	condition = DIA_Alvares_ATTACK_Condition;
+	information = DIA_Alvares_ATTACK_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_alvares_attack_condition()
+func int DIA_Alvares_ATTACK_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_alvares_hauab) && Npc_IsInState(self,zs_talk))
+	if(Npc_KnowsInfo(other,DIA_Alvares_HAUAB) && Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_alvares_attack_info()
+func void DIA_Alvares_ATTACK_Info()
 {
 	AI_Output(self,other,"DIA_Alvares_ATTACK_11_00");	//Hej, ci¹gle tu jesteœ? Dam ci szansê, przybyszu: wynoœ siê st¹d albo zginiesz.
-	Info_ClearChoices(dia_alvares_attack);
-	Info_AddChoice(dia_alvares_attack,"Kim jesteœcie, ch³opaki - wêdrownymi b³aznami?",dia_alvares_attack_kerle);
+	Info_ClearChoices(DIA_Alvares_ATTACK);
+	Info_AddChoice(DIA_Alvares_ATTACK,"Kim jesteœcie, ch³opaki - wêdrownymi b³aznami?",DIA_Alvares_ATTACK_Kerle);
 	if(other.guild == GIL_NONE)
 	{
-		Info_AddChoice(dia_alvares_attack,"Chcê siê do was zaci¹gn¹æ.",dia_alvares_attack_soeldner);
+		Info_AddChoice(DIA_Alvares_ATTACK,"Chcê siê do was zaci¹gn¹æ.",DIA_Alvares_ATTACK_Soeldner);
 	};
-	Info_AddChoice(dia_alvares_attack,"Wynoœcie siê st¹d, zrozumiano?",dia_alvares_attack_witz);
-	Info_AddChoice(dia_alvares_attack,"Nie chcê ¿adnych k³opotów.",dia_alvares_attack_aerger);
-	if(MIS_BALTRAM_SCOUTAKIL == LOG_RUNNING)
+	Info_AddChoice(DIA_Alvares_ATTACK,"Wynoœcie siê st¹d, zrozumiano?",DIA_Alvares_ATTACK_Witz);
+	Info_AddChoice(DIA_Alvares_ATTACK,"Nie chcê ¿adnych k³opotów.",DIA_Alvares_ATTACK_Aerger);
+	if(MIS_Baltram_ScoutAkil == LOG_Running)
 	{
-		Info_AddChoice(dia_alvares_attack,"Przyszed³em tylko coœ zabraæ.",dia_alvares_attack_lieferung);
+		Info_AddChoice(DIA_Alvares_ATTACK,"Przyszed³em tylko coœ zabraæ.",DIA_Alvares_ATTACK_Lieferung);
 	};
 };
 
-func void dia_alvares_attack_witz()
+func void DIA_Alvares_ATTACK_Witz()
 {
 	AI_Output(other,self,"DIA_Alvares_ATTACK_Witz_15_00");	//Wynoœcie siê st¹d, zrozumiano?
 	AI_Output(self,other,"DIA_Alvares_ATTACK_Witz_11_01");	//No patrzcie, wpad³ nam w ³apy bohater - prawdziwy, durny bohater.
@@ -95,19 +95,19 @@ func void dia_alvares_attack_witz()
 	AI_Output(other,self,"DIA_Alvares_ATTACK_Witz_15_03");	//A kogo obchodzi, co myœlisz?
 	AI_Output(self,other,"DIA_Alvares_ATTACK_Witz_11_04");	//Myœlê, ¿e dobry bohater to martwy bohater. Wiêc zrób coœ dla mnie - umieraj szybko!
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_SUDDENENEMYINFERNO,1);
+	B_Attack(self,other,AR_SuddenEnemyInferno,1);
 };
 
-func void dia_alvares_attack_kerle()
+func void DIA_Alvares_ATTACK_Kerle()
 {
 	AI_Output(other,self,"DIA_Alvares_ATTACK_Kerle_15_00");	//Kim jesteœcie, ch³opaki - wêdrownymi b³aznami?
 	AI_Output(self,other,"DIA_Alvares_ATTACK_Kerle_11_01");	//Sam tego chcia³eœ. Wci¹¿ bêdê siê œmia³, kiedy ty bêdziesz le¿a³ z gêb¹ w b³ocie.
 	AI_Output(self,other,"DIA_Alvares_ATTACK_Kerle_11_02");	//Engardo, zaczynamy! Ty ³ap wieœniaka - ja zajmê siê tym pajacem!
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_SUDDENENEMYINFERNO,1);
+	B_Attack(self,other,AR_SuddenEnemyInferno,1);
 };
 
-func void dia_alvares_attack_aerger()
+func void DIA_Alvares_ATTACK_Aerger()
 {
 	AI_Output(other,self,"DIA_Alvares_ATTACK_Aerger_15_00");	//Nie chcê ¿adnych k³opotów.
 	AI_Output(self,other,"DIA_Alvares_ATTACK_Aerger_11_01");	//Ale my w³aœnie szukamy k³opotów. Przebyliœmy d³ug¹ drogê w³aœnie po to, ¿eby narobiæ trochê zamieszania.
@@ -115,14 +115,14 @@ func void dia_alvares_attack_aerger()
 	AI_StopProcessInfos(self);
 };
 
-func void dia_alvares_attack_lieferung()
+func void DIA_Alvares_ATTACK_Lieferung()
 {
 	AI_Output(other,self,"DIA_Alvares_ATTACK_Lieferung_15_00");	//Przyszed³em tylko coœ zabraæ.
 	AI_Output(self,other,"DIA_Alvares_ATTACK_Lieferung_11_01");	//My te¿. I byliœmy pierwsi. Wiêc spadaj, bo bêdê musia³ zrobiæ ci krzywdê.
 	AI_StopProcessInfos(self);
 };
 
-func void dia_alvares_attack_soeldner()
+func void DIA_Alvares_ATTACK_Soeldner()
 {
 	AI_Output(other,self,"DIA_Alvares_ATTACK_Soeldner_15_00");	//Chcê siê do was zaci¹gn¹æ.
 	AI_Output(self,other,"DIA_Alvares_ATTACK_Soeldner_11_01");	//Och, naprawdê? No to spadówa - bo ju¿ siê nigdy nigdzie nie zaci¹gniesz.
@@ -130,65 +130,65 @@ func void dia_alvares_attack_soeldner()
 };
 
 
-instance DIA_ALVARES_SCHLUSS(C_INFO)
+instance DIA_Alvares_Schluss(C_Info)
 {
-	npc = sld_840_alvares;
+	npc = SLD_840_Alvares;
 	nr = 4;
-	condition = dia_alvares_schluss_condition;
-	information = dia_alvares_schluss_info;
+	condition = DIA_Alvares_Schluss_Condition;
+	information = DIA_Alvares_Schluss_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_alvares_schluss_condition()
+func int DIA_Alvares_Schluss_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && Npc_KnowsInfo(other,dia_alvares_attack))
+	if(Npc_IsInState(self,ZS_Talk) && Npc_KnowsInfo(other,DIA_Alvares_ATTACK))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_alvares_schluss_info()
+func void DIA_Alvares_Schluss_Info()
 {
 	AI_Output(self,other,"DIA_Alvares_Schluss_11_00");	//Mia³eœ szansê. Ale chyba nie chcesz pos³uchaæ m¹drej rady.
 	AI_Output(self,other,"DIA_Alvares_Schluss_11_01");	//Dobra - no to teraz ciê zabijê. Engardo, za³atwmy ich!
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_SUDDENENEMYINFERNO,1);
+	B_Attack(self,other,AR_SuddenEnemyInferno,1);
 };
 
 
-instance DIA_ALVARES_PICKPOCKET(C_INFO)
+instance DIA_Alvares_PICKPOCKET(C_Info)
 {
-	npc = sld_840_alvares;
+	npc = SLD_840_Alvares;
 	nr = 900;
-	condition = dia_alvares_pickpocket_condition;
-	information = dia_alvares_pickpocket_info;
+	condition = DIA_Alvares_PICKPOCKET_Condition;
+	information = DIA_Alvares_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_20;
+	description = Pickpocket_20;
 };
 
 
-func int dia_alvares_pickpocket_condition()
+func int DIA_Alvares_PICKPOCKET_Condition()
 {
-	return c_beklauen(20,15);
+	return C_Beklauen(20,15);
 };
 
-func void dia_alvares_pickpocket_info()
+func void DIA_Alvares_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_alvares_pickpocket);
-	Info_AddChoice(dia_alvares_pickpocket,DIALOG_BACK,dia_alvares_pickpocket_back);
-	Info_AddChoice(dia_alvares_pickpocket,DIALOG_PICKPOCKET,dia_alvares_pickpocket_doit);
+	Info_ClearChoices(DIA_Alvares_PICKPOCKET);
+	Info_AddChoice(DIA_Alvares_PICKPOCKET,Dialog_Back,DIA_Alvares_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Alvares_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Alvares_PICKPOCKET_DoIt);
 };
 
-func void dia_alvares_pickpocket_doit()
+func void DIA_Alvares_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_alvares_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Alvares_PICKPOCKET);
 };
 
-func void dia_alvares_pickpocket_back()
+func void DIA_Alvares_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_alvares_pickpocket);
+	Info_ClearChoices(DIA_Alvares_PICKPOCKET);
 };
 

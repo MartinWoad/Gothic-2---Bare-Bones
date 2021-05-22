@@ -1,52 +1,52 @@
 
-instance VLK_4250_JORGEN(NPC_DEFAULT)
+instance VLK_4250_Jorgen(Npc_Default)
 {
 	name[0] = "Jorgen";
 	guild = GIL_NONE;
 	id = 4250;
 	voice = 7;
 	flags = NPC_FLAG_IMMORTAL;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,5);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,5);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_bau_axe);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Thief",FACE_N_TOUGH_SKIP,BODYTEX_N,4820);
+	EquipItem(self,ItMw_1h_Bau_Axe);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Thief",Face_N_Tough_Skip,BodyTex_N,ITAR_Vlk_L);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,70);
-	daily_routine = rtn_start_4250;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,70);
+	daily_routine = Rtn_Start_4250;
 };
 
 
-func void rtn_start_4250()
+func void Rtn_Start_4250()
 {
-	ta_stand_armscrossed(8,0,20,0,"NW_MONASTERY_BRIDGE_01");
-	ta_stand_armscrossed(20,0,8,0,"NW_MONASTERY_BRIDGE_01");
+	TA_Stand_ArmsCrossed(8,0,20,0,"NW_MONASTERY_BRIDGE_01");
+	TA_Stand_ArmsCrossed(20,0,8,0,"NW_MONASTERY_BRIDGE_01");
 };
 
-func void rtn_kloster_4250()
+func void Rtn_Kloster_4250()
 {
-	ta_stand_armscrossed(8,0,20,0,"NW_MONASTERY_PLACE_06");
-	ta_sleep(20,0,8,0,"NW_MONASTERY_NOVICE04_06");
+	TA_Stand_ArmsCrossed(8,0,20,0,"NW_MONASTERY_PLACE_06");
+	TA_Sleep(20,0,8,0,"NW_MONASTERY_NOVICE04_06");
 };
 
-func void rtn_rausauskloster_4250()
+func void Rtn_RausAusKloster_4250()
 {
-	ta_stand_armscrossed(8,0,20,0,"NW_BIGFARM_KITCHEN_OUT_06");
-	ta_stand_armscrossed(20,0,8,0,"NW_BIGFARM_KITCHEN_OUT_06");
+	TA_Stand_ArmsCrossed(8,0,20,0,"NW_BIGFARM_KITCHEN_OUT_06");
+	TA_Stand_ArmsCrossed(20,0,8,0,"NW_BIGFARM_KITCHEN_OUT_06");
 };
 
-func void rtn_waitforshipcaptain_4250()
+func void Rtn_WaitForShipCaptain_4250()
 {
-	ta_sit_bench(8,0,20,0,"NW_WAITFOR_SHIP_CAPTAIN");
-	ta_sit_bench(20,0,8,0,"NW_WAITFOR_SHIP_CAPTAIN");
+	TA_Sit_Bench(8,0,20,0,"NW_WAITFOR_SHIP_CAPTAIN");
+	TA_Sit_Bench(20,0,8,0,"NW_WAITFOR_SHIP_CAPTAIN");
 };
 
-func void rtn_allonboard_4250()
+func void Rtn_AllOnBoard_4250()
 {
-	ta_stand_wp(8,0,23,0,"SHIP_CREW_CAPTAIN");
-	ta_sleep(23,0,8,0,"SHIP_IN_06");
+	TA_Stand_WP(8,0,23,0,"SHIP_CREW_CAPTAIN");
+	TA_Sleep(23,0,8,0,"SHIP_IN_06");
 };
 

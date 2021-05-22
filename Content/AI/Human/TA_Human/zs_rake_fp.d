@@ -1,21 +1,21 @@
 
-func void zs_rake_fp()
+func void ZS_Rake_FP()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
 		AI_GotoWP(self,self.wp);
 	};
-	if(Npc_HasItems(self,itmi_rake) == 0)
+	if(Npc_HasItems(self,ItMi_Rake) == 0)
 	{
-		CreateInvItem(self,itmi_rake);
+		CreateInvItem(self,ItMi_Rake);
 	};
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func int zs_rake_fp_loop()
+func int ZS_Rake_FP_Loop()
 {
 	if(Npc_IsOnFP(self,"PICK"))
 	{
@@ -42,14 +42,14 @@ func int zs_rake_fp_loop()
 	};
 	if(self.aivar[AIV_TAPOSITION] == NOTINPOS)
 	{
-		AI_UseItemToState(self,itmi_rake,1);
+		AI_UseItemToState(self,ItMi_Rake,1);
 		self.aivar[AIV_TAPOSITION] = ISINPOS;
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_rake_fp_end()
+func void ZS_Rake_FP_End()
 {
-	AI_UseItemToState(self,itmi_rake,-1);
+	AI_UseItemToState(self,ItMi_Rake,-1);
 };
 

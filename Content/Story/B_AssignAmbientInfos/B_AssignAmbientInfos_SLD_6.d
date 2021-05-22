@@ -1,36 +1,36 @@
 
-instance DIA_SLD_6_EXIT(C_INFO)
+instance DIA_SLD_6_EXIT(C_Info)
 {
 	nr = 999;
-	condition = dia_sld_6_exit_condition;
-	information = dia_sld_6_exit_info;
+	condition = DIA_SLD_6_EXIT_Condition;
+	information = DIA_SLD_6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_sld_6_exit_condition()
+func int DIA_SLD_6_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_sld_6_exit_info()
+func void DIA_SLD_6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SLD_6_JOIN(C_INFO)
+instance DIA_SLD_6_JOIN(C_Info)
 {
 	nr = 4;
-	condition = dia_sld_6_join_condition;
-	information = dia_sld_6_join_info;
+	condition = DIA_SLD_6_JOIN_Condition;
+	information = DIA_SLD_6_JOIN_Info;
 	permanent = TRUE;
 	description = "Chcê siê do was przy³¹czyæ!";
 };
 
 
-func int dia_sld_6_join_condition()
+func int DIA_SLD_6_JOIN_Condition()
 {
 	if(other.guild == GIL_NONE)
 	{
@@ -38,14 +38,14 @@ func int dia_sld_6_join_condition()
 	};
 };
 
-func void dia_sld_6_join_info()
+func void DIA_SLD_6_JOIN_Info()
 {
 	AI_Output(other,self,"DIA_SLD_6_JOIN_15_00");	//Chcê siê do was przy³¹czyæ.
-	if(MIS_TORLOF_BENGARMILIZKLATSCHEN == LOG_SUCCESS)
+	if(MIS_Torlof_BengarMilizKlatschen == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_SLD_6_JOIN_06_01");	//S³ysza³em o sprawie ze stra¿¹. Torlof powiada, ¿e zda³eœ test. Mo¿esz liczyæ na mój g³os.
 	}
-	else if(MIS_TORLOF_HOLPACHTVONSEKOB == LOG_SUCCESS)
+	else if(MIS_Torlof_HolPachtVonSekob == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_SLD_6_JOIN_06_02");	//Ograbianie ch³opów to jedno, ale potyczki z regularnymi oddzia³ami stra¿y to zupe³nie inna sprawa. Có¿, jeœli Onar uwa¿a, ¿e siê nadajesz, to ja nie bêdê siê sprzeciwia³.
 	}
@@ -56,17 +56,17 @@ func void dia_sld_6_join_info()
 };
 
 
-instance DIA_SLD_6_PEOPLE(C_INFO)
+instance DIA_SLD_6_PEOPLE(C_Info)
 {
 	nr = 3;
-	condition = dia_sld_6_people_condition;
-	information = dia_sld_6_people_info;
+	condition = DIA_SLD_6_PEOPLE_Condition;
+	information = DIA_SLD_6_PEOPLE_Info;
 	permanent = TRUE;
 	description = "Kto tu dowodzi?";
 };
 
 
-func int dia_sld_6_people_condition()
+func int DIA_SLD_6_PEOPLE_Condition()
 {
 	if((other.guild != GIL_SLD) && (other.guild != GIL_DJG))
 	{
@@ -74,7 +74,7 @@ func int dia_sld_6_people_condition()
 	};
 };
 
-func void dia_sld_6_people_info()
+func void DIA_SLD_6_PEOPLE_Info()
 {
 	AI_Output(other,self,"DIA_SLD_6_PEOPLE_15_00");	//Kto tu rz¹dzi?
 	AI_Output(self,other,"DIA_SLD_6_PEOPLE_06_01");	//Farma nale¿y do Onara, jeœli o to ci chodzi. Jednak naszym przywódc¹ jest Lee.
@@ -83,17 +83,17 @@ func void dia_sld_6_people_info()
 };
 
 
-instance DIA_SLD_6_LOCATION(C_INFO)
+instance DIA_SLD_6_LOCATION(C_Info)
 {
 	nr = 2;
-	condition = dia_sld_6_location_condition;
-	information = dia_sld_6_location_info;
+	condition = DIA_SLD_6_LOCATION_Condition;
+	information = DIA_SLD_6_LOCATION_Info;
 	permanent = TRUE;
 	description = "Czy chronicie farmerów?";
 };
 
 
-func int dia_sld_6_location_condition()
+func int DIA_SLD_6_LOCATION_Condition()
 {
 	if((other.guild != GIL_SLD) && (other.guild != GIL_DJG))
 	{
@@ -101,7 +101,7 @@ func int dia_sld_6_location_condition()
 	};
 };
 
-func void dia_sld_6_location_info()
+func void DIA_SLD_6_LOCATION_Info()
 {
 	AI_Output(other,self,"DIA_SLD_6_LOCATION_15_00");	//Czy chronicie farmerów?
 	AI_Output(self,other,"DIA_SLD_6_LOCATION_06_01");	//Chronimy nie tylko farmê Onara, ale i ca³¹ dolinê.
@@ -109,27 +109,27 @@ func void dia_sld_6_location_info()
 };
 
 
-instance DIA_SLD_6_STANDARD(C_INFO)
+instance DIA_SLD_6_STANDARD(C_Info)
 {
 	nr = 1;
-	condition = dia_sld_6_standard_condition;
-	information = dia_sld_6_standard_info;
+	condition = DIA_SLD_6_STANDARD_Condition;
+	information = DIA_SLD_6_STANDARD_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_sld_6_standard_condition()
+func int DIA_SLD_6_STANDARD_Condition()
 {
 	return TRUE;
 };
 
-func void dia_sld_6_standard_info()
+func void DIA_SLD_6_STANDARD_Info()
 {
 	AI_Output(other,self,"DIA_SLD_6_STANDARD_15_00");	//Co s³ychaæ?
-	if(KAPITEL <= 2)
+	if(Kapitel <= 2)
 	{
-		if(ENTEROW_KAPITEL2 == FALSE)
+		if(EnterOW_Kapitel2 == FALSE)
 		{
 			if(other.guild == GIL_SLD)
 			{
@@ -151,9 +151,9 @@ func void dia_sld_6_standard_info()
 			AI_Output(self,other,"DIA_SLD_6_STANDARD_06_06");	//Wygl¹da na to, ¿e w koñcu bêdzie musia³ ruszyæ swoje szanowne dupsko z miasta.
 		};
 	};
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
-		if(MIS_RESCUEBENNET == LOG_SUCCESS)
+		if(MIS_RescueBennet == LOG_SUCCESS)
 		{
 			AI_Output(self,other,"DIA_SLD_6_STANDARD_06_07");	//Lord Hagen ma szczêœcie. Jeszcze kilka dni, a sami odbilibyœmy Benneta.
 		}
@@ -162,7 +162,7 @@ func void dia_sld_6_standard_info()
 			AI_Output(self,other,"DIA_SLD_6_STANDARD_06_08");	//Jeœli w ci¹gu kilku dni nie wypuszcz¹ Benneta z wiêzienia, sami po niego pójdziemy.
 		};
 	};
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		if(hero.guild == GIL_DJG)
 		{
@@ -174,7 +174,7 @@ func void dia_sld_6_standard_info()
 			AI_Output(self,other,"DIA_SLD_6_STANDARD_06_11");	//Powinieneœ iœæ do Górniczej Doliny. S³ysza³em, ¿e te biedne psubraty same sobie nie poradz¹.
 		};
 	};
-	if(KAPITEL >= 5)
+	if(Kapitel >= 5)
 	{
 		if(hero.guild == GIL_DJG)
 		{
@@ -188,7 +188,7 @@ func void dia_sld_6_standard_info()
 	};
 };
 
-func void b_assignambientinfos_sld_6(var C_NPC slf)
+func void B_AssignAmbientInfos_SLD_6(var C_Npc slf)
 {
 	dia_sld_6_exit.npc = Hlp_GetInstanceID(slf);
 	dia_sld_6_join.npc = Hlp_GetInstanceID(slf);

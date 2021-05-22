@@ -1,16 +1,16 @@
 
-func void zs_mm_rtn_dragonrest()
+func void ZS_MM_Rtn_DragonRest()
 {
 	Npc_SetPercTime(self,1);
 	self.aivar[AIV_MM_PRIORITY] = PRIO_EAT;
-	if(Hlp_GetInstanceID(self) != Hlp_GetInstanceID(dragon_testmodell))
+	if(Hlp_GetInstanceID(self) != Hlp_GetInstanceID(Dragon_Testmodell))
 	{
-		perception_set_monster_rtn();
-		Npc_PercEnable(self,PERC_ASSESSPLAYER,b_mm_assessplayer);
+		Perception_Set_Monster_Rtn();
+		Npc_PercEnable(self,PERC_ASSESSPLAYER,B_MM_AssessPlayer);
 	};
-	Npc_PercEnable(self,PERC_ASSESSTALK,b_assesstalk);
+	Npc_PercEnable(self,PERC_ASSESSTALK,B_AssessTalk);
 	AI_SetWalkMode(self,NPC_WALK);
-	b_mm_desynchronize();
+	B_MM_DeSynchronize();
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == FALSE)
 	{
 		AI_GotoWP(self,self.wp);
@@ -25,27 +25,27 @@ func void zs_mm_rtn_dragonrest()
 	};
 };
 
-func int zs_mm_rtn_dragonrest_loop()
+func int ZS_MM_Rtn_DragonRest_Loop()
 {
-	var int randommove;
-	if(!Wld_IsTime(self.aivar[AIV_MM_RESTSTART],0,self.aivar[AIV_MM_RESTEND],0) && (self.aivar[AIV_MM_RESTSTART] != ONLYROUTINE))
+	var int randomMove;
+	if(!Wld_IsTime(self.aivar[AIV_MM_RestStart],0,self.aivar[AIV_MM_RestEnd],0) && (self.aivar[AIV_MM_RestStart] != OnlyRoutine))
 	{
-		AI_StartState(self,zs_mm_allscheduler,1,"");
+		AI_StartState(self,ZS_MM_AllScheduler,1,"");
 		return LOOP_END;
 	};
 	if(Hlp_Random(1000) <= 5)
 	{
-		randommove = Hlp_Random(3);
+		randomMove = Hlp_Random(3);
 		AI_Standup(self);
-		if(randommove == 0)
+		if(randomMove == 0)
 		{
 			AI_PlayAni(self,"R_ROAM1");
 		};
-		if(randommove == 1)
+		if(randomMove == 1)
 		{
 			AI_PlayAni(self,"R_ROAM2");
 		};
-		if(randommove == 2)
+		if(randomMove == 2)
 		{
 			AI_PlayAni(self,"R_ROAM3");
 		};
@@ -53,7 +53,7 @@ func int zs_mm_rtn_dragonrest_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_mm_rtn_dragonrest_end()
+func void ZS_MM_Rtn_DragonRest_End()
 {
 	AI_PlayAni(self,"T_REST_2_STAND");
 };

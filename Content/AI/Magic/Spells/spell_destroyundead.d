@@ -1,18 +1,18 @@
 
-const int SPL_COST_DESTROYUNDEAD = 40;
-const int SPL_DAMAGE_DESTROYUNDEAD = 1000;
+const int SPL_Cost_DESTROYUNDEAD = 40;
+const int SPL_Damage_DESTROYUNDEAD = 1000;
 
-instance SPELL_DESTROYUNDEAD(C_SPELL_PROTO)
+instance Spell_DestroyUndead(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	damage_per_level = SPL_DAMAGE_DESTROYUNDEAD;
-	spelltype = SPELL_NEUTRAL;
+	damage_per_level = SPL_Damage_DESTROYUNDEAD;
+	spellType = SPELL_NEUTRAL;
 };
 
 
-func int spell_logic_destroyundead(var int manainvested)
+func int Spell_Logic_DestroyUndead(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_DESTROYUNDEAD)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_DESTROYUNDEAD)
 	{
 		return SPL_SENDCAST;
 	}
@@ -22,8 +22,8 @@ func int spell_logic_destroyundead(var int manainvested)
 	};
 };
 
-func void spell_cast_destroyundead()
+func void Spell_Cast_DestroyUndead()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_DESTROYUNDEAD;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_DESTROYUNDEAD;
 };
 

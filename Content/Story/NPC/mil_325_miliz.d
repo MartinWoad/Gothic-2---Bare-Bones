@@ -1,29 +1,29 @@
 
-instance MIL_325_MILIZ(NPC_DEFAULT)
+instance Mil_325_Miliz(Npc_Default)
 {
-	name[0] = NAME_MILIZ;
+	name[0] = NAME_Miliz;
 	guild = GIL_MIL;
 	id = 325;
 	voice = 12;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_NEWSOVERRIDE] = TRUE;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	aivar[AIV_NewsOverride] = TRUE;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_mil_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_B_TOUGH_SILAS,BODYTEX_B,4826);
+	EquipItem(self,ItMw_1h_Mil_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_B_Tough_Silas,BodyTex_B,ITAR_Mil_L);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,50);
-	daily_routine = rtn_start_325;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,50);
+	daily_routine = Rtn_Start_325;
 };
 
 
-func void rtn_start_325()
+func void Rtn_Start_325()
 {
-	ta_guard_passage(8,0,23,0,"NW_CITY_MERCHANT_PATH_02");
-	ta_guard_passage(23,0,8,0,"NW_CITY_MERCHANT_PATH_02");
+	TA_Guard_Passage(8,0,23,0,"NW_CITY_MERCHANT_PATH_02");
+	TA_Guard_Passage(23,0,8,0,"NW_CITY_MERCHANT_PATH_02");
 };
 

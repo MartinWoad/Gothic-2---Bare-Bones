@@ -1,39 +1,39 @@
 
-instance VLK_401_CORNELIUS(NPC_DEFAULT)
+instance VLK_401_Cornelius(Npc_Default)
 {
 	name[0] = "Cornelius";
 	guild = GIL_NONE;
 	id = 401;
 	voice = 13;
 	flags = NPC_FLAG_IMMORTAL;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,1);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_P_WEAK_ULF_WOHLERS,BODYTEX_P,4816);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_P_Weak_Ulf_Wohlers,BodyTex_P,ITAR_Governor);
 	Mdl_SetModelFatness(self,0.9);
 	Mdl_ApplyOverlayMds(self,"Humans_Arrogance.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_401;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_401;
 };
 
 
-func void rtn_start_401()
+func void Rtn_Start_401()
 {
-	ta_read_bookstand(8,0,23,0,"NW_CITY_CORNELIUS");
-	ta_read_bookstand(23,0,8,0,"NW_CITY_CORNELIUS");
+	TA_Read_Bookstand(8,0,23,0,"NW_CITY_CORNELIUS");
+	TA_Read_Bookstand(23,0,8,0,"NW_CITY_CORNELIUS");
 };
 
-func void rtn_flee_401()
+func void Rtn_Flee_401()
 {
-	ta_fleetowp(8,0,23,0,"NW_XARDAS_BANDITS_LEFT");
-	ta_fleetowp(23,0,8,0,"NW_XARDAS_BANDITS_LEFT");
+	TA_FleeToWp(8,0,23,0,"NW_XARDAS_BANDITS_LEFT");
+	TA_FleeToWp(23,0,8,0,"NW_XARDAS_BANDITS_LEFT");
 };
 
-func void rtn_prison_401()
+func void Rtn_Prison_401()
 {
-	ta_stand_guarding(8,0,23,0,"NW_CITY_HABOUR_KASERN_PRISON_BORKA");
-	ta_stand_guarding(23,0,8,0,"NW_CITY_HABOUR_KASERN_PRISON_BORKA");
+	TA_Stand_Guarding(8,0,23,0,"NW_CITY_HABOUR_KASERN_PRISON_BORKA");
+	TA_Stand_Guarding(23,0,8,0,"NW_CITY_HABOUR_KASERN_PRISON_BORKA");
 };
 

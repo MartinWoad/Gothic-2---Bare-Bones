@@ -1,17 +1,17 @@
 
-func int b_getplayercrime(var C_NPC slf)
+func int B_GetPlayerCrime(var C_Npc slf)
 {
-	if(slf.aivar[AIV_NPCSAWPLAYERCOMMIT] <= CRIME_ATTACK)
+	if(slf.aivar[AIV_NpcSawPlayerCommit] <= CRIME_ATTACK)
 	{
-		if(slf.aivar[AIV_NPCSAWPLAYERCOMMITDAY] < (Wld_GetDay() - 2))
+		if(slf.aivar[AIV_NpcSawPlayerCommitDay] < (Wld_GetDay() - 2))
 		{
 			return CRIME_NONE;
 		};
 	};
-	if(slf.aivar[AIV_CRIMEABSOLUTIONLEVEL] < b_getcurrentabsolutionlevel(slf))
+	if(slf.aivar[AIV_CrimeAbsolutionLevel] < B_GetCurrentAbsolutionLevel(slf))
 	{
 		return CRIME_NONE;
 	};
-	return slf.aivar[AIV_NPCSAWPLAYERCOMMIT];
+	return slf.aivar[AIV_NpcSawPlayerCommit];
 };
 

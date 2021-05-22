@@ -2,12 +2,12 @@
 var int last_sleep_day;
 var int last_sleep_time;
 
-func void pc_sleep(var int t)
+func void PC_Sleep(var int t)
 {
 	AI_StopProcessInfos(self);
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	self.aivar[AIV_INVINCIBLE] = FALSE;
-	if((Wld_IsTime(0,0,LAST_SLEEP_TIME,0) && (LAST_SLEEP_DAY == Wld_GetDay())) || (SC_ISOBSESSED == TRUE))
+	if((Wld_IsTime(0,0,LAST_SLEEP_TIME,0) && (LAST_SLEEP_DAY == Wld_GetDay())) || (SC_IsObsessed == TRUE))
 	{
 	}
 	else if(Wld_IsTime(0,0,t,0))
@@ -20,36 +20,36 @@ func void pc_sleep(var int t)
 		Wld_SetTime(t,0);
 	};
 	Wld_StopEffect("DEMENTOR_FX");
-	if(SC_ISOBSESSED == TRUE)
+	if(SC_IsObsessed == TRUE)
 	{
-		PrintScreen(PRINT_SLEEPOVEROBSESSED,-1,-1,FONT_SCREEN,3);
+		PrintScreen(PRINT_SleepOverObsessed,-1,-1,FONT_Screen,3);
 	}
 	else if(Wld_IsTime(0,0,LAST_SLEEP_TIME,0) && (LAST_SLEEP_DAY == Wld_GetDay()))
 	{
-		PrintScreen(PRINT_SLEEPOVERRESTED,-1,-1,FONT_SCREEN,3);
+		PrintScreen(PRINT_SLEEPOVERRESTED,-1,-1,FONT_Screen,3);
 	}
 	else
 	{
-		PrintScreen(PRINT_SLEEPOVER,-1,-1,FONT_SCREEN,3);
+		PrintScreen(PRINT_SleepOver,-1,-1,FONT_Screen,3);
 		LAST_SLEEP_TIME = t;
 		LAST_SLEEP_DAY = Wld_GetDay();
 	};
-	printglobals(PD_ITEM_MOBSI);
+	PrintGlobals(PD_ITEM_MOBSI);
 	Npc_SendPassivePerc(hero,PERC_ASSESSENTERROOM,NULL,hero);
 };
 
 func void sleepabit_s1()
 {
-	var C_NPC her;
-	var C_NPC rock;
-	her = Hlp_GetNpc(pc_hero);
-	rock = Hlp_GetNpc(pc_rockefeller);
+	var C_Npc her;
+	var C_Npc rock;
+	her = Hlp_GetNpc(PC_Hero);
+	rock = Hlp_GetNpc(PC_Rockefeller);
 	if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(her)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(rock)))
 	{
 		self.aivar[AIV_INVINCIBLE] = TRUE;
-		PLAYER_MOBSI_PRODUCTION = MOBSI_SLEEPABIT;
+		PLAYER_MOBSI_PRODUCTION = MOBSI_SleepAbit;
 		AI_ProcessInfos(her);
-		if(SC_ISOBSESSED == TRUE)
+		if(SC_IsObsessed == TRUE)
 		{
 			Wld_PlayEffect("DEMENTOR_FX",hero,hero,0,0,0,FALSE);
 		};
@@ -57,27 +57,27 @@ func void sleepabit_s1()
 };
 
 
-instance PC_NOSLEEP(C_INFO)
+instance PC_NoSleep(C_Info)
 {
-	npc = pc_hero;
+	npc = PC_Hero;
 	nr = 999;
-	condition = pc_nosleep_condition;
-	information = pc_nosleep_info;
+	condition = PC_NoSleep_Condition;
+	information = PC_NoSleep_Info;
 	important = 0;
 	permanent = 1;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int pc_nosleep_condition()
+func int PC_NoSleep_Condition()
 {
-	if(PLAYER_MOBSI_PRODUCTION == MOBSI_SLEEPABIT)
+	if(PLAYER_MOBSI_PRODUCTION == MOBSI_SleepAbit)
 	{
 		return 1;
 	};
 };
 
-func void pc_nosleep_info()
+func void PC_NoSleep_Info()
 {
 	AI_StopProcessInfos(self);
 	Wld_StopEffect("DEMENTOR_FX");
@@ -86,102 +86,102 @@ func void pc_nosleep_info()
 };
 
 
-instance PC_SLEEPTIME_MORNING(C_INFO)
+instance PC_SleepTime_Morning(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_sleeptime_morning_condition;
-	information = pc_sleeptime_morning_info;
+	npc = PC_Hero;
+	condition = PC_SleepTime_Morning_Condition;
+	information = PC_SleepTime_Morning_Info;
 	important = 0;
 	permanent = 1;
 	description = "Odpoczywaj do rana";
 };
 
 
-func int pc_sleeptime_morning_condition()
+func int PC_SleepTime_Morning_Condition()
 {
-	if(PLAYER_MOBSI_PRODUCTION == MOBSI_SLEEPABIT)
+	if(PLAYER_MOBSI_PRODUCTION == MOBSI_SleepAbit)
 	{
 		return 1;
 	};
 };
 
-func void pc_sleeptime_morning_info()
+func void PC_SleepTime_Morning_Info()
 {
-	pc_sleep(8);
+	PC_Sleep(8);
 };
 
 
-instance PC_SLEEPTIME_NOON(C_INFO)
+instance PC_SleepTime_Noon(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_sleeptime_noon_condition;
-	information = pc_sleeptime_noon_info;
+	npc = PC_Hero;
+	condition = PC_SleepTime_Noon_Condition;
+	information = PC_SleepTime_Noon_Info;
 	important = 0;
 	permanent = 1;
 	description = "Odpoczywaj do po³udnia";
 };
 
 
-func int pc_sleeptime_noon_condition()
+func int PC_SleepTime_Noon_Condition()
 {
-	if(PLAYER_MOBSI_PRODUCTION == MOBSI_SLEEPABIT)
+	if(PLAYER_MOBSI_PRODUCTION == MOBSI_SleepAbit)
 	{
 		return 1;
 	};
 };
 
-func void pc_sleeptime_noon_info()
+func void PC_SleepTime_Noon_Info()
 {
-	pc_sleep(12);
+	PC_Sleep(12);
 };
 
 
-instance PC_SLEEPTIME_EVENING(C_INFO)
+instance PC_SleepTime_Evening(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_sleeptime_evening_condition;
-	information = pc_sleeptime_evening_info;
+	npc = PC_Hero;
+	condition = PC_SleepTime_Evening_Condition;
+	information = PC_SleepTime_Evening_Info;
 	important = 0;
 	permanent = 1;
 	description = "Odpoczywaj do nastêpnego wieczora";
 };
 
 
-func int pc_sleeptime_evening_condition()
+func int PC_SleepTime_Evening_Condition()
 {
-	if(PLAYER_MOBSI_PRODUCTION == MOBSI_SLEEPABIT)
+	if(PLAYER_MOBSI_PRODUCTION == MOBSI_SleepAbit)
 	{
 		return 1;
 	};
 };
 
-func void pc_sleeptime_evening_info()
+func void PC_SleepTime_Evening_Info()
 {
-	pc_sleep(20);
+	PC_Sleep(20);
 };
 
 
-instance PC_SLEEPTIME_MIDNIGHT(C_INFO)
+instance PC_SleepTime_Midnight(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_sleeptime_midnight_condition;
-	information = pc_sleeptime_midnight_info;
+	npc = PC_Hero;
+	condition = PC_SleepTime_Midnight_Condition;
+	information = PC_SleepTime_Midnight_Info;
 	important = 0;
 	permanent = 1;
 	description = "Odpoczywaj do pó³nocy";
 };
 
 
-func int pc_sleeptime_midnight_condition()
+func int PC_SleepTime_Midnight_Condition()
 {
-	if(PLAYER_MOBSI_PRODUCTION == MOBSI_SLEEPABIT)
+	if(PLAYER_MOBSI_PRODUCTION == MOBSI_SleepAbit)
 	{
 		return 1;
 	};
 };
 
-func void pc_sleeptime_midnight_info()
+func void PC_SleepTime_Midnight_Info()
 {
-	pc_sleep(0);
+	PC_Sleep(0);
 };
 

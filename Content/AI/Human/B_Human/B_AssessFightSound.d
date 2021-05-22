@@ -1,5 +1,5 @@
 
-func void b_assessfightsound()
+func void B_AssessFightSound()
 {
 	if(!Hlp_IsValidNpc(victim))
 	{
@@ -31,21 +31,21 @@ func void b_assessfightsound()
 	{
 		return;
 	};
-	if((victim.guild == GIL_SHEEP) && (victim.aivar[AIV_TOUGHGUY] == FALSE))
+	if((victim.guild == GIL_SHEEP) && (victim.aivar[AIV_ToughGuy] == FALSE))
 	{
-		if(c_wanttoattacksheepkiller(self,other))
+		if(C_WantToAttackSheepKiller(self,other))
 		{
-			b_attack(self,other,AR_SHEEPKILLER,0);
+			B_Attack(self,other,AR_SheepKiller,0);
 			return;
 		}
-		else if(c_npcisgateguard(self))
+		else if(C_NpcIsGateGuard(self))
 		{
-			b_memorizeplayercrime(self,other,CRIME_SHEEPKILLER);
+			B_MemorizePlayerCrime(self,other,CRIME_SHEEPKILLER);
 			return;
 		};
 		return;
 	};
-	if(c_npcisgateguard(self))
+	if(C_NpcIsGateGuard(self))
 	{
 		return;
 	};
@@ -55,37 +55,37 @@ func void b_assessfightsound()
 	};
 	if((other.guild > GIL_SEPERATOR_HUM) && (Npc_GetAttitude(self,victim) != ATT_HOSTILE))
 	{
-		b_attack(self,other,AR_MONSTERVSHUMAN,0);
+		B_Attack(self,other,AR_MonsterVsHuman,0);
 		return;
 	};
 	if((victim.guild > GIL_SEPERATOR_HUM) && (Npc_GetAttitude(self,other) != ATT_HOSTILE) && !Npc_IsDead(victim))
 	{
-		b_attack(self,victim,AR_MONSTERVSHUMAN,0);
+		B_Attack(self,victim,AR_MonsterVsHuman,0);
 		return;
 	};
-	if((self.aivar[AIV_ENEMYOVERRIDE] == TRUE) && (Npc_GetDistToNpc(self,victim) <= PERC_DIST_INTERMEDIAT) && (Npc_GetDistToNpc(self,other) <= PERC_DIST_INTERMEDIAT))
+	if((self.aivar[AIV_EnemyOverride] == TRUE) && (Npc_GetDistToNpc(self,victim) <= PERC_DIST_INTERMEDIAT) && (Npc_GetDistToNpc(self,other) <= PERC_DIST_INTERMEDIAT))
 	{
-		self.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+		self.aivar[AIV_EnemyOverride] = FALSE;
 		Npc_PerceiveAll(self);
 		Npc_GetNextTarget(self);
-		if(Hlp_IsValidNpc(other) && !c_npcisdown(other))
+		if(Hlp_IsValidNpc(other) && !C_NpcIsDown(other))
 		{
-			b_attack(self,other,AR_GUILDENEMY,0);
+			B_Attack(self,other,AR_GuildEnemy,0);
 			return;
 		};
 		return;
 	};
-	if(((other.aivar[AIV_ATTACKREASON] == AR_GUARDSTOPSINTRUDER) || (other.aivar[AIV_ATTACKREASON] == AR_MONSTERCLOSETOGATE) || (other.aivar[AIV_ATTACKREASON] == AR_HUMANMURDEREDHUMAN) || (other.aivar[AIV_ATTACKREASON] == AR_GUILDENEMY) || (other.aivar[AIV_ATTACKREASON] == AR_GUARDCALLEDTOKILL)) && (Npc_GetAttitude(self,other) == ATT_FRIENDLY))
+	if(((other.aivar[AIV_ATTACKREASON] == AR_GuardStopsIntruder) || (other.aivar[AIV_ATTACKREASON] == AR_MonsterCloseToGate) || (other.aivar[AIV_ATTACKREASON] == AR_HumanMurderedHuman) || (other.aivar[AIV_ATTACKREASON] == AR_GuildEnemy) || (other.aivar[AIV_ATTACKREASON] == AR_GuardCalledToKill)) && (Npc_GetAttitude(self,other) == ATT_FRIENDLY))
 	{
-		b_attack(self,victim,AR_GUARDCALLEDTOKILL,0);
+		B_Attack(self,victim,AR_GuardCalledToKill,0);
 		return;
 	};
-	if(((victim.aivar[AIV_ATTACKREASON] == AR_GUARDSTOPSINTRUDER) || (victim.aivar[AIV_ATTACKREASON] == AR_MONSTERCLOSETOGATE) || (victim.aivar[AIV_ATTACKREASON] == AR_HUMANMURDEREDHUMAN) || (victim.aivar[AIV_ATTACKREASON] == AR_GUILDENEMY) || (victim.aivar[AIV_ATTACKREASON] == AR_GUARDCALLEDTOKILL)) && (Npc_GetAttitude(self,victim) == ATT_FRIENDLY))
+	if(((victim.aivar[AIV_ATTACKREASON] == AR_GuardStopsIntruder) || (victim.aivar[AIV_ATTACKREASON] == AR_MonsterCloseToGate) || (victim.aivar[AIV_ATTACKREASON] == AR_HumanMurderedHuman) || (victim.aivar[AIV_ATTACKREASON] == AR_GuildEnemy) || (victim.aivar[AIV_ATTACKREASON] == AR_GuardCalledToKill)) && (Npc_GetAttitude(self,victim) == ATT_FRIENDLY))
 	{
-		b_attack(self,other,AR_GUARDCALLEDTOKILL,0);
+		B_Attack(self,other,AR_GuardCalledToKill,0);
 		return;
 	};
-	if(((other.aivar[AIV_ATTACKREASON] == AR_GUARDSTOPSFIGHT) || (other.aivar[AIV_ATTACKREASON] == AR_REACTTODAMAGE) || (other.aivar[AIV_ATTACKREASON] == AR_REACTTOWEAPON)) && (Npc_GetAttitude(self,other) == ATT_FRIENDLY))
+	if(((other.aivar[AIV_ATTACKREASON] == AR_GuardStopsFight) || (other.aivar[AIV_ATTACKREASON] == AR_ReactToDamage) || (other.aivar[AIV_ATTACKREASON] == AR_ReactToWeapon)) && (Npc_GetAttitude(self,other) == ATT_FRIENDLY))
 	{
 		if(((other.guild == GIL_SLD) || (other.guild == GIL_DJG) || (other.guild == GIL_NONE)) && ((victim.guild == GIL_SLD) || (victim.guild == GIL_DJG) || (victim.guild == GIL_NONE)))
 		{
@@ -95,11 +95,11 @@ func void b_assessfightsound()
 		}
 		else
 		{
-			b_attack(self,victim,AR_GUARDSTOPSFIGHT,0);
+			B_Attack(self,victim,AR_GuardStopsFight,0);
 			return;
 		};
 	};
-	if(((victim.aivar[AIV_ATTACKREASON] == AR_GUARDSTOPSFIGHT) || (victim.aivar[AIV_ATTACKREASON] == AR_REACTTODAMAGE) || (victim.aivar[AIV_ATTACKREASON] == AR_REACTTOWEAPON)) && (Npc_GetAttitude(self,victim) == ATT_FRIENDLY))
+	if(((victim.aivar[AIV_ATTACKREASON] == AR_GuardStopsFight) || (victim.aivar[AIV_ATTACKREASON] == AR_ReactToDamage) || (victim.aivar[AIV_ATTACKREASON] == AR_ReactToWeapon)) && (Npc_GetAttitude(self,victim) == ATT_FRIENDLY))
 	{
 		if(((other.guild == GIL_SLD) || (other.guild == GIL_DJG) || (other.guild == GIL_NONE)) && ((victim.guild == GIL_SLD) || (victim.guild == GIL_DJG) || (victim.guild == GIL_NONE)))
 		{
@@ -109,7 +109,7 @@ func void b_assessfightsound()
 		}
 		else
 		{
-			b_attack(self,other,AR_GUARDSTOPSFIGHT,0);
+			B_Attack(self,other,AR_GuardStopsFight,0);
 			return;
 		};
 	};
@@ -117,54 +117,54 @@ func void b_assessfightsound()
 	{
 		if((Npc_GetAttitude(self,other) == ATT_FRIENDLY) && (Npc_GetAttitude(self,victim) != ATT_FRIENDLY))
 		{
-			b_attack(self,victim,AR_GUARDSTOPSFIGHT,0);
+			B_Attack(self,victim,AR_GuardStopsFight,0);
 			return;
 		}
 		else if((Npc_GetAttitude(self,victim) == ATT_FRIENDLY) && (Npc_GetAttitude(self,other) != ATT_FRIENDLY))
 		{
-			b_attack(self,other,AR_GUARDSTOPSFIGHT,0);
+			B_Attack(self,other,AR_GuardStopsFight,0);
 			return;
 		}
 		else if(Npc_IsPlayer(other))
 		{
-			b_attack(self,victim,AR_GUARDSTOPSFIGHT,0);
+			B_Attack(self,victim,AR_GuardStopsFight,0);
 			return;
 		}
 		else if(Npc_IsPlayer(victim))
 		{
-			b_attack(self,other,AR_GUARDSTOPSFIGHT,0);
+			B_Attack(self,other,AR_GuardStopsFight,0);
 			return;
 		}
 		else
 		{
-			b_attack(self,other,AR_GUARDSTOPSFIGHT,0);
+			B_Attack(self,other,AR_GuardStopsFight,0);
 			return;
 		};
 	};
-	if(((other.aivar[AIV_ATTACKREASON] == AR_USEMOB) || (other.aivar[AIV_ATTACKREASON] == AR_THEFT) || (other.aivar[AIV_ATTACKREASON] == AR_LEFTPORTALROOM)) && (Npc_GetAttitude(self,other) == ATT_FRIENDLY))
+	if(((other.aivar[AIV_ATTACKREASON] == AR_UseMob) || (other.aivar[AIV_ATTACKREASON] == AR_Theft) || (other.aivar[AIV_ATTACKREASON] == AR_LeftPortalRoom)) && (Npc_GetAttitude(self,other) == ATT_FRIENDLY))
 	{
-		if(c_wanttoattackthief(self,victim))
+		if(C_WantToAttackThief(self,victim))
 		{
-			b_attack(self,victim,AR_GUARDCALLEDTOTHIEF,0);
+			B_Attack(self,victim,AR_GuardCalledToThief,0);
 		};
 		return;
 	};
-	if(((victim.aivar[AIV_ATTACKREASON] == AR_USEMOB) || (victim.aivar[AIV_ATTACKREASON] == AR_THEFT) || (victim.aivar[AIV_ATTACKREASON] == AR_LEFTPORTALROOM)) && (Npc_GetAttitude(self,victim) == ATT_FRIENDLY))
+	if(((victim.aivar[AIV_ATTACKREASON] == AR_UseMob) || (victim.aivar[AIV_ATTACKREASON] == AR_Theft) || (victim.aivar[AIV_ATTACKREASON] == AR_LeftPortalRoom)) && (Npc_GetAttitude(self,victim) == ATT_FRIENDLY))
 	{
-		if(c_wanttoattackthief(self,other))
+		if(C_WantToAttackThief(self,other))
 		{
-			b_attack(self,other,AR_GUARDCALLEDTOTHIEF,0);
+			B_Attack(self,other,AR_GuardCalledToThief,0);
 		};
 		return;
 	};
-	if((other.aivar[AIV_ATTACKREASON] == AR_CLEARROOM) && (Npc_GetAttitude(self,other) == ATT_FRIENDLY))
+	if((other.aivar[AIV_ATTACKREASON] == AR_ClearRoom) && (Npc_GetAttitude(self,other) == ATT_FRIENDLY))
 	{
-		b_attack(self,victim,AR_GUARDCALLEDTOROOM,0);
+		B_Attack(self,victim,AR_GuardCalledToRoom,0);
 		return;
 	};
-	if((victim.aivar[AIV_ATTACKREASON] == AR_CLEARROOM) && (Npc_GetAttitude(self,victim) == ATT_FRIENDLY))
+	if((victim.aivar[AIV_ATTACKREASON] == AR_ClearRoom) && (Npc_GetAttitude(self,victim) == ATT_FRIENDLY))
 	{
-		b_attack(self,other,AR_GUARDCALLEDTOROOM,0);
+		B_Attack(self,other,AR_GuardCalledToRoom,0);
 		return;
 	};
 	if((Npc_GetDistToNpc(self,other) > PERC_DIST_INTERMEDIAT) && (Npc_GetDistToNpc(self,victim) > PERC_DIST_INTERMEDIAT))
@@ -176,7 +176,7 @@ func void b_assessfightsound()
 		return;
 	};
 	Npc_ClearAIQueue(self);
-	b_clearperceptions(self);
-	AI_StartState(self,zs_watchfight,0,"");
+	B_ClearPerceptions(self);
+	AI_StartState(self,ZS_WatchFight,0,"");
 };
 

@@ -1,35 +1,35 @@
 
-instance VLK_450_BUERGER(NPC_DEFAULT)
+instance VLK_450_Buerger(Npc_Default)
 {
-	name[0] = NAME_BUERGER;
+	name[0] = NAME_Buerger;
 	guild = GIL_VLK;
 	id = 450;
 	voice = 6;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,2);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,2);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_vlk_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_WEAK_HEREK,BODYTEX_N,4821);
+	EquipItem(self,ItMw_1h_Vlk_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Weak_Herek,BodyTex_N,ITAR_Vlk_M);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Tired.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_450;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_450;
 };
 
 
-func void rtn_start_450()
+func void Rtn_Start_450()
 {
-	ta_stand_armscrossed(5,0,20,0,"NW_CITY_MERCHANT_PATH_15");
-	ta_smalltalk(20,0,3,50,"NW_CITY_MERCHANT_STAND_01");
-	ta_smalltalk(3,50,5,0,"NW_CITY_TAVERN_IN_06");
+	TA_Stand_ArmsCrossed(5,0,20,0,"NW_CITY_MERCHANT_PATH_15");
+	TA_Smalltalk(20,0,3,50,"NW_CITY_MERCHANT_STAND_01");
+	TA_Smalltalk(3,50,5,0,"NW_CITY_TAVERN_IN_06");
 };
 
-func void rtn_vatrasaway_450()
+func void Rtn_VatrasAway_450()
 {
-	ta_smalltalk(5,0,20,0,"NW_CITY_MERCHANT_PATH_14");
-	ta_smalltalk(20,0,5,0,"NW_CITY_MERCHANT_STAND_01");
+	TA_Smalltalk(5,0,20,0,"NW_CITY_MERCHANT_PATH_14");
+	TA_Smalltalk(20,0,5,0,"NW_CITY_MERCHANT_STAND_01");
 };
 

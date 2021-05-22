@@ -1,330 +1,330 @@
 
-const int VALUE_SWORDBLADE = 10;
-const int VALUE_SWORDBLADEHOT = 10;
-const int VALUE_SWORDRAWHOT = 10;
-const int VALUE_SWORDRAW = 10;
-const int VALUE_BRUSH = 3;
-const int VALUE_FLASK = 3;
-const int VALUE_STOMPER = 3;
-const int VALUE_PAN = 20;
-const int VALUE_SAW = 20;
-const int VALUE_BROOM = 10;
-const int VALUE_RAKE = 10;
-const int VALUE_HAMMER = 10;
-const int VALUE_SCOOP = 3;
-const int VALUE_NUGGET = 200;
-const int VALUE_JOINT = 30;
-const int VALUE_ALARMHORN = 10;
-const int VALUE_LUTE = 10;
-const int VALUE_GOLD = 1;
-const int VALUE_RUNEBLANK = 100;
-const int VALUE_SULFUR = 20;
-const int VALUE_QUARTZ = 20;
-const int VALUE_PITCH = 10;
-const int VALUE_ROCKCRYSTAL = 30;
-const int VALUE_AQUAMARINE = 100;
-const int VALUE_HOLYWATER = 20;
-const int VALUE_COAL = 15;
-const int VALUE_DARKPEARL = 1000;
-const int VALUE_ITMI_APFELTABAK = 10;
-const int VALUE_ITMI_PILZTABAK = 10;
-const int VALUE_ITMI_SUMPFTABAK = 10;
-const int VALUE_ITMI_DOPPELTABAK = 10;
-const int VALUE_ITMI_HONIGTABAK = 10;
-const int VALUE_SILVERRING = 120;
-const int VALUE_SILVERNECKLACE = 200;
-const int VALUE_SILVERCANDLEHOLDER = 50;
-const int VALUE_SILVERPLATE = 100;
-const int VALUE_SILVERCUP = 100;
-const int VALUE_SILVERCHALICE = 250;
-const int VALUE_GOLDPLATE = 200;
-const int VALUE_GOLDRING = 250;
-const int VALUE_GOLDNECKLACE = 300;
-const int VALUE_GOLDCANDLEHOLDER = 120;
-const int VALUE_GOLDCUP = 350;
-const int VALUE_BLOODCUP = 200;
-const int VALUE_GOLDCHALICE = 500;
-const int VALUE_GOLDCHEST = 750;
-const int VALUE_JEWELERYCHEST = 1000;
-const int VALUE_INNOSSTATUE = 100;
-const int VALUE_SEXTANT = 1500;
+const int Value_SwordBlade = 10;
+const int Value_SwordBladeHot = 10;
+const int Value_SwordRawHot = 10;
+const int Value_SwordRaw = 10;
+const int Value_Brush = 3;
+const int Value_Flask = 3;
+const int Value_Stomper = 3;
+const int Value_Pan = 20;
+const int Value_Saw = 20;
+const int Value_Broom = 10;
+const int Value_Rake = 10;
+const int Value_Hammer = 10;
+const int Value_Scoop = 3;
+const int Value_Nugget = 200;
+const int Value_Joint = 30;
+const int Value_Alarmhorn = 10;
+const int Value_Lute = 10;
+const int Value_Gold = 1;
+const int Value_RuneBlank = 100;
+const int Value_Sulfur = 20;
+const int Value_Quartz = 20;
+const int Value_Pitch = 10;
+const int Value_Rockcrystal = 30;
+const int Value_Aquamarine = 100;
+const int Value_HolyWater = 20;
+const int Value_Coal = 15;
+const int Value_DarkPearl = 1000;
+const int VALUE_ItMi_ApfelTabak = 10;
+const int VALUE_ItMi_PilzTabak = 10;
+const int VALUE_ItMi_SumpfTabak = 10;
+const int VALUE_ItMi_DoppelTabak = 10;
+const int VALUE_ItMi_HonigTabak = 10;
+const int Value_SilverRing = 120;
+const int Value_SilverNecklace = 200;
+const int Value_SilverCandleHolder = 50;
+const int Value_SilverPlate = 100;
+const int Value_SilverCup = 100;
+const int Value_SilverChalice = 250;
+const int Value_GoldPlate = 200;
+const int Value_GoldRing = 250;
+const int Value_GoldNecklace = 300;
+const int Value_GoldCandleHolder = 120;
+const int Value_GoldCup = 350;
+const int Value_BloodCup = 200;
+const int Value_GoldChalice = 500;
+const int Value_GoldChest = 750;
+const int Value_JeweleryChest = 1000;
+const int Value_InnosStatue = 100;
+const int Value_Sextant = 1500;
 
-instance ITMI_STOMPER(C_ITEM)
+instance ItMi_Stomper(C_Item)
 {
 	name = "Rozdrabniacz";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_STOMPER;
+	value = Value_Stomper;
 	visual = "ItMi_Stomper.3DS";
 	material = MAT_WOOD;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_RUNEBLANK(C_ITEM)
+instance ItMi_RuneBlank(C_Item)
 {
 	name = "Runa";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_RUNEBLANK;
+	value = Value_RuneBlank;
 	visual = "ItMi_RuneBlank.3DS";
 	material = MAT_STONE;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_PLIERS(C_ITEM)
+instance ItMi_Pliers(C_Item)
 {
 	name = "Szczypce";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_RUNEBLANK;
+	value = Value_RuneBlank;
 	visual = "ItMi_Pliers.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_FLASK(C_ITEM)
+instance ItMi_Flask(C_Item)
 {
 	name = "Menzurka";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_FLASK;
+	value = Value_Flask;
 	visual = "ItMi_Flask.3ds";
 	material = MAT_GLAS;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_HAMMER(C_ITEM)
+instance ItMi_Hammer(C_Item)
 {
 	name = "M³otek";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_HAMMER;
+	value = Value_Hammer;
 	visual = "ItMi_Hammer.3DS";
 	material = MAT_WOOD;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_SCOOP(C_ITEM)
+instance ItMi_Scoop(C_Item)
 {
 	name = "£y¿ka";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SCOOP;
+	value = Value_Scoop;
 	visual = "ItMi_Scoop.3DS";
 	material = MAT_WOOD;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_PAN(C_ITEM)
+instance ItMi_Pan(C_Item)
 {
 	name = "Patelnia";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_PAN;
+	value = Value_Pan;
 	visual = "ItMi_Pan.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_PANFULL(C_ITEM)
+instance ItMi_PanFull(C_Item)
 {
 	name = "Patelnia";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_PAN;
+	value = Value_Pan;
 	visual = "ItMi_PanFull.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_SAW(C_ITEM)
+instance ItMi_Saw(C_Item)
 {
 	name = "Pi³a";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SAW;
+	value = Value_Saw;
 	visual = "ItMi_Saw.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMISWORDRAW(C_ITEM)
+instance ItMiSwordraw(C_Item)
 {
 	name = "Surowa Stal";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SWORDRAW;
+	value = Value_SwordRaw;
 	visual = "ItMiSwordraw.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMISWORDRAWHOT(C_ITEM)
+instance ItMiSwordrawhot(C_Item)
 {
 	name = "Gor¹ca Stal";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SWORDRAWHOT;
+	value = Value_SwordRawHot;
 	visual = "ItMiSwordrawhot.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMISWORDBLADEHOT(C_ITEM)
+instance ItMiSwordbladehot(C_Item)
 {
 	name = "Gor¹ce Ostrze";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SWORDBLADEHOT;
+	value = Value_SwordBladeHot;
 	visual = "ItMiSwordbladehot.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMISWORDBLADE(C_ITEM)
+instance ItMiSwordblade(C_Item)
 {
 	name = "Ostrze";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SWORDBLADE;
+	value = Value_SwordBlade;
 	visual = "ItMiSwordblade.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_RAKE(C_ITEM)
+instance ItMi_Rake(C_Item)
 {
 	name = "Grabie";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_RAKE;
+	value = Value_Rake;
 	visual = "ItMi_Rake.3DS";
 	material = MAT_WOOD;
-	scemename = "RAKE";
-	on_state[0] = use_rake;
+	scemeName = "RAKE";
+	on_state[0] = Use_Rake;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void use_rake()
+func void Use_Rake()
 {
 };
 
 
-instance ITMI_BROOM(C_ITEM)
+instance ItMi_Broom(C_Item)
 {
 	name = "Miot³a";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_BROOM;
+	value = Value_Broom;
 	visual = "ItMi_Broom.3DS";
 	material = MAT_WOOD;
-	scemename = "BROOM";
-	on_state[0] = use_broom;
+	scemeName = "BROOM";
+	on_state[0] = Use_Broom;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void use_broom()
+func void Use_Broom()
 {
-	if(Npc_IsPlayer(self) && (Wld_GetPlayerPortalGuild() == GIL_NOV) && (MIS_PARLANFEGEN == LOG_RUNNING))
+	if(Npc_IsPlayer(self) && (Wld_GetPlayerPortalGuild() == GIL_NOV) && (MIS_ParlanFegen == LOG_Running))
 	{
-		b_say(self,self,"$NOSWEEPING");
-		Print(PRINT_NOSWEEPING);
+		B_Say(self,self,"$NOSWEEPING");
+		Print(PRINT_NoSweeping);
 	};
 };
 
 
-instance ITMI_LUTE(C_ITEM)
+instance ItMi_Lute(C_Item)
 {
 	name = "Lutnia";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_LUTE;
+	value = Value_Lute;
 	visual = "ItMi_Lute.3DS";
 	material = MAT_WOOD;
-	scemename = "LUTE";
-	on_state[0] = use_lute;
+	scemeName = "LUTE";
+	on_state[0] = Use_Lute;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void use_lute()
+func void Use_Lute()
 {
 };
 
 
-instance ITMI_BRUSH(C_ITEM)
+instance ItMi_Brush(C_Item)
 {
 	name = "Szczotka";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_BRUSH;
+	value = Value_Brush;
 	visual = "ItMi_Brush.3ds";
 	material = MAT_WOOD;
-	scemename = "BRUSH";
-	on_state[0] = use_brush;
+	scemeName = "BRUSH";
+	on_state[0] = Use_Brush;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void use_brush()
+func void Use_Brush()
 {
 };
 
 
-instance ITMI_JOINT(C_ITEM)
+instance ItMi_Joint(C_Item)
 {
 	name = "£odyga Bagiennego Ziela";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_JOINT;
+	value = Value_Joint;
 	visual = "ItMi_Joint_US.3ds";
 	material = MAT_LEATHER;
-	scemename = "JOINT";
-	on_state[0] = use_joint;
+	scemeName = "JOINT";
+	on_state[0] = Use_Joint;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 };
 
 
-func void use_joint()
+func void Use_Joint()
 {
 	if(Npc_IsPlayer(self))
 	{
@@ -333,81 +333,81 @@ func void use_joint()
 };
 
 
-instance ITMI_PACKET(C_ITEM)
+instance ItMi_Packet(C_Item)
 {
 	name = "Paczka";
 	mainflag = ITEM_KAT_NONE;
 	flags = 0;
 	value = 0;
 	visual = "ItMi_Packet.3ds";
-	scemename = "MAPSEALED";
+	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void usepacket()
+func void UsePacket()
 {
 };
 
 
-instance ITMI_POCKET(C_ITEM)
+instance ItMi_Pocket(C_Item)
 {
 	name = "Skórzany Mieszek";
 	mainflag = ITEM_KAT_NONE | ITEM_MULTI;
 	flags = 0;
 	value = 10;
 	visual = "ItMi_Pocket.3ds";
-	scemename = "MAPSEALED";
+	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
-	on_state[0] = usepocket;
+	on_state[0] = UsePocket;
 	description = name;
 	text[2] = "W¹ski, niezbyt";
 	text[3] = "ciê¿ki woreczek.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void usepocket()
+func void UsePocket()
 {
-	CreateInvItems(hero,itmi_gold,10);
-	Print(PRINT_FOUNDGOLD10);
+	CreateInvItems(hero,ItMi_Gold,10);
+	Print(PRINT_FoundGold10);
 	Snd_Play("Geldbeutel");
 };
 
 
-instance ITMI_NUGGET(C_ITEM)
+instance ItMi_Nugget(C_Item)
 {
 	name = "Bry³ka Rudy";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_NUGGET;
+	value = Value_Nugget;
 	visual = "ItMi_Nugget.3ds";
 	material = MAT_STONE;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
 };
 
-instance ITMI_GOLD(C_ITEM)
+instance ItMi_Gold(C_Item)
 {
 	name = "Z³oto";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_GOLD;
+	value = Value_Gold;
 	visual = "ItMi_Gold.3DS";
 	material = MAT_STONE;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
 };
 
-instance ITMI_OLDCOIN(C_ITEM)
+instance ItMi_OldCoin(C_Item)
 {
 	name = "Stara Moneta";
 	mainflag = ITEM_KAT_NONE;
@@ -416,415 +416,415 @@ instance ITMI_OLDCOIN(C_ITEM)
 	visual = "ItMi_OldCoin.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
 };
 
-instance ITMI_GOLDCANDLEHOLDER(C_ITEM)
+instance ItMi_GoldCandleHolder(C_Item)
 {
 	name = "Z³oty Œwiecznik";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_GOLDCANDLEHOLDER;
+	value = Value_GoldCandleHolder;
 	visual = "ItMi_GoldCandleHolder.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_GOLDNECKLACE(C_ITEM)
+instance ItMi_GoldNecklace(C_Item)
 {
 	name = "Z³oty Naszyjnik";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_AMULET;
-	value = VALUE_GOLDNECKLACE;
+	value = Value_GoldNecklace;
 	visual = "ItMi_GoldNecklace.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 };
 
-instance ITMI_SILVERRING(C_ITEM)
+instance ItMi_SilverRing(C_Item)
 {
 	name = "Srebrny Pierœcieñ";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_RING;
-	value = VALUE_SILVERRING;
+	value = Value_SilverRing;
 	visual = "ItMi_SilverRing.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 };
 
-instance ITMI_SILVERCUP(C_ITEM)
+instance ItMi_SilverCup(C_Item)
 {
 	name = "Srebrny Puchar";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SILVERCUP;
+	value = Value_SilverCup;
 	visual = "ItMi_SilverCup.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_SILVERPLATE(C_ITEM)
+instance ItMi_SilverPlate(C_Item)
 {
 	name = "Srebrny Talerz";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SILVERPLATE;
+	value = Value_SilverPlate;
 	visual = "ItMi_SilverPlate.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_GOLDPLATE(C_ITEM)
+instance ItMi_GoldPlate(C_Item)
 {
 	name = "Z³oty Talerz";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_GOLDPLATE;
+	value = Value_GoldPlate;
 	visual = "ItMi_GoldPlate.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_GOLDCUP(C_ITEM)
+instance ItMi_GoldCup(C_Item)
 {
 	name = "Z³oty Puchar";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_GOLDCUP;
+	value = Value_GoldCup;
 	visual = "ItMi_GoldCup.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_BLOODCUP_MIS(C_ITEM)
+instance ItMi_BloodCup_MIS(C_Item)
 {
 	name = "Krwawy Puchar";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
-	value = VALUE_BLOODCUP;
+	value = Value_BloodCup;
 	visual = "ItMi_GoldCup.3DS";
 	material = MAT_METAL;
 	description = "Puchar pe³en krwi.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_GOLDRING(C_ITEM)
+instance ItMi_GoldRing(C_Item)
 {
 	name = "Z³oty Pierœcieñ";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_RING;
-	value = VALUE_GOLDRING;
+	value = Value_GoldRing;
 	visual = "ItMi_GoldRing.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
 	inv_rotx = INVCAM_X_RING_STANDARD;
 };
 
-instance ITMI_SILVERCHALICE(C_ITEM)
+instance ItMi_SilverChalice(C_Item)
 {
 	name = "Srebrne Naczynie";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SILVERCHALICE;
+	value = Value_SilverChalice;
 	visual = "ItMi_SilverChalice.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_JEWELERYCHEST(C_ITEM)
+instance ItMi_JeweleryChest(C_Item)
 {
 	name = "Szkatu³ka z Klejnotami";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_JEWELERYCHEST;
+	value = Value_JeweleryChest;
 	visual = "ItMi_JeweleryChest.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_GOLDCHALICE(C_ITEM)
+instance ItMi_GoldChalice(C_Item)
 {
 	name = "Z³ote Naczynie";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_GOLDCHALICE;
+	value = Value_GoldChalice;
 	visual = "ItMi_GoldChalice.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_GOLDCHEST(C_ITEM)
+instance ItMi_GoldChest(C_Item)
 {
 	name = "Skrzyneczka";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_GOLDCHEST;
+	value = Value_GoldChest;
 	visual = "ItMi_GoldChest.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_INNOSSTATUE(C_ITEM)
+instance ItMi_InnosStatue(C_Item)
 {
 	name = "Pos¹¿ek Innosa";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_INNOSSTATUE;
+	value = Value_InnosStatue;
 	visual = "ItMi_InnosStatue.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_SEXTANT(C_ITEM)
+instance ItMi_Sextant(C_Item)
 {
 	name = "Sekstans";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SEXTANT;
+	value = Value_Sextant;
 	visual = "ItMi_Sextant.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_SILVERCANDLEHOLDER(C_ITEM)
+instance ItMi_SilverCandleHolder(C_Item)
 {
 	name = "Srebrny Œwiecznik";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SILVERCANDLEHOLDER;
+	value = Value_SilverCandleHolder;
 	visual = "ItMi_SilverCandleHolder.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_SILVERNECKLACE(C_ITEM)
+instance ItMi_SilverNecklace(C_Item)
 {
 	name = "Srebrny Naszyjnik";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_AMULET;
-	value = VALUE_SILVERNECKLACE;
+	value = Value_SilverNecklace;
 	visual = "ItMi_SilverNecklace.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_SULFUR(C_ITEM)
+instance ItMi_Sulfur(C_Item)
 {
 	name = "Siarka";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SULFUR;
+	value = Value_Sulfur;
 	visual = "ItMi_Sulfur.3DS";
 	material = MAT_WOOD;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
 };
 
-instance ITMI_QUARTZ(C_ITEM)
+instance ItMi_Quartz(C_Item)
 {
 	name = "Kwarcyt";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_QUARTZ;
+	value = Value_Quartz;
 	visual = "ItMi_Quartz.3ds";
 	material = MAT_STONE;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 };
 
-instance ITMI_PITCH(C_ITEM)
+instance ItMi_Pitch(C_Item)
 {
 	name = "Smo³a";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_PITCH;
+	value = Value_Pitch;
 	visual = "ItMi_Pitch.3DS";
 	material = MAT_GLAS;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_ROCKCRYSTAL(C_ITEM)
+instance ItMi_Rockcrystal(C_Item)
 {
 	name = "Ska³a Krystaliczna";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_ROCKCRYSTAL;
+	value = Value_Rockcrystal;
 	visual = "ItMi_Rockcrystal.3ds";
 	material = MAT_STONE;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_AQUAMARINE(C_ITEM)
+instance ItMi_Aquamarine(C_Item)
 {
 	name = "Akwamaryn";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_AQUAMARINE;
+	value = Value_Aquamarine;
 	visual = "ItMi_Aquamarine.3ds";
 	material = MAT_STONE;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
 };
 
-instance ITMI_HOLYWATER(C_ITEM)
+instance ItMi_HolyWater(C_Item)
 {
 	name = "Woda Œwiêcona";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_HOLYWATER;
+	value = Value_HolyWater;
 	visual = "ItMi_HolyWater.3ds";
 	material = MAT_GLAS;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_COAL(C_ITEM)
+instance ItMi_Coal(C_Item)
 {
 	name = "Wêgiel";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_COAL;
+	value = Value_Coal;
 	visual = "ItMi_Coal.3ds";
 	material = MAT_STONE;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
 };
 
-instance ITMI_DARKPEARL(C_ITEM)
+instance ItMi_DarkPearl(C_Item)
 {
 	name = "Czarna Per³a";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_DARKPEARL;
+	value = Value_DarkPearl;
 	visual = "ItMi_DarkPearl.3ds";
 	material = MAT_STONE;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
 };
 
-instance ITMI_APFELTABAK(C_ITEM)
+instance ItMi_ApfelTabak(C_Item)
 {
 	name = "Tytoñ Jab³kowy";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = value_itmi_apfeltabak;
+	value = VALUE_ItMi_ApfelTabak;
 	visual = "ItMi_Pocket.3ds";
 	material = MAT_LEATHER;
 	description = name;
 	text[2] = "Tytoñ o smaku jab³kowym.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_PILZTABAK(C_ITEM)
+instance ItMi_PilzTabak(C_Item)
 {
 	name = "Tytoñ Grzybowy";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = value_itmi_pilztabak;
+	value = VALUE_ItMi_PilzTabak;
 	visual = "ItMi_Pocket.3ds";
 	material = MAT_LEATHER;
 	description = name;
 	text[2] = "Tytoñ o smaku grzybowym.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_DOPPELTABAK(C_ITEM)
+instance ItMi_DoppelTabak(C_Item)
 {
 	name = "Intensywny Tytoñ Jab³kowy";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = value_itmi_doppeltabak;
+	value = VALUE_ItMi_DoppelTabak;
 	visual = "ItMi_Pocket.3ds";
 	material = MAT_LEATHER;
 	description = name;
 	text[2] = "Smakuje podobnie do zwyk³ego.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_HONIGTABAK(C_ITEM)
+instance ItMi_Honigtabak(C_Item)
 {
 	name = "Tytoñ Miodowy";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = value_itmi_honigtabak;
+	value = VALUE_ItMi_HonigTabak;
 	visual = "ItMi_Pocket.3ds";
 	material = MAT_LEATHER;
 	description = name;
 	text[2] = "S³odki tytoñ jab³kowy";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_SUMPFTABAK(C_ITEM)
+instance ItMi_SumpfTabak(C_Item)
 {
 	name = "Tytoñ Zio³owy";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = value_itmi_sumpftabak;
+	value = VALUE_ItMi_SumpfTabak;
 	visual = "ItMi_Pocket.3ds";
 	material = MAT_LEATHER;
 	description = name;
 	text[2] = "Mieszanka z bagiennym zielem.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 

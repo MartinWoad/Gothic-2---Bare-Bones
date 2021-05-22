@@ -1,79 +1,79 @@
 
-instance DIA_XARDAS_FIRSTEXIT(C_INFO)
+instance DIA_Xardas_FirstEXIT(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 999;
-	condition = dia_xardas_firstexit_condition;
-	information = dia_xardas_firstexit_info;
+	condition = DIA_Xardas_FirstEXIT_Condition;
+	information = DIA_Xardas_FirstEXIT_Info;
 	permanent = FALSE;
 	description = "Wyruszê w drogê najszybciej, jak siê tylko da!";
 };
 
 
-func int dia_xardas_firstexit_condition()
+func int DIA_Xardas_FirstEXIT_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_xardas_todo) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Xardas_TODO) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_firstexit_info()
+func void DIA_Xardas_FirstEXIT_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_FirstEXIT_15_00");	//Wyruszê w drogê najszybciej, jak siê da!
 	AI_Output(self,other,"DIA_Xardas_FirstEXIT_14_01");	//Œwietnie! I jeszcze coœ: nie zdradŸ nikomu, ¿e ze mn¹ rozmawia³eœ. A ju¿ w ¿adnym wypadku nie mów o tym ¿adnemu magowi.
 	AI_Output(self,other,"DIA_Xardas_FirstEXIT_14_02");	//Odk¹d obra³em w³asn¹ œcie¿kê, Kr¹g Ognia ma mnie za zmar³ego, i niech tak pozostanie.
 	AI_StopProcessInfos(self);
-	b_kapitelwechsel(1,NEWWORLD_ZEN);
+	B_Kapitelwechsel(1,NEWWORLD_ZEN);
 	Npc_ExchangeRoutine(self,"START");
 };
 
 
-instance DIA_XARDAS_EXIT(C_INFO)
+instance DIA_Xardas_EXIT(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 999;
-	condition = dia_xardas_exit_condition;
-	information = dia_xardas_exit_info;
+	condition = DIA_Xardas_EXIT_Condition;
+	information = DIA_Xardas_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_xardas_exit_condition()
+func int DIA_Xardas_EXIT_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_xardas_firstexit) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Xardas_FirstEXIT) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_exit_info()
+func void DIA_Xardas_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_XARDAS_HELLO(C_INFO)
+instance DIA_Xardas_Hello(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 1;
-	condition = dia_xardas_hello_condition;
-	information = dia_xardas_hello_info;
+	condition = DIA_Xardas_Hello_Condition;
+	information = DIA_Xardas_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_xardas_hello_condition()
+func int DIA_Xardas_Hello_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_hello_info()
+func void DIA_Xardas_Hello_Info()
 {
 	AI_Output(self,other,"DIA_Xardas_Hello_14_00");	//Nareszcie! Próbujê ciê tu sprowadziæ od wielu dni.
 	AI_Output(other,self,"DIA_Xardas_Hello_15_01");	//Czujê siê, jakbym przez trzy tygodnie le¿a³ przygnieciony ciê¿kimi g³azami.
@@ -94,26 +94,26 @@ func void dia_xardas_hello_info()
 };
 
 
-instance DIA_XARDAS_AWAY(C_INFO)
+instance DIA_Xardas_AWAY(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 1;
-	condition = dia_xardas_away_condition;
-	information = dia_xardas_away_info;
+	condition = DIA_Xardas_AWAY_Condition;
+	information = DIA_Xardas_AWAY_Info;
 	permanent = FALSE;
 	description = "Zatem wynoœmy siê st¹d czym prêdzej!";
 };
 
 
-func int dia_xardas_away_condition()
+func int DIA_Xardas_AWAY_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_xardas_hello) && !Npc_KnowsInfo(other,dia_xardas_todo) && !Npc_KnowsInfo(other,dia_xardas_firstexit) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Xardas_Hello) && !Npc_KnowsInfo(other,DIA_Xardas_TODO) && !Npc_KnowsInfo(other,DIA_Xardas_FirstEXIT) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_away_info()
+func void DIA_Xardas_AWAY_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_AWAY_15_00");	//Zatem wynoœmy siê st¹d czym prêdzej!
 	AI_Output(self,other,"DIA_Xardas_AWAY_14_01");	//Jeœli nawet zdo³amy teraz uciec, smoki w koñcu nas odnajd¹.
@@ -122,26 +122,26 @@ func void dia_xardas_away_info()
 };
 
 
-instance DIA_XARDAS_TODO(C_INFO)
+instance DIA_Xardas_TODO(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 2;
-	condition = dia_xardas_todo_condition;
-	information = dia_xardas_todo_info;
+	condition = DIA_Xardas_TODO_Condition;
+	information = DIA_Xardas_TODO_Info;
 	permanent = FALSE;
 	description = "Co mo¿emy zrobiæ?";
 };
 
 
-func int dia_xardas_todo_condition()
+func int DIA_Xardas_TODO_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_xardas_hello) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Xardas_Hello) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_todo_info()
+func void DIA_Xardas_TODO_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_TODO_15_00");	//Co mo¿emy zrobiæ?
 	AI_Output(self,other,"DIA_Xardas_TODO_14_01");	//Tym razem sami sobie nie poradzimy. W walce ze smokami mo¿e nam pomóc tylko moc Innosa.
@@ -150,31 +150,31 @@ func void dia_xardas_todo_info()
 	AI_Output(self,other,"DIA_Xardas_TODO_14_04");	//Nazywaj¹ go 'Okiem Innosa'. Musisz koniecznie zdobyæ to Oko.
 	AI_Output(self,other,"DIA_Xardas_TODO_14_05");	//Ostrze¿ paladynów o smokach i za wszelk¹ cenê przekonaj ich dowódcê, by nam pomóg³.
 	Log_CreateTopic(TOPIC_INNOSEYE,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_INNOSEYE,LOG_RUNNING);
-	b_logentry(TOPIC_INNOSEYE,"W mieœcie Khorinis przebywa grupa paladynów. Maj¹ ze sob¹ potê¿ny artefakt, Oko Innosa, którego moc pomo¿e nam pokonaæ smoki. Muszê tylko przekonaæ paladynów, aby wsparli nasz¹ sprawê.");
+	Log_SetTopicStatus(TOPIC_INNOSEYE,LOG_Running);
+	B_LogEntry(TOPIC_INNOSEYE,"W mieœcie Khorinis przebywa grupa paladynów. Maj¹ ze sob¹ potê¿ny artefakt, Oko Innosa, którego moc pomo¿e nam pokonaæ smoki. Muszê tylko przekonaæ paladynów, aby wsparli nasz¹ sprawê.");
 };
 
 
-instance DIA_XARDAS_WEAPON(C_INFO)
+instance DIA_Xardas_WEAPON(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 5;
-	condition = dia_xardas_weapon_condition;
-	information = dia_xardas_weapon_info;
+	condition = DIA_Xardas_WEAPON_Condition;
+	information = DIA_Xardas_WEAPON_Info;
 	permanent = FALSE;
 	description = "Potrzebujê broni.";
 };
 
 
-func int dia_xardas_weapon_condition()
+func int DIA_Xardas_WEAPON_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_xardas_hello) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Xardas_Hello) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_weapon_info()
+func void DIA_Xardas_WEAPON_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_WEAPON_15_00");	//Potrzebujê broni.
 	AI_Output(self,other,"DIA_Xardas_WEAPON_14_01");	//Mogê ci daæ tylko to, co znajdziesz w mojej wie¿y.
@@ -182,26 +182,26 @@ func void dia_xardas_weapon_info()
 };
 
 
-instance DIA_XARDAS_ARTEFAKT(C_INFO)
+instance DIA_Xardas_ARTEFAKT(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 2;
-	condition = dia_xardas_artefakt_condition;
-	information = dia_xardas_artefakt_info;
+	condition = DIA_Xardas_ARTEFAKT_Condition;
+	information = DIA_Xardas_ARTEFAKT_Info;
 	permanent = FALSE;
 	description = "Czym dok³adnie jest 'Oko Innosa'?";
 };
 
 
-func int dia_xardas_artefakt_condition()
+func int DIA_Xardas_ARTEFAKT_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_xardas_todo) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Xardas_TODO) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_artefakt_info()
+func void DIA_Xardas_ARTEFAKT_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_ARTEFAKT_15_00");	//Czym dok³adnie jest 'Oko Innosa'?
 	AI_Output(self,other,"DIA_Xardas_ARTEFAKT_14_01");	//To magiczny amulet. Legenda g³osi, ¿e sam Innos wla³ weñ czêœæ swojej boskiej mocy.
@@ -210,26 +210,26 @@ func void dia_xardas_artefakt_info()
 };
 
 
-instance DIA_XARDAS_PALADIN(C_INFO)
+instance DIA_Xardas_PALADIN(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 3;
-	condition = dia_xardas_paladin_condition;
-	information = dia_xardas_paladin_info;
+	condition = DIA_Xardas_PALADIN_Condition;
+	information = DIA_Xardas_PALADIN_Info;
 	permanent = FALSE;
 	description = "Dlaczego paladyni mieliby mi daæ Oko Innosa?";
 };
 
 
-func int dia_xardas_paladin_condition()
+func int DIA_Xardas_PALADIN_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_xardas_todo) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Xardas_TODO) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_paladin_info()
+func void DIA_Xardas_PALADIN_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_PALADIN_15_00");	//Dlaczego paladyni mieliby mi daæ Oko Innosa?
 	AI_Output(self,other,"DIA_Xardas_PALADIN_14_01");	//Bo twoim przeznaczeniem jest nosiæ ten amulet.
@@ -240,26 +240,26 @@ func void dia_xardas_paladin_info()
 };
 
 
-instance DIA_XARDAS_KHORINIS(C_INFO)
+instance DIA_Xardas_Khorinis(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 4;
-	condition = dia_xardas_khorinis_condition;
-	information = dia_xardas_khorinis_info;
+	condition = DIA_Xardas_Khorinis_Condition;
+	information = DIA_Xardas_Khorinis_Info;
 	permanent = FALSE;
 	description = "Jak siê dostaæ do miasta?";
 };
 
 
-func int dia_xardas_khorinis_condition()
+func int DIA_Xardas_Khorinis_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_xardas_todo) && (lothar.aivar[AIV_TALKEDTOPLAYER] == FALSE) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Xardas_TODO) && (Lothar.aivar[AIV_TalkedToPlayer] == FALSE) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_khorinis_info()
+func void DIA_Xardas_Khorinis_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_Khorinis_15_00");	//Jak siê dostaæ do miasta?
 	AI_Output(self,other,"DIA_Xardas_Khorinis_14_01");	//IdŸ po prostu w dó³ œcie¿ki prowadz¹cej od drzwi mojej wie¿y. Miasto jest du¿e, z pewnoœci¹ je zauwa¿ysz.
@@ -267,26 +267,26 @@ func void dia_xardas_khorinis_info()
 };
 
 
-instance DIA_XARDAS_WHEREEX(C_INFO)
+instance DIA_Xardas_WhereEx(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 6;
-	condition = dia_xardas_whereex_condition;
-	information = dia_xardas_whereex_info;
+	condition = DIA_Xardas_WhereEx_Condition;
+	information = DIA_Xardas_WhereEx_Info;
 	permanent = FALSE;
 	description = "Gdzie my w ogóle jesteœmy?";
 };
 
 
-func int dia_xardas_whereex_condition()
+func int DIA_Xardas_WhereEx_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_xardas_firstexit) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Xardas_FirstEXIT) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_whereex_info()
+func void DIA_Xardas_WhereEx_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_Add_15_00");	//Gdzie my w ogóle jesteœmy?
 	AI_Output(self,other,"DIA_Xardas_Add_14_01");	//Mówi³em ci ju¿ - niedaleko miasta Khorinis.
@@ -297,26 +297,26 @@ func void dia_xardas_whereex_info()
 };
 
 
-instance DIA_XARDAS_EQUIPMENT(C_INFO)
+instance DIA_Xardas_EQUIPMENT(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 7;
-	condition = dia_xardas_equipment_condition;
-	information = dia_xardas_equipment_info;
+	condition = DIA_Xardas_EQUIPMENT_Condition;
+	information = DIA_Xardas_EQUIPMENT_Info;
 	permanent = FALSE;
 	description = "Gdzie mogê znaleŸæ lepsze wyposa¿enie?";
 };
 
 
-func int dia_xardas_equipment_condition()
+func int DIA_Xardas_EQUIPMENT_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_xardas_weapon) && Npc_KnowsInfo(other,dia_xardas_firstexit) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Xardas_WEAPON) && Npc_KnowsInfo(other,DIA_Xardas_FirstEXIT) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_equipment_info()
+func void DIA_Xardas_EQUIPMENT_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_EQUIPMENT_15_00");	//Gdzie mogê znaleŸæ lepsze wyposa¿enie?
 	AI_Output(self,other,"DIA_Xardas_EQUIPMENT_14_01");	//Jeœli chcesz kupiæ broñ i pancerz, musisz pewnie udaæ siê do Khorinis.
@@ -325,26 +325,26 @@ func void dia_xardas_equipment_info()
 };
 
 
-instance DIA_XARDAS_ABOUTLESTER(C_INFO)
+instance DIA_Xardas_ABOUTLESTER(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 5;
-	condition = dia_xardas_aboutlester_condition;
-	information = dia_xardas_aboutlester_info;
+	condition = DIA_Xardas_ABOUTLESTER_Condition;
+	information = DIA_Xardas_ABOUTLESTER_Info;
 	permanent = FALSE;
 	description = "Rozmawia³eœ ju¿ z Lesterem?";
 };
 
 
-func int dia_xardas_aboutlester_condition()
+func int DIA_Xardas_ABOUTLESTER_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_lester_send_xardas) && (Npc_GetDistToWP(lester,"NW_XARDAS_TOWER_IN1_31") <= 500) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Lester_SEND_XARDAS) && (Npc_GetDistToWP(Lester,"NW_XARDAS_TOWER_IN1_31") <= 500) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_aboutlester_info()
+func void DIA_Xardas_ABOUTLESTER_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_ABOUTLESTER_15_00");	//Rozmawia³eœ ju¿ z Lesterem?
 	AI_Output(self,other,"DIA_Xardas_ABOUTLESTER_14_01");	//Tak, zasypa³em go pytaniami. Du¿o siê od niego dowiedzia³em. Jest teraz kompletnie wyczerpany.
@@ -354,31 +354,31 @@ func void dia_xardas_aboutlester_info()
 	AI_Output(other,self,"DIA_Xardas_ABOUTLESTER_15_05");	//To takie wa¿ne?
 	AI_Output(self,other,"DIA_Xardas_ABOUTLESTER_14_06");	//Jeœli ci ludzie rzeczywiœcie istniej¹, bêd¹ dla nas powa¿nym zagro¿eniem.
 	AI_Output(self,other,"DIA_Xardas_ABOUTLESTER_14_07");	//Niepokoi mnie to. Proszê, weŸ mój pierœcieñ. Bêdzie ciê chroni³ przed magi¹.
-	b_giveinvitems(self,other,5353,1);
-	b_giveplayerxp(XP_AMBIENT);
+	B_GiveInvItems(self,other,ItRi_Prot_Mage_01,1);
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_XARDAS_FIRSTPAL(C_INFO)
+instance DIA_Xardas_FirstPal(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 10;
-	condition = dia_xardas_firstpal_condition;
-	information = dia_xardas_firstpal_info;
+	condition = DIA_Xardas_FirstPal_Condition;
+	information = DIA_Xardas_FirstPal_Info;
 	permanent = FALSE;
 	description = "By³em w mieœcie...";
 };
 
 
-func int dia_xardas_firstpal_condition()
+func int DIA_Xardas_FirstPal_Condition()
 {
-	if((lothar.aivar[AIV_TALKEDTOPLAYER] == TRUE) && (lordhagen.aivar[AIV_TALKEDTOPLAYER] == FALSE) && (other.guild == GIL_NONE))
+	if((Lothar.aivar[AIV_TalkedToPlayer] == TRUE) && (LordHagen.aivar[AIV_TalkedToPlayer] == FALSE) && (other.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_firstpal_info()
+func void DIA_Xardas_FirstPal_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_FirstPal_15_00");	//By³em w mieœcie...
 	AI_Output(self,other,"DIA_Xardas_FirstPal_14_01");	//Uda³o ci siê porozmawiaæ z przywódc¹ paladynów?
@@ -390,26 +390,26 @@ func void dia_xardas_firstpal_info()
 };
 
 
-instance DIA_XARDAS_WEITER(C_INFO)
+instance DIA_Xardas_Weiter(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 99;
-	condition = dia_xardas_weiter_condition;
-	information = dia_xardas_weiter_info;
+	condition = DIA_Xardas_Weiter_Condition;
+	information = DIA_Xardas_Weiter_Info;
 	permanent = TRUE;
 	description = "Wiêc co mam teraz robiæ?";
 };
 
 
-func int dia_xardas_weiter_condition()
+func int DIA_Xardas_Weiter_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_xardas_firstexit) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Xardas_FirstEXIT) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_weiter_info()
+func void DIA_Xardas_Weiter_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_Weiter_15_00");	//Wiêc co mam teraz robiæ?
 	AI_Output(self,other,"DIA_Xardas_Weiter_14_01");	//Postêpujmy dalej zgodnie z planem. Chwilowo nie widzê innej drogi.
@@ -417,26 +417,26 @@ func void dia_xardas_weiter_info()
 };
 
 
-instance DIA_XARDAS_KDFSECRET(C_INFO)
+instance DIA_Xardas_KdfSecret(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 9;
-	condition = dia_xardas_kdfsecret_condition;
-	information = dia_xardas_kdfsecret_info;
+	condition = DIA_Xardas_KdfSecret_Condition;
+	information = DIA_Xardas_KdfSecret_Info;
 	permanent = FALSE;
 	description = "Dlaczego Kr¹g Ognia nie mo¿e siê o tobie dowiedzieæ?";
 };
 
 
-func int dia_xardas_kdfsecret_condition()
+func int DIA_Xardas_KdfSecret_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_xardas_firstexit))
+	if(Npc_KnowsInfo(other,DIA_Xardas_FirstEXIT))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_kdfsecret_info()
+func void DIA_Xardas_KdfSecret_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_KdfSecret_15_00");	//Dlaczego Kr¹g Ognia nie mo¿e siê o tobie dowiedzieæ?
 	AI_Output(self,other,"DIA_Xardas_KdfSecret_14_01");	//Kiedyœ by³em wysoko w hierarchii krêgu. Jednak ju¿ wtedy podejrzewa³em, ¿e kluczem do Bariery jest magia demonów.
@@ -447,81 +447,81 @@ func void dia_xardas_kdfsecret_info()
 };
 
 
-instance DIA_XARDAS_KAP3_EXIT(C_INFO)
+instance DIA_Xardas_KAP3_EXIT(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 999;
-	condition = dia_xardas_kap3_exit_condition;
-	information = dia_xardas_kap3_exit_info;
+	condition = DIA_Xardas_KAP3_EXIT_Condition;
+	information = DIA_Xardas_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_xardas_kap3_exit_condition()
+func int DIA_Xardas_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_kap3_exit_info()
+func void DIA_Xardas_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_XARDAS_BACKFROMOW(C_INFO)
+instance DIA_Xardas_BACKFROMOW(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 31;
-	condition = dia_xardas_backfromow_condition;
-	information = dia_xardas_backfromow_info;
+	condition = DIA_Xardas_BACKFROMOW_Condition;
+	information = DIA_Xardas_BACKFROMOW_Info;
 	description = "Wracam z Górniczej Doliny.";
 };
 
 
-func int dia_xardas_backfromow_condition()
+func int DIA_Xardas_BACKFROMOW_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_backfromow_info()
+func void DIA_Xardas_BACKFROMOW_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_BACKFROMOW_15_00");	//Wracam z Górniczej Doliny.
 	AI_Output(self,other,"DIA_Xardas_BACKFROMOW_14_01");	//Najwy¿szy czas. Co tam widzia³eœ?
 	AI_Output(other,self,"DIA_Xardas_BACKFROMOW_15_02");	//Mia³eœ racjê. W dolinie stacjonuje potê¿na armia nieprzyjaciela.
 	AI_Output(other,self,"DIA_Xardas_BACKFROMOW_15_03");	//Orkowie oblegaj¹ zamek, a smoki pustosz¹ okoliczne tereny.
 	AI_Output(other,self,"DIA_Xardas_BACKFROMOW_15_04");	//Jeœli siê nie mylê, wkrótce ca³a armia ruszy na Khorinis.
-	b_giveplayerxp(XP_AMBIENT);
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_XARDAS_DMTSINDDA(C_INFO)
+instance DIA_Xardas_DMTSINDDA(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 32;
-	condition = dia_xardas_dmtsindda_condition;
-	information = dia_xardas_dmtsindda_info;
+	condition = DIA_Xardas_DMTSINDDA_Condition;
+	information = DIA_Xardas_DMTSINDDA_Info;
 	description = "Co siê tu do diab³a dzia³o pod moj¹ nieobecnoœæ?";
 };
 
 
-func int dia_xardas_dmtsindda_condition()
+func int DIA_Xardas_DMTSINDDA_Condition()
 {
-	if((KAPITEL == 3) && Npc_KnowsInfo(other,dia_xardas_backfromow))
+	if((Kapitel == 3) && Npc_KnowsInfo(other,DIA_Xardas_BACKFROMOW))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_dmtsindda_info()
+func void DIA_Xardas_DMTSINDDA_Info()
 {
-	if(Npc_KnowsInfo(other,dia_lester_backintown))
+	if(Npc_KnowsInfo(other,DIA_Lester_BACKINTOWN))
 	{
 		AI_Output(other,self,"DIA_Xardas_DMTSINDDA_15_00");	//Lester powiedzia³, ¿e chcesz siê ze mn¹ widzieæ.
 	};
@@ -529,13 +529,13 @@ func void dia_xardas_dmtsindda_info()
 	AI_Output(self,other,"DIA_Xardas_DMTSINDDA_14_02");	//Nasz przeciwnik dowiedzia³ siê, kim jesteœ naprawdê, i ¿e zamierzasz zdobyæ Oko Innosa.
 	AI_Output(self,other,"DIA_Xardas_DMTSINDDA_14_03");	//Zda³ sobie sprawê z zagro¿enia, wiêc postanowi³ wyjœæ z ukrycia i zaatakowaæ otwarcie.
 	AI_Output(self,other,"DIA_Xardas_DMTSINDDA_14_04");	//Zabawa w chowanego ju¿ siê skoñczy³a. Jeszcze wczoraj nikt nie wiedzia³, z której strony nadejdzie cios. Dziœ nie ma co do tego ¿adnych w¹tpliwoœci.
-	b_logentry(TOPIC_INNOSEYE,"Wróg dowiedzia³ siê, ¿e szukam Oka Innosa. Muszê je jak najszybciej znaleŸæ, zanim bêdzie za póŸno.");
-	Info_ClearChoices(dia_xardas_dmtsindda);
-	Info_AddChoice(dia_xardas_dmtsindda,"Zaatakowali mnie magowie w czarnych szatach.",dia_xardas_dmtsindda_dmt);
-	Info_AddChoice(dia_xardas_dmtsindda,"Wreszcie uda³o mi siê zdobyæ dowód dla Lorda Hagena.",dia_xardas_dmtsindda_beweis);
+	B_LogEntry(TOPIC_INNOSEYE,"Wróg dowiedzia³ siê, ¿e szukam Oka Innosa. Muszê je jak najszybciej znaleŸæ, zanim bêdzie za póŸno.");
+	Info_ClearChoices(DIA_Xardas_DMTSINDDA);
+	Info_AddChoice(DIA_Xardas_DMTSINDDA,"Zaatakowali mnie magowie w czarnych szatach.",DIA_Xardas_DMTSINDDA_DMT);
+	Info_AddChoice(DIA_Xardas_DMTSINDDA,"Wreszcie uda³o mi siê zdobyæ dowód dla Lorda Hagena.",DIA_Xardas_DMTSINDDA_Beweis);
 };
 
-func void dia_xardas_dmtsindda_dmt()
+func void DIA_Xardas_DMTSINDDA_DMT()
 {
 	AI_Output(other,self,"DIA_Xardas_DMTSINDDA_DMT_15_00");	//Zaatakowali mnie magowie w czarnych szatach.
 	AI_Output(self,other,"DIA_Xardas_DMTSINDDA_DMT_14_01");	//Wróg ma wiele twarzy. Poszukiwacze to w³aœnie jedna z nich. Ale oni tylko przygotowuj¹ teren na przybycie prawdziwego przeciwnika.
@@ -544,91 +544,91 @@ func void dia_xardas_dmtsindda_dmt()
 	if(hero.guild == GIL_KDF)
 	{
 		Log_CreateTopic(TOPIC_DEMENTOREN,LOG_MISSION);
-		Log_SetTopicStatus(TOPIC_DEMENTOREN,LOG_RUNNING);
-		b_logentry(TOPIC_DEMENTOREN,"Xardas wie o odzianych na czarno mê¿czyznach. Wygl¹da na to, ¿e tak naprawdê to Poszukiwacze poci¹gaj¹ za sznurki, i s¹ bardzo niebezpiecznymi przeciwnikami.");
+		Log_SetTopicStatus(TOPIC_DEMENTOREN,LOG_Running);
+		B_LogEntry(TOPIC_DEMENTOREN,"Xardas wie o odzianych na czarno mê¿czyznach. Wygl¹da na to, ¿e tak naprawdê to Poszukiwacze poci¹gaj¹ za sznurki, i s¹ bardzo niebezpiecznymi przeciwnikami.");
 	};
 };
 
-func void dia_xardas_dmtsindda_beweis()
+func void DIA_Xardas_DMTSINDDA_Beweis()
 {
 	AI_Output(other,self,"DIA_Xardas_DMTSINDDA_Beweis_15_00");	//Znalaz³em wreszcie dowód, którego domaga³ siê Lord Hagen.
 	AI_Output(self,other,"DIA_Xardas_DMTSINDDA_Beweis_14_01");	//Co to za dowód?
 	AI_Output(other,self,"DIA_Xardas_DMTSINDDA_Beweis_15_02");	//Otrzyma³em list od Garonda, dowódcy paladynów w Górniczej Dolinie. Prosi w nim o posi³ki.
 	AI_Output(self,other,"DIA_Xardas_DMTSINDDA_Beweis_14_03");	//To powinno wystarczyæ, by przekonaæ Hagena. Dobra robota.
-	Info_AddChoice(dia_xardas_dmtsindda,"Co mam teraz robiæ?",dia_xardas_dmtsindda_dmt_whattodo);
-	b_giveplayerxp(XP_AMBIENT);
+	Info_AddChoice(DIA_Xardas_DMTSINDDA,"Co mam teraz robiæ?",DIA_Xardas_DMTSINDDA_DMT_WhatToDo);
+	B_GivePlayerXP(XP_Ambient);
 };
 
-func void dia_xardas_dmtsindda_dmt_whattodo()
+func void DIA_Xardas_DMTSINDDA_DMT_WhatToDo()
 {
 	AI_Output(other,self,"DIA_Xardas_DMTSINDDA_DMT_WhatToDo_15_00");	//Co mam teraz robiæ?
 	AI_Output(self,other,"DIA_Xardas_DMTSINDDA_DMT_WhatToDo_14_01");	//Zanieœ Hagenowi list od Garonda. Z takim dowodem w rêku zostaniesz dopuszczony do Oka Innosa.
 	AI_Output(self,other,"DIA_Xardas_DMTSINDDA_DMT_WhatToDo_14_02");	//Potem udaj siê do Pyrokara. To on da ci Oko.
 	AI_Output(self,other,"DIA_Xardas_DMTSINDDA_DMT_WhatToDo_14_03");	//Musisz koniecznie zabraæ ten artefakt w bezpieczne miejsce.
 	AI_Output(self,other,"DIA_Xardas_DMTSINDDA_DMT_WhatToDo_14_04");	//IdŸ ju¿, zanim bêdzie za póŸno. Wróg te¿ spróbuje zdobyæ amulet dla siebie.
-	b_logentry(TOPIC_INNOSEYE,"Oko znajduje siê w klasztorze Magów Ognia. Mam nadziejê, ¿e Lord Hagen pozwoli mi siê do niego dostaæ, kiedy dostarczê mu wiadomoœæ od Lorda Garonda. Mag Ognia Pyrokar nie dopuœci mnie w pobli¿e amuletu, jeœli nie bêdê mia³ poparcia Hagena.");
+	B_LogEntry(TOPIC_INNOSEYE,"Oko znajduje siê w klasztorze Magów Ognia. Mam nadziejê, ¿e Lord Hagen pozwoli mi siê do niego dostaæ, kiedy dostarczê mu wiadomoœæ od Lorda Garonda. Mag Ognia Pyrokar nie dopuœci mnie w pobli¿e amuletu, jeœli nie bêdê mia³ poparcia Hagena.");
 };
 
 
-instance DIA_XARDAS_INNOSEYEBROKEN(C_INFO)
+instance DIA_Xardas_INNOSEYEBROKEN(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 33;
-	condition = dia_xardas_innoseyebroken_condition;
-	information = dia_xardas_innoseyebroken_info;
+	condition = DIA_Xardas_INNOSEYEBROKEN_Condition;
+	information = DIA_Xardas_INNOSEYEBROKEN_Info;
 	description = "Oko Innosa zosta³o zniszczone.";
 };
 
 
-func int dia_xardas_innoseyebroken_condition()
+func int DIA_Xardas_INNOSEYEBROKEN_Condition()
 {
-	if((KAPITEL == 3) && Npc_KnowsInfo(other,dia_xardas_dmtsindda) && (Npc_HasItems(other,itmi_innoseye_broken_mis) || (MIS_SCKNOWSINNOSEYEISBROKEN == TRUE)))
+	if((Kapitel == 3) && Npc_KnowsInfo(other,DIA_Xardas_DMTSINDDA) && (Npc_HasItems(other,ItMi_InnosEye_Broken_Mis) || (MIS_SCKnowsInnosEyeIsBroken == TRUE)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_innoseyebroken_info()
+func void DIA_Xardas_INNOSEYEBROKEN_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_INNOSEYEBROKEN_15_00");	//Oko Innosa zosta³o zniszczone.
 	AI_Output(self,other,"DIA_Xardas_INNOSEYEBROKEN_14_01");	//Jak to mo¿liwe? Zniszczone?!
 	AI_Output(other,self,"DIA_Xardas_INNOSEYEBROKEN_15_02");	//Znalaz³em je w pó³nocnych lasach. Niestety, uda³o mi siê odzyskaæ tylko kawa³ki.
 	AI_Output(self,other,"DIA_Xardas_INNOSEYEBROKEN_14_03");	//To by³a nasza jedyna szansa na pokonanie tych smoków! Wszystko stracone.
-	MIS_SCKNOWSINNOSEYEISBROKEN = TRUE;
-	b_giveplayerxp(XP_AMBIENT);
-	Info_ClearChoices(dia_xardas_innoseyebroken);
-	Info_AddChoice(dia_xardas_innoseyebroken,"Co teraz?",dia_xardas_innoseyebroken_wasnun);
+	MIS_SCKnowsInnosEyeIsBroken = TRUE;
+	B_GivePlayerXP(XP_Ambient);
+	Info_ClearChoices(DIA_Xardas_INNOSEYEBROKEN);
+	Info_AddChoice(DIA_Xardas_INNOSEYEBROKEN,"Co teraz?",DIA_Xardas_INNOSEYEBROKEN_wasnun);
 };
 
-func void dia_xardas_innoseyebroken_wasnun()
+func void DIA_Xardas_INNOSEYEBROKEN_wasnun()
 {
 	AI_Output(other,self,"DIA_Xardas_INNOSEYEBROKEN_wasnun_15_00");	//Co teraz?
 	AI_Output(self,other,"DIA_Xardas_INNOSEYEBROKEN_wasnun_14_01");	//To straszliwy cios. Nieprêdko siê po nim podniesiemy. Muszê przemyœleæ ca³¹ sprawê w spokoju.
 	AI_Output(self,other,"DIA_Xardas_INNOSEYEBROKEN_wasnun_14_02");	//W miêdzyczasie powinieneœ udaæ siê do miasta i porozmawiaæ z Magiem Wody imieniem Vatras. Mo¿e on bêdzie wiedzia³, co wypada czyniæ dalej.
-	b_logentry(TOPIC_INNOSEYE,"Xardas nie by³ zachwycony, kiedy dowiedzia³ siê, ¿e Oko Innosa zosta³o zniszczone. Jedyn¹ nasz¹ nadziej¹ jest Vatras, Mag Wody z miasta Khorinis.");
-	MIS_XARDAS_GOTOVATRASINNOSEYE = LOG_RUNNING;
+	B_LogEntry(TOPIC_INNOSEYE,"Xardas nie by³ zachwycony, kiedy dowiedzia³ siê, ¿e Oko Innosa zosta³o zniszczone. Jedyn¹ nasz¹ nadziej¹ jest Vatras, Mag Wody z miasta Khorinis.");
+	MIS_Xardas_GoToVatrasInnoseye = LOG_Running;
 };
 
 
-instance DIA_XARDAS_RITUALREQUEST(C_INFO)
+instance DIA_Xardas_RITUALREQUEST(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 34;
-	condition = dia_xardas_ritualrequest_condition;
-	information = dia_xardas_ritualrequest_info;
+	condition = DIA_Xardas_RITUALREQUEST_Condition;
+	information = DIA_Xardas_RITUALREQUEST_Info;
 	description = "Vatras przys³a³ mnie do ciebie.";
 };
 
 
-func int dia_xardas_ritualrequest_condition()
+func int DIA_Xardas_RITUALREQUEST_Condition()
 {
-	if((MIS_RITUALINNOSEYEREPAIR == LOG_RUNNING) && Npc_KnowsInfo(other,dia_xardas_innoseyebroken) && (KAPITEL == 3))
+	if((MIS_RitualInnosEyeRepair == LOG_Running) && Npc_KnowsInfo(other,DIA_Xardas_INNOSEYEBROKEN) && (Kapitel == 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_ritualrequest_info()
+func void DIA_Xardas_RITUALREQUEST_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_RITUALREQUEST_15_00");	//Vatras przys³a³ mnie do ciebie.
 	AI_Output(self,other,"DIA_Xardas_RITUALREQUEST_14_01");	//To dobrze. Co ci powiedzia³?
@@ -637,59 +637,59 @@ func void dia_xardas_ritualrequest_info()
 	AI_Output(other,self,"DIA_Xardas_RITUALREQUEST_15_04");	//Na to wygl¹da. Kiedy wyruszysz?
 	AI_Output(self,other,"DIA_Xardas_RITUALREQUEST_14_05");	//Bezzw³ocznie. Ty musisz jeszcze wype³niæ swoje zadania. Potem znów siê spotkamy.
 	AI_StopProcessInfos(self);
-	b_logentry(TOPIC_INNOSEYE,"Xardas zgodzi³ siê przyjœæ do Krêgu Ognia na rytua³.");
-	b_giveplayerxp(XP_AMBIENT);
+	B_LogEntry(TOPIC_INNOSEYE,"Xardas zgodzi³ siê przyjœæ do Krêgu Ognia na rytua³.");
+	B_GivePlayerXP(XP_Ambient);
 	Npc_ExchangeRoutine(self,"RitualInnosEyeRepair");
-	XARDAS_GOESTORITUALINNOSEYE = TRUE;
-	b_giveplayerxp(XP_AMBIENT);
+	Xardas_GoesToRitualInnosEye = TRUE;
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_XARDAS_BINGESPANNT(C_INFO)
+instance DIA_Xardas_BINGESPANNT(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 35;
-	condition = dia_xardas_bingespannt_condition;
-	information = dia_xardas_bingespannt_info;
+	condition = DIA_Xardas_BINGESPANNT_Condition;
+	information = DIA_Xardas_BINGESPANNT_Info;
 	permanent = TRUE;
 	description = "Czy ten rytua³ odwrócenia ma szansê siê powieœæ?";
 };
 
 
-func int dia_xardas_bingespannt_condition()
+func int DIA_Xardas_BINGESPANNT_Condition()
 {
-	if((MIS_RITUALINNOSEYEREPAIR == LOG_RUNNING) && (KAPITEL == 3) && (XARDAS_GOESTORITUALINNOSEYE == TRUE))
+	if((MIS_RitualInnosEyeRepair == LOG_Running) && (Kapitel == 3) && (Xardas_GoesToRitualInnosEye == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_bingespannt_info()
+func void DIA_Xardas_BINGESPANNT_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_BINGESPANNT_15_00");	//Czy ten rytua³ odwrócenia ma szansê siê powieœæ?
 	AI_Output(self,other,"DIA_Xardas_BINGESPANNT_14_01");	//Nie mo¿emy mieæ pewnoœci. Wszystko zale¿y od szczegó³ów planu Vatrasa.
 };
 
 
-instance DIA_XARDAS_PYROWILLNICHT(C_INFO)
+instance DIA_Xardas_PYROWILLNICHT(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 37;
-	condition = dia_xardas_pyrowillnicht_condition;
-	information = dia_xardas_pyrowillnicht_info;
+	condition = DIA_Xardas_PYROWILLNICHT_Condition;
+	information = DIA_Xardas_PYROWILLNICHT_Info;
 	description = "Pyrokar nie chce siê stawiæ na spotkanie.";
 };
 
 
-func int dia_xardas_pyrowillnicht_condition()
+func int DIA_Xardas_PYROWILLNICHT_Condition()
 {
-	if((PYROKAR_DENIESINNOSEYERITUAL == TRUE) && Npc_KnowsInfo(other,dia_xardas_ritualrequest) && (KAPITEL == 3))
+	if((Pyrokar_DeniesInnosEyeRitual == TRUE) && Npc_KnowsInfo(other,DIA_Xardas_RITUALREQUEST) && (Kapitel == 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_pyrowillnicht_info()
+func void DIA_Xardas_PYROWILLNICHT_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_PYROWILLNICHT_15_00");	//Pyrokar nie chce siê stawiæ na spotkanie.
 	AI_Output(other,self,"DIA_Xardas_PYROWILLNICHT_15_01");	//Domaga siê dowodu, ¿e mo¿na ci zaufaæ.
@@ -700,78 +700,78 @@ func void dia_xardas_pyrowillnicht_info()
 	AI_Output(self,other,"DIA_Xardas_PYROWILLNICHT_14_07");	//Dlatego ukry³em je w bezpiecznym miejscu, w którym magowie nigdy nie bêd¹ ich szukaæ.
 	AI_Output(other,self,"DIA_Xardas_PYROWILLNICHT_15_08");	//Gdzie dok³adnie?
 	AI_Output(self,other,"DIA_Xardas_PYROWILLNICHT_14_09");	//Czêœæ z nich le¿y zamkniêta w skrzyni na farmie Sekoba.
-	SEKOB_ROOMFREE = TRUE;
+	Sekob_RoomFree = TRUE;
 	AI_Output(other,self,"DIA_Xardas_PYROWILLNICHT_15_10");	//Ufasz temu Sekobowi?
 	AI_Output(self,other,"DIA_Xardas_PYROWILLNICHT_14_11");	//Nie, ale mo¿na go kupiæ, a wtedy nie zadaje niewygodnych pytañ. Poza tym - skrzynia jest zamkniêta. Oto klucz.
-	CreateInvItems(self,itke_chest_sekob_xardasbook_mis,1);
-	b_giveinvitems(self,other,5780,1);
+	CreateInvItems(self,ItKe_CHEST_SEKOB_XARDASBOOK_MIS,1);
+	B_GiveInvItems(self,other,ItKe_CHEST_SEKOB_XARDASBOOK_MIS,1);
 	AI_Output(self,other,"DIA_Xardas_PYROWILLNICHT_14_12");	//Znajdziesz tam miêdzy innymi pewn¹ star¹ ksiêgê. Gdy Pyrokar j¹ zobaczy, bêdzie wiedzia³, ¿e to prezent ode mnie.
 	AI_Output(self,other,"DIA_Xardas_PYROWILLNICHT_14_13");	//Ja ju¿ nie bêdê mia³ z niej po¿ytku, wiêc przynajmniej tobie na coœ siê przyda.
-	b_logentry(TOPIC_INNOSEYE,"Xardas da³ mi klucz do kufra na farmie Sekoba. W œrodku znajdê ksi¹¿kê, któr¹ mam wrêczyæ Pyrokarowi.");
+	B_LogEntry(TOPIC_INNOSEYE,"Xardas da³ mi klucz do kufra na farmie Sekoba. W œrodku znajdê ksi¹¿kê, któr¹ mam wrêczyæ Pyrokarowi.");
 };
 
 
-instance DIA_XARDAS_RITUALINNOSEYEREPAIRIMPORTANT(C_INFO)
+instance DIA_Xardas_RitualInnosEyeRepairImportant(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 36;
-	condition = dia_xardas_ritualinnoseyerepairimportant_condition;
-	information = dia_xardas_ritualinnoseyerepairimportant_info;
+	condition = DIA_Xardas_RitualInnosEyeRepairImportant_Condition;
+	information = DIA_Xardas_RitualInnosEyeRepairImportant_Info;
 	important = TRUE;
 };
 
 
-func int dia_xardas_ritualinnoseyerepairimportant_condition()
+func int DIA_Xardas_RitualInnosEyeRepairImportant_Condition()
 {
-	if((MIS_RITUALINNOSEYEREPAIR == LOG_SUCCESS) && (KAPITEL == 3))
+	if((MIS_RitualInnosEyeRepair == LOG_SUCCESS) && (Kapitel == 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_ritualinnoseyerepairimportant_info()
+func void DIA_Xardas_RitualInnosEyeRepairImportant_Info()
 {
 	AI_Output(self,other,"DIA_Xardas_Add_14_06");	//Teraz, gdy Oko Innosa zosta³o naprawione, musisz stawiæ czo³a smokom.
 	AI_Output(self,other,"DIA_Xardas_Add_14_07");	//Wszystkie one s¹ s³ugami Beliara, boga ciemnoœci.
 	AI_Output(self,other,"DIA_Xardas_Add_14_08");	//Ale bezpoœrednie rozkazy musz¹ otrzymywaæ z tego œwiata. Tyle uda³o mi siê do tej pory ustaliæ.
 	AI_Output(self,other,"DIA_Xardas_Add_14_09");	//Dowiedz siê, co jest Ÿród³em ich potêgi.
 	AI_Output(self,other,"DIA_Xardas_Add_14_10");	//Potem wracaj czym prêdzej do mnie.
-	Info_ClearChoices(dia_xardas_ritualinnoseyerepairimportant);
-	Info_AddChoice(dia_xardas_ritualinnoseyerepairimportant,DIALOG_ENDE,dia_xardas_ritualinnoseyerepairimportant_weiter);
+	Info_ClearChoices(DIA_Xardas_RitualInnosEyeRepairImportant);
+	Info_AddChoice(DIA_Xardas_RitualInnosEyeRepairImportant,Dialog_Ende,DIA_Xardas_RitualInnosEyeRepairImportant_weiter);
 };
 
-func void dia_xardas_ritualinnoseyerepairimportant_weiter()
+func void DIA_Xardas_RitualInnosEyeRepairImportant_weiter()
 {
 	AI_StopProcessInfos(self);
-	b_startotherroutine(xardas,"Start");
-	b_startotherroutine(vatras,"Start");
+	B_StartOtherRoutine(Xardas,"Start");
+	B_StartOtherRoutine(Vatras,"Start");
 };
 
 
-instance DIA_XARDAS_WASNUN(C_INFO)
+instance DIA_Xardas_WASNUN(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 36;
-	condition = dia_xardas_wasnun_condition;
-	information = dia_xardas_wasnun_info;
+	condition = DIA_Xardas_WASNUN_Condition;
+	information = DIA_Xardas_WASNUN_Info;
 	permanent = TRUE;
 	description = "Oko Innosa zosta³o naprawione. Co teraz?";
 };
 
 
-func int dia_xardas_wasnun_condition()
+func int DIA_Xardas_WASNUN_Condition()
 {
-	if((MIS_RITUALINNOSEYEREPAIR == LOG_SUCCESS) && (KAPITEL == 3))
+	if((MIS_RitualInnosEyeRepair == LOG_SUCCESS) && (Kapitel == 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_wasnun_info()
+func void DIA_Xardas_WASNUN_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_WASNUN_15_00");	//Oko Innosa zosta³o naprawione. Co teraz?
 	AI_Output(self,other,"DIA_Xardas_WASNUN_14_01");	//Pamiêtaj, by zak³adaæ je za ka¿dym razem, gdy przyjdzie ci walczyæ ze smokiem.
-	if(MIS_READYFORCHAPTER4 == TRUE)
+	if(MIS_ReadyforChapter4 == TRUE)
 	{
 		AI_Output(self,other,"DIA_Xardas_WASNUN_14_02");	//Nie traæ czasu. ZejdŸ teraz do Górniczej Doliny i rozpraw siê ze smokami.
 	}
@@ -782,51 +782,51 @@ func void dia_xardas_wasnun_info()
 };
 
 
-instance DIA_XARDAS_KAP4_EXIT(C_INFO)
+instance DIA_Xardas_KAP4_EXIT(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 999;
-	condition = dia_xardas_kap4_exit_condition;
-	information = dia_xardas_kap4_exit_info;
+	condition = DIA_Xardas_KAP4_EXIT_Condition;
+	information = DIA_Xardas_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_xardas_kap4_exit_condition()
+func int DIA_Xardas_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_kap4_exit_info()
+func void DIA_Xardas_KAP4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_XARDAS_PERM4(C_INFO)
+instance DIA_Xardas_PERM4(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 40;
-	condition = dia_xardas_perm4_condition;
-	information = dia_xardas_perm4_info;
+	condition = DIA_Xardas_PERM4_Condition;
+	information = DIA_Xardas_PERM4_Info;
 	permanent = TRUE;
 	description = "Co nowego?";
 };
 
 
-func int dia_xardas_perm4_condition()
+func int DIA_Xardas_PERM4_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_perm4_info()
+func void DIA_Xardas_PERM4_Info()
 {
 	AI_Output(other,self,"DIA_Xardas_PERM4_15_00");	//Co nowego?
 	AI_Output(self,other,"DIA_Xardas_PERM4_14_01");	//Poszukiwacze nadal krêc¹ siê w pobli¿u. Nie spoczn¹, póki nie przeci¹gn¹ ciê na swoj¹ stronê.
@@ -834,51 +834,51 @@ func void dia_xardas_perm4_info()
 };
 
 
-instance DIA_XARDAS_KAP5_EXIT(C_INFO)
+instance DIA_Xardas_KAP5_EXIT(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 999;
-	condition = dia_xardas_kap5_exit_condition;
-	information = dia_xardas_kap5_exit_info;
+	condition = DIA_Xardas_KAP5_EXIT_Condition;
+	information = DIA_Xardas_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_xardas_kap5_exit_condition()
+func int DIA_Xardas_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_kap5_exit_info()
+func void DIA_Xardas_KAP5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_XARDAS_KAP6_EXIT(C_INFO)
+instance DIA_Xardas_KAP6_EXIT(C_Info)
 {
-	npc = none_100_xardas;
+	npc = NONE_100_Xardas;
 	nr = 999;
-	condition = dia_xardas_kap6_exit_condition;
-	information = dia_xardas_kap6_exit_info;
+	condition = DIA_Xardas_KAP6_EXIT_Condition;
+	information = DIA_Xardas_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_xardas_kap6_exit_condition()
+func int DIA_Xardas_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_xardas_kap6_exit_info()
+func void DIA_Xardas_KAP6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };

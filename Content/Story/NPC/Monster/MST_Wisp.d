@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_WISP(C_NPC)
+prototype Mst_Default_Wisp(C_Npc)
 {
 	name[0] = "B³êdny Ognik";
 	guild = GIL_BLOODFLY;
@@ -21,25 +21,25 @@ prototype MST_DEFAULT_WISP(C_NPC)
 	fight_tactic = FAI_BLOODFLY;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_SHORT;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	aivar[AIV_MM_PACKHUNTER] = FALSE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_WUSELSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_SHORT;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar[AIV_MM_Packhunter] = FALSE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_WuselStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_wisp()
+func void B_SetVisuals_Wisp()
 {
 	Mdl_SetVisual(self,"Irrlicht.mds");
 	Mdl_SetVisualBody(self,"Irrlicht_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance WISP(MST_DEFAULT_WISP)
+instance Wisp(Mst_Default_Wisp)
 {
-	b_setvisuals_wisp();
+	B_SetVisuals_Wisp();
 	Npc_SetToFistMode(self);
 };
 

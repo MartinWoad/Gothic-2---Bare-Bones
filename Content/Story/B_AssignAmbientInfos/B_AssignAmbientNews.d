@@ -1,68 +1,68 @@
 
-instance DIA_AMBIENT_NEWS(C_INFO)
+instance DIA_Ambient_NEWS(C_Info)
 {
 	nr = 1;
-	condition = dia_ambient_news_condition;
-	information = dia_ambient_news_info;
+	condition = DIA_Ambient_NEWS_Condition;
+	information = DIA_Ambient_NEWS_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_ambient_news_condition()
+func int DIA_Ambient_NEWS_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (b_getplayercrime(self) != CRIME_NONE))
+	if(Npc_IsInState(self,ZS_Talk) && (B_GetPlayerCrime(self) != CRIME_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ambient_news_info()
+func void DIA_Ambient_NEWS_Info()
 {
-	if(b_getplayercrime(self) == CRIME_SHEEPKILLER)
+	if(B_GetPlayerCrime(self) == CRIME_SHEEPKILLER)
 	{
-		b_say(self,other,"$SHEEPKILLER_CRIME");
+		B_Say(self,other,"$SHEEPKILLER_CRIME");
 	};
-	if(b_getplayercrime(self) == CRIME_ATTACK)
+	if(B_GetPlayerCrime(self) == CRIME_ATTACK)
 	{
-		b_say(self,other,"$ATTACK_CRIME");
+		B_Say(self,other,"$ATTACK_CRIME");
 	};
-	if(b_getplayercrime(self) == CRIME_THEFT)
+	if(B_GetPlayerCrime(self) == CRIME_THEFT)
 	{
-		b_say(self,other,"$THEFT_CRIME");
+		B_Say(self,other,"$THEFT_CRIME");
 	};
-	if(c_npcbelongstocity(self))
+	if(C_NpcBelongsToCity(self))
 	{
-		if((other.guild == GIL_PAL) && (HAGEN_SCHULDEN <= 0))
+		if((other.guild == GIL_PAL) && (Hagen_Schulden <= 0))
 		{
-			b_say(self,other,"$PAL_CITY_CRIME");
+			B_Say(self,other,"$PAL_CITY_CRIME");
 		}
-		else if((other.guild == GIL_MIL) && (ANDRE_SCHULDEN <= 0))
+		else if((other.guild == GIL_MIL) && (Andre_Schulden <= 0))
 		{
-			b_say(self,other,"$MIL_CITY_CRIME");
+			B_Say(self,other,"$MIL_CITY_CRIME");
 		}
-		else if(ANDRE_SCHULDEN <= 0)
+		else if(Andre_Schulden <= 0)
 		{
-			b_say(self,other,"$CITY_CRIME");
+			B_Say(self,other,"$CITY_CRIME");
 		};
 	};
-	if(c_npcbelongstomonastery(self) && (PARLAN_SCHULDEN <= 0))
+	if(C_NpcBelongsToMonastery(self) && (Parlan_Schulden <= 0))
 	{
-		b_say(self,other,"$MONA_CRIME");
+		B_Say(self,other,"$MONA_CRIME");
 	};
-	if(c_npcbelongstofarm(self) && (LEE_SCHULDEN <= 0))
+	if(C_NpcBelongsToFarm(self) && (Lee_Schulden <= 0))
 	{
-		b_say(self,other,"$FARM_CRIME");
+		B_Say(self,other,"$FARM_CRIME");
 	};
-	if(c_npcbelongstooldcamp(self) && (GAROND_SCHULDEN <= 0))
+	if(C_NpcBelongsToOldCamp(self) && (Garond_Schulden <= 0))
 	{
-		b_say(self,other,"$OC_CRIME");
+		B_Say(self,other,"$OC_CRIME");
 	};
 	AI_StopProcessInfos(self);
 };
 
-func void b_assignambientnews(var C_NPC slf)
+func void B_AssignAmbientNEWS(var C_Npc slf)
 {
-	dia_ambient_news.npc = Hlp_GetInstanceID(slf);
+	DIA_Ambient_NEWS.npc = Hlp_GetInstanceID(slf);
 };
 

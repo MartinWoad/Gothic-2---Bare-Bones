@@ -1,43 +1,43 @@
 
-instance DIA_PEPE_EXIT(C_INFO)
+instance DIA_Pepe_EXIT(C_Info)
 {
-	npc = bau_912_pepe;
+	npc = Bau_912_Pepe;
 	nr = 999;
-	condition = dia_pepe_exit_condition;
-	information = dia_pepe_exit_info;
+	condition = DIA_Pepe_EXIT_Condition;
+	information = DIA_Pepe_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_pepe_exit_condition()
+func int DIA_Pepe_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pepe_exit_info()
+func void DIA_Pepe_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PEPE_HALLO(C_INFO)
+instance DIA_Pepe_Hallo(C_Info)
 {
-	npc = bau_912_pepe;
+	npc = Bau_912_Pepe;
 	nr = 1;
-	condition = dia_pepe_hallo_condition;
-	information = dia_pepe_hallo_info;
+	condition = DIA_Pepe_Hallo_Condition;
+	information = DIA_Pepe_Hallo_Info;
 	permanent = FALSE;
 	description = "Co tu porabiasz?";
 };
 
 
-func int dia_pepe_hallo_condition()
+func int DIA_Pepe_Hallo_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pepe_hallo_info()
+func void DIA_Pepe_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Pepe_Hallo_15_00");	//Co porabiasz?
 	AI_Output(self,other,"DIA_Pepe_Hallo_03_01");	//Pilnujê owiec! I unikam k³opotów.
@@ -49,26 +49,26 @@ func void dia_pepe_hallo_info()
 };
 
 
-instance DIA_PEPE_DANGER(C_INFO)
+instance DIA_Pepe_Danger(C_Info)
 {
-	npc = bau_912_pepe;
+	npc = Bau_912_Pepe;
 	nr = 2;
-	condition = dia_pepe_danger_condition;
-	information = dia_pepe_danger_info;
+	condition = DIA_Pepe_Danger_Condition;
+	information = DIA_Pepe_Danger_Info;
 	permanent = FALSE;
 	description = "A jakie¿ to niebezpieczeñstwa czyhaj¹ na pastwisku?";
 };
 
 
-func int dia_pepe_danger_condition()
+func int DIA_Pepe_Danger_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_pepe_hallo))
+	if(Npc_KnowsInfo(other,DIA_Pepe_Hallo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pepe_danger_info()
+func void DIA_Pepe_Danger_Info()
 {
 	AI_Output(other,self,"DIA_Pepe_Danger_15_00");	//Jakie to niebezpieczeñstwa czyhaj¹ na pastwisku?
 	AI_Output(self,other,"DIA_Pepe_Danger_03_01");	//Po okolicy w³óczy siê niewielka wataha wilków. Ostatnio cholerne bestie prawie ka¿dego dnia porywaj¹ jedn¹ owcê.
@@ -76,26 +76,26 @@ func void dia_pepe_danger_info()
 };
 
 
-instance DIA_PEPE_WHYNOTSLD(C_INFO)
+instance DIA_Pepe_WhyNotSLD(C_Info)
 {
-	npc = bau_912_pepe;
+	npc = Bau_912_Pepe;
 	nr = 3;
-	condition = dia_pepe_whynotsld_condition;
-	information = dia_pepe_whynotsld_info;
+	condition = DIA_Pepe_WhyNotSLD_Condition;
+	information = DIA_Pepe_WhyNotSLD_Info;
 	permanent = FALSE;
 	description = "Dlaczego nie powiedzia³eœ o wilkach najemnikom?";
 };
 
 
-func int dia_pepe_whynotsld_condition()
+func int DIA_Pepe_WhyNotSLD_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_pepe_danger) && ((hero.guild != GIL_SLD) && (hero.guild != GIL_DJG)))
+	if(Npc_KnowsInfo(other,DIA_Pepe_Danger) && ((hero.guild != GIL_SLD) && (hero.guild != GIL_DJG)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pepe_whynotsld_info()
+func void DIA_Pepe_WhyNotSLD_Info()
 {
 	AI_Output(other,self,"DIA_Pepe_WhyNotSLD_15_00");	//Dlaczego nie powiedzia³eœ o wilkach najemnikom? Mogliby siê ich przecie¿ pozbyæ.
 	AI_Output(self,other,"DIA_Pepe_WhyNotSLD_03_01");	//Taa, wiem. Powinienem by³ im powiedzieæ. Ale nie powiedzia³em.
@@ -105,26 +105,26 @@ func void dia_pepe_whynotsld_info()
 };
 
 
-instance DIA_PEPE_KILLWOLVES(C_INFO)
+instance DIA_Pepe_KillWolves(C_Info)
 {
-	npc = bau_912_pepe;
+	npc = Bau_912_Pepe;
 	nr = 4;
-	condition = dia_pepe_killwolves_condition;
-	information = dia_pepe_killwolves_info;
+	condition = DIA_Pepe_KillWolves_Condition;
+	information = DIA_Pepe_KillWolves_Info;
 	permanent = FALSE;
 	description = "A gdybym zabi³ te wilki?";
 };
 
 
-func int dia_pepe_killwolves_condition()
+func int DIA_Pepe_KillWolves_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_pepe_danger))
+	if(Npc_KnowsInfo(other,DIA_Pepe_Danger))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pepe_killwolves_info()
+func void DIA_Pepe_KillWolves_Info()
 {
 	AI_Output(other,self,"DIA_Pepe_KillWolves_15_00");	//A gdybym zabi³ te wilki?
 	AI_Output(self,other,"DIA_Pepe_KillWolves_03_01");	//Ty, sam? Ha, ha. Nie wierzê. Ju¿ chyba prêdzej zrobi³by to któryœ z moich baranów.
@@ -132,46 +132,46 @@ func void dia_pepe_killwolves_info()
 	AI_Output(self,other,"DIA_Pepe_KillWolves_03_03");	//Zaraz... A zreszt¹ dobrze, w porz¹dku! Ehm... jesteœ wielki i silny, móg³byœ pokonaæ i setkê wilków. Bardzo proszê!
 	AI_Output(self,other,"DIA_Pepe_KillWolves_03_04");	//Na ogó³ czaj¹ siê w krzakach, na obrze¿ach pastwiska. Myœlê, ¿e s¹ tylko cztery...
 	AI_StopProcessInfos(self);
-	Wld_InsertNpc(pepes_ywolf1,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_01");
-	Wld_InsertNpc(pepes_ywolf2,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_02");
-	Wld_InsertNpc(pepes_ywolf3,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_03");
-	Wld_InsertNpc(pepes_ywolf4,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_04");
-	MIS_PEPE_KILLWOLVES = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_PEPEWOLVES,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_PEPEWOLVES,LOG_RUNNING);
-	b_logentry(TOPIC_PEPEWOLVES,"Owcom Pepe zagra¿aj¹ kr¹¿¹ce po okolicy stada wilków. Powinienem siê nimi zaj¹æ.");
+	Wld_InsertNpc(PEPES_YWolf1,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_01");
+	Wld_InsertNpc(PEPES_YWolf2,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_02");
+	Wld_InsertNpc(PEPES_YWolf3,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_03");
+	Wld_InsertNpc(PEPES_YWolf4,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_04");
+	MIS_Pepe_KillWolves = LOG_Running;
+	Log_CreateTopic(TOPIC_PepeWolves,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_PepeWolves,LOG_Running);
+	B_LogEntry(TOPIC_PepeWolves,"Owcom Pepe zagra¿aj¹ kr¹¿¹ce po okolicy stada wilków. Powinienem siê nimi zaj¹æ.");
 };
 
 
-instance DIA_PEPE_KILLEDWOLVES(C_INFO)
+instance DIA_Pepe_KilledWolves(C_Info)
 {
-	npc = bau_912_pepe;
+	npc = Bau_912_Pepe;
 	nr = 5;
-	condition = dia_pepe_killedwolves_condition;
-	information = dia_pepe_killedwolves_info;
+	condition = DIA_Pepe_KilledWolves_Condition;
+	information = DIA_Pepe_KilledWolves_Info;
 	permanent = TRUE;
 	description = "Pozby³em siê wilków.";
 };
 
 
-func int dia_pepe_killedwolves_condition()
+func int DIA_Pepe_KilledWolves_Condition()
 {
-	if(MIS_PEPE_KILLWOLVES == LOG_RUNNING)
+	if(MIS_Pepe_KillWolves == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pepe_killedwolves_info()
+func void DIA_Pepe_KilledWolves_Info()
 {
 	AI_Output(other,self,"DIA_Pepe_KilledWolves_15_00");	//Pozby³em siê wilków.
-	if(Npc_IsDead(pepes_ywolf1) && Npc_IsDead(pepes_ywolf2) && Npc_IsDead(pepes_ywolf3) && Npc_IsDead(pepes_ywolf4))
+	if(Npc_IsDead(PEPES_YWolf1) && Npc_IsDead(PEPES_YWolf2) && Npc_IsDead(PEPES_YWolf3) && Npc_IsDead(PEPES_YWolf4))
 	{
 		AI_Output(self,other,"DIA_Pepe_KilledWolves_03_01");	//Naprawdê? Innosowi niech bêd¹ dziêki!
 		AI_Output(self,other,"DIA_Pepe_KilledWolves_03_02");	//Dalej jednak nie wiem, jak powiedzieæ Onarowi o tych wszystkich porwanych owcach.
 		AI_Output(self,other,"DIA_Pepe_KilledWolves_03_03");	//To wszystko wina tego przeklêtego Bullka!
-		MIS_PEPE_KILLWOLVES = LOG_SUCCESS;
-		b_giveplayerxp(XP_PEPEWOLVES);
+		MIS_Pepe_KillWolves = LOG_SUCCESS;
+		B_GivePlayerXP(XP_PepeWolves);
 	}
 	else
 	{
@@ -180,131 +180,131 @@ func void dia_pepe_killedwolves_info()
 };
 
 
-instance DIA_PEPE_BULLCO(C_INFO)
+instance DIA_Pepe_Bullco(C_Info)
 {
-	npc = bau_912_pepe;
+	npc = Bau_912_Pepe;
 	nr = 5;
-	condition = dia_pepe_bullco_condition;
-	information = dia_pepe_bullco_info;
+	condition = DIA_Pepe_Bullco_Condition;
+	information = DIA_Pepe_Bullco_Info;
 	permanent = FALSE;
 	description = "Dlaczego wspomnia³eœ Bullka?";
 };
 
 
-func int dia_pepe_bullco_condition()
+func int DIA_Pepe_Bullco_Condition()
 {
-	if((MIS_PEPE_KILLWOLVES == LOG_SUCCESS) && !Npc_IsDead(bullco) && (KAPITEL <= 3))
+	if((MIS_Pepe_KillWolves == LOG_SUCCESS) && !Npc_IsDead(Bullco) && (Kapitel <= 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pepe_bullco_info()
+func void DIA_Pepe_Bullco_Info()
 {
 	AI_Output(other,self,"DIA_Pepe_Bullco_15_00");	//Dlaczego wspomnia³eœ Bullka?
 	AI_Output(self,other,"DIA_Pepe_Bullco_03_01");	//To jeden z najemników. W³aœciwie to on mia³ siê zajmowaæ ochron¹ stada.
 	AI_Output(self,other,"DIA_Pepe_Bullco_03_02");	//Zamiast tego on i jego kumpel Sylvio przesiaduj¹ ca³ymi dniami z Thekl¹ w kuchni.
 	AI_Output(self,other,"DIA_Pepe_Bullco_03_03");	//Jeœli nie dostanê zap³aty, to bêdzie wina tego drania.
 	AI_Output(self,other,"DIA_Pepe_Bullco_03_04");	//Gdybym chocia¿ móg³ mu spuœciæ porz¹dne lanie. Jednak wszyscy siê go boj¹, to prawdziwy morderca.
-	MIS_PEPE_KICKBULLCO = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_KICKBULLCO,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_KICKBULLCO,LOG_RUNNING);
-	b_logentry(TOPIC_KICKBULLCO,"Pepe jest niezadowolony, ¿e Bullko poœwiêca jego owcom tak ma³o uwagi, i szuka kogoœ, kto da³by mu nauczkê.");
+	MIS_Pepe_KickBullco = LOG_Running;
+	Log_CreateTopic(TOPIC_KickBullco,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_KickBullco,LOG_Running);
+	B_LogEntry(TOPIC_KickBullco,"Pepe jest niezadowolony, ¿e Bullko poœwiêca jego owcom tak ma³o uwagi, i szuka kogoœ, kto da³by mu nauczkê.");
 };
 
 
-instance DIA_PEPE_BULLCODEFEATED(C_INFO)
+instance DIA_Pepe_BullcoDefeated(C_Info)
 {
-	npc = bau_912_pepe;
+	npc = Bau_912_Pepe;
 	nr = 5;
-	condition = dia_pepe_bullcodefeated_condition;
-	information = dia_pepe_bullcodefeated_info;
+	condition = DIA_Pepe_BullcoDefeated_Condition;
+	information = DIA_Pepe_BullcoDefeated_Info;
 	permanent = FALSE;
 	description = "Bullko dosta³ to, na co zas³ugiwa³. ";
 };
 
 
-func int dia_pepe_bullcodefeated_condition()
+func int DIA_Pepe_BullcoDefeated_Condition()
 {
-	if(MIS_PEPE_KICKBULLCO == LOG_RUNNING)
+	if(MIS_Pepe_KickBullco == LOG_Running)
 	{
-		if((bullco.aivar[AIV_DEFEATEDBYPLAYER] == TRUE) || (djg_bullco.aivar[AIV_DEFEATEDBYPLAYER] == TRUE))
+		if((Bullco.aivar[AIV_DefeatedByPlayer] == TRUE) || (DJG_Bullco.aivar[AIV_DefeatedByPlayer] == TRUE))
 		{
 			return TRUE;
 		};
 	};
 };
 
-func void dia_pepe_bullcodefeated_info()
+func void DIA_Pepe_BullcoDefeated_Info()
 {
 	AI_Output(other,self,"DIA_Pepe_BullcoDefeated_15_00");	//Bullko dosta³ to, na co zas³ugiwa³. Da³em mu porz¹dn¹ nauczkê.
 	AI_Output(self,other,"DIA_Pepe_BullcoDefeated_03_01");	//Ta œwinia zas³u¿y³a sobie na to.
-	MIS_PEPE_KICKBULLCO = LOG_SUCCESS;
-	b_giveplayerxp(XP_KICKBULLCO);
+	MIS_Pepe_KickBullco = LOG_SUCCESS;
+	B_GivePlayerXP(XP_KickBullco);
 };
 
 
-instance DIA_PEPE_PERM(C_INFO)
+instance DIA_Pepe_PERM(C_Info)
 {
-	npc = bau_912_pepe;
+	npc = Bau_912_Pepe;
 	nr = 6;
-	condition = dia_pepe_perm_condition;
-	information = dia_pepe_perm_info;
+	condition = DIA_Pepe_PERM_Condition;
+	information = DIA_Pepe_PERM_Info;
 	permanent = TRUE;
 	description = "Co tam u ciebie? Jak owce?";
 };
 
 
-func int dia_pepe_perm_condition()
+func int DIA_Pepe_PERM_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_pepe_hallo))
+	if(Npc_KnowsInfo(other,DIA_Pepe_Hallo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pepe_perm_info()
+func void DIA_Pepe_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Pepe_PERM_15_00");	//Co tam u ciebie? Jak owce?
-	if(KAPITEL <= 1)
+	if(Kapitel <= 1)
 	{
 		AI_Output(self,other,"DIA_Pepe_PERM_03_01");	//Wszystko w porz¹dku i ze mn¹, i z owcami. Przynajmniej z tymi, które pozosta³y przy ¿yciu.
 	};
-	if(KAPITEL == 2)
+	if(Kapitel == 2)
 	{
 		AI_Output(self,other,"DIA_Pepe_PERM_03_02");	//Na razie dobrze. Ale obawiam siê, ¿e pewnego dnia wilki wróc¹ i bêdzie ich jeszcze wiêcej.
 	};
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		AI_Output(self,other,"DIA_Pepe_PERM_03_03");	//Dosz³y mnie dziwne wieœci. Podobno jakieœ wrogo nastawione typki zajê³y farmê Sekoba. Nie ruszaj¹ siê stamt¹d na krok.
 	};
-	if(KAPITEL >= 4)
+	if(Kapitel >= 4)
 	{
 		AI_Output(self,other,"DIA_Pepe_PERM_03_04");	//S³ysza³em, ¿e jacyœ ludzie zajêli farmê Lobarta. Mo¿e ktoœ powinien mu pomóc.
 	};
 };
 
 
-instance DIA_PEPE_LIESEL(C_INFO)
+instance DIA_Pepe_Liesel(C_Info)
 {
-	npc = bau_912_pepe;
+	npc = Bau_912_Pepe;
 	nr = 7;
-	condition = dia_pepe_liesel_condition;
-	information = dia_pepe_liesel_info;
+	condition = DIA_Pepe_Liesel_Condition;
+	information = DIA_Pepe_Liesel_Info;
 	permanent = FALSE;
 	description = "Czy móg³bym kupiæ owcê?";
 };
 
 
-func int dia_pepe_liesel_condition()
+func int DIA_Pepe_Liesel_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_pepe_hallo))
+	if(Npc_KnowsInfo(hero,DIA_Pepe_Hallo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pepe_liesel_info()
+func void DIA_Pepe_Liesel_Info()
 {
 	AI_Output(other,self,"DIA_Pepe_Liesel_15_00");	//Czy móg³bym kupiæ owcê?
 	AI_Output(self,other,"DIA_Pepe_Liesel_03_01");	//Oczywiœcie, pod warunkiem, ¿e masz pieni¹dze. Owca bêdzie ciê kosztowa³a 100 sztuk z³ota.
@@ -312,33 +312,33 @@ func void dia_pepe_liesel_info()
 };
 
 
-var int pepe_schafgekauft;
+var int Pepe_SchafGekauft;
 
-instance DIA_PEPE_BUYLIESEL(C_INFO)
+instance DIA_Pepe_BuyLiesel(C_Info)
 {
-	npc = bau_912_pepe;
+	npc = Bau_912_Pepe;
 	nr = 8;
-	condition = dia_pepe_buyliesel_condition;
-	information = dia_pepe_buyliesel_info;
+	condition = DIA_Pepe_BuyLiesel_Condition;
+	information = DIA_Pepe_BuyLiesel_Info;
 	permanent = TRUE;
 	description = "Proszê, oto 100 sztuk z³ota. A teraz daj mi owcê.";
 };
 
 
-func int dia_pepe_buyliesel_condition()
+func int DIA_Pepe_BuyLiesel_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_pepe_liesel))
+	if(Npc_KnowsInfo(other,DIA_Pepe_Liesel))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pepe_buyliesel_info()
+func void DIA_Pepe_BuyLiesel_Info()
 {
 	AI_Output(other,self,"DIA_Pepe_BuyLiesel_15_00");	//Proszê, oto 100 sztuk z³ota. A teraz daj mi owcê.
-	if(b_giveinvitems(other,self,5113,100))
+	if(B_GiveInvItems(other,self,ItMi_Gold,100))
 	{
-		if(PEPE_SCHAFGEKAUFT == 0)
+		if(Pepe_SchafGekauft == 0)
 		{
 			AI_Output(self,other,"DIA_Pepe_BuyLiesel_03_01");	//Œwietnie. WeŸ sobie Betsy, znajdziesz j¹ na pastwisku.
 			AI_Output(self,other,"DIA_Pepe_BuyLiesel_03_02");	//Powiedz jej tylko, ¿eby za tob¹ posz³a. Jak na owcê, jest ca³kiem sprytna. I pamiêtaj, opiekuj siê ni¹.
@@ -348,15 +348,15 @@ func void dia_pepe_buyliesel_info()
 			AI_Output(self,other,"DIA_Pepe_BuyLiesel_03_03");	//Znowu? Dobrze, weŸ Betsy.
 			AI_Output(other,self,"DIA_Pepe_BuyLiesel_15_04");	//Betsy? Jak to? Poprzednia te¿ nazywa³a siê Betsy...
 			AI_Output(self,other,"DIA_Pepe_BuyLiesel_03_05");	//Wszystkie owce nazywaj¹ siê Betsy.
-			if(PEPE_SCHAFGEKAUFT == 3)
+			if(Pepe_SchafGekauft == 3)
 			{
 				AI_Output(self,other,"DIA_Pepe_BuyLiesel_03_06");	//Oczywiœcie, nie dotyczy to baranów.
 				AI_Output(other,self,"DIA_Pepe_BuyLiesel_15_07");	//A one jak siê nazywaj¹?
 				AI_Output(self,other,"DIA_Pepe_BuyLiesel_03_08");	//Bruce.
 			};
 		};
-		PEPE_SCHAFGEKAUFT = PEPE_SCHAFGEKAUFT + 1;
-		Wld_InsertNpc(follow_sheep,"NW_BIGFARM_SHEEP2_02");
+		Pepe_SchafGekauft = Pepe_SchafGekauft + 1;
+		Wld_InsertNpc(Follow_Sheep,"NW_BIGFARM_SHEEP2_02");
 		AI_StopProcessInfos(self);
 	}
 	else
@@ -366,37 +366,37 @@ func void dia_pepe_buyliesel_info()
 };
 
 
-instance DIA_PEPE_PICKPOCKET(C_INFO)
+instance DIA_Pepe_PICKPOCKET(C_Info)
 {
-	npc = bau_912_pepe;
+	npc = Bau_912_Pepe;
 	nr = 900;
-	condition = dia_pepe_pickpocket_condition;
-	information = dia_pepe_pickpocket_info;
+	condition = DIA_Pepe_PICKPOCKET_Condition;
+	information = DIA_Pepe_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_20;
+	description = Pickpocket_20;
 };
 
 
-func int dia_pepe_pickpocket_condition()
+func int DIA_Pepe_PICKPOCKET_Condition()
 {
-	return c_beklauen(15,25);
+	return C_Beklauen(15,25);
 };
 
-func void dia_pepe_pickpocket_info()
+func void DIA_Pepe_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_pepe_pickpocket);
-	Info_AddChoice(dia_pepe_pickpocket,DIALOG_BACK,dia_pepe_pickpocket_back);
-	Info_AddChoice(dia_pepe_pickpocket,DIALOG_PICKPOCKET,dia_pepe_pickpocket_doit);
+	Info_ClearChoices(DIA_Pepe_PICKPOCKET);
+	Info_AddChoice(DIA_Pepe_PICKPOCKET,Dialog_Back,DIA_Pepe_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Pepe_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Pepe_PICKPOCKET_DoIt);
 };
 
-func void dia_pepe_pickpocket_doit()
+func void DIA_Pepe_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_pepe_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Pepe_PICKPOCKET);
 };
 
-func void dia_pepe_pickpocket_back()
+func void DIA_Pepe_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_pepe_pickpocket);
+	Info_ClearChoices(DIA_Pepe_PICKPOCKET);
 };
 

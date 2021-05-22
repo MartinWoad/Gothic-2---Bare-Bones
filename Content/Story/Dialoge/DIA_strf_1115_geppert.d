@@ -1,74 +1,74 @@
 
-instance DIA_GEPPERT_EXIT(C_INFO)
+instance DIA_Geppert_EXIT(C_Info)
 {
-	npc = strf_1115_geppert;
+	npc = STRF_1115_Geppert;
 	nr = 999;
-	condition = dia_geppert_exit_condition;
-	information = dia_geppert_exit_info;
+	condition = DIA_Geppert_EXIT_Condition;
+	information = DIA_Geppert_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_geppert_exit_condition()
+func int DIA_Geppert_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_geppert_exit_info()
+func void DIA_Geppert_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_GEPPERT_HALLO(C_INFO)
+instance DIA_Geppert_HALLO(C_Info)
 {
-	npc = strf_1115_geppert;
+	npc = STRF_1115_Geppert;
 	nr = 4;
-	condition = dia_geppert_hallo_condition;
-	information = dia_geppert_hallo_info;
+	condition = DIA_Geppert_HALLO_Condition;
+	information = DIA_Geppert_HALLO_Info;
 	important = TRUE;
 };
 
 
-func int dia_geppert_hallo_condition()
+func int DIA_Geppert_HALLO_Condition()
 {
 	return TRUE;
 };
 
 
-var int kervo_gotstuff;
+var int Kervo_GotStuff;
 
-func void dia_geppert_hallo_info()
+func void DIA_Geppert_HALLO_Info()
 {
-	if((Npc_IsDead(kervo) == FALSE) && (KERVO_GOTSTUFF == FALSE))
+	if((Npc_IsDead(Kervo) == FALSE) && (Kervo_GotStuff == FALSE))
 	{
 		if(hero.guild == GIL_KDF)
 		{
-			CreateInvItems(kervo,itmi_runeblank,1);
+			CreateInvItems(Kervo,ItMi_RuneBlank,1);
 		}
 		else
 		{
-			CreateInvItems(kervo,itmi_nugget,1);
+			CreateInvItems(Kervo,ItMi_Nugget,1);
 		};
-		KERVO_GOTSTUFF = TRUE;
+		Kervo_GotStuff = TRUE;
 	};
 	AI_Output(self,other,"DIA_Geppert_HALLO_10_00");	//Staæ! Kto idzie?
 	AI_Output(self,other,"DIA_Geppert_HALLO_10_01");	//Nie chcesz mnie chyba wys³aæ z powrotem do kopalni rudy, prawda?
 	AI_Output(self,other,"DIA_Geppert_HALLO_10_02");	//Muszê ciê rozczarowaæ. Nie wrócê tam za nic w œwiecie.
-	Info_ClearChoices(dia_geppert_hallo);
-	Info_AddChoice(dia_geppert_hallo,"Co tutaj robisz?",dia_geppert_hallo_wasmachtihr);
-	Info_AddChoice(dia_geppert_hallo,"Jesteœ zbieg³ym wiêŸniem, prawda?",dia_geppert_hallo_flucht);
+	Info_ClearChoices(DIA_Geppert_HALLO);
+	Info_AddChoice(DIA_Geppert_HALLO,"Co tutaj robisz?",DIA_Geppert_HALLO_Wasmachtihr);
+	Info_AddChoice(DIA_Geppert_HALLO,"Jesteœ zbieg³ym wiêŸniem, prawda?",DIA_Geppert_HALLO_Flucht);
 };
 
-func void dia_geppert_hallo_flucht()
+func void DIA_Geppert_HALLO_Flucht()
 {
 	AI_Output(other,self,"DIA_Geppert_HALLO_Flucht_15_00");	//Jesteœ zbieg³ym wiêŸniem, prawda?
 	AI_Output(self,other,"DIA_Geppert_HALLO_Flucht_10_01");	//Proszê, jaki jesteœ domyœlny. Z jakiego innego powodu móg³bym siedzieæ w tej zatêch³ej norze?
-	Info_ClearChoices(dia_geppert_hallo);
+	Info_ClearChoices(DIA_Geppert_HALLO);
 };
 
-func void dia_geppert_hallo_wasmachtihr()
+func void DIA_Geppert_HALLO_Wasmachtihr()
 {
 	AI_Output(other,self,"DIA_Geppert_HALLO_Wasmachtihr_15_00");	//Co tutaj robisz?
 	if((other.guild == GIL_MIL) || (other.guild == GIL_PAL))
@@ -81,30 +81,30 @@ func void dia_geppert_hallo_wasmachtihr()
 		AI_Output(self,other,"DIA_Geppert_HALLO_Wasmachtihr_10_03");	//G³upie pytanie. Ukrywam siê. Te œwinie ze stra¿y wszêdzie maj¹ swoich szpiegów.
 	};
 	AI_Output(self,other,"DIA_Geppert_HALLO_Wasmachtihr_10_04");	//Nie dam siê ponownie wys³aæ do kopalni, i ju¿.
-	Info_ClearChoices(dia_geppert_hallo);
+	Info_ClearChoices(DIA_Geppert_HALLO);
 };
 
 
-instance DIA_GEPPERT_BRATEN(C_INFO)
+instance DIA_Geppert_BRATEN(C_Info)
 {
-	npc = strf_1115_geppert;
+	npc = STRF_1115_Geppert;
 	nr = 5;
-	condition = dia_geppert_braten_condition;
-	information = dia_geppert_braten_info;
+	condition = DIA_Geppert_BRATEN_Condition;
+	information = DIA_Geppert_BRATEN_Info;
 	permanent = TRUE;
 	description = "Ta pieczeñ pachnie wspaniale.";
 };
 
 
-func int dia_geppert_braten_condition()
+func int DIA_Geppert_BRATEN_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_geppert_hallo))
+	if(Npc_KnowsInfo(other,DIA_Geppert_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_geppert_braten_info()
+func void DIA_Geppert_BRATEN_Info()
 {
 	AI_Output(other,self,"DIA_Geppert_BRATEN_15_00");	//Ta pieczeñ pachnie wspaniale.
 	AI_Output(self,other,"DIA_Geppert_BRATEN_10_01");	//Nie dotykaj!
@@ -112,37 +112,37 @@ func void dia_geppert_braten_info()
 };
 
 
-instance DIA_GEPPERT_PICKPOCKET(C_INFO)
+instance DIA_Geppert_PICKPOCKET(C_Info)
 {
-	npc = strf_1115_geppert;
+	npc = STRF_1115_Geppert;
 	nr = 900;
-	condition = dia_geppert_pickpocket_condition;
-	information = dia_geppert_pickpocket_info;
+	condition = DIA_Geppert_PICKPOCKET_Condition;
+	information = DIA_Geppert_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_geppert_pickpocket_condition()
+func int DIA_Geppert_PICKPOCKET_Condition()
 {
-	return c_beklauen(56,5);
+	return C_Beklauen(56,5);
 };
 
-func void dia_geppert_pickpocket_info()
+func void DIA_Geppert_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_geppert_pickpocket);
-	Info_AddChoice(dia_geppert_pickpocket,DIALOG_BACK,dia_geppert_pickpocket_back);
-	Info_AddChoice(dia_geppert_pickpocket,DIALOG_PICKPOCKET,dia_geppert_pickpocket_doit);
+	Info_ClearChoices(DIA_Geppert_PICKPOCKET);
+	Info_AddChoice(DIA_Geppert_PICKPOCKET,Dialog_Back,DIA_Geppert_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Geppert_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Geppert_PICKPOCKET_DoIt);
 };
 
-func void dia_geppert_pickpocket_doit()
+func void DIA_Geppert_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_geppert_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Geppert_PICKPOCKET);
 };
 
-func void dia_geppert_pickpocket_back()
+func void DIA_Geppert_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_geppert_pickpocket);
+	Info_ClearChoices(DIA_Geppert_PICKPOCKET);
 };
 

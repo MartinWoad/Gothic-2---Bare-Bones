@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_TROLL(C_NPC)
+prototype Mst_Default_Troll(C_Npc)
 {
 	name[0] = "Troll";
 	guild = GIL_TROLL;
@@ -21,41 +21,41 @@ prototype MST_DEFAULT_TROLL(C_NPC)
 	fight_tactic = FAI_TROLL;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	bodystateinterruptableoverride = TRUE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	bodyStateInterruptableOverride = TRUE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-func void b_setvisuals_troll()
+func void B_SetVisuals_Troll()
 {
 	Mdl_SetVisual(self,"Troll.mds");
 	Mdl_SetVisualBody(self,"Tro_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance TROLL(MST_DEFAULT_TROLL)
+instance Troll(Mst_Default_Troll)
 {
-	b_setvisuals_troll();
+	B_SetVisuals_Troll();
 	Npc_SetToFistMode(self);
 };
 
-instance MAYA_TROLL(MST_DEFAULT_TROLL)
+instance Maya_Troll(Mst_Default_Troll)
 {
-	aivar[AIV_MAXDISTTOWP] = 1000;
-	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_TROLL;
-	b_setvisuals_troll();
+	aivar[AIV_MaxDistToWp] = 1000;
+	aivar[AIV_OriginalFightTactic] = FAI_TROLL;
+	B_SetVisuals_Troll();
 	Npc_SetToFistMode(self);
 };
 
-instance TROLL_DI(MST_DEFAULT_TROLL)
+instance Troll_DI(Mst_Default_Troll)
 {
 	name[0] = "Troll Jaskiniowy";
-	aivar[AIV_MAXDISTTOWP] = 300;
-	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_TROLL;
-	b_setvisuals_troll();
+	aivar[AIV_MaxDistToWp] = 300;
+	aivar[AIV_OriginalFightTactic] = FAI_TROLL;
+	B_SetVisuals_Troll();
 	Npc_SetToFistMode(self);
 };
 

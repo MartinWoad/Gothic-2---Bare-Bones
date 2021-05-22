@@ -1,45 +1,45 @@
 
-const int VALUE_ITAR_GOVERNOR = 1100;
-const int VALUE_ITAR_JUDGE = 0;
-const int VALUE_ITAR_SMITH = 0;
-const int VALUE_ITAR_BARKEEPER = 0;
-const int VALUE_ITAR_VLK_L = 0;
-const int VALUE_ITAR_VLK_M = 0;
-const int VALUE_ITAR_VLK_H = 0;
-const int VALUE_ITAR_VLKBABE_L = 0;
-const int VALUE_ITAR_VLKBABE_M = 0;
-const int VALUE_ITAR_VLKBABE_H = 0;
+const int VALUE_ITAR_Governor = 1100;
+const int VALUE_ITAR_Judge = 0;
+const int VALUE_ITAR_Smith = 0;
+const int VALUE_ITAR_Barkeeper = 0;
+const int VALUE_ITAR_Vlk_L = 0;
+const int VALUE_ITAR_Vlk_M = 0;
+const int VALUE_ITAR_Vlk_H = 0;
+const int VALUE_ITAR_VlkBabe_L = 0;
+const int VALUE_ITAR_VlkBabe_M = 0;
+const int VALUE_ITAR_VlkBabe_H = 0;
 const int VALUE_ITAR_MIL_L = 500;
 const int VALUE_ITAR_MIL_M = 2500;
 const int VALUE_ITAR_PAL_M = 5000;
 const int VALUE_ITAR_PAL_H = 10000;
-const int VALUE_ITAR_BAU_L = 80;
-const int VALUE_ITAR_BAU_M = 100;
-const int VALUE_ITAR_BAUBABE_L = 0;
-const int VALUE_ITAR_BAUBABE_M = 0;
+const int VALUE_ITAR_Bau_L = 80;
+const int VALUE_ITAR_Bau_M = 100;
+const int VALUE_ITAR_BauBabe_L = 0;
+const int VALUE_ITAR_BauBabe_M = 0;
 const int VALUE_ITAR_SLD_L = 300;
 const int VALUE_ITAR_SLD_M = 500;
-const int VALUE_ITAR_DJG_CRAWLER = 600;
+const int VALUE_ITAR_DJG_Crawler = 600;
 const int VALUE_ITAR_SLD_H = 1000;
 const int VALUE_ITAR_NOV_L = 280;
 const int VALUE_ITAR_KDF_L = 500;
 const int VALUE_ITAR_KDF_H = 3000;
-const int VALUE_ITAR_LEATHER_L = 250;
+const int VALUE_ITAR_Leather_L = 250;
 const int VALUE_ITAR_BDT_M = 550;
 const int VALUE_ITAR_BDT_H = 2100;
 const int VALUE_ITAR_DJG_L = 3000;
 const int VALUE_ITAR_DJG_M = 12000;
 const int VALUE_ITAR_DJG_H = 20000;
-const int VALUE_ITAR_DJG_BABE = 0;
+const int VALUE_ITAR_DJG_Babe = 0;
 const int VALUE_ITAR_XARDAS = 15000;
 const int VALUE_ITAR_LESTER = 300;
-const int VALUE_ITAR_DIEGO = 450;
-const int VALUE_ITAR_CORANGAR = 600;
-const int VALUE_ITAR_DEMENTOR = 0;
+const int VALUE_ITAR_Diego = 450;
+const int VALUE_ITAR_CorAngar = 600;
+const int VALUE_ITAR_Dementor = 0;
 const int VALUE_ITAR_KDW_H = 450;
-const int VALUE_ITAR_PRISONER = 10;
+const int VALUE_ITAR_Prisoner = 10;
 
-instance ITAR_GOVERNOR(C_ITEM)
+instance ITAR_Governor(C_Item)
 {
 	name = "Kaftan Gubernatora";
 	mainflag = ITEM_KAT_ARMOR;
@@ -49,26 +49,26 @@ instance ITAR_GOVERNOR(C_ITEM)
 	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_governor;
+	value = VALUE_ITAR_Governor;
 	wear = WEAR_TORSO;
 	visual = "ItAr_Governor.3ds";
 	visual_change = "Armor_Governor.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_JUDGE(C_ITEM)
+instance ITAR_Judge(C_Item)
 {
 	name = "Szata Sêdziego";
 	mainflag = ITEM_KAT_ARMOR;
@@ -78,26 +78,26 @@ instance ITAR_JUDGE(C_ITEM)
 	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_judge;
+	value = VALUE_ITAR_Judge;
 	wear = WEAR_TORSO;
 	visual = "ItAr_Governor.3DS";
 	visual_change = "Armor_Judge.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_SMITH(C_ITEM)
+instance ITAR_Smith(C_Item)
 {
 	name = "Strój Kowala";
 	mainflag = ITEM_KAT_ARMOR;
@@ -107,26 +107,26 @@ instance ITAR_SMITH(C_ITEM)
 	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_smith;
+	value = VALUE_ITAR_Smith;
 	wear = WEAR_TORSO;
 	visual = "ItAr_Smith.3DS";
 	visual_change = "Armor_Smith.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_BARKEEPER(C_ITEM)
+instance ITAR_Barkeeper(C_Item)
 {
 	name = "Strój Karczmarza";
 	mainflag = ITEM_KAT_ARMOR;
@@ -136,26 +136,26 @@ instance ITAR_BARKEEPER(C_ITEM)
 	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_barkeeper;
+	value = VALUE_ITAR_Barkeeper;
 	wear = WEAR_TORSO;
 	visual = "ItAr_Wirt.3DS";
 	visual_change = "Armor_Barkeeper.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_VLK_L(C_ITEM)
+instance ITAR_Vlk_L(C_Item)
 {
 	name = "Strój Obywatela";
 	mainflag = ITEM_KAT_ARMOR;
@@ -165,26 +165,26 @@ instance ITAR_VLK_L(C_ITEM)
 	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_vlk_l;
+	value = VALUE_ITAR_Vlk_L;
 	wear = WEAR_TORSO;
 	visual = "ItAr_VLK_L.3DS";
 	visual_change = "Armor_Vlk_L.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_VLK_M(C_ITEM)
+instance ITAR_Vlk_M(C_Item)
 {
 	name = "Strój Obywatela";
 	mainflag = ITEM_KAT_ARMOR;
@@ -194,26 +194,26 @@ instance ITAR_VLK_M(C_ITEM)
 	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_vlk_m;
+	value = VALUE_ITAR_Vlk_M;
 	wear = WEAR_TORSO;
 	visual = "ItAr_VLK_M.3DS";
 	visual_change = "Armor_Vlk_M.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_VLK_H(C_ITEM)
+instance ITAR_Vlk_H(C_Item)
 {
 	name = "Strój Obywatela";
 	mainflag = ITEM_KAT_ARMOR;
@@ -223,26 +223,26 @@ instance ITAR_VLK_H(C_ITEM)
 	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_vlk_h;
+	value = VALUE_ITAR_Vlk_H;
 	wear = WEAR_TORSO;
 	visual = "ItAr_VLK_H.3DS";
 	visual_change = "Armor_Vlk_H.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_VLKBABE_L(C_ITEM)
+instance ITAR_VlkBabe_L(C_Item)
 {
 	name = "Strój Obywatela";
 	mainflag = ITEM_KAT_ARMOR;
@@ -253,26 +253,26 @@ instance ITAR_VLKBABE_L(C_ITEM)
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
 	protection[PROT_FLY] = 0;
-	value = value_itar_vlkbabe_l;
+	value = VALUE_ITAR_VlkBabe_L;
 	wear = WEAR_TORSO;
 	visual = "ItAr_VLKBabe.3DS";
 	visual_change = "Armor_VlkBabe_L.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_VLKBABE_M(C_ITEM)
+instance ITAR_VlkBabe_M(C_Item)
 {
 	name = "Strój Obywatela";
 	mainflag = ITEM_KAT_ARMOR;
@@ -282,26 +282,26 @@ instance ITAR_VLKBABE_M(C_ITEM)
 	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_vlkbabe_m;
+	value = VALUE_ITAR_VlkBabe_M;
 	wear = WEAR_TORSO;
 	visual = "ItAr_VLKBabe.3DS";
 	visual_change = "Armor_VlkBabe_M.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_VLKBABE_H(C_ITEM)
+instance ITAR_VlkBabe_H(C_Item)
 {
 	name = "Strój Obywatela";
 	mainflag = ITEM_KAT_ARMOR;
@@ -311,26 +311,26 @@ instance ITAR_VLKBABE_H(C_ITEM)
 	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_vlkbabe_h;
+	value = VALUE_ITAR_VlkBabe_H;
 	wear = WEAR_TORSO;
 	visual = "ItAr_VLKBabe.3DS";
 	visual_change = "Armor_VlkBabe_H.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_MIL_L(C_ITEM)
+instance ITAR_Mil_L(C_Item)
 {
 	name = "Lekki Pancerz Stra¿y";
 	mainflag = ITEM_KAT_ARMOR;
@@ -349,21 +349,21 @@ instance ITAR_MIL_L(C_ITEM)
 	cond_value[2] = 30;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_MIL_M(C_ITEM)
+instance ItAr_MIL_M(C_Item)
 {
 	name = "Ciê¿ki Pancerz Stra¿y";
 	mainflag = ITEM_KAT_ARMOR;
@@ -382,21 +382,21 @@ instance ITAR_MIL_M(C_ITEM)
 	cond_value[2] = 40;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_PAL_M(C_ITEM)
+instance ItAr_PAL_M(C_Item)
 {
 	name = "Pancerz Rycerza";
 	mainflag = ITEM_KAT_ARMOR;
@@ -415,21 +415,21 @@ instance ITAR_PAL_M(C_ITEM)
 	cond_value[2] = 50;
 	material = MAT_METAL;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_PAL_H(C_ITEM)
+instance ItAr_PAl_H(C_Item)
 {
 	name = "Zbroja Paladyna";
 	mainflag = ITEM_KAT_ARMOR;
@@ -448,21 +448,21 @@ instance ITAR_PAL_H(C_ITEM)
 	cond_value[2] = 70;
 	material = MAT_METAL;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_BAU_L(C_ITEM)
+instance ITAR_Bau_L(C_Item)
 {
 	name = "Strój Parobka";
 	mainflag = ITEM_KAT_ARMOR;
@@ -472,26 +472,26 @@ instance ITAR_BAU_L(C_ITEM)
 	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_bau_l;
+	value = VALUE_ITAR_Bau_L;
 	wear = WEAR_TORSO;
 	visual = "ItAr_Bau_L.3DS";
 	visual_change = "Armor_Bau_L.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_BAU_M(C_ITEM)
+instance ITAR_Bau_M(C_Item)
 {
 	name = "Strój Farmera";
 	mainflag = ITEM_KAT_ARMOR;
@@ -501,26 +501,26 @@ instance ITAR_BAU_M(C_ITEM)
 	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_bau_m;
+	value = VALUE_ITAR_Bau_M;
 	wear = WEAR_TORSO;
 	visual = "ItAr_Bau_M.3ds";
 	visual_change = "Armor_Bau_M.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_BAUBABE_L(C_ITEM)
+instance ITAR_BauBabe_L(C_Item)
 {
 	name = "Suknia Farmerki";
 	mainflag = ITEM_KAT_ARMOR;
@@ -530,26 +530,26 @@ instance ITAR_BAUBABE_L(C_ITEM)
 	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_baubabe_l;
+	value = VALUE_ITAR_BauBabe_L;
 	wear = WEAR_TORSO;
 	visual = "ItAr_VLKBabe.3DS";
 	visual_change = "Armor_BauBabe_L.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_BAUBABE_M(C_ITEM)
+instance ITAR_BauBabe_M(C_Item)
 {
 	name = "Suknia Farmerki";
 	mainflag = ITEM_KAT_ARMOR;
@@ -559,26 +559,26 @@ instance ITAR_BAUBABE_M(C_ITEM)
 	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_baubabe_m;
+	value = VALUE_ITAR_BauBabe_M;
 	wear = WEAR_TORSO;
 	visual = "ItAr_VLKBabe.3DS";
 	visual_change = "Armor_BauBabe_M.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_SLD_L(C_ITEM)
+instance ItAr_Sld_L(C_Item)
 {
 	name = "Lekki Pancerz Najemnika";
 	mainflag = ITEM_KAT_ARMOR;
@@ -597,21 +597,21 @@ instance ITAR_SLD_L(C_ITEM)
 	cond_value[2] = 25;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_SLD_M(C_ITEM)
+instance itar_sld_M(C_Item)
 {
 	name = "Œredni Pancerz Najemnika";
 	mainflag = ITEM_KAT_ARMOR;
@@ -630,21 +630,21 @@ instance ITAR_SLD_M(C_ITEM)
 	cond_value[2] = 35;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_SLD_H(C_ITEM)
+instance ItAr_Sld_H(C_Item)
 {
 	name = "Ciê¿ki Pancerz Najemnika";
 	mainflag = ITEM_KAT_ARMOR;
@@ -663,21 +663,21 @@ instance ITAR_SLD_H(C_ITEM)
 	cond_value[2] = 45;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_DJG_CRAWLER(C_ITEM)
+instance ITAR_DJG_Crawler(C_Item)
 {
 	name = "Zbroja z Pancerzy Pe³zaczy";
 	mainflag = ITEM_KAT_ARMOR;
@@ -687,7 +687,7 @@ instance ITAR_DJG_CRAWLER(C_ITEM)
 	protection[PROT_POINT] = 30;
 	protection[PROT_FIRE] = 20;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_djg_crawler;
+	value = VALUE_ITAR_DJG_Crawler;
 	wear = WEAR_TORSO;
 	visual = "ItAr_Djg_Crawler.3ds";
 	visual_change = "Armor_Djg_Crawler.asc";
@@ -696,21 +696,21 @@ instance ITAR_DJG_CRAWLER(C_ITEM)
 	cond_value[2] = 50;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_DJG_L(C_ITEM)
+instance ITAR_DJG_L(C_Item)
 {
 	name = "Lekki Pancerz £owcy Smoków";
 	mainflag = ITEM_KAT_ARMOR;
@@ -729,21 +729,21 @@ instance ITAR_DJG_L(C_ITEM)
 	cond_value[2] = 30;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_DJG_M(C_ITEM)
+instance ITAR_DJG_M(C_Item)
 {
 	name = "Œredni Pancerz £owcy Smoków";
 	mainflag = ITEM_KAT_ARMOR;
@@ -762,21 +762,21 @@ instance ITAR_DJG_M(C_ITEM)
 	cond_value[2] = 50;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_DJG_H(C_ITEM)
+instance ITAR_DJG_H(C_Item)
 {
 	name = "Ciê¿ki Pancerz £owcy Smoków";
 	mainflag = ITEM_KAT_ARMOR;
@@ -795,21 +795,21 @@ instance ITAR_DJG_H(C_ITEM)
 	cond_value[2] = 70;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_DJG_BABE(C_ITEM)
+instance ITAR_DJG_Babe(C_Item)
 {
 	name = "Kobiecy Pancerz £owcy Smoków";
 	mainflag = ITEM_KAT_ARMOR;
@@ -819,26 +819,26 @@ instance ITAR_DJG_BABE(C_ITEM)
 	protection[PROT_POINT] = 30;
 	protection[PROT_FIRE] = 15;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_djg_babe;
+	value = VALUE_ITAR_DJG_Babe;
 	wear = WEAR_TORSO;
 	visual = "ItAr_Djg_L.3DS";
 	visual_change = "Armor_Djg_Babe.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_NOV_L(C_ITEM)
+instance ItAr_NOV_L(C_Item)
 {
 	name = "Strój Nowicjusza";
 	mainflag = ITEM_KAT_ARMOR;
@@ -855,19 +855,19 @@ instance ITAR_NOV_L(C_ITEM)
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_KDF_L(C_ITEM)
+instance ItAr_KDF_L(C_Item)
 {
 	name = "Szata Ognia";
 	mainflag = ITEM_KAT_ARMOR;
@@ -884,19 +884,19 @@ instance ITAR_KDF_L(C_ITEM)
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_KDF_H(C_ITEM)
+instance ItAr_KDF_H(C_Item)
 {
 	name = "Zdobiona Szata Ognia";
 	mainflag = ITEM_KAT_ARMOR;
@@ -913,19 +913,19 @@ instance ITAR_KDF_H(C_ITEM)
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_LEATHER_L(C_ITEM)
+instance ITAR_Leather_L(C_Item)
 {
 	name = "Skórzany Pancerz";
 	mainflag = ITEM_KAT_ARMOR;
@@ -935,7 +935,7 @@ instance ITAR_LEATHER_L(C_ITEM)
 	protection[PROT_POINT] = 10;
 	protection[PROT_FIRE] = 5;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_leather_l;
+	value = VALUE_ITAR_Leather_L;
 	wear = WEAR_TORSO;
 	visual = "ItAr_Leather_L.3ds";
 	visual_change = "Armor_Leather_L.asc";
@@ -944,21 +944,21 @@ instance ITAR_LEATHER_L(C_ITEM)
 	cond_value[2] = 20;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_BDT_M(C_ITEM)
+instance ItAr_BDT_M(C_Item)
 {
 	name = "Œredni Pancerz Bandyty";
 	mainflag = ITEM_KAT_ARMOR;
@@ -977,21 +977,21 @@ instance ITAR_BDT_M(C_ITEM)
 	cond_value[2] = 20;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_BDT_H(C_ITEM)
+instance ItAr_BDT_H(C_Item)
 {
 	name = "Ciê¿ki Pancerz Bandyty";
 	mainflag = ITEM_KAT_ARMOR;
@@ -1010,21 +1010,21 @@ instance ITAR_BDT_H(C_ITEM)
 	cond_value[2] = 25;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_XARDAS(C_ITEM)
+instance ITAR_Xardas(C_Item)
 {
 	name = "Szata Mrocznej Magii";
 	mainflag = ITEM_KAT_ARMOR;
@@ -1041,19 +1041,19 @@ instance ITAR_XARDAS(C_ITEM)
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_LESTER(C_ITEM)
+instance ITAR_Lester(C_Item)
 {
 	name = "Szata Lestera";
 	mainflag = ITEM_KAT_ARMOR;
@@ -1072,21 +1072,21 @@ instance ITAR_LESTER(C_ITEM)
 	cond_value[2] = 30;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_DIEGO(C_ITEM)
+instance ITAR_Diego(C_Item)
 {
 	name = "Pancerz Diega";
 	mainflag = ITEM_KAT_ARMOR;
@@ -1096,7 +1096,7 @@ instance ITAR_DIEGO(C_ITEM)
 	protection[PROT_POINT] = 15;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_diego;
+	value = VALUE_ITAR_Diego;
 	wear = WEAR_TORSO;
 	visual = "ItAr_Diego.3ds";
 	visual_change = "Armor_Diego.asc";
@@ -1105,21 +1105,21 @@ instance ITAR_DIEGO(C_ITEM)
 	cond_value[2] = 30;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_CORANGAR(C_ITEM)
+instance ITAR_CorAngar(C_Item)
 {
 	name = "Pancerz Cor Angara";
 	mainflag = ITEM_KAT_ARMOR;
@@ -1129,7 +1129,7 @@ instance ITAR_CORANGAR(C_ITEM)
 	protection[PROT_POINT] = 35;
 	protection[PROT_FIRE] = 20;
 	protection[PROT_MAGIC] = 10;
-	value = value_itar_corangar;
+	value = VALUE_ITAR_CorAngar;
 	wear = WEAR_TORSO;
 	visual = "ItAr_CorAngar.3ds";
 	visual_change = "Armor_CorAngar.asc";
@@ -1138,21 +1138,21 @@ instance ITAR_CORANGAR(C_ITEM)
 	cond_value[2] = 50;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	text[0] = NAME_STR_NEEDED;
+	text[0] = NAME_Str_needed;
 	count[0] = cond_value[2];
 };
 
-instance ITAR_DEMENTOR(C_ITEM)
+instance ITAR_Dementor(C_Item)
 {
 	name = "Mroczny P³aszcz";
 	mainflag = ITEM_KAT_ARMOR;
@@ -1162,26 +1162,26 @@ instance ITAR_DEMENTOR(C_ITEM)
 	protection[PROT_POINT] = 50;
 	protection[PROT_FIRE] = 50;
 	protection[PROT_MAGIC] = 50;
-	value = value_itar_dementor;
+	value = VALUE_ITAR_Dementor;
 	wear = WEAR_TORSO;
 	visual = "ItAr_Xardas.3ds";
 	visual_change = "Armor_Dementor.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_KDW_H(C_ITEM)
+instance ITAR_KDW_H(C_Item)
 {
 	name = "Szata Maga Wody";
 	mainflag = ITEM_KAT_ARMOR;
@@ -1198,19 +1198,19 @@ instance ITAR_KDW_H(C_ITEM)
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAR_PRISONER(C_ITEM)
+instance ITAR_Prisoner(C_Item)
 {
 	name = "£achy Skazañca";
 	mainflag = ITEM_KAT_ARMOR;
@@ -1220,22 +1220,22 @@ instance ITAR_PRISONER(C_ITEM)
 	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
-	value = value_itar_prisoner;
+	value = VALUE_ITAR_Prisoner;
 	wear = WEAR_TORSO;
 	visual = "ItAr_Prisoner.3ds";
 	visual_change = "Armor_Prisoner.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 

@@ -1,8 +1,8 @@
 
-func void zs_guard_passage()
+func void ZS_Guard_Passage()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	Npc_SetPercTime(self,0.1);
 	AI_Standup(self);
 	AI_SetWalkMode(self,NPC_WALK);
@@ -13,7 +13,7 @@ func void zs_guard_passage()
 	};
 };
 
-func int zs_guard_passage_loop()
+func int ZS_Guard_Passage_Loop()
 {
 	if(Npc_GetStateTime(self) >= 3)
 	{
@@ -26,7 +26,7 @@ func int zs_guard_passage_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_guard_passage_end()
+func void ZS_Guard_Passage_End()
 {
 };
 

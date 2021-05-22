@@ -1,11 +1,11 @@
 
-func void b_assesswarn()
+func void B_AssessWarn()
 {
 	if(Hlp_GetInstanceID(victim) == Hlp_GetInstanceID(self))
 	{
 		return;
 	};
-	if(Npc_IsInState(self,zs_reacttoweapon) || Npc_IsInState(self,zs_observeplayer))
+	if(Npc_IsInState(self,ZS_ReactToWeapon) || Npc_IsInState(self,ZS_ObservePlayer))
 	{
 		return;
 	};
@@ -13,12 +13,12 @@ func void b_assesswarn()
 	{
 		return;
 	};
-	if(c_npcisgateguard(self))
+	if(C_NpcIsGateGuard(self))
 	{
 		return;
 	};
 	Npc_ClearAIQueue(self);
-	b_clearperceptions(self);
-	AI_StartState(self,zs_observeplayer,0,"");
+	B_ClearPerceptions(self);
+	AI_StartState(self,ZS_ObservePlayer,0,"");
 };
 

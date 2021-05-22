@@ -1,48 +1,48 @@
 
-instance BDT_1013_BANDIT_L(NPC_DEFAULT)
+instance Bdt_1013_Bandit_L(Npc_Default)
 {
 	name[0] = "Nieznajomy";
 	guild = GIL_BDT;
 	id = 1013;
 	voice = 1;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setattributestochapter(self,1);
+	npcType = npctype_main;
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_bau_mace);
-	b_createambientinv(self);
-	CreateInvItems(self,itwr_poster_mis,1);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fighter",FACE_N_HOMER,BODYTEX_N,4845);
+	EquipItem(self,ItMw_1h_Bau_Mace);
+	B_CreateAmbientInv(self);
+	CreateInvItems(self,ItWr_Poster_MIS,1);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_Homer,BodyTex_N,ITAR_Leather_L);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,10);
-	daily_routine = rtn_start_1013;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,10);
+	daily_routine = RTN_Start_1013;
 };
 
 
-func void rtn_start_1013()
+func void RTN_Start_1013()
 {
-	ta_stand_armscrossed(0,0,12,0,"NW_XARDAS_STAIRS_01");
-	ta_stand_armscrossed(12,0,0,0,"NW_XARDAS_STAIRS_01");
+	TA_Stand_ArmsCrossed(0,0,12,0,"NW_XARDAS_STAIRS_01");
+	TA_Stand_ArmsCrossed(12,0,0,0,"NW_XARDAS_STAIRS_01");
 };
 
-func void rtn_ambush_1013()
+func void RTN_Ambush_1013()
 {
-	ta_guide_player(0,0,12,0,"NW_XARDAS_BANDITS_RIGHT");
-	ta_guide_player(12,0,0,0,"NW_XARDAS_BANDITS_RIGHT");
+	TA_Guide_Player(0,0,12,0,"NW_XARDAS_BANDITS_RIGHT");
+	TA_Guide_Player(12,0,0,0,"NW_XARDAS_BANDITS_RIGHT");
 };
 
 func void rtn_away_1013()
 {
-	ta_sit_campfire(0,0,12,0,"NW_XARDAS_GOBBO_02");
-	ta_sit_campfire(12,0,0,0,"NW_XARDAS_GOBBO_02");
+	TA_Sit_Campfire(0,0,12,0,"NW_XARDAS_GOBBO_02");
+	TA_Sit_Campfire(12,0,0,0,"NW_XARDAS_GOBBO_02");
 };
 
 func void rtn_mercenary_1013()
 {
-	ta_stand_armscrossed(0,0,12,0,"NW_BIGFARM_STABLE_OUT_031");
-	ta_stand_armscrossed(12,0,0,0,"NW_BIGFARM_STABLE_OUT_031");
+	TA_Stand_ArmsCrossed(0,0,12,0,"NW_BIGFARM_STABLE_OUT_031");
+	TA_Stand_ArmsCrossed(12,0,0,0,"NW_BIGFARM_STABLE_OUT_031");
 };
 

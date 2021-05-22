@@ -1,30 +1,30 @@
 
-instance BAU_983_DRAGOMIR(NPC_DEFAULT)
+instance BAU_983_Dragomir(Npc_Default)
 {
 	name[0] = "Dragomir";
 	guild = GIL_OUT;
 	id = 983;
 	voice = 12;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,4);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_sld_sword);
-	EquipItem(self,itrw_mil_crossbow);
-	CreateInvItems(self,itrw_bolt,30);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_TOUGH_LEE_ÂHNLICH,BODYTEX_N,4845);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	EquipItem(self,ItRw_Mil_Crossbow);
+	CreateInvItems(self,ItRw_Bolt,30);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Tough_Lee_‰hnlich,BodyTex_N,ITAR_Leather_L);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,70);
-	daily_routine = rtn_start_983;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,70);
+	daily_routine = Rtn_Start_983;
 };
 
 
-func void rtn_start_983()
+func void Rtn_Start_983()
 {
-	ta_sit_bench(8,0,23,0,"NW_TAVERNE_TROLLAREA_MONSTER_02_01");
-	ta_sit_bench(23,0,8,0,"NW_TAVERNE_TROLLAREA_MONSTER_02_01");
+	TA_Sit_Bench(8,0,23,0,"NW_TAVERNE_TROLLAREA_MONSTER_02_01");
+	TA_Sit_Bench(23,0,8,0,"NW_TAVERNE_TROLLAREA_MONSTER_02_01");
 };
 

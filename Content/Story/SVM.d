@@ -1,80 +1,80 @@
 
 class C_SVM
 {
-	var string milgreetings;
-	var string palgreetings;
-	var string weather;
-	var string igetyoustill;
-	var string dieenemy;
-	var string diemonster;
-	var string addon_diemonster;
-	var string addon_diemonster2;
-	var string dirtythief;
-	var string handsoff;
-	var string sheepkiller;
-	var string sheepkillermonster;
-	var string youmurderer;
-	var string diestupidbeast;
-	var string youdarehitme;
-	var string youaskedforit;
-	var string thenibeatyououtofhere;
-	var string whatdidyoudointhere;
-	var string willyoustopfighting;
-	var string killenemy;
-	var string enemykilled;
-	var string monsterkilled;
-	var string addon_monsterkilled;
-	var string addon_monsterkilled2;
-	var string thiefdown;
-	var string rumfummlerdown;
-	var string sheepattackerdown;
-	var string killmurderer;
-	var string stupidbeastkilled;
-	var string neverhitmeagain;
-	var string youbettershouldhavelistened;
-	var string getupandbegone;
-	var string neverenterroomagain;
-	var string thereisnofightinghere;
-	var string spareme;
-	var string runaway;
-	var string alarm;
-	var string guards;
-	var string help;
-	var string goodmonsterkill;
-	var string goodkill;
+	var string MILGreetings;
+	var string PALGreetings;
+	var string Weather;
+	var string IGetYouStill;
+	var string DieEnemy;
+	var string DieMonster;
+	var string Addon_DieMonster;
+	var string Addon_DieMonster2;
+	var string DirtyThief;
+	var string HandsOff;
+	var string SheepKiller;
+	var string SheepKillerMonster;
+	var string YouMurderer;
+	var string DieStupidBeast;
+	var string YouDareHitMe;
+	var string YouAskedForIt;
+	var string ThenIBeatYouOutOfHere;
+	var string WhatDidYouDoInThere;
+	var string WillYouStopFighting;
+	var string KillEnemy;
+	var string EnemyKilled;
+	var string MonsterKilled;
+	var string Addon_MonsterKilled;
+	var string Addon_MonsterKilled2;
+	var string ThiefDown;
+	var string RumfummlerDown;
+	var string SheepAttackerDown;
+	var string KillMurderer;
+	var string StupidBeastKilled;
+	var string NeverHitMeAgain;
+	var string YouBetterShouldHaveListened;
+	var string GetUpAndBeGone;
+	var string NeverEnterRoomAgain;
+	var string ThereIsNoFightingHere;
+	var string SpareMe;
+	var string RunAway;
+	var string Alarm;
+	var string Guards;
+	var string Help;
+	var string GoodMonsterKill;
+	var string GoodKill;
 	var string notnow;
-	var string runcoward;
-	var string getoutofhere;
-	var string whyareyouinhere;
-	var string yesgooutofhere;
-	var string whatsthissupposedtobe;
-	var string youdisturbedmyslumber;
-	var string itookyourgold;
-	var string shitnogold;
-	var string itakeyourweapon;
-	var string whatareyoudoing;
-	var string lookingfortroubleagain;
-	var string stopmagic;
-	var string isaidstopmagic;
-	var string weapondown;
-	var string isaidweapondown;
-	var string wisemove;
-	var string nexttimeyoureinforit;
-	var string ohmyhead;
-	var string theresafight;
-	var string ohmygoditsafight;
-	var string goodvictory;
-	var string notbad;
-	var string ohmygodhesdown;
-	var string cheerfriend01;
-	var string cheerfriend02;
-	var string cheerfriend03;
-	var string ooh01;
-	var string ooh02;
-	var string ooh03;
-	var string whatwasthat;
-	var string getoutofmybed;
-	var string awake;
+	var string RunCoward;
+	var string GetOutOfHere;
+	var string WhyAreYouInHere;
+	var string YesGoOutOfHere;
+	var string WhatsThisSupposedToBe;
+	var string YouDisturbedMySlumber;
+	var string ITookYourGold;
+	var string ShitNoGold;
+	var string ITakeYourWeapon;
+	var string WhatAreYouDoing;
+	var string LookingForTroubleAgain;
+	var string StopMagic;
+	var string ISaidStopMagic;
+	var string WeaponDown;
+	var string ISaidWeaponDown;
+	var string WiseMove;
+	var string NextTimeYoureInForIt;
+	var string OhMyHead;
+	var string TheresAFight;
+	var string OhMyGodItsAFight;
+	var string GoodVictory;
+	var string NotBad;
+	var string OhMyGodHesDown;
+	var string CheerFriend01;
+	var string CheerFriend02;
+	var string CheerFriend03;
+	var string Ooh01;
+	var string Ooh02;
+	var string Ooh03;
+	var string WhatWasThat;
+	var string GetOutOfMyBed;
+	var string Awake;
 	var string abs_commander;
 	var string abs_monastery;
 	var string abs_farm;
@@ -120,40 +120,40 @@ class C_SVM
 	var string gold_30;
 	var string gold_20;
 	var string gold_10;
-	var string smalltalk01;
-	var string smalltalk02;
-	var string smalltalk03;
-	var string smalltalk04;
-	var string smalltalk05;
-	var string smalltalk06;
-	var string smalltalk07;
-	var string smalltalk08;
-	var string smalltalk09;
-	var string smalltalk10;
-	var string smalltalk11;
-	var string smalltalk12;
-	var string smalltalk13;
-	var string smalltalk14;
-	var string smalltalk15;
-	var string smalltalk16;
-	var string smalltalk17;
-	var string smalltalk18;
-	var string smalltalk19;
-	var string smalltalk20;
-	var string smalltalk21;
-	var string smalltalk22;
-	var string smalltalk23;
-	var string smalltalk24;
-	var string smalltalk25;
-	var string smalltalk26;
-	var string smalltalk27;
-	var string smalltalk28;
-	var string smalltalk29;
-	var string smalltalk30;
-	var string nolearnnopoints;
-	var string nolearnoverpersonalmax;
-	var string nolearnyourebetter;
-	var string youlearnedsomething;
+	var string Smalltalk01;
+	var string Smalltalk02;
+	var string Smalltalk03;
+	var string Smalltalk04;
+	var string Smalltalk05;
+	var string Smalltalk06;
+	var string Smalltalk07;
+	var string Smalltalk08;
+	var string Smalltalk09;
+	var string Smalltalk10;
+	var string Smalltalk11;
+	var string Smalltalk12;
+	var string Smalltalk13;
+	var string Smalltalk14;
+	var string Smalltalk15;
+	var string Smalltalk16;
+	var string Smalltalk17;
+	var string Smalltalk18;
+	var string Smalltalk19;
+	var string Smalltalk20;
+	var string Smalltalk21;
+	var string Smalltalk22;
+	var string Smalltalk23;
+	var string Smalltalk24;
+	var string Smalltalk25;
+	var string Smalltalk26;
+	var string Smalltalk27;
+	var string Smalltalk28;
+	var string Smalltalk29;
+	var string Smalltalk30;
+	var string NoLearnNoPoints;
+	var string NoLearnOverPersonalMAX;
+	var string NoLearnYoureBetter;
+	var string YouLearnedSomething;
 	var string unterstadt;
 	var string oberstadt;
 	var string tempel;
@@ -178,10 +178,10 @@ class C_SVM
 	var string kaserne_2_markt;
 	var string kaserne_2_galgen;
 	var string hafen_2_unterstadt;
-	var string dead;
-	var string aargh_1;
-	var string aargh_2;
-	var string aargh_3;
+	var string Dead;
+	var string Aargh_1;
+	var string Aargh_2;
+	var string Aargh_3;
 	var string addon_wrongarmor;
 	var string addon_wrongarmor_sld;
 	var string addon_wrongarmor_mil;
@@ -189,17 +189,17 @@ class C_SVM
 	var string addon_noarmor_bdt;
 	var string addon_diebandit;
 	var string addon_dirtypirate;
-	var string sc_heyturnaround;
-	var string sc_heyturnaround02;
-	var string sc_heyturnaround03;
-	var string sc_heyturnaround04;
-	var string sc_heywaitasecond;
-	var string doesntwork;
-	var string pickbroke;
-	var string needkey;
-	var string nomorepicks;
-	var string nopicklocktalent;
-	var string nosweeping;
+	var string SC_HeyTurnAround;
+	var string SC_HeyTurnAround02;
+	var string SC_HeyTurnAround03;
+	var string SC_HeyTurnAround04;
+	var string SC_HeyWaitASecond;
+	var string DoesntWork;
+	var string PickBroke;
+	var string NeedKey;
+	var string NoMorePicks;
+	var string NoPickLockTalent;
+	var string NoSweeping;
 	var string picklockorkeymissing;
 	var string keymissing;
 	var string picklockmissing;
@@ -226,7 +226,7 @@ class C_SVM
 	var string stoneplate_3;
 	var string cough;
 	var string hui;
-	var string addon_thislittlebastard;
+	var string Addon_ThisLittleBastard;
 	var string addon_openadanostemple;
 	var string attentat_addon_description;
 	var string attentat_addon_description2;
@@ -244,76 +244,76 @@ instance SVM_0(C_SVM)
 
 instance SVM_1(C_SVM)
 {
-	milgreetings = "SVM_1_MILGreetings";	//Niech ¿yje Król!
-	palgreetings = "SVM_1_PALGreetings";	//Chwa³a Innosowi!
-	weather = "SVM_1_Weather";	//Beznadziejna pogoda!
-	igetyoustill = "SVM_1_IGetYouStill";	//A jednak mi siê nie wymkniesz!
-	dieenemy = "SVM_1_DieEnemy";	//Doigra³eœ siê!
-	diemonster = "SVM_1_DieMonster";	//Znowu jedna z tych g³upich bestii!
-	dirtythief = "SVM_1_DirtyThief";	//Czekaj tylko, ty parszywy z³odzieju!
-	handsoff = "SVM_1_HandsOff";	//£apy precz!
-	sheepkiller = "SVM_1_SheepKiller";	//Ten bydlak szlachtuje nasze owce!
-	sheepkillermonster = "SVM_1_SheepKillerMonster";	//Ta przeklêta bestia po¿era nasze owce!
-	youmurderer = "SVM_1_YouMurderer";	//Morderca!
-	diestupidbeast = "SVM_1_DieStupidBeast";	//¯adne bestie nie maj¹ tu prawa wstêpu!
-	youdarehitme = "SVM_1_YouDareHitMe";	//Czekaj tylko, bydlaku!
-	youaskedforit = "SVM_1_YouAskedForIt";	//Sam tego chcia³eœ!
-	thenibeatyououtofhere = "SVM_1_ThenIBeatYouOutOfHere";	//W takim razie bêdê musia³ ciê st¹d wykopaæ!
-	whatdidyoudointhere = "SVM_1_WhatDidYouDoInThere";	//A czego TY tam szuka³eœ, hê?!
-	willyoustopfighting = "SVM_1_WillYouStopFighting";	//Przestaniecie w koñcu?!
-	killenemy = "SVM_1_KillEnemy";	//Giñ, gnido!
-	enemykilled = "SVM_1_EnemyKilled";	//To ju¿ koniec, œmieciu!
-	monsterkilled = "SVM_1_MonsterKilled";	//Jedna bestia mniej!
-	thiefdown = "SVM_1_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okradaæ!
-	rumfummlerdown = "SVM_1_rumfummlerDown";	//W przysz³oœci trzymaj ³apska z dala od cudzych spraw.
-	sheepattackerdown = "SVM_1_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To NASZE owce!
-	killmurderer = "SVM_1_KillMurderer";	//Giñ, morderco!
-	stupidbeastkilled = "SVM_1_StupidBeastKilled";	//Co za g³upia bestia!
-	neverhitmeagain = "SVM_1_NeverHitMeAgain";	//Nigdy wiêcej nie próbuj siê ze mn¹ mierzyæ!
-	youbettershouldhavelistened = "SVM_1_YouBetterShouldHaveListened";	//Trzeba by³o mnie s³uchaæ!
-	getupandbegone = "SVM_1_GetUpAndBeGone";	//A teraz zmywaj siê st¹d!
-	neverenterroomagain = "SVM_1_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
-	thereisnofightinghere = "SVM_1_ThereIsNoFightingHere";	//Tu siê nie walczy, jasne?! Niech to bêdzie dla ciebie nauczk¹!
-	spareme = "SVM_1_SpareMe";	//Zostaw mnie w spokoju!
-	runaway = "SVM_1_RunAway";	//A niech to! Trzeba wiaæ!
-	alarm = "SVM_1_Alarm";	//ALARM!
-	guards = "SVM_1_Guards";	//STRA¯!
-	help = "SVM_1_Help";	//Pomocy!
-	goodmonsterkill = "SVM_1_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
-	goodkill = "SVM_1_GoodKill";	//Dobrze! Wykoñcz œwiniê!
+	MILGreetings = "SVM_1_MILGreetings";	//Niech ¿yje Król!
+	PALGreetings = "SVM_1_PALGreetings";	//Chwa³a Innosowi!
+	Weather = "SVM_1_Weather";	//Beznadziejna pogoda!
+	IGetYouStill = "SVM_1_IGetYouStill";	//A jednak mi siê nie wymkniesz!
+	DieEnemy = "SVM_1_DieEnemy";	//Doigra³eœ siê!
+	DieMonster = "SVM_1_DieMonster";	//Znowu jedna z tych g³upich bestii!
+	DirtyThief = "SVM_1_DirtyThief";	//Czekaj tylko, ty parszywy z³odzieju!
+	HandsOff = "SVM_1_HandsOff";	//£apy precz!
+	SheepKiller = "SVM_1_SheepKiller";	//Ten bydlak szlachtuje nasze owce!
+	SheepKillerMonster = "SVM_1_SheepKillerMonster";	//Ta przeklêta bestia po¿era nasze owce!
+	YouMurderer = "SVM_1_YouMurderer";	//Morderca!
+	DieStupidBeast = "SVM_1_DieStupidBeast";	//¯adne bestie nie maj¹ tu prawa wstêpu!
+	YouDareHitMe = "SVM_1_YouDareHitMe";	//Czekaj tylko, bydlaku!
+	YouAskedForIt = "SVM_1_YouAskedForIt";	//Sam tego chcia³eœ!
+	ThenIBeatYouOutOfHere = "SVM_1_ThenIBeatYouOutOfHere";	//W takim razie bêdê musia³ ciê st¹d wykopaæ!
+	WhatDidYouDoInThere = "SVM_1_WhatDidYouDoInThere";	//A czego TY tam szuka³eœ, hê?!
+	WillYouStopFighting = "SVM_1_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	KillEnemy = "SVM_1_KillEnemy";	//Giñ, gnido!
+	EnemyKilled = "SVM_1_EnemyKilled";	//To ju¿ koniec, œmieciu!
+	MonsterKilled = "SVM_1_MonsterKilled";	//Jedna bestia mniej!
+	ThiefDown = "SVM_1_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okradaæ!
+	RumfummlerDown = "SVM_1_rumfummlerDown";	//W przysz³oœci trzymaj ³apska z dala od cudzych spraw.
+	SheepAttackerDown = "SVM_1_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To NASZE owce!
+	KillMurderer = "SVM_1_KillMurderer";	//Giñ, morderco!
+	StupidBeastKilled = "SVM_1_StupidBeastKilled";	//Co za g³upia bestia!
+	NeverHitMeAgain = "SVM_1_NeverHitMeAgain";	//Nigdy wiêcej nie próbuj siê ze mn¹ mierzyæ!
+	YouBetterShouldHaveListened = "SVM_1_YouBetterShouldHaveListened";	//Trzeba by³o mnie s³uchaæ!
+	GetUpAndBeGone = "SVM_1_GetUpAndBeGone";	//A teraz zmywaj siê st¹d!
+	NeverEnterRoomAgain = "SVM_1_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
+	ThereIsNoFightingHere = "SVM_1_ThereIsNoFightingHere";	//Tu siê nie walczy, jasne?! Niech to bêdzie dla ciebie nauczk¹!
+	SpareMe = "SVM_1_SpareMe";	//Zostaw mnie w spokoju!
+	RunAway = "SVM_1_RunAway";	//A niech to! Trzeba wiaæ!
+	Alarm = "SVM_1_Alarm";	//ALARM!
+	Guards = "SVM_1_Guards";	//STRA¯!
+	Help = "SVM_1_Help";	//Pomocy!
+	GoodMonsterKill = "SVM_1_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
+	GoodKill = "SVM_1_GoodKill";	//Dobrze! Wykoñcz œwiniê!
 	notnow = "SVM_1_NOTNOW";	//Zostaw mnie w spokoju!
-	runcoward = "SVM_1_RunCoward";	//Stój, œmieciu!
-	getoutofhere = "SVM_1_GetOutOfHere";	//Wynocha!
-	whyareyouinhere = "SVM_1_WhyAreYouInHere";	//Czego tu szukasz? OdejdŸ!
-	yesgooutofhere = "SVM_1_YesGoOutOfHere";	//No, wynoœ siê!
-	whatsthissupposedtobe = "SVM_1_WhatsThisSupposedToBe";	//Ej ty! Co ty tu robisz?
-	youdisturbedmyslumber = "SVM_1_YouDisturbedMySlumber";	//Cholera, co siê dzieje?
-	itookyourgold = "SVM_1_ITookYourGold";	//Z³oto! Zaopiekujê siê nim...
-	shitnogold = "SVM_1_ShitNoGold";	//Ten frajer nie ma nawet z³ota.
-	itakeyourweapon = "SVM_1_ITakeYourWeapon";	//Zajmê siê twoj¹ broni¹...
-	whatareyoudoing = "SVM_1_WhatAreYouDoing";	//Ej! Uwa¿aj!
-	lookingfortroubleagain = "SVM_1_LookingForTroubleAgain";	//Ci¹gle ci ma³o?!
-	stopmagic = "SVM_1_StopMagic";	//Zabieraj siê z t¹ swoj¹ magi¹!
-	isaidstopmagic = "SVM_1_ISaidStopMagic";	//Powiedzia³em: KONIEC z magi¹! Og³uch³eœ, czy co?!
-	weapondown = "SVM_1_WeaponDown";	//Od³ó¿ broñ!
-	isaidweapondown = "SVM_1_ISaidWeaponDown";	//Og³uch³eœ? Od³ó¿ tê broñ!
-	wisemove = "SVM_1_WiseMove";	//No proszê, jednak mo¿na!
-	nexttimeyoureinforit = "SVM_1_NextTimeYoureInForIt";	//Jeszcze zobaczymy...
-	ohmyhead = "SVM_1_OhMyHead";	//Och, moja g³owa...
-	theresafight = "SVM_1_TheresAFight";	//Wreszcie coœ siê dzieje...
-	ohmygoditsafight = "SVM_1_OhMyGodItsAFight";	//Oni zrobi¹ sobie krzywdê...
-	goodvictory = "SVM_1_GoodVictory";	//Zas³u¿y³ sobie na to!
-	notbad = "SVM_1_NotBad";	//NieŸle... Ca³kiem nieŸle.
-	ohmygodhesdown = "SVM_1_OhMyGodHesDown";	//Co za brutal...
-	cheerfriend01 = "SVM_1_CheerFriend01";	//Dobrze, tak trzymaj!
-	cheerfriend02 = "SVM_1_CheerFriend02";	//No, dalej!
-	cheerfriend03 = "SVM_1_CheerFriend03";	//Mocniej!
-	ooh01 = "SVM_1_Ooh01";	//Nie pozwól na to!
-	ooh02 = "SVM_1_Ooh02";	//Dasz sobie radê!
-	ooh03 = "SVM_1_Ooh03";	//A niech to!
-	whatwasthat = "SVM_1_WhatWasThat";	//Co TO by³o!?
-	getoutofmybed = "SVM_1_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
-	awake = "SVM_1_Awake";	//(rozkoszne ziewniêcie)
+	RunCoward = "SVM_1_RunCoward";	//Stój, œmieciu!
+	GetOutOfHere = "SVM_1_GetOutOfHere";	//Wynocha!
+	WhyAreYouInHere = "SVM_1_WhyAreYouInHere";	//Czego tu szukasz? OdejdŸ!
+	YesGoOutOfHere = "SVM_1_YesGoOutOfHere";	//No, wynoœ siê!
+	WhatsThisSupposedToBe = "SVM_1_WhatsThisSupposedToBe";	//Ej ty! Co ty tu robisz?
+	YouDisturbedMySlumber = "SVM_1_YouDisturbedMySlumber";	//Cholera, co siê dzieje?
+	ITookYourGold = "SVM_1_ITookYourGold";	//Z³oto! Zaopiekujê siê nim...
+	ShitNoGold = "SVM_1_ShitNoGold";	//Ten frajer nie ma nawet z³ota.
+	ITakeYourWeapon = "SVM_1_ITakeYourWeapon";	//Zajmê siê twoj¹ broni¹...
+	WhatAreYouDoing = "SVM_1_WhatAreYouDoing";	//Ej! Uwa¿aj!
+	LookingForTroubleAgain = "SVM_1_LookingForTroubleAgain";	//Ci¹gle ci ma³o?!
+	StopMagic = "SVM_1_StopMagic";	//Zabieraj siê z t¹ swoj¹ magi¹!
+	ISaidStopMagic = "SVM_1_ISaidStopMagic";	//Powiedzia³em: KONIEC z magi¹! Og³uch³eœ, czy co?!
+	WeaponDown = "SVM_1_WeaponDown";	//Od³ó¿ broñ!
+	ISaidWeaponDown = "SVM_1_ISaidWeaponDown";	//Og³uch³eœ? Od³ó¿ tê broñ!
+	WiseMove = "SVM_1_WiseMove";	//No proszê, jednak mo¿na!
+	NextTimeYoureInForIt = "SVM_1_NextTimeYoureInForIt";	//Jeszcze zobaczymy...
+	OhMyHead = "SVM_1_OhMyHead";	//Och, moja g³owa...
+	TheresAFight = "SVM_1_TheresAFight";	//Wreszcie coœ siê dzieje...
+	OhMyGodItsAFight = "SVM_1_OhMyGodItsAFight";	//Oni zrobi¹ sobie krzywdê...
+	GoodVictory = "SVM_1_GoodVictory";	//Zas³u¿y³ sobie na to!
+	NotBad = "SVM_1_NotBad";	//NieŸle... Ca³kiem nieŸle.
+	OhMyGodHesDown = "SVM_1_OhMyGodHesDown";	//Co za brutal...
+	CheerFriend01 = "SVM_1_CheerFriend01";	//Dobrze, tak trzymaj!
+	CheerFriend02 = "SVM_1_CheerFriend02";	//No, dalej!
+	CheerFriend03 = "SVM_1_CheerFriend03";	//Mocniej!
+	Ooh01 = "SVM_1_Ooh01";	//Nie pozwól na to!
+	Ooh02 = "SVM_1_Ooh02";	//Dasz sobie radê!
+	Ooh03 = "SVM_1_Ooh03";	//A niech to!
+	WhatWasThat = "SVM_1_WhatWasThat";	//Co TO by³o!?
+	GetOutOfMyBed = "SVM_1_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	Awake = "SVM_1_Awake";	//(rozkoszne ziewniêcie)
 	abs_commander = "SVM_1_ABS_COMMANDER";	//Powiadaj¹, ¿e by³eœ u kapitana i za³atwi³eœ sprawê.
 	abs_monastery = "SVM_1_ABS_MONASTERY";	//Ponoæ by³eœ u Ojca Parlana i wyspowiada³eœ siê ze swych grzechów?
 	abs_farm = "SVM_1_ABS_FARM";	//S³ysza³em, ¿e by³eœ u Lee i doprowadzi³eœ sprawê do porz¹dku.
@@ -358,40 +358,40 @@ instance SVM_1(C_SVM)
 	gold_30 = "SVM_1_GOLD_30";	//30 sztuk z³ota.
 	gold_20 = "SVM_1_GOLD_20";	//20 sztuk z³ota.
 	gold_10 = "SVM_1_GOLD_10";	//10 sztuk z³ota.
-	smalltalk01 = "SVM_1_Smalltalk01";	//...naprawdê s¹dzisz...
-	smalltalk02 = "SVM_1_Smalltalk02";	//...wszystko jest mo¿liwe...
-	smalltalk03 = "SVM_1_Smalltalk03";	//...powinien by³ wiedzieæ lepiej...
-	smalltalk04 = "SVM_1_Smalltalk04";	//...tak jakby brakowa³o mi zmartwieñ...
-	smalltalk05 = "SVM_1_Smalltalk05";	//...kto opowiada takie rzeczy...
-	smalltalk06 = "SVM_1_Smalltalk06";	//...przez to bêdzie jeszcze wiêcej k³opotów...
-	smalltalk07 = "SVM_1_Smalltalk07";	//...wiesz, mówi siê o tym i o tamtym...
-	smalltalk08 = "SVM_1_Smalltalk08";	//...ja bym tego nie zrobi³...
-	smalltalk09 = "SVM_1_Smalltalk09";	//...to wszystko tylko pog³oski...
-	smalltalk10 = "SVM_1_Smalltalk10";	//...trzeba uwa¿aæ na to, co siê mówi...
-	smalltalk11 = "SVM_1_Smalltalk11";	//...mog³em ci powiedzieæ wczeœniej...
-	smalltalk12 = "SVM_1_Smalltalk12";	//...mnie i tak nikt nie pyta...
-	smalltalk13 = "SVM_1_Smalltalk13";	//...w³aœciwie mo¿e byæ go tylko ¿al...
-	smalltalk14 = "SVM_1_Smalltalk14";	//...to przecie¿ nic nowego...
-	smalltalk15 = "SVM_1_Smalltalk15";	//...to przecie¿ oczywiste...
-	smalltalk16 = "SVM_1_Smalltalk16";	//...mnie nie musisz o to pytaæ...
-	smalltalk17 = "SVM_1_Smalltalk17";	//...to nie mo¿e byæ tak dalej...
-	smalltalk18 = "SVM_1_Smalltalk18";	//...znasz ju¿ moje zdanie...
-	smalltalk19 = "SVM_1_Smalltalk19";	//...powiedzia³em dok³adnie to samo...
-	smalltalk20 = "SVM_1_Smalltalk20";	//...nic siê nie zmieni...
-	smalltalk21 = "SVM_1_Smalltalk21";	//...dlaczego dowiadujê siê o tym dopiero teraz...
-	smalltalk22 = "SVM_1_Smalltalk22";	//...po prostu trzeba odczekaæ....
-	smalltalk23 = "SVM_1_Smalltalk23";	//...niektóre problemy same siê rozwi¹zuj¹...
-	smalltalk24 = "SVM_1_Smalltalk24";	//...nie chcê ju¿ o tym s³uchaæ...
-	smalltalk25 = "SVM_1_Smalltalk25";	//...by³ w sztok pijany...
-	smalltalk26 = "SVM_1_Smalltalk26";	//...nie ze mn¹ te numery...
-	smalltalk27 = "SVM_1_Smalltalk27";	//...pouciekali jak zaj¹ce, by³em zupe³nie sam...
-	smalltalk28 = "SVM_1_Smalltalk28";	//...tak jest napisane w œwiêtych pismach...
-	smalltalk29 = "SVM_1_Smalltalk29";	//...w swych dzia³aniach kierujê siê wol¹ Innosa...
-	smalltalk30 = "SVM_1_Smalltalk30";	//...nie wolno wystêpowaæ przeciwko boskiemu porz¹dkowi...
-	nolearnnopoints = "SVM_1_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
-	nolearnoverpersonalmax = "SVM_1_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
-	nolearnyourebetter = "SVM_1_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
-	youlearnedsomething = "SVM_1_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	Smalltalk01 = "SVM_1_Smalltalk01";	//...naprawdê s¹dzisz...
+	Smalltalk02 = "SVM_1_Smalltalk02";	//...wszystko jest mo¿liwe...
+	Smalltalk03 = "SVM_1_Smalltalk03";	//...powinien by³ wiedzieæ lepiej...
+	Smalltalk04 = "SVM_1_Smalltalk04";	//...tak jakby brakowa³o mi zmartwieñ...
+	Smalltalk05 = "SVM_1_Smalltalk05";	//...kto opowiada takie rzeczy...
+	Smalltalk06 = "SVM_1_Smalltalk06";	//...przez to bêdzie jeszcze wiêcej k³opotów...
+	Smalltalk07 = "SVM_1_Smalltalk07";	//...wiesz, mówi siê o tym i o tamtym...
+	Smalltalk08 = "SVM_1_Smalltalk08";	//...ja bym tego nie zrobi³...
+	Smalltalk09 = "SVM_1_Smalltalk09";	//...to wszystko tylko pog³oski...
+	Smalltalk10 = "SVM_1_Smalltalk10";	//...trzeba uwa¿aæ na to, co siê mówi...
+	Smalltalk11 = "SVM_1_Smalltalk11";	//...mog³em ci powiedzieæ wczeœniej...
+	Smalltalk12 = "SVM_1_Smalltalk12";	//...mnie i tak nikt nie pyta...
+	Smalltalk13 = "SVM_1_Smalltalk13";	//...w³aœciwie mo¿e byæ go tylko ¿al...
+	Smalltalk14 = "SVM_1_Smalltalk14";	//...to przecie¿ nic nowego...
+	Smalltalk15 = "SVM_1_Smalltalk15";	//...to przecie¿ oczywiste...
+	Smalltalk16 = "SVM_1_Smalltalk16";	//...mnie nie musisz o to pytaæ...
+	Smalltalk17 = "SVM_1_Smalltalk17";	//...to nie mo¿e byæ tak dalej...
+	Smalltalk18 = "SVM_1_Smalltalk18";	//...znasz ju¿ moje zdanie...
+	Smalltalk19 = "SVM_1_Smalltalk19";	//...powiedzia³em dok³adnie to samo...
+	Smalltalk20 = "SVM_1_Smalltalk20";	//...nic siê nie zmieni...
+	Smalltalk21 = "SVM_1_Smalltalk21";	//...dlaczego dowiadujê siê o tym dopiero teraz...
+	Smalltalk22 = "SVM_1_Smalltalk22";	//...po prostu trzeba odczekaæ....
+	Smalltalk23 = "SVM_1_Smalltalk23";	//...niektóre problemy same siê rozwi¹zuj¹...
+	Smalltalk24 = "SVM_1_Smalltalk24";	//...nie chcê ju¿ o tym s³uchaæ...
+	Smalltalk25 = "SVM_1_Smalltalk25";	//...by³ w sztok pijany...
+	Smalltalk26 = "SVM_1_Smalltalk26";	//...nie ze mn¹ te numery...
+	Smalltalk27 = "SVM_1_Smalltalk27";	//...pouciekali jak zaj¹ce, by³em zupe³nie sam...
+	Smalltalk28 = "SVM_1_Smalltalk28";	//...tak jest napisane w œwiêtych pismach...
+	Smalltalk29 = "SVM_1_Smalltalk29";	//...w swych dzia³aniach kierujê siê wol¹ Innosa...
+	Smalltalk30 = "SVM_1_Smalltalk30";	//...nie wolno wystêpowaæ przeciwko boskiemu porz¹dkowi...
+	NoLearnNoPoints = "SVM_1_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
+	NoLearnOverPersonalMAX = "SVM_1_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	NoLearnYoureBetter = "SVM_1_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	YouLearnedSomething = "SVM_1_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
 	unterstadt = "SVM_1_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
 	oberstadt = "SVM_1_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
 	tempel = "SVM_1_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
@@ -416,10 +416,10 @@ instance SVM_1(C_SVM)
 	kaserne_2_markt = "SVM_1_KASERNE_2_MARKT";	//Po prostu zejdŸ po schodach na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
 	kaserne_2_galgen = "SVM_1_KASERNE_2_GALGEN";	//Po prostu zejdŸ po schodach na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
 	hafen_2_unterstadt = "SVM_1_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nabrze¿u w górê ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
-	dead = "SVM_1_Dead";	//Aaaaarhhh!
-	aargh_1 = "SVM_1_Aargh_1";	//Aargh
-	aargh_2 = "SVM_1_Aargh_2";	//Aargh
-	aargh_3 = "SVM_1_Aargh_3";	//Aargh
+	Dead = "SVM_1_Dead";	//Aaaaarhhh!
+	Aargh_1 = "SVM_1_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_1_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_1_Aargh_3";	//Aargh
 	addon_wrongarmor = "SVM_1_Addon_WrongArmor";	//
 	addon_wrongarmor_sld = "SVM_1_ADDON_WRONGARMOR_SLD";	//
 	addon_wrongarmor_mil = "SVM_1_ADDON_WRONGARMOR_MIL";	//
@@ -435,76 +435,76 @@ instance SVM_2(C_SVM)
 
 instance SVM_3(C_SVM)
 {
-	milgreetings = "SVM_3_MILGreetings";	//Niech ¿yje Król!
-	palgreetings = "SVM_3_PALGreetings";	//Chwa³a Innosowi!
-	weather = "SVM_3_Weather";	//Ale nêdzna pogoda...
-	igetyoustill = "SVM_3_IGetYouStill";	//Teraz ciê dorwê!
-	dieenemy = "SVM_3_DieEnemy";	//Zaraz ciê za³atwiê!
-	diemonster = "SVM_3_DieMonster";	//Znowu jedna z tych g³upich bestii!
-	dirtythief = "SVM_3_DirtyThief";	//Czekaj tylko, ty parszywy z³odzieju!
-	handsoff = "SVM_3_HandsOff";	//£apy precz!
-	sheepkiller = "SVM_3_SheepKiller";	//Ten bydlak szlachtuje nasze owce!
-	sheepkillermonster = "SVM_3_SheepKillerMonster";	//Ta przeklêta bestia z¿era nasze owce!
-	youmurderer = "SVM_3_YouMurderer";	//Morderca!
-	diestupidbeast = "SVM_3_DieStupidBeast";	//¯adne stwory nie maj¹ tu prawa wstêpu!
-	youdarehitme = "SVM_3_YouDareHitMe";	//Czekaj tylko, ty gnido!
-	youaskedforit = "SVM_3_YouAskedForIt";	//Sam tego chcia³eœ!
-	thenibeatyououtofhere = "SVM_3_ThenIBeatYouOutOfHere";	//Nie chcesz iœæ? Dobrze!
-	whatdidyoudointhere = "SVM_3_WhatDidYouDoInThere";	//Czego tam szuka³eœ?
-	willyoustopfighting = "SVM_3_WillYouStopFighting";	//Przestaniecie w koñcu?!
-	killenemy = "SVM_3_KillEnemy";	//Giñ, gnido!
-	enemykilled = "SVM_3_EnemyKilled";	//Zas³u¿y³eœ sobie na to, bydlaku!
-	monsterkilled = "SVM_3_MonsterKilled";	//Jedna bestia mniej!
-	thiefdown = "SVM_3_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
-	rumfummlerdown = "SVM_3_rumfummlerDown";	//Na przysz³oœæ trzymaj siê z dala od cudzej w³asnoœci!
-	sheepattackerdown = "SVM_3_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To s¹ nasze owce!
-	killmurderer = "SVM_3_KillMurderer";	//Giñ, morderco!
-	stupidbeastkilled = "SVM_3_StupidBeastKilled";	//Ale g³upia bestia!
-	neverhitmeagain = "SVM_3_NeverHitMeAgain";	//Nigdy wiêcej nie próbuj siê ze mn¹ mierzyæ!
-	youbettershouldhavelistened = "SVM_3_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
-	getupandbegone = "SVM_3_GetUpAndBeGone";	//A teraz zmywaj siê st¹d!
-	neverenterroomagain = "SVM_3_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
-	thereisnofightinghere = "SVM_3_ThereIsNoFightingHere";	//Tu siê nie walczy, jasne?! Niech to bêdzie dla ciebie nauczka!
-	spareme = "SVM_3_SpareMe";	//Nie rób mi krzywdy!
-	runaway = "SVM_3_RunAway";	//O cholera!
-	alarm = "SVM_3_Alarm";	//ALARM!
-	guards = "SVM_3_Guards";	//STRA¯!
-	help = "SVM_3_Help";	//Pomocy!
-	goodmonsterkill = "SVM_3_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
-	goodkill = "SVM_3_GoodKill";	//No, wykoñcz œwiniê!
+	MILGreetings = "SVM_3_MILGreetings";	//Niech ¿yje Król!
+	PALGreetings = "SVM_3_PALGreetings";	//Chwa³a Innosowi!
+	Weather = "SVM_3_Weather";	//Ale nêdzna pogoda...
+	IGetYouStill = "SVM_3_IGetYouStill";	//Teraz ciê dorwê!
+	DieEnemy = "SVM_3_DieEnemy";	//Zaraz ciê za³atwiê!
+	DieMonster = "SVM_3_DieMonster";	//Znowu jedna z tych g³upich bestii!
+	DirtyThief = "SVM_3_DirtyThief";	//Czekaj tylko, ty parszywy z³odzieju!
+	HandsOff = "SVM_3_HandsOff";	//£apy precz!
+	SheepKiller = "SVM_3_SheepKiller";	//Ten bydlak szlachtuje nasze owce!
+	SheepKillerMonster = "SVM_3_SheepKillerMonster";	//Ta przeklêta bestia z¿era nasze owce!
+	YouMurderer = "SVM_3_YouMurderer";	//Morderca!
+	DieStupidBeast = "SVM_3_DieStupidBeast";	//¯adne stwory nie maj¹ tu prawa wstêpu!
+	YouDareHitMe = "SVM_3_YouDareHitMe";	//Czekaj tylko, ty gnido!
+	YouAskedForIt = "SVM_3_YouAskedForIt";	//Sam tego chcia³eœ!
+	ThenIBeatYouOutOfHere = "SVM_3_ThenIBeatYouOutOfHere";	//Nie chcesz iœæ? Dobrze!
+	WhatDidYouDoInThere = "SVM_3_WhatDidYouDoInThere";	//Czego tam szuka³eœ?
+	WillYouStopFighting = "SVM_3_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	KillEnemy = "SVM_3_KillEnemy";	//Giñ, gnido!
+	EnemyKilled = "SVM_3_EnemyKilled";	//Zas³u¿y³eœ sobie na to, bydlaku!
+	MonsterKilled = "SVM_3_MonsterKilled";	//Jedna bestia mniej!
+	ThiefDown = "SVM_3_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
+	RumfummlerDown = "SVM_3_rumfummlerDown";	//Na przysz³oœæ trzymaj siê z dala od cudzej w³asnoœci!
+	SheepAttackerDown = "SVM_3_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To s¹ nasze owce!
+	KillMurderer = "SVM_3_KillMurderer";	//Giñ, morderco!
+	StupidBeastKilled = "SVM_3_StupidBeastKilled";	//Ale g³upia bestia!
+	NeverHitMeAgain = "SVM_3_NeverHitMeAgain";	//Nigdy wiêcej nie próbuj siê ze mn¹ mierzyæ!
+	YouBetterShouldHaveListened = "SVM_3_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
+	GetUpAndBeGone = "SVM_3_GetUpAndBeGone";	//A teraz zmywaj siê st¹d!
+	NeverEnterRoomAgain = "SVM_3_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
+	ThereIsNoFightingHere = "SVM_3_ThereIsNoFightingHere";	//Tu siê nie walczy, jasne?! Niech to bêdzie dla ciebie nauczka!
+	SpareMe = "SVM_3_SpareMe";	//Nie rób mi krzywdy!
+	RunAway = "SVM_3_RunAway";	//O cholera!
+	Alarm = "SVM_3_Alarm";	//ALARM!
+	Guards = "SVM_3_Guards";	//STRA¯!
+	Help = "SVM_3_Help";	//Pomocy!
+	GoodMonsterKill = "SVM_3_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
+	GoodKill = "SVM_3_GoodKill";	//No, wykoñcz œwiniê!
 	notnow = "SVM_3_NOTNOW";	//Zostaw mnie w spokoju!
-	runcoward = "SVM_3_RunCoward";	//No, biegnij! Najszybciej jak potrafisz!
-	getoutofhere = "SVM_3_GetOutOfHere";	//Wynoœ siê st¹d!
-	whyareyouinhere = "SVM_3_WhyAreYouInHere";	//Czego tu szukasz? OdejdŸ!
-	yesgooutofhere = "SVM_3_YesGoOutOfHere";	//No, wynoœ siê!
-	whatsthissupposedtobe = "SVM_3_WhatsThisSupposedToBe";	//Ej ty! Co ty tu robisz?
-	youdisturbedmyslumber = "SVM_3_YouDisturbedMySlumber";	//Cholera, co siê dzieje?
-	itookyourgold = "SVM_3_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
-	shitnogold = "SVM_3_ShitNoGold";	//Ty frajerze, nawet nie masz z³ota!
-	itakeyourweapon = "SVM_3_ITakeYourWeapon";	//Lepiej zaopiekujê siê twoj¹ broni¹...
-	whatareyoudoing = "SVM_3_WhatAreYouDoing";	//Lepiej uwa¿aj! Nastêpnym razem ci przy³o¿ê.
-	lookingfortroubleagain = "SVM_3_LookingForTroubleAgain";	//Ci¹gle ci ma³o?!
-	stopmagic = "SVM_3_StopMagic";	//Skoñcz wreszcie z tym czarowaniem!
-	isaidstopmagic = "SVM_3_ISaidStopMagic";	//Chcesz dostaæ? Natychmiast przestañ!
-	weapondown = "SVM_3_WeaponDown";	//Od³ó¿ broñ!
-	isaidweapondown = "SVM_3_ISaidWeaponDown";	//Od³ó¿ wreszcie tê cholern¹ broñ!
-	wisemove = "SVM_3_WiseMove";	//Spryciarz!
-	nexttimeyoureinforit = "SVM_3_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
-	ohmyhead = "SVM_3_OhMyHead";	//Och, moja g³owa...
-	theresafight = "SVM_3_TheresAFight";	//Aach, walka..
-	ohmygoditsafight = "SVM_3_OhMyGodItsAFight";	//O rany, walka!
-	goodvictory = "SVM_3_GoodVictory";	//Ale mu pokaza³eœ!
-	notbad = "SVM_3_NotBad";	//NieŸle...
-	ohmygodhesdown = "SVM_3_OhMyGodHesDown";	//Na bogów! Jak brutalnie...
-	cheerfriend01 = "SVM_3_CheerFriend01";	//Wal!
-	cheerfriend02 = "SVM_3_CheerFriend02";	//Daj z siebie wszystko!
-	cheerfriend03 = "SVM_3_CheerFriend03";	//Poka¿ mu!
-	ooh01 = "SVM_3_Ooh01";	//Trzymaj siê!
-	ooh02 = "SVM_3_Ooh02";	//Uwaga!
-	ooh03 = "SVM_3_Ooh03";	//O! To musia³o boleæ!
-	whatwasthat = "SVM_3_WhatWasThat";	//Co TO by³o!?
-	getoutofmybed = "SVM_3_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
-	awake = "SVM_3_Awake";	//(rozkoszne ziewniêcie)
+	RunCoward = "SVM_3_RunCoward";	//No, biegnij! Najszybciej jak potrafisz!
+	GetOutOfHere = "SVM_3_GetOutOfHere";	//Wynoœ siê st¹d!
+	WhyAreYouInHere = "SVM_3_WhyAreYouInHere";	//Czego tu szukasz? OdejdŸ!
+	YesGoOutOfHere = "SVM_3_YesGoOutOfHere";	//No, wynoœ siê!
+	WhatsThisSupposedToBe = "SVM_3_WhatsThisSupposedToBe";	//Ej ty! Co ty tu robisz?
+	YouDisturbedMySlumber = "SVM_3_YouDisturbedMySlumber";	//Cholera, co siê dzieje?
+	ITookYourGold = "SVM_3_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
+	ShitNoGold = "SVM_3_ShitNoGold";	//Ty frajerze, nawet nie masz z³ota!
+	ITakeYourWeapon = "SVM_3_ITakeYourWeapon";	//Lepiej zaopiekujê siê twoj¹ broni¹...
+	WhatAreYouDoing = "SVM_3_WhatAreYouDoing";	//Lepiej uwa¿aj! Nastêpnym razem ci przy³o¿ê.
+	LookingForTroubleAgain = "SVM_3_LookingForTroubleAgain";	//Ci¹gle ci ma³o?!
+	StopMagic = "SVM_3_StopMagic";	//Skoñcz wreszcie z tym czarowaniem!
+	ISaidStopMagic = "SVM_3_ISaidStopMagic";	//Chcesz dostaæ? Natychmiast przestañ!
+	WeaponDown = "SVM_3_WeaponDown";	//Od³ó¿ broñ!
+	ISaidWeaponDown = "SVM_3_ISaidWeaponDown";	//Od³ó¿ wreszcie tê cholern¹ broñ!
+	WiseMove = "SVM_3_WiseMove";	//Spryciarz!
+	NextTimeYoureInForIt = "SVM_3_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
+	OhMyHead = "SVM_3_OhMyHead";	//Och, moja g³owa...
+	TheresAFight = "SVM_3_TheresAFight";	//Aach, walka..
+	OhMyGodItsAFight = "SVM_3_OhMyGodItsAFight";	//O rany, walka!
+	GoodVictory = "SVM_3_GoodVictory";	//Ale mu pokaza³eœ!
+	NotBad = "SVM_3_NotBad";	//NieŸle...
+	OhMyGodHesDown = "SVM_3_OhMyGodHesDown";	//Na bogów! Jak brutalnie...
+	CheerFriend01 = "SVM_3_CheerFriend01";	//Wal!
+	CheerFriend02 = "SVM_3_CheerFriend02";	//Daj z siebie wszystko!
+	CheerFriend03 = "SVM_3_CheerFriend03";	//Poka¿ mu!
+	Ooh01 = "SVM_3_Ooh01";	//Trzymaj siê!
+	Ooh02 = "SVM_3_Ooh02";	//Uwaga!
+	Ooh03 = "SVM_3_Ooh03";	//O! To musia³o boleæ!
+	WhatWasThat = "SVM_3_WhatWasThat";	//Co TO by³o!?
+	GetOutOfMyBed = "SVM_3_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	Awake = "SVM_3_Awake";	//(rozkoszne ziewniêcie)
 	abs_commander = "SVM_3_ABS_COMMANDER";	//By³eœ zatem u kapitana i doprowadzi³eœ wszystko do porz¹dku.
 	abs_monastery = "SVM_3_ABS_MONASTERY";	//By³eœ zatem u Ojca Parlana i wyspowiada³eœ siê ze swoich grzechów.
 	abs_farm = "SVM_3_ABS_FARM";	//By³eœ wiêc u Lee i wyjaœni³eœ sprawê.
@@ -549,40 +549,40 @@ instance SVM_3(C_SVM)
 	gold_30 = "SVM_3_GOLD_30";	//30 sztuk z³ota.
 	gold_20 = "SVM_3_GOLD_20";	//20 sztuk z³ota.
 	gold_10 = "SVM_3_GOLD_10";	//10 sztuk z³ota.
-	smalltalk01 = "SVM_3_Smalltalk01";	//...naprawdê myœlisz...
-	smalltalk02 = "SVM_3_Smalltalk02";	//...wszystko jest mo¿liwe...
-	smalltalk03 = "SVM_3_Smalltalk03";	//...powinien byæ m¹drzejszy...
-	smalltalk04 = "SVM_3_Smalltalk04";	//...tak jakbym nie mia³ wystarczaj¹co du¿o problemów...
-	smalltalk05 = "SVM_3_Smalltalk05";	//...kto ci to powiedzia³...
-	smalltalk06 = "SVM_3_Smalltalk06";	//...z tego wyniknie tylko jeszcze wiêcej k³opotów...
-	smalltalk07 = "SVM_3_Smalltalk07";	//...kr¹¿¹ ostatnio ró¿ne plotki...
-	smalltalk08 = "SVM_3_Smalltalk08";	//...nigdy by mi nie przysz³o do g³owy...
-	smalltalk09 = "SVM_3_Smalltalk09";	//...to przecie¿ tylko pog³oski...
-	smalltalk10 = "SVM_3_Smalltalk10";	//...trzeba uwa¿aæ na to, co siê mówi...
-	smalltalk11 = "SVM_3_Smalltalk11";	//...mog³em ci powiedzieæ wczeœniej...
-	smalltalk12 = "SVM_3_Smalltalk12";	//...mnie i tak nikt nie pyta...
-	smalltalk13 = "SVM_3_Smalltalk13";	//...biedakowi mo¿na tylko wspó³czuæ...
-	smalltalk14 = "SVM_3_Smalltalk14";	//...to przecie¿ nic nowego...
-	smalltalk15 = "SVM_3_Smalltalk15";	//...to przecie¿ oczywiste...
-	smalltalk16 = "SVM_3_Smalltalk16";	//...mnie nie musisz o to pytaæ...
-	smalltalk17 = "SVM_3_Smalltalk17";	//...tak dalej byæ nie mo¿e...
-	smalltalk18 = "SVM_3_Smalltalk18";	//...znasz ju¿ moje zdanie...
-	smalltalk19 = "SVM_3_Smalltalk19";	//...dok³adnie to samo powiedzia³em...
-	smalltalk20 = "SVM_3_Smalltalk20";	//...nic tego nie zmieni...
-	smalltalk21 = "SVM_3_Smalltalk21";	//...czemu dowiadujê siê o tym dopiero teraz...
-	smalltalk22 = "SVM_3_Smalltalk22";	//...poczekajmy, co z tego wyniknie...
-	smalltalk23 = "SVM_3_Smalltalk23";	//...niektóre problemy same siê rozwi¹zuj¹...
-	smalltalk24 = "SVM_3_Smalltalk24";	//...ju¿ nie chce mi siê o tym s³uchaæ...
-	smalltalk25 = "SVM_3_Smalltalk25";	//...przecie¿ on by³ w sztok pijany...
-	smalltalk26 = "SVM_3_Smalltalk26";	//...nie pozwolê siê tak traktowaæ...
-	smalltalk27 = "SVM_3_Smalltalk27";	//...wszyscy uciekali jak zaj¹ce, by³em zupe³nie sam...
-	smalltalk28 = "SVM_3_Smalltalk28";	//...tak jest napisane w œwiêtych pismach...
-	smalltalk29 = "SVM_3_Smalltalk29";	//...dzia³am zawsze w imieniu Innosa...
-	smalltalk30 = "SVM_3_Smalltalk30";	//...nikt nie mo¿e wystêpowaæ przeciwko boskiemu porz¹dkowi...
-	nolearnnopoints = "SVM_3_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
-	nolearnoverpersonalmax = "SVM_3_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
-	nolearnyourebetter = "SVM_3_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
-	youlearnedsomething = "SVM_3_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	Smalltalk01 = "SVM_3_Smalltalk01";	//...naprawdê myœlisz...
+	Smalltalk02 = "SVM_3_Smalltalk02";	//...wszystko jest mo¿liwe...
+	Smalltalk03 = "SVM_3_Smalltalk03";	//...powinien byæ m¹drzejszy...
+	Smalltalk04 = "SVM_3_Smalltalk04";	//...tak jakbym nie mia³ wystarczaj¹co du¿o problemów...
+	Smalltalk05 = "SVM_3_Smalltalk05";	//...kto ci to powiedzia³...
+	Smalltalk06 = "SVM_3_Smalltalk06";	//...z tego wyniknie tylko jeszcze wiêcej k³opotów...
+	Smalltalk07 = "SVM_3_Smalltalk07";	//...kr¹¿¹ ostatnio ró¿ne plotki...
+	Smalltalk08 = "SVM_3_Smalltalk08";	//...nigdy by mi nie przysz³o do g³owy...
+	Smalltalk09 = "SVM_3_Smalltalk09";	//...to przecie¿ tylko pog³oski...
+	Smalltalk10 = "SVM_3_Smalltalk10";	//...trzeba uwa¿aæ na to, co siê mówi...
+	Smalltalk11 = "SVM_3_Smalltalk11";	//...mog³em ci powiedzieæ wczeœniej...
+	Smalltalk12 = "SVM_3_Smalltalk12";	//...mnie i tak nikt nie pyta...
+	Smalltalk13 = "SVM_3_Smalltalk13";	//...biedakowi mo¿na tylko wspó³czuæ...
+	Smalltalk14 = "SVM_3_Smalltalk14";	//...to przecie¿ nic nowego...
+	Smalltalk15 = "SVM_3_Smalltalk15";	//...to przecie¿ oczywiste...
+	Smalltalk16 = "SVM_3_Smalltalk16";	//...mnie nie musisz o to pytaæ...
+	Smalltalk17 = "SVM_3_Smalltalk17";	//...tak dalej byæ nie mo¿e...
+	Smalltalk18 = "SVM_3_Smalltalk18";	//...znasz ju¿ moje zdanie...
+	Smalltalk19 = "SVM_3_Smalltalk19";	//...dok³adnie to samo powiedzia³em...
+	Smalltalk20 = "SVM_3_Smalltalk20";	//...nic tego nie zmieni...
+	Smalltalk21 = "SVM_3_Smalltalk21";	//...czemu dowiadujê siê o tym dopiero teraz...
+	Smalltalk22 = "SVM_3_Smalltalk22";	//...poczekajmy, co z tego wyniknie...
+	Smalltalk23 = "SVM_3_Smalltalk23";	//...niektóre problemy same siê rozwi¹zuj¹...
+	Smalltalk24 = "SVM_3_Smalltalk24";	//...ju¿ nie chce mi siê o tym s³uchaæ...
+	Smalltalk25 = "SVM_3_Smalltalk25";	//...przecie¿ on by³ w sztok pijany...
+	Smalltalk26 = "SVM_3_Smalltalk26";	//...nie pozwolê siê tak traktowaæ...
+	Smalltalk27 = "SVM_3_Smalltalk27";	//...wszyscy uciekali jak zaj¹ce, by³em zupe³nie sam...
+	Smalltalk28 = "SVM_3_Smalltalk28";	//...tak jest napisane w œwiêtych pismach...
+	Smalltalk29 = "SVM_3_Smalltalk29";	//...dzia³am zawsze w imieniu Innosa...
+	Smalltalk30 = "SVM_3_Smalltalk30";	//...nikt nie mo¿e wystêpowaæ przeciwko boskiemu porz¹dkowi...
+	NoLearnNoPoints = "SVM_3_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
+	NoLearnOverPersonalMAX = "SVM_3_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	NoLearnYoureBetter = "SVM_3_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	YouLearnedSomething = "SVM_3_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
 	unterstadt = "SVM_3_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
 	oberstadt = "SVM_3_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
 	tempel = "SVM_3_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
@@ -607,10 +607,10 @@ instance SVM_3(C_SVM)
 	kaserne_2_markt = "SVM_3_KASERNE_2_MARKT";	//ZejdŸ po schodach znajduj¹cych siê na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
 	kaserne_2_galgen = "SVM_3_KASERNE_2_GALGEN";	//ZejdŸ po schodach znajduj¹cych siê na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
 	hafen_2_unterstadt = "SVM_3_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nabrze¿u w górê ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
-	dead = "SVM_3_Dead";	//Aaarrrhhh!
-	aargh_1 = "SVM_3_Aargh_1";	//Aargh
-	aargh_2 = "SVM_3_Aargh_2";	//Aargh
-	aargh_3 = "SVM_3_Aargh_3";	//Aargh
+	Dead = "SVM_3_Dead";	//Aaarrrhhh!
+	Aargh_1 = "SVM_3_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_3_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_3_Aargh_3";	//Aargh
 	addon_wrongarmor = "SVM_3_Addon_WrongArmor";	//
 	addon_wrongarmor_sld = "SVM_3_ADDON_WRONGARMOR_SLD";	//
 	addon_wrongarmor_mil = "SVM_3_ADDON_WRONGARMOR_MIL";	//
@@ -622,76 +622,76 @@ instance SVM_3(C_SVM)
 
 instance SVM_4(C_SVM)
 {
-	milgreetings = "SVM_4_MILGreetings";	//Niech ¿yje Król!
-	palgreetings = "SVM_4_PALGreetings";	//Chwa³a Innosowi!
-	weather = "SVM_4_Weather";	//Beznadziejna pogoda!
-	igetyoustill = "SVM_4_IGetYouStill";	//To znowu TY!
-	dieenemy = "SVM_4_DieEnemy";	//Za³atwiê ciê!
-	diemonster = "SVM_4_DieMonster";	//Znowu jedna z tych g³upich bestii!
-	dirtythief = "SVM_4_DirtyThief";	//Ty ma³y, parszywy z³odzieju!
-	handsoff = "SVM_4_HandsOff";	//Zabieraj ³apy!
-	sheepkiller = "SVM_4_SheepKiller";	//Hej! Zostaw nasze owce w spokoju!
-	sheepkillermonster = "SVM_4_SheepKillerMonster";	//Ta bestia z¿era nasze owce!
-	youmurderer = "SVM_4_YouMurderer";	//Morderca!
-	diestupidbeast = "SVM_4_DieStupidBeast";	//A TEN stwór czego tu chce?!
-	youdarehitme = "SVM_4_YouDareHitMe";	//No, teraz to mnie wkurzy³eœ!
-	youaskedforit = "SVM_4_YouAskedForIt";	//Sam tego chcia³eœ!
-	thenibeatyououtofhere = "SVM_4_ThenIBeatYouOutOfHere";	//Kto nie chce s³uchaæ, musi poczuæ...
-	whatdidyoudointhere = "SVM_4_WhatDidYouDoInThere";	//Czego tam szuka³eœ, co?!
-	willyoustopfighting = "SVM_4_WillYouStopFighting";	//Przestaniecie w koñcu?!
-	killenemy = "SVM_4_KillEnemy";	//Giñ!
-	enemykilled = "SVM_4_EnemyKilled";	//Cholerny bydlak...
-	monsterkilled = "SVM_4_MonsterKilled";	//No, koniec z tob¹, bestio!
-	thiefdown = "SVM_4_ThiefDown";	//Trzymaj na przysz³oœæ ³apy z dala od moich rzeczy, jasne?
-	rumfummlerdown = "SVM_4_rumfummlerDown";	//Trzymaj na przysz³oœæ ³apy przy sobie!
-	sheepattackerdown = "SVM_4_SheepAttackerDown";	//Nie podnoœ nigdy wiêcej rêki na nasze owce!
-	killmurderer = "SVM_4_KillMurderer";	//Giñ, morderco!
-	stupidbeastkilled = "SVM_4_StupidBeastKilled";	//G³upie stworzenie!
-	neverhitmeagain = "SVM_4_NeverHitMeAgain";	//Nie próbuj tego jeszcze raz, ch³opczyku!
-	youbettershouldhavelistened = "SVM_4_YouBetterShouldHaveListened";	//Niech to bêdzie dla ciebie nauczka.
-	getupandbegone = "SVM_4_GetUpAndBeGone";	//Wstawaj i wynoœ siê st¹d!
-	neverenterroomagain = "SVM_4_NeverEnterRoomAgain";	//Nie chcê ciê wiêcej tam widzieæ, zrozumiano?
-	thereisnofightinghere = "SVM_4_ThereIsNoFightingHere";	//Je¿eli ktoœ tu rozdziela ciosy, to jestem to ja, zrozumiano?!
-	spareme = "SVM_4_SpareMe";	//Zostaw mnie w spokoju!
-	runaway = "SVM_4_RunAway";	//Cholera! Trzeba uciekaæ!
-	alarm = "SVM_4_Alarm";	//ALARM!
-	guards = "SVM_4_Guards";	//STRA¯!
-	help = "SVM_4_Help";	//Pomocy!
-	goodmonsterkill = "SVM_4_GoodMonsterKill";	//No! Tak nale¿y obchodziæ siê z bestiami!
-	goodkill = "SVM_4_GoodKill";	//Zas³uguje na to!
+	MILGreetings = "SVM_4_MILGreetings";	//Niech ¿yje Król!
+	PALGreetings = "SVM_4_PALGreetings";	//Chwa³a Innosowi!
+	Weather = "SVM_4_Weather";	//Beznadziejna pogoda!
+	IGetYouStill = "SVM_4_IGetYouStill";	//To znowu TY!
+	DieEnemy = "SVM_4_DieEnemy";	//Za³atwiê ciê!
+	DieMonster = "SVM_4_DieMonster";	//Znowu jedna z tych g³upich bestii!
+	DirtyThief = "SVM_4_DirtyThief";	//Ty ma³y, parszywy z³odzieju!
+	HandsOff = "SVM_4_HandsOff";	//Zabieraj ³apy!
+	SheepKiller = "SVM_4_SheepKiller";	//Hej! Zostaw nasze owce w spokoju!
+	SheepKillerMonster = "SVM_4_SheepKillerMonster";	//Ta bestia z¿era nasze owce!
+	YouMurderer = "SVM_4_YouMurderer";	//Morderca!
+	DieStupidBeast = "SVM_4_DieStupidBeast";	//A TEN stwór czego tu chce?!
+	YouDareHitMe = "SVM_4_YouDareHitMe";	//No, teraz to mnie wkurzy³eœ!
+	YouAskedForIt = "SVM_4_YouAskedForIt";	//Sam tego chcia³eœ!
+	ThenIBeatYouOutOfHere = "SVM_4_ThenIBeatYouOutOfHere";	//Kto nie chce s³uchaæ, musi poczuæ...
+	WhatDidYouDoInThere = "SVM_4_WhatDidYouDoInThere";	//Czego tam szuka³eœ, co?!
+	WillYouStopFighting = "SVM_4_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	KillEnemy = "SVM_4_KillEnemy";	//Giñ!
+	EnemyKilled = "SVM_4_EnemyKilled";	//Cholerny bydlak...
+	MonsterKilled = "SVM_4_MonsterKilled";	//No, koniec z tob¹, bestio!
+	ThiefDown = "SVM_4_ThiefDown";	//Trzymaj na przysz³oœæ ³apy z dala od moich rzeczy, jasne?
+	RumfummlerDown = "SVM_4_rumfummlerDown";	//Trzymaj na przysz³oœæ ³apy przy sobie!
+	SheepAttackerDown = "SVM_4_SheepAttackerDown";	//Nie podnoœ nigdy wiêcej rêki na nasze owce!
+	KillMurderer = "SVM_4_KillMurderer";	//Giñ, morderco!
+	StupidBeastKilled = "SVM_4_StupidBeastKilled";	//G³upie stworzenie!
+	NeverHitMeAgain = "SVM_4_NeverHitMeAgain";	//Nie próbuj tego jeszcze raz, ch³opczyku!
+	YouBetterShouldHaveListened = "SVM_4_YouBetterShouldHaveListened";	//Niech to bêdzie dla ciebie nauczka.
+	GetUpAndBeGone = "SVM_4_GetUpAndBeGone";	//Wstawaj i wynoœ siê st¹d!
+	NeverEnterRoomAgain = "SVM_4_NeverEnterRoomAgain";	//Nie chcê ciê wiêcej tam widzieæ, zrozumiano?
+	ThereIsNoFightingHere = "SVM_4_ThereIsNoFightingHere";	//Je¿eli ktoœ tu rozdziela ciosy, to jestem to ja, zrozumiano?!
+	SpareMe = "SVM_4_SpareMe";	//Zostaw mnie w spokoju!
+	RunAway = "SVM_4_RunAway";	//Cholera! Trzeba uciekaæ!
+	Alarm = "SVM_4_Alarm";	//ALARM!
+	Guards = "SVM_4_Guards";	//STRA¯!
+	Help = "SVM_4_Help";	//Pomocy!
+	GoodMonsterKill = "SVM_4_GoodMonsterKill";	//No! Tak nale¿y obchodziæ siê z bestiami!
+	GoodKill = "SVM_4_GoodKill";	//Zas³uguje na to!
 	notnow = "SVM_4_NOTNOW";	//Zostaw mnie w spokoju!
-	runcoward = "SVM_4_RunCoward";	//Jeszcze siê spotkamy!
-	getoutofhere = "SVM_4_GetOutOfHere";	//Wynoœ siê!
-	whyareyouinhere = "SVM_4_WhyAreYouInHere";	//Czego tu szukasz?!
-	yesgooutofhere = "SVM_4_YesGoOutOfHere";	//Zabieraj siê st¹d!
-	whatsthissupposedtobe = "SVM_4_WhatsThisSupposedToBe";	//Co ty tu robisz?
-	youdisturbedmyslumber = "SVM_4_YouDisturbedMySlumber";	//Co siê dzieje?
-	itookyourgold = "SVM_4_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
-	shitnogold = "SVM_4_ShitNoGold";	//Ty frajerze, nawet z³ota nie masz!
-	itakeyourweapon = "SVM_4_ITakeYourWeapon";	//Wezmê sobie twoj¹ broñ.
-	whatareyoudoing = "SVM_4_WhatAreYouDoing";	//Lepiej uwa¿aj! Nastêpnym razem ci przy³o¿ê.
-	lookingfortroubleagain = "SVM_4_LookingForTroubleAgain";	//Znowu chcesz w mordê?
-	stopmagic = "SVM_4_StopMagic";	//Skoñcz wreszcie z tym czarowaniem!
-	isaidstopmagic = "SVM_4_ISaidStopMagic";	//Chcesz dostaæ? Natychmiast przestañ!
-	weapondown = "SVM_4_WeaponDown";	//Od³ó¿ broñ!
-	isaidweapondown = "SVM_4_ISaidWeaponDown";	//Od³ó¿ wreszcie tê cholern¹ broñ!
-	wisemove = "SVM_4_WiseMove";	//Spryciarz!
-	nexttimeyoureinforit = "SVM_4_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
-	ohmyhead = "SVM_4_OhMyHead";	//O rany, moja g³owa...
-	theresafight = "SVM_4_TheresAFight";	//Aach, walka...
-	ohmygoditsafight = "SVM_4_OhMyGodItsAFight";	//O rany, walka!
-	goodvictory = "SVM_4_GoodVictory";	//Ale mu pokaza³eœ!
-	notbad = "SVM_4_NotBad";	//NieŸle...
-	ohmygodhesdown = "SVM_4_OhMyGodHesDown";	//Bogowie! Jak ostro...
-	cheerfriend01 = "SVM_4_CheerFriend01";	//Wal z ca³ej si³y!
-	cheerfriend02 = "SVM_4_CheerFriend02";	//Poka¿ mu!
-	cheerfriend03 = "SVM_4_CheerFriend03";	//Wykoñcz go!
-	ooh01 = "SVM_4_Ooh01";	//Broñ siê!
-	ooh02 = "SVM_4_Ooh02";	//Oddaj cios!
-	ooh03 = "SVM_4_Ooh03";	//Uuu, to musia³o boleæ!
-	whatwasthat = "SVM_4_WhatWasThat";	//Cholera, co TO by³o!?
-	getoutofmybed = "SVM_4_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
-	awake = "SVM_4_Awake";	//(rozkoszne ziewniêcie)
+	RunCoward = "SVM_4_RunCoward";	//Jeszcze siê spotkamy!
+	GetOutOfHere = "SVM_4_GetOutOfHere";	//Wynoœ siê!
+	WhyAreYouInHere = "SVM_4_WhyAreYouInHere";	//Czego tu szukasz?!
+	YesGoOutOfHere = "SVM_4_YesGoOutOfHere";	//Zabieraj siê st¹d!
+	WhatsThisSupposedToBe = "SVM_4_WhatsThisSupposedToBe";	//Co ty tu robisz?
+	YouDisturbedMySlumber = "SVM_4_YouDisturbedMySlumber";	//Co siê dzieje?
+	ITookYourGold = "SVM_4_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
+	ShitNoGold = "SVM_4_ShitNoGold";	//Ty frajerze, nawet z³ota nie masz!
+	ITakeYourWeapon = "SVM_4_ITakeYourWeapon";	//Wezmê sobie twoj¹ broñ.
+	WhatAreYouDoing = "SVM_4_WhatAreYouDoing";	//Lepiej uwa¿aj! Nastêpnym razem ci przy³o¿ê.
+	LookingForTroubleAgain = "SVM_4_LookingForTroubleAgain";	//Znowu chcesz w mordê?
+	StopMagic = "SVM_4_StopMagic";	//Skoñcz wreszcie z tym czarowaniem!
+	ISaidStopMagic = "SVM_4_ISaidStopMagic";	//Chcesz dostaæ? Natychmiast przestañ!
+	WeaponDown = "SVM_4_WeaponDown";	//Od³ó¿ broñ!
+	ISaidWeaponDown = "SVM_4_ISaidWeaponDown";	//Od³ó¿ wreszcie tê cholern¹ broñ!
+	WiseMove = "SVM_4_WiseMove";	//Spryciarz!
+	NextTimeYoureInForIt = "SVM_4_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
+	OhMyHead = "SVM_4_OhMyHead";	//O rany, moja g³owa...
+	TheresAFight = "SVM_4_TheresAFight";	//Aach, walka...
+	OhMyGodItsAFight = "SVM_4_OhMyGodItsAFight";	//O rany, walka!
+	GoodVictory = "SVM_4_GoodVictory";	//Ale mu pokaza³eœ!
+	NotBad = "SVM_4_NotBad";	//NieŸle...
+	OhMyGodHesDown = "SVM_4_OhMyGodHesDown";	//Bogowie! Jak ostro...
+	CheerFriend01 = "SVM_4_CheerFriend01";	//Wal z ca³ej si³y!
+	CheerFriend02 = "SVM_4_CheerFriend02";	//Poka¿ mu!
+	CheerFriend03 = "SVM_4_CheerFriend03";	//Wykoñcz go!
+	Ooh01 = "SVM_4_Ooh01";	//Broñ siê!
+	Ooh02 = "SVM_4_Ooh02";	//Oddaj cios!
+	Ooh03 = "SVM_4_Ooh03";	//Uuu, to musia³o boleæ!
+	WhatWasThat = "SVM_4_WhatWasThat";	//Cholera, co TO by³o!?
+	GetOutOfMyBed = "SVM_4_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	Awake = "SVM_4_Awake";	//(rozkoszne ziewniêcie)
 	abs_commander = "SVM_4_ABS_COMMANDER";	//Za³atwi³eœ zatem sprawê z kapitanem.
 	abs_monastery = "SVM_4_ABS_MONASTERY";	//Opowiedzia³eœ zatem Ojcu Parlanowi o swych czynach.
 	abs_farm = "SVM_4_ABS_FARM";	//Mówi¹, ¿e Lee za³atwi³ ca³¹ sprawê.
@@ -736,40 +736,40 @@ instance SVM_4(C_SVM)
 	gold_30 = "SVM_4_GOLD_30";	//30 sztuk z³ota.
 	gold_20 = "SVM_4_GOLD_20";	//20 sztuk z³ota.
 	gold_10 = "SVM_4_GOLD_10";	//10 sztuk z³ota.
-	smalltalk01 = "SVM_4_Smalltalk01";	//...to rzeczywiœcie prawda...
-	smalltalk02 = "SVM_4_Smalltalk02";	//...s³ysza³em coœ innego...
-	smalltalk03 = "SVM_4_Smalltalk03";	//...nie mów, ¿e o tym nie wiedzia³eœ...
-	smalltalk04 = "SVM_4_Smalltalk04";	//...cz³owiek nie wie, komu wierzyæ...
-	smalltalk05 = "SVM_4_Smalltalk05";	//...to tylko gadanie...
-	smalltalk06 = "SVM_4_Smalltalk06";	//...no widzisz, ju¿ mi lepiej...
-	smalltalk07 = "SVM_4_Smalltalk07";	//...mnie to ju¿ nic nie dziwi...
-	smalltalk08 = "SVM_4_Smalltalk08";	//...to naprawdê nie mój problem...
-	smalltalk09 = "SVM_4_Smalltalk09";	//...naprawdê w to wierzysz...
-	smalltalk10 = "SVM_4_Smalltalk10";	//...ode mnie nie us³ysz¹ nawet s³ówka...
-	smalltalk11 = "SVM_4_Smalltalk11";	//...to by³o oczywiste od dawna...
-	smalltalk12 = "SVM_4_Smalltalk12";	//...pos³ucha³ niew³aœciwych ludzi...
-	smalltalk13 = "SVM_4_Smalltalk13";	//...je¿eli on sam tego nie widzi, to nie mogê mu pomóc...
-	smalltalk14 = "SVM_4_Smalltalk14";	//...nie mówiê przecie¿ niczego nowego...
-	smalltalk15 = "SVM_4_Smalltalk15";	//...sam by na to nie wpad³...
-	smalltalk16 = "SVM_4_Smalltalk16";	//...przecie¿ wiadomo o tym od dawna...
-	smalltalk17 = "SVM_4_Smalltalk17";	//...nieprzyjemna sprawa...
-	smalltalk18 = "SVM_4_Smalltalk18";	//...zrobi³bym to inaczej...
-	smalltalk19 = "SVM_4_Smalltalk19";	//...ca³kowicie siê z tob¹ zgadzam...
-	smalltalk20 = "SVM_4_Smalltalk20";	//...czy to siê kiedykolwiek zmieni...
-	smalltalk21 = "SVM_4_Smalltalk21";	//...nikt mi o tym nie mówi³...
-	smalltalk22 = "SVM_4_Smalltalk22";	//...i tak nic nie zmienisz...
-	smalltalk23 = "SVM_4_Smalltalk23";	//...wcale mnie to nie dziwi...
-	smalltalk24 = "SVM_4_Smalltalk24";	//...ale on zawsze wie lepiej...
-	smalltalk25 = "SVM_4_Smalltalk25";	//...i tak liczy siê tylko si³a, wiêc nie mów mi takich rzeczy...
-	smalltalk26 = "SVM_4_Smalltalk26";	//...on nawet nie wie, jak siê trzyma miecz...
-	smalltalk27 = "SVM_4_Smalltalk27";	//...tak, naprawdê tak powiedzia³...
-	smalltalk28 = "SVM_4_Smalltalk28";	//...ktoœ za to odpowie...
-	smalltalk29 = "SVM_4_Smalltalk29";	//...Innos oœwieca wszystkich tych, którzy widz¹ jego m¹droœæ...
-	smalltalk30 = "SVM_4_Smalltalk30";	//...w koñcu musi wygraæ sprawiedliwoœæ...
-	nolearnnopoints = "SVM_4_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
-	nolearnoverpersonalmax = "SVM_4_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
-	nolearnyourebetter = "SVM_4_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
-	youlearnedsomething = "SVM_4_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	Smalltalk01 = "SVM_4_Smalltalk01";	//...to rzeczywiœcie prawda...
+	Smalltalk02 = "SVM_4_Smalltalk02";	//...s³ysza³em coœ innego...
+	Smalltalk03 = "SVM_4_Smalltalk03";	//...nie mów, ¿e o tym nie wiedzia³eœ...
+	Smalltalk04 = "SVM_4_Smalltalk04";	//...cz³owiek nie wie, komu wierzyæ...
+	Smalltalk05 = "SVM_4_Smalltalk05";	//...to tylko gadanie...
+	Smalltalk06 = "SVM_4_Smalltalk06";	//...no widzisz, ju¿ mi lepiej...
+	Smalltalk07 = "SVM_4_Smalltalk07";	//...mnie to ju¿ nic nie dziwi...
+	Smalltalk08 = "SVM_4_Smalltalk08";	//...to naprawdê nie mój problem...
+	Smalltalk09 = "SVM_4_Smalltalk09";	//...naprawdê w to wierzysz...
+	Smalltalk10 = "SVM_4_Smalltalk10";	//...ode mnie nie us³ysz¹ nawet s³ówka...
+	Smalltalk11 = "SVM_4_Smalltalk11";	//...to by³o oczywiste od dawna...
+	Smalltalk12 = "SVM_4_Smalltalk12";	//...pos³ucha³ niew³aœciwych ludzi...
+	Smalltalk13 = "SVM_4_Smalltalk13";	//...je¿eli on sam tego nie widzi, to nie mogê mu pomóc...
+	Smalltalk14 = "SVM_4_Smalltalk14";	//...nie mówiê przecie¿ niczego nowego...
+	Smalltalk15 = "SVM_4_Smalltalk15";	//...sam by na to nie wpad³...
+	Smalltalk16 = "SVM_4_Smalltalk16";	//...przecie¿ wiadomo o tym od dawna...
+	Smalltalk17 = "SVM_4_Smalltalk17";	//...nieprzyjemna sprawa...
+	Smalltalk18 = "SVM_4_Smalltalk18";	//...zrobi³bym to inaczej...
+	Smalltalk19 = "SVM_4_Smalltalk19";	//...ca³kowicie siê z tob¹ zgadzam...
+	Smalltalk20 = "SVM_4_Smalltalk20";	//...czy to siê kiedykolwiek zmieni...
+	Smalltalk21 = "SVM_4_Smalltalk21";	//...nikt mi o tym nie mówi³...
+	Smalltalk22 = "SVM_4_Smalltalk22";	//...i tak nic nie zmienisz...
+	Smalltalk23 = "SVM_4_Smalltalk23";	//...wcale mnie to nie dziwi...
+	Smalltalk24 = "SVM_4_Smalltalk24";	//...ale on zawsze wie lepiej...
+	Smalltalk25 = "SVM_4_Smalltalk25";	//...i tak liczy siê tylko si³a, wiêc nie mów mi takich rzeczy...
+	Smalltalk26 = "SVM_4_Smalltalk26";	//...on nawet nie wie, jak siê trzyma miecz...
+	Smalltalk27 = "SVM_4_Smalltalk27";	//...tak, naprawdê tak powiedzia³...
+	Smalltalk28 = "SVM_4_Smalltalk28";	//...ktoœ za to odpowie...
+	Smalltalk29 = "SVM_4_Smalltalk29";	//...Innos oœwieca wszystkich tych, którzy widz¹ jego m¹droœæ...
+	Smalltalk30 = "SVM_4_Smalltalk30";	//...w koñcu musi wygraæ sprawiedliwoœæ...
+	NoLearnNoPoints = "SVM_4_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
+	NoLearnOverPersonalMAX = "SVM_4_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	NoLearnYoureBetter = "SVM_4_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	YouLearnedSomething = "SVM_4_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
 	unterstadt = "SVM_4_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
 	oberstadt = "SVM_4_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
 	tempel = "SVM_4_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
@@ -794,10 +794,10 @@ instance SVM_4(C_SVM)
 	kaserne_2_markt = "SVM_4_KASERNE_2_MARKT";	//Po prostu zejdŸ po schodach na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
 	kaserne_2_galgen = "SVM_4_KASERNE_2_GALGEN";	//Po prostu zejdŸ po schodach na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
 	hafen_2_unterstadt = "SVM_4_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nadbrze¿u w górê ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
-	dead = "SVM_4_Dead";	//Aaaaarhhh!
-	aargh_1 = "SVM_4_Aargh_1";	//Aargh
-	aargh_2 = "SVM_4_Aargh_2";	//Aargh
-	aargh_3 = "SVM_4_Aargh_3";	//Aargh
+	Dead = "SVM_4_Dead";	//Aaaaarhhh!
+	Aargh_1 = "SVM_4_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_4_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_4_Aargh_3";	//Aargh
 	addon_wrongarmor = "SVM_4_Addon_WrongArmor";	//
 	addon_wrongarmor_sld = "SVM_4_ADDON_WRONGARMOR_SLD";	//
 	addon_wrongarmor_mil = "SVM_4_ADDON_WRONGARMOR_MIL";	//
@@ -809,76 +809,76 @@ instance SVM_4(C_SVM)
 
 instance SVM_5(C_SVM)
 {
-	milgreetings = "SVM_5_MILGreetings";	//Niech ¿yje Król!
-	palgreetings = "SVM_5_PALGreetings";	//Chwa³a Innosowi!
-	weather = "SVM_5_Weather";	//Ale beznadziejna pogoda...
-	igetyoustill = "SVM_5_IGetYouStill";	//A jednak ciê mam!
-	dieenemy = "SVM_5_DieEnemy";	//Teraz ciê za³atwiê!
-	diemonster = "SVM_5_DieMonster";	//Znowu jedna z tych przeklêtych bestii!
-	dirtythief = "SVM_5_DirtyThief";	//Czekaj tylko, parszywy z³odzieju!
-	handsoff = "SVM_5_HandsOff";	//£apy precz!
-	sheepkiller = "SVM_5_SheepKiller";	//Ten bydlak szlachtuje nasze owce!
-	sheepkillermonster = "SVM_5_SheepKillerMonster";	//Ta przeklêta bestia z¿era nasze owce!
-	youmurderer = "SVM_5_YouMurderer";	//Morderca!
-	diestupidbeast = "SVM_5_DieStupidBeast";	//¯adne stwory nie maj¹ tu prawa wstêpu!
-	youdarehitme = "SVM_5_YouDareHitMe";	//No, teraz ci siê dostanie, bydlaku!
-	youaskedforit = "SVM_5_YouAskedForIt";	//Sam tego chcia³eœ!
-	thenibeatyououtofhere = "SVM_5_ThenIBeatYouOutOfHere";	//Bêdê ciê wiêc musia³ wyrzuciæ si³¹!
-	whatdidyoudointhere = "SVM_5_WhatDidYouDoInThere";	//Czego TY tam szuka³eœ?
-	willyoustopfighting = "SVM_5_WillYouStopFighting";	//Przestaniecie w koñcu?!
-	killenemy = "SVM_5_KillEnemy";	//Giñ, gnido!
-	enemykilled = "SVM_5_EnemyKilled";	//Ju¿ po tobie, œmieciu.
-	monsterkilled = "SVM_5_MonsterKilled";	//Jedna cholerna bestia mniej!
-	thiefdown = "SVM_5_ThiefDown";	//Nie próbuj nigdy wiêcej mnie okradaæ!
-	rumfummlerdown = "SVM_5_rumfummlerDown";	//Na przysz³oœæ trzymaj ³apy z dala od nieswoich rzeczy!
-	sheepattackerdown = "SVM_5_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To s¹ nasze owce!
-	killmurderer = "SVM_5_KillMurderer";	//Giñ, morderco!
-	stupidbeastkilled = "SVM_5_StupidBeastKilled";	//G³upia bestia!
-	neverhitmeagain = "SVM_5_NeverHitMeAgain";	//Nigdy wiêcej nie próbuj siê ze mn¹ mierzyæ!
-	youbettershouldhavelistened = "SVM_5_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
-	getupandbegone = "SVM_5_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
-	neverenterroomagain = "SVM_5_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
-	thereisnofightinghere = "SVM_5_ThereIsNoFightingHere";	//Tutaj siê nie walczy, jasne?! Niech to bêdzie dla ciebie nauczka!
-	spareme = "SVM_5_SpareMe";	//Zostaw mnie w spokoju!
-	runaway = "SVM_5_RunAway";	//Cholera! Trzeba uciekaæ!
-	alarm = "SVM_5_Alarm";	//ALARM!
-	guards = "SVM_5_Guards";	//STRA¯!
-	help = "SVM_5_Help";	//Pomocy!
-	goodmonsterkill = "SVM_5_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
-	goodkill = "SVM_5_GoodKill";	//Dobrze, za³atw drania!
+	MILGreetings = "SVM_5_MILGreetings";	//Niech ¿yje Król!
+	PALGreetings = "SVM_5_PALGreetings";	//Chwa³a Innosowi!
+	Weather = "SVM_5_Weather";	//Ale beznadziejna pogoda...
+	IGetYouStill = "SVM_5_IGetYouStill";	//A jednak ciê mam!
+	DieEnemy = "SVM_5_DieEnemy";	//Teraz ciê za³atwiê!
+	DieMonster = "SVM_5_DieMonster";	//Znowu jedna z tych przeklêtych bestii!
+	DirtyThief = "SVM_5_DirtyThief";	//Czekaj tylko, parszywy z³odzieju!
+	HandsOff = "SVM_5_HandsOff";	//£apy precz!
+	SheepKiller = "SVM_5_SheepKiller";	//Ten bydlak szlachtuje nasze owce!
+	SheepKillerMonster = "SVM_5_SheepKillerMonster";	//Ta przeklêta bestia z¿era nasze owce!
+	YouMurderer = "SVM_5_YouMurderer";	//Morderca!
+	DieStupidBeast = "SVM_5_DieStupidBeast";	//¯adne stwory nie maj¹ tu prawa wstêpu!
+	YouDareHitMe = "SVM_5_YouDareHitMe";	//No, teraz ci siê dostanie, bydlaku!
+	YouAskedForIt = "SVM_5_YouAskedForIt";	//Sam tego chcia³eœ!
+	ThenIBeatYouOutOfHere = "SVM_5_ThenIBeatYouOutOfHere";	//Bêdê ciê wiêc musia³ wyrzuciæ si³¹!
+	WhatDidYouDoInThere = "SVM_5_WhatDidYouDoInThere";	//Czego TY tam szuka³eœ?
+	WillYouStopFighting = "SVM_5_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	KillEnemy = "SVM_5_KillEnemy";	//Giñ, gnido!
+	EnemyKilled = "SVM_5_EnemyKilled";	//Ju¿ po tobie, œmieciu.
+	MonsterKilled = "SVM_5_MonsterKilled";	//Jedna cholerna bestia mniej!
+	ThiefDown = "SVM_5_ThiefDown";	//Nie próbuj nigdy wiêcej mnie okradaæ!
+	RumfummlerDown = "SVM_5_rumfummlerDown";	//Na przysz³oœæ trzymaj ³apy z dala od nieswoich rzeczy!
+	SheepAttackerDown = "SVM_5_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To s¹ nasze owce!
+	KillMurderer = "SVM_5_KillMurderer";	//Giñ, morderco!
+	StupidBeastKilled = "SVM_5_StupidBeastKilled";	//G³upia bestia!
+	NeverHitMeAgain = "SVM_5_NeverHitMeAgain";	//Nigdy wiêcej nie próbuj siê ze mn¹ mierzyæ!
+	YouBetterShouldHaveListened = "SVM_5_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
+	GetUpAndBeGone = "SVM_5_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
+	NeverEnterRoomAgain = "SVM_5_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
+	ThereIsNoFightingHere = "SVM_5_ThereIsNoFightingHere";	//Tutaj siê nie walczy, jasne?! Niech to bêdzie dla ciebie nauczka!
+	SpareMe = "SVM_5_SpareMe";	//Zostaw mnie w spokoju!
+	RunAway = "SVM_5_RunAway";	//Cholera! Trzeba uciekaæ!
+	Alarm = "SVM_5_Alarm";	//ALARM!
+	Guards = "SVM_5_Guards";	//STRA¯!
+	Help = "SVM_5_Help";	//Pomocy!
+	GoodMonsterKill = "SVM_5_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
+	GoodKill = "SVM_5_GoodKill";	//Dobrze, za³atw drania!
 	notnow = "SVM_5_NOTNOW";	//Zostaw mnie w spokoju!
-	runcoward = "SVM_5_RunCoward";	//Stój, œmieciu!
-	getoutofhere = "SVM_5_GetOutOfHere";	//Wynoœ siê!
-	whyareyouinhere = "SVM_5_WhyAreYouInHere";	//Czego tu szukasz?! OdejdŸ!
-	yesgooutofhere = "SVM_5_YesGoOutOfHere";	//No, zabieraj siê st¹d!
-	whatsthissupposedtobe = "SVM_5_WhatsThisSupposedToBe";	//Ej ty! Co ty tu robisz?
-	youdisturbedmyslumber = "SVM_5_YouDisturbedMySlumber";	//Cholera, co siê dzieje?
-	itookyourgold = "SVM_5_ITookYourGold";	//Z³oto! Teraz nale¿y do mnie...
-	shitnogold = "SVM_5_ShitNoGold";	//Nie masz nawet z³ota?
-	itakeyourweapon = "SVM_5_ITakeYourWeapon";	//Wezmê twoj¹ broñ na przechowanie...
-	whatareyoudoing = "SVM_5_WhatAreYouDoing";	//Hej, uwa¿aj!
-	lookingfortroubleagain = "SVM_5_LookingForTroubleAgain";	//Jeszcze ci ma³o?!
-	stopmagic = "SVM_5_StopMagic";	//Trzymaj siê z dala ode mnie z t¹ twoj¹ magi¹!
-	isaidstopmagic = "SVM_5_ISaidStopMagic";	//Skoñcz z t¹ magi¹! Masz problem ze s³uchem?!
-	weapondown = "SVM_5_WeaponDown";	//Od³ó¿ broñ!
-	isaidweapondown = "SVM_5_ISaidWeaponDown";	//G³uchy jesteœ? Od³ó¿ wreszcie tê broñ!
-	wisemove = "SVM_5_WiseMove";	//Widzisz, to nie by³o takie trudne!
-	nexttimeyoureinforit = "SVM_5_NextTimeYoureInForIt";	//Jeszcze raz, a siê doigrasz...
-	ohmyhead = "SVM_5_OhMyHead";	//Och, moja g³owa...
-	theresafight = "SVM_5_TheresAFight";	//Wreszcie coœ siê dzieje...
-	ohmygoditsafight = "SVM_5_OhMyGodItsAFight";	//Porozwalaj¹ sobie ³by...
-	goodvictory = "SVM_5_GoodVictory";	//Zas³u¿y³ sobie na to!
-	notbad = "SVM_5_NotBad";	//NieŸle...
-	ohmygodhesdown = "SVM_5_OhMyGodHesDown";	//Ale brutal...
-	cheerfriend01 = "SVM_5_CheerFriend01";	//Tak, dobrze tak!
-	cheerfriend02 = "SVM_5_CheerFriend02";	//No, dalej!
-	cheerfriend03 = "SVM_5_CheerFriend03";	//Mocniej, mocniej!
-	ooh01 = "SVM_5_Ooh01";	//Nie pozwalaj na to!
-	ooh02 = "SVM_5_Ooh02";	//Poka¿, kto tu rz¹dzi!
-	ooh03 = "SVM_5_Ooh03";	//To przecie¿ niemo¿liwe!
-	whatwasthat = "SVM_5_WhatWasThat";	//Co to by³o!?
-	getoutofmybed = "SVM_5_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
-	awake = "SVM_5_Awake";	//(rozkoszne ziewniêcie)
+	RunCoward = "SVM_5_RunCoward";	//Stój, œmieciu!
+	GetOutOfHere = "SVM_5_GetOutOfHere";	//Wynoœ siê!
+	WhyAreYouInHere = "SVM_5_WhyAreYouInHere";	//Czego tu szukasz?! OdejdŸ!
+	YesGoOutOfHere = "SVM_5_YesGoOutOfHere";	//No, zabieraj siê st¹d!
+	WhatsThisSupposedToBe = "SVM_5_WhatsThisSupposedToBe";	//Ej ty! Co ty tu robisz?
+	YouDisturbedMySlumber = "SVM_5_YouDisturbedMySlumber";	//Cholera, co siê dzieje?
+	ITookYourGold = "SVM_5_ITookYourGold";	//Z³oto! Teraz nale¿y do mnie...
+	ShitNoGold = "SVM_5_ShitNoGold";	//Nie masz nawet z³ota?
+	ITakeYourWeapon = "SVM_5_ITakeYourWeapon";	//Wezmê twoj¹ broñ na przechowanie...
+	WhatAreYouDoing = "SVM_5_WhatAreYouDoing";	//Hej, uwa¿aj!
+	LookingForTroubleAgain = "SVM_5_LookingForTroubleAgain";	//Jeszcze ci ma³o?!
+	StopMagic = "SVM_5_StopMagic";	//Trzymaj siê z dala ode mnie z t¹ twoj¹ magi¹!
+	ISaidStopMagic = "SVM_5_ISaidStopMagic";	//Skoñcz z t¹ magi¹! Masz problem ze s³uchem?!
+	WeaponDown = "SVM_5_WeaponDown";	//Od³ó¿ broñ!
+	ISaidWeaponDown = "SVM_5_ISaidWeaponDown";	//G³uchy jesteœ? Od³ó¿ wreszcie tê broñ!
+	WiseMove = "SVM_5_WiseMove";	//Widzisz, to nie by³o takie trudne!
+	NextTimeYoureInForIt = "SVM_5_NextTimeYoureInForIt";	//Jeszcze raz, a siê doigrasz...
+	OhMyHead = "SVM_5_OhMyHead";	//Och, moja g³owa...
+	TheresAFight = "SVM_5_TheresAFight";	//Wreszcie coœ siê dzieje...
+	OhMyGodItsAFight = "SVM_5_OhMyGodItsAFight";	//Porozwalaj¹ sobie ³by...
+	GoodVictory = "SVM_5_GoodVictory";	//Zas³u¿y³ sobie na to!
+	NotBad = "SVM_5_NotBad";	//NieŸle...
+	OhMyGodHesDown = "SVM_5_OhMyGodHesDown";	//Ale brutal...
+	CheerFriend01 = "SVM_5_CheerFriend01";	//Tak, dobrze tak!
+	CheerFriend02 = "SVM_5_CheerFriend02";	//No, dalej!
+	CheerFriend03 = "SVM_5_CheerFriend03";	//Mocniej, mocniej!
+	Ooh01 = "SVM_5_Ooh01";	//Nie pozwalaj na to!
+	Ooh02 = "SVM_5_Ooh02";	//Poka¿, kto tu rz¹dzi!
+	Ooh03 = "SVM_5_Ooh03";	//To przecie¿ niemo¿liwe!
+	WhatWasThat = "SVM_5_WhatWasThat";	//Co to by³o!?
+	GetOutOfMyBed = "SVM_5_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	Awake = "SVM_5_Awake";	//(rozkoszne ziewniêcie)
 	abs_commander = "SVM_5_ABS_COMMANDER";	//Mówi¹, ¿e by³eœ u kapitana i za³atwi³eœ ca³¹ sprawê.
 	abs_monastery = "SVM_5_ABS_MONASTERY";	//Ponoæ by³eœ u Ojca Parlana i wyspowiada³eœ siê ze swych grzechów?
 	abs_farm = "SVM_5_ABS_FARM";	//By³eœ zatem u Lee i wyjaœni³eœ sprawê.
@@ -923,40 +923,40 @@ instance SVM_5(C_SVM)
 	gold_30 = "SVM_5_GOLD_30";	//30 sztuk z³ota.
 	gold_20 = "SVM_5_GOLD_20";	//20 sztuk z³ota.
 	gold_10 = "SVM_5_GOLD_10";	//10 sztuk z³ota.
-	smalltalk01 = "SVM_5_Smalltalk01";	//...naprawdê s¹dzisz...
-	smalltalk02 = "SVM_5_Smalltalk02";	//...wszystko jest mo¿liwe...
-	smalltalk03 = "SVM_5_Smalltalk03";	//...powinien byæ m¹drzejszy...
-	smalltalk04 = "SVM_5_Smalltalk04";	//...jakby by³o ma³o problemów...
-	smalltalk05 = "SVM_5_Smalltalk05";	//...kto ci to powiedzia³...
-	smalltalk06 = "SVM_5_Smalltalk06";	//...z tego bêdzie jeszcze wiêcej k³opotów...
-	smalltalk07 = "SVM_5_Smalltalk07";	//...ludzie gadaj¹ o tym i o tamtym...
-	smalltalk08 = "SVM_5_Smalltalk08";	//...lepiej tego nie robiæ...
-	smalltalk09 = "SVM_5_Smalltalk09";	//...to wszystko tylko plotki...
-	smalltalk10 = "SVM_5_Smalltalk10";	//...trzeba uwa¿aæ, co siê komu mówi...
-	smalltalk11 = "SVM_5_Smalltalk11";	//...trzeba by³o mnie spytaæ wczeœniej...
-	smalltalk12 = "SVM_5_Smalltalk12";	//...mnie i tak nikt nie pyta...
-	smalltalk13 = "SVM_5_Smalltalk13";	//...¿al mi tego biedaka...
-	smalltalk14 = "SVM_5_Smalltalk14";	//...to przecie¿ nic nowego...
-	smalltalk15 = "SVM_5_Smalltalk15";	//...to przecie¿ oczywiste...
-	smalltalk16 = "SVM_5_Smalltalk16";	//...mnie nie musisz o to pytaæ...
-	smalltalk17 = "SVM_5_Smalltalk17";	//...tak dalej byæ nie mo¿e...
-	smalltalk18 = "SVM_5_Smalltalk18";	//...moje zdanie ju¿ znasz...
-	smalltalk19 = "SVM_5_Smalltalk19";	//...moja reakcja by³a taka sama...
-	smalltalk20 = "SVM_5_Smalltalk20";	//...nic siê w tej sprawie nie zmieni...
-	smalltalk21 = "SVM_5_Smalltalk21";	//...czemu dowiadujê siê o tym dopiero teraz...
-	smalltalk22 = "SVM_5_Smalltalk22";	//...poczekajmy, co z tego wyniknie...
-	smalltalk23 = "SVM_5_Smalltalk23";	//...niektóre problemy same siê rozwi¹zuj¹...
-	smalltalk24 = "SVM_5_Smalltalk24";	//...ju¿ nie mogê tego s³uchaæ...
-	smalltalk25 = "SVM_5_Smalltalk25";	//...by³ w sztok pijany...
-	smalltalk26 = "SVM_5_Smalltalk26";	//...nie pozwolê, ¿eby mnie tak traktowano...
-	smalltalk27 = "SVM_5_Smalltalk27";	//...wszyscy uciekali jak zaj¹ce, by³em zupe³nie sam...
-	smalltalk28 = "SVM_5_Smalltalk28";	//...tak jest napisane w œwiêtych pismach...
-	smalltalk29 = "SVM_5_Smalltalk29";	//...dzia³am w imieniu Innosa...
-	smalltalk30 = "SVM_5_Smalltalk30";	//...nie wolno naruszaæ boskiego porz¹dku...
-	nolearnnopoints = "SVM_5_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
-	nolearnoverpersonalmax = "SVM_5_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
-	nolearnyourebetter = "SVM_5_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
-	youlearnedsomething = "SVM_5_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	Smalltalk01 = "SVM_5_Smalltalk01";	//...naprawdê s¹dzisz...
+	Smalltalk02 = "SVM_5_Smalltalk02";	//...wszystko jest mo¿liwe...
+	Smalltalk03 = "SVM_5_Smalltalk03";	//...powinien byæ m¹drzejszy...
+	Smalltalk04 = "SVM_5_Smalltalk04";	//...jakby by³o ma³o problemów...
+	Smalltalk05 = "SVM_5_Smalltalk05";	//...kto ci to powiedzia³...
+	Smalltalk06 = "SVM_5_Smalltalk06";	//...z tego bêdzie jeszcze wiêcej k³opotów...
+	Smalltalk07 = "SVM_5_Smalltalk07";	//...ludzie gadaj¹ o tym i o tamtym...
+	Smalltalk08 = "SVM_5_Smalltalk08";	//...lepiej tego nie robiæ...
+	Smalltalk09 = "SVM_5_Smalltalk09";	//...to wszystko tylko plotki...
+	Smalltalk10 = "SVM_5_Smalltalk10";	//...trzeba uwa¿aæ, co siê komu mówi...
+	Smalltalk11 = "SVM_5_Smalltalk11";	//...trzeba by³o mnie spytaæ wczeœniej...
+	Smalltalk12 = "SVM_5_Smalltalk12";	//...mnie i tak nikt nie pyta...
+	Smalltalk13 = "SVM_5_Smalltalk13";	//...¿al mi tego biedaka...
+	Smalltalk14 = "SVM_5_Smalltalk14";	//...to przecie¿ nic nowego...
+	Smalltalk15 = "SVM_5_Smalltalk15";	//...to przecie¿ oczywiste...
+	Smalltalk16 = "SVM_5_Smalltalk16";	//...mnie nie musisz o to pytaæ...
+	Smalltalk17 = "SVM_5_Smalltalk17";	//...tak dalej byæ nie mo¿e...
+	Smalltalk18 = "SVM_5_Smalltalk18";	//...moje zdanie ju¿ znasz...
+	Smalltalk19 = "SVM_5_Smalltalk19";	//...moja reakcja by³a taka sama...
+	Smalltalk20 = "SVM_5_Smalltalk20";	//...nic siê w tej sprawie nie zmieni...
+	Smalltalk21 = "SVM_5_Smalltalk21";	//...czemu dowiadujê siê o tym dopiero teraz...
+	Smalltalk22 = "SVM_5_Smalltalk22";	//...poczekajmy, co z tego wyniknie...
+	Smalltalk23 = "SVM_5_Smalltalk23";	//...niektóre problemy same siê rozwi¹zuj¹...
+	Smalltalk24 = "SVM_5_Smalltalk24";	//...ju¿ nie mogê tego s³uchaæ...
+	Smalltalk25 = "SVM_5_Smalltalk25";	//...by³ w sztok pijany...
+	Smalltalk26 = "SVM_5_Smalltalk26";	//...nie pozwolê, ¿eby mnie tak traktowano...
+	Smalltalk27 = "SVM_5_Smalltalk27";	//...wszyscy uciekali jak zaj¹ce, by³em zupe³nie sam...
+	Smalltalk28 = "SVM_5_Smalltalk28";	//...tak jest napisane w œwiêtych pismach...
+	Smalltalk29 = "SVM_5_Smalltalk29";	//...dzia³am w imieniu Innosa...
+	Smalltalk30 = "SVM_5_Smalltalk30";	//...nie wolno naruszaæ boskiego porz¹dku...
+	NoLearnNoPoints = "SVM_5_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
+	NoLearnOverPersonalMAX = "SVM_5_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	NoLearnYoureBetter = "SVM_5_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	YouLearnedSomething = "SVM_5_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
 	unterstadt = "SVM_5_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
 	oberstadt = "SVM_5_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
 	tempel = "SVM_5_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
@@ -981,10 +981,10 @@ instance SVM_5(C_SVM)
 	kaserne_2_markt = "SVM_5_KASERNE_2_MARKT";	//ZejdŸ po schodach na lewo od g³ównego wejœcia, to dojdziesz do targowiska.
 	kaserne_2_galgen = "SVM_5_KASERNE_2_GALGEN";	//ZejdŸ po schodach na prawo od g³ównego wejœcia, to dojdziesz do placu wisielców.
 	hafen_2_unterstadt = "SVM_5_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nabrze¿u w górê ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
-	dead = "SVM_5_Dead";	//Aaaarhhhh!
-	aargh_1 = "SVM_5_Aargh_1";	//Aargh
-	aargh_2 = "SVM_5_Aargh_2";	//Aargh
-	aargh_3 = "SVM_5_Aargh_3";	//Aargh
+	Dead = "SVM_5_Dead";	//Aaaarhhhh!
+	Aargh_1 = "SVM_5_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_5_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_5_Aargh_3";	//Aargh
 	addon_wrongarmor = "SVM_5_Addon_WrongArmor";	//
 	addon_wrongarmor_sld = "SVM_5_ADDON_WRONGARMOR_SLD";	//
 	addon_wrongarmor_mil = "SVM_5_ADDON_WRONGARMOR_MIL";	//
@@ -996,76 +996,76 @@ instance SVM_5(C_SVM)
 
 instance SVM_6(C_SVM)
 {
-	milgreetings = "SVM_6_MILGreetings";	//Niech ¿yje Król!
-	palgreetings = "SVM_6_PALGreetings";	//Chwa³a Innosowi!
-	weather = "SVM_6_Weather";	//Pieska pogoda...
-	igetyoustill = "SVM_6_IGetYouStill";	//Teraz ciê dorwê!
-	dieenemy = "SVM_6_DieEnemy";	//Nie powinieneœ tu przychodziæ!
-	diemonster = "SVM_6_DieMonster";	//No chodŸ!
-	dirtythief = "SVM_6_DirtyThief";	//Z³odziej! Czekaj no...
-	handsoff = "SVM_6_HandsOff";	//Zabieraj ³apy!
-	sheepkiller = "SVM_6_SheepKiller";	//Zostaw nasze owce w spokoju!
-	sheepkillermonster = "SVM_6_SheepKillerMonster";	//OdejdŸ od naszych owiec, bestio!
-	youmurderer = "SVM_6_YouMurderer";	//Morderca!
-	diestupidbeast = "SVM_6_DieStupidBeast";	//¯adna bestia tu nie wejdzie!
-	youdarehitme = "SVM_6_YouDareHitMe";	//Po¿a³ujesz tego!
-	youaskedforit = "SVM_6_YouAskedForIt";	//Ostrzega³em ciê...
-	thenibeatyououtofhere = "SVM_6_ThenIBeatYouOutOfHere";	//Hej, WYNOŒ SIÊ!
-	whatdidyoudointhere = "SVM_6_WhatDidYouDoInThere";	//Hej! Czego tam szuka³eœ?
-	willyoustopfighting = "SVM_6_WillYouStopFighting";	//Przestaæ! Natychmiast!
-	killenemy = "SVM_6_KillEnemy";	//Teraz ciê wypatroszê!
-	enemykilled = "SVM_6_EnemyKilled";	//Tyle na ten temat...
-	monsterkilled = "SVM_6_MonsterKilled";	//Hej! Ci¹gle to potrafiê!
-	thiefdown = "SVM_6_ThiefDown";	//Ostrzegam ciê! Nie próbuj tego ponownie, ty przeklêty z³odzieju!
-	rumfummlerdown = "SVM_6_rumfummlerDown";	//Trzymaj ³apy z dala od cudzej w³asnoœci!
-	sheepattackerdown = "SVM_6_SheepAttackerDown";	//I trzymaj siê na przysz³oœæ z dala od naszych owiec!
-	killmurderer = "SVM_6_KillMurderer";	//Giñ, morderco!
-	stupidbeastkilled = "SVM_6_StupidBeastKilled";	//G³upia bestia!
-	neverhitmeagain = "SVM_6_NeverHitMeAgain";	//Nie wa¿ siê nigdy wiêcej mnie atakowaæ!
-	youbettershouldhavelistened = "SVM_6_YouBetterShouldHaveListened";	//Ostrzega³em ciê...
-	getupandbegone = "SVM_6_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
-	neverenterroomagain = "SVM_6_NeverEnterRoomAgain";	//Nie chcê ciê ju¿ tam wiêcej widzieæ, jasne?
-	thereisnofightinghere = "SVM_6_ThereIsNoFightingHere";	//Tu siê nie walczy, niech to bêdzie dla ciebie nauczka.
-	spareme = "SVM_6_SpareMe";	//Nie rób g³upstw!
-	runaway = "SVM_6_RunAway";	//Zmywam siê st¹d!
-	alarm = "SVM_6_Alarm";	//ALARM!
-	guards = "SVM_6_Guards";	//STRA¯!
-	help = "SVM_6_Help";	//Pomocy!
-	goodmonsterkill = "SVM_6_GoodMonsterKill";	//Daj im wycisk!
-	goodkill = "SVM_6_GoodKill";	//No, poka¿ draniowi!
+	MILGreetings = "SVM_6_MILGreetings";	//Niech ¿yje Król!
+	PALGreetings = "SVM_6_PALGreetings";	//Chwa³a Innosowi!
+	Weather = "SVM_6_Weather";	//Pieska pogoda...
+	IGetYouStill = "SVM_6_IGetYouStill";	//Teraz ciê dorwê!
+	DieEnemy = "SVM_6_DieEnemy";	//Nie powinieneœ tu przychodziæ!
+	DieMonster = "SVM_6_DieMonster";	//No chodŸ!
+	DirtyThief = "SVM_6_DirtyThief";	//Z³odziej! Czekaj no...
+	HandsOff = "SVM_6_HandsOff";	//Zabieraj ³apy!
+	SheepKiller = "SVM_6_SheepKiller";	//Zostaw nasze owce w spokoju!
+	SheepKillerMonster = "SVM_6_SheepKillerMonster";	//OdejdŸ od naszych owiec, bestio!
+	YouMurderer = "SVM_6_YouMurderer";	//Morderca!
+	DieStupidBeast = "SVM_6_DieStupidBeast";	//¯adna bestia tu nie wejdzie!
+	YouDareHitMe = "SVM_6_YouDareHitMe";	//Po¿a³ujesz tego!
+	YouAskedForIt = "SVM_6_YouAskedForIt";	//Ostrzega³em ciê...
+	ThenIBeatYouOutOfHere = "SVM_6_ThenIBeatYouOutOfHere";	//Hej, WYNOŒ SIÊ!
+	WhatDidYouDoInThere = "SVM_6_WhatDidYouDoInThere";	//Hej! Czego tam szuka³eœ?
+	WillYouStopFighting = "SVM_6_WillYouStopFighting";	//Przestaæ! Natychmiast!
+	KillEnemy = "SVM_6_KillEnemy";	//Teraz ciê wypatroszê!
+	EnemyKilled = "SVM_6_EnemyKilled";	//Tyle na ten temat...
+	MonsterKilled = "SVM_6_MonsterKilled";	//Hej! Ci¹gle to potrafiê!
+	ThiefDown = "SVM_6_ThiefDown";	//Ostrzegam ciê! Nie próbuj tego ponownie, ty przeklêty z³odzieju!
+	RumfummlerDown = "SVM_6_rumfummlerDown";	//Trzymaj ³apy z dala od cudzej w³asnoœci!
+	SheepAttackerDown = "SVM_6_SheepAttackerDown";	//I trzymaj siê na przysz³oœæ z dala od naszych owiec!
+	KillMurderer = "SVM_6_KillMurderer";	//Giñ, morderco!
+	StupidBeastKilled = "SVM_6_StupidBeastKilled";	//G³upia bestia!
+	NeverHitMeAgain = "SVM_6_NeverHitMeAgain";	//Nie wa¿ siê nigdy wiêcej mnie atakowaæ!
+	YouBetterShouldHaveListened = "SVM_6_YouBetterShouldHaveListened";	//Ostrzega³em ciê...
+	GetUpAndBeGone = "SVM_6_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
+	NeverEnterRoomAgain = "SVM_6_NeverEnterRoomAgain";	//Nie chcê ciê ju¿ tam wiêcej widzieæ, jasne?
+	ThereIsNoFightingHere = "SVM_6_ThereIsNoFightingHere";	//Tu siê nie walczy, niech to bêdzie dla ciebie nauczka.
+	SpareMe = "SVM_6_SpareMe";	//Nie rób g³upstw!
+	RunAway = "SVM_6_RunAway";	//Zmywam siê st¹d!
+	Alarm = "SVM_6_Alarm";	//ALARM!
+	Guards = "SVM_6_Guards";	//STRA¯!
+	Help = "SVM_6_Help";	//Pomocy!
+	GoodMonsterKill = "SVM_6_GoodMonsterKill";	//Daj im wycisk!
+	GoodKill = "SVM_6_GoodKill";	//No, poka¿ draniowi!
 	notnow = "SVM_6_NOTNOW";	//Zostaw mnie w spokoju!
-	runcoward = "SVM_6_RunCoward";	//Jeszcze ciê dorwê!
-	getoutofhere = "SVM_6_GetOutOfHere";	//Wynoœ siê st¹d!
-	whyareyouinhere = "SVM_6_WhyAreYouInHere";	//Nie masz tu czego szukaæ!
-	yesgooutofhere = "SVM_6_YesGoOutOfHere";	//No, wynoœ siê!
-	whatsthissupposedtobe = "SVM_6_WhatsThisSupposedToBe";	//Co to ma byæ? Co ty tutaj robisz?
-	youdisturbedmyslumber = "SVM_6_YouDisturbedMySlumber";	//Cholera, czego chcesz?
-	itookyourgold = "SVM_6_ITookYourGold";	//No, przynajmniej masz jakieœ z³oto...
-	shitnogold = "SVM_6_ShitNoGold";	//Eeee... Nawet z³ota nie ma...
-	itakeyourweapon = "SVM_6_ITakeYourWeapon";	//Zajmê siê twoj¹ broni¹...
-	whatareyoudoing = "SVM_6_WhatAreYouDoing";	//Nie próbuj tego ponownie, ch³opcze!
-	lookingfortroubleagain = "SVM_6_LookingForTroubleAgain";	//Znowu szukasz guza?
-	stopmagic = "SVM_6_StopMagic";	//Przestañ z t¹ magi¹!
-	isaidstopmagic = "SVM_6_ISaidStopMagic";	//Ostatnie ostrze¿enie! Skoñcz z tym czarowaniem!
-	weapondown = "SVM_6_WeaponDown";	//Od³ó¿ broñ!
-	isaidweapondown = "SVM_6_ISaidWeaponDown";	//Od³ó¿ to albo ci przy³o¿ê!
-	wisemove = "SVM_6_WiseMove";	//Nie jesteœ wcale taki g³upi, na jakiego wygl¹dasz!
-	nexttimeyoureinforit = "SVM_6_NextTimeYoureInForIt";	//Nie próbuj tego ponownie...
-	ohmyhead = "SVM_6_OhMyHead";	//Och, moja g³owa...
-	theresafight = "SVM_6_TheresAFight";	//Teraz bêdzie zabawnie...
-	ohmygoditsafight = "SVM_6_OhMyGodItsAFight";	//O bogowie...
-	goodvictory = "SVM_6_GoodVictory";	//To bêdzie dla niego nauczka...
-	notbad = "SVM_6_NotBad";	//HA! To by³o niez³e!
-	ohmygodhesdown = "SVM_6_OhMyGodHesDown";	//Brutalny drañ!
-	cheerfriend01 = "SVM_6_CheerFriend01";	//Wal!
-	cheerfriend02 = "SVM_6_CheerFriend02";	//Nie przestawaj!
-	cheerfriend03 = "SVM_6_CheerFriend03";	//Za³atw go!
-	ooh01 = "SVM_6_Ooh01";	//Uwa¿aj!
-	ooh02 = "SVM_6_Ooh02";	//Paruj!
-	ooh03 = "SVM_6_Ooh03";	//Cholera, to bola³o!
-	whatwasthat = "SVM_6_WhatWasThat";	//Co ty tutaj robisz?
-	getoutofmybed = "SVM_6_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
-	awake = "SVM_6_Awake";	//(rozkoszne ziewniêcie)
+	RunCoward = "SVM_6_RunCoward";	//Jeszcze ciê dorwê!
+	GetOutOfHere = "SVM_6_GetOutOfHere";	//Wynoœ siê st¹d!
+	WhyAreYouInHere = "SVM_6_WhyAreYouInHere";	//Nie masz tu czego szukaæ!
+	YesGoOutOfHere = "SVM_6_YesGoOutOfHere";	//No, wynoœ siê!
+	WhatsThisSupposedToBe = "SVM_6_WhatsThisSupposedToBe";	//Co to ma byæ? Co ty tutaj robisz?
+	YouDisturbedMySlumber = "SVM_6_YouDisturbedMySlumber";	//Cholera, czego chcesz?
+	ITookYourGold = "SVM_6_ITookYourGold";	//No, przynajmniej masz jakieœ z³oto...
+	ShitNoGold = "SVM_6_ShitNoGold";	//Eeee... Nawet z³ota nie ma...
+	ITakeYourWeapon = "SVM_6_ITakeYourWeapon";	//Zajmê siê twoj¹ broni¹...
+	WhatAreYouDoing = "SVM_6_WhatAreYouDoing";	//Nie próbuj tego ponownie, ch³opcze!
+	LookingForTroubleAgain = "SVM_6_LookingForTroubleAgain";	//Znowu szukasz guza?
+	StopMagic = "SVM_6_StopMagic";	//Przestañ z t¹ magi¹!
+	ISaidStopMagic = "SVM_6_ISaidStopMagic";	//Ostatnie ostrze¿enie! Skoñcz z tym czarowaniem!
+	WeaponDown = "SVM_6_WeaponDown";	//Od³ó¿ broñ!
+	ISaidWeaponDown = "SVM_6_ISaidWeaponDown";	//Od³ó¿ to albo ci przy³o¿ê!
+	WiseMove = "SVM_6_WiseMove";	//Nie jesteœ wcale taki g³upi, na jakiego wygl¹dasz!
+	NextTimeYoureInForIt = "SVM_6_NextTimeYoureInForIt";	//Nie próbuj tego ponownie...
+	OhMyHead = "SVM_6_OhMyHead";	//Och, moja g³owa...
+	TheresAFight = "SVM_6_TheresAFight";	//Teraz bêdzie zabawnie...
+	OhMyGodItsAFight = "SVM_6_OhMyGodItsAFight";	//O bogowie...
+	GoodVictory = "SVM_6_GoodVictory";	//To bêdzie dla niego nauczka...
+	NotBad = "SVM_6_NotBad";	//HA! To by³o niez³e!
+	OhMyGodHesDown = "SVM_6_OhMyGodHesDown";	//Brutalny drañ!
+	CheerFriend01 = "SVM_6_CheerFriend01";	//Wal!
+	CheerFriend02 = "SVM_6_CheerFriend02";	//Nie przestawaj!
+	CheerFriend03 = "SVM_6_CheerFriend03";	//Za³atw go!
+	Ooh01 = "SVM_6_Ooh01";	//Uwa¿aj!
+	Ooh02 = "SVM_6_Ooh02";	//Paruj!
+	Ooh03 = "SVM_6_Ooh03";	//Cholera, to bola³o!
+	WhatWasThat = "SVM_6_WhatWasThat";	//Co ty tutaj robisz?
+	GetOutOfMyBed = "SVM_6_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	Awake = "SVM_6_Awake";	//(rozkoszne ziewniêcie)
 	abs_commander = "SVM_6_ABS_COMMANDER";	//Kapitan wyjaœni³ wiêc z tob¹ ca³¹ sprawê.
 	abs_monastery = "SVM_6_ABS_MONASTERY";	//Ojciec Parlan uwolni³ ciê od twoich grzechów.
 	abs_farm = "SVM_6_ABS_FARM";	//By³eœ zatem u Lee i wyjaœni³eœ sprawê.
@@ -1110,40 +1110,40 @@ instance SVM_6(C_SVM)
 	gold_30 = "SVM_6_GOLD_30";	//30 sztuk z³ota.
 	gold_20 = "SVM_6_GOLD_20";	//20 sztuk z³ota.
 	gold_10 = "SVM_6_GOLD_10";	//10 sztuk z³ota.
-	smalltalk01 = "SVM_6_Smalltalk01";	//...trudno mi w to uwierzyæ...
-	smalltalk02 = "SVM_6_Smalltalk02";	//...trudno byæ tego pewnym...
-	smalltalk03 = "SVM_6_Smalltalk03";	//...przecie¿ wiedzia³ o tym wczeœniej...
-	smalltalk04 = "SVM_6_Smalltalk04";	//...nie wiem ju¿, w co wierzyæ...
-	smalltalk05 = "SVM_6_Smalltalk05";	//...nie wiem, czym on siê tak denerwuje...
-	smalltalk06 = "SVM_6_Smalltalk06";	//...nie trzeba mi wiêcej k³opotów...
-	smalltalk07 = "SVM_6_Smalltalk07";	//...mówi¹ to i owo...
-	smalltalk08 = "SVM_6_Smalltalk08";	//...bêdê siê lepiej trzymaæ od tego z daleka...
-	smalltalk09 = "SVM_6_Smalltalk09";	//...nie mo¿na wierzyæ we wszystko, co siê s³yszy...
-	smalltalk10 = "SVM_6_Smalltalk10";	//...ode mnie tego nie dosta³...
-	smalltalk11 = "SVM_6_Smalltalk11";	//...przysz³o mi to do g³owy...
-	smalltalk12 = "SVM_6_Smalltalk12";	//...moje zdanie i tak nikogo nie obchodzi...
-	smalltalk13 = "SVM_6_Smalltalk13";	//...nie zas³u¿y³ sobie na to...
-	smalltalk14 = "SVM_6_Smalltalk14";	//...nie mów, ¿e o tym nie wiesz...
-	smalltalk15 = "SVM_6_Smalltalk15";	//...to by³o oczywiste...
-	smalltalk16 = "SVM_6_Smalltalk16";	//...sk¹d ty to znowu masz...
-	smalltalk17 = "SVM_6_Smalltalk17";	//...nie mo¿e tak dalej byæ...
-	smalltalk18 = "SVM_6_Smalltalk18";	//...mam swoje zdanie na ten temat...
-	smalltalk19 = "SVM_6_Smalltalk19";	//...by³o dok³adnie tak, jak mówisz...
-	smalltalk20 = "SVM_6_Smalltalk20";	//...nie s¹dzê, ¿eby coœ siê zmieni³o...
-	smalltalk21 = "SVM_6_Smalltalk21";	//...s³yszê o tym po raz pierwszy...
-	smalltalk22 = "SVM_6_Smalltalk22";	//...mo¿emy jedynie przeczekaæ...
-	smalltalk23 = "SVM_6_Smalltalk23";	//...musia³y pojawiæ siê problemy...
-	smalltalk24 = "SVM_6_Smalltalk24";	//...czemu nikt mnie nie s³ucha...
-	smalltalk25 = "SVM_6_Smalltalk25";	//...ucieka³, jakby goni³ go sam Beliar...
-	smalltalk26 = "SVM_6_Smalltalk26";	//...w koñcu i tak go oczywiœcie dorwaliœmy...
-	smalltalk27 = "SVM_6_Smalltalk27";	//...trzeba silnie uderzyæ w sam œrodek...
-	smalltalk28 = "SVM_6_Smalltalk28";	//...niektórzy nie zdaj¹ sobie w ogóle sprawy ze swoich grzechów...
-	smalltalk29 = "SVM_6_Smalltalk29";	//...taka jest bowiem wola Innosa...
-	smalltalk30 = "SVM_6_Smalltalk30";	//...jego czyny by³y sprawiedliwe...
-	nolearnnopoints = "SVM_6_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
-	nolearnoverpersonalmax = "SVM_6_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
-	nolearnyourebetter = "SVM_6_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
-	youlearnedsomething = "SVM_6_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	Smalltalk01 = "SVM_6_Smalltalk01";	//...trudno mi w to uwierzyæ...
+	Smalltalk02 = "SVM_6_Smalltalk02";	//...trudno byæ tego pewnym...
+	Smalltalk03 = "SVM_6_Smalltalk03";	//...przecie¿ wiedzia³ o tym wczeœniej...
+	Smalltalk04 = "SVM_6_Smalltalk04";	//...nie wiem ju¿, w co wierzyæ...
+	Smalltalk05 = "SVM_6_Smalltalk05";	//...nie wiem, czym on siê tak denerwuje...
+	Smalltalk06 = "SVM_6_Smalltalk06";	//...nie trzeba mi wiêcej k³opotów...
+	Smalltalk07 = "SVM_6_Smalltalk07";	//...mówi¹ to i owo...
+	Smalltalk08 = "SVM_6_Smalltalk08";	//...bêdê siê lepiej trzymaæ od tego z daleka...
+	Smalltalk09 = "SVM_6_Smalltalk09";	//...nie mo¿na wierzyæ we wszystko, co siê s³yszy...
+	Smalltalk10 = "SVM_6_Smalltalk10";	//...ode mnie tego nie dosta³...
+	Smalltalk11 = "SVM_6_Smalltalk11";	//...przysz³o mi to do g³owy...
+	Smalltalk12 = "SVM_6_Smalltalk12";	//...moje zdanie i tak nikogo nie obchodzi...
+	Smalltalk13 = "SVM_6_Smalltalk13";	//...nie zas³u¿y³ sobie na to...
+	Smalltalk14 = "SVM_6_Smalltalk14";	//...nie mów, ¿e o tym nie wiesz...
+	Smalltalk15 = "SVM_6_Smalltalk15";	//...to by³o oczywiste...
+	Smalltalk16 = "SVM_6_Smalltalk16";	//...sk¹d ty to znowu masz...
+	Smalltalk17 = "SVM_6_Smalltalk17";	//...nie mo¿e tak dalej byæ...
+	Smalltalk18 = "SVM_6_Smalltalk18";	//...mam swoje zdanie na ten temat...
+	Smalltalk19 = "SVM_6_Smalltalk19";	//...by³o dok³adnie tak, jak mówisz...
+	Smalltalk20 = "SVM_6_Smalltalk20";	//...nie s¹dzê, ¿eby coœ siê zmieni³o...
+	Smalltalk21 = "SVM_6_Smalltalk21";	//...s³yszê o tym po raz pierwszy...
+	Smalltalk22 = "SVM_6_Smalltalk22";	//...mo¿emy jedynie przeczekaæ...
+	Smalltalk23 = "SVM_6_Smalltalk23";	//...musia³y pojawiæ siê problemy...
+	Smalltalk24 = "SVM_6_Smalltalk24";	//...czemu nikt mnie nie s³ucha...
+	Smalltalk25 = "SVM_6_Smalltalk25";	//...ucieka³, jakby goni³ go sam Beliar...
+	Smalltalk26 = "SVM_6_Smalltalk26";	//...w koñcu i tak go oczywiœcie dorwaliœmy...
+	Smalltalk27 = "SVM_6_Smalltalk27";	//...trzeba silnie uderzyæ w sam œrodek...
+	Smalltalk28 = "SVM_6_Smalltalk28";	//...niektórzy nie zdaj¹ sobie w ogóle sprawy ze swoich grzechów...
+	Smalltalk29 = "SVM_6_Smalltalk29";	//...taka jest bowiem wola Innosa...
+	Smalltalk30 = "SVM_6_Smalltalk30";	//...jego czyny by³y sprawiedliwe...
+	NoLearnNoPoints = "SVM_6_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
+	NoLearnOverPersonalMAX = "SVM_6_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	NoLearnYoureBetter = "SVM_6_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	YouLearnedSomething = "SVM_6_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
 	unterstadt = "SVM_6_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
 	oberstadt = "SVM_6_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
 	tempel = "SVM_6_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
@@ -1168,10 +1168,10 @@ instance SVM_6(C_SVM)
 	kaserne_2_markt = "SVM_6_KASERNE_2_MARKT";	//ZejdŸ po schodach na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
 	kaserne_2_galgen = "SVM_6_KASERNE_2_GALGEN";	//ZejdŸ po schodach na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
 	hafen_2_unterstadt = "SVM_6_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nadbrze¿u w górê ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
-	dead = "SVM_6_Dead";	//Aaaaarhhh!
-	aargh_1 = "SVM_6_Aargh_1";	//Aargh
-	aargh_2 = "SVM_6_Aargh_2";	//Aargh
-	aargh_3 = "SVM_6_Aargh_3";	//Aargh
+	Dead = "SVM_6_Dead";	//Aaaaarhhh!
+	Aargh_1 = "SVM_6_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_6_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_6_Aargh_3";	//Aargh
 	addon_wrongarmor = "SVM_6_Addon_WrongArmor";	//
 	addon_wrongarmor_sld = "SVM_6_ADDON_WRONGARMOR_SLD";	//
 	addon_wrongarmor_mil = "SVM_6_ADDON_WRONGARMOR_MIL";	//
@@ -1183,76 +1183,76 @@ instance SVM_6(C_SVM)
 
 instance SVM_7(C_SVM)
 {
-	milgreetings = "SVM_7_MILGreetings";	//Niech ¿yje Król!
-	palgreetings = "SVM_7_PALGreetings";	//Chwa³a Innosowi!
-	weather = "SVM_7_Weather";	//Kiepska pogoda...
-	igetyoustill = "SVM_7_IGetYouStill";	//Znowu TY?!
-	dieenemy = "SVM_7_DieEnemy";	//Rozerwê ciê na kawa³ki!
-	diemonster = "SVM_7_DieMonster";	//Znowu jedno z tych przeklêtych stworzeñ!
-	dirtythief = "SVM_7_DirtyThief";	//Ty ma³y, nêdzny z³odzieju!
-	handsoff = "SVM_7_HandsOff";	//Trzymaj ³apy z daleka!
-	sheepkiller = "SVM_7_SheepKiller";	//Hej! Zostaw nasze owce w spokoju!
-	sheepkillermonster = "SVM_7_SheepKillerMonster";	//Ten potwór z¿era nasze owce!
-	youmurderer = "SVM_7_YouMurderer";	//Morderca!
-	diestupidbeast = "SVM_7_DieStupidBeast";	//A TA bestia co tu robi?
-	youdarehitme = "SVM_7_YouDareHitMe";	//Teraz mnie wkurzy³eœ!
-	youaskedforit = "SVM_7_YouAskedForIt";	//Sam tego chcia³eœ!
-	thenibeatyououtofhere = "SVM_7_ThenIBeatYouOutOfHere";	//Kto nie chce s³uchaæ, musi poczuæ...
-	whatdidyoudointhere = "SVM_7_WhatDidYouDoInThere";	//Co tam robi³eœ, co?!
-	willyoustopfighting = "SVM_7_WillYouStopFighting";	//Przestaniecie z tym?!
-	killenemy = "SVM_7_KillEnemy";	//Giñ!
-	enemykilled = "SVM_7_EnemyKilled";	//G³upi dureñ...
-	monsterkilled = "SVM_7_MonsterKilled";	//Tyle na ten temat...
-	thiefdown = "SVM_7_ThiefDown";	//Trzymaj na przysz³oœæ ³apy z dala od moich rzeczy, zrozumiano?!
-	rumfummlerdown = "SVM_7_rumfummlerDown";	//Trzymaj ³apy przy sobie!
-	sheepattackerdown = "SVM_7_SheepAttackerDown";	//Trzymaj ³apska z dala od naszych owiec!
-	killmurderer = "SVM_7_KillMurderer";	//Giñ, morderco!
-	stupidbeastkilled = "SVM_7_StupidBeastKilled";	//G³upia bestia!
-	neverhitmeagain = "SVM_7_NeverHitMeAgain";	//Nie próbuj tego ponownie, brachu!
-	youbettershouldhavelistened = "SVM_7_YouBetterShouldHaveListened";	//Niech to bêdzie dla ciebie nauczka.
-	getupandbegone = "SVM_7_GetUpAndBeGone";	//Wstawaj i zabieraj siê st¹d!
-	neverenterroomagain = "SVM_7_NeverEnterRoomAgain";	//Nie chcê ciê ju¿ tam wiêcej widzieæ, jasne?
-	thereisnofightinghere = "SVM_7_ThereIsNoFightingHere";	//To ja tutaj rozdajê ciosy, zrozumiano?
-	spareme = "SVM_7_SpareMe";	//Po prostu zostaw mnie w spokoju!
-	runaway = "SVM_7_RunAway";	//Cholera! Wynoszê siê st¹d!
-	alarm = "SVM_7_Alarm";	//ALARM!
-	guards = "SVM_7_Guards";	//STRA¯!
-	help = "SVM_7_Help";	//Pomocy!
-	goodmonsterkill = "SVM_7_GoodMonsterKill";	//Tak trzeba z nimi postêpowaæ!
-	goodkill = "SVM_7_GoodKill";	//Dobrze, poka¿ œwini!
+	MILGreetings = "SVM_7_MILGreetings";	//Niech ¿yje Król!
+	PALGreetings = "SVM_7_PALGreetings";	//Chwa³a Innosowi!
+	Weather = "SVM_7_Weather";	//Kiepska pogoda...
+	IGetYouStill = "SVM_7_IGetYouStill";	//Znowu TY?!
+	DieEnemy = "SVM_7_DieEnemy";	//Rozerwê ciê na kawa³ki!
+	DieMonster = "SVM_7_DieMonster";	//Znowu jedno z tych przeklêtych stworzeñ!
+	DirtyThief = "SVM_7_DirtyThief";	//Ty ma³y, nêdzny z³odzieju!
+	HandsOff = "SVM_7_HandsOff";	//Trzymaj ³apy z daleka!
+	SheepKiller = "SVM_7_SheepKiller";	//Hej! Zostaw nasze owce w spokoju!
+	SheepKillerMonster = "SVM_7_SheepKillerMonster";	//Ten potwór z¿era nasze owce!
+	YouMurderer = "SVM_7_YouMurderer";	//Morderca!
+	DieStupidBeast = "SVM_7_DieStupidBeast";	//A TA bestia co tu robi?
+	YouDareHitMe = "SVM_7_YouDareHitMe";	//Teraz mnie wkurzy³eœ!
+	YouAskedForIt = "SVM_7_YouAskedForIt";	//Sam tego chcia³eœ!
+	ThenIBeatYouOutOfHere = "SVM_7_ThenIBeatYouOutOfHere";	//Kto nie chce s³uchaæ, musi poczuæ...
+	WhatDidYouDoInThere = "SVM_7_WhatDidYouDoInThere";	//Co tam robi³eœ, co?!
+	WillYouStopFighting = "SVM_7_WillYouStopFighting";	//Przestaniecie z tym?!
+	KillEnemy = "SVM_7_KillEnemy";	//Giñ!
+	EnemyKilled = "SVM_7_EnemyKilled";	//G³upi dureñ...
+	MonsterKilled = "SVM_7_MonsterKilled";	//Tyle na ten temat...
+	ThiefDown = "SVM_7_ThiefDown";	//Trzymaj na przysz³oœæ ³apy z dala od moich rzeczy, zrozumiano?!
+	RumfummlerDown = "SVM_7_rumfummlerDown";	//Trzymaj ³apy przy sobie!
+	SheepAttackerDown = "SVM_7_SheepAttackerDown";	//Trzymaj ³apska z dala od naszych owiec!
+	KillMurderer = "SVM_7_KillMurderer";	//Giñ, morderco!
+	StupidBeastKilled = "SVM_7_StupidBeastKilled";	//G³upia bestia!
+	NeverHitMeAgain = "SVM_7_NeverHitMeAgain";	//Nie próbuj tego ponownie, brachu!
+	YouBetterShouldHaveListened = "SVM_7_YouBetterShouldHaveListened";	//Niech to bêdzie dla ciebie nauczka.
+	GetUpAndBeGone = "SVM_7_GetUpAndBeGone";	//Wstawaj i zabieraj siê st¹d!
+	NeverEnterRoomAgain = "SVM_7_NeverEnterRoomAgain";	//Nie chcê ciê ju¿ tam wiêcej widzieæ, jasne?
+	ThereIsNoFightingHere = "SVM_7_ThereIsNoFightingHere";	//To ja tutaj rozdajê ciosy, zrozumiano?
+	SpareMe = "SVM_7_SpareMe";	//Po prostu zostaw mnie w spokoju!
+	RunAway = "SVM_7_RunAway";	//Cholera! Wynoszê siê st¹d!
+	Alarm = "SVM_7_Alarm";	//ALARM!
+	Guards = "SVM_7_Guards";	//STRA¯!
+	Help = "SVM_7_Help";	//Pomocy!
+	GoodMonsterKill = "SVM_7_GoodMonsterKill";	//Tak trzeba z nimi postêpowaæ!
+	GoodKill = "SVM_7_GoodKill";	//Dobrze, poka¿ œwini!
 	notnow = "SVM_7_NOTNOW";	//Zostaw mnie w spokoju!
-	runcoward = "SVM_7_RunCoward";	//Jeszcze ciê dorwê!
-	getoutofhere = "SVM_7_GetOutOfHere";	//Wynoœ siê!
-	whyareyouinhere = "SVM_7_WhyAreYouInHere";	//Czego tu szukasz?!
-	yesgooutofhere = "SVM_7_YesGoOutOfHere";	//No, wynocha!
-	whatsthissupposedtobe = "SVM_7_WhatsThisSupposedToBe";	//Co ty tam robisz?
-	youdisturbedmyslumber = "SVM_7_YouDisturbedMySlumber";	//Co jest?
-	itookyourgold = "SVM_7_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
-	shitnogold = "SVM_7_ShitNoGold";	//Ty frajerze, nawet z³ota nie masz!
-	itakeyourweapon = "SVM_7_ITakeYourWeapon";	//Lepiej zaopiekujê siê twoj¹ broni¹...
-	whatareyoudoing = "SVM_7_WhatAreYouDoing";	//Uwa¿aj! Nastêpnym razem ci przy³o¿ê.
-	lookingfortroubleagain = "SVM_7_LookingForTroubleAgain";	//Chcesz jeszcze raz dostaæ w mordê?
-	stopmagic = "SVM_7_StopMagic";	//Przestañ natychmiast z tym czarowaniem!
-	isaidstopmagic = "SVM_7_ISaidStopMagic";	//Chcesz dostaæ? Przestañ w tej chwili!
-	weapondown = "SVM_7_WeaponDown";	//Od³ó¿ broñ!
-	isaidweapondown = "SVM_7_ISaidWeaponDown";	//Od³o¿ysz wreszcie tê przeklêt¹ broñ?!
-	wisemove = "SVM_7_WiseMove";	//M¹dra decyzja!
-	nexttimeyoureinforit = "SVM_7_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
-	ohmyhead = "SVM_7_OhMyHead";	//Och, moja g³owa...
-	theresafight = "SVM_7_TheresAFight";	//Ach, walka...
-	ohmygoditsafight = "SVM_7_OhMyGodItsAFight";	//O bogowie, walka!
-	goodvictory = "SVM_7_GoodVictory";	//Pokaza³eœ mu, kto tu rz¹dzi!
-	notbad = "SVM_7_NotBad";	//Hmm. NieŸle...
-	ohmygodhesdown = "SVM_7_OhMyGodHesDown";	//Bogowie! Jak ostro...
-	cheerfriend01 = "SVM_7_CheerFriend01";	//No, do³ó¿ mu!
-	cheerfriend02 = "SVM_7_CheerFriend02";	//Poka¿ mu!
-	cheerfriend03 = "SVM_7_CheerFriend03";	//Niech ma, czego chcia³!
-	ooh01 = "SVM_7_Ooh01";	//Broñ siê!
-	ooh02 = "SVM_7_Ooh02";	//Nie daj siê!
-	ooh03 = "SVM_7_Ooh03";	//Oj! To musia³o boleæ!
-	whatwasthat = "SVM_7_WhatWasThat";	//Cholera, co TO by³o!?
-	getoutofmybed = "SVM_7_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
-	awake = "SVM_7_Awake";	//(rozkoszne ziewniêcie)
+	RunCoward = "SVM_7_RunCoward";	//Jeszcze ciê dorwê!
+	GetOutOfHere = "SVM_7_GetOutOfHere";	//Wynoœ siê!
+	WhyAreYouInHere = "SVM_7_WhyAreYouInHere";	//Czego tu szukasz?!
+	YesGoOutOfHere = "SVM_7_YesGoOutOfHere";	//No, wynocha!
+	WhatsThisSupposedToBe = "SVM_7_WhatsThisSupposedToBe";	//Co ty tam robisz?
+	YouDisturbedMySlumber = "SVM_7_YouDisturbedMySlumber";	//Co jest?
+	ITookYourGold = "SVM_7_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
+	ShitNoGold = "SVM_7_ShitNoGold";	//Ty frajerze, nawet z³ota nie masz!
+	ITakeYourWeapon = "SVM_7_ITakeYourWeapon";	//Lepiej zaopiekujê siê twoj¹ broni¹...
+	WhatAreYouDoing = "SVM_7_WhatAreYouDoing";	//Uwa¿aj! Nastêpnym razem ci przy³o¿ê.
+	LookingForTroubleAgain = "SVM_7_LookingForTroubleAgain";	//Chcesz jeszcze raz dostaæ w mordê?
+	StopMagic = "SVM_7_StopMagic";	//Przestañ natychmiast z tym czarowaniem!
+	ISaidStopMagic = "SVM_7_ISaidStopMagic";	//Chcesz dostaæ? Przestañ w tej chwili!
+	WeaponDown = "SVM_7_WeaponDown";	//Od³ó¿ broñ!
+	ISaidWeaponDown = "SVM_7_ISaidWeaponDown";	//Od³o¿ysz wreszcie tê przeklêt¹ broñ?!
+	WiseMove = "SVM_7_WiseMove";	//M¹dra decyzja!
+	NextTimeYoureInForIt = "SVM_7_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
+	OhMyHead = "SVM_7_OhMyHead";	//Och, moja g³owa...
+	TheresAFight = "SVM_7_TheresAFight";	//Ach, walka...
+	OhMyGodItsAFight = "SVM_7_OhMyGodItsAFight";	//O bogowie, walka!
+	GoodVictory = "SVM_7_GoodVictory";	//Pokaza³eœ mu, kto tu rz¹dzi!
+	NotBad = "SVM_7_NotBad";	//Hmm. NieŸle...
+	OhMyGodHesDown = "SVM_7_OhMyGodHesDown";	//Bogowie! Jak ostro...
+	CheerFriend01 = "SVM_7_CheerFriend01";	//No, do³ó¿ mu!
+	CheerFriend02 = "SVM_7_CheerFriend02";	//Poka¿ mu!
+	CheerFriend03 = "SVM_7_CheerFriend03";	//Niech ma, czego chcia³!
+	Ooh01 = "SVM_7_Ooh01";	//Broñ siê!
+	Ooh02 = "SVM_7_Ooh02";	//Nie daj siê!
+	Ooh03 = "SVM_7_Ooh03";	//Oj! To musia³o boleæ!
+	WhatWasThat = "SVM_7_WhatWasThat";	//Cholera, co TO by³o!?
+	GetOutOfMyBed = "SVM_7_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	Awake = "SVM_7_Awake";	//(rozkoszne ziewniêcie)
 	abs_commander = "SVM_7_ABS_COMMANDER";	//Powiadaj¹, ¿e kapitan wyprostowa³ ca³¹ sprawê.
 	abs_monastery = "SVM_7_ABS_MONASTERY";	//Zatem wyspowiada³eœ siê Ojcu Parlanowi ze swoich grzechów.
 	abs_farm = "SVM_7_ABS_FARM";	//Mówi¹, ¿e Lee za³atwi³ dla ciebie ca³¹ sprawê.
@@ -1297,40 +1297,40 @@ instance SVM_7(C_SVM)
 	gold_30 = "SVM_7_GOLD_30";	//30 sztuk z³ota.
 	gold_20 = "SVM_7_GOLD_20";	//20 sztuk z³ota.
 	gold_10 = "SVM_7_GOLD_10";	//10 sztuk z³ota.
-	smalltalk01 = "SVM_7_Smalltalk01";	//...to rzeczywiœcie prawda...
-	smalltalk02 = "SVM_7_Smalltalk02";	//...mnie mówili co innego...
-	smalltalk03 = "SVM_7_Smalltalk03";	//...nie mów, ¿e o tym nie wiesz...
-	smalltalk04 = "SVM_7_Smalltalk04";	//...nie wiadomo ju¿, komu mo¿na ufaæ...
-	smalltalk05 = "SVM_7_Smalltalk05";	//...to tylko plotki...
-	smalltalk06 = "SVM_7_Smalltalk06";	//...myœlisz, ¿e ja mam lepiej...
-	smalltalk07 = "SVM_7_Smalltalk07";	//...nic mnie ju¿ nie dziwi...
-	smalltalk08 = "SVM_7_Smalltalk08";	//...to naprawdê nie mój problem...
-	smalltalk09 = "SVM_7_Smalltalk09";	//...naprawdê w to wierzysz...
-	smalltalk10 = "SVM_7_Smalltalk10";	//...ode mnie nikt siê niczego nie dowie...
-	smalltalk11 = "SVM_7_Smalltalk11";	//...to by³o oczywiste...
-	smalltalk12 = "SVM_7_Smalltalk12";	//...pos³ucha³ niew³aœciwych ludzi...
-	smalltalk13 = "SVM_7_Smalltalk13";	//...je¿eli on tego nie widzi, to przecie¿ nie mogê mu pomagaæ wbrew jego woli...
-	smalltalk14 = "SVM_7_Smalltalk14";	//...nie mówiê ci przecie¿ nic nowego...
-	smalltalk15 = "SVM_7_Smalltalk15";	//...sam by na to nie wpad³...
-	smalltalk16 = "SVM_7_Smalltalk16";	//...to by³o wiadomo od dawna...
-	smalltalk17 = "SVM_7_Smalltalk17";	//...kiepska sprawa...
-	smalltalk18 = "SVM_7_Smalltalk18";	//...inaczej bym siê do tego zabra³...
-	smalltalk19 = "SVM_7_Smalltalk19";	//...zupe³nie siê z tob¹ zgadzam...
-	smalltalk20 = "SVM_7_Smalltalk20";	//...czy coœ siê w koñcu zmieni...
-	smalltalk21 = "SVM_7_Smalltalk21";	//...nie dosz³o do mnie nic na ten temat...
-	smalltalk22 = "SVM_7_Smalltalk22";	//...nic nie mogê na to poradziæ...
-	smalltalk23 = "SVM_7_Smalltalk23";	//...to mnie wcale nie dziwi...
-	smalltalk24 = "SVM_7_Smalltalk24";	//...nie, ale on oczywiœcie wie wszystko lepiej...
-	smalltalk25 = "SVM_7_Smalltalk25";	//...i tak liczy siê tylko si³a, wiêc nie mów mi takich rzeczy...
-	smalltalk26 = "SVM_7_Smalltalk26";	//...on nawet nie wie, jak siê trzyma miecz...
-	smalltalk27 = "SVM_7_Smalltalk27";	//...tak, naprawdê tak powiedzia³...
-	smalltalk28 = "SVM_7_Smalltalk28";	//...ktoœ bêdzie musia³ za to zap³aciæ...
-	smalltalk29 = "SVM_7_Smalltalk29";	//...Innos przyœwieca tym wszystkim, którzy potrafi¹ zg³êbiæ jego m¹droœæ...
-	smalltalk30 = "SVM_7_Smalltalk30";	//...na koñcu i tak zwyciê¿y sprawiedliwoœæ...
-	nolearnnopoints = "SVM_7_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
-	nolearnoverpersonalmax = "SVM_7_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
-	nolearnyourebetter = "SVM_7_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
-	youlearnedsomething = "SVM_7_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	Smalltalk01 = "SVM_7_Smalltalk01";	//...to rzeczywiœcie prawda...
+	Smalltalk02 = "SVM_7_Smalltalk02";	//...mnie mówili co innego...
+	Smalltalk03 = "SVM_7_Smalltalk03";	//...nie mów, ¿e o tym nie wiesz...
+	Smalltalk04 = "SVM_7_Smalltalk04";	//...nie wiadomo ju¿, komu mo¿na ufaæ...
+	Smalltalk05 = "SVM_7_Smalltalk05";	//...to tylko plotki...
+	Smalltalk06 = "SVM_7_Smalltalk06";	//...myœlisz, ¿e ja mam lepiej...
+	Smalltalk07 = "SVM_7_Smalltalk07";	//...nic mnie ju¿ nie dziwi...
+	Smalltalk08 = "SVM_7_Smalltalk08";	//...to naprawdê nie mój problem...
+	Smalltalk09 = "SVM_7_Smalltalk09";	//...naprawdê w to wierzysz...
+	Smalltalk10 = "SVM_7_Smalltalk10";	//...ode mnie nikt siê niczego nie dowie...
+	Smalltalk11 = "SVM_7_Smalltalk11";	//...to by³o oczywiste...
+	Smalltalk12 = "SVM_7_Smalltalk12";	//...pos³ucha³ niew³aœciwych ludzi...
+	Smalltalk13 = "SVM_7_Smalltalk13";	//...je¿eli on tego nie widzi, to przecie¿ nie mogê mu pomagaæ wbrew jego woli...
+	Smalltalk14 = "SVM_7_Smalltalk14";	//...nie mówiê ci przecie¿ nic nowego...
+	Smalltalk15 = "SVM_7_Smalltalk15";	//...sam by na to nie wpad³...
+	Smalltalk16 = "SVM_7_Smalltalk16";	//...to by³o wiadomo od dawna...
+	Smalltalk17 = "SVM_7_Smalltalk17";	//...kiepska sprawa...
+	Smalltalk18 = "SVM_7_Smalltalk18";	//...inaczej bym siê do tego zabra³...
+	Smalltalk19 = "SVM_7_Smalltalk19";	//...zupe³nie siê z tob¹ zgadzam...
+	Smalltalk20 = "SVM_7_Smalltalk20";	//...czy coœ siê w koñcu zmieni...
+	Smalltalk21 = "SVM_7_Smalltalk21";	//...nie dosz³o do mnie nic na ten temat...
+	Smalltalk22 = "SVM_7_Smalltalk22";	//...nic nie mogê na to poradziæ...
+	Smalltalk23 = "SVM_7_Smalltalk23";	//...to mnie wcale nie dziwi...
+	Smalltalk24 = "SVM_7_Smalltalk24";	//...nie, ale on oczywiœcie wie wszystko lepiej...
+	Smalltalk25 = "SVM_7_Smalltalk25";	//...i tak liczy siê tylko si³a, wiêc nie mów mi takich rzeczy...
+	Smalltalk26 = "SVM_7_Smalltalk26";	//...on nawet nie wie, jak siê trzyma miecz...
+	Smalltalk27 = "SVM_7_Smalltalk27";	//...tak, naprawdê tak powiedzia³...
+	Smalltalk28 = "SVM_7_Smalltalk28";	//...ktoœ bêdzie musia³ za to zap³aciæ...
+	Smalltalk29 = "SVM_7_Smalltalk29";	//...Innos przyœwieca tym wszystkim, którzy potrafi¹ zg³êbiæ jego m¹droœæ...
+	Smalltalk30 = "SVM_7_Smalltalk30";	//...na koñcu i tak zwyciê¿y sprawiedliwoœæ...
+	NoLearnNoPoints = "SVM_7_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
+	NoLearnOverPersonalMAX = "SVM_7_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	NoLearnYoureBetter = "SVM_7_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	YouLearnedSomething = "SVM_7_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
 	unterstadt = "SVM_7_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
 	oberstadt = "SVM_7_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
 	tempel = "SVM_7_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
@@ -1355,10 +1355,10 @@ instance SVM_7(C_SVM)
 	kaserne_2_markt = "SVM_7_KASERNE_2_MARKT";	//ZejdŸ po schodach na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
 	kaserne_2_galgen = "SVM_7_KASERNE_2_GALGEN";	//ZejdŸ po schodach na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
 	hafen_2_unterstadt = "SVM_7_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nabrze¿u w górê ulic¹ portow¹, a dojdziesz do dolnego miasta.
-	dead = "SVM_7_Dead";	//Aaaaarhhh!
-	aargh_1 = "SVM_7_Aargh_1";	//Aargh
-	aargh_2 = "SVM_7_Aargh_2";	//Aargh
-	aargh_3 = "SVM_7_Aargh_3";	//Aargh
+	Dead = "SVM_7_Dead";	//Aaaaarhhh!
+	Aargh_1 = "SVM_7_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_7_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_7_Aargh_3";	//Aargh
 	addon_wrongarmor = "SVM_7_Addon_WrongArmor";	//
 	addon_wrongarmor_sld = "SVM_7_ADDON_WRONGARMOR_SLD";	//
 	addon_wrongarmor_mil = "SVM_7_ADDON_WRONGARMOR_MIL";	//
@@ -1370,76 +1370,76 @@ instance SVM_7(C_SVM)
 
 instance SVM_8(C_SVM)
 {
-	milgreetings = "SVM_8_MILGreetings";	//Niech ¿yje Król!
-	palgreetings = "SVM_8_PALGreetings";	//Chwa³a Innosowi!
-	weather = "SVM_8_Weather";	//Beznadziejna pogoda!
-	igetyoustill = "SVM_8_IGetYouStill";	//No, teraz to ciê dorwê!
-	dieenemy = "SVM_8_DieEnemy";	//Wykoñczê ciê!
-	diemonster = "SVM_8_DieMonster";	//Znowu jedno z tych przeklêtych stworzeñ!
-	dirtythief = "SVM_8_DirtyThief";	//Czekaj tylko, parszywy z³odzieju!
-	handsoff = "SVM_8_HandsOff";	//£apy precz!
-	sheepkiller = "SVM_8_SheepKiller";	//Ten drañ szlachtuje nasze owce!
-	sheepkillermonster = "SVM_8_SheepKillerMonster";	//Ta przeklêta bestia z¿era nasze owce!
-	youmurderer = "SVM_8_YouMurderer";	//Morderca!
-	diestupidbeast = "SVM_8_DieStupidBeast";	//¯adne bestie nie maj¹ tu czego szukaæ!
-	youdarehitme = "SVM_8_YouDareHitMe";	//Teraz jestem naprawdê wkurzony!
-	youaskedforit = "SVM_8_YouAskedForIt";	//Sam tego chcia³eœ!
-	thenibeatyououtofhere = "SVM_8_ThenIBeatYouOutOfHere";	//Nie chcesz iœæ? Dobrze!
-	whatdidyoudointhere = "SVM_8_WhatDidYouDoInThere";	//Czego tam szuka³eœ?
-	willyoustopfighting = "SVM_8_WillYouStopFighting";	//Mo¿esz przestaæ!?
-	killenemy = "SVM_8_KillEnemy";	//Giñ, bydlaku!
-	enemykilled = "SVM_8_EnemyKilled";	//Zas³u¿y³eœ sobie na to, bydlaku!
-	monsterkilled = "SVM_8_MonsterKilled";	//Jedna bestia mniej!
-	thiefdown = "SVM_8_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
-	rumfummlerdown = "SVM_8_rumfummlerDown";	//Trzymaj siê na przysz³oœæ z dala od nieswoich rzeczy!
-	sheepattackerdown = "SVM_8_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To s¹ nasze owce!
-	killmurderer = "SVM_8_KillMurderer";	//Giñ, morderco!
-	stupidbeastkilled = "SVM_8_StupidBeastKilled";	//Co za g³upie bestie!
-	neverhitmeagain = "SVM_8_NeverHitMeAgain";	//Nigdy wiêcej nie próbuj siê ze mn¹ mierzyæ!
-	youbettershouldhavelistened = "SVM_8_YouBetterShouldHaveListened";	//Szkoda, ¿e mnie nie pos³ucha³eœ!
-	getupandbegone = "SVM_8_GetUpAndBeGone";	//A teraz znikaj st¹d!
-	neverenterroomagain = "SVM_8_NeverEnterRoomAgain";	//Lepiej, ¿ebym ciê ju¿ tam nigdy nie przy³apa³!
-	thereisnofightinghere = "SVM_8_ThereIsNoFightingHere";	//Tutaj siê nie walczy, zrozumiano!? Niech to bêdzie dla ciebie nauczk¹!
-	spareme = "SVM_8_SpareMe";	//Nie rób mi krzywdy!
-	runaway = "SVM_8_RunAway";	//O cholera!
-	alarm = "SVM_8_Alarm";	//ALARM!
-	guards = "SVM_8_Guards";	//STRA¯!
-	help = "SVM_8_Help";	//Pomocy!
-	goodmonsterkill = "SVM_8_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
-	goodkill = "SVM_8_GoodKill";	//No, wykoñcz œwiniê!
+	MILGreetings = "SVM_8_MILGreetings";	//Niech ¿yje Król!
+	PALGreetings = "SVM_8_PALGreetings";	//Chwa³a Innosowi!
+	Weather = "SVM_8_Weather";	//Beznadziejna pogoda!
+	IGetYouStill = "SVM_8_IGetYouStill";	//No, teraz to ciê dorwê!
+	DieEnemy = "SVM_8_DieEnemy";	//Wykoñczê ciê!
+	DieMonster = "SVM_8_DieMonster";	//Znowu jedno z tych przeklêtych stworzeñ!
+	DirtyThief = "SVM_8_DirtyThief";	//Czekaj tylko, parszywy z³odzieju!
+	HandsOff = "SVM_8_HandsOff";	//£apy precz!
+	SheepKiller = "SVM_8_SheepKiller";	//Ten drañ szlachtuje nasze owce!
+	SheepKillerMonster = "SVM_8_SheepKillerMonster";	//Ta przeklêta bestia z¿era nasze owce!
+	YouMurderer = "SVM_8_YouMurderer";	//Morderca!
+	DieStupidBeast = "SVM_8_DieStupidBeast";	//¯adne bestie nie maj¹ tu czego szukaæ!
+	YouDareHitMe = "SVM_8_YouDareHitMe";	//Teraz jestem naprawdê wkurzony!
+	YouAskedForIt = "SVM_8_YouAskedForIt";	//Sam tego chcia³eœ!
+	ThenIBeatYouOutOfHere = "SVM_8_ThenIBeatYouOutOfHere";	//Nie chcesz iœæ? Dobrze!
+	WhatDidYouDoInThere = "SVM_8_WhatDidYouDoInThere";	//Czego tam szuka³eœ?
+	WillYouStopFighting = "SVM_8_WillYouStopFighting";	//Mo¿esz przestaæ!?
+	KillEnemy = "SVM_8_KillEnemy";	//Giñ, bydlaku!
+	EnemyKilled = "SVM_8_EnemyKilled";	//Zas³u¿y³eœ sobie na to, bydlaku!
+	MonsterKilled = "SVM_8_MonsterKilled";	//Jedna bestia mniej!
+	ThiefDown = "SVM_8_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
+	RumfummlerDown = "SVM_8_rumfummlerDown";	//Trzymaj siê na przysz³oœæ z dala od nieswoich rzeczy!
+	SheepAttackerDown = "SVM_8_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To s¹ nasze owce!
+	KillMurderer = "SVM_8_KillMurderer";	//Giñ, morderco!
+	StupidBeastKilled = "SVM_8_StupidBeastKilled";	//Co za g³upie bestie!
+	NeverHitMeAgain = "SVM_8_NeverHitMeAgain";	//Nigdy wiêcej nie próbuj siê ze mn¹ mierzyæ!
+	YouBetterShouldHaveListened = "SVM_8_YouBetterShouldHaveListened";	//Szkoda, ¿e mnie nie pos³ucha³eœ!
+	GetUpAndBeGone = "SVM_8_GetUpAndBeGone";	//A teraz znikaj st¹d!
+	NeverEnterRoomAgain = "SVM_8_NeverEnterRoomAgain";	//Lepiej, ¿ebym ciê ju¿ tam nigdy nie przy³apa³!
+	ThereIsNoFightingHere = "SVM_8_ThereIsNoFightingHere";	//Tutaj siê nie walczy, zrozumiano!? Niech to bêdzie dla ciebie nauczk¹!
+	SpareMe = "SVM_8_SpareMe";	//Nie rób mi krzywdy!
+	RunAway = "SVM_8_RunAway";	//O cholera!
+	Alarm = "SVM_8_Alarm";	//ALARM!
+	Guards = "SVM_8_Guards";	//STRA¯!
+	Help = "SVM_8_Help";	//Pomocy!
+	GoodMonsterKill = "SVM_8_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
+	GoodKill = "SVM_8_GoodKill";	//No, wykoñcz œwiniê!
 	notnow = "SVM_8_NOTNOW";	//Zostaw mnie w spokoju!
-	runcoward = "SVM_8_RunCoward";	//Tak, uciekaj! Najszybciej jak potrafisz!
-	getoutofhere = "SVM_8_GetOutOfHere";	//Wynoœ siê!
-	whyareyouinhere = "SVM_8_WhyAreYouInHere";	//Czego tu szukasz!? IdŸ sobie!
-	yesgooutofhere = "SVM_8_YesGoOutOfHere";	//No, wynoœ siê!
-	whatsthissupposedtobe = "SVM_8_WhatsThisSupposedToBe";	//Ej ty... Co ty tutaj robisz?
-	youdisturbedmyslumber = "SVM_8_YouDisturbedMySlumber";	//Co siê tu u diab³a dzieje?
-	itookyourgold = "SVM_8_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
-	shitnogold = "SVM_8_ShitNoGold";	//Biedaku, nawet z³ota nie masz...
-	itakeyourweapon = "SVM_8_ITakeYourWeapon";	//Zaopiekujê siê twoj¹ broni¹...
-	whatareyoudoing = "SVM_8_WhatAreYouDoing";	//Uwa¿aj! Nastêpnym razem ci przy³o¿ê.
-	lookingfortroubleagain = "SVM_8_LookingForTroubleAgain";	//Ci¹gle ci za ma³o!?
-	stopmagic = "SVM_8_StopMagic";	//Przestañ z t¹ cholern¹ magi¹!
-	isaidstopmagic = "SVM_8_ISaidStopMagic";	//Szukasz k³opotów!? Przestañ natychmiast!
-	weapondown = "SVM_8_WeaponDown";	//Od³ó¿ tê broñ!
-	isaidweapondown = "SVM_8_ISaidWeaponDown";	//Od³ó¿ wreszcie tê przeklêt¹ broñ!
-	wisemove = "SVM_8_WiseMove";	//Sprytnie!
-	nexttimeyoureinforit = "SVM_8_NextTimeYoureInForIt";	//Proszê... Zobaczymy nastêpnym razem...
-	ohmyhead = "SVM_8_OhMyHead";	//O rany, moja g³owa...
-	theresafight = "SVM_8_TheresAFight";	//Ach, walka...
-	ohmygoditsafight = "SVM_8_OhMyGodItsAFight";	//Na bogów, walka!
-	goodvictory = "SVM_8_GoodVictory";	//Da³eœ mu niez³y wycisk...
-	notbad = "SVM_8_NotBad";	//NieŸle...
-	ohmygodhesdown = "SVM_8_OhMyGodHesDown";	//Bogowie! Jak brutalnie...
-	cheerfriend01 = "SVM_8_CheerFriend01";	//Uderz go!
-	cheerfriend02 = "SVM_8_CheerFriend02";	//Daj z siebie wszystko!
-	cheerfriend03 = "SVM_8_CheerFriend03";	//Poka¿ mu!
-	ooh01 = "SVM_8_Ooh01";	//Trzymaj siê!
-	ooh02 = "SVM_8_Ooh02";	//Uwaga!
-	ooh03 = "SVM_8_Ooh03";	//A³! Ten by³ celny...
-	whatwasthat = "SVM_8_WhatWasThat";	//Co TO by³o!?
-	getoutofmybed = "SVM_8_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
-	awake = "SVM_8_Awake";	//(rozkoszne ziewniêcie)
+	RunCoward = "SVM_8_RunCoward";	//Tak, uciekaj! Najszybciej jak potrafisz!
+	GetOutOfHere = "SVM_8_GetOutOfHere";	//Wynoœ siê!
+	WhyAreYouInHere = "SVM_8_WhyAreYouInHere";	//Czego tu szukasz!? IdŸ sobie!
+	YesGoOutOfHere = "SVM_8_YesGoOutOfHere";	//No, wynoœ siê!
+	WhatsThisSupposedToBe = "SVM_8_WhatsThisSupposedToBe";	//Ej ty... Co ty tutaj robisz?
+	YouDisturbedMySlumber = "SVM_8_YouDisturbedMySlumber";	//Co siê tu u diab³a dzieje?
+	ITookYourGold = "SVM_8_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
+	ShitNoGold = "SVM_8_ShitNoGold";	//Biedaku, nawet z³ota nie masz...
+	ITakeYourWeapon = "SVM_8_ITakeYourWeapon";	//Zaopiekujê siê twoj¹ broni¹...
+	WhatAreYouDoing = "SVM_8_WhatAreYouDoing";	//Uwa¿aj! Nastêpnym razem ci przy³o¿ê.
+	LookingForTroubleAgain = "SVM_8_LookingForTroubleAgain";	//Ci¹gle ci za ma³o!?
+	StopMagic = "SVM_8_StopMagic";	//Przestañ z t¹ cholern¹ magi¹!
+	ISaidStopMagic = "SVM_8_ISaidStopMagic";	//Szukasz k³opotów!? Przestañ natychmiast!
+	WeaponDown = "SVM_8_WeaponDown";	//Od³ó¿ tê broñ!
+	ISaidWeaponDown = "SVM_8_ISaidWeaponDown";	//Od³ó¿ wreszcie tê przeklêt¹ broñ!
+	WiseMove = "SVM_8_WiseMove";	//Sprytnie!
+	NextTimeYoureInForIt = "SVM_8_NextTimeYoureInForIt";	//Proszê... Zobaczymy nastêpnym razem...
+	OhMyHead = "SVM_8_OhMyHead";	//O rany, moja g³owa...
+	TheresAFight = "SVM_8_TheresAFight";	//Ach, walka...
+	OhMyGodItsAFight = "SVM_8_OhMyGodItsAFight";	//Na bogów, walka!
+	GoodVictory = "SVM_8_GoodVictory";	//Da³eœ mu niez³y wycisk...
+	NotBad = "SVM_8_NotBad";	//NieŸle...
+	OhMyGodHesDown = "SVM_8_OhMyGodHesDown";	//Bogowie! Jak brutalnie...
+	CheerFriend01 = "SVM_8_CheerFriend01";	//Uderz go!
+	CheerFriend02 = "SVM_8_CheerFriend02";	//Daj z siebie wszystko!
+	CheerFriend03 = "SVM_8_CheerFriend03";	//Poka¿ mu!
+	Ooh01 = "SVM_8_Ooh01";	//Trzymaj siê!
+	Ooh02 = "SVM_8_Ooh02";	//Uwaga!
+	Ooh03 = "SVM_8_Ooh03";	//A³! Ten by³ celny...
+	WhatWasThat = "SVM_8_WhatWasThat";	//Co TO by³o!?
+	GetOutOfMyBed = "SVM_8_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	Awake = "SVM_8_Awake";	//(rozkoszne ziewniêcie)
 	abs_commander = "SVM_8_ABS_COMMANDER";	//By³eœ wiêc u kapitana i wyjaœni³eœ sprawê.
 	abs_monastery = "SVM_8_ABS_MONASTERY";	//By³eœ zatem u Ojca Parlana i opowiedzia³eœ mu o swoich grzechach.
 	abs_farm = "SVM_8_ABS_FARM";	//By³eœ zatem u Lee i doprowadzi³eœ wszystko do porz¹dku.
@@ -1484,40 +1484,40 @@ instance SVM_8(C_SVM)
 	gold_30 = "SVM_8_GOLD_30";	//30 sztuk z³ota.
 	gold_20 = "SVM_8_GOLD_20";	//20 sztuk z³ota.
 	gold_10 = "SVM_8_GOLD_10";	//10 sztuk z³ota.
-	smalltalk01 = "SVM_8_Smalltalk01";	//...to rzeczywiœcie prawda...
-	smalltalk02 = "SVM_8_Smalltalk02";	//...mnie mówili co innego...
-	smalltalk03 = "SVM_8_Smalltalk03";	//...tylko nie mów, ¿e o tym nie wiesz...
-	smalltalk04 = "SVM_8_Smalltalk04";	//...nie wiadomo ju¿, komu mo¿na ufaæ...
-	smalltalk05 = "SVM_8_Smalltalk05";	//...a tam, to tylko gadanie...
-	smalltalk06 = "SVM_8_Smalltalk06";	//...no popatrz, ju¿ mi lepiej...
-	smalltalk07 = "SVM_8_Smalltalk07";	//...mnie to i tak nikt nie s³ucha...
-	smalltalk08 = "SVM_8_Smalltalk08";	//...to naprawdê nie mój problem...
-	smalltalk09 = "SVM_8_Smalltalk09";	//...naprawdê w to wierzysz...
-	smalltalk10 = "SVM_8_Smalltalk10";	//...ode mnie nikt siê tego nie dowie...
-	smalltalk11 = "SVM_8_Smalltalk11";	//...o tym by³o wiadomo od dawna...
-	smalltalk12 = "SVM_8_Smalltalk12";	//...pos³ucha³ niew³aœciwych ludzi...
-	smalltalk13 = "SVM_8_Smalltalk13";	//...je¿eli on tego nie widzi, to przecie¿ nie mogê mu pomagaæ wbrew jego woli...
-	smalltalk14 = "SVM_8_Smalltalk14";	//...nie mówiê ci przecie¿ nic nowego...
-	smalltalk15 = "SVM_8_Smalltalk15";	//...sam by na to nie wpad³...
-	smalltalk16 = "SVM_8_Smalltalk16";	//...to przecie¿ wiadomo od dawna...
-	smalltalk17 = "SVM_8_Smalltalk17";	//...to niedobrze...
-	smalltalk18 = "SVM_8_Smalltalk18";	//...mo¿na to by³o zrobiæ zupe³nie inaczej...
-	smalltalk19 = "SVM_8_Smalltalk19";	//...w zupe³noœci siê z tob¹ zgadzam...
-	smalltalk20 = "SVM_8_Smalltalk20";	//...czy coœ siê w koñcu zmieni...
-	smalltalk21 = "SVM_8_Smalltalk21";	//...nic o tym nie wiem...
-	smalltalk22 = "SVM_8_Smalltalk22";	//...i tak tego nie zmienisz...
-	smalltalk23 = "SVM_8_Smalltalk23";	//...wcale mnie to nie dziwi...
-	smalltalk24 = "SVM_8_Smalltalk24";	//...powinien wiedzieæ lepiej...
-	smalltalk25 = "SVM_8_Smalltalk25";	//...liczy siê przecie¿ tylko si³a, wiêc nie opowiadaj mi tu takich rzeczy...
-	smalltalk26 = "SVM_8_Smalltalk26";	//...przecie¿ on nawet nie wie, jak siê trzyma miecz...
-	smalltalk27 = "SVM_8_Smalltalk27";	//...tak, naprawdê tak powiedzia³...
-	smalltalk28 = "SVM_8_Smalltalk28";	//...ktoœ bêdzie musia³ za to zap³aciæ...
-	smalltalk29 = "SVM_8_Smalltalk29";	//...Innos przyœwieca tym wszystkim, którzy potrafi¹ zg³êbiæ jego m¹droœæ...
-	smalltalk30 = "SVM_8_Smalltalk30";	//...w koñcu zwyciê¿y sprawiedliwoœæ...
-	nolearnnopoints = "SVM_8_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
-	nolearnoverpersonalmax = "SVM_8_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
-	nolearnyourebetter = "SVM_8_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
-	youlearnedsomething = "SVM_8_YouLearnedSomething";	//Widzisz, nauczy³eœ siê czegoœ nowego...
+	Smalltalk01 = "SVM_8_Smalltalk01";	//...to rzeczywiœcie prawda...
+	Smalltalk02 = "SVM_8_Smalltalk02";	//...mnie mówili co innego...
+	Smalltalk03 = "SVM_8_Smalltalk03";	//...tylko nie mów, ¿e o tym nie wiesz...
+	Smalltalk04 = "SVM_8_Smalltalk04";	//...nie wiadomo ju¿, komu mo¿na ufaæ...
+	Smalltalk05 = "SVM_8_Smalltalk05";	//...a tam, to tylko gadanie...
+	Smalltalk06 = "SVM_8_Smalltalk06";	//...no popatrz, ju¿ mi lepiej...
+	Smalltalk07 = "SVM_8_Smalltalk07";	//...mnie to i tak nikt nie s³ucha...
+	Smalltalk08 = "SVM_8_Smalltalk08";	//...to naprawdê nie mój problem...
+	Smalltalk09 = "SVM_8_Smalltalk09";	//...naprawdê w to wierzysz...
+	Smalltalk10 = "SVM_8_Smalltalk10";	//...ode mnie nikt siê tego nie dowie...
+	Smalltalk11 = "SVM_8_Smalltalk11";	//...o tym by³o wiadomo od dawna...
+	Smalltalk12 = "SVM_8_Smalltalk12";	//...pos³ucha³ niew³aœciwych ludzi...
+	Smalltalk13 = "SVM_8_Smalltalk13";	//...je¿eli on tego nie widzi, to przecie¿ nie mogê mu pomagaæ wbrew jego woli...
+	Smalltalk14 = "SVM_8_Smalltalk14";	//...nie mówiê ci przecie¿ nic nowego...
+	Smalltalk15 = "SVM_8_Smalltalk15";	//...sam by na to nie wpad³...
+	Smalltalk16 = "SVM_8_Smalltalk16";	//...to przecie¿ wiadomo od dawna...
+	Smalltalk17 = "SVM_8_Smalltalk17";	//...to niedobrze...
+	Smalltalk18 = "SVM_8_Smalltalk18";	//...mo¿na to by³o zrobiæ zupe³nie inaczej...
+	Smalltalk19 = "SVM_8_Smalltalk19";	//...w zupe³noœci siê z tob¹ zgadzam...
+	Smalltalk20 = "SVM_8_Smalltalk20";	//...czy coœ siê w koñcu zmieni...
+	Smalltalk21 = "SVM_8_Smalltalk21";	//...nic o tym nie wiem...
+	Smalltalk22 = "SVM_8_Smalltalk22";	//...i tak tego nie zmienisz...
+	Smalltalk23 = "SVM_8_Smalltalk23";	//...wcale mnie to nie dziwi...
+	Smalltalk24 = "SVM_8_Smalltalk24";	//...powinien wiedzieæ lepiej...
+	Smalltalk25 = "SVM_8_Smalltalk25";	//...liczy siê przecie¿ tylko si³a, wiêc nie opowiadaj mi tu takich rzeczy...
+	Smalltalk26 = "SVM_8_Smalltalk26";	//...przecie¿ on nawet nie wie, jak siê trzyma miecz...
+	Smalltalk27 = "SVM_8_Smalltalk27";	//...tak, naprawdê tak powiedzia³...
+	Smalltalk28 = "SVM_8_Smalltalk28";	//...ktoœ bêdzie musia³ za to zap³aciæ...
+	Smalltalk29 = "SVM_8_Smalltalk29";	//...Innos przyœwieca tym wszystkim, którzy potrafi¹ zg³êbiæ jego m¹droœæ...
+	Smalltalk30 = "SVM_8_Smalltalk30";	//...w koñcu zwyciê¿y sprawiedliwoœæ...
+	NoLearnNoPoints = "SVM_8_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
+	NoLearnOverPersonalMAX = "SVM_8_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	NoLearnYoureBetter = "SVM_8_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	YouLearnedSomething = "SVM_8_YouLearnedSomething";	//Widzisz, nauczy³eœ siê czegoœ nowego...
 	unterstadt = "SVM_8_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
 	oberstadt = "SVM_8_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
 	tempel = "SVM_8_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
@@ -1542,10 +1542,10 @@ instance SVM_8(C_SVM)
 	kaserne_2_markt = "SVM_8_KASERNE_2_MARKT";	//ZejdŸ po prostu po schodach znajduj¹cych siê na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
 	kaserne_2_galgen = "SVM_8_KASERNE_2_GALGEN";	//ZejdŸ po prostu po schodach znajduj¹cych siê na prawo od g³ównego wejœcia. Dojdziesz nimi do placu wisielców.
 	hafen_2_unterstadt = "SVM_8_HAFEN_2_UNTERSTADT";	//IdŸ od strony murów portowych ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
-	dead = "SVM_8_Dead";	//Aaaaarrrhhhh!
-	aargh_1 = "SVM_8_Aargh_1";	//Aargh
-	aargh_2 = "SVM_8_Aargh_2";	//Aargh
-	aargh_3 = "SVM_8_Aargh_3";	//Aargh
+	Dead = "SVM_8_Dead";	//Aaaaarrrhhhh!
+	Aargh_1 = "SVM_8_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_8_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_8_Aargh_3";	//Aargh
 	addon_wrongarmor = "SVM_8_Addon_WrongArmor";	//
 	addon_wrongarmor_sld = "SVM_8_ADDON_WRONGARMOR_SLD";	//
 	addon_wrongarmor_mil = "SVM_8_ADDON_WRONGARMOR_MIL";	//
@@ -1557,80 +1557,80 @@ instance SVM_8(C_SVM)
 
 instance SVM_9(C_SVM)
 {
-	milgreetings = "SVM_9_MILGreetings";	//Niech ¿yje Król!
-	palgreetings = "SVM_9_PALGreetings";	//Chwa³a Innosowi!
-	weather = "SVM_9_Weather";	//Ale nêdzna pogoda...
-	igetyoustill = "SVM_9_IGetYouStill";	//Teraz ciê mam!
-	dieenemy = "SVM_9_DieEnemy";	//Lepiej by³o tu nie przychodziæ!
-	diemonster = "SVM_9_DieMonster";	//ChodŸ tu, bydlaku!
-	addon_diemonster = "SVM_9_Addon_DieMonster";	//
-	addon_diemonster2 = "SVM_9_Addon_DieMonster2";	//
-	dirtythief = "SVM_9_DirtyThief";	//Parszywy z³odziej!
-	handsoff = "SVM_9_HandsOff";	//£apy precz!
-	sheepkiller = "SVM_9_SheepKiller";	//Zostaw nasze owce w spokoju!
-	sheepkillermonster = "SVM_9_SheepKillerMonster";	//Zostaw nasze owce, ty potworze!
-	youmurderer = "SVM_9_YouMurderer";	//Morderca!
-	diestupidbeast = "SVM_9_DieStupidBeast";	//Tu nie ma miejsca dla bestii!
-	youdarehitme = "SVM_9_YouDareHitMe";	//Po¿a³ujesz tego!
-	youaskedforit = "SVM_9_YouAskedForIt";	//Ostrzegano ciê...
-	thenibeatyououtofhere = "SVM_9_ThenIBeatYouOutOfHere";	//Powiedzia³em WYNOCHA!
-	whatdidyoudointhere = "SVM_9_WhatDidYouDoInThere";	//Hej! Czego tam szuka³eœ?
-	willyoustopfighting = "SVM_9_WillYouStopFighting";	//Przestañ! Natychmiast!
-	killenemy = "SVM_9_KillEnemy";	//Teraz siê zabawimy, gnido!
-	enemykilled = "SVM_9_EnemyKilled";	//I po sprawie...
-	addon_monsterkilled = "SVM_9_Addon_MonsterKilled";	//
-	addon_monsterkilled2 = "SVM_9_Addon_MonsterKilled2";	//
-	monsterkilled = "SVM_9_MonsterKilled";	//To mnie krêci!
-	thiefdown = "SVM_9_ThiefDown";	//Ostrzegam ciê! Nie próbuj tego ponownie, ty przeklêty z³odzieju!
-	rumfummlerdown = "SVM_9_rumfummlerDown";	//Trzymaj rêce z dala od rzeczy, które do ciebie nie nale¿¹!
-	sheepattackerdown = "SVM_9_SheepAttackerDown";	//I trzymaj siê na przysz³oœæ z dala od naszych owiec!
-	killmurderer = "SVM_9_KillMurderer";	//Giñ, morderco!
-	stupidbeastkilled = "SVM_9_StupidBeastKilled";	//G³upie bydlê!
-	neverhitmeagain = "SVM_9_NeverHitMeAgain";	//Nie wa¿ siê nigdy wiêcej mnie atakowaæ!
-	youbettershouldhavelistened = "SVM_9_YouBetterShouldHaveListened";	//Ostrzegano ciê...
-	getupandbegone = "SVM_9_GetUpAndBeGone";	//A teraz wynoœ siê!
-	neverenterroomagain = "SVM_9_NeverEnterRoomAgain";	//Nie chcê ciê ju¿ tam nigdy wiêcej widzieæ!
-	thereisnofightinghere = "SVM_9_ThereIsNoFightingHere";	//Tutaj siê nie walczy, zapamiêtaj to sobie!
-	spareme = "SVM_9_SpareMe";	//Nie zrób czegoœ g³upiego!
-	runaway = "SVM_9_RunAway";	//Zmywam siê!
-	alarm = "SVM_9_Alarm";	//ALARM!
-	guards = "SVM_9_Guards";	//STRA¯!
-	help = "SVM_9_Help";	//Pomocy!
-	goodmonsterkill = "SVM_9_GoodMonsterKill";	//Poka¿ tym potworom...!
-	goodkill = "SVM_9_GoodKill";	//Taa... Poka¿ mu!
+	MILGreetings = "SVM_9_MILGreetings";	//Niech ¿yje Król!
+	PALGreetings = "SVM_9_PALGreetings";	//Chwa³a Innosowi!
+	Weather = "SVM_9_Weather";	//Ale nêdzna pogoda...
+	IGetYouStill = "SVM_9_IGetYouStill";	//Teraz ciê mam!
+	DieEnemy = "SVM_9_DieEnemy";	//Lepiej by³o tu nie przychodziæ!
+	DieMonster = "SVM_9_DieMonster";	//ChodŸ tu, bydlaku!
+	Addon_DieMonster = "SVM_9_Addon_DieMonster";	//
+	Addon_DieMonster2 = "SVM_9_Addon_DieMonster2";	//
+	DirtyThief = "SVM_9_DirtyThief";	//Parszywy z³odziej!
+	HandsOff = "SVM_9_HandsOff";	//£apy precz!
+	SheepKiller = "SVM_9_SheepKiller";	//Zostaw nasze owce w spokoju!
+	SheepKillerMonster = "SVM_9_SheepKillerMonster";	//Zostaw nasze owce, ty potworze!
+	YouMurderer = "SVM_9_YouMurderer";	//Morderca!
+	DieStupidBeast = "SVM_9_DieStupidBeast";	//Tu nie ma miejsca dla bestii!
+	YouDareHitMe = "SVM_9_YouDareHitMe";	//Po¿a³ujesz tego!
+	YouAskedForIt = "SVM_9_YouAskedForIt";	//Ostrzegano ciê...
+	ThenIBeatYouOutOfHere = "SVM_9_ThenIBeatYouOutOfHere";	//Powiedzia³em WYNOCHA!
+	WhatDidYouDoInThere = "SVM_9_WhatDidYouDoInThere";	//Hej! Czego tam szuka³eœ?
+	WillYouStopFighting = "SVM_9_WillYouStopFighting";	//Przestañ! Natychmiast!
+	KillEnemy = "SVM_9_KillEnemy";	//Teraz siê zabawimy, gnido!
+	EnemyKilled = "SVM_9_EnemyKilled";	//I po sprawie...
+	Addon_MonsterKilled = "SVM_9_Addon_MonsterKilled";	//
+	Addon_MonsterKilled2 = "SVM_9_Addon_MonsterKilled2";	//
+	MonsterKilled = "SVM_9_MonsterKilled";	//To mnie krêci!
+	ThiefDown = "SVM_9_ThiefDown";	//Ostrzegam ciê! Nie próbuj tego ponownie, ty przeklêty z³odzieju!
+	RumfummlerDown = "SVM_9_rumfummlerDown";	//Trzymaj rêce z dala od rzeczy, które do ciebie nie nale¿¹!
+	SheepAttackerDown = "SVM_9_SheepAttackerDown";	//I trzymaj siê na przysz³oœæ z dala od naszych owiec!
+	KillMurderer = "SVM_9_KillMurderer";	//Giñ, morderco!
+	StupidBeastKilled = "SVM_9_StupidBeastKilled";	//G³upie bydlê!
+	NeverHitMeAgain = "SVM_9_NeverHitMeAgain";	//Nie wa¿ siê nigdy wiêcej mnie atakowaæ!
+	YouBetterShouldHaveListened = "SVM_9_YouBetterShouldHaveListened";	//Ostrzegano ciê...
+	GetUpAndBeGone = "SVM_9_GetUpAndBeGone";	//A teraz wynoœ siê!
+	NeverEnterRoomAgain = "SVM_9_NeverEnterRoomAgain";	//Nie chcê ciê ju¿ tam nigdy wiêcej widzieæ!
+	ThereIsNoFightingHere = "SVM_9_ThereIsNoFightingHere";	//Tutaj siê nie walczy, zapamiêtaj to sobie!
+	SpareMe = "SVM_9_SpareMe";	//Nie zrób czegoœ g³upiego!
+	RunAway = "SVM_9_RunAway";	//Zmywam siê!
+	Alarm = "SVM_9_Alarm";	//ALARM!
+	Guards = "SVM_9_Guards";	//STRA¯!
+	Help = "SVM_9_Help";	//Pomocy!
+	GoodMonsterKill = "SVM_9_GoodMonsterKill";	//Poka¿ tym potworom...!
+	GoodKill = "SVM_9_GoodKill";	//Taa... Poka¿ mu!
 	notnow = "SVM_9_NOTNOW";	//Zostaw mnie w spokoju!
-	runcoward = "SVM_9_RunCoward";	//Jeszcze ciê dorwê!
-	getoutofhere = "SVM_9_GetOutOfHere";	//Won!
-	whyareyouinhere = "SVM_9_WhyAreYouInHere";	//Nie masz tu czego szukaæ!
-	yesgooutofhere = "SVM_9_YesGoOutOfHere";	//No, wynoœ siê!
-	whatsthissupposedtobe = "SVM_9_WhatsThisSupposedToBe";	//Co to ma byæ? Co ty tutaj robisz?
-	youdisturbedmyslumber = "SVM_9_YouDisturbedMySlumber";	//Czego u diab³a chcesz?
-	itookyourgold = "SVM_9_ITookYourGold";	//Dobrze, ¿e przynajmniej masz jakieœ z³oto!
-	shitnogold = "SVM_9_ShitNoGold";	//Ha! Nawet z³ota nie ma...
-	itakeyourweapon = "SVM_9_ITakeYourWeapon";	//Twoja broñ mo¿e mi siê przydaæ.
-	whatareyoudoing = "SVM_9_WhatAreYouDoing";	//Lepiej nie próbuj tego po raz drugi!
-	lookingfortroubleagain = "SVM_9_LookingForTroubleAgain";	//Znowu szukasz guza?
-	stopmagic = "SVM_9_StopMagic";	//Tylko bez magii!
-	isaidstopmagic = "SVM_9_ISaidStopMagic";	//Ostrzegam po raz ostatni!
-	weapondown = "SVM_9_WeaponDown";	//Od³ó¿ broñ!
-	isaidweapondown = "SVM_9_ISaidWeaponDown";	//Od³ó¿ to albo ci przy³o¿ê.
-	wisemove = "SVM_9_WiseMove";	//Nie jesteœ wcale taki g³upi, na jakiego wygl¹dasz!
-	nexttimeyoureinforit = "SVM_9_NextTimeYoureInForIt";	//Lepiej nie próbuj tego po raz drugi!
-	ohmyhead = "SVM_9_OhMyHead";	//Aaach! Mój ³eb...
-	theresafight = "SVM_9_TheresAFight";	//Teraz bêdzie zabawnie...
-	ohmygoditsafight = "SVM_9_OhMyGodItsAFight";	//O rany...
-	goodvictory = "SVM_9_GoodVictory";	//Bêdzie mia³ nauczkê...
-	notbad = "SVM_9_NotBad";	//To by³o dobre!
-	ohmygodhesdown = "SVM_9_OhMyGodHesDown";	//Brutal!
-	cheerfriend01 = "SVM_9_CheerFriend01";	//Wal!
-	cheerfriend02 = "SVM_9_CheerFriend02";	//No, dalej!
-	cheerfriend03 = "SVM_9_CheerFriend03";	//Wykoñcz go!
-	ooh01 = "SVM_9_Ooh01";	//Uwa¿aj!
-	ooh02 = "SVM_9_Ooh02";	//Paruj!
-	ooh03 = "SVM_9_Ooh03";	//Cholera, to bola³o!
-	whatwasthat = "SVM_9_WhatWasThat";	//Co TO by³o!?
-	getoutofmybed = "SVM_9_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
-	awake = "SVM_9_Awake";	//(rozkoszne ziewniêcie)
+	RunCoward = "SVM_9_RunCoward";	//Jeszcze ciê dorwê!
+	GetOutOfHere = "SVM_9_GetOutOfHere";	//Won!
+	WhyAreYouInHere = "SVM_9_WhyAreYouInHere";	//Nie masz tu czego szukaæ!
+	YesGoOutOfHere = "SVM_9_YesGoOutOfHere";	//No, wynoœ siê!
+	WhatsThisSupposedToBe = "SVM_9_WhatsThisSupposedToBe";	//Co to ma byæ? Co ty tutaj robisz?
+	YouDisturbedMySlumber = "SVM_9_YouDisturbedMySlumber";	//Czego u diab³a chcesz?
+	ITookYourGold = "SVM_9_ITookYourGold";	//Dobrze, ¿e przynajmniej masz jakieœ z³oto!
+	ShitNoGold = "SVM_9_ShitNoGold";	//Ha! Nawet z³ota nie ma...
+	ITakeYourWeapon = "SVM_9_ITakeYourWeapon";	//Twoja broñ mo¿e mi siê przydaæ.
+	WhatAreYouDoing = "SVM_9_WhatAreYouDoing";	//Lepiej nie próbuj tego po raz drugi!
+	LookingForTroubleAgain = "SVM_9_LookingForTroubleAgain";	//Znowu szukasz guza?
+	StopMagic = "SVM_9_StopMagic";	//Tylko bez magii!
+	ISaidStopMagic = "SVM_9_ISaidStopMagic";	//Ostrzegam po raz ostatni!
+	WeaponDown = "SVM_9_WeaponDown";	//Od³ó¿ broñ!
+	ISaidWeaponDown = "SVM_9_ISaidWeaponDown";	//Od³ó¿ to albo ci przy³o¿ê.
+	WiseMove = "SVM_9_WiseMove";	//Nie jesteœ wcale taki g³upi, na jakiego wygl¹dasz!
+	NextTimeYoureInForIt = "SVM_9_NextTimeYoureInForIt";	//Lepiej nie próbuj tego po raz drugi!
+	OhMyHead = "SVM_9_OhMyHead";	//Aaach! Mój ³eb...
+	TheresAFight = "SVM_9_TheresAFight";	//Teraz bêdzie zabawnie...
+	OhMyGodItsAFight = "SVM_9_OhMyGodItsAFight";	//O rany...
+	GoodVictory = "SVM_9_GoodVictory";	//Bêdzie mia³ nauczkê...
+	NotBad = "SVM_9_NotBad";	//To by³o dobre!
+	OhMyGodHesDown = "SVM_9_OhMyGodHesDown";	//Brutal!
+	CheerFriend01 = "SVM_9_CheerFriend01";	//Wal!
+	CheerFriend02 = "SVM_9_CheerFriend02";	//No, dalej!
+	CheerFriend03 = "SVM_9_CheerFriend03";	//Wykoñcz go!
+	Ooh01 = "SVM_9_Ooh01";	//Uwa¿aj!
+	Ooh02 = "SVM_9_Ooh02";	//Paruj!
+	Ooh03 = "SVM_9_Ooh03";	//Cholera, to bola³o!
+	WhatWasThat = "SVM_9_WhatWasThat";	//Co TO by³o!?
+	GetOutOfMyBed = "SVM_9_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	Awake = "SVM_9_Awake";	//(rozkoszne ziewniêcie)
 	abs_commander = "SVM_9_ABS_COMMANDER";	//Wyjaœni³eœ zatem sprawê z dowódc¹.
 	abs_monastery = "SVM_9_ABS_MONASTERY";	//Ojciec Parlan uwolni³ ciê od twoich grzechów.
 	abs_farm = "SVM_9_ABS_FARM";	//Odwiedzi³eœ zatem Lee i za³atwi³eœ sprawê.
@@ -1675,40 +1675,40 @@ instance SVM_9(C_SVM)
 	gold_30 = "SVM_9_GOLD_30";	//30 sztuk z³ota.
 	gold_20 = "SVM_9_GOLD_20";	//20 sztuk z³ota.
 	gold_10 = "SVM_9_GOLD_10";	//10 sztuk z³ota.
-	smalltalk01 = "SVM_9_Smalltalk01";	//...trudno mi w to uwierzyæ...
-	smalltalk02 = "SVM_9_Smalltalk02";	//...nie wiem, czy mo¿na byæ tego pewnym...
-	smalltalk03 = "SVM_9_Smalltalk03";	//...przecie¿ on wiedzia³ ju¿ o tym wczeœniej...
-	smalltalk04 = "SVM_9_Smalltalk04";	//...ju¿ nie wiem, w co mam wierzyæ...
-	smalltalk05 = "SVM_9_Smalltalk05";	//...nie rozumiem w ogóle, czym on siê tak przejmuje...
-	smalltalk06 = "SVM_9_Smalltalk06";	//...nie potrzebujê jeszcze wiêcej k³opotów...
-	smalltalk07 = "SVM_9_Smalltalk07";	//...dosz³o do mnie to i owo...
-	smalltalk08 = "SVM_9_Smalltalk08";	//...lepiej zostawiê to w spokoju...
-	smalltalk09 = "SVM_9_Smalltalk09";	//...nie mo¿na wierzyæ we wszystko, co siê s³yszy...
-	smalltalk10 = "SVM_9_Smalltalk10";	//...ode mnie tego nie dosta³...
-	smalltalk11 = "SVM_9_Smalltalk11";	//...tak mi siê w³aœnie wydawa³o...
-	smalltalk12 = "SVM_9_Smalltalk12";	//...mnie i tak nikt nie s³ucha...
-	smalltalk13 = "SVM_9_Smalltalk13";	//...nie zas³u¿y³ na coœ takiego...
-	smalltalk14 = "SVM_9_Smalltalk14";	//...nie mów, ¿e o tym nie wiesz...
-	smalltalk15 = "SVM_9_Smalltalk15";	//...to by³o przecie¿ jasne...
-	smalltalk16 = "SVM_9_Smalltalk16";	//...sk¹d ty to masz...
-	smalltalk17 = "SVM_9_Smalltalk17";	//...tak dalej byæ nie mo¿e...
-	smalltalk18 = "SVM_9_Smalltalk18";	//...mam w³asne zdanie na ten temat...
-	smalltalk19 = "SVM_9_Smalltalk19";	//...by³o dok³adnie tak, jak mówisz...
-	smalltalk20 = "SVM_9_Smalltalk20";	//...nie s¹dzê, ¿eby w tej sprawie coœ siê zmieni³o...
-	smalltalk21 = "SVM_9_Smalltalk21";	//...s³yszê o tym po raz pierwszy...
-	smalltalk22 = "SVM_9_Smalltalk22";	//...mo¿emy jedynie przeczekaæ...
-	smalltalk23 = "SVM_9_Smalltalk23";	//...wiedzia³em, ¿e pojawi¹ siê problemy...
-	smalltalk24 = "SVM_9_Smalltalk24";	//...czemu nikt mnie nie s³ucha...
-	smalltalk25 = "SVM_9_Smalltalk25";	//...ucieka³, jakby goni³ go sam Beliar...
-	smalltalk26 = "SVM_9_Smalltalk26";	//...w koñcu i tak go oczywiœcie dorwaliœmy...
-	smalltalk27 = "SVM_9_Smalltalk27";	//...trzeba zdecydowanie i silnie uderzyæ w sam œrodek...
-	smalltalk28 = "SVM_9_Smalltalk28";	//...niektórzy nie zdaj¹ sobie w ogóle sprawy ze swoich grzechów...
-	smalltalk29 = "SVM_9_Smalltalk29";	//...taka jest bowiem wola Innosa
-	smalltalk30 = "SVM_9_Smalltalk30";	//...jego czyny by³y sprawiedliwe...
-	nolearnnopoints = "SVM_9_NoLearnNoPoints";	//Wróæ do mnie, kiedy nabierzesz wiêcej doœwiadczenia.
-	nolearnoverpersonalmax = "SVM_9_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
-	nolearnyourebetter = "SVM_9_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
-	youlearnedsomething = "SVM_9_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	Smalltalk01 = "SVM_9_Smalltalk01";	//...trudno mi w to uwierzyæ...
+	Smalltalk02 = "SVM_9_Smalltalk02";	//...nie wiem, czy mo¿na byæ tego pewnym...
+	Smalltalk03 = "SVM_9_Smalltalk03";	//...przecie¿ on wiedzia³ ju¿ o tym wczeœniej...
+	Smalltalk04 = "SVM_9_Smalltalk04";	//...ju¿ nie wiem, w co mam wierzyæ...
+	Smalltalk05 = "SVM_9_Smalltalk05";	//...nie rozumiem w ogóle, czym on siê tak przejmuje...
+	Smalltalk06 = "SVM_9_Smalltalk06";	//...nie potrzebujê jeszcze wiêcej k³opotów...
+	Smalltalk07 = "SVM_9_Smalltalk07";	//...dosz³o do mnie to i owo...
+	Smalltalk08 = "SVM_9_Smalltalk08";	//...lepiej zostawiê to w spokoju...
+	Smalltalk09 = "SVM_9_Smalltalk09";	//...nie mo¿na wierzyæ we wszystko, co siê s³yszy...
+	Smalltalk10 = "SVM_9_Smalltalk10";	//...ode mnie tego nie dosta³...
+	Smalltalk11 = "SVM_9_Smalltalk11";	//...tak mi siê w³aœnie wydawa³o...
+	Smalltalk12 = "SVM_9_Smalltalk12";	//...mnie i tak nikt nie s³ucha...
+	Smalltalk13 = "SVM_9_Smalltalk13";	//...nie zas³u¿y³ na coœ takiego...
+	Smalltalk14 = "SVM_9_Smalltalk14";	//...nie mów, ¿e o tym nie wiesz...
+	Smalltalk15 = "SVM_9_Smalltalk15";	//...to by³o przecie¿ jasne...
+	Smalltalk16 = "SVM_9_Smalltalk16";	//...sk¹d ty to masz...
+	Smalltalk17 = "SVM_9_Smalltalk17";	//...tak dalej byæ nie mo¿e...
+	Smalltalk18 = "SVM_9_Smalltalk18";	//...mam w³asne zdanie na ten temat...
+	Smalltalk19 = "SVM_9_Smalltalk19";	//...by³o dok³adnie tak, jak mówisz...
+	Smalltalk20 = "SVM_9_Smalltalk20";	//...nie s¹dzê, ¿eby w tej sprawie coœ siê zmieni³o...
+	Smalltalk21 = "SVM_9_Smalltalk21";	//...s³yszê o tym po raz pierwszy...
+	Smalltalk22 = "SVM_9_Smalltalk22";	//...mo¿emy jedynie przeczekaæ...
+	Smalltalk23 = "SVM_9_Smalltalk23";	//...wiedzia³em, ¿e pojawi¹ siê problemy...
+	Smalltalk24 = "SVM_9_Smalltalk24";	//...czemu nikt mnie nie s³ucha...
+	Smalltalk25 = "SVM_9_Smalltalk25";	//...ucieka³, jakby goni³ go sam Beliar...
+	Smalltalk26 = "SVM_9_Smalltalk26";	//...w koñcu i tak go oczywiœcie dorwaliœmy...
+	Smalltalk27 = "SVM_9_Smalltalk27";	//...trzeba zdecydowanie i silnie uderzyæ w sam œrodek...
+	Smalltalk28 = "SVM_9_Smalltalk28";	//...niektórzy nie zdaj¹ sobie w ogóle sprawy ze swoich grzechów...
+	Smalltalk29 = "SVM_9_Smalltalk29";	//...taka jest bowiem wola Innosa
+	Smalltalk30 = "SVM_9_Smalltalk30";	//...jego czyny by³y sprawiedliwe...
+	NoLearnNoPoints = "SVM_9_NoLearnNoPoints";	//Wróæ do mnie, kiedy nabierzesz wiêcej doœwiadczenia.
+	NoLearnOverPersonalMAX = "SVM_9_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	NoLearnYoureBetter = "SVM_9_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	YouLearnedSomething = "SVM_9_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
 	unterstadt = "SVM_9_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
 	oberstadt = "SVM_9_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
 	tempel = "SVM_9_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
@@ -1733,10 +1733,10 @@ instance SVM_9(C_SVM)
 	kaserne_2_markt = "SVM_9_KASERNE_2_MARKT";	//ZejdŸ po schodach na lewo od g³ównego wejœcia, to dojdziesz do targowiska.
 	kaserne_2_galgen = "SVM_9_KASERNE_2_GALGEN";	//ZejdŸ po schodach na prawo od g³ównego wejœcia, to dojdziesz do placu wisielców.
 	hafen_2_unterstadt = "SVM_9_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nabrze¿u ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
-	dead = "SVM_9_Dead";	//Aaaaaaaahrrrrrr!
-	aargh_1 = "SVM_9_Aargh_1";	//Aargh
-	aargh_2 = "SVM_9_Aargh_2";	//Aargh
-	aargh_3 = "SVM_9_Aargh_3";	//Aargh
+	Dead = "SVM_9_Dead";	//Aaaaaaaahrrrrrr!
+	Aargh_1 = "SVM_9_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_9_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_9_Aargh_3";	//Aargh
 	addon_wrongarmor = "SVM_9_Addon_WrongArmor";	//
 	addon_wrongarmor_sld = "SVM_9_ADDON_WRONGARMOR_SLD";	//
 	addon_wrongarmor_mil = "SVM_9_ADDON_WRONGARMOR_MIL";	//
@@ -1748,76 +1748,76 @@ instance SVM_9(C_SVM)
 
 instance SVM_10(C_SVM)
 {
-	milgreetings = "SVM_10_MILGreetings";	//Niech ¿yje Król!
-	palgreetings = "SVM_10_PALGreetings";	//Chwa³a Innosowi!
-	weather = "SVM_10_Weather";	//Beznadziejna pogoda!
-	igetyoustill = "SVM_10_IGetYouStill";	//To znowu TY!
-	dieenemy = "SVM_10_DieEnemy";	//Za³atwiê ciê!
-	diemonster = "SVM_10_DieMonster";	//Znowu jedna z tych g³upich bestii!
-	dirtythief = "SVM_10_DirtyThief";	//Ty ma³y, parszywy z³odzieju!
-	handsoff = "SVM_10_HandsOff";	//Zabieraj ³apy!
-	sheepkiller = "SVM_10_SheepKiller";	//Hej! Zostaw nasze owce w spokoju!
-	sheepkillermonster = "SVM_10_SheepKillerMonster";	//Ta bestia z¿era nasze owce!
-	youmurderer = "SVM_10_YouMurderer";	//Morderca!
-	diestupidbeast = "SVM_10_DieStupidBeast";	//A ten stwór czego tu chce?!
-	youdarehitme = "SVM_10_YouDareHitMe";	//No, teraz to mnie wkurzy³eœ!
-	youaskedforit = "SVM_10_YouAskedForIt";	//Sam tego chcia³eœ!
-	thenibeatyououtofhere = "SVM_10_ThenIBeatYouOutOfHere";	//Z niektórymi po prostu nie mo¿na siê dogadaæ w normalny sposób...
-	whatdidyoudointhere = "SVM_10_WhatDidYouDoInThere";	//Czego tam szuka³eœ, co?!
-	willyoustopfighting = "SVM_10_WillYouStopFighting";	//Przestaniecie w koñcu?!
-	killenemy = "SVM_10_KillEnemy";	//Giñ!
-	enemykilled = "SVM_10_EnemyKilled";	//Cholerny bydlak...
-	monsterkilled = "SVM_10_MonsterKilled";	//No, koniec z tob¹, bestio!
-	thiefdown = "SVM_10_ThiefDown";	//Trzymaj na przysz³oœæ ³apy z dala od moich rzeczy, jasne?
-	rumfummlerdown = "SVM_10_rumfummlerDown";	//Na przysz³oœæ trzymaj ³apy przy sobie!
-	sheepattackerdown = "SVM_10_SheepAttackerDown";	//Nigdy wiêcej nie podnoœ rêki na nasze owce!
-	killmurderer = "SVM_10_KillMurderer";	//Giñ, morderco!
-	stupidbeastkilled = "SVM_10_StupidBeastKilled";	//G³upie stworzenie!
-	neverhitmeagain = "SVM_10_NeverHitMeAgain";	//Nie próbuj tego jeszcze raz, ch³opczyku!
-	youbettershouldhavelistened = "SVM_10_YouBetterShouldHaveListened";	//Niech to bêdzie dla ciebie nauczka.
-	getupandbegone = "SVM_10_GetUpAndBeGone";	//Wstawaj i wynoœ siê st¹d!
-	neverenterroomagain = "SVM_10_NeverEnterRoomAgain";	//Nie chcê ciê wiêcej tam widzieæ, zrozumiano?
-	thereisnofightinghere = "SVM_10_ThereIsNoFightingHere";	//Je¿eli ktoœ tu rozdziela ciosy, to jestem to ja, zrozumiano?!
-	spareme = "SVM_10_SpareMe";	//Zostaw mnie w spokoju!
-	runaway = "SVM_10_RunAway";	//Cholera! Trzeba uciekaæ!
-	alarm = "SVM_10_Alarm";	//ALARM!
-	guards = "SVM_10_Guards";	//STRA¯!
-	help = "SVM_10_Help";	//Pomocy!
-	goodmonsterkill = "SVM_10_GoodMonsterKill";	//No! Tak nale¿y obchodziæ siê z bestiami!
-	goodkill = "SVM_10_GoodKill";	//Zas³uguje na to!
+	MILGreetings = "SVM_10_MILGreetings";	//Niech ¿yje Król!
+	PALGreetings = "SVM_10_PALGreetings";	//Chwa³a Innosowi!
+	Weather = "SVM_10_Weather";	//Beznadziejna pogoda!
+	IGetYouStill = "SVM_10_IGetYouStill";	//To znowu TY!
+	DieEnemy = "SVM_10_DieEnemy";	//Za³atwiê ciê!
+	DieMonster = "SVM_10_DieMonster";	//Znowu jedna z tych g³upich bestii!
+	DirtyThief = "SVM_10_DirtyThief";	//Ty ma³y, parszywy z³odzieju!
+	HandsOff = "SVM_10_HandsOff";	//Zabieraj ³apy!
+	SheepKiller = "SVM_10_SheepKiller";	//Hej! Zostaw nasze owce w spokoju!
+	SheepKillerMonster = "SVM_10_SheepKillerMonster";	//Ta bestia z¿era nasze owce!
+	YouMurderer = "SVM_10_YouMurderer";	//Morderca!
+	DieStupidBeast = "SVM_10_DieStupidBeast";	//A ten stwór czego tu chce?!
+	YouDareHitMe = "SVM_10_YouDareHitMe";	//No, teraz to mnie wkurzy³eœ!
+	YouAskedForIt = "SVM_10_YouAskedForIt";	//Sam tego chcia³eœ!
+	ThenIBeatYouOutOfHere = "SVM_10_ThenIBeatYouOutOfHere";	//Z niektórymi po prostu nie mo¿na siê dogadaæ w normalny sposób...
+	WhatDidYouDoInThere = "SVM_10_WhatDidYouDoInThere";	//Czego tam szuka³eœ, co?!
+	WillYouStopFighting = "SVM_10_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	KillEnemy = "SVM_10_KillEnemy";	//Giñ!
+	EnemyKilled = "SVM_10_EnemyKilled";	//Cholerny bydlak...
+	MonsterKilled = "SVM_10_MonsterKilled";	//No, koniec z tob¹, bestio!
+	ThiefDown = "SVM_10_ThiefDown";	//Trzymaj na przysz³oœæ ³apy z dala od moich rzeczy, jasne?
+	RumfummlerDown = "SVM_10_rumfummlerDown";	//Na przysz³oœæ trzymaj ³apy przy sobie!
+	SheepAttackerDown = "SVM_10_SheepAttackerDown";	//Nigdy wiêcej nie podnoœ rêki na nasze owce!
+	KillMurderer = "SVM_10_KillMurderer";	//Giñ, morderco!
+	StupidBeastKilled = "SVM_10_StupidBeastKilled";	//G³upie stworzenie!
+	NeverHitMeAgain = "SVM_10_NeverHitMeAgain";	//Nie próbuj tego jeszcze raz, ch³opczyku!
+	YouBetterShouldHaveListened = "SVM_10_YouBetterShouldHaveListened";	//Niech to bêdzie dla ciebie nauczka.
+	GetUpAndBeGone = "SVM_10_GetUpAndBeGone";	//Wstawaj i wynoœ siê st¹d!
+	NeverEnterRoomAgain = "SVM_10_NeverEnterRoomAgain";	//Nie chcê ciê wiêcej tam widzieæ, zrozumiano?
+	ThereIsNoFightingHere = "SVM_10_ThereIsNoFightingHere";	//Je¿eli ktoœ tu rozdziela ciosy, to jestem to ja, zrozumiano?!
+	SpareMe = "SVM_10_SpareMe";	//Zostaw mnie w spokoju!
+	RunAway = "SVM_10_RunAway";	//Cholera! Trzeba uciekaæ!
+	Alarm = "SVM_10_Alarm";	//ALARM!
+	Guards = "SVM_10_Guards";	//STRA¯!
+	Help = "SVM_10_Help";	//Pomocy!
+	GoodMonsterKill = "SVM_10_GoodMonsterKill";	//No! Tak nale¿y obchodziæ siê z bestiami!
+	GoodKill = "SVM_10_GoodKill";	//Zas³uguje na to!
 	notnow = "SVM_10_NOTNOW";	//Zostaw mnie w spokoju!
-	runcoward = "SVM_10_RunCoward";	//Jeszcze siê spotkamy!
-	getoutofhere = "SVM_10_GetOutOfHere";	//Wynoœ siê!
-	whyareyouinhere = "SVM_10_WhyAreYouInHere";	//Czego tu szukasz?!
-	yesgooutofhere = "SVM_10_YesGoOutOfHere";	//Zabieraj siê st¹d!
-	whatsthissupposedtobe = "SVM_10_WhatsThisSupposedToBe";	//Co ty tu robisz?
-	youdisturbedmyslumber = "SVM_10_YouDisturbedMySlumber";	//Co siê dzieje?
-	itookyourgold = "SVM_10_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
-	shitnogold = "SVM_10_ShitNoGold";	//Ty frajerze, nawet z³ota nie masz!
-	itakeyourweapon = "SVM_10_ITakeYourWeapon";	//Wezmê twoj¹ broñ na przechowanie.
-	whatareyoudoing = "SVM_10_WhatAreYouDoing";	//Lepiej uwa¿aj! Nastêpnym razem ci przy³o¿ê.
-	lookingfortroubleagain = "SVM_10_LookingForTroubleAgain";	//Znowu chcesz w mordê?
-	stopmagic = "SVM_10_StopMagic";	//Skoñcz wreszcie z tym czarowaniem!
-	isaidstopmagic = "SVM_10_ISaidStopMagic";	//Chcesz dostaæ? Natychmiast przestañ!
-	weapondown = "SVM_10_WeaponDown";	//Od³ó¿ broñ!
-	isaidweapondown = "SVM_10_ISaidWeaponDown";	//Od³ó¿ wreszcie tê cholern¹ broñ!
-	wisemove = "SVM_10_WiseMove";	//Spryciarz!
-	nexttimeyoureinforit = "SVM_10_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
-	ohmyhead = "SVM_10_OhMyHead";	//O rany, moja g³owa...
-	theresafight = "SVM_10_TheresAFight";	//Aach, walka...
-	ohmygoditsafight = "SVM_10_OhMyGodItsAFight";	//O rany, walka!
-	goodvictory = "SVM_10_GoodVictory";	//Ale mu pokaza³eœ!
-	notbad = "SVM_10_NotBad";	//NieŸle...
-	ohmygodhesdown = "SVM_10_OhMyGodHesDown";	//Bogowie! Co za brutal...
-	cheerfriend01 = "SVM_10_CheerFriend01";	//Wal z ca³ej si³y!
-	cheerfriend02 = "SVM_10_CheerFriend02";	//Poka¿ mu!
-	cheerfriend03 = "SVM_10_CheerFriend03";	//Wykoñcz go!
-	ooh01 = "SVM_10_Ooh01";	//Broñ siê!
-	ooh02 = "SVM_10_Ooh02";	//Oddaj cios!
-	ooh03 = "SVM_10_Ooh03";	//Uuu, to musia³o boleæ!
-	whatwasthat = "SVM_10_WhatWasThat";	//Cholera, co to by³o!?
-	getoutofmybed = "SVM_10_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
-	awake = "SVM_10_Awake";	//(rozkoszne ziewniêcie)
+	RunCoward = "SVM_10_RunCoward";	//Jeszcze siê spotkamy!
+	GetOutOfHere = "SVM_10_GetOutOfHere";	//Wynoœ siê!
+	WhyAreYouInHere = "SVM_10_WhyAreYouInHere";	//Czego tu szukasz?!
+	YesGoOutOfHere = "SVM_10_YesGoOutOfHere";	//Zabieraj siê st¹d!
+	WhatsThisSupposedToBe = "SVM_10_WhatsThisSupposedToBe";	//Co ty tu robisz?
+	YouDisturbedMySlumber = "SVM_10_YouDisturbedMySlumber";	//Co siê dzieje?
+	ITookYourGold = "SVM_10_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
+	ShitNoGold = "SVM_10_ShitNoGold";	//Ty frajerze, nawet z³ota nie masz!
+	ITakeYourWeapon = "SVM_10_ITakeYourWeapon";	//Wezmê twoj¹ broñ na przechowanie.
+	WhatAreYouDoing = "SVM_10_WhatAreYouDoing";	//Lepiej uwa¿aj! Nastêpnym razem ci przy³o¿ê.
+	LookingForTroubleAgain = "SVM_10_LookingForTroubleAgain";	//Znowu chcesz w mordê?
+	StopMagic = "SVM_10_StopMagic";	//Skoñcz wreszcie z tym czarowaniem!
+	ISaidStopMagic = "SVM_10_ISaidStopMagic";	//Chcesz dostaæ? Natychmiast przestañ!
+	WeaponDown = "SVM_10_WeaponDown";	//Od³ó¿ broñ!
+	ISaidWeaponDown = "SVM_10_ISaidWeaponDown";	//Od³ó¿ wreszcie tê cholern¹ broñ!
+	WiseMove = "SVM_10_WiseMove";	//Spryciarz!
+	NextTimeYoureInForIt = "SVM_10_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
+	OhMyHead = "SVM_10_OhMyHead";	//O rany, moja g³owa...
+	TheresAFight = "SVM_10_TheresAFight";	//Aach, walka...
+	OhMyGodItsAFight = "SVM_10_OhMyGodItsAFight";	//O rany, walka!
+	GoodVictory = "SVM_10_GoodVictory";	//Ale mu pokaza³eœ!
+	NotBad = "SVM_10_NotBad";	//NieŸle...
+	OhMyGodHesDown = "SVM_10_OhMyGodHesDown";	//Bogowie! Co za brutal...
+	CheerFriend01 = "SVM_10_CheerFriend01";	//Wal z ca³ej si³y!
+	CheerFriend02 = "SVM_10_CheerFriend02";	//Poka¿ mu!
+	CheerFriend03 = "SVM_10_CheerFriend03";	//Wykoñcz go!
+	Ooh01 = "SVM_10_Ooh01";	//Broñ siê!
+	Ooh02 = "SVM_10_Ooh02";	//Oddaj cios!
+	Ooh03 = "SVM_10_Ooh03";	//Uuu, to musia³o boleæ!
+	WhatWasThat = "SVM_10_WhatWasThat";	//Cholera, co to by³o!?
+	GetOutOfMyBed = "SVM_10_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	Awake = "SVM_10_Awake";	//(rozkoszne ziewniêcie)
 	abs_commander = "SVM_10_ABS_COMMANDER";	//Za³atwi³eœ zatem sprawê z kapitanem.
 	abs_monastery = "SVM_10_ABS_MONASTERY";	//Opowiedzia³eœ zatem Ojcu Parlanowi o swych czynach.
 	abs_farm = "SVM_10_ABS_FARM";	//Mówi¹, ¿e Lee uda³o siê za³atwiæ ca³¹ sprawê.
@@ -1862,40 +1862,40 @@ instance SVM_10(C_SVM)
 	gold_30 = "SVM_10_GOLD_30";	//30 sztuk z³ota.
 	gold_20 = "SVM_10_GOLD_20";	//20 sztuk z³ota.
 	gold_10 = "SVM_10_GOLD_10";	//10 sztuk z³ota.
-	smalltalk01 = "SVM_10_Smalltalk01";	//...tak jakby mnie to cokolwiek obchodzi³o...
-	smalltalk02 = "SVM_10_Smalltalk02";	//...nikt nie chce o tym s³yszeæ...
-	smalltalk03 = "SVM_10_Smalltalk03";	//...w koñcu to by³a jego decyzja...
-	smalltalk04 = "SVM_10_Smalltalk04";	//...nie wiem, ty mi powiedz...
-	smalltalk05 = "SVM_10_Smalltalk05";	//...trzymam siê od tego z daleka...
-	smalltalk06 = "SVM_10_Smalltalk06";	//...nie mam czasu na takie rzeczy...
-	smalltalk07 = "SVM_10_Smalltalk07";	//...du¿o by mnie to kosztowa³o...
-	smalltalk08 = "SVM_10_Smalltalk08";	//...nie musisz mi tego mówiæ...
-	smalltalk09 = "SVM_10_Smalltalk09";	//...widzi i s³yszy siê to, i owo...
-	smalltalk10 = "SVM_10_Smalltalk10";	//...mogê ci opowiedzieæ takich rzeczach...
-	smalltalk11 = "SVM_10_Smalltalk11";	//...nie mo¿na na tym polegaæ...
-	smalltalk12 = "SVM_10_Smalltalk12";	//...sam tak mówi³em...
-	smalltalk13 = "SVM_10_Smalltalk13";	//...tego jest wiêcej, wierz mi...
-	smalltalk14 = "SVM_10_Smalltalk14";	//...ci¹gle to samo...
-	smalltalk15 = "SVM_10_Smalltalk15";	//...nie mów, ¿e to nieprawda...
-	smalltalk16 = "SVM_10_Smalltalk16";	//...wczeœniej czy póŸniej musia³o siê tak zdarzyæ...
-	smalltalk17 = "SVM_10_Smalltalk17";	//...powinien byæ m¹drzejszy...
-	smalltalk18 = "SVM_10_Smalltalk18";	//...to siê nigdy nie zmieni...
-	smalltalk19 = "SVM_10_Smalltalk19";	//...to ¿adna tajemnica...
-	smalltalk20 = "SVM_10_Smalltalk20";	//...¿adna wielka sprawa...
-	smalltalk21 = "SVM_10_Smalltalk21";	//...on myœli, ¿e to takie ³atwe...
-	smalltalk22 = "SVM_10_Smalltalk22";	//...nikt nie chce tego s³uchaæ...
-	smalltalk23 = "SVM_10_Smalltalk23";	//...i to jest prawda...
-	smalltalk24 = "SVM_10_Smalltalk24";	//...trzeba po prostu s³uchaæ...
-	smalltalk25 = "SVM_10_Smalltalk25";	//...gdyby to zale¿a³o od nas, sprawy potoczy³yby siê inaczej...
-	smalltalk26 = "SVM_10_Smalltalk26";	//...musi po prostu wiêcej æwiczyæ...
-	smalltalk27 = "SVM_10_Smalltalk27";	//...co on wie o s³u¿bie...
-	smalltalk28 = "SVM_10_Smalltalk28";	//...Innos karze sprawiedliwie...
-	smalltalk29 = "SVM_10_Smalltalk29";	//...œcie¿ka cnoty jest d³uga i kamienista...
-	smalltalk30 = "SVM_10_Smalltalk30";	//...tylko Innos wie, co jest dobre, a co z³e...
-	nolearnnopoints = "SVM_10_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
-	nolearnoverpersonalmax = "SVM_10_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
-	nolearnyourebetter = "SVM_10_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
-	youlearnedsomething = "SVM_10_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	Smalltalk01 = "SVM_10_Smalltalk01";	//...tak jakby mnie to cokolwiek obchodzi³o...
+	Smalltalk02 = "SVM_10_Smalltalk02";	//...nikt nie chce o tym s³yszeæ...
+	Smalltalk03 = "SVM_10_Smalltalk03";	//...w koñcu to by³a jego decyzja...
+	Smalltalk04 = "SVM_10_Smalltalk04";	//...nie wiem, ty mi powiedz...
+	Smalltalk05 = "SVM_10_Smalltalk05";	//...trzymam siê od tego z daleka...
+	Smalltalk06 = "SVM_10_Smalltalk06";	//...nie mam czasu na takie rzeczy...
+	Smalltalk07 = "SVM_10_Smalltalk07";	//...du¿o by mnie to kosztowa³o...
+	Smalltalk08 = "SVM_10_Smalltalk08";	//...nie musisz mi tego mówiæ...
+	Smalltalk09 = "SVM_10_Smalltalk09";	//...widzi i s³yszy siê to, i owo...
+	Smalltalk10 = "SVM_10_Smalltalk10";	//...mogê ci opowiedzieæ takich rzeczach...
+	Smalltalk11 = "SVM_10_Smalltalk11";	//...nie mo¿na na tym polegaæ...
+	Smalltalk12 = "SVM_10_Smalltalk12";	//...sam tak mówi³em...
+	Smalltalk13 = "SVM_10_Smalltalk13";	//...tego jest wiêcej, wierz mi...
+	Smalltalk14 = "SVM_10_Smalltalk14";	//...ci¹gle to samo...
+	Smalltalk15 = "SVM_10_Smalltalk15";	//...nie mów, ¿e to nieprawda...
+	Smalltalk16 = "SVM_10_Smalltalk16";	//...wczeœniej czy póŸniej musia³o siê tak zdarzyæ...
+	Smalltalk17 = "SVM_10_Smalltalk17";	//...powinien byæ m¹drzejszy...
+	Smalltalk18 = "SVM_10_Smalltalk18";	//...to siê nigdy nie zmieni...
+	Smalltalk19 = "SVM_10_Smalltalk19";	//...to ¿adna tajemnica...
+	Smalltalk20 = "SVM_10_Smalltalk20";	//...¿adna wielka sprawa...
+	Smalltalk21 = "SVM_10_Smalltalk21";	//...on myœli, ¿e to takie ³atwe...
+	Smalltalk22 = "SVM_10_Smalltalk22";	//...nikt nie chce tego s³uchaæ...
+	Smalltalk23 = "SVM_10_Smalltalk23";	//...i to jest prawda...
+	Smalltalk24 = "SVM_10_Smalltalk24";	//...trzeba po prostu s³uchaæ...
+	Smalltalk25 = "SVM_10_Smalltalk25";	//...gdyby to zale¿a³o od nas, sprawy potoczy³yby siê inaczej...
+	Smalltalk26 = "SVM_10_Smalltalk26";	//...musi po prostu wiêcej æwiczyæ...
+	Smalltalk27 = "SVM_10_Smalltalk27";	//...co on wie o s³u¿bie...
+	Smalltalk28 = "SVM_10_Smalltalk28";	//...Innos karze sprawiedliwie...
+	Smalltalk29 = "SVM_10_Smalltalk29";	//...œcie¿ka cnoty jest d³uga i kamienista...
+	Smalltalk30 = "SVM_10_Smalltalk30";	//...tylko Innos wie, co jest dobre, a co z³e...
+	NoLearnNoPoints = "SVM_10_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
+	NoLearnOverPersonalMAX = "SVM_10_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	NoLearnYoureBetter = "SVM_10_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	YouLearnedSomething = "SVM_10_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
 	unterstadt = "SVM_10_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
 	oberstadt = "SVM_10_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
 	tempel = "SVM_10_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
@@ -1920,10 +1920,10 @@ instance SVM_10(C_SVM)
 	kaserne_2_markt = "SVM_10_KASERNE_2_MARKT";	//ZejdŸ po schodach na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
 	kaserne_2_galgen = "SVM_10_KASERNE_2_GALGEN";	//ZejdŸ po schodach na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
 	hafen_2_unterstadt = "SVM_10_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nadbrze¿u w górê ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
-	dead = "SVM_10_Dead";	//Aaaarhhh!
-	aargh_1 = "SVM_10_Aargh_1";	//Aargh
-	aargh_2 = "SVM_10_Aargh_2";	//Aargh
-	aargh_3 = "SVM_10_Aargh_3";	//Aargh
+	Dead = "SVM_10_Dead";	//Aaaarhhh!
+	Aargh_1 = "SVM_10_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_10_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_10_Aargh_3";	//Aargh
 	addon_wrongarmor = "SVM_10_Addon_WrongArmor";	//
 	addon_wrongarmor_sld = "SVM_10_ADDON_WRONGARMOR_SLD";	//
 	addon_wrongarmor_mil = "SVM_10_ADDON_WRONGARMOR_MIL";	//
@@ -1935,77 +1935,77 @@ instance SVM_10(C_SVM)
 
 instance SVM_11(C_SVM)
 {
-	sc_heywaitasecond = "SVM_11_Addon_HeyWaitASecond";	//
-	milgreetings = "SVM_11_MILGreetings";	//Niech ¿yje Król!
-	palgreetings = "SVM_11_PALGreetings";	//Chwa³a Innosowi!
-	weather = "SVM_11_Weather";	//Nêdzna pogoda...
-	igetyoustill = "SVM_11_IGetYouStill";	//Wiêc w koñcu i tak ciê dorwa³em!
-	dieenemy = "SVM_11_DieEnemy";	//Teraz kolej na ciebie!
-	diemonster = "SVM_11_DieMonster";	//Znowu jedna z tych cholernych bestii!
-	dirtythief = "SVM_11_DirtyThief";	//Parszywy z³odziej! Czekaj tylko...
-	handsoff = "SVM_11_HandsOff";	//Zabieraj ³apy!
-	sheepkiller = "SVM_11_SheepKiller";	//To cholerne bydlê zarzyna nasze owce!
-	sheepkillermonster = "SVM_11_SheepKillerMonster";	//Ten przeklêty potwór z¿era nasze owce!
-	youmurderer = "SVM_11_YouMurderer";	//Morderca!
-	diestupidbeast = "SVM_11_DieStupidBeast";	//Bestie nie maj¹ tu prawa wstêpu!
-	youdarehitme = "SVM_11_YouDareHitMe";	//Czekaj tylko, ty draniu!
-	youaskedforit = "SVM_11_YouAskedForIt";	//Sam siê o to prosi³eœ!
-	thenibeatyououtofhere = "SVM_11_ThenIBeatYouOutOfHere";	//Wiêc bêdê ciê musia³ st¹d WYKOPAÆ!
-	whatdidyoudointhere = "SVM_11_WhatDidYouDoInThere";	//Co ty tam robi³eœ, co?!
-	willyoustopfighting = "SVM_11_WillYouStopFighting";	//Przestaniecie w koñcu?!
-	killenemy = "SVM_11_KillEnemy";	//Giñ, bydlaku!
-	enemykilled = "SVM_11_EnemyKilled";	//Koniec z tob¹, paskudo!
-	monsterkilled = "SVM_11_MonsterKilled";	//Jedna bestia mniej!
-	thiefdown = "SVM_11_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
-	rumfummlerdown = "SVM_11_rumfummlerDown";	//Na przysz³oœæ trzymaj siê z dala od cudzej w³asnoœci!
-	sheepattackerdown = "SVM_11_SheepAttackerDown";	//Nie rób tego nigdy wiêcej! To s¹ nasze owce!
-	killmurderer = "SVM_11_KillMurderer";	//Giñ, morderco!
-	stupidbeastkilled = "SVM_11_StupidBeastKilled";	//G³upia bestia!
-	neverhitmeagain = "SVM_11_NeverHitMeAgain";	//Nigdy wiêcej ze mn¹ nie zaczynaj!
-	youbettershouldhavelistened = "SVM_11_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
-	getupandbegone = "SVM_11_GetUpAndBeGone";	//A teraz wynoœ siê!
-	neverenterroomagain = "SVM_11_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
-	thereisnofightinghere = "SVM_11_ThereIsNoFightingHere";	//Tu siê nie walczy, zrozumiano? Niech to bêdzie dla ciebie nauczka!
-	spareme = "SVM_11_SpareMe";	//Zostaw mnie w spokoju!
-	runaway = "SVM_11_RunAway";	//Cholera! Znikam st¹d!
-	alarm = "SVM_11_Alarm";	//ALARM!
-	guards = "SVM_11_Guards";	//STRA¯!
-	help = "SVM_11_Help";	//Pomocy!
-	goodmonsterkill = "SVM_11_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
-	goodkill = "SVM_11_GoodKill";	//No, daj œwini na co zas³uguje!
+	SC_HeyWaitASecond = "SVM_11_Addon_HeyWaitASecond";	//
+	MILGreetings = "SVM_11_MILGreetings";	//Niech ¿yje Król!
+	PALGreetings = "SVM_11_PALGreetings";	//Chwa³a Innosowi!
+	Weather = "SVM_11_Weather";	//Nêdzna pogoda...
+	IGetYouStill = "SVM_11_IGetYouStill";	//Wiêc w koñcu i tak ciê dorwa³em!
+	DieEnemy = "SVM_11_DieEnemy";	//Teraz kolej na ciebie!
+	DieMonster = "SVM_11_DieMonster";	//Znowu jedna z tych cholernych bestii!
+	DirtyThief = "SVM_11_DirtyThief";	//Parszywy z³odziej! Czekaj tylko...
+	HandsOff = "SVM_11_HandsOff";	//Zabieraj ³apy!
+	SheepKiller = "SVM_11_SheepKiller";	//To cholerne bydlê zarzyna nasze owce!
+	SheepKillerMonster = "SVM_11_SheepKillerMonster";	//Ten przeklêty potwór z¿era nasze owce!
+	YouMurderer = "SVM_11_YouMurderer";	//Morderca!
+	DieStupidBeast = "SVM_11_DieStupidBeast";	//Bestie nie maj¹ tu prawa wstêpu!
+	YouDareHitMe = "SVM_11_YouDareHitMe";	//Czekaj tylko, ty draniu!
+	YouAskedForIt = "SVM_11_YouAskedForIt";	//Sam siê o to prosi³eœ!
+	ThenIBeatYouOutOfHere = "SVM_11_ThenIBeatYouOutOfHere";	//Wiêc bêdê ciê musia³ st¹d WYKOPAÆ!
+	WhatDidYouDoInThere = "SVM_11_WhatDidYouDoInThere";	//Co ty tam robi³eœ, co?!
+	WillYouStopFighting = "SVM_11_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	KillEnemy = "SVM_11_KillEnemy";	//Giñ, bydlaku!
+	EnemyKilled = "SVM_11_EnemyKilled";	//Koniec z tob¹, paskudo!
+	MonsterKilled = "SVM_11_MonsterKilled";	//Jedna bestia mniej!
+	ThiefDown = "SVM_11_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
+	RumfummlerDown = "SVM_11_rumfummlerDown";	//Na przysz³oœæ trzymaj siê z dala od cudzej w³asnoœci!
+	SheepAttackerDown = "SVM_11_SheepAttackerDown";	//Nie rób tego nigdy wiêcej! To s¹ nasze owce!
+	KillMurderer = "SVM_11_KillMurderer";	//Giñ, morderco!
+	StupidBeastKilled = "SVM_11_StupidBeastKilled";	//G³upia bestia!
+	NeverHitMeAgain = "SVM_11_NeverHitMeAgain";	//Nigdy wiêcej ze mn¹ nie zaczynaj!
+	YouBetterShouldHaveListened = "SVM_11_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
+	GetUpAndBeGone = "SVM_11_GetUpAndBeGone";	//A teraz wynoœ siê!
+	NeverEnterRoomAgain = "SVM_11_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
+	ThereIsNoFightingHere = "SVM_11_ThereIsNoFightingHere";	//Tu siê nie walczy, zrozumiano? Niech to bêdzie dla ciebie nauczka!
+	SpareMe = "SVM_11_SpareMe";	//Zostaw mnie w spokoju!
+	RunAway = "SVM_11_RunAway";	//Cholera! Znikam st¹d!
+	Alarm = "SVM_11_Alarm";	//ALARM!
+	Guards = "SVM_11_Guards";	//STRA¯!
+	Help = "SVM_11_Help";	//Pomocy!
+	GoodMonsterKill = "SVM_11_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
+	GoodKill = "SVM_11_GoodKill";	//No, daj œwini na co zas³uguje!
 	notnow = "SVM_11_NOTNOW";	//Zostaw mnie w spokoju!
-	runcoward = "SVM_11_RunCoward";	//Stój, padalcu!
-	getoutofhere = "SVM_11_GetOutOfHere";	//Wynoœ siê st¹d!
-	whyareyouinhere = "SVM_11_WhyAreYouInHere";	//Czego tu chcesz?! OdejdŸ!
-	yesgooutofhere = "SVM_11_YesGoOutOfHere";	//No, zmywaj siê!
-	whatsthissupposedtobe = "SVM_11_WhatsThisSupposedToBe";	//Ej ty! Czego tam szukasz!
-	youdisturbedmyslumber = "SVM_11_YouDisturbedMySlumber";	//Czego u diab³a chcesz?
-	itookyourgold = "SVM_11_ITookYourGold";	//Z³oto! Przyda mi siê...
-	shitnogold = "SVM_11_ShitNoGold";	//Nie masz z³ota?!
-	itakeyourweapon = "SVM_11_ITakeYourWeapon";	//Wezmê twoj¹ broñ na przechowanie.
-	whatareyoudoing = "SVM_11_WhatAreYouDoing";	//Hej! Uwa¿aj!
-	lookingfortroubleagain = "SVM_11_LookingForTroubleAgain";	//Ci¹gle ci ma³o?
-	stopmagic = "SVM_11_StopMagic";	//Trzymaj siê ode mnie z daleka z t¹ swoj¹ magi¹!
-	isaidstopmagic = "SVM_11_ISaidStopMagic";	//Skoñcz z tymi czarami! Coœ nie tak z twoim s³uchem?!
-	weapondown = "SVM_11_WeaponDown";	//Od³ó¿ broñ!
-	isaidweapondown = "SVM_11_ISaidWeaponDown";	//Og³uch³eœ czy co?! Powtarzam: od³ó¿ broñ!
-	wisemove = "SVM_11_WiseMove";	//Widzisz, to nie by³o takie trudne.
-	nexttimeyoureinforit = "SVM_11_NextTimeYoureInForIt";	//Jeszcze zobaczymy...
-	ohmyhead = "SVM_11_OhMyHead";	//O rany, moja g³owa...
-	theresafight = "SVM_11_TheresAFight";	//Ach, wreszcie coœ siê dzieje!
-	ohmygoditsafight = "SVM_11_OhMyGodItsAFight";	//Porozwalaj¹ sobie ³by...
-	goodvictory = "SVM_11_GoodVictory";	//Zas³u¿y³ sobie na to!
-	notbad = "SVM_11_NotBad";	//Ca³kiem nieŸle...
-	ohmygodhesdown = "SVM_11_OhMyGodHesDown";	//Ale brutal...
-	cheerfriend01 = "SVM_11_CheerFriend01";	//Tak to siê powinno robiæ!
-	cheerfriend02 = "SVM_11_CheerFriend02";	//Na co czekasz?
-	cheerfriend03 = "SVM_11_CheerFriend03";	//I o to chodzi!
-	ooh01 = "SVM_11_Ooh01";	//Nie daj mu siê!
-	ooh02 = "SVM_11_Ooh02";	//Poka¿ mu, kto tu rz¹dzi!
-	ooh03 = "SVM_11_Ooh03";	//O cholera!
-	whatwasthat = "SVM_11_WhatWasThat";	//Co TO by³o!?
-	getoutofmybed = "SVM_11_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
-	awake = "SVM_11_Awake";	//(rozkoszne ziewniêcie)
+	RunCoward = "SVM_11_RunCoward";	//Stój, padalcu!
+	GetOutOfHere = "SVM_11_GetOutOfHere";	//Wynoœ siê st¹d!
+	WhyAreYouInHere = "SVM_11_WhyAreYouInHere";	//Czego tu chcesz?! OdejdŸ!
+	YesGoOutOfHere = "SVM_11_YesGoOutOfHere";	//No, zmywaj siê!
+	WhatsThisSupposedToBe = "SVM_11_WhatsThisSupposedToBe";	//Ej ty! Czego tam szukasz!
+	YouDisturbedMySlumber = "SVM_11_YouDisturbedMySlumber";	//Czego u diab³a chcesz?
+	ITookYourGold = "SVM_11_ITookYourGold";	//Z³oto! Przyda mi siê...
+	ShitNoGold = "SVM_11_ShitNoGold";	//Nie masz z³ota?!
+	ITakeYourWeapon = "SVM_11_ITakeYourWeapon";	//Wezmê twoj¹ broñ na przechowanie.
+	WhatAreYouDoing = "SVM_11_WhatAreYouDoing";	//Hej! Uwa¿aj!
+	LookingForTroubleAgain = "SVM_11_LookingForTroubleAgain";	//Ci¹gle ci ma³o?
+	StopMagic = "SVM_11_StopMagic";	//Trzymaj siê ode mnie z daleka z t¹ swoj¹ magi¹!
+	ISaidStopMagic = "SVM_11_ISaidStopMagic";	//Skoñcz z tymi czarami! Coœ nie tak z twoim s³uchem?!
+	WeaponDown = "SVM_11_WeaponDown";	//Od³ó¿ broñ!
+	ISaidWeaponDown = "SVM_11_ISaidWeaponDown";	//Og³uch³eœ czy co?! Powtarzam: od³ó¿ broñ!
+	WiseMove = "SVM_11_WiseMove";	//Widzisz, to nie by³o takie trudne.
+	NextTimeYoureInForIt = "SVM_11_NextTimeYoureInForIt";	//Jeszcze zobaczymy...
+	OhMyHead = "SVM_11_OhMyHead";	//O rany, moja g³owa...
+	TheresAFight = "SVM_11_TheresAFight";	//Ach, wreszcie coœ siê dzieje!
+	OhMyGodItsAFight = "SVM_11_OhMyGodItsAFight";	//Porozwalaj¹ sobie ³by...
+	GoodVictory = "SVM_11_GoodVictory";	//Zas³u¿y³ sobie na to!
+	NotBad = "SVM_11_NotBad";	//Ca³kiem nieŸle...
+	OhMyGodHesDown = "SVM_11_OhMyGodHesDown";	//Ale brutal...
+	CheerFriend01 = "SVM_11_CheerFriend01";	//Tak to siê powinno robiæ!
+	CheerFriend02 = "SVM_11_CheerFriend02";	//Na co czekasz?
+	CheerFriend03 = "SVM_11_CheerFriend03";	//I o to chodzi!
+	Ooh01 = "SVM_11_Ooh01";	//Nie daj mu siê!
+	Ooh02 = "SVM_11_Ooh02";	//Poka¿ mu, kto tu rz¹dzi!
+	Ooh03 = "SVM_11_Ooh03";	//O cholera!
+	WhatWasThat = "SVM_11_WhatWasThat";	//Co TO by³o!?
+	GetOutOfMyBed = "SVM_11_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	Awake = "SVM_11_Awake";	//(rozkoszne ziewniêcie)
 	abs_commander = "SVM_11_ABS_COMMANDER";	//Podobno by³eœ u kapitana i wszystko za³atwi³eœ.
 	abs_monastery = "SVM_11_ABS_MONASTERY";	//Ponoæ poszed³eœ do Ojca Parlana, by odkupiæ swe grzechy.
 	abs_farm = "SVM_11_ABS_FARM";	//Mówi¹, ¿e by³eœ u Lee i wszystko za³atwi³eœ.
@@ -2050,40 +2050,40 @@ instance SVM_11(C_SVM)
 	gold_30 = "SVM_11_GOLD_30";	//30 sztuk z³ota.
 	gold_20 = "SVM_11_GOLD_20";	//20 sztuk z³ota.
 	gold_10 = "SVM_11_GOLD_10";	//10 sztuk z³ota.
-	smalltalk01 = "SVM_11_Smalltalk01";	//...naprawdê tak myœlisz...
-	smalltalk02 = "SVM_11_Smalltalk02";	//...wszystko jest mo¿liwe...
-	smalltalk03 = "SVM_11_Smalltalk03";	//...powinien byæ m¹drzejszy...
-	smalltalk04 = "SVM_11_Smalltalk04";	//...jakbyœmy mieli nie doœæ problemów...
-	smalltalk05 = "SVM_11_Smalltalk05";	//...kto ci to powiedzia³...
-	smalltalk06 = "SVM_11_Smalltalk06";	//...przez to bêdzie jeszcze wiêcej k³opotów...
-	smalltalk07 = "SVM_11_Smalltalk07";	//...ludzie mówi¹ ró¿ne rzeczy...
-	smalltalk08 = "SVM_11_Smalltalk08";	//...ja bym tego nie zrobi³...
-	smalltalk09 = "SVM_11_Smalltalk09";	//...to wszystko tylko plotki...
-	smalltalk10 = "SVM_11_Smalltalk10";	//...lepiej uwa¿aæ, co siê komu mówi...
-	smalltalk11 = "SVM_11_Smalltalk11";	//...mog³em ci to powiedzieæ wczeœniej...
-	smalltalk12 = "SVM_11_Smalltalk12";	//...nikt mnie nigdy nie pyta o zdanie...
-	smalltalk13 = "SVM_11_Smalltalk13";	//...¿al biedaka...
-	smalltalk14 = "SVM_11_Smalltalk14";	//...to nic nowego...
-	smalltalk15 = "SVM_11_Smalltalk15";	//...to przecie¿ oczywiste...
-	smalltalk16 = "SVM_11_Smalltalk16";	//...nie musisz mnie o to pytaæ...
-	smalltalk17 = "SVM_11_Smalltalk17";	//...tak nie mo¿e dalej byæ...
-	smalltalk18 = "SVM_11_Smalltalk18";	//...i tak wiesz, co o tym s¹dzê...
-	smalltalk19 = "SVM_11_Smalltalk19";	//...to dok³adnie moje s³owa...
-	smalltalk20 = "SVM_11_Smalltalk20";	//...nic siê w zwi¹zku z tym nie zmieni...
-	smalltalk21 = "SVM_11_Smalltalk21";	//...czemu nie dosz³o to do mnie wczeœniej...
-	smalltalk22 = "SVM_11_Smalltalk22";	//...poczekajmy, co siê stanie...
-	smalltalk23 = "SVM_11_Smalltalk23";	//...niektóre problemy rozwi¹zuj¹ siê same...
-	smalltalk24 = "SVM_11_Smalltalk24";	//...nie chcê o tym s³uchaæ...
-	smalltalk25 = "SVM_11_Smalltalk25";	//...by³ w sztok pijany...
-	smalltalk26 = "SVM_11_Smalltalk26";	//...nie pozwolê siê tak traktowaæ...
-	smalltalk27 = "SVM_11_Smalltalk27";	//...wszyscy uciekali jak zaj¹ce, by³em zupe³nie sam...
-	smalltalk28 = "SVM_11_Smalltalk28";	//...tak mówi¹ pisma...
-	smalltalk29 = "SVM_11_Smalltalk29";	//...zawsze dzia³am w imieniu Innosa...
-	smalltalk30 = "SVM_11_Smalltalk30";	//...nie wolno naruszaæ boskiego porz¹dku...
-	nolearnnopoints = "SVM_11_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
-	nolearnoverpersonalmax = "SVM_11_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
-	nolearnyourebetter = "SVM_11_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
-	youlearnedsomething = "SVM_11_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	Smalltalk01 = "SVM_11_Smalltalk01";	//...naprawdê tak myœlisz...
+	Smalltalk02 = "SVM_11_Smalltalk02";	//...wszystko jest mo¿liwe...
+	Smalltalk03 = "SVM_11_Smalltalk03";	//...powinien byæ m¹drzejszy...
+	Smalltalk04 = "SVM_11_Smalltalk04";	//...jakbyœmy mieli nie doœæ problemów...
+	Smalltalk05 = "SVM_11_Smalltalk05";	//...kto ci to powiedzia³...
+	Smalltalk06 = "SVM_11_Smalltalk06";	//...przez to bêdzie jeszcze wiêcej k³opotów...
+	Smalltalk07 = "SVM_11_Smalltalk07";	//...ludzie mówi¹ ró¿ne rzeczy...
+	Smalltalk08 = "SVM_11_Smalltalk08";	//...ja bym tego nie zrobi³...
+	Smalltalk09 = "SVM_11_Smalltalk09";	//...to wszystko tylko plotki...
+	Smalltalk10 = "SVM_11_Smalltalk10";	//...lepiej uwa¿aæ, co siê komu mówi...
+	Smalltalk11 = "SVM_11_Smalltalk11";	//...mog³em ci to powiedzieæ wczeœniej...
+	Smalltalk12 = "SVM_11_Smalltalk12";	//...nikt mnie nigdy nie pyta o zdanie...
+	Smalltalk13 = "SVM_11_Smalltalk13";	//...¿al biedaka...
+	Smalltalk14 = "SVM_11_Smalltalk14";	//...to nic nowego...
+	Smalltalk15 = "SVM_11_Smalltalk15";	//...to przecie¿ oczywiste...
+	Smalltalk16 = "SVM_11_Smalltalk16";	//...nie musisz mnie o to pytaæ...
+	Smalltalk17 = "SVM_11_Smalltalk17";	//...tak nie mo¿e dalej byæ...
+	Smalltalk18 = "SVM_11_Smalltalk18";	//...i tak wiesz, co o tym s¹dzê...
+	Smalltalk19 = "SVM_11_Smalltalk19";	//...to dok³adnie moje s³owa...
+	Smalltalk20 = "SVM_11_Smalltalk20";	//...nic siê w zwi¹zku z tym nie zmieni...
+	Smalltalk21 = "SVM_11_Smalltalk21";	//...czemu nie dosz³o to do mnie wczeœniej...
+	Smalltalk22 = "SVM_11_Smalltalk22";	//...poczekajmy, co siê stanie...
+	Smalltalk23 = "SVM_11_Smalltalk23";	//...niektóre problemy rozwi¹zuj¹ siê same...
+	Smalltalk24 = "SVM_11_Smalltalk24";	//...nie chcê o tym s³uchaæ...
+	Smalltalk25 = "SVM_11_Smalltalk25";	//...by³ w sztok pijany...
+	Smalltalk26 = "SVM_11_Smalltalk26";	//...nie pozwolê siê tak traktowaæ...
+	Smalltalk27 = "SVM_11_Smalltalk27";	//...wszyscy uciekali jak zaj¹ce, by³em zupe³nie sam...
+	Smalltalk28 = "SVM_11_Smalltalk28";	//...tak mówi¹ pisma...
+	Smalltalk29 = "SVM_11_Smalltalk29";	//...zawsze dzia³am w imieniu Innosa...
+	Smalltalk30 = "SVM_11_Smalltalk30";	//...nie wolno naruszaæ boskiego porz¹dku...
+	NoLearnNoPoints = "SVM_11_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
+	NoLearnOverPersonalMAX = "SVM_11_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	NoLearnYoureBetter = "SVM_11_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	YouLearnedSomething = "SVM_11_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
 	unterstadt = "SVM_11_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
 	oberstadt = "SVM_11_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
 	tempel = "SVM_11_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
@@ -2108,10 +2108,10 @@ instance SVM_11(C_SVM)
 	kaserne_2_markt = "SVM_11_KASERNE_2_MARKT";	//ZejdŸ po schodach na lewo od g³ównego wejœcia, to dojdziesz do targowiska.
 	kaserne_2_galgen = "SVM_11_KASERNE_2_GALGEN";	//ZejdŸ po schodach na prawo od g³ównego wejœcia, to dojdziesz do placu wisielców.
 	hafen_2_unterstadt = "SVM_11_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nabrze¿u, w górê ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
-	dead = "SVM_11_Dead";	//Aaaaarhhh!
-	aargh_1 = "SVM_11_Aargh_1";	//Aargh
-	aargh_2 = "SVM_11_Aargh_2";	//Aargh
-	aargh_3 = "SVM_11_Aargh_3";	//Aargh
+	Dead = "SVM_11_Dead";	//Aaaaarhhh!
+	Aargh_1 = "SVM_11_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_11_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_11_Aargh_3";	//Aargh
 	addon_wrongarmor = "SVM_11_Addon_WrongArmor";	//
 	addon_wrongarmor_sld = "SVM_11_ADDON_WRONGARMOR_SLD";	//
 	addon_wrongarmor_mil = "SVM_11_ADDON_WRONGARMOR_MIL";	//
@@ -2123,77 +2123,77 @@ instance SVM_11(C_SVM)
 
 instance SVM_12(C_SVM)
 {
-	milgreetings = "SVM_12_MILGreetings";	//Niech ¿yje Król!
-	palgreetings = "SVM_12_PALGreetings";	//Chwa³a Innosowi!
-	weather = "SVM_12_Weather";	//Kiepska pogoda...
-	igetyoustill = "SVM_12_IGetYouStill";	//Teraz ciê mam!
-	dieenemy = "SVM_12_DieEnemy";	//Trzeba by³o tu nie przychodziæ!
-	diemonster = "SVM_12_DieMonster";	//No chodŸ, parszywa bestio!
-	dirtythief = "SVM_12_DirtyThief";	//Czekaj tylko, ty œmierdz¹cy z³odzieju!
-	handsoff = "SVM_12_HandsOff";	//Zabieraj st¹d ³apy!
-	sheepkiller = "SVM_12_SheepKiller";	//Zostaw nasze owce w spokoju!
-	sheepkillermonster = "SVM_12_SheepKillerMonster";	//OdejdŸ od naszych owiec, ty przeklêta bestio!
-	youmurderer = "SVM_12_YouMurderer";	//Morderca!
-	diestupidbeast = "SVM_12_DieStupidBeast";	//Tu nie ma miejsca dla bestii!
-	youdarehitme = "SVM_12_YouDareHitMe";	//Po¿a³ujesz tego!
-	youaskedforit = "SVM_12_YouAskedForIt";	//Ostrzega³em ciê!
-	thenibeatyououtofhere = "SVM_12_ThenIBeatYouOutOfHere";	//Powiedzia³em WON!
-	whatdidyoudointhere = "SVM_12_WhatDidYouDoInThere";	//Hej! Co ty tam robi³eœ?
-	willyoustopfighting = "SVM_12_WillYouStopFighting";	//Przestaæ! Natychmiast!
-	killenemy = "SVM_12_KillEnemy";	//Rozerwê ciê na strzêpy!
-	enemykilled = "SVM_12_EnemyKilled";	//Koniec z tob¹...
-	monsterkilled = "SVM_12_MonsterKilled";	//To mnie krêci!
-	addon_monsterkilled = "SVM_12_Addon_MonsterKilled";	//
-	thiefdown = "SVM_12_ThiefDown";	//Ostrzegam ciê! Nie próbuj tego ponownie, ty przeklêty z³odzieju!
-	rumfummlerdown = "SVM_12_rumfummlerDown";	//Trzymaj w przysz³oœci ³apy z dala od rzeczy, które do ciebie nie nale¿¹!
-	sheepattackerdown = "SVM_12_SheepAttackerDown";	//I trzymaj siê z dala od naszych owiec!
-	killmurderer = "SVM_12_KillMurderer";	//Giñ, morderco!
-	stupidbeastkilled = "SVM_12_StupidBeastKilled";	//Przeklêty potwór!
-	neverhitmeagain = "SVM_12_NeverHitMeAgain";	//Nigdy nie wa¿ siê mnie atakowaæ!
-	youbettershouldhavelistened = "SVM_12_YouBetterShouldHaveListened";	//Ostrzega³em ciê!
-	getupandbegone = "SVM_12_GetUpAndBeGone";	//A teraz wynoœ siê!
-	neverenterroomagain = "SVM_12_NeverEnterRoomAgain";	//Nie chcê ciê tu wiêcej widzieæ, jasne?
-	thereisnofightinghere = "SVM_12_ThereIsNoFightingHere";	//Tu siê nie walczy, zapamiêtaj to sobie dobrze!
-	spareme = "SVM_12_SpareMe";	//Nie zrób czegoœ g³upiego!
-	runaway = "SVM_12_RunAway";	//Wynoszê siê st¹d!
-	alarm = "SVM_12_Alarm";	//ALARM!
-	guards = "SVM_12_Guards";	//STRA¯!
-	help = "SVM_12_Help";	//Pomocy!
-	goodmonsterkill = "SVM_12_GoodMonsterKill";	//Odeœlemy te bestie do otch³ani!
-	goodkill = "SVM_12_GoodKill";	//Dobrze! Poka¿ draniowi!
+	MILGreetings = "SVM_12_MILGreetings";	//Niech ¿yje Król!
+	PALGreetings = "SVM_12_PALGreetings";	//Chwa³a Innosowi!
+	Weather = "SVM_12_Weather";	//Kiepska pogoda...
+	IGetYouStill = "SVM_12_IGetYouStill";	//Teraz ciê mam!
+	DieEnemy = "SVM_12_DieEnemy";	//Trzeba by³o tu nie przychodziæ!
+	DieMonster = "SVM_12_DieMonster";	//No chodŸ, parszywa bestio!
+	DirtyThief = "SVM_12_DirtyThief";	//Czekaj tylko, ty œmierdz¹cy z³odzieju!
+	HandsOff = "SVM_12_HandsOff";	//Zabieraj st¹d ³apy!
+	SheepKiller = "SVM_12_SheepKiller";	//Zostaw nasze owce w spokoju!
+	SheepKillerMonster = "SVM_12_SheepKillerMonster";	//OdejdŸ od naszych owiec, ty przeklêta bestio!
+	YouMurderer = "SVM_12_YouMurderer";	//Morderca!
+	DieStupidBeast = "SVM_12_DieStupidBeast";	//Tu nie ma miejsca dla bestii!
+	YouDareHitMe = "SVM_12_YouDareHitMe";	//Po¿a³ujesz tego!
+	YouAskedForIt = "SVM_12_YouAskedForIt";	//Ostrzega³em ciê!
+	ThenIBeatYouOutOfHere = "SVM_12_ThenIBeatYouOutOfHere";	//Powiedzia³em WON!
+	WhatDidYouDoInThere = "SVM_12_WhatDidYouDoInThere";	//Hej! Co ty tam robi³eœ?
+	WillYouStopFighting = "SVM_12_WillYouStopFighting";	//Przestaæ! Natychmiast!
+	KillEnemy = "SVM_12_KillEnemy";	//Rozerwê ciê na strzêpy!
+	EnemyKilled = "SVM_12_EnemyKilled";	//Koniec z tob¹...
+	MonsterKilled = "SVM_12_MonsterKilled";	//To mnie krêci!
+	Addon_MonsterKilled = "SVM_12_Addon_MonsterKilled";	//
+	ThiefDown = "SVM_12_ThiefDown";	//Ostrzegam ciê! Nie próbuj tego ponownie, ty przeklêty z³odzieju!
+	RumfummlerDown = "SVM_12_rumfummlerDown";	//Trzymaj w przysz³oœci ³apy z dala od rzeczy, które do ciebie nie nale¿¹!
+	SheepAttackerDown = "SVM_12_SheepAttackerDown";	//I trzymaj siê z dala od naszych owiec!
+	KillMurderer = "SVM_12_KillMurderer";	//Giñ, morderco!
+	StupidBeastKilled = "SVM_12_StupidBeastKilled";	//Przeklêty potwór!
+	NeverHitMeAgain = "SVM_12_NeverHitMeAgain";	//Nigdy nie wa¿ siê mnie atakowaæ!
+	YouBetterShouldHaveListened = "SVM_12_YouBetterShouldHaveListened";	//Ostrzega³em ciê!
+	GetUpAndBeGone = "SVM_12_GetUpAndBeGone";	//A teraz wynoœ siê!
+	NeverEnterRoomAgain = "SVM_12_NeverEnterRoomAgain";	//Nie chcê ciê tu wiêcej widzieæ, jasne?
+	ThereIsNoFightingHere = "SVM_12_ThereIsNoFightingHere";	//Tu siê nie walczy, zapamiêtaj to sobie dobrze!
+	SpareMe = "SVM_12_SpareMe";	//Nie zrób czegoœ g³upiego!
+	RunAway = "SVM_12_RunAway";	//Wynoszê siê st¹d!
+	Alarm = "SVM_12_Alarm";	//ALARM!
+	Guards = "SVM_12_Guards";	//STRA¯!
+	Help = "SVM_12_Help";	//Pomocy!
+	GoodMonsterKill = "SVM_12_GoodMonsterKill";	//Odeœlemy te bestie do otch³ani!
+	GoodKill = "SVM_12_GoodKill";	//Dobrze! Poka¿ draniowi!
 	notnow = "SVM_12_NOTNOW";	//Zostaw mnie w spokoju!
-	runcoward = "SVM_12_RunCoward";	//Dorwê ciê jeszcze!
-	getoutofhere = "SVM_12_GetOutOfHere";	//Wynoœ siê st¹d!
-	whyareyouinhere = "SVM_12_WhyAreYouInHere";	//Nie masz tu nic do roboty!
-	yesgooutofhere = "SVM_12_YesGoOutOfHere";	//No, wynocha!
-	whatsthissupposedtobe = "SVM_12_WhatsThisSupposedToBe";	//Co ty kombinujesz? Czego tam szukasz?
-	youdisturbedmyslumber = "SVM_12_YouDisturbedMySlumber";	//Czego u diab³a chcesz?
-	itookyourgold = "SVM_12_ITookYourGold";	//Dobrze, ¿e masz przy sobie przynajmniej trochê z³ota...
-	shitnogold = "SVM_12_ShitNoGold";	//Nawet z³ota nie ma?!
-	itakeyourweapon = "SVM_12_ITakeYourWeapon";	//Chyba wezmê sobie twoj¹ broñ.
-	whatareyoudoing = "SVM_12_WhatAreYouDoing";	//Nie próbuj tego ponownie, ch³opcze!
-	lookingfortroubleagain = "SVM_12_LookingForTroubleAgain";	//Ci¹gle ci ma³o?
-	stopmagic = "SVM_12_StopMagic";	//Przestañ z tymi czarami!
-	isaidstopmagic = "SVM_12_ISaidStopMagic";	//Ostatnie ostrze¿enie - skoñcz z t¹ magi¹!
-	weapondown = "SVM_12_WeaponDown";	//Od³ó¿ broñ!
-	isaidweapondown = "SVM_12_ISaidWeaponDown";	//Od³ó¿ to, albo pogadamy inaczej!
-	wisemove = "SVM_12_WiseMove";	//Hej, nie jesteœ wcale taki g³upi, na jakiego wygl¹dasz!
-	nexttimeyoureinforit = "SVM_12_NextTimeYoureInForIt";	//Nie próbuj tego ponownie...
-	ohmyhead = "SVM_12_OhMyHead";	//Och, moja g³owa...
-	theresafight = "SVM_12_TheresAFight";	//Teraz bêdzie zabawa...
-	ohmygoditsafight = "SVM_12_OhMyGodItsAFight";	//O bogowie...
-	goodvictory = "SVM_12_GoodVictory";	//Niech to bêdzie dla niego nauczka...
-	notbad = "SVM_12_NotBad";	//To by³o dobre!
-	ohmygodhesdown = "SVM_12_OhMyGodHesDown";	//Cholerny brutal!
-	cheerfriend01 = "SVM_12_CheerFriend01";	//R¹bnij go!
-	cheerfriend02 = "SVM_12_CheerFriend02";	//Nie przestawaj!
-	cheerfriend03 = "SVM_12_CheerFriend03";	//Wykoñcz go!
-	ooh01 = "SVM_12_Ooh01";	//Uwa¿aj!
-	ooh02 = "SVM_12_Ooh02";	//Paruj! Paruj!
-	ooh03 = "SVM_12_Ooh03";	//Cholera, to bola³o!
-	whatwasthat = "SVM_12_WhatWasThat";	//Co to by³o!?
-	getoutofmybed = "SVM_12_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
-	awake = "SVM_12_Awake";	//(rozkoszne ziewniêcie)
+	RunCoward = "SVM_12_RunCoward";	//Dorwê ciê jeszcze!
+	GetOutOfHere = "SVM_12_GetOutOfHere";	//Wynoœ siê st¹d!
+	WhyAreYouInHere = "SVM_12_WhyAreYouInHere";	//Nie masz tu nic do roboty!
+	YesGoOutOfHere = "SVM_12_YesGoOutOfHere";	//No, wynocha!
+	WhatsThisSupposedToBe = "SVM_12_WhatsThisSupposedToBe";	//Co ty kombinujesz? Czego tam szukasz?
+	YouDisturbedMySlumber = "SVM_12_YouDisturbedMySlumber";	//Czego u diab³a chcesz?
+	ITookYourGold = "SVM_12_ITookYourGold";	//Dobrze, ¿e masz przy sobie przynajmniej trochê z³ota...
+	ShitNoGold = "SVM_12_ShitNoGold";	//Nawet z³ota nie ma?!
+	ITakeYourWeapon = "SVM_12_ITakeYourWeapon";	//Chyba wezmê sobie twoj¹ broñ.
+	WhatAreYouDoing = "SVM_12_WhatAreYouDoing";	//Nie próbuj tego ponownie, ch³opcze!
+	LookingForTroubleAgain = "SVM_12_LookingForTroubleAgain";	//Ci¹gle ci ma³o?
+	StopMagic = "SVM_12_StopMagic";	//Przestañ z tymi czarami!
+	ISaidStopMagic = "SVM_12_ISaidStopMagic";	//Ostatnie ostrze¿enie - skoñcz z t¹ magi¹!
+	WeaponDown = "SVM_12_WeaponDown";	//Od³ó¿ broñ!
+	ISaidWeaponDown = "SVM_12_ISaidWeaponDown";	//Od³ó¿ to, albo pogadamy inaczej!
+	WiseMove = "SVM_12_WiseMove";	//Hej, nie jesteœ wcale taki g³upi, na jakiego wygl¹dasz!
+	NextTimeYoureInForIt = "SVM_12_NextTimeYoureInForIt";	//Nie próbuj tego ponownie...
+	OhMyHead = "SVM_12_OhMyHead";	//Och, moja g³owa...
+	TheresAFight = "SVM_12_TheresAFight";	//Teraz bêdzie zabawa...
+	OhMyGodItsAFight = "SVM_12_OhMyGodItsAFight";	//O bogowie...
+	GoodVictory = "SVM_12_GoodVictory";	//Niech to bêdzie dla niego nauczka...
+	NotBad = "SVM_12_NotBad";	//To by³o dobre!
+	OhMyGodHesDown = "SVM_12_OhMyGodHesDown";	//Cholerny brutal!
+	CheerFriend01 = "SVM_12_CheerFriend01";	//R¹bnij go!
+	CheerFriend02 = "SVM_12_CheerFriend02";	//Nie przestawaj!
+	CheerFriend03 = "SVM_12_CheerFriend03";	//Wykoñcz go!
+	Ooh01 = "SVM_12_Ooh01";	//Uwa¿aj!
+	Ooh02 = "SVM_12_Ooh02";	//Paruj! Paruj!
+	Ooh03 = "SVM_12_Ooh03";	//Cholera, to bola³o!
+	WhatWasThat = "SVM_12_WhatWasThat";	//Co to by³o!?
+	GetOutOfMyBed = "SVM_12_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	Awake = "SVM_12_Awake";	//(rozkoszne ziewniêcie)
 	abs_commander = "SVM_12_ABS_COMMANDER";	//Zatem kapitan wyjaœni³ sprawê.
 	abs_monastery = "SVM_12_ABS_MONASTERY";	//Ojciec Parlan uwolni³ ciê wiêc od twoich grzechów.
 	abs_farm = "SVM_12_ABS_FARM";	//Widzia³eœ siê zatem z Lee i zaj¹³eœ siê spraw¹.
@@ -2238,40 +2238,40 @@ instance SVM_12(C_SVM)
 	gold_30 = "SVM_12_GOLD_30";	//30 sztuk z³ota.
 	gold_20 = "SVM_12_GOLD_20";	//20 sztuk z³ota.
 	gold_10 = "SVM_12_GOLD_10";	//10 sztuk z³ota.
-	smalltalk01 = "SVM_12_Smalltalk01";	//...tak jakby mnie to cokolwiek obchodzi³o...
-	smalltalk02 = "SVM_12_Smalltalk02";	//...nikt nie chce wiedzieæ...
-	smalltalk03 = "SVM_12_Smalltalk03";	//...w koñcu to by³a jego decyzja...
-	smalltalk04 = "SVM_12_Smalltalk04";	//...nie wiem, ty mi powiedz...
-	smalltalk05 = "SVM_12_Smalltalk05";	//...trzymam siê od tego z daleka...
-	smalltalk06 = "SVM_12_Smalltalk06";	//...nie mam czasu na takie rzeczy...
-	smalltalk07 = "SVM_12_Smalltalk07";	//...du¿o by mnie to kosztowa³o...
-	smalltalk08 = "SVM_12_Smalltalk08";	//...nie musisz mi tego mówiæ...
-	smalltalk09 = "SVM_12_Smalltalk09";	//...widzi i s³yszy siê to, i owo...
-	smalltalk10 = "SVM_12_Smalltalk10";	//...mogê ci opowiedzieæ o takich rzeczach...
-	smalltalk11 = "SVM_12_Smalltalk11";	//...nie mo¿na na to liczyæ...
-	smalltalk12 = "SVM_12_Smalltalk12";	//...sam tak mówi³em...
-	smalltalk13 = "SVM_12_Smalltalk13";	//...tego jest wiêcej, wierz mi...
-	smalltalk14 = "SVM_12_Smalltalk14";	//...ci¹gle to samo...
-	smalltalk15 = "SVM_12_Smalltalk15";	//...nie mów, ¿e to nieprawda...
-	smalltalk16 = "SVM_12_Smalltalk16";	//...wczeœniej czy póŸniej musia³o siê tak zdarzyæ...
-	smalltalk17 = "SVM_12_Smalltalk17";	//...powinien byæ m¹drzejszy...
-	smalltalk18 = "SVM_12_Smalltalk18";	//...to siê nigdy nie zmieni...
-	smalltalk19 = "SVM_12_Smalltalk19";	//...to ¿adna tajemnica...
-	smalltalk20 = "SVM_12_Smalltalk20";	//...¿adna wielka sprawa...
-	smalltalk21 = "SVM_12_Smalltalk21";	//...on myœli, ¿e to takie ³atwe...
-	smalltalk22 = "SVM_12_Smalltalk22";	//...nikt nie chce tego s³uchaæ...
-	smalltalk23 = "SVM_12_Smalltalk23";	//...i to jest prawda...
-	smalltalk24 = "SVM_12_Smalltalk24";	//...trzeba po prostu s³uchaæ...
-	smalltalk25 = "SVM_12_Smalltalk25";	//...gdyby to zale¿a³o od nas, sprawy potoczy³yby siê inaczej...
-	smalltalk26 = "SVM_12_Smalltalk26";	//...musi po prostu wiêcej æwiczyæ...
-	smalltalk27 = "SVM_12_Smalltalk27";	//...co on wie o s³u¿bie...
-	smalltalk28 = "SVM_12_Smalltalk28";	//...Innos karze sprawiedliwie...
-	smalltalk29 = "SVM_12_Smalltalk29";	//...œcie¿ka cnoty jest d³uga i kamienista...
-	smalltalk30 = "SVM_12_Smalltalk30";	//...tylko Innos wie, co jest dobre, a co z³e...
-	nolearnnopoints = "SVM_12_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
-	nolearnoverpersonalmax = "SVM_12_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
-	nolearnyourebetter = "SVM_12_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
-	youlearnedsomething = "SVM_12_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	Smalltalk01 = "SVM_12_Smalltalk01";	//...tak jakby mnie to cokolwiek obchodzi³o...
+	Smalltalk02 = "SVM_12_Smalltalk02";	//...nikt nie chce wiedzieæ...
+	Smalltalk03 = "SVM_12_Smalltalk03";	//...w koñcu to by³a jego decyzja...
+	Smalltalk04 = "SVM_12_Smalltalk04";	//...nie wiem, ty mi powiedz...
+	Smalltalk05 = "SVM_12_Smalltalk05";	//...trzymam siê od tego z daleka...
+	Smalltalk06 = "SVM_12_Smalltalk06";	//...nie mam czasu na takie rzeczy...
+	Smalltalk07 = "SVM_12_Smalltalk07";	//...du¿o by mnie to kosztowa³o...
+	Smalltalk08 = "SVM_12_Smalltalk08";	//...nie musisz mi tego mówiæ...
+	Smalltalk09 = "SVM_12_Smalltalk09";	//...widzi i s³yszy siê to, i owo...
+	Smalltalk10 = "SVM_12_Smalltalk10";	//...mogê ci opowiedzieæ o takich rzeczach...
+	Smalltalk11 = "SVM_12_Smalltalk11";	//...nie mo¿na na to liczyæ...
+	Smalltalk12 = "SVM_12_Smalltalk12";	//...sam tak mówi³em...
+	Smalltalk13 = "SVM_12_Smalltalk13";	//...tego jest wiêcej, wierz mi...
+	Smalltalk14 = "SVM_12_Smalltalk14";	//...ci¹gle to samo...
+	Smalltalk15 = "SVM_12_Smalltalk15";	//...nie mów, ¿e to nieprawda...
+	Smalltalk16 = "SVM_12_Smalltalk16";	//...wczeœniej czy póŸniej musia³o siê tak zdarzyæ...
+	Smalltalk17 = "SVM_12_Smalltalk17";	//...powinien byæ m¹drzejszy...
+	Smalltalk18 = "SVM_12_Smalltalk18";	//...to siê nigdy nie zmieni...
+	Smalltalk19 = "SVM_12_Smalltalk19";	//...to ¿adna tajemnica...
+	Smalltalk20 = "SVM_12_Smalltalk20";	//...¿adna wielka sprawa...
+	Smalltalk21 = "SVM_12_Smalltalk21";	//...on myœli, ¿e to takie ³atwe...
+	Smalltalk22 = "SVM_12_Smalltalk22";	//...nikt nie chce tego s³uchaæ...
+	Smalltalk23 = "SVM_12_Smalltalk23";	//...i to jest prawda...
+	Smalltalk24 = "SVM_12_Smalltalk24";	//...trzeba po prostu s³uchaæ...
+	Smalltalk25 = "SVM_12_Smalltalk25";	//...gdyby to zale¿a³o od nas, sprawy potoczy³yby siê inaczej...
+	Smalltalk26 = "SVM_12_Smalltalk26";	//...musi po prostu wiêcej æwiczyæ...
+	Smalltalk27 = "SVM_12_Smalltalk27";	//...co on wie o s³u¿bie...
+	Smalltalk28 = "SVM_12_Smalltalk28";	//...Innos karze sprawiedliwie...
+	Smalltalk29 = "SVM_12_Smalltalk29";	//...œcie¿ka cnoty jest d³uga i kamienista...
+	Smalltalk30 = "SVM_12_Smalltalk30";	//...tylko Innos wie, co jest dobre, a co z³e...
+	NoLearnNoPoints = "SVM_12_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
+	NoLearnOverPersonalMAX = "SVM_12_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	NoLearnYoureBetter = "SVM_12_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	YouLearnedSomething = "SVM_12_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
 	unterstadt = "SVM_12_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
 	oberstadt = "SVM_12_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
 	tempel = "SVM_12_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
@@ -2296,10 +2296,10 @@ instance SVM_12(C_SVM)
 	kaserne_2_markt = "SVM_12_KASERNE_2_MARKT";	//ZejdŸ po schodach na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
 	kaserne_2_galgen = "SVM_12_KASERNE_2_GALGEN";	//ZejdŸ po schodach na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
 	hafen_2_unterstadt = "SVM_12_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nadbrze¿u w górê ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
-	dead = "SVM_12_Dead";	//Aaaaarhhh!
-	aargh_1 = "SVM_12_Aargh_1";	//Aargh
-	aargh_2 = "SVM_12_Aargh_2";	//Aargh
-	aargh_3 = "SVM_12_Aargh_3";	//Aargh
+	Dead = "SVM_12_Dead";	//Aaaaarhhh!
+	Aargh_1 = "SVM_12_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_12_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_12_Aargh_3";	//Aargh
 	addon_wrongarmor = "SVM_12_Addon_WrongArmor";	//
 	addon_wrongarmor_sld = "SVM_12_ADDON_WRONGARMOR_SLD";	//
 	addon_wrongarmor_mil = "SVM_12_ADDON_WRONGARMOR_MIL";	//
@@ -2311,76 +2311,76 @@ instance SVM_12(C_SVM)
 
 instance SVM_13(C_SVM)
 {
-	milgreetings = "SVM_13_MILGreetings";	//Niech ¿yje Król!
-	palgreetings = "SVM_13_PALGreetings";	//Chwa³a Innosowi!
-	weather = "SVM_13_Weather";	//Jakaœ nêdzna ta pogoda...
-	igetyoustill = "SVM_13_IGetYouStill";	//Teraz ciê dorwê!
-	dieenemy = "SVM_13_DieEnemy";	//Rozerwê ciê na kawa³ki!
-	diemonster = "SVM_13_DieMonster";	//Znowu jedna z tych cholernych bestii!
-	dirtythief = "SVM_13_DirtyThief";	//Parszywy z³odziej! Czekaj tylko...
-	handsoff = "SVM_13_HandsOff";	//Zabieraj ³apy!
-	sheepkiller = "SVM_13_SheepKiller";	//To cholerne bydlê zarzyna nasze owce!
-	sheepkillermonster = "SVM_13_SheepKillerMonster";	//Ten przeklêty potwór z¿era nasze owce!
-	youmurderer = "SVM_13_YouMurderer";	//Morderca!
-	diestupidbeast = "SVM_13_DieStupidBeast";	//Dobra bestia to martwa bestia!
-	youdarehitme = "SVM_13_YouDareHitMe";	//Czekaj tylko, ty draniu!
-	youaskedforit = "SVM_13_YouAskedForIt";	//Sam tego chcia³eœ!
-	thenibeatyououtofhere = "SVM_13_ThenIBeatYouOutOfHere";	//Nie chcesz iœæ? Dobrze!
-	whatdidyoudointhere = "SVM_13_WhatDidYouDoInThere";	//Czego tam szuka³eœ?
-	willyoustopfighting = "SVM_13_WillYouStopFighting";	//Przestaniecie w koñcu?!
-	killenemy = "SVM_13_KillEnemy";	//Giñ, bydlaku!
-	enemykilled = "SVM_13_EnemyKilled";	//Zas³u¿y³eœ na to, gnido!
-	monsterkilled = "SVM_13_MonsterKilled";	//Jedna bestia mniej!
-	thiefdown = "SVM_13_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
-	rumfummlerdown = "SVM_13_rumfummlerDown";	//Od tej chwili trzymaj ³apy z dala od rzeczy, które do ciebie nie nale¿¹!
-	sheepattackerdown = "SVM_13_SheepAttackerDown";	//Nie rób tego nigdy wiêcej! To s¹ nasze owce!
-	killmurderer = "SVM_13_KillMurderer";	//Giñ, morderco!
-	stupidbeastkilled = "SVM_13_StupidBeastKilled";	//G³upi potwór!
-	neverhitmeagain = "SVM_13_NeverHitMeAgain";	//Nigdy wiêcej ze mn¹ nie zaczynaj!
-	youbettershouldhavelistened = "SVM_13_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
-	getupandbegone = "SVM_13_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
-	neverenterroomagain = "SVM_13_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
-	thereisnofightinghere = "SVM_13_ThereIsNoFightingHere";	//Tu siê nie walczy, zrozumiano? Niech to bêdzie dla ciebie nauczka!
-	spareme = "SVM_13_SpareMe";	//Nie rób mi krzywdy!
-	runaway = "SVM_13_RunAway";	//O cholera!
-	alarm = "SVM_13_Alarm";	//ALARM!
-	guards = "SVM_13_Guards";	//STRA¯!
-	help = "SVM_13_Help";	//Pomocy!
-	goodmonsterkill = "SVM_13_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
-	goodkill = "SVM_13_GoodKill";	//No, daj œwini na co zas³uguje!
+	MILGreetings = "SVM_13_MILGreetings";	//Niech ¿yje Król!
+	PALGreetings = "SVM_13_PALGreetings";	//Chwa³a Innosowi!
+	Weather = "SVM_13_Weather";	//Jakaœ nêdzna ta pogoda...
+	IGetYouStill = "SVM_13_IGetYouStill";	//Teraz ciê dorwê!
+	DieEnemy = "SVM_13_DieEnemy";	//Rozerwê ciê na kawa³ki!
+	DieMonster = "SVM_13_DieMonster";	//Znowu jedna z tych cholernych bestii!
+	DirtyThief = "SVM_13_DirtyThief";	//Parszywy z³odziej! Czekaj tylko...
+	HandsOff = "SVM_13_HandsOff";	//Zabieraj ³apy!
+	SheepKiller = "SVM_13_SheepKiller";	//To cholerne bydlê zarzyna nasze owce!
+	SheepKillerMonster = "SVM_13_SheepKillerMonster";	//Ten przeklêty potwór z¿era nasze owce!
+	YouMurderer = "SVM_13_YouMurderer";	//Morderca!
+	DieStupidBeast = "SVM_13_DieStupidBeast";	//Dobra bestia to martwa bestia!
+	YouDareHitMe = "SVM_13_YouDareHitMe";	//Czekaj tylko, ty draniu!
+	YouAskedForIt = "SVM_13_YouAskedForIt";	//Sam tego chcia³eœ!
+	ThenIBeatYouOutOfHere = "SVM_13_ThenIBeatYouOutOfHere";	//Nie chcesz iœæ? Dobrze!
+	WhatDidYouDoInThere = "SVM_13_WhatDidYouDoInThere";	//Czego tam szuka³eœ?
+	WillYouStopFighting = "SVM_13_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	KillEnemy = "SVM_13_KillEnemy";	//Giñ, bydlaku!
+	EnemyKilled = "SVM_13_EnemyKilled";	//Zas³u¿y³eœ na to, gnido!
+	MonsterKilled = "SVM_13_MonsterKilled";	//Jedna bestia mniej!
+	ThiefDown = "SVM_13_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
+	RumfummlerDown = "SVM_13_rumfummlerDown";	//Od tej chwili trzymaj ³apy z dala od rzeczy, które do ciebie nie nale¿¹!
+	SheepAttackerDown = "SVM_13_SheepAttackerDown";	//Nie rób tego nigdy wiêcej! To s¹ nasze owce!
+	KillMurderer = "SVM_13_KillMurderer";	//Giñ, morderco!
+	StupidBeastKilled = "SVM_13_StupidBeastKilled";	//G³upi potwór!
+	NeverHitMeAgain = "SVM_13_NeverHitMeAgain";	//Nigdy wiêcej ze mn¹ nie zaczynaj!
+	YouBetterShouldHaveListened = "SVM_13_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
+	GetUpAndBeGone = "SVM_13_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
+	NeverEnterRoomAgain = "SVM_13_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
+	ThereIsNoFightingHere = "SVM_13_ThereIsNoFightingHere";	//Tu siê nie walczy, zrozumiano? Niech to bêdzie dla ciebie nauczka!
+	SpareMe = "SVM_13_SpareMe";	//Nie rób mi krzywdy!
+	RunAway = "SVM_13_RunAway";	//O cholera!
+	Alarm = "SVM_13_Alarm";	//ALARM!
+	Guards = "SVM_13_Guards";	//STRA¯!
+	Help = "SVM_13_Help";	//Pomocy!
+	GoodMonsterKill = "SVM_13_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
+	GoodKill = "SVM_13_GoodKill";	//No, daj œwini na co zas³uguje!
 	notnow = "SVM_13_NOTNOW";	//Zostaw mnie w spokoju!
-	runcoward = "SVM_13_RunCoward";	//Uciekaj, najszybciej jak tylko potrafisz!
-	getoutofhere = "SVM_13_GetOutOfHere";	//Wynoœ siê st¹d!
-	whyareyouinhere = "SVM_13_WhyAreYouInHere";	//Czego tu chcesz?! OdejdŸ!
-	yesgooutofhere = "SVM_13_YesGoOutOfHere";	//No, wynoœ siê!
-	whatsthissupposedtobe = "SVM_13_WhatsThisSupposedToBe";	//Ej ty! Czego tam szukasz!
-	youdisturbedmyslumber = "SVM_13_YouDisturbedMySlumber";	//Czego u diab³a chcesz?
-	itookyourgold = "SVM_13_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
-	shitnogold = "SVM_13_ShitNoGold";	//Ty biedny frajerze, nawet z³ota nie masz!
-	itakeyourweapon = "SVM_13_ITakeYourWeapon";	//Wezmê twoj¹ broñ na przechowanie.
-	whatareyoudoing = "SVM_13_WhatAreYouDoing";	//Uwa¿aj! Nastêpnym razem ci przy³o¿ê.
-	lookingfortroubleagain = "SVM_13_LookingForTroubleAgain";	//Ci¹gle ci ma³o?!
-	stopmagic = "SVM_13_StopMagic";	//Skoñcz z t¹ magi¹!
-	isaidstopmagic = "SVM_13_ISaidStopMagic";	//Chcesz dostaæ! Przestañ w tej chwili!
-	weapondown = "SVM_13_WeaponDown";	//Od³ó¿ broñ!
-	isaidweapondown = "SVM_13_ISaidWeaponDown";	//Od³o¿ysz wreszcie tê przeklêt¹ broñ?!
-	wisemove = "SVM_13_WiseMove";	//Dobra decyzja!
-	nexttimeyoureinforit = "SVM_13_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
-	ohmyhead = "SVM_13_OhMyHead";	//O rany, moja g³owa...
-	theresafight = "SVM_13_TheresAFight";	//Ach, walka...
-	ohmygoditsafight = "SVM_13_OhMyGodItsAFight";	//O bogowie, walka!
-	goodvictory = "SVM_13_GoodVictory";	//Pokaza³eœ mu, kto tu rz¹dzi!
-	notbad = "SVM_13_NotBad";	//NieŸle...
-	ohmygodhesdown = "SVM_13_OhMyGodHesDown";	//Bogowie! Jak ostro...
-	cheerfriend01 = "SVM_13_CheerFriend01";	//No, wal!
-	cheerfriend02 = "SVM_13_CheerFriend02";	//Daj z siebie wszystko!
-	cheerfriend03 = "SVM_13_CheerFriend03";	//Poka¿ mu!
-	ooh01 = "SVM_13_Ooh01";	//Trzymaj siê!
-	ooh02 = "SVM_13_Ooh02";	//Uwa¿aj!
-	ooh03 = "SVM_13_Ooh03";	//Oj! To by³o mocne!
-	whatwasthat = "SVM_13_WhatWasThat";	//Co TO by³o!?
-	getoutofmybed = "SVM_13_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
-	awake = "SVM_13_Awake";	//(rozkoszne ziewniêcie)
+	RunCoward = "SVM_13_RunCoward";	//Uciekaj, najszybciej jak tylko potrafisz!
+	GetOutOfHere = "SVM_13_GetOutOfHere";	//Wynoœ siê st¹d!
+	WhyAreYouInHere = "SVM_13_WhyAreYouInHere";	//Czego tu chcesz?! OdejdŸ!
+	YesGoOutOfHere = "SVM_13_YesGoOutOfHere";	//No, wynoœ siê!
+	WhatsThisSupposedToBe = "SVM_13_WhatsThisSupposedToBe";	//Ej ty! Czego tam szukasz!
+	YouDisturbedMySlumber = "SVM_13_YouDisturbedMySlumber";	//Czego u diab³a chcesz?
+	ITookYourGold = "SVM_13_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
+	ShitNoGold = "SVM_13_ShitNoGold";	//Ty biedny frajerze, nawet z³ota nie masz!
+	ITakeYourWeapon = "SVM_13_ITakeYourWeapon";	//Wezmê twoj¹ broñ na przechowanie.
+	WhatAreYouDoing = "SVM_13_WhatAreYouDoing";	//Uwa¿aj! Nastêpnym razem ci przy³o¿ê.
+	LookingForTroubleAgain = "SVM_13_LookingForTroubleAgain";	//Ci¹gle ci ma³o?!
+	StopMagic = "SVM_13_StopMagic";	//Skoñcz z t¹ magi¹!
+	ISaidStopMagic = "SVM_13_ISaidStopMagic";	//Chcesz dostaæ! Przestañ w tej chwili!
+	WeaponDown = "SVM_13_WeaponDown";	//Od³ó¿ broñ!
+	ISaidWeaponDown = "SVM_13_ISaidWeaponDown";	//Od³o¿ysz wreszcie tê przeklêt¹ broñ?!
+	WiseMove = "SVM_13_WiseMove";	//Dobra decyzja!
+	NextTimeYoureInForIt = "SVM_13_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
+	OhMyHead = "SVM_13_OhMyHead";	//O rany, moja g³owa...
+	TheresAFight = "SVM_13_TheresAFight";	//Ach, walka...
+	OhMyGodItsAFight = "SVM_13_OhMyGodItsAFight";	//O bogowie, walka!
+	GoodVictory = "SVM_13_GoodVictory";	//Pokaza³eœ mu, kto tu rz¹dzi!
+	NotBad = "SVM_13_NotBad";	//NieŸle...
+	OhMyGodHesDown = "SVM_13_OhMyGodHesDown";	//Bogowie! Jak ostro...
+	CheerFriend01 = "SVM_13_CheerFriend01";	//No, wal!
+	CheerFriend02 = "SVM_13_CheerFriend02";	//Daj z siebie wszystko!
+	CheerFriend03 = "SVM_13_CheerFriend03";	//Poka¿ mu!
+	Ooh01 = "SVM_13_Ooh01";	//Trzymaj siê!
+	Ooh02 = "SVM_13_Ooh02";	//Uwa¿aj!
+	Ooh03 = "SVM_13_Ooh03";	//Oj! To by³o mocne!
+	WhatWasThat = "SVM_13_WhatWasThat";	//Co TO by³o!?
+	GetOutOfMyBed = "SVM_13_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	Awake = "SVM_13_Awake";	//(rozkoszne ziewniêcie)
 	abs_commander = "SVM_13_ABS_COMMANDER";	//Poszed³eœ wiêc do kapitana i wszystko za³atwi³eœ.
 	abs_monastery = "SVM_13_ABS_MONASTERY";	//By³eœ wiêc u Ojca Parlana i opowiedzia³eœ mu o swych przewinieniach.
 	abs_farm = "SVM_13_ABS_FARM";	//Zobaczy³eœ siê zatem z Lee i wyjaœni³eœ sprawê.
@@ -2425,40 +2425,40 @@ instance SVM_13(C_SVM)
 	gold_30 = "SVM_13_GOLD_30";	//30 sztuk z³ota.
 	gold_20 = "SVM_13_GOLD_20";	//20 sztuk z³ota.
 	gold_10 = "SVM_13_GOLD_10";	//10 sztuk z³ota.
-	smalltalk01 = "SVM_13_Smalltalk01";	//...tak jakby mnie to cokolwiek obchodzi³o...
-	smalltalk02 = "SVM_13_Smalltalk02";	//...nikt nie chce wiedzieæ...
-	smalltalk03 = "SVM_13_Smalltalk03";	//...w koñcu to by³a jego decyzja...
-	smalltalk04 = "SVM_13_Smalltalk04";	//...nie wiem, ty mi powiedz...
-	smalltalk05 = "SVM_13_Smalltalk05";	//...trzymam siê od tego z daleka...
-	smalltalk06 = "SVM_13_Smalltalk06";	//...nie mam czasu na takie rzeczy...
-	smalltalk07 = "SVM_13_Smalltalk07";	//...du¿o by mnie to kosztowa³o...
-	smalltalk08 = "SVM_13_Smalltalk08";	//...nie musisz mi tego mówiæ...
-	smalltalk09 = "SVM_13_Smalltalk09";	//...widzi i s³yszy siê to i owo...
-	smalltalk10 = "SVM_13_Smalltalk10";	//...mogê ci opowiedzieæ o takich rzeczach...
-	smalltalk11 = "SVM_13_Smalltalk11";	//...nie mo¿na na tym polegaæ...
-	smalltalk12 = "SVM_13_Smalltalk12";	//...sam tak mówi³em...
-	smalltalk13 = "SVM_13_Smalltalk13";	//...tego jest wiêcej, wierz mi...
-	smalltalk14 = "SVM_13_Smalltalk14";	//...ci¹gle to samo...
-	smalltalk15 = "SVM_13_Smalltalk15";	//...nie mów, ¿e to nieprawda...
-	smalltalk16 = "SVM_13_Smalltalk16";	//...wczeœniej czy póŸniej musia³o siê to zdarzyæ...
-	smalltalk17 = "SVM_13_Smalltalk17";	//...powinien by³ wiedzieæ lepiej...
-	smalltalk18 = "SVM_13_Smalltalk18";	//...to siê nigdy nie zmieni...
-	smalltalk19 = "SVM_13_Smalltalk19";	//...to ¿adna tajemnica...
-	smalltalk20 = "SVM_13_Smalltalk20";	//...¿adna wielka sprawa...
-	smalltalk21 = "SVM_13_Smalltalk21";	//...on myœli, ¿e to takie ³atwe...
-	smalltalk22 = "SVM_13_Smalltalk22";	//...nikt nie chce tego s³uchaæ...
-	smalltalk23 = "SVM_13_Smalltalk23";	//...i to jest prawda...
-	smalltalk24 = "SVM_13_Smalltalk24";	//...trzeba po prostu s³uchaæ...
-	smalltalk25 = "SVM_13_Smalltalk25";	//...gdyby to zale¿a³o od nas, sprawy potoczy³yby siê inaczej...
-	smalltalk26 = "SVM_13_Smalltalk26";	//...musi po prostu wiêcej æwiczyæ...
-	smalltalk27 = "SVM_13_Smalltalk27";	//...co on wie o s³u¿bie...
-	smalltalk28 = "SVM_13_Smalltalk28";	//...Innos karze sprawiedliwie...
-	smalltalk29 = "SVM_13_Smalltalk29";	//...œcie¿ka cnoty jest d³uga i kamienista...
-	smalltalk30 = "SVM_13_Smalltalk30";	//...tylko Innos wie, co jest dobre, a co z³e...
-	nolearnnopoints = "SVM_13_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
-	nolearnoverpersonalmax = "SVM_13_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
-	nolearnyourebetter = "SVM_13_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
-	youlearnedsomething = "SVM_13_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	Smalltalk01 = "SVM_13_Smalltalk01";	//...tak jakby mnie to cokolwiek obchodzi³o...
+	Smalltalk02 = "SVM_13_Smalltalk02";	//...nikt nie chce wiedzieæ...
+	Smalltalk03 = "SVM_13_Smalltalk03";	//...w koñcu to by³a jego decyzja...
+	Smalltalk04 = "SVM_13_Smalltalk04";	//...nie wiem, ty mi powiedz...
+	Smalltalk05 = "SVM_13_Smalltalk05";	//...trzymam siê od tego z daleka...
+	Smalltalk06 = "SVM_13_Smalltalk06";	//...nie mam czasu na takie rzeczy...
+	Smalltalk07 = "SVM_13_Smalltalk07";	//...du¿o by mnie to kosztowa³o...
+	Smalltalk08 = "SVM_13_Smalltalk08";	//...nie musisz mi tego mówiæ...
+	Smalltalk09 = "SVM_13_Smalltalk09";	//...widzi i s³yszy siê to i owo...
+	Smalltalk10 = "SVM_13_Smalltalk10";	//...mogê ci opowiedzieæ o takich rzeczach...
+	Smalltalk11 = "SVM_13_Smalltalk11";	//...nie mo¿na na tym polegaæ...
+	Smalltalk12 = "SVM_13_Smalltalk12";	//...sam tak mówi³em...
+	Smalltalk13 = "SVM_13_Smalltalk13";	//...tego jest wiêcej, wierz mi...
+	Smalltalk14 = "SVM_13_Smalltalk14";	//...ci¹gle to samo...
+	Smalltalk15 = "SVM_13_Smalltalk15";	//...nie mów, ¿e to nieprawda...
+	Smalltalk16 = "SVM_13_Smalltalk16";	//...wczeœniej czy póŸniej musia³o siê to zdarzyæ...
+	Smalltalk17 = "SVM_13_Smalltalk17";	//...powinien by³ wiedzieæ lepiej...
+	Smalltalk18 = "SVM_13_Smalltalk18";	//...to siê nigdy nie zmieni...
+	Smalltalk19 = "SVM_13_Smalltalk19";	//...to ¿adna tajemnica...
+	Smalltalk20 = "SVM_13_Smalltalk20";	//...¿adna wielka sprawa...
+	Smalltalk21 = "SVM_13_Smalltalk21";	//...on myœli, ¿e to takie ³atwe...
+	Smalltalk22 = "SVM_13_Smalltalk22";	//...nikt nie chce tego s³uchaæ...
+	Smalltalk23 = "SVM_13_Smalltalk23";	//...i to jest prawda...
+	Smalltalk24 = "SVM_13_Smalltalk24";	//...trzeba po prostu s³uchaæ...
+	Smalltalk25 = "SVM_13_Smalltalk25";	//...gdyby to zale¿a³o od nas, sprawy potoczy³yby siê inaczej...
+	Smalltalk26 = "SVM_13_Smalltalk26";	//...musi po prostu wiêcej æwiczyæ...
+	Smalltalk27 = "SVM_13_Smalltalk27";	//...co on wie o s³u¿bie...
+	Smalltalk28 = "SVM_13_Smalltalk28";	//...Innos karze sprawiedliwie...
+	Smalltalk29 = "SVM_13_Smalltalk29";	//...œcie¿ka cnoty jest d³uga i kamienista...
+	Smalltalk30 = "SVM_13_Smalltalk30";	//...tylko Innos wie, co jest dobre, a co z³e...
+	NoLearnNoPoints = "SVM_13_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
+	NoLearnOverPersonalMAX = "SVM_13_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	NoLearnYoureBetter = "SVM_13_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	YouLearnedSomething = "SVM_13_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
 	unterstadt = "SVM_13_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
 	oberstadt = "SVM_13_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
 	tempel = "SVM_13_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
@@ -2483,10 +2483,10 @@ instance SVM_13(C_SVM)
 	kaserne_2_markt = "SVM_13_KASERNE_2_MARKT";	//Po prostu zejdŸ po schodach na lewo od g³ównego wejœcia, to dojdziesz do targowiska.
 	kaserne_2_galgen = "SVM_13_KASERNE_2_GALGEN";	//Po prostu zejdŸ po schodach na prawo od g³ównego wejœcia, to dojdziesz do placu wisielców.
 	hafen_2_unterstadt = "SVM_13_HAFEN_2_UNTERSTADT";	//Id¹c od strony muru przy nadbrze¿u, w górê ulic¹ portow¹, dojdziesz do dolnej czêœci miasta.
-	dead = "SVM_13_Dead";	//Aaarhhhh!
-	aargh_1 = "SVM_13_Aargh_1";	//Aargh
-	aargh_2 = "SVM_13_Aargh_2";	//Aargh
-	aargh_3 = "SVM_13_Aargh_3";	//Aargh
+	Dead = "SVM_13_Dead";	//Aaarhhhh!
+	Aargh_1 = "SVM_13_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_13_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_13_Aargh_3";	//Aargh
 	addon_wrongarmor = "SVM_13_Addon_WrongArmor";	//
 	addon_wrongarmor_sld = "SVM_13_ADDON_WRONGARMOR_SLD";	//
 	addon_wrongarmor_mil = "SVM_13_ADDON_WRONGARMOR_MIL";	//
@@ -2498,76 +2498,76 @@ instance SVM_13(C_SVM)
 
 instance SVM_14(C_SVM)
 {
-	milgreetings = "SVM_14_MILGreetings";	//Niech ¿yje Król!
-	palgreetings = "SVM_14_PALGreetings";	//Chwa³a Innosowi!
-	weather = "SVM_14_Weather";	//Nêdzna pogoda...
-	igetyoustill = "SVM_14_IGetYouStill";	//W koñcu ciê dopad³em!
-	dieenemy = "SVM_14_DieEnemy";	//Nadszed³ twój czas!
-	diemonster = "SVM_14_DieMonster";	//Znowu jedna z tych cholernych bestii!
-	dirtythief = "SVM_14_DirtyThief";	//Czekaj tylko, ty ma³y z³odzieju!
-	handsoff = "SVM_14_HandsOff";	//£apy precz!
-	sheepkiller = "SVM_14_SheepKiller";	//To bydlê zarzyna nasze owce!
-	sheepkillermonster = "SVM_14_SheepKillerMonster";	//Ten przeklêty potwór z¿era nasze owce!
-	youmurderer = "SVM_14_YouMurderer";	//Morderca!
-	diestupidbeast = "SVM_14_DieStupidBeast";	//Tu nie ma miejsca dla bestii!
-	youdarehitme = "SVM_14_YouDareHitMe";	//Czekaj tylko, ty gnido!
-	youaskedforit = "SVM_14_YouAskedForIt";	//Sam tego chcia³eœ!
-	thenibeatyououtofhere = "SVM_14_ThenIBeatYouOutOfHere";	//Wiêc bêdê ciê musia³ st¹d WYKOPAÆ!
-	whatdidyoudointhere = "SVM_14_WhatDidYouDoInThere";	//Co ty tam robi³eœ, co?!
-	willyoustopfighting = "SVM_14_WillYouStopFighting";	//Przestaniecie w koñcu?!
-	killenemy = "SVM_14_KillEnemy";	//Giñ, bydlaku!
-	enemykilled = "SVM_14_EnemyKilled";	//To twój koniec, padalcu!
-	monsterkilled = "SVM_14_MonsterKilled";	//Jedna bestia mniej!
-	thiefdown = "SVM_14_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
-	rumfummlerdown = "SVM_14_rumfummlerDown";	//Trzymaj siê w przysz³oœci z dala od rzeczy, które nie powinny ciê interesowaæ!
-	sheepattackerdown = "SVM_14_SheepAttackerDown";	//Nie rób tego nigdy wiêcej! To s¹ nasze owce!
-	killmurderer = "SVM_14_KillMurderer";	//Giñ, morderco!
-	stupidbeastkilled = "SVM_14_StupidBeastKilled";	//G³upia bestia!
-	neverhitmeagain = "SVM_14_NeverHitMeAgain";	//Nigdy wiêcej ze mn¹ nie zaczynaj!
-	youbettershouldhavelistened = "SVM_14_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
-	getupandbegone = "SVM_14_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
-	neverenterroomagain = "SVM_14_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
-	thereisnofightinghere = "SVM_14_ThereIsNoFightingHere";	//Tu siê nie walczy, zrozumiano? Niech to bêdzie dla ciebie nauczka!
-	spareme = "SVM_14_SpareMe";	//Zostaw mnie, proszê!
-	runaway = "SVM_14_RunAway";	//Cholera! Znikam st¹d!
-	alarm = "SVM_14_Alarm";	//ALARM!
-	guards = "SVM_14_Guards";	//STRA¯!
-	help = "SVM_14_Help";	//Pomocy!
-	goodmonsterkill = "SVM_14_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
-	goodkill = "SVM_14_GoodKill";	//No, daj œwini na co zas³uguje!
+	MILGreetings = "SVM_14_MILGreetings";	//Niech ¿yje Król!
+	PALGreetings = "SVM_14_PALGreetings";	//Chwa³a Innosowi!
+	Weather = "SVM_14_Weather";	//Nêdzna pogoda...
+	IGetYouStill = "SVM_14_IGetYouStill";	//W koñcu ciê dopad³em!
+	DieEnemy = "SVM_14_DieEnemy";	//Nadszed³ twój czas!
+	DieMonster = "SVM_14_DieMonster";	//Znowu jedna z tych cholernych bestii!
+	DirtyThief = "SVM_14_DirtyThief";	//Czekaj tylko, ty ma³y z³odzieju!
+	HandsOff = "SVM_14_HandsOff";	//£apy precz!
+	SheepKiller = "SVM_14_SheepKiller";	//To bydlê zarzyna nasze owce!
+	SheepKillerMonster = "SVM_14_SheepKillerMonster";	//Ten przeklêty potwór z¿era nasze owce!
+	YouMurderer = "SVM_14_YouMurderer";	//Morderca!
+	DieStupidBeast = "SVM_14_DieStupidBeast";	//Tu nie ma miejsca dla bestii!
+	YouDareHitMe = "SVM_14_YouDareHitMe";	//Czekaj tylko, ty gnido!
+	YouAskedForIt = "SVM_14_YouAskedForIt";	//Sam tego chcia³eœ!
+	ThenIBeatYouOutOfHere = "SVM_14_ThenIBeatYouOutOfHere";	//Wiêc bêdê ciê musia³ st¹d WYKOPAÆ!
+	WhatDidYouDoInThere = "SVM_14_WhatDidYouDoInThere";	//Co ty tam robi³eœ, co?!
+	WillYouStopFighting = "SVM_14_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	KillEnemy = "SVM_14_KillEnemy";	//Giñ, bydlaku!
+	EnemyKilled = "SVM_14_EnemyKilled";	//To twój koniec, padalcu!
+	MonsterKilled = "SVM_14_MonsterKilled";	//Jedna bestia mniej!
+	ThiefDown = "SVM_14_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
+	RumfummlerDown = "SVM_14_rumfummlerDown";	//Trzymaj siê w przysz³oœci z dala od rzeczy, które nie powinny ciê interesowaæ!
+	SheepAttackerDown = "SVM_14_SheepAttackerDown";	//Nie rób tego nigdy wiêcej! To s¹ nasze owce!
+	KillMurderer = "SVM_14_KillMurderer";	//Giñ, morderco!
+	StupidBeastKilled = "SVM_14_StupidBeastKilled";	//G³upia bestia!
+	NeverHitMeAgain = "SVM_14_NeverHitMeAgain";	//Nigdy wiêcej ze mn¹ nie zaczynaj!
+	YouBetterShouldHaveListened = "SVM_14_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
+	GetUpAndBeGone = "SVM_14_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
+	NeverEnterRoomAgain = "SVM_14_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
+	ThereIsNoFightingHere = "SVM_14_ThereIsNoFightingHere";	//Tu siê nie walczy, zrozumiano? Niech to bêdzie dla ciebie nauczka!
+	SpareMe = "SVM_14_SpareMe";	//Zostaw mnie, proszê!
+	RunAway = "SVM_14_RunAway";	//Cholera! Znikam st¹d!
+	Alarm = "SVM_14_Alarm";	//ALARM!
+	Guards = "SVM_14_Guards";	//STRA¯!
+	Help = "SVM_14_Help";	//Pomocy!
+	GoodMonsterKill = "SVM_14_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
+	GoodKill = "SVM_14_GoodKill";	//No, daj œwini na co zas³uguje!
 	notnow = "SVM_14_NOTNOW";	//Zostaw mnie w spokoju!
-	runcoward = "SVM_14_RunCoward";	//Stój, gnido!
-	getoutofhere = "SVM_14_GetOutOfHere";	//Wynoœ siê st¹d!
-	whyareyouinhere = "SVM_14_WhyAreYouInHere";	//Czego tutaj szukasz? OdejdŸ!
-	yesgooutofhere = "SVM_14_YesGoOutOfHere";	//No, zmywaj siê!
-	whatsthissupposedtobe = "SVM_14_WhatsThisSupposedToBe";	//Ej ty? Co ty tam robisz, co?
-	youdisturbedmyslumber = "SVM_14_YouDisturbedMySlumber";	//Cholera, co jest?
-	itookyourgold = "SVM_14_ITookYourGold";	//Z³oto! Dobrze... Przyda mi siê.
-	shitnogold = "SVM_14_ShitNoGold";	//Nawet nie masz z³ota?
-	itakeyourweapon = "SVM_14_ITakeYourWeapon";	//Wezmê sobie twoj¹ broñ.
-	whatareyoudoing = "SVM_14_WhatAreYouDoing";	//Hej, uwa¿aj!
-	lookingfortroubleagain = "SVM_14_LookingForTroubleAgain";	//Ci¹gle ci ma³o?
-	stopmagic = "SVM_14_StopMagic";	//Trzymaj siê ode mnie z daleka z t¹ swoj¹ magi¹!
-	isaidstopmagic = "SVM_14_ISaidStopMagic";	//Przestañ z tymi czarami! Masz coœ nie tak z uszami?!
-	weapondown = "SVM_14_WeaponDown";	//Od³ó¿ broñ!
-	isaidweapondown = "SVM_14_ISaidWeaponDown";	//Nie s³yszysz mnie? Powtarzam: od³ó¿ broñ!
-	wisemove = "SVM_14_WiseMove";	//Widzisz, to nie by³o takie trudne.
-	nexttimeyoureinforit = "SVM_14_NextTimeYoureInForIt";	//Jeszcze o tym pogadamy...
-	ohmyhead = "SVM_14_OhMyHead";	//O rany, moja g³owa...
-	theresafight = "SVM_14_TheresAFight";	//Wreszcie coœ siê dzieje!
-	ohmygoditsafight = "SVM_14_OhMyGodItsAFight";	//Porozwalaj¹ sobie ³by...
-	goodvictory = "SVM_14_GoodVictory";	//Pokaza³eœ mu, kto tu rz¹dzi!
-	notbad = "SVM_14_NotBad";	//Ca³kiem nieŸle...
-	ohmygodhesdown = "SVM_14_OhMyGodHesDown";	//Co za brutal...
-	cheerfriend01 = "SVM_14_CheerFriend01";	//Tak trzymaj!
-	cheerfriend02 = "SVM_14_CheerFriend02";	//Na co czekasz?!
-	cheerfriend03 = "SVM_14_CheerFriend03";	//Tak trzeba!
-	ooh01 = "SVM_14_Ooh01";	//Nie daj siê!
-	ooh02 = "SVM_14_Ooh02";	//Poka¿ mu, kto tu jest szefem!
-	ooh03 = "SVM_14_Ooh03";	//O cholera!
-	whatwasthat = "SVM_14_WhatWasThat";	//Co TO by³o!?
-	getoutofmybed = "SVM_14_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
-	awake = "SVM_14_Awake";	//(rozkoszne ziewniêcie)
+	RunCoward = "SVM_14_RunCoward";	//Stój, gnido!
+	GetOutOfHere = "SVM_14_GetOutOfHere";	//Wynoœ siê st¹d!
+	WhyAreYouInHere = "SVM_14_WhyAreYouInHere";	//Czego tutaj szukasz? OdejdŸ!
+	YesGoOutOfHere = "SVM_14_YesGoOutOfHere";	//No, zmywaj siê!
+	WhatsThisSupposedToBe = "SVM_14_WhatsThisSupposedToBe";	//Ej ty? Co ty tam robisz, co?
+	YouDisturbedMySlumber = "SVM_14_YouDisturbedMySlumber";	//Cholera, co jest?
+	ITookYourGold = "SVM_14_ITookYourGold";	//Z³oto! Dobrze... Przyda mi siê.
+	ShitNoGold = "SVM_14_ShitNoGold";	//Nawet nie masz z³ota?
+	ITakeYourWeapon = "SVM_14_ITakeYourWeapon";	//Wezmê sobie twoj¹ broñ.
+	WhatAreYouDoing = "SVM_14_WhatAreYouDoing";	//Hej, uwa¿aj!
+	LookingForTroubleAgain = "SVM_14_LookingForTroubleAgain";	//Ci¹gle ci ma³o?
+	StopMagic = "SVM_14_StopMagic";	//Trzymaj siê ode mnie z daleka z t¹ swoj¹ magi¹!
+	ISaidStopMagic = "SVM_14_ISaidStopMagic";	//Przestañ z tymi czarami! Masz coœ nie tak z uszami?!
+	WeaponDown = "SVM_14_WeaponDown";	//Od³ó¿ broñ!
+	ISaidWeaponDown = "SVM_14_ISaidWeaponDown";	//Nie s³yszysz mnie? Powtarzam: od³ó¿ broñ!
+	WiseMove = "SVM_14_WiseMove";	//Widzisz, to nie by³o takie trudne.
+	NextTimeYoureInForIt = "SVM_14_NextTimeYoureInForIt";	//Jeszcze o tym pogadamy...
+	OhMyHead = "SVM_14_OhMyHead";	//O rany, moja g³owa...
+	TheresAFight = "SVM_14_TheresAFight";	//Wreszcie coœ siê dzieje!
+	OhMyGodItsAFight = "SVM_14_OhMyGodItsAFight";	//Porozwalaj¹ sobie ³by...
+	GoodVictory = "SVM_14_GoodVictory";	//Pokaza³eœ mu, kto tu rz¹dzi!
+	NotBad = "SVM_14_NotBad";	//Ca³kiem nieŸle...
+	OhMyGodHesDown = "SVM_14_OhMyGodHesDown";	//Co za brutal...
+	CheerFriend01 = "SVM_14_CheerFriend01";	//Tak trzymaj!
+	CheerFriend02 = "SVM_14_CheerFriend02";	//Na co czekasz?!
+	CheerFriend03 = "SVM_14_CheerFriend03";	//Tak trzeba!
+	Ooh01 = "SVM_14_Ooh01";	//Nie daj siê!
+	Ooh02 = "SVM_14_Ooh02";	//Poka¿ mu, kto tu jest szefem!
+	Ooh03 = "SVM_14_Ooh03";	//O cholera!
+	WhatWasThat = "SVM_14_WhatWasThat";	//Co TO by³o!?
+	GetOutOfMyBed = "SVM_14_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	Awake = "SVM_14_Awake";	//(rozkoszne ziewniêcie)
 	abs_commander = "SVM_14_ABS_COMMANDER";	//Ponoæ by³eœ u kapitana i wszystko wyjaœni³eœ.
 	abs_monastery = "SVM_14_ABS_MONASTERY";	//By³eœ zatem u Ojca Parlana i wyzna³eœ mu swoje grzechy.
 	abs_farm = "SVM_14_ABS_FARM";	//Mówi¹, ¿e poszed³eœ do Lee i za³atwi³eœ sprawê.
@@ -2612,40 +2612,40 @@ instance SVM_14(C_SVM)
 	gold_30 = "SVM_14_GOLD_30";	//30 sztuk z³ota.
 	gold_20 = "SVM_14_GOLD_20";	//20 sztuk z³ota.
 	gold_10 = "SVM_14_GOLD_10";	//10 sztuk z³ota.
-	smalltalk01 = "SVM_14_Smalltalk01";	//...nie wierzê...
-	smalltalk02 = "SVM_14_Smalltalk02";	//...nie mo¿na byæ tego pewnym...
-	smalltalk03 = "SVM_14_Smalltalk03";	//...ale on o tym wiedzia³...
-	smalltalk04 = "SVM_14_Smalltalk04";	//...ju¿ nie wiem, komu ufaæ...
-	smalltalk05 = "SVM_14_Smalltalk05";	//...nie wiem, czym on siê tak denerwuje...
-	smalltalk06 = "SVM_14_Smalltalk06";	//...i tak mam wystarczaj¹co k³opotów...
-	smalltalk07 = "SVM_14_Smalltalk07";	//...a, s³ysza³em to i owo...
-	smalltalk08 = "SVM_14_Smalltalk08";	//...nie chcê mieæ z tym nic wspólnego...
-	smalltalk09 = "SVM_14_Smalltalk09";	//...nie wolno wierzyæ we wszystko, co siê s³yszy...
-	smalltalk10 = "SVM_14_Smalltalk10";	//...ode mnie tego nie dosta³...
-	smalltalk11 = "SVM_14_Smalltalk11";	//...ju¿ o tym myœla³em...
-	smalltalk12 = "SVM_14_Smalltalk12";	//...nikt mnie nie pyta o zdanie...
-	smalltalk13 = "SVM_14_Smalltalk13";	//...naprawdê na to nie zas³u¿y³...
-	smalltalk14 = "SVM_14_Smalltalk14";	//...nie mów, ¿e o tym nie wiesz...
-	smalltalk15 = "SVM_14_Smalltalk15";	//...to by³o oczywiste...
-	smalltalk16 = "SVM_14_Smalltalk16";	//...sk¹d to zatem masz...
-	smalltalk17 = "SVM_14_Smalltalk17";	//...nie mo¿e tak dalej byæ...
-	smalltalk18 = "SVM_14_Smalltalk18";	//...mam w³asne zdanie na ten temat...
-	smalltalk19 = "SVM_14_Smalltalk19";	//...by³o tak, jak mówisz...
-	smalltalk20 = "SVM_14_Smalltalk20";	//...nie s¹dzê, ¿eby coœ siê zmieni³o...
-	smalltalk21 = "SVM_14_Smalltalk21";	//...s³yszê o tym po raz pierwszy...
-	smalltalk22 = "SVM_14_Smalltalk22";	//...mo¿emy tylko siedzieæ i czekaæ...
-	smalltalk23 = "SVM_14_Smalltalk23";	//...wiedzia³em, ¿e bêdzie z tym problem...
-	smalltalk24 = "SVM_14_Smalltalk24";	//...wiêc czemu nie chc¹ mnie s³uchaæ...
-	smalltalk25 = "SVM_14_Smalltalk25";	//...ucieka³, jakby goni³ go sam Beliar...
-	smalltalk26 = "SVM_14_Smalltalk26";	//...w koñcu i tak go oczywiœcie dorwaliœmy...
-	smalltalk27 = "SVM_14_Smalltalk27";	//...trzeba siê tym zaj¹æ i uporz¹dkowaæ sprawy...
-	smalltalk28 = "SVM_14_Smalltalk28";	//...niektórzy nawet nie wiedz¹, jak bardzo grzesz¹...
-	smalltalk29 = "SVM_14_Smalltalk29";	//...taka jest bowiem wola Innosa...
-	smalltalk30 = "SVM_14_Smalltalk30";	//...jego czyny by³y sprawiedliwe...
-	nolearnnopoints = "SVM_14_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
-	nolearnoverpersonalmax = "SVM_14_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
-	nolearnyourebetter = "SVM_14_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
-	youlearnedsomething = "SVM_14_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	Smalltalk01 = "SVM_14_Smalltalk01";	//...nie wierzê...
+	Smalltalk02 = "SVM_14_Smalltalk02";	//...nie mo¿na byæ tego pewnym...
+	Smalltalk03 = "SVM_14_Smalltalk03";	//...ale on o tym wiedzia³...
+	Smalltalk04 = "SVM_14_Smalltalk04";	//...ju¿ nie wiem, komu ufaæ...
+	Smalltalk05 = "SVM_14_Smalltalk05";	//...nie wiem, czym on siê tak denerwuje...
+	Smalltalk06 = "SVM_14_Smalltalk06";	//...i tak mam wystarczaj¹co k³opotów...
+	Smalltalk07 = "SVM_14_Smalltalk07";	//...a, s³ysza³em to i owo...
+	Smalltalk08 = "SVM_14_Smalltalk08";	//...nie chcê mieæ z tym nic wspólnego...
+	Smalltalk09 = "SVM_14_Smalltalk09";	//...nie wolno wierzyæ we wszystko, co siê s³yszy...
+	Smalltalk10 = "SVM_14_Smalltalk10";	//...ode mnie tego nie dosta³...
+	Smalltalk11 = "SVM_14_Smalltalk11";	//...ju¿ o tym myœla³em...
+	Smalltalk12 = "SVM_14_Smalltalk12";	//...nikt mnie nie pyta o zdanie...
+	Smalltalk13 = "SVM_14_Smalltalk13";	//...naprawdê na to nie zas³u¿y³...
+	Smalltalk14 = "SVM_14_Smalltalk14";	//...nie mów, ¿e o tym nie wiesz...
+	Smalltalk15 = "SVM_14_Smalltalk15";	//...to by³o oczywiste...
+	Smalltalk16 = "SVM_14_Smalltalk16";	//...sk¹d to zatem masz...
+	Smalltalk17 = "SVM_14_Smalltalk17";	//...nie mo¿e tak dalej byæ...
+	Smalltalk18 = "SVM_14_Smalltalk18";	//...mam w³asne zdanie na ten temat...
+	Smalltalk19 = "SVM_14_Smalltalk19";	//...by³o tak, jak mówisz...
+	Smalltalk20 = "SVM_14_Smalltalk20";	//...nie s¹dzê, ¿eby coœ siê zmieni³o...
+	Smalltalk21 = "SVM_14_Smalltalk21";	//...s³yszê o tym po raz pierwszy...
+	Smalltalk22 = "SVM_14_Smalltalk22";	//...mo¿emy tylko siedzieæ i czekaæ...
+	Smalltalk23 = "SVM_14_Smalltalk23";	//...wiedzia³em, ¿e bêdzie z tym problem...
+	Smalltalk24 = "SVM_14_Smalltalk24";	//...wiêc czemu nie chc¹ mnie s³uchaæ...
+	Smalltalk25 = "SVM_14_Smalltalk25";	//...ucieka³, jakby goni³ go sam Beliar...
+	Smalltalk26 = "SVM_14_Smalltalk26";	//...w koñcu i tak go oczywiœcie dorwaliœmy...
+	Smalltalk27 = "SVM_14_Smalltalk27";	//...trzeba siê tym zaj¹æ i uporz¹dkowaæ sprawy...
+	Smalltalk28 = "SVM_14_Smalltalk28";	//...niektórzy nawet nie wiedz¹, jak bardzo grzesz¹...
+	Smalltalk29 = "SVM_14_Smalltalk29";	//...taka jest bowiem wola Innosa...
+	Smalltalk30 = "SVM_14_Smalltalk30";	//...jego czyny by³y sprawiedliwe...
+	NoLearnNoPoints = "SVM_14_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
+	NoLearnOverPersonalMAX = "SVM_14_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	NoLearnYoureBetter = "SVM_14_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	YouLearnedSomething = "SVM_14_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
 	unterstadt = "SVM_14_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
 	oberstadt = "SVM_14_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
 	tempel = "SVM_14_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
@@ -2670,10 +2670,10 @@ instance SVM_14(C_SVM)
 	kaserne_2_markt = "SVM_14_KASERNE_2_MARKT";	//Jeœli zejdziesz po schodach na lewo od g³ównego wejœcia, to dojdziesz do targowiska.
 	kaserne_2_galgen = "SVM_14_KASERNE_2_GALGEN";	//Schodz¹c po schodach na prawo od g³ównego wejœcia, dojdziesz do placu wisielców.
 	hafen_2_unterstadt = "SVM_14_HAFEN_2_UNTERSTADT";	//Id¹c od strony muru wzd³u¿ nabrze¿a w górê ulic¹ portow¹, dojdziesz do dolnej czêœci miasta.
-	dead = "SVM_14_Dead";	//Aaaaarhhh!
-	aargh_1 = "SVM_14_Aargh_1";	//Aargh
-	aargh_2 = "SVM_14_Aargh_2";	//Aargh
-	aargh_3 = "SVM_14_Aargh_3";	//Aargh
+	Dead = "SVM_14_Dead";	//Aaaaarhhh!
+	Aargh_1 = "SVM_14_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_14_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_14_Aargh_3";	//Aargh
 	addon_wrongarmor = "SVM_14_Addon_WrongArmor";	//
 	addon_wrongarmor_sld = "SVM_14_ADDON_WRONGARMOR_SLD";	//
 	addon_wrongarmor_mil = "SVM_14_ADDON_WRONGARMOR_MIL";	//
@@ -2685,17 +2685,17 @@ instance SVM_14(C_SVM)
 
 instance SVM_15(C_SVM)
 {
-	sc_heyturnaround = "SVM_15_SC_HeyTurnAround";	//Hej, ty!
-	sc_heyturnaround02 = "SVM_15_SC_HeyTurnAround02";	//Hej, ty!
-	sc_heyturnaround03 = "SVM_15_SC_HeyTurnAround03";	//Hej!
-	sc_heyturnaround04 = "SVM_15_SC_HeyTurnAround04";	//Hej!
-	sc_heywaitasecond = "SVM_15_SC_HeyWaitASecond";	//Chwila!
-	doesntwork = "SVM_15_DoesntWork";	//Nie dzia³a.
-	pickbroke = "SVM_15_PickBroke";	//Hm, z³ama³ siê...
-	needkey = "SVM_15_NeedKey";	//Potrzebujê do tego klucza...
-	nomorepicks = "SVM_15_NoMorePicks";	//Nie mam ju¿ wytrychów...
-	nopicklocktalent = "SVM_15_NoPickLockTalent";	//Nie znam siê na otwieraniu zamków.
-	nosweeping = "SVM_15_NoSweeping";	//Posprz¹tanie wszystkich komnat zajmie wieki!
+	SC_HeyTurnAround = "SVM_15_SC_HeyTurnAround";	//Hej, ty!
+	SC_HeyTurnAround02 = "SVM_15_SC_HeyTurnAround02";	//Hej, ty!
+	SC_HeyTurnAround03 = "SVM_15_SC_HeyTurnAround03";	//Hej!
+	SC_HeyTurnAround04 = "SVM_15_SC_HeyTurnAround04";	//Hej!
+	SC_HeyWaitASecond = "SVM_15_SC_HeyWaitASecond";	//Chwila!
+	DoesntWork = "SVM_15_DoesntWork";	//Nie dzia³a.
+	PickBroke = "SVM_15_PickBroke";	//Hm, z³ama³ siê...
+	NeedKey = "SVM_15_NeedKey";	//Potrzebujê do tego klucza...
+	NoMorePicks = "SVM_15_NoMorePicks";	//Nie mam ju¿ wytrychów...
+	NoPickLockTalent = "SVM_15_NoPickLockTalent";	//Nie znam siê na otwieraniu zamków.
+	NoSweeping = "SVM_15_NoSweeping";	//Posprz¹tanie wszystkich komnat zajmie wieki!
 	picklockorkeymissing = "SVM_15_PICKLOCKORKEYMISSING";	//Hm... Nie mam ani klucza, ani wytrychu.
 	keymissing = "SVM_15_KEYMISSING";	//Bez w³aœciwego klucza nigdy tego nie otworzê!
 	picklockmissing = "SVM_15_PICKLOCKMISSING";	//Przyda³oby siê parê wytrychów!
@@ -2705,11 +2705,11 @@ instance SVM_15(C_SVM)
 	nothingtoget = "SVM_15_NOTHINGTOGET";	//Niczego tu nie znajdê...
 	nothingtoget02 = "SVM_15_NOTHINGTOGET02";	//Nic tu nie ma...
 	nothingtoget03 = "SVM_15_NOTHINGTOGET03";	//Nie ma czego pl¹drowaæ...
-	aargh_1 = "SVM_15_Aargh_1";	//Aargh
-	aargh_2 = "SVM_15_Aargh_2";	//Aargh
-	aargh_3 = "SVM_15_Aargh_3";	//Aargh
-	dead = "SVM_15_Dead";	//Aaaarhhh!
-	awake = "SVM_15_Awake";	//(budzi siê)
+	Aargh_1 = "SVM_15_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_15_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_15_Aargh_3";	//Aargh
+	Dead = "SVM_15_Dead";	//Aaaarhhh!
+	Awake = "SVM_15_Awake";	//(budzi siê)
 	irdoraththereyouare = "SVM_15_IRDORATHTHEREYOUARE";	//Hm... A wiêc tam jest twoja kryjówka. Cholernie daleko. Chyba bêdê potrzebowaæ statku...
 	healshrine = "SVM_15_HEALSHRINE";	//Innosie, obdarz mnie sw¹ ³ask¹ i oczyœæ tê kapliczkê.
 	heallastshrine = "SVM_15_HEALLASTSHRINE";	//Innosie, obdarz mnie sw¹ ³ask¹ i tak dalej... No, to chyba ostatni raz.
@@ -2735,82 +2735,82 @@ instance SVM_15(C_SVM)
 	addon_summonancientghost = "SVM_15_ADDON_SUMMONANCIENTGHOST";	//
 	addon_ancientghost_notnear = "SVM_15_ADDON_ANCIENTGHOST_NOTNEAR";	//
 	addon_gold_description = "SVM_15_ADDON_GOLD_DESCRIPTION";	//
-	addon_thislittlebastard = "SVM_15_Addon_ThisLittleBastard";	//
+	Addon_ThisLittleBastard = "SVM_15_Addon_ThisLittleBastard";	//
 	addon_openadanostemple = "SVM_15_Addon_OPENADANOSTEMPLE";	//
 };
 
 instance SVM_16(C_SVM)
 {
-	milgreetings = "SVM_16_MILGreetings";	//Niech ¿yje Król!
-	palgreetings = "SVM_16_PALGreetings";	//Chwa³a Innosowi!
-	weather = "SVM_16_Weather";	//Nêdzna pogoda...
-	igetyoustill = "SVM_16_IGetYouStill";	//W koñcu i tak ciê dorwê!
-	dieenemy = "SVM_16_DieEnemy";	//Wybi³a twoja godzina!
-	diemonster = "SVM_16_DieMonster";	//Znowu jedna z tych przeklêtych bestii!
-	dirtythief = "SVM_16_DirtyThief";	//Parszywy z³odziej! Czekaj tylko...
-	handsoff = "SVM_16_HandsOff";	//£apy precz!
-	sheepkiller = "SVM_16_SheepKiller";	//To bydlê zarzyna nasze owce!
-	sheepkillermonster = "SVM_16_SheepKillerMonster";	//Ten cholerny potwór po¿era nasze owce!
-	youmurderer = "SVM_16_YouMurderer";	//Morderca!
-	diestupidbeast = "SVM_16_DieStupidBeast";	//Tu nie ma miejsca dla bestii!
-	youdarehitme = "SVM_16_YouDareHitMe";	//Czekaj tylko, gnido!
-	youaskedforit = "SVM_16_YouAskedForIt";	//Sam tego chcia³eœ!
-	thenibeatyououtofhere = "SVM_16_ThenIBeatYouOutOfHere";	//Zatem bêdê musia³a ciê st¹d WYKOPAÆ!
-	whatdidyoudointhere = "SVM_16_WhatDidYouDoInThere";	//Co ty tam robi³eœ, co?!
-	willyoustopfighting = "SVM_16_WillYouStopFighting";	//Przestaniecie w koñcu?!
-	killenemy = "SVM_16_KillEnemy";	//Giñ, bydlaku!
-	enemykilled = "SVM_16_EnemyKilled";	//To twój koniec, padalcu!
-	monsterkilled = "SVM_16_MonsterKilled";	//Jedna bestia mniej!
-	thiefdown = "SVM_16_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
-	rumfummlerdown = "SVM_16_rumfummlerDown";	//Na przysz³oœæ trzymaj siê z dala od rzeczy, które nie powinny ciê interesowaæ!
-	sheepattackerdown = "SVM_16_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To s¹ nasze owce!
-	killmurderer = "SVM_16_KillMurderer";	//Giñ, morderco!
-	stupidbeastkilled = "SVM_16_StupidBeastKilled";	//G³upia bestia!
-	neverhitmeagain = "SVM_16_NeverHitMeAgain";	//Nigdy wiêcej ze mn¹ nie zaczynaj!
-	youbettershouldhavelistened = "SVM_16_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
-	getupandbegone = "SVM_16_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
-	neverenterroomagain = "SVM_16_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³a!
-	thereisnofightinghere = "SVM_16_ThereIsNoFightingHere";	//Tu siê nie walczy, zrozumiano? Niech to bêdzie dla ciebie nauczka!
-	spareme = "SVM_16_SpareMe";	//Nie rób mi krzywdy!
-	runaway = "SVM_16_RunAway";	//Wynoszê siê st¹d!
-	alarm = "SVM_16_Alarm";	//ALARM!
-	guards = "SVM_16_Guards";	//STRA¯!
-	help = "SVM_16_Help";	//Pomocy!
-	goodmonsterkill = "SVM_16_GoodMonsterKill";	//Dobra robota!
-	goodkill = "SVM_16_GoodKill";	//No, daj œwini na co zas³uguje!
+	MILGreetings = "SVM_16_MILGreetings";	//Niech ¿yje Król!
+	PALGreetings = "SVM_16_PALGreetings";	//Chwa³a Innosowi!
+	Weather = "SVM_16_Weather";	//Nêdzna pogoda...
+	IGetYouStill = "SVM_16_IGetYouStill";	//W koñcu i tak ciê dorwê!
+	DieEnemy = "SVM_16_DieEnemy";	//Wybi³a twoja godzina!
+	DieMonster = "SVM_16_DieMonster";	//Znowu jedna z tych przeklêtych bestii!
+	DirtyThief = "SVM_16_DirtyThief";	//Parszywy z³odziej! Czekaj tylko...
+	HandsOff = "SVM_16_HandsOff";	//£apy precz!
+	SheepKiller = "SVM_16_SheepKiller";	//To bydlê zarzyna nasze owce!
+	SheepKillerMonster = "SVM_16_SheepKillerMonster";	//Ten cholerny potwór po¿era nasze owce!
+	YouMurderer = "SVM_16_YouMurderer";	//Morderca!
+	DieStupidBeast = "SVM_16_DieStupidBeast";	//Tu nie ma miejsca dla bestii!
+	YouDareHitMe = "SVM_16_YouDareHitMe";	//Czekaj tylko, gnido!
+	YouAskedForIt = "SVM_16_YouAskedForIt";	//Sam tego chcia³eœ!
+	ThenIBeatYouOutOfHere = "SVM_16_ThenIBeatYouOutOfHere";	//Zatem bêdê musia³a ciê st¹d WYKOPAÆ!
+	WhatDidYouDoInThere = "SVM_16_WhatDidYouDoInThere";	//Co ty tam robi³eœ, co?!
+	WillYouStopFighting = "SVM_16_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	KillEnemy = "SVM_16_KillEnemy";	//Giñ, bydlaku!
+	EnemyKilled = "SVM_16_EnemyKilled";	//To twój koniec, padalcu!
+	MonsterKilled = "SVM_16_MonsterKilled";	//Jedna bestia mniej!
+	ThiefDown = "SVM_16_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
+	RumfummlerDown = "SVM_16_rumfummlerDown";	//Na przysz³oœæ trzymaj siê z dala od rzeczy, które nie powinny ciê interesowaæ!
+	SheepAttackerDown = "SVM_16_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To s¹ nasze owce!
+	KillMurderer = "SVM_16_KillMurderer";	//Giñ, morderco!
+	StupidBeastKilled = "SVM_16_StupidBeastKilled";	//G³upia bestia!
+	NeverHitMeAgain = "SVM_16_NeverHitMeAgain";	//Nigdy wiêcej ze mn¹ nie zaczynaj!
+	YouBetterShouldHaveListened = "SVM_16_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
+	GetUpAndBeGone = "SVM_16_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
+	NeverEnterRoomAgain = "SVM_16_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³a!
+	ThereIsNoFightingHere = "SVM_16_ThereIsNoFightingHere";	//Tu siê nie walczy, zrozumiano? Niech to bêdzie dla ciebie nauczka!
+	SpareMe = "SVM_16_SpareMe";	//Nie rób mi krzywdy!
+	RunAway = "SVM_16_RunAway";	//Wynoszê siê st¹d!
+	Alarm = "SVM_16_Alarm";	//ALARM!
+	Guards = "SVM_16_Guards";	//STRA¯!
+	Help = "SVM_16_Help";	//Pomocy!
+	GoodMonsterKill = "SVM_16_GoodMonsterKill";	//Dobra robota!
+	GoodKill = "SVM_16_GoodKill";	//No, daj œwini na co zas³uguje!
 	notnow = "SVM_16_NOTNOW";	//Zostaw mnie w spokoju!
-	runcoward = "SVM_16_RunCoward";	//(wo³aj¹c) Stój, tchórzu!
-	getoutofhere = "SVM_16_GetOutOfHere";	//Wynoœ siê st¹d!
-	whyareyouinhere = "SVM_16_WhyAreYouInHere";	//Czego tutaj szukasz? OdejdŸ!
-	yesgooutofhere = "SVM_16_YesGoOutOfHere";	//No, zabieraj siê!
-	whatsthissupposedtobe = "SVM_16_WhatsThisSupposedToBe";	//Hej ty! Czego ty tam szukasz?
-	youdisturbedmyslumber = "SVM_16_YouDisturbedMySlumber";	//Co jest?
-	itookyourgold = "SVM_16_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
-	shitnogold = "SVM_16_ShitNoGold";	//Ty biedny frajerze, nawet z³ota nie masz!
-	itakeyourweapon = "SVM_16_ITakeYourWeapon";	//Lepiej zaopiekujê siê twoj¹ broni¹.
-	whatareyoudoing = "SVM_16_WhatAreYouDoing";	//Hej, uwa¿aj! Jeszcze raz i ci przy³o¿ê!
-	lookingfortroubleagain = "SVM_16_LookingForTroubleAgain";	//Ci¹gle ci ma³o?!
-	stopmagic = "SVM_16_StopMagic";	//Przestañ z tymi czarami!
-	isaidstopmagic = "SVM_16_ISaidStopMagic";	//Chcesz dostaæ? Przestañ w tej chwili!
-	weapondown = "SVM_16_WeaponDown";	//Od³ó¿ broñ!
-	isaidweapondown = "SVM_16_ISaidWeaponDown";	//Od³o¿ysz w koñcu tê cholern¹ broñ?!
-	wisemove = "SVM_16_WiseMove";	//M¹dra decyzja...
-	nexttimeyoureinforit = "SVM_16_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
-	ohmyhead = "SVM_16_OhMyHead";	//O bogowie, moja g³owa...
-	theresafight = "SVM_16_TheresAFight";	//Aach, walka...
-	ohmygoditsafight = "SVM_16_OhMyGodItsAFight";	//O bogowie, walka!
-	goodvictory = "SVM_16_GoodVictory";	//Pokaza³eœ mu, kto tu rz¹dzi!
-	notbad = "SVM_16_NotBad";	//NieŸle...
-	ohmygodhesdown = "SVM_16_OhMyGodHesDown";	//Bogowie! Jak brutalnie...
-	cheerfriend01 = "SVM_16_CheerFriend01";	//Rozwal go!
-	cheerfriend02 = "SVM_16_CheerFriend02";	//Poka¿ mu!
-	cheerfriend03 = "SVM_16_CheerFriend03";	//Daj mu popaliæ!
-	ooh01 = "SVM_16_Ooh01";	//Oddaj mu!
-	ooh02 = "SVM_16_Ooh02";	//Uwa¿aj!
-	ooh03 = "SVM_16_Ooh03";	//Och! To musia³o boleæ!
-	whatwasthat = "SVM_16_WhatWasThat";	//Co TO by³o!?
-	getoutofmybed = "SVM_16_GetOutOfMyBed";	//Wynoœ siê z mojego ³ó¿ka!
-	awake = "SVM_16_Awake";	//(rozkoszne ziewniêcie)
+	RunCoward = "SVM_16_RunCoward";	//(wo³aj¹c) Stój, tchórzu!
+	GetOutOfHere = "SVM_16_GetOutOfHere";	//Wynoœ siê st¹d!
+	WhyAreYouInHere = "SVM_16_WhyAreYouInHere";	//Czego tutaj szukasz? OdejdŸ!
+	YesGoOutOfHere = "SVM_16_YesGoOutOfHere";	//No, zabieraj siê!
+	WhatsThisSupposedToBe = "SVM_16_WhatsThisSupposedToBe";	//Hej ty! Czego ty tam szukasz?
+	YouDisturbedMySlumber = "SVM_16_YouDisturbedMySlumber";	//Co jest?
+	ITookYourGold = "SVM_16_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
+	ShitNoGold = "SVM_16_ShitNoGold";	//Ty biedny frajerze, nawet z³ota nie masz!
+	ITakeYourWeapon = "SVM_16_ITakeYourWeapon";	//Lepiej zaopiekujê siê twoj¹ broni¹.
+	WhatAreYouDoing = "SVM_16_WhatAreYouDoing";	//Hej, uwa¿aj! Jeszcze raz i ci przy³o¿ê!
+	LookingForTroubleAgain = "SVM_16_LookingForTroubleAgain";	//Ci¹gle ci ma³o?!
+	StopMagic = "SVM_16_StopMagic";	//Przestañ z tymi czarami!
+	ISaidStopMagic = "SVM_16_ISaidStopMagic";	//Chcesz dostaæ? Przestañ w tej chwili!
+	WeaponDown = "SVM_16_WeaponDown";	//Od³ó¿ broñ!
+	ISaidWeaponDown = "SVM_16_ISaidWeaponDown";	//Od³o¿ysz w koñcu tê cholern¹ broñ?!
+	WiseMove = "SVM_16_WiseMove";	//M¹dra decyzja...
+	NextTimeYoureInForIt = "SVM_16_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
+	OhMyHead = "SVM_16_OhMyHead";	//O bogowie, moja g³owa...
+	TheresAFight = "SVM_16_TheresAFight";	//Aach, walka...
+	OhMyGodItsAFight = "SVM_16_OhMyGodItsAFight";	//O bogowie, walka!
+	GoodVictory = "SVM_16_GoodVictory";	//Pokaza³eœ mu, kto tu rz¹dzi!
+	NotBad = "SVM_16_NotBad";	//NieŸle...
+	OhMyGodHesDown = "SVM_16_OhMyGodHesDown";	//Bogowie! Jak brutalnie...
+	CheerFriend01 = "SVM_16_CheerFriend01";	//Rozwal go!
+	CheerFriend02 = "SVM_16_CheerFriend02";	//Poka¿ mu!
+	CheerFriend03 = "SVM_16_CheerFriend03";	//Daj mu popaliæ!
+	Ooh01 = "SVM_16_Ooh01";	//Oddaj mu!
+	Ooh02 = "SVM_16_Ooh02";	//Uwa¿aj!
+	Ooh03 = "SVM_16_Ooh03";	//Och! To musia³o boleæ!
+	WhatWasThat = "SVM_16_WhatWasThat";	//Co TO by³o!?
+	GetOutOfMyBed = "SVM_16_GetOutOfMyBed";	//Wynoœ siê z mojego ³ó¿ka!
+	Awake = "SVM_16_Awake";	//(rozkoszne ziewniêcie)
 	abs_commander = "SVM_16_ABS_COMMANDER";	//Poszed³eœ wiêc do kapitana i oczyœci³eœ siê z zarzutów.
 	abs_monastery = "SVM_16_ABS_MONASTERY";	//By³eœ zatem u Ojca Parlana i wyzna³eœ mu swoje grzechy.
 	abs_farm = "SVM_16_ABS_FARM";	//Lee rozwi¹za³ ten problem.
@@ -2852,34 +2852,34 @@ instance SVM_16(C_SVM)
 	gold_30 = "SVM_16_GOLD_30";	//30 sztuk z³ota.
 	gold_20 = "SVM_16_GOLD_20";	//20 sztuk z³ota.
 	gold_10 = "SVM_16_GOLD_10";	//10 sztuk z³ota.
-	smalltalk01 = "SVM_16_Smalltalk01";	//...doprawdy? To interesuj¹ce...
-	smalltalk02 = "SVM_16_Smalltalk02";	//...nie wierzê w to...
-	smalltalk03 = "SVM_16_Smalltalk03";	//...mój m¹¿ uwa¿a inaczej...
-	smalltalk04 = "SVM_16_Smalltalk04";	//...daj spokój, nie opowiadaj mi takich rzeczy...
-	smalltalk05 = "SVM_16_Smalltalk05";	//...naprawdê, sama widzia³am...
-	smalltalk06 = "SVM_16_Smalltalk06";	//...nie mów...
-	smalltalk07 = "SVM_16_Smalltalk07";	//...nikomu tego nie powtarzaj...
-	smalltalk08 = "SVM_16_Smalltalk08";	//...przysz³o nam ¿yæ w niedobrych czasach...
-	smalltalk09 = "SVM_16_Smalltalk09";	//...kto to opowiada takie rzeczy...
-	smalltalk10 = "SVM_16_Smalltalk10";	//...gdybym sama tego nie widzia³a...
-	smalltalk11 = "SVM_16_Smalltalk11";	//...ktoœ musi pracowaæ...
-	smalltalk12 = "SVM_16_Smalltalk12";	//...s³ysza³am co innego...
-	smalltalk13 = "SVM_16_Smalltalk13";	//...tak, to bardzo typowe...
-	smalltalk14 = "SVM_16_Smalltalk14";	//...nie potrafi niczego zatrzymaæ dla siebie...
-	smalltalk15 = "SVM_16_Smalltalk15";	//...lepiej by by³o, gdyby siê przymkn¹³...
-	smalltalk16 = "SVM_16_Smalltalk16";	//...i pracuje niemal przez ca³y dzieñ...
-	smalltalk17 = "SVM_16_Smalltalk17";	//...nie mogê zajmowaæ siê wszystkim i wszystkimi...
-	smalltalk18 = "SVM_16_Smalltalk18";	//...on po prostu za du¿o gada...
-	smalltalk19 = "SVM_16_Smalltalk19";	//...tajemnica, o której wszyscy wiedz¹...
-	smalltalk20 = "SVM_16_Smalltalk20";	//...teraz ka¿dy ju¿ o tym wie...
-	smalltalk21 = "SVM_16_Smalltalk21";	//...niczego jej ju¿ nie powiem...
-	smalltalk22 = "SVM_16_Smalltalk22";	//...a bêdzie jeszcze gorzej...
-	smalltalk23 = "SVM_16_Smalltalk23";	//...to przecie¿ okropne...
-	smalltalk24 = "SVM_16_Smalltalk24";	//...zawsze to powtarza³am...
-	nolearnnopoints = "SVM_16_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
-	nolearnoverpersonalmax = "SVM_16_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
-	nolearnyourebetter = "SVM_16_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ ju¿ zbyt dobry.
-	youlearnedsomething = "SVM_16_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	Smalltalk01 = "SVM_16_Smalltalk01";	//...doprawdy? To interesuj¹ce...
+	Smalltalk02 = "SVM_16_Smalltalk02";	//...nie wierzê w to...
+	Smalltalk03 = "SVM_16_Smalltalk03";	//...mój m¹¿ uwa¿a inaczej...
+	Smalltalk04 = "SVM_16_Smalltalk04";	//...daj spokój, nie opowiadaj mi takich rzeczy...
+	Smalltalk05 = "SVM_16_Smalltalk05";	//...naprawdê, sama widzia³am...
+	Smalltalk06 = "SVM_16_Smalltalk06";	//...nie mów...
+	Smalltalk07 = "SVM_16_Smalltalk07";	//...nikomu tego nie powtarzaj...
+	Smalltalk08 = "SVM_16_Smalltalk08";	//...przysz³o nam ¿yæ w niedobrych czasach...
+	Smalltalk09 = "SVM_16_Smalltalk09";	//...kto to opowiada takie rzeczy...
+	Smalltalk10 = "SVM_16_Smalltalk10";	//...gdybym sama tego nie widzia³a...
+	Smalltalk11 = "SVM_16_Smalltalk11";	//...ktoœ musi pracowaæ...
+	Smalltalk12 = "SVM_16_Smalltalk12";	//...s³ysza³am co innego...
+	Smalltalk13 = "SVM_16_Smalltalk13";	//...tak, to bardzo typowe...
+	Smalltalk14 = "SVM_16_Smalltalk14";	//...nie potrafi niczego zatrzymaæ dla siebie...
+	Smalltalk15 = "SVM_16_Smalltalk15";	//...lepiej by by³o, gdyby siê przymkn¹³...
+	Smalltalk16 = "SVM_16_Smalltalk16";	//...i pracuje niemal przez ca³y dzieñ...
+	Smalltalk17 = "SVM_16_Smalltalk17";	//...nie mogê zajmowaæ siê wszystkim i wszystkimi...
+	Smalltalk18 = "SVM_16_Smalltalk18";	//...on po prostu za du¿o gada...
+	Smalltalk19 = "SVM_16_Smalltalk19";	//...tajemnica, o której wszyscy wiedz¹...
+	Smalltalk20 = "SVM_16_Smalltalk20";	//...teraz ka¿dy ju¿ o tym wie...
+	Smalltalk21 = "SVM_16_Smalltalk21";	//...niczego jej ju¿ nie powiem...
+	Smalltalk22 = "SVM_16_Smalltalk22";	//...a bêdzie jeszcze gorzej...
+	Smalltalk23 = "SVM_16_Smalltalk23";	//...to przecie¿ okropne...
+	Smalltalk24 = "SVM_16_Smalltalk24";	//...zawsze to powtarza³am...
+	NoLearnNoPoints = "SVM_16_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
+	NoLearnOverPersonalMAX = "SVM_16_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	NoLearnYoureBetter = "SVM_16_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ ju¿ zbyt dobry.
+	YouLearnedSomething = "SVM_16_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
 	unterstadt = "SVM_16_UNTERSTADT";	//Jesteœ teraz w ni¿szej czêœci miasta.
 	oberstadt = "SVM_16_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
 	tempel = "SVM_16_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
@@ -2904,10 +2904,10 @@ instance SVM_16(C_SVM)
 	kaserne_2_markt = "SVM_16_KASERNE_2_MARKT";	//ZejdŸ w dó³ po schodach na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
 	kaserne_2_galgen = "SVM_16_KASERNE_2_GALGEN";	//ZejdŸ w dó³ po schodach na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
 	hafen_2_unterstadt = "SVM_16_HAFEN_2_UNTERSTADT";	//Id¹c w górê ulic¹ portow¹, od strony muru przy nadbrze¿u, dojdziesz do dolnej czêœci miasta.
-	dead = "SVM_16_Dead";	//Aaaarhhh!
-	aargh_1 = "SVM_16_Aargh_1";	//Aargh
-	aargh_2 = "SVM_16_Aargh_2";	//Aargh
-	aargh_3 = "SVM_16_Aargh_3";	//Aargh
+	Dead = "SVM_16_Dead";	//Aaaarhhh!
+	Aargh_1 = "SVM_16_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_16_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_16_Aargh_3";	//Aargh
 	addon_wrongarmor = "SVM_16_Addon_WrongArmor";	//
 	addon_diebandit = "SVM_16_ADDON_DIEBANDIT";	//
 	addon_dirtypirate = "SVM_16_ADDON_DIRTYPIRATE";	//
@@ -2915,76 +2915,76 @@ instance SVM_16(C_SVM)
 
 instance SVM_17(C_SVM)
 {
-	milgreetings = "SVM_17_MILGreetings";	//Niech ¿yje Król!
-	palgreetings = "SVM_17_PALGreetings";	//Chwa³a Innosowi!
-	weather = "SVM_17_Weather";	//Nêdzna pogoda...
-	igetyoustill = "SVM_17_IGetYouStill";	//W koñcu ciê dopad³am!
-	dieenemy = "SVM_17_DieEnemy";	//Wybi³a twoja godzina!
-	diemonster = "SVM_17_DieMonster";	//Znowu jedna z tych cholernych bestii!
-	dirtythief = "SVM_17_DirtyThief";	//Parszywy z³odziej! Czekaj tylko...
-	handsoff = "SVM_17_HandsOff";	//£apy precz!
-	sheepkiller = "SVM_17_SheepKiller";	//Ten bydlak zarzyna nasze owce!
-	sheepkillermonster = "SVM_17_SheepKillerMonster";	//Ten cholerny potwór z¿era nasze owce!
-	youmurderer = "SVM_17_YouMurderer";	//Morderca!
-	diestupidbeast = "SVM_17_DieStupidBeast";	//Tu nie ma miejsca dla bestii!
-	youdarehitme = "SVM_17_YouDareHitMe";	//Czekaj tylko, gnido!
-	youaskedforit = "SVM_17_YouAskedForIt";	//Sam tego chcia³eœ!
-	thenibeatyououtofhere = "SVM_17_ThenIBeatYouOutOfHere";	//Zatem bêdê musia³a ciê st¹d WYKOPAÆ!
-	whatdidyoudointhere = "SVM_17_WhatDidYouDoInThere";	//Co TY tam robi³eœ, co?!
-	willyoustopfighting = "SVM_17_WillYouStopFighting";	//Przestaniecie w koñcu?!
-	killenemy = "SVM_17_KillEnemy";	//Giñ, bydlaku!
-	enemykilled = "SVM_17_EnemyKilled";	//To twój koniec, padalcu!
-	monsterkilled = "SVM_17_MonsterKilled";	//Jedna bestia mniej!
-	thiefdown = "SVM_17_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
-	rumfummlerdown = "SVM_17_rumfummlerDown";	//Na przysz³oœci trzymaj siê z dala od rzeczy, które nie powinny ciê interesowaæ!
-	sheepattackerdown = "SVM_17_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To s¹ nasze owce!
-	killmurderer = "SVM_17_KillMurderer";	//Giñ, morderco!
-	stupidbeastkilled = "SVM_17_StupidBeastKilled";	//G³upia bestia!
-	neverhitmeagain = "SVM_17_NeverHitMeAgain";	//Nigdy wiêcej ze mn¹ nie zaczynaj!
-	youbettershouldhavelistened = "SVM_17_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
-	getupandbegone = "SVM_17_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
-	neverenterroomagain = "SVM_17_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³a!
-	thereisnofightinghere = "SVM_17_ThereIsNoFightingHere";	//Tu siê nie walczy, zrozumiano? Niech to bêdzie dla ciebie nauczka!
-	spareme = "SVM_17_SpareMe";	//Nie rób mi krzywdy!
-	runaway = "SVM_17_RunAway";	//Wynoszê siê st¹d!
-	alarm = "SVM_17_Alarm";	//ALARM!
-	guards = "SVM_17_Guards";	//STRA¯!
-	help = "SVM_17_Help";	//Pomocy!
-	goodmonsterkill = "SVM_17_GoodMonsterKill";	//Dobra robota!
-	goodkill = "SVM_17_GoodKill";	//No, daj œwini na co zas³uguje!
+	MILGreetings = "SVM_17_MILGreetings";	//Niech ¿yje Król!
+	PALGreetings = "SVM_17_PALGreetings";	//Chwa³a Innosowi!
+	Weather = "SVM_17_Weather";	//Nêdzna pogoda...
+	IGetYouStill = "SVM_17_IGetYouStill";	//W koñcu ciê dopad³am!
+	DieEnemy = "SVM_17_DieEnemy";	//Wybi³a twoja godzina!
+	DieMonster = "SVM_17_DieMonster";	//Znowu jedna z tych cholernych bestii!
+	DirtyThief = "SVM_17_DirtyThief";	//Parszywy z³odziej! Czekaj tylko...
+	HandsOff = "SVM_17_HandsOff";	//£apy precz!
+	SheepKiller = "SVM_17_SheepKiller";	//Ten bydlak zarzyna nasze owce!
+	SheepKillerMonster = "SVM_17_SheepKillerMonster";	//Ten cholerny potwór z¿era nasze owce!
+	YouMurderer = "SVM_17_YouMurderer";	//Morderca!
+	DieStupidBeast = "SVM_17_DieStupidBeast";	//Tu nie ma miejsca dla bestii!
+	YouDareHitMe = "SVM_17_YouDareHitMe";	//Czekaj tylko, gnido!
+	YouAskedForIt = "SVM_17_YouAskedForIt";	//Sam tego chcia³eœ!
+	ThenIBeatYouOutOfHere = "SVM_17_ThenIBeatYouOutOfHere";	//Zatem bêdê musia³a ciê st¹d WYKOPAÆ!
+	WhatDidYouDoInThere = "SVM_17_WhatDidYouDoInThere";	//Co TY tam robi³eœ, co?!
+	WillYouStopFighting = "SVM_17_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	KillEnemy = "SVM_17_KillEnemy";	//Giñ, bydlaku!
+	EnemyKilled = "SVM_17_EnemyKilled";	//To twój koniec, padalcu!
+	MonsterKilled = "SVM_17_MonsterKilled";	//Jedna bestia mniej!
+	ThiefDown = "SVM_17_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
+	RumfummlerDown = "SVM_17_rumfummlerDown";	//Na przysz³oœci trzymaj siê z dala od rzeczy, które nie powinny ciê interesowaæ!
+	SheepAttackerDown = "SVM_17_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To s¹ nasze owce!
+	KillMurderer = "SVM_17_KillMurderer";	//Giñ, morderco!
+	StupidBeastKilled = "SVM_17_StupidBeastKilled";	//G³upia bestia!
+	NeverHitMeAgain = "SVM_17_NeverHitMeAgain";	//Nigdy wiêcej ze mn¹ nie zaczynaj!
+	YouBetterShouldHaveListened = "SVM_17_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
+	GetUpAndBeGone = "SVM_17_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
+	NeverEnterRoomAgain = "SVM_17_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³a!
+	ThereIsNoFightingHere = "SVM_17_ThereIsNoFightingHere";	//Tu siê nie walczy, zrozumiano? Niech to bêdzie dla ciebie nauczka!
+	SpareMe = "SVM_17_SpareMe";	//Nie rób mi krzywdy!
+	RunAway = "SVM_17_RunAway";	//Wynoszê siê st¹d!
+	Alarm = "SVM_17_Alarm";	//ALARM!
+	Guards = "SVM_17_Guards";	//STRA¯!
+	Help = "SVM_17_Help";	//Pomocy!
+	GoodMonsterKill = "SVM_17_GoodMonsterKill";	//Dobra robota!
+	GoodKill = "SVM_17_GoodKill";	//No, daj œwini na co zas³uguje!
 	notnow = "SVM_17_NOTNOW";	//Zostaw mnie w spokoju!
-	runcoward = "SVM_17_RunCoward";	//Stój, tchórzu!
-	getoutofhere = "SVM_17_GetOutOfHere";	//Wynoœ siê st¹d!
-	whyareyouinhere = "SVM_17_WhyAreYouInHere";	//Czego tutaj szukasz? OdejdŸ!
-	yesgooutofhere = "SVM_17_YesGoOutOfHere";	//No, zabieraj siê!
-	whatsthissupposedtobe = "SVM_17_WhatsThisSupposedToBe";	//Hej ty! Czego ty tam szukasz?
-	youdisturbedmyslumber = "SVM_17_YouDisturbedMySlumber";	//Co jest
-	itookyourgold = "SVM_17_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
-	shitnogold = "SVM_17_ShitNoGold";	//Ty biedny frajerze, nawet z³ota nie masz!
-	itakeyourweapon = "SVM_17_ITakeYourWeapon";	//Lepiej zaopiekujê siê twoj¹ broni¹.
-	whatareyoudoing = "SVM_17_WhatAreYouDoing";	//Hej, uwa¿aj! Jeszcze raz i ci przy³o¿ê!
-	lookingfortroubleagain = "SVM_17_LookingForTroubleAgain";	//Ci¹gle ci ma³o?!
-	stopmagic = "SVM_17_StopMagic";	//Przestañ z tymi czarami!
-	isaidstopmagic = "SVM_17_ISaidStopMagic";	//Chcesz dostaæ? Przestañ w tej chwili!
-	weapondown = "SVM_17_WeaponDown";	//Od³ó¿ broñ!
-	isaidweapondown = "SVM_17_ISaidWeaponDown";	//Od³o¿ysz w koñcu tê cholern¹ broñ?!
-	wisemove = "SVM_17_WiseMove";	//M¹dra decyzja...
-	nexttimeyoureinforit = "SVM_17_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
-	ohmyhead = "SVM_17_OhMyHead";	//O bogowie, moja g³owa...
-	theresafight = "SVM_17_TheresAFight";	//Aach, walka...
-	ohmygoditsafight = "SVM_17_OhMyGodItsAFight";	//O bogowie, walka!
-	goodvictory = "SVM_17_GoodVictory";	//Pokaza³eœ mu, kto tu rz¹dzi!
-	notbad = "SVM_17_NotBad";	//NieŸle...
-	ohmygodhesdown = "SVM_17_OhMyGodHesDown";	//Bogowie! Jak brutalnie...
-	cheerfriend01 = "SVM_17_CheerFriend01";	//Rozwal go!
-	cheerfriend02 = "SVM_17_CheerFriend02";	//Poka¿ mu!
-	cheerfriend03 = "SVM_17_CheerFriend03";	//Daj mu popaliæ!
-	ooh01 = "SVM_17_Ooh01";	//Oddaj mu!
-	ooh02 = "SVM_17_Ooh02";	//Uwa¿aj!
-	ooh03 = "SVM_17_Ooh03";	//Och! To bola³o!
-	whatwasthat = "SVM_17_WhatWasThat";	//Co TO by³o!?
-	getoutofmybed = "SVM_17_GetOutOfMyBed";	//Wynoœ siê z mojego ³ó¿ka!
-	awake = "SVM_17_Awake";	//(rozkoszne ziewniêcie)
+	RunCoward = "SVM_17_RunCoward";	//Stój, tchórzu!
+	GetOutOfHere = "SVM_17_GetOutOfHere";	//Wynoœ siê st¹d!
+	WhyAreYouInHere = "SVM_17_WhyAreYouInHere";	//Czego tutaj szukasz? OdejdŸ!
+	YesGoOutOfHere = "SVM_17_YesGoOutOfHere";	//No, zabieraj siê!
+	WhatsThisSupposedToBe = "SVM_17_WhatsThisSupposedToBe";	//Hej ty! Czego ty tam szukasz?
+	YouDisturbedMySlumber = "SVM_17_YouDisturbedMySlumber";	//Co jest
+	ITookYourGold = "SVM_17_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
+	ShitNoGold = "SVM_17_ShitNoGold";	//Ty biedny frajerze, nawet z³ota nie masz!
+	ITakeYourWeapon = "SVM_17_ITakeYourWeapon";	//Lepiej zaopiekujê siê twoj¹ broni¹.
+	WhatAreYouDoing = "SVM_17_WhatAreYouDoing";	//Hej, uwa¿aj! Jeszcze raz i ci przy³o¿ê!
+	LookingForTroubleAgain = "SVM_17_LookingForTroubleAgain";	//Ci¹gle ci ma³o?!
+	StopMagic = "SVM_17_StopMagic";	//Przestañ z tymi czarami!
+	ISaidStopMagic = "SVM_17_ISaidStopMagic";	//Chcesz dostaæ? Przestañ w tej chwili!
+	WeaponDown = "SVM_17_WeaponDown";	//Od³ó¿ broñ!
+	ISaidWeaponDown = "SVM_17_ISaidWeaponDown";	//Od³o¿ysz w koñcu tê cholern¹ broñ?!
+	WiseMove = "SVM_17_WiseMove";	//M¹dra decyzja...
+	NextTimeYoureInForIt = "SVM_17_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
+	OhMyHead = "SVM_17_OhMyHead";	//O bogowie, moja g³owa...
+	TheresAFight = "SVM_17_TheresAFight";	//Aach, walka...
+	OhMyGodItsAFight = "SVM_17_OhMyGodItsAFight";	//O bogowie, walka!
+	GoodVictory = "SVM_17_GoodVictory";	//Pokaza³eœ mu, kto tu rz¹dzi!
+	NotBad = "SVM_17_NotBad";	//NieŸle...
+	OhMyGodHesDown = "SVM_17_OhMyGodHesDown";	//Bogowie! Jak brutalnie...
+	CheerFriend01 = "SVM_17_CheerFriend01";	//Rozwal go!
+	CheerFriend02 = "SVM_17_CheerFriend02";	//Poka¿ mu!
+	CheerFriend03 = "SVM_17_CheerFriend03";	//Daj mu popaliæ!
+	Ooh01 = "SVM_17_Ooh01";	//Oddaj mu!
+	Ooh02 = "SVM_17_Ooh02";	//Uwa¿aj!
+	Ooh03 = "SVM_17_Ooh03";	//Och! To bola³o!
+	WhatWasThat = "SVM_17_WhatWasThat";	//Co TO by³o!?
+	GetOutOfMyBed = "SVM_17_GetOutOfMyBed";	//Wynoœ siê z mojego ³ó¿ka!
+	Awake = "SVM_17_Awake";	//(rozkoszne ziewniêcie)
 	abs_commander = "SVM_17_ABS_COMMANDER";	//Poszed³eœ wiêc do kapitana i oczyœci³eœ siê z zarzutów.
 	abs_monastery = "SVM_17_ABS_MONASTERY";	//By³eœ zatem u Ojca Parlana i wyzna³eœ mu o swoje grzechy.
 	abs_farm = "SVM_17_ABS_FARM";	//Lee rozwi¹za³ tê sprawê dla ciebie.
@@ -3026,34 +3026,34 @@ instance SVM_17(C_SVM)
 	gold_30 = "SVM_17_GOLD_30";	//30 sztuk z³ota.
 	gold_20 = "SVM_17_GOLD_20";	//20 sztuk z³ota.
 	gold_10 = "SVM_17_GOLD_10";	//10 sztuk z³ota.
-	smalltalk01 = "SVM_17_Smalltalk01";	//...doprawdy? To interesuj¹ce...
-	smalltalk02 = "SVM_17_Smalltalk02";	//...nie wierzê w to...
-	smalltalk03 = "SVM_17_Smalltalk03";	//...mój m¹¿ uwa¿a inaczej...
-	smalltalk04 = "SVM_17_Smalltalk04";	//...daj spokój, nie opowiadaj mi takich rzeczy...
-	smalltalk05 = "SVM_17_Smalltalk05";	//...naprawdê, sama widzia³am...
-	smalltalk06 = "SVM_17_Smalltalk06";	//...nie mów...
-	smalltalk07 = "SVM_17_Smalltalk07";	//...nikomu tego nie powtarzaj...
-	smalltalk08 = "SVM_17_Smalltalk08";	//...przysz³o nam ¿yæ w niedobrych czasach...
-	smalltalk09 = "SVM_17_Smalltalk09";	//...kto to opowiada takie rzeczy...
-	smalltalk10 = "SVM_17_Smalltalk10";	//...gdybym sama tego nie widzia³a...
-	smalltalk11 = "SVM_17_Smalltalk11";	//...ktoœ musi pracowaæ...
-	smalltalk12 = "SVM_17_Smalltalk12";	//...s³ysza³am co innego...
-	smalltalk13 = "SVM_17_Smalltalk13";	//...tak, to bardzo typowe...
-	smalltalk14 = "SVM_17_Smalltalk14";	//...nie potrafi niczego zatrzymaæ dla siebie...
-	smalltalk15 = "SVM_17_Smalltalk15";	//...lepiej by by³o, gdyby siê przymkn¹³...
-	smalltalk16 = "SVM_17_Smalltalk16";	//...i pracuje niemal przez ca³y dzieñ...
-	smalltalk17 = "SVM_17_Smalltalk17";	//...nie mogê siê zajmowaæ wszystkim i wszystkimi...
-	smalltalk18 = "SVM_17_Smalltalk18";	//...on po prostu za du¿o gada...
-	smalltalk19 = "SVM_17_Smalltalk19";	//...tajemnica, o której wszyscy wiedz¹...
-	smalltalk20 = "SVM_17_Smalltalk20";	//...teraz ka¿dy ju¿ o tym wie...
-	smalltalk21 = "SVM_17_Smalltalk21";	//...niczego jej ju¿ nie powiem...
-	smalltalk22 = "SVM_17_Smalltalk22";	//...a bêdzie jeszcze gorzej...
-	smalltalk23 = "SVM_17_Smalltalk23";	//...to przecie¿ okropne...
-	smalltalk24 = "SVM_17_Smalltalk24";	//...zawsze to powtarza³am...
-	nolearnnopoints = "SVM_17_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
-	nolearnoverpersonalmax = "SVM_17_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
-	nolearnyourebetter = "SVM_17_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ zbyt dobry.
-	youlearnedsomething = "SVM_17_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	Smalltalk01 = "SVM_17_Smalltalk01";	//...doprawdy? To interesuj¹ce...
+	Smalltalk02 = "SVM_17_Smalltalk02";	//...nie wierzê w to...
+	Smalltalk03 = "SVM_17_Smalltalk03";	//...mój m¹¿ uwa¿a inaczej...
+	Smalltalk04 = "SVM_17_Smalltalk04";	//...daj spokój, nie opowiadaj mi takich rzeczy...
+	Smalltalk05 = "SVM_17_Smalltalk05";	//...naprawdê, sama widzia³am...
+	Smalltalk06 = "SVM_17_Smalltalk06";	//...nie mów...
+	Smalltalk07 = "SVM_17_Smalltalk07";	//...nikomu tego nie powtarzaj...
+	Smalltalk08 = "SVM_17_Smalltalk08";	//...przysz³o nam ¿yæ w niedobrych czasach...
+	Smalltalk09 = "SVM_17_Smalltalk09";	//...kto to opowiada takie rzeczy...
+	Smalltalk10 = "SVM_17_Smalltalk10";	//...gdybym sama tego nie widzia³a...
+	Smalltalk11 = "SVM_17_Smalltalk11";	//...ktoœ musi pracowaæ...
+	Smalltalk12 = "SVM_17_Smalltalk12";	//...s³ysza³am co innego...
+	Smalltalk13 = "SVM_17_Smalltalk13";	//...tak, to bardzo typowe...
+	Smalltalk14 = "SVM_17_Smalltalk14";	//...nie potrafi niczego zatrzymaæ dla siebie...
+	Smalltalk15 = "SVM_17_Smalltalk15";	//...lepiej by by³o, gdyby siê przymkn¹³...
+	Smalltalk16 = "SVM_17_Smalltalk16";	//...i pracuje niemal przez ca³y dzieñ...
+	Smalltalk17 = "SVM_17_Smalltalk17";	//...nie mogê siê zajmowaæ wszystkim i wszystkimi...
+	Smalltalk18 = "SVM_17_Smalltalk18";	//...on po prostu za du¿o gada...
+	Smalltalk19 = "SVM_17_Smalltalk19";	//...tajemnica, o której wszyscy wiedz¹...
+	Smalltalk20 = "SVM_17_Smalltalk20";	//...teraz ka¿dy ju¿ o tym wie...
+	Smalltalk21 = "SVM_17_Smalltalk21";	//...niczego jej ju¿ nie powiem...
+	Smalltalk22 = "SVM_17_Smalltalk22";	//...a bêdzie jeszcze gorzej...
+	Smalltalk23 = "SVM_17_Smalltalk23";	//...to przecie¿ okropne...
+	Smalltalk24 = "SVM_17_Smalltalk24";	//...zawsze to powtarza³am...
+	NoLearnNoPoints = "SVM_17_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
+	NoLearnOverPersonalMAX = "SVM_17_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	NoLearnYoureBetter = "SVM_17_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ zbyt dobry.
+	YouLearnedSomething = "SVM_17_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
 	unterstadt = "SVM_17_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
 	oberstadt = "SVM_17_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
 	tempel = "SVM_17_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
@@ -3078,10 +3078,10 @@ instance SVM_17(C_SVM)
 	kaserne_2_markt = "SVM_17_KASERNE_2_MARKT";	//ZejdŸ po schodach na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
 	kaserne_2_galgen = "SVM_17_KASERNE_2_GALGEN";	//ZejdŸ po schodach na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
 	hafen_2_unterstadt = "SVM_17_HAFEN_2_UNTERSTADT";	//Id¹c w górê ulic¹ portow¹ od strony muru przy nabrze¿u, dojdziesz do dolnej czêœci miasta.
-	dead = "SVM_17_Dead";	//Aaaarhhh!
-	aargh_1 = "SVM_17_Aargh_1";	//Aargh
-	aargh_2 = "SVM_17_Aargh_2";	//Aargh
-	aargh_3 = "SVM_17_Aargh_3";	//Aargh
+	Dead = "SVM_17_Dead";	//Aaaarhhh!
+	Aargh_1 = "SVM_17_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_17_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_17_Aargh_3";	//Aargh
 };
 
 instance SVM_18(C_SVM)
@@ -3090,12 +3090,12 @@ instance SVM_18(C_SVM)
 
 instance SVM_19(C_SVM)
 {
-	dieenemy = "SVM_19_DieEnemy";	//Tam jesssssst!
-	runcoward = "SVM_19_RunCoward";	//Nie wymkniessssz ssssiê nam!
-	dead = "SVM_19_Dead";	//Aaaaarhhh!
-	aargh_1 = "SVM_19_Aargh_1";	//Aargh
-	aargh_2 = "SVM_19_Aargh_2";	//Aargh
-	aargh_3 = "SVM_19_Aargh_3";	//Aargh
+	DieEnemy = "SVM_19_DieEnemy";	//Tam jesssssst!
+	RunCoward = "SVM_19_RunCoward";	//Nie wymkniessssz ssssiê nam!
+	Dead = "SVM_19_Dead";	//Aaaaarhhh!
+	Aargh_1 = "SVM_19_Aargh_1";	//Aargh
+	Aargh_2 = "SVM_19_Aargh_2";	//Aargh
+	Aargh_3 = "SVM_19_Aargh_3";	//Aargh
 };
 
 

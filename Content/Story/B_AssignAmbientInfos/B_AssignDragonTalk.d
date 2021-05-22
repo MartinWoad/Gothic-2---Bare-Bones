@@ -1,23 +1,23 @@
 
-func void b_assigndragontalk(var C_NPC slf)
+func void B_AssignDragonTalk(var C_Npc slf)
 {
 	if(slf.guild == GIL_DRAGON)
 	{
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(swampdragon))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(SwampDragon))
 		{
-			b_assigndragontalk_swamp(slf);
+			B_AssignDragonTalk_Swamp(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(rockdragon))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(RockDragon))
 		{
-			b_assigndragontalk_rock(slf);
+			B_AssignDragonTalk_Rock(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(firedragon))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(FireDragon))
 		{
-			b_assigndragontalk_fire(slf);
+			B_AssignDragonTalk_Fire(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(icedragon))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(IceDragon))
 		{
-			b_assigndragontalk_ice(slf);
+			B_AssignDragonTalk_Ice(slf);
 		};
 	};
 };

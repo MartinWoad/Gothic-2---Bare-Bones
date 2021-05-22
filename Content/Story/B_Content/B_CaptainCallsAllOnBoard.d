@@ -1,62 +1,62 @@
 
-func void b_captaincallsallonboard(var C_NPC captain)
+func void B_CaptainCallsAllOnBoard(var C_Npc Captain)
 {
-	b_giveinvitems(hero,captain,5881,1);
-	CreateInvItems(captain,itke_ship_levelchange_mis,1);
-	b_giveinvitems(captain,other,5888,1);
-	b_startotherroutine(captain,"AllOnBoard");
-	if(LEE_ISONBOARD == LOG_SUCCESS)
+	B_GiveInvItems(hero,Captain,ItWr_Seamap_Irdorath,1);
+	CreateInvItems(Captain,ItKe_Ship_Levelchange_MIS,1);
+	B_GiveInvItems(Captain,other,ItKe_Ship_Levelchange_MIS,1);
+	B_StartOtherRoutine(Captain,"AllOnBoard");
+	if(Lee_IsOnBoard == LOG_SUCCESS)
 	{
-		b_startotherroutine(lee,"Ship");
+		B_StartOtherRoutine(Lee,"Ship");
 	};
-	if(MILTENNW_ISONBOARD == LOG_SUCCESS)
+	if(MiltenNW_IsOnBoard == LOG_SUCCESS)
 	{
-		b_startotherroutine(miltennw,"Ship");
+		B_StartOtherRoutine(MiltenNW,"Ship");
 	};
-	if(LESTER_ISONBOARD == LOG_SUCCESS)
+	if(Lester_IsOnBoard == LOG_SUCCESS)
 	{
-		b_startotherroutine(lester,"Ship");
+		B_StartOtherRoutine(Lester,"Ship");
 	};
-	if(GORN_ISONBOARD == LOG_SUCCESS)
+	if(Gorn_IsOnBoard == LOG_SUCCESS)
 	{
-		b_startotherroutine(gornnw_nach_djg,"Ship");
+		B_StartOtherRoutine(GornNW_nach_DJG,"Ship");
 	};
-	if(MARIO_ISONBOARD == LOG_SUCCESS)
+	if(Mario_IsOnBoard == LOG_SUCCESS)
 	{
-		b_startotherroutine(mario,"Ship");
+		B_StartOtherRoutine(Mario,"Ship");
 	};
-	if(WOLF_ISONBOARD == LOG_SUCCESS)
+	if(Wolf_IsOnBoard == LOG_SUCCESS)
 	{
-		b_startotherroutine(sld_wolf,"Ship");
+		B_StartOtherRoutine(SLD_Wolf,"Ship");
 	};
-	if(LARES_ISONBOARD == LOG_SUCCESS)
+	if(Lares_IsOnBoard == LOG_SUCCESS)
 	{
-		b_startotherroutine(lares,"Ship");
+		B_StartOtherRoutine(Lares,"Ship");
 	};
-	if(BENNET_ISONBOARD == LOG_SUCCESS)
+	if(Bennet_IsOnBoard == LOG_SUCCESS)
 	{
-		b_startotherroutine(bennet,"Ship");
+		B_StartOtherRoutine(Bennet,"Ship");
 	};
-	if(DIEGO_ISONBOARD == LOG_SUCCESS)
+	if(Diego_IsOnBoard == LOG_SUCCESS)
 	{
-		b_startotherroutine(diegonw,"Ship");
+		B_StartOtherRoutine(DiegoNW,"Ship");
 	};
-	if(BIFF_ISONBOARD == LOG_SUCCESS)
+	if(Biff_IsOnBoard == LOG_SUCCESS)
 	{
-		b_startotherroutine(biff_nw,"Ship");
+		B_StartOtherRoutine(Biff_NW,"Ship");
 	};
-	if(VATRAS_ISONBOARD == LOG_SUCCESS)
+	if(Vatras_IsOnBoard == LOG_SUCCESS)
 	{
-		b_startotherroutine(vatras,"Ship");
+		B_StartOtherRoutine(Vatras,"Ship");
 	};
-	if(ANGAR_ISONBOARD == LOG_SUCCESS)
+	if(Angar_IsOnBoard == LOG_SUCCESS)
 	{
-		b_startotherroutine(angar_nw,"Ship");
+		B_StartOtherRoutine(Angar_NW,"Ship");
 	};
-	if(GIRION_ISONBOARD == LOG_SUCCESS)
+	if(Girion_IsOnBoard == LOG_SUCCESS)
 	{
-		b_startotherroutine(girion,"Ship");
+		B_StartOtherRoutine(Girion,"Ship");
 	};
-	MIS_READYFORCHAPTER6 = TRUE;
+	MIS_ReadyforChapter6 = TRUE;
 };
 

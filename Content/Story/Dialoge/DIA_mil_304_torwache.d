@@ -1,46 +1,46 @@
 
-instance DIA_MIL_304_TORWACHE_EXIT(C_INFO)
+instance DIA_Mil_304_Torwache_EXIT(C_Info)
 {
-	npc = mil_304_torwache;
+	npc = Mil_304_Torwache;
 	nr = 999;
-	condition = dia_mil_304_torwache_exit_condition;
-	information = dia_mil_304_torwache_exit_info;
+	condition = DIA_Mil_304_Torwache_EXIT_Condition;
+	information = DIA_Mil_304_Torwache_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_mil_304_torwache_exit_condition()
+func int DIA_Mil_304_Torwache_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_mil_304_torwache_exit_info()
+func void DIA_Mil_304_Torwache_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MIL_304_TORWACHE_WASMACHSTDU(C_INFO)
+instance DIA_Mil_304_Torwache_WASMACHSTDU(C_Info)
 {
-	npc = mil_304_torwache;
+	npc = Mil_304_Torwache;
 	nr = 3;
-	condition = dia_mil_304_torwache_wasmachstdu_condition;
-	information = dia_mil_304_torwache_wasmachstdu_info;
+	condition = DIA_Mil_304_Torwache_WASMACHSTDU_Condition;
+	information = DIA_Mil_304_Torwache_WASMACHSTDU_Info;
 	permanent = TRUE;
 	description = "Jak leci?";
 };
 
 
-func int dia_mil_304_torwache_wasmachstdu_condition()
+func int DIA_Mil_304_Torwache_WASMACHSTDU_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mil_304_torwache_wasmachstdu_info()
+func void DIA_Mil_304_Torwache_WASMACHSTDU_Info()
 {
 	AI_Output(other,self,"DIA_Mil_304_Torwache_WASMACHSTDU_15_00");	//Jak leci?
 	if((hero.guild == GIL_PAL) || (hero.guild == GIL_KDF))

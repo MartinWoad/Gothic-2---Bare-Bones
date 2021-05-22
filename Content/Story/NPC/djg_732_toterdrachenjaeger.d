@@ -1,28 +1,28 @@
 
-instance DJG_732_TOTERDRACHENJAEGER(NPC_DEFAULT)
+instance DJG_732_ToterDrachenjaeger(Npc_Default)
 {
-	name[0] = NAME_TOTERDRACHENJAEGER;
+	name[0] = NAME_ToterDrachenjaeger;
 	guild = GIL_DJG;
 	id = 732;
 	voice = 5;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,4);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_2h_sld_axe);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_B_TOUGH_PACHO,BODYTEX_B,4839);
+	EquipItem(self,ItMw_2h_Sld_Axe);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_B_Tough_Pacho,BodyTex_B,itar_djg_m);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,70);
-	daily_routine = rtn_start_732;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,70);
+	daily_routine = Rtn_Start_732;
 };
 
 
-func void rtn_start_732()
+func void Rtn_Start_732()
 {
-	ta_sit_bench(8,0,23,0,"OW_PATH_065");
-	ta_sit_bench(23,0,8,0,"OW_PATH_066");
+	TA_Sit_Bench(8,0,23,0,"OW_PATH_065");
+	TA_Sit_Bench(23,0,8,0,"OW_PATH_066");
 };
 

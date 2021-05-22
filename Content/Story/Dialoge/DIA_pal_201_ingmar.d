@@ -1,61 +1,61 @@
 
-instance DIA_INGMAR_EXIT(C_INFO)
+instance DIA_Ingmar_EXIT(C_Info)
 {
-	npc = pal_201_ingmar;
+	npc = Pal_201_Ingmar;
 	nr = 999;
-	condition = dia_ingmar_exit_condition;
-	information = dia_ingmar_exit_info;
+	condition = DIA_Ingmar_EXIT_Condition;
+	information = DIA_Ingmar_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_ingmar_exit_condition()
+func int DIA_Ingmar_EXIT_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ingmar_exit_info()
+func void DIA_Ingmar_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_INGMAR_HALLO(C_INFO)
+instance DIA_Ingmar_Hallo(C_Info)
 {
-	npc = pal_201_ingmar;
+	npc = Pal_201_Ingmar;
 	nr = 2;
-	condition = dia_ingmar_hallo_condition;
-	information = dia_ingmar_hallo_info;
+	condition = DIA_Ingmar_Hallo_Condition;
+	information = DIA_Ingmar_Hallo_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-var int dia_ingmar_hallo_permanent;
+var int DIA_Ingmar_Hallo_permanent;
 
-func int dia_ingmar_hallo_condition()
+func int DIA_Ingmar_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (DIA_INGMAR_HALLO_PERMANENT == FALSE) && (KAPITEL < 4))
+	if(Npc_IsInState(self,ZS_Talk) && (DIA_Ingmar_Hallo_permanent == FALSE) && (Kapitel < 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ingmar_hallo_info()
+func void DIA_Ingmar_Hallo_Info()
 {
-	if((ENTEROW_KAPITEL2 == FALSE) && (lordhagen.aivar[AIV_TALKEDTOPLAYER] == TRUE))
+	if((EnterOW_Kapitel2 == FALSE) && (LordHagen.aivar[AIV_TalkedToPlayer] == TRUE))
 	{
 		AI_Output(self,other,"DIA_Ingmar_Hallo_06_00");	//Z otrzymanych przeze mnie raportów wynika, ¿e Górnicza Dolina to niebezpieczne miejsce.
 		AI_Output(self,other,"DIA_Ingmar_Hallo_06_01");	//Pamiêtaj, aby zabraæ ze sob¹ odpowiednie wyposa¿enie.
 	}
-	else if((MIS_OLDWORLD == LOG_SUCCESS) && (lordhagen.aivar[AIV_TALKEDTOPLAYER] == TRUE))
+	else if((MIS_OLDWORLD == LOG_SUCCESS) && (LordHagen.aivar[AIV_TalkedToPlayer] == TRUE))
 	{
 		AI_Output(self,other,"DIA_Ingmar_Hallo_06_02");	//Sytuacja w Górniczej Dolinie jest doœæ niepokoj¹ca. Potrzebny nam plan, dziêki któremu za¿egnane zostanie niebezpieczeñstwo, a nasi ch³opcy wróc¹ do domu wraz z wydobyt¹ rud¹.
-		DIA_INGMAR_HALLO_PERMANENT = TRUE;
+		DIA_Ingmar_Hallo_permanent = TRUE;
 	}
 	else
 	{
@@ -64,26 +64,26 @@ func void dia_ingmar_hallo_info()
 };
 
 
-instance DIA_INGMAR_KRIEG(C_INFO)
+instance DIA_Ingmar_Krieg(C_Info)
 {
-	npc = pal_201_ingmar;
+	npc = Pal_201_Ingmar;
 	nr = 99;
-	condition = dia_ingmar_krieg_condition;
-	information = dia_ingmar_krieg_info;
+	condition = DIA_Ingmar_Krieg_Condition;
+	information = DIA_Ingmar_Krieg_Info;
 	permanent = FALSE;
 	description = "Jak sytuacja na kontynencie?";
 };
 
 
-func int dia_ingmar_krieg_condition()
+func int DIA_Ingmar_Krieg_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ingmar_krieg_info()
+func void DIA_Ingmar_Krieg_Info()
 {
 	AI_Output(other,self,"DIA_Ingmar_Krieg_15_00");	//Jak sytuacja na kontynencie?
 	AI_Output(self,other,"DIA_Ingmar_Krieg_06_01");	//Jeszcze nie wygraliœmy wojny, chocia¿ królewska armia zmusi³a orków do odwrotu.
@@ -92,33 +92,33 @@ func void dia_ingmar_krieg_info()
 };
 
 
-instance DIA_INGMAR_CANTEACH(C_INFO)
+instance DIA_Ingmar_CanTeach(C_Info)
 {
-	npc = pal_201_ingmar;
+	npc = Pal_201_Ingmar;
 	nr = 100;
-	condition = dia_ingmar_canteach_condition;
-	information = dia_ingmar_canteach_info;
+	condition = DIA_Ingmar_CanTeach_Condition;
+	information = DIA_Ingmar_CanTeach_Info;
 	permanent = TRUE;
 	description = "Mo¿esz mnie przeszkoliæ?";
 };
 
 
-func int dia_ingmar_canteach_condition()
+func int DIA_Ingmar_CanTeach_Condition()
 {
-	if(INGMAR_TEACHSTR == FALSE)
+	if(Ingmar_TeachSTR == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ingmar_canteach_info()
+func void DIA_Ingmar_CanTeach_Info()
 {
 	AI_Output(other,self,"DIA_Ingmar_CanTeach_15_00");	//Bêdziesz moim nauczycielem?
 	if(other.guild == GIL_PAL)
 	{
 		AI_Output(self,other,"DIA_Ingmar_CanTeach_06_01");	//Mogê nauczyæ ciê specjalnych metod treningowych, dziêki którym wzroœnie twoja bieg³oœæ w pos³ugiwaniu siê ró¿nymi rodzajami orê¿a.
-		INGMAR_TEACHSTR = TRUE;
-		b_logentry(TOPIC_CITYTEACHER,"Paladyn Igmar mo¿e mi pokazaæ, jak staæ siê silniejszym.");
+		Ingmar_TeachSTR = TRUE;
+		B_LogEntry(TOPIC_CityTeacher,"Paladyn Igmar mo¿e mi pokazaæ, jak staæ siê silniejszym.");
 	}
 	else
 	{
@@ -127,182 +127,182 @@ func void dia_ingmar_canteach_info()
 };
 
 
-instance DIA_INGMAR_TEACH(C_INFO)
+instance DIA_Ingmar_Teach(C_Info)
 {
-	npc = pal_201_ingmar;
+	npc = Pal_201_Ingmar;
 	nr = 6;
-	condition = dia_ingmar_teach_condition;
-	information = dia_ingmar_teach_info;
+	condition = DIA_Ingmar_Teach_Condition;
+	information = DIA_Ingmar_Teach_Info;
 	permanent = TRUE;
 	description = "Chcê byæ silniejszy.";
 };
 
 
-func int dia_ingmar_teach_condition()
+func int DIA_Ingmar_Teach_Condition()
 {
-	if(INGMAR_TEACHSTR == TRUE)
+	if(Ingmar_TeachSTR == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ingmar_teach_info()
+func void DIA_Ingmar_Teach_Info()
 {
 	AI_Output(other,self,"DIA_Ingmar_Teach_15_00");	//Chcê byæ silniejszy.
-	Info_ClearChoices(dia_ingmar_teach);
-	Info_AddChoice(dia_ingmar_teach,DIALOG_BACK,dia_ingmar_teach_back);
-	Info_AddChoice(dia_ingmar_teach,b_buildlearnstring(PRINT_LEARNSTR1,b_getlearncostattribute(other,ATR_STRENGTH)),dia_ingmar_teach_1);
-	Info_AddChoice(dia_ingmar_teach,b_buildlearnstring(PRINT_LEARNSTR5,b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_ingmar_teach_5);
+	Info_ClearChoices(DIA_Ingmar_Teach);
+	Info_AddChoice(DIA_Ingmar_Teach,Dialog_Back,DIA_Ingmar_Teach_BACK);
+	Info_AddChoice(DIA_Ingmar_Teach,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Ingmar_Teach_1);
+	Info_AddChoice(DIA_Ingmar_Teach,B_BuildLearnString(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Ingmar_Teach_5);
 };
 
-func void dia_ingmar_teach_back()
+func void DIA_Ingmar_Teach_BACK()
 {
 	if((other.attribute[ATR_STRENGTH] - ATTRIBUTEBONUS[4] - ATTRIBUTEFROMEQUIPMENT[4]) >= 70)
 	{
 		AI_Output(self,other,"DIA_Ingmar_Teach_06_00");	//Jesteœ silny niczym troll, nie potrzebujesz ju¿ treningu.
 	};
-	Info_ClearChoices(dia_ingmar_teach);
+	Info_ClearChoices(DIA_Ingmar_Teach);
 };
 
-func void dia_ingmar_teach_1()
+func void DIA_Ingmar_Teach_1()
 {
-	if(KAPITEL >= 5)
+	if(Kapitel >= 5)
 	{
-		b_teachattributepoints(self,other,ATR_STRENGTH,1,70);
+		B_TeachAttributePoints(self,other,ATR_STRENGTH,1,70);
 	}
 	else
 	{
-		b_teachattributepoints(self,other,ATR_STRENGTH,1,60);
+		B_TeachAttributePoints(self,other,ATR_STRENGTH,1,60);
 	};
-	Info_ClearChoices(dia_ingmar_teach);
-	Info_AddChoice(dia_ingmar_teach,DIALOG_BACK,dia_ingmar_teach_back);
-	Info_AddChoice(dia_ingmar_teach,b_buildlearnstring(PRINT_LEARNSTR1,b_getlearncostattribute(other,ATR_STRENGTH)),dia_ingmar_teach_1);
-	Info_AddChoice(dia_ingmar_teach,b_buildlearnstring(PRINT_LEARNSTR5,b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_ingmar_teach_5);
+	Info_ClearChoices(DIA_Ingmar_Teach);
+	Info_AddChoice(DIA_Ingmar_Teach,Dialog_Back,DIA_Ingmar_Teach_BACK);
+	Info_AddChoice(DIA_Ingmar_Teach,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Ingmar_Teach_1);
+	Info_AddChoice(DIA_Ingmar_Teach,B_BuildLearnString(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Ingmar_Teach_5);
 };
 
-func void dia_ingmar_teach_5()
+func void DIA_Ingmar_Teach_5()
 {
-	if(KAPITEL >= 5)
+	if(Kapitel >= 5)
 	{
-		b_teachattributepoints(self,other,ATR_STRENGTH,5,70);
+		B_TeachAttributePoints(self,other,ATR_STRENGTH,5,70);
 	}
 	else
 	{
-		b_teachattributepoints(self,other,ATR_STRENGTH,5,60);
+		B_TeachAttributePoints(self,other,ATR_STRENGTH,5,60);
 	};
-	Info_ClearChoices(dia_ingmar_teach);
-	Info_AddChoice(dia_ingmar_teach,DIALOG_BACK,dia_ingmar_teach_back);
-	Info_AddChoice(dia_ingmar_teach,b_buildlearnstring(PRINT_LEARNSTR1,b_getlearncostattribute(other,ATR_STRENGTH)),dia_ingmar_teach_1);
-	Info_AddChoice(dia_ingmar_teach,b_buildlearnstring(PRINT_LEARNSTR5,b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_ingmar_teach_5);
+	Info_ClearChoices(DIA_Ingmar_Teach);
+	Info_AddChoice(DIA_Ingmar_Teach,Dialog_Back,DIA_Ingmar_Teach_BACK);
+	Info_AddChoice(DIA_Ingmar_Teach,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Ingmar_Teach_1);
+	Info_AddChoice(DIA_Ingmar_Teach,B_BuildLearnString(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Ingmar_Teach_5);
 };
 
 
-instance DIA_INGMAR_KAP3_EXIT(C_INFO)
+instance DIA_Ingmar_KAP3_EXIT(C_Info)
 {
-	npc = pal_201_ingmar;
+	npc = Pal_201_Ingmar;
 	nr = 999;
-	condition = dia_ingmar_kap3_exit_condition;
-	information = dia_ingmar_kap3_exit_info;
+	condition = DIA_Ingmar_KAP3_EXIT_Condition;
+	information = DIA_Ingmar_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_ingmar_kap3_exit_condition()
+func int DIA_Ingmar_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ingmar_kap3_exit_info()
+func void DIA_Ingmar_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_INGMAR_KAP4_EXIT(C_INFO)
+instance DIA_Ingmar_KAP4_EXIT(C_Info)
 {
-	npc = pal_201_ingmar;
+	npc = Pal_201_Ingmar;
 	nr = 999;
-	condition = dia_ingmar_kap4_exit_condition;
-	information = dia_ingmar_kap4_exit_info;
+	condition = DIA_Ingmar_KAP4_EXIT_Condition;
+	information = DIA_Ingmar_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_ingmar_kap4_exit_condition()
+func int DIA_Ingmar_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ingmar_kap4_exit_info()
+func void DIA_Ingmar_KAP4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_INGMAR_ORKELITE(C_INFO)
+instance DIA_Ingmar_ORKELITE(C_Info)
 {
-	npc = pal_201_ingmar;
+	npc = Pal_201_Ingmar;
 	nr = 40;
-	condition = dia_ingmar_orkelite_condition;
-	information = dia_ingmar_orkelite_info;
+	condition = DIA_Ingmar_ORKELITE_Condition;
+	information = DIA_Ingmar_ORKELITE_Info;
 	description = "Orkowie planuj¹ ogromny atak.";
 };
 
 
-func int dia_ingmar_orkelite_condition()
+func int DIA_Ingmar_ORKELITE_Condition()
 {
-	if(((TALKEDTO_ANTIPALADIN == TRUE) || Npc_HasItems(other,itri_orcelitering) || (HAGEN_SAWORCRING == TRUE)) && (hero.guild == GIL_PAL))
+	if(((TalkedTo_AntiPaladin == TRUE) || Npc_HasItems(other,ItRi_OrcEliteRing) || (Hagen_SawOrcRing == TRUE)) && (hero.guild == GIL_PAL))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ingmar_orkelite_info()
+func void DIA_Ingmar_ORKELITE_Info()
 {
 	AI_Output(other,self,"DIA_Ingmar_ORKELITE_15_00");	//Orkowie planuj¹ ogromny atak.
 	AI_Output(self,other,"DIA_Ingmar_ORKELITE_06_01");	//Doprawdy? Bardzo interesuj¹ce. A sk¹d niby o tym wiesz?
-	if(TALKEDTO_ANTIPALADIN == TRUE)
+	if(TalkedTo_AntiPaladin == TRUE)
 	{
 		AI_Output(other,self,"DIA_Ingmar_ORKELITE_15_02");	//Rozmawia³em z nimi.
 	};
 	AI_Output(other,self,"DIA_Ingmar_ORKELITE_15_03");	//Niektórzy z ich przywódców grasuj¹ w tej okolicy.
 	AI_Output(self,other,"DIA_Ingmar_ORKELITE_06_04");	//Hm. Nie wygl¹da mi to na typow¹ strategiê orków.
-	Info_ClearChoices(dia_ingmar_orkelite);
-	Info_AddChoice(dia_ingmar_orkelite,"Lepiej wymyœl, jak siê ich pozbyæ.",dia_ingmar_orkelite_loswerden);
-	Info_AddChoice(dia_ingmar_orkelite,"Co teraz zrobimy?",dia_ingmar_orkelite_wastun);
-	Info_AddChoice(dia_ingmar_orkelite,"Co masz na myœli?",dia_ingmar_orkelite_wieso);
-	Log_CreateTopic(TOPIC_ORCELITE,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_ORCELITE,LOG_RUNNING);
-	b_logentry(TOPIC_ORCELITE,"Ingmara bardzo zainteresowa³a historia o przywódcy hersztów orków.");
-	MIS_KILLORKOBERST = LOG_RUNNING;
+	Info_ClearChoices(DIA_Ingmar_ORKELITE);
+	Info_AddChoice(DIA_Ingmar_ORKELITE,"Lepiej wymyœl, jak siê ich pozbyæ.",DIA_Ingmar_ORKELITE_loswerden);
+	Info_AddChoice(DIA_Ingmar_ORKELITE,"Co teraz zrobimy?",DIA_Ingmar_ORKELITE_wasTun);
+	Info_AddChoice(DIA_Ingmar_ORKELITE,"Co masz na myœli?",DIA_Ingmar_ORKELITE_wieso);
+	Log_CreateTopic(TOPIC_OrcElite,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_OrcElite,LOG_Running);
+	B_LogEntry(TOPIC_OrcElite,"Ingmara bardzo zainteresowa³a historia o przywódcy hersztów orków.");
+	MIS_KillOrkOberst = LOG_Running;
 };
 
-func void dia_ingmar_orkelite_loswerden()
+func void DIA_Ingmar_ORKELITE_loswerden()
 {
 	AI_Output(other,self,"DIA_Ingmar_ORKELITE_loswerden_15_00");	//Lepiej wymyœl, jak siê ich pozbyæ.
 	AI_Output(self,other,"DIA_Ingmar_ORKELITE_loswerden_06_01");	//Gdybyœmy mieli wiêcej informacji... Wyœlê kogoœ na zwiady.
-	Info_ClearChoices(dia_ingmar_orkelite);
+	Info_ClearChoices(DIA_Ingmar_ORKELITE);
 };
 
-func void dia_ingmar_orkelite_wieso()
+func void DIA_Ingmar_ORKELITE_wieso()
 {
 	AI_Output(other,self,"DIA_Ingmar_ORKELITE_wieso_15_00");	//Co to oznacza?
 	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wieso_06_01");	//A jeœli mówisz prawdê, oznacza to, ¿e próbuj¹ nas najpierw os³abiæ, wysy³aj¹c tu swoich najlepszych wojowników.
 	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wieso_06_02");	//Przewa¿nie jeden dowódca prowadzi ca³¹ hordê orkowych wojowników. Zwykle nie spotyka siê ich w grupach.
 	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wieso_06_03");	//Taka strategia ma swoje uzasadnienie - przywódcy stanowi¹ rdzeñ si³ szturmowych i zwykle s¹ otoczeni kordonem wojowników.
 	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wieso_06_04");	//Dlatego, aby siê do nich zbli¿yæ, trzeba pokonaæ przynajmniej 30 wojowników.
-	b_logentry(TOPIC_ORCELITE,"Ingmar wspomina³ coœ o przywódcy hersztów orków.");
+	B_LogEntry(TOPIC_OrcElite,"Ingmar wspomina³ coœ o przywódcy hersztów orków.");
 };
 
-func void dia_ingmar_orkelite_wastun()
+func void DIA_Ingmar_ORKELITE_wasTun()
 {
 	AI_Output(other,self,"DIA_Ingmar_ORKELITE_wasTun_15_00");	//Co teraz zrobimy?
 	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wasTun_06_01");	//Kiedy pojawiaj¹ siê w takiej liczbie, to przewa¿nie tworz¹ patrol prowadzony przez najwy¿szego rang¹ przywódcê.
@@ -310,137 +310,137 @@ func void dia_ingmar_orkelite_wastun()
 	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wasTun_06_03");	//Gdyby uda³o nam siê schwytaæ tego przywódcê, zyskalibyœmy ogromn¹ przewagê.
 	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wasTun_06_04");	//Orkowi przywódcy lubi¹ przebywaæ blisko wroga. Jego jaskini nale¿y zatem szukaæ gdzieœ w pobli¿u miasta.
 	AI_Output(self,other,"DIA_Ingmar_ORKELITE_wasTun_06_05");	//W pobli¿u farmy Lobarta zauwa¿ono kilku orków. Mo¿e w³aœnie tam nale¿a³oby rozpocz¹æ poszukiwania.
-	b_logentry(TOPIC_ORCELITE,"Ingmar s¹dzi, ¿e orkowy przywódca przebywa prawdopodobnie w jaskini gdzieœ w pobli¿u farmy Lobarta. Ingmar chce, abym go odnalaz³ i pokona³.");
-	Info_ClearChoices(dia_ingmar_orkelite);
+	B_LogEntry(TOPIC_OrcElite,"Ingmar s¹dzi, ¿e orkowy przywódca przebywa prawdopodobnie w jaskini gdzieœ w pobli¿u farmy Lobarta. Ingmar chce, abym go odnalaz³ i pokona³.");
+	Info_ClearChoices(DIA_Ingmar_ORKELITE);
 };
 
 
-instance DIA_INGMAR_HAUPTQUARTIER(C_INFO)
+instance DIA_Ingmar_HAUPTQUARTIER(C_Info)
 {
-	npc = pal_201_ingmar;
+	npc = Pal_201_Ingmar;
 	nr = 41;
-	condition = dia_ingmar_hauptquartier_condition;
-	information = dia_ingmar_hauptquartier_info;
+	condition = DIA_Ingmar_HAUPTQUARTIER_Condition;
+	information = DIA_Ingmar_HAUPTQUARTIER_Info;
 	permanent = FALSE;
 	description = "Uda³o mi siê odnaleŸæ siedzibê orków.";
 };
 
 
-func int dia_ingmar_hauptquartier_condition()
+func int DIA_Ingmar_HAUPTQUARTIER_Condition()
 {
-	if(Npc_IsDead(orkelite_antipaladinorkoberst) && Npc_KnowsInfo(other,dia_ingmar_orkelite))
+	if(Npc_IsDead(OrkElite_AntiPaladinOrkOberst) && Npc_KnowsInfo(other,DIA_Ingmar_ORKELITE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ingmar_hauptquartier_info()
+func void DIA_Ingmar_HAUPTQUARTIER_Info()
 {
 	AI_Output(other,self,"DIA_Ingmar_HAUPTQUARTIER_15_00");	//Uda³o mi siê odnaleŸæ siedzibê orków. Ich herszt poleg³ w walce.
 	AI_Output(self,other,"DIA_Ingmar_HAUPTQUARTIER_06_01");	//To wspania³a wiadomoœæ. Przez jakiœ czas w szeregach wroga zapanuje chaos.
 	AI_Output(self,other,"DIA_Ingmar_HAUPTQUARTIER_06_02");	//Muszê przyznaæ, ¿e nieŸle siê spisa³eœ. Gdybyœmy mieli wiêcej rycerzy takich jak ty, nadchodz¹ca bitwa by³aby dla nas bu³k¹ z mas³em.
 	AI_Output(self,other,"DIA_Ingmar_HAUPTQUARTIER_06_03");	//Proszê, weŸ to z³oto i kup sobie za nie trochê ekwipunku.
-	b_giveplayerxp(XP_KILLEDORKOBERST);
-	CreateInvItems(self,itmi_gold,300);
-	b_giveinvitems(self,other,5113,300);
-	MIS_KILLORKOBERST = LOG_SUCCESS;
+	B_GivePlayerXP(XP_KilledOrkOberst);
+	CreateInvItems(self,ItMi_Gold,300);
+	B_GiveInvItems(self,other,ItMi_Gold,300);
+	MIS_KillOrkOberst = LOG_SUCCESS;
 };
 
 
-instance DIA_INGMAR_KAP5_EXIT(C_INFO)
+instance DIA_Ingmar_KAP5_EXIT(C_Info)
 {
-	npc = pal_201_ingmar;
+	npc = Pal_201_Ingmar;
 	nr = 999;
-	condition = dia_ingmar_kap5_exit_condition;
-	information = dia_ingmar_kap5_exit_info;
+	condition = DIA_Ingmar_KAP5_EXIT_Condition;
+	information = DIA_Ingmar_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_ingmar_kap5_exit_condition()
+func int DIA_Ingmar_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ingmar_kap5_exit_info()
+func void DIA_Ingmar_KAP5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_INGMAR_KAP6_EXIT(C_INFO)
+instance DIA_Ingmar_KAP6_EXIT(C_Info)
 {
-	npc = pal_201_ingmar;
+	npc = Pal_201_Ingmar;
 	nr = 999;
-	condition = dia_ingmar_kap6_exit_condition;
-	information = dia_ingmar_kap6_exit_info;
+	condition = DIA_Ingmar_KAP6_EXIT_Condition;
+	information = DIA_Ingmar_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_ingmar_kap6_exit_condition()
+func int DIA_Ingmar_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ingmar_kap6_exit_info()
+func void DIA_Ingmar_KAP6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_INGMAR_PICKPOCKET(C_INFO)
+instance DIA_Ingmar_PICKPOCKET(C_Info)
 {
-	npc = pal_201_ingmar;
+	npc = Pal_201_Ingmar;
 	nr = 900;
-	condition = dia_ingmar_pickpocket_condition;
-	information = dia_ingmar_pickpocket_info;
+	condition = DIA_Ingmar_PICKPOCKET_Condition;
+	information = DIA_Ingmar_PICKPOCKET_Info;
 	permanent = TRUE;
 	description = "(Kradzie¿ tego zwoju graniczy z cudem)";
 };
 
 
-func int dia_ingmar_pickpocket_condition()
+func int DIA_Ingmar_PICKPOCKET_Condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == FALSE) && (other.attribute[ATR_DEXTERITY] >= (90 - THEFTDIFF)))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (other.attribute[ATR_DEXTERITY] >= (90 - Theftdiff)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ingmar_pickpocket_info()
+func void DIA_Ingmar_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_ingmar_pickpocket);
-	Info_AddChoice(dia_ingmar_pickpocket,DIALOG_BACK,dia_ingmar_pickpocket_back);
-	Info_AddChoice(dia_ingmar_pickpocket,DIALOG_PICKPOCKET,dia_ingmar_pickpocket_doit);
+	Info_ClearChoices(DIA_Ingmar_PICKPOCKET);
+	Info_AddChoice(DIA_Ingmar_PICKPOCKET,Dialog_Back,DIA_Ingmar_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Ingmar_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Ingmar_PICKPOCKET_DoIt);
 };
 
-func void dia_ingmar_pickpocket_doit()
+func void DIA_Ingmar_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 90)
 	{
-		b_giveinvitems(self,other,5759,1);
-		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
-		b_giveplayerxp(XP_AMBIENT * 2);
-		Info_ClearChoices(dia_ingmar_pickpocket);
+		B_GiveInvItems(self,other,ItWr_Manowar,1);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+		B_GivePlayerXP(XP_Ambient * 2);
+		Info_ClearChoices(DIA_Ingmar_PICKPOCKET);
 	}
 	else
 	{
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_THEFT,1);
+		B_Attack(self,other,AR_Theft,1);
 	};
 };
 
-func void dia_ingmar_pickpocket_back()
+func void DIA_Ingmar_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_ingmar_pickpocket);
+	Info_ClearChoices(DIA_Ingmar_PICKPOCKET);
 };
 

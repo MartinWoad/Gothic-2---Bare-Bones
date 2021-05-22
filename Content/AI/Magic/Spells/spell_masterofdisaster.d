@@ -1,18 +1,18 @@
 
-const int SPL_COST_MASTEROFDISASTER = 50;
-const int SPL_DAMAGE_MASTEROFDISASTER = 300;
+const int SPL_COST_MasterOfDisaster = 50;
+const int SPL_DAMAGE_MasterOfDisaster = 300;
 
-instance SPELL_MASTEROFDISASTER(C_SPELL_PROTO)
+instance Spell_MasterOfDisaster(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	damage_per_level = SPL_DAMAGE_MASTEROFDISASTER;
+	damage_per_level = SPL_DAMAGE_MasterOfDisaster;
 	damagetype = DAM_MAGIC;
 };
 
 
-func int spell_logic_masterofdisaster(var int manainvested)
+func int Spell_Logic_MasterOfDisaster(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_MASTEROFDISASTER)
+	if(self.attribute[ATR_MANA] >= SPL_COST_MasterOfDisaster)
 	{
 		return SPL_SENDCAST;
 	}
@@ -22,8 +22,8 @@ func int spell_logic_masterofdisaster(var int manainvested)
 	};
 };
 
-func void spell_cast_masterofdisaster()
+func void Spell_Cast_MasterOfDisaster()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_MASTEROFDISASTER;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_MasterOfDisaster;
 };
 

@@ -1,8 +1,8 @@
 
-func void zs_stand_guarding()
+func void ZS_Stand_Guarding()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
@@ -11,7 +11,7 @@ func void zs_stand_guarding()
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func int zs_stand_guarding_loop()
+func int ZS_Stand_Guarding_loop()
 {
 	var int random;
 	if(Npc_IsOnFP(self,"STAND"))
@@ -54,7 +54,7 @@ func int zs_stand_guarding_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_stand_guarding_end()
+func void ZS_Stand_Guarding_end()
 {
 	AI_PlayAni(self,"T_HGUARD_2_STAND");
 };

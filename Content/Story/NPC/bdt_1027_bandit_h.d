@@ -1,22 +1,22 @@
 
-instance BDT_1027_BANDIT_H(NPC_DEFAULT)
+instance BDT_1027_Bandit_H(Npc_Default)
 {
-	name[0] = NAME_BANDIT;
+	name[0] = NAME_Bandit;
 	guild = GIL_BDT;
 	id = 1027;
 	voice = 1;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setattributestochapter(self,3);
+	npcType = NPCTYPE_AMBIENT;
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_vlk_mace);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fatbald",FACE_N_MUD,BODYTEX_N,4845);
+	EquipItem(self,ItMw_1h_Vlk_Mace);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fatbald",Face_N_Mud,BodyTex_N,ITAR_Leather_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,60);
-	start_aistate = zs_bandit;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,60);
+	start_aistate = ZS_Bandit;
 };
 

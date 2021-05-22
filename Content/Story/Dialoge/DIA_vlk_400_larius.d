@@ -1,68 +1,68 @@
 
-instance DIA_LARIUS_EXIT(C_INFO)
+instance DIA_Larius_EXIT(C_Info)
 {
-	npc = vlk_400_larius;
+	npc = VLK_400_Larius;
 	nr = 999;
-	condition = dia_larius_exit_condition;
-	information = dia_larius_exit_info;
+	condition = DIA_Larius_EXIT_Condition;
+	information = DIA_Larius_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_larius_exit_condition()
+func int DIA_Larius_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_larius_exit_info()
+func void DIA_Larius_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_LARIUS_HELLO(C_INFO)
+instance DIA_Larius_Hello(C_Info)
 {
-	npc = vlk_400_larius;
+	npc = VLK_400_Larius;
 	nr = 1;
-	condition = dia_larius_hello_condition;
-	information = dia_larius_hello_info;
+	condition = DIA_Larius_Hello_Condition;
+	information = DIA_Larius_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_larius_hello_condition()
+func int DIA_Larius_Hello_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_larius_hello_info()
+func void DIA_Larius_Hello_Info()
 {
 	AI_Output(self,other,"DIA_Larius_Hello_01_00");	//Czego chcesz? Jeœli masz jak¹œ sprawê, musisz siê najpierw umówiæ.
 };
 
 
-instance DIA_LARIUS_WHOAREYOU(C_INFO)
+instance DIA_Larius_WhoAreYou(C_Info)
 {
-	npc = vlk_400_larius;
+	npc = VLK_400_Larius;
 	nr = 2;
-	condition = dia_larius_whoareyou_condition;
-	information = dia_larius_whoareyou_info;
+	condition = DIA_Larius_WhoAreYou_Condition;
+	information = DIA_Larius_WhoAreYou_Info;
 	permanent = FALSE;
 	description = "Kim jesteœ?";
 };
 
 
-func int dia_larius_whoareyou_condition()
+func int DIA_Larius_WhoAreYou_Condition()
 {
 	return TRUE;
 };
 
-func void dia_larius_whoareyou_info()
+func void DIA_Larius_WhoAreYou_Info()
 {
 	AI_Output(other,self,"DIA_Larius_WhoAreYou_15_00");	//Kim jesteœ?
 	AI_Output(self,other,"DIA_Larius_WhoAreYou_01_01");	//Jestem Larius, miejscowy gubernator.
@@ -73,71 +73,71 @@ func void dia_larius_whoareyou_info()
 };
 
 
-instance DIA_LARIUS_DISTURB(C_INFO)
+instance DIA_Larius_Disturb(C_Info)
 {
-	npc = vlk_400_larius;
+	npc = VLK_400_Larius;
 	nr = 3;
-	condition = dia_larius_disturb_condition;
-	information = dia_larius_disturb_info;
+	condition = DIA_Larius_Disturb_Condition;
+	information = DIA_Larius_Disturb_Info;
 	permanent = TRUE;
 	description = "Nie chcia³em przeszkadzaæ.";
 };
 
 
-func int dia_larius_disturb_condition()
+func int DIA_Larius_Disturb_Condition()
 {
 	return TRUE;
 };
 
-func void dia_larius_disturb_info()
+func void DIA_Larius_Disturb_Info()
 {
 	AI_Output(other,self,"DIA_Larius_Disturb_15_00");	//Nie chcia³em przeszkadzaæ.
 	AI_Output(self,other,"DIA_Larius_Disturb_01_01");	//A jednak przeszkadzasz. Wynoœ siê st¹d!
 };
 
 
-instance DIA_LARIUS_DIELAGE(C_INFO)
+instance DIA_Larius_DieLage(C_Info)
 {
-	npc = vlk_400_larius;
+	npc = VLK_400_Larius;
 	nr = 2;
-	condition = dia_larius_dielage_condition;
-	information = dia_larius_dielage_info;
+	condition = DIA_Larius_DieLage_Condition;
+	information = DIA_Larius_DieLage_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_larius_dielage_condition()
+func int DIA_Larius_DieLage_Condition()
 {
 	return TRUE;
 };
 
-func void dia_larius_dielage_info()
+func void DIA_Larius_DieLage_Info()
 {
 	AI_Output(other,self,"DIA_Larius_DieLage_15_00");	//Jak leci?
 	AI_Output(self,other,"DIA_Larius_DieLage_01_01");	//A co ciê to obchodzi? Dopóki w mieœcie przebywaj¹ paladyni, Lord Hagen sprawuje tu w³adzê.
 };
 
 
-instance DIA_LARIUS_RICHTERUEBERFALL(C_INFO)
+instance DIA_Larius_Richterueberfall(C_Info)
 {
-	npc = vlk_400_larius;
+	npc = VLK_400_Larius;
 	nr = 2;
-	condition = dia_larius_richterueberfall_condition;
-	information = dia_larius_richterueberfall_info;
+	condition = DIA_Larius_Richterueberfall_Condition;
+	information = DIA_Larius_Richterueberfall_Info;
 	description = "Sêdzia wynaj¹³ kilku opryszków, ¿eby ciê uciszyli.";
 };
 
 
-func int dia_larius_richterueberfall_condition()
+func int DIA_Larius_Richterueberfall_Condition()
 {
-	if(SCKNOWSRICHTERKOMPROBRIEF == TRUE)
+	if(SCKnowsRichterKomproBrief == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_larius_richterueberfall_info()
+func void DIA_Larius_Richterueberfall_Info()
 {
 	AI_Output(other,self,"DIA_Larius_Richterueberfall_15_00");	//Sêdzia wynaj¹³ kilku opryszków, ¿eby ciê uciszyli. Mogê to udowodniæ.
 	AI_Output(self,other,"DIA_Larius_Richterueberfall_01_01");	//Nie opowiadaj takich bzdur, chcesz skoñczyæ w areszcie?
@@ -150,42 +150,42 @@ func void dia_larius_richterueberfall_info()
 		AI_Output(self,other,"DIA_Larius_Richterueberfall_01_03");	//Nawet jeœli jesteœ szanowanym magiem...
 	};
 	AI_Output(self,other,"DIA_Larius_Richterueberfall_01_04");	//Moje s³owo wci¹¿ coœ znaczy w tym mieœcie. Ostrzegam ciê, nie zamierzam s³uchaæ, jak bezczelnie szkalujesz dobre imiê sêdziego!
-	b_giveplayerxp(XP_AMBIENT);
+	B_GivePlayerXP(XP_Ambient);
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_LARIUS_PICKPOCKET(C_INFO)
+instance DIA_Larius_PICKPOCKET(C_Info)
 {
-	npc = vlk_400_larius;
+	npc = VLK_400_Larius;
 	nr = 900;
-	condition = dia_larius_pickpocket_condition;
-	information = dia_larius_pickpocket_info;
+	condition = DIA_Larius_PICKPOCKET_Condition;
+	information = DIA_Larius_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_larius_pickpocket_condition()
+func int DIA_Larius_PICKPOCKET_Condition()
 {
-	return c_beklauen(35,120);
+	return C_Beklauen(35,120);
 };
 
-func void dia_larius_pickpocket_info()
+func void DIA_Larius_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_larius_pickpocket);
-	Info_AddChoice(dia_larius_pickpocket,DIALOG_BACK,dia_larius_pickpocket_back);
-	Info_AddChoice(dia_larius_pickpocket,DIALOG_PICKPOCKET,dia_larius_pickpocket_doit);
+	Info_ClearChoices(DIA_Larius_PICKPOCKET);
+	Info_AddChoice(DIA_Larius_PICKPOCKET,Dialog_Back,DIA_Larius_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Larius_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Larius_PICKPOCKET_DoIt);
 };
 
-func void dia_larius_pickpocket_doit()
+func void DIA_Larius_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_larius_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Larius_PICKPOCKET);
 };
 
-func void dia_larius_pickpocket_back()
+func void DIA_Larius_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_larius_pickpocket);
+	Info_ClearChoices(DIA_Larius_PICKPOCKET);
 };
 

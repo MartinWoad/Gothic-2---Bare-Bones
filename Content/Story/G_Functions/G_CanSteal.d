@@ -1,5 +1,5 @@
 
-func int g_cansteal()
+func int G_CanSteal()
 {
 	return TRUE;
 };

@@ -1,49 +1,49 @@
 
-instance DIA_LARES_DI_EXIT(C_INFO)
+instance DIA_Lares_DI_EXIT(C_Info)
 {
-	npc = vlk_449_lares_di;
+	npc = VLK_449_Lares_DI;
 	nr = 999;
-	condition = dia_lares_di_exit_condition;
-	information = dia_lares_di_exit_info;
+	condition = DIA_Lares_DI_EXIT_Condition;
+	information = DIA_Lares_DI_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_lares_di_exit_condition()
+func int DIA_Lares_DI_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_lares_di_exit_info()
+func void DIA_Lares_DI_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_LARES_DI_HALLO(C_INFO)
+instance DIA_Lares_DI_Hallo(C_Info)
 {
-	npc = vlk_449_lares_di;
+	npc = VLK_449_Lares_DI;
 	nr = 2;
-	condition = dia_lares_di_hallo_condition;
-	information = dia_lares_di_hallo_info;
+	condition = DIA_Lares_DI_Hallo_Condition;
+	information = DIA_Lares_DI_Hallo_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_lares_di_hallo_condition()
+func int DIA_Lares_DI_Hallo_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lares_di_hallo_info()
+func void DIA_Lares_DI_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Lares_DI_Hallo_15_00");	//Jak idzie?
-	if(ORKSTURMDI == TRUE)
+	if(ORkSturmDI == TRUE)
 	{
 		AI_Output(self,other,"DIA_Lares_DI_Hallo_09_01");	//Poœpiesz siê. Orkowie na pewno wróc¹.
 	}
@@ -54,168 +54,168 @@ func void dia_lares_di_hallo_info()
 };
 
 
-instance DIA_LARES_DI_TRAINING(C_INFO)
+instance DIA_Lares_DI_Training(C_Info)
 {
-	npc = vlk_449_lares_di;
+	npc = VLK_449_Lares_DI;
 	nr = 10;
-	condition = dia_lares_di_training_condition;
-	information = dia_lares_di_training_info;
+	condition = DIA_Lares_DI_Training_Condition;
+	information = DIA_Lares_DI_Training_Info;
 	permanent = TRUE;
 	description = "Naucz mnie tego, co potrafisz.";
 };
 
 
-func int dia_lares_di_training_condition()
+func int DIA_Lares_DI_Training_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lares_di_training_info()
+func void DIA_Lares_DI_Training_Info()
 {
 	AI_Output(other,self,"DIA_Lares_DI_Training_15_00");	//Naucz mnie tego, co potrafisz.
 	AI_Output(self,other,"DIA_Lares_DI_Training_09_01");	//¯aden problem.
-	Info_ClearChoices(dia_lares_di_training);
-	Info_AddChoice(dia_lares_di_training,DIALOG_BACK,dia_lares_di_training_back);
+	Info_ClearChoices(DIA_Lares_DI_Training);
+	Info_AddChoice(DIA_Lares_DI_Training,Dialog_Back,DIA_Lares_DI_Training_BACK);
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_SNEAK) == FALSE)
 	{
-		Info_AddChoice(dia_lares_di_training,"Nauka skradania siê",dia_lares_di_training_sneak);
+		Info_AddChoice(DIA_Lares_DI_Training,"Nauka skradania siê",DIA_Lares_DI_Training_SNEAK);
 	};
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARNDEX1,b_getlearncostattribute(other,ATR_DEXTERITY)),dia_lares_di_training_dex_1);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARNDEX5,b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_lares_di_training_dex_5);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARN1H1,b_getlearncosttalent(other,NPC_TALENT_1H)),dia_lares_di_training_1h_1);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARN1H5,b_getlearncosttalent(other,NPC_TALENT_1H) * 5),dia_lares_di_training_1h_5);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_Lares_DI_Training_DEX_1);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_Lares_DI_Training_DEX_5);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Lares_DI_Training_1H_1);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Lares_DI_Training_1H_5);
 };
 
-func void dia_lares_di_training_1h_1()
+func void DIA_Lares_DI_Training_1H_1()
 {
-	if(b_teachfighttalentpercent(self,other,NPC_TALENT_1H,1,60))
+	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,1,60))
 	{
 		AI_Output(self,other,"DIA_Lares_DI_Training_1H_1_09_00");	//Musisz lekko ugi¹æ wysuniêt¹ nogê, a drug¹ trzymaæ prosto. Dziêki temu ³atwiej zachowasz równowagê.
 	};
-	Info_ClearChoices(dia_lares_di_training);
-	Info_AddChoice(dia_lares_di_training,DIALOG_BACK,dia_lares_di_training_back);
+	Info_ClearChoices(DIA_Lares_DI_Training);
+	Info_AddChoice(DIA_Lares_DI_Training,Dialog_Back,DIA_Lares_DI_Training_BACK);
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_SNEAK) == FALSE)
 	{
-		Info_AddChoice(dia_lares_di_training,"Nauka skradania siê",dia_lares_di_training_sneak);
+		Info_AddChoice(DIA_Lares_DI_Training,"Nauka skradania siê",DIA_Lares_DI_Training_SNEAK);
 	};
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARNDEX1,b_getlearncostattribute(other,ATR_DEXTERITY)),dia_lares_di_training_dex_1);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARNDEX5,b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_lares_di_training_dex_5);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARN1H1,b_getlearncosttalent(other,NPC_TALENT_1H)),dia_lares_di_training_1h_1);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARN1H5,b_getlearncosttalent(other,NPC_TALENT_1H) * 5),dia_lares_di_training_1h_5);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_Lares_DI_Training_DEX_1);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_Lares_DI_Training_DEX_5);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Lares_DI_Training_1H_1);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Lares_DI_Training_1H_5);
 };
 
-func void dia_lares_di_training_1h_5()
+func void DIA_Lares_DI_Training_1H_5()
 {
-	if(b_teachfighttalentpercent(self,other,NPC_TALENT_1H,5,60))
+	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,5,60))
 	{
 		AI_Output(self,other,"DIA_Lares_DI_Training_1H_5_09_00");	//Biodra powinny byæ w ruchu. Bêdzie ci ³atwiej unikn¹æ ataku.
 	};
-	Info_ClearChoices(dia_lares_di_training);
-	Info_AddChoice(dia_lares_di_training,DIALOG_BACK,dia_lares_di_training_back);
+	Info_ClearChoices(DIA_Lares_DI_Training);
+	Info_AddChoice(DIA_Lares_DI_Training,Dialog_Back,DIA_Lares_DI_Training_BACK);
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_SNEAK) == FALSE)
 	{
-		Info_AddChoice(dia_lares_di_training,"Nauka skradania siê",dia_lares_di_training_sneak);
+		Info_AddChoice(DIA_Lares_DI_Training,"Nauka skradania siê",DIA_Lares_DI_Training_SNEAK);
 	};
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARNDEX1,b_getlearncostattribute(other,ATR_DEXTERITY)),dia_lares_di_training_dex_1);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARNDEX5,b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_lares_di_training_dex_5);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARN1H1,b_getlearncosttalent(other,NPC_TALENT_1H)),dia_lares_di_training_1h_1);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARN1H5,b_getlearncosttalent(other,NPC_TALENT_1H) * 5),dia_lares_di_training_1h_5);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_Lares_DI_Training_DEX_1);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_Lares_DI_Training_DEX_5);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Lares_DI_Training_1H_1);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Lares_DI_Training_1H_5);
 };
 
-func void dia_lares_di_training_dex_1()
+func void DIA_Lares_DI_Training_DEX_1()
 {
-	if(b_teachattributepoints(self,other,ATR_DEXTERITY,1,80))
+	if(B_TeachAttributePoints(self,other,ATR_DEXTERITY,1,80))
 	{
 		AI_Output(self,other,"DIA_Lares_DI_Training_DEX_1_09_00");	//Górna czêœæ cia³a musi poruszaæ siê w zgodzie z reszt¹.
 	};
-	Info_ClearChoices(dia_lares_di_training);
-	Info_AddChoice(dia_lares_di_training,DIALOG_BACK,dia_lares_di_training_back);
+	Info_ClearChoices(DIA_Lares_DI_Training);
+	Info_AddChoice(DIA_Lares_DI_Training,Dialog_Back,DIA_Lares_DI_Training_BACK);
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_SNEAK) == FALSE)
 	{
-		Info_AddChoice(dia_lares_di_training,"Nauka skradania siê",dia_lares_di_training_sneak);
+		Info_AddChoice(DIA_Lares_DI_Training,"Nauka skradania siê",DIA_Lares_DI_Training_SNEAK);
 	};
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARNDEX1,b_getlearncostattribute(other,ATR_DEXTERITY)),dia_lares_di_training_dex_1);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARNDEX5,b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_lares_di_training_dex_5);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARN1H1,b_getlearncosttalent(other,NPC_TALENT_1H)),dia_lares_di_training_1h_1);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARN1H5,b_getlearncosttalent(other,NPC_TALENT_1H) * 5),dia_lares_di_training_1h_5);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_Lares_DI_Training_DEX_1);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_Lares_DI_Training_DEX_5);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Lares_DI_Training_1H_1);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Lares_DI_Training_1H_5);
 };
 
-func void dia_lares_di_training_dex_5()
+func void DIA_Lares_DI_Training_DEX_5()
 {
-	if(b_teachattributepoints(self,other,ATR_DEXTERITY,5,80))
+	if(B_TeachAttributePoints(self,other,ATR_DEXTERITY,5,80))
 	{
 		AI_Output(self,other,"DIA_Lares_DI_Training_DEX_5_09_00");	//Ca³y czas musisz uwa¿aæ, ¿eby nie straciæ równowagi.
 	};
-	Info_ClearChoices(dia_lares_di_training);
-	Info_AddChoice(dia_lares_di_training,DIALOG_BACK,dia_lares_di_training_back);
+	Info_ClearChoices(DIA_Lares_DI_Training);
+	Info_AddChoice(DIA_Lares_DI_Training,Dialog_Back,DIA_Lares_DI_Training_BACK);
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_SNEAK) == FALSE)
 	{
-		Info_AddChoice(dia_lares_di_training,"Nauka skradania siê",dia_lares_di_training_sneak);
+		Info_AddChoice(DIA_Lares_DI_Training,"Nauka skradania siê",DIA_Lares_DI_Training_SNEAK);
 	};
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARNDEX1,b_getlearncostattribute(other,ATR_DEXTERITY)),dia_lares_di_training_dex_1);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARNDEX5,b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_lares_di_training_dex_5);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARN1H1,b_getlearncosttalent(other,NPC_TALENT_1H)),dia_lares_di_training_1h_1);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARN1H5,b_getlearncosttalent(other,NPC_TALENT_1H) * 5),dia_lares_di_training_1h_5);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_Lares_DI_Training_DEX_1);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_Lares_DI_Training_DEX_5);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Lares_DI_Training_1H_1);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Lares_DI_Training_1H_5);
 };
 
-func void dia_lares_di_training_sneak()
+func void DIA_Lares_DI_Training_SNEAK()
 {
-	if(b_teachthieftalent(self,other,NPC_TALENT_SNEAK))
+	if(B_TeachThiefTalent(self,other,NPC_TALENT_SNEAK))
 	{
 		AI_Output(self,other,"DIA_Lares_DI_Training_SNEAK_09_00");	//Zawsze stawiaj ca³¹ stopê, kiedy siê skradasz.
 	};
-	Info_ClearChoices(dia_lares_di_training);
-	Info_AddChoice(dia_lares_di_training,DIALOG_BACK,dia_lares_di_training_back);
+	Info_ClearChoices(DIA_Lares_DI_Training);
+	Info_AddChoice(DIA_Lares_DI_Training,Dialog_Back,DIA_Lares_DI_Training_BACK);
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_SNEAK) == FALSE)
 	{
-		Info_AddChoice(dia_lares_di_training,"Nauka skradania siê",dia_lares_di_training_sneak);
+		Info_AddChoice(DIA_Lares_DI_Training,"Nauka skradania siê",DIA_Lares_DI_Training_SNEAK);
 	};
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARNDEX1,b_getlearncostattribute(other,ATR_DEXTERITY)),dia_lares_di_training_dex_1);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARNDEX5,b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_lares_di_training_dex_5);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARN1H1,b_getlearncosttalent(other,NPC_TALENT_1H)),dia_lares_di_training_1h_1);
-	Info_AddChoice(dia_lares_di_training,b_buildlearnstring(PRINT_LEARN1H5,b_getlearncosttalent(other,NPC_TALENT_1H) * 5),dia_lares_di_training_1h_5);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_Lares_DI_Training_DEX_1);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_Lares_DI_Training_DEX_5);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Lares_DI_Training_1H_1);
+	Info_AddChoice(DIA_Lares_DI_Training,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Lares_DI_Training_1H_5);
 };
 
-func void dia_lares_di_training_back()
+func void DIA_Lares_DI_Training_BACK()
 {
-	Info_ClearChoices(dia_lares_di_training);
+	Info_ClearChoices(DIA_Lares_DI_Training);
 };
 
 
-instance DIA_LARES_DI_UNDEADDRAGONDEAD(C_INFO)
+instance DIA_Lares_DI_UndeadDragonDead(C_Info)
 {
-	npc = vlk_449_lares_di;
+	npc = VLK_449_Lares_DI;
 	nr = 5;
-	condition = dia_lares_di_undeaddragondead_condition;
-	information = dia_lares_di_undeaddragondead_info;
+	condition = DIA_Lares_DI_UndeadDragonDead_Condition;
+	information = DIA_Lares_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
 	description = "Wygl¹dasz, jakbyœ niezbyt siê tym przejmowa³.";
 };
 
 
-func int dia_lares_di_undeaddragondead_condition()
+func int DIA_Lares_DI_UndeadDragonDead_Condition()
 {
-	if(Npc_IsDead(undeaddragon))
+	if(Npc_IsDead(UndeadDragon))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_lares_di_undeaddragondead_onetime;
+var int DIA_Lares_DI_UndeadDragonDead_OneTime;
 
-func void dia_lares_di_undeaddragondead_info()
+func void DIA_Lares_DI_UndeadDragonDead_Info()
 {
 	AI_Output(other,self,"DIA_Lares_DI_UndeadDragonDead_15_00");	//Wygl¹dasz, jakbyœ niezbyt siê tym przejmowa³.
 	AI_Output(self,other,"DIA_Lares_DI_UndeadDragonDead_09_01");	//Ech, no wiesz. Myœla³em, ¿e ci siê uda.
-	if(DIA_LARES_DI_UNDEADDRAGONDEAD_ONETIME == FALSE)
+	if(DIA_Lares_DI_UndeadDragonDead_OneTime == FALSE)
 	{
 		AI_Output(other,self,"DIA_Lares_DI_UndeadDragonDead_15_02");	//Co zamierzasz teraz zrobiæ?
 		AI_Output(self,other,"DIA_Lares_DI_UndeadDragonDead_09_03");	//Nie mam pojêcia. Na razie bêdê siê chyba trzymaæ ciebie.
-		DIA_LARES_DI_UNDEADDRAGONDEAD_ONETIME = TRUE;
+		DIA_Lares_DI_UndeadDragonDead_OneTime = TRUE;
 	};
 	AI_StopProcessInfos(self);
 };

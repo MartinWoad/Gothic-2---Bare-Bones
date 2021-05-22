@@ -1,49 +1,49 @@
 
-instance NOV_600_PEDRO_DI(NPC_DEFAULT)
+instance NOV_600_Pedro_DI(Npc_Default)
 {
 	name[0] = "Pedro";
 	guild = GIL_NONE;
 	id = 6000;
 	voice = 9;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	aivar[AIV_TOUGHGUYNEWSOVERRIDE] = TRUE;
-	b_setattributestochapter(self,2);
+	npcType = npctype_main;
+	aivar[AIV_ToughGuy] = TRUE;
+	aivar[AIV_ToughGuyNewsOverride] = TRUE;
+	B_SetAttributesToChapter(self,2);
 	fight_tactic = FAI_HUMAN_STRONG;
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_PSIONIC",FACE_L_NORMAL_GORNABAR,BODYTEX_L,4842);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_PSIONIC",Face_L_Normal_GorNaBar,BodyTex_L,ItAr_NOV_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	aivar[AIV_TOUGHGUY] = TRUE;
-	aivar[AIV_TOUGHGUYNEWSOVERRIDE] = TRUE;
-	daily_routine = rtn_start_6000;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	aivar[AIV_ToughGuy] = TRUE;
+	aivar[AIV_ToughGuyNewsOverride] = TRUE;
+	daily_routine = Rtn_Start_6000;
 };
 
 
-func void rtn_start_6000()
+func void Rtn_Start_6000()
 {
-	ta_sit_bench(8,0,23,0,"DI_ORKAREA_PEDRO");
-	ta_sit_bench(23,0,8,0,"DI_ORKAREA_PEDRO");
+	TA_Sit_Bench(8,0,23,0,"DI_ORKAREA_PEDRO");
+	TA_Sit_Bench(23,0,8,0,"DI_ORKAREA_PEDRO");
 };
 
-func void rtn_ship_6000()
+func void Rtn_Ship_6000()
 {
-	ta_sit_bench(8,0,23,0,"SHIP_DECK_05");
-	ta_sit_bench(23,0,8,0,"SHIP_DECK_05");
+	TA_Sit_Bench(8,0,23,0,"SHIP_DECK_05");
+	TA_Sit_Bench(23,0,8,0,"SHIP_DECK_05");
 };
 
-func void rtn_followship_6000()
+func void Rtn_FollowShip_6000()
 {
-	ta_follow_player(8,0,23,0,"SHIP");
-	ta_follow_player(23,0,8,0,"SHIP");
+	TA_Follow_Player(8,0,23,0,"SHIP");
+	TA_Follow_Player(23,0,8,0,"SHIP");
 };
 
-func void rtn_sleepship_6000()
+func void Rtn_SleepShip_6000()
 {
-	ta_sleep(8,0,23,0,"SHIP_IN_06");
-	ta_sleep(23,0,8,0,"SHIP_IN_06");
+	TA_Sleep(8,0,23,0,"SHIP_IN_06");
+	TA_Sleep(23,0,8,0,"SHIP_IN_06");
 };
 

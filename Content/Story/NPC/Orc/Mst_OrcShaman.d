@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_ORCSHAMAN(C_NPC)
+prototype Mst_Default_OrcShaman(C_Npc)
 {
 	name[0] = "Ork Szaman";
 	guild = GIL_ORC;
@@ -18,40 +18,40 @@ prototype MST_DEFAULT_ORCSHAMAN(C_NPC)
 	protection[PROT_FIRE] = 100;
 	protection[PROT_FLY] = 100;
 	protection[PROT_MAGIC] = 80;
-	hitchance[NPC_TALENT_1H] = 100;
-	hitchance[NPC_TALENT_2H] = 100;
-	hitchance[NPC_TALENT_BOW] = 100;
-	hitchance[NPC_TALENT_CROSSBOW] = 100;
+	HitChance[NPC_TALENT_1H] = 100;
+	HitChance[NPC_TALENT_2H] = 100;
+	HitChance[NPC_TALENT_BOW] = 100;
+	HitChance[NPC_TALENT_CROSSBOW] = 100;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_ORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_orcshaman()
+func void B_SetVisuals_OrcShaman()
 {
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyShaman",DEFAULT,DEFAULT,"Orc_HeadShaman",DEFAULT,DEFAULT,-1);
 };
 
 
-instance ORCSHAMAN_SIT(MST_DEFAULT_ORCSHAMAN)
+instance OrcShaman_Sit(Mst_Default_OrcShaman)
 {
-	b_setvisuals_orcshaman();
-	EquipItem(self,itmw_2h_orcaxe_01);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ORCSITSTART] = ONLYROUTINE;
+	B_SetVisuals_OrcShaman();
+	EquipItem(self,ItMw_2H_OrcAxe_01);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_OrcSitStart] = OnlyRoutine;
 };
 
-instance ORCSHAMAN_HOSH_PAK(MST_DEFAULT_ORCSHAMAN)
+instance OrcShaman_Hosh_Pak(Mst_Default_OrcShaman)
 {
 	name[0] = "Hosh-Pak";
-	b_setvisuals_orcshaman();
-	EquipItem(self,itmw_2h_orcaxe_01);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ORCSITSTART] = ONLYROUTINE;
+	B_SetVisuals_OrcShaman();
+	EquipItem(self,ItMw_2H_OrcAxe_01);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_OrcSitStart] = OnlyRoutine;
 };
 

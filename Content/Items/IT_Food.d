@@ -1,509 +1,509 @@
 
-const int VALUE_APPLE = 8;
-const int HP_APPLE = 3;
-const int VALUE_CHEESE = 30;
-const int HP_CHEESE = 15;
-const int VALUE_BACON = 50;
-const int HP_BACON = 20;
-const int VALUE_BREAD = 20;
-const int HP_BREAD = 10;
-const int VALUE_FISH = 15;
-const int HP_FISH = 5;
-const int VALUE_RAWMEAT = 3;
-const int HP_RAWMEAT = 6;
-const int VALUE_MEAT = 6;
-const int HP_MEAT = 12;
-const int VALUE_STEW = 8;
-const int HP_STEW = 20;
-const int VALUE_FISHSOUP = 20;
-const int HP_FISHSOUP = 10;
-const int VALUE_SAUSAGE = 30;
-const int HP_SAUSAGE = 12;
-const int VALUE_HONEY = 30;
-const int HP_HONEY = 12;
-const int VALUE_WATER = 10;
-const int HP_WATER = 8;
-const int VALUE_BEER = 20;
-const int HP_BEER = 3;
-const int MANA_BEER = 1;
-const int VALUE_BOOZE = 15;
-const int HP_BOOZE = 4;
-const int MANA_BOOZE = 1;
-const int VALUE_WINE = 20;
-const int HP_WINE = 2;
-const int MANA_WINE = 1;
-const int VALUE_MILK = 15;
-const int HP_MILK = 5;
-const int MANA_MILK = 1;
+const int Value_Apple = 8;
+const int HP_Apple = 3;
+const int Value_Cheese = 30;
+const int HP_Cheese = 15;
+const int Value_Bacon = 50;
+const int HP_Bacon = 20;
+const int Value_Bread = 20;
+const int HP_Bread = 10;
+const int Value_Fish = 15;
+const int HP_Fish = 5;
+const int Value_Rawmeat = 3;
+const int HP_RawMeat = 6;
+const int Value_Meat = 6;
+const int HP_Meat = 12;
+const int Value_Stew = 8;
+const int HP_Stew = 20;
+const int Value_FishSoup = 20;
+const int HP_FishSoup = 10;
+const int Value_Sausage = 30;
+const int HP_Sausage = 12;
+const int Value_Honey = 30;
+const int HP_Honey = 12;
+const int Value_Water = 10;
+const int HP_Water = 8;
+const int Value_Beer = 20;
+const int HP_Beer = 3;
+const int Mana_Beer = 1;
+const int Value_Booze = 15;
+const int HP_Booze = 4;
+const int Mana_Booze = 1;
+const int Value_Wine = 20;
+const int HP_Wine = 2;
+const int Mana_Wine = 1;
+const int Value_Milk = 15;
+const int HP_Milk = 5;
+const int Mana_Milk = 1;
 
-instance ITFO_APPLE(C_ITEM)
+instance ItFo_Apple(C_Item)
 {
 	name = "Jab³ko";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_APPLE;
+	value = Value_Apple;
 	visual = "ItFo_Apple.3DS";
 	material = MAT_LEATHER;
-	scemename = "FOOD";
-	on_state[0] = use_apple;
+	scemeName = "FOOD";
+	on_state[0] = Use_Apple;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_APPLE;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Apple;
 	text[3] = "Œwie¿e jab³ko,";
 	text[4] = "soczyste i po¿ywne.";
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_APPLE;
+	text[5] = NAME_Value;
+	count[5] = Value_Apple;
 };
 
 
-func void use_apple()
+func void Use_Apple()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_APPLE);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Apple);
 	if(Npc_IsPlayer(self))
 	{
-		APPLE_BONUS = APPLE_BONUS + 1;
-		if(APPLE_BONUS == 7)
+		Apple_Bonus = Apple_Bonus + 1;
+		if(Apple_Bonus == 7)
 		{
-			Print(PRINT_EAT1);
+			Print(PRINT_Eat1);
 		};
-		if(APPLE_BONUS == 15)
+		if(Apple_Bonus == 15)
 		{
-			Print(PRINT_EAT2);
+			Print(PRINT_Eat2);
 		};
-		if(APPLE_BONUS == 25)
+		if(Apple_Bonus == 25)
 		{
-			Print(PRINT_EAT3);
-			b_raiseattribute(self,ATR_STRENGTH,1,TRUE,FALSE);
+			Print(PRINT_Eat3);
+			B_RaiseAttribute(self,ATR_STRENGTH,1,TRUE,FALSE);
 			Print(PRINT_STR1);
 		};
 	};
 };
 
 
-instance ITFO_CHEESE(C_ITEM)
+instance ItFo_Cheese(C_Item)
 {
 	name = "Ser";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_CHEESE;
+	value = Value_Cheese;
 	visual = "ItFo_Cheese.3DS";
 	material = MAT_LEATHER;
-	scemename = "FOODHUGE";
-	on_state[0] = use_cheese;
+	scemeName = "FOODHUGE";
+	on_state[0] = Use_Cheese;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_CHEESE;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_CHEESE;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Cheese;
+	text[5] = NAME_Value;
+	count[5] = Value_Cheese;
 };
 
 
-func void use_cheese()
+func void Use_Cheese()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_CHEESE);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Cheese);
 };
 
 
-instance ITFO_BACON(C_ITEM)
+instance ItFo_Bacon(C_Item)
 {
 	name = "Szynka";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_BACON;
+	value = Value_Bacon;
 	visual = "ItFo_Bacon.3ds";
 	material = MAT_LEATHER;
-	scemename = "FOODHUGE";
-	on_state[0] = use_bacon;
+	scemeName = "FOODHUGE";
+	on_state[0] = Use_Bacon;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_BACON;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_BACON;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Bacon;
+	text[5] = NAME_Value;
+	count[5] = Value_Bacon;
 };
 
 
-func void use_bacon()
+func void Use_Bacon()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_BACON);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Bacon);
 };
 
 
-instance ITFO_BREAD(C_ITEM)
+instance ItFo_Bread(C_Item)
 {
 	name = "Chleb";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_BREAD;
+	value = Value_Bread;
 	visual = "ItFo_Bread.3DS";
 	material = MAT_LEATHER;
-	scemename = "FOODHUGE";
-	on_state[0] = use_bread;
+	scemeName = "FOODHUGE";
+	on_state[0] = Use_Bread;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_BREAD;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_BREAD;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Bread;
+	text[5] = NAME_Value;
+	count[5] = Value_Bread;
 };
 
 
-func void use_bread()
+func void Use_Bread()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_BREAD);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Bread);
 };
 
 
-instance ITFO_FISH(C_ITEM)
+instance ItFo_Fish(C_Item)
 {
 	name = "Ryba";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_FISH;
+	value = Value_Fish;
 	visual = "ItFo_Fish.3DS";
 	material = MAT_LEATHER;
-	scemename = "FOODHUGE";
-	on_state[0] = use_fish;
+	scemeName = "FOODHUGE";
+	on_state[0] = Use_Fish;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_FISH;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_FISH;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Fish;
+	text[5] = NAME_Value;
+	count[5] = Value_Fish;
 };
 
 
-func void use_fish()
+func void Use_Fish()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_FISH);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Fish);
 };
 
 
-instance ITFOMUTTONRAW(C_ITEM)
+instance ItFoMuttonRaw(C_Item)
 {
 	name = "Surowe Miêso";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_RAWMEAT;
+	value = Value_Rawmeat;
 	visual = "ItFoMuttonRaw.3DS";
 	material = MAT_LEATHER;
-	scemename = "MEAT";
-	on_state[0] = use_rawmeat;
+	scemeName = "MEAT";
+	on_state[0] = Use_RawMeat;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_RAWMEAT;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_RAWMEAT;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_RawMeat;
+	text[5] = NAME_Value;
+	count[5] = Value_Rawmeat;
 };
 
 
-func void use_rawmeat()
+func void Use_RawMeat()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_RAWMEAT);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_RawMeat);
 };
 
 
-instance ITFOMUTTON(C_ITEM)
+instance ItFoMutton(C_Item)
 {
 	name = "Sma¿one Miêso";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_MEAT;
+	value = Value_Meat;
 	visual = "ItFoMutton.3DS";
 	material = MAT_LEATHER;
-	scemename = "MEAT";
-	on_state[0] = use_meat;
+	scemeName = "MEAT";
+	on_state[0] = Use_Meat;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_MEAT;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_MEAT;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Meat;
+	text[5] = NAME_Value;
+	count[5] = Value_Meat;
 };
 
 
-func void use_meat()
+func void Use_Meat()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_MEAT);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Meat);
 };
 
 
-instance ITFO_STEW(C_ITEM)
+instance ItFo_Stew(C_Item)
 {
 	name = "Gulasz";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_STEW;
+	value = Value_Stew;
 	visual = "ItFo_Stew.3ds";
 	material = MAT_WOOD;
-	scemename = "RICE";
-	on_state[0] = use_stew;
+	scemeName = "RICE";
+	on_state[0] = Use_Stew;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_STEW;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_STEW;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Stew;
+	text[5] = NAME_Value;
+	count[5] = Value_Stew;
 };
 
 
-func void use_stew()
+func void Use_Stew()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_STEW);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Stew);
 };
 
 
-instance ITFO_XPSTEW(C_ITEM)
+instance ItFo_XPStew(C_Item)
 {
 	name = "Gulasz Thekli";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_STEW;
+	value = Value_Stew;
 	visual = "ItFo_Stew.3ds";
 	material = MAT_WOOD;
-	scemename = "RICE";
-	on_state[0] = use_xpstew;
+	scemeName = "RICE";
+	on_state[0] = Use_XPStew;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_STEW;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_STEW;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Stew;
+	text[5] = NAME_Value;
+	count[5] = Value_Stew;
 };
 
 
-func void use_xpstew()
+func void Use_XPStew()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_STEW);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Stew);
 	Print(PRINT_STR1);
-	b_raiseattribute(self,ATR_STRENGTH,1,TRUE,FALSE);
+	B_RaiseAttribute(self,ATR_STRENGTH,1,TRUE,FALSE);
 };
 
 
-instance ITFO_CORAGONSBEER(C_ITEM)
+instance ItFo_CoragonsBeer(C_Item)
 {
 	name = "Piwo";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_BEER;
+	value = Value_Beer;
 	visual = "ItFo_Beer.3DS";
 	material = MAT_GLAS;
-	scemename = "POTION";
-	on_state[0] = use_coragonsbeerbeer;
+	scemeName = "POTION";
+	on_state[0] = Use_CoragonsBeerBeer;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_BEER;
-	text[2] = NAME_BONUS_MANA;
-	count[2] = MANA_BEER;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Beer;
+	text[2] = NAME_Bonus_Mana;
+	count[2] = Mana_Beer;
 	text[4] = "Specjalne piwo Coragona";
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_BEER;
+	text[5] = NAME_Value;
+	count[5] = Value_Beer;
 };
 
 
-func void use_coragonsbeerbeer()
+func void Use_CoragonsBeerBeer()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_BEER);
-	b_raiseattribute(self,ATR_HITPOINTS_MAX,MANA_BEER,TRUE,FALSE);
-	Npc_ChangeAttribute(self,ATR_MANA,MANA_BEER);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Beer);
+	B_RaiseAttribute(self,ATR_HITPOINTS_MAX,Mana_Beer,TRUE,FALSE);
+	Npc_ChangeAttribute(self,ATR_MANA,Mana_Beer);
 };
 
 
-instance ITFO_FISHSOUP(C_ITEM)
+instance ItFo_FishSoup(C_Item)
 {
 	name = "Zupa Rybna";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_FISHSOUP;
+	value = Value_FishSoup;
 	visual = "ItFo_FishSoup.3ds";
 	material = MAT_WOOD;
-	scemename = "RICE";
-	on_state[0] = use_fishsoup;
+	scemeName = "RICE";
+	on_state[0] = Use_FishSoup;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_FISHSOUP;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_FISHSOUP;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_FishSoup;
+	text[5] = NAME_Value;
+	count[5] = Value_FishSoup;
 };
 
 
-func void use_fishsoup()
+func void Use_FishSoup()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_FISHSOUP);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_FishSoup);
 };
 
 
-instance ITFO_SAUSAGE(C_ITEM)
+instance ItFo_Sausage(C_Item)
 {
 	name = "Kie³basa";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_SAUSAGE;
+	value = Value_Sausage;
 	visual = "ItFo_Sausage.3DS";
 	material = MAT_LEATHER;
-	scemename = "FOODHUGE";
-	on_state[0] = use_sausage;
+	scemeName = "FOODHUGE";
+	on_state[0] = Use_Sausage;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_SAUSAGE;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_SAUSAGE;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Sausage;
+	text[5] = NAME_Value;
+	count[5] = Value_Sausage;
 };
 
 
-func void use_sausage()
+func void Use_Sausage()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_SAUSAGE);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Sausage);
 };
 
 
-instance ITFO_HONEY(C_ITEM)
+instance ItFo_Honey(C_Item)
 {
 	name = "Miód";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_HONEY;
+	value = Value_Honey;
 	visual = "ItFo_Honey.3DS";
 	material = MAT_STONE;
-	scemename = "FOODHUGE";
-	on_state[0] = use_honey;
+	scemeName = "FOODHUGE";
+	on_state[0] = Use_Honey;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_HONEY;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_HONEY;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Honey;
+	text[5] = NAME_Value;
+	count[5] = Value_Honey;
 };
 
 
-func void use_honey()
+func void Use_Honey()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_HONEY);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Honey);
 };
 
 
-instance ITFO_WATER(C_ITEM)
+instance ItFo_Water(C_Item)
 {
 	name = "Woda";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_WATER;
+	value = Value_Water;
 	visual = "ItFo_Water.3ds";
 	material = MAT_GLAS;
-	scemename = "POTION";
-	on_state[0] = use_water;
+	scemeName = "POTION";
+	on_state[0] = Use_Water;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_WATER;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_WATER;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Water;
+	text[5] = NAME_Value;
+	count[5] = Value_Water;
 };
 
 
-func void use_water()
+func void Use_Water()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_WATER);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Water);
 };
 
 
-instance ITFO_BEER(C_ITEM)
+instance ItFo_Beer(C_Item)
 {
 	name = "Piwo";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_BEER;
+	value = Value_Beer;
 	visual = "ItFo_Beer.3DS";
 	material = MAT_GLAS;
-	scemename = "POTION";
-	on_state[0] = use_beer;
+	scemeName = "POTION";
+	on_state[0] = Use_Beer;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_BEER;
-	text[2] = NAME_BONUS_MANA;
-	count[2] = MANA_BEER;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Beer;
+	text[2] = NAME_Bonus_Mana;
+	count[2] = Mana_Beer;
 	text[4] = "Mroczny paladyn";
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_BEER;
+	text[5] = NAME_Value;
+	count[5] = Value_Beer;
 };
 
 
-func void use_beer()
+func void Use_Beer()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_BEER);
-	Npc_ChangeAttribute(self,ATR_MANA,MANA_BEER);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Beer);
+	Npc_ChangeAttribute(self,ATR_MANA,Mana_Beer);
 };
 
 
-instance ITFO_BOOZE(C_ITEM)
+instance ItFo_Booze(C_Item)
 {
 	name = "Gin";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_BOOZE;
+	value = Value_Booze;
 	visual = "ItFo_Booze.3DS";
 	material = MAT_GLAS;
-	scemename = "POTION";
-	on_state[0] = use_booze;
+	scemeName = "POTION";
+	on_state[0] = Use_Booze;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_BOOZE;
-	text[2] = NAME_BONUS_MANA;
-	count[2] = MANA_BOOZE;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_BOOZE;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Booze;
+	text[2] = NAME_Bonus_Mana;
+	count[2] = Mana_Booze;
+	text[5] = NAME_Value;
+	count[5] = Value_Booze;
 };
 
 
-func void use_booze()
+func void Use_Booze()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_BOOZE);
-	Npc_ChangeAttribute(self,ATR_MANA,MANA_BOOZE);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Booze);
+	Npc_ChangeAttribute(self,ATR_MANA,Mana_Booze);
 };
 
 
-instance ITFO_WINE(C_ITEM)
+instance ItFo_Wine(C_Item)
 {
 	name = "Wino";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_WINE;
+	value = Value_Wine;
 	visual = "ItFo_Wine.3DS";
 	material = MAT_GLAS;
-	scemename = "POTION";
-	on_state[0] = use_wine;
+	scemeName = "POTION";
+	on_state[0] = Use_Wine;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_WINE;
-	text[2] = NAME_BONUS_MANA;
-	count[2] = MANA_WINE;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_WINE;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Wine;
+	text[2] = NAME_Bonus_Mana;
+	count[2] = Mana_Wine;
+	text[5] = NAME_Value;
+	count[5] = Value_Wine;
 };
 
 
-func void use_wine()
+func void Use_Wine()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_WINE);
-	Npc_ChangeAttribute(self,ATR_MANA,MANA_WINE);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Wine);
+	Npc_ChangeAttribute(self,ATR_MANA,Mana_Wine);
 };
 
 
-instance ITFO_MILK(C_ITEM)
+instance ItFo_Milk(C_Item)
 {
 	name = "Mleko";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_MILK;
+	value = Value_Milk;
 	visual = "ItFo_Milk.3DS";
 	material = MAT_GLAS;
-	scemename = "POTION";
-	on_state[0] = use_milk;
+	scemeName = "POTION";
+	on_state[0] = Use_Milk;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_MILK;
-	text[2] = NAME_BONUS_MANA;
-	count[2] = MANA_MILK;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_MILK;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Milk;
+	text[2] = NAME_Bonus_Mana;
+	count[2] = Mana_Milk;
+	text[5] = NAME_Value;
+	count[5] = Value_Milk;
 };
 
 
-func void use_milk()
+func void Use_Milk()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_MILK);
-	Npc_ChangeAttribute(self,ATR_MANA,MANA_MILK);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Milk);
+	Npc_ChangeAttribute(self,ATR_MANA,Mana_Milk);
 };
 

@@ -1,59 +1,59 @@
 
-instance DIA_ANDRE_EXIT(C_INFO)
+instance DIA_Andre_EXIT(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 999;
-	condition = dia_andre_exit_condition;
-	information = dia_andre_exit_info;
+	condition = DIA_Andre_EXIT_Condition;
+	information = DIA_Andre_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_andre_exit_condition()
+func int DIA_Andre_EXIT_Condition()
 {
-	if(self.aivar[AIV_TALKEDTOPLAYER] == TRUE)
+	if(self.aivar[AIV_TalkedToPlayer] == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_exit_info()
+func void DIA_Andre_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ANDRE_FIRSTEXIT(C_INFO)
+instance DIA_Andre_FIRSTEXIT(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 999;
-	condition = dia_andre_firstexit_condition;
-	information = dia_andre_firstexit_info;
+	condition = DIA_Andre_FIRSTEXIT_Condition;
+	information = DIA_Andre_FIRSTEXIT_Info;
 	permanent = FALSE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_andre_firstexit_condition()
+func int DIA_Andre_FIRSTEXIT_Condition()
 {
-	if(self.aivar[AIV_TALKEDTOPLAYER] == FALSE)
+	if(self.aivar[AIV_TalkedToPlayer] == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_firstexit_info()
+func void DIA_Andre_FIRSTEXIT_Info()
 {
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"START");
-	b_startotherroutine(wulfgar,"START");
+	B_StartOtherRoutine(Wulfgar,"START");
 };
 
 
-var int andre_steckbrief;
+var int Andre_Steckbrief;
 
-func void b_andre_steckbrief()
+func void B_Andre_Steckbrief()
 {
 	AI_Output(self,other,"DIA_Andre_Add_08_00");	//Jeden z moich ludzi mówi³, ¿e bandyci rozprowadzaj¹ listy goñcze z twoim portretem.
 	AI_Output(self,other,"DIA_Andre_Add_08_01");	//Mówi³ te¿, ¿e pocz¹tkowo temu zaprzecza³eœ.
@@ -63,226 +63,226 @@ func void b_andre_steckbrief()
 	AI_Output(self,other,"DIA_Andre_Add_08_05");	//Nie mogê tolerowaæ w stra¿y kogoœ, kto ma coœ na sumieniu.
 	AI_Output(self,other,"DIA_Andre_Add_08_06");	//Wiêkszoœæ bandytów to dawni wiêŸniowie z kolonii górniczej.
 	AI_Output(self,other,"DIA_Andre_Add_08_07");	//Mam nadziejê, ¿e nie zadawa³eœ siê z tymi bandziorami!
-	ANDRE_STECKBRIEF = TRUE;
+	Andre_Steckbrief = TRUE;
 };
 
 
-var int andre_cantharfalle;
+var int Andre_CantharFalle;
 
-func void b_andre_cantharfalle()
+func void B_Andre_CantharFalle()
 {
 	AI_Output(self,other,"B_Andre_CantharFalle_08_00");	//By³ tu kupiec Canthar. Mówi³, ¿e jesteœ zbiegiem z kolonii górniczej.
 	AI_Output(self,other,"B_Andre_CantharFalle_08_01");	//Nie wiem, czy to prawda i wolê nie pytaæ, ale sam powinieneœ wyjaœniæ tê sprawê.
-	b_removenpc(3220);
-	b_startotherroutine(canthar,"MARKTSTAND");
-	AI_Teleport(canthar,"NW_CITY_SARAH");
-	if((CANTHAR_SPERRE == FALSE) && (CANTHAR_PAY == FALSE))
+	B_RemoveNpc(Sarah);
+	B_StartOtherRoutine(Canthar,"MARKTSTAND");
+	AI_Teleport(Canthar,"NW_CITY_SARAH");
+	if((Canthar_Sperre == FALSE) && (Canthar_Pay == FALSE))
 	{
-		CANTHAR_SPERRE = TRUE;
+		Canthar_Sperre = TRUE;
 	};
-	MIS_CANTHARS_KOMPROBRIEF = LOG_OBSOLETE;
-	b_checklog();
-	ANDRE_CANTHARFALLE = TRUE;
+	MIS_Canthars_KomproBrief = LOG_OBSOLETE;
+	B_CheckLog();
+	Andre_CantharFalle = TRUE;
 };
 
 
-instance DIA_ANDRE_CANTHARFALLE(C_INFO)
+instance DIA_Andre_CantharFalle(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 3;
-	condition = dia_andre_cantharfalle_condition;
-	information = dia_andre_cantharfalle_info;
+	condition = DIA_Andre_CantharFalle_Condition;
+	information = DIA_Andre_CantharFalle_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_andre_cantharfalle_condition()
+func int DIA_Andre_CantharFalle_Condition()
 {
-	if((MIS_CANTHARS_KOMPROBRIEF == LOG_RUNNING) && (MIS_CANTHARS_KOMPROBRIEF_DAY <= (Wld_GetDay() - 2)) && (ANDRE_CANTHARFALLE == FALSE))
+	if((MIS_Canthars_KomproBrief == LOG_Running) && (MIS_Canthars_KomproBrief_Day <= (Wld_GetDay() - 2)) && (Andre_CantharFalle == FALSE))
 	{
 		return TRUE;
 	};
-	if((PABLO_ANDREMELDEN == TRUE) && !Npc_IsDead(pablo) && (ANDRE_STECKBRIEF == FALSE))
+	if((Pablo_AndreMelden == TRUE) && !Npc_IsDead(Pablo) && (Andre_Steckbrief == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_cantharfalle_info()
+func void DIA_Andre_CantharFalle_Info()
 {
-	if(ANDRE_STECKBRIEF == FALSE)
+	if(Andre_Steckbrief == FALSE)
 	{
-		b_andre_steckbrief();
+		B_Andre_Steckbrief();
 	};
-	if((ANDRE_CANTHARFALLE == FALSE) && (MIS_CANTHARS_KOMPROBRIEF_DAY <= (Wld_GetDay() - 2)))
+	if((Andre_CantharFalle == FALSE) && (MIS_Canthars_KomproBrief_Day <= (Wld_GetDay() - 2)))
 	{
-		b_andre_cantharfalle();
+		B_Andre_CantharFalle();
 	};
 };
 
 
-var int andre_lastpetzcounter;
-var int andre_lastpetzcrime;
+var int Andre_LastPetzCounter;
+var int Andre_LastPetzCrime;
 
-instance DIA_ANDRE_PMSCHULDEN(C_INFO)
+instance DIA_Andre_PMSchulden(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 1;
-	condition = dia_andre_pmschulden_condition;
-	information = dia_andre_pmschulden_info;
+	condition = DIA_Andre_PMSchulden_Condition;
+	information = DIA_Andre_PMSchulden_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_andre_pmschulden_condition()
+func int DIA_Andre_PMSchulden_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (ANDRE_SCHULDEN > 0) && (b_getgreatestpetzcrime(self) <= ANDRE_LASTPETZCRIME))
+	if(Npc_IsInState(self,ZS_Talk) && (Andre_Schulden > 0) && (B_GetGreatestPetzCrime(self) <= Andre_LastPetzCrime))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_pmschulden_info()
+func void DIA_Andre_PMSchulden_Info()
 {
 	var int diff;
 	AI_Output(self,other,"DIA_Andre_PMSchulden_08_00");	//Przyszed³eœ, ¿eby zap³aciæ grzywnê?
-	if((PABLO_ANDREMELDEN == TRUE) && !Npc_IsDead(pablo) && (ANDRE_STECKBRIEF == FALSE))
+	if((Pablo_AndreMelden == TRUE) && !Npc_IsDead(Pablo) && (Andre_Steckbrief == FALSE))
 	{
-		b_andre_steckbrief();
+		B_Andre_Steckbrief();
 	};
-	if((MIS_CANTHARS_KOMPROBRIEF == LOG_RUNNING) && (MIS_CANTHARS_KOMPROBRIEF_DAY <= (Wld_GetDay() - 2)) && (ANDRE_CANTHARFALLE == FALSE))
+	if((MIS_Canthars_KomproBrief == LOG_Running) && (MIS_Canthars_KomproBrief_Day <= (Wld_GetDay() - 2)) && (Andre_CantharFalle == FALSE))
 	{
-		b_andre_cantharfalle();
+		B_Andre_CantharFalle();
 	};
-	if(b_gettotalpetzcounter(self) > ANDRE_LASTPETZCOUNTER)
+	if(B_GetTotalPetzCounter(self) > Andre_LastPetzCounter)
 	{
 		AI_Output(self,other,"DIA_Andre_PMSchulden_08_01");	//Zastanawia³em siê, czy oœmielisz siê tu przyjœæ!
 		AI_Output(self,other,"DIA_Andre_PMSchulden_08_02");	//Pojawi³y siê nowe oskar¿enia pod twoim adresem!
-		if(ANDRE_SCHULDEN < 1000)
+		if(Andre_Schulden < 1000)
 		{
 			AI_Output(self,other,"DIA_Andre_PMSchulden_08_03");	//Ostrzega³em ciê! Teraz musisz zap³aciæ wiêksz¹ grzywnê!
 			AI_Output(other,self,"DIA_Andre_PMAdd_15_00");	//Ile?
-			diff = b_gettotalpetzcounter(self) - ANDRE_LASTPETZCOUNTER;
+			diff = B_GetTotalPetzCounter(self) - Andre_LastPetzCounter;
 			if(diff > 0)
 			{
-				ANDRE_SCHULDEN = ANDRE_SCHULDEN + (diff * 50);
+				Andre_Schulden = Andre_Schulden + (diff * 50);
 			};
-			if(ANDRE_SCHULDEN > 1000)
+			if(Andre_Schulden > 1000)
 			{
-				ANDRE_SCHULDEN = 1000;
+				Andre_Schulden = 1000;
 			};
-			b_say_gold(self,other,ANDRE_SCHULDEN);
+			B_Say_Gold(self,other,Andre_Schulden);
 		}
 		else
 		{
 			AI_Output(self,other,"DIA_Andre_PMSchulden_08_04");	//Bardzo mnie rozczarowa³eœ!
 		};
 	}
-	else if(b_getgreatestpetzcrime(self) < ANDRE_LASTPETZCRIME)
+	else if(B_GetGreatestPetzCrime(self) < Andre_LastPetzCrime)
 	{
 		AI_Output(self,other,"DIA_Andre_PMSchulden_08_05");	//Pojawi³y siê nowe okolicznoœci.
-		if(ANDRE_LASTPETZCRIME == CRIME_MURDER)
+		if(Andre_LastPetzCrime == CRIME_MURDER)
 		{
 			AI_Output(self,other,"DIA_Andre_PMSchulden_08_06");	//Nagle nikt ju¿ nie oskar¿a ciê o morderstwo.
 		};
-		if((ANDRE_LASTPETZCRIME == CRIME_THEFT) || ((ANDRE_LASTPETZCRIME > CRIME_THEFT) && (b_getgreatestpetzcrime(self) < CRIME_THEFT)))
+		if((Andre_LastPetzCrime == CRIME_THEFT) || ((Andre_LastPetzCrime > CRIME_THEFT) && (B_GetGreatestPetzCrime(self) < CRIME_THEFT)))
 		{
 			AI_Output(self,other,"DIA_Andre_PMSchulden_08_07");	//Nikt ju¿ sobie nie przypomina, ¿eby widzia³ ciê podczas kradzie¿y.
 		};
-		if((ANDRE_LASTPETZCRIME == CRIME_ATTACK) || ((ANDRE_LASTPETZCRIME > CRIME_ATTACK) && (b_getgreatestpetzcrime(self) < CRIME_ATTACK)))
+		if((Andre_LastPetzCrime == CRIME_ATTACK) || ((Andre_LastPetzCrime > CRIME_ATTACK) && (B_GetGreatestPetzCrime(self) < CRIME_ATTACK)))
 		{
 			AI_Output(self,other,"DIA_Andre_PMSchulden_08_08");	//Nie ma ju¿ ¿adnych œwiadków, którzy by twierdzili, ¿e widzieli, jak bra³eœ udzia³ w bójce.
 		};
-		if(b_getgreatestpetzcrime(self) == CRIME_NONE)
+		if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
 		{
 			AI_Output(self,other,"DIA_Andre_PMSchulden_08_09");	//NajwyraŸniej wycofano wszystkie oskar¿enia pod twoim adresem.
 		};
 		AI_Output(self,other,"DIA_Andre_PMSchulden_08_10");	//Nie wiem, jak to siê sta³o, ale ostrzegam ciê: nie pogrywaj sobie ze mn¹.
-		if(b_getgreatestpetzcrime(self) == CRIME_NONE)
+		if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
 		{
 			AI_Output(self,other,"DIA_Andre_PMSchulden_08_11");	//Tak czy inaczej, postanowi³em odst¹piæ od egzekucji grzywny.
 			AI_Output(self,other,"DIA_Andre_PMSchulden_08_12");	//Zadbaj o to, ¿eby nie wpakowaæ siê w nowe k³opoty.
-			ANDRE_SCHULDEN = 0;
-			ANDRE_LASTPETZCOUNTER = 0;
-			ANDRE_LASTPETZCRIME = CRIME_NONE;
+			Andre_Schulden = 0;
+			Andre_LastPetzCounter = 0;
+			Andre_LastPetzCrime = CRIME_NONE;
 		}
 		else
 		{
 			AI_Output(self,other,"DIA_Andre_PMSchulden_08_13");	//Chcê, ¿eby jedno by³o jasne: i tak bêdziesz musia³ zap³aciæ ca³¹ grzywnê.
-			b_say_gold(self,other,ANDRE_SCHULDEN);
+			B_Say_Gold(self,other,Andre_Schulden);
 		};
 	};
-	if(b_getgreatestpetzcrime(self) != CRIME_NONE)
+	if(B_GetGreatestPetzCrime(self) != CRIME_NONE)
 	{
-		Info_ClearChoices(dia_andre_pmschulden);
-		Info_ClearChoices(dia_andre_petzmaster);
-		Info_AddChoice(dia_andre_pmschulden,"Nie mam tyle z³ota.",dia_andre_petzmaster_paylater);
-		Info_AddChoice(dia_andre_pmschulden,"Ile to mia³o byæ?",dia_andre_pmschulden_howmuchagain);
-		if(Npc_HasItems(other,itmi_gold) >= ANDRE_SCHULDEN)
+		Info_ClearChoices(DIA_Andre_PMSchulden);
+		Info_ClearChoices(DIA_Andre_PETZMASTER);
+		Info_AddChoice(DIA_Andre_PMSchulden,"Nie mam tyle z³ota.",DIA_Andre_PETZMASTER_PayLater);
+		Info_AddChoice(DIA_Andre_PMSchulden,"Ile to mia³o byæ?",DIA_Andre_PMSchulden_HowMuchAgain);
+		if(Npc_HasItems(other,ItMi_Gold) >= Andre_Schulden)
 		{
-			Info_AddChoice(dia_andre_pmschulden,"Chcê zap³aciæ grzywnê!",dia_andre_petzmaster_paynow);
+			Info_AddChoice(DIA_Andre_PMSchulden,"Chcê zap³aciæ grzywnê!",DIA_Andre_PETZMASTER_PayNow);
 		};
 	};
 };
 
-func void dia_andre_pmschulden_howmuchagain()
+func void DIA_Andre_PMSchulden_HowMuchAgain()
 {
 	AI_Output(other,self,"DIA_Andre_PMSchulden_HowMuchAgain_15_00");	//Ile to mia³o byæ?
-	b_say_gold(self,other,ANDRE_SCHULDEN);
-	Info_ClearChoices(dia_andre_pmschulden);
-	Info_ClearChoices(dia_andre_petzmaster);
-	Info_AddChoice(dia_andre_pmschulden,"Nie mam tyle z³ota.",dia_andre_petzmaster_paylater);
-	Info_AddChoice(dia_andre_pmschulden,"Ile to mia³o byæ?",dia_andre_pmschulden_howmuchagain);
-	if(Npc_HasItems(other,itmi_gold) >= ANDRE_SCHULDEN)
+	B_Say_Gold(self,other,Andre_Schulden);
+	Info_ClearChoices(DIA_Andre_PMSchulden);
+	Info_ClearChoices(DIA_Andre_PETZMASTER);
+	Info_AddChoice(DIA_Andre_PMSchulden,"Nie mam tyle z³ota.",DIA_Andre_PETZMASTER_PayLater);
+	Info_AddChoice(DIA_Andre_PMSchulden,"Ile to mia³o byæ?",DIA_Andre_PMSchulden_HowMuchAgain);
+	if(Npc_HasItems(other,ItMi_Gold) >= Andre_Schulden)
 	{
-		Info_AddChoice(dia_andre_pmschulden,"Chcê zap³aciæ grzywnê!",dia_andre_petzmaster_paynow);
+		Info_AddChoice(DIA_Andre_PMSchulden,"Chcê zap³aciæ grzywnê!",DIA_Andre_PETZMASTER_PayNow);
 	};
 };
 
 
-instance DIA_ANDRE_PETZMASTER(C_INFO)
+instance DIA_Andre_PETZMASTER(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 1;
-	condition = dia_andre_petzmaster_condition;
-	information = dia_andre_petzmaster_info;
+	condition = DIA_Andre_PETZMASTER_Condition;
+	information = DIA_Andre_PETZMASTER_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_andre_petzmaster_condition()
+func int DIA_Andre_PETZMASTER_Condition()
 {
-	if(b_getgreatestpetzcrime(self) > ANDRE_LASTPETZCRIME)
+	if(B_GetGreatestPetzCrime(self) > Andre_LastPetzCrime)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_petzmaster_info()
+func void DIA_Andre_PETZMASTER_Info()
 {
-	ANDRE_SCHULDEN = 0;
-	if(self.aivar[AIV_TALKEDTOPLAYER] == FALSE)
+	Andre_Schulden = 0;
+	if(self.aivar[AIV_TalkedToPlayer] == FALSE)
 	{
 		AI_Output(self,other,"DIA_Andre_PETZMASTER_08_00");	//Musisz byæ tym nowym, który narobi³ w mieœcie sporo zamieszania.
 	};
-	if((PABLO_ANDREMELDEN == TRUE) && !Npc_IsDead(pablo) && (ANDRE_STECKBRIEF == FALSE))
+	if((Pablo_AndreMelden == TRUE) && !Npc_IsDead(Pablo) && (Andre_Steckbrief == FALSE))
 	{
-		b_andre_steckbrief();
+		B_Andre_Steckbrief();
 	};
-	if((MIS_CANTHARS_KOMPROBRIEF == LOG_RUNNING) && (MIS_CANTHARS_KOMPROBRIEF_DAY <= (Wld_GetDay() - 2)) && (ANDRE_CANTHARFALLE == FALSE))
+	if((MIS_Canthars_KomproBrief == LOG_Running) && (MIS_Canthars_KomproBrief_Day <= (Wld_GetDay() - 2)) && (Andre_CantharFalle == FALSE))
 	{
-		b_andre_cantharfalle();
+		B_Andre_CantharFalle();
 	};
-	if(b_getgreatestpetzcrime(self) == CRIME_MURDER)
+	if(B_GetGreatestPetzCrime(self) == CRIME_MURDER)
 	{
 		AI_Output(self,other,"DIA_Andre_PETZMASTER_08_01");	//Dobrze, ¿e do mnie przyszed³eœ, zanim twoja sytuacja sta³a siê beznadziejna.
 		AI_Output(self,other,"DIA_Andre_PETZMASTER_08_02");	//Morderstwo to powa¿ne przestêpstwo!
-		ANDRE_SCHULDEN = b_gettotalpetzcounter(self) * 50;
-		ANDRE_SCHULDEN = ANDRE_SCHULDEN + 500;
-		if((PETZCOUNTER_CITY_THEFT + PETZCOUNTER_CITY_ATTACK + PETZCOUNTER_CITY_SHEEPKILLER) > 0)
+		Andre_Schulden = B_GetTotalPetzCounter(self) * 50;
+		Andre_Schulden = Andre_Schulden + 500;
+		if((PETZCOUNTER_City_Theft + PETZCOUNTER_City_Attack + PETZCOUNTER_City_Sheepkiller) > 0)
 		{
 			AI_Output(self,other,"DIA_Andre_PETZMASTER_08_03");	//Nie mówi¹c ju¿ o innych twoich wystêpkach.
 		};
@@ -292,147 +292,147 @@ func void dia_andre_petzmaster_info()
 		AI_Output(self,other,"DIA_Andre_PETZMASTER_08_07");	//Ale nie³atwo bêdzie przekonaæ mieszkañców, ¿eby ci znowu zaufali.
 		AI_Output(self,other,"DIA_Andre_PETZMASTER_08_08");	//Móg³byœ okazaæ skruchê, p³ac¹c grzywnê - oczywiœcie, odpowiednio wysok¹.
 	};
-	if(b_getgreatestpetzcrime(self) == CRIME_THEFT)
+	if(B_GetGreatestPetzCrime(self) == CRIME_THEFT)
 	{
 		AI_Output(self,other,"DIA_Andre_PETZMASTER_08_09");	//Dobrze, ¿e przyszed³eœ! Jesteœ oskar¿ony o kradzie¿! S¹ na to œwiadkowie.
-		if((PETZCOUNTER_CITY_ATTACK + PETZCOUNTER_CITY_SHEEPKILLER) > 0)
+		if((PETZCOUNTER_City_Attack + PETZCOUNTER_City_Sheepkiller) > 0)
 		{
 			AI_Output(self,other,"DIA_Andre_PETZMASTER_08_10");	//Nie bêdê wspomina³ o innych sprawach, o których s³ysza³em.
 		};
 		AI_Output(self,other,"DIA_Andre_PETZMASTER_08_11");	//Nie mam zamiaru tolerowaæ takich rzeczy w mieœcie!
 		AI_Output(self,other,"DIA_Andre_PETZMASTER_08_12");	//¯eby odpokutowaæ za swoje winy, musisz zap³aciæ grzywnê.
-		ANDRE_SCHULDEN = b_gettotalpetzcounter(self) * 50;
+		Andre_Schulden = B_GetTotalPetzCounter(self) * 50;
 	};
-	if(b_getgreatestpetzcrime(self) == CRIME_ATTACK)
+	if(B_GetGreatestPetzCrime(self) == CRIME_ATTACK)
 	{
 		AI_Output(self,other,"DIA_Andre_PETZMASTER_08_13");	//Bijatyka z mot³ochem w porcie to jedno...
 		AI_Output(self,other,"DIA_Andre_PETZMASTER_08_14");	//Ale jeœli napadasz na obywateli, albo ¿o³nierzy Króla, to musisz stan¹æ przed obliczem sprawiedliwoœci.
-		if(PETZCOUNTER_CITY_SHEEPKILLER > 0)
+		if(PETZCOUNTER_City_Sheepkiller > 0)
 		{
 			AI_Output(self,other,"DIA_Andre_PETZMASTER_08_15");	//A ta sprawa z owcami te¿ niezbyt dobrze wp³ynê³a na twoj¹ reputacjê.
 		};
 		AI_Output(self,other,"DIA_Andre_PETZMASTER_08_16");	//Jeœli ciê za to nie ukarzê, wkrótce wszyscy bêd¹ robili, co im tylko przyjdzie do g³owy.
 		AI_Output(self,other,"DIA_Andre_PETZMASTER_08_17");	//A wiêc musisz zap³aciæ odpowiedni¹ grzywnê - i sprawa pójdzie w zapomnienie.
-		ANDRE_SCHULDEN = b_gettotalpetzcounter(self) * 50;
+		Andre_Schulden = B_GetTotalPetzCounter(self) * 50;
 	};
-	if(b_getgreatestpetzcrime(self) == CRIME_SHEEPKILLER)
+	if(B_GetGreatestPetzCrime(self) == CRIME_SHEEPKILLER)
 	{
 		AI_Output(self,other,"DIA_Andre_PETZMASTER_08_18");	//Dosz³o do mnie, ¿e polowa³eœ na nasze owce.
 		AI_Output(self,other,"DIA_Andre_PETZMASTER_08_19");	//Chyba rozumiesz, ¿e nie mogê tego puœciæ p³azem.
 		AI_Output(self,other,"DIA_Andre_PETZMASTER_08_20");	//Musisz zap³aciæ odszkodowanie!
-		ANDRE_SCHULDEN = 100;
+		Andre_Schulden = 100;
 	};
 	AI_Output(other,self,"DIA_Andre_PETZMASTER_15_21");	//Ile?
-	if(ANDRE_SCHULDEN > 1000)
+	if(Andre_Schulden > 1000)
 	{
-		ANDRE_SCHULDEN = 1000;
+		Andre_Schulden = 1000;
 	};
-	b_say_gold(self,other,ANDRE_SCHULDEN);
-	Info_ClearChoices(dia_andre_pmschulden);
-	Info_ClearChoices(dia_andre_petzmaster);
-	Info_AddChoice(dia_andre_petzmaster,"Nie mam tyle z³ota.",dia_andre_petzmaster_paylater);
-	if(Npc_HasItems(other,itmi_gold) >= ANDRE_SCHULDEN)
+	B_Say_Gold(self,other,Andre_Schulden);
+	Info_ClearChoices(DIA_Andre_PMSchulden);
+	Info_ClearChoices(DIA_Andre_PETZMASTER);
+	Info_AddChoice(DIA_Andre_PETZMASTER,"Nie mam tyle z³ota.",DIA_Andre_PETZMASTER_PayLater);
+	if(Npc_HasItems(other,ItMi_Gold) >= Andre_Schulden)
 	{
-		Info_AddChoice(dia_andre_petzmaster,"Chcê zap³aciæ grzywnê!",dia_andre_petzmaster_paynow);
+		Info_AddChoice(DIA_Andre_PETZMASTER,"Chcê zap³aciæ grzywnê!",DIA_Andre_PETZMASTER_PayNow);
 	};
 };
 
-func void dia_andre_petzmaster_paynow()
+func void DIA_Andre_PETZMASTER_PayNow()
 {
 	AI_Output(other,self,"DIA_Andre_PETZMASTER_PayNow_15_00");	//Chcê zap³aciæ grzywnê.
-	b_giveinvitems(other,self,5113,ANDRE_SCHULDEN);
+	B_GiveInvItems(other,self,ItMi_Gold,Andre_Schulden);
 	AI_Output(self,other,"DIA_Andre_PETZMASTER_PayNow_08_01");	//Dobrze! Dopilnujê, ¿eby wszyscy mieszkañcy siê o tym dowiedzieli. W pewnym stopniu poprawi to twoj¹ reputacjê.
-	b_grantabsolution(LOC_CITY);
-	ANDRE_SCHULDEN = 0;
-	ANDRE_LASTPETZCOUNTER = 0;
-	ANDRE_LASTPETZCRIME = CRIME_NONE;
-	Info_ClearChoices(dia_andre_petzmaster);
-	Info_ClearChoices(dia_andre_pmschulden);
+	B_GrantAbsolution(LOC_CITY);
+	Andre_Schulden = 0;
+	Andre_LastPetzCounter = 0;
+	Andre_LastPetzCrime = CRIME_NONE;
+	Info_ClearChoices(DIA_Andre_PETZMASTER);
+	Info_ClearChoices(DIA_Andre_PMSchulden);
 };
 
-func void dia_andre_petzmaster_paylater()
+func void DIA_Andre_PETZMASTER_PayLater()
 {
 	AI_Output(other,self,"DIA_Andre_PETZMASTER_PayLater_15_00");	//Nie mam tyle z³ota.
 	AI_Output(self,other,"DIA_Andre_PETZMASTER_PayLater_08_01");	//A wiêc postaraj siê je zdobyæ jak najszybciej.
 	AI_Output(self,other,"DIA_Andre_PETZMASTER_PayLater_08_02");	//Ostrzegam ciê - jeœli pope³nisz kolejne przestêpstwo, twoja sytuacja jeszcze bardziej siê pogorszy.
-	ANDRE_LASTPETZCOUNTER = b_gettotalpetzcounter(self);
-	ANDRE_LASTPETZCRIME = b_getgreatestpetzcrime(self);
+	Andre_LastPetzCounter = B_GetTotalPetzCounter(self);
+	Andre_LastPetzCrime = B_GetGreatestPetzCrime(self);
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ANDRE_HALLO(C_INFO)
+instance DIA_Andre_Hallo(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 2;
-	condition = dia_andre_hallo_condition;
-	information = dia_andre_hallo_info;
+	condition = DIA_Andre_Hallo_Condition;
+	information = DIA_Andre_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_andre_hallo_condition()
+func int DIA_Andre_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (self.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (self.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_hallo_info()
+func void DIA_Andre_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Andre_Hallo_08_00");	//Niech Innos bêdzie z tob¹, przybyszu! Co ciê do mnie sprowadza?
 };
 
 
-instance DIA_ANDRE_MESSAGE(C_INFO)
+instance DIA_Andre_Message(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 1;
-	condition = dia_andre_message_condition;
-	information = dia_andre_message_info;
+	condition = DIA_Andre_Message_Condition;
+	information = DIA_Andre_Message_Info;
 	permanent = FALSE;
 	description = "Mam wa¿n¹ wiadomoœæ dla Lorda Hagena.";
 };
 
 
-func int dia_andre_message_condition()
+func int DIA_Andre_Message_Condition()
 {
-	if((KAPITEL < 3) && ((hero.guild == GIL_NONE) || (hero.guild == GIL_NOV)))
+	if((Kapitel < 3) && ((hero.guild == GIL_NONE) || (hero.guild == GIL_NOV)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_message_info()
+func void DIA_Andre_Message_Info()
 {
 	AI_Output(other,self,"DIA_Andre_Message_15_00");	//Mam wa¿n¹ wiadomoœæ dla Lorda Hagena.
 	AI_Output(self,other,"DIA_Andre_Message_08_01");	//No có¿, stoisz przed jednym z jego ludzi. O co chodzi?
-	Info_ClearChoices(dia_andre_message);
-	Info_AddChoice(dia_andre_message,"To mogê powiedzieæ jedynie Lordowi Hagenowi.",dia_andre_message_personal);
-	Info_AddChoice(dia_andre_message,"Watahy orków s¹ prowadzone przez SMO...",dia_andre_message_dragons);
-	Info_AddChoice(dia_andre_message,"Chodzi o œwiêty artefakt - Oko Innosa.",dia_andre_message_eyeinnos);
+	Info_ClearChoices(DIA_Andre_Message);
+	Info_AddChoice(DIA_Andre_Message,"To mogê powiedzieæ jedynie Lordowi Hagenowi.",DIA_Andre_Message_Personal);
+	Info_AddChoice(DIA_Andre_Message,"Watahy orków s¹ prowadzone przez SMO...",DIA_Andre_Message_Dragons);
+	Info_AddChoice(DIA_Andre_Message,"Chodzi o œwiêty artefakt - Oko Innosa.",DIA_Andre_Message_EyeInnos);
 };
 
-func void b_andre_lordhagennichtzusprechen()
+func void B_Andre_LordHagenNichtZuSprechen()
 {
 	AI_Output(self,other,"B_Andre_LordHagenNichtZuSprechen_08_00");	//Lord Hagen przyjmuje tylko paladynów albo tych, którzy s¹ na ich s³u¿bie.
 	AI_Output(self,other,"B_Andre_LordHagenNichtZuSprechen_08_01");	//Marnowanie czasu z prostymi ludŸmi jest poni¿ej jego godnoœci.
 };
 
-func void dia_andre_message_eyeinnos()
+func void DIA_Andre_Message_EyeInnos()
 {
 	AI_Output(other,self,"DIA_Andre_Message_EyeInnos_15_00");	//Chodzi o œwiêty artefakt - Oko Innosa.
 	AI_Output(self,other,"DIA_Andre_Message_EyeInnos_08_01");	//Oko Innosa - nigdy o czymœ takim nie s³ysza³em. Ale to jeszcze nic nie znaczy.
 	AI_Output(self,other,"DIA_Andre_Message_EyeInnos_08_02");	//Jeœli naprawdê istnieje artefakt o takiej nazwie, bêd¹ o nim wiedzieæ tylko najwa¿niejsi przedstawiciele naszego zakonu.
 	AI_Output(other,self,"DIA_Andre_Message_EyeInnos_15_03");	//Dlatego muszê porozmawiaæ z samym Lordem Hagenem.
-	ANDRE_EYEINNOS = TRUE;
-	b_andre_lordhagennichtzusprechen();
-	Info_ClearChoices(dia_andre_message);
+	Andre_EyeInnos = TRUE;
+	B_Andre_LordHagenNichtZuSprechen();
+	Info_ClearChoices(DIA_Andre_Message);
 };
 
-func void dia_andre_message_dragons()
+func void DIA_Andre_Message_Dragons()
 {
 	AI_Output(other,self,"DIA_Andre_Message_Dragons_15_00");	//Watahy orków s¹ prowadzone przez SMO...
 	AI_Output(self,other,"DIA_Andre_Message_Dragons_08_01");	//WIEM, ¿e armie orków staj¹ siê coraz silniejsze.
@@ -442,35 +442,35 @@ func void dia_andre_message_dragons()
 	AI_Output(self,other,"DIA_Andre_Message_Dragons_08_05");	//A wiêc, o co naprawdê chodzi?
 };
 
-func void dia_andre_message_personal()
+func void DIA_Andre_Message_Personal()
 {
 	AI_Output(other,self,"DIA_Andre_Message_Personal_15_00");	//To mogê powiedzieæ jedynie Lordowi Hagenowi.
 	AI_Output(self,other,"DIA_Andre_Message_Personal_08_01");	//Jak chcesz. Ale pamiêtaj o jednym:
-	b_andre_lordhagennichtzusprechen();
-	Info_ClearChoices(dia_andre_message);
+	B_Andre_LordHagenNichtZuSprechen();
+	Info_ClearChoices(DIA_Andre_Message);
 };
 
 
-instance DIA_ANDRE_PALADINE(C_INFO)
+instance DIA_Andre_Paladine(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 3;
-	condition = dia_andre_paladine_condition;
-	information = dia_andre_paladine_info;
+	condition = DIA_Andre_Paladine_Condition;
+	information = DIA_Andre_Paladine_Info;
 	permanent = FALSE;
 	description = "Co robicie w mieœcie?";
 };
 
 
-func int dia_andre_paladine_condition()
+func int DIA_Andre_Paladine_Condition()
 {
-	if((other.guild != GIL_MIL) && (KAPITEL < 3))
+	if((other.guild != GIL_MIL) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_paladine_info()
+func void DIA_Andre_Paladine_Info()
 {
 	AI_Output(other,self,"DIA_Andre_Paladine_15_00");	//Co robicie w mieœcie?
 	AI_Output(self,other,"DIA_Andre_Paladine_08_01");	//Nasze zadanie jest tajne.
@@ -479,28 +479,28 @@ func void dia_andre_paladine_info()
 };
 
 
-instance DIA_ANDRE_PALADINEAGAIN(C_INFO)
+instance DIA_Andre_PaladineAgain(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 3;
-	condition = dia_andre_paladineagain_condition;
-	information = dia_andre_paladineagain_info;
+	condition = DIA_Andre_PaladineAgain_Condition;
+	information = DIA_Andre_PaladineAgain_Info;
 	permanent = FALSE;
 	description = "Co robicie w mieœcie?";
 };
 
 
-func int dia_andre_paladineagain_condition()
+func int DIA_Andre_PaladineAgain_Condition()
 {
-	if((other.guild == GIL_MIL) && (KAPITEL < 3))
+	if((other.guild == GIL_MIL) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_paladineagain_info()
+func void DIA_Andre_PaladineAgain_Info()
 {
-	if(Npc_KnowsInfo(other,dia_andre_paladine))
+	if(Npc_KnowsInfo(other,DIA_Andre_Paladine))
 	{
 		AI_Output(other,self,"DIA_Andre_PaladineAgain_15_00");	//Czy mo¿esz mi powiedzieæ, dlaczego przybyliœcie do Khorinis?
 	}
@@ -512,22 +512,22 @@ func void dia_andre_paladineagain_info()
 	AI_Output(self,other,"DIA_Andre_PaladineAgain_08_03");	//A zatem mogê wtajemniczyæ ciê w pewne sprawy.
 	AI_Output(self,other,"DIA_Andre_PaladineAgain_08_04");	//Król Rhobar wyznaczy³ nam zadanie. Po zniszczeniu Bariery zmniejszy³y siê dostawy rudy.
 	AI_Output(self,other,"DIA_Andre_PaladineAgain_08_05");	//Dlatego sprowadzamy j¹ na kontynent. Z rudy ¿elaza wykujemy now¹ broñ i odeprzemy orków.
-	KNOWSPALADINS_ORE = TRUE;
+	KnowsPaladins_Ore = TRUE;
 };
 
 
-instance DIA_ANDRE_ASKTOJOIN(C_INFO)
+instance DIA_Andre_AskToJoin(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 2;
-	condition = dia_andre_asktojoin_condition;
-	information = dia_andre_asktojoin_info;
+	condition = DIA_Andre_AskToJoin_Condition;
+	information = DIA_Andre_AskToJoin_Info;
 	permanent = FALSE;
 	description = "Chcê wst¹piæ na s³u¿bê u paladynów!";
 };
 
 
-func int dia_andre_asktojoin_condition()
+func int DIA_Andre_AskToJoin_Condition()
 {
 	if(hero.guild == GIL_NONE)
 	{
@@ -535,10 +535,10 @@ func int dia_andre_asktojoin_condition()
 	};
 };
 
-func void dia_andre_asktojoin_info()
+func void DIA_Andre_AskToJoin_Info()
 {
 	AI_Output(other,self,"DIA_Andre_AskToJoin_15_00");	//Chcê wst¹piæ na s³u¿bê u paladynów!
-	if(Npc_KnowsInfo(other,dia_andre_message))
+	if(Npc_KnowsInfo(other,DIA_Andre_Message))
 	{
 		AI_Output(self,other,"DIA_Andre_AskToJoin_08_01");	//Dobrze. Przyda mi siê tu ka¿dy zdolny cz³owiek. Niewa¿ne, jakie ma powody, ¿eby do nas do³¹czyæ.
 		AI_Output(self,other,"DIA_Andre_AskToJoin_08_02");	//Jeœli wst¹pisz na s³u¿bê u paladynów, pomogê ci uzyskaæ audiencjê u Lorda Hagena.
@@ -551,32 +551,32 @@ func void dia_andre_asktojoin_info()
 	AI_Output(self,other,"DIA_Andre_AskToJoin_08_05");	//Mój komandant boi siê, ¿e w szeregi stra¿y mogliby siê zakraœæ szpiedzy albo dywersanci.
 	AI_Output(self,other,"DIA_Andre_AskToJoin_08_06");	//Chce w ten sposób zmniejszyæ ryzyko zdrady.
 	AI_Output(self,other,"DIA_Andre_AskToJoin_08_07");	//Dlatego musisz najpierw zostaæ obywatelem miasta. Rozkaz to rozkaz, niewa¿ne, czy ma sens.
-	Log_CreateTopic(TOPIC_BECOMEMIL,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_BECOMEMIL,LOG_RUNNING);
-	b_logentry(TOPIC_BECOMEMIL,"Zanim bêdê móg³ wst¹piæ do stra¿y, muszê zostaæ obywatelem miasta.");
+	Log_CreateTopic(TOPIC_BecomeMIL,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_BecomeMIL,LOG_Running);
+	B_LogEntry(TOPIC_BecomeMIL,"Zanim bêdê móg³ wst¹piæ do stra¿y, muszê zostaæ obywatelem miasta.");
 };
 
 
-instance DIA_ANDRE_ABOUTMILIZ(C_INFO)
+instance DIA_Andre_AboutMiliz(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 5;
-	condition = dia_andre_aboutmiliz_condition;
-	information = dia_andre_aboutmiliz_info;
+	condition = DIA_Andre_AboutMiliz_Condition;
+	information = DIA_Andre_AboutMiliz_Info;
 	permanent = FALSE;
 	description = "Czego mogê siê spodziewaæ w stra¿y?";
 };
 
 
-func int dia_andre_aboutmiliz_condition()
+func int DIA_Andre_AboutMiliz_Condition()
 {
-	if((other.guild == GIL_NONE) && Npc_KnowsInfo(other,dia_andre_asktojoin))
+	if((other.guild == GIL_NONE) && Npc_KnowsInfo(other,DIA_Andre_AskToJoin))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_aboutmiliz_info()
+func void DIA_Andre_AboutMiliz_Info()
 {
 	AI_Output(other,self,"DIA_Andre_AboutMiliz_15_00");	//Czego mogê siê spodziewaæ w stra¿y?
 	AI_Output(self,other,"DIA_Andre_AboutMiliz_08_01");	//Postawmy sprawê jasno. Bycie cz³onkiem stra¿y nie oznacza, ¿e przez ca³y dzieñ mo¿na w³óczyæ siê w mundurze po mieœcie.
@@ -585,26 +585,26 @@ func void dia_andre_aboutmiliz_info()
 };
 
 
-instance DIA_ANDRE_ALTERNATIVE(C_INFO)
+instance DIA_Andre_Alternative(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 2;
-	condition = dia_andre_alternative_condition;
-	information = dia_andre_alternative_info;
+	condition = DIA_Andre_Alternative_Condition;
+	information = DIA_Andre_Alternative_Info;
 	permanent = FALSE;
 	description = "Nie ma jakiegoœ szybszego sposobu, ¿eby do was do³¹czyæ?";
 };
 
 
-func int dia_andre_alternative_condition()
+func int DIA_Andre_Alternative_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_andre_asktojoin) && (other.guild == GIL_NONE))
+	if(Npc_KnowsInfo(other,DIA_Andre_AskToJoin) && (other.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_alternative_info()
+func void DIA_Andre_Alternative_Info()
 {
 	AI_Output(other,self,"DIA_Andre_Alternative_15_00");	//Nie ma jakiegoœ szybszego sposobu, ¿eby do was do³¹czyæ?
 	AI_Output(self,other,"DIA_Andre_Alternative_08_01");	//Hmmm - widzê, ¿e ci na tym zale¿y.
@@ -613,26 +613,26 @@ func void dia_andre_alternative_info()
 };
 
 
-instance DIA_ANDRE_GUILDOFTHIEVES(C_INFO)
+instance DIA_Andre_GuildOfThieves(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 2;
-	condition = dia_andre_guildofthieves_condition;
-	information = dia_andre_guildofthieves_info;
+	condition = DIA_Andre_GuildOfThieves_Condition;
+	information = DIA_Andre_GuildOfThieves_Info;
 	permanent = FALSE;
 	description = "W czym problem?";
 };
 
 
-func int dia_andre_guildofthieves_condition()
+func int DIA_Andre_GuildOfThieves_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_andre_alternative))
+	if(Npc_KnowsInfo(other,DIA_Andre_Alternative))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_guildofthieves_info()
+func void DIA_Andre_GuildOfThieves_Info()
 {
 	AI_Output(other,self,"DIA_Andre_GuildOfThieves_15_00");	//Jaki masz problem?
 	AI_Output(self,other,"DIA_Andre_GuildOfThieves_08_01");	//Ostatnio w mieœcie by³o sporo kradzie¿y. Na razie nie uda³o nam siê nikogo z³apaæ. Z³odzieje s¹ po prostu za dobrzy.
@@ -643,31 +643,31 @@ func void dia_andre_guildofthieves_info()
 		AI_Output(self,other,"DIA_Andre_GuildOfThieves_08_04");	//Wtedy dopilnujê, ¿eby przyjêto ciê do stra¿y - niewa¿ne, czy jesteœ obywatelem, czy nie.
 		AI_Output(self,other,"DIA_Andre_GuildOfThieves_08_05");	//Ale nikomu nie wolno ci mówiæ o naszej umowie!
 	};
-	MIS_ANDRE_GUILDOFTHIEVES = LOG_RUNNING;
-	b_logentry(TOPIC_BECOMEMIL,"Istnieje inna droga wst¹pienia w szeregi stra¿y. Muszê tylko rozprawiæ siê z gildi¹ z³odziei w Khorinis.");
+	MIS_Andre_GuildOfThieves = LOG_Running;
+	B_LogEntry(TOPIC_BecomeMIL,"Istnieje inna droga wst¹pienia w szeregi stra¿y. Muszê tylko rozprawiæ siê z gildi¹ z³odziei w Khorinis.");
 };
 
 
-instance DIA_ANDRE_WHERETHIEVES(C_INFO)
+instance DIA_Andre_WhereThieves(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 2;
-	condition = dia_andre_wherethieves_condition;
-	information = dia_andre_wherethieves_info;
+	condition = DIA_Andre_WhereThieves_Condition;
+	information = DIA_Andre_WhereThieves_Info;
 	permanent = FALSE;
 	description = "Gdzie powinienem szukaæ tych z³odziei?";
 };
 
 
-func int dia_andre_wherethieves_condition()
+func int DIA_Andre_WhereThieves_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_andre_guildofthieves) && (MIS_ANDRE_GUILDOFTHIEVES == LOG_RUNNING))
+	if(Npc_KnowsInfo(other,DIA_Andre_GuildOfThieves) && (MIS_Andre_GuildOfThieves == LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_wherethieves_info()
+func void DIA_Andre_WhereThieves_Info()
 {
 	AI_Output(other,self,"DIA_Andre_WhereThieves_15_00");	//Gdzie powinienem szukaæ tych z³odziei?
 	AI_Output(self,other,"DIA_Andre_WhereThieves_08_01");	//Gdybym to wiedzia³, sam bym ich z³apa³!
@@ -675,30 +675,30 @@ func void dia_andre_wherethieves_info()
 	AI_Output(self,other,"DIA_Andre_WhereThieves_08_03");	//Tamtejsi mieszkañcy nie s¹ zbyt rozmowni, szczególnie jeœli paradujesz w zbroi paladyna.
 	AI_Output(self,other,"DIA_Andre_WhereThieves_08_04");	//Ale ty jesteœ cz³owiekiem z zewn¹trz, tobie szybciej zaufaj¹.
 	AI_Output(self,other,"DIA_Andre_WhereThieves_08_05");	//Na pocz¹tek mo¿esz popytaæ wokó³ portu. Ale b¹dŸ ostro¿ny. Jeœli ktoœ siê zorientuje, ¿e pracujesz dla paladynów, NICZEGO siê nie dowiesz!
-	b_logentry(TOPIC_BECOMEMIL,"Poszukiwania gildii z³odziei najrozs¹dniej bêdzie chyba zacz¹æ w dzielnicy portowej.");
+	B_LogEntry(TOPIC_BecomeMIL,"Poszukiwania gildii z³odziei najrozs¹dniej bêdzie chyba zacz¹æ w dzielnicy portowej.");
 };
 
 
-instance DIA_ANDRE_WHATTODO(C_INFO)
+instance DIA_Andre_WhatToDo(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 3;
-	condition = dia_andre_whattodo_condition;
-	information = dia_andre_whattodo_info;
+	condition = DIA_Andre_WhatToDo_Condition;
+	information = DIA_Andre_WhatToDo_Info;
 	permanent = FALSE;
 	description = "Co mam zrobiæ, kiedy znajdê jednego ze z³odziei?";
 };
 
 
-func int dia_andre_whattodo_condition()
+func int DIA_Andre_WhatToDo_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_andre_guildofthieves) && (MIS_ANDRE_GUILDOFTHIEVES == LOG_RUNNING))
+	if(Npc_KnowsInfo(other,DIA_Andre_GuildOfThieves) && (MIS_Andre_GuildOfThieves == LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_whattodo_info()
+func void DIA_Andre_WhatToDo_Info()
 {
 	AI_Output(other,self,"DIA_Andre_WhatToDo_15_00");	//Co mam zrobiæ, kiedy znajdê jednego ze z³odziei?
 	AI_Output(self,other,"DIA_Andre_WhatToDo_08_01");	//Jeœli spotkasz jakiegoœ s³u¿¹cego, pasera albo inn¹ p³otkê, lepiej ¿ebyœ nie wdawa³ siê w bijatykê.
@@ -706,191 +706,191 @@ func void dia_andre_whattodo_info()
 	AI_Output(self,other,"DIA_Andre_WhatToDo_08_03");	//Podczas zamieszania mo¿e zainterweniowaæ stra¿ miejska i nie bêdziesz mia³ okazji, ¿eby im wyjaœniæ, o co chodzi.
 	AI_Output(self,other,"DIA_Andre_WhatToDo_08_04");	//Poza tym jest nagroda za ka¿d¹ czarn¹ owcê, któr¹ wpakujesz za kratki.
 	AI_Output(self,other,"DIA_Andre_WhatToDo_08_05");	//Ale jeœli uda ci siê znaleŸæ kryjówkê szefów, có¿, wtedy zapewne nie uda ci siê unikn¹æ walki.
-	b_logentry(TOPIC_BECOMEMIL,"Jeœli znajdê kogoœ z gildii z³odziei, powinienem zabraæ go do Lorda Andre. Jednak aby ostatecznie skoñczyæ z gildi¹, bêdê musia³ znaleŸæ jej centrum operacyjne.");
+	B_LogEntry(TOPIC_BecomeMIL,"Jeœli znajdê kogoœ z gildii z³odziei, powinienem zabraæ go do Lorda Andre. Jednak aby ostatecznie skoñczyæ z gildi¹, bêdê musia³ znaleŸæ jej centrum operacyjne.");
 };
 
 
-instance DIA_ANDRE_AUSLIEFERUNG(C_INFO)
+instance DIA_Andre_Auslieferung(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 200;
-	condition = dia_andre_auslieferung_condition;
-	information = dia_andre_auslieferung_info;
+	condition = DIA_Andre_Auslieferung_Condition;
+	information = DIA_Andre_Auslieferung_Info;
 	permanent = TRUE;
 	description = "Chcê odebraæ nagrodê za przestêpcê.";
 };
 
 
-func int dia_andre_auslieferung_condition()
+func int DIA_Andre_Auslieferung_Condition()
 {
-	if((RENGARU_AUSGELIEFERT == FALSE) || (HALVOR_AUSGELIEFERT == FALSE) || (NAGUR_AUSGELIEFERT == FALSE) || (MIS_CANTHARS_KOMPROBRIEF == LOG_RUNNING))
+	if((Rengaru_Ausgeliefert == FALSE) || (Halvor_Ausgeliefert == FALSE) || (Nagur_Ausgeliefert == FALSE) || (MIS_Canthars_KomproBrief == LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_auslieferung_info()
+func void DIA_Andre_Auslieferung_Info()
 {
 	AI_Output(other,self,"DIA_Andre_Auslieferung_15_00");	//Chcê odebraæ nagrodê za przestêpcê.
-	Info_ClearChoices(dia_andre_auslieferung);
-	Info_AddChoice(dia_andre_auslieferung,"Wrócê tu jeszcze (POWRÓT)",dia_andre_auslieferung_back);
-	if((RENGARU_INKNAST == TRUE) && (RENGARU_AUSGELIEFERT == FALSE))
+	Info_ClearChoices(DIA_Andre_Auslieferung);
+	Info_AddChoice(DIA_Andre_Auslieferung,"Wrócê tu jeszcze (POWRÓT)",DIA_Andre_Auslieferung_Back);
+	if((Rengaru_InKnast == TRUE) && (Rengaru_Ausgeliefert == FALSE))
 	{
-		Info_AddChoice(dia_andre_auslieferung,"Rengaru okrad³ kupca Jorê.",dia_andre_auslieferung_rengaru);
+		Info_AddChoice(DIA_Andre_Auslieferung,"Rengaru okrad³ kupca Jorê.",DIA_Andre_Auslieferung_Rengaru);
 	};
-	if((BETRAYAL_HALVOR == TRUE) && (HALVOR_AUSGELIEFERT == FALSE))
+	if((Betrayal_Halvor == TRUE) && (Halvor_Ausgeliefert == FALSE))
 	{
-		Info_AddChoice(dia_andre_auslieferung,"Halvor sprzedaje towary pochodz¹ce z kradzie¿y.",dia_andre_auslieferung_halvor);
+		Info_AddChoice(DIA_Andre_Auslieferung,"Halvor sprzedaje towary pochodz¹ce z kradzie¿y.",DIA_Andre_Auslieferung_Halvor);
 	};
-	if((MIS_NAGUR_BOTE == LOG_RUNNING) && (NAGUR_AUSGELIEFERT == FALSE))
+	if((MIS_Nagur_Bote == LOG_Running) && (Nagur_Ausgeliefert == FALSE))
 	{
-		Info_AddChoice(dia_andre_auslieferung,"Nagur zabi³ wys³annika Baltrama.",dia_andre_auslieferung_nagur);
+		Info_AddChoice(DIA_Andre_Auslieferung,"Nagur zabi³ wys³annika Baltrama.",DIA_Andre_Auslieferung_Nagur);
 	};
-	if((MIS_CANTHARS_KOMPROBRIEF == LOG_RUNNING) && (MIS_CANTHARS_KOMPROBRIEF_DAY > (Wld_GetDay() - 2)))
+	if((MIS_Canthars_KomproBrief == LOG_Running) && (MIS_Canthars_KomproBrief_Day > (Wld_GetDay() - 2)))
 	{
-		Info_AddChoice(dia_andre_auslieferung,"Canthar usi³uje siê pozbyæ Sary!",dia_andre_auslieferung_canthar);
+		Info_AddChoice(DIA_Andre_Auslieferung,"Canthar usi³uje siê pozbyæ Sary!",DIA_Andre_Auslieferung_Canthar);
 	};
-	if((MIS_CANTHARS_KOMPROBRIEF == LOG_RUNNING) && (Npc_HasItems(sarah,itwr_canthars_komprobrief_mis) >= 1) && (MIS_CANTHARS_KOMPROBRIEF_DAY > (Wld_GetDay() - 2)))
+	if((MIS_Canthars_KomproBrief == LOG_Running) && (Npc_HasItems(Sarah,ItWr_Canthars_KomproBrief_MIS) >= 1) && (MIS_Canthars_KomproBrief_Day > (Wld_GetDay() - 2)))
 	{
-		Info_AddChoice(dia_andre_auslieferung,"Sara sprzedaje broñ Onarowi.",dia_andre_auslieferung_sarah);
+		Info_AddChoice(DIA_Andre_Auslieferung,"Sara sprzedaje broñ Onarowi.",DIA_Andre_Auslieferung_Sarah);
 	};
 };
 
-func void dia_andre_auslieferung_back()
+func void DIA_Andre_Auslieferung_Back()
 {
-	Info_ClearChoices(dia_andre_auslieferung);
+	Info_ClearChoices(DIA_Andre_Auslieferung);
 };
 
-func void dia_andre_auslieferung_rengaru()
+func void DIA_Andre_Auslieferung_Rengaru()
 {
-	AI_Teleport(rengaru,"NW_CITY_HABOUR_KASERN_RENGARU");
+	AI_Teleport(Rengaru,"NW_CITY_HABOUR_KASERN_RENGARU");
 	AI_Output(other,self,"DIA_Andre_Auslieferung_Rengaru_15_00");	//Rengar okrad³ kupca Jorê. Chcia³ siê ulotniæ, ale go z³apa³em.
 	AI_Output(self,other,"DIA_Andre_Auslieferung_Rengaru_08_01");	//Dobrze, moi ludzie ju¿ go zamknêli. W najbli¿szym czasie nikogo nie okradnie.
 	AI_Output(self,other,"DIA_Andre_Auslieferung_Rengaru_08_02");	//Oto twoje pieni¹dze.
-	b_giveinvitems(self,other,5113,KOPFGELD);
-	RENGARU_AUSGELIEFERT = TRUE;
-	MIS_THIEFGUILD_SUCKED = TRUE;
-	b_giveplayerxp(XP_ANDRE_AUSLIEFERUNG);
-	Info_ClearChoices(dia_andre_auslieferung);
-	b_startotherroutine(rengaru,"PRISON");
+	B_GiveInvItems(self,other,ItMi_Gold,Kopfgeld);
+	Rengaru_Ausgeliefert = TRUE;
+	MIS_ThiefGuild_sucked = TRUE;
+	B_GivePlayerXP(XP_Andre_Auslieferung);
+	Info_ClearChoices(DIA_Andre_Auslieferung);
+	B_StartOtherRoutine(Rengaru,"PRISON");
 };
 
-func void dia_andre_auslieferung_halvor()
+func void DIA_Andre_Auslieferung_Halvor()
 {
-	AI_Teleport(halvor,"NW_CITY_HABOUR_KASERN_HALVOR");
+	AI_Teleport(Halvor,"NW_CITY_HABOUR_KASERN_HALVOR");
 	AI_Output(other,self,"DIA_Andre_Auslieferung_Halvor_15_00");	//Halvor to paser. Sprzedaje to, co bandyci zrabuj¹ kupcom.
 	AI_Output(self,other,"DIA_Andre_Auslieferung_Halvor_08_01");	//A wiêc to on za tym stoi. Moi ludzie zaraz go zamkn¹.
 	AI_Output(self,other,"DIA_Andre_Auslieferung_Halvor_08_02");	//W¹tpiê, ¿eby sprawia³ jeszcze jakieœ k³opoty. Od razu wyp³acê ci nagrodê.
-	b_giveinvitems(self,other,5113,KOPFGELD);
-	b_startotherroutine(halvor,"PRISON");
-	MIS_THIEFGUILD_SUCKED = TRUE;
-	HALVOR_AUSGELIEFERT = TRUE;
-	b_giveplayerxp(XP_ANDRE_AUSLIEFERUNG);
-	Info_ClearChoices(dia_andre_auslieferung);
+	B_GiveInvItems(self,other,ItMi_Gold,Kopfgeld);
+	B_StartOtherRoutine(Halvor,"PRISON");
+	MIS_ThiefGuild_sucked = TRUE;
+	Halvor_Ausgeliefert = TRUE;
+	B_GivePlayerXP(XP_Andre_Auslieferung);
+	Info_ClearChoices(DIA_Andre_Auslieferung);
 };
 
-func void dia_andre_auslieferung_nagur()
+func void DIA_Andre_Auslieferung_Nagur()
 {
-	AI_Teleport(nagur,"NW_CITY_HABOUR_KASERN_NAGUR");
+	AI_Teleport(Nagur,"NW_CITY_HABOUR_KASERN_NAGUR");
 	AI_Output(other,self,"DIA_Andre_Auslieferung_Nagur_15_00");	//Nagur zabi³ pos³añca Baltrama. Chcia³ wykorzystaæ mnie jako nowego goñca, abym przechwyci³ dostawê Akila.
 	AI_Output(self,other,"DIA_Andre_Auslieferung_Nagur_08_01");	//Spotka go za to sprawiedliwa kara. Zaraz ka¿ê go zamkn¹æ.
 	AI_Output(self,other,"DIA_Andre_Auslieferung_Nagur_08_02");	//Proszê, weŸ nagrodê. Nale¿y ci siê.
-	b_giveinvitems(self,other,5113,KOPFGELD);
-	b_startotherroutine(nagur,"PRISON");
-	MIS_THIEFGUILD_SUCKED = TRUE;
-	NAGUR_AUSGELIEFERT = TRUE;
-	b_giveplayerxp(XP_ANDRE_AUSLIEFERUNG);
-	Info_ClearChoices(dia_andre_auslieferung);
+	B_GiveInvItems(self,other,ItMi_Gold,Kopfgeld);
+	B_StartOtherRoutine(Nagur,"PRISON");
+	MIS_ThiefGuild_sucked = TRUE;
+	Nagur_Ausgeliefert = TRUE;
+	B_GivePlayerXP(XP_Andre_Auslieferung);
+	Info_ClearChoices(DIA_Andre_Auslieferung);
 };
 
-func void dia_andre_auslieferung_canthar()
+func void DIA_Andre_Auslieferung_Canthar()
 {
-	AI_Teleport(canthar,"NW_CITY_HABOUR_KASERN_RENGARU");
+	AI_Teleport(Canthar,"NW_CITY_HABOUR_KASERN_RENGARU");
 	AI_Output(other,self,"DIA_Andre_Auslieferung_Canthar_15_00");	//Kupiec Canthar chce siê pozbyæ Sary!
 	AI_Output(self,other,"DIA_Andre_Auslieferung_Canthar_08_01");	//Sary? Tej, która sprzedaje broñ na targowisku?
 	AI_Output(other,self,"DIA_Andre_Auslieferung_Canthar_15_02");	//Mia³em podrzuciæ jej list, dowód na to, ¿e Sara sprzedaje broñ Onarowi.
 	AI_Output(self,other,"DIA_Andre_Auslieferung_Canthar_08_03");	//Rozumiem. Z radoœci¹ wyp³acê nagrodê za tego drania. Mo¿esz uznaæ, ¿e ju¿ siedzi za kratami.
-	b_giveinvitems(self,other,5113,KOPFGELD);
-	b_startotherroutine(canthar,"KNAST");
-	MIS_CANTHARS_KOMPROBRIEF = LOG_FAILED;
-	b_checklog();
-	CANTHAR_AUSGELIEFERT = TRUE;
-	b_giveplayerxp(XP_ANDRE_AUSLIEFERUNG);
-	Info_ClearChoices(dia_andre_auslieferung);
+	B_GiveInvItems(self,other,ItMi_Gold,Kopfgeld);
+	B_StartOtherRoutine(Canthar,"KNAST");
+	MIS_Canthars_KomproBrief = LOG_FAILED;
+	B_CheckLog();
+	Canthar_Ausgeliefert = TRUE;
+	B_GivePlayerXP(XP_Andre_Auslieferung);
+	Info_ClearChoices(DIA_Andre_Auslieferung);
 };
 
-func void dia_andre_auslieferung_sarah()
+func void DIA_Andre_Auslieferung_Sarah()
 {
-	AI_Teleport(sarah,"NW_CITY_HABOUR_KASERN_RENGARU");
-	AI_Teleport(canthar,"NW_CITY_SARAH");
+	AI_Teleport(Sarah,"NW_CITY_HABOUR_KASERN_RENGARU");
+	AI_Teleport(Canthar,"NW_CITY_SARAH");
 	AI_Output(other,self,"DIA_Andre_Auslieferung_Sarah_15_00");	//Sara sprzedaje broñ Onarowi.
 	AI_Output(self,other,"DIA_Andre_Auslieferung_Sarah_08_01");	//Sara? Ta, która handluje broni¹ na targowisku? Masz na to jakiœ dowód?
 	AI_Output(other,self,"DIA_Andre_Auslieferung_Sarah_15_02");	//Ma w kieszeni list, który dotyczy dostawy broni dla Onara.
 	AI_Output(self,other,"DIA_Andre_Auslieferung_Sarah_08_03");	//Nie ujdzie jej to na sucho. Ka¿ê j¹ aresztowaæ.
-	b_giveinvitems(self,other,5113,KOPFGELD);
-	b_startotherroutine(sarah,"KNAST");
-	b_startotherroutine(canthar,"MARKTSTAND");
-	SARAH_AUSGELIEFERT = TRUE;
-	MIS_CANTHARS_KOMPROBRIEF = LOG_SUCCESS;
-	b_giveplayerxp(XP_ANDRE_AUSLIEFERUNG);
-	Info_ClearChoices(dia_andre_auslieferung);
+	B_GiveInvItems(self,other,ItMi_Gold,Kopfgeld);
+	B_StartOtherRoutine(Sarah,"KNAST");
+	B_StartOtherRoutine(Canthar,"MARKTSTAND");
+	Sarah_Ausgeliefert = TRUE;
+	MIS_Canthars_KomproBrief = LOG_SUCCESS;
+	B_GivePlayerXP(XP_Andre_Auslieferung);
+	Info_ClearChoices(DIA_Andre_Auslieferung);
 };
 
 
-instance DIA_ANDRE_DGRUNNING(C_INFO)
+instance DIA_Andre_DGRunning(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 4;
-	condition = dia_andre_dgrunning_condition;
-	information = dia_andre_dgrunning_info;
+	condition = DIA_Andre_DGRunning_Condition;
+	information = DIA_Andre_DGRunning_Info;
 	permanent = TRUE;
 	description = "Co do gildii z³odziei...";
 };
 
 
-func int dia_andre_dgrunning_condition()
+func int DIA_Andre_DGRunning_Condition()
 {
-	if(MIS_ANDRE_GUILDOFTHIEVES == LOG_RUNNING)
+	if(MIS_Andre_GuildOfThieves == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_dgrunning_info()
+func void DIA_Andre_DGRunning_Info()
 {
 	AI_Output(other,self,"DIA_Andre_DGRunning_15_00");	//Co do gildii z³odziei...
-	if(ANDRE_DIEBESGILDE_AUFGERAEUMT == TRUE)
+	if(Andre_Diebesgilde_aufgeraeumt == TRUE)
 	{
 		AI_Output(self,other,"DIA_Andre_DGRunning_08_01");	//Mo¿esz zapomnieæ o tej sprawie. Wys³a³em kilku ludzi do kana³ów.
 		AI_Output(self,other,"DIA_Andre_DGRunning_08_02");	//Gildia z³odziei to ju¿ tylko smutny rozdzia³ w historii tego miasta.
-		MIS_ANDRE_GUILDOFTHIEVES = LOG_OBSOLETE;
-		if(MIS_CASSIAKELCHE == LOG_RUNNING)
+		MIS_Andre_GuildOfThieves = LOG_OBSOLETE;
+		if(MIS_CassiaKelche == LOG_Running)
 		{
-			MIS_CASSIAKELCHE = LOG_OBSOLETE;
+			MIS_CassiaKelche = LOG_OBSOLETE;
 		};
-		if(MIS_RAMIREZSEXTANT == LOG_RUNNING)
+		if(MIS_RamirezSextant == LOG_Running)
 		{
-			MIS_RAMIREZSEXTANT = LOG_OBSOLETE;
+			MIS_RamirezSextant = LOG_OBSOLETE;
 		};
 		return;
 	};
 	AI_Output(self,other,"DIA_Andre_DGRunning_08_03");	//Tak?
-	Info_ClearChoices(dia_andre_dgrunning);
-	Info_AddChoice(dia_andre_dgrunning,"Pracujê nad tym...",dia_andre_dgrunning_back);
-	if(Npc_IsDead(cassia) && Npc_IsDead(jesper) && Npc_IsDead(ramirez))
+	Info_ClearChoices(DIA_Andre_DGRunning);
+	Info_AddChoice(DIA_Andre_DGRunning,"Pracujê nad tym...",DIA_Andre_DGRunning_BACK);
+	if(Npc_IsDead(Cassia) && Npc_IsDead(Jesper) && Npc_IsDead(Ramirez))
 	{
-		Info_AddChoice(dia_andre_dgrunning,"Wytropi³em ich wszystkich!",dia_andre_dgrunning_success);
+		Info_AddChoice(DIA_Andre_DGRunning,"Wytropi³em ich wszystkich!",DIA_Andre_DGRunning_Success);
 	};
-	if(((cassia.aivar[AIV_TALKEDTOPLAYER] == TRUE) || (jesper.aivar[AIV_TALKEDTOPLAYER] == TRUE) || (ramirez.aivar[AIV_TALKEDTOPLAYER] == TRUE)) && (DIEBESGILDE_VERRATEN == FALSE))
+	if(((Cassia.aivar[AIV_TalkedToPlayer] == TRUE) || (Jesper.aivar[AIV_TalkedToPlayer] == TRUE) || (Ramirez.aivar[AIV_TalkedToPlayer] == TRUE)) && (Diebesgilde_Verraten == FALSE))
 	{
-		Info_AddChoice(dia_andre_dgrunning,"Znalaz³em kryjówkê gildii z³odziei!",dia_andre_dgrunning_verrat);
+		Info_AddChoice(DIA_Andre_DGRunning,"Znalaz³em kryjówkê gildii z³odziei!",DIA_Andre_DGRunning_Verrat);
 	};
 };
 
-func void dia_andre_dgrunning_back()
+func void DIA_Andre_DGRunning_BACK()
 {
 	AI_Output(other,self,"DIA_Andre_DGRunning_BACK_15_00");	//Pracujê nad tym...
-	if(DIEBESGILDE_VERRATEN == TRUE)
+	if(Diebesgilde_Verraten == TRUE)
 	{
 		AI_Output(self,other,"DIA_Andre_DGRunning_BACK_08_01");	//Dobrze. Dam ci jeszcze trochê czasu na wykonanie tego zadania.
 	}
@@ -898,10 +898,10 @@ func void dia_andre_dgrunning_back()
 	{
 		AI_Output(self,other,"DIA_Andre_DGRunning_BACK_08_02");	//Dobrze! Informuj mnie o postêpach.
 	};
-	Info_ClearChoices(dia_andre_dgrunning);
+	Info_ClearChoices(DIA_Andre_DGRunning);
 };
 
-func void dia_andre_dgrunning_verrat()
+func void DIA_Andre_DGRunning_Verrat()
 {
 	AI_Output(other,self,"DIA_Andre_DGRunning_Verrat_15_00");	//Znalaz³em kryjówkê gildii z³odziei!
 	AI_Output(self,other,"DIA_Andre_DGRunning_Verrat_08_01");	//Gdzie?
@@ -909,20 +909,20 @@ func void dia_andre_dgrunning_verrat()
 	AI_Output(self,other,"DIA_Andre_DGRunning_Verrat_08_03");	//Co? Zamknêliœmy kana³y...
 	AI_Output(other,self,"DIA_Andre_DGRunning_Verrat_15_04");	//Wygl¹da jednak na to, ¿e to wcale nie ograniczy³o ich dostêpu do miasta.
 	AI_Output(self,other,"DIA_Andre_DGRunning_Verrat_08_05");	//Odnalaz³eœ przestêpców?
-	DIEBESGILDE_VERRATEN = TRUE;
-	DG_GEFUNDEN = TRUE;
+	Diebesgilde_Verraten = TRUE;
+	DG_gefunden = TRUE;
 };
 
-func void dia_andre_dgrunning_success()
+func void DIA_Andre_DGRunning_Success()
 {
 	AI_Output(other,self,"DIA_Andre_DGRunning_Success_15_00");	//Wytropi³em ich wszystkich!
 	AI_Output(self,other,"DIA_Andre_DGRunning_Success_08_01");	//Wyœwiadczy³eœ temu miastu wielk¹ przys³ugê.
-	DG_GEFUNDEN = TRUE;
-	MIS_ANDRE_GUILDOFTHIEVES = LOG_SUCCESS;
-	b_giveplayerxp(XP_GUILDOFTHIEVESPLATT);
-	if(MIS_CASSIAKELCHE == LOG_RUNNING)
+	DG_gefunden = TRUE;
+	MIS_Andre_GuildOfThieves = LOG_SUCCESS;
+	B_GivePlayerXP(XP_GuildOfThievesPlatt);
+	if(MIS_CassiaKelche == LOG_Running)
 	{
-		MIS_CASSIAKELCHE = LOG_OBSOLETE;
+		MIS_CassiaKelche = LOG_OBSOLETE;
 	};
 	if(other.guild == GIL_NONE)
 	{
@@ -933,53 +933,53 @@ func void dia_andre_dgrunning_success()
 		AI_Output(self,other,"DIA_Andre_DGRunning_Success_08_03");	//Wype³ni³eœ swój obowi¹zek, jak przysta³o na s³ugê Innosa i ¿o³nierza Króla.
 	};
 	AI_Output(self,other,"DIA_Andre_DGRunning_Success_08_04");	//Nale¿y ci siê nagroda za bandytów. Proszê, weŸ to.
-	b_giveinvitems(self,other,5113,KOPFGELD * 3);
-	Info_ClearChoices(dia_andre_dgrunning);
+	B_GiveInvItems(self,other,ItMi_Gold,Kopfgeld * 3);
+	Info_ClearChoices(DIA_Andre_DGRunning);
 };
 
 
-instance DIA_ANDRE_JOIN(C_INFO)
+instance DIA_Andre_JOIN(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 100;
-	condition = dia_andre_join_condition;
-	information = dia_andre_join_info;
+	condition = DIA_Andre_JOIN_Condition;
+	information = DIA_Andre_JOIN_Info;
 	permanent = TRUE;
 	description = "Jestem gotów wst¹piæ do stra¿y!";
 };
 
 
-func int dia_andre_join_condition()
+func int DIA_Andre_JOIN_Condition()
 {
-	if((hero.guild == GIL_NONE) && Npc_KnowsInfo(other,dia_andre_asktojoin))
+	if((hero.guild == GIL_NONE) && Npc_KnowsInfo(other,DIA_Andre_AskToJoin))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_join_info()
+func void DIA_Andre_JOIN_Info()
 {
 	AI_Output(other,self,"DIA_Andre_JOIN_15_00");	//Jestem gotów wst¹piæ do stra¿y!
-	if((MIS_ANDRE_GUILDOFTHIEVES == LOG_SUCCESS) && (PLAYER_ISAPPRENTICE == APP_NONE))
+	if((MIS_Andre_GuildOfThieves == LOG_SUCCESS) && (Player_IsApprentice == APP_NONE))
 	{
 		AI_Output(self,other,"DIA_Andre_JOIN_08_01");	//Dotrzymam swojej czêœci umowy i przyjmê ciê do stra¿y, chocia¿ nie jesteœ obywatelem miasta.
 		AI_Output(self,other,"DIA_Andre_JOIN_08_02");	//Ale nie rozpowiadaj o tym wszystkim naoko³o! Im mniej ludzi o tym wie, tym mniej bêdê siê musia³ t³umaczyæ.
 	}
-	else if(PLAYER_ISAPPRENTICE > APP_NONE)
+	else if(Player_IsApprentice > APP_NONE)
 	{
 		AI_Output(self,other,"DIA_Andre_JOIN_08_03");	//A wiêc jesteœ obywatelem Khorinis?
-		if(PLAYER_ISAPPRENTICE == APP_HARAD)
+		if(Player_IsApprentice == APP_Harad)
 		{
 			AI_Output(other,self,"DIA_Andre_JOIN_15_04");	//Kowal przyj¹³ mnie na czeladnika.
 			AI_Output(self,other,"DIA_Andre_JOIN_08_05");	//Harad? Znam go. Pracuje dla nas. To dobry cz³owiek.
 		};
-		if(PLAYER_ISAPPRENTICE == APP_CONSTANTINO)
+		if(Player_IsApprentice == APP_Constantino)
 		{
 			AI_Output(other,self,"DIA_Andre_JOIN_15_06");	//Jestem uczniem alchemika!
 			AI_Output(self,other,"DIA_Andre_JOIN_08_07");	//W³aœciwie to nie mamy w stra¿y zbyt wielu uczonych. Byæ mo¿e twoje umiejêtnoœci bardzo nam siê przydadz¹.
 			AI_Output(self,other,"DIA_Andre_JOIN_08_08");	//Niewiele wiem o alchemiku. Ale ludzie mówi¹, ¿e to uczciwy cz³owiek.
 		};
-		if(PLAYER_ISAPPRENTICE == APP_BOSPER)
+		if(Player_IsApprentice == APP_Bosper)
 		{
 			AI_Output(other,self,"DIA_Andre_JOIN_15_09");	//Bosper, ³uczarz, przyj¹³ mnie na swego ucznia.
 			AI_Output(self,other,"DIA_Andre_JOIN_08_10");	//A wiêc wiesz te¿ co nieco o ¿yciu w dziczy? To dobrze, bo stra¿ pe³ni s³u¿bê nie tylko w obrêbie murów miasta.
@@ -987,7 +987,7 @@ func void dia_andre_join_info()
 			AI_Output(self,other,"DIA_Andre_JOIN_08_12");	//A ³uczarz jest wa¿n¹ osob¹ w mieœcie.
 		};
 		AI_Output(self,other,"DIA_Andre_JOIN_08_13");	//Jeœli on za ciebie porêczy³, to nic nie stoi na przeszkodzie, ¿ebyœ wst¹pi³ w szeregi stra¿y.
-		if(MIS_ANDRE_GUILDOFTHIEVES == LOG_SUCCESS)
+		if(MIS_Andre_GuildOfThieves == LOG_SUCCESS)
 		{
 			AI_Output(self,other,"DIA_Andre_JOIN_08_14");	//Ponadto, uwolni³eœ nas od k³opotów z gildi¹ z³odziei. Za samo to bym ciê przyj¹³.
 		};
@@ -1000,12 +1000,12 @@ func void dia_andre_join_info()
 	AI_Output(self,other,"DIA_Andre_JOIN_08_16");	//Jeœli chcesz, mo¿esz siê do nas zaci¹gn¹æ. Ale twoja decyzja bêdzie ostateczna.
 	AI_Output(self,other,"DIA_Andre_JOIN_08_17");	//Kiedy za³o¿ysz zbrojê stra¿nika, nie bêdziesz móg³ tak po prostu jej zdj¹æ i porzuciæ s³u¿by.
 	AI_Output(self,other,"DIA_Andre_JOIN_08_18");	//Czy jesteœ gotów, by walczyæ w naszych szeregach za Innosa i Króla?
-	Info_ClearChoices(dia_andre_join);
-	Info_AddChoice(dia_andre_join,"Nie jestem ca³kiem pewien...",dia_andre_join_no);
-	Info_AddChoice(dia_andre_join,"Jestem gotowy!",dia_andre_join_yes);
+	Info_ClearChoices(DIA_Andre_JOIN);
+	Info_AddChoice(DIA_Andre_JOIN,"Nie jestem ca³kiem pewien...",DIA_Andre_JOIN_No);
+	Info_AddChoice(DIA_Andre_JOIN,"Jestem gotowy!",DIA_Andre_JOIN_Yes);
 };
 
-func void dia_andre_join_yes()
+func void DIA_Andre_JOIN_Yes()
 {
 	AI_Output(other,self,"DIA_Andre_JOIN_Yes_15_00");	//Jestem gotów!
 	AI_Output(self,other,"DIA_Andre_JOIN_Yes_08_01");	//A wiêc niech tak bêdzie. Witaj w stra¿y.
@@ -1013,43 +1013,43 @@ func void dia_andre_join_yes()
 	other.guild = GIL_MIL;
 	Snd_Play("LEVELUP");
 	AI_Output(self,other,"DIA_Andre_JOIN_Yes_08_02");	//Oto twoja zbroja.
-	b_giveinvitems(self,other,4826,1);
+	B_GiveInvItems(self,other,ITAR_Mil_L,1);
 	AI_Output(self,other,"DIA_Andre_JOIN_Yes_08_03");	//Noœ j¹ z dum¹ i godnoœci¹.
-	SLD_AUFNAHME = LOG_OBSOLETE;
-	KDF_AUFNAHME = LOG_OBSOLETE;
-	MIL_AUFNAHME = LOG_SUCCESS;
-	b_giveplayerxp(XP_BECOMEMILIZ);
-	Info_ClearChoices(dia_andre_join);
+	SLD_Aufnahme = LOG_OBSOLETE;
+	KDF_Aufnahme = LOG_OBSOLETE;
+	MIL_Aufnahme = LOG_SUCCESS;
+	B_GivePlayerXP(XP_BecomeMiliz);
+	Info_ClearChoices(DIA_Andre_JOIN);
 };
 
-func void dia_andre_join_no()
+func void DIA_Andre_JOIN_No()
 {
 	AI_Output(other,self,"DIA_Andre_JOIN_No_15_00");	//Nie jestem ca³kiem pewien...
 	AI_Output(self,other,"DIA_Andre_JOIN_No_08_01");	//Dopóki masz w¹tpliwoœci, nie mogê przyj¹æ ciê do stra¿y.
-	Info_ClearChoices(dia_andre_join);
+	Info_ClearChoices(DIA_Andre_JOIN);
 };
 
 
-instance DIA_ANDRE_LORDHAGEN(C_INFO)
+instance DIA_Andre_LORDHAGEN(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 2;
-	condition = dia_andre_lordhagen_condition;
-	information = dia_andre_lordhagen_info;
+	condition = DIA_Andre_LORDHAGEN_Condition;
+	information = DIA_Andre_LORDHAGEN_Info;
 	permanent = FALSE;
 	description = "Czy teraz mogê siê w koñcu zobaczyæ z Lordem Hagenem?";
 };
 
 
-func int dia_andre_lordhagen_condition()
+func int DIA_Andre_LORDHAGEN_Condition()
 {
-	if((other.guild == GIL_MIL) && (KAPITEL < 3))
+	if((other.guild == GIL_MIL) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_lordhagen_info()
+func void DIA_Andre_LORDHAGEN_Info()
 {
 	AI_Output(other,self,"DIA_Andre_LORDHAGEN_15_00");	//Czy teraz mogê siê w koñcu zobaczyæ z Lordem Hagenem?
 	AI_Output(self,other,"DIA_Andre_LORDHAGEN_08_01");	//Jesteœ teraz na s³u¿bie paladynów. Pozwol¹ ci wejœæ. Ale lepiej, ¿ebyœ mia³ coœ wa¿nego do powiedzenia.
@@ -1058,105 +1058,105 @@ func void dia_andre_lordhagen_info()
 };
 
 
-instance DIA_ANDRE_WAFFE(C_INFO)
+instance DIA_Andre_Waffe(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 2;
-	condition = dia_andre_waffe_condition;
-	information = dia_andre_waffe_info;
+	condition = DIA_Andre_Waffe_Condition;
+	information = DIA_Andre_Waffe_Info;
 	permanent = FALSE;
 	description = "Czy ja te¿ dostanê broñ?";
 };
 
 
-func int dia_andre_waffe_condition()
+func int DIA_Andre_Waffe_Condition()
 {
-	if((other.guild == GIL_MIL) && (KAPITEL < 3))
+	if((other.guild == GIL_MIL) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_waffe_info()
+func void DIA_Andre_Waffe_Info()
 {
 	AI_Output(other,self,"DIA_Andre_Waffe_15_00");	//Czy ja te¿ dostanê broñ?
 	AI_Output(self,other,"DIA_Andre_Waffe_08_01");	//Oczywiœcie. Zazwyczaj zajmuje siê tym Peck. Ale w³aœnie skojarzy³em, ¿e od jakiegoœ czasu go nie widzia³em.
 	AI_Output(self,other,"DIA_Andre_Waffe_08_02");	//Dowiedz siê, gdzie siê zaszy³ i przyprowadŸ go do mnie. Wtedy da ci broñ.
 	AI_Output(self,other,"DIA_Andre_Waffe_08_03");	//A jeœli bêdziesz chcia³ siê przespaæ, skorzystaj z ³ó¿ka w sypialni.
-	MIS_ANDRE_PECK = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_PECK,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_PECK,LOG_RUNNING);
-	b_logentry(TOPIC_PECK,"Peck przebywa gdzieœ w mieœcie. Jeœli zabiorê go z powrotem do koszar, dostanê od niego broñ.");
+	MIS_Andre_Peck = LOG_Running;
+	Log_CreateTopic(TOPIC_Peck,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Peck,LOG_Running);
+	B_LogEntry(TOPIC_Peck,"Peck przebywa gdzieœ w mieœcie. Jeœli zabiorê go z powrotem do koszar, dostanê od niego broñ.");
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ANDRE_FOUND_PECK(C_INFO)
+instance DIA_Andre_FOUND_PECK(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 2;
-	condition = dia_andre_found_peck_condition;
-	information = dia_andre_found_peck_info;
+	condition = DIA_Andre_FOUND_PECK_Condition;
+	information = DIA_Andre_FOUND_PECK_Info;
 	permanent = FALSE;
 	description = "Uda³o mi siê znaleŸæ Pecka.";
 };
 
 
-func int dia_andre_found_peck_condition()
+func int DIA_Andre_FOUND_PECK_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_peck_found_peck) && (MIS_ANDRE_PECK == LOG_RUNNING) && (Npc_IsDead(peck) == FALSE))
+	if(Npc_KnowsInfo(hero,DIA_Peck_FOUND_PECK) && (MIS_Andre_Peck == LOG_Running) && (Npc_IsDead(Peck) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_found_peck_info()
+func void DIA_Andre_FOUND_PECK_Info()
 {
 	AI_Output(other,self,"DIA_Andre_FOUND_PECK_15_00");	//Uda³o mi siê znaleŸæ Pecka.
 	AI_Output(self,other,"DIA_Andre_FOUND_PECK_08_01");	//Tak, jest z powrotem na posterunku i robi, co do niego nale¿y. Gdzie go znalaz³eœ?
-	Info_ClearChoices(dia_andre_found_peck);
-	Info_AddChoice(dia_andre_found_peck,"Wszed³ mi w drogê...",dia_andre_found_peck_somewhere);
-	Info_AddChoice(dia_andre_found_peck,"W 'Czerwonej Latarni'...",dia_andre_found_peck_redlight);
+	Info_ClearChoices(DIA_Andre_FOUND_PECK);
+	Info_AddChoice(DIA_Andre_FOUND_PECK,"Wszed³ mi w drogê...",DIA_Andre_FOUND_PECK_SOMEWHERE);
+	Info_AddChoice(DIA_Andre_FOUND_PECK,"W 'Czerwonej Latarni'...",DIA_Andre_FOUND_PECK_REDLIGHT);
 };
 
-func void dia_andre_found_peck_somewhere()
+func void DIA_Andre_FOUND_PECK_SOMEWHERE()
 {
 	AI_Output(other,self,"DIA_Andre_FOUND_PECK_SOMEWHERE_15_00");	//Wszed³ mi w drogê na mieœcie.
 	AI_Output(self,other,"DIA_Andre_FOUND_PECK_SOMEWHERE_08_01");	//W porz¹dku, wiêc idŸ do niego i weŸ broñ.
-	MIS_ANDRE_PECK = LOG_OBSOLETE;
-	b_giveplayerxp(XP_FOUNDPECK);
-	Info_ClearChoices(dia_andre_found_peck);
+	MIS_Andre_Peck = LOG_OBSOLETE;
+	B_GivePlayerXP(XP_FoundPeck);
+	Info_ClearChoices(DIA_Andre_FOUND_PECK);
 };
 
-func void dia_andre_found_peck_redlight()
+func void DIA_Andre_FOUND_PECK_REDLIGHT()
 {
 	AI_Output(other,self,"DIA_Andre_FOUND_PECK_REDLIGHT_15_00");	//By³ w 'Czerwonej Latarni'.
 	AI_Output(self,other,"DIA_Andre_FOUND_PECK_REDLIGHT_08_01");	//Proszê... A wiêc krêci siê ko³o dziewczynek, zamiast pe³niæ s³u¿bê.
 	AI_Output(self,other,"DIA_Andre_FOUND_PECK_REDLIGHT_08_02");	//Wydaje mi siê, ¿e muszê z nim zamieniæ s³ówko.
-	b_giveplayerxp(XP_FOUNDPECK * 2);
-	MIS_ANDRE_PECK = LOG_SUCCESS;
-	Info_ClearChoices(dia_andre_found_peck);
+	B_GivePlayerXP(XP_FoundPeck * 2);
+	MIS_Andre_Peck = LOG_SUCCESS;
+	Info_ClearChoices(DIA_Andre_FOUND_PECK);
 };
 
-func void b_andresold()
+func void B_AndreSold()
 {
 	AI_Output(self,other,"DIA_Andre_Sold_08_00");	//Oto twoja zap³ata.
-	b_giveinvitems(self,other,5113,ANDRE_SOLD);
+	B_GiveInvItems(self,other,ItMi_Gold,Andre_Sold);
 };
 
 
-instance DIA_ANDRE_FIRSTMISSION(C_INFO)
+instance DIA_Andre_FIRSTMISSION(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 2;
-	condition = dia_andre_firstmission_condition;
-	information = dia_andre_firstmission_info;
+	condition = DIA_Andre_FIRSTMISSION_Condition;
+	information = DIA_Andre_FIRSTMISSION_Info;
 	permanent = FALSE;
 	description = "Masz dla mnie jakieœ zadanie?";
 };
 
 
-func int dia_andre_firstmission_condition()
+func int DIA_Andre_FIRSTMISSION_Condition()
 {
 	if(other.guild == GIL_MIL)
 	{
@@ -1164,7 +1164,7 @@ func int dia_andre_firstmission_condition()
 	};
 };
 
-func void dia_andre_firstmission_info()
+func void DIA_Andre_FIRSTMISSION_Info()
 {
 	AI_Output(other,self,"DIA_Andre_FIRSTMISSION_15_00");	//Masz dla mnie jakieœ zadanie?
 	AI_Output(self,other,"DIA_Andre_FIRSTMISSION_08_01");	//Ostatnio w mieœcie wzros³a sprzeda¿ bagiennego ziela.
@@ -1175,44 +1175,44 @@ func void dia_andre_firstmission_info()
 	AI_Output(other,self,"DIA_Andre_FIRSTMISSION_15_06");	//Co trzeba zrobiæ?
 	AI_Output(self,other,"DIA_Andre_FIRSTMISSION_08_07");	//Mortis, jeden z naszych ludzi, s³ysza³ w tawernie, ¿e w dzielnicy portowej pojawi³ siê transport bagiennego ziela.
 	AI_Output(self,other,"DIA_Andre_FIRSTMISSION_08_08");	//Rozejrzyj siê tam i przynieœ mi paczkê z zielskiem.
-	MIS_ANDRE_WAREHOUSE = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_WAREHOUSE,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_WAREHOUSE,LOG_RUNNING);
-	b_logentry(TOPIC_WAREHOUSE,"W porcie pojawi³a siê paczka bagiennego ziela. Mortis natkn¹³ siê na ni¹ w tamtejszej knajpie. Muszê znaleŸæ tê paczkê i zanieœæ j¹ Lordowi Andre.");
+	MIS_Andre_WAREHOUSE = LOG_Running;
+	Log_CreateTopic(TOPIC_Warehouse,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Warehouse,LOG_Running);
+	B_LogEntry(TOPIC_Warehouse,"W porcie pojawi³a siê paczka bagiennego ziela. Mortis natkn¹³ siê na ni¹ w tamtejszej knajpie. Muszê znaleŸæ tê paczkê i zanieœæ j¹ Lordowi Andre.");
 };
 
 
-instance DIA_ANDRE_FOUND_STUFF(C_INFO)
+instance DIA_Andre_FOUND_STUFF(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 2;
-	condition = dia_andre_found_stuff_condition;
-	information = dia_andre_found_stuff_info;
+	condition = DIA_Andre_FOUND_STUFF_Condition;
+	information = DIA_Andre_FOUND_STUFF_Info;
 	permanent = TRUE;
 	description = "Co do tej paczki...";
 };
 
 
-func int dia_andre_found_stuff_condition()
+func int DIA_Andre_FOUND_STUFF_Condition()
 {
-	if(MIS_ANDRE_WAREHOUSE == LOG_RUNNING)
+	if(MIS_Andre_WAREHOUSE == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_found_stuff_info()
+func void DIA_Andre_FOUND_STUFF_Info()
 {
 	AI_Output(other,self,"DIA_Andre_FOUND_STUFF_15_00");	//Co do tej paczki...
 	AI_Output(self,other,"DIA_Andre_FOUND_STUFF_08_01");	//Znalaz³eœ j¹?
-	if((Npc_HasItems(other,itmi_herbpaket) > 0) || (MIS_CIPHER_PAKET == LOG_SUCCESS))
+	if((Npc_HasItems(other,ItMi_HerbPaket) > 0) || (MIS_Cipher_Paket == LOG_SUCCESS))
 	{
-		Info_ClearChoices(dia_andre_found_stuff);
-		if(Npc_HasItems(other,itmi_herbpaket) > 0)
+		Info_ClearChoices(DIA_Andre_FOUND_STUFF);
+		if(Npc_HasItems(other,ItMi_HerbPaket) > 0)
 		{
-			Info_AddChoice(dia_andre_found_stuff,"Tak, oto ona.",dia_andre_found_stuff_ja);
+			Info_AddChoice(DIA_Andre_FOUND_STUFF,"Tak, oto ona.",DIA_Andre_FOUND_STUFF_Ja);
 		};
-		Info_AddChoice(dia_andre_found_stuff,"Wrzuci³em j¹ do basenu portowego.",dia_andre_found_stuff_becken);
+		Info_AddChoice(DIA_Andre_FOUND_STUFF,"Wrzuci³em j¹ do basenu portowego.",DIA_Andre_FOUND_STUFF_Becken);
 	}
 	else
 	{
@@ -1220,49 +1220,49 @@ func void dia_andre_found_stuff_info()
 	};
 };
 
-func void dia_andre_found_stuff_ja()
+func void DIA_Andre_FOUND_STUFF_Ja()
 {
 	AI_Output(other,self,"DIA_Andre_FOUND_STUFF_Ja_15_00");	//Tak, oto ona.
-	b_giveinvitems(other,self,5660,1);
+	B_GiveInvItems(other,self,ItMi_HerbPaket,1);
 	AI_Output(self,other,"DIA_Andre_FOUND_STUFF_Ja_08_01");	//Dobra robota. Bêdziemy dobrze pilnowaæ tego zielska.
-	b_andresold();
-	MIS_ANDRE_WAREHOUSE = LOG_SUCCESS;
-	MIS_CIPHER_PAKET = LOG_FAILED;
-	b_giveplayerxp(XP_WAREHOUSE_SUPER * 2);
-	Info_ClearChoices(dia_andre_found_stuff);
+	B_AndreSold();
+	MIS_Andre_WAREHOUSE = LOG_SUCCESS;
+	MIS_Cipher_Paket = LOG_FAILED;
+	B_GivePlayerXP(XP_Warehouse_Super * 2);
+	Info_ClearChoices(DIA_Andre_FOUND_STUFF);
 };
 
-func void dia_andre_found_stuff_becken()
+func void DIA_Andre_FOUND_STUFF_Becken()
 {
 	AI_Output(other,self,"DIA_Andre_FOUND_STUFF_Becken_15_00");	//Wrzuci³em j¹ do basenu portowego.
 	AI_Output(self,other,"DIA_Andre_FOUND_STUFF_Becken_08_01");	//Tak? Có¿, g³ównie chodzi³o o to, ¿eby nie wpad³a w niepowo³ane rêce.
-	b_andresold();
-	MIS_ANDRE_WAREHOUSE = LOG_SUCCESS;
-	b_giveplayerxp(XP_WAREHOUSE_SUPER);
-	Info_ClearChoices(dia_andre_found_stuff);
+	B_AndreSold();
+	MIS_Andre_WAREHOUSE = LOG_SUCCESS;
+	B_GivePlayerXP(XP_Warehouse_Super);
+	Info_ClearChoices(DIA_Andre_FOUND_STUFF);
 };
 
 
-instance DIA_ANDRE_FIND_DEALER(C_INFO)
+instance DIA_Andre_FIND_DEALER(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 2;
-	condition = dia_andre_find_dealer_condition;
-	information = dia_andre_find_dealer_info;
+	condition = DIA_Andre_FIND_DEALER_Condition;
+	information = DIA_Andre_FIND_DEALER_Info;
 	permanent = FALSE;
 	description = "Masz dla mnie inne zadanie?";
 };
 
 
-func int dia_andre_find_dealer_condition()
+func int DIA_Andre_FIND_DEALER_Condition()
 {
-	if((MIS_ANDRE_WAREHOUSE == LOG_SUCCESS) && (Npc_IsDead(borka) == FALSE))
+	if((MIS_Andre_WAREHOUSE == LOG_SUCCESS) && (Npc_IsDead(Borka) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_find_dealer_info()
+func void DIA_Andre_FIND_DEALER_Info()
 {
 	AI_Output(other,self,"DIA_Andre_FIND_DEALER_15_00");	//Masz dla mnie inne zadanie?
 	AI_Output(self,other,"DIA_Andre_FIND_DEALER_08_01");	//Wy³¹czy³eœ transport bagiennego ziela z obiegu - to dobrze.
@@ -1272,65 +1272,65 @@ func void dia_andre_find_dealer_info()
 	AI_Output(other,self,"DIA_Andre_FIND_DEALER_15_05");	//Co w³aœciwie mam zrobiæ?
 	AI_Output(self,other,"DIA_Andre_FIND_DEALER_08_06");	//ZnajdŸ sprzedawcê i kup od niego trochê tego ziela. To nie bêdzie ³atwe, ale bez tego nie mo¿emy go aresztowaæ.
 	AI_Output(self,other,"DIA_Andre_FIND_DEALER_08_07");	//Pogadaj z Mortisem, on zna dzielnicê portow¹. Mo¿e bêdzie ci w stanie pomóc.
-	MIS_ANDRE_REDLIGHT = LOG_RUNNING;
-	b_startotherroutine(nadja,"SMOKE");
-	Log_CreateTopic(TOPIC_REDLIGHT,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_REDLIGHT,LOG_RUNNING);
-	b_logentry(TOPIC_REDLIGHT,"Muszê znaleŸæ cz³owieka, który sprzedaje w porcie bagienne ziele, i kupiæ od niego trochê towaru. Mortis mo¿e mi w tym pomóc.");
+	MIS_Andre_REDLIGHT = LOG_Running;
+	B_StartOtherRoutine(Nadja,"SMOKE");
+	Log_CreateTopic(TOPIC_Redlight,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Redlight,LOG_Running);
+	B_LogEntry(TOPIC_Redlight,"Muszê znaleŸæ cz³owieka, który sprzedaje w porcie bagienne ziele, i kupiæ od niego trochê towaru. Mortis mo¿e mi w tym pomóc.");
 };
 
 
-instance DIA_ANDRE_REDLIGHT_SUCCESS(C_INFO)
+instance DIA_Andre_REDLIGHT_SUCCESS(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 2;
-	condition = dia_andre_redlight_success_condition;
-	information = dia_andre_redlight_success_info;
+	condition = DIA_Andre_REDLIGHT_SUCCESS_Condition;
+	information = DIA_Andre_REDLIGHT_SUCCESS_Info;
 	permanent = TRUE;
 	description = "Co do tego ziela...";
 };
 
 
-func int dia_andre_redlight_success_condition()
+func int DIA_Andre_REDLIGHT_SUCCESS_Condition()
 {
-	if(MIS_ANDRE_REDLIGHT == LOG_RUNNING)
+	if(MIS_Andre_REDLIGHT == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_redlight_success_info()
+func void DIA_Andre_REDLIGHT_SUCCESS_Info()
 {
 	AI_Output(other,self,"DIA_Andre_REDLIGHT_SUCCESS_15_00");	//Co do tego ziela...
-	if((Npc_IsDead(borka) == TRUE) || (UNDERCOVER_FAILED == TRUE))
+	if((Npc_IsDead(Borka) == TRUE) || (Undercover_Failed == TRUE))
 	{
 		AI_Output(self,other,"DIA_Andre_REDLIGHT_SUCCESS_08_01");	//W¹tpiê, ¿ebyœmy teraz dowiedzieli siê czegoœ w dzielnicy portowej.
-		if(Npc_IsDead(borka) == TRUE)
+		if(Npc_IsDead(Borka) == TRUE)
 		{
 			AI_Output(self,other,"DIA_Andre_REDLIGHT_SUCCESS_08_02");	//Skoro ten wykidaj³o nie ¿yje...
 		};
-		if(NADJA_VICTIM == TRUE)
+		if(Nadja_Victim == TRUE)
 		{
 			AI_Output(self,other,"DIA_Andre_REDLIGHT_SUCCESS_08_03");	//Ta dziewczyna z 'Czerwonej Latarni', Nadia, nie ¿yje. To by³ pewnie jakiœ dziwaczny wypadek.
-			b_removenpc(3211);
+			B_RemoveNpc(Nadja);
 		};
-		if(UNDERCOVER_FAILED == TRUE)
+		if(Undercover_Failed == TRUE)
 		{
 			AI_Output(self,other,"DIA_Andre_REDLIGHT_SUCCESS_08_04");	//By³eœ za ma³o dyskretny.
 		};
-		MIS_ANDRE_REDLIGHT = LOG_FAILED;
-		b_checklog();
+		MIS_Andre_REDLIGHT = LOG_FAILED;
+		B_CheckLog();
 	}
-	else if(BORKA_DEAL == 2)
+	else if(Borka_Deal == 2)
 	{
 		AI_Output(other,self,"DIA_Andre_REDLIGHT_SUCCESS_15_05");	//Wiem, kto sprzedaje ziele w mieœcie. To Borka, odŸwierny z 'Czerwonej Latarni'.
 		AI_Output(self,other,"DIA_Andre_REDLIGHT_SUCCESS_08_06");	//Naprawdê? A mamy jakiœ dowód?
 		AI_Output(other,self,"DIA_Andre_REDLIGHT_SUCCESS_15_07");	//Sprzeda³ mi trochê bagiennego ziela.
 		AI_Output(self,other,"DIA_Andre_REDLIGHT_SUCCESS_08_08");	//Dobrze, to nam wystarczy. Zaraz ka¿ê go aresztowaæ.
-		b_startotherroutine(borka,"PRISON");
-		MIS_ANDRE_REDLIGHT = LOG_SUCCESS;
-		b_giveplayerxp(XP_REDLIGHT);
-		b_andresold();
+		B_StartOtherRoutine(Borka,"PRISON");
+		MIS_Andre_REDLIGHT = LOG_SUCCESS;
+		B_GivePlayerXP(XP_Redlight);
+		B_AndreSold();
 	}
 	else
 	{
@@ -1340,128 +1340,128 @@ func void dia_andre_redlight_success_info()
 };
 
 
-instance DIA_ANDRE_HILFBAUERLOBART(C_INFO)
+instance DIA_Andre_HILFBAUERLOBART(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 3;
-	condition = dia_andre_hilfbauerlobart_condition;
-	information = dia_andre_hilfbauerlobart_info;
+	condition = DIA_Andre_HILFBAUERLOBART_Condition;
+	information = DIA_Andre_HILFBAUERLOBART_Info;
 	description = "Masz dla mnie jakieœ nowe zadanie?";
 };
 
 
-func int dia_andre_hilfbauerlobart_condition()
+func int DIA_Andre_HILFBAUERLOBART_Condition()
 {
-	if(MIS_ANDRE_WAREHOUSE == LOG_SUCCESS)
+	if(MIS_Andre_WAREHOUSE == LOG_SUCCESS)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_hilfbauerlobart_info()
+func void DIA_Andre_HILFBAUERLOBART_Info()
 {
 	AI_Output(other,self,"DIA_Andre_HILFBAUERLOBART_15_00");	//Masz dla mnie jakieœ nowe zadanie?
 	AI_Output(self,other,"DIA_Andre_HILFBAUERLOBART_08_01");	//Lobart, hodowca rzepy, ma pewne k³opoty.
 	AI_Output(self,other,"DIA_Andre_HILFBAUERLOBART_08_02");	//Jeœli mu pomo¿emy, poprawi¹ siê jego stosunki z miastem. IdŸ wiêc do niego i dowiedz siê, co mu przeszkadza.
-	Log_CreateTopic(TOPIC_FELDRAEUBER,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_FELDRAEUBER,LOG_RUNNING);
-	b_logentry(TOPIC_FELDRAEUBER,"Andre wys³a³ mnie na farmê Lobarta i nakaza³ mu pomóc.");
-	MIS_ANDREHELPLOBART = LOG_RUNNING;
-	Wld_InsertNpc(lobarts_giant_bug1,"NW_FARM1_FIELD_06");
-	Wld_InsertNpc(lobarts_giant_bug2,"NW_FARM1_FIELD_06");
-	Wld_InsertNpc(lobarts_giant_bug3,"NW_FARM1_FIELD_05");
-	Wld_InsertNpc(lobarts_giant_bug4,"NW_FARM1_FIELD_05");
-	Wld_InsertNpc(lobarts_giant_bug5,"NW_FARM1_FIELD_04");
-	Wld_InsertNpc(lobarts_giant_bug6,"NW_FARM1_FIELD_04");
-	Wld_InsertNpc(lobarts_giant_bug7,"NW_FARM1_FIELD_03");
-	b_startotherroutine(vino,"BUGSTHERE");
-	b_startotherroutine(lobartsbauer1,"BUGSTHERE");
-	b_startotherroutine(lobartsbauer2,"BUGSTHERE");
+	Log_CreateTopic(TOPIC_Feldraeuber,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Feldraeuber,LOG_Running);
+	B_LogEntry(TOPIC_Feldraeuber,"Andre wys³a³ mnie na farmê Lobarta i nakaza³ mu pomóc.");
+	MIS_AndreHelpLobart = LOG_Running;
+	Wld_InsertNpc(Lobarts_Giant_Bug1,"NW_FARM1_FIELD_06");
+	Wld_InsertNpc(Lobarts_Giant_Bug2,"NW_FARM1_FIELD_06");
+	Wld_InsertNpc(Lobarts_Giant_Bug3,"NW_FARM1_FIELD_05");
+	Wld_InsertNpc(Lobarts_Giant_Bug4,"NW_FARM1_FIELD_05");
+	Wld_InsertNpc(Lobarts_Giant_Bug5,"NW_FARM1_FIELD_04");
+	Wld_InsertNpc(Lobarts_Giant_Bug6,"NW_FARM1_FIELD_04");
+	Wld_InsertNpc(Lobarts_Giant_Bug7,"NW_FARM1_FIELD_03");
+	B_StartOtherRoutine(Vino,"BUGSTHERE");
+	B_StartOtherRoutine(LobartsBauer1,"BUGSTHERE");
+	B_StartOtherRoutine(LobartsBauer2,"BUGSTHERE");
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ANDRE_LOBART_SUCCESS(C_INFO)
+instance DIA_Andre_LOBART_SUCCESS(C_Info)
 {
-	npc = mil_311_andre;
-	condition = dia_andre_lobart_success_condition;
-	information = dia_andre_lobart_success_info;
+	npc = MIL_311_Andre;
+	condition = DIA_Andre_LOBART_SUCCESS_Condition;
+	information = DIA_Andre_LOBART_SUCCESS_Info;
 	description = "Pomog³em Lobartowi.";
 };
 
 
-func int dia_andre_lobart_success_condition()
+func int DIA_Andre_LOBART_SUCCESS_Condition()
 {
-	if(MIS_ANDREHELPLOBART == LOG_SUCCESS)
+	if(MIS_AndreHelpLobart == LOG_SUCCESS)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_lobart_success_info()
+func void DIA_Andre_LOBART_SUCCESS_Info()
 {
 	AI_Output(other,self,"DIA_Andre_LOBART_SUCCESS_15_00");	//Pomog³em Lobartowi.
 	AI_Output(self,other,"DIA_Andre_LOBART_SUCCESS_08_01");	//Doskonale. Skoro Lobart jest zadowolony, to bêdzie nadal sprzedawa³ swoje rzepy w mieœcie.
-	b_giveplayerxp(XP_LOBARTBUGS);
-	b_andresold();
+	B_GivePlayerXP(XP_LobartBugs);
+	B_AndreSold();
 };
 
-func void b_andre_gotolordhagen()
+func void B_Andre_GotoLordHagen()
 {
 	AI_Output(self,other,"DIA_Andre_Add_08_11");	//Lepiej idŸ prosto do niego.
 };
 
 
-instance DIA_ANDRE_BERICHTDRACHEN(C_INFO)
+instance DIA_Andre_BerichtDrachen(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 1;
-	condition = dia_andre_berichtdrachen_condition;
-	information = dia_andre_berichtdrachen_info;
+	condition = DIA_Andre_BerichtDrachen_Condition;
+	information = DIA_Andre_BerichtDrachen_Info;
 	permanent = FALSE;
 	description = "By³em w Górniczej Dolinie i widzia³em smoki!";
 };
 
 
-func int dia_andre_berichtdrachen_condition()
+func int DIA_Andre_BerichtDrachen_Condition()
 {
-	if((ENTEROW_KAPITEL2 == TRUE) && (MIS_OLDWORLD != LOG_SUCCESS))
+	if((EnterOW_Kapitel2 == TRUE) && (MIS_OLDWORLD != LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_berichtdrachen_info()
+func void DIA_Andre_BerichtDrachen_Info()
 {
 	AI_Output(other,self,"DIA_Andre_Add_15_13");	//By³em w Górniczej Dolinie i widzia³em smoki!
-	if(Npc_HasItems(hero,itwr_paladinletter_mis) > 0)
+	if(Npc_HasItems(hero,ItWr_PaladinLetter_MIS) > 0)
 	{
 		AI_Output(other,self,"DIA_Andre_Add_15_14");	//Mam list od kapitana Garonda, który potwierdza to, co mówi³em.
 	};
 	AI_Output(self,other,"DIA_Andre_Add_08_10");	//To zainteresuje Lorda Hagena!
-	b_andre_gotolordhagen();
+	B_Andre_GotoLordHagen();
 };
 
 
-instance DIA_ANDRE_BENNETINPRISON(C_INFO)
+instance DIA_Andre_BennetInPrison(C_Info)
 {
-	npc = mil_311_andre;
-	condition = dia_andre_bennetinprison_condition;
-	information = dia_andre_bennetinprison_info;
+	npc = MIL_311_Andre;
+	condition = DIA_Andre_BennetInPrison_Condition;
+	information = DIA_Andre_BennetInPrison_Info;
 	permanent = TRUE;
 	description = "A co z kowalem Bennetem?";
 };
 
 
-func int dia_andre_bennetinprison_condition()
+func int DIA_Andre_BennetInPrison_Condition()
 {
-	if(MIS_RESCUEBENNET == LOG_RUNNING)
+	if(MIS_RescueBennet == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_bennetinprison_info()
+func void DIA_Andre_BennetInPrison_Info()
 {
 	AI_Output(other,self,"DIA_Andre_BennetInPrison_15_00");	//A co z kowalem Bennetem?
 	AI_Output(self,other,"DIA_Andre_BennetInPrison_08_01");	//Z tym najemnikiem? Siedzi w wiêzieniu, tam gdzie jego miejsce.
@@ -1470,47 +1470,47 @@ func void dia_andre_bennetinprison_info()
 };
 
 
-instance DIA_ANDRE_CORNELIUS_LIAR(C_INFO)
+instance DIA_Andre_Cornelius_Liar(C_Info)
 {
-	npc = mil_311_andre;
-	condition = dia_andre_cornelius_liar_condition;
-	information = dia_andre_cornelius_liar_info;
+	npc = MIL_311_Andre;
+	condition = DIA_Andre_Cornelius_Liar_Condition;
+	information = DIA_Andre_Cornelius_Liar_Info;
 	permanent = TRUE;
 	description = "Myœlê, ¿e Cornelius k³amie.";
 };
 
 
-func int dia_andre_cornelius_liar_condition()
+func int DIA_Andre_Cornelius_Liar_Condition()
 {
-	if((CORNELIUS_THREATENBYMILSC == TRUE) && (CORNELIUSFLEE != TRUE))
+	if((Cornelius_ThreatenByMilSC == TRUE) && (CorneliusFlee != TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_cornelius_liar_info()
+func void DIA_Andre_Cornelius_Liar_Info()
 {
 	AI_Output(other,self,"DIA_Andre_Cornelius_Liar_15_00");	//Myœlê, ¿e Cornelius k³amie.
 	AI_Output(self,other,"DIA_Andre_Cornelius_Liar_08_01");	//Jesteœ pewien?
-	Info_ClearChoices(dia_andre_cornelius_liar);
-	Info_AddChoice(dia_andre_cornelius_liar,"Nie.",dia_andre_cornelius_liar_no);
-	Info_AddChoice(dia_andre_cornelius_liar,"Tak.",dia_andre_cornelius_liar_yes);
+	Info_ClearChoices(DIA_Andre_Cornelius_Liar);
+	Info_AddChoice(DIA_Andre_Cornelius_Liar,"Nie.",DIA_Andre_Cornelius_Liar_No);
+	Info_AddChoice(DIA_Andre_Cornelius_Liar,"Tak.",DIA_Andre_Cornelius_Liar_Yes);
 };
 
-func void dia_andre_cornelius_liar_no()
+func void DIA_Andre_Cornelius_Liar_No()
 {
 	AI_Output(other,self,"DIA_Andre_Cornelius_Liar_No_15_00");	//Nie.
 	AI_Output(self,other,"DIA_Andre_Cornelius_Liar_No_08_01");	//Wiêc nie powinieneœ wystêpowaæ z tak powa¿nym oskar¿eniem.
 	AI_Output(self,other,"DIA_Andre_Cornelius_Liar_No_08_02");	//Cornelius to wp³ywowy cz³owiek. Jeœli bêdzie chcia³, zamieni twoje ¿ycie w piek³o.
 	AI_Output(self,other,"DIA_Andre_Cornelius_Liar_No_08_03");	//Nie mogê ci pomóc, dopóki nie bêdziesz mia³ dowodów.
-	Info_ClearChoices(dia_andre_cornelius_liar);
+	Info_ClearChoices(DIA_Andre_Cornelius_Liar);
 };
 
-func void dia_andre_cornelius_liar_yes()
+func void DIA_Andre_Cornelius_Liar_Yes()
 {
 	AI_Output(other,self,"DIA_Andre_Cornelius_Liar_Yes_15_00");	//Tak.
 	AI_Output(self,other,"DIA_Andre_Cornelius_Liar_Yes_08_01");	//Jaki masz na to dowód?
-	if(CORNELIUS_ISLIAR == TRUE)
+	if(Cornelius_IsLiar == TRUE)
 	{
 		AI_Output(other,self,"DIA_Andre_Cornelius_Liar_Yes_15_02");	//Czyta³em jego dziennik! Przekupili go. To wszystko by³ stek k³amstw.
 		AI_Output(self,other,"DIA_Andre_Cornelius_Liar_Yes_08_03");	//Skoro tak, musisz natychmiast iœæ do Lorda Hagena.
@@ -1522,21 +1522,21 @@ func void dia_andre_cornelius_liar_yes()
 		AI_Output(self,other,"DIA_Andre_Cornelius_Liar_Yes_08_06");	//Potrzebne mi dowody, a nie podejrzenia. Zdob¹dŸ dowód, wtedy bêdê móg³ coœ zrobiæ.
 		AI_Output(self,other,"DIA_Andre_Cornelius_Liar_Yes_08_07");	//A do tego czasu powinieneœ bardziej uwa¿aæ na to, co mówisz.
 	};
-	Info_ClearChoices(dia_andre_cornelius_liar);
+	Info_ClearChoices(DIA_Andre_Cornelius_Liar);
 };
 
 
-instance DIA_ANDRE_PALADIN(C_INFO)
+instance DIA_Andre_Paladin(C_Info)
 {
-	npc = mil_311_andre;
-	condition = dia_andre_paladin_condition;
-	information = dia_andre_paladin_info;
+	npc = MIL_311_Andre;
+	condition = DIA_Andre_Paladin_Condition;
+	information = DIA_Andre_Paladin_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_andre_paladin_condition()
+func int DIA_Andre_Paladin_Condition()
 {
 	if(other.guild == GIL_PAL)
 	{
@@ -1544,25 +1544,25 @@ func int dia_andre_paladin_condition()
 	};
 };
 
-func void dia_andre_paladin_info()
+func void DIA_Andre_Paladin_Info()
 {
 	AI_Output(self,other,"DIA_Andre_Paladin_08_00");	//A wiêc teraz jesteœ paladynem! Moje gratulacje!
 	AI_Output(self,other,"DIA_Andre_Paladin_08_01");	//Od pocz¹tku wiedzia³em, ¿e nie zagrzejesz d³ugo miejsca w stra¿y.
 };
 
 
-instance DIA_ANDRE_PERM(C_INFO)
+instance DIA_Andre_PERM(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 100;
-	condition = dia_andre_perm_condition;
-	information = dia_andre_perm_info;
+	condition = DIA_Andre_PERM_Condition;
+	information = DIA_Andre_PERM_Info;
 	permanent = TRUE;
 	description = "Jak wygl¹da sytuacja w mieœcie?";
 };
 
 
-func int dia_andre_perm_condition()
+func int DIA_Andre_PERM_Condition()
 {
 	if(other.guild != GIL_NONE)
 	{
@@ -1570,7 +1570,7 @@ func int dia_andre_perm_condition()
 	};
 };
 
-func void dia_andre_perm_info()
+func void DIA_Andre_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Andre_PERM_15_00");	//Jak wygl¹da sytuacja w mieœcie?
 	AI_Output(self,other,"DIA_Andre_PERM_08_01");	//Wszystko jest pod kontrol¹.
@@ -1585,56 +1585,56 @@ func void dia_andre_perm_info()
 };
 
 
-instance DIA_ANDRE_BERICHTDRACHENTOT(C_INFO)
+instance DIA_Andre_BerichtDrachenTot(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 1;
-	condition = dia_andre_berichtdrachentot_condition;
-	information = dia_andre_berichtdrachentot_info;
+	condition = DIA_Andre_BerichtDrachenTot_Condition;
+	information = DIA_Andre_BerichtDrachenTot_Info;
 	permanent = FALSE;
 	description = "Zabi³em wszystkie smoki w Górniczej Dolinie!";
 };
 
 
-func int dia_andre_berichtdrachentot_condition()
+func int DIA_Andre_BerichtDrachenTot_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_berichtdrachentot_info()
+func void DIA_Andre_BerichtDrachenTot_Info()
 {
 	AI_Output(other,self,"DIA_Andre_Add_15_15");	//Zabi³em wszystkie smoki w Górniczej Dolinie!
 	AI_Output(self,other,"DIA_Andre_Add_08_08");	//Jeœli to prawda, musisz o tym opowiedzieæ Lordowi Hagenowi.
-	b_andre_gotolordhagen();
+	B_Andre_GotoLordHagen();
 };
 
 
-instance DIA_ANDRE_BERICHTTORAUF(C_INFO)
+instance DIA_Andre_BerichtTorAuf(C_Info)
 {
-	npc = mil_311_andre;
+	npc = MIL_311_Andre;
 	nr = 1;
-	condition = dia_andre_berichttorauf_condition;
-	information = dia_andre_berichttorauf_info;
+	condition = DIA_Andre_BerichtTorAuf_Condition;
+	information = DIA_Andre_BerichtTorAuf_Info;
 	permanent = FALSE;
 	description = "Zamek w Górniczej Dolinie zosta³ zaatakowany przez orków!";
 };
 
 
-func int dia_andre_berichttorauf_condition()
+func int DIA_Andre_BerichtTorAuf_Condition()
 {
-	if((KAPITEL == 5) && (MIS_OCGATEOPEN == TRUE) && Npc_KnowsInfo(other,dia_andre_berichtdrachentot))
+	if((Kapitel == 5) && (MIS_OCGateOpen == TRUE) && Npc_KnowsInfo(other,DIA_Andre_BerichtDrachenTot))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_andre_berichttorauf_info()
+func void DIA_Andre_BerichtTorAuf_Info()
 {
 	AI_Output(other,self,"DIA_Andre_Add_15_16");	//Zamek w Górniczej Dolinie zosta³ zaatakowany przez orków!
 	AI_Output(self,other,"DIA_Andre_Add_08_09");	//Nie! Lord Hagen musi o tym us³yszeæ.
-	b_andre_gotolordhagen();
+	B_Andre_GotoLordHagen();
 };
 

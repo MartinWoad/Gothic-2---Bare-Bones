@@ -1,36 +1,36 @@
 
-func int c_beklauen(var int theftdex,var int theftgold)
+func int C_Beklauen(var int TheftDex,var int TheftGold)
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == TRUE) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == FALSE) && (other.attribute[ATR_DEXTERITY] >= (theftdex - THEFTDIFF)) && (NPCOBSESSEDBYDMT == FALSE))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == TRUE) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (other.attribute[ATR_DEXTERITY] >= (TheftDex - Theftdiff)) && (NpcObsessedByDMT == FALSE))
 	{
-		if(Npc_IsInState(self,zs_talk))
+		if(Npc_IsInState(self,ZS_Talk))
 		{
-			if(theftdex <= 20)
+			if(TheftDex <= 20)
 			{
-				THEFTDEXGLOB = 10;
+				TheftDexGlob = 10;
 			}
 			else
 			{
-				THEFTDEXGLOB = theftdex;
+				TheftDexGlob = TheftDex;
 			};
-			THEFTGOLDGLOB = theftgold;
+			TheftGoldGlob = TheftGold;
 		};
 		return TRUE;
 	};
 };
 
-func void b_beklauen()
+func void B_Beklauen()
 {
-	if(other.attribute[ATR_DEXTERITY] >= THEFTDEXGLOB)
+	if(other.attribute[ATR_DEXTERITY] >= TheftDexGlob)
 	{
-		b_giveinvitems(self,other,5113,THEFTGOLDGLOB);
-		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
+		B_GiveInvItems(self,other,ItMi_Gold,TheftGoldGlob);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
 		Snd_Play("Geldbeutel");
 	}
 	else
 	{
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_THEFT,1);
+		B_Attack(self,other,AR_Theft,1);
 	};
 };
 

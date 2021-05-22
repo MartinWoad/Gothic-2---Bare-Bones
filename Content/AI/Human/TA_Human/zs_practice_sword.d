@@ -1,8 +1,8 @@
 
-func void zs_practice_sword()
+func void ZS_Practice_Sword()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
@@ -13,13 +13,13 @@ func void zs_practice_sword()
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func int zs_practice_sword_loop()
+func int ZS_Practice_Sword_Loop()
 {
 	if(self.aivar[AIV_TAPOSITION] == NOTINPOS)
 	{
 		if(!Npc_HasEquippedMeleeWeapon(self))
 		{
-			CreateInvItems(self,itmw_1h_bau_mace,1);
+			CreateInvItems(self,ItMw_1h_Bau_Mace,1);
 			AI_EquipBestMeleeWeapon(self);
 		};
 		AI_ReadyMeleeWeapon(self);
@@ -31,7 +31,7 @@ func int zs_practice_sword_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_practice_sword_end()
+func void ZS_Practice_Sword_End()
 {
 	AI_Standup(self);
 	AI_RemoveWeapon(self);

@@ -1,78 +1,78 @@
 
-instance DIA_ALWIN_EXIT(C_INFO)
+instance DIA_Alwin_EXIT(C_Info)
 {
-	npc = vlk_424_alwin;
+	npc = Vlk_424_Alwin;
 	nr = 999;
-	condition = dia_alwin_exit_condition;
-	information = dia_alwin_exit_info;
+	condition = DIA_Alwin_EXIT_Condition;
+	information = DIA_Alwin_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_alwin_exit_condition()
+func int DIA_Alwin_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_alwin_exit_info()
+func void DIA_Alwin_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ALWIN_PICKPOCKET(C_INFO)
+instance DIA_Alwin_PICKPOCKET(C_Info)
 {
-	npc = vlk_424_alwin;
+	npc = Vlk_424_Alwin;
 	nr = 900;
-	condition = dia_alwin_pickpocket_condition;
-	information = dia_alwin_pickpocket_info;
+	condition = DIA_Alwin_PICKPOCKET_Condition;
+	information = DIA_Alwin_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_20;
+	description = Pickpocket_20;
 };
 
 
-func int dia_alwin_pickpocket_condition()
+func int DIA_Alwin_PICKPOCKET_Condition()
 {
-	return c_beklauen(20,10);
+	return C_Beklauen(20,10);
 };
 
-func void dia_alwin_pickpocket_info()
+func void DIA_Alwin_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_alwin_pickpocket);
-	Info_AddChoice(dia_alwin_pickpocket,DIALOG_BACK,dia_alwin_pickpocket_back);
-	Info_AddChoice(dia_alwin_pickpocket,DIALOG_PICKPOCKET,dia_alwin_pickpocket_doit);
+	Info_ClearChoices(DIA_Alwin_PICKPOCKET);
+	Info_AddChoice(DIA_Alwin_PICKPOCKET,Dialog_Back,DIA_Alwin_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Alwin_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Alwin_PICKPOCKET_DoIt);
 };
 
-func void dia_alwin_pickpocket_doit()
+func void DIA_Alwin_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_alwin_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Alwin_PICKPOCKET);
 };
 
-func void dia_alwin_pickpocket_back()
+func void DIA_Alwin_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_alwin_pickpocket);
+	Info_ClearChoices(DIA_Alwin_PICKPOCKET);
 };
 
 
-instance DIA_ALWIN_SHEEP(C_INFO)
+instance DIA_Alwin_Sheep(C_Info)
 {
-	npc = vlk_424_alwin;
+	npc = Vlk_424_Alwin;
 	nr = 3;
-	condition = dia_alwin_sheep_condition;
-	information = dia_alwin_sheep_info;
+	condition = DIA_Alwin_Sheep_Condition;
+	information = DIA_Alwin_Sheep_Info;
 	permanent = FALSE;
 	description = "Czy to twoje owce?";
 };
 
 
-func int dia_alwin_sheep_condition()
+func int DIA_Alwin_Sheep_Condition()
 {
 	return TRUE;
 };
 
-func void dia_alwin_sheep_info()
+func void DIA_Alwin_Sheep_Info()
 {
 	AI_Output(other,self,"DIA_Alwin_Sheep_15_00");	//Czy to twoje owce?
 	AI_Output(self,other,"DIA_Alwin_Sheep_12_01");	//Jedyna, która do mnie nale¿y, reaguje na imiê Lucy. To moja ¿ona...
@@ -80,26 +80,26 @@ func void dia_alwin_sheep_info()
 };
 
 
-instance DIA_ALWIN_FELLAN(C_INFO)
+instance DIA_Alwin_Fellan(C_Info)
 {
-	npc = vlk_424_alwin;
+	npc = Vlk_424_Alwin;
 	nr = 2;
-	condition = dia_alwin_fellan_condition;
-	information = dia_alwin_fellan_info;
+	condition = DIA_Alwin_Fellan_Condition;
+	information = DIA_Alwin_Fellan_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_alwin_fellan_condition()
+func int DIA_Alwin_Fellan_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (Npc_IsDead(fellan) == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (Npc_IsDead(Fellan) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_alwin_fellan_info()
+func void DIA_Alwin_Fellan_Info()
 {
 	AI_Output(self,other,"DIA_Alwin_Fellan_12_00");	//Ch³opie, ten œwir z m³otkiem mnie dobija.
 	AI_Output(other,self,"DIA_Alwin_Fellan_15_01");	//O kim ty mówisz?
@@ -108,52 +108,52 @@ func void dia_alwin_fellan_info()
 };
 
 
-instance DIA_ALWIN_FELLANRUNNING(C_INFO)
+instance DIA_Alwin_FellanRunning(C_Info)
 {
-	npc = vlk_424_alwin;
+	npc = Vlk_424_Alwin;
 	nr = 2;
-	condition = dia_alwin_fellanrunning_condition;
-	information = dia_alwin_fellanrunning_info;
+	condition = DIA_Alwin_FellanRunning_Condition;
+	information = DIA_Alwin_FellanRunning_Info;
 	permanent = FALSE;
 	description = "Mogê siê zaj¹æ Fellanem...";
 };
 
 
-func int dia_alwin_fellanrunning_condition()
+func int DIA_Alwin_FellanRunning_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (Npc_IsDead(fellan) == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (Npc_IsDead(Fellan) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_alwin_fellanrunning_info()
+func void DIA_Alwin_FellanRunning_Info()
 {
 	AI_Output(other,self,"DIA_Alwin_FellanRunning_15_00");	//Mogê siê zaj¹æ Fellanem...
 	AI_Output(self,other,"DIA_Alwin_FellanRunning_12_01");	//Chcesz mi pomóc? A jaki masz w tym interes?
 	AI_Output(other,self,"DIA_Alwin_FellanRunning_15_02");	//Ty mi to powiedz.
 	AI_Output(self,other,"DIA_Alwin_FellanRunning_12_03");	//Och, o to chodzi! Dobra - jeœli przestanie waliæ tym m³otkiem, to zap³acê ci 25 sztuk z³ota.
 	AI_Output(self,other,"DIA_Alwin_FellanRunning_12_04");	//Ale muszê ci coœ powiedzieæ - nie zdo³asz go przekonaæ. To œwir. Dotrze do niego tylko wtedy, jak mu zdrowo przy³o¿ysz!
-	MIS_ATTACKFELLAN = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_ALWIN,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_ALWIN,LOG_RUNNING);
-	b_logentry(TOPIC_ALWIN,"Alwin chce, abym zmusi³ Fellana do przerwania prac na dachu. Zabójstwo nie jest dobr¹ metod¹.");
-	Info_ClearChoices(dia_alwin_fellanrunning);
-	Info_AddChoice(dia_alwin_fellanrunning,"Zobaczê, co da siê zrobiæ...",dia_alwin_fellanrunning_ok);
+	MIS_AttackFellan = LOG_Running;
+	Log_CreateTopic(TOPIC_Alwin,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Alwin,LOG_Running);
+	B_LogEntry(TOPIC_Alwin,"Alwin chce, abym zmusi³ Fellana do przerwania prac na dachu. Zabójstwo nie jest dobr¹ metod¹.");
+	Info_ClearChoices(DIA_Alwin_FellanRunning);
+	Info_AddChoice(DIA_Alwin_FellanRunning,"Zobaczê, co da siê zrobiæ...",DIA_Alwin_FellanRunning_Ok);
 	if((hero.guild != GIL_MIL) && (hero.guild != GIL_PAL) && (hero.guild != GIL_KDF))
 	{
-		Info_AddChoice(dia_alwin_fellanrunning,"Jeœli go pobijê, bêdê mia³ k³opoty ze stra¿¹...",dia_alwin_fellanrunning_problems);
+		Info_AddChoice(DIA_Alwin_FellanRunning,"Jeœli go pobijê, bêdê mia³ k³opoty ze stra¿¹...",DIA_Alwin_FellanRunning_Problems);
 	};
 };
 
-func void dia_alwin_fellanrunning_ok()
+func void DIA_Alwin_FellanRunning_Ok()
 {
 	AI_Output(other,self,"DIA_Alwin_FellanRunning_Ok_15_00");	//Zobaczê, co da siê zrobiæ...
 	AI_Output(self,other,"DIA_Alwin_FellanRunning_Ok_12_01");	//Zastanów siê. Pamiêtaj, p³acê 25 z³otych monet.
-	Info_ClearChoices(dia_alwin_fellanrunning);
+	Info_ClearChoices(DIA_Alwin_FellanRunning);
 };
 
-func void dia_alwin_fellanrunning_problems()
+func void DIA_Alwin_FellanRunning_Problems()
 {
 	AI_Output(other,self,"DIA_Alwin_FellanRunning_Problems_15_00");	//Jeœli go pobijê, bêdê mia³ k³opoty ze stra¿¹...
 	AI_Output(self,other,"DIA_Alwin_Add_12_00");	//Tutaj w porcie nikt nie zwraca specjalnej uwagi na walki...
@@ -161,76 +161,76 @@ func void dia_alwin_fellanrunning_problems()
 };
 
 
-instance DIA_ALWIN_FELLANSUCCESS(C_INFO)
+instance DIA_Alwin_FellanSuccess(C_Info)
 {
-	npc = vlk_424_alwin;
+	npc = Vlk_424_Alwin;
 	nr = 4;
-	condition = dia_alwin_fellansuccess_condition;
-	information = dia_alwin_fellansuccess_info;
+	condition = DIA_Alwin_FellanSuccess_Condition;
+	information = DIA_Alwin_FellanSuccess_Info;
 	permanent = FALSE;
 	description = "Fellan ju¿ nie bêdzie wali³ m³otkiem.";
 };
 
 
-func int dia_alwin_fellansuccess_condition()
+func int DIA_Alwin_FellanSuccess_Condition()
 {
-	if((MIS_ATTACKFELLAN == LOG_RUNNING) && ((FELLANGESCHLAGEN == TRUE) || Npc_IsDead(fellan)))
+	if((MIS_AttackFellan == LOG_Running) && ((FellanGeschlagen == TRUE) || Npc_IsDead(Fellan)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_alwin_fellansuccess_info()
+func void DIA_Alwin_FellanSuccess_Info()
 {
 	AI_Output(other,self,"DIA_Alwin_FellanSuccess_15_00");	//Fellan ju¿ nie bêdzie wali³ m³otkiem.
 	AI_Output(self,other,"DIA_Alwin_FellanSuccess_12_01");	//S³yszysz? Koniec z tym ha³asem! W koñcu. Myœla³em, ¿e ten koleœ nigdy nie zrezygnuje.
-	if(Npc_IsDead(fellan) == FALSE)
+	if(Npc_IsDead(Fellan) == FALSE)
 	{
 		AI_Output(self,other,"DIA_Alwin_FellanSuccess_12_02");	//Zrobi³eœ mi wielk¹ przys³ugê. Wiesz co, dam ci 30 sztuk z³ota.
-		b_giveinvitems(self,other,5113,30);
-		MIS_ATTACKFELLAN = LOG_SUCCESS;
-		b_giveplayerxp(XP_AMBIENT);
+		B_GiveInvItems(self,other,ItMi_Gold,30);
+		MIS_AttackFellan = LOG_SUCCESS;
+		B_GivePlayerXP(XP_Ambient);
 	}
 	else
 	{
-		MIS_ATTACKFELLAN = LOG_FAILED;
+		MIS_AttackFellan = LOG_FAILED;
 	};
 };
 
 
-instance DIA_ALWIN_ENDLOS(C_INFO)
+instance DIA_Alwin_Endlos(C_Info)
 {
-	npc = vlk_424_alwin;
+	npc = Vlk_424_Alwin;
 	nr = 8;
-	condition = dia_alwin_endlos_condition;
-	information = dia_alwin_endlos_info;
+	condition = DIA_Alwin_Endlos_Condition;
+	information = DIA_Alwin_Endlos_Info;
 	permanent = TRUE;
 	description = "A co z owcami?";
 };
 
 
-func int dia_alwin_endlos_condition()
+func int DIA_Alwin_Endlos_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_alwin_sheep))
+	if(Npc_KnowsInfo(other,DIA_Alwin_Sheep))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_alwin_endlos_info()
+func void DIA_Alwin_Endlos_Info()
 {
 	AI_Output(other,self,"DIA_Alwin_Endlos_15_00");	//A co z owcami?
-	if((MIS_ATTACKFELLAN != LOG_SUCCESS) && (Npc_IsDead(fellan) == FALSE))
+	if((MIS_AttackFellan != LOG_SUCCESS) && (Npc_IsDead(Fellan) == FALSE))
 	{
 		AI_Output(self,other,"DIA_Alwin_Endlos_12_01");	//Fellan ci¹gle ha³asuje i to je doprowadza do szaleñstwa. Któregoœ dnia ca³kiem zeœwiruj¹.
 	}
-	else if(KAPITEL <= 2)
+	else if(Kapitel <= 2)
 	{
 		AI_Output(self,other,"DIA_Alwin_Endlos_12_02");	//Owce jedz¹ i robi¹ siê coraz grubsze. Ca³kiem jak moja ¿ona. HA HA HA.
 	}
-	else if(KAPITEL == 3)
+	else if(Kapitel == 3)
 	{
-		if(MIS_RESCUEBENNET != LOG_SUCCESS)
+		if(MIS_RescueBennet != LOG_SUCCESS)
 		{
 			AI_Output(self,other,"DIA_Alwin_Endlos_12_03");	//Chyba bêdê musia³ jedn¹ z nich zaszlachtowaæ. Na ostatni¹ wieczerzê!
 			AI_Output(other,self,"DIA_Alwin_Endlos_15_04");	//Po co?
@@ -245,7 +245,7 @@ func void dia_alwin_endlos_info()
 			AI_Output(self,other,"DIA_Alwin_Endlos_12_10");	//Ale wszystko siê jakoœ u³o¿y³o. Lucy bêdzie zadowolona.
 		};
 	}
-	else if(KAPITEL == 4)
+	else if(Kapitel == 4)
 	{
 		AI_Output(self,other,"DIA_Alwin_Endlos_12_11");	//Po pewnym czasie obserwowanie, jak owce jedz¹, staje siê doœæ nudne.
 	}

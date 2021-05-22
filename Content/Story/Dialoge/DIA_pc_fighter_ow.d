@@ -1,46 +1,46 @@
 
-instance DIA_GORNOW_EXIT(C_INFO)
+instance DIA_GornOW_EXIT(C_Info)
 {
-	npc = pc_fighter_ow;
+	npc = PC_Fighter_OW;
 	nr = 999;
-	condition = dia_gornow_exit_condition;
-	information = dia_gornow_exit_info;
+	condition = DIA_GornOW_EXIT_Condition;
+	information = DIA_GornOW_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_gornow_exit_condition()
+func int DIA_GornOW_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_gornow_exit_info()
+func void DIA_GornOW_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_GORNOW_HELLO(C_INFO)
+instance DIA_GornOW_Hello(C_Info)
 {
-	npc = pc_fighter_ow;
+	npc = PC_Fighter_OW;
 	nr = 2;
-	condition = dia_gornow_hello_condition;
-	information = dia_gornow_hello_info;
+	condition = DIA_GornOW_Hello_Condition;
+	information = DIA_GornOW_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_gornow_hello_condition()
+func int DIA_GornOW_Hello_Condition()
 {
 	return TRUE;
 };
 
-func void dia_gornow_hello_info()
+func void DIA_GornOW_Hello_Info()
 {
-	var C_NPC milten;
-	milten = Hlp_GetNpc(pc_mage_ow);
+	var C_Npc Milten;
+	Milten = Hlp_GetNpc(PC_Mage_OW);
 	AI_Output(other,self,"DIA_GornOW_Hello_15_00");	//Doœæ tego wylegiwania! Jesteœ wolny!
 	AI_Output(self,other,"DIA_GornOW_Hello_12_01");	//Najwy¿szy czas, ¿eby ktoœ mnie st¹d wyci¹gn¹³.
 	AI_Output(self,other,"DIA_GornOW_Hello_12_02");	//Ale w ¿yciu bym siê nie spodziewa³, ¿e to bêdziesz ty! Dobrze ciê znowu widzieæ!
@@ -50,7 +50,7 @@ func void dia_gornow_hello_info()
 	{
 		AI_Output(self,other,"DIA_GornOW_Add_12_00");	//Czekaj chwilê. Mam tutaj coœ, co mo¿e ci siê przydaæ.
 		AI_Output(self,other,"DIA_GornOW_Add_12_01");	//Znalaz³em w celi tê zbrojê. Jakiœ wiêzieñ musia³ j¹ tutaj ukryæ.
-		b_giveinvitems(self,other,4835,1);
+		B_GiveInvItems(self,other,itar_sld_M,1);
 		AI_Output(self,other,"DIA_GornOW_Add_12_02");	//Na mnie jest za ma³a, ale na ciebie powinna pasowaæ.
 		AI_Output(other,self,"DIA_GornOW_Add_15_03");	//Dziêki! Zobaczymy siê u Miltena...
 	}
@@ -61,32 +61,32 @@ func void dia_gornow_hello_info()
 	AI_Output(self,other,"DIA_GornOW_Hello_12_06");	//Jasna sprawa!
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"FREE");
-	b_startotherroutine(milten,"GORNFREE");
-	MIS_RESCUEGORN = LOG_SUCCESS;
-	b_giveplayerxp(XP_RESCUEGORN);
+	B_StartOtherRoutine(Milten,"GORNFREE");
+	MIS_RescueGorn = LOG_SUCCESS;
+	B_GivePlayerXP(XP_RescueGorn);
 };
 
 
-instance DIA_GORNOW_METMILTEN(C_INFO)
+instance DIA_GornOW_MetMilten(C_Info)
 {
-	npc = pc_fighter_ow;
+	npc = PC_Fighter_OW;
 	nr = 2;
-	condition = dia_gornow_metmilten_condition;
-	information = dia_gornow_metmilten_info;
+	condition = DIA_GornOW_MetMilten_Condition;
+	information = DIA_GornOW_MetMilten_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_gornow_metmilten_condition()
+func int DIA_GornOW_MetMilten_Condition()
 {
-	if((MIS_RESCUEGORN == LOG_SUCCESS) && (Npc_GetDistToWP(self,"OC_MAGE_LIBRARY_IN") <= 500) && Npc_IsInState(self,zs_talk) && (KAPITEL == 2))
+	if((MIS_RescueGorn == LOG_SUCCESS) && (Npc_GetDistToWP(self,"OC_MAGE_LIBRARY_IN") <= 500) && Npc_IsInState(self,ZS_Talk) && (Kapitel == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gornow_metmilten_info()
+func void DIA_GornOW_MetMilten_Info()
 {
 	AI_Output(self,other,"DIA_GornOW_MetMilten_12_00");	//S³uchaj, doœæ siê ju¿ tutaj wynudzi³em. Mam wielk¹ ochotê rozejrzeæ siê trochê poza dolin¹.
 	AI_Output(self,other,"DIA_GornOW_MetMilten_12_01");	//Jak siê przedosta³eœ przez prze³êcz?
@@ -105,26 +105,26 @@ func void dia_gornow_metmilten_info()
 };
 
 
-instance DIA_GORNOW_SEEYOU(C_INFO)
+instance DIA_GornOW_SeeYou(C_Info)
 {
-	npc = pc_fighter_ow;
+	npc = PC_Fighter_OW;
 	nr = 900;
-	condition = dia_gornow_seeyou_condition;
-	information = dia_gornow_seeyou_info;
+	condition = DIA_GornOW_SeeYou_Condition;
+	information = DIA_GornOW_Seeyou_Info;
 	permanent = TRUE;
 	description = "Jeszcze siê spotkamy.";
 };
 
 
-func int dia_gornow_seeyou_condition()
+func int DIA_GornOW_SeeYou_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gornow_metmilten) && (KAPITEL == 2))
+	if(Npc_KnowsInfo(other,DIA_GornOW_MetMilten) && (Kapitel == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gornow_seeyou_info()
+func void DIA_GornOW_Seeyou_Info()
 {
 	AI_Output(other,self,"DIA_GornOW_SeeYou_15_00");	//Jeszcze siê spotkamy.
 	AI_Output(self,other,"DIA_GornOW_SeeYou_12_01");	//Mo¿esz na to liczyæ.

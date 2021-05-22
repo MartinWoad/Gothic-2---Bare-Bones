@@ -1,34 +1,34 @@
 
-func void zs_cook_stove()
+func void ZS_Cook_Stove()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == FALSE)
 	{
 		AI_GotoWP(self,self.wp);
 	};
-	if(Npc_HasItems(self,itfomuttonraw) == 0)
+	if(Npc_HasItems(self,ItFoMuttonRaw) == 0)
 	{
-		CreateInvItem(self,itfomuttonraw);
+		CreateInvItem(self,ItFoMuttonRaw);
 	};
 };
 
-func int zs_cook_stove_loop()
+func int ZS_Cook_Stove_Loop()
 {
-	if(!c_bodystatecontains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"STOVE"))
+	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"STOVE"))
 	{
 		AI_UseMob(self,"STOVE",1);
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_cook_stove_end()
+func void ZS_Cook_Stove_End()
 {
 	AI_UseMob(self,"STOVE",-1);
-	if(Npc_HasItems(self,itfomutton) >= 1)
+	if(Npc_HasItems(self,ItFoMutton) >= 1)
 	{
-		Npc_RemoveInvItems(self,itfomutton,1);
+		Npc_RemoveInvItems(self,ItFoMutton,1);
 	};
 };
 

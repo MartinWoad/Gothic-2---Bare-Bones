@@ -1,78 +1,78 @@
 
-instance DIA_CEDRIC_EXIT(C_INFO)
+instance DIA_Cedric_EXIT(C_Info)
 {
-	npc = pal_216_cedric;
+	npc = Pal_216_Cedric;
 	nr = 999;
-	condition = dia_cedric_exit_condition;
-	information = dia_cedric_exit_info;
+	condition = DIA_Cedric_EXIT_Condition;
+	information = DIA_Cedric_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_cedric_exit_condition()
+func int DIA_Cedric_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_cedric_exit_info()
+func void DIA_Cedric_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_CEDRIC_HALLO(C_INFO)
+instance DIA_Cedric_Hallo(C_Info)
 {
-	npc = pal_216_cedric;
+	npc = Pal_216_Cedric;
 	nr = 2;
-	condition = dia_cedric_hallo_condition;
-	information = dia_cedric_hallo_info;
+	condition = DIA_Cedric_Hallo_Condition;
+	information = DIA_Cedric_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_cedric_hallo_condition()
+func int DIA_Cedric_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_cedric_hallo_info()
+func void DIA_Cedric_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Cedric_Hallo_12_00");	//Jestem Cedrik, mistrz miecza i królewski paladyn.
 };
 
 
-instance DIA_CEDRIC_CANTEACH(C_INFO)
+instance DIA_Cedric_CanTeach(C_Info)
 {
-	npc = pal_216_cedric;
+	npc = Pal_216_Cedric;
 	nr = 5;
-	condition = dia_cedric_canteach_condition;
-	information = dia_cedric_canteach_info;
+	condition = DIA_Cedric_CanTeach_Condition;
+	information = DIA_Cedric_CanTeach_Info;
 	permanent = TRUE;
 	description = "Czy mo¿esz mnie wyszkoliæ?";
 };
 
 
-func int dia_cedric_canteach_condition()
+func int DIA_Cedric_CanTeach_Condition()
 {
-	if(CEDRIC_TEACH1H == FALSE)
+	if(Cedric_Teach1H == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_cedric_canteach_info()
+func void DIA_Cedric_CanTeach_Info()
 {
 	AI_Output(other,self,"DIA_Cedric_CanTeach_15_00");	//Mo¿esz mnie wyszkoliæ?
 	if(other.guild == GIL_PAL)
 	{
 		AI_Output(self,other,"DIA_Cedric_CanTeach_12_01");	//Mogê ciê nauczyæ walki broniami jednorêcznymi.
-		CEDRIC_TEACH1H = TRUE;
-		b_logentry(TOPIC_CITYTEACHER,"Paladyn Cedrik mo¿e mnie nauczyæ walki orê¿em jednorêcznym.");
+		Cedric_Teach1H = TRUE;
+		B_LogEntry(TOPIC_CityTeacher,"Paladyn Cedrik mo¿e mnie nauczyæ walki orê¿em jednorêcznym.");
 	}
 	else
 	{
@@ -81,112 +81,112 @@ func void dia_cedric_canteach_info()
 };
 
 
-instance DIA_CEDRIC_TEACH(C_INFO)
+instance DIA_Cedric_Teach(C_Info)
 {
-	npc = pal_216_cedric;
+	npc = Pal_216_Cedric;
 	nr = 100;
-	condition = dia_cedric_teach_condition;
-	information = dia_cedric_teach_info;
+	condition = DIA_Cedric_Teach_Condition;
+	information = DIA_Cedric_Teach_Info;
 	permanent = TRUE;
 	description = "Chcê siê wyszkoliæ.";
 };
 
 
-var int dia_cedric_teach_permanent;
+var int DIA_Cedric_Teach_permanent;
 
-func int dia_cedric_teach_condition()
+func int DIA_Cedric_Teach_Condition()
 {
-	if((CEDRIC_TEACH1H == TRUE) && (DIA_CEDRIC_TEACH_PERMANENT == FALSE))
+	if((Cedric_Teach1H == TRUE) && (DIA_Cedric_Teach_permanent == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_cedric_teach_info()
+func void DIA_Cedric_Teach_Info()
 {
 	AI_Output(other,self,"DIA_Cedric_Teach_15_00");	//Chcê siê wyszkoliæ.
-	if(other.hitchance[NPC_TALENT_1H] >= 60)
+	if(other.HitChance[NPC_TALENT_1H] >= 60)
 	{
 		AI_Output(self,other,"DIA_DIA_Cedric_Teach_12_01");	//Wiesz ju¿ wszystko o walce mieczem. Nie potrafiê ci przekazaæ nic wiêcej.
 	}
 	else
 	{
-		Info_ClearChoices(dia_cedric_teach);
-		Info_AddChoice(dia_cedric_teach,DIALOG_BACK,dia_cedric_teach_back);
-		Info_AddChoice(dia_cedric_teach,b_buildlearnstring(PRINT_LEARN1H1,b_getlearncosttalent(other,NPC_TALENT_1H)),dia_cedric_teach_2h_1);
-		Info_AddChoice(dia_cedric_teach,b_buildlearnstring(PRINT_LEARN1H5,b_getlearncosttalent(other,NPC_TALENT_1H) * 5),dia_cedric_teach_2h_5);
+		Info_ClearChoices(DIA_Cedric_Teach);
+		Info_AddChoice(DIA_Cedric_Teach,Dialog_Back,DIA_Cedric_Teach_Back);
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Cedric_Teach_2H_1);
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_2H_5);
 	};
 };
 
-func void dia_cedric_teach_back()
+func void DIA_Cedric_Teach_Back()
 {
-	Info_ClearChoices(dia_cedric_teach);
+	Info_ClearChoices(DIA_Cedric_Teach);
 };
 
-func void dia_cedric_teach_2h_1()
+func void DIA_Cedric_Teach_2H_1()
 {
-	if(KAPITEL >= 5)
+	if(Kapitel >= 5)
 	{
-		b_teachfighttalentpercent(self,other,NPC_TALENT_1H,1,60);
+		B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,1,60);
 	}
 	else
 	{
-		b_teachfighttalentpercent(self,other,NPC_TALENT_1H,1,50);
+		B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,1,50);
 	};
-	Info_ClearChoices(dia_cedric_teach);
-	Info_AddChoice(dia_cedric_teach,DIALOG_BACK,dia_cedric_teach_back);
-	Info_AddChoice(dia_cedric_teach,b_buildlearnstring(PRINT_LEARN1H1,b_getlearncosttalent(other,NPC_TALENT_1H)),dia_cedric_teach_2h_1);
-	Info_AddChoice(dia_cedric_teach,b_buildlearnstring(PRINT_LEARN1H5,b_getlearncosttalent(other,NPC_TALENT_1H) * 5),dia_cedric_teach_2h_5);
+	Info_ClearChoices(DIA_Cedric_Teach);
+	Info_AddChoice(DIA_Cedric_Teach,Dialog_Back,DIA_Cedric_Teach_Back);
+	Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Cedric_Teach_2H_1);
+	Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_2H_5);
 };
 
-func void dia_cedric_teach_2h_5()
+func void DIA_Cedric_Teach_2H_5()
 {
-	if(KAPITEL >= 5)
+	if(Kapitel >= 5)
 	{
-		b_teachfighttalentpercent(self,other,NPC_TALENT_1H,5,60);
+		B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,5,60);
 	}
 	else
 	{
-		b_teachfighttalentpercent(self,other,NPC_TALENT_1H,5,50);
+		B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,5,50);
 	};
-	Info_ClearChoices(dia_cedric_teach);
-	Info_AddChoice(dia_cedric_teach,DIALOG_BACK,dia_cedric_teach_back);
-	Info_AddChoice(dia_cedric_teach,b_buildlearnstring(PRINT_LEARN1H1,b_getlearncosttalent(other,NPC_TALENT_1H)),dia_cedric_teach_2h_1);
-	Info_AddChoice(dia_cedric_teach,b_buildlearnstring(PRINT_LEARN1H5,b_getlearncosttalent(other,NPC_TALENT_1H) * 5),dia_cedric_teach_2h_5);
+	Info_ClearChoices(DIA_Cedric_Teach);
+	Info_AddChoice(DIA_Cedric_Teach,Dialog_Back,DIA_Cedric_Teach_Back);
+	Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Cedric_Teach_2H_1);
+	Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_2H_5);
 };
 
 
-instance DIA_CEDRIC_PICKPOCKET(C_INFO)
+instance DIA_Cedric_PICKPOCKET(C_Info)
 {
-	npc = pal_216_cedric;
+	npc = Pal_216_Cedric;
 	nr = 900;
-	condition = dia_cedric_pickpocket_condition;
-	information = dia_cedric_pickpocket_info;
+	condition = DIA_Cedric_PICKPOCKET_Condition;
+	information = DIA_Cedric_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_cedric_pickpocket_condition()
+func int DIA_Cedric_PICKPOCKET_Condition()
 {
-	return c_beklauen(37,55);
+	return C_Beklauen(37,55);
 };
 
-func void dia_cedric_pickpocket_info()
+func void DIA_Cedric_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_cedric_pickpocket);
-	Info_AddChoice(dia_cedric_pickpocket,DIALOG_BACK,dia_cedric_pickpocket_back);
-	Info_AddChoice(dia_cedric_pickpocket,DIALOG_PICKPOCKET,dia_cedric_pickpocket_doit);
+	Info_ClearChoices(DIA_Cedric_PICKPOCKET);
+	Info_AddChoice(DIA_Cedric_PICKPOCKET,Dialog_Back,DIA_Cedric_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Cedric_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Cedric_PICKPOCKET_DoIt);
 };
 
-func void dia_cedric_pickpocket_doit()
+func void DIA_Cedric_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_cedric_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Cedric_PICKPOCKET);
 };
 
-func void dia_cedric_pickpocket_back()
+func void DIA_Cedric_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_cedric_pickpocket);
+	Info_ClearChoices(DIA_Cedric_PICKPOCKET);
 };
 

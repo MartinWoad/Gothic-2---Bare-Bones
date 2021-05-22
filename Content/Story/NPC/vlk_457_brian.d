@@ -1,34 +1,34 @@
 
-instance VLK_457_BRIAN(NPC_DEFAULT)
+instance VLK_457_Brian(Npc_Default)
 {
 	name[0] = "Brian";
 	guild = GIL_VLK;
 	id = 457;
 	voice = 4;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,2);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,2);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_vlk_axe);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fighter",FACE_B_NORMAL_KIRGO,BODYTEX_B,4818);
+	EquipItem(self,ItMw_1h_Vlk_Axe);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_B_Normal_Kirgo,BodyTex_B,ITAR_Smith);
 	Mdl_SetModelFatness(self,0.5);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_457;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_457;
 };
 
 
-func void rtn_start_457()
+func void Rtn_Start_457()
 {
-	ta_smith_sharp(7,5,20,35,"NW_CITY_SMITH_SHARP");
-	ta_smalltalk(20,35,0,25,"NW_CITY_MERCHANT_PATH_14");
-	ta_sleep(0,25,7,5,"NW_CITY_BED_BRIAN");
+	TA_Smith_Sharp(7,5,20,35,"NW_CITY_SMITH_SHARP");
+	TA_Smalltalk(20,35,0,25,"NW_CITY_MERCHANT_PATH_14");
+	TA_Sleep(0,25,7,5,"NW_CITY_BED_BRIAN");
 };
 
-func void rtn_lighthouse_457()
+func void Rtn_Lighthouse_457()
 {
-	ta_stand_guarding(8,0,20,0,"NW_LIGHTHOUSE_IN_01");
-	ta_sit_throne(20,0,8,0,"NW_LIGHTHOUSE_IN_03");
+	TA_Stand_Guarding(8,0,20,0,"NW_LIGHTHOUSE_IN_01");
+	TA_Sit_Throne(20,0,8,0,"NW_LIGHTHOUSE_IN_03");
 };
 

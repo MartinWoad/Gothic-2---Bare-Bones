@@ -1,8 +1,8 @@
 
-func void zs_pick_fp()
+func void ZS_Pick_FP()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
@@ -10,7 +10,7 @@ func void zs_pick_fp()
 	};
 };
 
-func int zs_pick_fp_loop()
+func int ZS_Pick_FP_Loop()
 {
 	if((Npc_GetStateTime(self) >= 7) && Hlp_Random(2))
 	{
@@ -42,7 +42,7 @@ func int zs_pick_fp_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_pick_fp_end()
+func void ZS_Pick_FP_End()
 {
 };
 

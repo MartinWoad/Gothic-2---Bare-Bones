@@ -1,28 +1,28 @@
 
-instance PAL_219_RITTER(NPC_DEFAULT)
+instance Pal_219_Ritter(Npc_Default)
 {
-	name[0] = NAME_RITTER;
+	name[0] = NAME_Ritter;
 	guild = GIL_OUT;
 	id = 218;
 	voice = 4;
 	flags = 0;
-	npctype = NPCTYPE_OCAMBIENT;
-	b_setattributestochapter(self,3);
+	npcType = NPCTYPE_OCAMBIENT;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_NORMAL;
-	EquipItem(self,itmw_1h_pal_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fighter",FACE_L_TOUGHBALD01,BODYTEX_L,4828);
+	EquipItem(self,ItMw_1h_Pal_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_L_ToughBald01,BodyTex_L,ItAr_PAL_M);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,55);
-	daily_routine = rtn_start_219;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,55);
+	daily_routine = Rtn_Start_219;
 };
 
 
-func void rtn_start_219()
+func void Rtn_Start_219()
 {
-	ta_stand_guarding(8,0,23,0,"OW_PATH_264");
-	ta_stand_guarding(23,0,8,0,"OW_PATH_264");
+	TA_Stand_Guarding(8,0,23,0,"OW_PATH_264");
+	TA_Stand_Guarding(23,0,8,0,"OW_PATH_264");
 };
 

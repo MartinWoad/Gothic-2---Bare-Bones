@@ -1,44 +1,44 @@
 
-instance DIA_BAU_7_EXIT(C_INFO)
+instance DIA_BAU_7_EXIT(C_Info)
 {
 	nr = 999;
-	condition = dia_bau_7_exit_condition;
-	information = dia_bau_7_exit_info;
+	condition = DIA_BAU_7_EXIT_Condition;
+	information = DIA_BAU_7_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_bau_7_exit_condition()
+func int DIA_BAU_7_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bau_7_exit_info()
+func void DIA_BAU_7_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BAU_7_JOIN(C_INFO)
+instance DIA_BAU_7_JOIN(C_Info)
 {
 	nr = 4;
-	condition = dia_bau_7_join_condition;
-	information = dia_bau_7_join_info;
+	condition = DIA_BAU_7_JOIN_Condition;
+	information = DIA_BAU_7_JOIN_Info;
 	permanent = TRUE;
 	description = "Co mo¿esz mi powiedzieæ o najemnikach?";
 };
 
 
-func int dia_bau_7_join_condition()
+func int DIA_BAU_7_JOIN_Condition()
 {
-	if(KAPITEL == 1)
+	if(Kapitel == 1)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bau_7_join_info()
+func void DIA_BAU_7_JOIN_Info()
 {
 	AI_Output(other,self,"DIA_BAU_7_JOIN_15_00");	//Co mo¿esz mi powiedzieæ o najemnikach?
 	AI_Output(self,other,"DIA_BAU_7_JOIN_07_01");	//Onar wynaj¹³ ich, by bronili jego farmy.
@@ -46,44 +46,44 @@ func void dia_bau_7_join_info()
 };
 
 
-instance DIA_BAU_7_PEOPLE(C_INFO)
+instance DIA_BAU_7_PEOPLE(C_Info)
 {
 	nr = 3;
-	condition = dia_bau_7_people_condition;
-	information = dia_bau_7_people_info;
+	condition = DIA_BAU_7_PEOPLE_Condition;
+	information = DIA_BAU_7_PEOPLE_Info;
 	permanent = TRUE;
 	description = "Kto tu dowodzi?";
 };
 
 
-func int dia_bau_7_people_condition()
+func int DIA_BAU_7_PEOPLE_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bau_7_people_info()
+func void DIA_BAU_7_PEOPLE_Info()
 {
 	AI_Output(other,self,"DIA_BAU_7_PEOPLE_15_00");	//Kto tu rz¹dzi?
 	AI_Output(self,other,"DIA_BAU_7_PEOPLE_07_01");	//Du¿a farma nale¿y do Onara. Mniejsze tak¿e, ale te wynajmuje okolicznym mieszkañcom.
 };
 
 
-instance DIA_BAU_7_LOCATION(C_INFO)
+instance DIA_BAU_7_LOCATION(C_Info)
 {
 	nr = 2;
-	condition = dia_bau_7_location_condition;
-	information = dia_bau_7_location_info;
+	condition = DIA_BAU_7_LOCATION_Condition;
+	information = DIA_BAU_7_LOCATION_Info;
 	permanent = TRUE;
 	description = "Powiedz mi coœ na temat okolicy.";
 };
 
 
-func int dia_bau_7_location_condition()
+func int DIA_BAU_7_LOCATION_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bau_7_location_info()
+func void DIA_BAU_7_LOCATION_Info()
 {
 	AI_Output(other,self,"DIA_BAU_7_LOCATION_15_00");	//Powiedz mi coœ na temat okolicy.
 	AI_Output(self,other,"DIA_BAU_7_LOCATION_07_01");	//Du¿a farma po wschodniej stronie doliny nale¿y do Onara. Na pó³noc st¹d le¿y farma Sekoba.
@@ -91,47 +91,47 @@ func void dia_bau_7_location_info()
 };
 
 
-instance DIA_BAU_7_STANDARD(C_INFO)
+instance DIA_BAU_7_STANDARD(C_Info)
 {
 	nr = 1;
-	condition = dia_bau_7_standard_condition;
-	information = dia_bau_7_standard_info;
+	condition = DIA_BAU_7_STANDARD_Condition;
+	information = DIA_BAU_7_STANDARD_Info;
 	permanent = TRUE;
 	description = "Co nowego?";
 };
 
 
-func int dia_bau_7_standard_condition()
+func int DIA_BAU_7_STANDARD_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bau_7_standard_info()
+func void DIA_BAU_7_STANDARD_Info()
 {
 	AI_Output(other,self,"DIA_BAU_7_STANDARD_15_00");	//Co s³ychaæ?
-	if(KAPITEL == 1)
+	if(Kapitel == 1)
 	{
 		AI_Output(self,other,"DIA_BAU_7_STANDARD_07_01");	//Og³osiliœmy niepodleg³oœæ - nie p³acimy ju¿ podatków na rzecz miasta. Król nic nigdy dla nas nie zrobi³ - mieliœmy tego doœæ!
 	};
-	if(KAPITEL == 2)
+	if(Kapitel == 2)
 	{
 		AI_Output(self,other,"DIA_BAU_7_STANDARD_07_02");	//W tej chwili niewiele siê tu dzieje.
 	};
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		AI_Output(self,other,"DIA_BAU_7_STANDARD_07_03");	//Ostatnio ludzie zaczêli opowiadaæ coœ o smokach. A król robi wszystko, ¿eby tylko wycisn¹æ z poddanych jak najwiêcej pieniêdzy.
 	};
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		AI_Output(self,other,"DIA_BAU_7_STANDARD_07_04");	//Uwa¿aj na siebie, wzd³u¿ prze³êczy pa³êta siê wiele podejrzanych typków i dzikich bestii.
 	};
-	if(KAPITEL >= 5)
+	if(Kapitel >= 5)
 	{
 		AI_Output(self,other,"DIA_BAU_7_STANDARD_07_05");	//Teraz, po œmierci smoków, paladyni zechcieli ³askawie opuœciæ mury miasta. Czas najwy¿szy, by na ulicach znów zapanowa³ porz¹dek.
 	};
 };
 
-func void b_assignambientinfos_bau_7(var C_NPC slf)
+func void B_AssignAmbientInfos_BAU_7(var C_Npc slf)
 {
 	dia_bau_7_exit.npc = Hlp_GetInstanceID(slf);
 	dia_bau_7_join.npc = Hlp_GetInstanceID(slf);

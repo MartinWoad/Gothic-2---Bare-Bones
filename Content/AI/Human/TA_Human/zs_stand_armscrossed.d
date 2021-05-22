@@ -1,8 +1,8 @@
 
-func void zs_stand_armscrossed()
+func void ZS_Stand_ArmsCrossed()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
@@ -11,7 +11,7 @@ func void zs_stand_armscrossed()
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func int zs_stand_armscrossed_loop()
+func int ZS_Stand_ArmsCrossed_loop()
 {
 	var int random;
 	if(Npc_IsOnFP(self,"STAND"))
@@ -63,7 +63,7 @@ func int zs_stand_armscrossed_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_stand_armscrossed_end()
+func void ZS_Stand_ArmsCrossed_end()
 {
 	AI_PlayAni(self,"T_LGUARD_2_STAND");
 };

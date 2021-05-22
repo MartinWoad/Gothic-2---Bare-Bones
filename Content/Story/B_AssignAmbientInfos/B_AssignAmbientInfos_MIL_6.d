@@ -1,36 +1,36 @@
 
-instance DIA_MIL_6_EXIT(C_INFO)
+instance DIA_MIL_6_EXIT(C_Info)
 {
 	nr = 999;
-	condition = dia_mil_6_exit_condition;
-	information = dia_mil_6_exit_info;
+	condition = DIA_MIL_6_EXIT_Condition;
+	information = DIA_MIL_6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_mil_6_exit_condition()
+func int DIA_MIL_6_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_mil_6_exit_info()
+func void DIA_MIL_6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MIL_6_JOIN(C_INFO)
+instance DIA_MIL_6_JOIN(C_Info)
 {
 	nr = 4;
-	condition = dia_mil_6_join_condition;
-	information = dia_mil_6_join_info;
+	condition = DIA_MIL_6_JOIN_Condition;
+	information = DIA_MIL_6_JOIN_Info;
 	permanent = TRUE;
 	description = "Co powinienem zrobiæ, aby wst¹piæ do stra¿y?";
 };
 
 
-func int dia_mil_6_join_condition()
+func int DIA_MIL_6_JOIN_Condition()
 {
 	if(hero.guild == GIL_NONE)
 	{
@@ -38,28 +38,28 @@ func int dia_mil_6_join_condition()
 	};
 };
 
-func void dia_mil_6_join_info()
+func void DIA_MIL_6_JOIN_Info()
 {
 	AI_Output(other,self,"DIA_MIL_6_JOIN_15_00");	//Co powinienem zrobiæ, ¿eby siê zaci¹gn¹æ do stra¿y?
 	AI_Output(self,other,"DIA_MIL_6_JOIN_06_01");	//Porozmawiaj z Lordem Andre. Od kiedy paladyni przybyli do miasta, to w³aœnie on nadzoruje dzia³ania stra¿y.
-	if(c_npcisinquarter(self) != Q_KASERNE)
+	if(C_NpcIsInQuarter(self) != Q_KASERNE)
 	{
 		AI_Output(self,other,"DIA_MIL_6_JOIN_06_02");	//Znajdziesz go w koszarach. Praktycznie z nich nie wychodzi.
 	};
 };
 
 
-instance DIA_MIL_6_PEOPLE(C_INFO)
+instance DIA_MIL_6_PEOPLE(C_Info)
 {
 	nr = 3;
-	condition = dia_mil_6_people_condition;
-	information = dia_mil_6_people_info;
+	condition = DIA_MIL_6_PEOPLE_Condition;
+	information = DIA_MIL_6_PEOPLE_Info;
 	permanent = TRUE;
 	description = "Opowiedz mi o tych paladynach.";
 };
 
 
-func int dia_mil_6_people_condition()
+func int DIA_MIL_6_PEOPLE_Condition()
 {
 	if(hero.guild != GIL_PAL)
 	{
@@ -67,7 +67,7 @@ func int dia_mil_6_people_condition()
 	};
 };
 
-func void dia_mil_6_people_info()
+func void DIA_MIL_6_PEOPLE_Info()
 {
 	AI_Output(other,self,"DIA_MIL_6_PEOPLE_15_00");	//Opowiedz mi o tych paladynach.
 	AI_Output(self,other,"DIA_MIL_6_PEOPLE_06_01");	//Zaraz po przybyciu do Khorinis udali siê do górnego miasta.
@@ -76,22 +76,22 @@ func void dia_mil_6_people_info()
 };
 
 
-instance DIA_MIL_6_LOCATION(C_INFO)
+instance DIA_MIL_6_LOCATION(C_Info)
 {
 	nr = 2;
-	condition = dia_mil_6_location_condition;
-	information = dia_mil_6_location_info;
+	condition = DIA_MIL_6_LOCATION_Condition;
+	information = DIA_MIL_6_LOCATION_Info;
 	permanent = TRUE;
 	description = "Co powinienem wiedzieæ o tym mieœcie?";
 };
 
 
-func int dia_mil_6_location_condition()
+func int DIA_MIL_6_LOCATION_Condition()
 {
 	return TRUE;
 };
 
-func void dia_mil_6_location_info()
+func void DIA_MIL_6_LOCATION_Info()
 {
 	AI_Output(other,self,"DIA_MIL_6_LOCATION_15_00");	//Co powinienem wiedzieæ o tym mieœcie?
 	AI_Output(self,other,"DIA_MIL_6_LOCATION_06_01");	//Kontrolê nad miastem przejêli paladyni. Stra¿ bezpoœrednio im podlega.
@@ -101,50 +101,50 @@ func void dia_mil_6_location_info()
 };
 
 
-instance DIA_MIL_6_STANDARD(C_INFO)
+instance DIA_MIL_6_STANDARD(C_Info)
 {
 	nr = 1;
-	condition = dia_mil_6_standard_condition;
-	information = dia_mil_6_standard_info;
+	condition = DIA_MIL_6_STANDARD_Condition;
+	information = DIA_MIL_6_STANDARD_Info;
 	permanent = TRUE;
 	description = "Co nowego?";
 };
 
 
-func int dia_mil_6_standard_condition()
+func int DIA_MIL_6_STANDARD_Condition()
 {
 	return TRUE;
 };
 
-func void dia_mil_6_standard_info()
+func void DIA_MIL_6_STANDARD_Info()
 {
 	AI_Output(other,self,"DIA_MIL_6_STANDARD_15_00");	//Co s³ychaæ?
-	if(KAPITEL == 1)
+	if(Kapitel == 1)
 	{
 		AI_Output(self,other,"DIA_MIL_6_STANDARD_06_01");	//W mieœcie coraz wiêcej szumowin.
 		AI_Output(self,other,"DIA_MIL_6_STANDARD_06_02");	//Wszêdzie coraz wiêcej z³odziei. Lord Andre podejrzewa nawet, ¿e ca³e to zamieszanie jest sprawk¹ gangu.
 		AI_Output(self,other,"DIA_MIL_6_STANDARD_06_03");	//Niedawno przetrz¹snêliœmy dok³adnie ca³¹ dzielnicê portow¹, ale niczego nie znaleŸliœmy.
 	};
-	if(KAPITEL == 2)
+	if(Kapitel == 2)
 	{
 		AI_Output(self,other,"DIA_MIL_6_STANDARD_06_04");	//Wygl¹da na to, ¿e problem bandytów mamy ju¿ z g³owy. Ataki sta³y siê ostatnimi czasy rzadkoœci¹.
 	};
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		AI_Output(self,other,"DIA_MIL_6_STANDARD_06_05");	//Z dnia na dzieñ jest coraz gorzej, wszystko przez te szumowiny wrêcz zalewaj¹ce miasto. Ostatniej nocy œledzi³em pewnego typka w czarnych szatach, zd¹¿aj¹cego ku górnemu miastu.
 		AI_Output(self,other,"DIA_MIL_6_STANDARD_06_06");	//Od pocz¹tku wyda³ mi siê podejrzany. Œledzi³em go a¿ pod dom gubernatora. Tam znikn¹³. Mówiê ci, dziwna to by³a postaæ.
 	};
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		AI_Output(self,other,"DIA_MIL_6_STANDARD_06_07");	//S³ysza³em, ¿e Lord Hagen zatrudni³ najemników, by zajêli siê smokami. Mnie to odpowiada, nie chcia³bym sam zmierzyæ siê z tymi bestiami.
 	};
-	if(KAPITEL >= 5)
+	if(Kapitel >= 5)
 	{
 		AI_Output(self,other,"DIA_MIL_6_STANDARD_06_08");	//Mówi siê, ¿e smoki zosta³y pokonane. Ponoæ Lord Hagen zbiera si³y, by ostatecznie wygnaæ je tak¿e z Górniczej Doliny.
 	};
 };
 
-func void b_assignambientinfos_mil_6(var C_NPC slf)
+func void B_AssignAmbientInfos_MIL_6(var C_Npc slf)
 {
 	dia_mil_6_exit.npc = Hlp_GetInstanceID(slf);
 	dia_mil_6_join.npc = Hlp_GetInstanceID(slf);

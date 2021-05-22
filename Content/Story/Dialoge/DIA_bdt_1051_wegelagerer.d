@@ -1,167 +1,167 @@
 
-instance DIA_1051_WEGELAGERER_EXIT(C_INFO)
+instance DIA_1051_Wegelagerer_EXIT(C_Info)
 {
-	npc = bdt_1051_wegelagerer;
+	npc = BDT_1051_Wegelagerer;
 	nr = 999;
-	condition = dia_1051_wegelagerer_exit_condition;
-	information = dia_1051_wegelagerer_exit_info;
+	condition = DIA_1051_Wegelagerer_EXIT_Condition;
+	information = DIA_1051_Wegelagerer_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-var int bdt_1051_wegelagerer_angriff;
+var int BDT_1051_Wegelagerer_Angriff;
 
-func int dia_1051_wegelagerer_exit_condition()
+func int DIA_1051_Wegelagerer_EXIT_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_1051_wegelagerer_question) || (BDT_1051_WEGELAGERER_ANGRIFF == TRUE))
+	if(Npc_KnowsInfo(other,DIA_1051_Wegelagerer_Question) || (BDT_1051_Wegelagerer_Angriff == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_1051_wegelagerer_exit_info()
+func void DIA_1051_Wegelagerer_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
-	if(BDT_1051_WEGELAGERER_ANGRIFF == TRUE)
+	if(BDT_1051_Wegelagerer_Angriff == TRUE)
 	{
-		self.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-		bdt_1052_wegelagerer.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+		self.aivar[AIV_EnemyOverride] = FALSE;
+		BDT_1052_Wegelagerer.aivar[AIV_EnemyOverride] = FALSE;
 	};
 };
 
 
-instance DIA_1051_WEGELAGERER_HELLO(C_INFO)
+instance DIA_1051_Wegelagerer_Hello(C_Info)
 {
-	npc = bdt_1051_wegelagerer;
+	npc = BDT_1051_Wegelagerer;
 	nr = 4;
-	condition = dia_wegelagerer_hello_condition;
-	information = dia_wegelagerer_hello_info;
+	condition = DIA_Wegelagerer_Hello_Condition;
+	information = DIA_Wegelagerer_Hello_Info;
 	permanent = FALSE;
 	description = "Co tu porabiasz?";
 };
 
 
-func int dia_wegelagerer_hello_condition()
+func int DIA_Wegelagerer_Hello_Condition()
 {
-	if(BDT_1051_WEGELAGERER_ANGRIFF == FALSE)
+	if(BDT_1051_Wegelagerer_Angriff == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_wegelagerer_hello_info()
+func void DIA_Wegelagerer_Hello_Info()
 {
 	AI_Output(other,self,"DIA_1051_Wegelagerer_Hello_15_00");	//Co tu robisz?
 	AI_Output(self,other,"DIA_1051_Wegelagerer_Hello_07_01");	//A co ciê to obchodzi?
 };
 
 
-instance DIA_1051_WEGELAGERER_NOVICE(C_INFO)
+instance DIA_1051_Wegelagerer_Novice(C_Info)
 {
-	npc = bdt_1051_wegelagerer;
+	npc = BDT_1051_Wegelagerer;
 	nr = 4;
-	condition = dia_wegelagerer_novice_condition;
-	information = dia_wegelagerer_novice_info;
+	condition = DIA_Wegelagerer_Novice_Condition;
+	information = DIA_Wegelagerer_Novice_Info;
 	permanent = FALSE;
 	description = "Szukam nowicjusza.";
 };
 
 
-func int dia_wegelagerer_novice_condition()
+func int DIA_Wegelagerer_Novice_Condition()
 {
-	if((MIS_NOVIZENCHASE == LOG_RUNNING) && (MIS_SCKNOWSINNOSEYEISBROKEN == FALSE) && (BDT_1051_WEGELAGERER_ANGRIFF == FALSE))
+	if((MIS_NovizenChase == LOG_Running) && (MIS_SCKnowsInnosEyeIsBroken == FALSE) && (BDT_1051_Wegelagerer_Angriff == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_wegelagerer_novice_info()
+func void DIA_Wegelagerer_Novice_Info()
 {
 	AI_Output(other,self,"DIA_1051_Wegelagerer_Novice_15_00");	//Szukam nowicjusza.
 	AI_Output(self,other,"DIA_1051_Wegelagerer_Novice_07_01");	//To bardzo ciekawe. My te¿ kogoœ szukamy.
-	Info_ClearChoices(dia_1051_wegelagerer_question);
-	Info_AddChoice(dia_1051_wegelagerer_novice,"Kogo szukasz?",dia_1051_wegelagerer_question_novice_who);
+	Info_ClearChoices(DIA_1051_Wegelagerer_Question);
+	Info_AddChoice(DIA_1051_Wegelagerer_Novice,"Kogo szukasz?",DIA_1051_Wegelagerer_Question_Novice_Who);
 };
 
 
-instance DIA_1051_WEGELAGERER_QUESTION(C_INFO)
+instance DIA_1051_Wegelagerer_Question(C_Info)
 {
-	npc = bdt_1051_wegelagerer;
+	npc = BDT_1051_Wegelagerer;
 	nr = 4;
-	condition = dia_wegelagerer_question_condition;
-	information = dia_wegelagerer_question_info;
+	condition = DIA_Wegelagerer_Question_Condition;
+	information = DIA_Wegelagerer_Question_Info;
 	permanent = FALSE;
 	description = "Tak tylko pytam.";
 };
 
 
-func int dia_wegelagerer_question_condition()
+func int DIA_Wegelagerer_Question_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_1051_wegelagerer_hello) && (BDT_1051_WEGELAGERER_ANGRIFF == FALSE))
+	if(Npc_KnowsInfo(other,DIA_1051_Wegelagerer_Hello) && (BDT_1051_Wegelagerer_Angriff == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_wegelagerer_question_info()
+func void DIA_Wegelagerer_Question_Info()
 {
 	AI_Output(other,self,"DIA_1051_Wegelagerer_Question_15_00");	//Tak tylko pytam.
 	AI_Output(self,other,"DIA_1051_Wegelagerer_Question_07_01");	//Zrozumia³em. Ale co TY tu robisz?
 	AI_Output(self,other,"DIA_1051_Wegelagerer_Question_07_02");	//Tak czy inaczej, to nasza droga i nie lubimy, jak nam ktoœ tu przeszkadza.
-	Info_ClearChoices(dia_1051_wegelagerer_question);
-	if((MIS_NOVIZENCHASE == LOG_RUNNING) && (MIS_SCKNOWSINNOSEYEISBROKEN == FALSE))
+	Info_ClearChoices(DIA_1051_Wegelagerer_Question);
+	if((MIS_NovizenChase == LOG_Running) && (MIS_SCKnowsInnosEyeIsBroken == FALSE))
 	{
-		Info_AddChoice(dia_1051_wegelagerer_question,"Szukam nowicjusza.",dia_1051_wegelagerer_question_novice);
+		Info_AddChoice(DIA_1051_Wegelagerer_Question,"Szukam nowicjusza.",DIA_1051_Wegelagerer_Question_Novice);
 	};
-	Info_AddChoice(dia_1051_wegelagerer_question,"Nie twój interes.",dia_1051_wegelagerer_question_myconcern);
-	Info_AddChoice(dia_1051_wegelagerer_question,"Tylko siê rozgl¹dam.",dia_1051_wegelagerer_question_lookaround);
+	Info_AddChoice(DIA_1051_Wegelagerer_Question,"Nie twój interes.",DIA_1051_Wegelagerer_Question_MyConcern);
+	Info_AddChoice(DIA_1051_Wegelagerer_Question,"Tylko siê rozgl¹dam.",DIA_1051_Wegelagerer_Question_LookAround);
 };
 
-func void dia_1051_wegelagerer_question_novice()
+func void DIA_1051_Wegelagerer_Question_Novice()
 {
 	AI_Output(other,self,"DIA_1051_Wegelagerer_Question_Novice_15_00");	//Szukam nowicjusza.
 	AI_Output(self,other,"DIA_1051_Wegelagerer_Question_Novice_07_01");	//To bardzo ciekawe. My te¿ kogoœ szukamy.
-	Info_ClearChoices(dia_1051_wegelagerer_question);
-	Info_AddChoice(dia_1051_wegelagerer_question,"Kogo szukasz?",dia_1051_wegelagerer_question_novice_who);
+	Info_ClearChoices(DIA_1051_Wegelagerer_Question);
+	Info_AddChoice(DIA_1051_Wegelagerer_Question,"Kogo szukasz?",DIA_1051_Wegelagerer_Question_Novice_Who);
 };
 
-func void dia_1051_wegelagerer_question_novice_who()
+func void DIA_1051_Wegelagerer_Question_Novice_Who()
 {
 	AI_Output(other,self,"DIA_1051_Wegelagerer_Question_Novice_Who_15_00");	//Tak? A kogo?
 	AI_Output(self,other,"DIA_1051_Wegelagerer_Question_Novice_Who_07_01");	//Ciebie!
-	BDT_1051_WEGELAGERER_ANGRIFF = TRUE;
+	BDT_1051_Wegelagerer_Angriff = TRUE;
 	Npc_SetRefuseTalk(self,40);
-	Info_ClearChoices(dia_1051_wegelagerer_question);
+	Info_ClearChoices(DIA_1051_Wegelagerer_Question);
 };
 
-func void dia_1051_wegelagerer_question_myconcern()
+func void DIA_1051_Wegelagerer_Question_MyConcern()
 {
 	AI_Output(other,self,"DIA_1051_Wegelagerer_Question_MyConcern_15_00");	//Nie twoja sprawa.
 	AI_Output(self,other,"DIA_1051_Wegelagerer_Question_MyConcern_07_01");	//O co ci chodzi? Szukasz k³opotów?
-	Info_ClearChoices(dia_1051_wegelagerer_question);
-	Info_AddChoice(dia_1051_wegelagerer_question,"Nie, nie przeszkadzajcie sobie. ¿aden k³opot.",dia_1051_wegelagerer_question_myconcern_no);
-	Info_AddChoice(dia_1051_wegelagerer_question,"Skoro nalegasz.",dia_1051_wegelagerer_question_myconcern_yes);
+	Info_ClearChoices(DIA_1051_Wegelagerer_Question);
+	Info_AddChoice(DIA_1051_Wegelagerer_Question,"Nie, nie przeszkadzajcie sobie. ¿aden k³opot.",DIA_1051_Wegelagerer_Question_MyConcern_No);
+	Info_AddChoice(DIA_1051_Wegelagerer_Question,"Skoro nalegasz.",DIA_1051_Wegelagerer_Question_MyConcern_Yes);
 };
 
-func void dia_1051_wegelagerer_question_myconcern_no()
+func void DIA_1051_Wegelagerer_Question_MyConcern_No()
 {
 	AI_Output(other,self,"DIA_1051_Wegelagerer_Question_MyConcern_No_15_00");	//Nie, nie przeszkadzajcie sobie. ¯aden k³opot.
 	AI_Output(self,other,"DIA_1051_Wegelagerer_Question_MyConcern_No_07_01");	//Rozumiem. Zapaæka³eœ sobie portki ze strachu. Spadaj.
 	AI_StopProcessInfos(self);
 };
 
-func void dia_1051_wegelagerer_question_myconcern_yes()
+func void DIA_1051_Wegelagerer_Question_MyConcern_Yes()
 {
 	AI_Output(other,self,"DIA_1051_Wegelagerer_Question_MyConcern_Yes_15_00");	//Skoro nalegasz.
 	AI_Output(self,other,"DIA_1051_Wegelagerer_Question_MyConcern_Yes_07_01");	//He, he, mocny w gêbie.
 	AI_Output(self,other,"DIA_1051_Wegelagerer_Question_MyConcern_Yes_07_02");	//Pora ci j¹ zamkn¹æ.
-	BDT_1051_WEGELAGERER_ANGRIFF = TRUE;
+	BDT_1051_Wegelagerer_Angriff = TRUE;
 	Npc_SetRefuseTalk(self,40);
-	Info_ClearChoices(dia_1051_wegelagerer_question);
+	Info_ClearChoices(DIA_1051_Wegelagerer_Question);
 };
 
-func void dia_1051_wegelagerer_question_lookaround()
+func void DIA_1051_Wegelagerer_Question_LookAround()
 {
 	AI_Output(other,self,"DIA_1051_Wegelagerer_Question_LookAround_15_00");	//Tylko siê rozgl¹dam.
 	AI_Output(self,other,"DIA_1051_Wegelagerer_Question_LookAround_07_01");	//Dobra, ale przestañ nas denerwowaæ.
@@ -169,33 +169,33 @@ func void dia_1051_wegelagerer_question_lookaround()
 };
 
 
-instance DIA_WEGELAGERER_ANGRIFF(C_INFO)
+instance DIA_Wegelagerer_ANGRIFF(C_Info)
 {
-	npc = bdt_1051_wegelagerer;
+	npc = BDT_1051_Wegelagerer;
 	nr = 2;
-	condition = dia_wegelagerer_angriff_condition;
-	information = dia_wegelagerer_angriff_info;
+	condition = DIA_Wegelagerer_ANGRIFF_Condition;
+	information = DIA_Wegelagerer_ANGRIFF_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_wegelagerer_angriff_condition()
+func int DIA_Wegelagerer_ANGRIFF_Condition()
 {
-	var C_NPC pal;
-	pal = Hlp_GetNpc(bdt_1052_wegelagerer);
-	if((Npc_RefuseTalk(self) == FALSE) && ((BDT_1051_WEGELAGERER_ANGRIFF == TRUE) || c_npcisdown(pal)))
+	var C_Npc Pal;
+	Pal = Hlp_GetNpc(BDT_1052_Wegelagerer);
+	if((Npc_RefuseTalk(self) == FALSE) && ((BDT_1051_Wegelagerer_Angriff == TRUE) || C_NpcIsDown(Pal)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_wegelagerer_angriff_info()
+func void DIA_Wegelagerer_ANGRIFF_Info()
 {
 	AI_Output(self,other,"DIA_Wegelagerer_ANGRIFF_07_00");	//No dobra, doigra³eœ siê!
 	AI_StopProcessInfos(self);
 	Npc_SetRefuseTalk(self,40);
-	self.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-	bdt_1052_wegelagerer.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE;
+	BDT_1052_Wegelagerer.aivar[AIV_EnemyOverride] = FALSE;
 };
 

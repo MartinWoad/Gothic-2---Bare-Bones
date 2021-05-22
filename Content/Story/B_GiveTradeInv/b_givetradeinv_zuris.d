@@ -1,102 +1,102 @@
 
-var int zuris_itemsgiven_chapter_1;
-var int zuris_itemsgiven_chapter_2;
-var int zuris_itemsgiven_chapter_3;
-var int zuris_itemsgiven_chapter_4;
-var int zuris_itemsgiven_chapter_5;
+var int Zuris_ItemsGiven_Chapter_1;
+var int Zuris_ItemsGiven_Chapter_2;
+var int Zuris_ItemsGiven_Chapter_3;
+var int Zuris_ItemsGiven_Chapter_4;
+var int Zuris_ItemsGiven_Chapter_5;
 var int zuris_itemsgiven_chapter_6;
 
-func void b_givetradeinv_zuris(var C_NPC slf)
+func void B_GiveTradeInv_Zuris(var C_Npc slf)
 {
-	if((KAPITEL >= 1) && (ZURIS_ITEMSGIVEN_CHAPTER_1 == FALSE))
+	if((Kapitel >= 1) && (Zuris_ItemsGiven_Chapter_1 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itpo_mana_01,10);
-		CreateInvItems(slf,itpo_health_01,10);
-		CreateInvItems(slf,itmi_apfeltabak,2);
-		CreateInvItems(slf,itsc_light,3);
-		CreateInvItems(slf,itsc_sleep,1);
-		CreateInvItems(slf,itsc_sumgobskel,1);
-		CreateInvItems(slf,itsc_firebolt,3);
-		CreateInvItems(slf,itsc_icebolt,3);
-		CreateInvItems(slf,itsc_instantfireball,3);
-		CreateInvItems(slf,itwr_astronomy_mis,1);
-		ZURIS_ITEMSGIVEN_CHAPTER_1 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItPo_Mana_01,10);
+		CreateInvItems(slf,ItPo_Health_01,10);
+		CreateInvItems(slf,ItMi_ApfelTabak,2);
+		CreateInvItems(slf,ItSc_Light,3);
+		CreateInvItems(slf,ItSc_Sleep,1);
+		CreateInvItems(slf,ItSc_SumGobSkel,1);
+		CreateInvItems(slf,ItSc_Firebolt,3);
+		CreateInvItems(slf,ItSc_Icebolt,3);
+		CreateInvItems(slf,ItSc_InstantFireball,3);
+		CreateInvItems(slf,ItWr_Astronomy_Mis,1);
+		Zuris_ItemsGiven_Chapter_1 = TRUE;
 	};
-	if((KAPITEL >= 2) && (ZURIS_ITEMSGIVEN_CHAPTER_2 == FALSE))
+	if((Kapitel >= 2) && (Zuris_ItemsGiven_Chapter_2 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,60);
-		CreateInvItems(slf,itpo_mana_01,15);
-		CreateInvItems(slf,itpo_mana_02,1);
-		CreateInvItems(slf,itpo_health_01,15);
-		CreateInvItems(slf,itpo_health_02,2);
-		CreateInvItems(slf,itsc_light,3);
-		CreateInvItems(slf,itsc_sumwolf,1);
-		CreateInvItems(slf,itsc_zap,1);
-		CreateInvItems(slf,itsc_windfist,1);
-		CreateInvItems(slf,itsc_instantfireball,3);
-		CreateInvItems(slf,itmi_apfeltabak,5);
-		ZURIS_ITEMSGIVEN_CHAPTER_2 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,60);
+		CreateInvItems(slf,ItPo_Mana_01,15);
+		CreateInvItems(slf,ItPo_Mana_02,1);
+		CreateInvItems(slf,ItPo_Health_01,15);
+		CreateInvItems(slf,ItPo_Health_02,2);
+		CreateInvItems(slf,ItSc_Light,3);
+		CreateInvItems(slf,ItSc_SumWolf,1);
+		CreateInvItems(slf,ItSc_Zap,1);
+		CreateInvItems(slf,ItSc_Windfist,1);
+		CreateInvItems(slf,ItSc_InstantFireball,3);
+		CreateInvItems(slf,ItMi_ApfelTabak,5);
+		Zuris_ItemsGiven_Chapter_2 = TRUE;
 	};
-	if((KAPITEL >= 3) && (ZURIS_ITEMSGIVEN_CHAPTER_3 == FALSE))
+	if((Kapitel >= 3) && (Zuris_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,120);
-		CreateInvItems(slf,itpo_mana_01,25);
-		CreateInvItems(slf,itpo_mana_02,3);
-		CreateInvItems(slf,itpo_health_01,25);
-		CreateInvItems(slf,itpo_health_02,15);
-		CreateInvItems(slf,itsc_sumskel,1);
-		CreateInvItems(slf,itsc_lightningflash,1);
-		CreateInvItems(slf,itsc_icecube,3);
-		CreateInvItems(slf,itsc_instantfireball,3);
-		CreateInvItems(slf,itpo_perm_dex,1);
-		ZURIS_ITEMSGIVEN_CHAPTER_3 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,120);
+		CreateInvItems(slf,ItPo_Mana_01,25);
+		CreateInvItems(slf,ItPo_Mana_02,3);
+		CreateInvItems(slf,ItPo_Health_01,25);
+		CreateInvItems(slf,ItPo_Health_02,15);
+		CreateInvItems(slf,ItSc_SumSkel,1);
+		CreateInvItems(slf,ItSc_LightningFlash,1);
+		CreateInvItems(slf,ItSc_IceCube,3);
+		CreateInvItems(slf,ItSc_InstantFireball,3);
+		CreateInvItems(slf,ItPo_Perm_DEX,1);
+		Zuris_ItemsGiven_Chapter_3 = TRUE;
 	};
-	if((KAPITEL >= 4) && (ZURIS_ITEMSGIVEN_CHAPTER_4 == FALSE))
+	if((Kapitel >= 4) && (Zuris_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,220);
-		CreateInvItems(slf,itpo_mana_01,35);
-		CreateInvItems(slf,itpo_mana_02,15);
-		CreateInvItems(slf,itpo_health_01,35);
-		CreateInvItems(slf,itpo_health_02,20);
-		CreateInvItems(slf,itpo_health_03,10);
-		CreateInvItems(slf,itsc_sumgol,1);
-		CreateInvItems(slf,itsc_lightningflash,1);
-		CreateInvItems(slf,itsc_harmundead,3);
-		CreateInvItems(slf,itsc_firestorm,1);
-		CreateInvItems(slf,itsc_icewave,1);
-		CreateInvItems(slf,itsc_firerain,1);
-		CreateInvItems(slf,itpo_perm_mana,1);
-		CreateInvItems(slf,itpo_speed,1);
-		ZURIS_ITEMSGIVEN_CHAPTER_4 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,220);
+		CreateInvItems(slf,ItPo_Mana_01,35);
+		CreateInvItems(slf,ItPo_Mana_02,15);
+		CreateInvItems(slf,ItPo_Health_01,35);
+		CreateInvItems(slf,ItPo_Health_02,20);
+		CreateInvItems(slf,ItPo_Health_03,10);
+		CreateInvItems(slf,ItSc_SumGol,1);
+		CreateInvItems(slf,ItSc_LightningFlash,1);
+		CreateInvItems(slf,ItSc_HarmUndead,3);
+		CreateInvItems(slf,ItSc_Firestorm,1);
+		CreateInvItems(slf,ItSc_IceWave,1);
+		CreateInvItems(slf,ItSc_Firerain,1);
+		CreateInvItems(slf,ItPo_Perm_Mana,1);
+		CreateInvItems(slf,ItPo_Speed,1);
+		Zuris_ItemsGiven_Chapter_4 = TRUE;
 	};
-	if((KAPITEL >= 5) && (ZURIS_ITEMSGIVEN_CHAPTER_5 == FALSE))
+	if((Kapitel >= 5) && (Zuris_ItemsGiven_Chapter_5 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,321);
-		CreateInvItems(slf,itpo_mana_01,55);
-		CreateInvItems(slf,itpo_mana_02,35);
-		CreateInvItems(slf,itpo_mana_03,15);
-		CreateInvItems(slf,itpo_health_01,55);
-		CreateInvItems(slf,itpo_health_02,30);
-		CreateInvItems(slf,itpo_health_03,20);
-		CreateInvItems(slf,itsc_icewave,1);
-		CreateInvItems(slf,itsc_sumdemon,1);
-		CreateInvItems(slf,itsc_firerain,1);
-		CreateInvItems(slf,itsc_shrink,1);
-		CreateInvItems(slf,itpo_perm_health,1);
-		CreateInvItems(slf,itpo_speed,1);
-		ZURIS_ITEMSGIVEN_CHAPTER_5 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,321);
+		CreateInvItems(slf,ItPo_Mana_01,55);
+		CreateInvItems(slf,ItPo_Mana_02,35);
+		CreateInvItems(slf,ItPo_Mana_03,15);
+		CreateInvItems(slf,ItPo_Health_01,55);
+		CreateInvItems(slf,ItPo_Health_02,30);
+		CreateInvItems(slf,ItPo_Health_03,20);
+		CreateInvItems(slf,ItSc_IceWave,1);
+		CreateInvItems(slf,ItSc_SumDemon,1);
+		CreateInvItems(slf,ItSc_Firerain,1);
+		CreateInvItems(slf,ItSc_Shrink,1);
+		CreateInvItems(slf,ItPo_Perm_Health,1);
+		CreateInvItems(slf,ItPo_Speed,1);
+		Zuris_ItemsGiven_Chapter_5 = TRUE;
 	};
-	if((KAPITEL >= 6) && (ZURIS_ITEMSGIVEN_CHAPTER_6 == FALSE))
+	if((Kapitel >= 6) && (ZURIS_ITEMSGIVEN_CHAPTER_6 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,411);
-		CreateInvItems(slf,itpo_mana_01,55);
-		CreateInvItems(slf,itpo_mana_02,35);
-		CreateInvItems(slf,itpo_mana_03,15);
-		CreateInvItems(slf,itpo_health_01,55);
-		CreateInvItems(slf,itpo_health_02,30);
-		CreateInvItems(slf,itpo_health_03,20);
-		CreateInvItems(slf,itpo_perm_health,1);
+		CreateInvItems(slf,ItMi_Gold,411);
+		CreateInvItems(slf,ItPo_Mana_01,55);
+		CreateInvItems(slf,ItPo_Mana_02,35);
+		CreateInvItems(slf,ItPo_Mana_03,15);
+		CreateInvItems(slf,ItPo_Health_01,55);
+		CreateInvItems(slf,ItPo_Health_02,30);
+		CreateInvItems(slf,ItPo_Health_03,20);
+		CreateInvItems(slf,ItPo_Perm_Health,1);
 		ZURIS_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };

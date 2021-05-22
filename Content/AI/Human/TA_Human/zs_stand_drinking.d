@@ -1,21 +1,21 @@
 
-func void zs_stand_drinking()
+func void ZS_Stand_Drinking()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
 		AI_GotoWP(self,self.wp);
 	};
-	if(Npc_HasItems(self,itfo_booze) == 0)
+	if(Npc_HasItems(self,ItFo_Booze) == 0)
 	{
-		CreateInvItem(self,itfo_booze);
+		CreateInvItem(self,ItFo_Booze);
 	};
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func int zs_stand_drinking_loop()
+func int ZS_Stand_Drinking_loop()
 {
 	var int random;
 	if(Npc_IsOnFP(self,"STAND"))
@@ -43,7 +43,7 @@ func int zs_stand_drinking_loop()
 	};
 	if(self.aivar[AIV_TAPOSITION] == NOTINPOS)
 	{
-		AI_UseItemToState(self,itfo_booze,0);
+		AI_UseItemToState(self,ItFo_Booze,0);
 		self.aivar[AIV_TAPOSITION] = ISINPOS;
 	};
 	if((Npc_GetStateTime(self) > 7) && (self.aivar[AIV_TAPOSITION] == ISINPOS))
@@ -68,8 +68,8 @@ func int zs_stand_drinking_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_stand_drinking_end()
+func void ZS_Stand_Drinking_end()
 {
-	AI_UseItemToState(self,itfo_booze,-1);
+	AI_UseItemToState(self,ItFo_Booze,-1);
 };
 

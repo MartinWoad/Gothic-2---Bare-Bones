@@ -1,74 +1,74 @@
 
-instance DIA_LEE_DI_EXIT(C_INFO)
+instance DIA_Lee_DI_EXIT(C_Info)
 {
-	npc = sld_800_lee_di;
+	npc = SLD_800_Lee_DI;
 	nr = 999;
-	condition = dia_lee_di_exit_condition;
-	information = dia_lee_di_exit_info;
+	condition = DIA_Lee_DI_EXIT_Condition;
+	information = DIA_Lee_DI_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_lee_di_exit_condition()
+func int DIA_Lee_DI_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_lee_di_exit_info()
+func void DIA_Lee_DI_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_LEE_DI_HALLO(C_INFO)
+instance DIA_Lee_DI_Hallo(C_Info)
 {
-	npc = sld_800_lee_di;
+	npc = SLD_800_Lee_DI;
 	nr = 2;
-	condition = dia_lee_di_hallo_condition;
-	information = dia_lee_di_hallo_info;
+	condition = DIA_Lee_DI_Hallo_Condition;
+	information = DIA_Lee_DI_Hallo_Info;
 	description = "Czym chcesz siê zaj¹æ?";
 };
 
 
-func int dia_lee_di_hallo_condition()
+func int DIA_Lee_DI_Hallo_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lee_di_hallo_info()
+func void DIA_Lee_DI_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Lee_DI_Hallo_15_00");	//Czym chcesz siê zaj¹æ?
 	AI_Output(self,other,"DIA_Lee_DI_Hallo_04_01");	//Ktoœ musi pilnowaæ statku. Zostanê tutaj i dopilnujê, ¿ebyœ mia³ do czego wracaæ.
 };
 
 
-instance DIA_LEE_DI_PERM6(C_INFO)
+instance DIA_Lee_DI_PERM6(C_Info)
 {
-	npc = sld_800_lee_di;
+	npc = SLD_800_Lee_DI;
 	nr = 2;
-	condition = dia_lee_di_perm6_condition;
-	information = dia_lee_di_perm6_info;
+	condition = DIA_Lee_DI_PERM6_Condition;
+	information = DIA_Lee_DI_PERM6_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ na statku?";
 };
 
 
-func int dia_lee_di_perm6_condition()
+func int DIA_Lee_DI_PERM6_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_lee_di_hallo) && (Npc_IsDead(undeaddragon) == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Lee_DI_Hallo) && (Npc_IsDead(UndeadDragon) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lee_di_perm6_info()
+func void DIA_Lee_DI_PERM6_Info()
 {
 	AI_Output(other,self,"DIA_Lee_DI_PERM6_15_00");	//Co s³ychaæ na statku?
-	if(ORKSTURMDI == FALSE)
+	if(ORkSturmDI == FALSE)
 	{
 		AI_Output(self,other,"DIA_Lee_DI_PERM6_04_01");	//Bez obaw. Wszystko jest pod kontrol¹.
 	}
@@ -80,116 +80,116 @@ func void dia_lee_di_perm6_info()
 };
 
 
-instance DIA_LEE_DI_TEACH(C_INFO)
+instance DIA_Lee_DI_Teach(C_Info)
 {
-	npc = sld_800_lee_di;
+	npc = SLD_800_Lee_DI;
 	nr = 10;
-	condition = dia_lee_di_teach_condition;
-	information = dia_lee_di_teach_info;
+	condition = DIA_Lee_DI_Teach_Condition;
+	information = DIA_Lee_DI_Teach_Info;
 	permanent = TRUE;
 	description = "Szukam dobrego nauczyciela.";
 };
 
 
-func int dia_lee_di_teach_condition()
+func int DIA_Lee_DI_Teach_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lee_di_teach_info()
+func void DIA_Lee_DI_Teach_Info()
 {
 	AI_Output(other,self,"DIA_Lee_DI_Teach_15_00");	//Szukam dobrego nauczyciela.
 	AI_Output(self,other,"DIA_Lee_DI_Teach_04_01");	//A czego dok³adnie chcia³byœ siê nauczyæ?
-	Info_ClearChoices(dia_lee_di_teach);
-	Info_AddChoice(dia_lee_di_teach,DIALOG_BACK,dia_lee_di_teach_back);
-	Info_AddChoice(dia_lee_di_teach,b_buildlearnstring(PRINT_LEARN2H1,b_getlearncosttalent(other,NPC_TALENT_2H)),dia_lee_di_teach_2h_1);
-	Info_AddChoice(dia_lee_di_teach,b_buildlearnstring(PRINT_LEARN2H5,b_getlearncosttalent(other,NPC_TALENT_2H) * 5),dia_lee_di_teach_2h_5);
+	Info_ClearChoices(DIA_Lee_DI_Teach);
+	Info_AddChoice(DIA_Lee_DI_Teach,Dialog_Back,DIA_Lee_DI_Teach_Back);
+	Info_AddChoice(DIA_Lee_DI_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Lee_DI_Teach_2H_1);
+	Info_AddChoice(DIA_Lee_DI_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Lee_DI_Teach_2H_5);
 };
 
-func void dia_lee_di_teach_1h_1()
+func void DIA_Lee_DI_Teach_1H_1()
 {
-	if(b_teachfighttalentpercent(self,other,NPC_TALENT_1H,1,60))
+	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,1,60))
 	{
 		AI_Output(self,other,"DIA_Lee_DI_Teach_1H_1_04_00");	//Twoja umiejêtnoœæ parowania ciosów jest jeszcze ¿a³osna, ale jakoœ sobie poradzisz.
 	};
-	Info_ClearChoices(dia_lee_di_teach);
-	Info_AddChoice(dia_lee_di_teach,DIALOG_BACK,dia_lee_di_teach_back);
-	Info_AddChoice(dia_lee_di_teach,b_buildlearnstring(PRINT_LEARN2H1,b_getlearncosttalent(other,NPC_TALENT_2H)),dia_lee_di_teach_2h_1);
-	Info_AddChoice(dia_lee_di_teach,b_buildlearnstring(PRINT_LEARN2H5,b_getlearncosttalent(other,NPC_TALENT_2H) * 5),dia_lee_di_teach_2h_5);
+	Info_ClearChoices(DIA_Lee_DI_Teach);
+	Info_AddChoice(DIA_Lee_DI_Teach,Dialog_Back,DIA_Lee_DI_Teach_Back);
+	Info_AddChoice(DIA_Lee_DI_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Lee_DI_Teach_2H_1);
+	Info_AddChoice(DIA_Lee_DI_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Lee_DI_Teach_2H_5);
 };
 
-func void dia_lee_di_teach_1h_5()
+func void DIA_Lee_DI_Teach_1H_5()
 {
-	if(b_teachfighttalentpercent(self,other,NPC_TALENT_1H,5,60))
+	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,5,60))
 	{
 		AI_Output(self,other,"DIA_Lee_DI_Teach_1H_5_04_00");	//Jesteœ za sztywny w nadgarstkach. Nie œciskaj broni tak kurczowo.
 	};
-	Info_ClearChoices(dia_lee_di_teach);
-	Info_AddChoice(dia_lee_di_teach,DIALOG_BACK,dia_lee_di_teach_back);
-	Info_AddChoice(dia_lee_di_teach,b_buildlearnstring(PRINT_LEARN2H1,b_getlearncosttalent(other,NPC_TALENT_2H)),dia_lee_di_teach_2h_1);
-	Info_AddChoice(dia_lee_di_teach,b_buildlearnstring(PRINT_LEARN2H5,b_getlearncosttalent(other,NPC_TALENT_2H) * 5),dia_lee_di_teach_2h_5);
+	Info_ClearChoices(DIA_Lee_DI_Teach);
+	Info_AddChoice(DIA_Lee_DI_Teach,Dialog_Back,DIA_Lee_DI_Teach_Back);
+	Info_AddChoice(DIA_Lee_DI_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Lee_DI_Teach_2H_1);
+	Info_AddChoice(DIA_Lee_DI_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Lee_DI_Teach_2H_5);
 };
 
-func void dia_lee_di_teach_2h_1()
+func void DIA_Lee_DI_Teach_2H_1()
 {
-	if(b_teachfighttalentpercent(self,other,NPC_TALENT_2H,1,60))
+	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,1,60))
 	{
 		AI_Output(self,other,"DIA_DIA_Lee_DI_Teach_2H_1_04_00");	//Pamiêtaj: si³a ciosu bierze siê z bioder, a nie z ramion.
 	};
-	Info_ClearChoices(dia_lee_di_teach);
-	Info_AddChoice(dia_lee_di_teach,DIALOG_BACK,dia_lee_di_teach_back);
-	Info_AddChoice(dia_lee_di_teach,b_buildlearnstring(PRINT_LEARN2H1,b_getlearncosttalent(other,NPC_TALENT_2H)),dia_lee_di_teach_2h_1);
-	Info_AddChoice(dia_lee_di_teach,b_buildlearnstring(PRINT_LEARN2H5,b_getlearncosttalent(other,NPC_TALENT_2H) * 5),dia_lee_di_teach_2h_5);
+	Info_ClearChoices(DIA_Lee_DI_Teach);
+	Info_AddChoice(DIA_Lee_DI_Teach,Dialog_Back,DIA_Lee_DI_Teach_Back);
+	Info_AddChoice(DIA_Lee_DI_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Lee_DI_Teach_2H_1);
+	Info_AddChoice(DIA_Lee_DI_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Lee_DI_Teach_2H_5);
 };
 
-func void dia_lee_di_teach_2h_5()
+func void DIA_Lee_DI_Teach_2H_5()
 {
-	if(b_teachfighttalentpercent(self,other,NPC_TALENT_2H,5,60))
+	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,5,60))
 	{
 		AI_Output(self,other,"DIA_Lee_DI_Teach_2H_5_04_00");	//Najsilniejszy cios nic nie znaczy, jeœli nie trafi w cel. U¿ywaj swojej si³y z wiêkszym wyczuciem.
 	};
-	Info_ClearChoices(dia_lee_di_teach);
-	Info_AddChoice(dia_lee_di_teach,DIALOG_BACK,dia_lee_di_teach_back);
-	Info_AddChoice(dia_lee_di_teach,b_buildlearnstring(PRINT_LEARN2H1,b_getlearncosttalent(other,NPC_TALENT_2H)),dia_lee_di_teach_2h_1);
-	Info_AddChoice(dia_lee_di_teach,b_buildlearnstring(PRINT_LEARN2H5,b_getlearncosttalent(other,NPC_TALENT_2H) * 5),dia_lee_di_teach_2h_5);
+	Info_ClearChoices(DIA_Lee_DI_Teach);
+	Info_AddChoice(DIA_Lee_DI_Teach,Dialog_Back,DIA_Lee_DI_Teach_Back);
+	Info_AddChoice(DIA_Lee_DI_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Lee_DI_Teach_2H_1);
+	Info_AddChoice(DIA_Lee_DI_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Lee_DI_Teach_2H_5);
 };
 
-func void dia_lee_di_teach_back()
+func void DIA_Lee_DI_Teach_Back()
 {
-	Info_ClearChoices(dia_lee_di_teach);
+	Info_ClearChoices(DIA_Lee_DI_Teach);
 };
 
 
-instance DIA_LEE_DI_UNDEADDRAGONDEAD(C_INFO)
+instance DIA_Lee_DI_UndeadDragonDead(C_Info)
 {
-	npc = sld_800_lee_di;
+	npc = SLD_800_Lee_DI;
 	nr = 2;
-	condition = dia_lee_di_undeaddragondead_condition;
-	information = dia_lee_di_undeaddragondead_info;
+	condition = DIA_Lee_DI_UndeadDragonDead_Condition;
+	information = DIA_Lee_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
 	description = "Mo¿emy ruszaæ w drogê.";
 };
 
 
-func int dia_lee_di_undeaddragondead_condition()
+func int DIA_Lee_DI_UndeadDragonDead_Condition()
 {
-	if(Npc_IsDead(undeaddragon))
+	if(Npc_IsDead(UndeadDragon))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_lee_di_undeaddragondead_onetime;
+var int DIA_Lee_DI_UndeadDragonDead_OneTime;
 
-func void dia_lee_di_undeaddragondead_info()
+func void DIA_Lee_DI_UndeadDragonDead_Info()
 {
 	AI_Output(other,self,"DIA_Lee_DI_UndeadDragonDead_15_00");	//Mo¿emy ruszaæ. Nieprzyjaciel zosta³ pokonany.
 	AI_Output(self,other,"DIA_Lee_DI_UndeadDragonDead_04_01");	//Œwietnie! W takim razie ka¿ kapitanowi podnosiæ kotwicê.
-	if((DIA_LEE_DI_UNDEADDRAGONDEAD_ONETIME == FALSE) && (hero.guild == GIL_DJG))
+	if((DIA_Lee_DI_UndeadDragonDead_OneTime == FALSE) && (hero.guild == GIL_DJG))
 	{
 		AI_Output(self,other,"DIA_Lee_DI_UndeadDragonDead_04_02");	//Ale zabierzesz mnie na kontynent, prawda?
 		AI_Output(other,self,"DIA_Lee_DI_UndeadDragonDead_15_03");	//Oczywiœcie. Khorinis jakoœ sobie poradzi bez ciebie.
@@ -198,7 +198,7 @@ func void dia_lee_di_undeaddragondead_info()
 		AI_Output(self,other,"DIA_Lee_DI_UndeadDragonDead_04_05");	//Jak myœlisz? Cierpliwoœæ chyba zas³uguje na nagrodê.
 		AI_Output(other,self,"DIA_Lee_DI_UndeadDragonDead_15_06");	//Cierpliwoœæ i odpowiednio mocne... argumenty.
 		AI_Output(self,other,"DIA_Lee_DI_UndeadDragonDead_04_07");	//No w³aœnie! Tym razem nie obejdzie siê bez rozróby. Walka u twojego boku to prawdziwy zaszczyt.
-		DIA_LEE_DI_UNDEADDRAGONDEAD_ONETIME = TRUE;
+		DIA_Lee_DI_UndeadDragonDead_OneTime = TRUE;
 	};
 	AI_Output(self,other,"DIA_Lee_DI_UndeadDragonDead_04_08");	//Mam nadziejê, ¿e nasze drogi jeszcze siê kiedyœ skrzy¿uj¹.
 	AI_StopProcessInfos(self);
@@ -206,37 +206,37 @@ func void dia_lee_di_undeaddragondead_info()
 };
 
 
-instance DIA_LEE_DI_PICKPOCKET(C_INFO)
+instance DIA_Lee_DI_PICKPOCKET(C_Info)
 {
-	npc = sld_800_lee_di;
+	npc = SLD_800_Lee_DI;
 	nr = 900;
-	condition = dia_lee_di_pickpocket_condition;
-	information = dia_lee_di_pickpocket_info;
+	condition = DIA_Lee_DI_PICKPOCKET_Condition;
+	information = DIA_Lee_DI_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_120;
+	description = Pickpocket_120;
 };
 
 
-func int dia_lee_di_pickpocket_condition()
+func int DIA_Lee_DI_PICKPOCKET_Condition()
 {
-	return c_beklauen(110,570);
+	return C_Beklauen(110,570);
 };
 
-func void dia_lee_di_pickpocket_info()
+func void DIA_Lee_DI_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_lee_di_pickpocket);
-	Info_AddChoice(dia_lee_di_pickpocket,DIALOG_BACK,dia_lee_di_pickpocket_back);
-	Info_AddChoice(dia_lee_di_pickpocket,DIALOG_PICKPOCKET,dia_lee_di_pickpocket_doit);
+	Info_ClearChoices(DIA_Lee_DI_PICKPOCKET);
+	Info_AddChoice(DIA_Lee_DI_PICKPOCKET,Dialog_Back,DIA_Lee_DI_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Lee_DI_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Lee_DI_PICKPOCKET_DoIt);
 };
 
-func void dia_lee_di_pickpocket_doit()
+func void DIA_Lee_DI_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_lee_di_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Lee_DI_PICKPOCKET);
 };
 
-func void dia_lee_di_pickpocket_back()
+func void DIA_Lee_DI_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_lee_di_pickpocket);
+	Info_ClearChoices(DIA_Lee_DI_PICKPOCKET);
 };
 

@@ -1,69 +1,69 @@
 
-instance DIA_FESTER_EXIT(C_INFO)
+instance DIA_Fester_EXIT(C_Info)
 {
-	npc = sld_816_fester;
+	npc = Sld_816_Fester;
 	nr = 999;
-	condition = dia_fester_exit_condition;
-	information = dia_fester_exit_info;
+	condition = DIA_Fester_EXIT_Condition;
+	information = DIA_Fester_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_fester_exit_condition()
+func int DIA_Fester_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_fester_exit_info()
+func void DIA_Fester_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_FESTER_HELLO(C_INFO)
+instance DIA_Fester_Hello(C_Info)
 {
-	npc = sld_816_fester;
+	npc = Sld_816_Fester;
 	nr = 1;
-	condition = dia_fester_hello_condition;
-	information = dia_fester_hello_info;
+	condition = DIA_Fester_Hello_Condition;
+	information = DIA_Fester_Hello_Info;
 	permanent = FALSE;
 	description = "Co tu porabiasz?";
 };
 
 
-func int dia_fester_hello_condition()
+func int DIA_Fester_Hello_Condition()
 {
 	return TRUE;
 };
 
-func void dia_fester_hello_info()
+func void DIA_Fester_Hello_Info()
 {
 	AI_Output(other,self,"DIA_Fester_Hello_15_00");	//Co tutaj robisz?
 	AI_Output(self,other,"DIA_Fester_Hello_08_01");	//Przygotowujê siê do bitwy...
 };
 
 
-instance DIA_FESTER_AUFTRAG(C_INFO)
+instance DIA_Fester_Auftrag(C_Info)
 {
-	npc = sld_816_fester;
+	npc = Sld_816_Fester;
 	nr = 2;
-	condition = dia_fester_auftrag_condition;
-	information = dia_fester_auftrag_info;
+	condition = DIA_Fester_Auftrag_Condition;
+	information = DIA_Fester_Auftrag_Info;
 	permanent = FALSE;
 	description = "Dlaczego?";
 };
 
 
-func int dia_fester_auftrag_condition()
+func int DIA_Fester_Auftrag_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_fester_hello))
+	if(Npc_KnowsInfo(other,DIA_Fester_Hello))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fester_auftrag_info()
+func void DIA_Fester_Auftrag_Info()
 {
 	AI_Output(other,self,"DIA_Fester_Auftrag_15_00");	//Dlaczego?
 	AI_Output(self,other,"DIA_Fester_Auftrag_08_01");	//Ostatnimi czasy ch³opi mieli coraz wiêksze problemy z polnymi bestiami.
@@ -74,135 +74,135 @@ func void dia_fester_auftrag_info()
 };
 
 
-instance DIA_FESTER_YOUFIGHT(C_INFO)
+instance DIA_Fester_YouFight(C_Info)
 {
-	npc = sld_816_fester;
+	npc = Sld_816_Fester;
 	nr = 3;
-	condition = dia_fester_youfight_condition;
-	information = dia_fester_youfight_info;
+	condition = DIA_Fester_YouFight_Condition;
+	information = DIA_Fester_YouFight_Info;
 	permanent = FALSE;
 	description = "Dobry z ciebie wojownik?";
 };
 
 
-func int dia_fester_youfight_condition()
+func int DIA_Fester_YouFight_Condition()
 {
-	if((self.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_NONE) && Npc_KnowsInfo(other,dia_fester_hello) && (MIS_FESTER_KILLBUGS == FALSE))
+	if((self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_NONE) && Npc_KnowsInfo(other,DIA_Fester_Hello) && (MIS_Fester_KillBugs == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fester_youfight_info()
+func void DIA_Fester_YouFight_Info()
 {
 	AI_Output(other,self,"DIA_Fester_YouFight_15_00");	//Dobry z ciebie wojownik?
 	AI_Output(self,other,"DIA_Fester_YouFight_08_01");	//NieŸle sobie radzê z mieczem, ale najlepszy jestem w ³ucznictwie! A dlaczego pytasz?
 };
 
 
-instance DIA_FESTER_WONEST(C_INFO)
+instance DIA_Fester_WoNest(C_Info)
 {
-	npc = sld_816_fester;
+	npc = Sld_816_Fester;
 	nr = 4;
-	condition = dia_fester_wonest_condition;
-	information = dia_fester_wonest_info;
+	condition = DIA_Fester_WoNest_Condition;
+	information = DIA_Fester_WoNest_Info;
 	permanent = FALSE;
 	description = "Gdzie jest gniazdo?";
 };
 
 
-func int dia_fester_wonest_condition()
+func int DIA_Fester_WoNest_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_fester_auftrag) && (MIS_FESTER_KILLBUGS == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Fester_Auftrag) && (MIS_Fester_KillBugs == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fester_wonest_info()
+func void DIA_Fester_WoNest_Info()
 {
 	AI_Output(other,self,"DIA_Fester_WoNest_15_00");	//Gdzie jest gniazdo?
 	AI_Output(self,other,"DIA_Fester_WoNest_08_01");	//Poœrodku tego pola, w du¿ej skale.
 };
 
 
-var int fester_choice;
-const int FC_GOLD = 0;
-const int FC_JOIN = 1;
+var int Fester_Choice;
+const int FC_Gold = 0;
+const int FC_Join = 1;
 
-instance DIA_FESTER_TOGETHER(C_INFO)
+instance DIA_Fester_Together(C_Info)
 {
-	npc = sld_816_fester;
+	npc = Sld_816_Fester;
 	nr = 5;
-	condition = dia_fester_together_condition;
-	information = dia_fester_together_info;
+	condition = DIA_Fester_Together_Condition;
+	information = DIA_Fester_Together_Info;
 	permanent = FALSE;
 	description = "Moglibyœmy spróbowaæ razem…";
 };
 
 
-func int dia_fester_together_condition()
+func int DIA_Fester_Together_Condition()
 {
-	if((self.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_NONE) && Npc_KnowsInfo(other,dia_fester_auftrag))
+	if((self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_NONE) && Npc_KnowsInfo(other,DIA_Fester_Auftrag))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fester_together_info()
+func void DIA_Fester_Together_Info()
 {
 	AI_Output(other,self,"DIA_Fester_Together_15_00");	//Moglibyœmy spróbowaæ razem...
 	AI_Output(self,other,"DIA_Fester_Together_08_01");	//Chcesz mi pomóc? Ale dlaczego?
-	Info_ClearChoices(dia_fester_together);
-	Info_AddChoice(dia_fester_together,"Chcê zarobiæ!",dia_fester_together_gold);
+	Info_ClearChoices(DIA_Fester_Together);
+	Info_AddChoice(DIA_Fester_Together,"Chcê zarobiæ!",DIA_Fester_Together_Gold);
 	if(hero.guild == GIL_NONE)
 	{
-		Info_AddChoice(dia_fester_together,"Chcê siê do was przy³¹czyæ!",dia_fester_together_join);
+		Info_AddChoice(DIA_Fester_Together,"Chcê siê do was przy³¹czyæ!",DIA_Fester_Together_Join);
 	};
 };
 
-func void dia_fester_together_join()
+func void DIA_Fester_Together_Join()
 {
 	AI_Output(other,self,"DIA_Fester_Together_Join_15_00");	//Chcê siê do was przy³¹czyæ!
 	AI_Output(self,other,"DIA_Fester_Together_Join_08_01");	//Ach, wiêc to tak... Chcesz pokazaæ, jaki jesteœ odwa¿ny...
 	AI_Output(self,other,"DIA_Fester_Together_Join_08_02");	//Dobrze, spróbujmy pokonaæ bestie wspólnymi si³ami.
-	FESTER_CHOICE = FC_JOIN;
-	Info_ClearChoices(dia_fester_together);
+	Fester_Choice = FC_Join;
+	Info_ClearChoices(DIA_Fester_Together);
 };
 
-func void dia_fester_together_gold()
+func void DIA_Fester_Together_Gold()
 {
 	AI_Output(other,self,"DIA_Fester_Together_Gold_15_00");	//Chcê zarobiæ!
 	AI_Output(self,other,"DIA_Fester_Together_Gold_08_01");	//Ty draniu! Zawsze wykorzystujesz okazjê, co?
 	AI_Output(self,other,"DIA_Fester_Together_Gold_08_02");	//Albo ci zap³acê, albo mnie ukatrupisz.
 	AI_Output(self,other,"DIA_Fester_Together_Gold_08_03");	//Dobrze, mogê ci obiecaæ 50 sztuk z³ota. To wszystko, co mam.
-	FESTER_CHOICE = FC_GOLD;
-	Info_ClearChoices(dia_fester_together);
+	Fester_Choice = FC_Gold;
+	Info_ClearChoices(DIA_Fester_Together);
 };
 
 
-var int fester_losgeh_day;
+var int Fester_Losgeh_Day;
 
-instance DIA_FESTER_TOGETHERNOW(C_INFO)
+instance DIA_Fester_TogetherNOW(C_Info)
 {
-	npc = sld_816_fester;
+	npc = Sld_816_Fester;
 	nr = 6;
-	condition = dia_fester_togethernow_condition;
-	information = dia_fester_togethernow_info;
+	condition = DIA_Fester_TogetherNOW_Condition;
+	information = DIA_Fester_TogetherNOW_Info;
 	permanent = TRUE;
 	description = "Zaatakujmy gniazdo!";
 };
 
 
-func int dia_fester_togethernow_condition()
+func int DIA_Fester_TogetherNOW_Condition()
 {
-	if((self.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_NONE) && Npc_KnowsInfo(other,dia_fester_together) && (MIS_FESTER_KILLBUGS == FALSE))
+	if((self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_NONE) && Npc_KnowsInfo(other,DIA_Fester_Together) && (MIS_Fester_KillBugs == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fester_togethernow_info()
+func void DIA_Fester_TogetherNOW_Info()
 {
 	AI_Output(other,self,"DIA_Fester_TogetherNOW_15_00");	//Zaatakujmy gniazdo!
 	if(Wld_IsTime(20,30,6,0))
@@ -213,57 +213,57 @@ func void dia_fester_togethernow_info()
 	{
 		AI_Output(self,other,"DIA_Fester_TogetherNOW_08_02");	//Teraz? Czy potrzebujesz siê wczeœniej przygotowaæ?
 		AI_Output(self,other,"DIA_Fester_TogetherNOW_08_03");	//Móg³byœ najpierw wróciæ na farmê...
-		Info_ClearChoices(dia_fester_togethernow);
-		Info_AddChoice(dia_fester_togethernow,"Dobrze, zaczekajmy jeszcze trochê…",dia_fester_togethernow_later);
-		Info_AddChoice(dia_fester_togethernow,"Teraz jest odpowiedni moment.",dia_fester_togethernow_now);
+		Info_ClearChoices(DIA_Fester_TogetherNOW);
+		Info_AddChoice(DIA_Fester_TogetherNOW,"Dobrze, zaczekajmy jeszcze trochê…",DIA_Fester_TogetherNOW_Later);
+		Info_AddChoice(DIA_Fester_TogetherNOW,"Teraz jest odpowiedni moment.",DIA_Fester_TogetherNOW_NOW);
 	};
 };
 
-func void dia_fester_togethernow_now()
+func void DIA_Fester_TogetherNOW_NOW()
 {
 	AI_Output(other,self,"DIA_Fester_TogetherNOW_Now_15_00");	//Teraz jest odpowiedni moment.
 	AI_Output(self,other,"DIA_Fester_TogetherNOW_Now_08_01");	//No dobrze, zobaczmy, co my tu mamy.
 	Npc_ExchangeRoutine(self,"GUIDE");
-	FESTER_LOSGEH_DAY = b_getdayplus();
-	MIS_FESTER_KILLBUGS = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_FESTERRAUBER,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_FESTERRAUBER,LOG_RUNNING);
-	b_logentry(TOPIC_FESTERRAUBER,"Zamierzam wraz z Festerem zaatakowaæ gniazdo polnych bestii.");
-	Info_ClearChoices(dia_fester_togethernow);
+	Fester_Losgeh_Day = B_GetDayPlus();
+	MIS_Fester_KillBugs = LOG_Running;
+	Log_CreateTopic(TOPIC_FesterRauber,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_FesterRauber,LOG_Running);
+	B_LogEntry(TOPIC_FesterRauber,"Zamierzam wraz z Festerem zaatakowaæ gniazdo polnych bestii.");
+	Info_ClearChoices(DIA_Fester_TogetherNOW);
 	AI_StopProcessInfos(self);
 };
 
-func void dia_fester_togethernow_later()
+func void DIA_Fester_TogetherNOW_Later()
 {
 	AI_Output(other,self,"DIA_Fester_TogetherNOW_Later_15_00");	//Dobrze, zaczekajmy jeszcze trochê...
 	AI_Output(self,other,"DIA_Fester_TogetherNOW_Later_08_01");	//Wiesz, gdzie mnie szukaæ...
-	Info_ClearChoices(dia_fester_togethernow);
+	Info_ClearChoices(DIA_Fester_TogetherNOW);
 };
 
 
-instance DIA_FESTER_INCAVE(C_INFO)
+instance DIA_Fester_InCave(C_Info)
 {
-	npc = sld_816_fester;
+	npc = Sld_816_Fester;
 	nr = 7;
-	condition = dia_fester_incave_condition;
-	information = dia_fester_incave_info;
+	condition = DIA_Fester_InCave_Condition;
+	information = DIA_Fester_InCave_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_fester_incave_condition()
+func int DIA_Fester_InCave_Condition()
 {
-	if((MIS_FESTER_KILLBUGS == LOG_RUNNING) && (Npc_GetDistToWP(self,"NW_BIGFARM_FELDREUBER4") <= 500))
+	if((MIS_Fester_KillBugs == LOG_Running) && (Npc_GetDistToWP(self,"NW_BIGFARM_FELDREUBER4") <= 500))
 	{
-		self.aivar[AIV_LASTFIGHTCOMMENT] = TRUE;
+		self.aivar[AIV_LastFightComment] = TRUE;
 		return TRUE;
 	};
 };
 
-func void dia_fester_incave_info()
+func void DIA_Fester_InCave_Info()
 {
-	if(Wld_GetDay() > FESTER_LOSGEH_DAY)
+	if(Wld_GetDay() > Fester_Losgeh_Day)
 	{
 		AI_Output(self,other,"DIA_Fester_InCave_08_00");	//Gdzie do diab³a siê podziewa³eœ?
 	}
@@ -278,33 +278,33 @@ func void dia_fester_incave_info()
 };
 
 
-instance DIA_FESTER_WASMITABMACHUNG(C_INFO)
+instance DIA_Fester_WasMitAbmachung(C_Info)
 {
-	npc = sld_816_fester;
+	npc = Sld_816_Fester;
 	nr = 8;
-	condition = dia_fester_wasmitabmachung_condition;
-	information = dia_fester_wasmitabmachung_info;
+	condition = DIA_Fester_WasMitAbmachung_Condition;
+	information = DIA_Fester_WasMitAbmachung_Info;
 	permanent = FALSE;
 	description = "Wracajmy!";
 };
 
 
-func int dia_fester_wasmitabmachung_condition()
+func int DIA_Fester_WasMitAbmachung_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_fester_incave))
+	if(Npc_KnowsInfo(other,DIA_Fester_InCave))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fester_wasmitabmachung_info()
+func void DIA_Fester_WasMitAbmachung_Info()
 {
 	AI_Output(other,self,"DIA_Fester_WasMitAbmachung_15_00");	//Wracajmy!
-	if(FESTERS_GIANT_BUG_KILLED == 0)
+	if(Festers_Giant_Bug_Killed == 0)
 	{
 		AI_Output(self,other,"DIA_Fester_WasMitAbmachung_08_01");	//¯artujesz? W ogóle mi nie pomog³eœ.
 	}
-	else if(FESTER_CHOICE == FC_JOIN)
+	else if(Fester_Choice == FC_Join)
 	{
 		AI_Output(self,other,"DIA_Fester_WasMitAbmachung_08_02");	//Hmmm, móg³bym ci pomóc w dostaniu siê do naszej grupy, ale tego nie zrobiê.
 		AI_Output(other,self,"DIA_Fester_WasMitAbmachung_15_03");	//Dlaczego??
@@ -317,61 +317,61 @@ func void dia_fester_wasmitabmachung_info()
 		AI_Output(self,other,"DIA_Fester_WasMitAbmachung_08_07");	//Chcia³eœ wykorzystaæ sytuacjê, w jakiej siê znalaz³em. Jak widzisz, by³em w tym lepszy!
 		AI_Output(self,other,"DIA_Fester_WasMitAbmachung_08_08");	//Ale spójrz na to z innej strony, przynajmniej zdoby³eœ nieco doœwiadczenia. Zawsze to coœ, prawda?
 	};
-	MIS_FESTER_KILLBUGS = LOG_OBSOLETE;
-	Wld_InsertNpc(giant_bug,"NW_BIGFARM01_RIGHTFIELD_02_MONSTER");
-	Wld_InsertNpc(giant_bug,"NW_BIGFARM01_RIGHTFIELD_02_MONSTER");
-	Wld_InsertNpc(giant_bug,"NW_BIGFARM01_RIGHTFIELD_02_MONSTER");
-	Wld_InsertNpc(giant_bug,"NW_BIGMILL_FIELD_MONSTER_04");
-	Wld_InsertNpc(giant_bug,"NW_BIGMILL_FIELD_MONSTER_04");
+	MIS_Fester_KillBugs = LOG_OBSOLETE;
+	Wld_InsertNpc(Giant_Bug,"NW_BIGFARM01_RIGHTFIELD_02_MONSTER");
+	Wld_InsertNpc(Giant_Bug,"NW_BIGFARM01_RIGHTFIELD_02_MONSTER");
+	Wld_InsertNpc(Giant_Bug,"NW_BIGFARM01_RIGHTFIELD_02_MONSTER");
+	Wld_InsertNpc(Giant_Bug,"NW_BIGMILL_FIELD_MONSTER_04");
+	Wld_InsertNpc(Giant_Bug,"NW_BIGMILL_FIELD_MONSTER_04");
 };
 
 
-var int fester_duell_day;
-var int fester_fightverarscht;
-var int fester_fightsylvio;
+var int Fester_Duell_Day;
+var int Fester_FightVerarscht;
+var int Fester_FightSylvio;
 
-instance DIA_FESTER_PERMPRUEGEL(C_INFO)
+instance DIA_Fester_PERMPruegel(C_Info)
 {
-	npc = sld_816_fester;
+	npc = Sld_816_Fester;
 	nr = 9;
-	condition = dia_fester_permpruegel_condition;
-	information = dia_fester_permpruegel_info;
+	condition = DIA_Fester_PERMPruegel_Condition;
+	information = DIA_Fester_PERMPruegel_Info;
 	permanent = TRUE;
 	description = "Trzeba ci bêdzie znowu przetrzepaæ skórê.";
 };
 
 
-func int dia_fester_permpruegel_condition()
+func int DIA_Fester_PERMPruegel_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_fester_wasmitabmachung) || Npc_KnowsInfo(other,dia_jarvis_missionko) || (self.aivar[AIV_LASTFIGHTAGAINSTPLAYER] != FIGHT_NONE))
+	if(Npc_KnowsInfo(other,DIA_Fester_WasMitAbmachung) || Npc_KnowsInfo(other,DIA_Jarvis_MissionKO) || (self.aivar[AIV_LastFightAgainstPlayer] != FIGHT_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fester_permpruegel_info()
+func void DIA_Fester_PERMPruegel_Info()
 {
 	var int random;
 	AI_Output(other,self,"DIA_Fester_PERMPruegel_15_00");	//Trzeba ci bêdzie znowu przetrzepaæ skórê.
-	if(FESTER_DUELL_DAY < Wld_GetDay())
+	if(Fester_Duell_Day < Wld_GetDay())
 	{
 		random = Hlp_Random(11);
-		CreateInvItems(self,itmi_gold,random);
-		FESTER_DUELL_DAY = Wld_GetDay();
+		CreateInvItems(self,ItMi_Gold,random);
+		Fester_Duell_Day = Wld_GetDay();
 	};
-	if(Npc_KnowsInfo(other,dia_fester_wasmitabmachung) && (FESTER_FIGHTVERARSCHT == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Fester_WasMitAbmachung) && (Fester_FightVerarscht == FALSE))
 	{
 		AI_Output(other,self,"DIA_Fester_PERMPruegel_15_01");	//Nie lubiê, jak ktoœ ze mnie ¿artuje.
 		AI_Output(self,other,"DIA_Fester_PERMPruegel_08_02");	//Trzêsê siê, trzêsê...
-		FESTER_FIGHTVERARSCHT = TRUE;
+		Fester_FightVerarscht = TRUE;
 	}
-	else if(Npc_KnowsInfo(other,dia_jarvis_missionko))
+	else if(Npc_KnowsInfo(other,DIA_Jarvis_MissionKO))
 	{
 		AI_Output(other,self,"DIA_Fester_PERMPruegel_15_03");	//Zbratanie siê z Sylviem nie by³o dobrym pomys³em.
 		AI_Output(self,other,"DIA_Fester_PERMPruegel_08_04");	//Jesteœ jednym z przydupasów Lee, prawda? Przyszed³eœ do niew³aœciwej osoby!
-		FESTER_FIGHTSYLVIO = TRUE;
+		Fester_FightSylvio = TRUE;
 	}
-	else if(self.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_LOST)
+	else if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
 	{
 		AI_Output(self,other,"DIA_Fester_PERMPruegel_08_05");	//Czego u diab³a znowu ode mnie chcesz?
 		AI_Output(other,self,"DIA_Fester_PERMPruegel_15_06");	//Uwielbiam patrzeæ, jak tarzasz siê w b³ocie!
@@ -381,41 +381,41 @@ func void dia_fester_permpruegel_info()
 		AI_Output(self,other,"DIA_Fester_PERMPruegel_08_07");	//Chyba masz k³opot ze s³uchem?
 	};
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_NONE,1);
+	B_Attack(self,other,AR_NONE,1);
 };
 
 
-instance DIA_FESTER_PICKPOCKET(C_INFO)
+instance DIA_Fester_PICKPOCKET(C_Info)
 {
-	npc = sld_816_fester;
+	npc = Sld_816_Fester;
 	nr = 900;
-	condition = dia_fester_pickpocket_condition;
-	information = dia_fester_pickpocket_info;
+	condition = DIA_Fester_PICKPOCKET_Condition;
+	information = DIA_Fester_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_fester_pickpocket_condition()
+func int DIA_Fester_PICKPOCKET_Condition()
 {
-	return c_beklauen(27,45);
+	return C_Beklauen(27,45);
 };
 
-func void dia_fester_pickpocket_info()
+func void DIA_Fester_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_fester_pickpocket);
-	Info_AddChoice(dia_fester_pickpocket,DIALOG_BACK,dia_fester_pickpocket_back);
-	Info_AddChoice(dia_fester_pickpocket,DIALOG_PICKPOCKET,dia_fester_pickpocket_doit);
+	Info_ClearChoices(DIA_Fester_PICKPOCKET);
+	Info_AddChoice(DIA_Fester_PICKPOCKET,Dialog_Back,DIA_Fester_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Fester_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Fester_PICKPOCKET_DoIt);
 };
 
-func void dia_fester_pickpocket_doit()
+func void DIA_Fester_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_fester_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Fester_PICKPOCKET);
 };
 
-func void dia_fester_pickpocket_back()
+func void DIA_Fester_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_fester_pickpocket);
+	Info_ClearChoices(DIA_Fester_PICKPOCKET);
 };
 

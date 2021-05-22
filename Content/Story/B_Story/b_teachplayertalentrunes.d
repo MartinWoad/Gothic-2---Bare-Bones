@@ -1,269 +1,269 @@
 
-func int b_teachplayertalentrunes(var C_NPC slf,var C_NPC oth,var int spell)
+func int B_TeachPlayerTalentRunes(var C_Npc slf,var C_Npc oth,var int spell)
 {
 	var int kosten;
-	var C_NPC scrolltrader;
-	kosten = b_getlearncosttalent(oth,NPC_TALENT_RUNES);
+	var C_Npc ScrollTrader;
+	kosten = B_GetLearnCostTalent(oth,NPC_TALENT_RUNES);
 	if(oth.lp < kosten)
 	{
-		PrintScreen(PRINT_NOTENOUGHLEARNPOINTS,-1,-1,FONT_SCREENSMALL,2);
-		b_say(slf,oth,"$NOLEARNNOPOINTS");
+		PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
+		B_Say(slf,oth,"$NOLEARNNOPOINTS");
 		return FALSE;
 	};
 	oth.lp = oth.lp - kosten;
-	Log_CreateTopic(TOPIC_TALENTRUNES,LOG_NOTE);
-	b_logentry(TOPIC_TALENTRUNES,"Aby stworzyæ runê, potrzeba zwoju z zaklêciem i pewnych sk³adników. Dziêki nim oraz pustemu kamieniowi runicznemu mogê na runicznym stole stworzyæ w³aœciw¹ runê.");
-	if(Npc_IsDead(gorax) == FALSE)
+	Log_CreateTopic(TOPIC_TalentRunes,LOG_NOTE);
+	B_LogEntry(TOPIC_TalentRunes,"Aby stworzyæ runê, potrzeba zwoju z zaklêciem i pewnych sk³adników. Dziêki nim oraz pustemu kamieniowi runicznemu mogê na runicznym stole stworzyæ w³aœciw¹ runê.");
+	if(Npc_IsDead(Gorax) == FALSE)
 	{
-		scrolltrader = Hlp_GetNpc(gorax);
+		ScrollTrader = Hlp_GetNpc(Gorax);
 	}
-	else if(Npc_IsDead(isgaroth) == FALSE)
+	else if(Npc_IsDead(Isgaroth) == FALSE)
 	{
-		scrolltrader = Hlp_GetNpc(isgaroth);
+		ScrollTrader = Hlp_GetNpc(Isgaroth);
 	}
-	else if(Npc_IsDead(engor) == FALSE)
+	else if(Npc_IsDead(Engor) == FALSE)
 	{
-		scrolltrader = Hlp_GetNpc(engor);
+		ScrollTrader = Hlp_GetNpc(Engor);
 	}
-	else if(Npc_IsDead(orlan) == FALSE)
+	else if(Npc_IsDead(Orlan) == FALSE)
 	{
-		scrolltrader = Hlp_GetNpc(orlan);
+		ScrollTrader = Hlp_GetNpc(Orlan);
 	};
-	if(spell == SPL_PALLIGHT)
+	if(spell == SPL_PalLight)
 	{
-		PLAYER_TALENT_RUNES[SPL_PALLIGHT] = TRUE;
+		PLAYER_TALENT_RUNES[SPL_PalLight] = TRUE;
 	};
-	if(spell == SPL_PALLIGHTHEAL)
+	if(spell == SPL_PalLightHeal)
 	{
-		PLAYER_TALENT_RUNES[SPL_PALLIGHTHEAL] = TRUE;
+		PLAYER_TALENT_RUNES[SPL_PalLightHeal] = TRUE;
 	};
-	if(spell == SPL_PALHOLYBOLT)
+	if(spell == SPL_PalHolyBolt)
 	{
-		PLAYER_TALENT_RUNES[SPL_PALHOLYBOLT] = TRUE;
+		PLAYER_TALENT_RUNES[SPL_PalHolyBolt] = TRUE;
 	};
-	if(spell == SPL_PALMEDIUMHEAL)
+	if(spell == SPL_PalMediumHeal)
 	{
-		PLAYER_TALENT_RUNES[SPL_PALMEDIUMHEAL] = TRUE;
+		PLAYER_TALENT_RUNES[SPL_PalMediumHeal] = TRUE;
 	};
-	if(spell == SPL_PALREPELEVIL)
+	if(spell == SPL_PalRepelEvil)
 	{
-		PLAYER_TALENT_RUNES[SPL_PALREPELEVIL] = TRUE;
+		PLAYER_TALENT_RUNES[SPL_PalRepelEvil] = TRUE;
 	};
-	if(spell == SPL_PALFULLHEAL)
+	if(spell == SPL_PalFullHeal)
 	{
-		PLAYER_TALENT_RUNES[SPL_PALFULLHEAL] = TRUE;
+		PLAYER_TALENT_RUNES[SPL_PalFullHeal] = TRUE;
 	};
-	if(spell == SPL_PALDESTROYEVIL)
+	if(spell == SPL_PalDestroyEvil)
 	{
-		PLAYER_TALENT_RUNES[SPL_PALDESTROYEVIL] = TRUE;
+		PLAYER_TALENT_RUNES[SPL_PalDestroyEvil] = TRUE;
 	};
-	if(spell == SPL_PALTELEPORTSECRET)
+	if(spell == SPL_PalTeleportSecret)
 	{
-		PLAYER_TALENT_RUNES[SPL_PALTELEPORTSECRET] = TRUE;
+		PLAYER_TALENT_RUNES[SPL_PalTeleportSecret] = TRUE;
 	};
-	if(spell == SPL_TELEPORTSEAPORT)
+	if(spell == SPL_TeleportSeaport)
 	{
-		PLAYER_TALENT_RUNES[SPL_TELEPORTSEAPORT] = TRUE;
+		PLAYER_TALENT_RUNES[SPL_TeleportSeaport] = TRUE;
 	};
-	if(spell == SPL_TELEPORTMONASTERY)
+	if(spell == SPL_TeleportMonastery)
 	{
-		PLAYER_TALENT_RUNES[SPL_TELEPORTMONASTERY] = TRUE;
+		PLAYER_TALENT_RUNES[SPL_TeleportMonastery] = TRUE;
 	};
-	if(spell == SPL_TELEPORTFARM)
+	if(spell == SPL_TeleportFarm)
 	{
-		PLAYER_TALENT_RUNES[SPL_TELEPORTFARM] = TRUE;
+		PLAYER_TALENT_RUNES[SPL_TeleportFarm] = TRUE;
 	};
-	if(spell == SPL_TELEPORTXARDAS)
+	if(spell == SPL_TeleportXardas)
 	{
-		PLAYER_TALENT_RUNES[SPL_TELEPORTXARDAS] = TRUE;
+		PLAYER_TALENT_RUNES[SPL_TeleportXardas] = TRUE;
 	};
-	if(spell == SPL_TELEPORTPASSNW)
+	if(spell == SPL_TeleportPassNW)
 	{
-		PLAYER_TALENT_RUNES[SPL_TELEPORTPASSNW] = TRUE;
+		PLAYER_TALENT_RUNES[SPL_TeleportPassNW] = TRUE;
 	};
-	if(spell == SPL_TELEPORTPASSOW)
+	if(spell == SPL_TeleportPassOW)
 	{
-		PLAYER_TALENT_RUNES[SPL_TELEPORTPASSOW] = TRUE;
+		PLAYER_TALENT_RUNES[SPL_TeleportPassOW] = TRUE;
 	};
-	if(spell == SPL_TELEPORTOC)
+	if(spell == SPL_TeleportOC)
 	{
-		PLAYER_TALENT_RUNES[SPL_TELEPORTOC] = TRUE;
+		PLAYER_TALENT_RUNES[SPL_TeleportOC] = TRUE;
 	};
-	if(spell == SPL_LIGHT)
+	if(spell == SPL_Light)
 	{
-		PLAYER_TALENT_RUNES[SPL_LIGHT] = TRUE;
-		CreateInvItems(scrolltrader,itsc_light,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´ŒWIAT£O´: 1 z³ota moneta.");
+		PLAYER_TALENT_RUNES[SPL_Light] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_Light,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´ŒWIAT£O´: 1 z³ota moneta.");
 	};
-	if(spell == SPL_FIREBOLT)
+	if(spell == SPL_Firebolt)
 	{
-		PLAYER_TALENT_RUNES[SPL_FIREBOLT] = TRUE;
-		CreateInvItems(scrolltrader,itsc_firebolt,1);
-		b_logentry(TOPIC_TALENTRUNES,"Rruna ´OGNISTA STRZA£A´: 1 siarka.");
+		PLAYER_TALENT_RUNES[SPL_Firebolt] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_Firebolt,1);
+		B_LogEntry(TOPIC_TalentRunes,"Rruna ´OGNISTA STRZA£A´: 1 siarka.");
 	};
-	if(spell == SPL_ICEBOLT)
+	if(spell == SPL_Icebolt)
 	{
-		PLAYER_TALENT_RUNES[SPL_ICEBOLT] = TRUE;
-		CreateInvItems(scrolltrader,itsc_icebolt,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´LODOWA STRZA£A´: 1 kwarcyt");
+		PLAYER_TALENT_RUNES[SPL_Icebolt] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_Icebolt,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´LODOWA STRZA£A´: 1 kwarcyt");
 	};
-	if(spell == SPL_LIGHTHEAL)
+	if(spell == SPL_LightHeal)
 	{
-		PLAYER_TALENT_RUNES[SPL_LIGHTHEAL] = TRUE;
-		CreateInvItems(scrolltrader,itsc_lightheal,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´LECZENIE LEKKICH RAN´: 1 roœlina lecznicza.");
+		PLAYER_TALENT_RUNES[SPL_LightHeal] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_LightHeal,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´LECZENIE LEKKICH RAN´: 1 roœlina lecznicza.");
 	};
-	if(spell == SPL_SUMMONGOBLINSKELETON)
+	if(spell == SPL_SummonGoblinSkeleton)
 	{
-		PLAYER_TALENT_RUNES[SPL_SUMMONGOBLINSKELETON] = TRUE;
-		CreateInvItems(scrolltrader,itsc_sumgobskel,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´TWORZENIE SZKIELETU GOBLINA´: 1 koœæ goblina.");
+		PLAYER_TALENT_RUNES[SPL_SummonGoblinSkeleton] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_SumGobSkel,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´TWORZENIE SZKIELETU GOBLINA´: 1 koœæ goblina.");
 	};
-	if(spell == SPL_INSTANTFIREBALL)
+	if(spell == SPL_InstantFireball)
 	{
-		PLAYER_TALENT_RUNES[SPL_INSTANTFIREBALL] = TRUE;
-		CreateInvItems(scrolltrader,itsc_instantfireball,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´KULA OGNIA´: 1 smo³a");
+		PLAYER_TALENT_RUNES[SPL_InstantFireball] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_InstantFireball,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´KULA OGNIA´: 1 smo³a");
 	};
-	if(spell == SPL_ZAP)
+	if(spell == SPL_Zap)
 	{
-		PLAYER_TALENT_RUNES[SPL_ZAP] = TRUE;
-		CreateInvItems(scrolltrader,itsc_zap,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´PORA¯ENIE`: 1 ska³a krystaliczna.");
+		PLAYER_TALENT_RUNES[SPL_Zap] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_Zap,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´PORA¯ENIE`: 1 ska³a krystaliczna.");
 	};
-	if(spell == SPL_SUMMONWOLF)
+	if(spell == SPL_SummonWolf)
 	{
-		PLAYER_TALENT_RUNES[SPL_SUMMONWOLF] = TRUE;
-		CreateInvItems(scrolltrader,itsc_sumwolf,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´PRZYZWANIE WILKA´: 1 skóra wilka.");
+		PLAYER_TALENT_RUNES[SPL_SummonWolf] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_SumWolf,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´PRZYZWANIE WILKA´: 1 skóra wilka.");
 	};
-	if(spell == SPL_WINDFIST)
+	if(spell == SPL_WindFist)
 	{
-		PLAYER_TALENT_RUNES[SPL_WINDFIST] = TRUE;
-		CreateInvItems(scrolltrader,itsc_windfist,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´PIÊŒÆ WICHRU´: 1 wêgiel.");
+		PLAYER_TALENT_RUNES[SPL_WindFist] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_Windfist,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´PIÊŒÆ WICHRU´: 1 wêgiel.");
 	};
-	if(spell == SPL_SLEEP)
+	if(spell == SPL_Sleep)
 	{
-		PLAYER_TALENT_RUNES[SPL_SLEEP] = TRUE;
-		CreateInvItems(scrolltrader,itsc_sleep,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´SEN`: 1 bagienne ziele.");
+		PLAYER_TALENT_RUNES[SPL_Sleep] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_Sleep,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´SEN`: 1 bagienne ziele.");
 	};
-	if(spell == SPL_MEDIUMHEAL)
+	if(spell == SPL_MediumHeal)
 	{
-		PLAYER_TALENT_RUNES[SPL_MEDIUMHEAL] = TRUE;
-		CreateInvItems(scrolltrader,itsc_mediumheal,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´LECZENIE ŒREDNICH RAN´: 1 ziele lecznicze.");
+		PLAYER_TALENT_RUNES[SPL_MediumHeal] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_MediumHeal,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´LECZENIE ŒREDNICH RAN´: 1 ziele lecznicze.");
 	};
-	if(spell == SPL_LIGHTNINGFLASH)
+	if(spell == SPL_LightningFlash)
 	{
-		PLAYER_TALENT_RUNES[SPL_LIGHTNINGFLASH] = TRUE;
-		CreateInvItems(scrolltrader,itsc_lightningflash,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´B£YSKAWICA´: 1 ska³a krystaliczna i 1 kwarcyt.");
+		PLAYER_TALENT_RUNES[SPL_LightningFlash] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_LightningFlash,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´B£YSKAWICA´: 1 ska³a krystaliczna i 1 kwarcyt.");
 	};
-	if(spell == SPL_CHARGEFIREBALL)
+	if(spell == SPL_ChargeFireball)
 	{
-		PLAYER_TALENT_RUNES[SPL_CHARGEFIREBALL] = TRUE;
-		CreateInvItems(scrolltrader,itsc_chargefireball,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´DU¯A KULA OGNIA´: 1 siarka i 1 smo³a.");
+		PLAYER_TALENT_RUNES[SPL_ChargeFireball] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_ChargeFireBall,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´DU¯A KULA OGNIA´: 1 siarka i 1 smo³a.");
 	};
-	if(spell == SPL_SUMMONSKELETON)
+	if(spell == SPL_SummonSkeleton)
 	{
-		PLAYER_TALENT_RUNES[SPL_SUMMONSKELETON] = TRUE;
-		CreateInvItems(scrolltrader,itsc_sumskel,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´TWORZENIE SZKIELETU´: 1 koœæ szkieletu.");
+		PLAYER_TALENT_RUNES[SPL_SummonSkeleton] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_SumSkel,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´TWORZENIE SZKIELETU´: 1 koœæ szkieletu.");
 	};
-	if(spell == SPL_FEAR)
+	if(spell == SPL_Fear)
 	{
-		PLAYER_TALENT_RUNES[SPL_FEAR] = TRUE;
-		CreateInvItems(scrolltrader,itsc_fear,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´STRACH´: 1 czarna per³a.");
+		PLAYER_TALENT_RUNES[SPL_Fear] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_Fear,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´STRACH´: 1 czarna per³a.");
 	};
-	if(spell == SPL_ICECUBE)
+	if(spell == SPL_IceCube)
 	{
-		PLAYER_TALENT_RUNES[SPL_ICECUBE] = TRUE;
-		CreateInvItems(scrolltrader,itsc_icecube,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´BRY£A LODU´: 1 kwarcyt i 1 akwamaryn.");
+		PLAYER_TALENT_RUNES[SPL_IceCube] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_IceCube,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´BRY£A LODU´: 1 kwarcyt i 1 akwamaryn.");
 	};
-	if(spell == SPL_CHARGEZAP)
+	if(spell == SPL_ChargeZap)
 	{
-		PLAYER_TALENT_RUNES[SPL_CHARGEZAP] = TRUE;
-		CreateInvItems(scrolltrader,itsc_thunderball,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´PIORUN KULISTY´: 1 siarka i 1 ska³a krystaliczna.");
+		PLAYER_TALENT_RUNES[SPL_ChargeZap] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_ThunderBall,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´PIORUN KULISTY´: 1 siarka i 1 ska³a krystaliczna.");
 	};
-	if(spell == SPL_SUMMONGOLEM)
+	if(spell == SPL_SummonGolem)
 	{
-		PLAYER_TALENT_RUNES[SPL_SUMMONGOLEM] = TRUE;
-		CreateInvItems(scrolltrader,itsc_sumgol,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa `OBUDZENIE GOLEMA`: 1 serce kamiennego golema.");
+		PLAYER_TALENT_RUNES[SPL_SummonGolem] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_SumGol,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa `OBUDZENIE GOLEMA`: 1 serce kamiennego golema.");
 	};
-	if(spell == SPL_DESTROYUNDEAD)
+	if(spell == SPL_DestroyUndead)
 	{
-		PLAYER_TALENT_RUNES[SPL_DESTROYUNDEAD] = TRUE;
-		CreateInvItems(scrolltrader,itsc_harmundead,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´ZNISZCZENIE O¯YWIEÑCA´: 1 woda œwiêcona.");
+		PLAYER_TALENT_RUNES[SPL_DestroyUndead] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_HarmUndead,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´ZNISZCZENIE O¯YWIEÑCA´: 1 woda œwiêcona.");
 	};
-	if(spell == SPL_PYROKINESIS)
+	if(spell == SPL_Pyrokinesis)
 	{
-		PLAYER_TALENT_RUNES[SPL_PYROKINESIS] = TRUE;
-		CreateInvItems(scrolltrader,itsc_pyrokinesis,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa `DU¯A BURZA OGNISTA´: 1 siarka i 1 jêzyk ognistego jaszczura.");
+		PLAYER_TALENT_RUNES[SPL_Pyrokinesis] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_Pyrokinesis,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa `DU¯A BURZA OGNISTA´: 1 siarka i 1 jêzyk ognistego jaszczura.");
 	};
-	if(spell == SPL_FIRESTORM)
+	if(spell == SPL_Firestorm)
 	{
-		PLAYER_TALENT_RUNES[SPL_FIRESTORM] = TRUE;
-		CreateInvItems(scrolltrader,itsc_firestorm,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´MA£A BURZA OGNISTA´: 1 smo³a i 1 siarka.");
+		PLAYER_TALENT_RUNES[SPL_Firestorm] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_Firestorm,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´MA£A BURZA OGNISTA´: 1 smo³a i 1 siarka.");
 	};
-	if(spell == SPL_ICEWAVE)
+	if(spell == SPL_IceWave)
 	{
-		PLAYER_TALENT_RUNES[SPL_ICEWAVE] = TRUE;
-		CreateInvItems(scrolltrader,itsc_icewave,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´LODOWA FALA´: 1 kwarcyt i 1 akwamaryn");
+		PLAYER_TALENT_RUNES[SPL_IceWave] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_IceWave,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´LODOWA FALA´: 1 kwarcyt i 1 akwamaryn");
 	};
-	if(spell == SPL_SUMMONDEMON)
+	if(spell == SPL_SummonDemon)
 	{
-		PLAYER_TALENT_RUNES[SPL_SUMMONDEMON] = TRUE;
-		CreateInvItems(scrolltrader,itsc_sumdemon,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´PRZYZWANIE DEMONA´: 1 serce demona.");
+		PLAYER_TALENT_RUNES[SPL_SummonDemon] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_SumDemon,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´PRZYZWANIE DEMONA´: 1 serce demona.");
 	};
-	if(spell == SPL_FULLHEAL)
+	if(spell == SPL_FullHeal)
 	{
-		PLAYER_TALENT_RUNES[SPL_FULLHEAL] = TRUE;
-		CreateInvItems(scrolltrader,itsc_fullheal,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´LECZENIE CIÊ¯KICH RAN´ : 1 korzeñ leczniczy.");
+		PLAYER_TALENT_RUNES[SPL_FullHeal] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_FullHeal,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´LECZENIE CIÊ¯KICH RAN´ : 1 korzeñ leczniczy.");
 	};
-	if(spell == SPL_FIRERAIN)
+	if(spell == SPL_Firerain)
 	{
-		PLAYER_TALENT_RUNES[SPL_FIRERAIN] = TRUE;
-		CreateInvItems(scrolltrader,itsc_firerain,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´DESZCZ OGNIA´: 1 siarka i 1 jêzyk ognistego jaszczura");
+		PLAYER_TALENT_RUNES[SPL_Firerain] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_Firerain,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´DESZCZ OGNIA´: 1 siarka i 1 jêzyk ognistego jaszczura");
 	};
-	if(spell == SPL_BREATHOFDEATH)
+	if(spell == SPL_BreathOfDeath)
 	{
-		PLAYER_TALENT_RUNES[SPL_BREATHOFDEATH] = TRUE;
-		CreateInvItems(scrolltrader,itsc_breathofdeath,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´TCHNIENIE ŒMIERCI´: 1 wêgiel i 1 czarna per³a");
+		PLAYER_TALENT_RUNES[SPL_BreathOfDeath] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_BreathOfDeath,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´TCHNIENIE ŒMIERCI´: 1 wêgiel i 1 czarna per³a");
 	};
-	if(spell == SPL_MASSDEATH)
+	if(spell == SPL_MassDeath)
 	{
-		PLAYER_TALENT_RUNES[SPL_MASSDEATH] = TRUE;
-		CreateInvItems(scrolltrader,itsc_massdeath,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´ŒMIERTELNA FALA´: 1 koœæ szkieletu i 1 czarna per³a");
+		PLAYER_TALENT_RUNES[SPL_MassDeath] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_MassDeath,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´ŒMIERTELNA FALA´: 1 koœæ szkieletu i 1 czarna per³a");
 	};
-	if(spell == SPL_ARMYOFDARKNESS)
+	if(spell == SPL_ArmyOfDarkness)
 	{
-		PLAYER_TALENT_RUNES[SPL_ARMYOFDARKNESS] = TRUE;
-		CreateInvItems(scrolltrader,itsc_armyofdarkness,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´ARMIA CIEMNOŒCI´: 1 koœæ szkieletu, 1 czarna per³a, 1 serce kamiennego golema i 1 serce demona. ");
+		PLAYER_TALENT_RUNES[SPL_ArmyOfDarkness] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_ArmyOfDarkness,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´ARMIA CIEMNOŒCI´: 1 koœæ szkieletu, 1 czarna per³a, 1 serce kamiennego golema i 1 serce demona. ");
 	};
-	if(spell == SPL_SHRINK)
+	if(spell == SPL_Shrink)
 	{
-		PLAYER_TALENT_RUNES[SPL_SHRINK] = TRUE;
-		CreateInvItems(scrolltrader,itsc_shrink,1);
-		b_logentry(TOPIC_TALENTRUNES,"Runa ´ZMNIEJSZENIE POTWORA´: 1 koœæ goblina i 1 kie³ trolla.");
+		PLAYER_TALENT_RUNES[SPL_Shrink] = TRUE;
+		CreateInvItems(ScrollTrader,ItSc_Shrink,1);
+		B_LogEntry(TOPIC_TalentRunes,"Runa ´ZMNIEJSZENIE POTWORA´: 1 koœæ goblina i 1 kie³ trolla.");
 	};
-	PrintScreen(PRINT_LEARNRUNES,-1,-1,FONT_SCREEN,2);
+	PrintScreen(PRINT_LearnRunes,-1,-1,FONT_Screen,2);
 	Npc_SetTalentSkill(oth,NPC_TALENT_RUNES,1);
 	return TRUE;
 };

@@ -1,27 +1,27 @@
 
-instance KDF_509_ISGAROTH(NPC_DEFAULT)
+instance KDF_509_Isgaroth(Npc_Default)
 {
 	name[0] = "Isgaroth";
 	guild = GIL_KDF;
 	id = 509;
 	voice = 1;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,6);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,6);
 	fight_tactic = FAI_HUMAN_STRONG;
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_TOUGH_OKYL,BODYTEX_N,4843);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Tough_Okyl,BodyTex_N,ItAr_KDF_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Mage.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,90);
-	daily_routine = rtn_start_509;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,90);
+	daily_routine = Rtn_Start_509;
 };
 
 
-func void rtn_start_509()
+func void Rtn_Start_509()
 {
-	ta_pray_innos_fp(6,0,21,0,"NW_MONASTERY_SHRINE_04");
-	ta_sit_bench(21,0,6,0,"NW_MONASTERY_SHRINE_05");
+	TA_Pray_Innos_FP(6,0,21,0,"NW_MONASTERY_SHRINE_04");
+	TA_Sit_Bench(21,0,6,0,"NW_MONASTERY_SHRINE_05");
 };
 

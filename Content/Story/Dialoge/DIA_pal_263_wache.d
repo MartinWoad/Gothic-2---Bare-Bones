@@ -1,38 +1,38 @@
 
-instance DIA_PAL_263_EXIT(C_INFO)
+instance DIA_PAL_263_EXIT(C_Info)
 {
-	npc = pal_263_wache;
+	npc = PAL_263_Wache;
 	nr = 999;
-	condition = dia_pal_263_exit_condition;
-	information = dia_pal_263_exit_info;
+	condition = DIA_PAL_263_EXIT_Condition;
+	information = DIA_PAL_263_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_pal_263_exit_condition()
+func int DIA_PAL_263_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pal_263_exit_info()
+func void DIA_PAL_263_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PAL_263_PERM(C_INFO)
+instance DIA_PAL_263_PERM(C_Info)
 {
-	npc = pal_263_wache;
+	npc = PAL_263_Wache;
 	nr = 2;
-	condition = dia_pal_263_perm_condition;
-	information = dia_pal_263_perm_info;
+	condition = DIA_PAL_263_PERM_Condition;
+	information = DIA_PAL_263_PERM_Info;
 	permanent = TRUE;
 	description = "Melduj, ¿o³nierzu!";
 };
 
 
-func int dia_pal_263_perm_condition()
+func int DIA_PAL_263_PERM_Condition()
 {
 	if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
 	{
@@ -40,7 +40,7 @@ func int dia_pal_263_perm_condition()
 	};
 };
 
-func void dia_pal_263_perm_info()
+func void DIA_PAL_263_PERM_Info()
 {
 	AI_Output(other,self,"DIA_PAL_263_PERM_15_00");	//Melduj, ¿o³nierzu!
 	AI_Output(self,other,"DIA_PAL_263_PERM_04_01");	//Tak jest! Zgodnie z rozkazem utrzymujemy pozycje. ¯adnych dodatkowych strat. Zapasy na wyczerpaniu, orkowie jak na razie spokojni.
@@ -49,18 +49,18 @@ func void dia_pal_263_perm_info()
 };
 
 
-instance DIA_PAL_263_PERM_OTH(C_INFO)
+instance DIA_PAL_263_PERM_OTH(C_Info)
 {
-	npc = pal_263_wache;
+	npc = PAL_263_Wache;
 	nr = 2;
-	condition = dia_pal_263_perm_oth_condition;
-	information = dia_pal_263_perm_oth_info;
+	condition = DIA_PAL_263_PERM_OTH_Condition;
+	information = DIA_PAL_263_PERM_OTH_Info;
 	permanent = TRUE;
 	description = "Jak wygl¹da sytuacja?";
 };
 
 
-func int dia_pal_263_perm_oth_condition()
+func int DIA_PAL_263_PERM_OTH_Condition()
 {
 	if((hero.guild != GIL_MIL) || (hero.guild != GIL_PAL))
 	{
@@ -68,7 +68,7 @@ func int dia_pal_263_perm_oth_condition()
 	};
 };
 
-func void dia_pal_263_perm_oth_info()
+func void DIA_PAL_263_PERM_OTH_Info()
 {
 	AI_Output(other,self,"DIA_PAL_263_PERM_OTH_15_00");	//Jak wygl¹da sytuacja?
 	AI_Output(self,other,"DIA_PAL_263_PERM_OTH_04_01");	//Kontrolujemy sytuacjê. Nie martw siê, cywilu. Wszystko dobrze siê skoñczy.

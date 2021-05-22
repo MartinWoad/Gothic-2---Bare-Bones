@@ -1,12 +1,12 @@
 
-func void b_stoppyro()
+func void B_StopPyro()
 {
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
 	Npc_ClearAIQueue(self);
 	AI_Standup(self);
 	if(self.guild < GIL_SEPERATOR_HUM)
 	{
-		b_assessdamage();
+		B_AssessDamage();
 		AI_ContinueRoutine(self);
 	}
 	else
@@ -16,9 +16,9 @@ func void b_stoppyro()
 	};
 };
 
-func void zs_pyro()
+func void ZS_Pyro()
 {
-	Npc_PercEnable(self,PERC_ASSESSSTOPMAGIC,b_stoppyro);
+	Npc_PercEnable(self,PERC_ASSESSSTOPMAGIC,B_StopPyro);
 	if(!Npc_HasBodyFlag(self,BS_FLAG_INTERRUPTABLE))
 	{
 		AI_Standup(self);
@@ -33,12 +33,12 @@ func void zs_pyro()
 	};
 };
 
-func int zs_pyro_loop()
+func int ZS_Pyro_Loop()
 {
 	if(Npc_GetStateTime(self) >= 1)
 	{
 		Npc_SetStateTime(self,0);
-		b_magichurtnpc(other,SPL_PYRO_DAMAGE_PER_SEC);
+		B_MagicHurtNpc(other,SPL_PYRO_DAMAGE_PER_SEC);
 		if(self.attribute[ATR_HITPOINTS] <= 0)
 		{
 			Npc_ClearAIQueue(self);
@@ -49,7 +49,7 @@ func int zs_pyro_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_pyro_end()
+func void ZS_Pyro_End()
 {
 };
 

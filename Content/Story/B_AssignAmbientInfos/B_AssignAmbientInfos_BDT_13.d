@@ -1,49 +1,49 @@
 
-instance DIA_BDT_13_EXIT(C_INFO)
+instance DIA_BDT_13_EXIT(C_Info)
 {
 	nr = 999;
-	condition = dia_bdt_13_exit_condition;
-	information = dia_bdt_13_exit_info;
+	condition = DIA_BDT_13_EXIT_Condition;
+	information = DIA_BDT_13_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_bdt_13_exit_condition()
+func int DIA_BDT_13_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bdt_13_exit_info()
+func void DIA_BDT_13_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BDT_13_STANDARD(C_INFO)
+instance DIA_BDT_13_STANDARD(C_Info)
 {
 	nr = 2;
-	condition = dia_bdt_13_standard_condition;
-	information = dia_bdt_13_standard_info;
+	condition = DIA_BDT_13_STANDARD_Condition;
+	information = DIA_BDT_13_STANDARD_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_bdt_13_standard_condition()
+func int DIA_BDT_13_STANDARD_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void b_verschwinde_stimme13()
+func void B_Verschwinde_Stimme13()
 {
 	AI_Output(self,other,"DIA_BDT_13_STANDARD_13_01");	//Wynocha!
 };
 
-func void dia_bdt_13_standard_info()
+func void DIA_BDT_13_STANDARD_Info()
 {
 	var int randy;
 	randy = Hlp_Random(3);
@@ -53,7 +53,7 @@ func void dia_bdt_13_standard_info()
 	};
 	if(randy == 1)
 	{
-		b_verschwinde_stimme13();
+		B_Verschwinde_Stimme13();
 	};
 	if(randy == 2)
 	{
@@ -62,7 +62,7 @@ func void dia_bdt_13_standard_info()
 	AI_StopProcessInfos(self);
 };
 
-func void b_assignambientinfos_bdt_13(var C_NPC slf)
+func void B_AssignAmbientInfos_BDT_13(var C_Npc slf)
 {
 	dia_bdt_13_exit.npc = Hlp_GetInstanceID(slf);
 	dia_bdt_13_standard.npc = Hlp_GetInstanceID(slf);

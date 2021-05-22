@@ -1,17 +1,17 @@
 
-const int SPL_COST_ICEWAVE = 60;
+const int SPL_Cost_IceWave = 60;
 
-instance SPELL_ICEWAVE(C_SPELL_PROTO)
+instance Spell_IceWave(C_Spell_Proto)
 {
 	time_per_mana = 0;
 	damage_per_level = 60;
-	targetcollectalgo = TARGET_COLLECT_NONE;
+	targetCollectAlgo = TARGET_COLLECT_NONE;
 };
 
 
-func int spell_logic_icewave(var int manainvested)
+func int Spell_Logic_IceWave(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_ICEWAVE)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_IceWave)
 	{
 		return SPL_SENDCAST;
 	}
@@ -21,8 +21,8 @@ func int spell_logic_icewave(var int manainvested)
 	};
 };
 
-func void spell_cast_icewave()
+func void Spell_Cast_IceWave()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_ICEWAVE;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_IceWave;
 };
 

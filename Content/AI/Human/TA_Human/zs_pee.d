@@ -1,8 +1,8 @@
 
-func void zs_pee()
+func void ZS_Pee()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
@@ -11,7 +11,7 @@ func void zs_pee()
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func int zs_pee_loop()
+func int ZS_Pee_loop()
 {
 	if(Npc_IsOnFP(self,"PEE"))
 	{
@@ -46,7 +46,7 @@ func int zs_pee_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_pee_end()
+func void ZS_Pee_end()
 {
 	AI_PlayAni(self,"T_PEE_2_STAND");
 };

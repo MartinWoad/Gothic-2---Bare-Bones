@@ -1,5 +1,5 @@
 
-func int c_predatorfoundprey(var C_NPC slf,var C_NPC oth)
+func int C_PredatorFoundPrey(var C_Npc slf,var C_Npc oth)
 {
 	if(slf.guild == GIL_WOLF)
 	{
@@ -7,7 +7,7 @@ func int c_predatorfoundprey(var C_NPC slf,var C_NPC oth)
 		{
 			return TRUE;
 		};
-		if(oth.guild == GIL_GIANT_RAT)
+		if(oth.guild == GIL_Giant_Rat)
 		{
 			return TRUE;
 		};
@@ -41,7 +41,7 @@ func int c_predatorfoundprey(var C_NPC slf,var C_NPC oth)
 		{
 			return TRUE;
 		};
-		if(oth.guild == GIL_GIANT_RAT)
+		if(oth.guild == GIL_Giant_Rat)
 		{
 			return TRUE;
 		};
@@ -68,7 +68,7 @@ func int c_predatorfoundprey(var C_NPC slf,var C_NPC oth)
 		{
 			return TRUE;
 		};
-		if(oth.guild == GIL_GIANT_RAT)
+		if(oth.guild == GIL_Giant_Rat)
 		{
 			return TRUE;
 		};

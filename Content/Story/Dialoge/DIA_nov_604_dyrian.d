@@ -1,106 +1,106 @@
 
-instance DIA_DYRIAN_EXIT(C_INFO)
+instance DIA_Dyrian_EXIT(C_Info)
 {
-	npc = nov_604_dyrian;
+	npc = NOV_604_Dyrian;
 	nr = 999;
-	condition = dia_dyrian_exit_condition;
-	information = dia_dyrian_exit_info;
+	condition = DIA_Dyrian_EXIT_Condition;
+	information = DIA_Dyrian_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dyrian_exit_condition()
+func int DIA_Dyrian_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_dyrian_exit_info()
+func void DIA_Dyrian_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_DYRIAN_HELLO(C_INFO)
+instance DIA_Dyrian_Hello(C_Info)
 {
-	npc = nov_604_dyrian;
+	npc = NOV_604_Dyrian;
 	nr = 2;
-	condition = dia_dyrian_hello_condition;
-	information = dia_dyrian_hello_info;
+	condition = DIA_Dyrian_Hello_Condition;
+	information = DIA_Dyrian_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_dyrian_hello_condition()
+func int DIA_Dyrian_Hello_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (MIS_RUNE == FALSE) && (MIS_SCHNITZELJAGD == FALSE) && (MIS_GOLEM == FALSE) && (other.guild == GIL_NOV))
+	if(Npc_IsInState(self,ZS_Talk) && (MIS_RUNE == FALSE) && (MIS_SCHNITZELJAGD == FALSE) && (MIS_GOLEM == FALSE) && (other.guild == GIL_NOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dyrian_hello_info()
+func void DIA_Dyrian_Hello_Info()
 {
 	AI_Output(self,other,"DIA_Dyrian_Hello_13_00");	//Czego chcesz?
 };
 
 
-instance DIA_DYRIAN_WURST(C_INFO)
+instance DIA_Dyrian_Wurst(C_Info)
 {
-	npc = nov_604_dyrian;
+	npc = NOV_604_Dyrian;
 	nr = 3;
-	condition = dia_dyrian_wurst_condition;
-	information = dia_dyrian_wurst_info;
+	condition = DIA_Dyrian_Wurst_Condition;
+	information = DIA_Dyrian_Wurst_Info;
 	permanent = FALSE;
 	description = "Jestem zajêty roznoszeniem kie³bas.";
 };
 
 
-func int dia_dyrian_wurst_condition()
+func int DIA_Dyrian_Wurst_Condition()
 {
-	if((KAPITEL < 3) && (MIS_GORAXESSEN == LOG_RUNNING) && (Npc_HasItems(self,itfo_schafswurst) == 0) && (Npc_HasItems(other,itfo_schafswurst) >= 1))
+	if((Kapitel < 3) && (MIS_GoraxEssen == LOG_Running) && (Npc_HasItems(self,ItFo_Schafswurst) == 0) && (Npc_HasItems(other,ItFo_Schafswurst) >= 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dyrian_wurst_info()
+func void DIA_Dyrian_Wurst_Info()
 {
-	var string novizetext;
-	var string novizeleft;
+	var string NovizeText;
+	var string NovizeLeft;
 	AI_Output(other,self,"DIA_Dyrian_Wurst_15_00");	//Jestem zajêty roznoszeniem kie³bas.
 	AI_Output(self,other,"DIA_Dyrian_Wurst_13_01");	//Dziêkujê. Mam nadziejê, ¿e to nie jest ostatnia kie³basa, jak¹ przyjdzie mi tutaj zjeœæ.
-	b_giveinvitems(other,self,5687,1);
-	WURST_GEGEBEN = WURST_GEGEBEN + 1;
-	CreateInvItems(self,itfo_sausage,1);
-	b_useitem(self,4914);
-	novizeleft = IntToString(13 - WURST_GEGEBEN);
-	novizetext = ConcatStrings(novizeleft,PRINT_NOVIZENLEFT);
-	AI_PrintScreen(novizetext,-1,YPOS_GOLDGIVEN,FONT_SCREENSMALL,3);
+	B_GiveInvItems(other,self,ItFo_Schafswurst,1);
+	Wurst_Gegeben = Wurst_Gegeben + 1;
+	CreateInvItems(self,ItFo_Sausage,1);
+	B_UseItem(self,ItFo_Sausage);
+	NovizeLeft = IntToString(13 - Wurst_Gegeben);
+	NovizeText = ConcatStrings(NovizeLeft,PRINT_NovizenLeft);
+	AI_PrintScreen(NovizeText,-1,YPOS_GoldGiven,FONT_ScreenSmall,3);
 };
 
 
-instance DIA_DYRIAN_JOB(C_INFO)
+instance DIA_Dyrian_Job(C_Info)
 {
-	npc = nov_604_dyrian;
+	npc = NOV_604_Dyrian;
 	nr = 1;
-	condition = dia_dyrian_job_condition;
-	information = dia_dyrian_job_info;
+	condition = DIA_Dyrian_Job_Condition;
+	information = DIA_Dyrian_Job_Info;
 	permanent = FALSE;
 	description = "Co tu porabiasz?";
 };
 
 
-func int dia_dyrian_job_condition()
+func int DIA_Dyrian_Job_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_dyrian_hello) && (MIS_RUNE == FALSE) && (MIS_SCHNITZELJAGD == FALSE) && (MIS_GOLEM == FALSE))
+	if(Npc_KnowsInfo(hero,DIA_Dyrian_Hello) && (MIS_RUNE == FALSE) && (MIS_SCHNITZELJAGD == FALSE) && (MIS_GOLEM == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dyrian_job_info()
+func void DIA_Dyrian_Job_Info()
 {
 	AI_Output(other,self,"DIA_Dyrian_Job_15_00");	//Co tu robisz?
 	AI_Output(self,other,"DIA_Dyrian_Job_13_01");	//Pope³ni³em wykroczenie przeciw spo³ecznoœci.
@@ -108,26 +108,26 @@ func void dia_dyrian_job_info()
 };
 
 
-instance DIA_DYRIAN_WHATDONE(C_INFO)
+instance DIA_Dyrian_WhatDone(C_Info)
 {
-	npc = nov_604_dyrian;
+	npc = NOV_604_Dyrian;
 	nr = 3;
-	condition = dia_dyrian_whatdone_condition;
-	information = dia_dyrian_whatdone_info;
+	condition = DIA_Dyrian_WhatDone_Condition;
+	information = DIA_Dyrian_WhatDone_Info;
 	permanent = FALSE;
 	description = "Opowiedz mi, co zasz³o.";
 };
 
 
-func int dia_dyrian_whatdone_condition()
+func int DIA_Dyrian_WhatDone_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_dyrian_job) && (MIS_RUNE == FALSE) && (MIS_SCHNITZELJAGD == FALSE) && (MIS_GOLEM == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Dyrian_Job) && (MIS_RUNE == FALSE) && (MIS_SCHNITZELJAGD == FALSE) && (MIS_GOLEM == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dyrian_whatdone_info()
+func void DIA_Dyrian_WhatDone_Info()
 {
 	AI_Output(other,self,"DIA_Dyrian_WhatDone_15_00");	//Opowiedz mi, co zasz³o.
 	AI_Output(self,other,"DIA_Dyrian_WhatDone_13_01");	//Podczas zamiatania zabra³em z pokoju jednego z magów ksi¹¿kê, aby j¹ póŸniej przeczytaæ.
@@ -137,63 +137,63 @@ func void dia_dyrian_whatdone_info()
 };
 
 
-instance DIA_DYRIAN_CANHELP(C_INFO)
+instance DIA_Dyrian_CanHelp(C_Info)
 {
-	npc = nov_604_dyrian;
+	npc = NOV_604_Dyrian;
 	nr = 4;
-	condition = dia_dyrian_canhelp_condition;
-	information = dia_dyrian_canhelp_info;
+	condition = DIA_Dyrian_CanHelp_Condition;
+	information = DIA_Dyrian_CanHelp_Info;
 	permanent = TRUE;
 	description = "Czy mogê ci jakoœ pomóc?";
 };
 
 
-func int dia_dyrian_canhelp_condition()
+func int DIA_Dyrian_CanHelp_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_dyrian_job) && (MIS_RUNE == FALSE) && (MIS_SCHNITZELJAGD == FALSE) && (MIS_GOLEM == FALSE))
+	if(Npc_KnowsInfo(hero,DIA_Dyrian_Job) && (MIS_RUNE == FALSE) && (MIS_SCHNITZELJAGD == FALSE) && (MIS_GOLEM == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dyrian_canhelp_info()
+func void DIA_Dyrian_CanHelp_Info()
 {
 	AI_Output(other,self,"DIA_Dyrian_CanHelp_15_00");	//Czy mogê ci jakoœ pomóc?
 	AI_Output(self,other,"DIA_Dyrian_CanHelp_13_01");	//Nie, mój los zale¿y jedynie od ³aski Innosa i magów.
 };
 
 
-instance DIA_DYRIAN_SCROLL(C_INFO)
+instance DIA_Dyrian_Scroll(C_Info)
 {
-	npc = nov_604_dyrian;
+	npc = NOV_604_Dyrian;
 	nr = 1;
-	condition = dia_dyrian_scroll_condition;
-	information = dia_dyrian_scroll_info;
+	condition = DIA_Dyrian_Scroll_Condition;
+	information = DIA_Dyrian_Scroll_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_dyrian_scroll_condition()
+func int DIA_Dyrian_Scroll_Condition()
 {
-	if((MIS_SCHNITZELJAGD == LOG_RUNNING) || (MIS_RUNE == LOG_RUNNING) || (MIS_GOLEM == LOG_RUNNING))
+	if((MIS_SCHNITZELJAGD == LOG_Running) || (MIS_RUNE == LOG_Running) || (MIS_GOLEM == LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dyrian_scroll_info()
+func void DIA_Dyrian_Scroll_Info()
 {
 	AI_Output(self,other,"DIA_Dyrian_Scroll_13_00");	//Hej, czy to prawda, ¿e za¿¹da³eœ Próby Ognia?
 	AI_Output(other,self,"DIA_Dyrian_Scroll_15_01");	//Tak. I zamierzam j¹ przejœæ.
 	AI_Output(self,other,"DIA_Dyrian_Scroll_13_02");	//Dobrze. Mo¿e bêdê w stanie ci pomóc. Mam tu bardzo przydatny zwój magiczny. Zwój SNU. Zainteresowany?
-	Info_ClearChoices(dia_dyrian_scroll);
-	Info_AddChoice(dia_dyrian_scroll,"Nie, nie potrzebujê twojej pomocy.",dia_dyrian_scroll_no);
-	Info_AddChoice(dia_dyrian_scroll,"Czego ¿¹dasz?",dia_dyrian_scroll_how);
-	Info_AddChoice(dia_dyrian_scroll,"Co mogê z tym zrobiæ?",dia_dyrian_scroll_what);
+	Info_ClearChoices(DIA_Dyrian_Scroll);
+	Info_AddChoice(DIA_Dyrian_Scroll,"Nie, nie potrzebujê twojej pomocy.",DIA_Dyrian_Scroll_No);
+	Info_AddChoice(DIA_Dyrian_Scroll,"Czego ¿¹dasz?",DIA_Dyrian_Scroll_How);
+	Info_AddChoice(DIA_Dyrian_Scroll,"Co mogê z tym zrobiæ?",DIA_Dyrian_Scroll_What);
 };
 
-func void dia_dyrian_scroll_what()
+func void DIA_Dyrian_Scroll_What()
 {
 	AI_Output(other,self,"DIA_Dyrian_Scroll_What_15_00");	//Co mogê z tym zrobiæ?
 	AI_Output(self,other,"DIA_Dyrian_Scroll_What_13_01");	//Przy pomocy tego zaklêcia bêdziesz móg³ uœpiæ na krótki czas ka¿dego, kto posiada wolê s³absz¹ od twojej.
@@ -202,137 +202,137 @@ func void dia_dyrian_scroll_what()
 	AI_Output(self,other,"DIA_Dyrian_Scroll_What_13_04");	//Mo¿esz sobie darowaæ próby uœpienia magów. Ale na wiêkszoœæ nowicjuszy powinno podzia³aæ.
 };
 
-func void dia_dyrian_scroll_no()
+func void DIA_Dyrian_Scroll_No()
 {
 	AI_Output(other,self,"DIA_Dyrian_Scroll_No_15_00");	//Nie, nie potrzebujê twojej pomocy.
 	AI_Output(self,other,"DIA_Dyrian_Scroll_No_13_01");	//Jeœli zmienisz zdanie, mo¿esz w ka¿dej chwili wróciæ.
-	Info_ClearChoices(dia_dyrian_scroll);
+	Info_ClearChoices(DIA_Dyrian_Scroll);
 };
 
-func void dia_dyrian_scroll_how()
+func void DIA_Dyrian_Scroll_How()
 {
 	AI_Output(other,self,"DIA_Dyrian_Scroll_How_15_00");	//Co za to chcesz?
 	AI_Output(self,other,"DIA_Dyrian_Scroll_How_13_01");	//Ka¿dy nowy mag ma prawo do jednego ¿yczenia.
 	AI_Output(self,other,"DIA_Dyrian_Scroll_How_13_02");	//Jeœli rzeczywiœcie uda ci siê przejœæ Próbê Ognia, mo¿esz sobie za¿yczyæ, aby pozwolono mi zostaæ w klasztorze.
-	Info_ClearChoices(dia_dyrian_scroll);
-	Info_AddChoice(dia_dyrian_scroll,"Nie, nie potrzebujê twojej pomocy.",dia_dyrian_scroll_no);
-	Info_AddChoice(dia_dyrian_scroll,"Dobrze, daj mi ten zwój.",dia_dyrian_scroll_yes);
+	Info_ClearChoices(DIA_Dyrian_Scroll);
+	Info_AddChoice(DIA_Dyrian_Scroll,"Nie, nie potrzebujê twojej pomocy.",DIA_Dyrian_Scroll_No);
+	Info_AddChoice(DIA_Dyrian_Scroll,"Dobrze, daj mi ten zwój.",DIA_Dyrian_Scroll_Yes);
 };
 
-func void dia_dyrian_scroll_yes()
+func void DIA_Dyrian_Scroll_Yes()
 {
 	AI_Output(other,self,"DIA_Dyrian_Scroll_Yes_15_00");	//Dobrze, daj mi ten zwój.
 	AI_Output(self,other,"DIA_Dyrian_Scroll_Yes_13_01");	//Powodzenia w czasie próby. Niech ciê Innos prowadzi.
-	b_giveinvitems(self,other,5561,1);
-	MIS_HELPDYRIAN = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_DYRIANDRIN,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_DYRIANDRIN,LOG_RUNNING);
-	b_logentry(TOPIC_DYRIANDRIN,"Dyrian da³ mi magiczny zwój snu. Jeœli zostanê magiem, mam siê odwdziêczyæ, zapewniaj¹c mu miejsce w klasztorze.");
-	Info_ClearChoices(dia_dyrian_scroll);
+	B_GiveInvItems(self,other,ItSc_Sleep,1);
+	MIS_HelpDyrian = LOG_Running;
+	Log_CreateTopic(Topic_DyrianDrin,LOG_MISSION);
+	Log_SetTopicStatus(Topic_DyrianDrin,LOG_Running);
+	B_LogEntry(Topic_DyrianDrin,"Dyrian da³ mi magiczny zwój snu. Jeœli zostanê magiem, mam siê odwdziêczyæ, zapewniaj¹c mu miejsce w klasztorze.");
+	Info_ClearChoices(DIA_Dyrian_Scroll);
 };
 
 
-instance DIA_DYRIAN_DOCH(C_INFO)
+instance DIA_Dyrian_Doch(C_Info)
 {
-	npc = nov_604_dyrian;
+	npc = NOV_604_Dyrian;
 	nr = 4;
-	condition = dia_dyrian_doch_condition;
-	information = dia_dyrian_doch_info;
+	condition = DIA_Dyrian_Doch_Condition;
+	information = DIA_Dyrian_Doch_Info;
 	permanent = TRUE;
 	description = "Zmieni³em zdanie. Daj mi zaklêcie nasenne.";
 };
 
 
-func int dia_dyrian_doch_condition()
+func int DIA_Dyrian_Doch_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_dyrian_scroll) && (MIS_HELPDYRIAN != LOG_RUNNING) && (other.guild == GIL_NOV))
+	if(Npc_KnowsInfo(hero,DIA_Dyrian_Scroll) && (MIS_HelpDyrian != LOG_Running) && (other.guild == GIL_NOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dyrian_doch_info()
+func void DIA_Dyrian_Doch_Info()
 {
 	AI_Output(other,self,"DIA_Dyrian_Doch_15_00");	//Zmieni³em zdanie. Daj mi zaklêcie nasenne.
 	AI_Output(self,other,"DIA_Dyrian_Doch_13_01");	//Dobrze, jeœli przejdziesz próbê, bêdziesz móg³ dopilnowaæ, aby pozwolono mi zostaæ w klasztorze.
-	b_giveinvitems(self,other,5561,1);
-	MIS_HELPDYRIAN = LOG_RUNNING;
+	B_GiveInvItems(self,other,ItSc_Sleep,1);
+	MIS_HelpDyrian = LOG_Running;
 };
 
 
-instance DIA_DYRIAN_HELLOAGAIN(C_INFO)
+instance DIA_Dyrian_HelloAgain(C_Info)
 {
-	npc = nov_604_dyrian;
+	npc = NOV_604_Dyrian;
 	nr = 2;
-	condition = dia_dyrian_helloagain_condition;
-	information = dia_dyrian_helloagain_info;
+	condition = DIA_Dyrian_HelloAgain_Condition;
+	information = DIA_Dyrian_HelloAgain_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_dyrian_helloagain_condition()
+func int DIA_Dyrian_HelloAgain_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (other.guild == GIL_KDF) && (MIS_HELPDYRIAN == LOG_SUCCESS))
+	if(Npc_IsInState(self,ZS_Talk) && (other.guild == GIL_KDF) && (MIS_HelpDyrian == LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dyrian_helloagain_info()
+func void DIA_Dyrian_HelloAgain_Info()
 {
 	AI_Output(self,other,"DIA_Dyrian_HelloAgain_13_00");	//Dziêkujê, uratowa³eœ mnie!
 	AI_Output(self,other,"DIA_Dyrian_HelloAgain_13_01");	//Och - wybacz, Mistrzu - nie chcia³em siê narzucaæ.
 	AI_Output(self,other,"DIA_Dyrian_HelloAgain_13_02");	//Dziêkujê z ca³ego serca za umo¿liwienie mi pozostania w klasztorze. Od dziœ moje ¿ycie siê zmieni...
-	b_giveplayerxp(XP_AMBIENT);
+	B_GivePlayerXP(XP_Ambient);
 	AI_StopProcessInfos(self);
 };
 
-func void b_dyrian_playerhowisit()
+func void B_Dyrian_PlayerHowIsIt()
 {
 	AI_Output(other,self,"DIA_Dyrian_HowIsIt_15_00");	//Jak leci?
 };
 
 
-instance DIA_DYRIAN_HOWISIT(C_INFO)
+instance DIA_Dyrian_HowIsIt(C_Info)
 {
-	npc = nov_604_dyrian;
+	npc = NOV_604_Dyrian;
 	nr = 3;
-	condition = dia_dyrian_howisit_condition;
-	information = dia_dyrian_howisit_info;
+	condition = DIA_Dyrian_HowIsIt_Condition;
+	information = DIA_Dyrian_HowIsIt_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_dyrian_howisit_condition()
+func int DIA_Dyrian_HowIsIt_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_dyrian_helloagain))
+	if(Npc_KnowsInfo(other,DIA_Dyrian_HelloAgain))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dyrian_howisit_info()
+func void DIA_Dyrian_HowIsIt_Info()
 {
-	b_dyrian_playerhowisit();
+	B_Dyrian_PlayerHowIsIt();
 	AI_Output(self,other,"DIA_Dyrian_HowIsIt_13_01");	//Dobrze. Naprawdê lubiê tê pracê, Mistrzu.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_DYRIAN_OTHER(C_INFO)
+instance DIA_Dyrian_other(C_Info)
 {
-	npc = nov_604_dyrian;
+	npc = NOV_604_Dyrian;
 	nr = 3;
-	condition = dia_dyrian_other_condition;
-	information = dia_dyrian_other_info;
+	condition = DIA_Dyrian_other_Condition;
+	information = DIA_Dyrian_other_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_dyrian_other_condition()
+func int DIA_Dyrian_other_Condition()
 {
 	if((other.guild != GIL_KDF) && (other.guild != GIL_NOV) && (other.guild != GIL_NONE))
 	{
@@ -340,54 +340,54 @@ func int dia_dyrian_other_condition()
 	};
 };
 
-func void dia_dyrian_other_info()
+func void DIA_Dyrian_other_Info()
 {
-	b_dyrian_playerhowisit();
+	B_Dyrian_PlayerHowIsIt();
 	AI_Output(self,other,"DIA_Dyrian_HowIsIt_13_02");	//Dziêkujê Innosowi, ¿e mogê przebywaæ tutaj, w klasztorze.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_DYRIAN_KNEIPE(C_INFO)
+instance DIA_Dyrian_Kneipe(C_Info)
 {
-	npc = nov_604_dyrian;
+	npc = NOV_604_Dyrian;
 	nr = 3;
-	condition = dia_dyrian_kneipe_condition;
-	information = dia_dyrian_kneipe_info;
+	condition = DIA_Dyrian_Kneipe_Condition;
+	information = DIA_Dyrian_Kneipe_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_dyrian_kneipe_condition()
+func int DIA_Dyrian_Kneipe_Condition()
 {
-	if((MIS_HELPDYRIAN == LOG_FAILED) && (other.guild == GIL_KDF))
+	if((MIS_HelpDyrian == LOG_FAILED) && (other.guild == GIL_KDF))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dyrian_kneipe_info()
+func void DIA_Dyrian_Kneipe_Info()
 {
 	AI_Output(other,self,"DIA_Dyrian_Kneipe_15_00");	//Jak leci?
 	AI_Output(self,other,"DIA_Dyrian_Kneipe_13_01");	//¯e te¿ w ogóle o to pytasz... Pok³ada³em w tobie wszystkie moje nadzieje, a ty zostawi³eœ mnie na lodzie.
 	AI_Output(self,other,"DIA_Dyrian_Kneipe_13_02");	//Nic mi ju¿ nie pozosta³o, oprócz alkoholu. I to wszystko twoja wina!
-	Info_ClearChoices(dia_dyrian_kneipe);
-	Info_AddChoice(dia_dyrian_kneipe,"Proszê, oto 5 sztuk z³ota dla ciebie.",dia_dyrian_kneipe_gold);
-	Info_AddChoice(dia_dyrian_kneipe,"Mogê wszystko wyjaœniæ.",dia_dyrian_kneipe_canexplain);
-	Info_AddChoice(dia_dyrian_kneipe,"Uwa¿aj, co mówisz.",dia_dyrian_kneipe_shutup);
+	Info_ClearChoices(DIA_Dyrian_Kneipe);
+	Info_AddChoice(DIA_Dyrian_Kneipe,"Proszê, oto 5 sztuk z³ota dla ciebie.",DIA_Dyrian_Kneipe_Gold);
+	Info_AddChoice(DIA_Dyrian_Kneipe,"Mogê wszystko wyjaœniæ.",DIA_Dyrian_Kneipe_CanExplain);
+	Info_AddChoice(DIA_Dyrian_Kneipe,"Uwa¿aj, co mówisz.",DIA_Dyrian_Kneipe_ShutUp);
 };
 
-func void dia_dyrian_kneipe_gold()
+func void DIA_Dyrian_Kneipe_Gold()
 {
 	AI_Output(other,self,"DIA_Dyrian_Kneipe_Gold_15_00");	//Proszê, oto 5 sztuk z³ota.
 	AI_Output(self,other,"DIA_Dyrian_Kneipe_Gold_13_01");	//5 sztuk z³ota? Dajesz mi 5 sztuk z³ota i uwa¿asz, ¿e to wystarczaj¹ca rekompensata za moje zmarnowane ¿ycie?
 	AI_Output(self,other,"DIA_Dyrian_Kneipe_Gold_13_02");	//Zabiorê ca³e twoje z³oto!
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_NONE,0);
+	B_Attack(self,other,AR_NONE,0);
 };
 
-func void dia_dyrian_kneipe_canexplain()
+func void DIA_Dyrian_Kneipe_CanExplain()
 {
 	AI_Output(other,self,"DIA_Dyrian_Kneipe_CanExplain_15_00");	//Mogê wszystko wyjaœniæ.
 	AI_Output(self,other,"DIA_Dyrian_Kneipe_CanExplain_13_01");	//OszczêdŸ sobie naiwnych wymówek.
@@ -395,7 +395,7 @@ func void dia_dyrian_kneipe_canexplain()
 	AI_StopProcessInfos(self);
 };
 
-func void dia_dyrian_kneipe_shutup()
+func void DIA_Dyrian_Kneipe_ShutUp()
 {
 	AI_Output(other,self,"DIA_Dyrian_Kneipe_ShutUp_15_00");	//Uwa¿aj, co mówisz.
 	AI_Output(self,other,"DIA_Dyrian_Kneipe_ShutUp_13_01");	//Bardzo proszê, mo¿esz mi groziæ. Nic ci to nie da.
@@ -405,26 +405,26 @@ func void dia_dyrian_kneipe_shutup()
 };
 
 
-instance DIA_DYRIAN_NACHHER(C_INFO)
+instance DIA_Dyrian_nachher(C_Info)
 {
-	npc = nov_604_dyrian;
+	npc = NOV_604_Dyrian;
 	nr = 3;
-	condition = dia_dyrian_nachher_condition;
-	information = dia_dyrian_nachher_info;
+	condition = DIA_Dyrian_nachher_Condition;
+	information = DIA_Dyrian_nachher_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_dyrian_nachher_condition()
+func int DIA_Dyrian_nachher_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_dyrian_kneipe))
+	if(Npc_KnowsInfo(other,DIA_Dyrian_Kneipe))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dyrian_nachher_info()
+func void DIA_Dyrian_nachher_Info()
 {
 	AI_Output(other,self,"DIA_Dyrian_nachher_15_00");	//Co tam?
 	AI_Output(self,other,"DIA_Dyrian_nachher_13_01");	//Po prostu zostaw mnie w spokoju! Nie chcê mieæ z tob¹ wiêcej nic wspólnego!
@@ -432,37 +432,37 @@ func void dia_dyrian_nachher_info()
 };
 
 
-instance DIA_DYRIAN_PICKPOCKET(C_INFO)
+instance DIA_Dyrian_PICKPOCKET(C_Info)
 {
-	npc = nov_604_dyrian;
+	npc = NOV_604_Dyrian;
 	nr = 900;
-	condition = dia_dyrian_pickpocket_condition;
-	information = dia_dyrian_pickpocket_info;
+	condition = DIA_Dyrian_PICKPOCKET_Condition;
+	information = DIA_Dyrian_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_20;
+	description = Pickpocket_20;
 };
 
 
-func int dia_dyrian_pickpocket_condition()
+func int DIA_Dyrian_PICKPOCKET_Condition()
 {
-	return c_beklauen(10,15);
+	return C_Beklauen(10,15);
 };
 
-func void dia_dyrian_pickpocket_info()
+func void DIA_Dyrian_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_dyrian_pickpocket);
-	Info_AddChoice(dia_dyrian_pickpocket,DIALOG_BACK,dia_dyrian_pickpocket_back);
-	Info_AddChoice(dia_dyrian_pickpocket,DIALOG_PICKPOCKET,dia_dyrian_pickpocket_doit);
+	Info_ClearChoices(DIA_Dyrian_PICKPOCKET);
+	Info_AddChoice(DIA_Dyrian_PICKPOCKET,Dialog_Back,DIA_Dyrian_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Dyrian_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Dyrian_PICKPOCKET_DoIt);
 };
 
-func void dia_dyrian_pickpocket_doit()
+func void DIA_Dyrian_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_dyrian_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Dyrian_PICKPOCKET);
 };
 
-func void dia_dyrian_pickpocket_back()
+func void DIA_Dyrian_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_dyrian_pickpocket);
+	Info_ClearChoices(DIA_Dyrian_PICKPOCKET);
 };
 

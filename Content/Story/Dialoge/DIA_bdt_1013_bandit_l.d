@@ -1,23 +1,23 @@
 
-instance DIA_BDT_1013_BANDIT_FIRSTEXIT(C_INFO)
+instance DIA_BDT_1013_BANDIT_FIRSTEXIT(C_Info)
 {
-	npc = bdt_1013_bandit_l;
+	npc = Bdt_1013_Bandit_L;
 	nr = 999;
-	condition = dia_bdt_1013_bandit_firstexit_condition;
-	information = dia_bdt_1013_bandit_firstexit_info;
+	condition = DIA_BDT_1013_BANDIT_FIRSTEXIT_Condition;
+	information = DIA_BDT_1013_BANDIT_FIRSTEXIT_Info;
 	permanent = FALSE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_bdt_1013_bandit_firstexit_condition()
+func int DIA_BDT_1013_BANDIT_FIRSTEXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bdt_1013_bandit_firstexit_info()
+func void DIA_BDT_1013_BANDIT_FIRSTEXIT_Info()
 {
-	if(BDT13_FRIEND == TRUE)
+	if(Bdt13_Friend == TRUE)
 	{
 		AI_Output(self,other,"DIA_BDT_1013_BANDIT_FIRSTEXIT_01_00");	//Na twoim miejscu trzyma³bym siê z dala od jaskini tam, na górze. Moi kumple mog¹ ci nieŸle osmaliæ ty³ek. A wierz mi, na bitce to oni siê znaj¹.
 	};
@@ -25,18 +25,18 @@ func void dia_bdt_1013_bandit_firstexit_info()
 };
 
 
-instance DIA_BDT_1013_BANDIT_EXIT(C_INFO)
+instance DIA_BDT_1013_BANDIT_EXIT(C_Info)
 {
-	npc = bdt_1013_bandit_l;
+	npc = Bdt_1013_Bandit_L;
 	nr = 999;
-	condition = dia_bdt_1013_bandit_exit_condition;
-	information = dia_bdt_1013_bandit_exit_info;
+	condition = DIA_BDT_1013_BANDIT_EXIT_Condition;
+	information = DIA_BDT_1013_BANDIT_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_bdt_1013_bandit_exit_condition()
+func int DIA_BDT_1013_BANDIT_EXIT_Condition()
 {
 	if(Npc_KnowsInfo(other,dia_bdt_1013_bandit_firstexit))
 	{
@@ -44,29 +44,29 @@ func int dia_bdt_1013_bandit_exit_condition()
 	};
 };
 
-func void dia_bdt_1013_bandit_exit_info()
+func void DIA_BDT_1013_BANDIT_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BDT_1013_BANDIT_WHERE(C_INFO)
+instance DIA_BDT_1013_BANDIT_WHERE(C_Info)
 {
-	npc = bdt_1013_bandit_l;
+	npc = Bdt_1013_Bandit_L;
 	nr = 3;
-	condition = dia_bdt_1013_bandit_where_condition;
-	information = dia_bdt_1013_bandit_where_info;
+	condition = DIA_BDT_1013_BANDIT_WHERE_Condition;
+	information = DIA_BDT_1013_BANDIT_WHERE_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_bdt_1013_bandit_where_condition()
+func int DIA_BDT_1013_BANDIT_WHERE_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bdt_1013_bandit_where_info()
+func void DIA_BDT_1013_BANDIT_WHERE_Info()
 {
 	AI_Output(self,other,"DIA_BDT_1013_BANDIT_WHERE_01_00");	//Hej - sk¹d siê tu wzi¹³eœ, co?
 	Info_ClearChoices(dia_bdt_1013_bandit_where);
@@ -78,7 +78,7 @@ func void dia_bdt_1013_bandit_where_mountain()
 {
 	AI_Output(other,self,"DIA_BDT_1013_BANDIT_WHERE_MOUNTAIN_15_00");	//Przybywam z gór.
 	AI_Output(self,other,"DIA_BDT_1013_BANDIT_WHERE_MOUNTAIN_01_01");	//No w³aœnie, przybywasz z gór. To Ÿle.
-	b_usefakescroll();
+	B_UseFakeScroll();
 	AI_Output(self,other,"DIA_BDT_1013_BANDIT_WHERE_MOUNTAIN_01_02");	//Bardzo Ÿle.
 	AI_Output(self,other,"DIA_BDT_1013_BANDIT_WHERE_MOUNTAIN_01_03");	//Szukaj¹ ciê - ca³a zgraja naprawdê z³ych ludzi.
 	AI_Output(self,other,"DIA_BDT_1013_BANDIT_WHERE_MOUNTAIN_01_04");	//Jest tu ktoœ, z kim musisz natychmiast porozmawiaæ. ChodŸ za mn¹!
@@ -93,7 +93,7 @@ func void dia_bdt_1013_bandit_where_xardas()
 	AI_Output(other,self,"DIA_BDT_1013_BANDIT_WHERE_XARDAS_15_00");	//Przysy³a mnie Xardas ...
 	AI_Output(self,other,"DIA_BDT_1013_BANDIT_WHERE_XARDAS_01_01");	//Stary czarodziej? Nazywa siê Xardas... Braga z pewnoœci¹ to zainteresuje.
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_SUDDENENEMYINFERNO,1);
+	B_Attack(self,other,AR_SuddenEnemyInferno,1);
 };
 
 func void dia_bdt_1013_bandit_where_yes()
@@ -162,11 +162,11 @@ func void dia_bdt_1013_bandit_where_prisoner()
 	AI_Output(self,other,"DIA_BDT_1013_BANDIT_WHERE_PRISONER_01_07");	//Ale my, ch³opcy z kolonii karnej, powinniœmy siê trzymaæ razem!
 	AI_Output(other,self,"DIA_BDT_1013_BANDIT_WHERE_PRISONER_15_08");	//Powinienem ci chyba podziêkowaæ...
 	AI_Output(self,other,"DIA_BDT_1013_BANDIT_WHERE_PRISONER_01_09");	//Nie ma za co. Próbujê po prostu utrzymaæ siê przy ¿yciu.
-	BDT13_FRIEND = TRUE;
-	b_setattitude(self,ATT_FRIENDLY);
+	Bdt13_Friend = TRUE;
+	B_SetAttitude(self,ATT_FRIENDLY);
 	self.level = 0;
-	self.npctype = NPCTYPE_FRIEND;
-	self.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+	self.npcType = NPCTYPE_FRIEND;
+	self.aivar[AIV_EnemyOverride] = FALSE;
 	Info_ClearChoices(dia_bdt_1013_bandit_where);
 };
 
@@ -184,35 +184,35 @@ func void dia_bdt_1013_bandit_where_later()
 	AI_Output(other,self,"DIA_BDT_1013_BANDIT_WHERE_LATER_15_00");	//Mo¿e póŸniej...
 	AI_Output(self,other,"DIA_BDT_1013_BANDIT_WHERE_LATER_01_01");	//Nie bêdzie ¿adnego póŸniej, kole¿ko!
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_SUDDENENEMYINFERNO,1);
+	B_Attack(self,other,AR_SuddenEnemyInferno,1);
 };
 
 
-instance DIA_1013_BANDIT_AMBUSH(C_INFO)
+instance DIA_1013_BANDIT_AMBUSH(C_Info)
 {
-	npc = bdt_1013_bandit_l;
+	npc = Bdt_1013_Bandit_L;
 	nr = 1;
-	condition = dia_1013_bandit_ambush_condition;
-	information = dia_1013_bandit_ambush_info;
+	condition = DIA_1013_BANDIT_AMBUSH_Condition;
+	information = DIA_1013_BANDIT_AMBUSH_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_1013_bandit_ambush_condition()
+func int DIA_1013_BANDIT_AMBUSH_Condition()
 {
-	if((Npc_GetDistToWP(self,"NW_XARDAS_BANDITS_RIGHT") <= 300) && (BDT13_FRIEND == FALSE))
+	if((Npc_GetDistToWP(self,"NW_XARDAS_BANDITS_RIGHT") <= 300) && (Bdt13_Friend == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_1013_bandit_ambush_info()
+func void DIA_1013_BANDIT_AMBUSH_Info()
 {
-	if(Npc_IsDead(ambusher_1014) && Npc_IsDead(ambusher_1015))
+	if(Npc_IsDead(Ambusher_1014) && Npc_IsDead(Ambusher_1015))
 	{
 		AI_Output(self,other,"DIA_1013_BANDIT_AMBUSH_01_00");	//G³upio zrobi³eœ, œledz¹c mnie...
-		b_attack(self,other,AR_SUDDENENEMYINFERNO,1);
+		B_Attack(self,other,AR_SuddenEnemyInferno,1);
 		AI_StopProcessInfos(self);
 	}
 	else
@@ -223,66 +223,66 @@ func void dia_1013_bandit_ambush_info()
 };
 
 
-instance DIA_1013_BANDIT_NAME(C_INFO)
+instance DIA_1013_BANDIT_NAME(C_Info)
 {
-	npc = bdt_1013_bandit_l;
+	npc = Bdt_1013_Bandit_L;
 	nr = 1;
-	condition = dia_1013_bandit_name_condition;
-	information = dia_1013_bandit_name_info;
+	condition = DIA_1013_BANDIT_NAME_Condition;
+	information = DIA_1013_BANDIT_NAME_Info;
 	permanent = FALSE;
 	description = "Kto wyznaczy³ tê nagrodê?";
 };
 
 
-func int dia_1013_bandit_name_condition()
+func int DIA_1013_BANDIT_NAME_Condition()
 {
-	if(BDT13_FRIEND == TRUE)
+	if(Bdt13_Friend == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_1013_bandit_name_info()
+func void DIA_1013_BANDIT_NAME_Info()
 {
 	AI_Output(other,self,"DIA_1013_BANDIT_NAME_15_00");	//Kto wyznaczy³ tê nagrodê?
 	AI_Output(self,other,"DIA_1013_BANDIT_NAME_01_01");	//Tego nie wiem. Tylko jeden z nas go zna.
 	AI_Output(other,self,"DIA_1013_BANDIT_NAME_15_02");	//A kto to taki?
 	AI_Output(self,other,"DIA_1013_BANDIT_NAME_01_03");	//Hej, stary, no naprawdê nie mogê ci tego powiedzieæ. Wiesz, jak jest...
-	Log_CreateTopic(TOPIC_BANDITS,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_BANDITS,LOG_RUNNING);
-	b_logentry(TOPIC_BANDITS,"Œcigaj¹ mnie bandyci. Maj¹ list goñczy z moj¹ podobizn¹. Zastanawiam siê, kto lub co siê za tym kryje.");
-	MIS_STECKBRIEFE = LOG_RUNNING;
+	Log_CreateTopic(Topic_Bandits,LOG_MISSION);
+	Log_SetTopicStatus(Topic_Bandits,LOG_Running);
+	B_LogEntry(Topic_Bandits,"Œcigaj¹ mnie bandyci. Maj¹ list goñczy z moj¹ podobizn¹. Zastanawiam siê, kto lub co siê za tym kryje.");
+	MIS_Steckbriefe = LOG_Running;
 };
 
 
-instance DIA_1013_BANDIT_DEXTER(C_INFO)
+instance DIA_1013_BANDIT_DEXTER(C_Info)
 {
-	npc = bdt_1013_bandit_l;
+	npc = Bdt_1013_Bandit_L;
 	nr = 1;
-	condition = dia_1013_bandit_dexter_condition;
-	information = dia_1013_bandit_dexter_info;
+	condition = DIA_1013_BANDIT_DEXTER_Condition;
+	information = DIA_1013_BANDIT_DEXTER_Info;
 	permanent = TRUE;
 	description = "10 sztuk z³ota za imiê tego goœcia!";
 };
 
 
-func int dia_1013_bandit_dexter_condition()
+func int DIA_1013_BANDIT_DEXTER_Condition()
 {
-	if((BDT13_FRIEND == TRUE) && (BDT13_DEXTER_VERRATEN == FALSE) && Npc_KnowsInfo(other,dia_1013_bandit_name))
+	if((Bdt13_Friend == TRUE) && (Bdt13_Dexter_verraten == FALSE) && Npc_KnowsInfo(other,dia_1013_bandit_name))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_1013_bandit_dexter_info()
+func void DIA_1013_BANDIT_DEXTER_Info()
 {
 	AI_Output(other,self,"DIA_1013_BANDIT_DEXTER_15_00");	//10 sztuk z³ota za imiê tego goœcia!
 	AI_Output(self,other,"DIA_1013_BANDIT_DEXTER_01_01");	//Och, stary, naprawdê nie mogê tego zrobiæ...
 	AI_Output(other,self,"DIA_1013_BANDIT_DEXTER_15_02");	//No, wykrztuœ to w koñcu!
 	AI_Output(self,other,"DIA_1013_BANDIT_DEXTER_01_03");	//Och, stary! No dobra. Nazywa siê Dexter. Ko³o du¿ego gospodarstwa jest stroma ska³a.
 	AI_Output(self,other,"DIA_1013_BANDIT_DEXTER_01_04");	//Na niej jest wie¿a stra¿nicza, a obok kilka kopalni. Gdzieœ w pobli¿u jest jego kryjówka.
-	b_logentry(TOPIC_BANDITS,"Przywódc¹ bandytów jest Dexter. Ukrywa siê w kopalni w pobli¿u farmy w³aœciciela ziemskiego.");
-	if(b_giveinvitems(other,self,5113,10))
+	B_LogEntry(Topic_Bandits,"Przywódc¹ bandytów jest Dexter. Ukrywa siê w kopalni w pobli¿u farmy w³aœciciela ziemskiego.");
+	if(B_GiveInvItems(other,self,ItMi_Gold,10))
 	{
 		AI_Output(other,self,"DIA_1013_BANDIT_DEXTER_15_05");	//Widzisz, to nie by³o takie trudne. Tu jest twoje z³oto.
 	}
@@ -292,65 +292,65 @@ func void dia_1013_bandit_dexter_info()
 		AI_Output(self,other,"DIA_1013_BANDIT_DEXTER_01_07");	//Co?! Ja... Och, niewa¿ne. To moja wina. Mog³em nic ci nie mówiæ, zanim nie zobaczy³em z³ota...
 	};
 	AI_Output(self,other,"DIA_1013_BANDIT_DEXTER_01_08");	//Tylko nie mów im, kto ci to powiedzia³.
-	BDT13_DEXTER_VERRATEN = TRUE;
+	Bdt13_Dexter_verraten = TRUE;
 };
 
 
-instance DIA_1013_BANDIT_PIC(C_INFO)
+instance DIA_1013_BANDIT_PIC(C_Info)
 {
-	npc = bdt_1013_bandit_l;
+	npc = Bdt_1013_Bandit_L;
 	nr = 2;
-	condition = dia_1013_bandit_pic_condition;
-	information = dia_1013_bandit_pic_info;
+	condition = DIA_1013_BANDIT_PIC_Condition;
+	information = DIA_1013_BANDIT_PIC_Info;
 	permanent = FALSE;
 	description = "Dasz mi ten portret?";
 };
 
 
-func int dia_1013_bandit_pic_condition()
+func int DIA_1013_BANDIT_PIC_Condition()
 {
-	if(BDT13_FRIEND == TRUE)
+	if(Bdt13_Friend == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_1013_bandit_pic_info()
+func void DIA_1013_BANDIT_PIC_Info()
 {
 	AI_Output(other,self,"DIA_1013_BANDIT_PIC_15_00");	//Dasz mi ten portret?
 	AI_Output(self,other,"DIA_1013_BANDIT_PIC_01_01");	//Jasne. Przecie¿ to TWOJA gêba.
-	b_giveinvitems(self,other,5699,1);
+	B_GiveInvItems(self,other,ItWr_Poster_MIS,1);
 };
 
 
-instance DIA_1013_BANDIT_FROMMALETH(C_INFO)
+instance DIA_1013_BANDIT_FromMaleth(C_Info)
 {
-	npc = bdt_1013_bandit_l;
+	npc = Bdt_1013_Bandit_L;
 	nr = 3;
-	condition = dia_1013_bandit_frommaleth_condition;
-	information = dia_1013_bandit_frommaleth_info;
+	condition = DIA_1013_BANDIT_FromMaleth_Condition;
+	information = DIA_1013_BANDIT_FromMaleth_Info;
 	permanent = FALSE;
 	description = "Przys³a³ mnie jeden z ch³opów spoza miasta...";
 };
 
 
-func int dia_1013_bandit_frommaleth_condition()
+func int DIA_1013_BANDIT_FromMaleth_Condition()
 {
-	if((BDT13_FRIEND == TRUE) && ((MIS_MALETH_BANDITS == LOG_RUNNING) || (MIS_MALETH_BANDITS == LOG_SUCCESS)))
+	if((Bdt13_Friend == TRUE) && ((MIS_Maleth_Bandits == LOG_Running) || (MIS_Maleth_Bandits == LOG_SUCCESS)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_1013_bandit_frommaleth_info()
+func void DIA_1013_BANDIT_FromMaleth_Info()
 {
-	var C_NPC b14;
-	var C_NPC b15;
+	var C_Npc b14;
+	var C_Npc b15;
 	AI_Output(other,self,"DIA_1013_BANDIT_FromMaleth_15_00");	//Przys³a³ mnie jeden z ch³opów spoza miasta...
 	AI_Output(self,other,"DIA_1013_BANDIT_FromMaleth_01_01");	//Co? Wieœniacy wiedz¹ o kryjówce?
 	AI_Output(other,self,"DIA_1013_BANDIT_FromMaleth_15_02");	//Zauwa¿yli brak owiec.
-	b14 = Hlp_GetNpc(bdt_1014_bandit_l);
-	b15 = Hlp_GetNpc(bdt_1015_bandit_l);
+	b14 = Hlp_GetNpc(Bdt_1014_Bandit_L);
+	b15 = Hlp_GetNpc(Bdt_1015_Bandit_L);
 	if(Npc_IsDead(b14) && Npc_IsDead(b15))
 	{
 		AI_Output(self,other,"DIA_1013_BANDIT_FromMaleth_01_03");	//O cholera! Có¿, wiêc muszê siê st¹d wynieœæ. Jeœli znajd¹ pust¹ kryjówkê, to mo¿e przestan¹ mnie szukaæ.
@@ -361,42 +361,42 @@ func void dia_1013_bandit_frommaleth_info()
 		AI_Output(self,other,"DIA_1013_BANDIT_FromMaleth_01_05");	//Zaraz - chyba mnie nie wkopiesz? Nie po tym, jak ci pomog³em?
 		AI_Output(self,other,"DIA_1013_BANDIT_FromMaleth_01_06");	//No to idŸ i porozbijaj ³by pozosta³ym, skoro tak pragniesz rozlewu krwi - ja w to nie wchodzê!
 	};
-	b_giveplayerxp(XP_BANDITWEG);
+	B_GivePlayerXP(XP_BanditWeg);
 	Npc_ExchangeRoutine(self,"AWAY");
 	self.guild = GIL_NONE;
 	AI_StopProcessInfos(self);
 };
 
 
-var int bdt13_gossip_wildnis;
+var int bdt13_Gossip_Wildnis;
 
-instance DIA_1013_BANDIT_PERM(C_INFO)
+instance DIA_1013_BANDIT_PERM(C_Info)
 {
-	npc = bdt_1013_bandit_l;
+	npc = Bdt_1013_Bandit_L;
 	nr = 4;
-	condition = dia_1013_bandit_perm_condition;
-	information = dia_1013_bandit_perm_info;
+	condition = DIA_1013_BANDIT_PERM_Condition;
+	information = DIA_1013_BANDIT_PERM_Info;
 	permanent = TRUE;
 	description = "Wiesz coœ jeszcze, co mog³oby mnie zainteresowaæ?";
 };
 
 
-func int dia_1013_bandit_perm_condition()
+func int DIA_1013_BANDIT_PERM_Condition()
 {
-	if(BDT13_FRIEND == TRUE)
+	if(Bdt13_Friend == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_1013_bandit_perm_info()
+func void DIA_1013_BANDIT_PERM_Info()
 {
 	AI_Output(other,self,"DIA_1013_BANDIT_PERM_15_00");	//Wiesz coœ jeszcze, co mog³oby mnie zainteresowaæ?
-	if(BDT13_GOSSIP_WILDNIS == FALSE)
+	if(bdt13_Gossip_Wildnis == FALSE)
 	{
 		AI_Output(self,other,"DIA_1013_BANDIT_PERM_01_01");	//Chodzi ci o tutejsz¹ okolicê? Jeœli chcesz prze¿yæ, trzymaj siê œcie¿ek.
 		AI_Output(self,other,"DIA_1013_BANDIT_PERM_01_02");	//Im dalej zapuœcisz siê w dzicz, tym wiêksze grozi ci niebezpieczeñstwo.
-		BDT13_GOSSIP_WILDNIS = TRUE;
+		bdt13_Gossip_Wildnis = TRUE;
 	}
 	else
 	{

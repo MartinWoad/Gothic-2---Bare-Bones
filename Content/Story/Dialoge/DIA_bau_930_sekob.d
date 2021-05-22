@@ -1,49 +1,49 @@
 
-instance DIA_SEKOB_EXIT(C_INFO)
+instance DIA_Sekob_EXIT(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 999;
-	condition = dia_sekob_exit_condition;
-	information = dia_sekob_exit_info;
+	condition = DIA_Sekob_EXIT_Condition;
+	information = DIA_Sekob_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_sekob_exit_condition()
+func int DIA_Sekob_EXIT_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_exit_info()
+func void DIA_Sekob_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SEKOB_HALLO(C_INFO)
+instance DIA_Sekob_HALLO(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 3;
-	condition = dia_sekob_hallo_condition;
-	information = dia_sekob_hallo_info;
+	condition = DIA_Sekob_HALLO_Condition;
+	information = DIA_Sekob_HALLO_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_sekob_hallo_condition()
+func int DIA_Sekob_HALLO_Condition()
 {
-	if((KAPITEL < 3) && (self.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if((Kapitel < 3) && (self.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_hallo_info()
+func void DIA_Sekob_HALLO_Info()
 {
 	AI_Output(self,other,"DIA_Sekob_HALLO_01_00");	//Czego szukasz na mojej ziemi? Nie ma tu nawet co ukraœæ. Wynocha.
 	AI_Output(other,self,"DIA_Sekob_HALLO_15_01");	//Czy w tym kraju jest choæ skrawek ziemi, który do nikogo nie nale¿y?
@@ -51,253 +51,253 @@ func void dia_sekob_hallo_info()
 };
 
 
-instance DIA_SEKOB_PERMVORMIS(C_INFO)
+instance DIA_Sekob_PermVorMis(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 3;
-	condition = dia_sekob_permvormis_condition;
-	information = dia_sekob_permvormis_info;
+	condition = DIA_Sekob_PermVorMis_Condition;
+	information = DIA_Sekob_PermVorMis_Info;
 	permanent = TRUE;
 	description = "Pos³uchaj...";
 };
 
 
-func int dia_sekob_permvormis_condition()
+func int DIA_Sekob_PermVorMis_Condition()
 {
-	if((KAPITEL < 3) && (MIS_TORLOF_HOLPACHTVONSEKOB == FALSE))
+	if((Kapitel < 3) && (MIS_Torlof_HolPachtVonSekob == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_permvormis_info()
+func void DIA_Sekob_PermVorMis_Info()
 {
 	AI_Output(other,self,"DIA_Sekob_PermVorMis_15_00");	//Pos³uchaj...
 	AI_Output(self,other,"DIA_Sekob_PermVorMis_01_01");	//Nie mam w tej chwili ¿adnej pracy dla ciebie.
 };
 
 
-instance DIA_SEKOB_ZAHLPACHT(C_INFO)
+instance DIA_Sekob_ZAHLPACHT(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 5;
-	condition = dia_sekob_zahlpacht_condition;
-	information = dia_sekob_zahlpacht_info;
+	condition = DIA_Sekob_ZAHLPACHT_Condition;
+	information = DIA_Sekob_ZAHLPACHT_Info;
 	permanent = FALSE;
 	description = "Onar chce, ¿ebyœ w koñcu zap³aci³ czynsz.";
 };
 
 
-func int dia_sekob_zahlpacht_condition()
+func int DIA_Sekob_ZAHLPACHT_Condition()
 {
-	if(MIS_TORLOF_HOLPACHTVONSEKOB == LOG_RUNNING)
+	if(MIS_Torlof_HolPachtVonSekob == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_zahlpacht_info()
+func void DIA_Sekob_ZAHLPACHT_Info()
 {
 	AI_Output(other,self,"DIA_Sekob_ZAHLPACHT_15_00");	//Ta ziemia nale¿y do Onara, ty j¹ tylko wynajmujesz. Musisz zap³aciæ czynsz. Zalegasz ju¿ za kilka tygodni.
 	AI_Output(self,other,"DIA_Sekob_ZAHLPACHT_01_01");	//Co? I przys³a³ tu takiego zbira? Sam w to chyba nie wierzysz.
 	AI_Output(self,other,"DIA_Sekob_ZAHLPACHT_01_02");	//Wynoœ siê, nim stracê panowanie nad sob¹.
-	self.aivar[AIV_DEFEATEDBYPLAYER] = FALSE;
+	self.aivar[AIV_DefeatedByPlayer] = FALSE;
 };
 
 
-instance DIA_SEKOB_KOHLERAUS(C_INFO)
+instance DIA_Sekob_KohleRaus(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 5;
-	condition = dia_sekob_kohleraus_condition;
-	information = dia_sekob_kohleraus_info;
+	condition = DIA_Sekob_KohleRaus_Condition;
+	information = DIA_Sekob_KohleRaus_Info;
 	permanent = TRUE;
 	description = "Oddawaj kasê albo porachujê ci koœci.";
 };
 
 
-func int dia_sekob_kohleraus_condition()
+func int DIA_Sekob_KohleRaus_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_sekob_zahlpacht) && (self.aivar[AIV_DEFEATEDBYPLAYER] == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Sekob_ZAHLPACHT) && (self.aivar[AIV_DefeatedByPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_kohleraus_info()
+func void DIA_Sekob_KohleRaus_Info()
 {
 	AI_Output(other,self,"DIA_Sekob_KohleRaus_15_00");	//Oddawaj kasê albo porachujê ci koœci.
 	AI_Output(self,other,"DIA_Sekob_KohleRaus_01_01");	//Nie dostaniesz moich pieniêdzy, zbóju. NIE TY!
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_NONE,1);
+	B_Attack(self,other,AR_NONE,1);
 };
 
 
-instance DIA_SEKOB_INFORMONAR(C_INFO)
+instance DIA_Sekob_InformOnar(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 5;
-	condition = dia_sekob_informonar_condition;
-	information = dia_sekob_informonar_info;
+	condition = DIA_Sekob_InformOnar_Condition;
+	information = DIA_Sekob_InformOnar_Info;
 	permanent = FALSE;
 	description = "Có¿, w takim razie bêdê musia³ poinformowaæ o tym Onara.";
 };
 
 
-func int dia_sekob_informonar_condition()
+func int DIA_Sekob_InformOnar_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_sekob_zahlpacht) && (self.aivar[AIV_DEFEATEDBYPLAYER] == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Sekob_ZAHLPACHT) && (self.aivar[AIV_DefeatedByPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_informonar_info()
+func void DIA_Sekob_InformOnar_Info()
 {
 	AI_Output(other,self,"DIA_Sekob_InformOnar_15_00");	//Có¿, w takim razie bêdê musia³ poinformowaæ o tym Onara.
 	AI_Output(self,other,"DIA_Sekob_InformOnar_01_01");	//Nic mnie to nie obchodzi! Powiedz Onarowi, ¿e nic nie mam. To zreszt¹ smutna prawda.
-	MIS_SEKOB_REDEMITONAR = LOG_RUNNING;
+	MIS_Sekob_RedeMitOnar = LOG_Running;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SEKOB_DEFEATED(C_INFO)
+instance DIA_Sekob_Defeated(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 5;
-	condition = dia_sekob_defeated_condition;
-	information = dia_sekob_defeated_info;
+	condition = DIA_Sekob_Defeated_Condition;
+	information = DIA_Sekob_Defeated_Info;
 	permanent = FALSE;
 	description = "Gdzieœ schowa³ pieni¹dze!?!";
 };
 
 
-func int dia_sekob_defeated_condition()
+func int DIA_Sekob_Defeated_Condition()
 {
-	if((self.aivar[AIV_DEFEATEDBYPLAYER] == TRUE) && Npc_KnowsInfo(other,dia_sekob_zahlpacht) && (SEKOB_PACHTBEZAHLT == FALSE))
+	if((self.aivar[AIV_DefeatedByPlayer] == TRUE) && Npc_KnowsInfo(other,DIA_Sekob_ZAHLPACHT) && (Sekob_Pachtbezahlt == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_defeated_info()
+func void DIA_Sekob_Defeated_Info()
 {
 	AI_Output(other,self,"DIA_Sekob_Defeated_15_00");	//Gdzieœ schowa³eœ pieni¹dze!?!
 	AI_Output(self,other,"DIA_Sekob_Defeated_01_01");	//Nie bij mnie, proszê. Zrobiê, co tylko ka¿esz.
 	AI_Output(other,self,"DIA_Sekob_Defeated_15_02");	//Zap³aæ wiec zaleg³y czynsz.
 	AI_Output(self,other,"DIA_Sekob_Defeated_01_03");	//Ale¿ Panie no, nie mam ni miedziaka. Jestem zag³odzonym biedakiem.
 	AI_Output(self,other,"DIA_Sekob_Defeated_01_04");	//Ostatnie zbiory zniszczy³a susza. CHCÊ zap³aciæ czynsz, ale NIE MAM czym. Miej¿e litoœæ.
-	Info_ClearChoices(dia_sekob_defeated);
-	Info_AddChoice(dia_sekob_defeated,"P³aæ albo po¿egnasz siê z ¿yciem.",dia_sekob_defeated_hart);
-	Info_AddChoice(dia_sekob_defeated,"W porz¹dku, pogadam z Onarem.",dia_sekob_defeated_weich);
+	Info_ClearChoices(DIA_Sekob_Defeated);
+	Info_AddChoice(DIA_Sekob_Defeated,"P³aæ albo po¿egnasz siê z ¿yciem.",DIA_Sekob_Defeated_hart);
+	Info_AddChoice(DIA_Sekob_Defeated,"W porz¹dku, pogadam z Onarem.",DIA_Sekob_Defeated_weich);
 };
 
-func void dia_sekob_defeated_weich()
+func void DIA_Sekob_Defeated_weich()
 {
 	AI_Output(other,self,"DIA_Sekob_Defeated_weich_15_00");	//W porz¹dku, pogadam z Onarem.
 	AI_Output(self,other,"DIA_Sekob_Defeated_weich_01_01");	//Dziêkujê Panie, po tysi¹ckroæ dziêkujê!
-	MIS_SEKOB_REDEMITONAR = LOG_RUNNING;
+	MIS_Sekob_RedeMitOnar = LOG_Running;
 	AI_StopProcessInfos(self);
 };
 
-func void b_sekob_kassieren()
+func void B_Sekob_Kassieren()
 {
 	AI_Output(other,self,"DIA_Sekob_Kassieren_15_00");	//Daruj sobie tê gadkê. Deszcz pada tu niemal bez przerwy, a i twoje spi¿arnie pustkami nie œwiec¹. P³aæ albo po¿egnasz siê z ¿yciem.
 	AI_Output(self,other,"DIA_Sekob_Kassieren_01_01");	//Nie no, proszê, weŸ z³oto. Zap³acê nawet wiêcej, ale nie zabijaj mnie.
-	b_giveinvitems(self,other,5113,60);
+	B_GiveInvItems(self,other,ItMi_Gold,60);
 	AI_Output(other,self,"DIA_Sekob_Kassieren_15_02");	//No widzisz. Nie by³o tak Ÿle.
 	AI_Output(self,other,"DIA_Sekob_Kassieren_01_03");	//Jestem zrujnowany.
-	SEKOB_PACHTBEZAHLT = TRUE;
+	Sekob_Pachtbezahlt = TRUE;
 	AI_StopProcessInfos(self);
 };
 
-func void dia_sekob_defeated_hart()
+func void DIA_Sekob_Defeated_hart()
 {
-	b_sekob_kassieren();
+	B_Sekob_Kassieren();
 };
 
 
-instance DIA_SEKOB_AGAIN(C_INFO)
+instance DIA_Sekob_Again(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 5;
-	condition = dia_sekob_again_condition;
-	information = dia_sekob_again_info;
+	condition = DIA_Sekob_Again_Condition;
+	information = DIA_Sekob_Again_Info;
 	permanent = TRUE;
 	description = "Jeœli chodzi o czynsz...";
 };
 
 
-func int dia_sekob_again_condition()
+func int DIA_Sekob_Again_Condition()
 {
-	if((MIS_SEKOB_REDEMITONAR == LOG_RUNNING) && Npc_KnowsInfo(other,dia_sekob_defeated) && (SEKOB_PACHTBEZAHLT == FALSE))
+	if((MIS_Sekob_RedeMitOnar == LOG_Running) && Npc_KnowsInfo(other,DIA_Sekob_Defeated) && (Sekob_Pachtbezahlt == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_again_info()
+func void DIA_Sekob_Again_Info()
 {
 	AI_Output(other,self,"DIA_Sekob_Again_15_00");	//Jeœli chodzi o czynsz...
 	AI_Output(self,other,"DIA_Sekob_Again_01_01");	//Porozmawiasz z Onarem, prawda?
-	Info_ClearChoices(dia_sekob_again);
-	Info_AddChoice(dia_sekob_again,"Rozmyœli³em siê.",dia_sekob_again_nein);
-	if(ONAR_WEGENSEKOB == TRUE)
+	Info_ClearChoices(DIA_Sekob_Again);
+	Info_AddChoice(DIA_Sekob_Again,"Rozmyœli³em siê.",DIA_Sekob_Again_Nein);
+	if(Onar_WegenSekob == TRUE)
 	{
-		Info_AddChoice(dia_sekob_again,"Ju¿ to zrobi³em...",dia_sekob_again_verarscht);
+		Info_AddChoice(DIA_Sekob_Again,"Ju¿ to zrobi³em...",DIA_Sekob_Again_verarscht);
 	}
 	else
 	{
-		Info_AddChoice(dia_sekob_again,"Jasne.",dia_sekob_again_ja);
+		Info_AddChoice(DIA_Sekob_Again,"Jasne.",DIA_Sekob_Again_Ja);
 	};
 };
 
-func void dia_sekob_again_nein()
+func void DIA_Sekob_Again_Nein()
 {
 	AI_Output(other,self,"DIA_Sekob_Again_Nein_15_00");	//Rozmyœli³em siê.
-	b_sekob_kassieren();
+	B_Sekob_Kassieren();
 };
 
-func void dia_sekob_again_ja()
+func void DIA_Sekob_Again_Ja()
 {
 	AI_Output(other,self,"DIA_Sekob_Again_Ja_15_00");	//Oczywiœcie.
 	AI_Output(self,other,"DIA_Sekob_Again_Ja_01_01");	//Proszê, zrób to.
 	AI_StopProcessInfos(self);
 };
 
-func void dia_sekob_again_verarscht()
+func void DIA_Sekob_Again_verarscht()
 {
-	MIS_SEKOB_REDEMITONAR = LOG_SUCCESS;
+	MIS_Sekob_RedeMitOnar = LOG_SUCCESS;
 	AI_Output(other,self,"DIA_Sekob_Again_verarscht_15_00");	//Ju¿ to zrobi³em...
 	AI_Output(self,other,"DIA_Sekob_Again_verarscht_01_01");	//I co? Co powiedzia³?
 	AI_Output(other,self,"DIA_Sekob_Again_verarscht_15_02");	//Przykro mi, ale muszê ciê zabiæ.
 	AI_Output(self,other,"DIA_Sekob_Again_verarscht_01_03");	//Ale dlaczego? Có¿ ja takiego zrobi³em?
 	AI_Output(other,self,"DIA_Sekob_Again_verarscht_15_04");	//Zrobi³eœ ze mnie idiotê.
 	AI_Output(self,other,"DIA_Sekob_Again_verarscht_01_05");	//Powiedzia³em prawdê - przysiêgam!
-	b_sekob_kassieren();
+	B_Sekob_Kassieren();
 };
 
 
-instance DIA_SEKOB_PERMKAP1(C_INFO)
+instance DIA_Sekob_PERMKAP1(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 6;
-	condition = dia_sekob_permkap1_condition;
-	information = dia_sekob_permkap1_info;
+	condition = DIA_Sekob_PERMKAP1_Condition;
+	information = DIA_Sekob_PERMKAP1_Info;
 	permanent = TRUE;
 	description = "Nastêpnym razem p³aæ na czas, zrozumiano?";
 };
 
 
-func int dia_sekob_permkap1_condition()
+func int DIA_Sekob_PERMKAP1_Condition()
 {
-	if((SEKOB_PACHTBEZAHLT == TRUE) && (KAPITEL < 3))
+	if((Sekob_Pachtbezahlt == TRUE) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_permkap1_info()
+func void DIA_Sekob_PERMKAP1_Info()
 {
 	AI_Output(other,self,"DIA_Sekob_PERMKAP1_15_00");	//Nastêpnym razem p³aæ na czas, zrozumiano?
 	AI_Output(self,other,"DIA_Sekob_PERMKAP1_01_01");	//Czym sobie na to zas³u¿y³em...
@@ -305,50 +305,50 @@ func void dia_sekob_permkap1_info()
 };
 
 
-instance DIA_SEKOB_KAP3_EXIT(C_INFO)
+instance DIA_Sekob_KAP3_EXIT(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 999;
-	condition = dia_sekob_kap3_exit_condition;
-	information = dia_sekob_kap3_exit_info;
+	condition = DIA_Sekob_KAP3_EXIT_Condition;
+	information = DIA_Sekob_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_sekob_kap3_exit_condition()
+func int DIA_Sekob_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_kap3_exit_info()
+func void DIA_Sekob_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SEKOB_DMT(C_INFO)
+instance DIA_Sekob_DMT(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 30;
-	condition = dia_sekob_dmt_condition;
-	information = dia_sekob_dmt_info;
+	condition = DIA_Sekob_DMT_Condition;
+	information = DIA_Sekob_DMT_Info;
 	description = "Czy coœ siê sta³o?";
 };
 
 
-func int dia_sekob_dmt_condition()
+func int DIA_Sekob_DMT_Condition()
 {
-	if(KAPITEL >= 3)
+	if(Kapitel >= 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_dmt_info()
+func void DIA_Sekob_DMT_Info()
 {
 	AI_Output(other,self,"DIA_Sekob_DMT_15_00");	//Czy coœ siê sta³o?
 	AI_Output(self,other,"DIA_Sekob_DMT_01_01");	//Musisz mi pomóc. Ludzie w czarnych szatach w³amali siê do mojego domu.
@@ -366,31 +366,31 @@ func void dia_sekob_dmt_info()
 	};
 	AI_Output(self,other,"DIA_Sekob_DMT_01_05");	//Ci ludzi mówili, ¿e czegoœ szukaj¹. Ale nie w moim domu.
 	AI_Output(self,other,"DIA_Sekob_DMT_01_06");	//Proszê, pomó¿ mi! Spraw, by st¹d odeszli!
-	Log_CreateTopic(TOPIC_SEKOBDMT,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_SEKOBDMT,LOG_RUNNING);
-	b_logentry(TOPIC_SEKOBDMT,"Czarni magowie wygnali Sekoba z domu. Sekob prosi mnie, abym siê ich pozby³.");
+	Log_CreateTopic(TOPIC_SekobDMT,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_SekobDMT,LOG_Running);
+	B_LogEntry(TOPIC_SekobDMT,"Czarni magowie wygnali Sekoba z domu. Sekob prosi mnie, abym siê ich pozby³.");
 };
 
 
-instance DIA_SEKOB_DMTWEG(C_INFO)
+instance DIA_Sekob_DMTWEG(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 31;
-	condition = dia_sekob_dmtweg_condition;
-	information = dia_sekob_dmtweg_info;
+	condition = DIA_Sekob_DMTWEG_Condition;
+	information = DIA_Sekob_DMTWEG_Info;
 	description = "Twój dom jest pusty.";
 };
 
 
-func int dia_sekob_dmtweg_condition()
+func int DIA_Sekob_DMTWEG_Condition()
 {
-	if((KAPITEL >= 3) && Npc_KnowsInfo(other,dia_sekob_dmt) && Npc_IsDead(dmt_dementorambientsekob1) && Npc_IsDead(dmt_dementorambientsekob2) && Npc_IsDead(dmt_dementorambientsekob3) && Npc_IsDead(dmt_dementorambientsekob4))
+	if((Kapitel >= 3) && Npc_KnowsInfo(other,DIA_Sekob_DMT) && Npc_IsDead(DMT_DementorAmbientSekob1) && Npc_IsDead(DMT_DementorAmbientSekob2) && Npc_IsDead(DMT_DementorAmbientSekob3) && Npc_IsDead(DMT_DementorAmbientSekob4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_dmtweg_info()
+func void DIA_Sekob_DMTWEG_Info()
 {
 	AI_Output(other,self,"DIA_Sekob_DMTWEG_15_00");	//Twój dom jest pusty. Ludzie w czarnych kapturach odeszli.
 	if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
@@ -405,9 +405,9 @@ func void dia_sekob_dmtweg_info()
 	{
 		AI_Output(self,other,"DIA_Sekob_DMTWEG_01_03");	//Dziêkujê ci Panie Magu. Gdyby nie potê¿ni kap³ani, bylibyœmy zgubieni.
 	};
-	TOPIC_END_SEKOBDMT = TRUE;
-	b_giveplayerxp(XP_SEKOBDMTWEG);
-	if(KAPITEL < 5)
+	TOPIC_END_SekobDMT = TRUE;
+	B_GivePlayerXP(XP_SekobDMTWEG);
+	if(Kapitel < 5)
 	{
 		Npc_ExchangeRoutine(self,"Start");
 	}
@@ -415,43 +415,43 @@ func void dia_sekob_dmtweg_info()
 	{
 		Npc_ExchangeRoutine(self,"Obsessed");
 	};
-	if(ROSI_FLEEFROMSEKOB_KAP5 == FALSE)
+	if(Rosi_FleeFromSekob_Kap5 == FALSE)
 	{
-		b_startotherroutine(rosi,"Start");
-		b_startotherroutine(till,"Start");
+		B_StartOtherRoutine(Rosi,"Start");
+		B_StartOtherRoutine(Till,"Start");
 	};
-	b_startotherroutine(balthasar,"Start");
-	b_startotherroutine(bau_933_rega,"Start");
-	b_startotherroutine(bau_934_babera,"Start");
-	b_startotherroutine(bau_937_bauer,"Start");
-	b_startotherroutine(bau_938_bauer,"Start");
+	B_StartOtherRoutine(Balthasar,"Start");
+	B_StartOtherRoutine(BAU_933_Rega,"Start");
+	B_StartOtherRoutine(BAU_934_Babera,"Start");
+	B_StartOtherRoutine(BAU_937_Bauer,"Start");
+	B_StartOtherRoutine(BAU_938_Bauer,"Start");
 };
 
 
-instance DIA_SEKOB_BELOHNUNG(C_INFO)
+instance DIA_Sekob_BELOHNUNG(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 32;
-	condition = dia_sekob_belohnung_condition;
-	information = dia_sekob_belohnung_info;
+	condition = DIA_Sekob_BELOHNUNG_Condition;
+	information = DIA_Sekob_BELOHNUNG_Info;
 	description = "Nie tak szybko, przyjacielu.";
 };
 
 
-func int dia_sekob_belohnung_condition()
+func int DIA_Sekob_BELOHNUNG_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_sekob_dmtweg) && (KAPITEL >= 3))
+	if(Npc_KnowsInfo(other,DIA_Sekob_DMTWEG) && (Kapitel >= 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_belohnung_info()
+func void DIA_Sekob_BELOHNUNG_Info()
 {
 	AI_Output(other,self,"DIA_Sekob_BELOHNUNG_15_00");	//Nie tak szybko, przyjacielu.
 	if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
 	{
-		if(Npc_KnowsInfo(other,dia_rosi_wasmachstdu))
+		if(Npc_KnowsInfo(other,DIA_Rosi_WASMACHSTDU))
 		{
 			AI_Output(other,self,"DIA_Sekob_BELOHNUNG_15_01");	//Od dzisiaj porzucisz swoje ciemne machlojki i zajmiesz siê uczciw¹ prac¹ dla wspólnego dobra, chyba ¿e chcesz, bym tu wróci³.
 		};
@@ -471,57 +471,57 @@ func void dia_sekob_belohnung_info()
 	AI_Output(self,other,"DIA_Sekob_BELOHNUNG_01_08");	//Mogê jedynie daæ ci odrobinê z³ota i prosiæ, byœ mnie oszczêdzi³.
 	AI_Output(other,self,"DIA_Sekob_BELOHNUNG_15_09");	//W takim razie dawaj. Spieszy mi siê.
 	AI_Output(self,other,"DIA_Sekob_BELOHNUNG_01_10");	//Proszê.
-	CreateInvItems(self,itmi_gold,250);
-	b_giveinvitems(self,other,5113,250);
+	CreateInvItems(self,ItMi_Gold,250);
+	B_GiveInvItems(self,other,ItMi_Gold,250);
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SEKOB_PERM(C_INFO)
+instance DIA_Sekob_PERM(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 80;
-	condition = dia_sekob_perm_condition;
-	information = dia_sekob_perm_info;
+	condition = DIA_Sekob_PERM_Condition;
+	information = DIA_Sekob_PERM_Info;
 	permanent = TRUE;
 	description = "Czy wydarzy³o siê coœ ostatnio?";
 };
 
 
-func int dia_sekob_perm_condition()
+func int DIA_Sekob_PERM_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_sekob_belohnung) && (KAPITEL >= 3) && (NPCOBSESSEDBYDMT_SEKOB == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Sekob_BELOHNUNG) && (Kapitel >= 3) && (NpcObsessedByDMT_Sekob == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_perm_info()
+func void DIA_Sekob_PERM_Info()
 {
-	if((hero.guild == GIL_KDF) && (KAPITEL >= 5))
+	if((hero.guild == GIL_KDF) && (Kapitel >= 5))
 	{
-		b_npcobsessedbydmt(self);
+		B_NpcObsessedByDMT(self);
 	}
 	else
 	{
 		AI_Output(other,self,"DIA_Sekob_PERM_15_00");	//Czy wydarzy³o siê coœ ostatnio?
-		if(MIS_BRINGROSIBACKTOSEKOB == LOG_FAILED)
+		if(MIS_bringRosiBackToSekob == LOG_FAILED)
 		{
 			AI_Output(self,other,"DIA_Sekob_PERM_01_01");	//Wynoœ siê.
 		}
-		else if(MIS_BRINGROSIBACKTOSEKOB == LOG_SUCCESS)
+		else if(MIS_bringRosiBackToSekob == LOG_SUCCESS)
 		{
 			AI_Output(self,other,"DIA_Sekob_PERM_01_02");	//Nie. Nic specjalnego.
 		}
-		else if((KAPITEL >= 5) && (MIS_BRINGROSIBACKTOSEKOB != LOG_SUCCESS))
+		else if((Kapitel >= 5) && (MIS_bringRosiBackToSekob != LOG_SUCCESS))
 		{
 			AI_Output(self,other,"DIA_Sekob_PERM_01_03");	//Moja ¿ona zniknê³a. Na pocz¹tku nie zwróci³em na to uwagi, ale ona po prostu przepad³a.
 			AI_Output(self,other,"DIA_Sekob_PERM_01_04");	//Podejrzewam, ¿e uciek³a do lasu, chc¹c siê schroniæ przed polnymi bestiami.
 			AI_Output(self,other,"DIA_Sekob_PERM_01_05");	//Zrób coœ dla mnie, jeœli j¹ odnajdziesz, przyprowadŸ j¹ tutaj.
-			MIS_BRINGROSIBACKTOSEKOB = LOG_RUNNING;
-			Log_CreateTopic(TOPIC_BRINGROSIBACKTOSEKOB,LOG_MISSION);
-			Log_SetTopicStatus(TOPIC_BRINGROSIBACKTOSEKOB,LOG_RUNNING);
-			b_logentry(TOPIC_BRINGROSIBACKTOSEKOB,"¯ona Sekoba, Rosi, zaginê³a. Sekob prosi o jej odnalezienie.");
+			MIS_bringRosiBackToSekob = LOG_Running;
+			Log_CreateTopic(TOPIC_bringRosiBackToSekob,LOG_MISSION);
+			Log_SetTopicStatus(TOPIC_bringRosiBackToSekob,LOG_Running);
+			B_LogEntry(TOPIC_bringRosiBackToSekob,"¯ona Sekoba, Rosi, zaginê³a. Sekob prosi o jej odnalezienie.");
 		}
 		else
 		{
@@ -531,217 +531,217 @@ func void dia_sekob_perm_info()
 };
 
 
-instance DIA_SEKOB_KAP4_EXIT(C_INFO)
+instance DIA_Sekob_KAP4_EXIT(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 999;
-	condition = dia_sekob_kap4_exit_condition;
-	information = dia_sekob_kap4_exit_info;
+	condition = DIA_Sekob_KAP4_EXIT_Condition;
+	information = DIA_Sekob_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_sekob_kap4_exit_condition()
+func int DIA_Sekob_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_kap4_exit_info()
+func void DIA_Sekob_KAP4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SEKOB_KAP5_EXIT(C_INFO)
+instance DIA_Sekob_KAP5_EXIT(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 999;
-	condition = dia_sekob_kap5_exit_condition;
-	information = dia_sekob_kap5_exit_info;
+	condition = DIA_Sekob_KAP5_EXIT_Condition;
+	information = DIA_Sekob_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_sekob_kap5_exit_condition()
+func int DIA_Sekob_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_kap5_exit_info()
+func void DIA_Sekob_KAP5_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_SEKOB_HEILUNG(C_INFO)
+instance DIA_Sekob_Heilung(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 55;
-	condition = dia_sekob_heilung_condition;
-	information = dia_sekob_heilung_info;
+	condition = DIA_Sekob_Heilung_Condition;
+	information = DIA_Sekob_Heilung_Info;
 	permanent = TRUE;
 	description = "Masz jakiœ problem.";
 };
 
 
-func int dia_sekob_heilung_condition()
+func int DIA_Sekob_Heilung_Condition()
 {
-	if((NPCOBSESSEDBYDMT_SEKOB == TRUE) && (NPCOBSESSEDBYDMT == FALSE) && (hero.guild == GIL_KDF) && (KAPITEL >= 5))
+	if((NpcObsessedByDMT_Sekob == TRUE) && (NpcObsessedByDMT == FALSE) && (hero.guild == GIL_KDF) && (Kapitel >= 5))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_sekob_heilung_onetime;
+var int DIA_Sekob_Heilung_oneTime;
 
-func void dia_sekob_heilung_info()
+func void DIA_Sekob_Heilung_Info()
 {
 	AI_Output(other,self,"DIA_Sekob_Heilung_15_00");	//Masz problem.
-	if(DIA_SEKOB_HEILUNG_ONETIME == FALSE)
+	if(DIA_Sekob_Heilung_oneTime == FALSE)
 	{
 		AI_Output(self,other,"DIA_Sekob_Heilung_01_01");	//Tak, w³aœciwie tak. TY jesteœ moim problemem, paskudny magu. Wynoœ siê, albo klnê siê na wszystko, ¿e obedrê ciê ¿ywcem ze skóry.
 		AI_Output(other,self,"DIA_Sekob_Heilung_15_02");	//Ciê¿ki przypadek.
-		b_npcclearobsessionbydmt(self);
-		DIA_SEKOB_HEILUNG_ONETIME = TRUE;
+		B_NpcClearObsessionByDMT(self);
+		DIA_Sekob_Heilung_oneTime = TRUE;
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Sekob_Heilung_01_03");	//Chyba mnie nie s³ysza³eœ, co?
 		AI_Output(other,self,"DIA_Sekob_Heilung_15_04");	//Beznadziejny przypadek.
-		b_npcclearobsessionbydmt(self);
-		b_attack(self,other,AR_NONE,1);
+		B_NpcClearObsessionByDMT(self);
+		B_Attack(self,other,AR_NONE,1);
 	};
 };
 
 
-instance DIA_SEKOB_ROSIBACKATSEKOB(C_INFO)
+instance DIA_Sekob_ROSIBACKATSEKOB(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 53;
-	condition = dia_sekob_rosibackatsekob_condition;
-	information = dia_sekob_rosibackatsekob_info;
+	condition = DIA_Sekob_ROSIBACKATSEKOB_Condition;
+	information = DIA_Sekob_ROSIBACKATSEKOB_Info;
 	description = "Przyprowadzê twoj¹ ¿onê z powrotem.";
 };
 
 
-func int dia_sekob_rosibackatsekob_condition()
+func int DIA_Sekob_ROSIBACKATSEKOB_Condition()
 {
-	if((KAPITEL >= 5) && (hero.guild != GIL_KDF) && (Npc_GetDistToWP(rosi,"NW_FARM4_SEKOB") < 3000) && (MIS_BRINGROSIBACKTOSEKOB == LOG_RUNNING))
+	if((Kapitel >= 5) && (hero.guild != GIL_KDF) && (Npc_GetDistToWP(Rosi,"NW_FARM4_SEKOB") < 3000) && (MIS_bringRosiBackToSekob == LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_rosibackatsekob_info()
+func void DIA_Sekob_ROSIBACKATSEKOB_Info()
 {
 	AI_Output(other,self,"DIA_Sekob_ROSIBACKATSEKOB_15_00");	//Przyprowadzê twoj¹ ¿onê z powrotem.
 	AI_Output(self,other,"DIA_Sekob_ROSIBACKATSEKOB_01_01");	//Doskonale, proszê, to za fatygê.
-	MIS_BRINGROSIBACKTOSEKOB = LOG_SUCCESS;
-	CreateInvItems(self,itmi_gold,650);
-	b_giveinvitems(self,other,5113,650);
-	b_giveplayerxp(XP_AMBIENT);
-	b_npcclearobsessionbydmt(self);
-	b_startotherroutine(rosi,"Start");
-	b_startotherroutine(till,"Start");
+	MIS_bringRosiBackToSekob = LOG_SUCCESS;
+	CreateInvItems(self,ItMi_Gold,650);
+	B_GiveInvItems(self,other,ItMi_Gold,650);
+	B_GivePlayerXP(XP_Ambient);
+	B_NpcClearObsessionByDMT(self);
+	B_StartOtherRoutine(Rosi,"Start");
+	B_StartOtherRoutine(Till,"Start");
 };
 
 
-instance DIA_SEKOB_ROSINEVERBACK(C_INFO)
+instance DIA_Sekob_ROSINEVERBACK(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 56;
-	condition = dia_sekob_rosineverback_condition;
-	information = dia_sekob_rosineverback_info;
+	condition = DIA_Sekob_ROSINEVERBACK_Condition;
+	information = DIA_Sekob_ROSINEVERBACK_Info;
 	description = "Rosi ju¿ do ciebie nie wróci.";
 };
 
 
-func int dia_sekob_rosineverback_condition()
+func int DIA_Sekob_ROSINEVERBACK_Condition()
 {
-	if((MIS_BRINGROSIBACKTOSEKOB == LOG_OBSOLETE) && (hero.guild != GIL_KDF))
+	if((MIS_bringRosiBackToSekob == LOG_OBSOLETE) && (hero.guild != GIL_KDF))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_rosineverback_info()
+func void DIA_Sekob_ROSINEVERBACK_Info()
 {
 	AI_Output(other,self,"DIA_Sekob_ROSINEVERBACK_15_00");	//Rosi ju¿ do ciebie nie wróci. Zaprowadzi³em j¹ w bezpieczne miejsce.
 	AI_Output(self,other,"DIA_Sekob_ROSINEVERBACK_01_01");	//Bezpieczne, a przed kim j¹ chronisz?
 	AI_Output(other,self,"DIA_Sekob_ROSINEVERBACK_15_02");	//Przed tob¹.
 	AI_Output(self,other,"DIA_Sekob_ROSINEVERBACK_01_03");	//Po¿a³ujesz tego, ty œwinio!
-	b_npcclearobsessionbydmt(self);
-	b_attack(self,other,AR_NONE,1);
-	b_giveplayerxp(XP_AMBIENT);
-	MIS_BRINGROSIBACKTOSEKOB = LOG_FAILED;
+	B_NpcClearObsessionByDMT(self);
+	B_Attack(self,other,AR_NONE,1);
+	B_GivePlayerXP(XP_Ambient);
+	MIS_bringRosiBackToSekob = LOG_FAILED;
 };
 
 
-instance DIA_SEKOB_KAP6_EXIT(C_INFO)
+instance DIA_Sekob_KAP6_EXIT(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 999;
-	condition = dia_sekob_kap6_exit_condition;
-	information = dia_sekob_kap6_exit_info;
+	condition = DIA_Sekob_KAP6_EXIT_Condition;
+	information = DIA_Sekob_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_sekob_kap6_exit_condition()
+func int DIA_Sekob_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sekob_kap6_exit_info()
+func void DIA_Sekob_KAP6_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_SEKOB_PICKPOCKET(C_INFO)
+instance DIA_Sekob_PICKPOCKET(C_Info)
 {
-	npc = bau_930_sekob;
+	npc = BAU_930_Sekob;
 	nr = 900;
-	condition = dia_sekob_pickpocket_condition;
-	information = dia_sekob_pickpocket_info;
+	condition = DIA_Sekob_PICKPOCKET_Condition;
+	information = DIA_Sekob_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_80;
+	description = Pickpocket_80;
 };
 
 
-func int dia_sekob_pickpocket_condition()
+func int DIA_Sekob_PICKPOCKET_Condition()
 {
-	return c_beklauen(75,230);
+	return C_Beklauen(75,230);
 };
 
-func void dia_sekob_pickpocket_info()
+func void DIA_Sekob_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_sekob_pickpocket);
-	Info_AddChoice(dia_sekob_pickpocket,DIALOG_BACK,dia_sekob_pickpocket_back);
-	Info_AddChoice(dia_sekob_pickpocket,DIALOG_PICKPOCKET,dia_sekob_pickpocket_doit);
+	Info_ClearChoices(DIA_Sekob_PICKPOCKET);
+	Info_AddChoice(DIA_Sekob_PICKPOCKET,Dialog_Back,DIA_Sekob_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Sekob_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Sekob_PICKPOCKET_DoIt);
 };
 
-func void dia_sekob_pickpocket_doit()
+func void DIA_Sekob_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_sekob_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Sekob_PICKPOCKET);
 };
 
-func void dia_sekob_pickpocket_back()
+func void DIA_Sekob_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_sekob_pickpocket);
+	Info_ClearChoices(DIA_Sekob_PICKPOCKET);
 };
 

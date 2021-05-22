@@ -1,56 +1,56 @@
 
-instance NONE_100_XARDAS(NPC_DEFAULT)
+instance NONE_100_Xardas(Npc_Default)
 {
 	name[0] = "Xardas";
 	guild = GIL_NONE;
 	id = 100;
 	voice = 14;
 	flags = NPC_FLAG_IMMORTAL;
-	npctype = NPCTYPE_FRIEND;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	aivar[AIV_TOUGHGUYNEWSOVERRIDE] = TRUE;
-	aivar[AIV_IGNORE_MURDER] = TRUE;
-	aivar[AIV_IGNORE_THEFT] = TRUE;
-	aivar[AIV_IGNORE_SHEEPKILLER] = TRUE;
-	b_setattributestochapter(self,6);
+	npcType = NPCTYPE_FRIEND;
+	aivar[AIV_ToughGuy] = TRUE;
+	aivar[AIV_ToughGuyNewsOverride] = TRUE;
+	aivar[AIV_IGNORE_Murder] = TRUE;
+	aivar[AIV_IGNORE_Theft] = TRUE;
+	aivar[AIV_IGNORE_Sheepkiller] = TRUE;
+	B_SetAttributesToChapter(self,6);
 	fight_tactic = FAI_HUMAN_MASTER;
-	b_setnpcvisual(self,MALE,"Hum_Head_Psionic",FACE_N_XARDAS,BODYTEX_N,4848);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Psionic",Face_N_Xardas,BodyTex_N,ITAR_Xardas);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Mage.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	aivar[AIV_MAGICUSER] = MAGIC_ALWAYS;
-	daily_routine = rtn_prestart_100;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
+	daily_routine = Rtn_PreStart_100;
 };
 
 
-func void rtn_prestart_100()
+func void Rtn_PreStart_100()
 {
-	ta_stand_armscrossed(8,0,23,0,"NW_XARDAS_START");
-	ta_stand_armscrossed(23,0,8,0,"NW_XARDAS_START");
+	TA_Stand_ArmsCrossed(8,0,23,0,"NW_XARDAS_START");
+	TA_Stand_ArmsCrossed(23,0,8,0,"NW_XARDAS_START");
 };
 
-func void rtn_start_100()
+func void Rtn_Start_100()
 {
-	ta_read_bookstand(8,0,23,0,"NW_XARDAS_TOWER_IN1_28");
-	ta_read_bookstand(23,0,8,0,"NW_XARDAS_TOWER_IN1_28");
+	TA_Read_Bookstand(8,0,23,0,"NW_XARDAS_TOWER_IN1_28");
+	TA_Read_Bookstand(23,0,8,0,"NW_XARDAS_TOWER_IN1_28");
 };
 
-func void rtn_ritualinnoseyerepair_100()
+func void Rtn_RitualInnosEyeRepair_100()
 {
-	ta_stand_armscrossed(8,0,23,0,"NW_TROLLAREA_RITUAL_01");
-	ta_stand_armscrossed(23,0,8,0,"NW_TROLLAREA_RITUAL_01");
+	TA_Stand_ArmsCrossed(8,0,23,0,"NW_TROLLAREA_RITUAL_01");
+	TA_Stand_ArmsCrossed(23,0,8,0,"NW_TROLLAREA_RITUAL_01");
 };
 
-func void rtn_ritualinnoseye_100()
+func void Rtn_RitualInnosEye_100()
 {
-	ta_circle(8,0,23,0,"NW_TROLLAREA_RITUAL_01");
-	ta_circle(23,0,8,0,"NW_TROLLAREA_RITUAL_01");
+	TA_Circle(8,0,23,0,"NW_TROLLAREA_RITUAL_01");
+	TA_Circle(23,0,8,0,"NW_TROLLAREA_RITUAL_01");
 };
 
-func void rtn_tot_100()
+func void Rtn_Tot_100()
 {
-	ta_circle(8,0,23,0,"TOT");
-	ta_circle(23,0,8,0,"TOT");
+	TA_Circle(8,0,23,0,"TOT");
+	TA_Circle(23,0,8,0,"TOT");
 };
 

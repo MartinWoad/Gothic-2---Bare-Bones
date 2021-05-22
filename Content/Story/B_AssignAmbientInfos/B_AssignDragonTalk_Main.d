@@ -1,32 +1,32 @@
 
-instance DIA_DRAGONTALK_MAIN_1(C_INFO)
+instance DIA_DragonTalk_Main_1(C_Info)
 {
 	nr = 10;
-	condition = dia_dragontalk_main_1_condition;
-	information = dia_dragontalk_main_1_info;
+	condition = DIA_DragonTalk_Main_1_Condition;
+	information = DIA_DragonTalk_Main_1_Info;
 	permanent = FALSE;
 	description = "Co ciê sprowadza do tego miejsca?";
 };
 
 
-func int dia_dragontalk_main_1_condition()
+func int DIA_DragonTalk_Main_1_Condition()
 {
-	if(MIS_KILLEDDRAGONS == 0)
+	if(MIS_KilledDragons == 0)
 	{
 		return 1;
 	};
 };
 
-func void dia_dragontalk_main_1_info()
+func void DIA_DragonTalk_Main_1_Info()
 {
 	AI_Output(other,self,"DIA_DragonTalk_Main_1_15_00");	//S³ugo ciemnoœci! Co ciê sprowadza do tego miejsca? Czy twoim jedynym celem jest sianie strachu i zniszczenia?
 	AI_Output(self,other,"DIA_DragonTalk_Main_1_20_01");	//Prawdziwy cel naszego przybycia do tego œwiata nigdy nie zostanie ci wyjawiony, cz³owiecze.
-	Info_AddChoice(dia_dragontalk_main_1,"Jak mam zmusiæ do mówienia pozosta³e smoki?",dia_dragontalk_main_1_reden);
-	Info_AddChoice(dia_dragontalk_main_1,"Co muszê zrobiæ, aby ponownie ciê wygnaæ?",dia_dragontalk_main_1_verbannen);
-	DRAGONTALK_EXIT_FREE = TRUE;
+	Info_AddChoice(DIA_DragonTalk_Main_1,"Jak mam zmusiæ do mówienia pozosta³e smoki?",DIA_DragonTalk_Main_1_reden);
+	Info_AddChoice(DIA_DragonTalk_Main_1,"Co muszê zrobiæ, aby ponownie ciê wygnaæ?",DIA_DragonTalk_Main_1_verbannen);
+	DragonTalk_Exit_Free = TRUE;
 };
 
-func void dia_dragontalk_main_1_verbannen()
+func void DIA_DragonTalk_Main_1_verbannen()
 {
 	AI_Output(other,self,"DIA_DragonTalk_MAIN_1_verbannen_15_00");	//Na Innosa, co mam uczyniæ, by przegnaæ was precz z królestwa ludzi?
 	AI_Output(self,other,"DIA_DragonTalk_MAIN_1_verbannen_20_01");	//By tego dokonaæ, musia³byœ najpierw zrozumieæ znaczenie naszego spotkania.
@@ -39,8 +39,8 @@ func void dia_dragontalk_main_1_verbannen()
 		AI_Output(self,other,"DIA_DragonTalk_MAIN_1_verbannen_20_06");	//Dlatego wys³aliœmy do twojego œwiata nasz pomiot, by zapewniæ przetrwanie naszej staro¿ytnej dynastii.
 		AI_Output(self,other,"DIA_DragonTalk_MAIN_1_verbannen_20_07");	//Przegra³eœ tê wojnê, ma³y cz³owieczku.
 		Log_CreateTopic(TOPIC_DRACHENEIER,LOG_MISSION);
-		Log_SetTopicStatus(TOPIC_DRACHENEIER,LOG_RUNNING);
-		b_logentry(TOPIC_DRACHENEIER,"Jeden z tych smoków mamrota³ coœ o 'potomkach' i utrzymaniu ci¹g³oœci jego rodu. Bojê siê, ¿e te potwory rozpleni³y siê po ca³ym cywilizowanym œwiecie.");
+		Log_SetTopicStatus(TOPIC_DRACHENEIER,LOG_Running);
+		B_LogEntry(TOPIC_DRACHENEIER,"Jeden z tych smoków mamrota³ coœ o 'potomkach' i utrzymaniu ci¹g³oœci jego rodu. Bojê siê, ¿e te potwory rozpleni³y siê po ca³ym cywilizowanym œwiecie.");
 	}
 	else
 	{
@@ -48,7 +48,7 @@ func void dia_dragontalk_main_1_verbannen()
 	};
 };
 
-func void dia_dragontalk_main_1_reden()
+func void DIA_DragonTalk_Main_1_reden()
 {
 	AI_Output(other,self,"DIA_DragonTalk_MAIN_1_reden_15_00");	//Jak mam zmusiæ do mówienia pozosta³e smoki?
 	AI_Output(self,other,"DIA_DragonTalk_MAIN_1_reden_20_01");	//Tylko moje serce pozwoli ci odnowiæ moc Oka.
@@ -56,25 +56,25 @@ func void dia_dragontalk_main_1_reden()
 };
 
 
-instance DIA_DRAGONTALK_MAIN_2(C_INFO)
+instance DIA_DragonTalk_Main_2(C_Info)
 {
 	nr = 10;
-	condition = dia_dragontalk_main_2_condition;
-	information = dia_dragontalk_main_2_info;
+	condition = DIA_DragonTalk_Main_2_Condition;
+	information = DIA_DragonTalk_Main_2_Info;
 	permanent = FALSE;
 	description = "Kto was tu przys³a³?";
 };
 
 
-func int dia_dragontalk_main_2_condition()
+func int DIA_DragonTalk_Main_2_Condition()
 {
-	if(MIS_KILLEDDRAGONS == 1)
+	if(MIS_KilledDragons == 1)
 	{
 		return 1;
 	};
 };
 
-func void dia_dragontalk_main_2_info()
+func void DIA_DragonTalk_Main_2_Info()
 {
 	AI_Output(other,self,"DIA_DragonTalk_Main_2_15_00");	//Kto wam rozkazuje? Kto was tu przys³a³?
 	AI_Output(self,other,"DIA_DragonTalk_Main_2_20_01");	//Naszymi czynami kieruje nasz Pan i jego S³owo Mocy. Wkrótce nikt nie zdo³a oprzeæ siê jego woli.
@@ -82,30 +82,30 @@ func void dia_dragontalk_main_2_info()
 	AI_Output(self,other,"DIA_DragonTalk_Main_2_20_03");	//Wkrótce zostaniecie pokonani, a on zapanuje nad œwiatem.
 	AI_Output(self,other,"DIA_DragonTalk_Main_2_20_04");	//W porównaniu z nim, nawet my jesteœmy nic nie znacz¹cym py³em.
 	AI_Output(self,other,"DIA_DragonTalk_Main_2_20_05");	//Nasz Pan nadejdzie, by wskrzesiæ wasze cia³a z popio³ów i wykorzystaæ je do podporz¹dkowania sobie tego œwiata.
-	b_logentry(TOPIC_DRACHENJAGD,"Te smoki nie s¹ samodzielnymi istotami. S³u¿¹ jakiemuœ panu, o którym nie chc¹ mówiæ - no, mo¿e poza bezwartoœciowymi przepowiedniami w stylu 'nasz pan przyjdzie i zniszczy œwiat, bla bla bla'. Nic nowego.");
-	DRAGONTALK_EXIT_FREE = TRUE;
+	B_LogEntry(TOPIC_DRACHENJAGD,"Te smoki nie s¹ samodzielnymi istotami. S³u¿¹ jakiemuœ panu, o którym nie chc¹ mówiæ - no, mo¿e poza bezwartoœciowymi przepowiedniami w stylu 'nasz pan przyjdzie i zniszczy œwiat, bla bla bla'. Nic nowego.");
+	DragonTalk_Exit_Free = TRUE;
 };
 
 
-instance DIA_DRAGONTALK_MAIN_3(C_INFO)
+instance DIA_DragonTalk_Main_3(C_Info)
 {
 	nr = 10;
-	condition = dia_dragontalk_main_3_condition;
-	information = dia_dragontalk_main_3_info;
+	condition = DIA_DragonTalk_Main_3_Condition;
+	information = DIA_DragonTalk_Main_3_Info;
 	permanent = FALSE;
 	description = "Jak mogê pokonaæ twego pana?";
 };
 
 
-func int dia_dragontalk_main_3_condition()
+func int DIA_DragonTalk_Main_3_Condition()
 {
-	if(MIS_KILLEDDRAGONS == 2)
+	if(MIS_KilledDragons == 2)
 	{
 		return 1;
 	};
 };
 
-func void dia_dragontalk_main_3_info()
+func void DIA_DragonTalk_Main_3_Info()
 {
 	AI_Output(other,self,"DIA_DragonTalk_Main_3_15_00");	//Jak mogê pokonaæ twego pana?
 	AI_Output(self,other,"DIA_DragonTalk_Main_3_20_01");	//Mój Pan jest wszechpotê¿ny i niemal niezwyciê¿ony. Gdybyœ okaza³ siê wystarczaj¹co g³upi, by stawiæ mu czo³a, czeka ciê d³uga, powolna œmieræ w okrutnych mêczarniach.
@@ -128,29 +128,29 @@ func void dia_dragontalk_main_3_info()
 	};
 	AI_Output(self,other,"DIA_DragonTalk_Main_3_20_08");	//Ale najtrudniejszym do spe³nienia warunkiem jest znalezienie piêciu towarzyszy gotowych pójœæ za tob¹ na pewn¹ œmieræ.
 	AI_Output(self,other,"DIA_DragonTalk_Main_3_20_09");	//Dopiero wtedy mo¿esz stawiæ czo³a mojemu Panu.
-	DRAGONTALK_EXIT_FREE = TRUE;
+	DragonTalk_Exit_Free = TRUE;
 };
 
 
-instance DIA_DRAGONTALK_MAIN_4(C_INFO)
+instance DIA_DragonTalk_Main_4(C_Info)
 {
 	nr = 10;
-	condition = dia_dragontalk_main_4_condition;
-	information = dia_dragontalk_main_4_info;
+	condition = DIA_DragonTalk_Main_4_Condition;
+	information = DIA_DragonTalk_Main_4_Info;
 	permanent = FALSE;
 	description = "Gdzie znajdê twego pana?";
 };
 
 
-func int dia_dragontalk_main_4_condition()
+func int DIA_DragonTalk_Main_4_Condition()
 {
-	if(MIS_KILLEDDRAGONS == 3)
+	if(MIS_KilledDragons == 3)
 	{
 		return 1;
 	};
 };
 
-func void dia_dragontalk_main_4_info()
+func void DIA_DragonTalk_Main_4_Info()
 {
 	AI_Output(other,self,"DIA_DragonTalk_Main_4_15_00");	//Gdzie znajdê twego pana?
 	AI_Output(self,other,"DIA_DragonTalk_Main_4_20_01");	//Jego skarbiec znajduje siê w kamiennym Dworze Irdorath. Tam go szukaj.
@@ -159,18 +159,18 @@ func void dia_dragontalk_main_4_info()
 	AI_Output(self,other,"DIA_DragonTalk_Main_4_20_04");	//Ha, ha, ha. Rozczarowa³eœ mnie, cz³owieczku. Przezwyciê¿y³eœ tyle przeciwnoœci i pokona³eœ niemal wszystkich z nas, a teraz oœmieszasz siê w³asn¹ niewiedz¹.
 	AI_Output(self,other,"DIA_DragonTalk_Main_4_20_05");	//Jeœli nazwa Irdorath nic ci nie mówi, lepiej udaj siê do swoich magów i poproœ, by pozwolili ci sobie us³ugiwaæ.
 	AI_Output(self,other,"DIA_DragonTalk_Main_4_20_06");	//Bo najwyraŸniej nie jesteœ jeszcze gotów, by dŸwigaæ brzemiê prawdziwej wiedzy.
-	Log_CreateTopic(TOPIC_BUCHHALLENVONIRDORATH,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_BUCHHALLENVONIRDORATH,LOG_RUNNING);
-	b_logentry(TOPIC_BUCHHALLENVONIRDORATH,"W³adca smoków skry³ siê podobno w potê¿nym i œwiêtym Dworze Irdorath. To brzmi jakoœ znajomo. Gdzie to ja mog³em o tym czytaæ?");
-	b_npc_isalivecheck(OLDWORLD_ZEN);
-	DRAGONTALK_EXIT_FREE = TRUE;
+	Log_CreateTopic(TOPIC_BuchHallenVonIrdorath,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_BuchHallenVonIrdorath,LOG_Running);
+	B_LogEntry(TOPIC_BuchHallenVonIrdorath,"W³adca smoków skry³ siê podobno w potê¿nym i œwiêtym Dworze Irdorath. To brzmi jakoœ znajomo. Gdzie to ja mog³em o tym czytaæ?");
+	B_NPC_IsAliveCheck(OldWorld_Zen);
+	DragonTalk_Exit_Free = TRUE;
 };
 
-func void b_assigndragontalk_main(var C_NPC slf)
+func void B_AssignDragonTalk_Main(var C_Npc slf)
 {
-	dia_dragontalk_main_1.npc = Hlp_GetInstanceID(slf);
-	dia_dragontalk_main_2.npc = Hlp_GetInstanceID(slf);
-	dia_dragontalk_main_3.npc = Hlp_GetInstanceID(slf);
-	dia_dragontalk_main_4.npc = Hlp_GetInstanceID(slf);
+	DIA_DragonTalk_Main_1.npc = Hlp_GetInstanceID(slf);
+	DIA_DragonTalk_Main_2.npc = Hlp_GetInstanceID(slf);
+	DIA_DragonTalk_Main_3.npc = Hlp_GetInstanceID(slf);
+	DIA_DragonTalk_Main_4.npc = Hlp_GetInstanceID(slf);
 };
 

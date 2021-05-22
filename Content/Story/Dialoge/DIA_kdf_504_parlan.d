@@ -1,278 +1,278 @@
 
-instance DIA_PARLAN_KAP1_EXIT(C_INFO)
+instance DIA_Parlan_Kap1_EXIT(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 999;
-	condition = dia_parlan_kap1_exit_condition;
-	information = dia_parlan_kap1_exit_info;
+	condition = DIA_Parlan_Kap1_EXIT_Condition;
+	information = DIA_Parlan_Kap1_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_parlan_kap1_exit_condition()
+func int DIA_Parlan_Kap1_EXIT_Condition()
 {
-	if(KAPITEL <= 1)
+	if(Kapitel <= 1)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_kap1_exit_info()
+func void DIA_Parlan_Kap1_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-var int parlan_hammer;
+var int Parlan_Hammer;
 
-func void b_parlan_hammer()
+func void B_Parlan_HAMMER()
 {
 	AI_Output(self,other,"DIA_Parlan_HAMMER_05_00");	//Chwileczkê, mój synu.
 	AI_Output(self,other,"DIA_Parlan_HAMMER_05_01");	//Plotka g³osi, ¿e z sanktuarium skradziono bardzo cenny artefakt.
 	AI_Output(self,other,"DIA_Parlan_HAMMER_05_02");	//Nie chcê wiedzieæ nic wiêcej na ten temat. Rozumiem, ¿e wkrótce wróci on na swoje dawne miejsce.
-	PARLAN_HAMMER = TRUE;
+	Parlan_Hammer = TRUE;
 };
 
 
-var int parlan_lastpetzcounter;
-var int parlan_lastpetzcrime;
+var int Parlan_LastPetzCounter;
+var int Parlan_LastPetzCrime;
 
-instance DIA_PARLAN_PMSCHULDEN(C_INFO)
+instance DIA_Parlan_PMSchulden(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 1;
-	condition = dia_parlan_pmschulden_condition;
-	information = dia_parlan_pmschulden_info;
+	condition = DIA_Parlan_PMSchulden_Condition;
+	information = DIA_Parlan_PMSchulden_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_parlan_pmschulden_condition()
+func int DIA_Parlan_PMSchulden_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (PARLAN_SCHULDEN > 0) && (b_getgreatestpetzcrime(self) <= PARLAN_LASTPETZCRIME))
+	if(Npc_IsInState(self,ZS_Talk) && (Parlan_Schulden > 0) && (B_GetGreatestPetzCrime(self) <= Parlan_LastPetzCrime))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_pmschulden_info()
+func void DIA_Parlan_PMSchulden_Info()
 {
 	var int diff;
-	if((PARLAN_HAMMER == FALSE) && (HAMMER_TAKEN == TRUE) && (other.guild == GIL_NOV) && (Npc_IsDead(garwig) == FALSE))
+	if((Parlan_Hammer == FALSE) && (Hammer_Taken == TRUE) && (other.guild == GIL_NOV) && (Npc_IsDead(Garwig) == FALSE))
 	{
-		b_parlan_hammer();
+		B_Parlan_HAMMER();
 	};
 	AI_Output(self,other,"DIA_Parlan_PMSchulden_05_00");	//Pogwa³ci³eœ zasady naszego zgromadzenia.
-	if(b_gettotalpetzcounter(self) > PARLAN_LASTPETZCOUNTER)
+	if(B_GetTotalPetzCounter(self) > Parlan_LastPetzCounter)
 	{
 		AI_Output(self,other,"DIA_Parlan_PMSchulden_05_01");	//Nie jest to twoje pierwsze wykroczenie.
-		if(PARLAN_SCHULDEN < 1000)
+		if(Parlan_Schulden < 1000)
 		{
 			AI_Output(self,other,"DIA_Parlan_PMSchulden_05_02");	//Twe winy zostan¹ ci odpuszczone tylko wtedy, gdy ofiarujesz pokaŸny datek na rzecz klasztoru.
 			AI_Output(other,self,"DIA_Parlan_PMAdd_15_00");	//Ile?
-			diff = b_gettotalpetzcounter(self) - PARLAN_LASTPETZCOUNTER;
+			diff = B_GetTotalPetzCounter(self) - Parlan_LastPetzCounter;
 			if(diff > 0)
 			{
-				PARLAN_SCHULDEN = PARLAN_SCHULDEN + (diff * 50);
+				Parlan_Schulden = Parlan_Schulden + (diff * 50);
 			};
-			if(PARLAN_SCHULDEN > 1000)
+			if(Parlan_Schulden > 1000)
 			{
-				PARLAN_SCHULDEN = 1000;
+				Parlan_Schulden = 1000;
 			};
-			b_say_gold(self,other,PARLAN_SCHULDEN);
+			B_Say_Gold(self,other,Parlan_Schulden);
 		}
 		else
 		{
 			AI_Output(self,other,"DIA_Parlan_PMSchulden_05_03");	//Co ty sobie wyobra¿asz? Módl siê do Innosa, by przebaczy³ ci twe wystêpki.
 		};
 	}
-	else if(b_getgreatestpetzcrime(self) < PARLAN_LASTPETZCRIME)
+	else if(B_GetGreatestPetzCrime(self) < Parlan_LastPetzCrime)
 	{
 		AI_Output(self,other,"DIA_Parlan_PMSchulden_05_04");	//Twoja sytuacja uleg³a zmianie.
-		if(PARLAN_LASTPETZCRIME == CRIME_MURDER)
+		if(Parlan_LastPetzCrime == CRIME_MURDER)
 		{
 			AI_Output(self,other,"DIA_Parlan_PMSchulden_05_05");	//Nie ma ju¿ œwiadków pope³nionego przez ciebie morderstwa.
 		};
-		if((PARLAN_LASTPETZCRIME == CRIME_THEFT) || ((PARLAN_LASTPETZCRIME > CRIME_THEFT) && (b_getgreatestpetzcrime(self) < CRIME_THEFT)))
+		if((Parlan_LastPetzCrime == CRIME_THEFT) || ((Parlan_LastPetzCrime > CRIME_THEFT) && (B_GetGreatestPetzCrime(self) < CRIME_THEFT)))
 		{
 			AI_Output(self,other,"DIA_Parlan_PMSchulden_05_06");	//Nikt nie chce zeznawaæ w sprawie pope³nionej przez ciebie kradzie¿y.
 		};
-		if((PARLAN_LASTPETZCRIME == CRIME_ATTACK) || ((PARLAN_LASTPETZCRIME > CRIME_ATTACK) && (b_getgreatestpetzcrime(self) < CRIME_ATTACK)))
+		if((Parlan_LastPetzCrime == CRIME_ATTACK) || ((Parlan_LastPetzCrime > CRIME_ATTACK) && (B_GetGreatestPetzCrime(self) < CRIME_ATTACK)))
 		{
 			AI_Output(self,other,"DIA_Parlan_PMSchulden_05_07");	//Nie ma ju¿ nikogo, kto oskar¿a³by ciê o spowodowanie bójki.
 		};
-		if(b_getgreatestpetzcrime(self) == CRIME_NONE)
+		if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
 		{
 			AI_Output(self,other,"DIA_Parlan_PMSchulden_05_08");	//Wszystkie oskar¿enia wobec ciebie zosta³y wycofane.
 		};
 		AI_Output(self,other,"DIA_Parlan_PMSchulden_05_09");	//Mnie mo¿esz oszukaæ - ale Innos widzi wszystko!
-		if(b_getgreatestpetzcrime(self) == CRIME_NONE)
+		if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
 		{
 			AI_Output(self,other,"DIA_Parlan_PMSchulden_05_10");	//Grzechy zosta³y ci odpuszczone.
 			AI_Output(self,other,"DIA_Parlan_PMSchulden_05_11");	//Nie zmarnuj tej szansy.
-			PARLAN_SCHULDEN = 0;
-			PARLAN_LASTPETZCOUNTER = 0;
-			PARLAN_LASTPETZCRIME = CRIME_NONE;
+			Parlan_Schulden = 0;
+			Parlan_LastPetzCounter = 0;
+			Parlan_LastPetzCrime = CRIME_NONE;
 		}
 		else
 		{
 			AI_Output(self,other,"DIA_Parlan_PMSchulden_05_12");	//Zap³acisz za swe grzechy - taka jest wola Innosa!
-			b_say_gold(self,other,PARLAN_SCHULDEN);
+			B_Say_Gold(self,other,Parlan_Schulden);
 			AI_Output(self,other,"DIA_Parlan_PMSchulden_05_13");	//Uwolnij siê od swych grzechów!
 		};
 	};
-	if(b_getgreatestpetzcrime(self) != CRIME_NONE)
+	if(B_GetGreatestPetzCrime(self) != CRIME_NONE)
 	{
-		Info_ClearChoices(dia_parlan_pmschulden);
-		Info_ClearChoices(dia_parlan_petzmaster);
-		Info_AddChoice(dia_parlan_pmschulden,"Nie mam dostatecznie du¿o z³ota!",dia_parlan_petzmaster_paylater);
-		Info_AddChoice(dia_parlan_pmschulden,"Ile to mia³o byæ?",dia_parlan_pmschulden_howmuchagain);
-		if(Npc_HasItems(other,itmi_gold) >= PARLAN_SCHULDEN)
+		Info_ClearChoices(DIA_Parlan_PMSchulden);
+		Info_ClearChoices(DIA_Parlan_PETZMASTER);
+		Info_AddChoice(DIA_Parlan_PMSchulden,"Nie mam dostatecznie du¿o z³ota!",DIA_Parlan_PETZMASTER_PayLater);
+		Info_AddChoice(DIA_Parlan_PMSchulden,"Ile to mia³o byæ?",DIA_Parlan_PMSchulden_HowMuchAgain);
+		if(Npc_HasItems(other,ItMi_Gold) >= Parlan_Schulden)
 		{
-			Info_AddChoice(dia_parlan_pmschulden,"Chcê zap³aciæ grzywnê!",dia_parlan_petzmaster_paynow);
+			Info_AddChoice(DIA_Parlan_PMSchulden,"Chcê zap³aciæ grzywnê!",DIA_Parlan_PETZMASTER_PayNow);
 		};
 	};
 };
 
-func void dia_parlan_pmschulden_howmuchagain()
+func void DIA_Parlan_PMSchulden_HowMuchAgain()
 {
 	AI_Output(other,self,"DIA_Parlan_PMSchulden_HowMuchAgain_15_00");	//Przypomnij mi, o jakiej sumie mówiliœmy.
-	b_say_gold(self,other,PARLAN_SCHULDEN);
-	Info_ClearChoices(dia_parlan_pmschulden);
-	Info_ClearChoices(dia_parlan_petzmaster);
-	Info_AddChoice(dia_parlan_pmschulden,"Nie mam dostatecznie du¿o z³ota!",dia_parlan_petzmaster_paylater);
-	Info_AddChoice(dia_parlan_pmschulden,"Ile to mia³o byæ?",dia_parlan_pmschulden_howmuchagain);
-	if(Npc_HasItems(other,itmi_gold) >= PARLAN_SCHULDEN)
+	B_Say_Gold(self,other,Parlan_Schulden);
+	Info_ClearChoices(DIA_Parlan_PMSchulden);
+	Info_ClearChoices(DIA_Parlan_PETZMASTER);
+	Info_AddChoice(DIA_Parlan_PMSchulden,"Nie mam dostatecznie du¿o z³ota!",DIA_Parlan_PETZMASTER_PayLater);
+	Info_AddChoice(DIA_Parlan_PMSchulden,"Ile to mia³o byæ?",DIA_Parlan_PMSchulden_HowMuchAgain);
+	if(Npc_HasItems(other,ItMi_Gold) >= Parlan_Schulden)
 	{
-		Info_AddChoice(dia_parlan_pmschulden,"Chcê zap³aciæ grzywnê!",dia_parlan_petzmaster_paynow);
+		Info_AddChoice(DIA_Parlan_PMSchulden,"Chcê zap³aciæ grzywnê!",DIA_Parlan_PETZMASTER_PayNow);
 	};
 };
 
 
-instance DIA_PARLAN_PETZMASTER(C_INFO)
+instance DIA_Parlan_PETZMASTER(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 1;
-	condition = dia_parlan_petzmaster_condition;
-	information = dia_parlan_petzmaster_info;
+	condition = DIA_Parlan_PETZMASTER_Condition;
+	information = DIA_Parlan_PETZMASTER_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_parlan_petzmaster_condition()
+func int DIA_Parlan_PETZMASTER_Condition()
 {
-	if(b_getgreatestpetzcrime(self) > PARLAN_LASTPETZCRIME)
+	if(B_GetGreatestPetzCrime(self) > Parlan_LastPetzCrime)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_petzmaster_info()
+func void DIA_Parlan_PETZMASTER_Info()
 {
-	if((PARLAN_HAMMER == FALSE) && (HAMMER_TAKEN == TRUE) && (other.guild == GIL_NOV) && (Npc_IsDead(garwig) == FALSE))
+	if((Parlan_Hammer == FALSE) && (Hammer_Taken == TRUE) && (other.guild == GIL_NOV) && (Npc_IsDead(Garwig) == FALSE))
 	{
-		b_parlan_hammer();
+		B_Parlan_HAMMER();
 	};
-	PARLAN_SCHULDEN = 0;
-	if(self.aivar[AIV_TALKEDTOPLAYER] == FALSE)
+	Parlan_Schulden = 0;
+	if(self.aivar[AIV_TalkedToPlayer] == FALSE)
 	{
 		AI_Output(self,other,"DIA_Parlan_PETZMASTER_05_00");	//Nie zamieniliœmy jeszcze ani s³owa, a ty ju¿ obarczy³eœ siê ciê¿arem winy!
 	};
-	if(b_getgreatestpetzcrime(self) == CRIME_MURDER)
+	if(B_GetGreatestPetzCrime(self) == CRIME_MURDER)
 	{
 		AI_Output(self,other,"DIA_Parlan_PETZMASTER_05_01");	//Jesteœ winny najgorszej z mo¿liwych zbrodni! Morderstwa!
-		PARLAN_SCHULDEN = b_gettotalpetzcounter(self) * 50;
-		PARLAN_SCHULDEN = PARLAN_SCHULDEN + 500;
-		if((PETZCOUNTER_CITY_THEFT + PETZCOUNTER_CITY_ATTACK + PETZCOUNTER_CITY_SHEEPKILLER) > 0)
+		Parlan_Schulden = B_GetTotalPetzCounter(self) * 50;
+		Parlan_Schulden = Parlan_Schulden + 500;
+		if((PETZCOUNTER_City_Theft + PETZCOUNTER_City_Attack + PETZCOUNTER_City_Sheepkiller) > 0)
 		{
 			AI_Output(self,other,"DIA_Parlan_PETZMASTER_05_02");	//A teraz masz na sumieniu jeszcze dodatkowe grzechy!
 		};
 		AI_Output(self,other,"DIA_Parlan_PETZMASTER_05_03");	//Gdyby to zale¿a³o ode mnie, zosta³byœ potêpiony tu i teraz, morderco!
 		AI_Output(self,other,"DIA_Parlan_PETZMASTER_05_04");	//Jeœli jednak zap³acisz za swe czyny, mogê ciê rozgrzeszyæ..
 	};
-	if(b_getgreatestpetzcrime(self) == CRIME_THEFT)
+	if(B_GetGreatestPetzCrime(self) == CRIME_THEFT)
 	{
 		AI_Output(self,other,"DIA_Parlan_PETZMASTER_05_05");	//Kradzie¿ to pogwa³cenie zasad klasztoru.
-		if((PETZCOUNTER_CITY_ATTACK + PETZCOUNTER_CITY_SHEEPKILLER) > 0)
+		if((PETZCOUNTER_City_Attack + PETZCOUNTER_City_Sheepkiller) > 0)
 		{
 			AI_Output(self,other,"DIA_Parlan_PETZMASTER_05_06");	//Prócz tego z³ama³eœ jeszcze inne zasady.
 		};
 		AI_Output(self,other,"DIA_Parlan_PETZMASTER_05_07");	//Te przestêpstwa musz¹ zostaæ ukarane. Takie jest prawo Innosa.
 		AI_Output(self,other,"DIA_Parlan_PETZMASTER_05_08");	//Przeka¿esz klasztorowi stosowny datek.
-		PARLAN_SCHULDEN = b_gettotalpetzcounter(self) * 50;
+		Parlan_Schulden = B_GetTotalPetzCounter(self) * 50;
 	};
-	if(b_getgreatestpetzcrime(self) == CRIME_ATTACK)
+	if(B_GetGreatestPetzCrime(self) == CRIME_ATTACK)
 	{
 		AI_Output(self,other,"DIA_Parlan_PETZMASTER_05_09");	//Nie tolerujemy tu ¿adnych bójek. To naruszenie panuj¹cych w klasztorze zasad.
-		if(PETZCOUNTER_CITY_SHEEPKILLER > 0)
+		if(PETZCOUNTER_City_Sheepkiller > 0)
 		{
 			AI_Output(self,other,"DIA_Parlan_PETZMASTER_05_10");	//Dlaczego zabijasz nasze owce?
 		};
 		AI_Output(self,other,"DIA_Parlan_PETZMASTER_05_11");	//¯yjemy tu, przestrzegaj¹c okreœlonych zasad. Dotycz¹ one tak¿e ciebie.
 		AI_Output(self,other,"DIA_Parlan_PETZMASTER_05_12");	//Za swe zbrodnie musisz z³o¿yæ ofiarê na rzecz klasztoru.
-		PARLAN_SCHULDEN = b_gettotalpetzcounter(self) * 50;
+		Parlan_Schulden = B_GetTotalPetzCounter(self) * 50;
 	};
-	if(b_getgreatestpetzcrime(self) == CRIME_SHEEPKILLER)
+	if(B_GetGreatestPetzCrime(self) == CRIME_SHEEPKILLER)
 	{
 		AI_Output(self,other,"DIA_Parlan_PETZMASTER_05_13");	//Zabi³eœ nasze owce. Musisz zap³aciæ odpowiedni¹ rekompensatê.
-		PARLAN_SCHULDEN = 100;
+		Parlan_Schulden = 100;
 	};
 	AI_Output(other,self,"DIA_Parlan_PETZMASTER_15_14");	//Ile?
-	if(PARLAN_SCHULDEN > 1000)
+	if(Parlan_Schulden > 1000)
 	{
-		PARLAN_SCHULDEN = 1000;
+		Parlan_Schulden = 1000;
 	};
-	b_say_gold(self,other,PARLAN_SCHULDEN);
-	Info_ClearChoices(dia_parlan_pmschulden);
-	Info_ClearChoices(dia_parlan_petzmaster);
-	Info_AddChoice(dia_parlan_petzmaster,"Nie mam dostatecznie du¿o z³ota!",dia_parlan_petzmaster_paylater);
-	if(Npc_HasItems(other,itmi_gold) >= PARLAN_SCHULDEN)
+	B_Say_Gold(self,other,Parlan_Schulden);
+	Info_ClearChoices(DIA_Parlan_PMSchulden);
+	Info_ClearChoices(DIA_Parlan_PETZMASTER);
+	Info_AddChoice(DIA_Parlan_PETZMASTER,"Nie mam dostatecznie du¿o z³ota!",DIA_Parlan_PETZMASTER_PayLater);
+	if(Npc_HasItems(other,ItMi_Gold) >= Parlan_Schulden)
 	{
-		Info_AddChoice(dia_parlan_petzmaster,"Chcê zap³aciæ grzywnê!",dia_parlan_petzmaster_paynow);
+		Info_AddChoice(DIA_Parlan_PETZMASTER,"Chcê zap³aciæ grzywnê!",DIA_Parlan_PETZMASTER_PayNow);
 	};
 };
 
-func void dia_parlan_petzmaster_paynow()
+func void DIA_Parlan_PETZMASTER_PayNow()
 {
 	AI_Output(other,self,"DIA_Parlan_PETZMASTER_PayNow_15_00");	//Chcê zap³aciæ karê!
-	b_giveinvitems(other,self,5113,PARLAN_SCHULDEN);
+	B_GiveInvItems(other,self,ItMi_Gold,Parlan_Schulden);
 	AI_Output(self,other,"DIA_Parlan_PETZMASTER_PayNow_05_01");	//Przyjmujê datek. Twoje wykroczenie zostaje ci wybaczone. Niech Innos obdarzy ciê m¹droœci¹, byœ wiêcej nie grzeszy³.
-	b_grantabsolution(LOC_MONASTERY);
-	PARLAN_SCHULDEN = 0;
-	PARLAN_LASTPETZCOUNTER = 0;
-	PARLAN_LASTPETZCRIME = CRIME_NONE;
-	Info_ClearChoices(dia_parlan_pmschulden);
-	Info_ClearChoices(dia_parlan_petzmaster);
+	B_GrantAbsolution(LOC_MONASTERY);
+	Parlan_Schulden = 0;
+	Parlan_LastPetzCounter = 0;
+	Parlan_LastPetzCrime = CRIME_NONE;
+	Info_ClearChoices(DIA_Parlan_PMSchulden);
+	Info_ClearChoices(DIA_Parlan_PETZMASTER);
 };
 
-func void dia_parlan_petzmaster_paylater()
+func void DIA_Parlan_PETZMASTER_PayLater()
 {
 	AI_Output(other,self,"DIA_Parlan_PETZMASTER_PayLater_15_00");	//Nie mam dostatecznie du¿o z³ota!
 	AI_Output(self,other,"DIA_Parlan_PETZMASTER_PayLater_05_01");	//Trzeba by³o o tym pomyœleæ, zanim dopuœci³eœ siê owych wystêpków.
 	AI_Output(self,other,"DIA_Parlan_PETZMASTER_PayLater_05_02");	//Mo¿e bêdzie to dla ciebie dobra nauczka. Pamiêtaj, jeœli nie bêdziesz pope³nia³ wykroczeñ, nie bêdziesz musia³ za nie p³aciæ.
-	PARLAN_LASTPETZCOUNTER = b_gettotalpetzcounter(self);
-	PARLAN_LASTPETZCRIME = b_getgreatestpetzcrime(self);
-	Info_ClearChoices(dia_parlan_pmschulden);
-	Info_ClearChoices(dia_parlan_petzmaster);
+	Parlan_LastPetzCounter = B_GetTotalPetzCounter(self);
+	Parlan_LastPetzCrime = B_GetGreatestPetzCrime(self);
+	Info_ClearChoices(DIA_Parlan_PMSchulden);
+	Info_ClearChoices(DIA_Parlan_PETZMASTER);
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PARLAN_WELCOME(C_INFO)
+instance DIA_Parlan_WELCOME(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 1;
-	condition = dia_parlan_welcome_condition;
-	information = dia_parlan_welcome_info;
+	condition = DIA_Parlan_WELCOME_Condition;
+	information = DIA_Parlan_WELCOME_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_parlan_welcome_condition()
+func int DIA_Parlan_WELCOME_Condition()
 {
 	if(other.guild == GIL_NOV)
 	{
@@ -280,7 +280,7 @@ func int dia_parlan_welcome_condition()
 	};
 };
 
-func void dia_parlan_welcome_info()
+func void DIA_Parlan_WELCOME_Info()
 {
 	AI_Output(self,other,"DIA_Parlan_WELCOME_05_00");	//Witaj nowicjuszu, mam na imiê Parlan.
 	AI_Output(other,self,"DIA_Parlan_WELCOME_15_01");	//Ja jestem...
@@ -289,16 +289,16 @@ func void dia_parlan_welcome_info()
 	AI_Output(self,other,"DIA_Parlan_WELCOME_05_04");	//Niech Innos b³ogos³awi i oczyœci grzechy tego, który wstêpuje doñ na s³u¿bê.
 	AI_Output(other,self,"DIA_Parlan_WELCOME_15_05");	//Co teraz?
 	AI_Output(self,other,"DIA_Parlan_WELCOME_05_06");	//Najpierw musisz wype³niæ zadania nowicjusza. Bêdziesz pracowa³ i s³u¿y³ klasztorowi.
-	b_grantabsolution(LOC_ALL);
+	B_GrantAbsolution(LOC_ALL);
 	Snd_Play("LEVELUP");
-	Log_CreateTopic(TOPIC_GEMEINSCHAFT,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_GEMEINSCHAFT,LOG_RUNNING);
-	b_logentry(TOPIC_GEMEINSCHAFT,"Jako nowicjusz jestem zobowi¹zany s³u¿yæ spo³ecznoœci.");
-	if(LIESEL_GIVEAWAY == FALSE)
+	Log_CreateTopic(Topic_Gemeinschaft,LOG_MISSION);
+	Log_SetTopicStatus(Topic_Gemeinschaft,LOG_Running);
+	B_LogEntry(Topic_Gemeinschaft,"Jako nowicjusz jestem zobowi¹zany s³u¿yæ spo³ecznoœci.");
+	if(Liesel_Giveaway == FALSE)
 	{
 		AI_Output(self,other,"DIA_Parlan_WELCOME_05_07");	//Przedtem jednak zabierz swoj¹ owcê do Opolosa, on siê ni¹ zajmie.
 	};
-	if(DIA_GORAX_GOLD_PERM == FALSE)
+	if(DIA_Gorax_GOLD_perm == FALSE)
 	{
 		AI_Output(self,other,"DIA_Parlan_WELCOME_05_08");	//Z³oto mo¿esz zanieœæ Goraxowi, naszemu ochmistrzowi. Znajdziesz go w winiarni.
 		AI_Output(self,other,"DIA_Parlan_WELCOME_05_09");	//Kiedy to ju¿ zrobisz, porozmawiamy na temat twojej pracy tu, w klasztorze.
@@ -306,26 +306,26 @@ func void dia_parlan_welcome_info()
 };
 
 
-instance DIA_PARLAN_AUGE(C_INFO)
+instance DIA_Parlan_Auge(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 2;
-	condition = dia_parlan_auge_condition;
-	information = dia_parlan_auge_info;
+	condition = DIA_Parlan_Auge_Condition;
+	information = DIA_Parlan_Auge_Info;
 	permanent = FALSE;
 	description = "Poszukujê Oka Innosa.";
 };
 
 
-func int dia_parlan_auge_condition()
+func int DIA_Parlan_Auge_Condition()
 {
-	if(KAPITEL <= 2)
+	if(Kapitel <= 2)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_auge_info()
+func void DIA_Parlan_Auge_Info()
 {
 	AI_Output(other,self,"DIA_Parlan_Auge_15_00");	//Poszukujê Oka Innosa.
 	AI_Output(self,other,"DIA_Parlan_Auge_05_01");	//Nie wiem, kto ci o nim powiedzia³, ale nikt nie ma dostêpu do boskiego artefaktu.
@@ -334,26 +334,26 @@ func void dia_parlan_auge_info()
 };
 
 
-instance DIA_PARLAN_AMULETT(C_INFO)
+instance DIA_Parlan_Amulett(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 3;
-	condition = dia_parlan_amulett_condition;
-	information = dia_parlan_amulett_info;
+	condition = DIA_Parlan_Amulett_Condition;
+	information = DIA_Parlan_Amulett_Info;
 	permanent = FALSE;
 	description = "Powiedz mi coœ o Oku Innosa.";
 };
 
 
-func int dia_parlan_amulett_condition()
+func int DIA_Parlan_Amulett_Condition()
 {
-	if((KAPITEL <= 2) && Npc_KnowsInfo(other,dia_parlan_auge))
+	if((Kapitel <= 2) && Npc_KnowsInfo(other,DIA_Parlan_Auge))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_amulett_info()
+func void DIA_Parlan_Amulett_Info()
 {
 	AI_Output(other,self,"DIA_Parlan_Amulett_15_00");	//Powiedz mi coœ o Oku Innosa.
 	AI_Output(self,other,"DIA_Parlan_Amulett_05_01");	//Dobrze. Oko Innosa zawiera w sobie cz¹stkê jego boskiej mocy. Tylko JEDEN wybrany s³uga Innosa mo¿e nosiæ ten amulet.
@@ -361,64 +361,64 @@ func void dia_parlan_amulett_info()
 };
 
 
-instance DIA_PARLAN_HAGEN(C_INFO)
+instance DIA_Parlan_Hagen(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 2;
-	condition = dia_parlan_hagen_condition;
-	information = dia_parlan_hagen_info;
+	condition = DIA_Parlan_Hagen_Condition;
+	information = DIA_Parlan_Hagen_Info;
 	permanent = FALSE;
 	description = "Muszê porozmawiaæ z dowódc¹ paladynów!";
 };
 
 
-func int dia_parlan_hagen_condition()
+func int DIA_Parlan_Hagen_Condition()
 {
-	if((KAPITEL <= 2) && (hero.guild == GIL_NOV))
+	if((Kapitel <= 2) && (hero.guild == GIL_NOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_hagen_info()
+func void DIA_Parlan_Hagen_Info()
 {
 	AI_Output(other,self,"DIA_Parlan_Hagen_15_00");	//Muszê porozmawiaæ z dowódc¹ paladynów!
 	AI_Output(self,other,"DIA_Parlan_Hagen_05_01");	//Lord Hagen nie przyjmuje nowicjuszy, jedynie my, magowie, mamy prawo siê z nim widzieæ.
 };
 
 
-instance DIA_PARLAN_WORK(C_INFO)
+instance DIA_Parlan_WORK(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 2;
-	condition = dia_parlan_work_condition;
-	information = dia_parlan_work_info;
+	condition = DIA_Parlan_WORK_Condition;
+	information = DIA_Parlan_WORK_Info;
 	permanent = TRUE;
 	description = "W jaki sposób móg³bym s³u¿yæ zgromadzeniu?";
 };
 
 
-var int dia_parlan_work_perm;
+var int DIA_Parlan_WORK_perm;
 
-func int dia_parlan_work_condition()
+func int DIA_Parlan_WORK_Condition()
 {
-	if((KAPITEL < 3) && (Npc_KnowsInfo(other,dia_parlan_knowsjudge) == FALSE) && Npc_KnowsInfo(other,dia_parlan_welcome) && (DIA_PARLAN_WORK_PERM == FALSE))
+	if((Kapitel < 3) && (Npc_KnowsInfo(other,DIA_Parlan_KNOWSJUDGE) == FALSE) && Npc_KnowsInfo(other,DIA_Parlan_WELCOME) && (DIA_Parlan_WORK_perm == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_work_info()
+func void DIA_Parlan_WORK_Info()
 {
 	AI_Output(other,self,"DIA_Parlan_WORK_15_00");	//W jaki sposób móg³bym s³u¿yæ zgromadzeniu?
-	if((LIESEL_GIVEAWAY == FALSE) || (DIA_GORAX_GOLD_PERM == FALSE))
+	if((Liesel_Giveaway == FALSE) || (DIA_Gorax_GOLD_perm == FALSE))
 	{
 		AI_Output(self,other,"DIA_Parlan_WELCOME_05_06");	//Najpierw musisz wype³niæ zadania nowicjusza. Bêdziesz pracowa³ i s³u¿y³ klasztorowi.
-		if(LIESEL_GIVEAWAY == FALSE)
+		if(Liesel_Giveaway == FALSE)
 		{
 			AI_Output(self,other,"DIA_Parlan_WELCOME_05_07");	//Przedtem jednak zabierz swoj¹ owcê do Opolosa, on siê ni¹ zajmie.
 		};
-		if(DIA_GORAX_GOLD_PERM == FALSE)
+		if(DIA_Gorax_GOLD_perm == FALSE)
 		{
 			AI_Output(self,other,"DIA_Parlan_WELCOME_05_08");	//Z³oto mo¿esz zanieœæ Goraxowi, naszemu ochmistrzowi. Znajdziesz go w winiarni.
 			AI_Output(self,other,"DIA_Parlan_WELCOME_05_09");	//Kiedy to ju¿ zrobisz, porozmawiamy na temat twojej pracy tu, w klasztorze.
@@ -435,113 +435,113 @@ func void dia_parlan_work_info()
 	{
 		AI_Output(self,other,"DIA_Parlan_WORK_05_03");	//Porozmawiaj z innymi magami, dostaniesz od nich zadania.
 		AI_Output(self,other,"DIA_Parlan_WORK_05_04");	//Bêdê nadzorowa³ twoj¹ pracê. Kiedy wype³nisz wszystkie swoje obowi¹zki, otrzymasz pozwolenie na wejœcie do biblioteki, by studiowaæ s³owo Innosa.
-		DIA_PARLAN_WORK_PERM = TRUE;
-		MIS_KLOSTERARBEIT = LOG_RUNNING;
-		b_logentry(TOPIC_GEMEINSCHAFT,"Jeœli wykonam wszystkie polecenia magów, bêdê móg³ korzystaæ z biblioteki.");
+		DIA_Parlan_WORK_perm = TRUE;
+		MIS_KlosterArbeit = LOG_Running;
+		B_LogEntry(Topic_Gemeinschaft,"Jeœli wykonam wszystkie polecenia magów, bêdê móg³ korzystaæ z biblioteki.");
 	};
 };
 
 
-instance DIA_PARLAN_STAND(C_INFO)
+instance DIA_Parlan_Stand(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 23;
-	condition = dia_parlan_stand_condition;
-	information = dia_parlan_stand_info;
+	condition = DIA_Parlan_Stand_Condition;
+	information = DIA_Parlan_Stand_Info;
 	permanent = TRUE;
 	description = "Czy mogê skorzystaæ z biblioteki?";
 };
 
 
-func int dia_parlan_stand_condition()
+func int DIA_Parlan_Stand_Condition()
 {
-	if((MIS_KLOSTERARBEIT == LOG_RUNNING) && (other.guild == GIL_NOV))
+	if((MIS_KlosterArbeit == LOG_Running) && (other.guild == GIL_NOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_stand_info()
+func void DIA_Parlan_Stand_Info()
 {
-	KLOSTER_PUNKTE = 0;
+	Kloster_Punkte = 0;
 	AI_Output(other,self,"DIA_Parlan_Stand_15_00");	//Mogê skorzystaæ z biblioteki?
-	if(MIS_NEORASPFLANZEN == LOG_SUCCESS)
+	if(MIS_NeorasPflanzen == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Parlan_Stand_05_01");	//Uda³o ci siê zdobyæ ogniste pokrzywy dla Brata Neorasa.
-		KLOSTER_PUNKTE = KLOSTER_PUNKTE + 2;
+		Kloster_Punkte = Kloster_Punkte + 2;
 	};
-	if(MIS_NEORASREZEPT == LOG_SUCCESS)
+	if(MIS_NeorasRezept == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Parlan_Stand_05_02");	//Odnalaz³eœ receptury Brata Neorasa.
-		KLOSTER_PUNKTE = KLOSTER_PUNKTE + 2;
+		Kloster_Punkte = Kloster_Punkte + 2;
 	};
-	if(MIS_ISGAROTHWOLF == LOG_SUCCESS)
+	if(MIS_IsgarothWolf == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Parlan_Stand_05_03");	//Pozby³eœ siê czarnego wilka, który zagra¿a³ kaplicy.
-		KLOSTER_PUNKTE = KLOSTER_PUNKTE + 1;
+		Kloster_Punkte = Kloster_Punkte + 1;
 	};
-	if(MIS_PARLANFEGEN == LOG_SUCCESS)
+	if(MIS_ParlanFegen == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Parlan_Stand_05_04");	//Znalaz³eœ czterech nowicjuszy, dziêki czemu mog³eœ posprz¹taæ komnaty.
-		KLOSTER_PUNKTE = KLOSTER_PUNKTE + 3;
+		Kloster_Punkte = Kloster_Punkte + 3;
 	};
-	if(MIS_GORAXESSEN == LOG_SUCCESS)
+	if(MIS_GoraxEssen == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Parlan_Stand_05_05");	//Sprawiedliwie rozdzieli³eœ jad³o miêdzy nowicjuszy, tak jak prosi³ ciê o to brat Gorax.
-		KLOSTER_PUNKTE = KLOSTER_PUNKTE + 1;
+		Kloster_Punkte = Kloster_Punkte + 1;
 	}
-	else if(MIS_GORAXESSEN == LOG_FAILED)
+	else if(MIS_GoraxEssen == LOG_FAILED)
 	{
 		AI_Output(self,other,"DIA_Parlan_Stand_05_06");	//Gorax nie by³ z ciebie zadowolony, nie uda³o ci siê sprawiedliwie rozdzieliæ jedzenia.
 	};
-	if(MIS_GORAXWEIN == LOG_SUCCESS)
+	if(MIS_GoraxWein == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Parlan_Stand_05_07");	//Ku radoœci Goraxa sprzeda³eœ wino.
-		KLOSTER_PUNKTE = KLOSTER_PUNKTE + 1;
+		Kloster_Punkte = Kloster_Punkte + 1;
 	}
-	else if(MIS_GORAXWEIN == LOG_FAILED)
+	else if(MIS_GoraxWein == LOG_FAILED)
 	{
 		AI_Output(self,other,"DIA_Parlan_Stand_05_08");	//Nie mówmy ju¿ o tej sprawie z winem, tak chyba bêdzie najlepiej...
 	};
-	if(KLOSTER_PUNKTE >= 8)
+	if(Kloster_Punkte >= 8)
 	{
 		AI_Output(self,other,"DIA_Parlan_Stand_05_09");	//Tak, wykona³eœ dostatecznie du¿o zadañ. Czas postudiowaæ nauki Innosa. Porozmawiaj proszê z Mistrzem Hyglasem, znajdziesz go w bibliotece.
 		AI_Output(self,other,"DIA_Parlan_Stand_05_10");	//Przyjmij ten oto klucz.
-		PARLAN_ERLAUBNIS = TRUE;
-		MIS_KLOSTERARBEIT = LOG_SUCCESS;
+		Parlan_Erlaubnis = TRUE;
+		MIS_KlosterArbeit = LOG_SUCCESS;
 		Wld_AssignRoomToGuild("Kloster02",GIL_PUBLIC);
-		b_giveinvitems(self,other,5686,1);
-		if(MIS_NEORASPFLANZEN == LOG_RUNNING)
+		B_GiveInvItems(self,other,ItKe_KlosterBibliothek,1);
+		if(MIS_NeorasPflanzen == LOG_Running)
 		{
-			MIS_NEORASPFLANZEN = LOG_OBSOLETE;
+			MIS_NeorasPflanzen = LOG_OBSOLETE;
 		};
-		if(MIS_NEORASREZEPT == LOG_RUNNING)
+		if(MIS_NeorasRezept == LOG_Running)
 		{
-			MIS_NEORASREZEPT = LOG_OBSOLETE;
+			MIS_NeorasRezept = LOG_OBSOLETE;
 		};
-		if(MIS_ISGAROTHWOLF == LOG_RUNNING)
+		if(MIS_IsgarothWolf == LOG_Running)
 		{
-			MIS_ISGAROTHWOLF = LOG_OBSOLETE;
+			MIS_IsgarothWolf = LOG_OBSOLETE;
 		};
-		if(MIS_PARLANFEGEN == LOG_RUNNING)
+		if(MIS_ParlanFegen == LOG_Running)
 		{
-			MIS_PARLANFEGEN = LOG_OBSOLETE;
+			MIS_ParlanFegen = LOG_OBSOLETE;
 		};
-		if(MIS_GORAXESSEN == LOG_RUNNING)
+		if(MIS_GoraxEssen == LOG_Running)
 		{
-			MIS_GORAXESSEN = LOG_OBSOLETE;
+			MIS_GoraxEssen = LOG_OBSOLETE;
 		};
-		if(MIS_GORAXWEIN == LOG_RUNNING)
+		if(MIS_GoraxWein == LOG_Running)
 		{
-			MIS_GORAXWEIN = LOG_OBSOLETE;
+			MIS_GoraxWein = LOG_OBSOLETE;
 		};
-		if(MIS_MARDUKBETEN == LOG_RUNNING)
+		if(MIS_MardukBeten == LOG_Running)
 		{
-			MIS_MARDUKBETEN = LOG_OBSOLETE;
+			MIS_MardukBeten = LOG_OBSOLETE;
 		};
-		b_checklog();
+		B_CheckLog();
 	}
-	else if(KLOSTER_PUNKTE >= 1)
+	else if(Kloster_Punkte >= 1)
 	{
 		AI_Output(self,other,"DIA_Parlan_Stand_05_11");	//Zaiste sporo siê napracowa³eœ, wci¹¿ jednak musisz s³u¿yæ zgromadzeniu.
 	}
@@ -552,74 +552,74 @@ func void dia_parlan_stand_info()
 };
 
 
-instance DIA_PARLAN_AUFGABE(C_INFO)
+instance DIA_Parlan_Aufgabe(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 10;
-	condition = dia_parlan_aufgabe_condition;
-	information = dia_parlan_aufgabe_info;
+	condition = DIA_Parlan_Aufgabe_Condition;
+	information = DIA_Parlan_Aufgabe_Info;
 	permanent = FALSE;
 	description = "Czy masz dla mnie jakieœ zadanie?";
 };
 
 
-func int dia_parlan_aufgabe_condition()
+func int DIA_Parlan_Aufgabe_Condition()
 {
-	if(MIS_KLOSTERARBEIT == LOG_RUNNING)
+	if(MIS_KlosterArbeit == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_aufgabe_info()
+func void DIA_Parlan_Aufgabe_Info()
 {
 	AI_Output(other,self,"DIA_Parlan_Aufgabe_15_00");	//Czy masz dla mnie jakieœ zadanie?
 	AI_Output(self,other,"DIA_Parlan_Aufgabe_05_01");	//Hmmm... Tak, w rzeczy samej, jest coœ, co mo¿esz zrobiæ dla dobra zgromadzenia.
 	AI_Output(self,other,"DIA_Parlan_Aufgabe_05_02");	//Komnatom nowicjuszy przyda³oby siê porz¹dne zamiatanie. Zajmij siê tym.
 	AI_Output(other,self,"DIA_Parlan_Aufgabe_15_03");	//Przecie¿ to potrwa wieki...
 	AI_Output(self,other,"DIA_Parlan_Aufgabe_05_04");	//Chyba wiêc najlepiej bêdzie zacz¹æ od razu, prawda?
-	MIS_PARLANFEGEN = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_PARLANFEGEN,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_PARLANFEGEN,LOG_RUNNING);
-	b_logentry(TOPIC_PARLANFEGEN,"Mistrz Parlan chce, abym posprz¹ta³ komnaty czterech nowicjuszy. To zajmie ca³e wieki.");
+	MIS_ParlanFegen = LOG_Running;
+	Log_CreateTopic(Topic_ParlanFegen,LOG_MISSION);
+	Log_SetTopicStatus(Topic_ParlanFegen,LOG_Running);
+	B_LogEntry(Topic_ParlanFegen,"Mistrz Parlan chce, abym posprz¹ta³ komnaty czterech nowicjuszy. To zajmie ca³e wieki.");
 };
 
 
-instance DIA_PARLAN_FEGEN(C_INFO)
+instance DIA_Parlan_Fegen(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 3;
-	condition = dia_parlan_fegen_condition;
-	information = dia_parlan_fegen_info;
+	condition = DIA_Parlan_Fegen_Condition;
+	information = DIA_Parlan_Fegen_Info;
 	permanent = TRUE;
 	description = "Jeœli chodzi o komnaty nowicjuszy...";
 };
 
 
-var int dia_parlan_fegen_permanent;
+var int DIA_Parlan_Fegen_permanent;
 
-func int dia_parlan_fegen_condition()
+func int DIA_Parlan_Fegen_Condition()
 {
-	if((MIS_PARLANFEGEN == LOG_RUNNING) && (DIA_PARLAN_FEGEN_PERMANENT == FALSE))
+	if((MIS_ParlanFegen == LOG_Running) && (DIA_Parlan_Fegen_permanent == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_fegen_info()
+func void DIA_Parlan_Fegen_Info()
 {
 	AI_Output(other,self,"DIA_Parlan_Fegen_15_00");	//Jeœli chodzi o komnaty nowicjuszy...
-	if(NOV_HELFER >= 4)
+	if(NOV_Helfer >= 4)
 	{
 		AI_Output(self,other,"DIA_Parlan_Fegen_05_01");	//Widzê, ¿e uda³o ci siê znaleŸæ czterech pomocników. Myœlê, ¿e teraz mog¹ wróciæ do swych obowi¹zków.
 		AI_Output(self,other,"DIA_Parlan_Fegen_05_02");	//Dobra robota, nowicjuszu. Wype³ni³eœ powierzone ci przeze mnie zadanie.
-		MIS_PARLANFEGEN = LOG_SUCCESS;
-		b_giveplayerxp(XP_PARLANFEGEN);
-		DIA_PARLAN_FEGEN_PERMANENT = TRUE;
-		b_startotherroutine(feger1,"START");
-		b_startotherroutine(feger2,"START");
-		b_startotherroutine(feger3,"START");
-		b_startotherroutine(babo,"START");
+		MIS_ParlanFegen = LOG_SUCCESS;
+		B_GivePlayerXP(XP_ParlanFegen);
+		DIA_Parlan_Fegen_permanent = TRUE;
+		B_StartOtherRoutine(Feger1,"START");
+		B_StartOtherRoutine(Feger2,"START");
+		B_StartOtherRoutine(Feger3,"START");
+		B_StartOtherRoutine(Babo,"START");
 	}
 	else
 	{
@@ -628,172 +628,172 @@ func void dia_parlan_fegen_info()
 };
 
 
-instance DIA_PARLAN_LEARN(C_INFO)
+instance DIA_Parlan_LEARN(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 23;
-	condition = dia_parlan_learn_condition;
-	information = dia_parlan_learn_info;
+	condition = DIA_Parlan_LEARN_Condition;
+	information = DIA_Parlan_LEARN_Info;
 	permanent = FALSE;
 	description = "Jak móg³bym siê nauczyæ sztuk magicznych?";
 };
 
 
-func int dia_parlan_learn_condition()
+func int DIA_Parlan_LEARN_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_parlan_hagen) && (other.guild == GIL_NOV))
+	if(Npc_KnowsInfo(hero,DIA_Parlan_Hagen) && (other.guild == GIL_NOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_learn_info()
+func void DIA_Parlan_LEARN_Info()
 {
 	AI_Output(other,self,"DIA_Parlan_LEARN_15_00");	//Jak móg³bym siê nauczyæ sztuk magicznych?
 	AI_Output(self,other,"DIA_Parlan_LEARN_05_01");	//Nie jesteœ tu, by uczyæ siê magii, lecz by s³u¿yæ Innosowi.
 	AI_Output(self,other,"DIA_Parlan_LEARN_05_02");	//Mogê ci jednak pokazaæ, jak zwiêkszyæ swe magiczne moce.
-	b_logentry(TOPIC_KLOSTERTEACHER,"Mistrz Parlan mo¿e mi pomóc w doskonaleniu moich zdolnoœci magicznych.");
+	B_LogEntry(Topic_KlosterTeacher,"Mistrz Parlan mo¿e mi pomóc w doskonaleniu moich zdolnoœci magicznych.");
 };
 
 
-instance DIA_PARLAN_KNOWSJUDGE(C_INFO)
+instance DIA_Parlan_KNOWSJUDGE(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 23;
-	condition = dia_parlan_knowsjudge_condition;
-	information = dia_parlan_knowsjudge_info;
+	condition = DIA_Parlan_KNOWSJUDGE_Condition;
+	information = DIA_Parlan_KNOWSJUDGE_Info;
 	permanent = FALSE;
 	description = "Chcê siê poddaæ Próbie Ognia.";
 };
 
 
-func int dia_parlan_knowsjudge_condition()
+func int DIA_Parlan_KNOWSJUDGE_Condition()
 {
-	if((other.guild == GIL_NOV) && (KNOWS_FIRE_CONTEST == TRUE) && (Npc_KnowsInfo(hero,dia_pyrokar_fire) == FALSE))
+	if((other.guild == GIL_NOV) && (KNOWS_FIRE_CONTEST == TRUE) && (Npc_KnowsInfo(hero,DIA_Pyrokar_FIRE) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_knowsjudge_info()
+func void DIA_Parlan_KNOWSJUDGE_Info()
 {
 	AI_Output(other,self,"DIA_Parlan_KNOWSJUDGE_15_00");	//Chcê siê poddaæ Próbie Ognia.
 	AI_Output(self,other,"DIA_Parlan_KNOWSJUDGE_05_01");	//Co...? Hm... Mówisz powa¿nie?
 	AI_Output(other,self,"DIA_Parlan_KNOWSJUDGE_15_02");	//Nalegam.
 	AI_Output(self,other,"DIA_Parlan_KNOWSJUDGE_05_03");	//Wyj¹tkowy z ciebie nowicjusz. W porz¹dku, jeœli mówisz powa¿nie, porozmawiaj z mistrzem Pyrokarem.
-	b_logentry(TOPIC_FIRECONTEST,"Jeœli chcê siê podj¹æ Próby Ognia, powinienem porozmawiaæ z Mistrzem Pyrokarem.");
+	B_LogEntry(TOPIC_FireContest,"Jeœli chcê siê podj¹æ Próby Ognia, powinienem porozmawiaæ z Mistrzem Pyrokarem.");
 };
 
 
-instance DIA_PARLAN_TEACH_MANA(C_INFO)
+instance DIA_Parlan_TEACH_MANA(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 10;
-	condition = dia_parlan_teach_mana_condition;
-	information = dia_parlan_teach_mana_info;
+	condition = DIA_Parlan_TEACH_MANA_Condition;
+	information = DIA_Parlan_TEACH_MANA_Info;
 	permanent = TRUE;
 	description = "Chcê zwiêkszyæ moj¹ magiczn¹ moc.";
 };
 
 
-func int dia_parlan_teach_mana_condition()
+func int DIA_Parlan_TEACH_MANA_Condition()
 {
-	if(((other.guild == GIL_KDF) || (other.guild == GIL_PAL) || ((other.guild == GIL_NOV) && Npc_KnowsInfo(hero,dia_parlan_learn))) && (PARLAN_SENDS == FALSE))
+	if(((other.guild == GIL_KDF) || (other.guild == GIL_PAL) || ((other.guild == GIL_NOV) && Npc_KnowsInfo(hero,DIA_Parlan_LEARN))) && (Parlan_Sends == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_teach_mana_info()
+func void DIA_Parlan_TEACH_MANA_Info()
 {
 	AI_Output(other,self,"DIA_Parlan_TEACH_MANA_15_00");	//Chcia³bym powiêkszyæ swoje magiczne zdolnoœci.
-	Info_ClearChoices(dia_parlan_teach_mana);
-	Info_AddChoice(dia_parlan_teach_mana,DIALOG_BACK,dia_parlan_teach_mana_back);
-	Info_AddChoice(dia_parlan_teach_mana,b_buildlearnstring(PRINT_LEARNMANA1,b_getlearncostattribute(other,ATR_MANA_MAX)),dia_parlan_teach_mana_1);
-	Info_AddChoice(dia_parlan_teach_mana,b_buildlearnstring(PRINT_LEARNMANA5,b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_parlan_teach_mana_5);
+	Info_ClearChoices(DIA_Parlan_TEACH_MANA);
+	Info_AddChoice(DIA_Parlan_TEACH_MANA,Dialog_Back,DIA_Parlan_TEACH_MANA_BACK);
+	Info_AddChoice(DIA_Parlan_TEACH_MANA,B_BuildLearnString(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),DIA_Parlan_TEACH_MANA_1);
+	Info_AddChoice(DIA_Parlan_TEACH_MANA,B_BuildLearnString(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),DIA_Parlan_TEACH_MANA_5);
 };
 
-func void dia_parlan_teach_mana_back()
+func void DIA_Parlan_TEACH_MANA_BACK()
 {
 	if(other.attribute[ATR_MANA_MAX] >= 100)
 	{
 		AI_Output(self,other,"DIA_Parlan_TEACH_MANA_05_00");	//Twoja magiczna moc wzros³a. Wiêcej nie mogê ci ju¿ pomóc.
 		AI_Output(self,other,"DIA_Parlan_TEACH_MANA_05_01");	//Jeœli pragniesz nauczyæ siê wiêcej, porozmawiaj z Pyrokarem.
-		PARLAN_SENDS = TRUE;
+		Parlan_Sends = TRUE;
 	};
-	Info_ClearChoices(dia_parlan_teach_mana);
+	Info_ClearChoices(DIA_Parlan_TEACH_MANA);
 };
 
-func void dia_parlan_teach_mana_1()
+func void DIA_Parlan_TEACH_MANA_1()
 {
-	b_teachattributepoints(self,other,ATR_MANA_MAX,1,100);
-	Info_ClearChoices(dia_parlan_teach_mana);
-	Info_AddChoice(dia_parlan_teach_mana,DIALOG_BACK,dia_parlan_teach_mana_back);
-	Info_AddChoice(dia_parlan_teach_mana,b_buildlearnstring(PRINT_LEARNMANA1,b_getlearncostattribute(other,ATR_MANA_MAX)),dia_parlan_teach_mana_1);
-	Info_AddChoice(dia_parlan_teach_mana,b_buildlearnstring(PRINT_LEARNMANA5,b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_parlan_teach_mana_5);
+	B_TeachAttributePoints(self,other,ATR_MANA_MAX,1,100);
+	Info_ClearChoices(DIA_Parlan_TEACH_MANA);
+	Info_AddChoice(DIA_Parlan_TEACH_MANA,Dialog_Back,DIA_Parlan_TEACH_MANA_BACK);
+	Info_AddChoice(DIA_Parlan_TEACH_MANA,B_BuildLearnString(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),DIA_Parlan_TEACH_MANA_1);
+	Info_AddChoice(DIA_Parlan_TEACH_MANA,B_BuildLearnString(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),DIA_Parlan_TEACH_MANA_5);
 };
 
-func void dia_parlan_teach_mana_5()
+func void DIA_Parlan_TEACH_MANA_5()
 {
-	b_teachattributepoints(self,other,ATR_MANA_MAX,5,100);
-	Info_ClearChoices(dia_parlan_teach_mana);
-	Info_AddChoice(dia_parlan_teach_mana,DIALOG_BACK,dia_parlan_teach_mana_back);
-	Info_AddChoice(dia_parlan_teach_mana,b_buildlearnstring(PRINT_LEARNMANA1,b_getlearncostattribute(other,ATR_MANA_MAX)),dia_parlan_teach_mana_1);
-	Info_AddChoice(dia_parlan_teach_mana,b_buildlearnstring(PRINT_LEARNMANA5,b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_parlan_teach_mana_5);
+	B_TeachAttributePoints(self,other,ATR_MANA_MAX,5,100);
+	Info_ClearChoices(DIA_Parlan_TEACH_MANA);
+	Info_AddChoice(DIA_Parlan_TEACH_MANA,Dialog_Back,DIA_Parlan_TEACH_MANA_BACK);
+	Info_AddChoice(DIA_Parlan_TEACH_MANA,B_BuildLearnString(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),DIA_Parlan_TEACH_MANA_1);
+	Info_AddChoice(DIA_Parlan_TEACH_MANA,B_BuildLearnString(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),DIA_Parlan_TEACH_MANA_5);
 };
 
 
-instance DIA_PARLAN_MAGE(C_INFO)
+instance DIA_Parlan_MAGE(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 2;
-	condition = dia_parlan_mage_condition;
-	information = dia_parlan_mage_info;
+	condition = DIA_Parlan_MAGE_Condition;
+	information = DIA_Parlan_MAGE_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_parlan_mage_condition()
+func int DIA_Parlan_MAGE_Condition()
 {
-	if((other.guild == GIL_KDF) && Npc_IsInState(self,zs_talk))
+	if((other.guild == GIL_KDF) && Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_mage_info()
+func void DIA_Parlan_MAGE_Info()
 {
 	AI_Output(self,other,"DIA_Parlan_MAGE_05_00");	//Z³o¿y³eœ przysiêgê, Bracie. Witaj w naszych szeregach.
 	AI_Output(self,other,"DIA_Parlan_MAGE_05_01");	//O krêgach magii opowiem ci, kiedy zdobêdziesz wiêksze doœwiadczenie.
 	AI_Output(self,other,"DIA_Parlan_MAGE_05_02");	//WeŸ ten kamieñ runiczny, to znak twojej mocy.
-	b_giveinvitems(self,other,5086,1);
+	B_GiveInvItems(self,other,ItMi_RuneBlank,1);
 };
 
 
-instance DIA_PARLAN_CIRCLE1(C_INFO)
+instance DIA_Parlan_CIRCLE1(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 99;
-	condition = dia_parlan_circle1_condition;
-	information = dia_parlan_circle1_info;
+	condition = DIA_Parlan_CIRCLE1_Condition;
+	information = DIA_Parlan_CIRCLE1_Info;
 	permanent = TRUE;
 	description = "WprowadŸ mnie proszê do pierwszego krêgu magii.";
 };
 
 
-func int dia_parlan_circle1_condition()
+func int DIA_Parlan_CIRCLE1_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_parlan_mage) && (other.guild == GIL_KDF) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 0))
+	if(Npc_KnowsInfo(hero,DIA_Parlan_MAGE) && (other.guild == GIL_KDF) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 0))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_circle1_info()
+func void DIA_Parlan_CIRCLE1_Info()
 {
 	AI_Output(other,self,"DIA_Parlan_TECH_CIRCLE1_15_00");	//WprowadŸ mnie proszê do pierwszego krêgu magii.
-	if(b_teachmagiccircle(self,other,1))
+	if(B_TeachMagicCircle(self,other,1))
 	{
 		AI_Output(self,other,"DIA_Parlan_TECH_CIRCLE1_05_01");	//Magia pierwszego krêgu pozwala na u¿ywanie stworzonych przez siebie run.
 		AI_Output(self,other,"DIA_Parlan_TECH_CIRCLE1_05_02");	//Mo¿esz nauczyæ siê magicznych formu³ i samemu tworzyæ runy.
@@ -802,31 +802,31 @@ func void dia_parlan_circle1_info()
 };
 
 
-instance DIA_PARLAN_CIRCLE2(C_INFO)
+instance DIA_Parlan_CIRCLE2(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 99;
-	condition = dia_parlan_circle2_condition;
-	information = dia_parlan_circle2_info;
+	condition = DIA_Parlan_CIRCLE2_Condition;
+	information = DIA_Parlan_CIRCLE2_Info;
 	permanent = TRUE;
 	description = "WprowadŸ mnie w tajniki drugiego krêgu magii.";
 };
 
 
-func int dia_parlan_circle2_condition()
+func int DIA_Parlan_CIRCLE2_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_parlan_mage) && (other.guild == GIL_KDF) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 1))
+	if(Npc_KnowsInfo(hero,DIA_Parlan_MAGE) && (other.guild == GIL_KDF) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_circle2_info()
+func void DIA_Parlan_CIRCLE2_Info()
 {
 	AI_Output(other,self,"DIA_Parlan_TECH_CIRCLE2_15_00");	//WprowadŸ mnie w tajniki drugiego krêgu magii.
-	if(KAPITEL >= 2)
+	if(Kapitel >= 2)
 	{
-		if(b_teachmagiccircle(self,other,2))
+		if(B_TeachMagicCircle(self,other,2))
 		{
 			AI_Output(self,other,"DIA_Parlan_TECH_CIRCLE2_05_01");	//Poznasz teraz drugi kr¹g i nauczysz siê pos³ugiwaæ jeszcze potê¿niejsz¹ magi¹.
 			AI_Output(self,other,"DIA_Parlan_TECH_CIRCLE2_05_02");	//Pamiêtaj jednak o spoczywaj¹cej na tobie odpowiedzialnoœci. Nie wobec mnie czy Pyrokara - wobec samego Innosa.
@@ -840,36 +840,36 @@ func void dia_parlan_circle2_info()
 };
 
 
-instance DIA_PARLAN_CIRCLE3(C_INFO)
+instance DIA_Parlan_CIRCLE3(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 99;
-	condition = dia_parlan_circle3_condition;
-	information = dia_parlan_circle3_info;
+	condition = DIA_Parlan_CIRCLE3_Condition;
+	information = DIA_Parlan_CIRCLE3_Info;
 	permanent = TRUE;
 	description = "WprowadŸ mnie w tajniki trzeciego krêgu magii.";
 };
 
 
-func int dia_parlan_circle3_condition()
+func int DIA_Parlan_CIRCLE3_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_parlan_mage) && (other.guild == GIL_KDF) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 2))
+	if(Npc_KnowsInfo(hero,DIA_Parlan_MAGE) && (other.guild == GIL_KDF) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_circle3_info()
+func void DIA_Parlan_CIRCLE3_Info()
 {
 	AI_Output(other,self,"DIA_Parlan_TECH_CIRCLE3_15_00");	//WprowadŸ mnie w tajniki trzeciego krêgu magii.
-	if(KAPITEL >= 3)
+	if(Kapitel >= 3)
 	{
-		if(b_teachmagiccircle(self,other,3))
+		if(B_TeachMagicCircle(self,other,3))
 		{
 			AI_Output(self,other,"DIA_Parlan_TECH_CIRCLE3_05_01");	//Tak, najwy¿szy czas, byœ pozna³ trzeci kr¹g magii. Czekaj¹ na ciebie nowe zaklêcia.
 			AI_Output(self,other,"DIA_Parlan_TECH_CIRCLE3_05_02");	//Bêdziesz ich potrzebowa³. Z³o nie œpi, a jedynie potêga Innosa mo¿e je pokonaæ.
 			AI_Output(self,other,"DIA_Parlan_TECH_CIRCLE3_05_03");	//Przekaza³em ci ju¿ wiedzê z zakresu wszystkich krêgów, jakie znam. Jeœli pragniesz poznaæ magiê wy¿szych Krêgów, porozmawiaj z Karasem.
-			b_logentry(TOPIC_KLOSTERTEACHER,"Brat Parlan zapozna³ mnie z pierwszymi trzema krêgami. Dalsze postêpy mogê poczyniæ dziêki Bratu Karrasowi.");
+			B_LogEntry(Topic_KlosterTeacher,"Brat Parlan zapozna³ mnie z pierwszymi trzema krêgami. Dalsze postêpy mogê poczyniæ dziêki Bratu Karrasowi.");
 		};
 	}
 	else
@@ -879,18 +879,18 @@ func void dia_parlan_circle3_info()
 };
 
 
-instance DIA_PARLAN_TEACH(C_INFO)
+instance DIA_Parlan_TEACH(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 3;
-	condition = dia_parlan_teach_condition;
-	information = dia_parlan_teach_info;
+	condition = DIA_Parlan_TEACH_Condition;
+	information = DIA_Parlan_TEACH_Info;
 	permanent = TRUE;
 	description = "Nauczaj mnie (tworzenie run)";
 };
 
 
-func int dia_parlan_teach_condition()
+func int DIA_Parlan_TEACH_Condition()
 {
 	if(other.guild == GIL_KDF)
 	{
@@ -898,51 +898,51 @@ func int dia_parlan_teach_condition()
 	};
 };
 
-func void dia_parlan_teach_info()
+func void DIA_Parlan_TEACH_Info()
 {
 	var int abletolearn;
 	abletolearn = 0;
 	AI_Output(other,self,"DIA_Parlan_TEACH_15_00");	//Naucz mnie!
-	Info_ClearChoices(dia_parlan_teach);
-	Info_AddChoice(dia_parlan_teach,DIALOG_BACK,dia_parlan_teach_back);
-	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 1) && (PLAYER_TALENT_RUNES[SPL_LIGHTHEAL] == FALSE))
+	Info_ClearChoices(DIA_Parlan_TEACH);
+	Info_AddChoice(DIA_Parlan_TEACH,Dialog_Back,DIA_Parlan_TEACH_BACK);
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 1) && (PLAYER_TALENT_RUNES[SPL_LightHeal] == FALSE))
 	{
-		Info_AddChoice(dia_parlan_teach,b_buildlearnstring(NAME_SPL_LIGHTHEAL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_parlan_teach_light_heal);
+		Info_AddChoice(DIA_Parlan_TEACH,B_BuildLearnString(NAME_SPL_LightHeal,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Parlan_TEACH_LIGHT_HEAL);
 		abletolearn = abletolearn + 1;
 	};
-	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 1) && (PLAYER_TALENT_RUNES[SPL_LIGHT] == FALSE))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 1) && (PLAYER_TALENT_RUNES[SPL_Light] == FALSE))
 	{
-		Info_AddChoice(dia_parlan_teach,b_buildlearnstring(NAME_SPL_LIGHT,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_parlan_teach_light);
+		Info_AddChoice(DIA_Parlan_TEACH,B_BuildLearnString(NAME_SPL_LIGHT,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Parlan_TEACH_LIGHT);
 		abletolearn = abletolearn + 1;
 	};
-	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 2) && (PLAYER_TALENT_RUNES[SPL_WINDFIST] == FALSE))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 2) && (PLAYER_TALENT_RUNES[SPL_WindFist] == FALSE))
 	{
-		Info_AddChoice(dia_parlan_teach,b_buildlearnstring(NAME_SPL_WINDFIST,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_parlan_teach_windfist);
+		Info_AddChoice(DIA_Parlan_TEACH,B_BuildLearnString(NAME_SPL_WINDFIST,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Parlan_TEACH_WINDFIST);
 		abletolearn = abletolearn + 1;
 	};
-	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 2) && (PLAYER_TALENT_RUNES[SPL_SLEEP] == FALSE))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 2) && (PLAYER_TALENT_RUNES[SPL_Sleep] == FALSE))
 	{
-		Info_AddChoice(dia_parlan_teach,b_buildlearnstring(NAME_SPL_SLEEP,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_parlan_teach_sleep);
+		Info_AddChoice(DIA_Parlan_TEACH,B_BuildLearnString(NAME_SPL_Sleep,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Parlan_TEACH_Sleep);
 		abletolearn = abletolearn + 1;
 	};
-	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 3) && (PLAYER_TALENT_RUNES[SPL_MEDIUMHEAL] == FALSE) && (PLAYER_TALENT_RUNES[SPL_LIGHTHEAL] == TRUE))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 3) && (PLAYER_TALENT_RUNES[SPL_MediumHeal] == FALSE) && (PLAYER_TALENT_RUNES[SPL_LightHeal] == TRUE))
 	{
-		Info_AddChoice(dia_parlan_teach,b_buildlearnstring(NAME_SPL_MEDIUMHEAL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_parlan_teach_mediumheal);
+		Info_AddChoice(DIA_Parlan_TEACH,B_BuildLearnString(NAME_SPL_MediumHeal,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Parlan_TEACH_MediumHeal);
 		abletolearn = abletolearn + 1;
 	};
-	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 3) && (PLAYER_TALENT_RUNES[SPL_FEAR] == FALSE) && (PLAYER_TALENT_RUNES[SPL_SLEEP] == TRUE))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 3) && (PLAYER_TALENT_RUNES[SPL_Fear] == FALSE) && (PLAYER_TALENT_RUNES[SPL_Sleep] == TRUE))
 	{
-		Info_AddChoice(dia_parlan_teach,b_buildlearnstring(NAME_SPL_FEAR,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_parlan_teach_fear);
+		Info_AddChoice(DIA_Parlan_TEACH,B_BuildLearnString(NAME_SPL_Fear,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Parlan_TEACH_Fear);
 		abletolearn = abletolearn + 1;
 	};
-	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 4) && (PLAYER_TALENT_RUNES[SPL_DESTROYUNDEAD] == FALSE))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 4) && (PLAYER_TALENT_RUNES[SPL_DestroyUndead] == FALSE))
 	{
-		Info_AddChoice(dia_parlan_teach,b_buildlearnstring(NAME_SPL_DESTROYUNDEAD,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_parlan_teach_destroyundead);
+		Info_AddChoice(DIA_Parlan_TEACH,B_BuildLearnString(NAME_SPL_DestroyUndead,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Parlan_TEACH_DestroyUndead);
 		abletolearn = abletolearn + 1;
 	};
-	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 5) && (PLAYER_TALENT_RUNES[SPL_FULLHEAL] == FALSE) && (PLAYER_TALENT_RUNES[SPL_MEDIUMHEAL] == TRUE))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 5) && (PLAYER_TALENT_RUNES[SPL_FullHeal] == FALSE) && (PLAYER_TALENT_RUNES[SPL_MediumHeal] == TRUE))
 	{
-		Info_AddChoice(dia_parlan_teach,b_buildlearnstring(NAME_SPL_FULLHEAL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_parlan_teach_fullheal);
+		Info_AddChoice(DIA_Parlan_TEACH,B_BuildLearnString(NAME_SPL_FullHeal,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Parlan_TEACH_FullHeal);
 		abletolearn = abletolearn + 1;
 	};
 	if(abletolearn < 1)
@@ -951,131 +951,131 @@ func void dia_parlan_teach_info()
 	};
 };
 
-func void dia_parlan_teach_back()
+func void DIA_Parlan_TEACH_BACK()
 {
-	Info_ClearChoices(dia_parlan_teach);
+	Info_ClearChoices(DIA_Parlan_TEACH);
 };
 
-func void dia_parlan_teach_light_heal()
+func void DIA_Parlan_TEACH_LIGHT_HEAL()
 {
-	b_teachplayertalentrunes(self,other,SPL_LIGHTHEAL);
+	B_TeachPlayerTalentRunes(self,other,SPL_LightHeal);
 };
 
-func void dia_parlan_teach_light()
+func void DIA_Parlan_TEACH_LIGHT()
 {
-	b_teachplayertalentrunes(self,other,SPL_LIGHT);
+	B_TeachPlayerTalentRunes(self,other,SPL_Light);
 };
 
-func void dia_parlan_teach_windfist()
+func void DIA_Parlan_TEACH_WINDFIST()
 {
-	b_teachplayertalentrunes(self,other,SPL_WINDFIST);
+	B_TeachPlayerTalentRunes(self,other,SPL_WindFist);
 };
 
-func void dia_parlan_teach_sleep()
+func void DIA_Parlan_TEACH_Sleep()
 {
-	b_teachplayertalentrunes(self,other,SPL_SLEEP);
+	B_TeachPlayerTalentRunes(self,other,SPL_Sleep);
 };
 
-func void dia_parlan_teach_mediumheal()
+func void DIA_Parlan_TEACH_MediumHeal()
 {
-	b_teachplayertalentrunes(self,other,SPL_MEDIUMHEAL);
+	B_TeachPlayerTalentRunes(self,other,SPL_MediumHeal);
 };
 
-func void dia_parlan_teach_fear()
+func void DIA_Parlan_TEACH_Fear()
 {
-	b_teachplayertalentrunes(self,other,SPL_FEAR);
+	B_TeachPlayerTalentRunes(self,other,SPL_Fear);
 };
 
-func void dia_parlan_teach_destroyundead()
+func void DIA_Parlan_TEACH_DestroyUndead()
 {
-	b_teachplayertalentrunes(self,other,SPL_DESTROYUNDEAD);
+	B_TeachPlayerTalentRunes(self,other,SPL_DestroyUndead);
 };
 
-func void dia_parlan_teach_fullheal()
+func void DIA_Parlan_TEACH_FullHeal()
 {
-	b_teachplayertalentrunes(self,other,SPL_FULLHEAL);
+	B_TeachPlayerTalentRunes(self,other,SPL_FullHeal);
 };
 
 
-instance DIA_PARLAN_KAP2_EXIT(C_INFO)
+instance DIA_Parlan_Kap2_EXIT(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 999;
-	condition = dia_parlan_kap2_exit_condition;
-	information = dia_parlan_kap2_exit_info;
+	condition = DIA_Parlan_Kap2_EXIT_Condition;
+	information = DIA_Parlan_Kap2_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_parlan_kap2_exit_condition()
+func int DIA_Parlan_Kap2_EXIT_Condition()
 {
-	if(KAPITEL == 2)
+	if(Kapitel == 2)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_kap2_exit_info()
+func void DIA_Parlan_Kap2_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
-func void b_parlan_exit()
+func void B_Parlan_Exit()
 {
 	AI_Output(self,other,"DIA_Parlan_EXIT_05_00");	//Niech Innos ciê prowadzi.
 };
 
 
-instance DIA_PARLAN_KAP3_EXIT(C_INFO)
+instance DIA_Parlan_Kap3_EXIT(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 999;
-	condition = dia_parlan_kap3_exit_condition;
-	information = dia_parlan_kap3_exit_info;
+	condition = DIA_Parlan_Kap3_EXIT_Condition;
+	information = DIA_Parlan_Kap3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_parlan_kap3_exit_condition()
+func int DIA_Parlan_Kap3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_kap3_exit_info()
+func void DIA_Parlan_Kap3_EXIT_Info()
 {
 	if((other.guild == GIL_PAL) || (other.guild == GIL_NOV) || (other.guild == GIL_KDF))
 	{
-		b_parlan_exit();
+		B_Parlan_Exit();
 	};
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PARLAN_IAMPARLAN(C_INFO)
+instance DIA_Parlan_IAmParlan(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 39;
-	condition = dia_parlan_iamparlan_condition;
-	information = dia_parlan_iamparlan_info;
+	condition = DIA_Parlan_IAmParlan_Condition;
+	information = DIA_Parlan_IAmParlan_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_parlan_iamparlan_condition()
+func int DIA_Parlan_IAmParlan_Condition()
 {
-	if((KAPITEL >= 3) && Npc_IsInState(self,zs_talk) && ((other.guild != GIL_NOV) && (other.guild != GIL_KDF)))
+	if((Kapitel >= 3) && Npc_IsInState(self,ZS_Talk) && ((other.guild != GIL_NOV) && (other.guild != GIL_KDF)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_iamparlan_info()
+func void DIA_Parlan_IAmParlan_Info()
 {
 	if(other.guild == GIL_PAL)
 	{
@@ -1086,50 +1086,50 @@ func void dia_parlan_iamparlan_info()
 	{
 		AI_Output(self,other,"DIA_Parlan_IAmParlan_05_02");	//Nie wiem, kto ciê wpuœci³ do klasztoru. Jestem Parlan, opiekujê siê nowicjuszami.
 		AI_Output(self,other,"DIA_Parlan_IAmParlan_05_03");	//Nie ¿yczê sobie, by ktoœ odrywa³ ich od zajêæ, i drêczy³ niem¹drymi pytaniami, zrozumiano?
-		PARLAN_DONTTALKTONOVICE = LOG_RUNNING;
-		Info_ClearChoices(dia_parlan_iamparlan);
-		Info_AddChoice(dia_parlan_iamparlan,"Bêdê robi³, co mi siê podoba.",dia_parlan_iamparlan_mychoice);
-		Info_AddChoice(dia_parlan_iamparlan,"Jasne.",dia_parlan_iamparlan_ok);
+		Parlan_DontTalkToNovice = LOG_Running;
+		Info_ClearChoices(DIA_Parlan_IAmParlan);
+		Info_AddChoice(DIA_Parlan_IAmParlan,"Bêdê robi³, co mi siê podoba.",DIA_Parlan_IAmParlan_MyChoice);
+		Info_AddChoice(DIA_Parlan_IAmParlan,"Jasne.",DIA_Parlan_IAmParlan_OK);
 	};
-	Wld_InsertItem(itke_klosterbibliothek,"NW_MONASTERY_CORRIDOR_02");
+	Wld_InsertItem(ItKe_KlosterBibliothek,"NW_MONASTERY_CORRIDOR_02");
 };
 
-func void dia_parlan_iamparlan_mychoice()
+func void DIA_Parlan_IAmParlan_MyChoice()
 {
 	AI_Output(other,self,"DIA_Parlan_IAmParlan_MyChoice_15_00");	//Bêdê robi³, co mi siê podoba.
 	AI_Output(self,other,"DIA_Parlan_IAmParlan_MyChoice_05_01");	//Na pewno istnieje jakiœ powód, dla którego twa obecnoœæ jest tutaj tolerowana, ale pamiêtaj - wszystko ma swoje granice.
 	AI_Output(self,other,"DIA_Parlan_IAmParlan_MyChoice_05_02");	//Jeœli bêdziesz sprawia³ k³opoty, s³ono za to zap³acisz. Trzymaj siê z dala od nowicjuszy.
-	Info_ClearChoices(dia_parlan_iamparlan);
+	Info_ClearChoices(DIA_Parlan_IAmParlan);
 };
 
-func void dia_parlan_iamparlan_ok()
+func void DIA_Parlan_IAmParlan_OK()
 {
 	AI_Output(other,self,"DIA_Parlan_IAmParlan_OK_15_00");	//Rozumiem.
 	AI_Output(self,other,"DIA_Parlan_IAmParlan_OK_05_01");	//Mam tak¹ nadziejê.
-	Info_ClearChoices(dia_parlan_iamparlan);
+	Info_ClearChoices(DIA_Parlan_IAmParlan);
 };
 
 
-instance DIA_PARLAN_BIBLIOTHEK(C_INFO)
+instance DIA_Parlan_Bibliothek(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 40;
-	condition = dia_parlan_bibliothek_condition;
-	information = dia_parlan_bibliothek_info;
+	condition = DIA_Parlan_Bibliothek_Condition;
+	information = DIA_Parlan_Bibliothek_Info;
 	permanent = FALSE;
 	description = "Czy masz dla mnie coœ jeszcze?";
 };
 
 
-func int dia_parlan_bibliothek_condition()
+func int DIA_Parlan_Bibliothek_Condition()
 {
-	if((other.guild != GIL_KDF) && (KAPITEL >= 3) && (other.guild != GIL_SLD) && (other.guild != GIL_DJG))
+	if((other.guild != GIL_KDF) && (Kapitel >= 3) && (other.guild != GIL_SLD) && (other.guild != GIL_DJG))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_bibliothek_info()
+func void DIA_Parlan_Bibliothek_Info()
 {
 	AI_Output(other,self,"DIA_Parlan_Bibliothek_15_00");	//Czy masz dla mnie coœ jeszcze?
 	AI_Output(self,other,"DIA_Parlan_Bibliothek_05_01");	//Tak. Jako cz³onek biblioteki posiadasz do niej klucz. W bibliotece znajdziesz Braci Karasa i Hyglasa.
@@ -1138,152 +1138,152 @@ func void dia_parlan_bibliothek_info()
 	{
 		AI_Output(self,other,"DIA_Parlan_DontDisturb_05_03");	//Tylko zostaw w spokoju nowicjuszy.
 	};
-	b_giveinvitems(self,other,5686,1);
+	B_GiveInvItems(self,other,ItKe_KlosterBibliothek,1);
 };
 
 
-instance DIA_PARLAN_DONTDISTURB(C_INFO)
+instance DIA_Parlan_DontDisturb(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 39;
-	condition = dia_parlan_dontdisturb_condition;
-	information = dia_parlan_dontdisturb_info;
+	condition = DIA_Parlan_DontDisturb_Condition;
+	information = DIA_Parlan_DontDisturb_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_parlan_dontdisturb_condition()
+func int DIA_Parlan_DontDisturb_Condition()
 {
-	if((PARLAN_DONTTALKTONOVICE == LOG_SUCCESS) && (b_getgreatestpetzcrime(self) == CRIME_NONE) && ((other.guild != GIL_PAL) || (other.guild != GIL_NOV) || (other.guild != GIL_KDF)))
+	if((Parlan_DontTalkToNovice == LOG_SUCCESS) && (B_GetGreatestPetzCrime(self) == CRIME_NONE) && ((other.guild != GIL_PAL) || (other.guild != GIL_NOV) || (other.guild != GIL_KDF)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_dontdisturb_info()
+func void DIA_Parlan_DontDisturb_Info()
 {
 	AI_Output(self,other,"DIA_Parlan_DontDisturb_05_00");	//Nie lubiê siê powtarzaæ, ale... zostaw nowicjuszy w spokoju.
 	AI_Output(self,other,"DIA_Parlan_DontDisturb_05_01");	//Maj¹ oczyszczaæ swe dusze przy pomocy ciê¿kiej fizycznej pracy, aby przygotowywaæ siê do ¿ycia w klasztorze.
 	AI_Output(self,other,"DIA_Parlan_DontDisturb_05_02");	//Nie bêdê tolerowa³ twoich dalszych wybryków.
-	PARLAN_DONTTALKTONOVICE = LOG_RUNNING;
+	Parlan_DontTalkToNovice = LOG_Running;
 };
 
 
-instance DIA_PARLAN_KAP3U4U5_PERM(C_INFO)
+instance DIA_Parlan_Kap3U4U5_PERM(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 39;
-	condition = dia_parlan_kap3u4u5_perm_condition;
-	information = dia_parlan_kap3u4u5_perm_info;
+	condition = DIA_Parlan_Kap3U4U5_PERM_Condition;
+	information = DIA_Parlan_Kap3U4U5_PERM_Info;
 	permanent = TRUE;
 	description = "Gdzie znajdê...";
 };
 
 
-func int dia_parlan_kap3u4u5_perm_condition()
+func int DIA_Parlan_Kap3U4U5_PERM_Condition()
 {
-	if((KAPITEL >= 3) && (other.guild != GIL_KDF))
+	if((Kapitel >= 3) && (other.guild != GIL_KDF))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_kap3u4u5_perm_info()
+func void DIA_Parlan_Kap3U4U5_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Parlan_Kap3_PERM_15_00");	//Gdzie znajdê...
-	Info_ClearChoices(dia_parlan_kap3u4u5_perm);
-	Info_AddChoice(dia_parlan_kap3u4u5_perm,DIALOG_BACK,dia_parlan_kap3u4u5_perm_back);
-	Info_AddChoice(dia_parlan_kap3u4u5_perm,"... koœció³?",dia_parlan_kap3u4u5_perm_church);
-	Info_AddChoice(dia_parlan_kap3u4u5_perm,"... bibliotekê?",dia_parlan_kap3u4u5_perm_library);
-	Info_AddChoice(dia_parlan_kap3u4u5_perm,"... kaplicê?",dia_parlan_kap3u4u5_perm_chapel);
-	Info_AddChoice(dia_parlan_kap3u4u5_perm,"... piwnice?",dia_parlan_kap3u4u5_perm_cellar);
+	Info_ClearChoices(DIA_Parlan_Kap3U4U5_PERM);
+	Info_AddChoice(DIA_Parlan_Kap3U4U5_PERM,Dialog_Back,DIA_Parlan_Kap3U4U5_PERM_Back);
+	Info_AddChoice(DIA_Parlan_Kap3U4U5_PERM,"... koœció³?",DIA_Parlan_Kap3U4U5_PERM_Church);
+	Info_AddChoice(DIA_Parlan_Kap3U4U5_PERM,"... bibliotekê?",DIA_Parlan_Kap3U4U5_PERM_Library);
+	Info_AddChoice(DIA_Parlan_Kap3U4U5_PERM,"... kaplicê?",DIA_Parlan_Kap3U4U5_PERM_Chapel);
+	Info_AddChoice(DIA_Parlan_Kap3U4U5_PERM,"... piwnice?",DIA_Parlan_Kap3U4U5_PERM_Cellar);
 };
 
-func void dia_parlan_kap3u4u5_perm_back()
+func void DIA_Parlan_Kap3U4U5_PERM_Back()
 {
-	Info_ClearChoices(dia_parlan_kap3u4u5_perm);
+	Info_ClearChoices(DIA_Parlan_Kap3U4U5_PERM);
 };
 
-func void dia_parlan_kap3u4u5_perm_church()
+func void DIA_Parlan_Kap3U4U5_PERM_Church()
 {
 	AI_Output(other,self,"DIA_Parlan_Kap3U4U5_PERM_Church_15_00");	//... koœció³?
 	AI_Output(self,other,"DIA_Parlan_Add_05_00");	//Panie Wszechmog¹cy! Czy¿by Innos pozbawi³ ciê wzroku?
 	AI_Output(self,other,"DIA_Parlan_Add_05_01");	//Gdzie tu jest koœció³? Hmmm... gdzie¿ on mo¿e byæ?
 };
 
-func void dia_parlan_kap3u4u5_perm_library()
+func void DIA_Parlan_Kap3U4U5_PERM_Library()
 {
 	AI_Output(other,self,"DIA_Parlan_Kap3U4U5_PERM_Library_15_00");	//... bibliotekê?
 	AI_Output(self,other,"DIA_Parlan_Add_05_02");	//Biblioteka znajduje siê na koñcu kolumnady, na lewo. Dok³adnie po drugiej stronie koœcio³a.
 };
 
-func void dia_parlan_kap3u4u5_perm_chapel()
+func void DIA_Parlan_Kap3U4U5_PERM_Chapel()
 {
 	AI_Output(other,self,"DIA_Parlan_Kap3U4U5_PERM_Chapel_15_00");	//... kaplicê?
 	AI_Output(self,other,"DIA_Parlan_Add_05_03");	//Kaplica to sala znajduj¹ca siê mniej wiêcej w po³owie kolumnady po lewej stronie. Tam w³aœnie paladyni modl¹ siê do Innosa.
 };
 
-func void dia_parlan_kap3u4u5_perm_cellar()
+func void DIA_Parlan_Kap3U4U5_PERM_Cellar()
 {
 	AI_Output(other,self,"DIA_Parlan_Kap3U4U5_PERM_Cellar_15_00");	//... piwnice?
 	AI_Output(self,other,"DIA_Parlan_Add_05_04");	//Wejœcie do piwnic znajduje siê w po³owie kolumnady, po prawej stronie.
 };
 
 
-instance DIA_PARLAN_KAP4_EXIT(C_INFO)
+instance DIA_Parlan_Kap4_EXIT(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 999;
-	condition = dia_parlan_kap4_exit_condition;
-	information = dia_parlan_kap4_exit_info;
+	condition = DIA_Parlan_Kap4_EXIT_Condition;
+	information = DIA_Parlan_Kap4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_parlan_kap4_exit_condition()
+func int DIA_Parlan_Kap4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_kap4_exit_info()
+func void DIA_Parlan_Kap4_EXIT_Info()
 {
 	if((other.guild == GIL_PAL) || (other.guild == GIL_NOV) || (other.guild == GIL_KDF))
 	{
-		b_parlan_exit();
+		B_Parlan_Exit();
 	};
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PARLAN_KAP5_EXIT(C_INFO)
+instance DIA_Parlan_Kap5_EXIT(C_Info)
 {
-	npc = kdf_504_parlan;
+	npc = KDF_504_Parlan;
 	nr = 999;
-	condition = dia_parlan_kap5_exit_condition;
-	information = dia_parlan_kap5_exit_info;
+	condition = DIA_Parlan_Kap5_EXIT_Condition;
+	information = DIA_Parlan_Kap5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_parlan_kap5_exit_condition()
+func int DIA_Parlan_Kap5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlan_kap5_exit_info()
+func void DIA_Parlan_Kap5_EXIT_Info()
 {
 	if((other.guild == GIL_PAL) || (other.guild == GIL_NOV) || (other.guild == GIL_KDF))
 	{
-		b_parlan_exit();
+		B_Parlan_Exit();
 	};
 	AI_StopProcessInfos(self);
 };

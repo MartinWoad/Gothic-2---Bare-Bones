@@ -1,297 +1,297 @@
 
-const int VALUE_AM_PROTFIRE = 250;
-const int AM_PROTFIRE = 6;
-const int VALUE_AM_PROTEDGE = 250;
-const int AM_PROTEDGE = 3;
-const int VALUE_AM_PROTMAGE = 250;
-const int AM_PROTMAGE = 6;
-const int VALUE_AM_PROTPOINT = 250;
-const int AM_PROTPOINT = 3;
-const int VALUE_AM_PROTTOTAL = 750;
-const int AM_TPROTFIRE = 3;
-const int AM_TPROTEDGE = 3;
-const int AM_TPROTMAGE = 3;
-const int AM_TPROTPOINT = 3;
-const int VALUE_AM_DEX = 300;
-const int AM_DEX = 3;
-const int VALUE_AM_MANA = 300;
-const int AM_MANA = 6;
-const int VALUE_AM_STRG = 300;
-const int AM_STRG = 3;
-const int VALUE_AM_HP = 300;
-const int AM_HP = 15;
-const int VALUE_AM_HPMANA = 500;
-const int AM_HPMANA_HP = 10;
-const int AM_HPMANA_MANA = 4;
-const int VALUE_AM_DEXSTRG = 500;
-const int AM_DEXSTRG_DEX = 2;
-const int AM_DEXSTRG_STRG = 2;
+const int Value_Am_ProtFire = 250;
+const int Am_ProtFire = 6;
+const int Value_Am_ProtEdge = 250;
+const int Am_ProtEdge = 3;
+const int Value_Am_ProtMage = 250;
+const int Am_ProtMage = 6;
+const int Value_Am_ProtPoint = 250;
+const int Am_ProtPoint = 3;
+const int Value_Am_ProtTotal = 750;
+const int Am_TProtFire = 3;
+const int AM_TProtEdge = 3;
+const int Am_TProtMage = 3;
+const int Am_TProtPoint = 3;
+const int Value_Am_Dex = 300;
+const int Am_Dex = 3;
+const int Value_Am_Mana = 300;
+const int Am_Mana = 6;
+const int Value_Am_Strg = 300;
+const int Am_Strg = 3;
+const int Value_Am_Hp = 300;
+const int Am_Hp = 15;
+const int Value_Am_HpMana = 500;
+const int Am_HpMana_Hp = 10;
+const int Am_HpMana_Mana = 4;
+const int Value_Am_DexStrg = 500;
+const int Am_DexStrg_Dex = 2;
+const int Am_DexStrg_Strg = 2;
 
-instance ITAM_PROT_FIRE_01(C_ITEM)
+instance ItAm_Prot_Fire_01(C_Item)
 {
-	name = NAME_AMULETT;
+	name = NAME_Amulett;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET;
-	value = VALUE_AM_PROTFIRE;
+	value = Value_Am_ProtFire;
 	visual = "ItAm_Prot_Fire_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itam_prot_fire_01;
-	on_unequip = unequip_itam_prot_fire_01;
+	on_equip = Equip_ItAm_Prot_Fire_01;
+	on_unequip = UnEquip_ItAm_Prot_Fire_01;
 	description = "Amulet Ognia";
-	text[2] = NAME_PROT_FIRE;
-	count[2] = AM_PROTFIRE;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Prot_Fire;
+	count[2] = Am_ProtFire;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
 };
 
 
-func void equip_itam_prot_fire_01()
+func void Equip_ItAm_Prot_Fire_01()
 {
-	self.protection[PROT_FIRE] += AM_PROTFIRE;
+	self.protection[PROT_FIRE] += Am_ProtFire;
 };
 
-func void unequip_itam_prot_fire_01()
+func void UnEquip_ItAm_Prot_Fire_01()
 {
-	self.protection[PROT_FIRE] -= AM_PROTFIRE;
+	self.protection[PROT_FIRE] -= Am_ProtFire;
 };
 
 
-instance ITAM_PROT_EDGE_01(C_ITEM)
+instance ItAm_Prot_Edge_01(C_Item)
 {
-	name = NAME_AMULETT;
+	name = NAME_Amulett;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET;
-	value = VALUE_AM_PROTEDGE;
+	value = Value_Am_ProtEdge;
 	visual = "ItAm_Prot_Edge_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itam_prot_edge_01;
-	on_unequip = unequip_itam_prot_edge_01;
+	on_equip = Equip_ItAm_Prot_Edge_01;
+	on_unequip = UnEquip_ItAm_Prot_Edge_01;
 	description = "Amulet Stalowej Skóry";
-	text[2] = NAME_PROT_EDGE;
-	count[2] = AM_PROTEDGE;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Prot_Edge;
+	count[2] = Am_ProtEdge;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
 };
 
 
-func void equip_itam_prot_edge_01()
+func void Equip_ItAm_Prot_Edge_01()
 {
-	self.protection[PROT_EDGE] += AM_PROTEDGE;
-	self.protection[PROT_BLUNT] += AM_PROTEDGE;
+	self.protection[PROT_EDGE] += Am_ProtEdge;
+	self.protection[PROT_BLUNT] += Am_ProtEdge;
 };
 
-func void unequip_itam_prot_edge_01()
+func void UnEquip_ItAm_Prot_Edge_01()
 {
-	self.protection[PROT_EDGE] -= AM_PROTEDGE;
-	self.protection[PROT_BLUNT] -= AM_PROTEDGE;
+	self.protection[PROT_EDGE] -= Am_ProtEdge;
+	self.protection[PROT_BLUNT] -= Am_ProtEdge;
 };
 
 
-instance ITAM_PROT_POINT_01(C_ITEM)
+instance ItAm_Prot_Point_01(C_Item)
 {
-	name = NAME_AMULETT;
+	name = NAME_Amulett;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET;
-	value = VALUE_AM_PROTPOINT;
+	value = Value_Am_ProtPoint;
 	visual = "ItAm_Prot_Point_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itam_prot_point_01;
-	on_unequip = unequip_itam_prot_point_01;
+	on_equip = Equip_ItAm_Prot_Point_01;
+	on_unequip = UnEquip_ItAm_Prot_Point_01;
 	description = "Amulet Dêbowej Skóry";
-	text[2] = NAME_PROT_POINT;
-	count[2] = AM_PROTPOINT;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Prot_Point;
+	count[2] = Am_ProtPoint;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
 };
 
 
-func void equip_itam_prot_point_01()
+func void Equip_ItAm_Prot_Point_01()
 {
-	self.protection[PROT_POINT] += AM_PROTPOINT;
+	self.protection[PROT_POINT] += Am_ProtPoint;
 };
 
-func void unequip_itam_prot_point_01()
+func void UnEquip_ItAm_Prot_Point_01()
 {
-	self.protection[PROT_POINT] -= AM_PROTPOINT;
+	self.protection[PROT_POINT] -= Am_ProtPoint;
 };
 
 
-instance ITAM_PROT_MAGE_01(C_ITEM)
+instance ItAm_Prot_Mage_01(C_Item)
 {
-	name = NAME_AMULETT;
+	name = NAME_Amulett;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET;
-	value = VALUE_AM_PROTMAGE;
+	value = Value_Am_ProtMage;
 	visual = "ItAm_Prot_Mage_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itam_prot_mage_01;
-	on_unequip = unequip_itam_prot_mage_01;
+	on_equip = Equip_ItAm_Prot_Mage_01;
+	on_unequip = UnEquip_ItAm_Prot_Mage_01;
 	description = "Amulet Duchowej Si³y";
-	text[2] = NAME_PROT_MAGIC;
-	count[2] = AM_PROTMAGE;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Prot_Magic;
+	count[2] = Am_ProtMage;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
 };
 
 
-func void equip_itam_prot_mage_01()
+func void Equip_ItAm_Prot_Mage_01()
 {
-	self.protection[PROT_MAGIC] += AM_PROTMAGE;
+	self.protection[PROT_MAGIC] += Am_ProtMage;
 };
 
-func void unequip_itam_prot_mage_01()
+func void UnEquip_ItAm_Prot_Mage_01()
 {
-	self.protection[PROT_MAGIC] -= AM_PROTMAGE;
+	self.protection[PROT_MAGIC] -= Am_ProtMage;
 };
 
 
-instance ITAM_PROT_TOTAL_01(C_ITEM)
+instance ItAm_Prot_Total_01(C_Item)
 {
-	name = NAME_AMULETT;
+	name = NAME_Amulett;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET;
-	value = VALUE_AM_PROTTOTAL;
+	value = Value_Am_ProtTotal;
 	visual = "ItAm_Prot_Total_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_value_am_prottotal;
-	on_unequip = unequip_value_am_prottotal;
+	on_equip = Equip_Value_Am_ProtTotal;
+	on_unequip = UnEquip_Value_Am_ProtTotal;
 	description = "Amulet Magicznego Pancerza";
-	text[1] = NAME_PROT_FIRE;
-	count[1] = AM_TPROTFIRE;
-	text[2] = NAME_PROT_MAGIC;
-	count[2] = AM_TPROTMAGE;
-	text[3] = NAME_PROT_POINT;
-	count[3] = AM_TPROTPOINT;
-	text[4] = NAME_PROT_EDGE;
-	count[4] = AM_TPROTEDGE;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Prot_Fire;
+	count[1] = Am_TProtFire;
+	text[2] = NAME_Prot_Magic;
+	count[2] = Am_TProtMage;
+	text[3] = NAME_Prot_Point;
+	count[3] = Am_TProtPoint;
+	text[4] = NAME_Prot_Edge;
+	count[4] = AM_TProtEdge;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
 };
 
 
-func void equip_value_am_prottotal()
+func void Equip_Value_Am_ProtTotal()
 {
-	self.protection[PROT_EDGE] += AM_TPROTEDGE;
-	self.protection[PROT_BLUNT] += AM_TPROTEDGE;
-	self.protection[PROT_POINT] += AM_TPROTPOINT;
-	self.protection[PROT_FIRE] += AM_TPROTFIRE;
-	self.protection[PROT_MAGIC] += AM_TPROTMAGE;
+	self.protection[PROT_EDGE] += AM_TProtEdge;
+	self.protection[PROT_BLUNT] += AM_TProtEdge;
+	self.protection[PROT_POINT] += Am_TProtPoint;
+	self.protection[PROT_FIRE] += Am_TProtFire;
+	self.protection[PROT_MAGIC] += Am_TProtMage;
 };
 
-func void unequip_value_am_prottotal()
+func void UnEquip_Value_Am_ProtTotal()
 {
-	self.protection[PROT_EDGE] -= AM_TPROTEDGE;
-	self.protection[PROT_BLUNT] -= AM_TPROTEDGE;
-	self.protection[PROT_POINT] -= AM_TPROTPOINT;
-	self.protection[PROT_FIRE] -= AM_TPROTFIRE;
-	self.protection[PROT_MAGIC] -= AM_TPROTMAGE;
+	self.protection[PROT_EDGE] -= AM_TProtEdge;
+	self.protection[PROT_BLUNT] -= AM_TProtEdge;
+	self.protection[PROT_POINT] -= Am_TProtPoint;
+	self.protection[PROT_FIRE] -= Am_TProtFire;
+	self.protection[PROT_MAGIC] -= Am_TProtMage;
 };
 
 
-instance ITAM_DEX_01(C_ITEM)
+instance ItAm_Dex_01(C_Item)
 {
-	name = NAME_AMULETT;
+	name = NAME_Amulett;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET;
-	value = VALUE_AM_DEX;
+	value = Value_Am_Dex;
 	visual = "ItAm_Dex_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itam_dex_01;
-	on_unequip = unequip_itam_dex_01;
+	on_equip = Equip_ItAm_Dex_01;
+	on_unequip = UnEquip_ItAm_Dex_01;
 	description = "Amulet Zwinnoœci";
-	text[2] = NAME_BONUS_DEX;
-	count[2] = AM_DEX;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Bonus_Dex;
+	count[2] = Am_Dex;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
 };
 
 
-func void equip_itam_dex_01()
+func void Equip_ItAm_Dex_01()
 {
-	b_raiseattribute(self,ATR_DEXTERITY,AM_DEX,FALSE,TRUE);
+	B_RaiseAttribute(self,ATR_DEXTERITY,Am_Dex,FALSE,TRUE);
 };
 
-func void unequip_itam_dex_01()
+func void UnEquip_ItAm_Dex_01()
 {
-	b_removeitemattribute(self,ATR_DEXTERITY,AM_DEX);
+	b_removeitemattribute(self,ATR_DEXTERITY,Am_Dex);
 };
 
 
-instance ITAM_STRG_01(C_ITEM)
+instance ItAm_Strg_01(C_Item)
 {
-	name = NAME_AMULETT;
+	name = NAME_Amulett;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET;
-	value = VALUE_AM_STRG;
+	value = Value_Am_Strg;
 	visual = "ItAm_Strg_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itam_strg_01;
-	on_unequip = unequip_itam_strg_01;
+	on_equip = Equip_ItAm_Strg_01;
+	on_unequip = UnEquip_ItAm_Strg_01;
 	description = "Amulet Si³y";
-	text[2] = NAME_BONUS_STR;
-	count[2] = AM_STRG;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Bonus_Str;
+	count[2] = Am_Strg;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
 };
 
 
-func void equip_itam_strg_01()
+func void Equip_ItAm_Strg_01()
 {
-	b_raiseattribute(self,ATR_STRENGTH,AM_STRG,FALSE,TRUE);
+	B_RaiseAttribute(self,ATR_STRENGTH,Am_Strg,FALSE,TRUE);
 };
 
-func void unequip_itam_strg_01()
+func void UnEquip_ItAm_Strg_01()
 {
-	b_removeitemattribute(self,ATR_STRENGTH,AM_STRG);
+	b_removeitemattribute(self,ATR_STRENGTH,Am_Strg);
 };
 
 
-instance ITAM_HP_01(C_ITEM)
+instance ItAm_Hp_01(C_Item)
 {
-	name = NAME_AMULETT;
+	name = NAME_Amulett;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET;
-	value = VALUE_AM_HP;
+	value = Value_Am_Hp;
 	visual = "ItAm_Hp_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itam_hp_01;
-	on_unequip = unequip_itam_hp_01;
+	on_equip = Equip_ItAm_Hp_01;
+	on_unequip = UnEquip_ItAm_Hp_01;
 	description = "Amulet ¯ycia";
-	text[2] = NAME_BONUS_HP;
-	count[2] = AM_HP;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Bonus_HP;
+	count[2] = Am_Hp;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
 };
 
 
-func void equip_itam_hp_01()
+func void Equip_ItAm_Hp_01()
 {
-	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] + AM_HP;
-	//self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + AM_HP;
+	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] + Am_Hp;
+	self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + Am_Hp;
 };
 
-func void unequip_itam_hp_01()
+func void UnEquip_ItAm_Hp_01()
 {
-	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - AM_HP;
-	if(self.attribute[ATR_HITPOINTS] > (AM_HP + 2))
+	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - Am_Hp;
+	if(self.attribute[ATR_HITPOINTS] > (Am_Hp + 2))
 	{
-		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - AM_HP;
+		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - Am_Hp;
 	}
 	else
 	{
@@ -300,38 +300,38 @@ func void unequip_itam_hp_01()
 };
 
 
-instance ITAM_MANA_01(C_ITEM)
+instance ItAm_Mana_01(C_Item)
 {
-	name = NAME_AMULETT;
+	name = NAME_Amulett;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET;
-	value = VALUE_AM_MANA;
+	value = Value_Am_Mana;
 	visual = "ItAm_Mana_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itam_mana_01;
-	on_unequip = unequip_itam_mana_01;
+	on_equip = Equip_ItAm_Mana_01;
+	on_unequip = UnEquip_ItAm_Mana_01;
 	description = "Amulet Magii";
-	text[2] = NAME_BONUS_MANA;
+	text[2] = NAME_Bonus_Mana;
 	count[2] = 10;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
 };
 
 
-func void equip_itam_mana_01()
+func void Equip_ItAm_Mana_01()
 {
-	b_raiseattribute(self,ATR_MANA_MAX,AM_MANA,FALSE,TRUE);
-	//self.attribute[ATR_MANA] = self.attribute[ATR_MANA] + AM_MANA;
+	B_RaiseAttribute(self,ATR_MANA_MAX,Am_Mana,FALSE,TRUE);
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] + Am_Mana;
 };
 
-func void unequip_itam_mana_01()
+func void UnEquip_ItAm_Mana_01()
 {
-	b_removeitemattribute(self,ATR_MANA_MAX,AM_MANA);
-	if(self.attribute[ATR_MANA] > AM_MANA)
+	b_removeitemattribute(self,ATR_MANA_MAX,Am_Mana);
+	if(self.attribute[ATR_MANA] > Am_Mana)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - AM_MANA;
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - Am_Mana;
 	}
 	else
 	{
@@ -340,87 +340,87 @@ func void unequip_itam_mana_01()
 };
 
 
-instance ITAM_DEX_STRG_01(C_ITEM)
+instance ItAm_Dex_Strg_01(C_Item)
 {
-	name = NAME_AMULETT;
+	name = NAME_Amulett;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET;
-	value = VALUE_AM_DEXSTRG;
+	value = Value_Am_DexStrg;
 	visual = "ItAm_Dex_Strg_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itam_dex_strg_01;
-	on_unequip = unequip_itam_dex_strg_01;
+	on_equip = Equip_ItAm_Dex_Strg_01;
+	on_unequip = UnEquip_ItAm_Dex_Strg_01;
 	description = "Amulet Potêgi";
-	text[2] = NAME_BONUS_DEX;
-	count[2] = AM_DEXSTRG_DEX;
-	text[3] = NAME_BONUS_STR;
-	count[3] = AM_DEXSTRG_STRG;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Bonus_Dex;
+	count[2] = Am_DexStrg_Dex;
+	text[3] = NAME_Bonus_Str;
+	count[3] = Am_DexStrg_Strg;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
 };
 
 
-func void equip_itam_dex_strg_01()
+func void Equip_ItAm_Dex_Strg_01()
 {
-	b_raiseattribute(self,ATR_STRENGTH,AM_DEXSTRG_STRG,FALSE,TRUE);
-	b_raiseattribute(self,ATR_DEXTERITY,AM_DEXSTRG_DEX,FALSE,TRUE);
+	B_RaiseAttribute(self,ATR_STRENGTH,Am_DexStrg_Strg,FALSE,TRUE);
+	B_RaiseAttribute(self,ATR_DEXTERITY,Am_DexStrg_Dex,FALSE,TRUE);
 };
 
-func void unequip_itam_dex_strg_01()
+func void UnEquip_ItAm_Dex_Strg_01()
 {
-	b_removeitemattribute(self,ATR_STRENGTH,AM_DEXSTRG_STRG);
-	b_removeitemattribute(self,ATR_DEXTERITY,AM_DEXSTRG_DEX);
+	b_removeitemattribute(self,ATR_STRENGTH,Am_DexStrg_Strg);
+	b_removeitemattribute(self,ATR_DEXTERITY,Am_DexStrg_Dex);
 };
 
 
-instance ITAM_HP_MANA_01(C_ITEM)
+instance ItAm_Hp_Mana_01(C_Item)
 {
-	name = NAME_AMULETT;
+	name = NAME_Amulett;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET;
-	value = VALUE_AM_HPMANA;
+	value = Value_Am_HpMana;
 	visual = "ItAm_Hp_Mana_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itam_hp_mana_01;
-	on_unequip = unequip_itam_hp_mana_01;
+	on_equip = Equip_ItAm_Hp_Mana_01;
+	on_unequip = UnEquip_ItAm_Hp_Mana_01;
 	description = "Amulet Oœwiecenia";
-	text[2] = NAME_BONUS_HP;
-	count[2] = AM_HPMANA_HP;
-	text[3] = NAME_BONUS_MANA;
-	count[3] = AM_HPMANA_MANA;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Bonus_HP;
+	count[2] = Am_HpMana_Hp;
+	text[3] = NAME_Bonus_Mana;
+	count[3] = Am_HpMana_Mana;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
 };
 
 
-func void equip_itam_hp_mana_01()
+func void Equip_ItAm_Hp_Mana_01()
 {
-	//self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + AM_HPMANA_HP;
-	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] + AM_HPMANA_HP;
-	b_raiseattribute(self,ATR_MANA_MAX,AM_HPMANA_MANA,FALSE,TRUE);
-	self.attribute[ATR_MANA_MAX] = self.attribute[ATR_MANA_MAX] + AM_HPMANA_MANA;
+	self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + Am_HpMana_Hp;
+	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] + Am_HpMana_Hp;
+	B_RaiseAttribute(self,ATR_MANA_MAX,Am_HpMana_Mana,FALSE,TRUE);
+	self.attribute[ATR_MANA_MAX] = self.attribute[ATR_MANA_MAX] + Am_HpMana_Mana;
 };
 
-func void unequip_itam_hp_mana_01()
+func void UnEquip_ItAm_Hp_Mana_01()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - AM_HPMANA_MANA;
-	b_removeitemattribute(self,ATR_MANA_MAX,AM_HPMANA_MANA);
-	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - AM_HPMANA_HP;
-	if(self.attribute[ATR_HITPOINTS] > (AM_HPMANA_HP + 1))
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - Am_HpMana_Mana;
+	b_removeitemattribute(self,ATR_MANA_MAX,Am_HpMana_Mana);
+	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - Am_HpMana_Hp;
+	if(self.attribute[ATR_HITPOINTS] > (Am_HpMana_Hp + 1))
 	{
-		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - AM_HPMANA_HP;
+		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - Am_HpMana_Hp;
 	}
 	else
 	{
 		self.attribute[ATR_HITPOINTS] = 2;
 	};
-	if(self.attribute[ATR_MANA] >= AM_HPMANA_HP)
+	if(self.attribute[ATR_MANA] >= Am_HpMana_Hp)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - AM_HPMANA_HP;
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - Am_HpMana_Hp;
 	}
 	else
 	{

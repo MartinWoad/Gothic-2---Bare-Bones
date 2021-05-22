@@ -1,9 +1,9 @@
 
-func void zs_sit_bench()
+func void ZS_Sit_Bench()
 {
-	perception_set_normal();
-	b_resetall(self);
-	if(!c_bodystatecontains(self,BS_SIT))
+	Perception_Set_Normal();
+	B_ResetAll(self);
+	if(!C_BodyStateContains(self,BS_SIT))
 	{
 		AI_SetWalkMode(self,NPC_WALK);
 		if(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == FALSE)
@@ -13,14 +13,14 @@ func void zs_sit_bench()
 	};
 };
 
-func int zs_sit_bench_loop()
+func int ZS_Sit_Bench_Loop()
 {
 	var int random;
-	if(!c_bodystatecontains(self,BS_SIT) && Wld_IsMobAvailable(self,"BENCH"))
+	if(!C_BodyStateContains(self,BS_SIT) && Wld_IsMobAvailable(self,"BENCH"))
 	{
 		AI_UseMob(self,"BENCH",1);
 	};
-	if(c_bodystatecontains(self,BS_SIT) && (Npc_GetStateTime(self) > 5))
+	if(C_BodyStateContains(self,BS_SIT) && (Npc_GetStateTime(self) > 5))
 	{
 		random = Hlp_Random(8);
 		if(random <= 0)
@@ -44,7 +44,7 @@ func int zs_sit_bench_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_sit_bench_end()
+func void ZS_Sit_Bench_End()
 {
 	AI_UseMob(self,"BENCH",-1);
 };

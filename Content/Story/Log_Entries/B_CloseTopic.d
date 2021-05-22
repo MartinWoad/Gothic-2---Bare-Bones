@@ -1,19 +1,19 @@
 
-func void b_closetopic(var string topic,var int missionvar,var int commonvar,var int endchapter)
+func void B_CloseTopic(var string topic,var int MissionVar,var int CommonVar,var int EndChapter)
 {
-	if((missionvar == LOG_SUCCESS) || (commonvar == TRUE))
+	if((MissionVar == LOG_SUCCESS) || (CommonVar == TRUE))
 	{
 		Log_SetTopicStatus(topic,LOG_SUCCESS);
 	}
-	else if(missionvar == LOG_OBSOLETE)
+	else if(MissionVar == LOG_OBSOLETE)
 	{
 		Log_SetTopicStatus(topic,LOG_OBSOLETE);
 	}
-	else if(missionvar == LOG_FAILED)
+	else if(MissionVar == LOG_FAILED)
 	{
 		Log_SetTopicStatus(topic,LOG_FAILED);
 	}
-	else if((KAPITEL >= endchapter) && ((missionvar == LOG_RUNNING) || (commonvar == FALSE)))
+	else if((Kapitel >= EndChapter) && ((MissionVar == LOG_Running) || (CommonVar == FALSE)))
 	{
 		Log_SetTopicStatus(topic,LOG_OBSOLETE);
 	};

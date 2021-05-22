@@ -1,13 +1,13 @@
 
-func int c_refusetalk(var C_NPC slf)
+func int C_RefuseTalk(var C_Npc slf)
 {
-	if((Npc_RefuseTalk(slf) == TRUE) && c_npcisgateguard(slf) && (slf.aivar[AIV_GUARDPASSAGE_STATUS] == GP_NONE))
+	if((Npc_RefuseTalk(slf) == TRUE) && C_NpcIsGateGuard(slf) && (slf.aivar[AIV_Guardpassage_Status] == GP_NONE))
 	{
 		return TRUE;
 	};
-	if((slf.aivar[AIV_TALKEDTOPLAYER] == FALSE) && (Npc_GetDistToWP(slf,slf.wp) > 500))
+	if((slf.aivar[AIV_TalkedToPlayer] == FALSE) && (Npc_GetDistToWP(slf,slf.wp) > 500))
 	{
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(lothar))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Lothar))
 		{
 			return TRUE;
 		};

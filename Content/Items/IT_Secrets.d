@@ -1,5 +1,5 @@
 
-instance ITSE_ERZFISCH(C_ITEM)
+instance ItSe_ErzFisch(C_Item)
 {
 	name = "Kulista Ryba";
 	mainflag = ITEM_KAT_NONE;
@@ -7,21 +7,21 @@ instance ITSE_ERZFISCH(C_ITEM)
 	value = 25;
 	visual = "ItFo_Fish.3DS";
 	material = MAT_LEATHER;
-	scemename = "MAPSEALED";
-	on_state[0] = use_erzfisch;
+	scemeName = "MAPSEALED";
+	on_state[0] = Use_ErzFisch;
 	description = name;
 	text[2] = "W tej rybie coœ schowano.";
 };
 
 
-func void use_erzfisch()
+func void Use_ErzFisch()
 {
-	CreateInvItems(hero,itmi_nugget,1);
-	Print(PRINT_FOUNDORENUGGET);
+	CreateInvItems(hero,ItMi_Nugget,1);
+	Print(PRINT_FoundOreNugget);
 };
 
 
-instance ITSE_GOLDFISCH(C_ITEM)
+instance ItSe_GoldFisch(C_Item)
 {
 	name = "Ciê¿ka Ryba";
 	mainflag = ITEM_KAT_NONE;
@@ -29,22 +29,22 @@ instance ITSE_GOLDFISCH(C_ITEM)
 	value = 25;
 	visual = "ItFo_Fish.3DS";
 	material = MAT_LEATHER;
-	scemename = "MAPSEALED";
-	on_state[0] = use_goldfisch;
+	scemeName = "MAPSEALED";
+	on_state[0] = Use_GoldFisch;
 	description = name;
 	text[2] = "W tej rybie coœ schowano.";
 };
 
 
-func void use_goldfisch()
+func void Use_GoldFisch()
 {
-	CreateInvItems(hero,itmi_gold,50);
-	Print(PRINT_FOUNDGOLD50);
+	CreateInvItems(hero,ItMi_Gold,50);
+	Print(PRINT_FoundGold50);
 	Snd_Play("Geldbeutel");
 };
 
 
-instance ITSE_RINGFISCH(C_ITEM)
+instance ItSe_Ringfisch(C_Item)
 {
 	name = "Ma³a Ryba";
 	mainflag = ITEM_KAT_NONE;
@@ -52,21 +52,21 @@ instance ITSE_RINGFISCH(C_ITEM)
 	value = 25;
 	visual = "ItFo_Fish.3DS";
 	material = MAT_LEATHER;
-	scemename = "MAPSEALED";
-	on_state[0] = use_ringfisch;
+	scemeName = "MAPSEALED";
+	on_state[0] = Use_Ringfisch;
 	description = name;
 	text[2] = "W tej rybie coœ schowano.";
 };
 
 
-func void use_ringfisch()
+func void Use_Ringfisch()
 {
-	CreateInvItems(hero,itri_prot_fire_01,1);
-	Print(PRINT_FOUNDRING);
+	CreateInvItems(hero,ItRi_Prot_Fire_01,1);
+	Print(PRINT_FoundRing);
 };
 
 
-instance ITSE_LOCKPICKFISCH(C_ITEM)
+instance ItSe_LockpickFisch(C_Item)
 {
 	name = "Lekka Ryba";
 	mainflag = ITEM_KAT_NONE;
@@ -74,132 +74,132 @@ instance ITSE_LOCKPICKFISCH(C_ITEM)
 	value = 25;
 	visual = "ItFo_Fish.3DS";
 	material = MAT_LEATHER;
-	scemename = "MAPSEALED";
-	on_state[0] = use_lockpickfisch;
+	scemeName = "MAPSEALED";
+	on_state[0] = Use_LockpickFisch;
 	description = name;
 	text[2] = "W tej rybie coœ schowano.";
 };
 
 
-func void use_lockpickfisch()
+func void Use_LockpickFisch()
 {
-	CreateInvItems(hero,itke_lockpick,3);
-	Print(PRINT_FOUNDLOCKPICK);
+	CreateInvItems(hero,ItKE_lockpick,3);
+	Print(PRINT_FoundLockpick);
 };
 
 
-instance ITSE_GOLDPOCKET25(C_ITEM)
+instance ItSe_GoldPocket25(C_Item)
 {
 	name = "Skórzany Mieszek";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = 25;
 	visual = "ItMi_Pocket.3ds";
-	scemename = "MAPSEALED";
+	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
-	on_state[0] = goldpocket25;
+	on_state[0] = GoldPocket25;
 	description = "Skórzany woreczek.";
 	text[0] = "";
 	text[1] = "";
 	text[2] = "W œrodku podzwania kilka monet.";
 	text[3] = "";
 	text[4] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void goldpocket25()
+func void GoldPocket25()
 {
-	CreateInvItems(hero,itmi_gold,25);
-	Print(PRINT_FOUNDGOLD25);
+	CreateInvItems(hero,ItMi_Gold,25);
+	Print(PRINT_FoundGold25);
 	Snd_Play("Geldbeutel");
 };
 
 
-instance ITSE_GOLDPOCKET50(C_ITEM)
+instance ItSe_GoldPocket50(C_Item)
 {
 	name = "Skórzany Mieszek";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = 50;
 	visual = "ItMi_Pocket.3ds";
-	scemename = "MAPSEALED";
+	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
-	on_state[0] = goldpocket50;
+	on_state[0] = GoldPocket50;
 	description = "Skórzany woreczek.";
 	text[0] = "";
 	text[1] = "";
 	text[2] = "Woreczek jest pe³ny monet.";
 	text[3] = "";
 	text[4] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void goldpocket50()
+func void GoldPocket50()
 {
-	CreateInvItems(hero,itmi_gold,50);
-	Print(PRINT_FOUNDGOLD50);
+	CreateInvItems(hero,ItMi_Gold,50);
+	Print(PRINT_FoundGold50);
 	Snd_Play("Geldbeutel");
 };
 
 
-instance ITSE_GOLDPOCKET100(C_ITEM)
+instance ItSe_GoldPocket100(C_Item)
 {
 	name = "Skórzany Mieszek";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = 100;
 	visual = "ItMi_Pocket.3ds";
-	scemename = "MAPSEALED";
+	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
-	on_state[0] = goldpocket100;
+	on_state[0] = GoldPocket100;
 	description = "Skórzany woreczek.";
 	text[0] = "";
 	text[1] = "";
 	text[2] = "Ciê¿ka torba pe³na";
 	text[3] = "z³otych monet.";
 	text[4] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void goldpocket100()
+func void GoldPocket100()
 {
-	CreateInvItems(hero,itmi_gold,100);
-	Print(PRINT_FOUNDGOLD100);
+	CreateInvItems(hero,ItMi_Gold,100);
+	Print(PRINT_FoundGold100);
 	Snd_Play("Geldbeutel");
 };
 
 
-instance ITSE_HANNASBEUTEL(C_ITEM)
+instance ItSe_HannasBeutel(C_Item)
 {
 	name = "Skórzany Mieszek";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = 100;
 	visual = "ItMi_Pocket.3ds";
-	scemename = "MAPSEALED";
+	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
-	on_state[0] = hannasbeutel;
+	on_state[0] = HannasBeutel;
 	description = "Skórzany woreczek.";
 	text[0] = "";
 	text[1] = "";
 	text[2] = "Da³a mi go Hanna.";
 	text[3] = "";
 	text[4] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void hannasbeutel()
+func void HannasBeutel()
 {
-	CreateInvItems(hero,itke_lockpick,10);
-	CreateInvItems(hero,itke_thieftreasure,1);
-	Print(print_hannasbeutel);
+	CreateInvItems(hero,ItKE_lockpick,10);
+	CreateInvItems(hero,ItKe_ThiefTreasure,1);
+	Print(PRINT_HannasBeutel);
 };
 

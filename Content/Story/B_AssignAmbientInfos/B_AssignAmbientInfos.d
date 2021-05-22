@@ -1,196 +1,196 @@
 
-func void b_assignambientinfos(var C_NPC slf)
+func void B_AssignAmbientInfos(var C_Npc slf)
 {
 	if(slf.guild == GIL_VLK)
 	{
-		if(slf.npctype == NPCTYPE_AMBIENT)
+		if(slf.npcType == NPCTYPE_AMBIENT)
 		{
 			if(slf.voice == 1)
 			{
-				b_assignambientinfos_vlk_1(slf);
+				B_AssignAmbientInfos_VLK_1(slf);
 			};
 			if(slf.voice == 6)
 			{
-				b_assignambientinfos_vlk_6(slf);
+				B_AssignAmbientInfos_VLK_6(slf);
 			};
 			if(slf.voice == 8)
 			{
-				b_assignambientinfos_vlk_8(slf);
+				B_AssignAmbientInfos_VLK_8(slf);
 			};
 			if(slf.voice == 16)
 			{
-				b_assignambientinfos_vlk_16(slf);
+				B_AssignAmbientInfos_VLK_16(slf);
 			};
 			if(slf.voice == 17)
 			{
-				b_assignambientinfos_vlk_17(slf);
+				B_AssignAmbientInfos_VLK_17(slf);
 			};
 		};
 	};
 	if(slf.guild == GIL_MIL)
 	{
-		if(slf.npctype == NPCTYPE_AMBIENT)
+		if(slf.npcType == NPCTYPE_AMBIENT)
 		{
 			if(slf.voice == 6)
 			{
-				b_assignambientinfos_mil_6(slf);
+				B_AssignAmbientInfos_MIL_6(slf);
 			};
 			if(slf.voice == 7)
 			{
-				b_assignambientinfos_mil_7(slf);
+				B_AssignAmbientInfos_MIL_7(slf);
 			};
 		};
-		if(slf.npctype == NPCTYPE_OCAMBIENT)
+		if(slf.npcType == NPCTYPE_OCAMBIENT)
 		{
 			if(slf.voice == 1)
 			{
-				b_assignambientinfos_ocvlk_1(slf);
+				B_AssignAmbientInfos_OCVLK_1(slf);
 			};
 			if(slf.voice == 6)
 			{
-				b_assignambientinfos_ocvlk_6(slf);
+				B_AssignAmbientInfos_OCVLK_6(slf);
 			};
 		};
 	};
 	if(slf.guild == GIL_PAL)
 	{
-		if(slf.npctype == NPCTYPE_AMBIENT)
+		if(slf.npcType == NPCTYPE_AMBIENT)
 		{
 			if(slf.voice == 4)
 			{
-				b_assignambientinfos_pal_4(slf);
+				B_AssignAmbientInfos_PAL_4(slf);
 			};
 			if(slf.voice == 9)
 			{
-				b_assignambientinfos_pal_9(slf);
+				B_AssignAmbientInfos_PAL_9(slf);
 			};
 			if(slf.voice == 12)
 			{
-				b_assignambientinfos_pal_12(slf);
+				B_AssignAmbientInfos_PAL_12(slf);
 			};
 		};
-		if(slf.npctype == NPCTYPE_OCAMBIENT)
+		if(slf.npcType == NPCTYPE_OCAMBIENT)
 		{
 			if(slf.voice == 4)
 			{
-				b_assignambientinfos_ocpal_4(slf);
+				B_AssignAmbientInfos_OCPAL_4(slf);
 			};
 			if(slf.voice == 9)
 			{
-				b_assignambientinfos_ocpal_9(slf);
+				B_AssignAmbientInfos_OCPAL_9(slf);
 			};
 		};
 	};
 	if(slf.guild == GIL_BAU)
 	{
-		if(slf.npctype == NPCTYPE_AMBIENT)
+		if(slf.npcType == NPCTYPE_AMBIENT)
 		{
 			if(slf.voice == 1)
 			{
-				b_assignambientinfos_bau_1(slf);
+				B_AssignAmbientInfos_BAU_1(slf);
 			};
 			if(slf.voice == 7)
 			{
-				b_assignambientinfos_bau_7(slf);
+				B_AssignAmbientInfos_BAU_7(slf);
 			};
 			if(slf.voice == 13)
 			{
-				b_assignambientinfos_bau_13(slf);
+				B_AssignAmbientInfos_BAU_13(slf);
 			};
 			if(slf.voice == 16)
 			{
-				b_assignambientinfos_bau_16(slf);
+				B_AssignAmbientInfos_BAU_16(slf);
 			};
 		};
 	};
 	if(slf.guild == GIL_SLD)
 	{
-		if(slf.npctype == NPCTYPE_AMBIENT)
+		if(slf.npcType == NPCTYPE_AMBIENT)
 		{
 			if(slf.voice == 6)
 			{
-				b_assignambientinfos_sld_6(slf);
+				B_AssignAmbientInfos_SLD_6(slf);
 			};
 			if(slf.voice == 7)
 			{
-				b_assignambientinfos_sld_7(slf);
+				B_AssignAmbientInfos_SLD_7(slf);
 			};
 		};
 	};
 	if(slf.guild == GIL_NOV)
 	{
-		if(slf.npctype == NPCTYPE_AMBIENT)
+		if(slf.npcType == NPCTYPE_AMBIENT)
 		{
 			if(slf.voice == 3)
 			{
-				b_assignambientinfos_nov_3(slf);
+				B_AssignAmbientInfos_NOV_3(slf);
 			};
 			if(slf.voice == 8)
 			{
-				b_assignambientinfos_nov_8(slf);
+				B_AssignAmbientInfos_NOV_8(slf);
 			};
 		};
 	};
 	if(slf.guild == GIL_OUT)
 	{
-		if(slf.npctype == NPCTYPE_AMBIENT)
+		if(slf.npcType == NPCTYPE_AMBIENT)
 		{
 			if(slf.voice == 1)
 			{
-				b_assignambientinfos_out_1(slf);
+				B_AssignAmbientInfos_OUT_1(slf);
 			};
 			if(slf.voice == 7)
 			{
-				b_assignambientinfos_out_7(slf);
+				B_AssignAmbientInfos_OUT_7(slf);
 			};
 			if(slf.voice == 13)
 			{
-				b_assignambientinfos_out_13(slf);
+				B_AssignAmbientInfos_OUT_13(slf);
 			};
 		};
-		if(slf.npctype == NPCTYPE_OCAMBIENT)
+		if(slf.npcType == NPCTYPE_OCAMBIENT)
 		{
 			if(slf.voice == 4)
 			{
-				b_assignambientinfos_owpal_4(slf);
+				B_AssignAmbientInfos_OWPAL_4(slf);
 			};
 		};
 	};
 	if(slf.guild == GIL_STRF)
 	{
-		if((slf.npctype == NPCTYPE_AMBIENT) || (slf.npctype == NPCTYPE_OCAMBIENT))
+		if((slf.npcType == NPCTYPE_AMBIENT) || (slf.npcType == NPCTYPE_OCAMBIENT))
 		{
 			if(slf.voice == 1)
 			{
-				b_assignambientinfos_strf_1(slf);
+				B_AssignAmbientInfos_STRF_1(slf);
 			};
 			if(slf.voice == 13)
 			{
-				b_assignambientinfos_strf_13(slf);
+				B_AssignAmbientInfos_STRF_13(slf);
 			};
 		};
 	};
 	if(slf.guild == GIL_BDT)
 	{
-		if((slf.npctype == NPCTYPE_AMBIENT) || (slf.npctype == NPCTYPE_OCAMBIENT))
+		if((slf.npcType == NPCTYPE_AMBIENT) || (slf.npcType == NPCTYPE_OCAMBIENT))
 		{
 			if(slf.voice == 1)
 			{
-				b_assignambientinfos_bdt_1(slf);
+				B_AssignAmbientInfos_BDT_1(slf);
 			};
 			if(slf.voice == 13)
 			{
-				b_assignambientinfos_bdt_13(slf);
+				B_AssignAmbientInfos_BDT_13(slf);
 			};
 		};
 	};
 	if(slf.guild == GIL_DMT)
 	{
-		if((slf.npctype == NPCTYPE_AMBIENT) || (slf.npctype == NPCTYPE_OCAMBIENT))
+		if((slf.npcType == NPCTYPE_AMBIENT) || (slf.npcType == NPCTYPE_OCAMBIENT))
 		{
 			if(slf.voice == 19)
 			{
-				b_assigndementortalk(slf);
+				B_AssignDementorTalk(slf);
 			};
 		};
 	};

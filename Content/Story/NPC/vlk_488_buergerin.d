@@ -1,34 +1,34 @@
 
-instance VLK_488_BUERGERIN(NPC_DEFAULT)
+instance VLK_488_Buergerin(Npc_Default)
 {
-	name[0] = NAME_BUERGERIN;
+	name[0] = NAME_Buergerin;
 	guild = GIL_VLK;
 	id = 488;
 	voice = 16;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	b_setattributestochapter(self,1);
+	npcType = NPCTYPE_AMBIENT;
+	aivar[AIV_ToughGuy] = TRUE;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	b_createambientinv(self);
-	EquipItem(self,itmw_1h_vlk_dagger);
-	b_setnpcvisual(self,FEMALE,"Hum_Head_BabeHair",FACEBABE_N_HAIRANDCLOTH,BODYTEX_N,4832);
+	B_CreateAmbientInv(self);
+	EquipItem(self,ItMw_1h_Vlk_Dagger);
+	B_SetNpcVisual(self,FEMALE,"Hum_Head_BabeHair",FaceBabe_N_HairAndCloth,BodyTex_N,ITAR_BauBabe_L);
 	Mdl_ApplyOverlayMds(self,"Humans_Babe.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_488;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_488;
 };
 
 
-func void rtn_start_488()
+func void Rtn_Start_488()
 {
-	ta_cook_stove(5,0,8,0,"NW_CITY_HABOUR_HUT_08_IN_B");
-	ta_smalltalk(8,0,12,0,"NW_CITY_PATH_HABOUR_04");
-	ta_stand_eating(12,0,14,0,"NW_CITY_PATH_HABOUR_03");
-	ta_sweep_fp(14,0,16,0,"NW_CITY_HABOUR_HUT_08_IN_B");
-	ta_stand_eating(16,0,18,0,"NW_CITY_PATH_HABOUR_03");
-	ta_cook_stove(18,0,20,0,"NW_CITY_HABOUR_HUT_08_IN_B");
-	ta_sweep_fp(20,0,0,0,"NW_CITY_HABOUR_HUT_08_IN_B");
-	ta_sleep(0,0,5,0,"NW_CITY_HABOUR_HUT_08_BED_01");
+	TA_Cook_Stove(5,0,8,0,"NW_CITY_HABOUR_HUT_08_IN_B");
+	TA_Smalltalk(8,0,12,0,"NW_CITY_PATH_HABOUR_04");
+	TA_Stand_Eating(12,0,14,0,"NW_CITY_PATH_HABOUR_03");
+	TA_Sweep_FP(14,0,16,0,"NW_CITY_HABOUR_HUT_08_IN_B");
+	TA_Stand_Eating(16,0,18,0,"NW_CITY_PATH_HABOUR_03");
+	TA_Cook_Stove(18,0,20,0,"NW_CITY_HABOUR_HUT_08_IN_B");
+	TA_Sweep_FP(20,0,0,0,"NW_CITY_HABOUR_HUT_08_IN_B");
+	TA_Sleep(0,0,5,0,"NW_CITY_HABOUR_HUT_08_BED_01");
 };
 

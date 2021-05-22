@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_DRACONIAN(C_NPC)
+prototype Mst_Default_Draconian(C_Npc)
 {
 	name[0] = "Jaszczurocz³ek";
 	guild = GIL_DRACONIAN;
@@ -17,31 +17,31 @@ prototype MST_DEFAULT_DRACONIAN(C_NPC)
 	protection[PROT_FIRE] = IMMUNE;
 	protection[PROT_FLY] = 70;
 	protection[PROT_MAGIC] = 120;
-	hitchance[NPC_TALENT_1H] = 80;
-	hitchance[NPC_TALENT_2H] = 80;
-	hitchance[NPC_TALENT_BOW] = 80;
-	hitchance[NPC_TALENT_CROSSBOW] = 80;
+	HitChance[NPC_TALENT_1H] = 80;
+	HitChance[NPC_TALENT_2H] = 80;
+	HitChance[NPC_TALENT_BOW] = 80;
+	HitChance[NPC_TALENT_CROSSBOW] = 80;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_ORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_draconian()
+func void B_SetVisuals_Draconian()
 {
 	Mdl_SetVisual(self,"Draconian.mds");
 	Mdl_SetVisualBody(self,"Draconian_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance DRACONIAN(MST_DEFAULT_DRACONIAN)
+instance Draconian(Mst_Default_Draconian)
 {
-	b_setvisuals_draconian();
-	EquipItem(self,itmw_2h_orcsword_01);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	B_SetVisuals_Draconian();
+	EquipItem(self,ItMw_2H_OrcSword_01);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 

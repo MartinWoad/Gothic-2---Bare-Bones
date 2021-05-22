@@ -1,35 +1,35 @@
 
-instance SLD_804_ROD(NPC_DEFAULT)
+instance Sld_804_Rod(Npc_Default)
 {
 	name[0] = "Rod";
 	guild = GIL_SLD;
 	id = 804;
 	voice = 6;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,2);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,2);
 	level = 12;
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_2h_rod);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_N_TOUGHBART01,BODYTEX_N,4835);
+	EquipItem(self,ItMw_2h_Rod);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_N_ToughBart01,BodyTex_N,itar_sld_M);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,50);
-	daily_routine = rtn_start_804;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,50);
+	daily_routine = Rtn_Start_804;
 };
 
 
-func void rtn_start_804()
+func void Rtn_Start_804()
 {
-	ta_smalltalk(7,55,22,55,"NW_BIGFARM_PATH_02");
-	ta_sleep(22,55,7,55,"NW_BIGFARM_HOUSE_SLD_SLEEP");
+	TA_Smalltalk(7,55,22,55,"NW_BIGFARM_PATH_02");
+	TA_Sleep(22,55,7,55,"NW_BIGFARM_HOUSE_SLD_SLEEP");
 };
 
-func void rtn_tot_804()
+func void Rtn_Tot_804()
 {
-	ta_sleep(8,0,23,0,"TOT");
-	ta_sleep(23,0,8,0,"TOT");
+	TA_Sleep(8,0,23,0,"TOT");
+	TA_Sleep(23,0,8,0,"TOT");
 };
 

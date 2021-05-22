@@ -1,5 +1,5 @@
 
-func int c_getdisttocenter(var C_NPC slf,var int quarter)
+func int C_GetDistToCenter(var C_Npc slf,var int quarter)
 {
 	var int dist;
 	if(quarter == Q_KASERNE)
@@ -65,16 +65,16 @@ func int c_getdisttocenter(var C_NPC slf,var int quarter)
 	}
 	else
 	{
-		printplus("WRONG Q-PARAMETER!");
+		PrintPlus("WRONG Q-PARAMETER!");
 	};
 	return dist;
 };
 
-func int c_isquarternearest(var C_NPC slf,var int quart)
+func int C_IsQuarterNearest(var C_Npc slf,var int quart)
 {
-	var int quartdist;
-	quartdist = c_getdisttocenter(slf,quart);
-	if((quartdist <= c_getdisttocenter(slf,Q_KASERNE)) && (quartdist <= c_getdisttocenter(slf,Q_GALGEN)) && (quartdist <= c_getdisttocenter(slf,Q_MARKT)) && (quartdist <= c_getdisttocenter(slf,Q_TEMPEL)) && (quartdist <= c_getdisttocenter(slf,Q_UNTERSTADT)) && (quartdist <= c_getdisttocenter(slf,Q_HAFEN)) && (quartdist <= c_getdisttocenter(slf,Q_OBERSTADT)))
+	var int quartDist;
+	quartDist = C_GetDistToCenter(slf,quart);
+	if((quartDist <= C_GetDistToCenter(slf,Q_KASERNE)) && (quartDist <= C_GetDistToCenter(slf,Q_GALGEN)) && (quartDist <= C_GetDistToCenter(slf,Q_MARKT)) && (quartDist <= C_GetDistToCenter(slf,Q_TEMPEL)) && (quartDist <= C_GetDistToCenter(slf,Q_UNTERSTADT)) && (quartDist <= C_GetDistToCenter(slf,Q_HAFEN)) && (quartDist <= C_GetDistToCenter(slf,Q_OBERSTADT)))
 	{
 		return TRUE;
 	}
@@ -84,33 +84,33 @@ func int c_isquarternearest(var C_NPC slf,var int quart)
 	};
 };
 
-func int c_npcisinquarter(var C_NPC slf)
+func int C_NpcIsInQuarter(var C_Npc slf)
 {
-	if(c_isquarternearest(slf,Q_KASERNE))
+	if(C_IsQuarterNearest(slf,Q_KASERNE))
 	{
 		return Q_KASERNE;
 	};
-	if(c_isquarternearest(slf,Q_GALGEN))
+	if(C_IsQuarterNearest(slf,Q_GALGEN))
 	{
 		return Q_GALGEN;
 	};
-	if(c_isquarternearest(slf,Q_MARKT))
+	if(C_IsQuarterNearest(slf,Q_MARKT))
 	{
 		return Q_MARKT;
 	};
-	if(c_isquarternearest(slf,Q_TEMPEL))
+	if(C_IsQuarterNearest(slf,Q_TEMPEL))
 	{
 		return Q_TEMPEL;
 	};
-	if(c_isquarternearest(slf,Q_UNTERSTADT))
+	if(C_IsQuarterNearest(slf,Q_UNTERSTADT))
 	{
 		return Q_UNTERSTADT;
 	};
-	if(c_isquarternearest(slf,Q_HAFEN))
+	if(C_IsQuarterNearest(slf,Q_HAFEN))
 	{
 		return Q_HAFEN;
 	};
-	if(c_isquarternearest(slf,Q_OBERSTADT))
+	if(C_IsQuarterNearest(slf,Q_OBERSTADT))
 	{
 		return Q_OBERSTADT;
 	};

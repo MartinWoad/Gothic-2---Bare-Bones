@@ -1,28 +1,28 @@
 
-instance BAU_954_MALETH(NPC_DEFAULT)
+instance BAU_954_Maleth(Npc_Default)
 {
 	name[0] = "Maleth";
 	guild = GIL_OUT;
 	id = 954;
 	voice = 8;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,1);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_bau_axe);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_NORMALBART_DEXTER,BODYTEX_N,4830);
+	EquipItem(self,ItMw_1h_Bau_Axe);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_NormalBart_Dexter,BodyTex_N,ITAR_Bau_L);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,25);
-	daily_routine = rtn_start_954;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,25);
+	daily_routine = Rtn_Start_954;
 };
 
 
-func void rtn_start_954()
+func void Rtn_Start_954()
 {
-	ta_stand_guarding(8,0,22,0,"NW_FARM1_PATH_CITY_SHEEP_09");
-	ta_sleep(22,0,8,0,"NW_FARM1_INSTABLE_BED");
+	TA_Stand_Guarding(8,0,22,0,"NW_FARM1_PATH_CITY_SHEEP_09");
+	TA_Sleep(22,0,8,0,"NW_FARM1_INSTABLE_BED");
 };
 

@@ -1,30 +1,30 @@
 
-instance NOV_610_NOVIZE(NPC_DEFAULT)
+instance NOV_610_Novize(Npc_Default)
 {
-	name[0] = NAME_NOVIZE;
+	name[0] = NAME_Novize;
 	guild = GIL_NOV;
 	id = 610;
 	voice = 8;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,2);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,2);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_nov_mace);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_NORMAL04,BODYTEX_N,4842);
+	EquipItem(self,ItMw_1h_Nov_Mace);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Normal04,BodyTex_N,ItAr_NOV_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Mage.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_610;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_610;
 };
 
 
-func void rtn_start_610()
+func void Rtn_Start_610()
 {
-	ta_pick_fp(8,0,13,0,"NW_MONASTERY_HERB_03");
-	ta_pray_innos_fp(13,0,14,0,"NW_MONASTERY_CHURCH_03");
-	ta_pick_fp(14,0,22,50,"NW_MONASTERY_HERB_03");
-	ta_sleep(22,50,8,0,"NW_MONASTERY_NOVICE04_06");
+	TA_Pick_FP(8,0,13,0,"NW_MONASTERY_HERB_03");
+	TA_Pray_Innos_FP(13,0,14,0,"NW_MONASTERY_CHURCH_03");
+	TA_Pick_FP(14,0,22,50,"NW_MONASTERY_HERB_03");
+	TA_Sleep(22,50,8,0,"NW_MONASTERY_NOVICE04_06");
 };
 

@@ -1,97 +1,97 @@
 
-var int kardif_itemsgiven_chapter_1;
-var int kardif_itemsgiven_chapter_2;
-var int kardif_itemsgiven_chapter_3;
-var int kardif_itemsgiven_chapter_4;
-var int kardif_itemsgiven_chapter_5;
+var int Kardif_ItemsGiven_Chapter_1;
+var int Kardif_ItemsGiven_Chapter_2;
+var int Kardif_ItemsGiven_Chapter_3;
+var int Kardif_ItemsGiven_Chapter_4;
+var int Kardif_ItemsGiven_Chapter_5;
 var int kardif_itemsgiven_chapter_6;
 
-func void b_givetradeinv_kardif(var C_NPC slf)
+func void B_GiveTradeInv_Kardif(var C_Npc slf)
 {
-	if((KAPITEL >= 1) && (KARDIF_ITEMSGIVEN_CHAPTER_1 == FALSE))
+	if((Kapitel >= 1) && (Kardif_ItemsGiven_Chapter_1 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,80);
-		CreateInvItems(slf,itfo_fishsoup,3);
-		CreateInvItems(slf,itfomutton,1);
-		CreateInvItems(slf,itfo_fish,4);
-		CreateInvItems(slf,itfo_booze,2);
-		CreateInvItems(slf,itfo_beer,4);
-		CreateInvItems(slf,itfo_wine,3);
-		KARDIF_ITEMSGIVEN_CHAPTER_1 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,80);
+		CreateInvItems(slf,ItFo_FishSoup,3);
+		CreateInvItems(slf,ItFoMutton,1);
+		CreateInvItems(slf,ItFo_Fish,4);
+		CreateInvItems(slf,ItFo_Booze,2);
+		CreateInvItems(slf,ItFo_Beer,4);
+		CreateInvItems(slf,ItFo_Wine,3);
+		Kardif_ItemsGiven_Chapter_1 = TRUE;
 	};
-	if((KAPITEL >= 2) && (KARDIF_ITEMSGIVEN_CHAPTER_2 == FALSE))
+	if((Kapitel >= 2) && (Kardif_ItemsGiven_Chapter_2 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itfo_sausage,2);
-		CreateInvItems(slf,itfo_fish,4);
-		CreateInvItems(slf,itfo_booze,2);
-		CreateInvItems(slf,itfo_beer,4);
-		CreateInvItems(slf,itfo_wine,3);
-		if(KNOWS_SECRETSIGN == TRUE)
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItFo_Sausage,2);
+		CreateInvItems(slf,ItFo_Fish,4);
+		CreateInvItems(slf,ItFo_Booze,2);
+		CreateInvItems(slf,ItFo_Beer,4);
+		CreateInvItems(slf,ItFo_Wine,3);
+		if(Knows_SecretSign == TRUE)
 		{
-			CreateInvItems(self,itke_lockpick,20);
+			CreateInvItems(self,ItKE_lockpick,20);
 		};
-		KARDIF_ITEMSGIVEN_CHAPTER_2 = TRUE;
+		Kardif_ItemsGiven_Chapter_2 = TRUE;
 	};
-	if((KAPITEL >= 3) && (KARDIF_ITEMSGIVEN_CHAPTER_3 == FALSE))
+	if((Kapitel >= 3) && (Kardif_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,150);
-		CreateInvItems(slf,itfo_sausage,2);
-		CreateInvItems(slf,itfo_fishsoup,3);
-		CreateInvItems(slf,itfomutton,1);
-		CreateInvItems(slf,itfo_wine,1);
-		CreateInvItems(slf,itfo_beer,4);
-		if(KNOWS_SECRETSIGN == TRUE)
+		CreateInvItems(slf,ItMi_Gold,150);
+		CreateInvItems(slf,ItFo_Sausage,2);
+		CreateInvItems(slf,ItFo_FishSoup,3);
+		CreateInvItems(slf,ItFoMutton,1);
+		CreateInvItems(slf,ItFo_Wine,1);
+		CreateInvItems(slf,ItFo_Beer,4);
+		if(Knows_SecretSign == TRUE)
 		{
-			CreateInvItems(self,itke_lockpick,20);
+			CreateInvItems(self,ItKE_lockpick,20);
 		};
-		KARDIF_ITEMSGIVEN_CHAPTER_3 = TRUE;
+		Kardif_ItemsGiven_Chapter_3 = TRUE;
 	};
-	if((KAPITEL >= 4) && (KARDIF_ITEMSGIVEN_CHAPTER_4 == FALSE))
+	if((Kapitel >= 4) && (Kardif_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,200);
-		CreateInvItems(slf,itfo_sausage,2);
-		CreateInvItems(slf,itfo_fishsoup,3);
-		CreateInvItems(slf,itfomutton,1);
-		CreateInvItems(slf,itfo_fish,4);
-		CreateInvItems(slf,itfo_wine,1);
-		CreateInvItems(slf,itfo_booze,2);
-		CreateInvItems(slf,itfo_beer,4);
-		if(KNOWS_SECRETSIGN == TRUE)
+		CreateInvItems(slf,ItMi_Gold,200);
+		CreateInvItems(slf,ItFo_Sausage,2);
+		CreateInvItems(slf,ItFo_FishSoup,3);
+		CreateInvItems(slf,ItFoMutton,1);
+		CreateInvItems(slf,ItFo_Fish,4);
+		CreateInvItems(slf,ItFo_Wine,1);
+		CreateInvItems(slf,ItFo_Booze,2);
+		CreateInvItems(slf,ItFo_Beer,4);
+		if(Knows_SecretSign == TRUE)
 		{
-			CreateInvItems(self,itke_lockpick,20);
+			CreateInvItems(self,ItKE_lockpick,20);
 		};
-		KARDIF_ITEMSGIVEN_CHAPTER_4 = TRUE;
+		Kardif_ItemsGiven_Chapter_4 = TRUE;
 	};
-	if((KAPITEL >= 5) && (KARDIF_ITEMSGIVEN_CHAPTER_5 == FALSE))
+	if((Kapitel >= 5) && (Kardif_ItemsGiven_Chapter_5 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,300);
-		CreateInvItems(slf,itfo_sausage,3);
-		CreateInvItems(slf,itfo_fishsoup,5);
-		CreateInvItems(slf,itfomutton,7);
-		CreateInvItems(slf,itfo_fish,8);
-		CreateInvItems(slf,itfo_wine,3);
-		CreateInvItems(slf,itfo_booze,4);
-		CreateInvItems(slf,itfo_beer,4);
-		if(KNOWS_SECRETSIGN == TRUE)
+		CreateInvItems(slf,ItMi_Gold,300);
+		CreateInvItems(slf,ItFo_Sausage,3);
+		CreateInvItems(slf,ItFo_FishSoup,5);
+		CreateInvItems(slf,ItFoMutton,7);
+		CreateInvItems(slf,ItFo_Fish,8);
+		CreateInvItems(slf,ItFo_Wine,3);
+		CreateInvItems(slf,ItFo_Booze,4);
+		CreateInvItems(slf,ItFo_Beer,4);
+		if(Knows_SecretSign == TRUE)
 		{
-			CreateInvItems(self,itke_lockpick,20);
+			CreateInvItems(self,ItKE_lockpick,20);
 		};
-		KARDIF_ITEMSGIVEN_CHAPTER_5 = TRUE;
+		Kardif_ItemsGiven_Chapter_5 = TRUE;
 	};
-	if((KAPITEL >= 6) && (KARDIF_ITEMSGIVEN_CHAPTER_6 == FALSE))
+	if((Kapitel >= 6) && (KARDIF_ITEMSGIVEN_CHAPTER_6 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,300);
-		CreateInvItems(slf,itfo_sausage,3);
-		CreateInvItems(slf,itfo_fishsoup,4);
-		CreateInvItems(slf,itfomutton,2);
-		CreateInvItems(slf,itfo_fish,5);
-		CreateInvItems(slf,itfo_wine,2);
-		CreateInvItems(slf,itfo_booze,6);
-		CreateInvItems(slf,itfo_beer,1);
-		if(KNOWS_SECRETSIGN == TRUE)
+		CreateInvItems(slf,ItMi_Gold,300);
+		CreateInvItems(slf,ItFo_Sausage,3);
+		CreateInvItems(slf,ItFo_FishSoup,4);
+		CreateInvItems(slf,ItFoMutton,2);
+		CreateInvItems(slf,ItFo_Fish,5);
+		CreateInvItems(slf,ItFo_Wine,2);
+		CreateInvItems(slf,ItFo_Booze,6);
+		CreateInvItems(slf,ItFo_Beer,1);
+		if(Knows_SecretSign == TRUE)
 		{
-			CreateInvItems(self,itke_lockpick,20);
+			CreateInvItems(self,ItKE_lockpick,20);
 		};
 		KARDIF_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};

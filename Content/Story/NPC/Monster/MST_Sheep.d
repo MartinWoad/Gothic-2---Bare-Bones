@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_SHEEP(C_NPC)
+prototype Mst_Default_Sheep(C_Npc)
 {
 	name[0] = "Owca";
 	guild = GIL_SHEEP;
@@ -20,80 +20,80 @@ prototype MST_DEFAULT_SHEEP(C_NPC)
 	damagetype = DAM_EDGE;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
 };
 
-func void b_setvisuals_sheep()
+func void B_SetVisuals_Sheep()
 {
 	Mdl_SetVisual(self,"Sheep.mds");
 	Mdl_SetVisualBody(self,"Sheep_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
-func void b_setvisuals_hammel()
+func void B_SetVisuals_Hammel()
 {
 	Mdl_SetVisual(self,"Sheep.mds");
 	Mdl_SetVisualBody(self,"Hammel_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance SHEEP(MST_DEFAULT_SHEEP)
+instance Sheep(Mst_Default_Sheep)
 {
-	b_setvisuals_sheep();
+	B_SetVisuals_Sheep();
 	Npc_SetToFistMode(self);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance HAMMEL(MST_DEFAULT_SHEEP)
+instance Hammel(Mst_Default_Sheep)
 {
-	b_setvisuals_hammel();
+	B_SetVisuals_Hammel();
 	Npc_SetToFistMode(self);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance FOLLOW_SHEEP(MST_DEFAULT_SHEEP)
+instance Follow_Sheep(Mst_Default_Sheep)
 {
 	name[0] = "Betsy";
-	aivar[AIV_TOUGHGUY] = TRUE;
-	b_setvisuals_sheep();
+	aivar[AIV_ToughGuy] = TRUE;
+	B_SetVisuals_Sheep();
 	Npc_SetToFistMode(self);
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
-	start_aistate = zs_mm_rtn_follow_sheep;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
+	start_aistate = ZS_MM_Rtn_Follow_Sheep;
 };
 
-instance FOLLOW_SHEEP_AKIL(MST_DEFAULT_SHEEP)
+instance Follow_Sheep_AKIL(Mst_Default_Sheep)
 {
 	name[0] = "Owca";
-	aivar[AIV_TOUGHGUY] = TRUE;
-	b_setvisuals_sheep();
+	aivar[AIV_ToughGuy] = TRUE;
+	B_SetVisuals_Sheep();
 	Npc_SetToFistMode(self);
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
-	start_aistate = zs_mm_rtn_follow_sheep;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
+	start_aistate = ZS_MM_Rtn_Follow_Sheep;
 };
 
-instance BALTHASAR_SHEEP1(MST_DEFAULT_SHEEP)
+instance Balthasar_Sheep1(Mst_Default_Sheep)
 {
-	b_setvisuals_hammel();
+	B_SetVisuals_Hammel();
 	Npc_SetToFistMode(self);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance BALTHASAR_SHEEP2(MST_DEFAULT_SHEEP)
+instance Balthasar_Sheep2(Mst_Default_Sheep)
 {
-	b_setvisuals_sheep();
+	B_SetVisuals_Sheep();
 	Npc_SetToFistMode(self);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance BALTHASAR_SHEEP3(MST_DEFAULT_SHEEP)
+instance Balthasar_Sheep3(Mst_Default_Sheep)
 {
-	b_setvisuals_sheep();
+	B_SetVisuals_Sheep();
 	Npc_SetToFistMode(self);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 

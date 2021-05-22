@@ -1,43 +1,43 @@
 
-instance PC_PSIONIC_DI(NPC_DEFAULT)
+instance PC_Psionic_DI(Npc_Default)
 {
 	name[0] = "Lester";
 	guild = GIL_NONE;
 	id = 24;
 	voice = 13;
 	flags = 0;
-	npctype = NPCTYPE_FRIEND;
+	npcType = NPCTYPE_FRIEND;
 	aivar[AIV_PARTYMEMBER] = TRUE;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	aivar[AIV_TOUGHGUYNEWSOVERRIDE] = TRUE;
-	b_setattributestochapter(self,6);
+	aivar[AIV_ToughGuy] = TRUE;
+	aivar[AIV_ToughGuyNewsOverride] = TRUE;
+	B_SetAttributesToChapter(self,6);
 	fight_tactic = FAI_HUMAN_MASTER;
-	b_createambientinv(self);
-	EquipItem(self,itmw_kriegshammer2);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_P_LESTER,BODYTEX_P,4849);
+	B_CreateAmbientInv(self);
+	EquipItem(self,ItMw_Kriegshammer2);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_P_Lester,BodyTex_P,ITAR_Lester);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_24;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_24;
 };
 
 
-func void rtn_start_24()
+func void Rtn_Start_24()
 {
-	ta_smalltalk(8,0,23,0,"SHIP_CREW_19");
-	ta_smalltalk(23,0,8,0,"SHIP_CREW_19");
+	TA_Smalltalk(8,0,23,0,"SHIP_CREW_19");
+	TA_Smalltalk(23,0,8,0,"SHIP_CREW_19");
 };
 
-func void rtn_undeaddragondead_24()
+func void Rtn_UNDEADDRAGONDEAD_24()
 {
-	ta_stand_armscrossed(8,0,23,0,"DI_DRACONIANAREA_19");
-	ta_stand_armscrossed(23,0,8,0,"DI_DRACONIANAREA_19");
+	TA_Stand_ArmsCrossed(8,0,23,0,"DI_DRACONIANAREA_19");
+	TA_Stand_ArmsCrossed(23,0,8,0,"DI_DRACONIANAREA_19");
 };
 
-func void rtn_sittingshipdi_24()
+func void Rtn_SittingShipDI_24()
 {
-	ta_sit_bench(8,0,23,0,"SHIP_CREW_19");
-	ta_sit_bench(23,0,8,0,"SHIP_CREW_19");
+	TA_Sit_Bench(8,0,23,0,"SHIP_CREW_19");
+	TA_Sit_Bench(23,0,8,0,"SHIP_CREW_19");
 };
 

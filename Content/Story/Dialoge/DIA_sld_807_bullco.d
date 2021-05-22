@@ -1,46 +1,46 @@
 
-instance DIA_BULLCO_EXIT(C_INFO)
+instance DIA_Bullco_EXIT(C_Info)
 {
-	npc = sld_807_bullco;
+	npc = Sld_807_Bullco;
 	nr = 999;
-	condition = dia_bullco_exit_condition;
-	information = dia_bullco_exit_info;
+	condition = DIA_Bullco_EXIT_Condition;
+	information = DIA_Bullco_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_bullco_exit_condition()
+func int DIA_Bullco_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bullco_exit_info()
+func void DIA_Bullco_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BULLCO_HALLO(C_INFO)
+instance DIA_Bullco_Hallo(C_Info)
 {
-	npc = sld_807_bullco;
+	npc = Sld_807_Bullco;
 	nr = 1;
-	condition = dia_bullco_hallo_condition;
-	information = dia_bullco_hallo_info;
+	condition = DIA_Bullco_Hallo_Condition;
+	information = DIA_Bullco_Hallo_Info;
 	permanent = TRUE;
 	description = "Jest coœ, o czym powinniœmy pogadaæ...";
 };
 
 
-func int dia_bullco_hallo_condition()
+func int DIA_Bullco_Hallo_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bullco_hallo_info()
+func void DIA_Bullco_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Bullco_HALLO_15_00");	//Jest coœ, o czym powinniœmy pogadaæ...
-	if(self.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_LOST)
+	if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
 	{
 		AI_Output(self,other,"DIA_Bullco_HALLO_06_01");	//Wygra³eœ! A teraz idŸ sobie.
 	}
@@ -52,96 +52,96 @@ func void dia_bullco_hallo_info()
 };
 
 
-instance DIA_BULLCO_QUATSCHER(C_INFO)
+instance DIA_Bullco_Quatscher(C_Info)
 {
-	npc = sld_807_bullco;
+	npc = Sld_807_Bullco;
 	nr = 2;
-	condition = dia_bullco_quatscher_condition;
-	information = dia_bullco_quatscher_info;
+	condition = DIA_Bullco_Quatscher_Condition;
+	information = DIA_Bullco_Quatscher_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_bullco_quatscher_condition()
+func int DIA_Bullco_Quatscher_Condition()
 {
-	if((self.aivar[AIV_DEFEATEDBYPLAYER] == FALSE) && (SYLVIO_ANGEQUATSCHT >= 2))
+	if((self.aivar[AIV_DefeatedByPlayer] == FALSE) && (Sylvio_angequatscht >= 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bullco_quatscher_info()
+func void DIA_Bullco_Quatscher_Info()
 {
 	AI_Output(self,other,"DIA_Bullco_Quatscher_06_00");	//Silvio nie lubi, jak siê do niego rozmawia. Do tej pory powinieneœ to ju¿ wiedzieæ.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"PEE");
-	b_attack(self,other,AR_NONE,1);
+	B_Attack(self,other,AR_NONE,1);
 };
 
 
-var int bullco_leave_day;
-var int bullco_scharf;
+var int Bullco_Leave_Day;
+var int Bullco_scharf;
 
-instance DIA_BULLCO_PLEASELEAVE(C_INFO)
+instance DIA_Bullco_PleaseLeave(C_Info)
 {
-	npc = sld_807_bullco;
+	npc = Sld_807_Bullco;
 	nr = 3;
-	condition = dia_bullco_pleaseleave_condition;
-	information = dia_bullco_pleaseleave_info;
+	condition = DIA_Bullco_PleaseLeave_Condition;
+	information = DIA_Bullco_PleaseLeave_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_bullco_pleaseleave_condition()
+func int DIA_Bullco_PleaseLeave_Condition()
 {
-	if(self.aivar[AIV_DEFEATEDBYPLAYER] == FALSE)
+	if(self.aivar[AIV_DefeatedByPlayer] == FALSE)
 	{
-		if((self.aivar[AIV_LASTFIGHTAGAINSTPLAYER] != FIGHT_NONE) || (SYLVIO_MENDEFEATED == TRUE))
+		if((self.aivar[AIV_LastFightAgainstPlayer] != FIGHT_NONE) || (Sylvio_MenDefeated == TRUE))
 		{
 			return TRUE;
 		};
 	};
 };
 
-func void dia_bullco_pleaseleave_info()
+func void DIA_Bullco_PleaseLeave_Info()
 {
 	AI_Output(self,other,"DIA_Bullco_PleaseLeave_06_00");	//Ty i ja musimy pogadaæ.
 	AI_Output(other,self,"DIA_Bullco_PleaseLeave_15_01");	//Czego chcesz?
 	AI_Output(self,other,"DIA_Bullco_PleaseLeave_06_02");	//Myœlê, ¿ebyœ nie pokazywa³ siê na farmie.
 	AI_Output(self,other,"DIA_Bullco_PleaseLeave_06_03");	//Jutro ma ciê tu nie byæ. Rozumiesz?
-	BULLCO_LEAVE_DAY = b_getdayplus();
-	BULLCO_SCHARF = TRUE;
+	Bullco_Leave_Day = B_GetDayPlus();
+	Bullco_scharf = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"PEE");
 };
 
 
-var int bullco_hitcounter;
+var int Bullco_HitCounter;
 
-instance DIA_BULLCO_DAILYCHECK(C_INFO)
+instance DIA_Bullco_DailyCheck(C_Info)
 {
-	npc = sld_807_bullco;
+	npc = Sld_807_Bullco;
 	nr = 4;
-	condition = dia_bullco_dailycheck_condition;
-	information = dia_bullco_dailycheck_info;
+	condition = DIA_Bullco_DailyCheck_Condition;
+	information = DIA_Bullco_DailyCheck_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_bullco_dailycheck_condition()
+func int DIA_Bullco_DailyCheck_Condition()
 {
-	if((self.aivar[AIV_DEFEATEDBYPLAYER] == FALSE) && (BULLCO_SCHARF == TRUE) && (Wld_GetDay() > BULLCO_LEAVE_DAY))
+	if((self.aivar[AIV_DefeatedByPlayer] == FALSE) && (Bullco_scharf == TRUE) && (Wld_GetDay() > Bullco_Leave_Day))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bullco_dailycheck_info()
+func void DIA_Bullco_DailyCheck_Info()
 {
-	if(BULLCO_HITCOUNTER == 0)
+	if(Bullco_HitCounter == 0)
 	{
 		AI_Output(self,other,"DIA_Bullco_DailyCheck_06_00");	//Dalej tu jesteœ...
 		AI_Output(self,other,"DIA_Bullco_DailyCheck_06_01");	//Chyba ustaliliœmy, ¿e nie bêdê ciê zatrzymywa³.
@@ -151,70 +151,70 @@ func void dia_bullco_dailycheck_info()
 	{
 		AI_Output(self,other,"DIA_Bullco_DailyCheck_06_03");	//Nie wierzê! Ten kole¿ka wci¹¿ tu jest!
 	};
-	BULLCO_HITCOUNTER = BULLCO_HITCOUNTER + 1;
-	BULLCO_LEAVE_DAY = b_getdayplus();
+	Bullco_HitCounter = Bullco_HitCounter + 1;
+	Bullco_Leave_Day = B_GetDayPlus();
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_NONE,1);
+	B_Attack(self,other,AR_NONE,1);
 };
 
 
-instance DIA_BULLCO_WONTLEAVE(C_INFO)
+instance DIA_Bullco_WontLeave(C_Info)
 {
-	npc = sld_807_bullco;
+	npc = Sld_807_Bullco;
 	nr = 5;
-	condition = dia_bullco_wontleave_condition;
-	information = dia_bullco_wontleave_info;
+	condition = DIA_Bullco_WontLeave_Condition;
+	information = DIA_Bullco_WontLeave_Info;
 	permanent = FALSE;
 	description = "NIE zamierzam st¹d odejœæ!";
 };
 
 
-func int dia_bullco_wontleave_condition()
+func int DIA_Bullco_WontLeave_Condition()
 {
-	if(BULLCO_SCHARF == TRUE)
+	if(Bullco_scharf == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bullco_wontleave_info()
+func void DIA_Bullco_WontLeave_Info()
 {
 	AI_Output(other,self,"DIA_Bullco_WontLeave_15_00");	//NIE zamierzam st¹d odejœæ!
-	if(self.aivar[AIV_DEFEATEDBYPLAYER] == FALSE)
+	if(self.aivar[AIV_DefeatedByPlayer] == FALSE)
 	{
 		AI_Output(self,other,"DIA_Bullco_WontLeave_06_01");	//No to chyba bêdziemy gadali o tym jeszcze raz.
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_NONE,1);
+		B_Attack(self,other,AR_NONE,1);
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Bullco_WontLeave_06_02");	//Taak, taak, idŸ to powiedz komuœ, kogo to obchodzi.
-		BULLCO_SCHARF = FALSE;
+		Bullco_scharf = FALSE;
 		AI_StopProcessInfos(self);
 	};
 };
 
 
-instance DIA_BULLCO_PEPESSCHAFE(C_INFO)
+instance DIA_Bullco_PepesSchafe(C_Info)
 {
-	npc = sld_807_bullco;
+	npc = Sld_807_Bullco;
 	nr = 6;
-	condition = dia_bullco_pepesschafe_condition;
-	information = dia_bullco_pepesschafe_info;
+	condition = DIA_Bullco_PepesSchafe_Condition;
+	information = DIA_Bullco_PepesSchafe_Info;
 	permanent = FALSE;
 	description = "Czy imiê Pepe coœ ci mówi?";
 };
 
 
-func int dia_bullco_pepesschafe_condition()
+func int DIA_Bullco_PepesSchafe_Condition()
 {
-	if((MIS_PEPE_KILLWOLVES == LOG_SUCCESS) && (BULLCO_SCHARF == TRUE) && (ONAR_WEGENPEPE == TRUE))
+	if((MIS_Pepe_KillWolves == LOG_SUCCESS) && (Bullco_scharf == TRUE) && (Onar_WegenPepe == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bullco_pepesschafe_info()
+func void DIA_Bullco_PepesSchafe_Info()
 {
 	AI_Output(other,self,"DIA_Bullco_PepesSchafe_15_00");	//Czy imiê Pepe coœ ci mówi?
 	AI_Output(self,other,"DIA_Bullco_PepesSchafe_06_01");	//Nie rozumiem, co gadasz, ale nie widzi mi siê, jak to gadasz.
@@ -227,43 +227,43 @@ func void dia_bullco_pepesschafe_info()
 	AI_Output(self,other,"DIA_Bullco_PepesSchafe_06_08");	//Ty, ty....
 	AI_Output(other,self,"DIA_Bullco_PepesSchafe_15_09");	//Tak?
 	AI_Output(self,other,"DIA_Bullco_PepesSchafe_06_10");	//Ty wstrêtna kreaturo...
-	BULLCO_SCHARF = FALSE;
-	b_giveplayerxp(XP_AMBIENT);
+	Bullco_scharf = FALSE;
+	B_GivePlayerXP(XP_Ambient);
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BULLCOSLD_PICKPOCKET(C_INFO)
+instance DIA_BullcoSLD_PICKPOCKET(C_Info)
 {
-	npc = sld_807_bullco;
+	npc = Sld_807_Bullco;
 	nr = 900;
-	condition = dia_bullcosld_pickpocket_condition;
-	information = dia_bullcosld_pickpocket_info;
+	condition = DIA_BullcoSLD_PICKPOCKET_Condition;
+	information = DIA_BullcoSLD_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_bullcosld_pickpocket_condition()
+func int DIA_BullcoSLD_PICKPOCKET_Condition()
 {
-	return c_beklauen(56,35);
+	return C_Beklauen(56,35);
 };
 
-func void dia_bullcosld_pickpocket_info()
+func void DIA_BullcoSLD_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_bullcosld_pickpocket);
-	Info_AddChoice(dia_bullcosld_pickpocket,DIALOG_BACK,dia_bullcosld_pickpocket_back);
-	Info_AddChoice(dia_bullcosld_pickpocket,DIALOG_PICKPOCKET,dia_bullcosld_pickpocket_doit);
+	Info_ClearChoices(DIA_BullcoSLD_PICKPOCKET);
+	Info_AddChoice(DIA_BullcoSLD_PICKPOCKET,Dialog_Back,DIA_BullcoSLD_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_BullcoSLD_PICKPOCKET,DIALOG_PICKPOCKET,DIA_BullcoSLD_PICKPOCKET_DoIt);
 };
 
-func void dia_bullcosld_pickpocket_doit()
+func void DIA_BullcoSLD_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_bullcosld_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_BullcoSLD_PICKPOCKET);
 };
 
-func void dia_bullcosld_pickpocket_back()
+func void DIA_BullcoSLD_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_bullcosld_pickpocket);
+	Info_ClearChoices(DIA_BullcoSLD_PICKPOCKET);
 };
 

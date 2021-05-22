@@ -1,8 +1,8 @@
 
-func void b_say_attackend()
+func void B_Say_AttackEnd()
 {
 	var int rnd;
-	if((self.aivar[AIV_ATTACKREASON] == AR_GUILDENEMY) || (self.aivar[AIV_ATTACKREASON] == AR_MONSTERMURDEREDHUMAN))
+	if((self.aivar[AIV_ATTACKREASON] == AR_GuildEnemy) || (self.aivar[AIV_ATTACKREASON] == AR_MonsterMurderedHuman))
 	{
 		if(other.guild < GIL_SEPERATOR_HUM)
 		{
@@ -10,16 +10,16 @@ func void b_say_attackend()
 			{
 				if(self.aivar[AIV_LASTTARGET] == Hlp_GetInstanceID(other))
 				{
-					b_say(self,other,"$KILLENEMY");
+					B_Say(self,other,"$KILLENEMY");
 				}
 				else
 				{
-					b_say(self,other,"$GOODKILL");
+					B_Say(self,other,"$GOODKILL");
 				};
 			}
 			else
 			{
-				b_say(self,other,"$ENEMYKILLED");
+				B_Say(self,other,"$ENEMYKILLED");
 			};
 		}
 		else
@@ -32,114 +32,114 @@ func void b_say_attackend()
 					return;
 				};
 			};
-			if(other.aivar[AIV_KILLEDBYPLAYER] == FALSE)
+			if(other.aivar[AIV_KilledByPlayer] == FALSE)
 			{
-				b_say(self,other,"$MONSTERKILLED");
+				B_Say(self,other,"$MONSTERKILLED");
 			}
 			else
 			{
-				b_say(self,other,"$GOODMONSTERKILL");
+				B_Say(self,other,"$GOODMONSTERKILL");
 			};
 		};
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_THEFT)
+	if(self.aivar[AIV_ATTACKREASON] == AR_Theft)
 	{
-		b_say(self,other,"$THIEFDOWN");
+		B_Say(self,other,"$THIEFDOWN");
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_USEMOB)
+	if(self.aivar[AIV_ATTACKREASON] == AR_UseMob)
 	{
-		b_say(self,other,"$RUMFUMMLERDOWN");
+		B_Say(self,other,"$RUMFUMMLERDOWN");
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_SHEEPKILLER)
+	if(self.aivar[AIV_ATTACKREASON] == AR_SheepKiller)
 	{
 		if(other.guild < GIL_SEPERATOR_HUM)
 		{
-			b_say(self,other,"$SHEEPATTACKERDOWN");
+			B_Say(self,other,"$SHEEPATTACKERDOWN");
 		}
 		else
 		{
-			b_say(self,other,"$MONSTERKILLED");
+			B_Say(self,other,"$MONSTERKILLED");
 		};
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_HUMANMURDEREDHUMAN)
+	if(self.aivar[AIV_ATTACKREASON] == AR_HumanMurderedHuman)
 	{
 		if(!Npc_IsDead(other))
 		{
 			if(self.aivar[AIV_LASTTARGET] == Hlp_GetInstanceID(other))
 			{
-				b_say(self,other,"$KILLMURDERER");
+				B_Say(self,other,"$KILLMURDERER");
 			}
 			else
 			{
-				b_say(self,other,"$GOODKILL");
+				B_Say(self,other,"$GOODKILL");
 			};
 		}
 		else
 		{
-			b_say(self,other,"$ENEMYKILLED");
+			B_Say(self,other,"$ENEMYKILLED");
 		};
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_MONSTERVSHUMAN)
+	if(self.aivar[AIV_ATTACKREASON] == AR_MonsterVsHuman)
 	{
-		b_say(self,other,"$MONSTERKILLED");
+		B_Say(self,other,"$MONSTERKILLED");
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_MONSTERCLOSETOGATE)
+	if(self.aivar[AIV_ATTACKREASON] == AR_MonsterCloseToGate)
 	{
-		b_say(self,other,"$STUPIDBEASTKILLED");
+		B_Say(self,other,"$STUPIDBEASTKILLED");
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_REACTTODAMAGE)
+	if(self.aivar[AIV_ATTACKREASON] == AR_ReactToDamage)
 	{
-		b_say(self,other,"$NEVERHITMEAGAIN");
+		B_Say(self,other,"$NEVERHITMEAGAIN");
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_REACTTOWEAPON)
+	if(self.aivar[AIV_ATTACKREASON] == AR_ReactToWeapon)
 	{
-		b_say(self,other,"$YOUBETTERSHOULDHAVELISTENED");
+		B_Say(self,other,"$YOUBETTERSHOULDHAVELISTENED");
 		return;
 	};
-	if((self.aivar[AIV_ATTACKREASON] == AR_CLEARROOM) || (self.aivar[AIV_ATTACKREASON] == AR_GUARDCALLEDTOROOM))
+	if((self.aivar[AIV_ATTACKREASON] == AR_ClearRoom) || (self.aivar[AIV_ATTACKREASON] == AR_GuardCalledToRoom))
 	{
-		if(c_npcisbotheredbyplayerroomguild(self))
+		if(C_NpcIsBotheredByPlayerRoomGuild(self))
 		{
-			b_say(self,other,"$GETUPANDBEGONE");
+			B_Say(self,other,"$GETUPANDBEGONE");
 		}
 		else
 		{
-			b_say(self,other,"$NEVERENTERROOMAGAIN");
+			B_Say(self,other,"$NEVERENTERROOMAGAIN");
 		};
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_LEFTPORTALROOM)
+	if(self.aivar[AIV_ATTACKREASON] == AR_LeftPortalRoom)
 	{
-		b_say(self,other,"$NEVERENTERROOMAGAIN");
+		B_Say(self,other,"$NEVERENTERROOMAGAIN");
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_GUARDSTOPSINTRUDER)
+	if(self.aivar[AIV_ATTACKREASON] == AR_GuardStopsIntruder)
 	{
-		b_say(self,other,"$KILLENEMY");
+		B_Say(self,other,"$KILLENEMY");
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_GUARDSTOPSFIGHT)
+	if(self.aivar[AIV_ATTACKREASON] == AR_GuardStopsFight)
 	{
 		if((other.guild == GIL_SLD) || (other.guild == GIL_DJG))
 		{
 		}
 		else
 		{
-			b_say(self,other,"$THEREISNOFIGHTINGHERE");
+			B_Say(self,other,"$THEREISNOFIGHTINGHERE");
 		};
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_GUARDCALLEDTOTHIEF)
+	if(self.aivar[AIV_ATTACKREASON] == AR_GuardCalledToThief)
 	{
-		b_say(self,other,"$RUMFUMMLERDOWN");
+		B_Say(self,other,"$RUMFUMMLERDOWN");
 		return;
 	};
 };

@@ -1,47 +1,47 @@
 
-instance DIA_BIFF_NW_EXIT(C_INFO)
+instance DIA_Biff_NW_EXIT(C_Info)
 {
-	npc = djg_713_biff_nw;
+	npc = DJG_713_Biff_NW;
 	nr = 999;
-	condition = dia_biff_nw_exit_condition;
-	information = dia_biff_nw_exit_info;
+	condition = DIA_Biff_NW_EXIT_Condition;
+	information = DIA_Biff_NW_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_biff_nw_exit_condition()
+func int DIA_Biff_NW_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_biff_nw_exit_info()
+func void DIA_Biff_NW_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BIFF_NW_HAFEN(C_INFO)
+instance DIA_Biff_NW_HAfen(C_Info)
 {
-	npc = djg_713_biff_nw;
+	npc = DJG_713_Biff_NW;
 	nr = 5;
-	condition = dia_biff_nw_hafen_condition;
-	information = dia_biff_nw_hafen_info;
+	condition = DIA_Biff_NW_HAfen_Condition;
+	information = DIA_Biff_NW_HAfen_Info;
 	permanent = TRUE;
 	description = "Dobra. Ju¿ nied³ugo.";
 };
 
 
-func int dia_biff_nw_hafen_condition()
+func int DIA_Biff_NW_HAfen_Condition()
 {
 	return TRUE;
 };
 
-func void dia_biff_nw_hafen_info()
+func void DIA_Biff_NW_HAfen_Info()
 {
 	AI_Output(other,self,"DIA_Biff_NW_HAfen_15_00");	//Dobra. Ju¿ nied³ugo.
 	AI_Output(self,other,"DIA_Biff_NW_HAfen_07_01");	//Nie mogê siê ju¿ doczekaæ.
-	if(MIS_READYFORCHAPTER6 == TRUE)
+	if(MIS_ReadyforChapter6 == TRUE)
 	{
 		Npc_ExchangeRoutine(self,"SHIP");
 	}
@@ -53,37 +53,37 @@ func void dia_biff_nw_hafen_info()
 };
 
 
-instance DIA_BIFF_NW_PICKPOCKET(C_INFO)
+instance DIA_Biff_NW_PICKPOCKET(C_Info)
 {
-	npc = djg_713_biff_nw;
+	npc = DJG_713_Biff_NW;
 	nr = 900;
-	condition = dia_biff_nw_pickpocket_condition;
-	information = dia_biff_nw_pickpocket_info;
+	condition = DIA_Biff_NW_PICKPOCKET_Condition;
+	information = DIA_Biff_NW_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_100;
+	description = Pickpocket_100;
 };
 
 
-func int dia_biff_nw_pickpocket_condition()
+func int DIA_Biff_NW_PICKPOCKET_Condition()
 {
-	return c_beklauen(92,250);
+	return C_Beklauen(92,250);
 };
 
-func void dia_biff_nw_pickpocket_info()
+func void DIA_Biff_NW_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_biff_nw_pickpocket);
-	Info_AddChoice(dia_biff_nw_pickpocket,DIALOG_BACK,dia_biff_nw_pickpocket_back);
-	Info_AddChoice(dia_biff_nw_pickpocket,DIALOG_PICKPOCKET,dia_biff_nw_pickpocket_doit);
+	Info_ClearChoices(DIA_Biff_NW_PICKPOCKET);
+	Info_AddChoice(DIA_Biff_NW_PICKPOCKET,Dialog_Back,DIA_Biff_NW_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Biff_NW_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Biff_NW_PICKPOCKET_DoIt);
 };
 
-func void dia_biff_nw_pickpocket_doit()
+func void DIA_Biff_NW_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_biff_nw_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Biff_NW_PICKPOCKET);
 };
 
-func void dia_biff_nw_pickpocket_back()
+func void DIA_Biff_NW_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_biff_nw_pickpocket);
+	Info_ClearChoices(DIA_Biff_NW_PICKPOCKET);
 };
 

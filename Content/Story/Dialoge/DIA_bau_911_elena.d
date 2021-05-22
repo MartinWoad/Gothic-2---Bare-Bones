@@ -1,43 +1,43 @@
 
-instance DIA_ELENA_EXIT(C_INFO)
+instance DIA_Elena_EXIT(C_Info)
 {
-	npc = bau_911_elena;
+	npc = BAU_911_Elena;
 	nr = 999;
-	condition = dia_elena_exit_condition;
-	information = dia_elena_exit_info;
+	condition = DIA_Elena_EXIT_Condition;
+	information = DIA_Elena_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_elena_exit_condition()
+func int DIA_Elena_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_elena_exit_info()
+func void DIA_Elena_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ELENA_HALLO(C_INFO)
+instance DIA_Elena_HALLO(C_Info)
 {
-	npc = bau_911_elena;
+	npc = BAU_911_Elena;
 	nr = 1;
-	condition = dia_elena_hallo_condition;
-	information = dia_elena_hallo_info;
+	condition = DIA_Elena_HALLO_Condition;
+	information = DIA_Elena_HALLO_Info;
 	permanent = FALSE;
 	description = "Witaj, piêkna nieznajoma.";
 };
 
 
-func int dia_elena_hallo_condition()
+func int DIA_Elena_HALLO_Condition()
 {
 	return TRUE;
 };
 
-func void dia_elena_hallo_info()
+func void DIA_Elena_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Elena_HALLO_15_00");	//Witaj, piêkna nieznajoma.
 	if(other.guild == GIL_NONE)
@@ -51,26 +51,26 @@ func void dia_elena_hallo_info()
 };
 
 
-instance DIA_ELENA_AUFSTAND(C_INFO)
+instance DIA_Elena_Aufstand(C_Info)
 {
-	npc = bau_911_elena;
+	npc = BAU_911_Elena;
 	nr = 2;
-	condition = dia_elena_aufstand_condition;
-	information = dia_elena_aufstand_info;
+	condition = DIA_Elena_Aufstand_Condition;
+	information = DIA_Elena_Aufstand_Info;
 	permanent = FALSE;
 	description = "Podobno buntujecie siê przeciwko Królowi?";
 };
 
 
-func int dia_elena_aufstand_condition()
+func int DIA_Elena_Aufstand_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_elena_hallo))
+	if(Npc_KnowsInfo(other,DIA_Elena_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_elena_aufstand_info()
+func void DIA_Elena_Aufstand_Info()
 {
 	AI_Output(other,self,"DIA_Elena_Aufstand_15_00");	//Podobno buntujecie siê przeciwko Królowi?
 	AI_Output(self,other,"DIA_Elena_Aufstand_16_01");	//Mój ojciec zadecydowa³, ¿e najwy¿szy czas zadbaæ o nasze bezpieczeñstwo.
@@ -81,26 +81,26 @@ func void dia_elena_aufstand_info()
 };
 
 
-instance DIA_ELENA_ARBEIT(C_INFO)
+instance DIA_Elena_Arbeit(C_Info)
 {
-	npc = bau_911_elena;
+	npc = BAU_911_Elena;
 	nr = 3;
-	condition = dia_elena_arbeit_condition;
-	information = dia_elena_arbeit_info;
+	condition = DIA_Elena_Arbeit_Condition;
+	information = DIA_Elena_Arbeit_Info;
 	permanent = FALSE;
 	description = "Jakiego rodzaju prace prowadzone s¹ na farmie?";
 };
 
 
-func int dia_elena_arbeit_condition()
+func int DIA_Elena_Arbeit_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_elena_hallo) && (other.guild == GIL_NONE))
+	if(Npc_KnowsInfo(other,DIA_Elena_HALLO) && (other.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_elena_arbeit_info()
+func void DIA_Elena_Arbeit_Info()
 {
 	AI_Output(other,self,"DIA_Elena_Arbeit_15_00");	//Jakiego rodzaju prace prowadzone s¹ na farmie?
 	AI_Output(self,other,"DIA_Elena_Arbeit_16_01");	//Mój ojciec p³aci wszystkim mê¿czyznom, którzy zgodz¹ siê broniæ farmy.
@@ -111,26 +111,26 @@ func void dia_elena_arbeit_info()
 };
 
 
-instance DIA_ELENA_REGELN(C_INFO)
+instance DIA_Elena_Regeln(C_Info)
 {
-	npc = bau_911_elena;
+	npc = BAU_911_Elena;
 	nr = 4;
-	condition = dia_elena_regeln_condition;
-	information = dia_elena_regeln_info;
+	condition = DIA_Elena_Regeln_Condition;
+	information = DIA_Elena_Regeln_Info;
 	permanent = FALSE;
 	description = "Czy panuj¹ tutaj jakieœ zasady, o których powinienem pamiêtaæ?";
 };
 
 
-func int dia_elena_regeln_condition()
+func int DIA_Elena_Regeln_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_elena_hallo) && (other.guild == GIL_NONE))
+	if(Npc_KnowsInfo(other,DIA_Elena_HALLO) && (other.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_elena_regeln_info()
+func void DIA_Elena_Regeln_Info()
 {
 	AI_Output(other,self,"DIA_Elena_Regeln_15_00");	//Czy panuj¹ tutaj jakieœ zasady, o których powinienem pamiêtaæ?
 	AI_Output(self,other,"DIA_Elena_Regeln_16_01");	//Nie dotykaj niczego, co nie nale¿y do ciebie.
@@ -140,102 +140,102 @@ func void dia_elena_regeln_info()
 };
 
 
-instance DIA_ELENA_AUFGABE(C_INFO)
+instance DIA_Elena_AUFGABE(C_Info)
 {
-	npc = bau_911_elena;
+	npc = BAU_911_Elena;
 	nr = 5;
-	condition = dia_elena_aufgabe_condition;
-	information = dia_elena_aufgabe_info;
+	condition = DIA_Elena_AUFGABE_Condition;
+	information = DIA_Elena_AUFGABE_Info;
 	permanent = FALSE;
 	description = "Czym siê zajmujesz?";
 };
 
 
-func int dia_elena_aufgabe_condition()
+func int DIA_Elena_AUFGABE_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_elena_hallo))
+	if(Npc_KnowsInfo(other,DIA_Elena_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_elena_aufgabe_info()
+func void DIA_Elena_AUFGABE_Info()
 {
 	AI_Output(other,self,"DIA_Elena_AUFGABE_15_00");	//Na czym polega twoja praca?
 	AI_Output(self,other,"DIA_Elena_AUFGABE_16_01");	//Sprzedajê towary produkowane na farmie. Gdybyœ chcia³ coœ kupiæ, daj mi znaæ.
 	AI_Output(self,other,"DIA_Elena_AUFGABE_16_02");	//Pozwól jednak, ¿e ciê ostrzegê. Nie znoszê z³odziei, jasne?
-	Log_CreateTopic(TOPIC_SOLDIERTRADER,LOG_NOTE);
-	b_logentry(TOPIC_SOLDIERTRADER,"Elena handluje na farmie Onara.");
+	Log_CreateTopic(Topic_SoldierTrader,LOG_NOTE);
+	B_LogEntry(Topic_SoldierTrader,"Elena handluje na farmie Onara.");
 };
 
 
-var int elena_trade_mit_mir;
+var int Elena_Trade_mit_mir;
 
-instance DIA_ELENA_TRADE(C_INFO)
+instance DIA_Elena_TRADE(C_Info)
 {
-	npc = bau_911_elena;
+	npc = BAU_911_Elena;
 	nr = 7;
-	condition = dia_elena_trade_condition;
-	information = dia_elena_trade_info;
+	condition = DIA_Elena_TRADE_Condition;
+	information = DIA_Elena_TRADE_Info;
 	permanent = TRUE;
 	description = "Poka¿ mi, co masz na sprzeda¿!";
 	trade = TRUE;
 };
 
 
-func int dia_elena_trade_condition()
+func int DIA_Elena_TRADE_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_elena_aufgabe) || (ELENA_TRADE_MIT_MIR == TRUE))
+	if(Npc_KnowsInfo(other,DIA_Elena_AUFGABE) || (Elena_Trade_mit_mir == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_elena_trade_info()
+func void DIA_Elena_TRADE_Info()
 {
 	AI_Output(other,self,"DIA_Elena_TRADE_15_00");	//Poka¿ mi swoje towary!
-	b_givetradeinv(self);
+	B_GiveTradeInv(self);
 	AI_Output(self,other,"DIA_Elena_TRADE_16_01");	//Co mogê ci zaoferowaæ?
 };
 
 
-instance DIA_ELENA_PERM(C_INFO)
+instance DIA_Elena_PERM(C_Info)
 {
-	npc = bau_911_elena;
+	npc = BAU_911_Elena;
 	nr = 900;
-	condition = dia_elena_perm_condition;
-	information = dia_elena_perm_info;
+	condition = DIA_Elena_PERM_Condition;
+	information = DIA_Elena_PERM_Info;
 	permanent = TRUE;
 	description = "Czy ostatnio zdarzy³o siê coœ wa¿nego?";
 };
 
 
-func int dia_elena_perm_condition()
+func int DIA_Elena_PERM_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_elena_hallo))
+	if(Npc_KnowsInfo(other,DIA_Elena_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_elena_perm_info()
+func void DIA_Elena_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Elena_PERM_15_00");	//Czy ostatnio zdarzy³o siê coœ wa¿nego?
-	if(KAPITEL <= 1)
+	if(Kapitel <= 1)
 	{
 		AI_Output(self,other,"DIA_Elena_PERM_16_01");	//Parê dni temu mój ojciec zadecydowa³, ¿e nie wolno nam sprzedawaæ niczego w mieœcie.
 		AI_Output(self,other,"DIA_Elena_PERM_16_02");	//Wiêc teraz trzymam siê w pobli¿u farmy i sprzedajê swoje towary przejezdnym.
-		ELENA_TRADE_MIT_MIR = TRUE;
+		Elena_Trade_mit_mir = TRUE;
 	}
-	else if(KAPITEL == 2)
+	else if(Kapitel == 2)
 	{
 		AI_Output(self,other,"DIA_Elena_PERM_16_03");	//Ataki stra¿y na okoliczne farmy staj¹ siê coraz czêstsze. Interwencja mojego ojca jest tylko kwesti¹ czasu.
 	}
-	else if(KAPITEL == 3)
+	else if(Kapitel == 3)
 	{
 		AI_Output(self,other,"DIA_Elena_PERM_16_04");	//Okoliczne ziemie sta³y siê bardzo niebezpieczne. Nikt nie zapuszcza siê poza w³asne tereny. Up³ynê³o ju¿ bardzo du¿o czasu, od kiedy którekolwiek z nas by³o w mieœcie.
 	}
-	else if(KAPITEL == 4)
+	else if(Kapitel == 4)
 	{
 		AI_Output(self,other,"DIA_Elena_PERM_16_05");	//Najemnicy staj¹ siê coraz bardziej niespokojni. Chocia¿ wydaje mi siê, ¿e od czasu jak opuœci³ nas Sylvio wraz ze swoj¹ dru¿yn¹, i tak s¹ w znacznie lepszej kondycji psychicznej.
 	}
@@ -246,63 +246,63 @@ func void dia_elena_perm_info()
 };
 
 
-instance DIA_ELENA_MINENANTEIL(C_INFO)
+instance DIA_Elena_MINENANTEIL(C_Info)
 {
-	npc = bau_911_elena;
+	npc = BAU_911_Elena;
 	nr = 2;
-	condition = dia_elena_minenanteil_condition;
-	information = dia_elena_minenanteil_info;
+	condition = DIA_Elena_MINENANTEIL_Condition;
+	information = DIA_Elena_MINENANTEIL_Info;
 	description = "Sprzedajesz udzia³y w kopalni?";
 };
 
 
-func int dia_elena_minenanteil_condition()
+func int DIA_Elena_MINENANTEIL_Condition()
 {
-	if((hero.guild == GIL_KDF) && (MIS_SERPENTES_MINENANTEIL_KDF == LOG_RUNNING) && Npc_KnowsInfo(other,dia_elena_hallo))
+	if((hero.guild == GIL_KDF) && (MIS_Serpentes_MinenAnteil_KDF == LOG_Running) && Npc_KnowsInfo(other,DIA_Elena_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_elena_minenanteil_info()
+func void DIA_Elena_MINENANTEIL_Info()
 {
 	AI_Output(other,self,"DIA_Elena_MINENANTEIL_15_00");	//Sprzedajesz udzia³y w kopalni?
 	AI_Output(self,other,"DIA_Elena_MINENANTEIL_16_01");	//No i co z tego? Sama zap³aci³am za nie maj¹tek.
-	b_giveplayerxp(XP_AMBIENT);
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_ELENA_PICKPOCKET(C_INFO)
+instance DIA_Elena_PICKPOCKET(C_Info)
 {
-	npc = bau_911_elena;
+	npc = BAU_911_Elena;
 	nr = 900;
-	condition = dia_elena_pickpocket_condition;
-	information = dia_elena_pickpocket_info;
+	condition = DIA_Elena_PICKPOCKET_Condition;
+	information = DIA_Elena_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40_FEMALE;
+	description = Pickpocket_40_Female;
 };
 
 
-func int dia_elena_pickpocket_condition()
+func int DIA_Elena_PICKPOCKET_Condition()
 {
-	return c_beklauen(30,35);
+	return C_Beklauen(30,35);
 };
 
-func void dia_elena_pickpocket_info()
+func void DIA_Elena_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_elena_pickpocket);
-	Info_AddChoice(dia_elena_pickpocket,DIALOG_BACK,dia_elena_pickpocket_back);
-	Info_AddChoice(dia_elena_pickpocket,DIALOG_PICKPOCKET,dia_elena_pickpocket_doit);
+	Info_ClearChoices(DIA_Elena_PICKPOCKET);
+	Info_AddChoice(DIA_Elena_PICKPOCKET,Dialog_Back,DIA_Elena_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Elena_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Elena_PICKPOCKET_DoIt);
 };
 
-func void dia_elena_pickpocket_doit()
+func void DIA_Elena_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_elena_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Elena_PICKPOCKET);
 };
 
-func void dia_elena_pickpocket_back()
+func void DIA_Elena_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_elena_pickpocket);
+	Info_ClearChoices(DIA_Elena_PICKPOCKET);
 };
 

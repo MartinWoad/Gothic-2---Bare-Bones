@@ -1,8 +1,8 @@
 
-func void zs_guard_hammer()
+func void ZS_Guard_Hammer()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
@@ -11,7 +11,7 @@ func void zs_guard_hammer()
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func int zs_guard_hammer_loop()
+func int ZS_Guard_Hammer_loop()
 {
 	var int random;
 	if(Npc_IsOnFP(self,"STAND"))
@@ -42,10 +42,10 @@ func int zs_guard_hammer_loop()
 		AI_PlayAni(self,"T_STAND_2_HGUARD");
 		self.aivar[AIV_TAPOSITION] = ISINPOS;
 	};
-	if((Npc_HasItems(self,holy_hammer_mis) == 1) && (Npc_GetDistToWP(self,"NW_MONASTERY_SANCTUM_01") <= 500))
+	if((Npc_HasItems(self,Holy_Hammer_MIS) == 1) && (Npc_GetDistToWP(self,"NW_MONASTERY_SANCTUM_01") <= 500))
 	{
-		Npc_RemoveInvItems(self,holy_hammer_mis,1);
-		Wld_InsertItem(holy_hammer_mis,"FP_HAMMER");
+		Npc_RemoveInvItems(self,Holy_Hammer_MIS,1);
+		Wld_InsertItem(Holy_Hammer_MIS,"FP_HAMMER");
 	};
 	if((Npc_GetStateTime(self) > 5) && (self.aivar[AIV_TAPOSITION] == ISINPOS))
 	{
@@ -59,7 +59,7 @@ func int zs_guard_hammer_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_guard_hammer_end()
+func void ZS_Guard_Hammer_end()
 {
 	AI_PlayAni(self,"T_HGUARD_2_STAND");
 };

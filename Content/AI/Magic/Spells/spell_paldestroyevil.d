@@ -1,18 +1,18 @@
 
-const int SPL_COST_PALDESTROYEVIL = 60;
-const int SPL_DAMAGE_PALDESTROYEVIL = 600;
+const int SPL_Cost_PalDestroyEvil = 60;
+const int SPL_Damage_PalDestroyEvil = 600;
 
-instance SPELL_PALDESTROYEVIL(C_SPELL_PROTO)
+instance Spell_PalDestroyEvil(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	damage_per_level = SPL_DAMAGE_PALDESTROYEVIL;
-	spelltype = SPELL_NEUTRAL;
+	damage_per_level = SPL_Damage_PalDestroyEvil;
+	spellType = SPELL_NEUTRAL;
 };
 
 
-func int spell_logic_paldestroyevil(var int manainvested)
+func int Spell_Logic_PalDestroyEvil(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_PALDESTROYEVIL)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_PalDestroyEvil)
 	{
 		return SPL_SENDCAST;
 	}
@@ -22,8 +22,8 @@ func int spell_logic_paldestroyevil(var int manainvested)
 	};
 };
 
-func void spell_cast_paldestroyevil()
+func void Spell_Cast_PalDestroyEvil()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_PALDESTROYEVIL;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_PalDestroyEvil;
 };
 

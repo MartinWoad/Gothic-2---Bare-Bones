@@ -1,82 +1,82 @@
 
-instance DIA_RANDOLPH_EXIT(C_INFO)
+instance DIA_Randolph_EXIT(C_Info)
 {
-	npc = bau_942_randolph;
+	npc = BAU_942_Randolph;
 	nr = 999;
-	condition = dia_randolph_exit_condition;
-	information = dia_randolph_exit_info;
+	condition = DIA_Randolph_EXIT_Condition;
+	information = DIA_Randolph_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_randolph_exit_condition()
+func int DIA_Randolph_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_randolph_exit_info()
+func void DIA_Randolph_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_RANDOLPH_SCHWERELUFT(C_INFO)
+instance DIA_Randolph_SchwereLuft(C_Info)
 {
-	npc = bau_942_randolph;
+	npc = BAU_942_Randolph;
 	nr = 4;
-	condition = dia_randolph_schwereluft_condition;
-	information = dia_randolph_schwereluft_info;
+	condition = DIA_Randolph_SchwereLuft_Condition;
+	information = DIA_Randolph_SchwereLuft_Info;
 	permanent = FALSE;
 	description = "Wszystko w porz¹dku?";
 };
 
 
-func int dia_randolph_schwereluft_condition()
+func int DIA_Randolph_SchwereLuft_Condition()
 {
-	if(!Npc_IsDead(alvares) && !Npc_IsDead(engardo) && (KAPITEL < 4))
+	if(!Npc_IsDead(Alvares) && !Npc_IsDead(Engardo) && (Kapitel < 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_randolph_schwereluft_info()
+func void DIA_Randolph_SchwereLuft_Info()
 {
 	AI_Output(other,self,"DIA_Randolph_SchwereLuft_15_00");	//Wszystko w porz¹dku?
 	AI_Output(self,other,"DIA_Randolph_SchwereLuft_06_01");	//Hmmm... Jedno z³e s³owo, a rozpêta siê tu prawdziwe piek³o... Uwa¿aj, bo bêdzie jatka.
 	AI_Output(other,self,"DIA_Randolph_SchwereLuft_15_02");	//Czy przy³¹czysz siê do walki?
 	AI_Output(self,other,"DIA_Randolph_SchwereLuft_06_03");	//Nie bêdê sta³ jak idiota i przygl¹da³ siê, ale te¿ nie zamierzam nikogo prowokowaæ.
-	AKILS_SLDSTILLTHERE = TRUE;
-	Log_CreateTopic(TOPIC_AKILSSLDSTILLTHERE,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_AKILSSLDSTILLTHERE,LOG_RUNNING);
-	b_logentry(TOPIC_AKILSSLDSTILLTHERE,"Farmie Akila zagra¿aj¹ najemnicy.");
-	b_npcclearobsessionbydmt(self);
+	Akils_SLDStillthere = TRUE;
+	Log_CreateTopic(TOPIC_AkilsSLDStillthere,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_AkilsSLDStillthere,LOG_Running);
+	B_LogEntry(TOPIC_AkilsSLDStillthere,"Farmie Akila zagra¿aj¹ najemnicy.");
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_RANDOLPH_HALLO(C_INFO)
+instance DIA_Randolph_HALLO(C_Info)
 {
-	npc = bau_942_randolph;
+	npc = BAU_942_Randolph;
 	nr = 4;
-	condition = dia_randolph_hallo_condition;
-	information = dia_randolph_hallo_info;
+	condition = DIA_Randolph_HALLO_Condition;
+	information = DIA_Randolph_HALLO_Info;
 	permanent = FALSE;
 	description = "Wszystko w porz¹dku?";
 };
 
 
-func int dia_randolph_hallo_condition()
+func int DIA_Randolph_HALLO_Condition()
 {
-	if(Npc_IsDead(alvares) && Npc_IsDead(engardo) && (KAPITEL < 4))
+	if(Npc_IsDead(Alvares) && Npc_IsDead(Engardo) && (Kapitel < 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_randolph_hallo_info()
+func void DIA_Randolph_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Randolph_HALLO_15_00");	//Wszystko w porz¹dku?
-	if(Npc_IsDead(akil) && Npc_IsDead(kati))
+	if(Npc_IsDead(Akil) && Npc_IsDead(Kati))
 	{
 		AI_Output(self,other,"DIA_Randolph_HALLO_06_01");	//Skoro Kati i Akil udali siê do œwiata Innosa, teraz ja bêdê zajmowa³ siê farm¹.
 		Npc_ExchangeRoutine(self,"START");
@@ -90,55 +90,55 @@ func void dia_randolph_hallo_info()
 };
 
 
-instance DIA_RANDOLPH_BALTRAM(C_INFO)
+instance DIA_Randolph_Baltram(C_Info)
 {
-	npc = bau_942_randolph;
+	npc = BAU_942_Randolph;
 	nr = 5;
-	condition = dia_randolph_baltram_condition;
-	information = dia_randolph_baltram_info;
+	condition = DIA_Randolph_Baltram_Condition;
+	information = DIA_Randolph_Baltram_Info;
 	permanent = FALSE;
 	description = "Baltram mnie przys³a³...";
 };
 
 
-func int dia_randolph_baltram_condition()
+func int DIA_Randolph_Baltram_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_randolph_hallo) && (MIS_BALTRAM_SCOUTAKIL == LOG_RUNNING) && Npc_IsDead(akil) && Npc_IsDead(kati) && (LIEFERUNG_GEHOLT == FALSE) && (KAPITEL < 4))
+	if(Npc_KnowsInfo(other,DIA_Randolph_HALLO) && (MIS_Baltram_ScoutAkil == LOG_Running) && Npc_IsDead(Akil) && Npc_IsDead(Kati) && (Lieferung_Geholt == FALSE) && (Kapitel < 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_randolph_baltram_info()
+func void DIA_Randolph_Baltram_Info()
 {
 	AI_Output(other,self,"DIA_Randolph_Baltram_15_00");	//Przysy³a mnie Baltram, mam odebraæ dla niego dostawê.
 	AI_Output(self,other,"DIA_Randolph_Baltram_06_01");	//Œwietnie. Wszystko ju¿ przygotowa³em. Oto paczka dla ciebie.
-	CreateInvItems(self,itmi_baltrampaket,1);
-	b_giveinvitems(self,other,5703,1);
-	LIEFERUNG_GEHOLT = TRUE;
+	CreateInvItems(self,ItMi_BaltramPaket,1);
+	B_GiveInvItems(self,other,ItMi_BaltramPaket,1);
+	Lieferung_Geholt = TRUE;
 };
 
 
-instance DIA_RANDOLPH_GESCHICHTE(C_INFO)
+instance DIA_Randolph_Geschichte(C_Info)
 {
-	npc = bau_942_randolph;
+	npc = BAU_942_Randolph;
 	nr = 5;
-	condition = dia_randolph_geschichte_condition;
-	information = dia_randolph_geschichte_info;
+	condition = DIA_Randolph_Geschichte_Condition;
+	information = DIA_Randolph_Geschichte_Info;
 	permanent = FALSE;
 	description = "Nie jesteœ st¹d, prawda?";
 };
 
 
-func int dia_randolph_geschichte_condition()
+func int DIA_Randolph_Geschichte_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_randolph_hallo) && (KAPITEL < 4))
+	if(Npc_KnowsInfo(other,DIA_Randolph_HALLO) && (Kapitel < 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_randolph_geschichte_info()
+func void DIA_Randolph_Geschichte_Info()
 {
 	AI_Output(other,self,"DIA_Randolph_Geschichte_15_00");	//Nie jesteœ st¹d, prawda?
 	AI_Output(self,other,"DIA_Randolph_Geschichte_06_01");	//Przybywam z po³udniowych wysp. Swego czasu Khorinis potrzebowa³o ludzi do wydobywania magicznej rudy.
@@ -147,25 +147,25 @@ func void dia_randolph_geschichte_info()
 };
 
 
-instance DIA_RANDOLPH_TAVERNE(C_INFO)
+instance DIA_Randolph_TAVERNE(C_Info)
 {
-	npc = bau_942_randolph;
+	npc = BAU_942_Randolph;
 	nr = 5;
-	condition = dia_randolph_taverne_condition;
-	information = dia_randolph_taverne_info;
+	condition = DIA_Randolph_TAVERNE_Condition;
+	information = DIA_Randolph_TAVERNE_Info;
 	description = "Bywasz w gospodzie?";
 };
 
 
-func int dia_randolph_taverne_condition()
+func int DIA_Randolph_TAVERNE_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_randolph_hallo) && (KAPITEL < 4))
+	if(Npc_KnowsInfo(other,DIA_Randolph_HALLO) && (Kapitel < 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_randolph_taverne_info()
+func void DIA_Randolph_TAVERNE_Info()
 {
 	AI_Output(other,self,"DIA_Randolph_TAVERNE_15_00");	//Bywasz w gospodzie?
 	AI_Output(self,other,"DIA_Randolph_TAVERNE_06_01");	//To prawda. Choæ ostatnio coraz rzadziej.
@@ -173,55 +173,55 @@ func void dia_randolph_taverne_info()
 };
 
 
-instance DIA_RANDOLPH_WASISTINTAVERNE(C_INFO)
+instance DIA_Randolph_WASISTINTAVERNE(C_Info)
 {
-	npc = bau_942_randolph;
+	npc = BAU_942_Randolph;
 	nr = 6;
-	condition = dia_randolph_wasistintaverne_condition;
-	information = dia_randolph_wasistintaverne_info;
+	condition = DIA_Randolph_WASISTINTAVERNE_Condition;
+	information = DIA_Randolph_WASISTINTAVERNE_Info;
 	description = "Co tak dok³adnie dzieje siê w gospodzie?";
 };
 
 
-func int dia_randolph_wasistintaverne_condition()
+func int DIA_Randolph_WASISTINTAVERNE_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_randolph_taverne) && (KAPITEL < 4))
+	if(Npc_KnowsInfo(other,DIA_Randolph_TAVERNE) && (Kapitel < 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_randolph_wasistintaverne_info()
+func void DIA_Randolph_WASISTINTAVERNE_Info()
 {
 	AI_Output(other,self,"DIA_Randolph_WASISTINTAVERNE_15_00");	//Co tak dok³adnie dzieje siê w gospodzie?
 	AI_Output(self,other,"DIA_Randolph_WASISTINTAVERNE_06_01");	//Najproœciej mówi¹c, kwitnie tam hazard.
 	AI_Output(self,other,"DIA_Randolph_WASISTINTAVERNE_06_02");	//Dwóch goœci konkuruje w piciu piwa. Wygrywa ten, który d³u¿ej utrzyma siê na nogach.
 	AI_Output(self,other,"DIA_Randolph_WASISTINTAVERNE_06_03");	//Przegra³em w tej konkurencji. Zanim tam wrócê, muszê trochê zarobiæ.
-	Log_CreateTopic(TOPIC_WETTSAUFEN,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_WETTSAUFEN,LOG_RUNNING);
-	b_logentry(TOPIC_WETTSAUFEN,"W gospodzie s¹ przyjmowane zak³ady.");
+	Log_CreateTopic(TOPIC_Wettsaufen,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Wettsaufen,LOG_Running);
+	B_LogEntry(TOPIC_Wettsaufen,"W gospodzie s¹ przyjmowane zak³ady.");
 };
 
 
-instance DIA_RANDOLPH_GEGENWEN(C_INFO)
+instance DIA_Randolph_GEGENWEN(C_Info)
 {
-	npc = bau_942_randolph;
+	npc = BAU_942_Randolph;
 	nr = 7;
-	condition = dia_randolph_gegenwen_condition;
-	information = dia_randolph_gegenwen_info;
+	condition = DIA_Randolph_GEGENWEN_Condition;
+	information = DIA_Randolph_GEGENWEN_Info;
 	description = "Kto by³ twoim przeciwnikiem?";
 };
 
 
-func int dia_randolph_gegenwen_condition()
+func int DIA_Randolph_GEGENWEN_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_randolph_wasistintaverne) && (KAPITEL < 4))
+	if(Npc_KnowsInfo(other,DIA_Randolph_WASISTINTAVERNE) && (Kapitel < 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_randolph_gegenwen_info()
+func void DIA_Randolph_GEGENWEN_Info()
 {
 	AI_Output(other,self,"DIA_Randolph_GEGENWEN_15_00");	//Kto by³ twoim przeciwnikiem?
 	AI_Output(self,other,"DIA_Randolph_GEGENWEN_06_01");	//Ten stary hultaj - Rukhar. Jak dot¹d nie uda³o mi siê go pokonaæ.
@@ -229,107 +229,107 @@ func void dia_randolph_gegenwen_info()
 	AI_Output(self,other,"DIA_Randolph_GEGENWEN_06_03");	//Wydaje mi siê, ¿e ta brudna kanalia trzyma gin w tym swoim kufrze!
 	AI_Output(self,other,"DIA_Randolph_GEGENWEN_06_04");	//Ktoœ powinien podmieniæ gin na wodê. Wtedy mo¿e sobie doprawiaæ moje piwo, jak d³ugo zechce.
 	AI_Output(self,other,"DIA_Randolph_GEGENWEN_06_05");	//Gdybym tylko mia³ trochê z³ota, by raz jeszcze stan¹æ z nim do pojedynku...
-	b_logentry(TOPIC_WETTSAUFEN,"Randolph opowiedzia³ mi o Rukharze i konkursie picia. Randolph nie ma ju¿ pieniêdzy, aby stan¹æ przeciwko Rukharowi.");
-	b_logentry(TOPIC_WETTSAUFEN,"Randolph podejrzewa, ¿e Rukhar oszukuje podczas zawodów w piciu. Prosi mnie, abym zamieni³ butelkê ginu, któr¹ Rukhar trzyma w swoim kufrze, na butelkê wody.");
+	B_LogEntry(TOPIC_Wettsaufen,"Randolph opowiedzia³ mi o Rukharze i konkursie picia. Randolph nie ma ju¿ pieniêdzy, aby stan¹æ przeciwko Rukharowi.");
+	B_LogEntry(TOPIC_Wettsaufen,"Randolph podejrzewa, ¿e Rukhar oszukuje podczas zawodów w piciu. Prosi mnie, abym zamieni³ butelkê ginu, któr¹ Rukhar trzyma w swoim kufrze, na butelkê wody.");
 };
 
 
-instance DIA_RANDOLPH_WASBRAUCHSTDU(C_INFO)
+instance DIA_Randolph_WASBRAUCHSTDU(C_Info)
 {
-	npc = bau_942_randolph;
+	npc = BAU_942_Randolph;
 	nr = 8;
-	condition = dia_randolph_wasbrauchstdu_condition;
-	information = dia_randolph_wasbrauchstdu_info;
+	condition = DIA_Randolph_WASBRAUCHSTDU_Condition;
+	information = DIA_Randolph_WASBRAUCHSTDU_Info;
 	description = "Ile pieniêdzy potrzebujesz, by wzi¹æ udzia³ w konkursie?";
 };
 
 
-func int dia_randolph_wasbrauchstdu_condition()
+func int DIA_Randolph_WASBRAUCHSTDU_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_randolph_gegenwen) && (MIS_RUKHAR_WETTKAMPF == LOG_RUNNING) && (KAPITEL < 4))
+	if(Npc_KnowsInfo(other,DIA_Randolph_GEGENWEN) && (MIS_Rukhar_Wettkampf == LOG_Running) && (Kapitel < 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_randolph_wasbrauchstdu_info()
+func void DIA_Randolph_WASBRAUCHSTDU_Info()
 {
 	AI_Output(other,self,"DIA_Randolph_WASBRAUCHSTDU_15_00");	//Ile pieniêdzy potrzebujesz, by wzi¹æ udzia³ w konkursie?
 	AI_Output(self,other,"DIA_Randolph_WASBRAUCHSTDU_06_01");	//10 sztuk z³ota.
 };
 
 
-instance DIA_RANDOLPH_ICHGEBEDIRGELD(C_INFO)
+instance DIA_Randolph_ICHGEBEDIRGELD(C_Info)
 {
-	npc = bau_942_randolph;
+	npc = BAU_942_Randolph;
 	nr = 9;
-	condition = dia_randolph_ichgebedirgeld_condition;
-	information = dia_randolph_ichgebedirgeld_info;
+	condition = DIA_Randolph_ICHGEBEDIRGELD_Condition;
+	information = DIA_Randolph_ICHGEBEDIRGELD_Info;
 	permanent = TRUE;
 	description = "Dam ci pieni¹dze, byœ móg³ stan¹æ w szranki z Rukharem.";
 };
 
 
-var int dia_randolph_ichgebedirgeld_noperm;
+var int DIA_Randolph_ICHGEBEDIRGELD_noPerm;
 
-func int dia_randolph_ichgebedirgeld_condition()
+func int DIA_Randolph_ICHGEBEDIRGELD_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_randolph_wasbrauchstdu) && (DIA_RANDOLPH_ICHGEBEDIRGELD_NOPERM == FALSE) && (KAPITEL < 4))
+	if(Npc_KnowsInfo(other,DIA_Randolph_WASBRAUCHSTDU) && (DIA_Randolph_ICHGEBEDIRGELD_noPerm == FALSE) && (Kapitel < 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_randolph_ichgebedirgeld_info()
+func void DIA_Randolph_ICHGEBEDIRGELD_Info()
 {
 	AI_Output(other,self,"DIA_Randolph_ICHGEBEDIRGELD_15_00");	//Dam ci pieni¹dze, byœ móg³ stan¹æ w szranki z Rukharem.
-	if(b_giveinvitems(other,self,5113,10))
+	if(B_GiveInvItems(other,self,ItMi_Gold,10))
 	{
 		AI_Output(self,other,"DIA_Randolph_ICHGEBEDIRGELD_06_01");	//Naprawdê? Serdecznie dziêkujê. Wkrótce je oddam.
 		AI_Output(self,other,"DIA_Randolph_ICHGEBEDIRGELD_06_02");	//Jeœli wygram, dorzucê nawet coœ ekstra.
-		b_logentry(TOPIC_WETTSAUFEN,"Powinienem wybraæ siê na zawody w piciu piwa.");
-		b_giveplayerxp(XP_RANDOLPH_WETTKAMPFSTART);
-		DIA_RANDOLPH_ICHGEBEDIRGELD_NOPERM = TRUE;
-		b_npcclearobsessionbydmt(self);
-		MIS_RUKHAR_WETTKAMPF_DAY = Wld_GetDay();
+		B_LogEntry(TOPIC_Wettsaufen,"Powinienem wybraæ siê na zawody w piciu piwa.");
+		B_GivePlayerXP(XP_Randolph_WettkampfStart);
+		DIA_Randolph_ICHGEBEDIRGELD_noPerm = TRUE;
+		B_NpcClearObsessionByDMT(self);
+		MIS_Rukhar_Wettkampf_Day = Wld_GetDay();
 		Npc_ExchangeRoutine(self,"Wettkampf");
-		b_startotherroutine(orlan,"Wettkampf");
-		b_startotherroutine(rukhar,"Wettkampf");
+		B_StartOtherRoutine(Orlan,"Wettkampf");
+		B_StartOtherRoutine(Rukhar,"Wettkampf");
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Randolph_ICHGEBEDIRGELD_06_03");	//Nie trzeba, sam ledwie wi¹¿esz koniec z koñcem.
 	};
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_RANDOLPH_WETTKAMPFZUENDE(C_INFO)
+instance DIA_Randolph_WETTKAMPFZUENDE(C_Info)
 {
-	npc = bau_942_randolph;
+	npc = BAU_942_Randolph;
 	nr = 10;
-	condition = dia_randolph_wettkampfzuende_condition;
-	information = dia_randolph_wettkampfzuende_info;
+	condition = DIA_Randolph_WETTKAMPFZUENDE_Condition;
+	information = DIA_Randolph_WETTKAMPFZUENDE_Info;
 	permanent = TRUE;
 	description = "Mamy kaca?";
 };
 
 
-func int dia_randolph_wettkampfzuende_condition()
+func int DIA_Randolph_WETTKAMPFZUENDE_Condition()
 {
-	if((MIS_RUKHAR_WETTKAMPF == LOG_SUCCESS) && (KAPITEL < 4))
+	if((MIS_Rukhar_Wettkampf == LOG_SUCCESS) && (Kapitel < 4))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_randolph_wettkampfzuende_onetime;
+var int DIA_Randolph_WETTKAMPFZUENDE_OneTime;
 
-func void dia_randolph_wettkampfzuende_info()
+func void DIA_Randolph_WETTKAMPFZUENDE_Info()
 {
 	AI_Output(other,self,"DIA_Randolph_WETTKAMPFZUENDE_15_00");	//Mamy kaca?
-	if(RUKHAR_WON_WETTKAMPF == TRUE)
+	if(Rukhar_Won_Wettkampf == TRUE)
 	{
 		AI_Output(self,other,"DIA_Randolph_WETTKAMPFZUENDE_06_01");	//Chyba nawet parê kaców na raz... Ju¿ nigdy nie dotknê alkoholu.
 		AI_Output(self,other,"DIA_Randolph_WETTKAMPFZUENDE_06_02");	//Twoje pieni¹dze przepad³y. Przykro mi.
@@ -337,60 +337,60 @@ func void dia_randolph_wettkampfzuende_info()
 	else
 	{
 		AI_Output(self,other,"DIA_Randolph_WETTKAMPFZUENDE_06_03");	//Nie. Czujê siê œwietnie.
-		if(DIA_RANDOLPH_WETTKAMPFZUENDE_ONETIME == FALSE)
+		if(DIA_Randolph_WETTKAMPFZUENDE_OneTime == FALSE)
 		{
 			AI_Output(self,other,"DIA_Randolph_WETTKAMPFZUENDE_06_04");	//W koñcu siê uda³o. Wielkie dziêki za po¿yczkê. Proszê, przyjmij to w podziêce.
-			CreateInvItems(self,itmi_gold,20);
-			b_giveinvitems(self,other,5113,12);
-			DIA_RANDOLPH_WETTKAMPFZUENDE_ONETIME = TRUE;
+			CreateInvItems(self,ItMi_Gold,20);
+			B_GiveInvItems(self,other,ItMi_Gold,12);
+			DIA_Randolph_WETTKAMPFZUENDE_OneTime = TRUE;
 		};
 		AI_Output(self,other,"DIA_Randolph_WETTKAMPFZUENDE_06_05");	//Wygl¹da na to, ¿e Rukhar d³uugo jeszcze bêdzie trzeŸwia³.
 	};
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_RANDOLPH_PERM(C_INFO)
+instance DIA_Randolph_PERM(C_Info)
 {
-	npc = bau_942_randolph;
+	npc = BAU_942_Randolph;
 	nr = 30;
-	condition = dia_randolph_perm_condition;
-	information = dia_randolph_perm_info;
+	condition = DIA_Randolph_PERM_Condition;
+	information = DIA_Randolph_PERM_Info;
 	permanent = TRUE;
 	description = "Oszala³eœ?";
 };
 
 
-func int dia_randolph_perm_condition()
+func int DIA_Randolph_PERM_Condition()
 {
-	if((KAPITEL >= 4) && (NPCOBSESSEDBYDMT_RANDOLPH == FALSE))
+	if((Kapitel >= 4) && (NpcObsessedByDMT_Randolph == FALSE))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_randolph_perm_gotmoney;
+var int DIA_Randolph_PERM_GotMoney;
 
-func void dia_randolph_perm_info()
+func void DIA_Randolph_PERM_Info()
 {
 	if(hero.guild == GIL_KDF)
 	{
-		b_npcobsessedbydmt(self);
+		B_NpcObsessedByDMT(self);
 	}
 	else
 	{
 		AI_Output(other,self,"DIA_Randolph_PERM_15_00");	//Wszystko w porz¹dku?
-		if(((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL)) && (MIS_HEALRANDOLPH != LOG_SUCCESS))
+		if(((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL)) && (MIS_HealRandolph != LOG_SUCCESS))
 		{
-			if((DIA_SAGITTA_HEALRANDOLPH_GOTONE == FALSE) && (DIA_SAGITTA_HEALRANDOLPH_KNOWSPRICE == TRUE) && (DIA_RANDOLPH_PERM_GOTMONEY == FALSE))
+			if((DIA_Sagitta_HEALRANDOLPH_GotOne == FALSE) && (DIA_Sagitta_HEALRANDOLPH_KnowsPrice == TRUE) && (DIA_Randolph_PERM_GotMoney == FALSE))
 			{
 				AI_Output(other,self,"DIA_Randolph_PERM_15_01");	//Wysy³asz mnie bez grosza przy duszy i nawet nie raczysz uprzedziæ, ¿e to cholerstwo tyle kosztuje?
 				AI_Output(other,self,"DIA_Randolph_PERM_15_02");	//Sagitta ¿¹da ode mnie 300 sztuk z³ota.
 				AI_Output(self,other,"DIA_Randolph_PERM_06_03");	//Nie dam ci wiêcej ni¿ 150 sztuk z³ota. Proszê, musisz mi pomóc, b³agam.
-				CreateInvItems(self,itmi_gold,150);
-				b_giveinvitems(self,other,5113,150);
-				DIA_RANDOLPH_PERM_GOTMONEY = TRUE;
+				CreateInvItems(self,ItMi_Gold,150);
+				B_GiveInvItems(self,other,ItMi_Gold,150);
+				DIA_Randolph_PERM_GotMoney = TRUE;
 			}
 			else
 			{
@@ -398,10 +398,10 @@ func void dia_randolph_perm_info()
 				AI_Output(self,other,"DIA_Randolph_PERM_06_05");	//Jest pewne lekarstwo, które powinno pomóc.
 				AI_Output(self,other,"DIA_Randolph_PERM_06_06");	//Sagitta, stara zielarka, zwykle je dla mnie przygotowuje. Ale nie mogê ryzykowaæ wyprawy do niej, kiedy bandy orków grasuj¹ po okolicy.
 			};
-			Log_CreateTopic(TOPIC_HEALRANDOLPH,LOG_MISSION);
-			Log_SetTopicStatus(TOPIC_HEALRANDOLPH,LOG_RUNNING);
-			b_logentry(TOPIC_HEALRANDOLPH,"Randolph twierdzi, ¿e przesta³ piæ alkohol, i prosi mnie o przyniesienie od zielarki Sagitty jakichœ zió³, które pomog¹ mu przetrwaæ pierwsze ciê¿kie dni trzeŸwoœci.");
-			MIS_HEALRANDOLPH = LOG_RUNNING;
+			Log_CreateTopic(TOPIC_HealRandolph,LOG_MISSION);
+			Log_SetTopicStatus(TOPIC_HealRandolph,LOG_Running);
+			B_LogEntry(TOPIC_HealRandolph,"Randolph twierdzi, ¿e przesta³ piæ alkohol, i prosi mnie o przyniesienie od zielarki Sagitty jakichœ zió³, które pomog¹ mu przetrwaæ pierwsze ciê¿kie dni trzeŸwoœci.");
+			MIS_HealRandolph = LOG_Running;
 		}
 		else
 		{
@@ -411,109 +411,109 @@ func void dia_randolph_perm_info()
 };
 
 
-instance DIA_RANDOLPH_HEILUNG(C_INFO)
+instance DIA_Randolph_Heilung(C_Info)
 {
-	npc = bau_942_randolph;
+	npc = BAU_942_Randolph;
 	nr = 55;
-	condition = dia_randolph_heilung_condition;
-	information = dia_randolph_heilung_info;
+	condition = DIA_Randolph_Heilung_Condition;
+	information = DIA_Randolph_Heilung_Info;
 	permanent = TRUE;
 	description = "Alkohol uderzy³ do g³ówki, co?";
 };
 
 
-func int dia_randolph_heilung_condition()
+func int DIA_Randolph_Heilung_Condition()
 {
-	if((NPCOBSESSEDBYDMT_RANDOLPH == TRUE) && (NPCOBSESSEDBYDMT == FALSE) && (hero.guild == GIL_KDF))
+	if((NpcObsessedByDMT_Randolph == TRUE) && (NpcObsessedByDMT == FALSE) && (hero.guild == GIL_KDF))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_randolph_heilung_info()
+func void DIA_Randolph_Heilung_Info()
 {
 	AI_Output(other,self,"DIA_Randolph_Heilung_15_00");	//Alkohol uderzy³ do g³ówki, co?
 	AI_Output(self,other,"DIA_Randolph_Heilung_06_01");	//Ju¿ nigdy ani kropelki. Nigdy w ¿yciu. S³owo honoru.
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_RANDOLPH_SAGITTAHEAL(C_INFO)
+instance DIA_Randolph_SAGITTAHEAL(C_Info)
 {
-	npc = bau_942_randolph;
+	npc = BAU_942_Randolph;
 	nr = 56;
-	condition = dia_randolph_sagittaheal_condition;
-	information = dia_randolph_sagittaheal_info;
+	condition = DIA_Randolph_SAGITTAHEAL_Condition;
+	information = DIA_Randolph_SAGITTAHEAL_Info;
 	description = "Proszê, to powinno z³agodziæ objawy odstawienia trunków.";
 };
 
 
-func int dia_randolph_sagittaheal_condition()
+func int DIA_Randolph_SAGITTAHEAL_Condition()
 {
-	if((MIS_HEALRANDOLPH == LOG_RUNNING) && Npc_HasItems(other,itpo_healrandolph_mis))
+	if((MIS_HealRandolph == LOG_Running) && Npc_HasItems(other,ItPo_HealRandolph_MIS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_randolph_sagittaheal_info()
+func void DIA_Randolph_SAGITTAHEAL_Info()
 {
 	AI_Output(other,self,"DIA_Randolph_SAGITTAHEAL_15_00");	//Proszê, to powinno z³agodziæ objawy odstawienia trunków.
-	b_giveinvitems(other,self,5895,1);
-	if(Npc_IsInState(self,zs_pick_fp))
+	B_GiveInvItems(other,self,ItPo_HealRandolph_MIS,1);
+	if(Npc_IsInState(self,ZS_Pick_FP))
 	{
-		b_useitem(self,5895);
+		B_UseItem(self,ItPo_HealRandolph_MIS);
 	};
 	AI_Output(self,other,"DIA_Randolph_SAGITTAHEAL_06_01");	//Och! Dziêki, stary. Nareszcie trochê odpocznê.
 	AI_Output(self,other,"DIA_Randolph_SAGITTAHEAL_06_02");	//Jak ja ci siê odwdziêczê?
-	if(DIA_RANDOLPH_PERM_GOTMONEY == FALSE)
+	if(DIA_Randolph_PERM_GotMoney == FALSE)
 	{
 		AI_Output(self,other,"DIA_Randolph_SAGITTAHEAL_06_03");	//Te kilka monet to niewiele, wiem. Ale to ostatnie pieni¹dze, jakie mi zosta³y.
-		CreateInvItems(self,itmi_gold,150);
-		b_giveinvitems(self,other,5113,150);
+		CreateInvItems(self,ItMi_Gold,150);
+		B_GiveInvItems(self,other,ItMi_Gold,150);
 	}
 	else
 	{
 		AI_Output(other,self,"DIA_Randolph_SAGITTAHEAL_15_04");	//Zap³aci³em za ciebie kupê kasy, a ty dajesz mi kilka œmierdz¹cych monet? To nawet nie pokryje moich wydatków.
 		AI_Output(self,other,"DIA_Randolph_SAGITTAHEAL_06_05");	//Mogê siê chyba uznaæ za szczêœliwca. Nieczêsto spotyka siê tak pomocnych paladynów. Nie s¹dzisz?
 	};
-	MIS_HEALRANDOLPH = LOG_SUCCESS;
-	b_giveplayerxp(XP_HEALRANDOLPH);
-	b_npcclearobsessionbydmt(self);
+	MIS_HealRandolph = LOG_SUCCESS;
+	B_GivePlayerXP(XP_HealRandolph);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_RANDOLPH_PICKPOCKET(C_INFO)
+instance DIA_Randolph_PICKPOCKET(C_Info)
 {
-	npc = bau_942_randolph;
+	npc = BAU_942_Randolph;
 	nr = 900;
-	condition = dia_randolph_pickpocket_condition;
-	information = dia_randolph_pickpocket_info;
+	condition = DIA_Randolph_PICKPOCKET_Condition;
+	information = DIA_Randolph_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_randolph_pickpocket_condition()
+func int DIA_Randolph_PICKPOCKET_Condition()
 {
-	return c_beklauen(58,2);
+	return C_Beklauen(58,2);
 };
 
-func void dia_randolph_pickpocket_info()
+func void DIA_Randolph_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_randolph_pickpocket);
-	Info_AddChoice(dia_randolph_pickpocket,DIALOG_BACK,dia_randolph_pickpocket_back);
-	Info_AddChoice(dia_randolph_pickpocket,DIALOG_PICKPOCKET,dia_randolph_pickpocket_doit);
+	Info_ClearChoices(DIA_Randolph_PICKPOCKET);
+	Info_AddChoice(DIA_Randolph_PICKPOCKET,Dialog_Back,DIA_Randolph_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Randolph_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Randolph_PICKPOCKET_DoIt);
 };
 
-func void dia_randolph_pickpocket_doit()
+func void DIA_Randolph_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_randolph_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Randolph_PICKPOCKET);
 };
 
-func void dia_randolph_pickpocket_back()
+func void DIA_Randolph_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_randolph_pickpocket);
+	Info_ClearChoices(DIA_Randolph_PICKPOCKET);
 };
 

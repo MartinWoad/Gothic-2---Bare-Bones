@@ -1,81 +1,81 @@
 
-instance DIA_IGNAZ_EXIT(C_INFO)
+instance DIA_Ignaz_EXIT(C_Info)
 {
-	npc = vlk_498_ignaz;
+	npc = VLK_498_Ignaz;
 	nr = 999;
-	condition = dia_ignaz_exit_condition;
-	information = dia_ignaz_exit_info;
+	condition = DIA_Ignaz_EXIT_Condition;
+	information = DIA_Ignaz_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_ignaz_exit_condition()
+func int DIA_Ignaz_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_ignaz_exit_info()
+func void DIA_Ignaz_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_IGNAZ_PICKPOCKET(C_INFO)
+instance DIA_Ignaz_PICKPOCKET(C_Info)
 {
-	npc = vlk_498_ignaz;
+	npc = VLK_498_Ignaz;
 	nr = 900;
-	condition = dia_ignaz_pickpocket_condition;
-	information = dia_ignaz_pickpocket_info;
+	condition = DIA_Ignaz_PICKPOCKET_Condition;
+	information = DIA_Ignaz_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_ignaz_pickpocket_condition()
+func int DIA_Ignaz_PICKPOCKET_Condition()
 {
-	return c_beklauen(38,50);
+	return C_Beklauen(38,50);
 };
 
-func void dia_ignaz_pickpocket_info()
+func void DIA_Ignaz_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_ignaz_pickpocket);
-	Info_AddChoice(dia_ignaz_pickpocket,DIALOG_BACK,dia_ignaz_pickpocket_back);
-	Info_AddChoice(dia_ignaz_pickpocket,DIALOG_PICKPOCKET,dia_ignaz_pickpocket_doit);
+	Info_ClearChoices(DIA_Ignaz_PICKPOCKET);
+	Info_AddChoice(DIA_Ignaz_PICKPOCKET,Dialog_Back,DIA_Ignaz_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Ignaz_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Ignaz_PICKPOCKET_DoIt);
 };
 
-func void dia_ignaz_pickpocket_doit()
+func void DIA_Ignaz_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_ignaz_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Ignaz_PICKPOCKET);
 };
 
-func void dia_ignaz_pickpocket_back()
+func void DIA_Ignaz_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_ignaz_pickpocket);
+	Info_ClearChoices(DIA_Ignaz_PICKPOCKET);
 };
 
 
-instance DIA_IGNAZ_HALLO(C_INFO)
+instance DIA_Ignaz_Hallo(C_Info)
 {
-	npc = vlk_498_ignaz;
+	npc = VLK_498_Ignaz;
 	nr = 2;
-	condition = dia_ignaz_hallo_condition;
-	information = dia_ignaz_hallo_info;
+	condition = DIA_Ignaz_Hallo_Condition;
+	information = DIA_Ignaz_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_ignaz_hallo_condition()
+func int DIA_Ignaz_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ignaz_hallo_info()
+func void DIA_Ignaz_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Ignaz_Hallo_14_00");	//O, przychodzisz w sam¹ porê. W³aœnie poszukujê asystenta do mojego magicznego eksperymentu.
 	AI_Output(self,other,"DIA_Ignaz_Hallo_14_01");	//Jestem pewien, ¿e zgodzisz siê pomóc w imiê nauki.
@@ -85,26 +85,26 @@ func void dia_ignaz_hallo_info()
 };
 
 
-instance DIA_IGNAZ_TRAENKE(C_INFO)
+instance DIA_Ignaz_Traenke(C_Info)
 {
-	npc = vlk_498_ignaz;
+	npc = VLK_498_Ignaz;
 	nr = 3;
-	condition = dia_ignaz_traenke_condition;
-	information = dia_ignaz_traenke_info;
+	condition = DIA_Ignaz_Traenke_Condition;
+	information = DIA_Ignaz_Traenke_Info;
 	permanent = FALSE;
 	description = "Co bêdê z tego mia³?";
 };
 
 
-func int dia_ignaz_traenke_condition()
+func int DIA_Ignaz_Traenke_Condition()
 {
-	if(MIS_IGNAZ_CHARM != LOG_SUCCESS)
+	if(MIS_Ignaz_Charm != LOG_SUCCESS)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ignaz_traenke_info()
+func void DIA_Ignaz_Traenke_Info()
 {
 	AI_Output(other,self,"DIA_Ignaz_Traenke_15_00");	//Co bêdê z tego mia³?
 	AI_Output(self,other,"DIA_Ignaz_Traenke_14_01");	//Móg³bym ciê nauczyæ przygotowywaæ ró¿ne mikstury.
@@ -112,23 +112,23 @@ func void dia_ignaz_traenke_info()
 };
 
 
-instance DIA_IGNAZ_EXPERIMENT(C_INFO)
+instance DIA_Ignaz_Experiment(C_Info)
 {
-	npc = vlk_498_ignaz;
+	npc = VLK_498_Ignaz;
 	nr = 4;
-	condition = dia_ignaz_experiment_condition;
-	information = dia_ignaz_experiment_info;
+	condition = DIA_Ignaz_Experiment_Condition;
+	information = DIA_Ignaz_Experiment_Info;
 	permanent = FALSE;
 	description = "Powiedz mi wiêcej o tym eksperymencie i o samym zaklêciu.";
 };
 
 
-func int dia_ignaz_experiment_condition()
+func int DIA_Ignaz_Experiment_Condition()
 {
 	return TRUE;
 };
 
-func void dia_ignaz_experiment_info()
+func void DIA_Ignaz_Experiment_Info()
 {
 	AI_Output(other,self,"DIA_Ignaz_Experiment_15_00");	//Powiedz mi wiêcej o tym eksperymencie i o samym zaklêciu.
 	AI_Output(self,other,"DIA_Ignaz_Experiment_14_01");	//Zaklêcie s³u¿y do wymazywania z pamiêci ró¿nych wspomnieñ.
@@ -143,60 +143,60 @@ func void dia_ignaz_experiment_info()
 };
 
 
-instance DIA_IGNAZ_TEILNEHMEN(C_INFO)
+instance DIA_Ignaz_teilnehmen(C_Info)
 {
-	npc = vlk_498_ignaz;
+	npc = VLK_498_Ignaz;
 	nr = 5;
-	condition = dia_ignaz_teilnehmen_condition;
-	information = dia_ignaz_teilnehmen_info;
+	condition = DIA_Ignaz_teilnehmen_Condition;
+	information = DIA_Ignaz_teilnehmen_Info;
 	permanent = FALSE;
 	description = "Dobrze, wypróbujê to zaklêcie.";
 };
 
 
-func int dia_ignaz_teilnehmen_condition()
+func int DIA_Ignaz_teilnehmen_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_ignaz_experiment))
+	if(Npc_KnowsInfo(other,DIA_Ignaz_Experiment))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ignaz_teilnehmen_info()
+func void DIA_Ignaz_teilnehmen_Info()
 {
 	AI_Output(other,self,"DIA_Ignaz_teilnehmen_15_00");	//Dobrze, wypróbujê to zaklêcie.
 	AI_Output(self,other,"DIA_Ignaz_teilnehmen_14_01");	//A zatem weŸ ten zwój i poszukaj sobie dobrej œwinki doœwiadczalnej.
 	AI_Output(self,other,"DIA_Ignaz_teilnehmen_14_02");	//Kiedy ju¿ skoñczysz, wróæ do mnie i powiedz, jak ci posz³o.
-	b_giveinvitems(self,other,5562,1);
-	MIS_IGNAZ_CHARM = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_IGNAZ,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_IGNAZ,LOG_RUNNING);
-	b_logentry(TOPIC_IGNAZ,"Mam wypróbowaæ nowe zaklêcie Ignaza. Jest to czar zapomnienia. Osoby, które s¹ na mnie obra¿one z jakiegoœ powodu, nie bêd¹ chcia³y ze mn¹ rozmawiaæ. W takim przypadku zaklêcie Ignaza mo¿e okazaæ siê naprawdê przydatne.");
-	b_logentry(TOPIC_IGNAZ,"Pobity nie bêdzie nawet pamiêta³, ¿e zg³osi³ swoje pobicie stra¿y. Teraz mogê zaatakowaæ ka¿dego w dzielnicy portowej bez obaw, ¿e siê na mnie obrazi.");
+	B_GiveInvItems(self,other,ItSc_Charm,1);
+	MIS_Ignaz_Charm = LOG_Running;
+	Log_CreateTopic(TOPIC_Ignaz,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Ignaz,LOG_Running);
+	B_LogEntry(TOPIC_Ignaz,"Mam wypróbowaæ nowe zaklêcie Ignaza. Jest to czar zapomnienia. Osoby, które s¹ na mnie obra¿one z jakiegoœ powodu, nie bêd¹ chcia³y ze mn¹ rozmawiaæ. W takim przypadku zaklêcie Ignaza mo¿e okazaæ siê naprawdê przydatne.");
+	B_LogEntry(TOPIC_Ignaz,"Pobity nie bêdzie nawet pamiêta³, ¿e zg³osi³ swoje pobicie stra¿y. Teraz mogê zaatakowaæ ka¿dego w dzielnicy portowej bez obaw, ¿e siê na mnie obrazi.");
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_IGNAZ_RUNNING(C_INFO)
+instance DIA_Ignaz_Running(C_Info)
 {
-	npc = vlk_498_ignaz;
+	npc = VLK_498_Ignaz;
 	nr = 2;
-	condition = dia_ignaz_running_condition;
-	information = dia_ignaz_running_info;
+	condition = DIA_Ignaz_Running_Condition;
+	information = DIA_Ignaz_Running_Info;
 	permanent = FALSE;
 	description = "Co do eksperymentu…";
 };
 
 
-func int dia_ignaz_running_condition()
+func int DIA_Ignaz_Running_Condition()
 {
-	if((MIS_IGNAZ_CHARM == LOG_RUNNING) && (CHARM_TEST == FALSE))
+	if((MIS_Ignaz_Charm == LOG_Running) && (Charm_Test == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ignaz_running_info()
+func void DIA_Ignaz_Running_Info()
 {
 	AI_Output(other,self,"DIA_Ignaz_Running_15_00");	//Co do eksperymentu...
 	AI_Output(self,other,"DIA_Ignaz_Running_14_01");	//Czy próba siê powiod³a? Czy tylko zmarnowa³eœ zwój? Co? Mów szybko.
@@ -204,26 +204,26 @@ func void dia_ignaz_running_info()
 };
 
 
-instance DIA_IGNAZ_DANACH(C_INFO)
+instance DIA_Ignaz_Danach(C_Info)
 {
-	npc = vlk_498_ignaz;
+	npc = VLK_498_Ignaz;
 	nr = 6;
-	condition = dia_ignaz_danach_condition;
-	information = dia_ignaz_danach_info;
+	condition = DIA_Ignaz_Danach_Condition;
+	information = DIA_Ignaz_Danach_Info;
 	permanent = FALSE;
 	description = "U¿y³em zwoju z twoim zaklêciem.";
 };
 
 
-func int dia_ignaz_danach_condition()
+func int DIA_Ignaz_Danach_Condition()
 {
-	if((CHARM_TEST == TRUE) && (MIS_IGNAZ_CHARM == LOG_RUNNING))
+	if((Charm_Test == TRUE) && (MIS_Ignaz_Charm == LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ignaz_danach_info()
+func void DIA_Ignaz_Danach_Info()
 {
 	AI_Output(other,self,"DIA_Ignaz_Danach_15_00");	//U¿y³em zwoju z twoim zaklêciem.
 	AI_Output(self,other,"DIA_Ignaz_Danach_14_01");	//Dobrze, dobrze. I co, zadzia³a³o?
@@ -231,95 +231,95 @@ func void dia_ignaz_danach_info()
 	AI_Output(self,other,"DIA_Ignaz_Danach_14_03");	//Doskonale! Jeden ma³y krok dla nauki, jeden ogromny krok dla mojej kariery.
 	AI_Output(self,other,"DIA_Ignaz_Danach_14_04");	//Teraz mogê ciê nauczyæ paru rzeczy o sztuce alchemii.
 	AI_Output(self,other,"DIA_Ignaz_Danach_14_05");	//Mogê ci równie¿ daæ kilka przydatnych przedmiotów, jeœli chcesz.
-	IGNAZ_TEACHALCHEMY = TRUE;
-	Log_CreateTopic(TOPIC_CITYTEACHER,LOG_NOTE);
-	b_logentry(TOPIC_CITYTEACHER,"Ignaz mo¿e mi pokazaæ receptury na ró¿ne mikstury. Mieszka w dzielnicy portowej.");
-	MIS_IGNAZ_CHARM = LOG_SUCCESS;
-	b_giveplayerxp(XP_MIS_IGNAZ_CHARM);
-	CreateInvItems(self,itsc_charm,3);
+	Ignaz_TeachAlchemy = TRUE;
+	Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
+	B_LogEntry(TOPIC_CityTeacher,"Ignaz mo¿e mi pokazaæ receptury na ró¿ne mikstury. Mieszka w dzielnicy portowej.");
+	MIS_Ignaz_Charm = LOG_SUCCESS;
+	B_GivePlayerXP(XP_MIS_Ignaz_Charm);
+	CreateInvItems(self,ItSc_Charm,3);
 };
 
 
-instance DIA_IGNAZ_TRADE(C_INFO)
+instance DIA_Ignaz_Trade(C_Info)
 {
-	npc = vlk_498_ignaz;
+	npc = VLK_498_Ignaz;
 	nr = 6;
-	condition = dia_ignaz_trade_condition;
-	information = dia_ignaz_trade_info;
+	condition = DIA_Ignaz_Trade_Condition;
+	information = DIA_Ignaz_Trade_Info;
 	permanent = TRUE;
 	trade = TRUE;
 	description = "Poka¿ mi swoje towary.";
 };
 
 
-func int dia_ignaz_trade_condition()
+func int DIA_Ignaz_Trade_Condition()
 {
-	if((MIS_IGNAZ_CHARM == LOG_SUCCESS) || Npc_KnowsInfo(other,dia_ignaz_running))
+	if((MIS_Ignaz_Charm == LOG_SUCCESS) || Npc_KnowsInfo(other,DIA_Ignaz_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ignaz_trade_info()
+func void DIA_Ignaz_Trade_Info()
 {
-	b_givetradeinv(self);
+	B_GiveTradeInv(self);
 	AI_Output(other,self,"DIA_Ignaz_Trade_15_00");	//Poka¿ mi swoje towary.
 };
 
 
-instance DIA_IGNAZ_TEACH(C_INFO)
+instance DIA_Ignaz_Teach(C_Info)
 {
-	npc = vlk_498_ignaz;
+	npc = VLK_498_Ignaz;
 	nr = 2;
-	condition = dia_ignaz_teach_condition;
-	information = dia_ignaz_teach_info;
+	condition = DIA_Ignaz_Teach_Condition;
+	information = DIA_Ignaz_Teach_Info;
 	permanent = TRUE;
 	description = "Opowiedz mi o sztuce alchemii.";
 };
 
 
-var int dia_ignaz_teach_permanent;
+var int DIA_Ignaz_Teach_permanent;
 
-func int dia_ignaz_teach_condition()
+func int DIA_Ignaz_Teach_Condition()
 {
-	if((DIA_IGNAZ_TEACH_PERMANENT == FALSE) && (IGNAZ_TEACHALCHEMY == TRUE))
+	if((DIA_Ignaz_Teach_permanent == FALSE) && (Ignaz_TeachAlchemy == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ignaz_teach_info()
+func void DIA_Ignaz_Teach_Info()
 {
 	var int talente;
 	talente = 0;
 	AI_Output(other,self,"DIA_Ignaz_Teach_15_00");	//Opowiedz mi o sztuce alchemii.
-	if((PLAYER_TALENT_ALCHEMY[POTION_SPEED] == FALSE) || (PLAYER_TALENT_ALCHEMY[POTION_MANA_01] == FALSE) || (PLAYER_TALENT_ALCHEMY[POTION_HEALTH_01] == FALSE))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Speed] == FALSE) || (PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == FALSE) || (PLAYER_TALENT_ALCHEMY[POTION_Health_01] == FALSE))
 	{
-		Info_ClearChoices(dia_ignaz_teach);
-		Info_AddChoice(dia_ignaz_teach,DIALOG_BACK,dia_ignaz_teach_back);
+		Info_ClearChoices(DIA_Ignaz_Teach);
+		Info_AddChoice(DIA_Ignaz_Teach,Dialog_Back,DIA_Ignaz_Teach_BACK);
 	};
-	if((PLAYER_TALENT_ALCHEMY[POTION_SPEED] == FALSE) && ((PLAYER_TALENT_ALCHEMY[POTION_HEALTH_01] == TRUE) || (PLAYER_TALENT_ALCHEMY[POTION_MANA_01] == TRUE)))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Speed] == FALSE) && ((PLAYER_TALENT_ALCHEMY[POTION_Health_01] == TRUE) || (PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == TRUE)))
 	{
-		Info_AddChoice(dia_ignaz_teach,b_buildlearnstring("Mikstura szybkoœci",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_ignaz_teach_speed);
+		Info_AddChoice(DIA_Ignaz_Teach,B_BuildLearnString("Mikstura szybkoœci",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Ignaz_Teach_Speed);
 		talente = talente + 1;
 	};
-	if(PLAYER_TALENT_ALCHEMY[POTION_MANA_01] == FALSE)
+	if(PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == FALSE)
 	{
-		Info_AddChoice(dia_ignaz_teach,b_buildlearnstring("Esencja many",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_ignaz_teach_mana);
+		Info_AddChoice(DIA_Ignaz_Teach,B_BuildLearnString("Esencja many",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Ignaz_Teach_Mana);
 		talente = talente + 1;
 	};
-	if(PLAYER_TALENT_ALCHEMY[POTION_HEALTH_01] == FALSE)
+	if(PLAYER_TALENT_ALCHEMY[POTION_Health_01] == FALSE)
 	{
-		Info_AddChoice(dia_ignaz_teach,b_buildlearnstring("Esencja lecznicza",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_ignaz_teach_health);
+		Info_AddChoice(DIA_Ignaz_Teach,B_BuildLearnString("Esencja lecznicza",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Ignaz_Teach_Health);
 		talente = talente + 1;
 	};
 	if(talente > 0)
 	{
-		if(ALCHEMY_EXPLAIN != TRUE)
+		if(Alchemy_Explain != TRUE)
 		{
 			AI_Output(self,other,"DIA_Ignaz_Teach_14_01");	//Aby przygotowaæ miksturê, potrzebujesz menzurki.
 			AI_Output(self,other,"DIA_Ignaz_Teach_14_02");	//Bêd¹ ci równie¿ potrzebne odpowiednie sk³adniki.
-			ALCHEMY_EXPLAIN = TRUE;
+			Alchemy_Explain = TRUE;
 		}
 		else
 		{
@@ -329,30 +329,30 @@ func void dia_ignaz_teach_info()
 	else
 	{
 		AI_Output(self,other,"DIA_Ignaz_Teach_14_05");	//Wiesz ju¿ wszystko, czego móg³bym ciê nauczyæ.
-		DIA_IGNAZ_TEACH_PERMANENT = TRUE;
+		DIA_Ignaz_Teach_permanent = TRUE;
 	};
 };
 
-func void dia_ignaz_teach_health()
+func void DIA_Ignaz_Teach_Health()
 {
-	b_teachplayertalentalchemy(self,other,POTION_HEALTH_01);
-	Info_ClearChoices(dia_ignaz_teach);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Health_01);
+	Info_ClearChoices(DIA_Ignaz_Teach);
 };
 
-func void dia_ignaz_teach_mana()
+func void DIA_Ignaz_Teach_Mana()
 {
-	b_teachplayertalentalchemy(self,other,POTION_MANA_01);
-	Info_ClearChoices(dia_ignaz_teach);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Mana_01);
+	Info_ClearChoices(DIA_Ignaz_Teach);
 };
 
-func void dia_ignaz_teach_speed()
+func void DIA_Ignaz_Teach_Speed()
 {
-	b_teachplayertalentalchemy(self,other,POTION_SPEED);
-	Info_ClearChoices(dia_ignaz_teach);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Speed);
+	Info_ClearChoices(DIA_Ignaz_Teach);
 };
 
-func void dia_ignaz_teach_back()
+func void DIA_Ignaz_Teach_BACK()
 {
-	Info_ClearChoices(dia_ignaz_teach);
+	Info_ClearChoices(DIA_Ignaz_Teach);
 };
 

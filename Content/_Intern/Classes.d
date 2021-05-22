@@ -3,16 +3,16 @@ const int MAX_CHAPTER = 5;
 const int MAX_MISSIONS = 5;
 const int MAX_HITCHANCE = 5;
 
-class C_NPC
+class C_Npc
 {
 	var int id;
 	var string name[5];
 	var string slot;
 	var string effect;
-	var int npctype;
+	var int npcType;
 	var int flags;
 	var int attribute[ATR_INDEX_MAX];
-	var int hitchance[MAX_HITCHANCE];
+	var int HitChance[MAX_HITCHANCE];
 	var int protection[PROT_INDEX_MAX];
 	var int damage[DAM_INDEX_MAX];
 	var int damagetype;
@@ -22,12 +22,12 @@ class C_NPC
 	var int fight_tactic;
 	var int weapon;
 	var int voice;
-	var int voicepitch;
+	var int voicePitch;
 	var int bodymass;
 	var func daily_routine;
 	var func start_aistate;
-	var string spawnpoint;
-	var int spawndelay;
+	var string spawnPoint;
+	var int spawnDelay;
 	var int senses;
 	var int senses_range;
 	var int aivar[100];
@@ -35,32 +35,32 @@ class C_NPC
 	var int exp;
 	var int exp_next;
 	var int lp;
-	var int bodystateinterruptableoverride;
-	var int nofocus;
+	var int bodyStateInterruptableOverride;
+	var int noFocus;
 };
 
-class C_MISSION
+class C_Mission
 {
 	var string name;
 	var string description;
 	var int duration;
 	var int important;
-	var func offerconditions;
+	var func offerConditions;
 	var func offer;
-	var func successconditions;
+	var func successConditions;
 	var func success;
-	var func failureconditions;
+	var func failureConditions;
 	var func failure;
-	var func obsoleteconditions;
+	var func obsoleteConditions;
 	var func obsolete;
 	var func running;
 };
 
-class C_ITEM
+class C_Item
 {
 	var int id;
 	var string name;
-	var string nameid;
+	var string nameID;
 	var int hp;
 	var int hp_max;
 	var int mainflag;
@@ -68,7 +68,7 @@ class C_ITEM
 	var int weight;
 	var int value;
 	var int damagetype;
-	var int damagetotal;
+	var int damageTotal;
 	var int damage[DAM_INDEX_MAX];
 	var int wear;
 	var int protection[PROT_INDEX_MAX];
@@ -82,13 +82,13 @@ class C_ITEM
 	var func on_unequip;
 	var func on_state[4];
 	var func owner;
-	var int ownerguild;
-	var int disguiseguild;
+	var int ownerGuild;
+	var int disguiseGuild;
 	var string visual;
 	var string visual_change;
 	var string effect;
 	var int visual_skin;
-	var string scemename;
+	var string scemeName;
 	var int material;
 	var int munition;
 	var int spell;
@@ -104,7 +104,7 @@ class C_ITEM
 	var int inv_animate;
 };
 
-class C_FOCUS
+class C_Focus
 {
 	var float npc_longrange;
 	var float npc_range1;
@@ -127,7 +127,7 @@ class C_FOCUS
 	var int mob_prio;
 };
 
-class C_INFO
+class C_Info
 {
 	var int npc;
 	var int nr;
@@ -150,39 +150,39 @@ class C_ITEMREACT
 	var func reaction;
 };
 
-class C_SPELL
+class C_Spell
 {
 	var float time_per_mana;
 	var int damage_per_level;
 	var int damagetype;
-	var int spelltype;
-	var int canturnduringinvest;
-	var int canchangetargetduringinvest;
-	var int ismultieffect;
-	var int targetcollectalgo;
-	var int targetcollecttype;
-	var int targetcollectrange;
-	var int targetcollectazi;
-	var int targetcollectelev;
+	var int spellType;
+	var int canTurnDuringInvest;
+	var int canChangeTargetDuringInvest;
+	var int isMultiEffect;
+	var int targetCollectAlgo;
+	var int targetCollectType;
+	var int targetCollectRange;
+	var int targetCollectAzi;
+	var int targetCollectElev;
 };
 
-instance SELF(C_NPC)
+instance self(C_Npc)
 {
 };
 
-instance OTHER(C_NPC)
+instance other(C_Npc)
 {
 };
 
-instance VICTIM(C_NPC)
+instance victim(C_Npc)
 {
 };
 
-instance ITEM(C_ITEM)
+instance item(C_Item)
 {
 };
 
-instance HERO(C_NPC)
+instance hero(C_Npc)
 {
 };
 

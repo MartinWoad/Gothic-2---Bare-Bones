@@ -1,46 +1,46 @@
 
-instance DIA_NONE_101_MARIO_DI_EXIT(C_INFO)
+instance DIA_NONE_101_MARIO_DI_EXIT(C_Info)
 {
-	npc = none_101_mario_di;
+	npc = None_101_Mario_DI;
 	nr = 999;
-	condition = dia_none_101_mario_di_exit_condition;
-	information = dia_none_101_mario_di_exit_info;
+	condition = DIA_NONE_101_MARIO_DI_EXIT_Condition;
+	information = DIA_NONE_101_MARIO_DI_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_none_101_mario_di_exit_condition()
+func int DIA_NONE_101_MARIO_DI_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_none_101_mario_di_exit_info()
+func void DIA_NONE_101_MARIO_DI_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_NONE_101_MARIO_DI_JOB(C_INFO)
+instance DIA_NONE_101_MARIO_DI_Job(C_Info)
 {
-	npc = none_101_mario_di;
+	npc = None_101_Mario_DI;
 	nr = 4;
-	condition = dia_none_101_mario_di_job_condition;
-	information = dia_none_101_mario_di_job_info;
+	condition = DIA_NONE_101_MARIO_DI_Job_Condition;
+	information = DIA_NONE_101_MARIO_DI_Job_Info;
 	permanent = TRUE;
 	description = "Dam ci szansê wykazania siê w walce, no, dalej!";
 };
 
 
-func int dia_none_101_mario_di_job_condition()
+func int DIA_NONE_101_MARIO_DI_Job_Condition()
 {
-	if((Npc_IsDead(undeaddragon) == FALSE) && (ORKSTURMDI == FALSE))
+	if((Npc_IsDead(UndeadDragon) == FALSE) && (ORkSturmDI == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_none_101_mario_di_job_info()
+func void DIA_NONE_101_MARIO_DI_Job_Info()
 {
 	AI_Output(other,self,"DIA_NONE_101_MARIO_DI_Job_15_00");	//Dam ci szansê wykazania siê w walce, no, dalej!
 	AI_Output(self,other,"DIA_NONE_101_MARIO_DI_Job_07_01");	//Powoli, wszystko w swoim czasie.
@@ -49,73 +49,73 @@ func void dia_none_101_mario_di_job_info()
 };
 
 
-instance DIA_NONE_101_MARIO_DI_AMBUSH(C_INFO)
+instance DIA_NONE_101_MARIO_DI_ambush(C_Info)
 {
-	npc = none_101_mario_di;
+	npc = None_101_Mario_DI;
 	nr = 4;
-	condition = dia_none_101_mario_di_ambush_condition;
-	information = dia_none_101_mario_di_ambush_info;
+	condition = DIA_NONE_101_MARIO_DI_ambush_Condition;
+	information = DIA_NONE_101_MARIO_DI_ambush_Info;
 	important = TRUE;
 };
 
 
-func int dia_none_101_mario_di_ambush_condition()
+func int DIA_NONE_101_MARIO_DI_ambush_Condition()
 {
-	if(ORKSTURMDI == TRUE)
+	if(ORkSturmDI == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_none_101_mario_di_ambush_info()
+func void DIA_NONE_101_MARIO_DI_ambush_Info()
 {
 	AI_Output(self,other,"DIA_NONE_101_MARIO_DI_ambush_07_00");	//PodejdŸ bli¿ej przyjacielu, poka¿ na co ciê staæ.
 	AI_Output(other,self,"DIA_NONE_101_MARIO_DI_ambush_15_01");	//O co ci chodzi?
 	AI_Output(self,other,"DIA_NONE_101_MARIO_DI_ambush_07_02");	//To proste. Mistrz ju¿ dawno chcia³ siê ciebie pozbyæ.
 	AI_Output(self,other,"DIA_NONE_101_MARIO_DI_ambush_07_03");	//Powinienem by³ ciê zabiæ wczeœniej. Teraz jednak moi przyjaciele naprawi¹ ten b³¹d.
-	Info_ClearChoices(dia_none_101_mario_di_ambush);
-	Info_AddChoice(dia_none_101_mario_di_ambush,DIALOG_ENDE,dia_none_101_mario_di_ambush_ambush);
-	b_giveplayerxp(XP_MARIO_AMBUSH);
-	MIS_MARIO_AMBUSH = LOG_SUCCESS;
+	Info_ClearChoices(DIA_NONE_101_MARIO_DI_ambush);
+	Info_AddChoice(DIA_NONE_101_MARIO_DI_ambush,Dialog_Ende,DIA_NONE_101_MARIO_DI_ambush_ambush);
+	B_GivePlayerXP(XP_Mario_Ambush);
+	MIS_Mario_Ambush = LOG_SUCCESS;
 };
 
-func void dia_none_101_mario_di_ambush_ambush()
+func void DIA_NONE_101_MARIO_DI_ambush_ambush()
 {
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_SUDDENENEMYINFERNO,1);
-	skeleton_mario1.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-	skeleton_mario2.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-	skeleton_mario3.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-	skeleton_mario4.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+	B_Attack(self,other,AR_SuddenEnemyInferno,1);
+	Skeleton_Mario1.aivar[AIV_EnemyOverride] = FALSE;
+	Skeleton_Mario2.aivar[AIV_EnemyOverride] = FALSE;
+	Skeleton_Mario3.aivar[AIV_EnemyOverride] = FALSE;
+	Skeleton_Mario4.aivar[AIV_EnemyOverride] = FALSE;
 };
 
 
-instance DIA_MARIO_DI_PICKPOCKET(C_INFO)
+instance DIA_MARIO_DI_PICKPOCKET(C_Info)
 {
-	npc = none_101_mario_di;
+	npc = None_101_Mario_DI;
 	nr = 900;
-	condition = dia_mario_di_pickpocket_condition;
-	information = dia_mario_di_pickpocket_info;
+	condition = DIA_MARIO_DI_PICKPOCKET_Condition;
+	information = DIA_MARIO_DI_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_80;
+	description = Pickpocket_80;
 };
 
 
-func int dia_mario_di_pickpocket_condition()
+func int DIA_MARIO_DI_PICKPOCKET_Condition()
 {
-	return c_beklauen(71,110);
+	return C_Beklauen(71,110);
 };
 
-func void dia_mario_di_pickpocket_info()
+func void DIA_MARIO_DI_PICKPOCKET_Info()
 {
 	Info_ClearChoices(dia_mario_di_pickpocket);
-	Info_AddChoice(dia_mario_di_pickpocket,DIALOG_BACK,dia_mario_di_pickpocket_back);
-	Info_AddChoice(dia_mario_di_pickpocket,DIALOG_PICKPOCKET,dia_mario_di_pickpocket_doit);
+	Info_AddChoice(dia_mario_di_pickpocket,Dialog_Back,dia_mario_di_pickpocket_back);
+	Info_AddChoice(dia_mario_di_pickpocket,DIALOG_PICKPOCKET,DIA_MARIO_DI_PICKPOCKET_DoIt);
 };
 
-func void dia_mario_di_pickpocket_doit()
+func void DIA_MARIO_DI_PICKPOCKET_DoIt()
 {
-	b_beklauen();
+	B_Beklauen();
 	Info_ClearChoices(dia_mario_di_pickpocket);
 };
 

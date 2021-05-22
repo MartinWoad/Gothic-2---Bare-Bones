@@ -1,41 +1,41 @@
 
-instance VLK_405_FERNANDO(NPC_DEFAULT)
+instance VLK_405_Fernando(Npc_Default)
 {
 	name[0] = "Fernando";
 	guild = GIL_VLK;
 	id = 405;
 	voice = 14;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,4);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_vlk_mace);
-	b_createambientinv(self);
-	CreateInvItems(self,itse_goldpocket100,1);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_CORRISTO,BODYTEX_N,4816);
+	EquipItem(self,ItMw_1h_Vlk_Mace);
+	B_CreateAmbientInv(self);
+	CreateInvItems(self,ItSe_GoldPocket100,1);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Corristo,BodyTex_N,ITAR_Governor);
 	Mdl_SetModelFatness(self,3);
 	Mdl_ApplyOverlayMds(self,"Humans_Arrogance.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_405;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_405;
 };
 
 
-func void rtn_start_405()
+func void Rtn_Start_405()
 {
-	ta_sleep(22,5,7,59,"NW_CITY_REICH02_BED_01");
-	ta_smalltalk(7,59,11,0,"NW_CITY_UPTOWN_PATH_08");
-	ta_stand_wp(11,0,14,59,"NW_CITY_UPTOWN_PATH_04");
-	ta_smalltalk(14,59,18,0,"NW_CITY_UPTOWN_PATH_08");
-	ta_read_bookstand(18,0,20,0,"NW_CITY_REICH02_READ");
-	ta_read_bookstand(20,0,22,5,"NW_CITY_REICH02_READ");
+	TA_Sleep(22,5,7,59,"NW_CITY_REICH02_BED_01");
+	TA_Smalltalk(7,59,11,0,"NW_CITY_UPTOWN_PATH_08");
+	TA_Stand_WP(11,0,14,59,"NW_CITY_UPTOWN_PATH_04");
+	TA_Smalltalk(14,59,18,0,"NW_CITY_UPTOWN_PATH_08");
+	TA_Read_Bookstand(18,0,20,0,"NW_CITY_REICH02_READ");
+	TA_Read_Bookstand(20,0,22,5,"NW_CITY_REICH02_READ");
 };
 
-func void rtn_wait_405()
+func void Rtn_Wait_405()
 {
-	ta_smalltalk(7,59,11,0,"NW_CITY_UPTOWN_PATH_08");
-	ta_stand_wp(11,0,14,59,"NW_CITY_UPTOWN_PATH_04");
-	ta_smalltalk(14,59,18,0,"NW_CITY_UPTOWN_PATH_08");
-	ta_stand_wp(18,0,7,59,"NW_CITY_UPTOWN_PATH_04");
+	TA_Smalltalk(7,59,11,0,"NW_CITY_UPTOWN_PATH_08");
+	TA_Stand_WP(11,0,14,59,"NW_CITY_UPTOWN_PATH_04");
+	TA_Smalltalk(14,59,18,0,"NW_CITY_UPTOWN_PATH_08");
+	TA_Stand_WP(18,0,7,59,"NW_CITY_UPTOWN_PATH_04");
 };
 

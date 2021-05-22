@@ -1,13 +1,13 @@
 
 func void b_magecavetrigger()
 {
-	if((Npc_IsDead(magicgolem) == FALSE) && (MIS_SCHNITZELJAGD == LOG_RUNNING))
+	if((Npc_IsDead(MagicGolem) == FALSE) && (MIS_SCHNITZELJAGD == LOG_Running))
 	{
-		if(Hlp_IsValidNpc(agon) && !Npc_IsDead(agon))
+		if(Hlp_IsValidNpc(Agon) && !Npc_IsDead(Agon))
 		{
-			AI_Teleport(agon,"NW_TROLLAREA_PATH_02");
-			Npc_ExchangeRoutine(agon,"GOLEMLIVES");
-			AI_ContinueRoutine(agon);
+			AI_Teleport(Agon,"NW_TROLLAREA_PATH_02");
+			Npc_ExchangeRoutine(Agon,"GOLEMLIVES");
+			AI_ContinueRoutine(Agon);
 		};
 	};
 };

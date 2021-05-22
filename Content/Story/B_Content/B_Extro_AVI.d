@@ -1,14 +1,14 @@
 
-func void b_extro_avi()
+func void B_Extro_Avi()
 {
-	if((Npc_IsDead(pc_thief_di) == FALSE) && (Npc_IsDead(pc_fighter_di) == FALSE))
+	if((Npc_IsDead(PC_Thief_DI) == FALSE) && (Npc_IsDead(PC_Fighter_DI) == FALSE))
 	{
-		DIEGANDGORNAREONBOARD = TRUE;
+		DiegAndGornAreOnboard = TRUE;
 	};
 	PlayVideo("Extro_Xardas.BIK");
 	PlayVideo("Credits_Extro.BIK");
 	PlayVideo("Credits2.BIK");
-	if(DIEGANDGORNAREONBOARD == TRUE)
+	if(DiegAndGornAreOnboard == TRUE)
 	{
 		PlayVideo("Extro_AllesWirdGut.BIK");
 	};

@@ -1,29 +1,29 @@
 
-instance BDT_1046_BANDIT_L(NPC_DEFAULT)
+instance BDT_1046_Bandit_L(Npc_Default)
 {
-	name[0] = NAME_BANDIT;
+	name[0] = NAME_Bandit;
 	guild = GIL_BDT;
 	id = 1046;
 	voice = 1;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setattributestochapter(self,1);
+	npcType = NPCTYPE_AMBIENT;
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_bau_mace);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_MUD,BODYTEX_N,4845);
+	EquipItem(self,ItMw_1h_Bau_Mace);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Mud,BodyTex_N,ITAR_Leather_L);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_1046;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_1046;
 };
 
 
-func void rtn_start_1046()
+func void Rtn_Start_1046()
 {
-	ta_stand_armscrossed(0,0,12,0,"NW_CASTLEMINE_PATH_01");
-	ta_stand_armscrossed(12,0,0,0,"NW_CASTLEMINE_PATH_01");
+	TA_Stand_ArmsCrossed(0,0,12,0,"NW_CASTLEMINE_PATH_01");
+	TA_Stand_ArmsCrossed(12,0,0,0,"NW_CASTLEMINE_PATH_01");
 };
 

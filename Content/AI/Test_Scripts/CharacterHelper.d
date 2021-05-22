@@ -1,5 +1,5 @@
 
-instance MOBSIBRIEF(C_ITEM)
+instance MobsiBrief(C_Item)
 {
 	name = "MobsiBrief";
 	mainflag = ITEM_KAT_DOCS;
@@ -7,100 +7,100 @@ instance MOBSIBRIEF(C_ITEM)
 	value = 0;
 	visual = "ItWr_Scroll_02.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = usemobsibrief;
-	scemename = "MAP";
+	on_state[0] = UseMobsiBrief;
+	scemeName = "MAP";
 	description = "MobsiBrief";
 };
 
 
-func void usemobsibrief()
+func void UseMobsiBrief()
 {
-	var int ndocid;
+	var int nDocID;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	self.aivar[AIV_INVINCIBLE] = FALSE;
-	ndocid = Doc_Create();
-	Doc_SetPages(ndocid,1);
-	Doc_SetPage(ndocid,0,"letters.TGA",0);
-	Doc_SetFont(ndocid,0,FONT_BOOKHEADLINE);
-	Doc_SetMargins(ndocid,-1,50,50,50,50,1);
-	Doc_PrintLine(ndocid,0,"StandardBrief");
-	Doc_SetFont(ndocid,0,FONT_BOOK);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Jetzt wird alles wieder gut");
-	Doc_PrintLines(ndocid,0,"PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;");
-	Doc_PrintLines(ndocid,0,"self.aivar[AIV_INVINCIBLE]=FALSE;");
-	Doc_Show(ndocid);
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,1);
+	Doc_SetPage(nDocID,0,"letters.TGA",0);
+	Doc_SetFont(nDocID,0,FONT_BookHeadline);
+	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
+	Doc_PrintLine(nDocID,0,"StandardBrief");
+	Doc_SetFont(nDocID,0,FONT_Book);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"Jetzt wird alles wieder gut");
+	Doc_PrintLines(nDocID,0,"PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;");
+	Doc_PrintLines(nDocID,0,"self.aivar[AIV_INVINCIBLE]=FALSE;");
+	Doc_Show(nDocID);
 };
 
 
-instance CH(NPC_DEFAULT)
+instance CH(Npc_Default)
 {
 	name[0] = "Characterhelper";
 	guild = GIL_NONE;
 	id = 0;
 	voice = 15;
 	flags = 0;
-	npctype = NPCTYPE_FRIEND;
-	b_setattributestochapter(self,1);
-	b_givenpctalents(self);
+	npcType = NPCTYPE_FRIEND;
+	B_SetAttributesToChapter(self,1);
+	B_GiveNpcTalents(self);
 	fight_tactic = FAI_HUMAN_MASTER;
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_PLAYER,BODYTEX_PLAYER,-1);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Pony",Face_N_Player,BodyTex_Player,-1);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	daily_routine = rtn_start_0;
+	daily_routine = Rtn_Start_0;
 };
 
 
-func void rtn_start_0()
+func void Rtn_Start_0()
 {
-	ta_stand_armscrossed(8,0,23,0,"XXX");
-	ta_stand_armscrossed(23,0,8,0,"XXX");
+	TA_Stand_ArmsCrossed(8,0,23,0,"XXX");
+	TA_Stand_ArmsCrossed(23,0,8,0,"XXX");
 };
 
-func void b_setheroexp()
+func void B_SetHeroExp()
 {
 };
 
 
-instance CH_EXIT(C_INFO)
+instance CH_Exit(C_Info)
 {
 	npc = ch;
 	nr = 999;
-	condition = ch_exit_condition;
-	information = ch_exit_info;
+	condition = CH_Exit_Condition;
+	information = CH_Exit_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int ch_exit_condition()
+func int CH_Exit_Condition()
 {
 	return TRUE;
 };
 
-func void ch_exit_info()
+func void CH_Exit_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance CH_RESET(C_INFO)
+instance CH_RESET(C_Info)
 {
 	npc = ch;
 	nr = 990;
-	condition = ch_reset_condition;
-	information = ch_reset_info;
+	condition = CH_RESET_Condition;
+	information = CH_RESET_Info;
 	description = "Totaler Reset";
 };
 
 
-func int ch_reset_condition()
+func int CH_RESET_Condition()
 {
 	return TRUE;
 };
 
-func void ch_reset_info()
+func void CH_RESET_Info()
 {
 	other.guild = GIL_NONE;
 	Npc_SetTrueGuild(other,GIL_NONE);
@@ -123,11 +123,11 @@ func void ch_reset_info()
 	Npc_SetTalentSkill(hero,NPC_TALENT_2H,0);
 	Npc_SetTalentSkill(hero,NPC_TALENT_MAGE,0);
 	AI_UnequipArmor(hero);
-	PrintScreen("PC_Hero wieder hergestellt",-1,-1,FONT_SCREEN,2);
+	PrintScreen("PC_Hero wieder hergestellt",-1,-1,FONT_Screen,2);
 };
 
 
-instance CH_VLIPPER(C_INFO)
+instance CH_VLIPPER(C_Info)
 {
 	npc = ch;
 	nr = 990;
@@ -148,34 +148,34 @@ func int ch_vlipper_condition()
 func void ch_vlipper_info()
 {
 	hero.lp = hero.lp + 5000;
-	PrintScreen("LP + 5000",-1,-1,FONT_SCREEN,2);
+	PrintScreen("LP + 5000",-1,-1,FONT_Screen,2);
 };
 
-func void b_setpaladinequipment()
+func void B_SetPaladinEquipment()
 {
-	CreateInvItems(hero,itru_pallight,1);
-	CreateInvItems(hero,itru_pallightheal,1);
-	CreateInvItems(hero,itru_palholybolt,1);
-	CreateInvItems(hero,itru_palmediumheal,1);
-	CreateInvItems(hero,itru_palrepelevil,1);
-	CreateInvItems(hero,itru_palfullheal,1);
-	CreateInvItems(hero,itru_paldestroyevil,1);
-	CreateInvItems(hero,itru_palteleportsecret,1);
+	CreateInvItems(hero,ItRu_PalLight,1);
+	CreateInvItems(hero,ItRu_PalLightHeal,1);
+	CreateInvItems(hero,ItRu_PalHolyBolt,1);
+	CreateInvItems(hero,ItRu_PalMediumHeal,1);
+	CreateInvItems(hero,ItRu_PalRepelEvil,1);
+	CreateInvItems(hero,ItRu_PalFullHeal,1);
+	CreateInvItems(hero,ItRu_PalDestroyEvil,1);
+	CreateInvItems(hero,ItRu_PalTeleportSecret,1);
 };
 
 
-instance CH_GUILD(C_INFO)
+instance CH_Guild(C_Info)
 {
 	npc = ch;
-	condition = ch_guild_condition;
-	information = ch_guild_info;
+	condition = CH_Guild_Condition;
+	information = CH_Guild_Info;
 	important = 0;
 	permanent = 1;
 	description = "Gildenwahl";
 };
 
 
-func int ch_guild_condition()
+func int CH_Guild_Condition()
 {
 	if((hero.level > 0) || Npc_KnowsInfo(hero,ch_vlipper))
 	{
@@ -183,54 +183,54 @@ func int ch_guild_condition()
 	};
 };
 
-func void ch_guild_info()
+func void CH_Guild_Info()
 {
-	Info_ClearChoices(ch_guild);
-	Info_AddChoice(ch_guild,"BACK",ch_guild_back);
-	Info_AddChoice(ch_guild,"Novize",ch_nov);
-	Info_AddChoice(ch_guild,"KDF",ch_kdf);
-	Info_AddChoice(ch_guild,"Söldner",ch_sld);
-	Info_AddChoice(ch_guild,"Drachenjäger",ch_djg);
-	Info_AddChoice(ch_guild,"Miliz",ch_mil);
-	Info_AddChoice(ch_guild,"Paladin",ch_pal);
-	Info_AddChoice(ch_guild,"None",ch_none);
+	Info_ClearChoices(CH_Guild);
+	Info_AddChoice(CH_Guild,"BACK",CH_Guild_BACK);
+	Info_AddChoice(CH_Guild,"Novize",ch_nov);
+	Info_AddChoice(CH_Guild,"KDF",ch_kdf);
+	Info_AddChoice(CH_Guild,"Söldner",ch_sld);
+	Info_AddChoice(CH_Guild,"Drachenjäger",ch_djg);
+	Info_AddChoice(CH_Guild,"Miliz",ch_mil);
+	Info_AddChoice(CH_Guild,"Paladin",ch_pal);
+	Info_AddChoice(CH_Guild,"None",ch_none);
 };
 
-func void ch_guild_back()
+func void CH_Guild_BACK()
 {
-	Info_ClearChoices(ch_guild);
+	Info_ClearChoices(CH_Guild);
 };
 
 func void ch_nov()
 {
-	Info_ClearChoices(ch_guild);
+	Info_ClearChoices(CH_Guild);
 	other.guild = GIL_NOV;
 	Npc_SetTrueGuild(other,GIL_NOV);
-	CreateInvItem(hero,itar_nov_l);
-	AI_EquipArmor(hero,itar_nov_l);
+	CreateInvItem(hero,ItAr_NOV_L);
+	AI_EquipArmor(hero,ItAr_NOV_L);
 };
 
 func void ch_kdf()
 {
-	Info_ClearChoices(ch_guild);
+	Info_ClearChoices(CH_Guild);
 	other.guild = GIL_KDF;
 	Npc_SetTrueGuild(other,GIL_KDF);
-	CreateInvItem(hero,itar_kdf_l);
-	AI_EquipArmor(hero,itar_kdf_l);
+	CreateInvItem(hero,ItAr_KDF_L);
+	AI_EquipArmor(hero,ItAr_KDF_L);
 };
 
 func void ch_sld()
 {
-	Info_ClearChoices(ch_guild);
+	Info_ClearChoices(CH_Guild);
 	other.guild = GIL_SLD;
 	Npc_SetTrueGuild(other,GIL_SLD);
-	CreateInvItem(hero,itar_sld_m);
-	AI_EquipArmor(hero,itar_sld_m);
+	CreateInvItem(hero,itar_sld_M);
+	AI_EquipArmor(hero,itar_sld_M);
 };
 
 func void ch_djg()
 {
-	Info_ClearChoices(ch_guild);
+	Info_ClearChoices(CH_Guild);
 	other.guild = GIL_DJG;
 	Npc_SetTrueGuild(other,GIL_DJG);
 	CreateInvItem(hero,itar_djg_m);
@@ -239,130 +239,130 @@ func void ch_djg()
 
 func void ch_mil()
 {
-	Info_ClearChoices(ch_guild);
+	Info_ClearChoices(CH_Guild);
 	other.guild = GIL_MIL;
 	Npc_SetTrueGuild(other,GIL_MIL);
-	CreateInvItem(hero,itar_mil_l);
-	AI_EquipArmor(hero,itar_mil_l);
+	CreateInvItem(hero,ITAR_Mil_L);
+	AI_EquipArmor(hero,ITAR_Mil_L);
 };
 
 func void ch_pal()
 {
-	Info_ClearChoices(ch_guild);
+	Info_ClearChoices(CH_Guild);
 	other.guild = GIL_PAL;
 	Npc_SetTrueGuild(other,GIL_PAL);
-	CreateInvItem(hero,itar_pal_m);
-	AI_EquipArmor(hero,itar_pal_m);
-	b_setpaladinequipment();
+	CreateInvItem(hero,ItAr_PAL_M);
+	AI_EquipArmor(hero,ItAr_PAL_M);
+	B_SetPaladinEquipment();
 };
 
 func void ch_none()
 {
-	Info_ClearChoices(ch_guild);
+	Info_ClearChoices(CH_Guild);
 	other.guild = GIL_NONE;
 	Npc_SetTrueGuild(other,GIL_NONE);
 	AI_UnequipArmor(hero);
 };
 
-func void b_setheroweapon()
+func void B_SetHeroWeapon()
 {
 	if(hero.level <= 6)
 	{
-		CreateInvItems(hero,itrw_crossbow_l_01,1);
+		CreateInvItems(hero,ItRw_Crossbow_L_01,1);
 	}
 	else if(hero.level <= 12)
 	{
-		CreateInvItems(hero,itrw_bow_l_04,1);
-		CreateInvItems(hero,itrw_crossbow_l_02,1);
+		CreateInvItems(hero,ItRw_Bow_L_04,1);
+		CreateInvItems(hero,ItRw_Crossbow_L_02,1);
 	}
 	else if(hero.level <= 18)
 	{
-		CreateInvItems(hero,itrw_bow_m_02,1);
-		CreateInvItems(hero,itrw_crossbow_m_02,1);
+		CreateInvItems(hero,ItRw_Bow_M_02,1);
+		CreateInvItems(hero,ItRw_Crossbow_M_02,1);
 	}
 	else if(hero.level <= 24)
 	{
-		CreateInvItems(hero,itrw_bow_m_04,1);
-		CreateInvItems(hero,itrw_crossbow_h_01,1);
+		CreateInvItems(hero,ItRw_Bow_M_04,1);
+		CreateInvItems(hero,ItRw_Crossbow_H_01,1);
 	}
 	else if(hero.level <= 30)
 	{
-		CreateInvItems(hero,itrw_bow_h_02,1);
-		CreateInvItems(hero,itrw_crossbow_h_02,1);
+		CreateInvItems(hero,ItRw_Bow_H_02,1);
+		CreateInvItems(hero,ItRw_Crossbow_H_02,1);
 	}
 	else if(hero.level <= 36)
 	{
-		CreateInvItems(hero,itrw_bow_h_04,1);
-		CreateInvItems(hero,itrw_bow_l_04,1);
+		CreateInvItems(hero,ItRw_Bow_H_04,1);
+		CreateInvItems(hero,ItRw_Bow_L_04,1);
 	};
 	AI_EquipBestMeleeWeapon(hero);
 	AI_EquipBestRangedWeapon(hero);
 };
 
-func void b_setheroequipment()
+func void B_SetHeroEquipment()
 {
-	CreateInvItems(hero,itrw_arrow,100);
-	CreateInvItems(hero,itrw_bolt,100);
-	CreateInvItems(hero,itlstorch,30);
-	CreateInvItems(hero,itmi_gold,500);
-	CreateInvItems(hero,itpo_health_03,5);
-	CreateInvItems(hero,itpo_mana_03,5);
-	CreateInvItems(hero,itke_lockpick,30);
+	CreateInvItems(hero,ItRw_Arrow,100);
+	CreateInvItems(hero,ItRw_Bolt,100);
+	CreateInvItems(hero,ItLsTorch,30);
+	CreateInvItems(hero,ItMi_Gold,500);
+	CreateInvItems(hero,ItPo_Health_03,5);
+	CreateInvItems(hero,ItPo_Mana_03,5);
+	CreateInvItems(hero,ItKE_lockpick,30);
 };
 
-func void b_setkdfrunes()
+func void B_SetKDFRunes()
 {
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 1)
 	{
-		CreateInvItems(hero,itru_light,1);
-		CreateInvItems(hero,itru_firebolt,1);
-		CreateInvItems(hero,itru_lightheal,1);
-		CreateInvItems(hero,itru_sumgobskel,1);
-		CreateInvItems(hero,itru_zap,1);
+		CreateInvItems(hero,ItRu_Light,1);
+		CreateInvItems(hero,ItRu_FireBolt,1);
+		CreateInvItems(hero,ItRu_LightHeal,1);
+		CreateInvItems(hero,ItRu_SumGobSkel,1);
+		CreateInvItems(hero,ItRu_Zap,1);
 	}
 	else if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 2)
 	{
-		CreateInvItems(hero,itru_instantfireball,1);
-		CreateInvItems(hero,itru_icebolt,1);
-		CreateInvItems(hero,itru_sumwolf,1);
-		CreateInvItems(hero,itru_windfist,1);
-		CreateInvItems(hero,itru_sleep,1);
+		CreateInvItems(hero,ItRu_InstantFireball,1);
+		CreateInvItems(hero,ItRu_Icebolt,1);
+		CreateInvItems(hero,ItRu_SumWolf,1);
+		CreateInvItems(hero,ItRu_Windfist,1);
+		CreateInvItems(hero,ItRu_Sleep,1);
 	}
 	else if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 3)
 	{
-		CreateInvItems(hero,itru_mediumheal,1);
-		CreateInvItems(hero,itru_firestorm,1);
-		CreateInvItems(hero,itru_thunderball,1);
-		CreateInvItems(hero,itru_sumskel,1);
-		CreateInvItems(hero,itru_fear,1);
-		CreateInvItems(hero,itru_icecube,1);
+		CreateInvItems(hero,ItRu_MediumHeal,1);
+		CreateInvItems(hero,ItRu_Firestorm,1);
+		CreateInvItems(hero,ItRu_ThunderBall,1);
+		CreateInvItems(hero,ItRu_SumSkel,1);
+		CreateInvItems(hero,ItRu_Fear,1);
+		CreateInvItems(hero,ItRu_IceCube,1);
 	}
 	else if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 4)
 	{
-		CreateInvItems(hero,itru_sumgol,1);
-		CreateInvItems(hero,itru_harmundead,1);
-		CreateInvItems(hero,itru_lightningflash,1);
-		CreateInvItems(hero,itru_chargefireball,1);
+		CreateInvItems(hero,ItRu_SumGol,1);
+		CreateInvItems(hero,ItRu_HarmUndead,1);
+		CreateInvItems(hero,ItRu_LightningFlash,1);
+		CreateInvItems(hero,ItRu_ChargeFireball,1);
 	}
 	else if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 5)
 	{
-		CreateInvItems(hero,itru_pyrokinesis,1);
-		CreateInvItems(hero,itru_icewave,1);
-		CreateInvItems(hero,itru_sumdemon,1);
-		CreateInvItems(hero,itru_fullheal,1);
+		CreateInvItems(hero,ItRu_Pyrokinesis,1);
+		CreateInvItems(hero,ItRu_IceWave,1);
+		CreateInvItems(hero,ItRu_SumDemon,1);
+		CreateInvItems(hero,ItRu_FullHeal,1);
 	}
 	else if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 6)
 	{
-		CreateInvItems(hero,itru_firerain,1);
-		CreateInvItems(hero,itru_breathofdeath,1);
-		CreateInvItems(hero,itru_massdeath,1);
-		CreateInvItems(hero,itru_armyofdarkness,1);
-		CreateInvItems(hero,itru_shrink,1);
+		CreateInvItems(hero,ItRu_Firerain,1);
+		CreateInvItems(hero,ItRu_BreathOfDeath,1);
+		CreateInvItems(hero,ItRu_MassDeath,1);
+		CreateInvItems(hero,ItRu_ArmyOfDarkness,1);
+		CreateInvItems(hero,ItRu_Shrink,1);
 	};
 };
 
 
-instance CH_LEVEL(C_INFO)
+instance CH_LEVEL(C_Info)
 {
 	npc = ch;
 	condition = ch_level_condition;
@@ -384,78 +384,78 @@ func void ch_level_info()
 {
 	Info_ClearChoices(ch_level);
 	Info_AddChoice(ch_level,"BACK",ch_level_back);
-	Info_AddChoice(ch_level,"Level  1 -  5",ch_level1);
-	Info_AddChoice(ch_level,"Level  6 - 10",ch_level6);
-	Info_AddChoice(ch_level,"Level 11 - 15",ch_level11);
-	Info_AddChoice(ch_level,"Level 16 - 20",ch_level16);
-	Info_AddChoice(ch_level,"Level 21 - 25",ch_level21);
-	Info_AddChoice(ch_level,"Level 26 - 30",ch_level26);
+	Info_AddChoice(ch_level,"Level  1 -  5",CH_Level1);
+	Info_AddChoice(ch_level,"Level  6 - 10",CH_Level6);
+	Info_AddChoice(ch_level,"Level 11 - 15",CH_Level11);
+	Info_AddChoice(ch_level,"Level 16 - 20",CH_Level16);
+	Info_AddChoice(ch_level,"Level 21 - 25",CH_Level21);
+	Info_AddChoice(ch_level,"Level 26 - 30",CH_Level26);
 };
 
-func void ch_level26()
+func void CH_Level26()
 {
 	Info_ClearChoices(ch_level);
 	Info_AddChoice(ch_level,"BACK",ch_level_back);
-	Info_AddChoice(ch_level,"Level 26",ch_level_26);
-	Info_AddChoice(ch_level,"Level 27",ch_level_27);
-	Info_AddChoice(ch_level,"Level 28",ch_level_28);
-	Info_AddChoice(ch_level,"Level 29",ch_level_29);
-	Info_AddChoice(ch_level,"Level 30",ch_level_30);
+	Info_AddChoice(ch_level,"Level 26",CH_Level_26);
+	Info_AddChoice(ch_level,"Level 27",CH_Level_27);
+	Info_AddChoice(ch_level,"Level 28",CH_Level_28);
+	Info_AddChoice(ch_level,"Level 29",CH_Level_29);
+	Info_AddChoice(ch_level,"Level 30",CH_Level_30);
 };
 
-func void ch_level21()
+func void CH_Level21()
 {
 	Info_ClearChoices(ch_level);
 	Info_AddChoice(ch_level,"BACK",ch_level_back);
-	Info_AddChoice(ch_level,"Level 21",ch_level_21);
-	Info_AddChoice(ch_level,"Level 22",ch_level_22);
-	Info_AddChoice(ch_level,"Level 23",ch_level_23);
-	Info_AddChoice(ch_level,"Level 24",ch_level_24);
-	Info_AddChoice(ch_level,"Level 25",ch_level_25);
+	Info_AddChoice(ch_level,"Level 21",CH_Level_21);
+	Info_AddChoice(ch_level,"Level 22",CH_Level_22);
+	Info_AddChoice(ch_level,"Level 23",CH_Level_23);
+	Info_AddChoice(ch_level,"Level 24",CH_Level_24);
+	Info_AddChoice(ch_level,"Level 25",CH_Level_25);
 };
 
-func void ch_level16()
+func void CH_Level16()
 {
 	Info_ClearChoices(ch_level);
 	Info_AddChoice(ch_level,"BACK",ch_level_back);
-	Info_AddChoice(ch_level,"Level 16",ch_level_16);
-	Info_AddChoice(ch_level,"Level 17",ch_level_17);
-	Info_AddChoice(ch_level,"Level 18",ch_level_18);
-	Info_AddChoice(ch_level,"Level 19",ch_level_19);
-	Info_AddChoice(ch_level,"Level 20",ch_level_20);
+	Info_AddChoice(ch_level,"Level 16",CH_Level_16);
+	Info_AddChoice(ch_level,"Level 17",CH_Level_17);
+	Info_AddChoice(ch_level,"Level 18",CH_Level_18);
+	Info_AddChoice(ch_level,"Level 19",CH_Level_19);
+	Info_AddChoice(ch_level,"Level 20",CH_Level_20);
 };
 
-func void ch_level11()
+func void CH_Level11()
 {
 	Info_ClearChoices(ch_level);
 	Info_AddChoice(ch_level,"BACK",ch_level_back);
-	Info_AddChoice(ch_level,"Level 11",ch_level_11);
-	Info_AddChoice(ch_level,"Level 12",ch_level_12);
-	Info_AddChoice(ch_level,"Level 13",ch_level_13);
-	Info_AddChoice(ch_level,"Level 14",ch_level_14);
-	Info_AddChoice(ch_level,"Level 15",ch_level_15);
+	Info_AddChoice(ch_level,"Level 11",CH_Level_11);
+	Info_AddChoice(ch_level,"Level 12",CH_Level_12);
+	Info_AddChoice(ch_level,"Level 13",CH_Level_13);
+	Info_AddChoice(ch_level,"Level 14",CH_Level_14);
+	Info_AddChoice(ch_level,"Level 15",CH_Level_15);
 };
 
-func void ch_level6()
+func void CH_Level6()
 {
 	Info_ClearChoices(ch_level);
 	Info_AddChoice(ch_level,"BACK",ch_level_back);
-	Info_AddChoice(ch_level,"Level  6",ch_level_6);
-	Info_AddChoice(ch_level,"Level  7",ch_level_7);
-	Info_AddChoice(ch_level,"Level  8",ch_level_8);
-	Info_AddChoice(ch_level,"Level  9",ch_level_9);
-	Info_AddChoice(ch_level,"Level 10",ch_level_10);
+	Info_AddChoice(ch_level,"Level  6",CH_Level_6);
+	Info_AddChoice(ch_level,"Level  7",CH_Level_7);
+	Info_AddChoice(ch_level,"Level  8",CH_Level_8);
+	Info_AddChoice(ch_level,"Level  9",CH_Level_9);
+	Info_AddChoice(ch_level,"Level 10",CH_Level_10);
 };
 
-func void ch_level1()
+func void CH_Level1()
 {
 	Info_ClearChoices(ch_level);
 	Info_AddChoice(ch_level,"BACK",ch_level_back);
-	Info_AddChoice(ch_level,"Level 1",ch_level_1);
-	Info_AddChoice(ch_level,"Level 2",ch_level_2);
-	Info_AddChoice(ch_level,"Level 3",ch_level_3);
-	Info_AddChoice(ch_level,"Level 4",ch_level_4);
-	Info_AddChoice(ch_level,"Level 5",ch_level_5);
+	Info_AddChoice(ch_level,"Level 1",CH_Level_1);
+	Info_AddChoice(ch_level,"Level 2",CH_Level_2);
+	Info_AddChoice(ch_level,"Level 3",CH_Level_3);
+	Info_AddChoice(ch_level,"Level 4",CH_Level_4);
+	Info_AddChoice(ch_level,"Level 5",CH_Level_5);
 };
 
 func void ch_level_back()
@@ -463,338 +463,338 @@ func void ch_level_back()
 	Info_ClearChoices(ch_level);
 };
 
-func void ch_level_1()
+func void CH_Level_1()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 1;
 	hero.attribute[ATR_HITPOINTS_MAX] = 52;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_2()
+func void CH_Level_2()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 2;
 	hero.attribute[ATR_HITPOINTS_MAX] = 64;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_3()
+func void CH_Level_3()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 3;
 	hero.attribute[ATR_HITPOINTS_MAX] = 76;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_4()
+func void CH_Level_4()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 4;
 	hero.attribute[ATR_HITPOINTS_MAX] = 88;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_5()
+func void CH_Level_5()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 5;
 	hero.attribute[ATR_HITPOINTS_MAX] = 100;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_6()
+func void CH_Level_6()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 6;
 	hero.attribute[ATR_HITPOINTS_MAX] = 112;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_7()
+func void CH_Level_7()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 7;
 	hero.attribute[ATR_HITPOINTS_MAX] = 124;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_8()
+func void CH_Level_8()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 8;
 	hero.attribute[ATR_HITPOINTS_MAX] = 136;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_9()
+func void CH_Level_9()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 9;
 	hero.attribute[ATR_HITPOINTS_MAX] = 148;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_10()
+func void CH_Level_10()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 10;
 	hero.attribute[ATR_HITPOINTS_MAX] = 160;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_11()
+func void CH_Level_11()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 11;
 	hero.attribute[ATR_HITPOINTS_MAX] = 172;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_12()
+func void CH_Level_12()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 12;
 	hero.attribute[ATR_HITPOINTS_MAX] = 184;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_13()
+func void CH_Level_13()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 13;
 	hero.attribute[ATR_HITPOINTS_MAX] = 196;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_14()
+func void CH_Level_14()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 14;
 	hero.attribute[ATR_HITPOINTS_MAX] = 208;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_15()
+func void CH_Level_15()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 15;
 	hero.attribute[ATR_HITPOINTS_MAX] = 220;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_16()
+func void CH_Level_16()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 16;
 	hero.attribute[ATR_HITPOINTS_MAX] = 232;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_17()
+func void CH_Level_17()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 17;
 	hero.attribute[ATR_HITPOINTS_MAX] = 244;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_18()
+func void CH_Level_18()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 18;
 	hero.attribute[ATR_HITPOINTS_MAX] = 256;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_19()
+func void CH_Level_19()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 19;
 	hero.attribute[ATR_HITPOINTS_MAX] = 268;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_20()
+func void CH_Level_20()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 20;
 	hero.attribute[ATR_HITPOINTS_MAX] = 280;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_21()
+func void CH_Level_21()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 21;
 	hero.attribute[ATR_HITPOINTS_MAX] = 292;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_22()
+func void CH_Level_22()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 22;
 	hero.attribute[ATR_HITPOINTS_MAX] = 304;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_23()
+func void CH_Level_23()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 23;
 	hero.attribute[ATR_HITPOINTS_MAX] = 316;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_24()
+func void CH_Level_24()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 24;
 	hero.attribute[ATR_HITPOINTS_MAX] = 328;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_25()
+func void CH_Level_25()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 25;
 	hero.attribute[ATR_HITPOINTS_MAX] = 340;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_26()
+func void CH_Level_26()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 26;
 	hero.attribute[ATR_HITPOINTS_MAX] = 352;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_27()
+func void CH_Level_27()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 27;
 	hero.attribute[ATR_HITPOINTS_MAX] = 364;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_28()
+func void CH_Level_28()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 28;
 	hero.attribute[ATR_HITPOINTS_MAX] = 376;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_29()
+func void CH_Level_29()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 29;
 	hero.attribute[ATR_HITPOINTS_MAX] = 388;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
-func void ch_level_30()
+func void CH_Level_30()
 {
 	Info_ClearChoices(ch_level);
 	hero.level = 30;
 	hero.attribute[ATR_HITPOINTS_MAX] = 400;
 	hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-	b_setheroexp();
-	b_setheroweapon();
-	b_setheroequipment();
+	B_SetHeroExp();
+	B_SetHeroWeapon();
+	B_SetHeroEquipment();
 };
 
 
-instance DIA_CH_ATTRIBUTE(C_INFO)
+instance DIA_CH_ATTRIBUTE(C_Info)
 {
 	npc = ch;
 	nr = 1;
@@ -816,7 +816,7 @@ func int dia_ch_attribute_condition()
 func void dia_ch_attribute_info()
 {
 	Info_ClearChoices(dia_ch_attribute);
-	Info_AddChoice(dia_ch_attribute,DIALOG_BACK,dia_ch_attribute_back);
+	Info_AddChoice(dia_ch_attribute,Dialog_Back,dia_ch_attribute_back);
 	Info_AddChoice(dia_ch_attribute,"Stärke steigern",dia_ch_attribute_str);
 	Info_AddChoice(dia_ch_attribute,"Geschicklichkeit steigern",dia_ch_attribute_dex);
 	Info_AddChoice(dia_ch_attribute,"Mana steigern",dia_ch_attribute_mana);
@@ -830,167 +830,167 @@ func void dia_ch_attribute_back()
 func void dia_ch_attribute_str()
 {
 	Info_ClearChoices(dia_ch_attribute);
-	Info_AddChoice(dia_ch_attribute,DIALOG_BACK,dia_ch_attribute_back);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 1",b_getlearncostattribute(other,ATR_STRENGTH)),dia_ch_strength_str_1);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 5",b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_ch_strength_str_5);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 10",b_getlearncostattribute(other,ATR_STRENGTH) * 10),dia_ch_strength_str_10);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 20",b_getlearncostattribute(other,ATR_STRENGTH) * 20),dia_ch_strength_str_20);
+	Info_AddChoice(dia_ch_attribute,Dialog_Back,dia_ch_attribute_back);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 1",B_GetLearnCostAttribute(other,ATR_STRENGTH)),dia_ch_strength_str_1);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 5",B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),dia_ch_strength_str_5);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 10",B_GetLearnCostAttribute(other,ATR_STRENGTH) * 10),dia_ch_strength_str_10);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 20",B_GetLearnCostAttribute(other,ATR_STRENGTH) * 20),dia_ch_strength_str_20);
 };
 
 func void dia_ch_attribute_dex()
 {
 	Info_ClearChoices(dia_ch_attribute);
-	Info_AddChoice(dia_ch_attribute,DIALOG_BACK,dia_ch_attribute_back);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 1",b_getlearncostattribute(other,ATR_DEXTERITY)),dia_ch_dex_1);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 5",b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_ch_dex_5);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 10",b_getlearncostattribute(other,ATR_DEXTERITY) * 10),dia_ch_dex_10);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 20",b_getlearncostattribute(other,ATR_DEXTERITY) * 20),dia_ch_dex_20);
+	Info_AddChoice(dia_ch_attribute,Dialog_Back,dia_ch_attribute_back);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 1",B_GetLearnCostAttribute(other,ATR_DEXTERITY)),dia_ch_dex_1);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 5",B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),dia_ch_dex_5);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 10",B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 10),dia_ch_dex_10);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 20",B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 20),dia_ch_dex_20);
 };
 
 func void dia_ch_attribute_mana()
 {
 	Info_ClearChoices(dia_ch_attribute);
-	Info_AddChoice(dia_ch_attribute,DIALOG_BACK,dia_ch_attribute_back);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 1",b_getlearncostattribute(other,ATR_MANA_MAX)),dia_ch_mana_1);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 5",b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_ch_mana_5);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 10",b_getlearncostattribute(other,ATR_MANA_MAX) * 10),dia_ch_mana_10);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 20",b_getlearncostattribute(other,ATR_MANA_MAX) * 20),dia_ch_mana_20);
+	Info_AddChoice(dia_ch_attribute,Dialog_Back,dia_ch_attribute_back);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 1",B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_ch_mana_1);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 5",B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),dia_ch_mana_5);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 10",B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 10),dia_ch_mana_10);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 20",B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 20),dia_ch_mana_20);
 };
 
 func void dia_ch_strength_str_1()
 {
-	b_teachattributepoints(self,other,ATR_STRENGTH,1,100);
+	B_TeachAttributePoints(self,other,ATR_STRENGTH,1,100);
 	Info_ClearChoices(dia_ch_attribute);
-	Info_AddChoice(dia_ch_attribute,DIALOG_BACK,dia_ch_attribute_back);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 1",b_getlearncostattribute(other,ATR_STRENGTH)),dia_ch_strength_str_1);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 5",b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_ch_strength_str_5);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 10",b_getlearncostattribute(other,ATR_STRENGTH) * 10),dia_ch_strength_str_10);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 20",b_getlearncostattribute(other,ATR_STRENGTH) * 20),dia_ch_strength_str_20);
+	Info_AddChoice(dia_ch_attribute,Dialog_Back,dia_ch_attribute_back);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 1",B_GetLearnCostAttribute(other,ATR_STRENGTH)),dia_ch_strength_str_1);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 5",B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),dia_ch_strength_str_5);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 10",B_GetLearnCostAttribute(other,ATR_STRENGTH) * 10),dia_ch_strength_str_10);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 20",B_GetLearnCostAttribute(other,ATR_STRENGTH) * 20),dia_ch_strength_str_20);
 };
 
 func void dia_ch_strength_str_5()
 {
-	b_teachattributepoints(self,other,ATR_STRENGTH,5,100);
+	B_TeachAttributePoints(self,other,ATR_STRENGTH,5,100);
 	Info_ClearChoices(dia_ch_attribute);
-	Info_AddChoice(dia_ch_attribute,DIALOG_BACK,dia_ch_attribute_back);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 1",b_getlearncostattribute(other,ATR_STRENGTH)),dia_ch_strength_str_1);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 5",b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_ch_strength_str_5);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 10",b_getlearncostattribute(other,ATR_STRENGTH) * 10),dia_ch_strength_str_10);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 20",b_getlearncostattribute(other,ATR_STRENGTH) * 20),dia_ch_strength_str_20);
+	Info_AddChoice(dia_ch_attribute,Dialog_Back,dia_ch_attribute_back);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 1",B_GetLearnCostAttribute(other,ATR_STRENGTH)),dia_ch_strength_str_1);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 5",B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),dia_ch_strength_str_5);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 10",B_GetLearnCostAttribute(other,ATR_STRENGTH) * 10),dia_ch_strength_str_10);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 20",B_GetLearnCostAttribute(other,ATR_STRENGTH) * 20),dia_ch_strength_str_20);
 };
 
 func void dia_ch_strength_str_10()
 {
-	b_teachattributepoints(self,other,ATR_STRENGTH,10,100);
+	B_TeachAttributePoints(self,other,ATR_STRENGTH,10,100);
 	Info_ClearChoices(dia_ch_attribute);
-	Info_AddChoice(dia_ch_attribute,DIALOG_BACK,dia_ch_attribute_back);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 1",b_getlearncostattribute(other,ATR_STRENGTH)),dia_ch_strength_str_1);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 5",b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_ch_strength_str_5);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 10",b_getlearncostattribute(other,ATR_STRENGTH) * 10),dia_ch_strength_str_10);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 20",b_getlearncostattribute(other,ATR_STRENGTH) * 20),dia_ch_strength_str_20);
+	Info_AddChoice(dia_ch_attribute,Dialog_Back,dia_ch_attribute_back);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 1",B_GetLearnCostAttribute(other,ATR_STRENGTH)),dia_ch_strength_str_1);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 5",B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),dia_ch_strength_str_5);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 10",B_GetLearnCostAttribute(other,ATR_STRENGTH) * 10),dia_ch_strength_str_10);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 20",B_GetLearnCostAttribute(other,ATR_STRENGTH) * 20),dia_ch_strength_str_20);
 };
 
 func void dia_ch_strength_str_20()
 {
-	b_teachattributepoints(self,other,ATR_STRENGTH,20,100);
+	B_TeachAttributePoints(self,other,ATR_STRENGTH,20,100);
 	Info_ClearChoices(dia_ch_attribute);
-	Info_AddChoice(dia_ch_attribute,DIALOG_BACK,dia_ch_attribute_back);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 1",b_getlearncostattribute(other,ATR_STRENGTH)),dia_ch_strength_str_1);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 5",b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_ch_strength_str_5);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 10",b_getlearncostattribute(other,ATR_STRENGTH) * 10),dia_ch_strength_str_10);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Stärke + 20",b_getlearncostattribute(other,ATR_STRENGTH) * 20),dia_ch_strength_str_20);
+	Info_AddChoice(dia_ch_attribute,Dialog_Back,dia_ch_attribute_back);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 1",B_GetLearnCostAttribute(other,ATR_STRENGTH)),dia_ch_strength_str_1);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 5",B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),dia_ch_strength_str_5);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 10",B_GetLearnCostAttribute(other,ATR_STRENGTH) * 10),dia_ch_strength_str_10);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Stärke + 20",B_GetLearnCostAttribute(other,ATR_STRENGTH) * 20),dia_ch_strength_str_20);
 };
 
 func void dia_ch_dex_1()
 {
-	b_teachattributepoints(self,other,ATR_DEXTERITY,1,100);
+	B_TeachAttributePoints(self,other,ATR_DEXTERITY,1,100);
 	Info_ClearChoices(dia_ch_attribute);
-	Info_AddChoice(dia_ch_attribute,DIALOG_BACK,dia_ch_attribute_back);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 1",b_getlearncostattribute(other,ATR_DEXTERITY)),dia_ch_dex_1);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 5",b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_ch_dex_5);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 10",b_getlearncostattribute(other,ATR_DEXTERITY) * 10),dia_ch_dex_10);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 20",b_getlearncostattribute(other,ATR_DEXTERITY) * 20),dia_ch_dex_20);
+	Info_AddChoice(dia_ch_attribute,Dialog_Back,dia_ch_attribute_back);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 1",B_GetLearnCostAttribute(other,ATR_DEXTERITY)),dia_ch_dex_1);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 5",B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),dia_ch_dex_5);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 10",B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 10),dia_ch_dex_10);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 20",B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 20),dia_ch_dex_20);
 };
 
 func void dia_ch_dex_5()
 {
-	b_teachattributepoints(self,other,ATR_DEXTERITY,5,100);
+	B_TeachAttributePoints(self,other,ATR_DEXTERITY,5,100);
 	Info_ClearChoices(dia_ch_attribute);
-	Info_AddChoice(dia_ch_attribute,DIALOG_BACK,dia_ch_attribute_back);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 1",b_getlearncostattribute(other,ATR_DEXTERITY)),dia_ch_dex_1);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 5",b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_ch_dex_5);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 10",b_getlearncostattribute(other,ATR_DEXTERITY) * 10),dia_ch_dex_10);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 20",b_getlearncostattribute(other,ATR_DEXTERITY) * 20),dia_ch_dex_20);
+	Info_AddChoice(dia_ch_attribute,Dialog_Back,dia_ch_attribute_back);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 1",B_GetLearnCostAttribute(other,ATR_DEXTERITY)),dia_ch_dex_1);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 5",B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),dia_ch_dex_5);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 10",B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 10),dia_ch_dex_10);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 20",B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 20),dia_ch_dex_20);
 };
 
 func void dia_ch_dex_10()
 {
-	b_teachattributepoints(self,other,ATR_DEXTERITY,10,100);
+	B_TeachAttributePoints(self,other,ATR_DEXTERITY,10,100);
 	Info_ClearChoices(dia_ch_attribute);
-	Info_AddChoice(dia_ch_attribute,DIALOG_BACK,dia_ch_attribute_back);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 1",b_getlearncostattribute(other,ATR_DEXTERITY)),dia_ch_dex_1);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 5",b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_ch_dex_5);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 10",b_getlearncostattribute(other,ATR_DEXTERITY) * 10),dia_ch_dex_10);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 20",b_getlearncostattribute(other,ATR_DEXTERITY) * 20),dia_ch_dex_20);
+	Info_AddChoice(dia_ch_attribute,Dialog_Back,dia_ch_attribute_back);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 1",B_GetLearnCostAttribute(other,ATR_DEXTERITY)),dia_ch_dex_1);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 5",B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),dia_ch_dex_5);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 10",B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 10),dia_ch_dex_10);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 20",B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 20),dia_ch_dex_20);
 };
 
 func void dia_ch_dex_20()
 {
-	b_teachattributepoints(self,other,ATR_DEXTERITY,20,100);
+	B_TeachAttributePoints(self,other,ATR_DEXTERITY,20,100);
 	Info_ClearChoices(dia_ch_attribute);
-	Info_AddChoice(dia_ch_attribute,DIALOG_BACK,dia_ch_attribute_back);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 1",b_getlearncostattribute(other,ATR_DEXTERITY)),dia_ch_dex_1);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 5",b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_ch_dex_5);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 10",b_getlearncostattribute(other,ATR_DEXTERITY) * 10),dia_ch_dex_10);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Geschick + 20",b_getlearncostattribute(other,ATR_DEXTERITY) * 20),dia_ch_dex_20);
+	Info_AddChoice(dia_ch_attribute,Dialog_Back,dia_ch_attribute_back);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 1",B_GetLearnCostAttribute(other,ATR_DEXTERITY)),dia_ch_dex_1);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 5",B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),dia_ch_dex_5);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 10",B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 10),dia_ch_dex_10);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Geschick + 20",B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 20),dia_ch_dex_20);
 };
 
 func void dia_ch_mana_1()
 {
-	b_teachattributepoints(self,other,ATR_MANA_MAX,1,100);
+	B_TeachAttributePoints(self,other,ATR_MANA_MAX,1,100);
 	Info_ClearChoices(dia_ch_attribute);
-	Info_AddChoice(dia_ch_attribute,DIALOG_BACK,dia_ch_attribute_back);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 1",b_getlearncostattribute(other,ATR_MANA_MAX)),dia_ch_mana_1);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 5",b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_ch_mana_5);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 10",b_getlearncostattribute(other,ATR_MANA_MAX) * 10),dia_ch_mana_10);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 20",b_getlearncostattribute(other,ATR_MANA_MAX) * 20),dia_ch_mana_20);
+	Info_AddChoice(dia_ch_attribute,Dialog_Back,dia_ch_attribute_back);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 1",B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_ch_mana_1);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 5",B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),dia_ch_mana_5);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 10",B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 10),dia_ch_mana_10);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 20",B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 20),dia_ch_mana_20);
 };
 
 func void dia_ch_mana_5()
 {
-	b_teachattributepoints(self,other,ATR_MANA_MAX,5,100);
+	B_TeachAttributePoints(self,other,ATR_MANA_MAX,5,100);
 	Info_ClearChoices(dia_ch_attribute);
-	Info_AddChoice(dia_ch_attribute,DIALOG_BACK,dia_ch_attribute_back);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 1",b_getlearncostattribute(other,ATR_MANA_MAX)),dia_ch_mana_1);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 5",b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_ch_mana_5);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 10",b_getlearncostattribute(other,ATR_MANA_MAX) * 10),dia_ch_mana_10);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 20",b_getlearncostattribute(other,ATR_MANA_MAX) * 20),dia_ch_mana_20);
+	Info_AddChoice(dia_ch_attribute,Dialog_Back,dia_ch_attribute_back);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 1",B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_ch_mana_1);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 5",B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),dia_ch_mana_5);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 10",B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 10),dia_ch_mana_10);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 20",B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 20),dia_ch_mana_20);
 };
 
 func void dia_ch_mana_10()
 {
-	b_teachattributepoints(self,other,ATR_MANA_MAX,10,100);
+	B_TeachAttributePoints(self,other,ATR_MANA_MAX,10,100);
 	Info_ClearChoices(dia_ch_attribute);
-	Info_AddChoice(dia_ch_attribute,DIALOG_BACK,dia_ch_attribute_back);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 1",b_getlearncostattribute(other,ATR_MANA_MAX)),dia_ch_mana_1);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 5",b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_ch_mana_5);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 10",b_getlearncostattribute(other,ATR_MANA_MAX) * 10),dia_ch_mana_10);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 20",b_getlearncostattribute(other,ATR_MANA_MAX) * 20),dia_ch_mana_20);
+	Info_AddChoice(dia_ch_attribute,Dialog_Back,dia_ch_attribute_back);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 1",B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_ch_mana_1);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 5",B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),dia_ch_mana_5);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 10",B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 10),dia_ch_mana_10);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 20",B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 20),dia_ch_mana_20);
 };
 
 func void dia_ch_mana_20()
 {
-	b_teachattributepoints(self,other,ATR_MANA_MAX,20,100);
+	B_TeachAttributePoints(self,other,ATR_MANA_MAX,20,100);
 	Info_ClearChoices(dia_ch_attribute);
-	Info_AddChoice(dia_ch_attribute,DIALOG_BACK,dia_ch_attribute_back);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 1",b_getlearncostattribute(other,ATR_MANA_MAX)),dia_ch_mana_1);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 5",b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_ch_mana_5);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 10",b_getlearncostattribute(other,ATR_MANA_MAX) * 10),dia_ch_mana_10);
-	Info_AddChoice(dia_ch_attribute,b_buildlearnstring("Mana + 20",b_getlearncostattribute(other,ATR_MANA_MAX) * 20),dia_ch_mana_20);
+	Info_AddChoice(dia_ch_attribute,Dialog_Back,dia_ch_attribute_back);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 1",B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_ch_mana_1);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 5",B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),dia_ch_mana_5);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 10",B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 10),dia_ch_mana_10);
+	Info_AddChoice(dia_ch_attribute,B_BuildLearnString("Mana + 20",B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 20),dia_ch_mana_20);
 };
 
 
-instance CH_TRAINING_TALENTE(C_INFO)
+instance CH_TRAINING_TALENTE(C_Info)
 {
 	npc = ch;
 	condition = ch_training_talente_condition;
@@ -1012,7 +1012,7 @@ func int ch_training_talente_condition()
 func void ch_training_talente_info()
 {
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
 	Info_AddChoice(ch_training_talente,"Alles Kampf",ch_training_talente_fight);
 	Info_AddChoice(ch_training_talente,"Magische Kreise",ch_training_talente_circles);
 	Info_AddChoice(ch_training_talente,"Diebesfähigkeiten",ch_training_talente_thief);
@@ -1030,177 +1030,177 @@ func void ch_training_talente_back()
 func void ch_training_talente_fight()
 {
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 1",b_getlearncosttalent(other,NPC_TALENT_1H)),ch_training_combat_1h_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 5",b_getlearncosttalent(other,NPC_TALENT_1H) * 5),ch_training_combat_1h_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 10",b_getlearncosttalent(other,NPC_TALENT_1H) * 10),ch_training_combat_1h_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 20",b_getlearncosttalent(other,NPC_TALENT_1H) * 20),ch_training_combat_1h_20);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 1",b_getlearncosttalent(other,NPC_TALENT_2H)),ch_training_combat_2h_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 5",b_getlearncosttalent(other,NPC_TALENT_2H) * 5),ch_training_combat_2h_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 10",b_getlearncosttalent(other,NPC_TALENT_2H) * 10),ch_training_combat_2h_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 20",b_getlearncosttalent(other,NPC_TALENT_2H) * 20),ch_training_combat_2h_20);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 1",b_getlearncosttalent(other,NPC_TALENT_BOW)),ch_training_combat_bow_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 5",b_getlearncosttalent(other,NPC_TALENT_BOW) * 5),ch_training_combat_bow_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 10",b_getlearncosttalent(other,NPC_TALENT_BOW) * 10),ch_training_combat_bow_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 20",b_getlearncosttalent(other,NPC_TALENT_BOW) * 20),ch_training_combat_bow_20);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 1",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW)),ch_training_combat_crossbow_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 5",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW) * 5),ch_training_combat_crossbow_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 10",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW) * 10),ch_training_combat_crossbow_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 20",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW) * 20),ch_training_combat_crossbow_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 1",B_GetLearnCostTalent(other,NPC_TALENT_1H)),CH_Training_Combat_1H_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 5",B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),CH_Training_Combat_1H_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 10",B_GetLearnCostTalent(other,NPC_TALENT_1H) * 10),CH_Training_Combat_1H_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 20",B_GetLearnCostTalent(other,NPC_TALENT_1H) * 20),CH_Training_Combat_1H_20);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 1",B_GetLearnCostTalent(other,NPC_TALENT_2H)),CH_Training_Combat_2H_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 5",B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),CH_Training_Combat_2H_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 10",B_GetLearnCostTalent(other,NPC_TALENT_2H) * 10),CH_Training_Combat_2H_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 20",B_GetLearnCostTalent(other,NPC_TALENT_2H) * 20),CH_Training_Combat_2H_20);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 1",B_GetLearnCostTalent(other,NPC_TALENT_BOW)),CH_Training_Combat_BOW_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 5",B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),CH_Training_Combat_BOW_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 10",B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 10),CH_Training_Combat_BOW_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 20",B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 20),CH_Training_Combat_BOW_20);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 1",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),CH_Training_Combat_CROSSBOW_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 5",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),CH_Training_Combat_CROSSBOW_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 10",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 10),CH_Training_Combat_CROSSBOW_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 20",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 20),CH_Training_Combat_CROSSBOW_20);
 };
 
 func void ch_training_talente_circles()
 {
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) < 1)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("1. Kreis der Magie",b_getlearncosttalent(other,NPC_TALENT_MAGE)),ch_training_mage_circle_1);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("1. Kreis der Magie",B_GetLearnCostTalent(other,NPC_TALENT_MAGE)),ch_training_mage_circle_1);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 1)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("2. Kreis der Magie",b_getlearncosttalent(other,NPC_TALENT_MAGE)),ch_training_mage_circle_2);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("2. Kreis der Magie",B_GetLearnCostTalent(other,NPC_TALENT_MAGE)),ch_training_mage_circle_2);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 2)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("3. Kreis der Magie",b_getlearncosttalent(other,NPC_TALENT_MAGE)),ch_training_mage_circle_3);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("3. Kreis der Magie",B_GetLearnCostTalent(other,NPC_TALENT_MAGE)),ch_training_mage_circle_3);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 3)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("4. Kreis der Magie",b_getlearncosttalent(other,NPC_TALENT_MAGE)),ch_training_mage_circle_4);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("4. Kreis der Magie",B_GetLearnCostTalent(other,NPC_TALENT_MAGE)),ch_training_mage_circle_4);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 4)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("5. Kreis der Magie",b_getlearncosttalent(other,NPC_TALENT_MAGE)),ch_training_mage_circle_5);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("5. Kreis der Magie",B_GetLearnCostTalent(other,NPC_TALENT_MAGE)),ch_training_mage_circle_5);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 5)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("6. Kreis der Magie",b_getlearncosttalent(other,NPC_TALENT_MAGE)),ch_training_mage_circle_6);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("6. Kreis der Magie",B_GetLearnCostTalent(other,NPC_TALENT_MAGE)),ch_training_mage_circle_6);
 	};
 };
 
 func void ch_training_talente_thief()
 {
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
 	if(Npc_GetTalentSkill(other,NPC_TALENT_PICKLOCK) == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Schlösser knacken",b_getlearncosttalent(other,NPC_TALENT_PICKLOCK)),ch_training_thief_picklock);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Schlösser knacken",B_GetLearnCostTalent(other,NPC_TALENT_PICKLOCK)),CH_Training_Thief_Picklock);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Taschendiebstahl",b_getlearncosttalent(other,NPC_TALENT_PICKPOCKET)),ch_training_thief_pickpocket);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Taschendiebstahl",B_GetLearnCostTalent(other,NPC_TALENT_PICKPOCKET)),CH_Training_Thief_Pickpocket);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_SNEAK) == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Schleichen		",b_getlearncosttalent(other,NPC_TALENT_SNEAK)),ch_training_thief_sneak);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Schleichen		",B_GetLearnCostTalent(other,NPC_TALENT_SNEAK)),CH_Training_Thief_Sneak);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_ACROBAT) == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Akrobatik		",b_getlearncosttalent(other,NPC_TALENT_ACROBAT)),ch_training_thief_acrobat);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Akrobatik		",B_GetLearnCostTalent(other,NPC_TALENT_ACROBAT)),ch_training_thief_acrobat);
 	};
 };
 
 func void ch_training_talente_smith()
 {
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	if(PLAYER_TALENT_SMITH[WEAPON_COMMON] == FALSE)
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	if(PLAYER_TALENT_SMITH[WEAPON_Common] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Common lernen ",b_getlearncosttalent(other,NPC_TALENT_SMITH)),ch_training_smith_common);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Common lernen ",B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),CH_Training_Smith_Common);
 	};
-	if(PLAYER_TALENT_SMITH[WEAPON_1H_SPECIAL_01] == FALSE)
+	if(PLAYER_TALENT_SMITH[WEAPON_1H_Special_01] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("1hSpecial1 lernen ",b_getlearncosttalent(other,NPC_TALENT_SMITH)),ch_training_smith_1hspecial1);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("1hSpecial1 lernen ",B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),CH_Training_Smith_1hSpecial1);
 	};
-	if(PLAYER_TALENT_SMITH[WEAPON_2H_SPECIAL_01] == FALSE)
+	if(PLAYER_TALENT_SMITH[WEAPON_2H_Special_01] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("2hSpecial1 lernen ",b_getlearncosttalent(other,NPC_TALENT_SMITH)),ch_training_smith_2hspecial1);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("2hSpecial1 lernen ",B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),CH_Training_Smith_2hSpecial1);
 	};
-	if(PLAYER_TALENT_SMITH[WEAPON_1H_SPECIAL_02] == FALSE)
+	if(PLAYER_TALENT_SMITH[WEAPON_1H_Special_02] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("1hSpecial2 lernen ",b_getlearncosttalent(other,NPC_TALENT_SMITH)),ch_training_smith_1hspecial2);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("1hSpecial2 lernen ",B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),CH_Training_Smith_1hSpecial2);
 	};
-	if(PLAYER_TALENT_SMITH[WEAPON_2H_SPECIAL_02] == FALSE)
+	if(PLAYER_TALENT_SMITH[WEAPON_2H_Special_02] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("2hSpecial2 lernen ",b_getlearncosttalent(other,NPC_TALENT_SMITH)),ch_training_smith_2hspecial2);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("2hSpecial2 lernen ",B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),CH_Training_Smith_2hSpecial2);
 	};
-	if(PLAYER_TALENT_SMITH[WEAPON_1H_SPECIAL_03] == FALSE)
+	if(PLAYER_TALENT_SMITH[WEAPON_1H_Special_03] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("1hSpecial3 lernen ",b_getlearncosttalent(other,NPC_TALENT_SMITH)),ch_training_smith_1hspecial3);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("1hSpecial3 lernen ",B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),CH_Training_Smith_1hSpecial3);
 	};
-	if(PLAYER_TALENT_SMITH[WEAPON_2H_SPECIAL_03] == FALSE)
+	if(PLAYER_TALENT_SMITH[WEAPON_2H_Special_03] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("2hSpecial3 lernen ",b_getlearncosttalent(other,NPC_TALENT_SMITH)),ch_training_smith_2hspecial3);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("2hSpecial3 lernen ",B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),CH_Training_Smith_2hSpecial3);
 	};
-	if(PLAYER_TALENT_SMITH[WEAPON_1H_SPECIAL_04] == FALSE)
+	if(PLAYER_TALENT_SMITH[WEAPON_1H_Special_04] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("1hSpecial4 lernen ",b_getlearncosttalent(other,NPC_TALENT_SMITH)),ch_training_smith_1hspecial4);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("1hSpecial4 lernen ",B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),CH_Training_Smith_1hSpecial4);
 	};
-	if(PLAYER_TALENT_SMITH[WEAPON_2H_SPECIAL_04] == FALSE)
+	if(PLAYER_TALENT_SMITH[WEAPON_2H_Special_04] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("2hSpecial4 lernen ",b_getlearncosttalent(other,NPC_TALENT_SMITH)),ch_training_smith_2hspecial4);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("2hSpecial4 lernen ",B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),CH_Training_Smith_2hSpecial4);
 	};
 };
 
 func void ch_training_talente_alchimie()
 {
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	if(PLAYER_TALENT_ALCHEMY[POTION_HEALTH_01] == FALSE)
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	if(PLAYER_TALENT_ALCHEMY[POTION_Health_01] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Heiltrank 1",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),ch_training_alchemy_potion_health_01);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Heiltrank 1",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),CH_Training_Alchemy_POTION_Health_01);
 	};
-	if(PLAYER_TALENT_ALCHEMY[POTION_HEALTH_02] == FALSE)
+	if(PLAYER_TALENT_ALCHEMY[POTION_Health_02] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Heiltrank 2",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),ch_training_alchemy_potion_health_02);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Heiltrank 2",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),CH_Training_Alchemy_POTION_Health_02);
 	};
-	if(PLAYER_TALENT_ALCHEMY[POTION_HEALTH_03] == FALSE)
+	if(PLAYER_TALENT_ALCHEMY[POTION_Health_03] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Heiltrank 3",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),ch_training_alchemy_potion_health_03);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Heiltrank 3",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),CH_Training_Alchemy_POTION_Health_03);
 	};
-	if(PLAYER_TALENT_ALCHEMY[POTION_MANA_01] == FALSE)
+	if(PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Manatrank 1",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),ch_training_alchemy_potion_mana_01);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Manatrank 1",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),CH_Training_Alchemy_POTION_Mana_01);
 	};
-	if(PLAYER_TALENT_ALCHEMY[POTION_MANA_02] == FALSE)
+	if(PLAYER_TALENT_ALCHEMY[POTION_Mana_02] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Manatrank 2",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),ch_training_alchemy_potion_mana_02);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Manatrank 2",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),CH_Training_Alchemy_POTION_Mana_02);
 	};
-	if(PLAYER_TALENT_ALCHEMY[POTION_MANA_03] == FALSE)
+	if(PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Manatrank 3",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),ch_training_alchemy_potion_mana_03);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Manatrank 3",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),CH_Training_Alchemy_POTION_Mana_03);
 	};
-	if(PLAYER_TALENT_ALCHEMY[POTION_SPEED] == FALSE)
+	if(PLAYER_TALENT_ALCHEMY[POTION_Speed] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Speed ",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),ch_training_alchemy_potion_speed);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Speed ",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),CH_Training_Alchemy_POTION_Speed);
 	};
-	if(PLAYER_TALENT_ALCHEMY[POTION_PERM_STR] == FALSE)
+	if(PLAYER_TALENT_ALCHEMY[POTION_Perm_STR] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("STR",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),ch_training_alchemy_potion_perm_str);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("STR",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),CH_Training_Alchemy_POTION_Perm_STR);
 	};
-	if(PLAYER_TALENT_ALCHEMY[POTION_PERM_DEX] == FALSE)
+	if(PLAYER_TALENT_ALCHEMY[POTION_Perm_DEX] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("DEX",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),ch_training_alchemy_potion_perm_dex);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("DEX",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),CH_Training_Alchemy_POTION_Perm_DEX);
 	};
-	if(PLAYER_TALENT_ALCHEMY[POTION_PERM_MANA] == FALSE)
+	if(PLAYER_TALENT_ALCHEMY[POTION_Perm_Mana] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Perm_Mana",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),ch_training_alchemy_potion_perm_mana);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Perm_Mana",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),CH_Training_Alchemy_POTION_Perm_Mana);
 	};
-	if(PLAYER_TALENT_ALCHEMY[POTION_PERM_HEALTH] == FALSE)
+	if(PLAYER_TALENT_ALCHEMY[POTION_Perm_Health] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Perm_Health",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),ch_training_alchemy_potion_perm_health);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Perm_Health",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),CH_Training_Alchemy_POTION_Perm_Health);
 	};
-	if(PLAYER_TALENT_ALCHEMY[CHARGE_INNOSEYE] == FALSE)
+	if(PLAYER_TALENT_ALCHEMY[CHARGE_Innoseye] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Auge aufladen",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),ch_training_alchemy_charge_innoseye);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Auge aufladen",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),CH_Training_Alchemy_Charge_InnosEye);
 	};
 };
 
 func void ch_training_talente_runes()
 {
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
 	Info_AddChoice(ch_training_talente,"Paladin-Runen",ch_training_runen_paladin);
 	Info_AddChoice(ch_training_talente," Erster Kreis",ch_training_runen_circle_1);
 	Info_AddChoice(ch_training_talente," Zweiter Kreis",ch_training_runen_circle_2);
@@ -1213,772 +1213,772 @@ func void ch_training_talente_runes()
 func void ch_training_talente_trophy()
 {
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_TEETH] == FALSE)
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Zähne reissen",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),ch_training_trophys_teeth);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Zähne reissen",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),CH_Training_TROPHYS_Teeth);
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CLAWS] == FALSE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Claws] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Klauen hacken",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),ch_training_trophys_claws);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Klauen hacken",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),CH_Training_TROPHYS_Claws);
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FUR] == FALSE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Fell abziehen",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),ch_training_trophys_fur);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Fell abziehen",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),CH_Training_TROPHYS_Fur);
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_HEART] == FALSE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Heart] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Herzen nehmen",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),ch_training_trophys_heart);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Herzen nehmen",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),CH_Training_TROPHYS_Heart);
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_SHADOWHORN] == FALSE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_ShadowHorn] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Horn des Schattenläufers",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),ch_training_trophys_shadowhorn);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Horn des Schattenläufers",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),CH_Training_TROPHYS_ShadowHorn);
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FIRETONGUE] == FALSE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FireTongue] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Feuerzunge",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),ch_training_trophys_firetongue);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Feuerzunge",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),CH_Training_TROPHYS_FireTongue);
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSTING] == FALSE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Blutfliegenstachel",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),ch_training_trophys_bfsting);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Blutfliegenstachel",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),CH_Training_TROPHYS_BFSting);
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWING] == FALSE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Blutfliegenflügel",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),ch_training_trophys_bfwing);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Blutfliegenflügel",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),CH_Training_TROPHYS_BFWing);
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CRAWLERPLATE] == FALSE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CrawlerPlate] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Crawlerplatten nehmen",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),ch_training_trophys_crawlerplate);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Crawlerplatten nehmen",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),CH_Training_TROPHYS_CrawlerPlate);
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_MANDIBLES] == FALSE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Mandibles] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Zangen rausschneiden",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),ch_training_trophys_mandibles);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Zangen rausschneiden",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),CH_Training_TROPHYS_Mandibles);
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRGSNAPPERHORN] == FALSE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DrgSnapperHorn] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Drachensnapperhorn",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),ch_training_trophys_drgsnapperhorn);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Drachensnapperhorn",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),CH_Training_TROPHYS_DrgSnapperHorn);
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRAGONSCALE] == FALSE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DragonScale] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Drachenschuppen ziehen",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),ch_training_trophys_dragonscale);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Drachenschuppen ziehen",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),CH_Training_TROPHYS_DragonScale);
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRAGONBLOOD] == FALSE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DragonBlood] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring("Drachenblut zapfen",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),ch_training_trophys_dragonblood);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString("Drachenblut zapfen",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),CH_Training_TROPHYS_DragonBlood);
 	};
 };
 
-func void ch_training_combat_1h_1()
+func void CH_Training_Combat_1H_1()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_1H,1,99);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,1,99);
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 1",b_getlearncosttalent(other,NPC_TALENT_1H)),ch_training_combat_1h_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 5",b_getlearncosttalent(other,NPC_TALENT_1H) * 5),ch_training_combat_1h_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 10",b_getlearncosttalent(other,NPC_TALENT_1H) * 10),ch_training_combat_1h_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 20",b_getlearncosttalent(other,NPC_TALENT_1H) * 20),ch_training_combat_1h_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 1",B_GetLearnCostTalent(other,NPC_TALENT_1H)),CH_Training_Combat_1H_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 5",B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),CH_Training_Combat_1H_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 10",B_GetLearnCostTalent(other,NPC_TALENT_1H) * 10),CH_Training_Combat_1H_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 20",B_GetLearnCostTalent(other,NPC_TALENT_1H) * 20),CH_Training_Combat_1H_20);
 };
 
-func void ch_training_combat_1h_5()
+func void CH_Training_Combat_1H_5()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_1H,5,99);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,5,99);
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 1",b_getlearncosttalent(other,NPC_TALENT_1H)),ch_training_combat_1h_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 5",b_getlearncosttalent(other,NPC_TALENT_1H) * 5),ch_training_combat_1h_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 10",b_getlearncosttalent(other,NPC_TALENT_1H) * 10),ch_training_combat_1h_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 20",b_getlearncosttalent(other,NPC_TALENT_1H) * 20),ch_training_combat_1h_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 1",B_GetLearnCostTalent(other,NPC_TALENT_1H)),CH_Training_Combat_1H_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 5",B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),CH_Training_Combat_1H_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 10",B_GetLearnCostTalent(other,NPC_TALENT_1H) * 10),CH_Training_Combat_1H_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 20",B_GetLearnCostTalent(other,NPC_TALENT_1H) * 20),CH_Training_Combat_1H_20);
 };
 
-func void ch_training_combat_1h_10()
+func void CH_Training_Combat_1H_10()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_1H,10,99);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,10,99);
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 1",b_getlearncosttalent(other,NPC_TALENT_1H)),ch_training_combat_1h_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 5",b_getlearncosttalent(other,NPC_TALENT_1H) * 5),ch_training_combat_1h_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 10",b_getlearncosttalent(other,NPC_TALENT_1H) * 10),ch_training_combat_1h_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 20",b_getlearncosttalent(other,NPC_TALENT_1H) * 20),ch_training_combat_1h_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 1",B_GetLearnCostTalent(other,NPC_TALENT_1H)),CH_Training_Combat_1H_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 5",B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),CH_Training_Combat_1H_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 10",B_GetLearnCostTalent(other,NPC_TALENT_1H) * 10),CH_Training_Combat_1H_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 20",B_GetLearnCostTalent(other,NPC_TALENT_1H) * 20),CH_Training_Combat_1H_20);
 };
 
-func void ch_training_combat_1h_20()
+func void CH_Training_Combat_1H_20()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_1H,20,99);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,20,99);
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 1",b_getlearncosttalent(other,NPC_TALENT_1H)),ch_training_combat_1h_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 5",b_getlearncosttalent(other,NPC_TALENT_1H) * 5),ch_training_combat_1h_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 10",b_getlearncosttalent(other,NPC_TALENT_1H) * 10),ch_training_combat_1h_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Einhand-Waffen + 20",b_getlearncosttalent(other,NPC_TALENT_1H) * 20),ch_training_combat_1h_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 1",B_GetLearnCostTalent(other,NPC_TALENT_1H)),CH_Training_Combat_1H_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 5",B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),CH_Training_Combat_1H_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 10",B_GetLearnCostTalent(other,NPC_TALENT_1H) * 10),CH_Training_Combat_1H_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Einhand-Waffen + 20",B_GetLearnCostTalent(other,NPC_TALENT_1H) * 20),CH_Training_Combat_1H_20);
 };
 
-func void ch_training_combat_2h_1()
+func void CH_Training_Combat_2H_1()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_2H,1,99);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,1,99);
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 1",b_getlearncosttalent(other,NPC_TALENT_2H)),ch_training_combat_2h_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 5",b_getlearncosttalent(other,NPC_TALENT_2H) * 5),ch_training_combat_2h_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 10",b_getlearncosttalent(other,NPC_TALENT_2H) * 10),ch_training_combat_2h_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 20",b_getlearncosttalent(other,NPC_TALENT_2H) * 20),ch_training_combat_2h_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 1",B_GetLearnCostTalent(other,NPC_TALENT_2H)),CH_Training_Combat_2H_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 5",B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),CH_Training_Combat_2H_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 10",B_GetLearnCostTalent(other,NPC_TALENT_2H) * 10),CH_Training_Combat_2H_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 20",B_GetLearnCostTalent(other,NPC_TALENT_2H) * 20),CH_Training_Combat_2H_20);
 };
 
-func void ch_training_combat_2h_5()
+func void CH_Training_Combat_2H_5()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_2H,5,99);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,5,99);
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 1",b_getlearncosttalent(other,NPC_TALENT_2H)),ch_training_combat_2h_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 5",b_getlearncosttalent(other,NPC_TALENT_2H) * 5),ch_training_combat_2h_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 10",b_getlearncosttalent(other,NPC_TALENT_2H) * 10),ch_training_combat_2h_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 20",b_getlearncosttalent(other,NPC_TALENT_2H) * 20),ch_training_combat_2h_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 1",B_GetLearnCostTalent(other,NPC_TALENT_2H)),CH_Training_Combat_2H_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 5",B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),CH_Training_Combat_2H_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 10",B_GetLearnCostTalent(other,NPC_TALENT_2H) * 10),CH_Training_Combat_2H_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 20",B_GetLearnCostTalent(other,NPC_TALENT_2H) * 20),CH_Training_Combat_2H_20);
 };
 
-func void ch_training_combat_2h_10()
+func void CH_Training_Combat_2H_10()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_2H,10,99);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,10,99);
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 1",b_getlearncosttalent(other,NPC_TALENT_2H)),ch_training_combat_2h_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 5",b_getlearncosttalent(other,NPC_TALENT_2H) * 5),ch_training_combat_2h_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 10",b_getlearncosttalent(other,NPC_TALENT_2H) * 10),ch_training_combat_2h_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 20",b_getlearncosttalent(other,NPC_TALENT_2H) * 20),ch_training_combat_2h_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 1",B_GetLearnCostTalent(other,NPC_TALENT_2H)),CH_Training_Combat_2H_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 5",B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),CH_Training_Combat_2H_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 10",B_GetLearnCostTalent(other,NPC_TALENT_2H) * 10),CH_Training_Combat_2H_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 20",B_GetLearnCostTalent(other,NPC_TALENT_2H) * 20),CH_Training_Combat_2H_20);
 };
 
-func void ch_training_combat_2h_20()
+func void CH_Training_Combat_2H_20()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_2H,20,99);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,20,99);
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 1",b_getlearncosttalent(other,NPC_TALENT_2H)),ch_training_combat_2h_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 5",b_getlearncosttalent(other,NPC_TALENT_2H) * 5),ch_training_combat_2h_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 10",b_getlearncosttalent(other,NPC_TALENT_2H) * 10),ch_training_combat_2h_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Zweihand-Waffen + 20",b_getlearncosttalent(other,NPC_TALENT_2H) * 20),ch_training_combat_2h_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 1",B_GetLearnCostTalent(other,NPC_TALENT_2H)),CH_Training_Combat_2H_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 5",B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),CH_Training_Combat_2H_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 10",B_GetLearnCostTalent(other,NPC_TALENT_2H) * 10),CH_Training_Combat_2H_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Zweihand-Waffen + 20",B_GetLearnCostTalent(other,NPC_TALENT_2H) * 20),CH_Training_Combat_2H_20);
 };
 
-func void ch_training_combat_bow_1()
+func void CH_Training_Combat_BOW_1()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_BOW,1,99);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_BOW,1,99);
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 1",b_getlearncosttalent(other,NPC_TALENT_BOW)),ch_training_combat_bow_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 5",b_getlearncosttalent(other,NPC_TALENT_BOW) * 5),ch_training_combat_bow_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 10",b_getlearncosttalent(other,NPC_TALENT_BOW) * 10),ch_training_combat_bow_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 20",b_getlearncosttalent(other,NPC_TALENT_BOW) * 20),ch_training_combat_bow_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 1",B_GetLearnCostTalent(other,NPC_TALENT_BOW)),CH_Training_Combat_BOW_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 5",B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),CH_Training_Combat_BOW_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 10",B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 10),CH_Training_Combat_BOW_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 20",B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 20),CH_Training_Combat_BOW_20);
 };
 
-func void ch_training_combat_bow_5()
+func void CH_Training_Combat_BOW_5()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_BOW,5,99);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_BOW,5,99);
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 1",b_getlearncosttalent(other,NPC_TALENT_BOW)),ch_training_combat_bow_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 5",b_getlearncosttalent(other,NPC_TALENT_BOW) * 5),ch_training_combat_bow_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 10",b_getlearncosttalent(other,NPC_TALENT_BOW) * 10),ch_training_combat_bow_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 20",b_getlearncosttalent(other,NPC_TALENT_BOW) * 20),ch_training_combat_bow_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 1",B_GetLearnCostTalent(other,NPC_TALENT_BOW)),CH_Training_Combat_BOW_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 5",B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),CH_Training_Combat_BOW_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 10",B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 10),CH_Training_Combat_BOW_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 20",B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 20),CH_Training_Combat_BOW_20);
 };
 
-func void ch_training_combat_bow_10()
+func void CH_Training_Combat_BOW_10()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_BOW,10,99);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_BOW,10,99);
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 1",b_getlearncosttalent(other,NPC_TALENT_BOW)),ch_training_combat_bow_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 5",b_getlearncosttalent(other,NPC_TALENT_BOW) * 5),ch_training_combat_bow_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 10",b_getlearncosttalent(other,NPC_TALENT_BOW) * 10),ch_training_combat_bow_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 20",b_getlearncosttalent(other,NPC_TALENT_BOW) * 20),ch_training_combat_bow_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 1",B_GetLearnCostTalent(other,NPC_TALENT_BOW)),CH_Training_Combat_BOW_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 5",B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),CH_Training_Combat_BOW_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 10",B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 10),CH_Training_Combat_BOW_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 20",B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 20),CH_Training_Combat_BOW_20);
 };
 
-func void ch_training_combat_bow_20()
+func void CH_Training_Combat_BOW_20()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_BOW,20,99);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_BOW,20,99);
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 1",b_getlearncosttalent(other,NPC_TALENT_BOW)),ch_training_combat_bow_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 5",b_getlearncosttalent(other,NPC_TALENT_BOW) * 5),ch_training_combat_bow_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 10",b_getlearncosttalent(other,NPC_TALENT_BOW) * 10),ch_training_combat_bow_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Bogen + 20",b_getlearncosttalent(other,NPC_TALENT_BOW) * 20),ch_training_combat_bow_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 1",B_GetLearnCostTalent(other,NPC_TALENT_BOW)),CH_Training_Combat_BOW_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 5",B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),CH_Training_Combat_BOW_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 10",B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 10),CH_Training_Combat_BOW_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Bogen + 20",B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 20),CH_Training_Combat_BOW_20);
 };
 
-func void ch_training_combat_crossbow_1()
+func void CH_Training_Combat_CROSSBOW_1()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_CROSSBOW,1,99);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,1,99);
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 1",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW)),ch_training_combat_crossbow_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 5",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW) * 5),ch_training_combat_crossbow_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 10",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW) * 10),ch_training_combat_crossbow_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 20",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW) * 20),ch_training_combat_crossbow_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 1",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),CH_Training_Combat_CROSSBOW_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 5",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),CH_Training_Combat_CROSSBOW_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 10",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 10),CH_Training_Combat_CROSSBOW_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 20",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 20),CH_Training_Combat_CROSSBOW_20);
 };
 
-func void ch_training_combat_crossbow_5()
+func void CH_Training_Combat_CROSSBOW_5()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_CROSSBOW,5,99);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,5,99);
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 1",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW)),ch_training_combat_crossbow_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 5",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW) * 5),ch_training_combat_crossbow_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 10",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW) * 10),ch_training_combat_crossbow_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 20",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW) * 20),ch_training_combat_crossbow_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 1",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),CH_Training_Combat_CROSSBOW_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 5",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),CH_Training_Combat_CROSSBOW_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 10",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 10),CH_Training_Combat_CROSSBOW_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 20",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 20),CH_Training_Combat_CROSSBOW_20);
 };
 
-func void ch_training_combat_crossbow_10()
+func void CH_Training_Combat_CROSSBOW_10()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_CROSSBOW,10,99);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,10,99);
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 1",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW)),ch_training_combat_crossbow_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 5",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW) * 5),ch_training_combat_crossbow_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 10",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW) * 10),ch_training_combat_crossbow_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 20",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW) * 20),ch_training_combat_crossbow_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 1",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),CH_Training_Combat_CROSSBOW_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 5",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),CH_Training_Combat_CROSSBOW_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 10",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 10),CH_Training_Combat_CROSSBOW_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 20",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 20),CH_Training_Combat_CROSSBOW_20);
 };
 
-func void ch_training_combat_crossbow_20()
+func void CH_Training_Combat_CROSSBOW_20()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_CROSSBOW,20,99);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,20,99);
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 1",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW)),ch_training_combat_crossbow_1);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 5",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW) * 5),ch_training_combat_crossbow_5);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 10",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW) * 10),ch_training_combat_crossbow_10);
-	Info_AddChoice(ch_training_talente,b_buildlearnstring("Armbrust + 20",b_getlearncosttalent(other,NPC_TALENT_CROSSBOW) * 20),ch_training_combat_crossbow_20);
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 1",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),CH_Training_Combat_CROSSBOW_1);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 5",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),CH_Training_Combat_CROSSBOW_5);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 10",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 10),CH_Training_Combat_CROSSBOW_10);
+	Info_AddChoice(ch_training_talente,B_BuildLearnString("Armbrust + 20",B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 20),CH_Training_Combat_CROSSBOW_20);
 };
 
 func void ch_training_mage_circle_1()
 {
 	Info_ClearChoices(ch_training_talente);
-	b_teachmagiccircle(self,other,1);
-	b_setkdfrunes();
+	B_TeachMagicCircle(self,other,1);
+	B_SetKDFRunes();
 };
 
 func void ch_training_mage_circle_2()
 {
 	Info_ClearChoices(ch_training_talente);
-	b_teachmagiccircle(self,other,2);
-	b_setkdfrunes();
+	B_TeachMagicCircle(self,other,2);
+	B_SetKDFRunes();
 };
 
 func void ch_training_mage_circle_3()
 {
 	Info_ClearChoices(ch_training_talente);
-	b_teachmagiccircle(self,other,3);
-	b_setkdfrunes();
+	B_TeachMagicCircle(self,other,3);
+	B_SetKDFRunes();
 };
 
 func void ch_training_mage_circle_4()
 {
 	Info_ClearChoices(ch_training_talente);
-	b_teachmagiccircle(self,other,4);
-	b_setkdfrunes();
+	B_TeachMagicCircle(self,other,4);
+	B_SetKDFRunes();
 };
 
 func void ch_training_mage_circle_5()
 {
 	Info_ClearChoices(ch_training_talente);
-	b_teachmagiccircle(self,other,5);
-	b_setkdfrunes();
+	B_TeachMagicCircle(self,other,5);
+	B_SetKDFRunes();
 };
 
 func void ch_training_mage_circle_6()
 {
 	Info_ClearChoices(ch_training_talente);
-	b_teachmagiccircle(self,other,6);
-	b_setkdfrunes();
+	B_TeachMagicCircle(self,other,6);
+	B_SetKDFRunes();
 };
 
-func void ch_training_thief_picklock()
+func void CH_Training_Thief_Picklock()
 {
 	Info_ClearChoices(ch_training_talente);
-	b_teachthieftalent(self,other,NPC_TALENT_PICKLOCK);
+	B_TeachThiefTalent(self,other,NPC_TALENT_PICKLOCK);
 };
 
-func void ch_training_thief_pickpocket()
+func void CH_Training_Thief_Pickpocket()
 {
 	Info_ClearChoices(ch_training_talente);
-	b_teachthieftalent(self,other,NPC_TALENT_PICKPOCKET);
+	B_TeachThiefTalent(self,other,NPC_TALENT_PICKPOCKET);
 };
 
-func void ch_training_thief_sneak()
+func void CH_Training_Thief_Sneak()
 {
 	Info_ClearChoices(ch_training_talente);
-	b_teachthieftalent(self,other,NPC_TALENT_SNEAK);
+	B_TeachThiefTalent(self,other,NPC_TALENT_SNEAK);
 };
 
 func void ch_training_thief_acrobat()
 {
 	Info_ClearChoices(ch_training_talente);
-	b_teachthieftalent(self,other,NPC_TALENT_ACROBAT);
+	B_TeachThiefTalent(self,other,NPC_TALENT_ACROBAT);
 };
 
-func void ch_training_smith_common()
+func void CH_Training_Smith_Common()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_COMMON);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_Common);
 };
 
-func void ch_training_smith_1hspecial1()
+func void CH_Training_Smith_1hSpecial1()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_1H_SPECIAL_01);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_1H_Special_01);
 };
 
-func void ch_training_smith_2hspecial1()
+func void CH_Training_Smith_2hSpecial1()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_2H_SPECIAL_01);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_2H_Special_01);
 };
 
-func void ch_training_smith_1hspecial2()
+func void CH_Training_Smith_1hSpecial2()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_1H_SPECIAL_02);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_1H_Special_02);
 };
 
-func void ch_training_smith_2hspecial2()
+func void CH_Training_Smith_2hSpecial2()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_2H_SPECIAL_02);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_2H_Special_02);
 };
 
-func void ch_training_smith_1hspecial3()
+func void CH_Training_Smith_1hSpecial3()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_1H_SPECIAL_03);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_1H_Special_03);
 };
 
-func void ch_training_smith_2hspecial3()
+func void CH_Training_Smith_2hSpecial3()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_2H_SPECIAL_03);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_2H_Special_03);
 };
 
-func void ch_training_smith_1hspecial4()
+func void CH_Training_Smith_1hSpecial4()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_1H_SPECIAL_04);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_1H_Special_04);
 };
 
-func void ch_training_smith_2hspecial4()
+func void CH_Training_Smith_2hSpecial4()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_2H_SPECIAL_04);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_2H_Special_04);
 };
 
-func void ch_training_alchemy_potion_health_01()
+func void CH_Training_Alchemy_POTION_Health_01()
 {
-	b_teachplayertalentalchemy(self,other,POTION_HEALTH_01);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Health_01);
 };
 
-func void ch_training_alchemy_potion_health_02()
+func void CH_Training_Alchemy_POTION_Health_02()
 {
-	b_teachplayertalentalchemy(self,other,POTION_HEALTH_02);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Health_02);
 };
 
-func void ch_training_alchemy_potion_health_03()
+func void CH_Training_Alchemy_POTION_Health_03()
 {
-	b_teachplayertalentalchemy(self,other,POTION_HEALTH_03);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Health_03);
 };
 
-func void ch_training_alchemy_potion_mana_01()
+func void CH_Training_Alchemy_POTION_Mana_01()
 {
-	b_teachplayertalentalchemy(self,other,POTION_MANA_01);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Mana_01);
 };
 
-func void ch_training_alchemy_potion_mana_02()
+func void CH_Training_Alchemy_POTION_Mana_02()
 {
-	b_teachplayertalentalchemy(self,other,POTION_MANA_02);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Mana_02);
 };
 
-func void ch_training_alchemy_potion_mana_03()
+func void CH_Training_Alchemy_POTION_Mana_03()
 {
-	b_teachplayertalentalchemy(self,other,POTION_MANA_03);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Mana_03);
 };
 
-func void ch_training_alchemy_potion_speed()
+func void CH_Training_Alchemy_POTION_Speed()
 {
-	b_teachplayertalentalchemy(self,other,POTION_SPEED);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Speed);
 };
 
-func void ch_training_alchemy_potion_perm_str()
+func void CH_Training_Alchemy_POTION_Perm_STR()
 {
-	b_teachplayertalentalchemy(self,other,POTION_PERM_STR);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Perm_STR);
 };
 
-func void ch_training_alchemy_potion_perm_dex()
+func void CH_Training_Alchemy_POTION_Perm_DEX()
 {
-	b_teachplayertalentalchemy(self,other,POTION_PERM_DEX);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Perm_DEX);
 };
 
-func void ch_training_alchemy_potion_perm_mana()
+func void CH_Training_Alchemy_POTION_Perm_Mana()
 {
-	b_teachplayertalentalchemy(self,other,POTION_PERM_MANA);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Perm_Mana);
 };
 
-func void ch_training_alchemy_potion_perm_health()
+func void CH_Training_Alchemy_POTION_Perm_Health()
 {
-	b_teachplayertalentalchemy(self,other,POTION_PERM_HEALTH);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Perm_Health);
 };
 
-func void ch_training_alchemy_charge_innoseye()
+func void CH_Training_Alchemy_Charge_InnosEye()
 {
-	b_teachplayertalentalchemy(self,other,CHARGE_INNOSEYE);
+	B_TeachPlayerTalentAlchemy(self,other,CHARGE_Innoseye);
 };
 
 func void ch_training_runen_paladin()
 {
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	if(PLAYER_TALENT_RUNES[SPL_PALLIGHT] == FALSE)
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	if(PLAYER_TALENT_RUNES[SPL_PalLight] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_PALLIGHT,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_paladin_spl_pallight);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_PalLight,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Paladin_SPL_PalLight);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_PALLIGHTHEAL] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_PalLightHeal] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_PALLIGHTHEAL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_paladin_spl_pallightheal);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_PalLightHeal,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Paladin_SPL_PalLightHeal);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_PALHOLYBOLT] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_PalHolyBolt] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_PALHOLYBOLT,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_paladin_spl_palholybolt);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_PalHolyBolt,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Paladin_SPL_PalHolyBolt);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_PALMEDIUMHEAL] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_PalMediumHeal] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_PALMEDIUMHEAL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_paladin_spl_palmediumheal);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_PalMediumHeal,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Paladin_SPL_PalMediumHeal);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_PALREPELEVIL] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_PalRepelEvil] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_PALREPELEVIL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_paladin_spl_palrepelevil);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_PalRepelEvil,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Paladin_SPL_PalRepelEvil);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_PALFULLHEAL] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_PalFullHeal] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_PALFULLHEAL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_paladin_spl_palfullheal);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_PalFullHeal,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Paladin_SPL_PalFullHeal);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_PALDESTROYEVIL] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_PalDestroyEvil] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_PALDESTROYEVIL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_paladin_spl_paldestroyevil);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_PalDestroyEvil,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Paladin_SPL_PalDestroyEvil);
 	};
 };
 
-func void ch_training_runen_paladin_spl_pallight()
+func void CH_Training_Runen_Paladin_SPL_PalLight()
 {
-	b_teachplayertalentrunes(self,other,SPL_PALLIGHT);
+	B_TeachPlayerTalentRunes(self,other,SPL_PalLight);
 };
 
-func void ch_training_runen_paladin_spl_pallightheal()
+func void CH_Training_Runen_Paladin_SPL_PalLightHeal()
 {
-	b_teachplayertalentrunes(self,other,SPL_PALLIGHTHEAL);
+	B_TeachPlayerTalentRunes(self,other,SPL_PalLightHeal);
 };
 
-func void ch_training_runen_paladin_spl_palholybolt()
+func void CH_Training_Runen_Paladin_SPL_PalHolyBolt()
 {
-	b_teachplayertalentrunes(self,other,SPL_PALHOLYBOLT);
+	B_TeachPlayerTalentRunes(self,other,SPL_PalHolyBolt);
 };
 
-func void ch_training_runen_paladin_spl_palmediumheal()
+func void CH_Training_Runen_Paladin_SPL_PalMediumHeal()
 {
-	b_teachplayertalentrunes(self,other,SPL_PALMEDIUMHEAL);
+	B_TeachPlayerTalentRunes(self,other,SPL_PalMediumHeal);
 };
 
-func void ch_training_runen_paladin_spl_palrepelevil()
+func void CH_Training_Runen_Paladin_SPL_PalRepelEvil()
 {
-	b_teachplayertalentrunes(self,other,SPL_PALREPELEVIL);
+	B_TeachPlayerTalentRunes(self,other,SPL_PalRepelEvil);
 };
 
-func void ch_training_runen_paladin_spl_palfullheal()
+func void CH_Training_Runen_Paladin_SPL_PalFullHeal()
 {
-	b_teachplayertalentrunes(self,other,SPL_PALFULLHEAL);
+	B_TeachPlayerTalentRunes(self,other,SPL_PalFullHeal);
 };
 
-func void ch_training_runen_paladin_spl_paldestroyevil()
+func void CH_Training_Runen_Paladin_SPL_PalDestroyEvil()
 {
-	b_teachplayertalentrunes(self,other,SPL_PALDESTROYEVIL);
+	B_TeachPlayerTalentRunes(self,other,SPL_PalDestroyEvil);
 };
 
 func void ch_training_runen_circle_1()
 {
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	if(PLAYER_TALENT_RUNES[SPL_LIGHT] == FALSE)
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	if(PLAYER_TALENT_RUNES[SPL_Light] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_LIGHT,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_1_spl_light);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_LIGHT,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_1_SPL_LIGHT);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_FIREBOLT] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_Firebolt] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_FIREBOLT,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_1_spl_firebolt);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_Firebolt,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_1_SPL_Firebolt);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_ZAP] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_Zap] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_ZAP,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_2_spl_zap);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_Zap,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_2_spl_zap);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_LIGHTHEAL] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_LightHeal] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_LIGHTHEAL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_1_spl_lightheal);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_LightHeal,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_1_SPL_LightHeal);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_SUMMONGOBLINSKELETON] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_SummonGoblinSkeleton] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_SUMMONGOBLINSKELETON,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_1_spl_summongoblinskeleton);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_SummonGoblinSkeleton,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_1_SPL_SummonGoblinSkeleton);
 	};
 };
 
-func void ch_training_runen_circle_1_spl_light()
+func void CH_Training_Runen_Circle_1_SPL_LIGHT()
 {
-	b_teachplayertalentrunes(self,other,SPL_LIGHT);
+	B_TeachPlayerTalentRunes(self,other,SPL_Light);
 };
 
-func void ch_training_runen_circle_1_spl_firebolt()
+func void CH_Training_Runen_Circle_1_SPL_Firebolt()
 {
-	b_teachplayertalentrunes(self,other,SPL_FIREBOLT);
+	B_TeachPlayerTalentRunes(self,other,SPL_Firebolt);
 };
 
 func void ch_training_runen_circle_1_spl_icebolt()
 {
-	b_teachplayertalentrunes(self,other,SPL_ZAP);
+	B_TeachPlayerTalentRunes(self,other,SPL_Zap);
 };
 
-func void ch_training_runen_circle_1_spl_lightheal()
+func void CH_Training_Runen_Circle_1_SPL_LightHeal()
 {
-	b_teachplayertalentrunes(self,other,SPL_LIGHTHEAL);
+	B_TeachPlayerTalentRunes(self,other,SPL_LightHeal);
 };
 
-func void ch_training_runen_circle_1_spl_summongoblinskeleton()
+func void CH_Training_Runen_Circle_1_SPL_SummonGoblinSkeleton()
 {
-	b_teachplayertalentrunes(self,other,SPL_SUMMONGOBLINSKELETON);
+	B_TeachPlayerTalentRunes(self,other,SPL_SummonGoblinSkeleton);
 };
 
 func void ch_training_runen_circle_2()
 {
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	if(PLAYER_TALENT_RUNES[SPL_INSTANTFIREBALL] == FALSE)
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	if(PLAYER_TALENT_RUNES[SPL_InstantFireball] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_INSTANTFIREBALL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_2_spl_instantfireball);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_InstantFireball,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_2_SPL_InstantFireball);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_ICEBOLT] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_Icebolt] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_ICEBOLT,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_1_spl_icebolt);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_Icebolt,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_1_spl_icebolt);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_SUMMONWOLF] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_SummonWolf] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_SUMMONWOLF,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_2_spl_summonwolf);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_SummonWolf,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_2_SPL_SummonWolf);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_WINDFIST] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_WindFist] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_WINDFIST,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_2_spl_windfist);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_WINDFIST,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_2_SPL_WINDFIST);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_SLEEP] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_Sleep] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_SLEEP,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_2_spl_sleep);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_Sleep,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_2_SPL_Sleep);
 	};
 };
 
-func void ch_training_runen_circle_2_spl_instantfireball()
+func void CH_Training_Runen_Circle_2_SPL_InstantFireball()
 {
-	b_teachplayertalentrunes(self,other,SPL_INSTANTFIREBALL);
+	B_TeachPlayerTalentRunes(self,other,SPL_InstantFireball);
 };
 
 func void ch_training_runen_circle_2_spl_zap()
 {
-	b_teachplayertalentrunes(self,other,SPL_ICEBOLT);
+	B_TeachPlayerTalentRunes(self,other,SPL_Icebolt);
 };
 
-func void ch_training_runen_circle_2_spl_summonwolf()
+func void CH_Training_Runen_Circle_2_SPL_SummonWolf()
 {
-	b_teachplayertalentrunes(self,other,SPL_SUMMONWOLF);
+	B_TeachPlayerTalentRunes(self,other,SPL_SummonWolf);
 };
 
-func void ch_training_runen_circle_2_spl_windfist()
+func void CH_Training_Runen_Circle_2_SPL_WINDFIST()
 {
-	b_teachplayertalentrunes(self,other,SPL_WINDFIST);
+	B_TeachPlayerTalentRunes(self,other,SPL_WindFist);
 };
 
-func void ch_training_runen_circle_2_spl_sleep()
+func void CH_Training_Runen_Circle_2_SPL_Sleep()
 {
-	b_teachplayertalentrunes(self,other,SPL_SLEEP);
+	B_TeachPlayerTalentRunes(self,other,SPL_Sleep);
 };
 
 func void ch_training_runen_circle_3()
 {
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	if(PLAYER_TALENT_RUNES[SPL_MEDIUMHEAL] == FALSE)
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	if(PLAYER_TALENT_RUNES[SPL_MediumHeal] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_MEDIUMHEAL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_3_spl_mediumheal);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_MediumHeal,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_3_SPL_MediumHeal);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_CHARGEZAP] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_ChargeZap] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_CHARGEZAP,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_4_spl_thunderball);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_ChargeZap,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_4_SPL_ThunderBall);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_FIRESTORM] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_Firestorm] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_FIRESTORM,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_5_spl_firestorm);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_Firestorm,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_5_SPL_Firestorm);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_SUMMONSKELETON] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_SummonSkeleton] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_SUMMONSKELETON,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_3_spl_summonskeleton);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_SummonSkeleton,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_3_SPL_SummonSkeleton);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_FEAR] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_Fear] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_FEAR,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_3_spl_fear);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_Fear,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_3_SPL_Fear);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_ICECUBE] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_IceCube] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_ICECUBE,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_3_spl_icecube);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_IceCube,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_3_SPL_IceCube);
 	};
 };
 
-func void ch_training_runen_circle_3_spl_mediumheal()
+func void CH_Training_Runen_Circle_3_SPL_MediumHeal()
 {
-	b_teachplayertalentrunes(self,other,SPL_MEDIUMHEAL);
+	B_TeachPlayerTalentRunes(self,other,SPL_MediumHeal);
 };
 
-func void ch_training_runen_circle_3_spl_lightningflash()
+func void CH_Training_Runen_Circle_3_SPL_LightningFlash()
 {
-	b_teachplayertalentrunes(self,other,SPL_LIGHTNINGFLASH);
+	B_TeachPlayerTalentRunes(self,other,SPL_LightningFlash);
 };
 
-func void ch_training_runen_circle_3_spl_chargefireball()
+func void CH_Training_Runen_Circle_3_SPL_ChargeFireball()
 {
-	b_teachplayertalentrunes(self,other,SPL_CHARGEFIREBALL);
+	B_TeachPlayerTalentRunes(self,other,SPL_ChargeFireball);
 };
 
-func void ch_training_runen_circle_3_spl_summonskeleton()
+func void CH_Training_Runen_Circle_3_SPL_SummonSkeleton()
 {
-	b_teachplayertalentrunes(self,other,SPL_SUMMONSKELETON);
+	B_TeachPlayerTalentRunes(self,other,SPL_SummonSkeleton);
 };
 
-func void ch_training_runen_circle_3_spl_fear()
+func void CH_Training_Runen_Circle_3_SPL_Fear()
 {
-	b_teachplayertalentrunes(self,other,SPL_FEAR);
+	B_TeachPlayerTalentRunes(self,other,SPL_Fear);
 };
 
-func void ch_training_runen_circle_3_spl_icecube()
+func void CH_Training_Runen_Circle_3_SPL_IceCube()
 {
-	b_teachplayertalentrunes(self,other,SPL_ICECUBE);
+	B_TeachPlayerTalentRunes(self,other,SPL_IceCube);
 };
 
 func void ch_training_runen_circle_4()
 {
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	if(PLAYER_TALENT_RUNES[SPL_SUMMONGOLEM] == FALSE)
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	if(PLAYER_TALENT_RUNES[SPL_SummonGolem] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_SUMMONGOLEM,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_4_spl_summongolem);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_SummonGolem,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_4_SPL_SummonGolem);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_DESTROYUNDEAD] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_DestroyUndead] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_DESTROYUNDEAD,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_4_spl_destroyundead);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_DestroyUndead,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_4_SPL_DestroyUndead);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_LIGHTNINGFLASH] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_LightningFlash] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_LIGHTNINGFLASH,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_3_spl_lightningflash);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_LightningFlash,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_3_SPL_LightningFlash);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_CHARGEFIREBALL] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_ChargeFireball] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_CHARGEFIREBALL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_3_spl_chargefireball);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_ChargeFireball,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_3_SPL_ChargeFireball);
 	};
 };
 
-func void ch_training_runen_circle_4_spl_thunderball()
+func void CH_Training_Runen_Circle_4_SPL_ThunderBall()
 {
-	b_teachplayertalentrunes(self,other,SPL_CHARGEZAP);
+	B_TeachPlayerTalentRunes(self,other,SPL_ChargeZap);
 };
 
-func void ch_training_runen_circle_4_spl_summongolem()
+func void CH_Training_Runen_Circle_4_SPL_SummonGolem()
 {
-	b_teachplayertalentrunes(self,other,SPL_SUMMONGOLEM);
+	B_TeachPlayerTalentRunes(self,other,SPL_SummonGolem);
 };
 
-func void ch_training_runen_circle_4_spl_destroyundead()
+func void CH_Training_Runen_Circle_4_SPL_DestroyUndead()
 {
-	b_teachplayertalentrunes(self,other,SPL_DESTROYUNDEAD);
+	B_TeachPlayerTalentRunes(self,other,SPL_DestroyUndead);
 };
 
-func void ch_training_runen_circle_4_spl_pyrokinesis()
+func void CH_Training_Runen_Circle_4_SPL_Pyrokinesis()
 {
-	b_teachplayertalentrunes(self,other,SPL_PYROKINESIS);
+	B_TeachPlayerTalentRunes(self,other,SPL_Pyrokinesis);
 };
 
 func void ch_training_runen_circle_5()
 {
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	if(PLAYER_TALENT_RUNES[SPL_ICEWAVE] == FALSE)
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	if(PLAYER_TALENT_RUNES[SPL_IceWave] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_ICEWAVE,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_5_spl_icewave);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_IceWave,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_5_SPL_IceWave);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_SUMMONDEMON] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_SummonDemon] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_SUMMONDEMON,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_5_spl_summondemon);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_SummonDemon,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_5_SPL_SummonDemon);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_FULLHEAL] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_FullHeal] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_FULLHEAL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_5_spl_fullheal);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_FullHeal,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_5_SPL_FullHeal);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_PYROKINESIS] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_Pyrokinesis] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_PYROKINESIS,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_4_spl_pyrokinesis);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_Pyrokinesis,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_4_SPL_Pyrokinesis);
 	};
 };
 
-func void ch_training_runen_circle_5_spl_firestorm()
+func void CH_Training_Runen_Circle_5_SPL_Firestorm()
 {
-	b_teachplayertalentrunes(self,other,SPL_FIRESTORM);
+	B_TeachPlayerTalentRunes(self,other,SPL_Firestorm);
 };
 
-func void ch_training_runen_circle_5_spl_icewave()
+func void CH_Training_Runen_Circle_5_SPL_IceWave()
 {
-	b_teachplayertalentrunes(self,other,SPL_ICEWAVE);
+	B_TeachPlayerTalentRunes(self,other,SPL_IceWave);
 };
 
-func void ch_training_runen_circle_5_spl_summondemon()
+func void CH_Training_Runen_Circle_5_SPL_SummonDemon()
 {
-	b_teachplayertalentrunes(self,other,SPL_SUMMONDEMON);
+	B_TeachPlayerTalentRunes(self,other,SPL_SummonDemon);
 };
 
-func void ch_training_runen_circle_5_spl_fullheal()
+func void CH_Training_Runen_Circle_5_SPL_FullHeal()
 {
-	b_teachplayertalentrunes(self,other,SPL_FULLHEAL);
+	B_TeachPlayerTalentRunes(self,other,SPL_FullHeal);
 };
 
 func void ch_training_runen_circle_6()
 {
 	Info_ClearChoices(ch_training_talente);
-	Info_AddChoice(ch_training_talente,DIALOG_BACK,ch_training_talente_back);
-	if(PLAYER_TALENT_RUNES[SPL_FIRERAIN] == FALSE)
+	Info_AddChoice(ch_training_talente,Dialog_Back,ch_training_talente_back);
+	if(PLAYER_TALENT_RUNES[SPL_Firerain] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_FIRERAIN,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_6_spl_firerain);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_Firerain,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_6_SPL_Firerain);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_BREATHOFDEATH] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_BreathOfDeath] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_BREATHOFDEATH,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_6_spl_breathofdeath);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_BreathOfDeath,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_6_SPL_BreathOfDeath);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_MASSDEATH] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_MassDeath] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_MASSDEATH,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_6_spl_massdeath);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_MassDeath,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_6_SPL_MassDeath);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_ARMYOFDARKNESS] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_ArmyOfDarkness] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_ARMYOFDARKNESS,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_6_spl_armyofdarkness);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_ArmyOfDarkness,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_6_SPL_ArmyOfDarkness);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_SHRINK] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_Shrink] == FALSE)
 	{
-		Info_AddChoice(ch_training_talente,b_buildlearnstring(NAME_SPL_SHRINK,b_getlearncosttalent(other,NPC_TALENT_RUNES)),ch_training_runen_circle_6_spl_shrink);
+		Info_AddChoice(ch_training_talente,B_BuildLearnString(NAME_SPL_Shrink,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),CH_Training_Runen_Circle_6_SPL_Shrink);
 	};
 };
 
-func void ch_training_runen_circle_6_spl_firerain()
+func void CH_Training_Runen_Circle_6_SPL_Firerain()
 {
-	b_teachplayertalentrunes(self,other,SPL_FIRERAIN);
+	B_TeachPlayerTalentRunes(self,other,SPL_Firerain);
 };
 
-func void ch_training_runen_circle_6_spl_breathofdeath()
+func void CH_Training_Runen_Circle_6_SPL_BreathOfDeath()
 {
-	b_teachplayertalentrunes(self,other,SPL_BREATHOFDEATH);
+	B_TeachPlayerTalentRunes(self,other,SPL_BreathOfDeath);
 };
 
-func void ch_training_runen_circle_6_spl_massdeath()
+func void CH_Training_Runen_Circle_6_SPL_MassDeath()
 {
-	b_teachplayertalentrunes(self,other,SPL_MASSDEATH);
+	B_TeachPlayerTalentRunes(self,other,SPL_MassDeath);
 };
 
-func void ch_training_runen_circle_6_spl_armyofdarkness()
+func void CH_Training_Runen_Circle_6_SPL_ArmyOfDarkness()
 {
-	b_teachplayertalentrunes(self,other,SPL_ARMYOFDARKNESS);
+	B_TeachPlayerTalentRunes(self,other,SPL_ArmyOfDarkness);
 };
 
-func void ch_training_runen_circle_6_spl_shrink()
+func void CH_Training_Runen_Circle_6_SPL_Shrink()
 {
-	b_teachplayertalentrunes(self,other,SPL_SHRINK);
+	B_TeachPlayerTalentRunes(self,other,SPL_Shrink);
 };
 
 func void ch_training_trophys_back()
@@ -1986,68 +1986,68 @@ func void ch_training_trophys_back()
 	Info_ClearChoices(ch_training_talente);
 };
 
-func void ch_training_trophys_teeth()
+func void CH_Training_TROPHYS_Teeth()
 {
-	b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_TEETH);
+	B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Teeth);
 };
 
-func void ch_training_trophys_claws()
+func void CH_Training_TROPHYS_Claws()
 {
-	b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_CLAWS);
+	B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Claws);
 };
 
-func void ch_training_trophys_fur()
+func void CH_Training_TROPHYS_Fur()
 {
-	b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_FUR);
+	B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Fur);
 };
 
-func void ch_training_trophys_heart()
+func void CH_Training_TROPHYS_Heart()
 {
-	b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_HEART);
+	B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Heart);
 };
 
-func void ch_training_trophys_shadowhorn()
+func void CH_Training_TROPHYS_ShadowHorn()
 {
-	b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_SHADOWHORN);
+	B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_ShadowHorn);
 };
 
-func void ch_training_trophys_firetongue()
+func void CH_Training_TROPHYS_FireTongue()
 {
-	b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_FIRETONGUE);
+	B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_FireTongue);
 };
 
-func void ch_training_trophys_bfsting()
+func void CH_Training_TROPHYS_BFSting()
 {
-	b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_BFWING);
+	B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_BFWing);
 };
 
-func void ch_training_trophys_bfwing()
+func void CH_Training_TROPHYS_BFWing()
 {
-	b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_BFSTING);
+	B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_BFSting);
 };
 
-func void ch_training_trophys_crawlerplate()
+func void CH_Training_TROPHYS_CrawlerPlate()
 {
-	b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_MANDIBLES);
+	B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Mandibles);
 };
 
-func void ch_training_trophys_mandibles()
+func void CH_Training_TROPHYS_Mandibles()
 {
-	b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_CRAWLERPLATE);
+	B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_CrawlerPlate);
 };
 
-func void ch_training_trophys_drgsnapperhorn()
+func void CH_Training_TROPHYS_DrgSnapperHorn()
 {
-	b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_DRGSNAPPERHORN);
+	B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_DrgSnapperHorn);
 };
 
-func void ch_training_trophys_dragonscale()
+func void CH_Training_TROPHYS_DragonScale()
 {
-	b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_DRAGONSCALE);
+	B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_DragonScale);
 };
 
-func void ch_training_trophys_dragonblood()
+func void CH_Training_TROPHYS_DragonBlood()
 {
-	b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_DRAGONBLOOD);
+	B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_DragonBlood);
 };
 

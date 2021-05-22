@@ -1,1042 +1,1042 @@
 
-const string NAME_PALADINSCROLL = "Paladin Zauber";
+const string Name_PaladinScroll = "Paladin Zauber";
 
-const int VALUE_SC_PALLIGHT = 5;
-const int VALUE_SC_PALLIGHTHEAL = 35;
-const int VALUE_SC_PALHOLYBOLT = 100;
-const int VALUE_SC_PALMEDIUMHEAL = 175;
-const int VALUE_SC_PALREPELEVIL = 350;
-const int VALUE_SC_PALFULLHEAL = 600;
-const int VALUE_SC_PALDESTROYEVIL = 750;
-const int VALUE_SC_LIGHT = 5;
-const int VALUE_SC_FIREBOLT = 15;
-const int VALUE_SC_CHARM = 100;
-const int VALUE_SC_ICEBOLT = 80;
-const int VALUE_SC_LIGHTHEAL = 35;
-const int VALUE_SC_SUMGOBSKEL = 50;
-const int VALUE_SC_INSTANTFIREBALL = 75;
-const int VALUE_SC_ZAP = 50;
-const int VALUE_SC_SUMWOLF = 100;
-const int VALUE_SC_WINDFIST = 125;
-const int VALUE_SC_SLEEP = 150;
-const int VALUE_SC_MEDIUMHEAL = 175;
-const int VALUE_SC_LIGHTNINGFLASH = 275;
-const int VALUE_SC_CHARGEFIREBALL = 300;
-const int VALUE_SC_SUMSKEL = 215;
-const int VALUE_SC_FEAR = 225;
-const int VALUE_SC_ICECUBE = 250;
-const int VALUE_SC_THUNDERBALL = 250;
-const int VALUE_SC_SUMGOL = 325;
-const int VALUE_SC_HARMUNDEAD = 350;
-const int VALUE_SC_PYROKINESIS = 500;
-const int VALUE_SC_FIRESTORM = 200;
-const int VALUE_SC_ICEWAVE = 425;
-const int VALUE_SC_SUMDEMON = 425;
-const int VALUE_SC_FULLHEAL = 600;
-const int VALUE_SC_FIRERAIN = 600;
-const int VALUE_SC_BREATHOFDEATH = 650;
-const int VALUE_SC_MASSDEATH = 750;
-const int VALUE_SC_ARMYOFDARKNESS = 900;
-const int VALUE_SC_SHRINK = 1000;
-const int VALUE_SC_TRFSHEEP = 10;
-const int VALUE_SC_TRFSCAVENGER = 50;
-const int VALUE_SC_TRFGIANTRAT = 50;
-const int VALUE_SC_TRFGIANTBUG = 50;
-const int VALUE_SC_TRFWOLF = 55;
-const int VALUE_SC_TRFWARAN = 55;
-const int VALUE_SC_TRFSNAPPER = 55;
-const int VALUE_SC_TRFWARG = 55;
-const int VALUE_SC_TRFFIREWARAN = 60;
-const int VALUE_SC_TRFLURKER = 65;
-const int VALUE_SC_TRFSHADOWBEAST = 75;
-const int VALUE_SC_TRFDRAGONSNAPPER = 100;
+const int Value_Sc_PalLight = 5;
+const int Value_Sc_PalLightHeal = 35;
+const int Value_Sc_PalHolyBolt = 100;
+const int Value_Sc_PalMediumHeal = 175;
+const int Value_Sc_PalRepelEvil = 350;
+const int Value_Sc_PalFullHeal = 600;
+const int Value_Sc_PalDestroyEvil = 750;
+const int Value_Sc_Light = 5;
+const int Value_Sc_Firebolt = 15;
+const int Value_Sc_Charm = 100;
+const int Value_Sc_Icebolt = 80;
+const int Value_Sc_LightHeal = 35;
+const int Value_Sc_SumGobSkel = 50;
+const int Value_Sc_InstantFireball = 75;
+const int Value_Sc_Zap = 50;
+const int Value_Sc_SumWolf = 100;
+const int Value_Sc_Windfist = 125;
+const int Value_Sc_Sleep = 150;
+const int Value_Sc_MediumHeal = 175;
+const int Value_Sc_LightningFlash = 275;
+const int Value_Sc_ChargeFireball = 300;
+const int Value_Sc_SumSkel = 215;
+const int Value_Sc_Fear = 225;
+const int Value_Sc_IceCube = 250;
+const int Value_Sc_ThunderBall = 250;
+const int Value_Sc_SumGol = 325;
+const int Value_Sc_HarmUndead = 350;
+const int Value_Sc_Pyrokinesis = 500;
+const int Value_Sc_Firestorm = 200;
+const int Value_Sc_IceWave = 425;
+const int Value_Sc_SumDemon = 425;
+const int Value_Sc_FullHeal = 600;
+const int Value_Sc_Firerain = 600;
+const int Value_Sc_BreathOfDeath = 650;
+const int Value_Sc_MassDeath = 750;
+const int Value_Sc_ArmyOfDarkness = 900;
+const int Value_Sc_Shrink = 1000;
+const int Value_Sc_TrfSheep = 10;
+const int Value_Sc_TrfScavenger = 50;
+const int Value_Sc_TrfGiantRat = 50;
+const int Value_Sc_TrfGiantBug = 50;
+const int Value_Sc_TrfWolf = 55;
+const int Value_Sc_TrfWaran = 55;
+const int Value_Sc_TrfSnapper = 55;
+const int Value_Sc_TrfWarg = 55;
+const int Value_Sc_TrfFireWaran = 60;
+const int Value_Sc_TrfLurker = 65;
+const int Value_Sc_TrfShadowbeast = 75;
+const int Value_Sc_TrfDragonSnapper = 100;
 
-instance ITSC_PALLIGHT(C_ITEM)
+instance ItSc_PalLight(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_PALLIGHT;
+	value = Value_Sc_PalLight;
 	visual = "ItSc_PalLight.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_LIGHT;
+	spell = SPL_Light;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_LIGHT;
-	description = NAME_SPL_PALLIGHT;
-	text[0] = NAME_PALADINSCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_PALLIGHT;
-	text[2] = NAME_DURATION;
-	count[2] = SPL_DURATION_PALLIGHT;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_LIGHT;
+	description = NAME_SPL_PalLight;
+	text[0] = Name_PaladinScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_PalLight;
+	text[2] = NAME_Duration;
+	count[2] = SPL_Duration_PalLIGHT;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_PALLIGHTHEAL(C_ITEM)
+instance ItSc_PalLightHeal(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_PALLIGHTHEAL;
+	value = Value_Sc_PalLightHeal;
 	visual = "ItSc_PalLightHeal.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_PALLIGHTHEAL;
+	spell = SPL_PalLightHeal;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_PALLIGHTHEAL;
-	description = NAME_SPL_PALLIGHTHEAL;
-	text[0] = NAME_PALADINSCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_PALLIGHTHEAL;
-	text[2] = NAME_HEALINGPERCAST;
-	count[2] = SPL_HEAL_PALLIGHTHEAL;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_PalLightHeal;
+	description = NAME_SPL_PalLightHeal;
+	text[0] = Name_PaladinScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_PalLightHeal;
+	text[2] = NAME_HealingPerCast;
+	count[2] = SPL_Heal_PalLightHeal;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_PALHOLYBOLT(C_ITEM)
+instance ItSc_PalHolyBolt(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_PALHOLYBOLT;
+	value = Value_Sc_PalHolyBolt;
 	visual = "ItSc_PalHolyBolt.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_PALHOLYBOLT;
+	spell = SPL_PalHolyBolt;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_PALHOLYBOLT;
-	description = NAME_SPL_PALHOLYBOLT;
-	text[0] = NAME_PALADINSCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_PALHOLYBOLT;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_PALHOLYBOLT;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_PalHolyBolt;
+	description = NAME_SPL_PalHolyBolt;
+	text[0] = Name_PaladinScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_PalHolyBolt;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_PalHolyBolt;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_PALMEDIUMHEAL(C_ITEM)
+instance ItSc_PalMediumHeal(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_PALMEDIUMHEAL;
+	value = Value_Sc_PalMediumHeal;
 	visual = "ItSc_PalMediumHeal.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_PALMEDIUMHEAL;
+	spell = SPL_PalMediumHeal;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_PALMEDIUMHEAL;
-	description = NAME_SPL_PALMEDIUMHEAL;
-	text[0] = NAME_PALADINSCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_PALMEDIUMHEAL;
-	text[2] = NAME_HEALINGPERCAST;
-	count[2] = SPL_HEAL_PALMEDIUMHEAL;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_PalMediumHeal;
+	description = NAME_SPL_PalMediumHeal;
+	text[0] = Name_PaladinScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_PalMediumHeal;
+	text[2] = NAME_HealingPerCast;
+	count[2] = SPL_Heal_PalMediumHeal;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_PALREPELEVIL(C_ITEM)
+instance ItSc_PalRepelEvil(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_PALREPELEVIL;
+	value = Value_Sc_PalRepelEvil;
 	visual = "ItSc_PalRepelEvil.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_PALREPELEVIL;
+	spell = SPL_PalRepelEvil;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_PALREPELEVIL;
-	description = NAME_SPL_PALREPELEVIL;
-	text[0] = NAME_PALADINSCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_PALREPELEVIL;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_PALREPELEVIL;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_PalRepelEvil;
+	description = NAME_SPL_PalRepelEvil;
+	text[0] = Name_PaladinScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_PalRepelEvil;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_PalRepelEvil;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_PALFULLHEAL(C_ITEM)
+instance ItSc_PalFullHeal(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_PALFULLHEAL;
+	value = Value_Sc_PalFullHeal;
 	visual = "ItSc_PalFullHeal.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_PALFULLHEAL;
+	spell = SPL_PalFullHeal;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_PALFULLHEAL;
-	description = NAME_SPL_PALFULLHEAL;
-	text[0] = NAME_PALADINSCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_PALFULLHEAL;
-	text[2] = NAME_HEALINGPERCAST;
-	count[2] = SPL_HEAL_PALFULLHEAL;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_PalFullHeal;
+	description = NAME_SPL_PalFullHeal;
+	text[0] = Name_PaladinScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_PalFullHeal;
+	text[2] = NAME_HealingPerCast;
+	count[2] = SPL_Heal_PalFullHeal;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_PALDESTROYEVIL(C_ITEM)
+instance ItSc_PalDestroyEvil(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_PALDESTROYEVIL;
+	value = Value_Sc_PalDestroyEvil;
 	visual = "ItSc_PalDestroyEvil.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_PALDESTROYEVIL;
+	spell = SPL_PalDestroyEvil;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_PALDESTROYEVIL;
-	description = NAME_SPL_PALDESTROYEVIL;
-	text[0] = NAME_PALADINSCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_PALDESTROYEVIL;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_PALDESTROYEVIL;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_PalDestroyEvil;
+	description = NAME_SPL_PalDestroyEvil;
+	text[0] = Name_PaladinScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_PalDestroyEvil;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_PalDestroyEvil;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_LIGHT(C_ITEM)
+instance ItSc_Light(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_LIGHT;
+	value = Value_Sc_Light;
 	visual = "ItSc_Light.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_LIGHT;
+	spell = SPL_Light;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_LIGHT;
+	cond_value[2] = SPL_Cost_LIGHT;
 	description = NAME_SPL_LIGHT;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_LIGHT;
-	text[2] = NAME_DURATION;
-	count[2] = SPL_DURATION_LIGHT;
-	text[5] = NAME_VALUE;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_LIGHT;
+	text[2] = NAME_Duration;
+	count[2] = SPL_Duration_LIGHT;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_FIREBOLT(C_ITEM)
+instance ItSc_Firebolt(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_FIREBOLT;
+	value = Value_Sc_Firebolt;
 	visual = "ItSc_Firebolt.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_FIREBOLT;
+	spell = SPL_Firebolt;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_FIREBOLT;
-	description = NAME_SPL_FIREBOLT;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_FIREBOLT;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_FIREBOLT;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_Firebolt;
+	description = NAME_SPL_Firebolt;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_Firebolt;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_Firebolt;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_ICEBOLT(C_ITEM)
+instance ItSc_Icebolt(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_ICEBOLT;
+	value = Value_Sc_Icebolt;
 	visual = "ItSc_Icebolt.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_ICEBOLT;
+	spell = SPL_Icebolt;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_ICEBOLT;
-	description = NAME_SPL_ICEBOLT;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_ICEBOLT;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_ICEBOLT;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_COST_Icebolt;
+	description = NAME_SPL_Icebolt;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_COST_Icebolt;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_DAMAGE_Icebolt;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_LIGHTHEAL(C_ITEM)
+instance ItSc_LightHeal(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_LIGHTHEAL;
+	value = Value_Sc_LightHeal;
 	visual = "ItSc_LightHeal.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_LIGHTHEAL;
+	spell = SPL_LightHeal;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_LIGHTHEAL;
-	description = NAME_SPL_LIGHTHEAL;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_LIGHTHEAL;
-	text[2] = NAME_HEALINGPERCAST;
-	count[2] = SPL_HEAL_LIGHTHEAL;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_LightHeal;
+	description = NAME_SPL_LightHeal;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_LightHeal;
+	text[2] = NAME_HealingPerCast;
+	count[2] = SPL_Heal_LightHeal;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_SUMGOBSKEL(C_ITEM)
+instance ItSc_SumGobSkel(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_SUMGOBSKEL;
+	value = Value_Sc_SumGobSkel;
 	visual = "ItSc_SumGobSkel.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_SUMMONGOBLINSKELETON;
+	spell = SPL_SummonGoblinSkeleton;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_SUMMONGOBLINSKELETON;
-	description = NAME_SPL_SUMMONGOBLINSKELETON;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_SUMMONGOBLINSKELETON;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_SummonGoblinSkeleton;
+	description = NAME_SPL_SummonGoblinSkeleton;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_SummonGoblinSkeleton;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_INSTANTFIREBALL(C_ITEM)
+instance ItSc_InstantFireball(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_INSTANTFIREBALL;
+	value = Value_Sc_InstantFireball;
 	visual = "ItSc_InstantFireball.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_INSTANTFIREBALL;
+	spell = SPL_InstantFireball;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_INSTANTFIREBALL;
-	description = NAME_SPL_INSTANTFIREBALL;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_INSTANTFIREBALL;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_INSTANTFIREBALL;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_COST_InstantFireball;
+	description = NAME_SPL_InstantFireball;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_COST_InstantFireball;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_DAMAGE_InstantFireball;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_ZAP(C_ITEM)
+instance ItSc_Zap(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_ZAP;
+	value = Value_Sc_Zap;
 	visual = "ItSc_Zap.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_ZAP;
-	description = NAME_SPL_ZAP;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_ZAP;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_ZAP;
-	text[5] = NAME_VALUE;
+	spell = SPL_Zap;
+	description = NAME_SPL_Zap;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_Zap;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_Zap;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_SUMWOLF(C_ITEM)
+instance ItSc_SumWolf(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_SUMWOLF;
+	value = Value_Sc_SumWolf;
 	visual = "ItSc_SumWolf.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_SUMMONWOLF;
+	spell = SPL_SummonWolf;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_SUMMONWOLF;
-	description = NAME_SPL_SUMMONWOLF;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_SUMMONWOLF;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_SummonWolf;
+	description = NAME_SPL_SummonWolf;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_SummonWolf;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_WINDFIST(C_ITEM)
+instance ItSc_Windfist(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_WINDFIST;
+	value = Value_Sc_Windfist;
 	visual = "ItSc_Windfist.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_WINDFIST;
+	spell = SPL_WindFist;
 	cond_atr[2] = ATR_MANA_MAX;
 	cond_value[2] = 10;
 	description = NAME_SPL_WINDFIST;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANAKOSTENMAX;
-	count[1] = SPL_COST_WINDFIST;
-	text[2] = NAME_DAMAGE_MAX;
-	count[2] = SPL_DAMAGE_WINDFIST * 3;
-	text[4] = NAME_MANAPERSEC;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_ManakostenMax;
+	count[1] = SPL_Cost_WindFist;
+	text[2] = NAME_Damage_Max;
+	count[2] = SPL_Damage_Windfist * 3;
+	text[4] = NAME_ManaPerSec;
 	count[4] = 1000 / 200;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_SLEEP(C_ITEM)
+instance ItSc_Sleep(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_SLEEP;
+	value = Value_Sc_Sleep;
 	visual = "ItSc_Sleep.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_SLEEP;
+	spell = SPL_Sleep;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_SLEEP;
-	description = NAME_SPL_SLEEP;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_SLEEP;
-	text[2] = NAME_DURATION;
-	count[2] = SPL_TIME_SLEEP;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_Sleep;
+	description = NAME_SPL_Sleep;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_Sleep;
+	text[2] = NAME_Duration;
+	count[2] = SPL_TIME_Sleep;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_CHARM(C_ITEM)
+instance ItSc_Charm(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI | ITEM_MISSION;
-	value = VALUE_SC_CHARM;
+	value = Value_Sc_Charm;
 	visual = "ItSc_Sleep.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_CHARM;
+	spell = SPL_Charm;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_CHARM;
-	description = NAME_SPL_CHARM;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_CHARM;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_Charm;
+	description = NAME_SPL_Charm;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_Charm;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_MEDIUMHEAL(C_ITEM)
+instance ItSc_MediumHeal(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_MEDIUMHEAL;
+	value = Value_Sc_MediumHeal;
 	visual = "ItSc_MediumHeal.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_MEDIUMHEAL;
+	spell = SPL_MediumHeal;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_MEDIUMHEAL;
-	description = NAME_SPL_MEDIUMHEAL;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_MEDIUMHEAL;
-	text[2] = NAME_HEALINGPERCAST;
-	count[2] = SPL_HEAL_MEDIUMHEAL;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_MediumHeal;
+	description = NAME_SPL_MediumHeal;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_MediumHeal;
+	text[2] = NAME_HealingPerCast;
+	count[2] = SPL_Heal_MediumHeal;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_LIGHTNINGFLASH(C_ITEM)
+instance ItSc_LightningFlash(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_LIGHTNINGFLASH;
+	value = Value_Sc_LightningFlash;
 	visual = "ItSc_LightningFlash.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_LIGHTNINGFLASH;
+	spell = SPL_LightningFlash;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_LIGHTNINGFLASH;
-	description = NAME_SPL_LIGHTNINGFLASH;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_LIGHTNINGFLASH;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_LIGHTNINGFLASH;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_LightningFlash;
+	description = NAME_SPL_LightningFlash;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_LightningFlash;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_LightningFlash;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_CHARGEFIREBALL(C_ITEM)
+instance ItSc_ChargeFireBall(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_CHARGEFIREBALL;
+	value = Value_Sc_ChargeFireball;
 	visual = "ItSc_ChargeFireball.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_CHARGEFIREBALL;
+	spell = SPL_ChargeFireball;
 	cond_atr[2] = ATR_MANA_MAX;
 	cond_value[2] = 15;
-	description = NAME_SPL_CHARGEFIREBALL;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANAKOSTENMAX;
-	count[1] = SPL_COST_CHARGEFIREBALL;
-	text[2] = NAME_DAMAGE_MAX;
-	count[2] = SPL_DAMAGE_CHARGEFIREBALL * 3;
-	text[4] = NAME_MANAPERSEC;
+	description = NAME_SPL_ChargeFireball;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_ManakostenMax;
+	count[1] = SPL_COST_ChargeFireball;
+	text[2] = NAME_Damage_Max;
+	count[2] = SPL_Damage_ChargeFireball * 3;
+	text[4] = NAME_ManaPerSec;
 	count[4] = 1000 / 120;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_SUMSKEL(C_ITEM)
+instance ItSc_SumSkel(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_SUMSKEL;
+	value = Value_Sc_SumSkel;
 	visual = "ItSc_SumSkel.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_SUMMONSKELETON;
+	spell = SPL_SummonSkeleton;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_SUMMONSKELETON;
-	description = NAME_SPL_SUMMONSKELETON;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_SUMMONSKELETON;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_SummonSkeleton;
+	description = NAME_SPL_SummonSkeleton;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_SummonSkeleton;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_FEAR(C_ITEM)
+instance ItSc_Fear(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_FEAR;
+	value = Value_Sc_Fear;
 	visual = "ItSc_Fear.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_FEAR;
+	spell = SPL_Fear;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_FEAR;
-	description = NAME_SPL_FEAR;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_FEAR;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_Fear;
+	description = NAME_SPL_Fear;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_Fear;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_ICECUBE(C_ITEM)
+instance ItSc_IceCube(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_ICECUBE;
+	value = Value_Sc_IceCube;
 	visual = "ItSc_IceCube.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_ICECUBE;
+	spell = SPL_IceCube;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_ICECUBE;
-	description = NAME_SPL_ICECUBE;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_ICECUBE;
-	text[2] = NAME_DAMAGE;
+	cond_value[2] = SPL_Cost_IceCube;
+	description = NAME_SPL_IceCube;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_IceCube;
+	text[2] = NAME_Damage;
 	count[2] = SPL_FREEZE_DAMAGE;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_THUNDERBALL(C_ITEM)
+instance ItSc_ThunderBall(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_THUNDERBALL;
+	value = Value_Sc_ThunderBall;
 	visual = "ItSc_ThunderBall.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_CHARGEZAP;
+	spell = SPL_ChargeZap;
 	cond_atr[2] = ATR_MANA_MAX;
 	cond_value[2] = 18;
-	description = NAME_SPL_CHARGEZAP;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANAKOSTENMAX;
-	count[1] = SPL_COST_CHARGEZAP;
-	text[2] = NAME_DAMAGE_MAX;
-	count[2] = SPL_DAMAGE_CHARGEZAP * 3;
-	text[4] = NAME_MANAPERSEC;
+	description = NAME_SPL_ChargeZap;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_ManakostenMax;
+	count[1] = SPL_COST_ChargeZap;
+	text[2] = NAME_Damage_Max;
+	count[2] = SPL_Damage_ChargeZap * 3;
+	text[4] = NAME_ManaPerSec;
 	count[4] = 1000 / 100;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_SUMGOL(C_ITEM)
+instance ItSc_SumGol(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_SUMGOL;
+	value = Value_Sc_SumGol;
 	visual = "ItSc_SumGol.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_SUMMONGOLEM;
+	spell = SPL_SummonGolem;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_SUMMONGOLEM;
-	description = NAME_SPL_SUMMONGOLEM;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_SUMMONGOLEM;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_SummonGolem;
+	description = NAME_SPL_SummonGolem;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_SummonGolem;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_HARMUNDEAD(C_ITEM)
+instance ItSc_HarmUndead(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_HARMUNDEAD;
+	value = Value_Sc_HarmUndead;
 	visual = "ItSc_HarmUndead.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_DESTROYUNDEAD;
+	spell = SPL_DestroyUndead;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_DESTROYUNDEAD;
-	description = NAME_SPL_DESTROYUNDEAD;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_DESTROYUNDEAD;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_DESTROYUNDEAD;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_DESTROYUNDEAD;
+	description = NAME_SPL_DestroyUndead;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_DESTROYUNDEAD;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_DESTROYUNDEAD;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_PYROKINESIS(C_ITEM)
+instance ItSc_Pyrokinesis(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_PYROKINESIS;
+	value = Value_Sc_Pyrokinesis;
 	visual = "ItSc_Pyrokinesis.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_PYROKINESIS;
+	spell = SPL_Pyrokinesis;
 	cond_atr[2] = ATR_MANA_MAX;
 	cond_value[2] = 25;
-	description = NAME_SPL_PYROKINESIS;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANAKOSTENMAX;
-	count[1] = SPL_COST_FIRESTORM;
-	text[2] = NAME_DAMAGE_MAX;
-	count[2] = SPL_DAMAGE_FIRESTORM * 3;
-	text[4] = NAME_MANAPERSEC;
+	description = NAME_SPL_Pyrokinesis;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_ManakostenMax;
+	count[1] = SPL_COST_Firestorm;
+	text[2] = NAME_Damage_Max;
+	count[2] = SPL_Damage_Firestorm * 3;
+	text[4] = NAME_ManaPerSec;
 	count[4] = 1000 / 120;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_FIRESTORM(C_ITEM)
+instance ItSc_Firestorm(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_FIRESTORM;
+	value = Value_Sc_Firestorm;
 	visual = "ItSc_Firestorm.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_FIRESTORM;
+	spell = SPL_Firestorm;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_INSTANTFIRESTORM;
-	description = NAME_SPL_FIRESTORM;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_INSTANTFIRESTORM;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_INSTANTFIRESTORM;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_InstantFireStorm;
+	description = NAME_SPL_Firestorm;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_InstantFireStorm;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_InstantFireStorm;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_ICEWAVE(C_ITEM)
+instance ItSc_IceWave(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
 	value = 110;
 	visual = "ItSc_IceWave.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_ICEWAVE;
+	spell = SPL_IceWave;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_ICEWAVE;
-	description = NAME_SPL_ICEWAVE;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_ICEWAVE;
-	text[2] = NAME_DAMAGE;
+	cond_value[2] = SPL_Cost_IceWave;
+	description = NAME_SPL_IceWave;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_IceWave;
+	text[2] = NAME_Damage;
 	count[2] = SPL_FREEZE_DAMAGE;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_SUMDEMON(C_ITEM)
+instance ItSc_SumDemon(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_SUMDEMON;
+	value = Value_Sc_SumDemon;
 	visual = "ItSc_SumDemon.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_SUMMONDEMON;
+	spell = SPL_SummonDemon;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_SUMMONDEMON;
-	description = NAME_SPL_SUMMONDEMON;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_SUMMONDEMON;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_SummonDemon;
+	description = NAME_SPL_SummonDemon;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_SummonDemon;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_FULLHEAL(C_ITEM)
+instance ItSc_FullHeal(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_FULLHEAL;
+	value = Value_Sc_FullHeal;
 	visual = "ItSc_FullHeal.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_FULLHEAL;
+	spell = SPL_FullHeal;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_FULLHEAL;
-	description = NAME_SPL_FULLHEAL;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_FULLHEAL;
-	text[2] = NAME_HEALINGPERCAST;
-	count[2] = SPL_HEAL_FULLHEAL;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_FullHeal;
+	description = NAME_SPL_FullHeal;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_FullHeal;
+	text[2] = NAME_HealingPerCast;
+	count[2] = SPL_Heal_FullHeal;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_FIRERAIN(C_ITEM)
+instance ItSc_Firerain(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_FIRERAIN;
+	value = Value_Sc_Firerain;
 	visual = "ItSc_Firerain.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_FIRERAIN;
+	spell = SPL_Firerain;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_FIRERAIN;
-	description = NAME_SPL_FIRERAIN;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_FIRERAIN;
-	text[2] = NAME_DAM_FIRE;
-	count[2] = SPL_DAMAGE_FIRERAIN;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_Firerain;
+	description = NAME_SPL_Firerain;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_Firerain;
+	text[2] = NAME_Dam_Fire;
+	count[2] = SPL_Damage_FireRain;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_BREATHOFDEATH(C_ITEM)
+instance ItSc_BreathOfDeath(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_BREATHOFDEATH;
+	value = Value_Sc_BreathOfDeath;
 	visual = "ItSc_BreathOfDeath.3ds";
 	material = MAT_LEATHER;
-	spell = SPL_BREATHOFDEATH;
-	description = NAME_SPL_BREATHOFDEATH;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_BREATHOFDEATH;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_BREATHOFDEATH;
-	text[5] = NAME_VALUE;
+	spell = SPL_BreathOfDeath;
+	description = NAME_SPL_BreathOfDeath;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_BreathOfDeath;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_BreathOfDeath;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_MASSDEATH(C_ITEM)
+instance ItSc_MassDeath(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_MASSDEATH;
+	value = Value_Sc_MassDeath;
 	visual = "ItSc_MassDeath.3ds";
 	material = MAT_LEATHER;
-	spell = SPL_MASSDEATH;
-	description = NAME_SPL_MASSDEATH;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_MASSDEATH;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_MASSDEATH;
-	text[5] = NAME_VALUE;
+	spell = SPL_MassDeath;
+	description = NAME_SPL_MassDeath;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_MassDeath;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_MassDeath;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_ARMYOFDARKNESS(C_ITEM)
+instance ItSc_ArmyOfDarkness(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_ARMYOFDARKNESS;
+	value = Value_Sc_ArmyOfDarkness;
 	visual = "ItSc_ArmyOfDarkness.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_ARMYOFDARKNESS;
+	spell = SPL_ArmyOfDarkness;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_ARMYOFDARKNESS;
-	description = NAME_SPL_ARMYOFDARKNESS;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_ARMYOFDARKNESS;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_ArmyOfDarkness;
+	description = NAME_SPL_ArmyOfDarkness;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_ArmyOfDarkness;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_SHRINK(C_ITEM)
+instance ItSc_Shrink(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_SHRINK;
+	value = Value_Sc_Shrink;
 	visual = "ItSc_Shrink.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_SHRINK;
+	spell = SPL_Shrink;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_SHRINK;
-	description = NAME_SPL_SHRINK;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_SHRINK;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_Shrink;
+	description = NAME_SPL_Shrink;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_Shrink;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_TRFSHEEP(C_ITEM)
+instance ItSc_TrfSheep(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_TRFSHEEP;
+	value = Value_Sc_TrfSheep;
 	visual = "ItSc_TrfSheep.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_TRFSHEEP;
+	spell = SPL_TrfSheep;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_TRFSHEEP;
-	description = NAME_SPL_TRFSHEEP;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_TRFSHEEP;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_TrfSheep;
+	description = NAME_SPL_TrfSheep;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_TrfSheep;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_TRFSCAVENGER(C_ITEM)
+instance ItSc_TrfScavenger(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_TRFSCAVENGER;
+	value = Value_Sc_TrfScavenger;
 	visual = "ItSc_TrfScavenger.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_TRFSCAVENGER;
+	spell = SPL_TrfScavenger;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_TRFSCAVENGER;
-	description = NAME_SPL_TRFSCAVENGER;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_TRFSCAVENGER;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_TrfScavenger;
+	description = NAME_SPL_TrfScavenger;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_TrfScavenger;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_TRFGIANTRAT(C_ITEM)
+instance ItSc_TrfGiantRat(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_TRFGIANTRAT;
+	value = Value_Sc_TrfGiantRat;
 	visual = "ItSc_TrfGiantRat.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_TRFGIANTRAT;
+	spell = SPL_TrfGiantRat;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_TRFGIANTRAT;
-	description = NAME_SPL_TRFGIANTRAT;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_TRFGIANTRAT;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_TrfGiantRat;
+	description = NAME_SPL_TrfGiantRat;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_TrfGiantRat;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_TRFGIANTBUG(C_ITEM)
+instance ItSc_TrfGiantBug(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_TRFGIANTBUG;
+	value = Value_Sc_TrfGiantBug;
 	visual = "ItSc_TrfGiantBug.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_TRFGIANTBUG;
+	spell = SPL_TrfGiantBug;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_TRFGIANTBUG;
-	description = NAME_SPL_TRFGIANTBUG;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_TRFGIANTBUG;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_TrfGiantBug;
+	description = NAME_SPL_TrfGiantBug;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_TrfGiantBug;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_TRFWOLF(C_ITEM)
+instance ItSc_TrfWolf(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_TRFWOLF;
+	value = Value_Sc_TrfWolf;
 	visual = "ItSc_TrfWolf.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_TRFWOLF;
+	spell = SPL_TrfWolf;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_TRFWOLF;
-	description = NAME_SPL_TRFWOLF;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_TRFWOLF;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_TrfWolf;
+	description = NAME_SPL_TrfWolf;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_TrfWolf;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_TRFWARAN(C_ITEM)
+instance ItSc_TrfWaran(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_TRFWARAN;
+	value = Value_Sc_TrfWaran;
 	visual = "ItSc_TrfWaran.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_TRFWARAN;
+	spell = SPL_TrfWaran;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_TRFWARAN;
-	description = NAME_SPL_TRFWARAN;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_TRFWARAN;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_TrfWaran;
+	description = NAME_SPL_TrfWaran;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_TrfWaran;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_TRFSNAPPER(C_ITEM)
+instance ItSc_TrfSnapper(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_TRFSNAPPER;
+	value = Value_Sc_TrfSnapper;
 	visual = "ItSc_TrfSnapper.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_TRFSNAPPER;
+	spell = SPL_TrfSnapper;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_TRFSNAPPER;
-	description = NAME_SPL_TRFSNAPPER;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_TRFSNAPPER;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_TrfSnapper;
+	description = NAME_SPL_TrfSnapper;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_TrfSnapper;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_TRFWARG(C_ITEM)
+instance ItSc_TrfWarg(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_TRFWARG;
+	value = Value_Sc_TrfWarg;
 	visual = "ItSc_TrfWarg.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_TRFWARG;
+	spell = SPL_TrfWarg;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_TRFWARG;
-	description = NAME_SPL_TRFWARG;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_TRFWARG;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_TrfWarg;
+	description = NAME_SPL_TrfWarg;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_TrfWarg;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_TRFFIREWARAN(C_ITEM)
+instance ItSc_TrfFireWaran(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_TRFFIREWARAN;
+	value = Value_Sc_TrfFireWaran;
 	visual = "ItSc_TrfFireWaran.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_TRFFIREWARAN;
+	spell = SPL_TrfFireWaran;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_TRFFIREWARAN;
-	description = NAME_SPL_TRFFIREWARAN;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_TRFFIREWARAN;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_TrfFireWaran;
+	description = NAME_SPL_TrfFireWaran;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_TrfFireWaran;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_TRFLURKER(C_ITEM)
+instance ItSc_TrfLurker(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_TRFLURKER;
+	value = Value_Sc_TrfLurker;
 	visual = "ItSc_TrfLurker.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_TRFLURKER;
+	spell = SPL_TrfLurker;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_TRFLURKER;
-	description = NAME_SPL_TRFLURKER;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_TRFLURKER;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_TrfLurker;
+	description = NAME_SPL_TrfLurker;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_TrfLurker;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_TRFSHADOWBEAST(C_ITEM)
+instance ItSc_TrfShadowbeast(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_TRFSHADOWBEAST;
+	value = Value_Sc_TrfShadowbeast;
 	visual = "ItSc_TrfShadowbeast.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_TRFSHADOWBEAST;
+	spell = SPL_TrfShadowbeast;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_TRFSHADOWBEAST;
-	description = NAME_SPL_TRFSHADOWBEAST;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_TRFSHADOWBEAST;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_TrfShadowbeast;
+	description = NAME_SPL_TrfShadowbeast;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_TrfShadowbeast;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITSC_TRFDRAGONSNAPPER(C_ITEM)
+instance ItSc_TrfDragonSnapper(C_Item)
 {
-	name = NAME_SPRUCHROLLE;
+	name = NAME_Spruchrolle;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
-	value = VALUE_SC_TRFDRAGONSNAPPER;
+	value = Value_Sc_TrfDragonSnapper;
 	visual = "ItSc_TrfDragonSnapper.3DS";
 	material = MAT_LEATHER;
-	spell = SPL_TRFDRAGONSNAPPER;
+	spell = SPL_TrfDragonSnapper;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_COST_TRFDRAGONSNAPPER;
-	description = NAME_SPL_TRFDRAGONSNAPPER;
-	text[0] = NAME_MAGESCROLL;
-	text[1] = NAME_MANA_NEEDED;
-	count[1] = SPL_COST_TRFDRAGONSNAPPER;
-	text[5] = NAME_VALUE;
+	cond_value[2] = SPL_Cost_TrfDragonSnapper;
+	description = NAME_SPL_TrfDragonSnapper;
+	text[0] = NAME_MageScroll;
+	text[1] = NAME_Mana_needed;
+	count[1] = SPL_Cost_TrfDragonSnapper;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 

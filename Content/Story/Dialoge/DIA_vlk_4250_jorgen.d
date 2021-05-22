@@ -1,84 +1,84 @@
 
-instance DIA_JORGEN_KAP3_EXIT(C_INFO)
+instance DIA_Jorgen_KAP3_EXIT(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 999;
-	condition = dia_jorgen_kap3_exit_condition;
-	information = dia_jorgen_kap3_exit_info;
+	condition = DIA_Jorgen_KAP3_EXIT_Condition;
+	information = DIA_Jorgen_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_jorgen_kap3_exit_condition()
+func int DIA_Jorgen_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jorgen_kap3_exit_info()
+func void DIA_Jorgen_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_JORGEN_PICKPOCKET(C_INFO)
+instance DIA_Jorgen_PICKPOCKET(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 900;
-	condition = dia_jorgen_pickpocket_condition;
-	information = dia_jorgen_pickpocket_info;
+	condition = DIA_Jorgen_PICKPOCKET_Condition;
+	information = DIA_Jorgen_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_jorgen_pickpocket_condition()
+func int DIA_Jorgen_PICKPOCKET_Condition()
 {
-	return c_beklauen(59,70);
+	return C_Beklauen(59,70);
 };
 
-func void dia_jorgen_pickpocket_info()
+func void DIA_Jorgen_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_jorgen_pickpocket);
-	Info_AddChoice(dia_jorgen_pickpocket,DIALOG_BACK,dia_jorgen_pickpocket_back);
-	Info_AddChoice(dia_jorgen_pickpocket,DIALOG_PICKPOCKET,dia_jorgen_pickpocket_doit);
+	Info_ClearChoices(DIA_Jorgen_PICKPOCKET);
+	Info_AddChoice(DIA_Jorgen_PICKPOCKET,Dialog_Back,DIA_Jorgen_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Jorgen_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Jorgen_PICKPOCKET_DoIt);
 };
 
-func void dia_jorgen_pickpocket_doit()
+func void DIA_Jorgen_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_jorgen_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Jorgen_PICKPOCKET);
 };
 
-func void dia_jorgen_pickpocket_back()
+func void DIA_Jorgen_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_jorgen_pickpocket);
+	Info_ClearChoices(DIA_Jorgen_PICKPOCKET);
 };
 
 
-instance DIA_JORGEN_HALLO(C_INFO)
+instance DIA_Jorgen_Hallo(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 4;
-	condition = dia_jorgen_hallo_condition;
-	information = dia_jorgen_hallo_info;
+	condition = DIA_Jorgen_Hallo_Condition;
+	information = DIA_Jorgen_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_jorgen_hallo_condition()
+func int DIA_Jorgen_Hallo_Condition()
 {
-	if((KAPITEL == 3) && (MIS_SCKNOWSINNOSEYEISBROKEN == FALSE))
+	if((Kapitel == 3) && (MIS_SCKnowsInnosEyeIsBroken == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jorgen_hallo_info()
+func void DIA_Jorgen_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Jorgen_Hallo_07_00");	//Hej, ty!
 	if((hero.guild == GIL_NOV) || (hero.guild == GIL_KDF))
@@ -97,26 +97,26 @@ func void dia_jorgen_hallo_info()
 };
 
 
-instance DIA_JORGEN_NOVICE(C_INFO)
+instance DIA_Jorgen_Novice(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 6;
-	condition = dia_jorgen_novice_condition;
-	information = dia_jorgen_novice_info;
+	condition = DIA_Jorgen_Novice_Condition;
+	information = DIA_Jorgen_Novice_Info;
 	permanent = FALSE;
 	description = "Nie przechodzi³ têdy jakiœ nowicjusz?";
 };
 
 
-func int dia_jorgen_novice_condition()
+func int DIA_Jorgen_Novice_Condition()
 {
-	if((MIS_NOVIZENCHASE == LOG_RUNNING) && (KAPITEL == 3) && (MIS_SCKNOWSINNOSEYEISBROKEN == FALSE))
+	if((MIS_NovizenChase == LOG_Running) && (Kapitel == 3) && (MIS_SCKnowsInnosEyeIsBroken == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jorgen_novice_info()
+func void DIA_Jorgen_Novice_Info()
 {
 	AI_Output(other,self,"DIA_Jorgen_Novice_15_00");	//Nie przechodzi³ têdy jakiœ nowicjusz?
 	AI_Output(self,other,"DIA_Jorgen_Novice_07_01");	//Jasne. Tam pobieg³.
@@ -126,26 +126,26 @@ func void dia_jorgen_novice_info()
 };
 
 
-instance DIA_JORGEN_MILTEN(C_INFO)
+instance DIA_Jorgen_Milten(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 5;
-	condition = dia_jorgen_milten_condition;
-	information = dia_jorgen_milten_info;
+	condition = DIA_Jorgen_Milten_Condition;
+	information = DIA_Jorgen_Milten_Info;
 	permanent = FALSE;
 	description = "Jeœli udajesz siê do klasztoru, porozmawiaj koniecznie z Miltenem.";
 };
 
 
-func int dia_jorgen_milten_condition()
+func int DIA_Jorgen_Milten_Condition()
 {
-	if((KAPITEL == 3) && (MIS_SCKNOWSINNOSEYEISBROKEN == FALSE) && (MIS_OLDWORLD == LOG_SUCCESS) && (miltennw.aivar[AIV_TALKEDTOPLAYER] == TRUE))
+	if((Kapitel == 3) && (MIS_SCKnowsInnosEyeIsBroken == FALSE) && (MIS_OLDWORLD == LOG_SUCCESS) && (MiltenNW.aivar[AIV_TalkedToPlayer] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jorgen_milten_info()
+func void DIA_Jorgen_Milten_Info()
 {
 	AI_Output(other,self,"DIA_Jorgen_Milten_15_00");	//Jeœli udajesz siê do klasztoru, porozmawiaj koniecznie z Miltenem. On ci pomo¿e.
 	AI_Output(self,other,"DIA_Jorgen_Milten_07_01");	//Jak myœlisz, wpuszcz¹ mnie tam?
@@ -154,25 +154,25 @@ func void dia_jorgen_milten_info()
 };
 
 
-instance DIA_JORGEN_HOME(C_INFO)
+instance DIA_Jorgen_Home(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 7;
-	condition = dia_jorgen_home_condition;
-	information = dia_jorgen_home_info;
+	condition = DIA_Jorgen_Home_Condition;
+	information = DIA_Jorgen_Home_Info;
 	description = "Sk¹d pochodzisz?";
 };
 
 
-func int dia_jorgen_home_condition()
+func int DIA_Jorgen_Home_Condition()
 {
-	if(KAPITEL >= 3)
+	if(Kapitel >= 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jorgen_home_info()
+func void DIA_Jorgen_Home_Info()
 {
 	AI_Output(other,self,"DIA_Jorgen_Home_15_00");	//Sk¹d pochodzisz?
 	AI_Output(self,other,"DIA_Jorgen_Home_07_01");	//Kiedyœ by³em kapitanem wielorybniczego statku. Mój dom jest na morzu.
@@ -183,83 +183,83 @@ func void dia_jorgen_home_info()
 };
 
 
-instance DIA_JORGEN_BECAREFULL(C_INFO)
+instance DIA_Jorgen_BeCarefull(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 8;
-	condition = dia_jorgen_becarefull_condition;
-	information = dia_jorgen_becarefull_info;
+	condition = DIA_Jorgen_BeCarefull_Condition;
+	information = DIA_Jorgen_BeCarefull_Info;
 	permanent = TRUE;
 	description = "Lepiej zejdŸ z drogi.";
 };
 
 
-func int dia_jorgen_becarefull_condition()
+func int DIA_Jorgen_BeCarefull_Condition()
 {
-	if((KAPITEL == 3) && Npc_KnowsInfo(other,dia_jorgen_home))
+	if((Kapitel == 3) && Npc_KnowsInfo(other,DIA_Jorgen_Home))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jorgen_becarefull_info()
+func void DIA_Jorgen_BeCarefull_Info()
 {
 	AI_Output(other,self,"DIA_Jorgen_BeCarefull_15_00");	//Lepiej zejdŸ z drogi.
 	AI_Output(self,other,"DIA_Jorgen_BeCarefull_07_01");	//Ech... Bez obaw. Zd¹¿y³em ju¿ zauwa¿yæ, ¿e od paru dni jest tu cholernie niebezpiecznie.
 };
 
 
-instance DIA_JORGEN_KAP4_EXIT(C_INFO)
+instance DIA_Jorgen_KAP4_EXIT(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 999;
-	condition = dia_jorgen_kap4_exit_condition;
-	information = dia_jorgen_kap4_exit_info;
+	condition = DIA_Jorgen_KAP4_EXIT_Condition;
+	information = DIA_Jorgen_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_jorgen_kap4_exit_condition()
+func int DIA_Jorgen_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jorgen_kap4_exit_info()
+func void DIA_Jorgen_KAP4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_JORGEN_NEUHIER(C_INFO)
+instance DIA_Jorgen_NEUHIER(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 41;
-	condition = dia_jorgen_neuhier_condition;
-	information = dia_jorgen_neuhier_info;
+	condition = DIA_Jorgen_NEUHIER_Condition;
+	information = DIA_Jorgen_NEUHIER_Info;
 	description = "Jak ci siê podoba ¿ycie w klasztorze?";
 };
 
 
-func int dia_jorgen_neuhier_condition()
+func int DIA_Jorgen_NEUHIER_Condition()
 {
-	if(KAPITEL >= 4)
+	if(Kapitel >= 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jorgen_neuhier_info()
+func void DIA_Jorgen_NEUHIER_Info()
 {
 	AI_Output(other,self,"DIA_Jorgen_NEUHIER_15_00");	//Jak ci siê podoba ¿ycie w klasztorze?
 	AI_Output(self,other,"DIA_Jorgen_NEUHIER_07_01");	//Ja tu chyba zwariujê!
-	if(Npc_KnowsInfo(other,dia_jorgen_milten))
+	if(Npc_KnowsInfo(other,DIA_Jorgen_Milten))
 	{
 		AI_Output(self,other,"DIA_Jorgen_NEUHIER_07_02");	//Ale dziêki za pomoc. Milten rzeczywiœcie znalaz³ tu dla mnie miejsce.
-		b_giveplayerxp(XP_AMBIENT);
+		B_GivePlayerXP(XP_Ambient);
 	};
 	if(hero.guild != GIL_KDF)
 	{
@@ -269,129 +269,129 @@ func void dia_jorgen_neuhier_info()
 };
 
 
-instance DIA_JORGEN_PERM4(C_INFO)
+instance DIA_Jorgen_PERM4(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 400;
-	condition = dia_jorgen_perm4_condition;
-	information = dia_jorgen_perm4_info;
+	condition = DIA_Jorgen_PERM4_Condition;
+	information = DIA_Jorgen_PERM4_Info;
 	permanent = TRUE;
 	description = "Nic ci nie bêdzie.";
 };
 
 
-func int dia_jorgen_perm4_condition()
+func int DIA_Jorgen_PERM4_Condition()
 {
-	if((KAPITEL >= 4) && Npc_KnowsInfo(other,dia_jorgen_home) && Npc_KnowsInfo(other,dia_jorgen_neuhier) && (JORGENISCAPTAIN == FALSE))
+	if((Kapitel >= 4) && Npc_KnowsInfo(other,DIA_Jorgen_Home) && Npc_KnowsInfo(other,DIA_Jorgen_NEUHIER) && (JorgenIsCaptain == FALSE))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_jorgen_perm4_onetime;
+var int DIA_Jorgen_PERM4_OneTime;
 
-func void dia_jorgen_perm4_info()
+func void DIA_Jorgen_PERM4_Info()
 {
 	AI_Output(other,self,"DIA_Jorgen_PERM4_15_00");	//Nic ci nie bêdzie.
-	if((DIA_JORGEN_PERM4_ONETIME == FALSE) && (hero.guild != GIL_KDF))
+	if((DIA_Jorgen_PERM4_OneTime == FALSE) && (hero.guild != GIL_KDF))
 	{
 		AI_Output(self,other,"DIA_Jorgen_PERM4_07_01");	//Kazali mi pieliæ grz¹dki! Wyobra¿asz sobie? Jak tak dalej pójdzie, zwariujê tu z kretesem.
-		DIA_JORGEN_PERM4_ONETIME = TRUE;
+		DIA_Jorgen_PERM4_OneTime = TRUE;
 	};
 	AI_Output(self,other,"DIA_Jorgen_PERM4_07_02");	//Solidny pok³ad pod nogami - oto czego mi trzeba!
 };
 
 
-instance DIA_JORGEN_KAP5_EXIT(C_INFO)
+instance DIA_Jorgen_KAP5_EXIT(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 999;
-	condition = dia_jorgen_kap5_exit_condition;
-	information = dia_jorgen_kap5_exit_info;
+	condition = DIA_Jorgen_KAP5_EXIT_Condition;
+	information = DIA_Jorgen_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_jorgen_kap5_exit_condition()
+func int DIA_Jorgen_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jorgen_kap5_exit_info()
+func void DIA_Jorgen_KAP5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_JORGEN_BEMYCAPTAIN(C_INFO)
+instance DIA_Jorgen_BEMYCAPTAIN(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 51;
-	condition = dia_jorgen_bemycaptain_condition;
-	information = dia_jorgen_bemycaptain_info;
+	condition = DIA_Jorgen_BEMYCAPTAIN_Condition;
+	information = DIA_Jorgen_BEMYCAPTAIN_Info;
 	permanent = TRUE;
 	description = "Móg³bym ciê zatrudniæ jako kapitana na moim statku.";
 };
 
 
-func int dia_jorgen_bemycaptain_condition()
+func int DIA_Jorgen_BEMYCAPTAIN_Condition()
 {
-	if((KAPITEL == 5) && (MIS_SCKNOWSWAYTOIRDORATH == TRUE) && (MIS_PYROKARCLEARDEMONTOWER != LOG_SUCCESS) && Npc_KnowsInfo(other,dia_jorgen_home))
+	if((Kapitel == 5) && (MIS_SCKnowsWayToIrdorath == TRUE) && (MIS_PyrokarClearDemonTower != LOG_SUCCESS) && Npc_KnowsInfo(other,DIA_Jorgen_Home))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_jorgen_bemycaptain_onetime;
+var int DIA_Jorgen_BEMYCAPTAIN_OneTime;
 
-func void dia_jorgen_bemycaptain_info()
+func void DIA_Jorgen_BEMYCAPTAIN_Info()
 {
 	AI_Output(other,self,"DIA_Jorgen_BEMYCAPTAIN_15_00");	//Móg³bym ciê zatrudniæ jako kapitana na moim statku.
-	if(DIA_JORGEN_BEMYCAPTAIN_ONETIME == FALSE)
+	if(DIA_Jorgen_BEMYCAPTAIN_OneTime == FALSE)
 	{
 		AI_Output(self,other,"DIA_Jorgen_BEMYCAPTAIN_07_01");	//Ej, chyba mnie nie nabierasz, co? Jeœli mówisz serio, mo¿esz na mnie liczyæ!
 		AI_Output(self,other,"DIA_Jorgen_BEMYCAPTAIN_07_02");	//Eeee... Jest tylko jeden ma³y problem. Wy¿ar³em nowicjuszom po³owê spi¿arni.
 		AI_Output(self,other,"DIA_Jorgen_BEMYCAPTAIN_07_03");	//Strasznie siê z tego powodu zez³oœcili. Obawiam siê, ¿e mog¹ nie chcieæ mnie st¹d wypuœciæ.
-		DIA_JORGEN_BEMYCAPTAIN_ONETIME = TRUE;
+		DIA_Jorgen_BEMYCAPTAIN_OneTime = TRUE;
 	};
 	AI_Output(self,other,"DIA_Jorgen_BEMYCAPTAIN_07_04");	//Najpierw muszê odpracowaæ swój d³ug u Pyrokara. Przykro mi.
-	Log_CreateTopic(TOPIC_CAPTAIN,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_CAPTAIN,LOG_RUNNING);
-	b_logentry(TOPIC_CAPTAIN,"Jorgen zostanie moim kapitanem, jeœli sp³acê jego d³ugi wzglêdem klasztoru.");
+	Log_CreateTopic(Topic_Captain,LOG_MISSION);
+	Log_SetTopicStatus(Topic_Captain,LOG_Running);
+	B_LogEntry(Topic_Captain,"Jorgen zostanie moim kapitanem, jeœli sp³acê jego d³ugi wzglêdem klasztoru.");
 };
 
 
-instance DIA_JORGEN_BEMYCAPTAIN2(C_INFO)
+instance DIA_Jorgen_BEMYCAPTAIN2(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 52;
-	condition = dia_jorgen_bemycaptain2_condition;
-	information = dia_jorgen_bemycaptain2_info;
+	condition = DIA_Jorgen_BEMYCAPTAIN2_Condition;
+	information = DIA_Jorgen_BEMYCAPTAIN2_Info;
 	description = "Zaj¹³em siê twoim d³ugiem.";
 };
 
 
-func int dia_jorgen_bemycaptain2_condition()
+func int DIA_Jorgen_BEMYCAPTAIN2_Condition()
 {
-	if(MIS_PYROKARCLEARDEMONTOWER == LOG_SUCCESS)
+	if(MIS_PyrokarClearDemonTower == LOG_SUCCESS)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jorgen_bemycaptain2_info()
+func void DIA_Jorgen_BEMYCAPTAIN2_Info()
 {
 	AI_Output(other,self,"DIA_Jorgen_BEMYCAPTAIN2_15_00");	//Zaj¹³em siê twoim d³ugiem. Jesteœ wolny.
 	AI_Output(self,other,"DIA_Jorgen_BEMYCAPTAIN2_07_01");	//Naprawdê? Jak tego dokona³eœ?
 	AI_Output(other,self,"DIA_Jorgen_BEMYCAPTAIN2_15_02");	//Nie chcesz wiedzieæ.
 	AI_Output(self,other,"DIA_Jorgen_BEMYCAPTAIN2_07_03");	//W sumie to prawda. Wielkie dziêki!
-	if(SCGOTCAPTAIN == FALSE)
+	if(SCGotCaptain == FALSE)
 	{
 		AI_Output(self,other,"DIA_Jorgen_BEMYCAPTAIN2_07_04");	//A co z twoj¹ ofert¹? Nadal widzisz mnie w swojej za³odze?
 	}
@@ -404,25 +404,25 @@ func void dia_jorgen_bemycaptain2_info()
 };
 
 
-instance DIA_JORGEN_BEMYCAPTAIN3(C_INFO)
+instance DIA_Jorgen_BEMYCAPTAIN3(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 53;
-	condition = dia_jorgen_bemycaptain3_condition;
-	information = dia_jorgen_bemycaptain3_info;
+	condition = DIA_Jorgen_BEMYCAPTAIN3_Condition;
+	information = DIA_Jorgen_BEMYCAPTAIN3_Info;
 	description = "Zostañ kapitanem mojego statku.";
 };
 
 
-func int dia_jorgen_bemycaptain3_condition()
+func int DIA_Jorgen_BEMYCAPTAIN3_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_jorgen_bemycaptain2) && (SCGOTCAPTAIN == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Jorgen_BEMYCAPTAIN2) && (SCGotCaptain == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jorgen_bemycaptain3_info()
+func void DIA_Jorgen_BEMYCAPTAIN3_Info()
 {
 	AI_Output(other,self,"DIA_Jorgen_BEMYCAPTAIN3_15_00");	//Zostañ kapitanem mojego statku.
 	AI_Output(self,other,"DIA_Jorgen_BEMYCAPTAIN3_07_01");	//Czujê siê zaszczycony, ale czy ty w ogóle MASZ ten statek? A za³ogê?
@@ -430,43 +430,43 @@ func void dia_jorgen_bemycaptain3_info()
 	AI_Output(other,self,"DIA_Jorgen_BEMYCAPTAIN3_15_03");	//Dobrze. Zobaczê, co siê da zrobiæ. Czekaj na mnie na przystani.
 	AI_Output(self,other,"DIA_Jorgen_BEMYCAPTAIN3_07_04");	//Tak jest!
 	AI_StopProcessInfos(self);
-	SCGOTCAPTAIN = TRUE;
-	JORGENISCAPTAIN = TRUE;
+	SCGotCaptain = TRUE;
+	JorgenIsCaptain = TRUE;
 	Npc_ExchangeRoutine(self,"WaitForShipCaptain");
-	b_giveplayerxp(XP_CAPTAIN_SUCCESS);
+	B_GivePlayerXP(XP_Captain_Success);
 };
 
 
-instance DIA_JORGEN_LOSFAHREN(C_INFO)
+instance DIA_Jorgen_LOSFAHREN(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 59;
-	condition = dia_jorgen_losfahren_condition;
-	information = dia_jorgen_losfahren_info;
+	condition = DIA_Jorgen_LOSFAHREN_Condition;
+	information = DIA_Jorgen_LOSFAHREN_Info;
 	permanent = TRUE;
 	description = "Jesteœ gotów, by pop³yn¹æ na wyspê?";
 };
 
 
-func int dia_jorgen_losfahren_condition()
+func int DIA_Jorgen_LOSFAHREN_Condition()
 {
-	if((JORGENISCAPTAIN == TRUE) && (MIS_READYFORCHAPTER6 == FALSE))
+	if((JorgenIsCaptain == TRUE) && (MIS_ReadyforChapter6 == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jorgen_losfahren_info()
+func void DIA_Jorgen_LOSFAHREN_Info()
 {
 	AI_Output(other,self,"DIA_Jorgen_LOSFAHREN_15_00");	//Jesteœ gotów, by pop³yn¹æ na wyspê?
-	if(b_captainconditions(self) == TRUE)
+	if(B_CaptainConditions(self) == TRUE)
 	{
 		AI_Output(self,other,"DIA_Jorgen_LOSFAHREN_07_01");	//Oczywiœcie. Daj mi tê mapê.
 		AI_Output(self,other,"DIA_Jorgen_LOSFAHREN_07_02");	//Œwietnie. Zatem ¿agle na maszt i ruszamy w drogê!
 		AI_Output(self,other,"DIA_Jorgen_LOSFAHREN_07_03");	//Tylko sprawdŸ, czy masz wszystko, czego potrzebujesz. Jak ju¿ wyruszymy, nie bêdziemy mogli zawróciæ.
 		AI_Output(self,other,"DIA_Jorgen_LOSFAHREN_07_04");	//Potem mo¿esz siê trochê zdrzemn¹æ. W kajucie kapitana jest wolna koja. Mi³ych snów!
 		AI_StopProcessInfos(self);
-		b_captaincallsallonboard(self);
+		B_CaptainCallsAllOnBoard(self);
 	}
 	else
 	{
@@ -477,39 +477,39 @@ func void dia_jorgen_losfahren_info()
 };
 
 
-instance DIA_JORGEN_PERM5_NOTCAPTAIN(C_INFO)
+instance DIA_Jorgen_PERM5_NOTCAPTAIN(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 59;
-	condition = dia_jorgen_perm5_notcaptain_condition;
-	information = dia_jorgen_perm5_notcaptain_info;
+	condition = DIA_Jorgen_PERM5_NOTCAPTAIN_Condition;
+	information = DIA_Jorgen_PERM5_NOTCAPTAIN_Info;
 	permanent = TRUE;
 	description = "Jak siê masz?";
 };
 
 
-func int dia_jorgen_perm5_notcaptain_condition()
+func int DIA_Jorgen_PERM5_NOTCAPTAIN_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_jorgen_bemycaptain2) && (SCGOTCAPTAIN == TRUE) && (JORGENISCAPTAIN == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Jorgen_BEMYCAPTAIN2) && (SCGotCaptain == TRUE) && (JorgenIsCaptain == FALSE))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_jorgen_perm5_notcaptain_xpgiven;
+var int DIA_Jorgen_PERM5_NOTCAPTAIN_XPGiven;
 
-func void dia_jorgen_perm5_notcaptain_info()
+func void DIA_Jorgen_PERM5_NOTCAPTAIN_Info()
 {
 	AI_Output(other,self,"DIA_Jorgen_PERM5_NOTCAPTAIN_15_00");	//Jak siê masz?
 	if(Npc_GetDistToWP(self,"NW_BIGFARM_KITCHEN_OUT_06") < 1000)
 	{
 		AI_Output(self,other,"DIA_Jorgen_PERM5_NOTCAPTAIN_07_01");	//NieŸle. Da siê tu wytrzymaæ.
 		AI_Output(self,other,"DIA_Jorgen_PERM5_NOTCAPTAIN_07_02");	//Dalej przydzielaj¹ mi jakieœ g³upie zadania, jak pilnowanie owiec, ale w porównaniu z klasztorem to prawdziwy raj!
-		if(DIA_JORGEN_PERM5_NOTCAPTAIN_XPGIVEN == FALSE)
+		if(DIA_Jorgen_PERM5_NOTCAPTAIN_XPGiven == FALSE)
 		{
-			b_giveplayerxp(XP_AMBIENT);
-			DIA_JORGEN_PERM5_NOTCAPTAIN_XPGIVEN = TRUE;
+			B_GivePlayerXP(XP_Ambient);
+			DIA_Jorgen_PERM5_NOTCAPTAIN_XPGiven = TRUE;
 		};
 		AI_StopProcessInfos(self);
 	}
@@ -522,26 +522,26 @@ func void dia_jorgen_perm5_notcaptain_info()
 };
 
 
-instance DIA_JORGEN_KAP6_EXIT(C_INFO)
+instance DIA_Jorgen_KAP6_EXIT(C_Info)
 {
-	npc = vlk_4250_jorgen;
+	npc = VLK_4250_Jorgen;
 	nr = 999;
-	condition = dia_jorgen_kap6_exit_condition;
-	information = dia_jorgen_kap6_exit_info;
+	condition = DIA_Jorgen_KAP6_EXIT_Condition;
+	information = DIA_Jorgen_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_jorgen_kap6_exit_condition()
+func int DIA_Jorgen_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jorgen_kap6_exit_info()
+func void DIA_Jorgen_KAP6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };

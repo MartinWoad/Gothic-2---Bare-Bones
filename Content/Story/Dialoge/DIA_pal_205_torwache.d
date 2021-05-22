@@ -1,73 +1,73 @@
 
-instance DIA_PAL_205_TORWACHE_EXIT(C_INFO)
+instance DIA_PAL_205_Torwache_EXIT(C_Info)
 {
-	npc = pal_205_torwache;
+	npc = Pal_205_Torwache;
 	nr = 999;
-	condition = dia_pal_205_torwache_exit_condition;
-	information = dia_pal_205_torwache_exit_info;
+	condition = DIA_PAL_205_Torwache_EXIT_Condition;
+	information = DIA_PAL_205_Torwache_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_pal_205_torwache_exit_condition()
+func int DIA_PAL_205_Torwache_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pal_205_torwache_exit_info()
+func void DIA_PAL_205_Torwache_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-const string PAL_205_CHECKPOINT = "NW_CITY_CITYHALL_IN";
+const string PAL_205_Checkpoint = "NW_CITY_CITYHALL_IN";
 
-var int pal_205_schonmalreingelassen;
+var int PAL_205_schonmalreingelassen;
 
-instance DIA_PAL_205_TORWACHE_FIRSTWARN(C_INFO)
+instance DIA_PAL_205_Torwache_FirstWarn(C_Info)
 {
-	npc = pal_205_torwache;
+	npc = Pal_205_Torwache;
 	nr = 1;
-	condition = dia_pal_205_torwache_firstwarn_condition;
-	information = dia_pal_205_torwache_firstwarn_info;
+	condition = DIA_PAL_205_Torwache_FirstWarn_Condition;
+	information = DIA_PAL_205_Torwache_FirstWarn_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_pal_205_torwache_firstwarn_condition()
+func int DIA_PAL_205_Torwache_FirstWarn_Condition()
 {
-	if((b_getgreatestpetzcrime(self) >= CRIME_ATTACK) && (PAL_205_SCHONMALREINGELASSEN == TRUE))
+	if((B_GetGreatestPetzCrime(self) >= CRIME_ATTACK) && (PAL_205_schonmalreingelassen == TRUE))
 	{
 		self.aivar[AIV_PASSGATE] = FALSE;
 	}
-	else if(PAL_205_SCHONMALREINGELASSEN == TRUE)
+	else if(PAL_205_schonmalreingelassen == TRUE)
 	{
 		self.aivar[AIV_PASSGATE] = TRUE;
 	};
-	if((self.aivar[AIV_GUARDPASSAGE_STATUS] == GP_NONE) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_RefuseTalk(self) == FALSE))
+	if((self.aivar[AIV_Guardpassage_Status] == GP_NONE) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_RefuseTalk(self) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_205_torwache_firstwarn_info()
+func void DIA_PAL_205_Torwache_FirstWarn_Info()
 {
 	AI_Output(self,other,"DIA_PAL_205_Torwache_FirstWarn_12_00");	//STÓJ!
 	AI_GotoWP(other,"NW_CITY_CITYHALL_ENTRY");
 	AI_TurnToNPC(other,self);
-	if(b_getgreatestpetzcrime(self) >= CRIME_ATTACK)
+	if(B_GetGreatestPetzCrime(self) >= CRIME_ATTACK)
 	{
-		if(b_getgreatestpetzcrime(self) == CRIME_MURDER)
+		if(B_GetGreatestPetzCrime(self) == CRIME_MURDER)
 		{
 			AI_Output(self,other,"DIA_PAL_205_Torwache_FirstWarn_12_01");	//Sprzeniewierzy³bym siê swoim zasadom, gdybym wpuœci³ mordercê.
 		};
-		if(b_getgreatestpetzcrime(self) == CRIME_THEFT)
+		if(B_GetGreatestPetzCrime(self) == CRIME_THEFT)
 		{
 			AI_Output(self,other,"DIA_PAL_205_Torwache_FirstWarn_12_02");	//Jesteœ oskar¿ony o kradzie¿. Dopóki nie oczyœcisz siê z zarzutów, nie wpuszczê ciê do œrodka.
 		};
-		if(b_getgreatestpetzcrime(self) == CRIME_ATTACK)
+		if(B_GetGreatestPetzCrime(self) == CRIME_ATTACK)
 		{
 			AI_Output(self,other,"DIA_PAL_205_Torwache_FirstWarn_12_03");	//Twoje zami³owanie do awantur jest powszechnie znane. Nie wpuszczê ciê do œrodka.
 		};
@@ -77,90 +77,90 @@ func void dia_pal_205_torwache_firstwarn_info()
 	{
 		AI_Output(self,other,"DIA_PAL_205_Torwache_FirstWarn_12_05");	//Tylko osoby w s³u¿bie u Króla mog¹ wejœæ do ratusza.
 	};
-	other.aivar[AIV_LASTDISTTOWP] = Npc_GetDistToWP(other,PAL_205_CHECKPOINT);
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_FIRSTWARNGIVEN;
-	PrintScreen("",-1,-1,FONT_SCREEN,0);
+	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,PAL_205_Checkpoint);
+	self.aivar[AIV_Guardpassage_Status] = GP_FirstWarnGiven;
+	PrintScreen("",-1,-1,FONT_Screen,0);
 };
 
 
-instance DIA_PAL_205_TORWACHE_SECONDWARN(C_INFO)
+instance DIA_PAL_205_Torwache_SecondWarn(C_Info)
 {
-	npc = pal_205_torwache;
+	npc = Pal_205_Torwache;
 	nr = 2;
-	condition = dia_pal_205_torwache_secondwarn_condition;
-	information = dia_pal_205_torwache_secondwarn_info;
+	condition = DIA_PAL_205_Torwache_SecondWarn_Condition;
+	information = DIA_PAL_205_Torwache_SecondWarn_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_pal_205_torwache_secondwarn_condition()
+func int DIA_PAL_205_Torwache_SecondWarn_Condition()
 {
-	if((self.aivar[AIV_GUARDPASSAGE_STATUS] == GP_FIRSTWARNGIVEN) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,PAL_205_CHECKPOINT) < (other.aivar[AIV_LASTDISTTOWP] - 50)))
+	if((self.aivar[AIV_Guardpassage_Status] == GP_FirstWarnGiven) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,PAL_205_Checkpoint) < (other.aivar[AIV_LastDistToWP] - 50)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_205_torwache_secondwarn_info()
+func void DIA_PAL_205_Torwache_SecondWarn_Info()
 {
 	AI_GotoWP(other,"NW_CITY_CITYHALL_01");
 	AI_TurnToNPC(other,self);
 	AI_Output(self,other,"DIA_PAL_205_Torwache_SecondWarn_12_00");	//Jeszcze jeden krok, a klnê siê na Innosa, ¿e oberwiesz.
-	other.aivar[AIV_LASTDISTTOWP] = Npc_GetDistToWP(other,PAL_205_CHECKPOINT);
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_SECONDWARNGIVEN;
+	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,PAL_205_Checkpoint);
+	self.aivar[AIV_Guardpassage_Status] = GP_SecondWarnGiven;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PAL_205_TORWACHE_ATTACK(C_INFO)
+instance DIA_PAL_205_Torwache_Attack(C_Info)
 {
-	npc = pal_205_torwache;
+	npc = Pal_205_Torwache;
 	nr = 3;
-	condition = dia_pal_205_torwache_attack_condition;
-	information = dia_pal_205_torwache_attack_info;
+	condition = DIA_PAL_205_Torwache_Attack_Condition;
+	information = DIA_PAL_205_Torwache_Attack_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_pal_205_torwache_attack_condition()
+func int DIA_PAL_205_Torwache_Attack_Condition()
 {
-	if((self.aivar[AIV_GUARDPASSAGE_STATUS] == GP_SECONDWARNGIVEN) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,PAL_205_CHECKPOINT) < (other.aivar[AIV_LASTDISTTOWP] - 50)))
+	if((self.aivar[AIV_Guardpassage_Status] == GP_SecondWarnGiven) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,PAL_205_Checkpoint) < (other.aivar[AIV_LastDistToWP] - 50)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_205_torwache_attack_info()
+func void DIA_PAL_205_Torwache_Attack_Info()
 {
-	other.aivar[AIV_LASTDISTTOWP] = 0;
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_NONE;
+	other.aivar[AIV_LastDistToWP] = 0;
+	self.aivar[AIV_Guardpassage_Status] = GP_NONE;
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_KILL,0);
+	B_Attack(self,other,AR_KILL,0);
 };
 
 
-instance DIA_PAL_205_TORWACHE_HAGEN(C_INFO)
+instance DIA_PAL_205_Torwache_Hagen(C_Info)
 {
-	npc = pal_205_torwache;
+	npc = Pal_205_Torwache;
 	nr = 2;
-	condition = dia_pal_205_torwache_hagen_condition;
-	information = dia_pal_205_torwache_hagen_info;
+	condition = DIA_PAL_205_Torwache_Hagen_Condition;
+	information = DIA_PAL_205_Torwache_Hagen_Info;
 	permanent = TRUE;
 	description = "Muszê porozmawiaæ z Lordem Hagenem!";
 };
 
 
-func int dia_pal_205_torwache_hagen_condition()
+func int DIA_PAL_205_Torwache_Hagen_Condition()
 {
-	if(PAL_205_SCHONMALREINGELASSEN == FALSE)
+	if(PAL_205_schonmalreingelassen == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_205_torwache_hagen_info()
+func void DIA_PAL_205_Torwache_Hagen_Info()
 {
 	AI_Output(other,self,"DIA_PAL_205_Torwache_Hagen_15_00");	//Muszê porozmawiaæ z Lordem Hagenem!
 	AI_Output(self,other,"DIA_PAL_205_Torwache_Hagen_12_01");	//Czy wiesz, ile razy dziennie s³yszê te s³owa? Nie mo¿esz wejœæ. Jeœli spróbujesz, bêdê musia³ ciê zabiæ.
@@ -168,113 +168,113 @@ func void dia_pal_205_torwache_hagen_info()
 };
 
 
-instance DIA_PAL_205_TORWACHE_PASSASMIL(C_INFO)
+instance DIA_PAL_205_Torwache_PassAsMil(C_Info)
 {
-	npc = pal_205_torwache;
+	npc = Pal_205_Torwache;
 	nr = 3;
-	condition = dia_pal_205_torwache_passasmil_condition;
-	information = dia_pal_205_torwache_passasmil_info;
+	condition = DIA_PAL_205_Torwache_PassAsMil_Condition;
+	information = DIA_PAL_205_Torwache_PassAsMil_Info;
 	permanent = TRUE;
 	description = "Nale¿ê do stra¿y miejskiej.";
 };
 
 
-func int dia_pal_205_torwache_passasmil_condition()
+func int DIA_PAL_205_Torwache_PassAsMil_Condition()
 {
-	if((Npc_GetTrueGuild(other) == GIL_MIL) && (PAL_205_SCHONMALREINGELASSEN == FALSE) && (b_getgreatestpetzcrime(self) < CRIME_ATTACK))
+	if((Npc_GetTrueGuild(other) == GIL_MIL) && (PAL_205_schonmalreingelassen == FALSE) && (B_GetGreatestPetzCrime(self) < CRIME_ATTACK))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_205_torwache_passasmil_info()
+func void DIA_PAL_205_Torwache_PassAsMil_Info()
 {
 	AI_Output(other,self,"DIA_PAL_205_Torwache_PassAsMil_15_00");	//Nale¿ê do stra¿y miejskiej.
 	AI_Output(self,other,"DIA_PAL_205_Torwache_PassAsMil_12_01");	//W porz¹dku, mo¿esz wejœæ.
 	self.aivar[AIV_PASSGATE] = TRUE;
-	PAL_205_SCHONMALREINGELASSEN = TRUE;
+	PAL_205_schonmalreingelassen = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PAL_205_TORWACHE_PASSASMAGE(C_INFO)
+instance DIA_PAL_205_Torwache_PassAsMage(C_Info)
 {
-	npc = pal_205_torwache;
+	npc = Pal_205_Torwache;
 	nr = 3;
-	condition = dia_pal_205_torwache_passasmage_condition;
-	information = dia_pal_205_torwache_passasmage_info;
+	condition = DIA_PAL_205_Torwache_PassAsMage_Condition;
+	information = DIA_PAL_205_Torwache_PassAsMage_Info;
 	permanent = TRUE;
 	description = "Jestem Magiem Ognia.";
 };
 
 
-func int dia_pal_205_torwache_passasmage_condition()
+func int DIA_PAL_205_Torwache_PassAsMage_Condition()
 {
-	if((Npc_GetTrueGuild(other) == GIL_KDF) && (PAL_205_SCHONMALREINGELASSEN == FALSE) && (b_getgreatestpetzcrime(self) < CRIME_ATTACK))
+	if((Npc_GetTrueGuild(other) == GIL_KDF) && (PAL_205_schonmalreingelassen == FALSE) && (B_GetGreatestPetzCrime(self) < CRIME_ATTACK))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_205_torwache_passasmage_info()
+func void DIA_PAL_205_Torwache_PassAsMage_Info()
 {
 	AI_Output(other,self,"DIA_PAL_205_Torwache_PassAsMage_15_00");	//Jestem Magiem Ognia.
 	AI_Output(self,other,"DIA_PAL_205_Torwache_PassAsMage_12_01");	//Tak, oczywiœcie. Wybacz mi, Wybrañcze, wykonujê tylko polecenia.
 	self.aivar[AIV_PASSGATE] = TRUE;
-	PAL_205_SCHONMALREINGELASSEN = TRUE;
+	PAL_205_schonmalreingelassen = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PAL_205_TORWACHE_PASSASSLD(C_INFO)
+instance DIA_PAL_205_Torwache_PassAsSld(C_Info)
 {
-	npc = pal_205_torwache;
+	npc = Pal_205_Torwache;
 	nr = 3;
-	condition = dia_pal_205_torwache_passassld_condition;
-	information = dia_pal_205_torwache_passassld_info;
+	condition = DIA_PAL_205_Torwache_PassAsSld_Condition;
+	information = DIA_PAL_205_Torwache_PassAsSld_Info;
 	permanent = TRUE;
 	description = "Przepuœæ mnie, przynoszê wieœci od najemników.";
 };
 
 
-func int dia_pal_205_torwache_passassld_condition()
+func int DIA_PAL_205_Torwache_PassAsSld_Condition()
 {
-	if((Npc_GetTrueGuild(other) == GIL_SLD) && (PAL_205_SCHONMALREINGELASSEN == FALSE) && (b_getgreatestpetzcrime(self) < CRIME_ATTACK))
+	if((Npc_GetTrueGuild(other) == GIL_SLD) && (PAL_205_schonmalreingelassen == FALSE) && (B_GetGreatestPetzCrime(self) < CRIME_ATTACK))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_205_torwache_passassld_info()
+func void DIA_PAL_205_Torwache_PassAsSld_Info()
 {
 	AI_Output(other,self,"DIA_PAL_205_Torwache_PassAsSld_15_00");	//Przepuœæ mnie, przynoszê wieœci od najemników.
 	AI_Output(self,other,"DIA_PAL_205_Torwache_PassAsSld_12_01");	//Dobrze, ale ostrzegam ciê. Jeœli bêdziesz sprawia³ k³opoty, nie zd¹¿ysz tego nawet po¿a³owaæ.
 	self.aivar[AIV_PASSGATE] = TRUE;
-	PAL_205_SCHONMALREINGELASSEN = TRUE;
+	PAL_205_schonmalreingelassen = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PAL_205_TORWACHE_PERM(C_INFO)
+instance DIA_PAL_205_Torwache_PERM(C_Info)
 {
-	npc = pal_205_torwache;
+	npc = Pal_205_Torwache;
 	nr = 2;
-	condition = dia_pal_205_torwache_perm_condition;
-	information = dia_pal_205_torwache_perm_info;
+	condition = DIA_PAL_205_Torwache_PERM_Condition;
+	information = DIA_PAL_205_Torwache_PERM_Info;
 	permanent = TRUE;
 	description = "Jak tam na s³u¿bie?";
 };
 
 
-func int dia_pal_205_torwache_perm_condition()
+func int DIA_PAL_205_Torwache_PERM_Condition()
 {
-	if((PAL_205_SCHONMALREINGELASSEN == TRUE) && (b_getgreatestpetzcrime(self) < CRIME_ATTACK))
+	if((PAL_205_schonmalreingelassen == TRUE) && (B_GetGreatestPetzCrime(self) < CRIME_ATTACK))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_205_torwache_perm_info()
+func void DIA_PAL_205_Torwache_PERM_Info()
 {
 	AI_Output(other,self,"DIA_PAL_205_Torwache_PERM_15_00");	//Jak tam na s³u¿bie?
 	if((other.guild == GIL_PAL) || (other.guild == GIL_MIL))

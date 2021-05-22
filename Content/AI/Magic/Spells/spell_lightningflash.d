@@ -1,20 +1,20 @@
 
-const int SPL_COST_LIGHTNINGFLASH = 20;
-const int SPL_DAMAGE_LIGHTNINGFLASH = 120;
+const int SPL_Cost_LightningFlash = 20;
+const int SPL_Damage_LightningFlash = 120;
 const int SPL_ZAPPED_DAMAGE_PER_SEC = 2;
 const int SPL_TIME_SHORTZAPPED = 2;
 
-instance SPELL_LIGHTNINGFLASH(C_SPELL_PROTO)
+instance Spell_LightningFlash(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	damage_per_level = SPL_DAMAGE_LIGHTNINGFLASH;
+	damage_per_level = SPL_Damage_LightningFlash;
 	damagetype = DAM_MAGIC;
 };
 
 
-func int spell_logic_lightningflash(var int manainvested)
+func int Spell_Logic_LightningFlash(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_LIGHTNINGFLASH)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_LightningFlash)
 	{
 		return SPL_SENDCAST;
 	}
@@ -24,8 +24,8 @@ func int spell_logic_lightningflash(var int manainvested)
 	};
 };
 
-func void spell_cast_lightningflash()
+func void Spell_Cast_LightningFlash()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_LIGHTNINGFLASH;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_LightningFlash;
 };
 

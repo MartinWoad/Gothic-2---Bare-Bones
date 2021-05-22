@@ -1,11 +1,11 @@
 
-func void b_setnpcvisual(var C_NPC slf,var int gender,var string headmesh,var int facetex,var int bodytex,var int armorinstance)
+func void B_SetNpcVisual(var C_Npc slf,var int gender,var string headMesh,var int faceTex,var int bodyTex,var int armorInstance)
 {
-	slf.aivar[AIV_GENDER] = gender;
+	slf.aivar[AIV_Gender] = gender;
 	Mdl_SetVisual(slf,"HUMANS.MDS");
 	if(gender == MALE)
 	{
-		Mdl_SetVisualBody(slf,"hum_body_Naked0",bodytex,0,headmesh,facetex,0,armorinstance);
+		Mdl_SetVisualBody(slf,"hum_body_Naked0",bodyTex,0,headMesh,faceTex,0,armorInstance);
 		if(slf.attribute[ATR_STRENGTH] < 50)
 		{
 			Mdl_SetModelScale(slf,0.9,1,1);
@@ -17,11 +17,11 @@ func void b_setnpcvisual(var C_NPC slf,var int gender,var string headmesh,var in
 	}
 	else
 	{
-		if((bodytex >= 0) && (bodytex <= 3))
+		if((bodyTex >= 0) && (bodyTex <= 3))
 		{
-			bodytex = bodytex + 4;
+			bodyTex = bodyTex + 4;
 		};
-		Mdl_SetVisualBody(slf,"Hum_Body_Babe0",bodytex,0,headmesh,facetex,0,armorinstance);
+		Mdl_SetVisualBody(slf,"Hum_Body_Babe0",bodyTex,0,headMesh,faceTex,0,armorInstance);
 	};
 };
 

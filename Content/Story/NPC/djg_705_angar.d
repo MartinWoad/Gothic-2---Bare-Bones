@@ -1,72 +1,72 @@
 
-instance DJG_705_ANGAR(NPC_DEFAULT)
+instance DJG_705_Angar(Npc_Default)
 {
 	name[0] = "Angar";
 	guild = GIL_DJG;
 	id = 705;
 	voice = 4;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,6);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,6);
 	fight_tactic = FAI_HUMAN_MASTER;
-	EquipItem(self,itmw_zweihaender2);
-	CreateInvItems(self,itpo_health_03,6);
-	CreateInvItems(self,itmi_oldcoin,1);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_B_CORANGAR,BODYTEX_B,4851);
+	EquipItem(self,ItMw_Zweihaender2);
+	CreateInvItems(self,ItPo_Health_03,6);
+	CreateInvItems(self,ItMi_OldCoin,1);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_B_CorAngar,BodyTex_B,ITAR_CorAngar);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,80);
-	daily_routine = rtn_prestart_705;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,80);
+	daily_routine = Rtn_PreStart_705;
 };
 
 
-func void rtn_prestart_705()
+func void Rtn_PreStart_705()
 {
-	ta_stand_armscrossed(8,0,23,0,"OC_TO_MAGE");
-	ta_stand_armscrossed(23,0,8,0,"OC_TO_MAGE");
+	TA_Stand_ArmsCrossed(8,0,23,0,"OC_TO_MAGE");
+	TA_Stand_ArmsCrossed(23,0,8,0,"OC_TO_MAGE");
 };
 
-func void rtn_start_705()
+func void Rtn_Start_705()
 {
-	ta_stand_armscrossed(8,0,23,0,"OW_DJG_WATCH_STONEHENGE_01");
-	ta_stand_armscrossed(23,0,8,0,"OW_DJG_WATCH_STONEHENGE_01");
+	TA_Stand_ArmsCrossed(8,0,23,0,"OW_DJG_WATCH_STONEHENGE_01");
+	TA_Stand_ArmsCrossed(23,0,8,0,"OW_DJG_WATCH_STONEHENGE_01");
 };
 
-func void rtn_zwischenstop_705()
+func void Rtn_Zwischenstop_705()
 {
-	ta_stand_armscrossed(8,0,23,0,"OW_PATH_3_13");
-	ta_stand_armscrossed(23,0,8,0,"OW_PATH_3_13");
+	TA_Stand_ArmsCrossed(8,0,23,0,"OW_PATH_3_13");
+	TA_Stand_ArmsCrossed(23,0,8,0,"OW_PATH_3_13");
 };
 
-func void rtn_gotostonehendgeentrance_705()
+func void Rtn_GotoStonehendgeEntrance_705()
 {
-	ta_stand_armscrossed(8,0,23,0,"OW_PATH_3_STONES");
-	ta_stand_armscrossed(23,0,8,0,"OW_PATH_3_STONES");
+	TA_Stand_ArmsCrossed(8,0,23,0,"OW_PATH_3_STONES");
+	TA_Stand_ArmsCrossed(23,0,8,0,"OW_PATH_3_STONES");
 };
 
-func void rtn_leavingow_705()
+func void Rtn_LeavingOW_705()
 {
-	ta_sit_campfire(8,0,23,0,"OW_CAVALORN_01");
-	ta_sit_campfire(23,0,8,0,"OW_CAVALORN_01");
+	TA_Sit_Campfire(8,0,23,0,"OW_CAVALORN_01");
+	TA_Sit_Campfire(23,0,8,0,"OW_CAVALORN_01");
 };
 
-func void rtn_angriff_705()
+func void Rtn_Angriff_705()
 {
-	ta_stand_armscrossed(8,0,23,0,"OW_UNDEAD_DUNGEON_02");
-	ta_stand_armscrossed(23,0,8,0,"OW_UNDEAD_DUNGEON_02");
+	TA_Stand_ArmsCrossed(8,0,23,0,"OW_UNDEAD_DUNGEON_02");
+	TA_Stand_ArmsCrossed(23,0,8,0,"OW_UNDEAD_DUNGEON_02");
 };
 
-func void rtn_runtoentrance_705()
+func void Rtn_RunToEntrance_705()
 {
-	ta_runtowp(8,0,23,0,"OW_PATH_3_STONES");
-	ta_runtowp(23,0,8,0,"OW_PATH_3_STONES");
+	TA_RunToWP(8,0,23,0,"OW_PATH_3_STONES");
+	TA_RunToWP(23,0,8,0,"OW_PATH_3_STONES");
 };
 
-func void rtn_tot_705()
+func void Rtn_Tot_705()
 {
-	ta_runtowp(8,0,23,0,"TOT");
-	ta_runtowp(23,0,8,0,"TOT");
+	TA_RunToWP(8,0,23,0,"TOT");
+	TA_RunToWP(23,0,8,0,"TOT");
 };
 

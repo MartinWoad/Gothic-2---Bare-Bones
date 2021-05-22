@@ -1,8 +1,8 @@
 
-func void zs_saw()
+func void ZS_Saw()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == FALSE)
 	{
@@ -10,20 +10,20 @@ func void zs_saw()
 	};
 };
 
-func int zs_saw_loop()
+func int ZS_Saw_Loop()
 {
-	if(!c_bodystatecontains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BAUMSAEGE"))
+	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BAUMSAEGE"))
 	{
 		AI_UseMob(self,"BAUMSAEGE",1);
 	};
-	if((Npc_GetStateTime(self) > 15) && c_bodystatecontains(self,BS_MOBINTERACT_INTERRUPT))
+	if((Npc_GetStateTime(self) > 15) && C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT))
 	{
 		Npc_SetStateTime(self,0);
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_saw_end()
+func void ZS_Saw_End()
 {
 	AI_UseMob(self,"BAUMSAEGE",-1);
 };

@@ -1,28 +1,28 @@
 
-func void b_usefakescroll()
+func void B_UseFakeScroll()
 {
-	var C_NPC target;
-	if(c_bodystatecontains(self,BS_SIT))
+	var C_Npc target;
+	if(C_BodyStateContains(self,BS_SIT))
 	{
 		AI_Standup(self);
-		b_turntonpc(self,hero);
+		B_TurnToNpc(self,hero);
 	};
 	AI_RemoveWeapon(self);
-	CreateInvItem(self,fakescroll);
+	CreateInvItem(self,Fakescroll);
 	target = Npc_GetLookAtTarget(self);
 	if(Hlp_IsValidNpc(target))
 	{
-		b_stoplookat(self);
-		AI_UseItemToState(self,fakescroll,1);
+		B_StopLookAt(self);
+		AI_UseItemToState(self,Fakescroll,1);
 		AI_Wait(self,1);
-		AI_UseItemToState(self,fakescroll,-1);
-		b_lookatnpc(self,hero);
+		AI_UseItemToState(self,Fakescroll,-1);
+		B_LookAtNpc(self,hero);
 	}
 	else
 	{
-		AI_UseItemToState(self,fakescroll,1);
+		AI_UseItemToState(self,Fakescroll,1);
 		AI_Wait(self,1);
-		AI_UseItemToState(self,fakescroll,-1);
+		AI_UseItemToState(self,Fakescroll,-1);
 	};
 };
 

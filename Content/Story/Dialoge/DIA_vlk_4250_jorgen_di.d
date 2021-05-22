@@ -1,99 +1,99 @@
 
-instance DIA_JORGEN_DI_KAP3_EXIT(C_INFO)
+instance DIA_Jorgen_DI_KAP3_EXIT(C_Info)
 {
-	npc = vlk_4250_jorgen_di;
+	npc = VLK_4250_Jorgen_DI;
 	nr = 999;
-	condition = dia_jorgen_di_kap3_exit_condition;
-	information = dia_jorgen_di_kap3_exit_info;
+	condition = DIA_Jorgen_DI_KAP3_EXIT_Condition;
+	information = DIA_Jorgen_DI_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_jorgen_di_kap3_exit_condition()
+func int DIA_Jorgen_DI_KAP3_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_jorgen_di_kap3_exit_info()
+func void DIA_Jorgen_DI_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_JORGEN_DI_HALLO(C_INFO)
+instance DIA_Jorgen_DI_Hallo(C_Info)
 {
-	npc = vlk_4250_jorgen_di;
+	npc = VLK_4250_Jorgen_DI;
 	nr = 4;
-	condition = dia_jorgen_di_hallo_condition;
-	information = dia_jorgen_di_hallo_info;
+	condition = DIA_Jorgen_DI_Hallo_Condition;
+	information = DIA_Jorgen_DI_Hallo_Info;
 	permanent = TRUE;
 	description = "Wszystko w porz¹dku?";
 };
 
 
-func int dia_jorgen_di_hallo_condition()
+func int DIA_Jorgen_DI_Hallo_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jorgen_di_hallo_info()
+func void DIA_Jorgen_DI_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Jorgen_DI_Hallo_15_00");	//Wszystko w porz¹dku?
-	if(ORKSTURMDI == FALSE)
+	if(ORkSturmDI == FALSE)
 	{
 		AI_Output(self,other,"DIA_Jorgen_DI_Hallo_07_01");	//Jasne. Przynajmniej tak d³ugo, jak te potwory trzymaj¹ siê od nas z dala...
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Jorgen_DI_Hallo_07_02");	//Nastêpnego ataku orków mo¿emy nie przetrzymaæ, wiêc lepiej siê poœpiesz. Czas siê st¹d wynosiæ!
-		b_startotherroutine(jorgen_di,"Start");
+		B_StartOtherRoutine(Jorgen_DI,"Start");
 	};
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_JORGEN_DI_UNDEADDRAGONDEAD(C_INFO)
+instance DIA_Jorgen_DI_UndeadDragonDead(C_Info)
 {
-	npc = vlk_4250_jorgen_di;
+	npc = VLK_4250_Jorgen_DI;
 	nr = 4;
-	condition = dia_jorgen_di_undeaddragondead_condition;
-	information = dia_jorgen_di_undeaddragondead_info;
+	condition = DIA_Jorgen_DI_UndeadDragonDead_Condition;
+	information = DIA_Jorgen_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
 	description = "Nieprzyjaciel nie ¿yje.";
 };
 
 
-func int dia_jorgen_di_undeaddragondead_condition()
+func int DIA_Jorgen_DI_UndeadDragonDead_Condition()
 {
-	if(Npc_IsDead(undeaddragon))
+	if(Npc_IsDead(UndeadDragon))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jorgen_di_undeaddragondead_info()
+func void DIA_Jorgen_DI_UndeadDragonDead_Info()
 {
 	AI_Output(other,self,"DIA_Jorgen_DI_UndeadDragonDead_15_00");	//Nieprzyjaciel nie ¿yje.
 	AI_Output(self,other,"DIA_Jorgen_DI_UndeadDragonDead_07_01");	//To œwietna wiadomoœæ. Czyli sprawa jest ju¿ za³atwiona?
-	Info_ClearChoices(dia_jorgen_di_undeaddragondead);
-	Info_AddChoice(dia_jorgen_di_undeaddragondead,"Jeszcze chwila.",dia_jorgen_di_undeaddragondead_moment);
-	Info_AddChoice(dia_jorgen_di_undeaddragondead,"Tak, to jest to. ChodŸmy.",dia_jorgen_di_undeaddragondead_over);
+	Info_ClearChoices(DIA_Jorgen_DI_UndeadDragonDead);
+	Info_AddChoice(DIA_Jorgen_DI_UndeadDragonDead,"Jeszcze chwila.",DIA_Jorgen_DI_UndeadDragonDead_moment);
+	Info_AddChoice(DIA_Jorgen_DI_UndeadDragonDead,"Tak, to jest to. ChodŸmy.",DIA_Jorgen_DI_UndeadDragonDead_over);
 };
 
-func void dia_jorgen_di_undeaddragondead_moment()
+func void DIA_Jorgen_DI_UndeadDragonDead_moment()
 {
 	AI_Output(other,self,"DIA_Jorgen_DI_UndeadDragonDead_moment_15_00");	//Jeszcze chwila. Muszê siê najpierw czymœ zaj¹æ.
 	AI_Output(self,other,"DIA_Jorgen_DI_UndeadDragonDead_moment_07_01");	//Dobra. Tylko siê poœpiesz!
 	AI_StopProcessInfos(self);
 };
 
-func void dia_jorgen_di_undeaddragondead_over()
+func void DIA_Jorgen_DI_UndeadDragonDead_over()
 {
 	AI_StopProcessInfos(self);
-	b_extro_avi();
+	B_Extro_Avi();
 };
 

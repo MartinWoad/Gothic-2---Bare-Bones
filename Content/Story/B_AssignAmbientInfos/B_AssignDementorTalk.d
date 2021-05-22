@@ -1,51 +1,51 @@
 
-instance DIA_AMBIENTDEMENTOR_EXIT(C_INFO)
+instance DIA_AmbientDementor_EXIT(C_Info)
 {
 	nr = 999;
-	condition = dia_ambientdementor_exit_condition;
-	information = dia_ambientdementor_exit_info;
+	condition = DIA_AmbientDementor_EXIT_Condition;
+	information = DIA_AmbientDementor_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_ambientdementor_exit_condition()
+func int DIA_AmbientDementor_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_ambientdementor_exit_info()
+func void DIA_AmbientDementor_EXIT_Info()
 {
 	Wld_StopEffect("DEMENTOR_FX");
 	AI_StopProcessInfos(self);
-	b_scisobsessed(self);
+	B_SCIsObsessed(self);
 	Npc_SetRefuseTalk(self,5);
 	Snd_Play("MFX_FEAR_CAST");
-	if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(dmt_vino1)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(dmt_vino2)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(dmt_vino3)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(dmt_vino4)))
+	if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DMT_Vino1)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DMT_Vino2)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DMT_Vino3)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DMT_Vino4)))
 	{
-		dmt_vino1.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-		dmt_vino2.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-		dmt_vino3.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-		dmt_vino4.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+		DMT_Vino1.aivar[AIV_EnemyOverride] = FALSE;
+		DMT_Vino2.aivar[AIV_EnemyOverride] = FALSE;
+		DMT_Vino3.aivar[AIV_EnemyOverride] = FALSE;
+		DMT_Vino4.aivar[AIV_EnemyOverride] = FALSE;
 	}
 	else
 	{
-		b_attack(self,other,AR_SUDDENENEMYINFERNO,1);
+		B_Attack(self,other,AR_SuddenEnemyInferno,1);
 	};
 };
 
 
-instance DIA_AMBIENTDEMENTOR(C_INFO)
+instance DIA_AmbientDementor(C_Info)
 {
 	nr = 1;
-	condition = dia_ambientdementor_condition;
-	information = dia_ambientdementor_info;
+	condition = DIA_AmbientDementor_Condition;
+	information = DIA_AmbientDementor_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_ambientdementor_condition()
+func int DIA_AmbientDementor_Condition()
 {
 	if(Npc_RefuseTalk(self) == FALSE)
 	{
@@ -53,20 +53,20 @@ func int dia_ambientdementor_condition()
 	};
 };
 
-func void dia_ambientdementor_info()
+func void DIA_AmbientDementor_Info()
 {
 	var int randy;
 	Wld_PlayEffect("DEMENTOR_FX",hero,hero,0,0,0,FALSE);
 	Wld_PlayEffect("spellFX_Fear",self,self,0,0,0,FALSE);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
 	randy = Hlp_Random(4);
-	if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(dmt_vino1)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(dmt_vino2)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(dmt_vino3)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(dmt_vino4)))
+	if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DMT_Vino1)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DMT_Vino2)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DMT_Vino3)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DMT_Vino4)))
 	{
 		AI_Output(self,other,"DIA_VinoDementor_19_00");	//Przyszed³eœ tu, by przeszkodziæ nam w rytuale? Jego dusza nale¿y do nas! Ju¿ mu nie pomo¿esz, magu!
 	}
-	else if(CURRENTLEVEL == DRAGONISLAND_ZEN)
+	else if(CurrentLevel == DRAGONISLAND_ZEN)
 	{
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(dragonisle_keymaster))
+		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DragonIsle_Keymaster))
 		{
 			AI_Output(self,other,"DIA_AmbientDementor_19_01");	//Spróbujesz przeszkodziæ mi w moim zadaniu? Nie masz szans, œmiertelniku!
 			AI_Output(self,other,"DIA_AmbientDementor_19_02");	//Jeszcze nikomu nie uda³o siê przejœæ przez moj¹ kryptê. Zawróæ! Ty te¿ nigdy nie dotrzesz do œwiêtego Dworu Irdorath.
@@ -131,12 +131,12 @@ func void dia_ambientdementor_info()
 	};
 };
 
-func void b_assigndementortalk(var C_NPC slf)
+func void B_AssignDementorTalk(var C_Npc slf)
 {
-	if((slf.guild == GIL_DMT) && (slf.npctype == NPCTYPE_AMBIENT))
+	if((slf.guild == GIL_DMT) && (slf.npcType == NPCTYPE_AMBIENT))
 	{
-		dia_ambientdementor_exit.npc = Hlp_GetInstanceID(slf);
-		dia_ambientdementor.npc = Hlp_GetInstanceID(slf);
+		DIA_AmbientDementor_EXIT.npc = Hlp_GetInstanceID(slf);
+		DIA_AmbientDementor.npc = Hlp_GetInstanceID(slf);
 	};
 };
 

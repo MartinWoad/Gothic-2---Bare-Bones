@@ -1,89 +1,89 @@
 
-instance DIA_SONJA_EXIT(C_INFO)
+instance DIA_Sonja_EXIT(C_Info)
 {
-	npc = vlk_436_sonja;
+	npc = VLK_436_Sonja;
 	nr = 999;
-	condition = dia_sonja_exit_condition;
-	information = dia_sonja_exit_info;
+	condition = DIA_Sonja_EXIT_Condition;
+	information = DIA_Sonja_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_sonja_exit_condition()
+func int DIA_Sonja_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_sonja_exit_info()
+func void DIA_Sonja_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SONJA_PICKPOCKET(C_INFO)
+instance DIA_Sonja_PICKPOCKET(C_Info)
 {
-	npc = vlk_436_sonja;
+	npc = VLK_436_Sonja;
 	nr = 900;
-	condition = dia_sonja_pickpocket_condition;
-	information = dia_sonja_pickpocket_info;
+	condition = DIA_Sonja_PICKPOCKET_Condition;
+	information = DIA_Sonja_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60_FEMALE;
+	description = Pickpocket_60_Female;
 };
 
 
-func int dia_sonja_pickpocket_condition()
+func int DIA_Sonja_PICKPOCKET_Condition()
 {
-	return c_beklauen(58,70);
+	return C_Beklauen(58,70);
 };
 
-func void dia_sonja_pickpocket_info()
+func void DIA_Sonja_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_sonja_pickpocket);
-	Info_AddChoice(dia_sonja_pickpocket,DIALOG_BACK,dia_sonja_pickpocket_back);
-	Info_AddChoice(dia_sonja_pickpocket,DIALOG_PICKPOCKET,dia_sonja_pickpocket_doit);
+	Info_ClearChoices(DIA_Sonja_PICKPOCKET);
+	Info_AddChoice(DIA_Sonja_PICKPOCKET,Dialog_Back,DIA_Sonja_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Sonja_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Sonja_PICKPOCKET_DoIt);
 };
 
-func void dia_sonja_pickpocket_doit()
+func void DIA_Sonja_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_sonja_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Sonja_PICKPOCKET);
 };
 
-func void dia_sonja_pickpocket_back()
+func void DIA_Sonja_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_sonja_pickpocket);
+	Info_ClearChoices(DIA_Sonja_PICKPOCKET);
 };
 
 
-instance DIA_SONJA_STANDARD(C_INFO)
+instance DIA_Sonja_STANDARD(C_Info)
 {
-	npc = vlk_436_sonja;
-	condition = dia_sonja_standard_condition;
-	information = dia_sonja_standard_info;
+	npc = VLK_436_Sonja;
+	condition = DIA_Sonja_STANDARD_Condition;
+	information = DIA_Sonja_STANDARD_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_sonja_standard_condition()
+func int DIA_Sonja_STANDARD_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (MIS_ANDRE_REDLIGHT != LOG_RUNNING))
+	if(Npc_IsInState(self,ZS_Talk) && (MIS_Andre_REDLIGHT != LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sonja_standard_info()
+func void DIA_Sonja_STANDARD_Info()
 {
-	if(self.aivar[AIV_TALKEDTOPLAYER] == FALSE)
+	if(self.aivar[AIV_TalkedToPlayer] == FALSE)
 	{
 		AI_Output(self,other,"DIA_Sonja_STANDARD_16_00");	//Jeœli chcesz siê zabawiæ, pogadaj z Bromorem.
 	}
-	else if((other.guild == GIL_DJG) && (SONJA_SAYS == FALSE))
+	else if((other.guild == GIL_DJG) && (Sonja_Says == FALSE))
 	{
 		AI_Output(self,other,"DIA_Sonja_STANDARD_16_01");	//Problem z wami panowie jest taki, ¿e miast uprawiaæ porz¹dny seks, wolicie wytaczaæ krew z orków.
-		SONJA_SAYS = TRUE;
+		Sonja_Says = TRUE;
 	}
 	else
 	{

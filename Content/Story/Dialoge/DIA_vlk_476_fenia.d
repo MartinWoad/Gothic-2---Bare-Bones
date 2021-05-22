@@ -1,21 +1,21 @@
 
-instance DIA_FENIA_EXIT(C_INFO)
+instance DIA_Fenia_EXIT(C_Info)
 {
-	npc = vlk_476_fenia;
+	npc = VLK_476_Fenia;
 	nr = 999;
-	condition = dia_fenia_exit_condition;
-	information = dia_fenia_exit_info;
+	condition = DIA_Fenia_EXIT_Condition;
+	information = DIA_Fenia_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_fenia_exit_condition()
+func int DIA_Fenia_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_fenia_exit_info()
+func void DIA_Fenia_EXIT_Info()
 {
 	if(hero.guild == GIL_PAL)
 	{
@@ -29,60 +29,60 @@ func void dia_fenia_exit_info()
 };
 
 
-instance DIA_FENIA_PICKPOCKET(C_INFO)
+instance DIA_Fenia_PICKPOCKET(C_Info)
 {
-	npc = vlk_476_fenia;
+	npc = VLK_476_Fenia;
 	nr = 900;
-	condition = dia_fenia_pickpocket_condition;
-	information = dia_fenia_pickpocket_info;
+	condition = DIA_Fenia_PICKPOCKET_Condition;
+	information = DIA_Fenia_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60_FEMALE;
+	description = Pickpocket_60_Female;
 };
 
 
-func int dia_fenia_pickpocket_condition()
+func int DIA_Fenia_PICKPOCKET_Condition()
 {
-	return c_beklauen(50,75);
+	return C_Beklauen(50,75);
 };
 
-func void dia_fenia_pickpocket_info()
+func void DIA_Fenia_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_fenia_pickpocket);
-	Info_AddChoice(dia_fenia_pickpocket,DIALOG_BACK,dia_fenia_pickpocket_back);
-	Info_AddChoice(dia_fenia_pickpocket,DIALOG_PICKPOCKET,dia_fenia_pickpocket_doit);
+	Info_ClearChoices(DIA_Fenia_PICKPOCKET);
+	Info_AddChoice(DIA_Fenia_PICKPOCKET,Dialog_Back,DIA_Fenia_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Fenia_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Fenia_PICKPOCKET_DoIt);
 };
 
-func void dia_fenia_pickpocket_doit()
+func void DIA_Fenia_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_fenia_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Fenia_PICKPOCKET);
 };
 
-func void dia_fenia_pickpocket_back()
+func void DIA_Fenia_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_fenia_pickpocket);
+	Info_ClearChoices(DIA_Fenia_PICKPOCKET);
 };
 
 
-instance DIA_FENIA_HALLO(C_INFO)
+instance DIA_Fenia_Hallo(C_Info)
 {
-	npc = vlk_476_fenia;
+	npc = VLK_476_Fenia;
 	nr = 3;
-	condition = dia_fenia_hallo_condition;
-	information = dia_fenia_hallo_info;
+	condition = DIA_Fenia_Hallo_Condition;
+	information = DIA_Fenia_Hallo_Info;
 	important = TRUE;
 };
 
 
-func int dia_fenia_hallo_condition()
+func int DIA_Fenia_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fenia_hallo_info()
+func void DIA_Fenia_Hallo_Info()
 {
 	if(hero.guild == GIL_NONE)
 	{
@@ -90,84 +90,84 @@ func void dia_fenia_hallo_info()
 		AI_Output(other,self,"DIA_Fenia_Hallo_15_01");	//Zbyt d³ugo, zdecydowanie zbyt d³ugo.
 	};
 	AI_Output(self,other,"DIA_Fenia_Hallo_17_02");	//ChodŸ, podejdŸ bli¿ej. U mnie znajdziesz to, czego ci potrzeba!
-	Log_CreateTopic(TOPIC_CITYTRADER,LOG_NOTE);
-	b_logentry(TOPIC_CITYTRADER,"Fenia sprzedaje jedzenie przy drodze do portu.");
+	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
+	B_LogEntry(TOPIC_CityTrader,"Fenia sprzedaje jedzenie przy drodze do portu.");
 };
 
 
-instance DIA_FENIA_HANDELN(C_INFO)
+instance DIA_Fenia_HANDELN(C_Info)
 {
-	npc = vlk_476_fenia;
+	npc = VLK_476_Fenia;
 	nr = 10;
-	condition = dia_fenia_handeln_condition;
-	information = dia_fenia_handeln_info;
+	condition = DIA_Fenia_HANDELN_Condition;
+	information = DIA_Fenia_HANDELN_Info;
 	permanent = TRUE;
 	trade = TRUE;
 	description = "Poka¿ mi swoje towary.";
 };
 
 
-func int dia_fenia_handeln_condition()
+func int DIA_Fenia_HANDELN_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_fenia_hallo))
+	if(Npc_KnowsInfo(hero,DIA_Fenia_Hallo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fenia_handeln_info()
+func void DIA_Fenia_HANDELN_Info()
 {
-	b_givetradeinv(self);
+	B_GiveTradeInv(self);
 	AI_Output(other,self,"DIA_Fenia_HANDELN_15_00");	//Poka¿ mi swoje towary.
 };
 
 
-instance DIA_FENIA_INFOS(C_INFO)
+instance DIA_Fenia_Infos(C_Info)
 {
-	npc = vlk_476_fenia;
+	npc = VLK_476_Fenia;
 	nr = 10;
-	condition = dia_fenia_infos_condition;
-	information = dia_fenia_infos_info;
+	condition = DIA_Fenia_Infos_Condition;
+	information = DIA_Fenia_Infos_Info;
 	permanent = FALSE;
 	description = "Powiedzia³aœ, ¿e masz wszystko... Czy to dotyczy równie¿ informacji?";
 };
 
 
-func int dia_fenia_infos_condition()
+func int DIA_Fenia_Infos_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_fenia_hallo))
+	if(Npc_KnowsInfo(hero,DIA_Fenia_Hallo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fenia_infos_info()
+func void DIA_Fenia_Infos_Info()
 {
 	AI_Output(other,self,"DIA_Fenia_Infos_15_00");	//Powiedzia³aœ, ¿e masz wszystko, czego mogê potrzebowaæ. Czy to dotyczy równie¿ informacji?
 	AI_Output(self,other,"DIA_Fenia_Infos_17_01");	//Ale¿ oczywiœcie! A co ciê interesuje?
 };
 
 
-instance DIA_FENIA_MORETRADERS(C_INFO)
+instance DIA_Fenia_MoreTraders(C_Info)
 {
-	npc = vlk_476_fenia;
+	npc = VLK_476_Fenia;
 	nr = 11;
-	condition = dia_fenia_moretraders_condition;
-	information = dia_fenia_moretraders_info;
+	condition = DIA_Fenia_MoreTraders_Condition;
+	information = DIA_Fenia_MoreTraders_Info;
 	permanent = FALSE;
 	description = "Czy tu, w porcie, s¹ jeszcze jacyœ inni handlarze?";
 };
 
 
-func int dia_fenia_moretraders_condition()
+func int DIA_Fenia_MoreTraders_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_fenia_infos))
+	if(Npc_KnowsInfo(other,DIA_Fenia_Infos))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fenia_moretraders_info()
+func void DIA_Fenia_MoreTraders_Info()
 {
 	AI_Output(other,self,"DIA_Fenia_Infos_haendler_15_00");	//Czy tu, w porcie, s¹ jeszcze jacyœ inni handlarze?
 	AI_Output(self,other,"DIA_Fenia_Infos_haendler_17_01");	//Trzymaj siê lewej strony nabrze¿a, a spotkasz Halvora, mojego mê¿a. Sprzedaje ryby.
@@ -175,52 +175,52 @@ func void dia_fenia_moretraders_info()
 };
 
 
-instance DIA_FENIA_OV(C_INFO)
+instance DIA_Fenia_OV(C_Info)
 {
-	npc = vlk_476_fenia;
+	npc = VLK_476_Fenia;
 	nr = 13;
-	condition = dia_fenia_ov_condition;
-	information = dia_fenia_ov_info;
+	condition = DIA_Fenia_OV_Condition;
+	information = DIA_Fenia_OV_Info;
 	permanent = FALSE;
 	description = "Znasz kogoœ z górnego miasta?";
 };
 
 
-func int dia_fenia_ov_condition()
+func int DIA_Fenia_OV_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_fenia_infos) && (other.guild == GIL_NONE))
+	if(Npc_KnowsInfo(other,DIA_Fenia_Infos) && (other.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fenia_ov_info()
+func void DIA_Fenia_OV_Info()
 {
 	AI_Output(other,self,"DIA_Fenia_Infos_oberesViertel_15_00");	//Znasz kogoœ z górnego miasta?
 	AI_Output(self,other,"DIA_Fenia_Infos_oberesViertel_17_01");	//Gdybym zna³a kogoœ stamt¹d, na pewno byœ mnie tu nie znalaz³, ch³opcze.
 };
 
 
-instance DIA_FENIA_INTERESTING(C_INFO)
+instance DIA_Fenia_Interesting(C_Info)
 {
-	npc = vlk_476_fenia;
+	npc = VLK_476_Fenia;
 	nr = 14;
-	condition = dia_fenia_interesting_condition;
-	information = dia_fenia_interesting_info;
+	condition = DIA_Fenia_Interesting_Condition;
+	information = DIA_Fenia_Interesting_Info;
 	permanent = FALSE;
 	description = "Co ciekawego mo¿na znaleŸæ w okolicach portu?";
 };
 
 
-func int dia_fenia_interesting_condition()
+func int DIA_Fenia_Interesting_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_fenia_infos))
+	if(Npc_KnowsInfo(other,DIA_Fenia_Infos))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fenia_interesting_info()
+func void DIA_Fenia_Interesting_Info()
 {
 	AI_Output(other,self,"DIA_Fenia_Infos_interessantes_15_00");	//S¹ tu jakieœ interesuj¹ce rzeczy, które powinienem zobaczyæ?
 	AI_Output(self,other,"DIA_Fenia_Infos_interessantes_17_01");	//Jeœli szukasz mocnych wra¿eñ, udaj siê do knajpy Kardifa na nabrze¿u. Tam zawsze coœ siê dzieje.
@@ -230,26 +230,26 @@ func void dia_fenia_interesting_info()
 };
 
 
-instance DIA_FENIA_AUFREGEND(C_INFO)
+instance DIA_Fenia_Aufregend(C_Info)
 {
-	npc = vlk_476_fenia;
+	npc = VLK_476_Fenia;
 	nr = 15;
-	condition = dia_fenia_aufregend_condition;
-	information = dia_fenia_aufregend_info;
+	condition = DIA_Fenia_Aufregend_Condition;
+	information = DIA_Fenia_Aufregend_Info;
 	permanent = FALSE;
 	description = "Czy ostatnio wydarzy³o siê tu coœ niezwyk³ego?";
 };
 
 
-func int dia_fenia_aufregend_condition()
+func int DIA_Fenia_Aufregend_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_fenia_infos))
+	if(Npc_KnowsInfo(other,DIA_Fenia_Infos))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fenia_aufregend_info()
+func void DIA_Fenia_Aufregend_Info()
 {
 	AI_Output(other,self,"DIA_Fenia_Add_15_00");	//Czy ostatnio wydarzy³o siê tu coœ niezwyk³ego?
 	AI_Output(self,other,"DIA_Fenia_Add_17_01");	//Mo¿na tak powiedzieæ. To nie by³o dawno temu.

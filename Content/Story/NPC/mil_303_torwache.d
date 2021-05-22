@@ -1,28 +1,28 @@
 
-instance MIL_303_TORWACHE(NPC_DEFAULT)
+instance Mil_303_Torwache(Npc_Default)
 {
 	name[0] = "Stra¿nik wrót";
 	guild = GIL_MIL;
 	id = 303;
 	voice = 7;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_mil_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_NORMAL_SLY,BODYTEX_N,4826);
+	EquipItem(self,ItMw_1h_Mil_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Normal_Sly,BodyTex_N,ITAR_Mil_L);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,50);
-	daily_routine = rtn_start_303;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,50);
+	daily_routine = Rtn_Start_303;
 };
 
 
-func void rtn_start_303()
+func void Rtn_Start_303()
 {
-	ta_guard_passage(8,0,23,0,"NW_CITY_GUARDOFFICE_GUARD_02");
-	ta_guard_passage(23,0,8,0,"NW_CITY_GUARDOFFICE_GUARD_02");
+	TA_Guard_Passage(8,0,23,0,"NW_CITY_GUARDOFFICE_GUARD_02");
+	TA_Guard_Passage(23,0,8,0,"NW_CITY_GUARDOFFICE_GUARD_02");
 };
 

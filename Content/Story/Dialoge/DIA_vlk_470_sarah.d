@@ -1,133 +1,133 @@
 
-instance DIA_SARAH_EXIT(C_INFO)
+instance DIA_Sarah_EXIT(C_Info)
 {
-	npc = vlk_470_sarah;
+	npc = VLK_470_Sarah;
 	nr = 999;
-	condition = dia_sarah_exit_condition;
-	information = dia_sarah_exit_info;
+	condition = DIA_Sarah_EXIT_Condition;
+	information = DIA_Sarah_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_sarah_exit_condition()
+func int DIA_Sarah_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_sarah_exit_info()
+func void DIA_Sarah_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SARAH_PICKPOCKET(C_INFO)
+instance DIA_Sarah_PICKPOCKET(C_Info)
 {
-	npc = vlk_470_sarah;
+	npc = VLK_470_Sarah;
 	nr = 900;
-	condition = dia_sarah_pickpocket_condition;
-	information = dia_sarah_pickpocket_info;
+	condition = DIA_Sarah_PICKPOCKET_Condition;
+	information = DIA_Sarah_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60_FEMALE;
+	description = Pickpocket_60_Female;
 };
 
 
-func int dia_sarah_pickpocket_condition()
+func int DIA_Sarah_PICKPOCKET_Condition()
 {
-	return c_beklauen(57,60);
+	return C_Beklauen(57,60);
 };
 
-func void dia_sarah_pickpocket_info()
+func void DIA_Sarah_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_sarah_pickpocket);
-	Info_AddChoice(dia_sarah_pickpocket,DIALOG_BACK,dia_sarah_pickpocket_back);
-	Info_AddChoice(dia_sarah_pickpocket,DIALOG_PICKPOCKET,dia_sarah_pickpocket_doit);
+	Info_ClearChoices(DIA_Sarah_PICKPOCKET);
+	Info_AddChoice(DIA_Sarah_PICKPOCKET,Dialog_Back,DIA_Sarah_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Sarah_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Sarah_PICKPOCKET_DoIt);
 };
 
-func void dia_sarah_pickpocket_doit()
+func void DIA_Sarah_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_sarah_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Sarah_PICKPOCKET);
 };
 
-func void dia_sarah_pickpocket_back()
+func void DIA_Sarah_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_sarah_pickpocket);
+	Info_ClearChoices(DIA_Sarah_PICKPOCKET);
 };
 
 
-instance DIA_SARAH_GREET(C_INFO)
+instance DIA_Sarah_Greet(C_Info)
 {
-	npc = vlk_470_sarah;
+	npc = VLK_470_Sarah;
 	nr = 1;
-	condition = dia_sarah_greet_condition;
-	information = dia_sarah_greet_info;
+	condition = DIA_Sarah_Greet_Condition;
+	information = DIA_Sarah_Greet_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_sarah_greet_condition()
+func int DIA_Sarah_Greet_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (CANTHAR_AUSGELIEFERT == TRUE))
+	if(Npc_IsInState(self,ZS_Talk) && (Canthar_Ausgeliefert == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sarah_greet_info()
+func void DIA_Sarah_Greet_Info()
 {
 	AI_Output(self,other,"DIA_Sarah_Add_16_07");	//Ach! To znowu ty!
 };
 
 
-instance DIA_SARAH_HALLO(C_INFO)
+instance DIA_Sarah_HALLO(C_Info)
 {
-	npc = vlk_470_sarah;
-	condition = dia_sarah_hallo_condition;
-	information = dia_sarah_hallo_info;
+	npc = VLK_470_Sarah;
+	condition = DIA_Sarah_HALLO_Condition;
+	information = DIA_Sarah_HALLO_Info;
 	permanent = FALSE;
 	description = "Jak idzie interes?";
 };
 
 
-func int dia_sarah_hallo_condition()
+func int DIA_Sarah_HALLO_Condition()
 {
 	return TRUE;
 };
 
-func void dia_sarah_hallo_info()
+func void DIA_Sarah_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Sarah_HALLO_15_00");	//Jak idzie interes?
 	AI_Output(self,other,"DIA_Sarah_HALLO_16_01");	//Kiedy pojawili siê paladyni, pomyœla³am, ¿e to dobra okazja na zarobek.
 	AI_Output(self,other,"DIA_Sarah_HALLO_16_02");	//Zlecili jednak produkcjê swojej broni Haradowi, wiêc ani Hakon, ani ja nie zarobiliœmy nawet sztuki z³ota.
 	AI_Output(self,other,"DIA_Sarah_HALLO_16_03");	//Co wiêcej, wieœniacy odciêli dostawy po¿ywienia i ceny bardzo posz³y w górê.
 	AI_Output(self,other,"DIA_Sarah_Add_16_00");	//Pocieszam siê jeszcze tylko tym, ¿e paladyni p³ac¹ za moje pokoje w gospodzie.
-	Log_CreateTopic(TOPIC_CITYTRADER,LOG_NOTE);
-	b_logentry(TOPIC_CITYTRADER,"Sara sprzedaje broñ na targowisku.");
+	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
+	B_LogEntry(TOPIC_CityTrader,"Sara sprzedaje broñ na targowisku.");
 };
 
 
-instance DIA_SARAH_BAUERN(C_INFO)
+instance DIA_Sarah_Bauern(C_Info)
 {
-	npc = vlk_470_sarah;
+	npc = VLK_470_Sarah;
 	nr = 2;
-	condition = dia_sarah_bauern_condition;
-	information = dia_sarah_bauern_info;
+	condition = DIA_Sarah_Bauern_Condition;
+	information = DIA_Sarah_Bauern_Info;
 	permanent = FALSE;
 	description = "Na czym polega problem z ch³opami?";
 };
 
 
-func int dia_sarah_bauern_condition()
+func int DIA_Sarah_Bauern_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_sarah_hallo))
+	if(Npc_KnowsInfo(other,DIA_Sarah_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sarah_bauern_info()
+func void DIA_Sarah_Bauern_Info()
 {
 	AI_Output(other,self,"DIA_Sarah_Bauern_15_00");	//Na czym polega problem z ch³opami?
 	AI_Output(self,other,"DIA_Sarah_Bauern_16_01");	//Odmawiaj¹ dostaw towarów.
@@ -139,26 +139,26 @@ func void dia_sarah_bauern_info()
 };
 
 
-instance DIA_SARAH_AKILSHOF(C_INFO)
+instance DIA_Sarah_AkilsHof(C_Info)
 {
-	npc = vlk_470_sarah;
+	npc = VLK_470_Sarah;
 	nr = 3;
-	condition = dia_sarah_akilshof_condition;
-	information = dia_sarah_akilshof_info;
+	condition = DIA_Sarah_AkilsHof_Condition;
+	information = DIA_Sarah_AkilsHof_Info;
 	permanent = FALSE;
 	description = "Gdzie znajduje siê farma Akila?";
 };
 
 
-func int dia_sarah_akilshof_condition()
+func int DIA_Sarah_AkilsHof_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_sarah_bauern))
+	if(Npc_KnowsInfo(other,DIA_Sarah_Bauern))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sarah_akilshof_info()
+func void DIA_Sarah_AkilsHof_Info()
 {
 	AI_Output(other,self,"DIA_Sarah_AkilsHof_15_00");	//Gdzie znajduje siê farma Akila?
 	AI_Output(self,other,"DIA_Sarah_Add_16_04");	//Jeœli wyjdziesz wschodni¹ bram¹, a potem skrêcisz w prawo, dojdziesz do schodów.
@@ -167,54 +167,54 @@ func void dia_sarah_akilshof_info()
 };
 
 
-instance DIA_SARAH_TRADE(C_INFO)
+instance DIA_Sarah_Trade(C_Info)
 {
-	npc = vlk_470_sarah;
+	npc = VLK_470_Sarah;
 	nr = 99;
-	condition = dia_sarah_trade_condition;
-	information = dia_sarah_trade_info;
+	condition = DIA_Sarah_Trade_Condition;
+	information = DIA_Sarah_Trade_Info;
 	trade = TRUE;
 	permanent = TRUE;
 	description = "Poka¿ mi swoje towary.";
 };
 
 
-func int dia_sarah_trade_condition()
+func int DIA_Sarah_Trade_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_sarah_hallo) && (MIS_CANTHARS_KOMPROBRIEF != LOG_SUCCESS))
+	if(Npc_KnowsInfo(other,DIA_Sarah_HALLO) && (MIS_Canthars_KomproBrief != LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sarah_trade_info()
+func void DIA_Sarah_Trade_Info()
 {
-	b_givetradeinv(self);
+	B_GiveTradeInv(self);
 	AI_Output(other,self,"DIA_Sarah_Trade_15_00");	//Poka¿ mi swoje towary.
-	SARAH_WAFFENGESEHEN = TRUE;
+	Sarah_WaffenGesehen = TRUE;
 };
 
 
-instance DIA_SARAH_IMKNAST(C_INFO)
+instance DIA_Sarah_IMKNAST(C_Info)
 {
-	npc = vlk_470_sarah;
+	npc = VLK_470_Sarah;
 	nr = 99;
-	condition = dia_sarah_imknast_condition;
-	information = dia_sarah_imknast_info;
+	condition = DIA_Sarah_IMKNAST_Condition;
+	information = DIA_Sarah_IMKNAST_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_sarah_imknast_condition()
+func int DIA_Sarah_IMKNAST_Condition()
 {
-	if((MIS_CANTHARS_KOMPROBRIEF == LOG_SUCCESS) && Npc_IsInState(self,zs_talk))
+	if((MIS_Canthars_KomproBrief == LOG_SUCCESS) && Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sarah_imknast_info()
+func void DIA_Sarah_IMKNAST_Info()
 {
 	AI_Output(self,other,"DIA_Sarah_IMKNAST_16_00");	//Ty! Jak œmiesz siê tu pokazywaæ! Nie mogê tego udowodniæ, ale jestem pewna, ¿e macza³eœ ³apska w tych brudnych machlojkach.
 	AI_Output(self,other,"DIA_Sarah_IMKNAST_16_01");	//To przez ciebie teraz tu jestem. Przez ciebie, i tego cholernego Canthara - niech dosiêgnie was gniew Innosa!
@@ -222,31 +222,31 @@ func void dia_sarah_imknast_info()
 };
 
 
-instance DIA_SARAH_SUCCESS(C_INFO)
+instance DIA_Sarah_Success(C_Info)
 {
-	npc = vlk_470_sarah;
+	npc = VLK_470_Sarah;
 	nr = 4;
-	condition = dia_sarah_success_condition;
-	information = dia_sarah_success_info;
+	condition = DIA_Sarah_Success_Condition;
+	information = DIA_Sarah_Success_Info;
 	permanent = FALSE;
 	description = "Canthar próbowa³ ciê wrobiæ...";
 };
 
 
-func int dia_sarah_success_condition()
+func int DIA_Sarah_Success_Condition()
 {
-	if(CANTHAR_AUSGELIEFERT == TRUE)
+	if(Canthar_Ausgeliefert == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sarah_success_info()
+func void DIA_Sarah_Success_Info()
 {
 	AI_Output(other,self,"DIA_Sarah_Success_15_00");	//Canthar próbowa³ ciê wrobiæ i przej¹æ twój interes. Wyda³em go jednak stra¿y miejskiej.
 	AI_Output(self,other,"DIA_Sarah_Success_16_01");	//W ten sposób sprowadzi³eœ na siebie gniew potê¿nego cz³owieka. Znam tego drania od dawna, zawsze chcia³ zaj¹æ moje miejsce.
 	AI_Output(self,other,"DIA_Sarah_Success_16_02");	//Przyjmij tê broñ jako wyraz mojej wdziêcznoœci.
-	b_giveplayerxp(XP_CANTHARIMKNAST);
-	b_giveinvitems(self,other,4985,1);
+	B_GivePlayerXP(XP_CantharImKnast);
+	B_GiveInvItems(self,other,ItMw_Piratensaebel,1);
 };
 

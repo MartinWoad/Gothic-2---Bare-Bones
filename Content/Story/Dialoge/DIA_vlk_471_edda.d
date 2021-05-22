@@ -1,46 +1,46 @@
 
-instance DIA_EDDA_EXIT(C_INFO)
+instance DIA_Edda_EXIT(C_Info)
 {
-	npc = vlk_471_edda;
+	npc = VLK_471_Edda;
 	nr = 999;
-	condition = dia_edda_exit_condition;
-	information = dia_edda_exit_info;
+	condition = DIA_Edda_EXIT_Condition;
+	information = DIA_Edda_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_edda_exit_condition()
+func int DIA_Edda_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_edda_exit_info()
+func void DIA_Edda_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_EDDA_HALLO(C_INFO)
+instance DIA_Edda_Hallo(C_Info)
 {
-	npc = vlk_471_edda;
+	npc = VLK_471_Edda;
 	nr = 2;
-	condition = dia_edda_hallo_condition;
-	information = dia_edda_hallo_info;
+	condition = DIA_Edda_Hallo_Condition;
+	information = DIA_Edda_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_edda_hallo_condition()
+func int DIA_Edda_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_edda_hallo_info()
+func void DIA_Edda_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Edda_Hallo_15_00");	//Co tu gotujesz?
 	AI_Output(self,other,"DIA_Edda_Hallo_17_01");	//Zupê rybn¹. Mo¿e nie smakuje najlepiej, ale przynajmniej jest gor¹ca.
@@ -48,23 +48,23 @@ func void dia_edda_hallo_info()
 };
 
 
-instance DIA_EDDA_STADT(C_INFO)
+instance DIA_Edda_Stadt(C_Info)
 {
-	npc = vlk_471_edda;
+	npc = VLK_471_Edda;
 	nr = 5;
-	condition = dia_edda_stadt_condition;
-	information = dia_edda_stadt_info;
+	condition = DIA_Edda_Stadt_Condition;
+	information = DIA_Edda_Stadt_Info;
 	permanent = FALSE;
 	description = "Co mo¿esz mi powiedzieæ o mieœcie?";
 };
 
 
-func int dia_edda_stadt_condition()
+func int DIA_Edda_Stadt_Condition()
 {
 	return TRUE;
 };
 
-func void dia_edda_stadt_info()
+func void DIA_Edda_Stadt_Info()
 {
 	AI_Output(other,self,"DIA_Edda_Stadt_15_00");	//Co mo¿esz mi powiedzieæ o mieœcie?
 	AI_Output(self,other,"DIA_Edda_Stadt_17_01");	//Wiêkszoœæ jego mieszkañców obawia siê z³odziei. Dlatego lepiej nie wchodziæ do obcych domów.
@@ -72,67 +72,67 @@ func void dia_edda_stadt_info()
 	AI_Output(other,self,"DIA_Edda_Stadt_15_03");	//Nie boisz siê z³odziei?
 	AI_Output(self,other,"DIA_Edda_Stadt_17_04");	//Jedyna wartoœciowa rzecz, jaka kiedykolwiek nale¿a³a do mnie, zosta³a mi odebrana.
 	AI_Output(self,other,"DIA_Edda_Stadt_17_05");	//Ktoœ ukrad³ mój pos¹¿ek Innosa.
-	EDDA_SCHLAFPLATZ = TRUE;
+	Edda_Schlafplatz = TRUE;
 	Wld_AssignRoomToGuild("hafen08",GIL_NONE);
 };
 
 
-instance DIA_EDDA_KOCHEN(C_INFO)
+instance DIA_Edda_Kochen(C_Info)
 {
-	npc = vlk_471_edda;
+	npc = VLK_471_Edda;
 	nr = 6;
-	condition = dia_edda_kochen_condition;
-	information = dia_edda_kochen_info;
+	condition = DIA_Edda_Kochen_Condition;
+	information = DIA_Edda_Kochen_Info;
 	permanent = FALSE;
 	description = "Mo¿esz mi ugotowaæ zupê?";
 };
 
 
-func int dia_edda_kochen_condition()
+func int DIA_Edda_Kochen_Condition()
 {
 	return TRUE;
 };
 
-func void dia_edda_kochen_info()
+func void DIA_Edda_Kochen_Info()
 {
 	AI_Output(other,self,"DIA_Edda_Kochen_15_00");	//Mo¿esz mi ugotowaæ zupê?
 	AI_Output(self,other,"DIA_Edda_Kochen_17_01");	//Gotujê dla wszystkich. Jeœli zechcesz, mogê gotowaæ i dla ciebie. Musisz mi tylko przynieœæ rybê.
 };
 
 
-instance DIA_EDDA_SUPPE(C_INFO)
+instance DIA_Edda_Suppe(C_Info)
 {
-	npc = vlk_471_edda;
+	npc = VLK_471_Edda;
 	nr = 6;
-	condition = dia_edda_suppe_condition;
-	information = dia_edda_suppe_info;
+	condition = DIA_Edda_Suppe_Condition;
+	information = DIA_Edda_Suppe_Info;
 	permanent = TRUE;
 	description = "Mo¿esz mi ugotowaæ zupê?";
 };
 
 
-func int dia_edda_suppe_condition()
+func int DIA_Edda_Suppe_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_edda_kochen))
+	if(Npc_KnowsInfo(other,DIA_Edda_Kochen))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_edda_suppe_info()
+func void DIA_Edda_Suppe_Info()
 {
 	AI_Output(other,self,"DIA_Edda_Suppe_15_00");	//Mo¿esz mi ugotowaæ zupê?
 	if(Wld_GetDay() == 0)
 	{
 		AI_Output(self,other,"DIA_Edda_Suppe_17_02");	//Od jutra mo¿esz codziennie liczyæ na talerz mojej gor¹cej zupy.
 	}
-	else if(EDDA_DAY != Wld_GetDay())
+	else if(Edda_Day != Wld_GetDay())
 	{
-		if(b_giveinvitems(other,self,4900,1))
+		if(B_GiveInvItems(other,self,ItFo_Fish,1))
 		{
 			AI_Output(self,other,"DIA_Edda_Suppe_17_01");	//Nic prostszego. Proszê, weŸ talerz.
-			b_giveinvitems(self,other,4912,1);
-			EDDA_DAY = Wld_GetDay();
+			B_GiveInvItems(self,other,ItFo_FishSoup,1);
+			Edda_Day = Wld_GetDay();
 		}
 		else
 		{
@@ -146,79 +146,79 @@ func void dia_edda_suppe_info()
 };
 
 
-instance DIA_EDDA_STATUE(C_INFO)
+instance DIA_Edda_Statue(C_Info)
 {
-	npc = vlk_471_edda;
+	npc = VLK_471_Edda;
 	nr = 6;
-	condition = dia_edda_statue_condition;
-	information = dia_edda_statue_info;
+	condition = DIA_Edda_Statue_Condition;
+	information = DIA_Edda_Statue_Info;
 	permanent = FALSE;
 	description = "Patrz, przynios³em ci pos¹¿ek Innosa.";
 };
 
 
-func int dia_edda_statue_condition()
+func int DIA_Edda_Statue_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_edda_stadt) && (Npc_HasItems(other,itmi_innosstatue) >= 1))
+	if(Npc_KnowsInfo(other,DIA_Edda_Stadt) && (Npc_HasItems(other,ItMi_InnosStatue) >= 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_edda_statue_info()
+func void DIA_Edda_Statue_Info()
 {
 	AI_Output(other,self,"DIA_Edda_Statue_15_00");	//Patrz, przynios³em ci pos¹¿ek Innosa.
 	AI_Output(self,other,"DIA_Edda_Statue_17_01");	//Dziêkujê, bardzo dziêkujê. Niechaj œwiat³o Innosa zawsze oœwietla ci drogê...
 	AI_Output(other,self,"DIA_Edda_Statue_15_02");	//Drobiazg.
-	b_giveinvitems(other,self,5128,1);
-	b_giveplayerxp(XP_EDDA_STATUE);
+	B_GiveInvItems(other,self,ItMi_InnosStatue,1);
+	B_GivePlayerXP(XP_Edda_Statue);
 };
 
 
-instance DIA_EDDA_PICKPOCKET(C_INFO)
+instance DIA_Edda_PICKPOCKET(C_Info)
 {
-	npc = vlk_471_edda;
+	npc = VLK_471_Edda;
 	nr = 900;
-	condition = dia_edda_pickpocket_condition;
-	information = dia_edda_pickpocket_info;
+	condition = DIA_Edda_PICKPOCKET_Condition;
+	information = DIA_Edda_PICKPOCKET_Info;
 	permanent = TRUE;
 	description = "(Kradzie¿ tego pos¹¿ka bêdzie dziecinnie ³atwa)";
 };
 
 
-func int dia_edda_pickpocket_condition()
+func int DIA_Edda_PICKPOCKET_Condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == FALSE) && (Npc_HasItems(self,itmi_eddasstatue) >= 1) && (other.attribute[ATR_DEXTERITY] >= (20 - THEFTDIFF)))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_HasItems(self,ItMi_EddasStatue) >= 1) && (other.attribute[ATR_DEXTERITY] >= (20 - Theftdiff)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_edda_pickpocket_info()
+func void DIA_Edda_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_edda_pickpocket);
-	Info_AddChoice(dia_edda_pickpocket,DIALOG_BACK,dia_edda_pickpocket_back);
-	Info_AddChoice(dia_edda_pickpocket,DIALOG_PICKPOCKET,dia_edda_pickpocket_doit);
+	Info_ClearChoices(DIA_Edda_PICKPOCKET);
+	Info_AddChoice(DIA_Edda_PICKPOCKET,Dialog_Back,DIA_Edda_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Edda_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Edda_PICKPOCKET_DoIt);
 };
 
-func void dia_edda_pickpocket_doit()
+func void DIA_Edda_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 20)
 	{
-		b_giveinvitems(self,other,5708,1);
-		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
-		b_giveplayerxp(XP_AMBIENT);
-		Info_ClearChoices(dia_edda_pickpocket);
+		B_GiveInvItems(self,other,ItMi_EddasStatue,1);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+		B_GivePlayerXP(XP_Ambient);
+		Info_ClearChoices(DIA_Edda_PICKPOCKET);
 	}
 	else
 	{
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_THEFT,1);
+		B_Attack(self,other,AR_Theft,1);
 	};
 };
 
-func void dia_edda_pickpocket_back()
+func void DIA_Edda_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_edda_pickpocket);
+	Info_ClearChoices(DIA_Edda_PICKPOCKET);
 };
 

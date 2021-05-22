@@ -1,53 +1,53 @@
 
-instance VLK_468_CANTHAR(NPC_DEFAULT)
+instance VLK_468_Canthar(Npc_Default)
 {
 	name[0] = "Canthar";
 	guild = GIL_NONE;
 	id = 468;
 	voice = 9;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	aivar[AIV_TOUGHGUYNEWSOVERRIDE] = TRUE;
-	aivar[AIV_IGNORE_MURDER] = TRUE;
-	aivar[AIV_IGNORE_THEFT] = TRUE;
-	aivar[AIV_IGNORE_SHEEPKILLER] = TRUE;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	aivar[AIV_ToughGuy] = TRUE;
+	aivar[AIV_ToughGuyNewsOverride] = TRUE;
+	aivar[AIV_IGNORE_Murder] = TRUE;
+	aivar[AIV_IGNORE_Theft] = TRUE;
+	aivar[AIV_IGNORE_Sheepkiller] = TRUE;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_vlk_sword);
-	CreateInvItems(self,itmi_gold,50);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_WEAK_ORRY,BODYTEX_N,4821);
+	EquipItem(self,ItMw_1h_Vlk_Sword);
+	CreateInvItems(self,ItMi_Gold,50);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Weak_Orry,BodyTex_N,ITAR_Vlk_M);
 	Mdl_SetModelFatness(self,1.8);
 	Mdl_ApplyOverlayMds(self,"Humans_Arrogance.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,50);
-	daily_routine = rtn_prestart_468;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,50);
+	daily_routine = Rtn_PreStart_468;
 };
 
 
-func void rtn_prestart_468()
+func void Rtn_PreStart_468()
 {
-	ta_sit_bench(8,0,23,0,"NW_FARM1_PATH_CITY_SHEEP_05");
-	ta_sit_bench(23,0,8,0,"NW_FARM1_PATH_CITY_SHEEP_05");
+	TA_Sit_Bench(8,0,23,0,"NW_FARM1_PATH_CITY_SHEEP_05");
+	TA_Sit_Bench(23,0,8,0,"NW_FARM1_PATH_CITY_SHEEP_05");
 };
 
-func void rtn_start_468()
+func void Rtn_Start_468()
 {
-	ta_sit_bench(7,45,19,45,"NW_CITY_MERCHANT_PATH_30");
-	ta_smoke_waterpipe(19,45,0,45,"NW_CITY_RAUCH_05");
-	ta_sleep(0,45,7,45,"NW_CITY_HOTEL_BED_01");
+	TA_Sit_Bench(7,45,19,45,"NW_CITY_MERCHANT_PATH_30");
+	TA_Smoke_Waterpipe(19,45,0,45,"NW_CITY_RAUCH_05");
+	TA_Sleep(0,45,7,45,"NW_CITY_HOTEL_BED_01");
 };
 
-func void rtn_marktstand_468()
+func void Rtn_Marktstand_468()
 {
-	ta_stand_armscrossed(7,45,19,45,"NW_CITY_SARAH");
-	ta_smoke_waterpipe(19,45,0,45,"NW_CITY_RAUCH_05");
-	ta_sleep(0,45,7,45,"NW_CITY_HOTEL_BED_01");
+	TA_Stand_ArmsCrossed(7,45,19,45,"NW_CITY_SARAH");
+	TA_Smoke_Waterpipe(19,45,0,45,"NW_CITY_RAUCH_05");
+	TA_Sleep(0,45,7,45,"NW_CITY_HOTEL_BED_01");
 };
 
-func void rtn_knast_468()
+func void Rtn_Knast_468()
 {
-	ta_sit_bench(8,0,23,0,"NW_CITY_HABOUR_KASERN_RENGARU");
-	ta_sit_bench(23,0,8,0,"NW_CITY_HABOUR_KASERN_RENGARU");
+	TA_Sit_Bench(8,0,23,0,"NW_CITY_HABOUR_KASERN_RENGARU");
+	TA_Sit_Bench(23,0,8,0,"NW_CITY_HABOUR_KASERN_RENGARU");
 };
 

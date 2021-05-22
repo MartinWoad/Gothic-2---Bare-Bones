@@ -1,30 +1,30 @@
 
-func void b_mm_assessplayer()
+func void B_MM_AssessPlayer()
 {
 	if(other.aivar[AIV_INVINCIBLE] == TRUE)
 	{
 		return;
 	};
-	if(c_npcisdown(other))
+	if(C_NpcIsDown(other))
 	{
 		return;
 	};
-	b_assigndragontalk(self);
+	B_AssignDragonTalk(self);
 	if((Npc_GetDistToNpc(self,other) <= 700) && Npc_CheckInfo(self,1))
 	{
 		if((self.guild == GIL_DRAGON) || ((self.guild != GIL_DRAGON) && (Npc_GetDistToNpc(self,other) <= PERC_DIST_DIALOG)))
 		{
-			if(!c_bodystatecontains(other,BS_FALL) && !c_bodystatecontains(other,BS_SWIM) && !c_bodystatecontains(other,BS_DIVE))
+			if(!C_BodyStateContains(other,BS_FALL) && !C_BodyStateContains(other,BS_SWIM) && !C_BodyStateContains(other,BS_DIVE))
 			{
-				self.aivar[AIV_NPCSTARTEDTALK] = TRUE;
-				b_assesstalk();
+				self.aivar[AIV_NpcStartedTalk] = TRUE;
+				B_AssessTalk();
 				return;
 			};
 		};
 	};
 	if(self.aivar[AIV_PARTYMEMBER] == TRUE)
 	{
-		if((Npc_GetDistToNpc(self,hero) < 500) && !c_bodystatecontains(self,BS_STAND))
+		if((Npc_GetDistToNpc(self,hero) < 500) && !C_BodyStateContains(self,BS_STAND))
 		{
 			Npc_ClearAIQueue(self);
 			AI_Standup(self);

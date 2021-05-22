@@ -1,15 +1,15 @@
 
-func void zs_stand_wp()
+func void ZS_Stand_WP()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	AI_GotoWP(self,self.wp);
 	AI_AlignToWP(self);
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func int zs_stand_wp_loop()
+func int ZS_Stand_WP_loop()
 {
 	var int random;
 	if(self.aivar[AIV_TAPOSITION] == NOTINPOS)
@@ -37,7 +37,7 @@ func int zs_stand_wp_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_stand_wp_end()
+func void ZS_Stand_WP_end()
 {
 	AI_PlayAni(self,"T_LGUARD_2_STAND");
 };

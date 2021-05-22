@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_SNAPPER(C_NPC)
+prototype Mst_Default_Snapper(C_Npc)
 {
 	name[0] = "Zêbacz";
 	guild = GIL_SNAPPER;
@@ -21,79 +21,79 @@ prototype MST_DEFAULT_SNAPPER(C_NPC)
 	fight_tactic = FAI_SNAPPER;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	aivar[AIV_MM_PACKHUNTER] = TRUE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar[AIV_MM_Packhunter] = TRUE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_snapper()
+func void B_SetVisuals_Snapper()
 {
 	Mdl_SetVisual(self,"Snapper.mds");
 	Mdl_SetVisualBody(self,"Sna_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance SNAPPER(MST_DEFAULT_SNAPPER)
+instance Snapper(Mst_Default_Snapper)
 {
-	b_setvisuals_snapper();
+	B_SetVisuals_Snapper();
 	Npc_SetToFistMode(self);
 };
 
-instance NEWMINE_SNAPPER1(MST_DEFAULT_SNAPPER)
+instance NewMine_Snapper1(Mst_Default_Snapper)
 {
-	b_setvisuals_snapper();
+	B_SetVisuals_Snapper();
 	Npc_SetToFistMode(self);
 };
 
-instance NEWMINE_SNAPPER2(MST_DEFAULT_SNAPPER)
+instance NewMine_Snapper2(Mst_Default_Snapper)
 {
-	b_setvisuals_snapper();
+	B_SetVisuals_Snapper();
 	Npc_SetToFistMode(self);
 };
 
-instance NEWMINE_SNAPPER3(MST_DEFAULT_SNAPPER)
+instance NewMine_Snapper3(Mst_Default_Snapper)
 {
-	b_setvisuals_snapper();
+	B_SetVisuals_Snapper();
 	Npc_SetToFistMode(self);
 };
 
-instance NEWMINE_SNAPPER4(MST_DEFAULT_SNAPPER)
+instance NewMine_Snapper4(Mst_Default_Snapper)
 {
-	b_setvisuals_snapper();
+	B_SetVisuals_Snapper();
 	Npc_SetToFistMode(self);
 };
 
-instance NEWMINE_SNAPPER5(MST_DEFAULT_SNAPPER)
+instance NewMine_Snapper5(Mst_Default_Snapper)
 {
-	b_setvisuals_snapper();
+	B_SetVisuals_Snapper();
 	Npc_SetToFistMode(self);
 };
 
-instance NEWMINE_SNAPPER6(MST_DEFAULT_SNAPPER)
+instance NewMine_Snapper6(Mst_Default_Snapper)
 {
-	b_setvisuals_snapper();
+	B_SetVisuals_Snapper();
 	Npc_SetToFistMode(self);
 };
 
-instance NEWMINE_SNAPPER7(MST_DEFAULT_SNAPPER)
+instance NewMine_Snapper7(Mst_Default_Snapper)
 {
-	b_setvisuals_snapper();
+	B_SetVisuals_Snapper();
 	Npc_SetToFistMode(self);
 };
 
-instance NEWMINE_SNAPPER8(MST_DEFAULT_SNAPPER)
+instance NewMine_Snapper8(Mst_Default_Snapper)
 {
-	b_setvisuals_snapper();
+	B_SetVisuals_Snapper();
 	Npc_SetToFistMode(self);
 };
 
-instance NEWMINE_LEADSNAPPER(MST_DEFAULT_SNAPPER)
+instance NewMine_LeadSnapper(Mst_Default_Snapper)
 {
-	b_setvisuals_snapper();
+	B_SetVisuals_Snapper();
 	Npc_SetToFistMode(self);
 	name[0] = "Przywódca Stada";
 	attribute[ATR_STRENGTH] = 80;
@@ -108,24 +108,24 @@ instance NEWMINE_LEADSNAPPER(MST_DEFAULT_SNAPPER)
 	protection[PROT_FIRE] = 55;
 	protection[PROT_FLY] = 60;
 	protection[PROT_MAGIC] = 35;
-	CreateInvItems(self,itat_clawleader,1);
+	CreateInvItems(self,ItAt_ClawLeader,1);
 };
 
-instance GRIMBALD_SNAPPER1(MST_DEFAULT_SNAPPER)
+instance Grimbald_Snapper1(Mst_Default_Snapper)
 {
-	b_setvisuals_snapper();
+	B_SetVisuals_Snapper();
 	Npc_SetToFistMode(self);
 };
 
-instance GRIMBALD_SNAPPER2(MST_DEFAULT_SNAPPER)
+instance Grimbald_Snapper2(Mst_Default_Snapper)
 {
-	b_setvisuals_snapper();
+	B_SetVisuals_Snapper();
 	Npc_SetToFistMode(self);
 };
 
-instance GRIMBALD_SNAPPER3(MST_DEFAULT_SNAPPER)
+instance Grimbald_Snapper3(Mst_Default_Snapper)
 {
-	b_setvisuals_snapper();
+	B_SetVisuals_Snapper();
 	Npc_SetToFistMode(self);
 };
 

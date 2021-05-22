@@ -1,46 +1,46 @@
 
-instance DIA_BROMOR_EXIT(C_INFO)
+instance DIA_Bromor_EXIT(C_Info)
 {
-	npc = vlk_433_bromor;
+	npc = VLK_433_Bromor;
 	nr = 999;
-	condition = dia_bromor_exit_condition;
-	information = dia_bromor_exit_info;
+	condition = DIA_Bromor_EXIT_Condition;
+	information = DIA_Bromor_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_bromor_exit_condition()
+func int DIA_Bromor_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bromor_exit_info()
+func void DIA_Bromor_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_BROMOR_GIRLS(C_INFO)
+instance DIA_Bromor_GIRLS(C_Info)
 {
-	npc = vlk_433_bromor;
+	npc = VLK_433_Bromor;
 	nr = 2;
-	condition = dia_bromor_girls_condition;
-	information = dia_bromor_girls_info;
+	condition = DIA_Bromor_GIRLS_Condition;
+	information = DIA_Bromor_GIRLS_Info;
 	permanent = FALSE;
 	description = "Chcê siê zabawiæ.";
 };
 
 
-func int dia_bromor_girls_condition()
+func int DIA_Bromor_GIRLS_Condition()
 {
-	if(NPCOBSESSEDBYDMT_BROMOR == FALSE)
+	if(NpcObsessedByDMT_Bromor == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bromor_girls_info()
+func void DIA_Bromor_GIRLS_Info()
 {
 	AI_Output(other,self,"DIA_Bromor_GIRLS_15_00");	//Chcê siê zabawiæ.
 	AI_Output(self,other,"DIA_Bromor_GIRLS_07_01");	//Koniec koñców po to tu w³aœnie przyszed³eœ.
@@ -50,69 +50,69 @@ func void dia_bromor_girls_info()
 };
 
 
-instance DIA_BROMOR_PAY(C_INFO)
+instance DIA_Bromor_Pay(C_Info)
 {
-	npc = vlk_433_bromor;
+	npc = VLK_433_Bromor;
 	nr = 2;
-	condition = dia_bromor_pay_condition;
-	information = dia_bromor_pay_info;
+	condition = DIA_Bromor_Pay_Condition;
+	information = DIA_Bromor_Pay_Info;
 	permanent = TRUE;
 	description = "Chcê siê troszkê zabawiæ (zap³aæ 50 sztuk z³ota).";
 };
 
 
-func int dia_bromor_pay_condition()
+func int DIA_Bromor_Pay_Condition()
 {
-	if((BROMOR_PAY == FALSE) && Npc_KnowsInfo(other,dia_bromor_girls) && (NPCOBSESSEDBYDMT_BROMOR == FALSE) && (Npc_IsDead(nadja) == FALSE))
+	if((Bromor_Pay == FALSE) && Npc_KnowsInfo(other,DIA_Bromor_GIRLS) && (NpcObsessedByDMT_Bromor == FALSE) && (Npc_IsDead(Nadja) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_bromor_pay_onetime;
+var int DIA_Bromor_Pay_OneTime;
 
-func void dia_bromor_pay_info()
+func void DIA_Bromor_Pay_Info()
 {
 	AI_Output(other,self,"DIA_Bromor_Pay_15_00");	//Chcê siê zabawiæ.
-	if(b_giveinvitems(other,self,5113,50))
+	if(B_GiveInvItems(other,self,ItMi_Gold,50))
 	{
 		AI_Output(self,other,"DIA_Bromor_Pay_07_01");	//Dobra. Najbli¿szych kilku godzin d³ugo nie zapomnisz.
 		AI_Output(self,other,"DIA_Bromor_Pay_07_02");	//Zatem idŸ na górê z Nadj¹.
-		if(DIA_BROMOR_PAY_ONETIME == FALSE)
+		if(DIA_Bromor_Pay_OneTime == FALSE)
 		{
-			DIA_BROMOR_PAY_ONETIME = TRUE;
+			DIA_Bromor_Pay_OneTime = TRUE;
 		};
-		BROMOR_PAY = 1;
+		Bromor_Pay = 1;
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Bromor_Pay_07_03");	//Nie znoszê, kiedy ludzie próbuj¹ ze mnie ¿artowaæ. Skoro nie mo¿esz zap³aciæ, to wynoœ siê st¹d.
 	};
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_BROMOR_DOPE(C_INFO)
+instance DIA_Bromor_DOPE(C_Info)
 {
-	npc = vlk_433_bromor;
+	npc = VLK_433_Bromor;
 	nr = 3;
-	condition = dia_bromor_dope_condition;
-	information = dia_bromor_dope_info;
+	condition = DIA_Bromor_DOPE_Condition;
+	information = DIA_Bromor_DOPE_Info;
 	permanent = FALSE;
 	description = "Czy mogê tutaj dostaæ tak¿e 'wyj¹tkowe' towary?";
 };
 
 
-func int dia_bromor_dope_condition()
+func int DIA_Bromor_DOPE_Condition()
 {
-	if((MIS_ANDRE_REDLIGHT == LOG_RUNNING) && (NPCOBSESSEDBYDMT_BROMOR == FALSE))
+	if((MIS_Andre_REDLIGHT == LOG_Running) && (NpcObsessedByDMT_Bromor == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bromor_dope_info()
+func void DIA_Bromor_DOPE_Info()
 {
 	AI_Output(other,self,"DIA_Bromor_DOPE_15_00");	//Czy mogê tutaj dostaæ tak¿e 'wyj¹tkowe' towary?
 	AI_Output(self,other,"DIA_Bromor_DOPE_07_01");	//Pewnie, wszystkie moje dziewczyny s¹ wyj¹tkowe.
@@ -120,104 +120,104 @@ func void dia_bromor_dope_info()
 };
 
 
-instance DIA_BROMOR_OBSESSION(C_INFO)
+instance DIA_Bromor_Obsession(C_Info)
 {
-	npc = vlk_433_bromor;
+	npc = VLK_433_Bromor;
 	nr = 30;
-	condition = dia_bromor_obsession_condition;
-	information = dia_bromor_obsession_info;
+	condition = DIA_Bromor_Obsession_Condition;
+	information = DIA_Bromor_Obsession_Info;
 	description = "Wszystko w porz¹dku?";
 };
 
 
-func int dia_bromor_obsession_condition()
+func int DIA_Bromor_Obsession_Condition()
 {
-	if((KAPITEL >= 3) && (NPCOBSESSEDBYDMT_BROMOR == FALSE) && (hero.guild == GIL_KDF))
+	if((Kapitel >= 3) && (NpcObsessedByDMT_Bromor == FALSE) && (hero.guild == GIL_KDF))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_bromor_obsession_gotmoney;
+var int DIA_Bromor_Obsession_GotMoney;
 
-func void dia_bromor_obsession_info()
+func void DIA_Bromor_Obsession_Info()
 {
-	b_npcobsessedbydmt(self);
+	B_NpcObsessedByDMT(self);
 };
 
 
-instance DIA_BROMOR_HEILUNG(C_INFO)
+instance DIA_Bromor_Heilung(C_Info)
 {
-	npc = vlk_433_bromor;
+	npc = VLK_433_Bromor;
 	nr = 55;
-	condition = dia_bromor_heilung_condition;
-	information = dia_bromor_heilung_info;
+	condition = DIA_Bromor_Heilung_Condition;
+	information = DIA_Bromor_Heilung_Info;
 	permanent = TRUE;
 	description = "Jesteœ opêtany.";
 };
 
 
-func int dia_bromor_heilung_condition()
+func int DIA_Bromor_Heilung_Condition()
 {
-	if((NPCOBSESSEDBYDMT_BROMOR == TRUE) && (NPCOBSESSEDBYDMT == FALSE) && (hero.guild == GIL_KDF))
+	if((NpcObsessedByDMT_Bromor == TRUE) && (NpcObsessedByDMT == FALSE) && (hero.guild == GIL_KDF))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bromor_heilung_info()
+func void DIA_Bromor_Heilung_Info()
 {
 	AI_Output(other,self,"DIA_Bromor_Heilung_15_00");	//Jesteœ opêtany.
 	AI_Output(self,other,"DIA_Bromor_Heilung_07_01");	//Co? O czym ty gadasz? Wynocha.
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_BROMOR_PICKPOCKET(C_INFO)
+instance DIA_Bromor_PICKPOCKET(C_Info)
 {
-	npc = vlk_433_bromor;
+	npc = VLK_433_Bromor;
 	nr = 900;
-	condition = dia_bromor_pickpocket_condition;
-	information = dia_bromor_pickpocket_info;
+	condition = DIA_Bromor_PICKPOCKET_Condition;
+	information = DIA_Bromor_PICKPOCKET_Info;
 	permanent = TRUE;
 	description = "(Kradzie¿ tego klucza bêdzie ryzykownym zadaniem)";
 };
 
 
-func int dia_bromor_pickpocket_condition()
+func int DIA_Bromor_PICKPOCKET_Condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == FALSE) && (Npc_HasItems(self,itke_bromor) >= 1) && (other.attribute[ATR_DEXTERITY] >= (50 - THEFTDIFF)))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_HasItems(self,ItKe_Bromor) >= 1) && (other.attribute[ATR_DEXTERITY] >= (50 - Theftdiff)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bromor_pickpocket_info()
+func void DIA_Bromor_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_bromor_pickpocket);
-	Info_AddChoice(dia_bromor_pickpocket,DIALOG_BACK,dia_bromor_pickpocket_back);
-	Info_AddChoice(dia_bromor_pickpocket,DIALOG_PICKPOCKET,dia_bromor_pickpocket_doit);
+	Info_ClearChoices(DIA_Bromor_PICKPOCKET);
+	Info_AddChoice(DIA_Bromor_PICKPOCKET,Dialog_Back,DIA_Bromor_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Bromor_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Bromor_PICKPOCKET_DoIt);
 };
 
-func void dia_bromor_pickpocket_doit()
+func void DIA_Bromor_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 50)
 	{
-		b_giveinvitems(self,other,5748,1);
-		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
-		b_giveplayerxp(XP_AMBIENT);
-		Info_ClearChoices(dia_bromor_pickpocket);
+		B_GiveInvItems(self,other,ItKe_Bromor,1);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+		B_GivePlayerXP(XP_Ambient);
+		Info_ClearChoices(DIA_Bromor_PICKPOCKET);
 	}
 	else
 	{
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_THEFT,1);
+		B_Attack(self,other,AR_Theft,1);
 	};
 };
 
-func void dia_bromor_pickpocket_back()
+func void DIA_Bromor_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_bromor_pickpocket);
+	Info_ClearChoices(DIA_Bromor_PICKPOCKET);
 };
 

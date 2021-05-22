@@ -1,30 +1,30 @@
 
-instance PAL_251_ORIC(NPC_DEFAULT)
+instance PAL_251_Oric(Npc_Default)
 {
 	name[0] = "Orik";
 	guild = GIL_PAL;
 	id = 251;
 	voice = 11;
 	flags = 0;
-	npctype = NPCTYPE_OCMAIN;
-	b_setattributestochapter(self,5);
+	npcType = NPCTYPE_OCMAIN;
+	B_SetAttributesToChapter(self,5);
 	fight_tactic = FAI_HUMAN_MASTER;
-	EquipItem(self,itmw_2h_pal_sword);
-	EquipItem(self,itrw_mil_crossbow);
-	CreateInvItems(self,itrw_bolt,14);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fighter",FACE_N_TOUGH_LEE_ÂHNLICH,BODYTEX_N,4829);
+	EquipItem(self,ItMw_2h_Pal_Sword);
+	EquipItem(self,ItRw_Mil_Crossbow);
+	CreateInvItems(self,ItRw_Bolt,14);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_Tough_Lee_‰hnlich,BodyTex_N,ItAr_PAl_H);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,80);
-	daily_routine = rtn_start_251;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,80);
+	daily_routine = Rtn_Start_251;
 };
 
 
-func void rtn_start_251()
+func void Rtn_Start_251()
 {
-	ta_smalltalk(8,0,21,0,"OC_EBR_HALL_CENTER");
-	ta_sleep(21,0,8,0,"OC_EBR_ROOM_02_SLEEP");
+	TA_Smalltalk(8,0,21,0,"OC_EBR_HALL_CENTER");
+	TA_Sleep(21,0,8,0,"OC_EBR_ROOM_02_SLEEP");
 };
 

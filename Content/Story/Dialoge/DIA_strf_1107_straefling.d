@@ -1,60 +1,60 @@
 
-instance DIA_STRF_1107_EXIT(C_INFO)
+instance DIA_STRF_1107_EXIT(C_Info)
 {
-	npc = strf_1107_straefling;
+	npc = STRF_1107_Straefling;
 	nr = 999;
-	condition = dia_strf_1107_exit_condition;
-	information = dia_strf_1107_exit_info;
+	condition = DIA_STRF_1107_EXIT_Condition;
+	information = DIA_STRF_1107_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_strf_1107_exit_condition()
+func int DIA_STRF_1107_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_strf_1107_exit_info()
+func void DIA_STRF_1107_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_STRF_1107_FINGER(C_INFO)
+instance DIA_STRF_1107_FINGER(C_Info)
 {
-	npc = strf_1107_straefling;
-	condition = dia_strf_1107_finger_condition;
-	information = dia_strf_1107_finger_info;
+	npc = STRF_1107_Straefling;
+	condition = DIA_STRF_1107_FINGER_Condition;
+	information = DIA_STRF_1107_FINGER_Info;
 	important = TRUE;
 };
 
 
-func int dia_strf_1107_finger_condition()
+func int DIA_STRF_1107_FINGER_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_strf_1107_finger_info()
+func void DIA_STRF_1107_FINGER_Info()
 {
 	AI_Output(self,other,"DIA_STRF_1107_FINGER_01_00");	//£apy precz od moich garnków! Nikt nie bêdzie ich rusza³.
 	AI_Output(self,other,"DIA_STRF_1107_FINGER_01_01");	//Ja odpowiadam za jedzenie, a to oznacza, ¿e nikt inny nie ma tu wstêpu! Rozumiemy siê!
 };
 
 
-instance DIA_STRF_1107_COOK(C_INFO)
+instance DIA_STRF_1107_COOK(C_Info)
 {
-	npc = strf_1107_straefling;
-	condition = dia_strf_1107_cook_condition;
-	information = dia_strf_1107_cook_info;
+	npc = STRF_1107_Straefling;
+	condition = DIA_STRF_1107_COOK_Condition;
+	information = DIA_STRF_1107_COOK_Info;
 	description = "Kto wybra³ ciê na kucharza?";
 };
 
 
-func int dia_strf_1107_cook_condition()
+func int DIA_STRF_1107_COOK_Condition()
 {
 	if(Npc_KnowsInfo(hero,dia_strf_1107_finger))
 	{
@@ -62,7 +62,7 @@ func int dia_strf_1107_cook_condition()
 	};
 };
 
-func void dia_strf_1107_cook_info()
+func void DIA_STRF_1107_COOK_Info()
 {
 	AI_Output(other,self,"DIA_STRF_1107_COOK_15_00");	//Kto wybra³ ciê na kucharza?
 	AI_Output(self,other,"DIA_STRF_1107_COOK_01_01");	//Kapitan Garond. Nim zosta³em wiêŸniem, by³em kucharzem we 'Wœciek³ym Dziku'.
@@ -71,18 +71,18 @@ func void dia_strf_1107_cook_info()
 };
 
 
-instance DIA_STRF_1107_PERM(C_INFO)
+instance DIA_STRF_1107_PERM(C_Info)
 {
-	npc = strf_1107_straefling;
+	npc = STRF_1107_Straefling;
 	nr = 900;
-	condition = dia_strf_1107_perm_condition;
-	information = dia_strf_1107_perm_info;
+	condition = DIA_STRF_1107_PERM_Condition;
+	information = DIA_STRF_1107_PERM_Info;
 	permanent = TRUE;
 	description = "Coœ nowego?";
 };
 
 
-func int dia_strf_1107_perm_condition()
+func int DIA_STRF_1107_PERM_Condition()
 {
 	if(Npc_KnowsInfo(hero,dia_strf_1107_finger))
 	{
@@ -90,7 +90,7 @@ func int dia_strf_1107_perm_condition()
 	};
 };
 
-func void dia_strf_1107_perm_info()
+func void DIA_STRF_1107_PERM_Info()
 {
 	AI_Output(other,self,"DIA_STRF_1107_PERM_15_00");	//Jakieœ nowe wieœci?
 	AI_Output(self,other,"DIA_STRF_1107_PERM_01_01");	//Jeœli chcesz poznaæ najnowsze wieœci, pogadaj z rycerzami. Ja tu jestem tylko kucharzem... Za kratkami.

@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_DEMONLORD(C_NPC)
+prototype Mst_Default_DemonLord(C_Npc)
 {
 	name[0] = "Ksi¹¿ê Demonów";
 	guild = GIL_DEMON;
@@ -21,30 +21,30 @@ prototype MST_DEFAULT_DEMONLORD(C_NPC)
 	fight_tactic = FAI_DEMON;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	aivar[AIV_MM_PACKHUNTER] = FALSE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar[AIV_MM_Packhunter] = FALSE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_demonlord()
+func void B_SetVisuals_DemonLord()
 {
 	Mdl_SetVisual(self,"Demon.mds");
 	Mdl_SetVisualBody(self,"Dem2_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance DEMONLORD(MST_DEFAULT_DEMONLORD)
+instance DemonLord(Mst_Default_DemonLord)
 {
-	b_setvisuals_demonlord();
+	B_SetVisuals_DemonLord();
 	Npc_SetToFistMode(self);
 };
 
-instance XARDAS_DT_DEMONLORD(MST_DEFAULT_DEMONLORD)
+instance Xardas_DT_DemonLord(Mst_Default_DemonLord)
 {
-	b_setvisuals_demonlord();
+	B_SetVisuals_DemonLord();
 	Npc_SetToFistMode(self);
 };
 

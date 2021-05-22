@@ -1,28 +1,28 @@
 
-instance PAL_202_ALBRECHT(NPC_DEFAULT)
+instance PAL_202_Albrecht(Npc_Default)
 {
 	name[0] = "Albrecht";
 	guild = GIL_PAL;
 	id = 202;
 	voice = 3;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,5);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,5);
 	fight_tactic = FAI_HUMAN_MASTER;
-	EquipItem(self,itmw_1h_pal_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fighter",FACE_P_TOUGH_RODRIGUEZ,BODYTEX_P,4829);
+	EquipItem(self,ItMw_1h_Pal_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_P_Tough_Rodriguez,BodyTex_P,ItAr_PAl_H);
 	Mdl_SetModelFatness(self,1.5);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,80);
-	daily_routine = rtn_start_202;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,80);
+	daily_routine = Rtn_Start_202;
 };
 
 
-func void rtn_start_202()
+func void Rtn_Start_202()
 {
-	ta_read_bookstand(8,0,23,0,"NW_CITY_ALBRECHT");
-	ta_read_bookstand(23,0,8,0,"NW_CITY_ALBRECHT");
+	TA_Read_Bookstand(8,0,23,0,"NW_CITY_ALBRECHT");
+	TA_Read_Bookstand(23,0,8,0,"NW_CITY_ALBRECHT");
 };
 

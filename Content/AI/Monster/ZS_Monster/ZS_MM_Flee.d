@@ -1,15 +1,15 @@
 
-func void zs_mm_flee()
+func void ZS_MM_Flee()
 {
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
-	b_validateother();
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
+	B_ValidateOther();
 	AI_Standup(self);
 	AI_SetWalkMode(self,NPC_RUN);
 	Npc_SendPassivePerc(self,PERC_ASSESSWARN,other,self);
-	b_mm_desynchronize();
+	B_MM_DeSynchronize();
 };
 
-func int zs_mm_flee_loop()
+func int ZS_MM_Flee_Loop()
 {
 	Npc_GetTarget(self);
 	if(Npc_GetDistToNpc(self,other) < 2000)
@@ -29,7 +29,7 @@ func int zs_mm_flee_loop()
 	};
 };
 
-func void zs_mm_flee_end()
+func void ZS_MM_Flee_End()
 {
 };
 

@@ -1,5 +1,5 @@
 
-func void b_movemob()
+func void B_MoveMob()
 {
 	var string door;
 	door = Npc_GetDetectedMob(self);

@@ -1,31 +1,31 @@
 
-instance BDT_1025_BANDIT_H(NPC_DEFAULT)
+instance BDT_1025_Bandit_H(Npc_Default)
 {
-	name[0] = NAME_BANDIT;
+	name[0] = NAME_Bandit;
 	guild = GIL_BDT;
 	id = 1025;
 	voice = 9;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_sld_sword);
-	EquipItem(self,itrw_sld_bow);
-	CreateInvItems(self,itrw_arrow,12);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Thief",FACE_B_NORMAL01,BODYTEX_B,4847);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	EquipItem(self,ItRw_Sld_Bow);
+	CreateInvItems(self,ItRw_Arrow,12);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Thief",Face_B_Normal01,BodyTex_B,ItAr_BDT_H);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Arrogance.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,60);
-	daily_routine = rtn_start_1025;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,60);
+	daily_routine = Rtn_Start_1025;
 };
 
 
-func void rtn_start_1025()
+func void Rtn_Start_1025()
 {
-	ta_stand_guarding(8,0,22,0,"NW_FOREST_CAVE1_02");
-	ta_stand_guarding(22,0,8,0,"NW_FOREST_CAVE1_02");
+	TA_Stand_Guarding(8,0,22,0,"NW_FOREST_CAVE1_02");
+	TA_Stand_Guarding(22,0,8,0,"NW_FOREST_CAVE1_02");
 };
 

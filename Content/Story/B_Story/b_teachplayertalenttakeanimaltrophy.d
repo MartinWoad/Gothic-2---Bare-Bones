@@ -1,91 +1,91 @@
 
-func int b_teachplayertalenttakeanimaltrophy(var C_NPC slf,var C_NPC oth,var int trophy)
+func int B_TeachPlayerTalentTakeAnimalTrophy(var C_Npc slf,var C_Npc oth,var int trophy)
 {
 	var int kosten;
-	kosten = b_getlearncosttalent(oth,NPC_TALENT_TAKEANIMALTROPHY);
+	kosten = B_GetLearnCostTalent(oth,NPC_TALENT_TAKEANIMALTROPHY);
 	if(oth.lp < kosten)
 	{
-		PrintScreen(PRINT_NOTENOUGHLEARNPOINTS,-1,-1,FONT_SCREENSMALL,2);
-		b_say(slf,oth,"$NOLEARNNOPOINTS");
+		PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
+		B_Say(slf,oth,"$NOLEARNNOPOINTS");
 		return FALSE;
 	};
 	oth.lp = oth.lp - kosten;
-	Log_CreateTopic(TOPIC_TALENTANIMALTROPHY,LOG_NOTE);
-	b_logentry(TOPIC_TALENTANIMALTROPHY,"Teraz mogê:");
-	if(trophy == TROPHY_TEETH)
+	Log_CreateTopic(TOPIC_TalentAnimalTrophy,LOG_NOTE);
+	B_LogEntry(TOPIC_TalentAnimalTrophy,"Teraz mogê:");
+	if(trophy == TROPHY_Teeth)
 	{
-		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_TEETH] = TRUE;
-		b_logentry(TOPIC_TALENTANIMALTROPHY,"...usuwaæ zwierzêtom k³y.");
+		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] = TRUE;
+		B_LogEntry(TOPIC_TalentAnimalTrophy,"...usuwaæ zwierzêtom k³y.");
 	};
-	if(trophy == TROPHY_CLAWS)
+	if(trophy == TROPHY_Claws)
 	{
-		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CLAWS] = TRUE;
-		b_logentry(TOPIC_TALENTANIMALTROPHY,"...usuwaæ zwierzêtom pazury.");
+		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Claws] = TRUE;
+		B_LogEntry(TOPIC_TalentAnimalTrophy,"...usuwaæ zwierzêtom pazury.");
 	};
-	if(trophy == TROPHY_FUR)
+	if(trophy == TROPHY_Fur)
 	{
-		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FUR] = TRUE;
-		b_logentry(TOPIC_TALENTANIMALTROPHY,"...oprawiaæ zwierzêta.");
+		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] = TRUE;
+		B_LogEntry(TOPIC_TalentAnimalTrophy,"...oprawiaæ zwierzêta.");
 	};
-	if(trophy == TROPHY_HEART)
+	if(trophy == TROPHY_Heart)
 	{
-		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_HEART] = TRUE;
-		b_logentry(TOPIC_TALENTANIMALTROPHY,"...usuwaæ serca golemom i demonom.");
+		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Heart] = TRUE;
+		B_LogEntry(TOPIC_TalentAnimalTrophy,"...usuwaæ serca golemom i demonom.");
 	};
-	if(trophy == TROPHY_SHADOWHORN)
+	if(trophy == TROPHY_ShadowHorn)
 	{
-		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_SHADOWHORN] = TRUE;
-		b_logentry(TOPIC_TALENTANIMALTROPHY,"...usuwaæ rogi cieniostworom.");
+		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_ShadowHorn] = TRUE;
+		B_LogEntry(TOPIC_TalentAnimalTrophy,"...usuwaæ rogi cieniostworom.");
 	};
-	if(trophy == TROPHY_FIRETONGUE)
+	if(trophy == TROPHY_FireTongue)
 	{
-		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FIRETONGUE] = TRUE;
-		b_logentry(TOPIC_TALENTANIMALTROPHY,"...usuwaæ ognistym jaszczurkom jêzyki.");
+		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FireTongue] = TRUE;
+		B_LogEntry(TOPIC_TalentAnimalTrophy,"...usuwaæ ognistym jaszczurkom jêzyki.");
 	};
-	if(trophy == TROPHY_BFWING)
+	if(trophy == TROPHY_BFWing)
 	{
-		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWING] = TRUE;
-		b_logentry(TOPIC_TALENTANIMALTROPHY,"...usuwaæ krwiopijcom skrzyd³a.");
+		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] = TRUE;
+		B_LogEntry(TOPIC_TalentAnimalTrophy,"...usuwaæ krwiopijcom skrzyd³a.");
 	};
-	if(trophy == TROPHY_BFSTING)
+	if(trophy == TROPHY_BFSting)
 	{
-		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSTING] = TRUE;
-		b_logentry(TOPIC_TALENTANIMALTROPHY,"...usuwaæ krwiopijcom ¿¹d³a.");
+		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] = TRUE;
+		B_LogEntry(TOPIC_TalentAnimalTrophy,"...usuwaæ krwiopijcom ¿¹d³a.");
 	};
-	if(trophy == TROPHY_MANDIBLES)
+	if(trophy == TROPHY_Mandibles)
 	{
-		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_MANDIBLES] = TRUE;
-		b_logentry(TOPIC_TALENTANIMALTROPHY,"...usuwaæ zwierzêtom ¿uwaczki.");
+		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Mandibles] = TRUE;
+		B_LogEntry(TOPIC_TalentAnimalTrophy,"...usuwaæ zwierzêtom ¿uwaczki.");
 	};
-	if(trophy == TROPHY_CRAWLERPLATE)
+	if(trophy == TROPHY_CrawlerPlate)
 	{
-		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CRAWLERPLATE] = TRUE;
-		b_logentry(TOPIC_TALENTANIMALTROPHY,"...usuwaæ pe³zaczom pancerze.");
+		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CrawlerPlate] = TRUE;
+		B_LogEntry(TOPIC_TalentAnimalTrophy,"...usuwaæ pe³zaczom pancerze.");
 	};
-	if(trophy == TROPHY_DRGSNAPPERHORN)
+	if(trophy == TROPHY_DrgSnapperHorn)
 	{
-		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRGSNAPPERHORN] = TRUE;
-		b_logentry(TOPIC_TALENTANIMALTROPHY,"...usuwaæ zêbaczom rogi.");
+		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DrgSnapperHorn] = TRUE;
+		B_LogEntry(TOPIC_TalentAnimalTrophy,"...usuwaæ zêbaczom rogi.");
 	};
-	if(trophy == TROPHY_DRAGONSCALE)
+	if(trophy == TROPHY_DragonScale)
 	{
-		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRAGONSCALE] = TRUE;
-		CreateInvItems(swampdragon,itat_dragonscale,12);
-		CreateInvItems(rockdragon,itat_dragonscale,12);
-		CreateInvItems(firedragon,itat_dragonscale,12);
-		CreateInvItems(icedragon,itat_dragonscale,12);
-		b_logentry(TOPIC_TALENTANIMALTROPHY,"... zbieraæ smocze ³uski ze skór zabitych smoków.");
+		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DragonScale] = TRUE;
+		CreateInvItems(SwampDragon,ItAt_DragonScale,12);
+		CreateInvItems(RockDragon,ItAt_DragonScale,12);
+		CreateInvItems(FireDragon,ItAt_DragonScale,12);
+		CreateInvItems(IceDragon,ItAt_DragonScale,12);
+		B_LogEntry(TOPIC_TalentAnimalTrophy,"... zbieraæ smocze ³uski ze skór zabitych smoków.");
 	};
-	if(trophy == TROPHY_DRAGONBLOOD)
+	if(trophy == TROPHY_DragonBlood)
 	{
-		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRAGONBLOOD] = TRUE;
-		CreateInvItems(swampdragon,itat_dragonblood,2);
-		CreateInvItems(rockdragon,itat_dragonblood,2);
-		CreateInvItems(firedragon,itat_dragonblood,2);
-		CreateInvItems(icedragon,itat_dragonblood,2);
-		b_logentry(TOPIC_TALENTANIMALTROPHY,"... magazynowaæ krew zabitych smoków.");
+		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DragonBlood] = TRUE;
+		CreateInvItems(SwampDragon,ItAt_DragonBlood,2);
+		CreateInvItems(RockDragon,ItAt_DragonBlood,2);
+		CreateInvItems(FireDragon,ItAt_DragonBlood,2);
+		CreateInvItems(IceDragon,ItAt_DragonBlood,2);
+		B_LogEntry(TOPIC_TalentAnimalTrophy,"... magazynowaæ krew zabitych smoków.");
 	};
-	PrintScreen(PRINT_LEARNTAKEANIMALTROPHY,-1,-1,FONT_SCREEN,2);
+	PrintScreen(PRINT_LearnTakeAnimalTrophy,-1,-1,FONT_Screen,2);
 	Npc_SetTalentSkill(oth,NPC_TALENT_TAKEANIMALTROPHY,1);
 	return TRUE;
 };

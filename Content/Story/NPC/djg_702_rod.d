@@ -1,48 +1,48 @@
 
-instance DJG_702_ROD(NPC_DEFAULT)
+instance DJG_702_Rod(Npc_Default)
 {
 	name[0] = "Rod";
 	guild = GIL_DJG;
 	id = 702;
 	voice = 6;
 	flags = 0;
-	npctype = NPCTYPE_FRIEND;
-	b_setattributestochapter(self,4);
+	npcType = NPCTYPE_FRIEND;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_MASTER;
-	EquipItem(self,itmw_1h_sld_sword);
-	b_createambientinv(self);
-	CreateInvItems(self,itpo_health_02,6);
-	CreateInvItems(self,itmi_oldcoin,1);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_N_TOUGHBART01,BODYTEX_N,4839);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	B_CreateAmbientInv(self);
+	CreateInvItems(self,ItPo_Health_02,6);
+	CreateInvItems(self,ItMi_OldCoin,1);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_N_ToughBart01,BodyTex_N,itar_djg_m);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,70);
-	daily_routine = rtn_start_702;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,70);
+	daily_routine = Rtn_Start_702;
 };
 
 
-func void rtn_start_702()
+func void Rtn_Start_702()
 {
-	ta_sit_bench(8,0,23,0,"OW_DJG_SWAMPCAMP_01");
-	ta_sit_bench(23,0,8,0,"OW_DJG_SWAMPCAMP_01");
+	TA_Sit_Bench(8,0,23,0,"OW_DJG_SWAMPCAMP_01");
+	TA_Sit_Bench(23,0,8,0,"OW_DJG_SWAMPCAMP_01");
 };
 
-func void rtn_swampwait1_702()
+func void Rtn_SwampWait1_702()
 {
-	ta_guide_player(8,0,23,0,"OW_DJG_SWAMP_WAIT1_02");
-	ta_guide_player(23,0,8,0,"OW_DJG_SWAMP_WAIT1_02");
+	TA_Guide_Player(8,0,23,0,"OW_DJG_SWAMP_WAIT1_02");
+	TA_Guide_Player(23,0,8,0,"OW_DJG_SWAMP_WAIT1_02");
 };
 
-func void rtn_swampwait2_702()
+func void Rtn_SwampWait2_702()
 {
-	ta_runtowp(8,0,23,0,"OW_DJG_SWAMP_WAIT2_02");
-	ta_runtowp(23,0,8,0,"OW_DJG_SWAMP_WAIT2_02");
+	TA_RunToWP(8,0,23,0,"OW_DJG_SWAMP_WAIT2_02");
+	TA_RunToWP(23,0,8,0,"OW_DJG_SWAMP_WAIT2_02");
 };
 
-func void rtn_swampdragon_702()
+func void Rtn_SwampDragon_702()
 {
-	ta_runtowp(8,0,23,0,"OW_SWAMPDRAGON_01");
-	ta_runtowp(23,0,8,0,"OW_SWAMPDRAGON_01");
+	TA_RunToWP(8,0,23,0,"OW_SWAMPDRAGON_01");
+	TA_RunToWP(23,0,8,0,"OW_SWAMPDRAGON_01");
 };
 

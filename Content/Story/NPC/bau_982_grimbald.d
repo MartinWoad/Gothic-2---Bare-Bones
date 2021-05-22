@@ -1,42 +1,42 @@
 
-instance BAU_982_GRIMBALD(NPC_DEFAULT)
+instance BAU_982_Grimbald(Npc_Default)
 {
 	name[0] = "Grimbald";
 	guild = GIL_OUT;
 	id = 982;
 	voice = 7;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,5);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,5);
 	fight_tactic = FAI_HUMAN_MASTER;
-	EquipItem(self,itmw_1h_sld_sword);
-	EquipItem(self,itrw_sld_bow);
-	CreateInvItems(self,itrw_arrow,12);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Psionic",FACE_B_NORMAL_KIRGO,BODYTEX_B,4845);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	EquipItem(self,ItRw_Sld_Bow);
+	CreateInvItems(self,ItRw_Arrow,12);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Psionic",Face_B_Normal_Kirgo,BodyTex_B,ITAR_Leather_L);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,70);
-	daily_routine = rtn_start_982;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,70);
+	daily_routine = Rtn_Start_982;
 };
 
 
-func void rtn_start_982()
+func void Rtn_Start_982()
 {
-	ta_stand_guarding(8,0,23,0,"NW_TROLLAREA_PATH_79");
-	ta_stand_guarding(23,0,8,0,"NW_TROLLAREA_PATH_79");
+	TA_Stand_Guarding(8,0,23,0,"NW_TROLLAREA_PATH_79");
+	TA_Stand_Guarding(23,0,8,0,"NW_TROLLAREA_PATH_79");
 };
 
-func void rtn_jagd_982()
+func void Rtn_Jagd_982()
 {
-	ta_runtowp(8,0,23,0,"NW_TROLLAREA_PATH_80");
-	ta_runtowp(23,0,8,0,"NW_TROLLAREA_PATH_80");
+	TA_RunToWP(8,0,23,0,"NW_TROLLAREA_PATH_80");
+	TA_RunToWP(23,0,8,0,"NW_TROLLAREA_PATH_80");
 };
 
-func void rtn_jagdover_982()
+func void Rtn_JagdOver_982()
 {
-	ta_stand_guarding(8,0,23,0,"NW_TROLLAREA_PATH_79");
-	ta_stand_guarding(23,0,8,0,"NW_TROLLAREA_PATH_79");
+	TA_Stand_Guarding(8,0,23,0,"NW_TROLLAREA_PATH_79");
+	TA_Stand_Guarding(23,0,8,0,"NW_TROLLAREA_PATH_79");
 };
 

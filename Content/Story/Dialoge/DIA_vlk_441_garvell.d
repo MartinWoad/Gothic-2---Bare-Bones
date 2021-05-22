@@ -1,85 +1,85 @@
 
-instance DIA_GARVELL_EXIT(C_INFO)
+instance DIA_Garvell_EXIT(C_Info)
 {
-	npc = vlk_441_garvell;
+	npc = VLK_441_Garvell;
 	nr = 999;
-	condition = dia_garvell_exit_condition;
-	information = dia_garvell_exit_info;
+	condition = DIA_Garvell_EXIT_Condition;
+	information = DIA_Garvell_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_garvell_exit_condition()
+func int DIA_Garvell_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_garvell_exit_info()
+func void DIA_Garvell_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_GARVELL_PICKPOCKET(C_INFO)
+instance DIA_Garvell_PICKPOCKET(C_Info)
 {
-	npc = vlk_441_garvell;
+	npc = VLK_441_Garvell;
 	nr = 900;
-	condition = dia_garvell_pickpocket_condition;
-	information = dia_garvell_pickpocket_info;
+	condition = DIA_Garvell_PICKPOCKET_Condition;
+	information = DIA_Garvell_PICKPOCKET_Info;
 	permanent = TRUE;
 	description = "(Kradzie¿ tego mieszka bêdzie dziecinnie ³atwa)";
 };
 
 
-func int dia_garvell_pickpocket_condition()
+func int DIA_Garvell_PICKPOCKET_Condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == FALSE) && (Npc_HasItems(self,itse_goldpocket25) >= 1) && (other.attribute[ATR_DEXTERITY] >= (10 - THEFTDIFF)))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_HasItems(self,ItSe_GoldPocket25) >= 1) && (other.attribute[ATR_DEXTERITY] >= (10 - Theftdiff)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garvell_pickpocket_info()
+func void DIA_Garvell_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_garvell_pickpocket);
-	Info_AddChoice(dia_garvell_pickpocket,DIALOG_BACK,dia_garvell_pickpocket_back);
-	Info_AddChoice(dia_garvell_pickpocket,DIALOG_PICKPOCKET,dia_garvell_pickpocket_doit);
+	Info_ClearChoices(DIA_Garvell_PICKPOCKET);
+	Info_AddChoice(DIA_Garvell_PICKPOCKET,Dialog_Back,DIA_Garvell_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Garvell_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Garvell_PICKPOCKET_DoIt);
 };
 
-func void dia_garvell_pickpocket_doit()
+func void DIA_Garvell_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 10)
 	{
-		b_giveinvitems(self,other,5602,1);
-		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
-		b_giveplayerxp(XP_AMBIENT);
-		Info_ClearChoices(dia_garvell_pickpocket);
+		B_GiveInvItems(self,other,ItSe_GoldPocket25,1);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+		B_GivePlayerXP(XP_Ambient);
+		Info_ClearChoices(DIA_Garvell_PICKPOCKET);
 	}
 	else
 	{
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_THEFT,1);
+		B_Attack(self,other,AR_Theft,1);
 	};
 };
 
-func void dia_garvell_pickpocket_back()
+func void DIA_Garvell_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_garvell_pickpocket);
+	Info_ClearChoices(DIA_Garvell_PICKPOCKET);
 };
 
 
-instance DIA_GARVELL_GREET(C_INFO)
+instance DIA_Garvell_GREET(C_Info)
 {
-	npc = vlk_441_garvell;
+	npc = VLK_441_Garvell;
 	nr = 2;
-	condition = dia_garvell_greet_condition;
-	information = dia_garvell_greet_info;
+	condition = DIA_Garvell_GREET_Condition;
+	information = DIA_Garvell_GREET_Info;
 	description = "Co tu porabiasz?";
 };
 
 
-func int dia_garvell_greet_condition()
+func int DIA_Garvell_GREET_Condition()
 {
 	if(Wld_IsTime(5,0,19,0))
 	{
@@ -87,7 +87,7 @@ func int dia_garvell_greet_condition()
 	};
 };
 
-func void dia_garvell_greet_info()
+func void DIA_Garvell_GREET_Info()
 {
 	AI_Output(other,self,"DIA_Garvell_GREET_15_00");	//Co tu robisz?
 	AI_Output(self,other,"DIA_Garvell_GREET_04_01");	//Budujê statek i chcê siê jak najszybciej st¹d wydostaæ.
@@ -95,25 +95,25 @@ func void dia_garvell_greet_info()
 };
 
 
-instance DIA_GARVELL_EILIG(C_INFO)
+instance DIA_Garvell_eilig(C_Info)
 {
-	npc = vlk_441_garvell;
+	npc = VLK_441_Garvell;
 	nr = 2;
-	condition = dia_garvell_eilig_condition;
-	information = dia_garvell_eilig_info;
+	condition = DIA_Garvell_eilig_Condition;
+	information = DIA_Garvell_eilig_Info;
 	description = "Czemu siê tak strasznie spieszysz?";
 };
 
 
-func int dia_garvell_eilig_condition()
+func int DIA_Garvell_eilig_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_garvell_greet))
+	if(Npc_KnowsInfo(other,DIA_Garvell_GREET))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garvell_eilig_info()
+func void DIA_Garvell_eilig_Info()
 {
 	AI_Output(other,self,"DIA_Garvell_eilig_15_00");	//Czemu siê tak strasznie spieszysz?
 	AI_Output(self,other,"DIA_Garvell_eilig_04_01");	//Wkrótce przybêd¹ orkowie i spal¹ to miasto.
@@ -123,25 +123,25 @@ func void dia_garvell_eilig_info()
 };
 
 
-instance DIA_GARVELL_SCHIFF(C_INFO)
+instance DIA_Garvell_Schiff(C_Info)
 {
-	npc = vlk_441_garvell;
+	npc = VLK_441_Garvell;
 	nr = 99;
-	condition = dia_garvell_schiff_condition;
-	information = dia_garvell_schiff_info;
+	condition = DIA_Garvell_Schiff_Condition;
+	information = DIA_Garvell_Schiff_Info;
 	description = "Czemu nie mo¿esz dokoñczyæ budowy statku?";
 };
 
 
-func int dia_garvell_schiff_condition()
+func int DIA_Garvell_Schiff_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_garvell_greet))
+	if(Npc_KnowsInfo(other,DIA_Garvell_GREET))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garvell_schiff_info()
+func void DIA_Garvell_Schiff_Info()
 {
 	AI_Output(other,self,"DIA_Garvell_Schiff_15_00");	//Czemu nie mo¿esz dokoñczyæ budowy statku?
 	AI_Output(self,other,"DIA_Garvell_Schiff_04_01");	//Och, mamy tysi¹ce problemów. Kad³ub wci¹¿ jeszcze nie stabilny, brakuje wielu elementów...
@@ -151,26 +151,26 @@ func void dia_garvell_schiff_info()
 };
 
 
-instance DIA_GARVELL_MISSION(C_INFO)
+instance DIA_Garvell_MISSION(C_Info)
 {
-	npc = vlk_441_garvell;
+	npc = VLK_441_Garvell;
 	nr = 2;
-	condition = dia_garvell_mission_condition;
-	information = dia_garvell_mission_info;
+	condition = DIA_Garvell_MISSION_Condition;
+	information = DIA_Garvell_MISSION_Info;
 	permanent = FALSE;
 	description = "Czy mogê ci jakoœ pomóc?";
 };
 
 
-func int dia_garvell_mission_condition()
+func int DIA_Garvell_MISSION_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_garvell_eilig) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Garvell_eilig) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garvell_mission_info()
+func void DIA_Garvell_MISSION_Info()
 {
 	AI_Output(other,self,"DIA_Garvell_MISSION_15_00");	//Czy mogê ci jakoœ pomóc?
 	AI_Output(self,other,"DIA_Garvell_MISSION_04_01");	//Oczywiœcie. Spróbuj siê dowiedzieæ, co planuj¹ paladyni. Jestem ciekaw, po co tu przybyli.
@@ -178,162 +178,162 @@ func void dia_garvell_mission_info()
 	AI_Output(self,other,"DIA_Garvell_MISSION_04_03");	//Jeden z tych œmierdzieli podobno pojawi³ siê tu¿ za miastem...
 	AI_Output(self,other,"DIA_Garvell_MISSION_04_04");	//Po prostu dowiedz siê tyle, ile mo¿esz.
 	AI_Output(self,other,"DIA_Garvell_Add_04_00");	//Chcê wiedzieæ, ile mam jeszcze czasu na dokoñczenie budowy okrêtu.
-	MIS_GARVELL_INFOS = LOG_RUNNING;
-	KNOWS_ORK = TRUE;
-	Log_CreateTopic(TOPIC_GARVELL,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_GARVELL,LOG_RUNNING);
-	b_logentry(TOPIC_GARVELL,"Garvell chce siê dowiedzieæ jak najwiêcej na temat orków. Chce te¿ wiedzieæ, czemu w mieœcie przebywaj¹ paladyni.");
+	MIS_Garvell_Infos = LOG_Running;
+	Knows_Ork = TRUE;
+	Log_CreateTopic(TOPIC_Garvell,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Garvell,LOG_Running);
+	B_LogEntry(TOPIC_Garvell,"Garvell chce siê dowiedzieæ jak najwiêcej na temat orków. Chce te¿ wiedzieæ, czemu w mieœcie przebywaj¹ paladyni.");
 };
 
-func void b_garvellweiter()
+func void B_GarvellWeiter()
 {
 	AI_Output(self,other,"DIA_Garvell_Weiter_04_00");	//Dobrze. Jeœli dowiesz siê czegoœ wiêcej, daj mi znaæ.
 };
 
-func void b_garvellsuccess()
+func void B_GarvellSuccess()
 {
 	AI_Output(self,other,"DIA_Garvell_Success_04_00");	//Dziêkujê za informacje. Wygl¹da na to, ¿e mamy ca³¹ masê czasu na ukoñczenie naszego statku.
-	MIS_GARVELL_INFOS = LOG_SUCCESS;
-	b_giveplayerxp(XP_AMBIENT);
+	MIS_Garvell_Infos = LOG_SUCCESS;
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_GARVELL_ORKS(C_INFO)
+instance DIA_Garvell_Orks(C_Info)
 {
-	npc = vlk_441_garvell;
+	npc = VLK_441_Garvell;
 	nr = 3;
-	condition = dia_garvell_orks_condition;
-	information = dia_garvell_orks_info;
+	condition = DIA_Garvell_Orks_Condition;
+	information = DIA_Garvell_Orks_Info;
 	permanent = FALSE;
 	description = "Mam informacje dotycz¹ce orków.";
 };
 
 
-func int dia_garvell_orks_condition()
+func int DIA_Garvell_Orks_Condition()
 {
-	if((MIS_GARVELL_INFOS == LOG_RUNNING) && (KNOWS_PALADINS >= 1))
+	if((MIS_Garvell_Infos == LOG_Running) && (Knows_Paladins >= 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garvell_orks_info()
+func void DIA_Garvell_Orks_Info()
 {
 	AI_Output(other,self,"DIA_Garvell_Orks_15_00");	//Mam informacje dotycz¹ce orków.
 	AI_Output(self,other,"DIA_Garvell_Orks_04_01");	//S³ucham.
 	AI_Output(other,self,"DIA_Garvell_Orks_15_02");	//Utknêli w Górniczej Dolinie, i wygl¹da na to, ¿e ju¿ tam pozostan¹.
 	AI_Output(other,self,"DIA_Garvell_Orks_15_03");	//Paladyni strzeg¹ prze³êczy.
-	TELL_GARVELL = TELL_GARVELL + 1;
-	b_giveplayerxp(XP_AMBIENT);
-	if(TELL_GARVELL >= 3)
+	Tell_Garvell = Tell_Garvell + 1;
+	B_GivePlayerXP(XP_Ambient);
+	if(Tell_Garvell >= 3)
 	{
-		b_garvellsuccess();
+		B_GarvellSuccess();
 	}
 	else
 	{
-		b_garvellweiter();
+		B_GarvellWeiter();
 	};
 };
 
 
-instance DIA_GARVELL_PALADINE(C_INFO)
+instance DIA_Garvell_Paladine(C_Info)
 {
-	npc = vlk_441_garvell;
+	npc = VLK_441_Garvell;
 	nr = 2;
-	condition = dia_garvell_paladine_condition;
-	information = dia_garvell_paladine_info;
+	condition = DIA_Garvell_Paladine_Condition;
+	information = DIA_Garvell_Paladine_Info;
 	permanent = FALSE;
 	description = "Wiem, co tu robi¹ paladyni.";
 };
 
 
-func int dia_garvell_paladine_condition()
+func int DIA_Garvell_Paladine_Condition()
 {
-	if((MIS_GARVELL_INFOS == LOG_RUNNING) && (KNOWSPALADINS_ORE == TRUE))
+	if((MIS_Garvell_Infos == LOG_Running) && (KnowsPaladins_Ore == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garvell_paladine_info()
+func void DIA_Garvell_Paladine_Info()
 {
 	AI_Output(other,self,"DIA_Garvell_Paladine_15_00");	//Wiem, co tu robi¹ paladyni.
 	AI_Output(self,other,"DIA_Garvell_Paladine_04_01");	//Naprawdê? Powiedz!
 	AI_Output(other,self,"DIA_Garvell_Paladine_15_02");	//Paladyni nie przybyli tutaj, dlatego ¿e spodziewaj¹ siê ataku orków. Ich celem jest zdobycie magicznej rudy z Górniczej Doliny.
 	AI_Output(other,self,"DIA_Garvell_Paladine_15_03");	//Kiedy tylko j¹ zdobêd¹, powróc¹ na kontynent.
-	TELL_GARVELL = TELL_GARVELL + 1;
-	b_giveplayerxp(XP_AMBIENT);
-	if(TELL_GARVELL >= 3)
+	Tell_Garvell = Tell_Garvell + 1;
+	B_GivePlayerXP(XP_Ambient);
+	if(Tell_Garvell >= 3)
 	{
-		b_garvellsuccess();
+		B_GarvellSuccess();
 	}
 	else
 	{
-		b_garvellweiter();
+		B_GarvellWeiter();
 	};
 };
 
 
-instance DIA_GARVELL_CITY(C_INFO)
+instance DIA_Garvell_City(C_Info)
 {
-	npc = vlk_441_garvell;
+	npc = VLK_441_Garvell;
 	nr = 4;
-	condition = dia_garvell_city_condition;
-	information = dia_garvell_city_info;
+	condition = DIA_Garvell_City_Condition;
+	information = DIA_Garvell_City_Info;
 	permanent = FALSE;
 	description = "Co do tego orka za miastem…";
 };
 
 
-func int dia_garvell_city_condition()
+func int DIA_Garvell_City_Condition()
 {
-	if((MIS_GARVELL_INFOS == LOG_RUNNING) && (KNOWS_PALADINS >= 2))
+	if((MIS_Garvell_Infos == LOG_Running) && (Knows_Paladins >= 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garvell_city_info()
+func void DIA_Garvell_City_Info()
 {
 	AI_Output(other,self,"DIA_Garvell_City_15_00");	//Co do tego orka za miastem...
 	AI_Output(self,other,"DIA_Garvell_City_04_01");	//Taaak...?
 	AI_Output(other,self,"DIA_Garvell_City_15_02");	//Nie przejmuj siê nim. Stra¿ da sobie radê.
-	TELL_GARVELL = TELL_GARVELL + 1;
-	b_giveplayerxp(XP_AMBIENT);
-	if(TELL_GARVELL >= 3)
+	Tell_Garvell = Tell_Garvell + 1;
+	B_GivePlayerXP(XP_Ambient);
+	if(Tell_Garvell >= 3)
 	{
-		b_garvellsuccess();
+		B_GarvellSuccess();
 	}
 	else
 	{
-		b_garvellweiter();
+		B_GarvellWeiter();
 	};
 };
 
 
-instance DIA_GARVELL_PERM(C_INFO)
+instance DIA_Garvell_Perm(C_Info)
 {
-	npc = vlk_441_garvell;
+	npc = VLK_441_Garvell;
 	nr = 13;
-	condition = dia_garvell_perm_condition;
-	information = dia_garvell_perm_info;
+	condition = DIA_Garvell_Perm_Condition;
+	information = DIA_Garvell_Perm_Info;
 	permanent = TRUE;
 	description = "Co siê dzieje w porcie?";
 };
 
 
-func int dia_garvell_perm_condition()
+func int DIA_Garvell_Perm_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_garvell_mission))
+	if(Npc_KnowsInfo(other,DIA_Garvell_MISSION))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garvell_perm_info()
+func void DIA_Garvell_Perm_Info()
 {
 	AI_Output(other,self,"DIA_Garvell_Perm_15_00");	//Co siê dzieje w porcie?
-	if(MIS_GARVELL_INFOS != LOG_SUCCESS)
+	if(MIS_Garvell_Infos != LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Garvell_Perm_04_01");	//Orkowie depcz¹ nam po piêtach, a ty pytasz, co siê dzieje w porcie?
 		AI_Output(other,self,"DIA_Garvell_Perm_15_02");	//Chcia³em tylko...

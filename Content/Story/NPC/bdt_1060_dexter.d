@@ -1,30 +1,30 @@
 
-instance BDT_1060_DEXTER(NPC_DEFAULT)
+instance BDT_1060_Dexter(Npc_Default)
 {
 	name[0] = "Dexter";
 	guild = GIL_BDT;
 	id = 1060;
 	voice = 9;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_NORMAL;
-	EquipItem(self,itmw_shortsword2);
-	b_createambientinv(self);
-	CreateInvItems(self,itke_dexter,1);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_N_NORMALBART_DEXTER,BODYTEX_N,4850);
+	EquipItem(self,ItMw_ShortSword2);
+	B_CreateAmbientInv(self);
+	CreateInvItems(self,ItKe_Dexter,1);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_N_NormalBart_Dexter,BodyTex_N,ITAR_Diego);
 	Mdl_SetModelFatness(self,-1);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,45);
-	daily_routine = rtn_start_1060;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,45);
+	daily_routine = Rtn_Start_1060;
 };
 
 
-func void rtn_start_1060()
+func void Rtn_Start_1060()
 {
-	ta_sit_throne(0,0,12,0,"NW_CASTLEMINE_HUT_10");
-	ta_sit_throne(12,0,0,0,"NW_CASTLEMINE_HUT_10");
+	TA_Sit_Throne(0,0,12,0,"NW_CASTLEMINE_HUT_10");
+	TA_Sit_Throne(12,0,0,0,"NW_CASTLEMINE_HUT_10");
 };
 

@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_SKELETON(C_NPC)
+prototype Mst_Default_Skeleton(C_Npc)
 {
 	name[0] = "Szkielet Wojownik";
 	guild = GIL_SKELETON;
@@ -21,14 +21,14 @@ prototype MST_DEFAULT_SKELETON(C_NPC)
 	fight_tactic = FAI_HUMAN_STRONG;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_skeleton()
+func void B_SetVisuals_Skeleton()
 {
 	Mdl_SetVisual(self,"HumanS.mds");
 	Mdl_ApplyOverlayMds(self,"humans_1hST1.mds");
@@ -39,7 +39,7 @@ func void b_setvisuals_skeleton()
 	Mdl_SetVisualBody(self,"Ske_Body2",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
-func void b_setvisuals_lesser_skeleton()
+func void B_SetVisuals_Lesser_Skeleton()
 {
 	Mdl_SetVisual(self,"HumanS.mds");
 	Mdl_ApplyOverlayMds(self,"humans_1hST1.mds");
@@ -51,13 +51,13 @@ func void b_setvisuals_lesser_skeleton()
 };
 
 
-instance SKELETON(MST_DEFAULT_SKELETON)
+instance Skeleton(Mst_Default_Skeleton)
 {
-	b_setvisuals_skeleton();
-	EquipItem(self,itmw_2h_sword_m_01);
+	B_SetVisuals_Skeleton();
+	EquipItem(self,ItMw_2H_Sword_M_01);
 };
 
-instance SUMMONED_SKELETON(MST_DEFAULT_SKELETON)
+instance Summoned_Skeleton(Mst_Default_Skeleton)
 {
 	name[0] = "Przyzwany Szkielet";
 	guild = gil_summoned_skeleton;
@@ -76,15 +76,15 @@ instance SUMMONED_SKELETON(MST_DEFAULT_SKELETON)
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 75;
 	fight_tactic = FAI_HUMAN_NORMAL;
-	b_setvisuals_lesser_skeleton();
+	B_SetVisuals_Lesser_Skeleton();
 	aivar[AIV_PARTYMEMBER] = TRUE;
-	b_setattitude(self,ATT_FRIENDLY);
-	start_aistate = zs_mm_rtn_summoned;
-	b_setvisuals_lesser_skeleton();
-	EquipItem(self,itmw_2h_sword_m_01);
+	B_SetAttitude(self,ATT_FRIENDLY);
+	start_aistate = ZS_MM_Rtn_Summoned;
+	B_SetVisuals_Lesser_Skeleton();
+	EquipItem(self,ItMw_2H_Sword_M_01);
 };
 
-instance LESSER_SKELETON(MST_DEFAULT_SKELETON)
+instance Lesser_Skeleton(Mst_Default_Skeleton)
 {
 	name[0] = "Szkielet";
 	level = 12;
@@ -101,111 +101,111 @@ instance LESSER_SKELETON(MST_DEFAULT_SKELETON)
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 75;
 	fight_tactic = FAI_HUMAN_NORMAL;
-	b_setvisuals_lesser_skeleton();
-	EquipItem(self,itmw_1h_misc_sword);
+	B_SetVisuals_Lesser_Skeleton();
+	EquipItem(self,ItMw_1h_MISC_Sword);
 };
 
-instance CRYPT_SKELETON_ROOM_01(MST_DEFAULT_SKELETON)
+instance Crypt_Skeleton_Room_01(Mst_Default_Skeleton)
 {
 	name[0] = "Stra¿nik Krypty";
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_skeleton();
-	EquipItem(self,itmw_1h_misc_sword);
-	CreateInvItem(self,itke_evt_crypt_01);
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_Skeleton();
+	EquipItem(self,ItMw_1h_MISC_Sword);
+	CreateInvItem(self,ItKe_EVT_CRYPT_01);
 };
 
-instance CRYPT_SKELETON_ROOM_02(MST_DEFAULT_SKELETON)
+instance Crypt_Skeleton_Room_02(Mst_Default_Skeleton)
 {
 	name[0] = "Stra¿nik Krypty";
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_skeleton();
-	EquipItem(self,itmw_2h_sword_m_01);
-	CreateInvItem(self,itke_evt_crypt_02);
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_Skeleton();
+	EquipItem(self,ItMw_2H_Sword_M_01);
+	CreateInvItem(self,ItKe_EVT_CRYPT_02);
 };
 
-instance CRYPT_SKELETON_ROOM_03(MST_DEFAULT_SKELETON)
+instance Crypt_Skeleton_Room_03(Mst_Default_Skeleton)
 {
 	name[0] = "Stra¿nik Krypty";
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_skeleton();
-	EquipItem(self,itmw_1h_misc_sword);
-	CreateInvItem(self,itke_evt_crypt_03);
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_Skeleton();
+	EquipItem(self,ItMw_1h_MISC_Sword);
+	CreateInvItem(self,ItKe_EVT_CRYPT_03);
 };
 
-instance SKELETON_ARCHOL1(MST_DEFAULT_SKELETON)
+instance Skeleton_Archol1(Mst_Default_Skeleton)
 {
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_skeleton();
-	EquipItem(self,itmw_1h_misc_sword);
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_Skeleton();
+	EquipItem(self,ItMw_1h_MISC_Sword);
 };
 
-instance SKELETON_ARCHOL2(MST_DEFAULT_SKELETON)
+instance Skeleton_Archol2(Mst_Default_Skeleton)
 {
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_skeleton();
-	EquipItem(self,itmw_2h_sword_m_01);
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_Skeleton();
+	EquipItem(self,ItMw_2H_Sword_M_01);
 };
 
-instance SKELETON_ARCHOL3(MST_DEFAULT_SKELETON)
+instance Skeleton_Archol3(Mst_Default_Skeleton)
 {
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_skeleton();
-	EquipItem(self,itmw_1h_misc_sword);
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_Skeleton();
+	EquipItem(self,ItMw_1h_MISC_Sword);
 };
 
-instance SKELETON_ARCHOL4(MST_DEFAULT_SKELETON)
+instance Skeleton_Archol4(Mst_Default_Skeleton)
 {
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_skeleton();
-	EquipItem(self,itmw_2h_sword_m_01);
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_Skeleton();
+	EquipItem(self,ItMw_2H_Sword_M_01);
 };
 
-instance SKELETON_ARCHOL5(MST_DEFAULT_SKELETON)
+instance Skeleton_Archol5(Mst_Default_Skeleton)
 {
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_skeleton();
-	EquipItem(self,itmw_1h_misc_sword);
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_Skeleton();
+	EquipItem(self,ItMw_1h_MISC_Sword);
 };
 
-instance SKELETON_ARCHOL6(MST_DEFAULT_SKELETON)
+instance Skeleton_Archol6(Mst_Default_Skeleton)
 {
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_skeleton();
-	EquipItem(self,itmw_2h_sword_m_01);
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_Skeleton();
+	EquipItem(self,ItMw_2H_Sword_M_01);
 };
 
-instance SKELETON_MARIO1(MST_DEFAULT_SKELETON)
+instance Skeleton_Mario1(Mst_Default_Skeleton)
 {
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_skeleton();
-	EquipItem(self,itmw_1h_misc_sword);
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_Skeleton();
+	EquipItem(self,ItMw_1h_MISC_Sword);
 };
 
-instance SKELETON_MARIO2(MST_DEFAULT_SKELETON)
+instance Skeleton_Mario2(Mst_Default_Skeleton)
 {
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_skeleton();
-	EquipItem(self,itmw_2h_sword_m_01);
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_Skeleton();
+	EquipItem(self,ItMw_2H_Sword_M_01);
 };
 
-instance SKELETON_MARIO3(MST_DEFAULT_SKELETON)
+instance Skeleton_Mario3(Mst_Default_Skeleton)
 {
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_skeleton();
-	EquipItem(self,itmw_1h_misc_sword);
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_Skeleton();
+	EquipItem(self,ItMw_1h_MISC_Sword);
 };
 
-instance SKELETON_MARIO4(MST_DEFAULT_SKELETON)
+instance Skeleton_Mario4(Mst_Default_Skeleton)
 {
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_skeleton();
-	EquipItem(self,itmw_2h_sword_m_01);
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_Skeleton();
+	EquipItem(self,ItMw_2H_Sword_M_01);
 };
 
-instance SKELETON_0(MST_DEFAULT_SKELETON)
+instance SKELETON_0(Mst_Default_Skeleton)
 {
 	level = 0;
-	b_setvisuals_skeleton();
-	EquipItem(self,itmw_2h_sword_m_01);
+	B_SetVisuals_Skeleton();
+	EquipItem(self,ItMw_2H_Sword_M_01);
 };
 

@@ -1,939 +1,939 @@
 
 func void makerune_s1()
 {
-	var C_NPC her;
-	her = Hlp_GetNpc(pc_hero);
+	var C_Npc her;
+	her = Hlp_GetNpc(PC_Hero);
 	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(her))
 	{
 		self.aivar[AIV_INVINCIBLE] = TRUE;
-		PLAYER_MOBSI_PRODUCTION = MOBSI_MAKERUNE;
+		PLAYER_MOBSI_PRODUCTION = MOBSI_MakeRune;
 		AI_ProcessInfos(her);
 	};
 };
 
 
-instance PC_MAKERUNE_END(C_INFO)
+instance PC_MakeRune_End(C_Info)
 {
-	npc = pc_hero;
+	npc = PC_Hero;
 	nr = 999;
-	condition = pc_makerune_end_condition;
-	information = pc_makerune_end_info;
+	condition = PC_MakeRune_End_Condition;
+	information = PC_MakeRune_End_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int pc_makerune_end_condition()
+func int PC_MakeRune_End_Condition()
 {
-	if(PLAYER_MOBSI_PRODUCTION == MOBSI_MAKERUNE)
+	if(PLAYER_MOBSI_PRODUCTION == MOBSI_MakeRune)
 	{
 		return TRUE;
 	};
 };
 
-func void pc_makerune_end_info()
+func void PC_MakeRune_End_Info()
 {
-	CreateInvItems(self,itmi_runeblank,1);
+	CreateInvItems(self,ItMi_RuneBlank,1);
 	b_endproductiondialog();
 };
 
 
-instance PC_CIRCLE_01(C_INFO)
+instance PC_Circle_01(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_circle_01_condition;
-	information = pc_circle_01_info;
+	npc = PC_Hero;
+	condition = PC_Circle_01_Condition;
+	information = PC_Circle_01_Info;
 	permanent = TRUE;
 	description = "Twórz runy pierwszego krêgu";
 };
 
 
-func int pc_circle_01_condition()
+func int PC_Circle_01_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKERUNE) && ((PLAYER_TALENT_RUNES[SPL_LIGHT] == TRUE) || (PLAYER_TALENT_RUNES[SPL_FIREBOLT] == TRUE) || (PLAYER_TALENT_RUNES[SPL_LIGHTHEAL] == TRUE) || (PLAYER_TALENT_RUNES[SPL_SUMMONGOBLINSKELETON] == TRUE) || (PLAYER_TALENT_RUNES[SPL_ZAP] == TRUE)))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MakeRune) && ((PLAYER_TALENT_RUNES[SPL_Light] == TRUE) || (PLAYER_TALENT_RUNES[SPL_Firebolt] == TRUE) || (PLAYER_TALENT_RUNES[SPL_LightHeal] == TRUE) || (PLAYER_TALENT_RUNES[SPL_SummonGoblinSkeleton] == TRUE) || (PLAYER_TALENT_RUNES[SPL_Zap] == TRUE)))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_circle_01_info()
+func void PC_Circle_01_Info()
 {
-	Info_ClearChoices(pc_circle_01);
-	Info_AddChoice(pc_circle_01,DIALOG_BACK,pc_circle_01_back);
-	if(PLAYER_TALENT_RUNES[SPL_LIGHT] == TRUE)
+	Info_ClearChoices(PC_Circle_01);
+	Info_AddChoice(PC_Circle_01,Dialog_Back,PC_Circle_01_BACK);
+	if(PLAYER_TALENT_RUNES[SPL_Light] == TRUE)
 	{
-		Info_AddChoice(pc_circle_01,NAME_SPL_LIGHT,pc_itru_light_info);
+		Info_AddChoice(PC_Circle_01,NAME_SPL_LIGHT,PC_ItRu_Light_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_FIREBOLT] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_Firebolt] == TRUE)
 	{
-		Info_AddChoice(pc_circle_01,NAME_SPL_FIREBOLT,pc_itru_firebolt_info);
+		Info_AddChoice(PC_Circle_01,NAME_SPL_Firebolt,PC_ItRu_Firebolt_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_ZAP] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_Zap] == TRUE)
 	{
-		Info_AddChoice(pc_circle_01,NAME_SPL_ZAP,pc_itru_zap_info);
+		Info_AddChoice(PC_Circle_01,NAME_SPL_Zap,PC_ItRu_Zap_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_LIGHTHEAL] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_LightHeal] == TRUE)
 	{
-		Info_AddChoice(pc_circle_01,NAME_SPL_LIGHTHEAL,pc_itru_lightheal_info);
+		Info_AddChoice(PC_Circle_01,NAME_SPL_LightHeal,PC_ItRu_LightHeal_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_SUMMONGOBLINSKELETON] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_SummonGoblinSkeleton] == TRUE)
 	{
-		Info_AddChoice(pc_circle_01,NAME_SPL_SUMMONGOBLINSKELETON,pc_itru_sumgobskel_info);
+		Info_AddChoice(PC_Circle_01,NAME_SPL_SummonGoblinSkeleton,PC_ItRu_SumGobSkel_Info);
 	};
 };
 
-func void pc_circle_01_back()
+func void PC_Circle_01_BACK()
 {
-	Info_ClearChoices(pc_circle_01);
+	Info_ClearChoices(PC_Circle_01);
 };
 
 
-instance PC_CIRCLE_02(C_INFO)
+instance PC_Circle_02(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_circle_02_condition;
-	information = pc_circle_02_info;
+	npc = PC_Hero;
+	condition = PC_Circle_02_Condition;
+	information = PC_Circle_02_Info;
 	permanent = TRUE;
 	description = "Twórz runy drugiego krêgu";
 };
 
 
-func int pc_circle_02_condition()
+func int PC_Circle_02_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKERUNE) && ((PLAYER_TALENT_RUNES[SPL_INSTANTFIREBALL] == TRUE) || (PLAYER_TALENT_RUNES[SPL_ICEBOLT] == TRUE) || (PLAYER_TALENT_RUNES[SPL_SUMMONWOLF] == TRUE) || (PLAYER_TALENT_RUNES[SPL_WINDFIST] == TRUE) || (PLAYER_TALENT_RUNES[SPL_SLEEP] == TRUE)))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MakeRune) && ((PLAYER_TALENT_RUNES[SPL_InstantFireball] == TRUE) || (PLAYER_TALENT_RUNES[SPL_Icebolt] == TRUE) || (PLAYER_TALENT_RUNES[SPL_SummonWolf] == TRUE) || (PLAYER_TALENT_RUNES[SPL_WindFist] == TRUE) || (PLAYER_TALENT_RUNES[SPL_Sleep] == TRUE)))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_circle_02_info()
+func void PC_Circle_02_Info()
 {
-	Info_ClearChoices(pc_circle_02);
-	Info_AddChoice(pc_circle_02,DIALOG_BACK,pc_circle_02_back);
-	if(PLAYER_TALENT_RUNES[SPL_INSTANTFIREBALL] == TRUE)
+	Info_ClearChoices(PC_Circle_02);
+	Info_AddChoice(PC_Circle_02,Dialog_Back,PC_Circle_02_BACK);
+	if(PLAYER_TALENT_RUNES[SPL_InstantFireball] == TRUE)
 	{
-		Info_AddChoice(pc_circle_02,NAME_SPL_INSTANTFIREBALL,pc_itru_instfireball_info);
+		Info_AddChoice(PC_Circle_02,NAME_SPL_InstantFireball,PC_ItRu_InstFireball_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_ICEBOLT] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_Icebolt] == TRUE)
 	{
-		Info_AddChoice(pc_circle_02,NAME_SPL_ICEBOLT,pc_itru_icebolt_info);
+		Info_AddChoice(PC_Circle_02,NAME_SPL_Icebolt,PC_ItRu_Icebolt_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_SUMMONWOLF] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_SummonWolf] == TRUE)
 	{
-		Info_AddChoice(pc_circle_02,NAME_SPL_SUMMONWOLF,pc_itru_sumwolf_info);
+		Info_AddChoice(PC_Circle_02,NAME_SPL_SummonWolf,PC_ItRu_SumWolf_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_WINDFIST] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_WindFist] == TRUE)
 	{
-		Info_AddChoice(pc_circle_02,NAME_SPL_WINDFIST,pc_itru_windfist_info);
+		Info_AddChoice(PC_Circle_02,NAME_SPL_WINDFIST,PC_ItRu_Windfist_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_SLEEP] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_Sleep] == TRUE)
 	{
-		Info_AddChoice(pc_circle_02,NAME_SPL_SLEEP,pc_itru_sleep_info);
+		Info_AddChoice(PC_Circle_02,NAME_SPL_Sleep,PC_ItRu_Sleep_Info);
 	};
 };
 
-func void pc_circle_02_back()
+func void PC_Circle_02_BACK()
 {
-	Info_ClearChoices(pc_circle_02);
+	Info_ClearChoices(PC_Circle_02);
 };
 
 
-instance PC_CIRCLE_03(C_INFO)
+instance PC_Circle_03(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_circle_03_condition;
-	information = pc_circle_03_info;
+	npc = PC_Hero;
+	condition = PC_Circle_03_Condition;
+	information = PC_Circle_03_Info;
 	permanent = TRUE;
 	description = "Twórz runy trzeciego krêgu";
 };
 
 
-func int pc_circle_03_condition()
+func int PC_Circle_03_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKERUNE) && ((PLAYER_TALENT_RUNES[SPL_MEDIUMHEAL] == TRUE) || (PLAYER_TALENT_RUNES[SPL_SUMMONSKELETON] == TRUE) || (PLAYER_TALENT_RUNES[SPL_FEAR] == TRUE) || (PLAYER_TALENT_RUNES[SPL_ICECUBE] == TRUE) || (PLAYER_TALENT_RUNES[SPL_CHARGEZAP] == TRUE) || (PLAYER_TALENT_RUNES[SPL_FIRESTORM] == TRUE)))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MakeRune) && ((PLAYER_TALENT_RUNES[SPL_MediumHeal] == TRUE) || (PLAYER_TALENT_RUNES[SPL_SummonSkeleton] == TRUE) || (PLAYER_TALENT_RUNES[SPL_Fear] == TRUE) || (PLAYER_TALENT_RUNES[SPL_IceCube] == TRUE) || (PLAYER_TALENT_RUNES[SPL_ChargeZap] == TRUE) || (PLAYER_TALENT_RUNES[SPL_Firestorm] == TRUE)))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_circle_03_info()
+func void PC_Circle_03_Info()
 {
-	Info_ClearChoices(pc_circle_03);
-	Info_AddChoice(pc_circle_03,DIALOG_BACK,pc_circle_03_back);
-	if(PLAYER_TALENT_RUNES[SPL_MEDIUMHEAL] == TRUE)
+	Info_ClearChoices(PC_Circle_03);
+	Info_AddChoice(PC_Circle_03,Dialog_Back,PC_Circle_03_BACK);
+	if(PLAYER_TALENT_RUNES[SPL_MediumHeal] == TRUE)
 	{
-		Info_AddChoice(pc_circle_03,NAME_SPL_MEDIUMHEAL,pc_itru_mediumheal_info);
+		Info_AddChoice(PC_Circle_03,NAME_SPL_MediumHeal,PC_ItRu_MediumHeal_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_SUMMONSKELETON] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_SummonSkeleton] == TRUE)
 	{
-		Info_AddChoice(pc_circle_03,NAME_SPL_SUMMONSKELETON,pc_itru_sumskel_info);
+		Info_AddChoice(PC_Circle_03,NAME_SPL_SummonSkeleton,PC_ItRu_SumSkel_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_FEAR] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_Fear] == TRUE)
 	{
-		Info_AddChoice(pc_circle_03,NAME_SPL_FEAR,pc_itru_fear_info);
+		Info_AddChoice(PC_Circle_03,NAME_SPL_Fear,PC_ItRu_Fear_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_ICECUBE] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_IceCube] == TRUE)
 	{
-		Info_AddChoice(pc_circle_03,NAME_SPL_ICECUBE,pc_itru_icecube_info);
+		Info_AddChoice(PC_Circle_03,NAME_SPL_IceCube,PC_ItRu_IceCube_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_CHARGEZAP] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_ChargeZap] == TRUE)
 	{
-		Info_AddChoice(pc_circle_03,NAME_SPL_CHARGEZAP,pc_itru_thunderball_info);
+		Info_AddChoice(PC_Circle_03,NAME_SPL_ChargeZap,PC_ItRu_ThunderBall_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_FIRESTORM] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_Firestorm] == TRUE)
 	{
-		Info_AddChoice(pc_circle_03,NAME_SPL_FIRESTORM,pc_itru_firestorm_info);
+		Info_AddChoice(PC_Circle_03,NAME_SPL_Firestorm,PC_ItRu_Firestorm_Info);
 	};
 };
 
-func void pc_circle_03_back()
+func void PC_Circle_03_BACK()
 {
-	Info_ClearChoices(pc_circle_03);
+	Info_ClearChoices(PC_Circle_03);
 };
 
 
-instance PC_CIRCLE_04(C_INFO)
+instance PC_Circle_04(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_circle_04_condition;
-	information = pc_circle_04_info;
+	npc = PC_Hero;
+	condition = PC_Circle_04_Condition;
+	information = PC_Circle_04_Info;
 	permanent = TRUE;
 	description = "Twórz runy czwartego krêgu";
 };
 
 
-func int pc_circle_04_condition()
+func int PC_Circle_04_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKERUNE) && ((PLAYER_TALENT_RUNES[SPL_DESTROYUNDEAD] == TRUE) || (PLAYER_TALENT_RUNES[SPL_LIGHTNINGFLASH] == TRUE) || (PLAYER_TALENT_RUNES[SPL_CHARGEFIREBALL] == TRUE) || (PLAYER_TALENT_RUNES[SPL_SUMMONGOLEM] == TRUE)))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MakeRune) && ((PLAYER_TALENT_RUNES[SPL_DestroyUndead] == TRUE) || (PLAYER_TALENT_RUNES[SPL_LightningFlash] == TRUE) || (PLAYER_TALENT_RUNES[SPL_ChargeFireball] == TRUE) || (PLAYER_TALENT_RUNES[SPL_SummonGolem] == TRUE)))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_circle_04_info()
+func void PC_Circle_04_Info()
 {
-	Info_ClearChoices(pc_circle_04);
-	Info_AddChoice(pc_circle_04,DIALOG_BACK,pc_circle_04_back);
-	if(PLAYER_TALENT_RUNES[SPL_SUMMONGOLEM] == TRUE)
+	Info_ClearChoices(PC_Circle_04);
+	Info_AddChoice(PC_Circle_04,Dialog_Back,PC_Circle_04_BACK);
+	if(PLAYER_TALENT_RUNES[SPL_SummonGolem] == TRUE)
 	{
-		Info_AddChoice(pc_circle_04,NAME_SPL_SUMMONGOLEM,pc_itru_sumgol_info);
+		Info_AddChoice(PC_Circle_04,NAME_SPL_SummonGolem,PC_ItRu_SumGol_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_DESTROYUNDEAD] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_DestroyUndead] == TRUE)
 	{
-		Info_AddChoice(pc_circle_04,NAME_SPL_DESTROYUNDEAD,pc_itru_harmundead_info);
+		Info_AddChoice(PC_Circle_04,NAME_SPL_DestroyUndead,PC_ItRu_HarmUndead_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_CHARGEFIREBALL] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_ChargeFireball] == TRUE)
 	{
-		Info_AddChoice(pc_circle_04,NAME_SPL_CHARGEFIREBALL,pc_itru_chargefireball_info);
+		Info_AddChoice(PC_Circle_04,NAME_SPL_ChargeFireball,PC_ItRu_ChargeFireball_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_LIGHTNINGFLASH] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_LightningFlash] == TRUE)
 	{
-		Info_AddChoice(pc_circle_04,NAME_SPL_LIGHTNINGFLASH,pc_itru_lightningflash_info);
+		Info_AddChoice(PC_Circle_04,NAME_SPL_LightningFlash,PC_ItRu_LightningFlash_Info);
 	};
 };
 
-func void pc_circle_04_back()
+func void PC_Circle_04_BACK()
 {
-	Info_ClearChoices(pc_circle_04);
+	Info_ClearChoices(PC_Circle_04);
 };
 
 
-instance PC_CIRCLE_05(C_INFO)
+instance PC_Circle_05(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_circle_05_condition;
-	information = pc_circle_05_info;
+	npc = PC_Hero;
+	condition = PC_Circle_05_Condition;
+	information = PC_Circle_05_Info;
 	permanent = TRUE;
 	description = "Twórz runy pi¹tego krêgu";
 };
 
 
-func int pc_circle_05_condition()
+func int PC_Circle_05_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKERUNE) && ((PLAYER_TALENT_RUNES[SPL_ICEWAVE] == TRUE) || (PLAYER_TALENT_RUNES[SPL_SUMMONDEMON] == TRUE) || (PLAYER_TALENT_RUNES[SPL_FULLHEAL] == TRUE) || (PLAYER_TALENT_RUNES[SPL_PYROKINESIS] == TRUE)))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MakeRune) && ((PLAYER_TALENT_RUNES[SPL_IceWave] == TRUE) || (PLAYER_TALENT_RUNES[SPL_SummonDemon] == TRUE) || (PLAYER_TALENT_RUNES[SPL_FullHeal] == TRUE) || (PLAYER_TALENT_RUNES[SPL_Pyrokinesis] == TRUE)))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_circle_05_info()
+func void PC_Circle_05_Info()
 {
-	Info_ClearChoices(pc_circle_05);
-	Info_AddChoice(pc_circle_05,DIALOG_BACK,pc_circle_05_back);
-	if(PLAYER_TALENT_RUNES[SPL_ICEWAVE] == TRUE)
+	Info_ClearChoices(PC_Circle_05);
+	Info_AddChoice(PC_Circle_05,Dialog_Back,PC_Circle_05_BACK);
+	if(PLAYER_TALENT_RUNES[SPL_IceWave] == TRUE)
 	{
-		Info_AddChoice(pc_circle_05,NAME_SPL_ICEWAVE,pc_itru_icewave_info);
+		Info_AddChoice(PC_Circle_05,NAME_SPL_IceWave,PC_ItRu_IceWave_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_SUMMONDEMON] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_SummonDemon] == TRUE)
 	{
-		Info_AddChoice(pc_circle_05,NAME_SPL_SUMMONDEMON,pc_itru_sumdemon_info);
+		Info_AddChoice(PC_Circle_05,NAME_SPL_SummonDemon,PC_ItRu_SumDemon_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_FULLHEAL] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_FullHeal] == TRUE)
 	{
-		Info_AddChoice(pc_circle_05,NAME_SPL_FULLHEAL,pc_itru_fullheal_info);
+		Info_AddChoice(PC_Circle_05,NAME_SPL_FullHeal,PC_ItRu_FullHeal_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_PYROKINESIS] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_Pyrokinesis] == TRUE)
 	{
-		Info_AddChoice(pc_circle_05,NAME_SPL_PYROKINESIS,pc_itru_pyrokinesis_info);
+		Info_AddChoice(PC_Circle_05,NAME_SPL_Pyrokinesis,PC_ItRu_Pyrokinesis_Info);
 	};
 };
 
-func void pc_circle_05_back()
+func void PC_Circle_05_BACK()
 {
-	Info_ClearChoices(pc_circle_05);
+	Info_ClearChoices(PC_Circle_05);
 };
 
 
-instance PC_CIRCLE_06(C_INFO)
+instance PC_Circle_06(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_circle_06_condition;
-	information = pc_circle_06_info;
+	npc = PC_Hero;
+	condition = PC_Circle_06_Condition;
+	information = PC_Circle_06_Info;
 	permanent = TRUE;
 	description = "Twórz runy szóstego krêgu";
 };
 
 
-func int pc_circle_06_condition()
+func int PC_Circle_06_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKERUNE) && ((PLAYER_TALENT_RUNES[SPL_FIRERAIN] == TRUE) || (PLAYER_TALENT_RUNES[SPL_BREATHOFDEATH] == TRUE) || (PLAYER_TALENT_RUNES[SPL_ARMYOFDARKNESS] == TRUE) || (PLAYER_TALENT_RUNES[SPL_SHRINK] == TRUE)))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MakeRune) && ((PLAYER_TALENT_RUNES[SPL_Firerain] == TRUE) || (PLAYER_TALENT_RUNES[SPL_BreathOfDeath] == TRUE) || (PLAYER_TALENT_RUNES[SPL_ArmyOfDarkness] == TRUE) || (PLAYER_TALENT_RUNES[SPL_Shrink] == TRUE)))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_circle_06_info()
+func void PC_Circle_06_Info()
 {
-	Info_ClearChoices(pc_circle_06);
-	Info_AddChoice(pc_circle_06,DIALOG_BACK,pc_circle_06_back);
-	if(PLAYER_TALENT_RUNES[SPL_FIRERAIN] == TRUE)
+	Info_ClearChoices(PC_Circle_06);
+	Info_AddChoice(PC_Circle_06,Dialog_Back,PC_Circle_06_BACK);
+	if(PLAYER_TALENT_RUNES[SPL_Firerain] == TRUE)
 	{
-		Info_AddChoice(pc_circle_06,NAME_SPL_FIRERAIN,pc_itru_firerain_info);
+		Info_AddChoice(PC_Circle_06,NAME_SPL_Firerain,PC_ItRu_Firerain_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_BREATHOFDEATH] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_BreathOfDeath] == TRUE)
 	{
-		Info_AddChoice(pc_circle_06,NAME_SPL_BREATHOFDEATH,pc_itru_breathofdeath_info);
+		Info_AddChoice(PC_Circle_06,NAME_SPL_BreathOfDeath,PC_ItRu_BreathOfDeath_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_MASSDEATH] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_MassDeath] == TRUE)
 	{
-		Info_AddChoice(pc_circle_06,NAME_SPL_MASSDEATH,pc_itru_massdeath_info);
+		Info_AddChoice(PC_Circle_06,NAME_SPL_MassDeath,PC_ItRu_MassDeath_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_ARMYOFDARKNESS] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_ArmyOfDarkness] == TRUE)
 	{
-		Info_AddChoice(pc_circle_06,NAME_SPL_ARMYOFDARKNESS,pc_itru_armyofdarkness_info);
+		Info_AddChoice(PC_Circle_06,NAME_SPL_ArmyOfDarkness,PC_ItRu_ArmyOfDarkness_Info);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_SHRINK] == TRUE)
+	if(PLAYER_TALENT_RUNES[SPL_Shrink] == TRUE)
 	{
-		Info_AddChoice(pc_circle_06,NAME_SPL_SHRINK,pc_itru_shrink_info);
+		Info_AddChoice(PC_Circle_06,NAME_SPL_Shrink,PC_ItRu_Shrink_Info);
 	};
 };
 
-func void pc_circle_06_back()
+func void PC_Circle_06_BACK()
 {
-	Info_ClearChoices(pc_circle_06);
+	Info_ClearChoices(PC_Circle_06);
 };
 
 
-instance PC_SPL_MASTEROFDISASTER(C_INFO)
+instance PC_SPL_MasterOfDisaster(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_spl_masterofdisaster_condition;
-	information = pc_spl_masterofdisaster_info;
+	npc = PC_Hero;
+	condition = PC_SPL_MasterOfDisaster_Condition;
+	information = PC_SPL_MasterOfDisaster_Info;
 	permanent = TRUE;
 	description = "Tajemnica biblioteki!";
 };
 
 
-func int pc_spl_masterofdisaster_condition()
+func int PC_SPL_MasterOfDisaster_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKERUNE) && (PLAYER_TALENT_RUNES[SPL_MASTEROFDISASTER] == TRUE))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MakeRune) && (PLAYER_TALENT_RUNES[SPL_MasterOfDisaster] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_spl_masterofdisaster_info()
+func void PC_SPL_MasterOfDisaster_Info()
 {
-	Info_ClearChoices(pc_spl_masterofdisaster);
-	Info_AddChoice(pc_spl_masterofdisaster,DIALOG_BACK,pc_spl_masterofdisaster_back);
-	if(PLAYER_TALENT_RUNES[SPL_MASTEROFDISASTER] == TRUE)
+	Info_ClearChoices(PC_SPL_MasterOfDisaster);
+	Info_AddChoice(PC_SPL_MasterOfDisaster,Dialog_Back,PC_SPL_MasterOfDisaster_BACK);
+	if(PLAYER_TALENT_RUNES[SPL_MasterOfDisaster] == TRUE)
 	{
-		Info_AddChoice(pc_spl_masterofdisaster,"Tajemnica biblioteki!",pc_spl_masterofdisaster_create);
+		Info_AddChoice(PC_SPL_MasterOfDisaster,"Tajemnica biblioteki!",PC_SPL_MasterOfDisaster_Create);
 	};
 };
 
-func void pc_spl_masterofdisaster_back()
+func void PC_SPL_MasterOfDisaster_BACK()
 {
-	Info_ClearChoices(pc_spl_masterofdisaster);
+	Info_ClearChoices(PC_SPL_MasterOfDisaster);
 };
 
-func void pc_spl_masterofdisaster_create()
+func void PC_SPL_MasterOfDisaster_Create()
 {
-	if(Npc_HasItems(hero,itmi_holywater) >= 1)
+	if(Npc_HasItems(hero,ItMi_HolyWater) >= 1)
 	{
-		Npc_RemoveInvItems(hero,itmi_holywater,1);
-		CreateInvItems(hero,itru_masterofdisaster,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItMi_HolyWater,1);
+		CreateInvItems(hero,ItRu_MasterOfDisaster,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
 
-instance PC_SPL_PALTELEPORTSECRET(C_INFO)
+instance PC_SPL_PalTeleportSecret(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_spl_palteleportsecret_condition;
-	information = pc_spl_palteleportsecret_info;
+	npc = PC_Hero;
+	condition = PC_SPL_PalTeleportSecret_Condition;
+	information = PC_SPL_PalTeleportSecret_Info;
 	permanent = TRUE;
 	description = "Twórz runê teleportacyjn¹";
 };
 
 
-func int pc_spl_palteleportsecret_condition()
+func int PC_SPL_PalTeleportSecret_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKERUNE) && (PLAYER_TALENT_RUNES[SPL_PALTELEPORTSECRET] == TRUE))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MakeRune) && (PLAYER_TALENT_RUNES[SPL_PalTeleportSecret] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_spl_palteleportsecret_info()
+func void PC_SPL_PalTeleportSecret_Info()
 {
-	Info_ClearChoices(pc_spl_palteleportsecret);
-	Info_AddChoice(pc_spl_palteleportsecret,DIALOG_BACK,pc_spl_palteleportsecret_back);
-	if(PLAYER_TALENT_RUNES[SPL_PALTELEPORTSECRET] == TRUE)
+	Info_ClearChoices(PC_SPL_PalTeleportSecret);
+	Info_AddChoice(PC_SPL_PalTeleportSecret,Dialog_Back,PC_SPL_PalTeleportSecret_BACK);
+	if(PLAYER_TALENT_RUNES[SPL_PalTeleportSecret] == TRUE)
 	{
-		Info_AddChoice(pc_spl_palteleportsecret,"Tajemnica biblioteki!",pc_spl_palteleportsecret_create);
+		Info_AddChoice(PC_SPL_PalTeleportSecret,"Tajemnica biblioteki!",PC_SPL_PalTeleportSecret_Create);
 	};
 };
 
-func void pc_spl_palteleportsecret_back()
+func void PC_SPL_PalTeleportSecret_BACK()
 {
-	Info_ClearChoices(pc_spl_palteleportsecret);
+	Info_ClearChoices(PC_SPL_PalTeleportSecret);
 };
 
-func void pc_spl_palteleportsecret_create()
+func void PC_SPL_PalTeleportSecret_Create()
 {
-	if(Npc_HasItems(hero,itmi_holywater) >= 1)
+	if(Npc_HasItems(hero,ItMi_HolyWater) >= 1)
 	{
-		Npc_RemoveInvItems(hero,itmi_holywater,1);
-		CreateInvItems(hero,itru_palteleportsecret,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItMi_HolyWater,1);
+		CreateInvItems(hero,ItRu_PalTeleportSecret,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
-	};
-	b_endproductiondialog();
-};
-
-func void pc_itru_light_info()
-{
-	if((Npc_HasItems(hero,itsc_light) >= 1) && (Npc_HasItems(hero,itmi_gold) >= 1))
-	{
-		Npc_RemoveInvItems(hero,itsc_light,1);
-		Npc_RemoveInvItems(hero,itmi_gold,1);
-		CreateInvItems(hero,itru_light,1);
-		Print(PRINT_RUNESUCCESS);
-	}
-	else
-	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_firebolt_info()
+func void PC_ItRu_Light_Info()
 {
-	if((Npc_HasItems(hero,itsc_firebolt) >= 1) && (Npc_HasItems(hero,itmi_sulfur) >= 1))
+	if((Npc_HasItems(hero,ItSc_Light) >= 1) && (Npc_HasItems(hero,ItMi_Gold) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_firebolt,1);
-		Npc_RemoveInvItems(hero,itmi_sulfur,1);
-		CreateInvItems(hero,itru_firebolt,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_Light,1);
+		Npc_RemoveInvItems(hero,ItMi_Gold,1);
+		CreateInvItems(hero,ItRu_Light,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_lightheal_info()
+func void PC_ItRu_Firebolt_Info()
 {
-	if((Npc_HasItems(hero,itsc_lightheal) >= 1) && (Npc_HasItems(hero,itpl_health_herb_01) >= 1))
+	if((Npc_HasItems(hero,ItSc_Firebolt) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_lightheal,1);
-		Npc_RemoveInvItems(hero,itpl_health_herb_01,1);
-		CreateInvItems(hero,itru_lightheal,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_Firebolt,1);
+		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
+		CreateInvItems(hero,ItRu_FireBolt,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_sumgobskel_info()
+func void PC_ItRu_LightHeal_Info()
 {
-	if((Npc_HasItems(hero,itsc_sumgobskel) >= 1) && (Npc_HasItems(hero,itat_goblinbone) >= 1))
+	if((Npc_HasItems(hero,ItSc_LightHeal) >= 1) && (Npc_HasItems(hero,ItPl_Health_Herb_01) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_sumgobskel,1);
-		Npc_RemoveInvItems(hero,itat_goblinbone,1);
-		CreateInvItems(hero,itru_sumgobskel,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_LightHeal,1);
+		Npc_RemoveInvItems(hero,ItPl_Health_Herb_01,1);
+		CreateInvItems(hero,ItRu_LightHeal,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_zap_info()
+func void PC_ItRu_SumGobSkel_Info()
 {
-	if((Npc_HasItems(hero,itsc_zap) >= 1) && (Npc_HasItems(hero,itmi_rockcrystal) >= 1))
+	if((Npc_HasItems(hero,ItSc_SumGobSkel) >= 1) && (Npc_HasItems(hero,ItAt_GoblinBone) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_zap,1);
-		Npc_RemoveInvItems(hero,itmi_rockcrystal,1);
-		CreateInvItems(hero,itru_zap,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_SumGobSkel,1);
+		Npc_RemoveInvItems(hero,ItAt_GoblinBone,1);
+		CreateInvItems(hero,ItRu_SumGobSkel,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_instfireball_info()
+func void PC_ItRu_Zap_Info()
 {
-	if((Npc_HasItems(hero,itsc_instantfireball) >= 1) && (Npc_HasItems(hero,itmi_pitch) >= 1))
+	if((Npc_HasItems(hero,ItSc_Zap) >= 1) && (Npc_HasItems(hero,ItMi_Rockcrystal) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_instantfireball,1);
-		Npc_RemoveInvItems(hero,itmi_pitch,1);
-		CreateInvItems(hero,itru_instantfireball,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_Zap,1);
+		Npc_RemoveInvItems(hero,ItMi_Rockcrystal,1);
+		CreateInvItems(hero,ItRu_Zap,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_icebolt_info()
+func void PC_ItRu_InstFireball_Info()
 {
-	if((Npc_HasItems(hero,itsc_icebolt) >= 1) && (Npc_HasItems(hero,itmi_quartz) >= 1))
+	if((Npc_HasItems(hero,ItSc_InstantFireball) >= 1) && (Npc_HasItems(hero,ItMi_Pitch) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_icebolt,1);
-		Npc_RemoveInvItems(hero,itmi_quartz,1);
-		CreateInvItems(hero,itru_icebolt,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_InstantFireball,1);
+		Npc_RemoveInvItems(hero,ItMi_Pitch,1);
+		CreateInvItems(hero,ItRu_InstantFireball,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_sumwolf_info()
+func void PC_ItRu_Icebolt_Info()
 {
-	if((Npc_HasItems(hero,itsc_sumwolf) >= 1) && (Npc_HasItems(hero,itat_wolffur) >= 1))
+	if((Npc_HasItems(hero,ItSc_Icebolt) >= 1) && (Npc_HasItems(hero,ItMi_Quartz) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_sumwolf,1);
-		Npc_RemoveInvItems(hero,itat_wolffur,1);
-		CreateInvItems(hero,itru_sumwolf,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_Icebolt,1);
+		Npc_RemoveInvItems(hero,ItMi_Quartz,1);
+		CreateInvItems(hero,ItRu_Icebolt,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_windfist_info()
+func void PC_ItRu_SumWolf_Info()
 {
-	if((Npc_HasItems(hero,itsc_windfist) >= 1) && (Npc_HasItems(hero,itmi_coal) >= 1))
+	if((Npc_HasItems(hero,ItSc_SumWolf) >= 1) && (Npc_HasItems(hero,ItAt_WolfFur) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_windfist,1);
-		Npc_RemoveInvItems(hero,itmi_coal,1);
-		CreateInvItems(hero,itru_windfist,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_SumWolf,1);
+		Npc_RemoveInvItems(hero,ItAt_WolfFur,1);
+		CreateInvItems(hero,ItRu_SumWolf,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_sleep_info()
+func void PC_ItRu_Windfist_Info()
 {
-	if((Npc_HasItems(hero,itsc_sleep) >= 1) && (Npc_HasItems(hero,itpl_swampherb) >= 1))
+	if((Npc_HasItems(hero,ItSc_Windfist) >= 1) && (Npc_HasItems(hero,ItMi_Coal) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_sleep,1);
-		Npc_RemoveInvItems(hero,itpl_swampherb,1);
-		CreateInvItems(hero,itru_sleep,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_Windfist,1);
+		Npc_RemoveInvItems(hero,ItMi_Coal,1);
+		CreateInvItems(hero,ItRu_Windfist,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_mediumheal_info()
+func void PC_ItRu_Sleep_Info()
 {
-	if((Npc_HasItems(hero,itsc_mediumheal) >= 1) && (Npc_HasItems(hero,itpl_health_herb_02) >= 1))
+	if((Npc_HasItems(hero,ItSc_Sleep) >= 1) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_mediumheal,1);
-		Npc_RemoveInvItems(hero,itpl_health_herb_02,1);
-		CreateInvItems(hero,itru_mediumheal,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_Sleep,1);
+		Npc_RemoveInvItems(hero,ItPl_SwampHerb,1);
+		CreateInvItems(hero,ItRu_Sleep,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_lightningflash_info()
+func void PC_ItRu_MediumHeal_Info()
 {
-	if((Npc_HasItems(hero,itsc_lightningflash) >= 1) && (Npc_HasItems(hero,itmi_rockcrystal) >= 1) && (Npc_HasItems(hero,itmi_quartz) >= 1))
+	if((Npc_HasItems(hero,ItSc_MediumHeal) >= 1) && (Npc_HasItems(hero,ItPl_Health_Herb_02) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_lightningflash,1);
-		Npc_RemoveInvItems(hero,itmi_rockcrystal,1);
-		Npc_RemoveInvItems(hero,itmi_quartz,1);
-		CreateInvItems(hero,itru_lightningflash,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_MediumHeal,1);
+		Npc_RemoveInvItems(hero,ItPl_Health_Herb_02,1);
+		CreateInvItems(hero,ItRu_MediumHeal,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_chargefireball_info()
+func void PC_ItRu_LightningFlash_Info()
 {
-	if((Npc_HasItems(hero,itsc_chargefireball) >= 1) && (Npc_HasItems(hero,itmi_sulfur) >= 1) && (Npc_HasItems(hero,itmi_pitch) >= 1))
+	if((Npc_HasItems(hero,ItSc_LightningFlash) >= 1) && (Npc_HasItems(hero,ItMi_Rockcrystal) >= 1) && (Npc_HasItems(hero,ItMi_Quartz) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_chargefireball,1);
-		Npc_RemoveInvItems(hero,itmi_sulfur,1);
-		Npc_RemoveInvItems(hero,itmi_pitch,1);
-		CreateInvItem(hero,itru_chargefireball);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_LightningFlash,1);
+		Npc_RemoveInvItems(hero,ItMi_Rockcrystal,1);
+		Npc_RemoveInvItems(hero,ItMi_Quartz,1);
+		CreateInvItems(hero,ItRu_LightningFlash,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_sumskel_info()
+func void PC_ItRu_ChargeFireball_Info()
 {
-	if((Npc_HasItems(hero,itsc_sumskel) >= 1) && (Npc_HasItems(hero,itat_skeletonbone) >= 1))
+	if((Npc_HasItems(hero,ItSc_ChargeFireBall) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1) && (Npc_HasItems(hero,ItMi_Pitch) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_sumskel,1);
-		Npc_RemoveInvItems(hero,itat_skeletonbone,1);
-		CreateInvItems(hero,itru_sumskel,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_ChargeFireBall,1);
+		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
+		Npc_RemoveInvItems(hero,ItMi_Pitch,1);
+		CreateInvItem(hero,ItRu_ChargeFireball);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_fear_info()
+func void PC_ItRu_SumSkel_Info()
 {
-	if((Npc_HasItems(hero,itsc_fear) >= 1) && (Npc_HasItems(hero,itmi_darkpearl) >= 1))
+	if((Npc_HasItems(hero,ItSc_SumSkel) >= 1) && (Npc_HasItems(hero,ItAt_SkeletonBone) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_fear,1);
-		Npc_RemoveInvItems(hero,itmi_darkpearl,1);
-		CreateInvItems(hero,itru_fear,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_SumSkel,1);
+		Npc_RemoveInvItems(hero,ItAt_SkeletonBone,1);
+		CreateInvItems(hero,ItRu_SumSkel,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_icecube_info()
+func void PC_ItRu_Fear_Info()
 {
-	if((Npc_HasItems(hero,itsc_icecube) >= 1) && (Npc_HasItems(hero,itmi_quartz) >= 1) && (Npc_HasItems(hero,itmi_aquamarine) >= 1))
+	if((Npc_HasItems(hero,ItSc_Fear) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_icecube,1);
-		Npc_RemoveInvItems(hero,itmi_quartz,1);
-		Npc_RemoveInvItems(hero,itmi_aquamarine,1);
-		CreateInvItems(hero,itru_icecube,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_Fear,1);
+		Npc_RemoveInvItems(hero,ItMi_DarkPearl,1);
+		CreateInvItems(hero,ItRu_Fear,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_thunderball_info()
+func void PC_ItRu_IceCube_Info()
 {
-	if((Npc_HasItems(hero,itsc_thunderball) >= 1) && (Npc_HasItems(hero,itmi_rockcrystal) >= 1) && (Npc_HasItems(hero,itmi_sulfur) >= 1))
+	if((Npc_HasItems(hero,ItSc_IceCube) >= 1) && (Npc_HasItems(hero,ItMi_Quartz) >= 1) && (Npc_HasItems(hero,ItMi_Aquamarine) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_thunderball,1);
-		Npc_RemoveInvItems(hero,itmi_rockcrystal,1);
-		Npc_RemoveInvItems(hero,itmi_sulfur,1);
-		CreateInvItems(hero,itru_thunderball,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_IceCube,1);
+		Npc_RemoveInvItems(hero,ItMi_Quartz,1);
+		Npc_RemoveInvItems(hero,ItMi_Aquamarine,1);
+		CreateInvItems(hero,ItRu_IceCube,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_sumgol_info()
+func void PC_ItRu_ThunderBall_Info()
 {
-	if((Npc_HasItems(hero,itsc_sumgol) >= 1) && (Npc_HasItems(hero,itat_stonegolemheart) >= 1))
+	if((Npc_HasItems(hero,ItSc_ThunderBall) >= 1) && (Npc_HasItems(hero,ItMi_Rockcrystal) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_sumgol,1);
-		Npc_RemoveInvItems(hero,itat_stonegolemheart,1);
-		CreateInvItems(hero,itru_sumgol,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_ThunderBall,1);
+		Npc_RemoveInvItems(hero,ItMi_Rockcrystal,1);
+		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
+		CreateInvItems(hero,ItRu_ThunderBall,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_harmundead_info()
+func void PC_ItRu_SumGol_Info()
 {
-	if((Npc_HasItems(hero,itsc_harmundead) >= 1) && (Npc_HasItems(hero,itmi_holywater) >= 1))
+	if((Npc_HasItems(hero,ItSc_SumGol) >= 1) && (Npc_HasItems(hero,ItAt_StoneGolemHeart) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_harmundead,1);
-		Npc_RemoveInvItems(hero,itmi_holywater,1);
-		CreateInvItems(hero,itru_harmundead,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_SumGol,1);
+		Npc_RemoveInvItems(hero,ItAt_StoneGolemHeart,1);
+		CreateInvItems(hero,ItRu_SumGol,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_pyrokinesis_info()
+func void PC_ItRu_HarmUndead_Info()
 {
-	if((Npc_HasItems(hero,itsc_pyrokinesis) >= 1) && (Npc_HasItems(hero,itmi_sulfur) >= 1) && (Npc_HasItems(hero,itat_waranfiretongue) >= 1))
+	if((Npc_HasItems(hero,ItSc_HarmUndead) >= 1) && (Npc_HasItems(hero,ItMi_HolyWater) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_pyrokinesis,1);
-		Npc_RemoveInvItems(hero,itmi_sulfur,1);
-		Npc_RemoveInvItems(hero,itat_waranfiretongue,1);
-		CreateInvItems(hero,itru_pyrokinesis,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_HarmUndead,1);
+		Npc_RemoveInvItems(hero,ItMi_HolyWater,1);
+		CreateInvItems(hero,ItRu_HarmUndead,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_firestorm_info()
+func void PC_ItRu_Pyrokinesis_Info()
 {
-	if((Npc_HasItems(hero,itsc_firestorm) >= 1) && (Npc_HasItems(hero,itmi_pitch) >= 1) && (Npc_HasItems(hero,itmi_sulfur) >= 1))
+	if((Npc_HasItems(hero,ItSc_Pyrokinesis) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1) && (Npc_HasItems(hero,ItAt_WaranFiretongue) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_firestorm,1);
-		Npc_RemoveInvItems(hero,itmi_pitch,1);
-		Npc_RemoveInvItems(hero,itmi_sulfur,1);
-		CreateInvItems(hero,itru_firestorm,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_Pyrokinesis,1);
+		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
+		Npc_RemoveInvItems(hero,ItAt_WaranFiretongue,1);
+		CreateInvItems(hero,ItRu_Pyrokinesis,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_icewave_info()
+func void PC_ItRu_Firestorm_Info()
 {
-	if((Npc_HasItems(hero,itsc_icewave) >= 1) && (Npc_HasItems(hero,itmi_quartz) >= 1) && (Npc_HasItems(hero,itmi_aquamarine) >= 1))
+	if((Npc_HasItems(hero,ItSc_Firestorm) >= 1) && (Npc_HasItems(hero,ItMi_Pitch) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_icewave,1);
-		Npc_RemoveInvItems(hero,itmi_quartz,1);
-		Npc_RemoveInvItems(hero,itmi_aquamarine,1);
-		CreateInvItems(hero,itru_icewave,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_Firestorm,1);
+		Npc_RemoveInvItems(hero,ItMi_Pitch,1);
+		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
+		CreateInvItems(hero,ItRu_Firestorm,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_sumdemon_info()
+func void PC_ItRu_IceWave_Info()
 {
-	if((Npc_HasItems(hero,itsc_sumdemon) >= 1) && (Npc_HasItems(hero,itat_demonheart) >= 1))
+	if((Npc_HasItems(hero,ItSc_IceWave) >= 1) && (Npc_HasItems(hero,ItMi_Quartz) >= 1) && (Npc_HasItems(hero,ItMi_Aquamarine) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_sumdemon,1);
-		Npc_RemoveInvItems(hero,itat_demonheart,1);
-		CreateInvItems(hero,itru_sumdemon,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_IceWave,1);
+		Npc_RemoveInvItems(hero,ItMi_Quartz,1);
+		Npc_RemoveInvItems(hero,ItMi_Aquamarine,1);
+		CreateInvItems(hero,ItRu_IceWave,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_fullheal_info()
+func void PC_ItRu_SumDemon_Info()
 {
-	if((Npc_HasItems(hero,itsc_fullheal) >= 1) && (Npc_HasItems(hero,itpl_health_herb_03) >= 1))
+	if((Npc_HasItems(hero,ItSc_SumDemon) >= 1) && (Npc_HasItems(hero,ItAt_DemonHeart) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_fullheal,1);
-		Npc_RemoveInvItems(hero,itpl_health_herb_03,1);
-		CreateInvItems(hero,itru_fullheal,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_SumDemon,1);
+		Npc_RemoveInvItems(hero,ItAt_DemonHeart,1);
+		CreateInvItems(hero,ItRu_SumDemon,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_firerain_info()
+func void PC_ItRu_FullHeal_Info()
 {
-	if((Npc_HasItems(hero,itsc_firerain) >= 1) && (Npc_HasItems(hero,itmi_pitch) >= 1) && (Npc_HasItems(hero,itmi_sulfur) >= 1) && (Npc_HasItems(hero,itat_waranfiretongue) >= 1))
+	if((Npc_HasItems(hero,ItSc_FullHeal) >= 1) && (Npc_HasItems(hero,ItPl_Health_Herb_03) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_firerain,1);
-		Npc_RemoveInvItems(hero,itmi_pitch,1);
-		Npc_RemoveInvItems(hero,itat_waranfiretongue,1);
-		CreateInvItems(hero,itru_firerain,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_FullHeal,1);
+		Npc_RemoveInvItems(hero,ItPl_Health_Herb_03,1);
+		CreateInvItems(hero,ItRu_FullHeal,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_breathofdeath_info()
+func void PC_ItRu_Firerain_Info()
 {
-	if((Npc_HasItems(hero,itsc_breathofdeath) >= 1) && (Npc_HasItems(hero,itmi_coal) >= 1) && (Npc_HasItems(hero,itmi_darkpearl) >= 1))
+	if((Npc_HasItems(hero,ItSc_Firerain) >= 1) && (Npc_HasItems(hero,ItMi_Pitch) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1) && (Npc_HasItems(hero,ItAt_WaranFiretongue) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_breathofdeath,1);
-		Npc_RemoveInvItems(hero,itmi_coal,1);
-		Npc_RemoveInvItems(hero,itmi_darkpearl,1);
-		CreateInvItems(hero,itru_breathofdeath,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_Firerain,1);
+		Npc_RemoveInvItems(hero,ItMi_Pitch,1);
+		Npc_RemoveInvItems(hero,ItAt_WaranFiretongue,1);
+		CreateInvItems(hero,ItRu_Firerain,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_massdeath_info()
+func void PC_ItRu_BreathOfDeath_Info()
 {
-	if((Npc_HasItems(hero,itsc_massdeath) >= 1) && (Npc_HasItems(hero,itat_skeletonbone) >= 1) && (Npc_HasItems(hero,itmi_darkpearl) >= 1))
+	if((Npc_HasItems(hero,ItSc_BreathOfDeath) >= 1) && (Npc_HasItems(hero,ItMi_Coal) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_massdeath,1);
-		Npc_RemoveInvItems(hero,itat_skeletonbone,1);
-		Npc_RemoveInvItems(hero,itmi_darkpearl,1);
-		CreateInvItems(hero,itru_massdeath,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_BreathOfDeath,1);
+		Npc_RemoveInvItems(hero,ItMi_Coal,1);
+		Npc_RemoveInvItems(hero,ItMi_DarkPearl,1);
+		CreateInvItems(hero,ItRu_BreathOfDeath,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_armyofdarkness_info()
+func void PC_ItRu_MassDeath_Info()
 {
-	if((Npc_HasItems(hero,itsc_armyofdarkness) >= 1) && (Npc_HasItems(hero,itat_skeletonbone) >= 1) && (Npc_HasItems(hero,itmi_darkpearl) >= 1) && (Npc_HasItems(hero,itat_stonegolemheart) >= 1) && (Npc_HasItems(hero,itat_demonheart) >= 1))
+	if((Npc_HasItems(hero,ItSc_MassDeath) >= 1) && (Npc_HasItems(hero,ItAt_SkeletonBone) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_armyofdarkness,1);
-		Npc_RemoveInvItems(hero,itat_skeletonbone,1);
-		Npc_RemoveInvItems(hero,itmi_darkpearl,1);
-		Npc_RemoveInvItems(hero,itat_stonegolemheart,1);
-		Npc_RemoveInvItems(hero,itat_demonheart,1);
-		CreateInvItems(hero,itru_armyofdarkness,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_MassDeath,1);
+		Npc_RemoveInvItems(hero,ItAt_SkeletonBone,1);
+		Npc_RemoveInvItems(hero,ItMi_DarkPearl,1);
+		CreateInvItems(hero,ItRu_MassDeath,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };
 
-func void pc_itru_shrink_info()
+func void PC_ItRu_ArmyOfDarkness_Info()
 {
-	if((Npc_HasItems(hero,itsc_shrink) >= 1) && (Npc_HasItems(hero,itat_goblinbone) >= 1) && (Npc_HasItems(hero,itat_trolltooth) >= 1))
+	if((Npc_HasItems(hero,ItSc_ArmyOfDarkness) >= 1) && (Npc_HasItems(hero,ItAt_SkeletonBone) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,ItAt_StoneGolemHeart) >= 1) && (Npc_HasItems(hero,ItAt_DemonHeart) >= 1))
 	{
-		Npc_RemoveInvItems(hero,itsc_shrink,1);
-		Npc_RemoveInvItems(hero,itat_goblinbone,1);
-		Npc_RemoveInvItems(hero,itat_trolltooth,1);
-		CreateInvItems(hero,itru_shrink,1);
-		Print(PRINT_RUNESUCCESS);
+		Npc_RemoveInvItems(hero,ItSc_ArmyOfDarkness,1);
+		Npc_RemoveInvItems(hero,ItAt_SkeletonBone,1);
+		Npc_RemoveInvItems(hero,ItMi_DarkPearl,1);
+		Npc_RemoveInvItems(hero,ItAt_StoneGolemHeart,1);
+		Npc_RemoveInvItems(hero,ItAt_DemonHeart,1);
+		CreateInvItems(hero,ItRu_ArmyOfDarkness,1);
+		Print(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmi_runeblank,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
+	};
+	b_endproductiondialog();
+};
+
+func void PC_ItRu_Shrink_Info()
+{
+	if((Npc_HasItems(hero,ItSc_Shrink) >= 1) && (Npc_HasItems(hero,ItAt_GoblinBone) >= 1) && (Npc_HasItems(hero,ItAt_TrollTooth) >= 1))
+	{
+		Npc_RemoveInvItems(hero,ItSc_Shrink,1);
+		Npc_RemoveInvItems(hero,ItAt_GoblinBone,1);
+		Npc_RemoveInvItems(hero,ItAt_TrollTooth,1);
+		CreateInvItems(hero,ItRu_Shrink,1);
+		Print(PRINT_RuneSuccess);
+	}
+	else
+	{
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
 };

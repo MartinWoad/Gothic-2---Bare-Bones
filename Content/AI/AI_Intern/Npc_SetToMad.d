@@ -1,5 +1,5 @@
 
-func void npc_settomad(var C_NPC self,var int seconds)
+func void Npc_SetToMad(var C_Npc self,var int seconds)
 {
 };
 

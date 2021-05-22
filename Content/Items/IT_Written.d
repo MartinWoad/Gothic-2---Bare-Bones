@@ -1,5 +1,5 @@
 
-instance STANDARDBRIEF(C_ITEM)
+instance StandardBrief(C_Item)
 {
 	name = "List";
 	mainflag = ITEM_KAT_DOCS;
@@ -7,29 +7,29 @@ instance STANDARDBRIEF(C_ITEM)
 	value = 0;
 	visual = "ItWr_Scroll_01.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = usestandardbrief;
-	scemename = "MAP";
+	on_state[0] = UseStandardBrief;
+	scemeName = "MAP";
 	description = "Typowy List";
 };
 
 
-func void usestandardbrief()
+func void UseStandardBrief()
 {
-	var int ndocid;
-	ndocid = Doc_Create();
-	Doc_SetPages(ndocid,1);
-	Doc_SetPage(ndocid,0,"letters.TGA",0);
-	Doc_SetFont(ndocid,0,FONT_BOOKHEADLINE);
-	Doc_SetMargins(ndocid,-1,50,50,50,50,1);
-	Doc_PrintLine(ndocid,0,"TypowyList");
-	Doc_SetFont(ndocid,0,FONT_BOOK);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Bla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla bla");
-	Doc_Show(ndocid);
+	var int nDocID;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,1);
+	Doc_SetPage(nDocID,0,"letters.TGA",0);
+	Doc_SetFont(nDocID,0,FONT_BookHeadline);
+	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
+	Doc_PrintLine(nDocID,0,"TypowyList");
+	Doc_SetFont(nDocID,0,FONT_Book);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"Bla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla bla");
+	Doc_Show(nDocID);
 };
 
 
-instance STANDARDBUCH(C_ITEM)
+instance StandardBuch(C_Item)
 {
 	name = "Typowa Ksi¹¿ka";
 	mainflag = ITEM_KAT_DOCS;
@@ -37,44 +37,44 @@ instance STANDARDBUCH(C_ITEM)
 	value = 100;
 	visual = "ItWr_Book_02_05.3ds";
 	material = MAT_LEATHER;
-	scemename = "MAP";
+	scemeName = "MAP";
 	description = "Typowa Ksi¹¿ka";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = usestandardbuch;
+	on_state[0] = UseStandardBuch;
 };
 
 
-func void usestandardbuch()
+func void UseStandardBuch()
 {
-	var int ndocid;
-	ndocid = Doc_Create();
-	Doc_SetPages(ndocid,2);
-	Doc_SetPage(ndocid,0,"Book_Brown_L.tga",0);
-	Doc_SetPage(ndocid,1,"Book_Brown_R.tga",0);
-	Doc_SetMargins(ndocid,0,275,20,30,20,1);
-	Doc_SetFont(ndocid,0,FONT_BOOKHEADLINE);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"TypowaKsi¹¿ka Strona 1");
-	Doc_SetFont(ndocid,0,FONT_BOOK);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"Bla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla bla");
-	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLines(ndocid,0,"Bla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla bBla blaBla blaBla blaBlaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla bla");
-	Doc_SetMargins(ndocid,-1,30,20,275,20,1);
-	Doc_SetFont(ndocid,1,FONT_BOOKHEADLINE);
-	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLines(ndocid,1,"TypowaKsi¹¿ka Strona 2");
-	Doc_SetFont(ndocid,1,FONT_BOOK);
-	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLines(ndocid,1,"Bla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla bla");
-	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLines(ndocid,1,"Bla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla bla");
-	Doc_Show(ndocid);
+	var int nDocID;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,2);
+	Doc_SetPage(nDocID,0,"Book_Brown_L.tga",0);
+	Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
+	Doc_SetMargins(nDocID,0,275,20,30,20,1);
+	Doc_SetFont(nDocID,0,FONT_BookHeadline);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"TypowaKsi¹¿ka Strona 1");
+	Doc_SetFont(nDocID,0,FONT_Book);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"Bla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla bla");
+	Doc_PrintLine(nDocID,1,"");
+	Doc_PrintLines(nDocID,0,"Bla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla bBla blaBla blaBla blaBlaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla bla");
+	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
+	Doc_SetFont(nDocID,1,FONT_BookHeadline);
+	Doc_PrintLine(nDocID,1,"");
+	Doc_PrintLines(nDocID,1,"TypowaKsi¹¿ka Strona 2");
+	Doc_SetFont(nDocID,1,FONT_Book);
+	Doc_PrintLine(nDocID,1,"");
+	Doc_PrintLines(nDocID,1,"Bla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla bla");
+	Doc_PrintLine(nDocID,1,"");
+	Doc_PrintLines(nDocID,1,"Bla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla blaBla bla");
+	Doc_Show(nDocID);
 };
 
 
-instance ITWR_MAP_NEWWORLD(C_ITEM)
+instance ItWr_Map_NewWorld(C_Item)
 {
 	name = "Mapa Terenów Khorinis";
 	mainflag = ITEM_KAT_DOCS;
@@ -82,29 +82,29 @@ instance ITWR_MAP_NEWWORLD(C_ITEM)
 	value = 250;
 	visual = "ItWr_Map_01.3DS";
 	material = MAT_LEATHER;
-	scemename = "MAP";
-	on_state[0] = use_map_newworld;
+	scemeName = "MAP";
+	on_state[0] = Use_Map_NewWorld;
 	description = name;
 	text[0] = "";
 	text[1] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void use_map_newworld()
+func void Use_Map_NewWorld()
 {
-	var int document;
-	document = Doc_CreateMap();
-	Doc_SetPages(document,1);
-	Doc_SetPage(document,0,"Map_NewWorld.tga",TRUE);
-	Doc_SetLevel(document,"NewWorld\NewWorld.zen");
-	Doc_SetLevelCoords(document,-28000,50500,95500,-42500);
-	Doc_Show(document);
+	var int Document;
+	Document = Doc_CreateMap();
+	Doc_SetPages(Document,1);
+	Doc_SetPage(Document,0,"Map_NewWorld.tga",TRUE);
+	Doc_SetLevel(Document,"NewWorld\NewWorld.zen");
+	Doc_SetLevelCoords(Document,-28000,50500,95500,-42500);
+	Doc_Show(Document);
 };
 
 
-instance ITWR_MAP_NEWWORLD_CITY(C_ITEM)
+instance ItWr_Map_NewWorld_City(C_Item)
 {
 	name = "Mapa Miasta Khorinis";
 	mainflag = ITEM_KAT_DOCS;
@@ -112,29 +112,29 @@ instance ITWR_MAP_NEWWORLD_CITY(C_ITEM)
 	value = 50;
 	visual = "ItWr_Map_01.3DS";
 	material = MAT_LEATHER;
-	scemename = "MAP";
-	on_state[0] = use_map_newworld_city;
+	scemeName = "MAP";
+	on_state[0] = Use_Map_NewWorld_City;
 	description = name;
 	text[0] = "";
 	text[1] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void use_map_newworld_city()
+func void Use_Map_NewWorld_City()
 {
-	var int document;
-	document = Doc_CreateMap();
-	Doc_SetPages(document,1);
-	Doc_SetPage(document,0,"Map_NewWorld_City.tga",TRUE);
-	Doc_SetLevel(document,"NewWorld\NewWorld.zen");
-	Doc_SetLevelCoords(document,-6900,11800,21600,-9400);
-	Doc_Show(document);
+	var int Document;
+	Document = Doc_CreateMap();
+	Doc_SetPages(Document,1);
+	Doc_SetPage(Document,0,"Map_NewWorld_City.tga",TRUE);
+	Doc_SetLevel(Document,"NewWorld\NewWorld.zen");
+	Doc_SetLevelCoords(Document,-6900,11800,21600,-9400);
+	Doc_Show(Document);
 };
 
 
-instance ITWR_MAP_OLDWORLD(C_ITEM)
+instance ItWr_Map_OldWorld(C_Item)
 {
 	name = "Mapa Górniczej Doliny";
 	mainflag = ITEM_KAT_DOCS;
@@ -142,32 +142,32 @@ instance ITWR_MAP_OLDWORLD(C_ITEM)
 	value = 350;
 	visual = "ItWr_Map_01.3DS";
 	material = MAT_LEATHER;
-	scemename = "MAP";
-	on_state[0] = use_map_oldworld;
+	scemeName = "MAP";
+	on_state[0] = Use_Map_OldWorld;
 	description = name;
 	text[0] = "";
 	text[1] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void use_map_oldworld()
+func void Use_Map_OldWorld()
 {
-	var int document;
-	document = Doc_CreateMap();
-	Doc_SetPages(document,1);
-	Doc_SetPage(document,0,"Map_OldWorld.tga",TRUE);
-	Doc_SetLevel(document,"OldWorld\OldWorld.zen");
-	Doc_SetLevelCoords(document,-78500,47500,54000,-53000);
-	Doc_Show(document);
+	var int Document;
+	Document = Doc_CreateMap();
+	Doc_SetPages(Document,1);
+	Doc_SetPage(Document,0,"Map_OldWorld.tga",TRUE);
+	Doc_SetLevel(Document,"OldWorld\OldWorld.zen");
+	Doc_SetLevelCoords(Document,-78500,47500,54000,-53000);
+	Doc_Show(Document);
 };
 
 
-var int lerne_einhand;
-var int lerne_zweihand;
+var int Lerne_Einhand;
+var int Lerne_Zweihand;
 
-instance ITWR_EINHANDBUCH(C_ITEM)
+instance ItWr_EinhandBuch(C_Item)
 {
 	name = "Sztuka Walki";
 	mainflag = ITEM_KAT_DOCS;
@@ -175,53 +175,53 @@ instance ITWR_EINHANDBUCH(C_ITEM)
 	value = 5000;
 	visual = "ItWr_Book_02_04.3ds";
 	material = MAT_LEATHER;
-	scemename = "MAP";
+	scemeName = "MAP";
 	description = "Kunszt Obronny Po³udniowców";
 	text[2] = "Ksi¹¿ka opisuj¹ca sztukê";
 	text[3] = "walki broniami jednorêcznymi.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = useeinhandbuch;
+	on_state[0] = UseEinhandBuch;
 };
 
 
-func void useeinhandbuch()
+func void UseEinhandBuch()
 {
-	var int ndocid;
-	if((self.hitchance[NPC_TALENT_1H] >= 60) && (LERNE_EINHAND == FALSE))
+	var int nDocID;
+	if((self.HitChance[NPC_TALENT_1H] >= 60) && (Lerne_Einhand == FALSE))
 	{
 		Print("To dla ciebie zbyt oczywiste, ¿eby czegoœ siê nauczyæ.");
-		LERNE_EINHAND = TRUE;
+		Lerne_Einhand = TRUE;
 	}
-	else if(LERNE_EINHAND == FALSE)
+	else if(Lerne_Einhand == FALSE)
 	{
-		b_addfightskill(self,NPC_TALENT_1H,1,TRUE);
-		Print(PRINT_LEARN1H);
-		LERNE_EINHAND = TRUE;
+		B_AddFightSkill(self,NPC_TALENT_1H,1,TRUE);
+		Print(PRINT_Learn1H);
+		Lerne_Einhand = TRUE;
 	};
-	ndocid = Doc_Create();
-	Doc_SetPages(ndocid,2);
-	Doc_SetPage(ndocid,0,"Book_Red_L.tga",0);
-	Doc_SetPage(ndocid,1,"Book_Red_R.tga",0);
-	Doc_SetMargins(ndocid,0,275,20,30,20,1);
-	Doc_SetFont(ndocid,0,FONT_BOOKHEADLINE);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Kunszt Obronny Po³udniowców");
-	Doc_SetFont(ndocid,0,FONT_BOOK);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Po³udniowiec w porównaniu z mieszkañcem pó³nocy nie polega tak bardzo na sile fizycznej, preferuj¹c zwinnoœæ, a gor¹cy klimat jego ojczyzny zmusza go do korzystania z l¿ejszych i daj¹cych wiêksz¹ swobodê ruchów pancerzy. W zwi¹zku z tym styl walki ludzi po³udnia jest ca³kowicie inny od tego, do którego jesteœmy przyzwyczajeni. ");
-	Doc_SetMargins(ndocid,-1,30,20,275,20,1);
-	Doc_SetFont(ndocid,1,FONT_BOOKHEADLINE);
-	Doc_PrintLine(ndocid,1,"");
-	Doc_SetFont(ndocid,1,FONT_BOOK);
-	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLines(ndocid,1,"Prawdopodobnie najs³ynniejszym manewrem wywodz¹cym siê z po³udnia jest jednorêczny blok po³¹czony z krokiem wstecz: cofniêcie siê pozwala na zmniejszenie si³y wrogiego ciosu i umo¿liwia przyjêcie postawy u³atwiaj¹cej wyprowadzenie kontrataku.");
-	Doc_PrintLine(ndocid,1,"");
-	Doc_Show(ndocid);
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,2);
+	Doc_SetPage(nDocID,0,"Book_Red_L.tga",0);
+	Doc_SetPage(nDocID,1,"Book_Red_R.tga",0);
+	Doc_SetMargins(nDocID,0,275,20,30,20,1);
+	Doc_SetFont(nDocID,0,FONT_BookHeadline);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"Kunszt Obronny Po³udniowców");
+	Doc_SetFont(nDocID,0,FONT_Book);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"Po³udniowiec w porównaniu z mieszkañcem pó³nocy nie polega tak bardzo na sile fizycznej, preferuj¹c zwinnoœæ, a gor¹cy klimat jego ojczyzny zmusza go do korzystania z l¿ejszych i daj¹cych wiêksz¹ swobodê ruchów pancerzy. W zwi¹zku z tym styl walki ludzi po³udnia jest ca³kowicie inny od tego, do którego jesteœmy przyzwyczajeni. ");
+	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
+	Doc_SetFont(nDocID,1,FONT_BookHeadline);
+	Doc_PrintLine(nDocID,1,"");
+	Doc_SetFont(nDocID,1,FONT_Book);
+	Doc_PrintLine(nDocID,1,"");
+	Doc_PrintLines(nDocID,1,"Prawdopodobnie najs³ynniejszym manewrem wywodz¹cym siê z po³udnia jest jednorêczny blok po³¹czony z krokiem wstecz: cofniêcie siê pozwala na zmniejszenie si³y wrogiego ciosu i umo¿liwia przyjêcie postawy u³atwiaj¹cej wyprowadzenie kontrataku.");
+	Doc_PrintLine(nDocID,1,"");
+	Doc_Show(nDocID);
 };
 
 
-instance ITWR_ZWEIHANDBUCH(C_ITEM)
+instance ItWr_ZweihandBuch(C_Item)
 {
 	name = "Taktyka Walki";
 	mainflag = ITEM_KAT_DOCS;
@@ -229,50 +229,50 @@ instance ITWR_ZWEIHANDBUCH(C_ITEM)
 	value = 5000;
 	visual = "ItWr_Book_02_03.3ds";
 	material = MAT_LEATHER;
-	scemename = "MAP";
+	scemeName = "MAP";
 	description = "Bloki Dwurêczne";
 	text[2] = "Ksi¹¿ka opisuj¹ca sztukê";
 	text[3] = "walki broniami dwurêcznymi.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = usezweihandbuch;
+	on_state[0] = UseZweihandBuch;
 };
 
 
-func void usezweihandbuch()
+func void UseZweihandBuch()
 {
-	var int ndocid;
-	if((self.hitchance[NPC_TALENT_2H] >= 60) && (LERNE_ZWEIHAND == FALSE))
+	var int nDocID;
+	if((self.HitChance[NPC_TALENT_2H] >= 60) && (Lerne_Zweihand == FALSE))
 	{
 		Print("To dla ciebie zbyt oczywiste, ¿eby czegoœ siê nauczyæ.");
-		LERNE_EINHAND = TRUE;
+		Lerne_Einhand = TRUE;
 	}
-	else if(LERNE_ZWEIHAND == FALSE)
+	else if(Lerne_Zweihand == FALSE)
 	{
-		b_addfightskill(self,NPC_TALENT_2H,1,TRUE);
-		Print(PRINT_LEARN2H);
-		LERNE_ZWEIHAND = TRUE;
+		B_AddFightSkill(self,NPC_TALENT_2H,1,TRUE);
+		Print(PRINT_Learn2H);
+		Lerne_Zweihand = TRUE;
 	};
-	ndocid = Doc_Create();
-	Doc_SetPages(ndocid,2);
-	Doc_SetPage(ndocid,0,"Book_Red_L.tga",0);
-	Doc_SetPage(ndocid,1,"Book_Red_R.tga",0);
-	Doc_SetMargins(ndocid,0,275,20,30,20,1);
-	Doc_SetFont(ndocid,0,FONT_BOOKHEADLINE);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Bloki Dwurêczne");
-	Doc_SetFont(ndocid,0,FONT_BOOK);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Blokowanie ciosów przeciwnika za pomoc¹ broni dwurêcznej umo¿liwia silnym wojownikom gwa³towne powstrzymanie wroga i przerwanie ewentualnej kombinacji jego ciosów. ");
-	Doc_SetMargins(ndocid,-1,30,20,275,20,1);
-	Doc_SetFont(ndocid,1,FONT_BOOKHEADLINE);
-	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLines(ndocid,1,"");
-	Doc_SetFont(ndocid,1,FONT_BOOK);
-	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLines(ndocid,1,"Zatrzymany w ten sposób przeciwnik traci inicjatywê i ³atwiej go potem skutecznie zaatakowaæ.    ");
-	Doc_Show(ndocid);
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,2);
+	Doc_SetPage(nDocID,0,"Book_Red_L.tga",0);
+	Doc_SetPage(nDocID,1,"Book_Red_R.tga",0);
+	Doc_SetMargins(nDocID,0,275,20,30,20,1);
+	Doc_SetFont(nDocID,0,FONT_BookHeadline);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"Bloki Dwurêczne");
+	Doc_SetFont(nDocID,0,FONT_Book);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"Blokowanie ciosów przeciwnika za pomoc¹ broni dwurêcznej umo¿liwia silnym wojownikom gwa³towne powstrzymanie wroga i przerwanie ewentualnej kombinacji jego ciosów. ");
+	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
+	Doc_SetFont(nDocID,1,FONT_BookHeadline);
+	Doc_PrintLine(nDocID,1,"");
+	Doc_PrintLines(nDocID,1,"");
+	Doc_SetFont(nDocID,1,FONT_Book);
+	Doc_PrintLine(nDocID,1,"");
+	Doc_PrintLine(nDocID,1,"");
+	Doc_PrintLines(nDocID,1,"Zatrzymany w ten sposób przeciwnik traci inicjatywê i ³atwiej go potem skutecznie zaatakowaæ.    ");
+	Doc_Show(nDocID);
 };
 

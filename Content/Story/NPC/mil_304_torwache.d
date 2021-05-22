@@ -1,27 +1,27 @@
 
-instance MIL_304_TORWACHE(NPC_DEFAULT)
+instance Mil_304_Torwache(Npc_Default)
 {
-	name[0] = NAME_TORWACHE;
+	name[0] = NAME_Torwache;
 	guild = GIL_MIL;
 	id = 304;
 	voice = 8;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,6);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,6);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_mil_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_NORMAL16,BODYTEX_N,4828);
+	EquipItem(self,ItMw_1h_Mil_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Normal16,BodyTex_N,ItAr_PAL_M);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,60);
-	daily_routine = rtn_start_304;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,60);
+	daily_routine = Rtn_Start_304;
 };
 
 
-func void rtn_start_304()
+func void Rtn_Start_304()
 {
-	ta_stand_wp(8,0,22,0,"NW_CITY_UPTOWN_GUARD_01");
-	ta_stand_wp(22,0,8,0,"NW_CITY_UPTOWN_GUARD_01");
+	TA_Stand_WP(8,0,22,0,"NW_CITY_UPTOWN_GUARD_01");
+	TA_Stand_WP(22,0,8,0,"NW_CITY_UPTOWN_GUARD_01");
 };
 

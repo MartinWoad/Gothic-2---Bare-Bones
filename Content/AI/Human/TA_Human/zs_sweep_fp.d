@@ -1,20 +1,20 @@
 
-func void zs_sweep_fp()
+func void ZS_Sweep_FP()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == 0)
 	{
 		AI_GotoWP(self,self.wp);
 	};
-	if(Npc_HasItems(self,itmi_brush) == 0)
+	if(Npc_HasItems(self,ItMi_Brush) == 0)
 	{
-		CreateInvItem(self,itmi_brush);
+		CreateInvItem(self,ItMi_Brush);
 	};
 };
 
-func int zs_sweep_fp_loop()
+func int ZS_Sweep_FP_Loop()
 {
 	if(Npc_IsOnFP(self,"SWEEP"))
 	{
@@ -41,14 +41,14 @@ func int zs_sweep_fp_loop()
 	};
 	if(self.aivar[AIV_TAPOSITION] == NOTINPOS)
 	{
-		AI_UseItemToState(self,itmi_brush,1);
+		AI_UseItemToState(self,ItMi_Brush,1);
 		self.aivar[AIV_TAPOSITION] = ISINPOS;
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_sweep_fp_end()
+func void ZS_Sweep_FP_End()
 {
-	AI_UseItemToState(self,itmi_brush,-1);
+	AI_UseItemToState(self,ItMi_Brush,-1);
 };
 

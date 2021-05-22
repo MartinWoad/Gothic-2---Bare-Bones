@@ -1,48 +1,48 @@
 
-instance DIA_ENGROM_EXIT(C_INFO)
+instance DIA_Engrom_EXIT(C_Info)
 {
-	npc = vlk_4131_engrom;
+	npc = VLK_4131_Engrom;
 	nr = 999;
-	condition = dia_engrom_exit_condition;
-	information = dia_engrom_exit_info;
+	condition = DIA_Engrom_EXIT_Condition;
+	information = DIA_Engrom_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_engrom_exit_condition()
+func int DIA_Engrom_EXIT_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engrom_exit_info()
+func void DIA_Engrom_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_ENGROM_HALLO(C_INFO)
+instance DIA_Engrom_HALLO(C_Info)
 {
-	npc = vlk_4131_engrom;
+	npc = VLK_4131_Engrom;
 	nr = 5;
-	condition = dia_engrom_hallo_condition;
-	information = dia_engrom_hallo_info;
+	condition = DIA_Engrom_HALLO_Condition;
+	information = DIA_Engrom_HALLO_Info;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_engrom_hallo_condition()
+func int DIA_Engrom_HALLO_Condition()
 {
-	if(KAPITEL <= 3)
+	if(Kapitel <= 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engrom_hallo_info()
+func void DIA_Engrom_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Engrom_HALLO_15_00");	//Jak leci?
 	AI_Output(self,other,"DIA_Engrom_HALLO_12_01");	//Fatalnie!
@@ -52,25 +52,25 @@ func void dia_engrom_hallo_info()
 };
 
 
-instance DIA_ENGROM_WHATABOUTLEAVING(C_INFO)
+instance DIA_Engrom_WhatAboutLeaving(C_Info)
 {
-	npc = vlk_4131_engrom;
+	npc = VLK_4131_Engrom;
 	nr = 6;
-	condition = dia_engrom_whataboutleaving_condition;
-	information = dia_engrom_whataboutleaving_info;
+	condition = DIA_Engrom_WhatAboutLeaving_Condition;
+	information = DIA_Engrom_WhatAboutLeaving_Info;
 	description = "Zastanawia³eœ siê kiedyœ nad opuszczeniem tego miejsca?";
 };
 
 
-func int dia_engrom_whataboutleaving_condition()
+func int DIA_Engrom_WhatAboutLeaving_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_engrom_hallo) && (KAPITEL <= 3))
+	if(Npc_KnowsInfo(other,DIA_Engrom_HALLO) && (Kapitel <= 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engrom_whataboutleaving_info()
+func void DIA_Engrom_WhatAboutLeaving_Info()
 {
 	AI_Output(other,self,"DIA_Engrom_WhatAboutLeaving_15_00");	//Zastanawia³eœ siê kiedyœ nad opuszczeniem tego miejsca?
 	AI_Output(self,other,"DIA_Engrom_WhatAboutLeaving_12_01");	//Tak, pewnie. Nie ma problemu.
@@ -83,220 +83,220 @@ func void dia_engrom_whataboutleaving_info()
 };
 
 
-instance DIA_ENGROM_JAGD(C_INFO)
+instance DIA_Engrom_Jagd(C_Info)
 {
-	npc = vlk_4131_engrom;
+	npc = VLK_4131_Engrom;
 	nr = 6;
-	condition = dia_engrom_jagd_condition;
-	information = dia_engrom_jagd_info;
+	condition = DIA_Engrom_Jagd_Condition;
+	information = DIA_Engrom_Jagd_Info;
 	permanent = TRUE;
 	description = "Jak idzie polowanie?";
 };
 
 
-func int dia_engrom_jagd_condition()
+func int DIA_Engrom_Jagd_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_engrom_hallo) && (KAPITEL <= 3))
+	if(Npc_KnowsInfo(other,DIA_Engrom_HALLO) && (Kapitel <= 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engrom_jagd_info()
+func void DIA_Engrom_Jagd_Info()
 {
-	b_wasmachtjagd();
+	B_WasMachtJagd();
 	AI_Output(self,other,"DIA_Engrom_Jagd_12_01");	//Polowanie jest moj¹ jedyn¹ pociech¹. Przyda³by siê od czasu do czasu jakiœ inny cel ni¿ te przeklête topielce.
 };
 
 
-instance DIA_ENGROM_KAP3_EXIT(C_INFO)
+instance DIA_Engrom_KAP3_EXIT(C_Info)
 {
-	npc = vlk_4131_engrom;
+	npc = VLK_4131_Engrom;
 	nr = 999;
-	condition = dia_engrom_kap3_exit_condition;
-	information = dia_engrom_kap3_exit_info;
+	condition = DIA_Engrom_KAP3_EXIT_Condition;
+	information = DIA_Engrom_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_engrom_kap3_exit_condition()
+func int DIA_Engrom_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engrom_kap3_exit_info()
+func void DIA_Engrom_KAP3_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_ENGROM_KAP4_EXIT(C_INFO)
+instance DIA_Engrom_KAP4_EXIT(C_Info)
 {
-	npc = vlk_4131_engrom;
+	npc = VLK_4131_Engrom;
 	nr = 999;
-	condition = dia_engrom_kap4_exit_condition;
-	information = dia_engrom_kap4_exit_info;
+	condition = DIA_Engrom_KAP4_EXIT_Condition;
+	information = DIA_Engrom_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_engrom_kap4_exit_condition()
+func int DIA_Engrom_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engrom_kap4_exit_info()
+func void DIA_Engrom_KAP4_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_ENGROM_B_NPCOBSESSEDBYDMT(C_INFO)
+instance DIA_Engrom_B_NpcObsessedByDMT(C_Info)
 {
-	npc = vlk_4131_engrom;
+	npc = VLK_4131_Engrom;
 	nr = 32;
-	condition = dia_engrom_b_npcobsessedbydmt_condition;
-	information = dia_engrom_b_npcobsessedbydmt_info;
+	condition = DIA_Engrom_B_NpcObsessedByDMT_Condition;
+	information = DIA_Engrom_B_NpcObsessedByDMT_Info;
 	description = "Wszystko w porz¹dku?";
 };
 
 
-func int dia_engrom_b_npcobsessedbydmt_condition()
+func int DIA_Engrom_B_NpcObsessedByDMT_Condition()
 {
-	if((NPCOBSESSEDBYDMT_ENGROM == FALSE) && (KAPITEL >= 4))
+	if((NpcObsessedByDMT_Engrom == FALSE) && (Kapitel >= 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engrom_b_npcobsessedbydmt_info()
+func void DIA_Engrom_B_NpcObsessedByDMT_Info()
 {
-	MIS_TABIN_LOOKFORENGROM = LOG_SUCCESS;
-	b_npcobsessedbydmt(self);
+	MIS_Tabin_LookForEngrom = LOG_SUCCESS;
+	B_NpcObsessedByDMT(self);
 };
 
 
-instance DIA_ENGROM_BESSEN(C_INFO)
+instance DIA_Engrom_BESSEN(C_Info)
 {
-	npc = vlk_4131_engrom;
+	npc = VLK_4131_Engrom;
 	nr = 55;
-	condition = dia_engrom_bessen_condition;
-	information = dia_engrom_bessen_info;
+	condition = DIA_Engrom_BESSEN_Condition;
+	information = DIA_Engrom_BESSEN_Info;
 	permanent = TRUE;
 	description = "Opêta³o ciê z³o.";
 };
 
 
-func int dia_engrom_bessen_condition()
+func int DIA_Engrom_BESSEN_Condition()
 {
-	if((NPCOBSESSEDBYDMT_ENGROM == TRUE) && (NPCOBSESSEDBYDMT == FALSE) && (KAPITEL >= 4))
+	if((NpcObsessedByDMT_Engrom == TRUE) && (NpcObsessedByDMT == FALSE) && (Kapitel >= 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engrom_bessen_info()
+func void DIA_Engrom_BESSEN_Info()
 {
 	AI_Output(other,self,"DIA_Engrom_BESSEN_15_00");	//Opêta³o ciê z³o.
 	AI_Output(other,self,"DIA_Engrom_BESSEN_15_01");	//Pozwól, ¿e ci pomogê.
 	AI_Output(self,other,"DIA_Engrom_BESSEN_12_02");	//Nie dotykaj mnie!
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 	Npc_SetTarget(self,other);
 	self.aivar[AIV_INVINCIBLE] = FALSE;
 	other.aivar[AIV_INVINCIBLE] = FALSE;
-	AI_StartState(self,zs_flee,0,"");
+	AI_StartState(self,ZS_Flee,0,"");
 };
 
 
-instance DIA_ENGROM_KAP5_EXIT(C_INFO)
+instance DIA_Engrom_KAP5_EXIT(C_Info)
 {
-	npc = vlk_4131_engrom;
+	npc = VLK_4131_Engrom;
 	nr = 999;
-	condition = dia_engrom_kap5_exit_condition;
-	information = dia_engrom_kap5_exit_info;
+	condition = DIA_Engrom_KAP5_EXIT_Condition;
+	information = DIA_Engrom_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_engrom_kap5_exit_condition()
+func int DIA_Engrom_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engrom_kap5_exit_info()
+func void DIA_Engrom_KAP5_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_ENGROM_KAP6_EXIT(C_INFO)
+instance DIA_Engrom_KAP6_EXIT(C_Info)
 {
-	npc = vlk_4131_engrom;
+	npc = VLK_4131_Engrom;
 	nr = 999;
-	condition = dia_engrom_kap6_exit_condition;
-	information = dia_engrom_kap6_exit_info;
+	condition = DIA_Engrom_KAP6_EXIT_Condition;
+	information = DIA_Engrom_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_engrom_kap6_exit_condition()
+func int DIA_Engrom_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engrom_kap6_exit_info()
+func void DIA_Engrom_KAP6_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_ENGROM_PICKPOCKET(C_INFO)
+instance DIA_Engrom_PICKPOCKET(C_Info)
 {
-	npc = vlk_4131_engrom;
+	npc = VLK_4131_Engrom;
 	nr = 900;
-	condition = dia_engrom_pickpocket_condition;
-	information = dia_engrom_pickpocket_info;
+	condition = DIA_Engrom_PICKPOCKET_Condition;
+	information = DIA_Engrom_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_20;
+	description = Pickpocket_20;
 };
 
 
-func int dia_engrom_pickpocket_condition()
+func int DIA_Engrom_PICKPOCKET_Condition()
 {
-	return c_beklauen(10,5);
+	return C_Beklauen(10,5);
 };
 
-func void dia_engrom_pickpocket_info()
+func void DIA_Engrom_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_engrom_pickpocket);
-	Info_AddChoice(dia_engrom_pickpocket,DIALOG_BACK,dia_engrom_pickpocket_back);
-	Info_AddChoice(dia_engrom_pickpocket,DIALOG_PICKPOCKET,dia_engrom_pickpocket_doit);
+	Info_ClearChoices(DIA_Engrom_PICKPOCKET);
+	Info_AddChoice(DIA_Engrom_PICKPOCKET,Dialog_Back,DIA_Engrom_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Engrom_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Engrom_PICKPOCKET_DoIt);
 };
 
-func void dia_engrom_pickpocket_doit()
+func void DIA_Engrom_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_engrom_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Engrom_PICKPOCKET);
 };
 
-func void dia_engrom_pickpocket_back()
+func void DIA_Engrom_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_engrom_pickpocket);
+	Info_ClearChoices(DIA_Engrom_PICKPOCKET);
 };
 

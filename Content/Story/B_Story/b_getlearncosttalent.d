@@ -1,5 +1,5 @@
 
-func int b_getlearncosttalent(var C_NPC oth,var int talent)
+func int B_GetLearnCostTalent(var C_Npc oth,var int talent)
 {
 	var int kosten;
 	if(talent == NPC_TALENT_MAGE)

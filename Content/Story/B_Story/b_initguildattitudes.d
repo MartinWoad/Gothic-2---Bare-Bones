@@ -1,5 +1,5 @@
 
-func void b_initguildattitudes()
+func void B_InitGuildAttitudes()
 {
 };
 

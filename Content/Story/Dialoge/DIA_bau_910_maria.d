@@ -1,43 +1,43 @@
 
-instance DIA_MARIA_EXIT(C_INFO)
+instance DIA_Maria_EXIT(C_Info)
 {
-	npc = bau_910_maria;
+	npc = BAU_910_Maria;
 	nr = 999;
-	condition = dia_maria_exit_condition;
-	information = dia_maria_exit_info;
+	condition = DIA_Maria_EXIT_Condition;
+	information = DIA_Maria_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_maria_exit_condition()
+func int DIA_Maria_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_maria_exit_info()
+func void DIA_Maria_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MARIA_HALLO(C_INFO)
+instance DIA_Maria_Hallo(C_Info)
 {
-	npc = bau_910_maria;
+	npc = BAU_910_Maria;
 	nr = 1;
-	condition = dia_maria_hallo_condition;
-	information = dia_maria_hallo_info;
+	condition = DIA_Maria_Hallo_Condition;
+	information = DIA_Maria_Hallo_Info;
 	permanent = FALSE;
 	description = "Kim jesteœ?";
 };
 
 
-func int dia_maria_hallo_condition()
+func int DIA_Maria_Hallo_Condition()
 {
 	return TRUE;
 };
 
-func void dia_maria_hallo_info()
+func void DIA_Maria_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Maria_Hallo_15_00");	//Kim jesteœ?
 	AI_Output(self,other,"DIA_Maria_Hallo_17_01");	//Mam na imiê Maria i jestem ¿on¹ Onara.
@@ -45,26 +45,26 @@ func void dia_maria_hallo_info()
 };
 
 
-instance DIA_MARIA_UMSEHEN(C_INFO)
+instance DIA_Maria_Umsehen(C_Info)
 {
-	npc = bau_910_maria;
+	npc = BAU_910_Maria;
 	nr = 2;
-	condition = dia_maria_umsehen_condition;
-	information = dia_maria_umsehen_info;
+	condition = DIA_Maria_Umsehen_Condition;
+	information = DIA_Maria_Umsehen_Info;
 	permanent = FALSE;
 	description = "Chcia³em siê po prostu rozejrzeæ…";
 };
 
 
-func int dia_maria_umsehen_condition()
+func int DIA_Maria_Umsehen_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_maria_hallo))
+	if(Npc_KnowsInfo(other,DIA_Maria_Hallo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maria_umsehen_info()
+func void DIA_Maria_Umsehen_Info()
 {
 	AI_Output(other,self,"DIA_Maria_Umsehen_15_00");	//Chcia³em siê po prostu rozejrzeæ...
 	AI_Output(self,other,"DIA_Maria_Umsehen_17_01");	//Odk¹d znaleŸli siê tutaj ci wszyscy mê¿czyŸni, w domu nie mo¿na mieæ ani chwili spokoju.
@@ -72,26 +72,26 @@ func void dia_maria_umsehen_info()
 };
 
 
-instance DIA_MARIA_SOELDNER(C_INFO)
+instance DIA_Maria_Soeldner(C_Info)
 {
-	npc = bau_910_maria;
+	npc = BAU_910_Maria;
 	nr = 3;
-	condition = dia_maria_soeldner_condition;
-	information = dia_maria_soeldner_info;
+	condition = DIA_Maria_Soeldner_Condition;
+	information = DIA_Maria_Soeldner_Info;
 	permanent = FALSE;
 	description = "Czy obecnoœæ najemników jest dla ciebie k³opotliwa?";
 };
 
 
-func int dia_maria_soeldner_condition()
+func int DIA_Maria_Soeldner_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_maria_umsehen))
+	if(Npc_KnowsInfo(other,DIA_Maria_Umsehen))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maria_soeldner_info()
+func void DIA_Maria_Soeldner_Info()
 {
 	AI_Output(other,self,"DIA_Maria_Soeldner_15_00");	//Czy obecnoœæ najemników jest dla ciebie k³opotliwa?
 	if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
@@ -112,26 +112,26 @@ func void dia_maria_soeldner_info()
 };
 
 
-instance DIA_MARIA_MISSION(C_INFO)
+instance DIA_Maria_Mission(C_Info)
 {
-	npc = bau_910_maria;
+	npc = BAU_910_Maria;
 	nr = 4;
-	condition = dia_maria_mission_condition;
-	information = dia_maria_mission_info;
+	condition = DIA_Maria_Mission_Condition;
+	information = DIA_Maria_Mission_Info;
 	permanent = FALSE;
 	description = "A mo¿na wiedzieæ, co ci ukradli?";
 };
 
 
-func int dia_maria_mission_condition()
+func int DIA_Maria_Mission_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_maria_soeldner) && (MIS_MARIA_BRINGPLATE != LOG_SUCCESS))
+	if(Npc_KnowsInfo(other,DIA_Maria_Soeldner) && (MIS_Maria_BringPlate != LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maria_mission_info()
+func void DIA_Maria_Mission_Info()
 {
 	AI_Output(other,self,"DIA_Maria_Mission_15_00");	//A mo¿na wiedzieæ, co ci ukradli?
 	AI_Output(self,other,"DIA_Maria_Mission_17_01");	//Przede wszystkim z³oto i srebro. Zabrali te¿ mój prezent œlubny, z³oty talerz.
@@ -139,128 +139,128 @@ func void dia_maria_mission_info()
 	{
 		AI_Output(self,other,"DIA_Maria_Mission_17_02");	//Za³o¿ê siê, ¿e teraz le¿y zakurzony w kufrze jakiegoœ stra¿nika.
 	};
-	MIS_MARIA_BRINGPLATE = LOG_RUNNING;
+	MIS_Maria_BringPlate = LOG_Running;
 };
 
 
-instance DIA_MARIA_BRINGPLATE(C_INFO)
+instance DIA_Maria_BringPlate(C_Info)
 {
-	npc = bau_910_maria;
+	npc = BAU_910_Maria;
 	nr = 5;
-	condition = dia_maria_bringplate_condition;
-	information = dia_maria_bringplate_info;
+	condition = DIA_Maria_BringPlate_Condition;
+	information = DIA_Maria_BringPlate_Info;
 	permanent = FALSE;
 	description = "Mam przy sobie z³oty talerz. Czy to twoja w³asnoœæ?";
 };
 
 
-func int dia_maria_bringplate_condition()
+func int DIA_Maria_BringPlate_Condition()
 {
-	if(Npc_HasItems(other,itmi_mariasgoldplate) > 0)
+	if(Npc_HasItems(other,ItMi_MariasGoldPlate) > 0)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maria_bringplate_info()
+func void DIA_Maria_BringPlate_Info()
 {
-	b_giveinvitems(other,self,5646,1);
+	B_GiveInvItems(other,self,ItMi_MariasGoldPlate,1);
 	AI_Output(other,self,"DIA_Maria_BringPlate_15_00");	//Mam przy sobie z³oty talerz. Czy to twoja w³asnoœæ?
 	AI_Output(self,other,"DIA_Maria_BringPlate_17_01");	//Tak! To on! Stokrotne dziêki!
-	MIS_MARIA_BRINGPLATE = LOG_SUCCESS;
-	b_giveplayerxp(XP_MARIA_TELLER);
+	MIS_Maria_BringPlate = LOG_SUCCESS;
+	B_GivePlayerXP(XP_Maria_Teller);
 };
 
 
-var int maria_belohnung;
+var int Maria_Belohnung;
 
-instance DIA_MARIA_BELOHNUNG(C_INFO)
+instance DIA_Maria_Belohnung(C_Info)
 {
-	npc = bau_910_maria;
+	npc = BAU_910_Maria;
 	nr = 6;
-	condition = dia_maria_belohnung_condition;
-	information = dia_maria_belohnung_info;
+	condition = DIA_Maria_Belohnung_Condition;
+	information = DIA_Maria_Belohnung_Info;
 	permanent = TRUE;
 	description = "A jak bêdzie z moj¹ nagrod¹?";
 };
 
 
-func int dia_maria_belohnung_condition()
+func int DIA_Maria_Belohnung_Condition()
 {
-	if((MIS_MARIA_BRINGPLATE == LOG_SUCCESS) && (MARIA_BELOHNUNG == FALSE))
+	if((MIS_Maria_BringPlate == LOG_SUCCESS) && (Maria_Belohnung == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maria_belohnung_info()
+func void DIA_Maria_Belohnung_Info()
 {
 	AI_Output(other,self,"DIA_Maria_Belohnung_15_00");	//A jak bêdzie z moj¹ nagrod¹?
-	if((other.guild == GIL_SLD) || Npc_KnowsInfo(other,dia_onar_howmuch))
+	if((other.guild == GIL_SLD) || Npc_KnowsInfo(other,DIA_Onar_HowMuch))
 	{
 		AI_Output(self,other,"DIA_Maria_Belohnung_17_01");	//Jesteœ najemnikiem na s³u¿bie u mojego mê¿a, prawda?
 		AI_Output(other,self,"DIA_Maria_Belohnung_15_02");	//Zgadza siê.
 		AI_Output(self,other,"DIA_Maria_Belohnung_17_03");	//Ile ci p³aci mój m¹¿?
-		b_say_gold(other,self,SOLD);
+		B_Say_Gold(other,self,SOLD);
 		AI_Output(self,other,"DIA_Maria_Belohnung_17_04");	//To za ma³o. IdŸ do niego i poproœ o podwy¿kê.
 		AI_Output(other,self,"DIA_Maria_Belohnung_15_05");	//S¹dzisz, ¿e na to przystanie?
 		AI_Output(self,other,"DIA_Maria_Belohnung_17_06");	//Wierz mi, wie, co go czeka, jeœli siê nie zgodzi.
-		MARIA_MEHRGOLD = TRUE;
-		MARIA_BELOHNUNG = TRUE;
+		Maria_MehrGold = TRUE;
+		Maria_Belohnung = TRUE;
 	}
 	else if(other.guild == GIL_NONE)
 	{
 		AI_Output(self,other,"DIA_Maria_Belohnung_17_07");	//Czy chcesz siê zatrudniæ na naszej farmie jako najemnik?
-		Info_ClearChoices(dia_maria_belohnung);
-		Info_AddChoice(dia_maria_belohnung,"Nie, nie bardzo.",dia_maria_belohnung_gold);
-		Info_AddChoice(dia_maria_belohnung,"Tak.",dia_maria_belohnung_sold);
+		Info_ClearChoices(DIA_Maria_Belohnung);
+		Info_AddChoice(DIA_Maria_Belohnung,"Nie, nie bardzo.",DIA_Maria_Belohnung_Gold);
+		Info_AddChoice(DIA_Maria_Belohnung,"Tak.",DIA_Maria_Belohnung_SOLD);
 	}
 	else
 	{
-		b_giveinvitems(self,other,5113,50);
-		MARIA_BELOHNUNG = TRUE;
+		B_GiveInvItems(self,other,ItMi_Gold,50);
+		Maria_Belohnung = TRUE;
 		AI_Output(self,other,"DIA_Maria_Belohnung_17_08");	//Proszê, weŸ to. Zas³u¿y³eœ sobie.
 	};
 };
 
-func void dia_maria_belohnung_gold()
+func void DIA_Maria_Belohnung_Gold()
 {
 	AI_Output(other,self,"DIA_Maria_Belohnung_Gold_15_00");	//Nie, nie bardzo.
-	b_giveinvitems(self,other,5113,50);
-	MARIA_BELOHNUNG = TRUE;
+	B_GiveInvItems(self,other,ItMi_Gold,50);
+	Maria_Belohnung = TRUE;
 	AI_Output(self,other,"DIA_Maria_Belohnung_Gold_17_01");	//Wiêc przyjmij w nagrodê to z³oto. Zas³u¿y³eœ na nie.
-	Info_ClearChoices(dia_maria_belohnung);
+	Info_ClearChoices(DIA_Maria_Belohnung);
 };
 
-func void dia_maria_belohnung_sold()
+func void DIA_Maria_Belohnung_SOLD()
 {
 	AI_Output(other,self,"DIA_Maria_Belohnung_SOLD_15_00");	//Tak.
 	AI_Output(self,other,"DIA_Maria_Belohnung_SOLD_17_01");	//Dobrze, jeœli zatrudnisz siê u nas jako najemnik, dopilnujê, abyœ dosta³ godziw¹ zap³atê.
 	AI_Output(self,other,"DIA_Maria_Belohnung_SOLD_17_02");	//Wróæ tutaj, kiedy ju¿ uzgodnisz z moim mê¿em kwestiê wynagrodzenia.
-	Info_ClearChoices(dia_maria_belohnung);
+	Info_ClearChoices(DIA_Maria_Belohnung);
 };
 
 
-instance DIA_MARIA_ABOUTONAR(C_INFO)
+instance DIA_Maria_AboutOnar(C_Info)
 {
-	npc = bau_910_maria;
+	npc = BAU_910_Maria;
 	nr = 7;
-	condition = dia_maria_aboutonar_condition;
-	information = dia_maria_aboutonar_info;
+	condition = DIA_Maria_AboutOnar_Condition;
+	information = DIA_Maria_AboutOnar_Info;
 	permanent = FALSE;
 	description = "Opowiedz mi o Onarze.";
 };
 
 
-func int dia_maria_aboutonar_condition()
+func int DIA_Maria_AboutOnar_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_maria_hallo))
+	if(Npc_KnowsInfo(other,DIA_Maria_Hallo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maria_aboutonar_info()
+func void DIA_Maria_AboutOnar_Info()
 {
 	AI_Output(other,self,"DIA_Maria_AboutOnar_15_00");	//Opowiedz mi o Onarze.
 	AI_Output(self,other,"DIA_Maria_AboutOnar_17_01");	//To dobry cz³owiek. Trochê zrzêdliwy i strasznie niecierpliwy, ale w koñcu ka¿dy ma jakieœ wady.
@@ -271,75 +271,75 @@ func void dia_maria_aboutonar_info()
 };
 
 
-instance DIA_MARIA_PERM(C_INFO)
+instance DIA_Maria_PERM(C_Info)
 {
-	npc = bau_910_maria;
+	npc = BAU_910_Maria;
 	nr = 8;
-	condition = dia_maria_perm_condition;
-	information = dia_maria_perm_info;
+	condition = DIA_Maria_PERM_Condition;
+	information = DIA_Maria_PERM_Info;
 	permanent = FALSE;
 	description = "Czy ostatnio zdarzy³o siê tu coœ interesuj¹cego?";
 };
 
 
-func int dia_maria_perm_condition()
+func int DIA_Maria_PERM_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_maria_hallo))
+	if(Npc_KnowsInfo(other,DIA_Maria_Hallo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maria_perm_info()
+func void DIA_Maria_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Maria_PERM_15_00");	//Czy ostatnio zdarzy³o siê tu coœ interesuj¹cego?
-	if(KAPITEL <= 2)
+	if(Kapitel <= 2)
 	{
 		AI_Output(self,other,"DIA_Maria_PERM_17_01");	//Przechodzi³a têdy grupa paladynów.
 		AI_Output(self,other,"DIA_Maria_PERM_17_02");	//Najpierw s¹dziliœmy, ¿e bêd¹ chcieli zaatakowaæ farmê, ale okaza³o siê, ¿e zmierzali do Górniczej Doliny.
 	};
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		AI_Output(self,other,"DIA_Maria_PERM_17_03");	//Kilka nocy temu Wasili wyp³oszy³ z³odzieja. Poza tym nie dzia³o siê tutaj nic godnego uwagi.
 	};
-	if(KAPITEL >= 4)
+	if(Kapitel >= 4)
 	{
 		AI_Output(self,other,"DIA_Maria_PERM_17_04");	//Odk¹d najemnicy opuœcili nasz dom, zrobi³o siê tutaj znacznie ciszej.
 	};
 };
 
 
-instance DIA_MARIA_PICKPOCKET(C_INFO)
+instance DIA_Maria_PICKPOCKET(C_Info)
 {
-	npc = bau_910_maria;
+	npc = BAU_910_Maria;
 	nr = 900;
-	condition = dia_maria_pickpocket_condition;
-	information = dia_maria_pickpocket_info;
+	condition = DIA_Maria_PICKPOCKET_Condition;
+	information = DIA_Maria_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60_FEMALE;
+	description = Pickpocket_60_Female;
 };
 
 
-func int dia_maria_pickpocket_condition()
+func int DIA_Maria_PICKPOCKET_Condition()
 {
-	return c_beklauen(60,110);
+	return C_Beklauen(60,110);
 };
 
-func void dia_maria_pickpocket_info()
+func void DIA_Maria_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_maria_pickpocket);
-	Info_AddChoice(dia_maria_pickpocket,DIALOG_BACK,dia_maria_pickpocket_back);
-	Info_AddChoice(dia_maria_pickpocket,DIALOG_PICKPOCKET,dia_maria_pickpocket_doit);
+	Info_ClearChoices(DIA_Maria_PICKPOCKET);
+	Info_AddChoice(DIA_Maria_PICKPOCKET,Dialog_Back,DIA_Maria_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Maria_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Maria_PICKPOCKET_DoIt);
 };
 
-func void dia_maria_pickpocket_doit()
+func void DIA_Maria_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_maria_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Maria_PICKPOCKET);
 };
 
-func void dia_maria_pickpocket_back()
+func void DIA_Maria_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_maria_pickpocket);
+	Info_ClearChoices(DIA_Maria_PICKPOCKET);
 };
 

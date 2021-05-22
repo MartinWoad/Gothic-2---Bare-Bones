@@ -1,542 +1,542 @@
 
-func void b_createambientinv_vlk(var int inventoryset)
+func void B_CreateAmbientInv_VLK(var int InventorySet)
 {
-	if(inventoryset == 1)
+	if(InventorySet == 1)
 	{
-		CreateInvItems(self,itpl_blueplant,1);
-		CreateInvItems(self,itfo_water,1);
-		CreateInvItems(self,itmi_gold,5);
+		CreateInvItems(self,ItPl_Blueplant,1);
+		CreateInvItems(self,ItFo_Water,1);
+		CreateInvItems(self,ItMi_Gold,5);
 	}
-	else if(inventoryset == 2)
+	else if(InventorySet == 2)
 	{
-		CreateInvItems(self,itpl_planeberry,1);
-		CreateInvItems(self,itfo_apple,1);
-		CreateInvItems(self,itfo_fish,1);
-		CreateInvItems(self,itfo_beer,1);
-		CreateInvItems(self,itmi_gold,1);
+		CreateInvItems(self,ItPl_Planeberry,1);
+		CreateInvItems(self,ItFo_Apple,1);
+		CreateInvItems(self,ItFo_Fish,1);
+		CreateInvItems(self,ItFo_Beer,1);
+		CreateInvItems(self,ItMi_Gold,1);
 	}
-	else if(inventoryset == 3)
+	else if(InventorySet == 3)
 	{
-		CreateInvItems(self,itfo_fish,1);
-		CreateInvItems(self,itfo_bread,1);
-		CreateInvItems(self,itmi_gold,7);
+		CreateInvItems(self,ItFo_Fish,1);
+		CreateInvItems(self,ItFo_Bread,1);
+		CreateInvItems(self,ItMi_Gold,7);
 	}
-	else if(inventoryset == 4)
+	else if(InventorySet == 4)
 	{
-		CreateInvItems(self,itfo_bread,1);
-		CreateInvItems(self,itfo_water,1);
-		CreateInvItems(self,itfomuttonraw,1);
-		CreateInvItems(self,itmi_gold,7);
+		CreateInvItems(self,ItFo_Bread,1);
+		CreateInvItems(self,ItFo_Water,1);
+		CreateInvItems(self,ItFoMuttonRaw,1);
+		CreateInvItems(self,ItMi_Gold,7);
 	}
-	else if(inventoryset == 5)
+	else if(InventorySet == 5)
 	{
-		CreateInvItems(self,itfo_apple,1);
-		CreateInvItems(self,itfo_cheese,1);
-		CreateInvItems(self,itfo_bread,1);
-		CreateInvItems(self,itmi_gold,3);
+		CreateInvItems(self,ItFo_Apple,1);
+		CreateInvItems(self,ItFo_Cheese,1);
+		CreateInvItems(self,ItFo_Bread,1);
+		CreateInvItems(self,ItMi_Gold,3);
 	}
-	else if(inventoryset == 6)
+	else if(InventorySet == 6)
 	{
-		CreateInvItems(self,itfo_apple,1);
-		CreateInvItems(self,itfo_cheese,1);
-		CreateInvItems(self,itmi_gold,1);
+		CreateInvItems(self,ItFo_Apple,1);
+		CreateInvItems(self,ItFo_Cheese,1);
+		CreateInvItems(self,ItMi_Gold,1);
 	}
-	else if(inventoryset == 0)
+	else if(InventorySet == 0)
 	{
-		CreateInvItems(self,itpl_planeberry,1);
-		CreateInvItems(self,itfo_apple,1);
-		CreateInvItems(self,itfo_beer,1);
-		CreateInvItems(self,itmi_gold,8);
+		CreateInvItems(self,ItPl_Planeberry,1);
+		CreateInvItems(self,ItFo_Apple,1);
+		CreateInvItems(self,ItFo_Beer,1);
+		CreateInvItems(self,ItMi_Gold,8);
 	};
 };
 
-func void b_createambientinv_bau(var int inventoryset)
+func void B_CreateAmbientInv_BAU(var int InventorySet)
 {
-	if(inventoryset == 1)
+	if(InventorySet == 1)
 	{
-		CreateInvItems(self,itpl_forestberry,1);
-		CreateInvItems(self,itfo_water,1);
-		CreateInvItems(self,itfo_milk,1);
-		CreateInvItems(self,itmi_gold,6);
+		CreateInvItems(self,ItPl_Forestberry,1);
+		CreateInvItems(self,ItFo_Water,1);
+		CreateInvItems(self,ItFo_Milk,1);
+		CreateInvItems(self,ItMi_Gold,6);
 	}
-	else if(inventoryset == 2)
+	else if(InventorySet == 2)
 	{
-		CreateInvItems(self,itpl_forestberry,1);
-		CreateInvItems(self,itpl_planeberry,1);
-		CreateInvItems(self,itfo_apple,1);
-		CreateInvItems(self,itfo_cheese,1);
-		CreateInvItems(self,itmi_gold,5);
+		CreateInvItems(self,ItPl_Forestberry,1);
+		CreateInvItems(self,ItPl_Planeberry,1);
+		CreateInvItems(self,ItFo_Apple,1);
+		CreateInvItems(self,ItFo_Cheese,1);
+		CreateInvItems(self,ItMi_Gold,5);
 	}
-	else if(inventoryset == 3)
+	else if(InventorySet == 3)
 	{
-		CreateInvItems(self,itfo_apple,1);
-		CreateInvItems(self,itfo_cheese,1);
-		CreateInvItems(self,itmi_gold,4);
+		CreateInvItems(self,ItFo_Apple,1);
+		CreateInvItems(self,ItFo_Cheese,1);
+		CreateInvItems(self,ItMi_Gold,4);
 	}
-	else if(inventoryset == 4)
+	else if(InventorySet == 4)
 	{
-		CreateInvItems(self,itpl_blueplant,1);
-		CreateInvItems(self,itfomuttonraw,1);
-		CreateInvItems(self,itfo_bread,1);
-		CreateInvItems(self,itmi_gold,2);
+		CreateInvItems(self,ItPl_Blueplant,1);
+		CreateInvItems(self,ItFoMuttonRaw,1);
+		CreateInvItems(self,ItFo_Bread,1);
+		CreateInvItems(self,ItMi_Gold,2);
 	}
-	else if(inventoryset == 5)
+	else if(InventorySet == 5)
 	{
-		CreateInvItems(self,itpl_forestberry,1);
-		CreateInvItems(self,itfo_bread,1);
-		CreateInvItems(self,itfomuttonraw,1);
-		CreateInvItems(self,itmi_gold,3);
+		CreateInvItems(self,ItPl_Forestberry,1);
+		CreateInvItems(self,ItFo_Bread,1);
+		CreateInvItems(self,ItFoMuttonRaw,1);
+		CreateInvItems(self,ItMi_Gold,3);
 	}
-	else if(inventoryset == 6)
+	else if(InventorySet == 6)
 	{
-		CreateInvItems(self,itpl_forestberry,1);
-		CreateInvItems(self,itfo_milk,1);
-		CreateInvItems(self,itfo_cheese,1);
-		CreateInvItems(self,itpl_planeberry,1);
-		CreateInvItems(self,itmi_gold,2);
+		CreateInvItems(self,ItPl_Forestberry,1);
+		CreateInvItems(self,ItFo_Milk,1);
+		CreateInvItems(self,ItFo_Cheese,1);
+		CreateInvItems(self,ItPl_Planeberry,1);
+		CreateInvItems(self,ItMi_Gold,2);
 	}
-	else if(inventoryset == 0)
+	else if(InventorySet == 0)
 	{
-		CreateInvItems(self,itpl_planeberry,1);
-		CreateInvItems(self,itfo_apple,1);
-		CreateInvItems(self,itfo_cheese,4);
-		CreateInvItems(self,itfo_beer,1);
+		CreateInvItems(self,ItPl_Planeberry,1);
+		CreateInvItems(self,ItFo_Apple,1);
+		CreateInvItems(self,ItFo_Cheese,4);
+		CreateInvItems(self,ItFo_Beer,1);
 	};
 };
 
-func void b_createambientinv_nov(var int inventoryset)
+func void B_CreateAmbientInv_NOV(var int InventorySet)
 {
-	if(inventoryset == 1)
+	if(InventorySet == 1)
 	{
-		CreateInvItems(self,itpl_forestberry,1);
-		CreateInvItems(self,itfo_water,3);
-		CreateInvItems(self,itpl_blueplant,1);
-		CreateInvItems(self,itfo_fish,1);
+		CreateInvItems(self,ItPl_Forestberry,1);
+		CreateInvItems(self,ItFo_Water,3);
+		CreateInvItems(self,ItPl_Blueplant,1);
+		CreateInvItems(self,ItFo_Fish,1);
 	}
-	else if(inventoryset == 2)
+	else if(InventorySet == 2)
 	{
-		CreateInvItems(self,itfomuttonraw,1);
-		CreateInvItems(self,itfo_cheese,1);
-		CreateInvItems(self,itmi_flask,1);
-		CreateInvItems(self,itmi_gold,15);
+		CreateInvItems(self,ItFoMuttonRaw,1);
+		CreateInvItems(self,ItFo_Cheese,1);
+		CreateInvItems(self,ItMi_Flask,1);
+		CreateInvItems(self,ItMi_Gold,15);
 	}
-	else if(inventoryset == 3)
+	else if(InventorySet == 3)
 	{
-		CreateInvItems(self,itfo_apple,3);
-		CreateInvItems(self,itfo_cheese,2);
-		CreateInvItems(self,itfo_beer,2);
-		CreateInvItems(self,itmi_sulfur,1);
+		CreateInvItems(self,ItFo_Apple,3);
+		CreateInvItems(self,ItFo_Cheese,2);
+		CreateInvItems(self,ItFo_Beer,2);
+		CreateInvItems(self,ItMi_Sulfur,1);
 	}
-	else if(inventoryset == 4)
+	else if(InventorySet == 4)
 	{
-		CreateInvItems(self,itpl_blueplant,1);
-		CreateInvItems(self,itfo_bread,1);
-		CreateInvItems(self,itfo_water,1);
-		CreateInvItems(self,itmi_coal,1);
-		CreateInvItems(self,itmi_gold,13);
+		CreateInvItems(self,ItPl_Blueplant,1);
+		CreateInvItems(self,ItFo_Bread,1);
+		CreateInvItems(self,ItFo_Water,1);
+		CreateInvItems(self,ItMi_Coal,1);
+		CreateInvItems(self,ItMi_Gold,13);
 	}
-	else if(inventoryset == 5)
+	else if(InventorySet == 5)
 	{
-		CreateInvItems(self,itfo_bread,2);
-		CreateInvItems(self,itfomuttonraw,1);
-		CreateInvItems(self,itfo_fish,1);
-		CreateInvItems(self,itmi_gold,14);
+		CreateInvItems(self,ItFo_Bread,2);
+		CreateInvItems(self,ItFoMuttonRaw,1);
+		CreateInvItems(self,ItFo_Fish,1);
+		CreateInvItems(self,ItMi_Gold,14);
 	}
-	else if(inventoryset == 6)
+	else if(InventorySet == 6)
 	{
-		CreateInvItems(self,itpl_forestberry,1);
-		CreateInvItems(self,itfo_fish,1);
-		CreateInvItems(self,itfo_bread,1);
-		CreateInvItems(self,itpo_mana_01,1);
-		CreateInvItems(self,itmi_gold,12);
+		CreateInvItems(self,ItPl_Forestberry,1);
+		CreateInvItems(self,ItFo_Fish,1);
+		CreateInvItems(self,ItFo_Bread,1);
+		CreateInvItems(self,ItPo_Mana_01,1);
+		CreateInvItems(self,ItMi_Gold,12);
 	}
-	else if(inventoryset == 0)
+	else if(InventorySet == 0)
 	{
-		CreateInvItems(self,itpl_planeberry,3);
-		CreateInvItems(self,itfo_apple,1);
-		CreateInvItems(self,itfo_cheese,1);
-		CreateInvItems(self,itfo_beer,1);
+		CreateInvItems(self,ItPl_Planeberry,3);
+		CreateInvItems(self,ItFo_Apple,1);
+		CreateInvItems(self,ItFo_Cheese,1);
+		CreateInvItems(self,ItFo_Beer,1);
 	};
 };
 
-func void b_createambientinv_sld(var int inventoryset)
+func void B_CreateAmbientInv_SLD(var int InventorySet)
 {
-	if(inventoryset == 1)
+	if(InventorySet == 1)
 	{
-		CreateInvItems(self,itfomutton,1);
-		CreateInvItems(self,itpl_mushroom_01,1);
-		CreateInvItems(self,itmi_gold,17);
+		CreateInvItems(self,ItFoMutton,1);
+		CreateInvItems(self,ItPl_Mushroom_01,1);
+		CreateInvItems(self,ItMi_Gold,17);
 	}
-	else if(inventoryset == 2)
+	else if(InventorySet == 2)
 	{
-		CreateInvItems(self,itpl_health_herb_01,1);
-		CreateInvItems(self,itfo_booze,2);
-		CreateInvItems(self,itfo_sausage,1);
+		CreateInvItems(self,ItPl_Health_Herb_01,1);
+		CreateInvItems(self,ItFo_Booze,2);
+		CreateInvItems(self,ItFo_Sausage,1);
 	}
-	else if(inventoryset == 3)
+	else if(InventorySet == 3)
 	{
-		CreateInvItems(self,itfo_stew,1);
-		CreateInvItems(self,itmi_joint,2);
-		CreateInvItems(self,itmi_gold,16);
+		CreateInvItems(self,ItFo_Stew,1);
+		CreateInvItems(self,ItMi_Joint,2);
+		CreateInvItems(self,ItMi_Gold,16);
 	}
-	else if(inventoryset == 4)
+	else if(InventorySet == 4)
 	{
-		CreateInvItems(self,itfo_stew,1);
-		CreateInvItems(self,itfo_booze,1);
-		CreateInvItems(self,itmi_gold,15);
+		CreateInvItems(self,ItFo_Stew,1);
+		CreateInvItems(self,ItFo_Booze,1);
+		CreateInvItems(self,ItMi_Gold,15);
 	}
-	else if(inventoryset == 5)
+	else if(InventorySet == 5)
 	{
-		CreateInvItems(self,itfo_sausage,1);
-		CreateInvItems(self,itfomuttonraw,1);
-		CreateInvItems(self,itmi_gold,11);
+		CreateInvItems(self,ItFo_Sausage,1);
+		CreateInvItems(self,ItFoMuttonRaw,1);
+		CreateInvItems(self,ItMi_Gold,11);
 	}
-	else if(inventoryset == 6)
+	else if(InventorySet == 6)
 	{
-		CreateInvItems(self,itfo_booze,1);
-		CreateInvItems(self,itpl_planeberry,1);
-		CreateInvItems(self,itfo_fishsoup,1);
-		CreateInvItems(self,itmi_gold,19);
+		CreateInvItems(self,ItFo_Booze,1);
+		CreateInvItems(self,ItPl_Planeberry,1);
+		CreateInvItems(self,ItFo_FishSoup,1);
+		CreateInvItems(self,ItMi_Gold,19);
 	}
-	else if(inventoryset == 0)
+	else if(InventorySet == 0)
 	{
-		CreateInvItems(self,itpl_mushroom_02,3);
-		CreateInvItems(self,itfo_booze,1);
-		CreateInvItems(self,itmi_gold,10);
-		CreateInvItems(self,itfomutton,2);
+		CreateInvItems(self,ItPl_Mushroom_02,3);
+		CreateInvItems(self,ItFo_Booze,1);
+		CreateInvItems(self,ItMi_Gold,10);
+		CreateInvItems(self,ItFoMutton,2);
 	};
 };
 
-func void b_createambientinv_kdf(var int inventoryset)
+func void B_CreateAmbientInv_KDF(var int InventorySet)
 {
-	if(inventoryset == 1)
+	if(InventorySet == 1)
 	{
-		CreateInvItems(self,itfomutton,1);
-		CreateInvItems(self,itmi_quartz,1);
-		CreateInvItems(self,itmi_coal,1);
-		CreateInvItems(self,itmi_gold,33);
+		CreateInvItems(self,ItFoMutton,1);
+		CreateInvItems(self,ItMi_Quartz,1);
+		CreateInvItems(self,ItMi_Coal,1);
+		CreateInvItems(self,ItMi_Gold,33);
 	}
-	else if(inventoryset == 2)
+	else if(InventorySet == 2)
 	{
-		CreateInvItems(self,itpo_mana_02,1);
-		CreateInvItems(self,itmi_sulfur,1);
-		CreateInvItems(self,itmi_flask,1);
-		CreateInvItems(self,itmi_gold,36);
+		CreateInvItems(self,ItPo_Mana_02,1);
+		CreateInvItems(self,ItMi_Sulfur,1);
+		CreateInvItems(self,ItMi_Flask,1);
+		CreateInvItems(self,ItMi_Gold,36);
 	}
-	else if(inventoryset == 3)
+	else if(InventorySet == 3)
 	{
-		CreateInvItems(self,itmi_silverring,1);
-		CreateInvItems(self,itpl_mushroom_01,1);
-		CreateInvItems(self,itpl_planeberry,1);
-		CreateInvItems(self,itmi_rockcrystal,1);
-		CreateInvItems(self,itmi_gold,30);
+		CreateInvItems(self,ItMi_SilverRing,1);
+		CreateInvItems(self,ItPl_Mushroom_01,1);
+		CreateInvItems(self,ItPl_Planeberry,1);
+		CreateInvItems(self,ItMi_Rockcrystal,1);
+		CreateInvItems(self,ItMi_Gold,30);
 	}
-	else if(inventoryset == 4)
+	else if(InventorySet == 4)
 	{
-		CreateInvItems(self,itfo_sausage,1);
-		CreateInvItems(self,itpo_health_03,1);
-		CreateInvItems(self,itfo_booze,1);
-		CreateInvItems(self,itmi_gold,36);
+		CreateInvItems(self,ItFo_Sausage,1);
+		CreateInvItems(self,ItPo_Health_03,1);
+		CreateInvItems(self,ItFo_Booze,1);
+		CreateInvItems(self,ItMi_Gold,36);
 	}
-	else if(inventoryset == 5)
+	else if(InventorySet == 5)
 	{
-		CreateInvItems(self,itpl_health_herb_01,1);
-		CreateInvItems(self,itpl_mushroom_01,1);
-		CreateInvItems(self,itpl_mana_herb_01,1);
-		CreateInvItems(self,itmi_gold,39);
+		CreateInvItems(self,ItPl_Health_Herb_01,1);
+		CreateInvItems(self,ItPl_Mushroom_01,1);
+		CreateInvItems(self,ItPl_Mana_Herb_01,1);
+		CreateInvItems(self,ItMi_Gold,39);
 	}
-	else if(inventoryset == 6)
+	else if(InventorySet == 6)
 	{
-		CreateInvItems(self,itfo_booze,1);
-		CreateInvItems(self,itmi_sulfur,1);
-		CreateInvItems(self,itpl_blueplant,1);
-		CreateInvItems(self,itmi_gold,34);
+		CreateInvItems(self,ItFo_Booze,1);
+		CreateInvItems(self,ItMi_Sulfur,1);
+		CreateInvItems(self,ItPl_Blueplant,1);
+		CreateInvItems(self,ItMi_Gold,34);
 	}
-	else if(inventoryset == 0)
+	else if(InventorySet == 0)
 	{
-		CreateInvItems(self,itpl_mushroom_02,1);
-		CreateInvItems(self,itmi_quartz,1);
-		CreateInvItems(self,itmi_pitch,1);
-		CreateInvItems(self,itmi_gold,35);
+		CreateInvItems(self,ItPl_Mushroom_02,1);
+		CreateInvItems(self,ItMi_Quartz,1);
+		CreateInvItems(self,ItMi_Pitch,1);
+		CreateInvItems(self,ItMi_Gold,35);
 	};
 };
 
-func void b_createambientinv_mil(var int inventoryset)
+func void B_CreateAmbientInv_MIL(var int InventorySet)
 {
-	if(inventoryset == 1)
+	if(InventorySet == 1)
 	{
-		CreateInvItems(self,itfomutton,3);
-		CreateInvItems(self,itpl_mushroom_01,1);
-		CreateInvItems(self,itfo_stew,1);
-		CreateInvItems(self,itmi_gold,15);
+		CreateInvItems(self,ItFoMutton,3);
+		CreateInvItems(self,ItPl_Mushroom_01,1);
+		CreateInvItems(self,ItFo_Stew,1);
+		CreateInvItems(self,ItMi_Gold,15);
 	}
-	else if(inventoryset == 2)
+	else if(InventorySet == 2)
 	{
-		CreateInvItems(self,itpo_health_01,1);
-		CreateInvItems(self,itpl_health_herb_01,3);
-		CreateInvItems(self,itfomutton,1);
-		CreateInvItems(self,itmi_gold,17);
+		CreateInvItems(self,ItPo_Health_01,1);
+		CreateInvItems(self,ItPl_Health_Herb_01,3);
+		CreateInvItems(self,ItFoMutton,1);
+		CreateInvItems(self,ItMi_Gold,17);
 	}
-	else if(inventoryset == 3)
+	else if(InventorySet == 3)
 	{
-		CreateInvItems(self,itpl_mushroom_01,1);
-		CreateInvItems(self,itpl_health_herb_01,1);
-		CreateInvItems(self,itmi_gold,25);
+		CreateInvItems(self,ItPl_Mushroom_01,1);
+		CreateInvItems(self,ItPl_Health_Herb_01,1);
+		CreateInvItems(self,ItMi_Gold,25);
 	}
-	else if(inventoryset == 4)
+	else if(InventorySet == 4)
 	{
-		CreateInvItems(self,itpl_mushroom_01,1);
-		CreateInvItems(self,itfo_sausage,1);
-		CreateInvItems(self,itmi_gold,30);
+		CreateInvItems(self,ItPl_Mushroom_01,1);
+		CreateInvItems(self,ItFo_Sausage,1);
+		CreateInvItems(self,ItMi_Gold,30);
 	}
-	else if(inventoryset == 5)
+	else if(InventorySet == 5)
 	{
-		CreateInvItems(self,itfo_booze,3);
-		CreateInvItems(self,itfo_fishsoup,1);
-		CreateInvItems(self,itmi_gold,14);
+		CreateInvItems(self,ItFo_Booze,3);
+		CreateInvItems(self,ItFo_FishSoup,1);
+		CreateInvItems(self,ItMi_Gold,14);
 	}
-	else if(inventoryset == 6)
+	else if(InventorySet == 6)
 	{
-		CreateInvItems(self,itpl_health_herb_01,1);
-		CreateInvItems(self,itfo_fishsoup,1);
-		CreateInvItems(self,itpl_mushroom_02,1);
-		CreateInvItems(self,itmi_gold,26);
+		CreateInvItems(self,ItPl_Health_Herb_01,1);
+		CreateInvItems(self,ItFo_FishSoup,1);
+		CreateInvItems(self,ItPl_Mushroom_02,1);
+		CreateInvItems(self,ItMi_Gold,26);
 	}
-	else if(inventoryset == 0)
+	else if(InventorySet == 0)
 	{
-		CreateInvItems(self,itpl_mushroom_02,1);
-		CreateInvItems(self,itfo_booze,1);
-		CreateInvItems(self,itfo_sausage,3);
-		CreateInvItems(self,itmi_gold,25);
+		CreateInvItems(self,ItPl_Mushroom_02,1);
+		CreateInvItems(self,ItFo_Booze,1);
+		CreateInvItems(self,ItFo_Sausage,3);
+		CreateInvItems(self,ItMi_Gold,25);
 	};
 };
 
-func void b_createambientinv_djg(var int inventoryset)
+func void B_CreateAmbientInv_DJG(var int InventorySet)
 {
-	if(inventoryset == 1)
+	if(InventorySet == 1)
 	{
-		CreateInvItems(self,itfo_wine,1);
-		CreateInvItems(self,itpl_mana_herb_01,1);
-		CreateInvItems(self,itfomuttonraw,1);
-		CreateInvItems(self,itat_wolffur,1);
-		CreateInvItems(self,itmi_gold,39);
+		CreateInvItems(self,ItFo_Wine,1);
+		CreateInvItems(self,ItPl_Mana_Herb_01,1);
+		CreateInvItems(self,ItFoMuttonRaw,1);
+		CreateInvItems(self,ItAt_WolfFur,1);
+		CreateInvItems(self,ItMi_Gold,39);
 	}
-	else if(inventoryset == 2)
+	else if(InventorySet == 2)
 	{
-		CreateInvItems(self,itfo_milk,1);
-		CreateInvItems(self,itmi_joint,1);
-		CreateInvItems(self,itpl_health_herb_02,1);
-		CreateInvItems(self,itmi_gold,46);
+		CreateInvItems(self,ItFo_Milk,1);
+		CreateInvItems(self,ItMi_Joint,1);
+		CreateInvItems(self,ItPl_Health_Herb_02,1);
+		CreateInvItems(self,ItMi_Gold,46);
 	}
-	else if(inventoryset == 3)
+	else if(InventorySet == 3)
 	{
-		CreateInvItems(self,itfo_bacon,1);
-		CreateInvItems(self,itpl_speed_herb_01,1);
-		CreateInvItems(self,itat_bugmandibles,1);
-		CreateInvItems(self,itmi_gold,45);
+		CreateInvItems(self,ItFo_Bacon,1);
+		CreateInvItems(self,ItPl_Speed_Herb_01,1);
+		CreateInvItems(self,ItAt_BugMandibles,1);
+		CreateInvItems(self,ItMi_Gold,45);
 	}
-	else if(inventoryset == 4)
+	else if(InventorySet == 4)
 	{
-		CreateInvItems(self,itfomutton,1);
-		CreateInvItems(self,itpl_swampherb,1);
-		CreateInvItems(self,itfo_bacon,1);
-		CreateInvItems(self,itmi_gold,44);
+		CreateInvItems(self,ItFoMutton,1);
+		CreateInvItems(self,ItPl_SwampHerb,1);
+		CreateInvItems(self,ItFo_Bacon,1);
+		CreateInvItems(self,ItMi_Gold,44);
 	}
-	else if(inventoryset == 5)
+	else if(InventorySet == 5)
 	{
-		CreateInvItems(self,itfo_stew,1);
-		CreateInvItems(self,itpl_health_herb_02,1);
-		CreateInvItems(self,itmi_joint,1);
-		CreateInvItems(self,itmi_gold,43);
+		CreateInvItems(self,ItFo_Stew,1);
+		CreateInvItems(self,ItPl_Health_Herb_02,1);
+		CreateInvItems(self,ItMi_Joint,1);
+		CreateInvItems(self,ItMi_Gold,43);
 	}
-	else if(inventoryset == 6)
+	else if(InventorySet == 6)
 	{
-		CreateInvItems(self,itpo_health_02,1);
-		CreateInvItems(self,itfo_booze,2);
-		CreateInvItems(self,itfo_wine,1);
-		CreateInvItems(self,itmi_gold,46);
+		CreateInvItems(self,ItPo_Health_02,1);
+		CreateInvItems(self,ItFo_Booze,2);
+		CreateInvItems(self,ItFo_Wine,1);
+		CreateInvItems(self,ItMi_Gold,46);
 	}
-	else if(inventoryset == 0)
+	else if(InventorySet == 0)
 	{
-		CreateInvItems(self,itfo_sausage,1);
-		CreateInvItems(self,itfomuttonraw,2);
-		CreateInvItems(self,itat_sheepfur,1);
-		CreateInvItems(self,itmi_gold,41);
+		CreateInvItems(self,ItFo_Sausage,1);
+		CreateInvItems(self,ItFoMuttonRaw,2);
+		CreateInvItems(self,ItAt_SheepFur,1);
+		CreateInvItems(self,ItMi_Gold,41);
 	};
 };
 
-func void b_createambientinv_pal(var int inventoryset)
+func void B_CreateAmbientInv_PAL(var int InventorySet)
 {
-	if(inventoryset == 1)
+	if(InventorySet == 1)
 	{
-		CreateInvItems(self,itfo_wine,1);
-		CreateInvItems(self,itfo_bacon,1);
-		CreateInvItems(self,itmi_gold,44);
+		CreateInvItems(self,ItFo_Wine,1);
+		CreateInvItems(self,ItFo_Bacon,1);
+		CreateInvItems(self,ItMi_Gold,44);
 	}
-	else if(inventoryset == 2)
+	else if(InventorySet == 2)
 	{
-		CreateInvItems(self,itfo_booze,1);
-		CreateInvItems(self,itfo_milk,1);
-		CreateInvItems(self,itpl_mana_herb_02,1);
-		CreateInvItems(self,itmi_gold,42);
+		CreateInvItems(self,ItFo_Booze,1);
+		CreateInvItems(self,ItFo_Milk,1);
+		CreateInvItems(self,ItPl_Mana_Herb_02,1);
+		CreateInvItems(self,ItMi_Gold,42);
 	}
-	else if(inventoryset == 3)
+	else if(InventorySet == 3)
 	{
-		CreateInvItems(self,itfo_bacon,1);
-		CreateInvItems(self,itpl_mana_herb_01,2);
-		CreateInvItems(self,itmi_gold,23);
+		CreateInvItems(self,ItFo_Bacon,1);
+		CreateInvItems(self,ItPl_Mana_Herb_01,2);
+		CreateInvItems(self,ItMi_Gold,23);
 	}
-	else if(inventoryset == 4)
+	else if(InventorySet == 4)
 	{
-		CreateInvItems(self,itmi_silverring,1);
-		CreateInvItems(self,itpl_health_herb_03,1);
-		CreateInvItems(self,itmi_gold,46);
+		CreateInvItems(self,ItMi_SilverRing,1);
+		CreateInvItems(self,ItPl_Health_Herb_03,1);
+		CreateInvItems(self,ItMi_Gold,46);
 	}
-	else if(inventoryset == 5)
+	else if(InventorySet == 5)
 	{
-		CreateInvItems(self,itfo_stew,1);
-		CreateInvItems(self,itpl_health_herb_02,1);
-		CreateInvItems(self,itmi_gold,43);
+		CreateInvItems(self,ItFo_Stew,1);
+		CreateInvItems(self,ItPl_Health_Herb_02,1);
+		CreateInvItems(self,ItMi_Gold,43);
 	}
-	else if(inventoryset == 6)
+	else if(InventorySet == 6)
 	{
-		CreateInvItems(self,itpo_health_02,1);
-		CreateInvItems(self,itpl_speed_herb_01,2);
-		CreateInvItems(self,itmi_gold,37);
+		CreateInvItems(self,ItPo_Health_02,1);
+		CreateInvItems(self,ItPl_Speed_Herb_01,2);
+		CreateInvItems(self,ItMi_Gold,37);
 	}
-	else if(inventoryset == 0)
+	else if(InventorySet == 0)
 	{
-		CreateInvItems(self,itfo_sausage,1);
-		CreateInvItems(self,itpl_health_herb_02,1);
-		CreateInvItems(self,itmi_gold,40);
+		CreateInvItems(self,ItFo_Sausage,1);
+		CreateInvItems(self,ItPl_Health_Herb_02,1);
+		CreateInvItems(self,ItMi_Gold,40);
 	};
 };
 
-func void b_createambientinv_dmt(var int inventoryset)
+func void B_CreateAmbientInv_DMT(var int InventorySet)
 {
-	if(inventoryset == 1)
+	if(InventorySet == 1)
 	{
-		CreateInvItems(self,itpo_mana_01,1);
-		CreateInvItems(self,itmi_pitch,1);
-		CreateInvItems(self,itmi_gold,42);
+		CreateInvItems(self,ItPo_Mana_01,1);
+		CreateInvItems(self,ItMi_Pitch,1);
+		CreateInvItems(self,ItMi_Gold,42);
 	}
-	else if(inventoryset == 2)
+	else if(InventorySet == 2)
 	{
-		CreateInvItems(self,itpo_mana_02,1);
-		CreateInvItems(self,itmi_gold,35);
-		CreateInvItems(self,itmi_aquamarine,1);
+		CreateInvItems(self,ItPo_Mana_02,1);
+		CreateInvItems(self,ItMi_Gold,35);
+		CreateInvItems(self,ItMi_Aquamarine,1);
 	}
-	else if(inventoryset == 3)
+	else if(InventorySet == 3)
 	{
-		CreateInvItems(self,itmi_sulfur,1);
-		CreateInvItems(self,itmi_gold,23);
-		CreateInvItems(self,itpo_mana_01,1);
+		CreateInvItems(self,ItMi_Sulfur,1);
+		CreateInvItems(self,ItMi_Gold,23);
+		CreateInvItems(self,ItPo_Mana_01,1);
 	}
-	else if(inventoryset == 4)
+	else if(InventorySet == 4)
 	{
-		CreateInvItems(self,itmi_rockcrystal,1);
-		CreateInvItems(self,itpo_health_01,1);
-		CreateInvItems(self,itmi_gold,46);
+		CreateInvItems(self,ItMi_Rockcrystal,1);
+		CreateInvItems(self,ItPo_Health_01,1);
+		CreateInvItems(self,ItMi_Gold,46);
 	}
-	else if(inventoryset == 5)
+	else if(InventorySet == 5)
 	{
-		CreateInvItems(self,itmi_quartz,1);
-		CreateInvItems(self,itmi_gold,43);
-		CreateInvItems(self,itpo_health_02,1);
+		CreateInvItems(self,ItMi_Quartz,1);
+		CreateInvItems(self,ItMi_Gold,43);
+		CreateInvItems(self,ItPo_Health_02,1);
 	}
-	else if(inventoryset == 6)
+	else if(InventorySet == 6)
 	{
-		CreateInvItems(self,itpo_speed,1);
-		CreateInvItems(self,itmi_coal,1);
-		CreateInvItems(self,itmi_gold,37);
+		CreateInvItems(self,ItPo_Speed,1);
+		CreateInvItems(self,ItMi_Coal,1);
+		CreateInvItems(self,ItMi_Gold,37);
 	}
-	else if(inventoryset == 0)
+	else if(InventorySet == 0)
 	{
-		CreateInvItems(self,itmi_rockcrystal,1);
-		CreateInvItems(self,itpo_health_01,1);
-		CreateInvItems(self,itmi_gold,40);
+		CreateInvItems(self,ItMi_Rockcrystal,1);
+		CreateInvItems(self,ItPo_Health_01,1);
+		CreateInvItems(self,ItMi_Gold,40);
 	};
 };
 
-func void b_createambientinv_strf(var int inventoryset)
+func void B_CreateAmbientInv_STRF(var int InventorySet)
 {
-	if(inventoryset == 1)
+	if(InventorySet == 1)
 	{
-		CreateInvItems(self,itpl_planeberry,1);
+		CreateInvItems(self,ItPl_Planeberry,1);
 	}
-	else if(inventoryset == 2)
+	else if(InventorySet == 2)
 	{
-		CreateInvItems(self,itfo_apple,1);
+		CreateInvItems(self,ItFo_Apple,1);
 	}
-	else if(inventoryset == 3)
+	else if(InventorySet == 3)
 	{
-		CreateInvItems(self,itfo_beer,1);
+		CreateInvItems(self,ItFo_Beer,1);
 	}
-	else if(inventoryset == 4)
+	else if(InventorySet == 4)
 	{
-		CreateInvItems(self,itfo_cheese,1);
+		CreateInvItems(self,ItFo_Cheese,1);
 	}
-	else if(inventoryset == 5)
+	else if(InventorySet == 5)
 	{
-		CreateInvItems(self,itfo_water,1);
+		CreateInvItems(self,ItFo_Water,1);
 	}
-	else if(inventoryset == 6)
+	else if(InventorySet == 6)
 	{
-		CreateInvItems(self,itpl_forestberry,1);
+		CreateInvItems(self,ItPl_Forestberry,1);
 	}
-	else if(inventoryset == 0)
+	else if(InventorySet == 0)
 	{
-		CreateInvItems(self,itfo_bread,1);
+		CreateInvItems(self,ItFo_Bread,1);
 	};
 };
 
-func void b_createambientinv(var C_NPC slf)
+func void B_CreateAmbientInv(var C_Npc slf)
 {
 	var int zufall;
 	zufall = Hlp_Random(7);
 	if(slf.guild == GIL_VLK)
 	{
-		b_createambientinv_vlk(zufall);
+		B_CreateAmbientInv_VLK(zufall);
 	}
 	else if(slf.guild == GIL_BAU)
 	{
-		b_createambientinv_bau(zufall);
+		B_CreateAmbientInv_BAU(zufall);
 	}
 	else if(slf.guild == GIL_NOV)
 	{
-		b_createambientinv_nov(zufall);
+		B_CreateAmbientInv_NOV(zufall);
 	}
 	else if(slf.guild == GIL_SLD)
 	{
-		b_createambientinv_sld(zufall);
+		B_CreateAmbientInv_SLD(zufall);
 	}
 	else if(slf.guild == GIL_KDF)
 	{
-		b_createambientinv_kdf(zufall);
+		B_CreateAmbientInv_KDF(zufall);
 	}
 	else if(slf.guild == GIL_MIL)
 	{
-		b_createambientinv_mil(zufall);
+		B_CreateAmbientInv_MIL(zufall);
 	}
 	else if(slf.guild == GIL_DJG)
 	{
-		b_createambientinv_djg(zufall);
+		B_CreateAmbientInv_DJG(zufall);
 	}
 	else if(slf.guild == GIL_PAL)
 	{
-		b_createambientinv_pal(zufall);
+		B_CreateAmbientInv_PAL(zufall);
 	}
 	else if(slf.guild == GIL_DMT)
 	{
-		b_createambientinv_dmt(zufall);
+		B_CreateAmbientInv_DMT(zufall);
 	}
 	else if(slf.guild == GIL_STRF)
 	{
-		b_createambientinv_strf(zufall);
+		B_CreateAmbientInv_STRF(zufall);
 	}
 	else
 	{
-		b_createambientinv_bau(zufall);
+		B_CreateAmbientInv_BAU(zufall);
 	};
 };
 

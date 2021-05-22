@@ -1,64 +1,64 @@
 
-var int bosper_itemsgiven_chapter_1;
-var int bosper_itemsgiven_chapter_2;
-var int bosper_itemsgiven_chapter_3;
-var int bosper_itemsgiven_chapter_4;
-var int bosper_itemsgiven_chapter_5;
+var int Bosper_ItemsGiven_Chapter_1;
+var int Bosper_ItemsGiven_Chapter_2;
+var int Bosper_ItemsGiven_Chapter_3;
+var int Bosper_ItemsGiven_Chapter_4;
+var int Bosper_ItemsGiven_Chapter_5;
 var int bosper_itemsgiven_chapter_6;
 
-func void b_givetradeinv_bosper(var C_NPC slf)
+func void B_GiveTradeInv_Bosper(var C_Npc slf)
 {
-	if((KAPITEL >= 1) && (BOSPER_ITEMSGIVEN_CHAPTER_1 == FALSE))
+	if((Kapitel >= 1) && (Bosper_ItemsGiven_Chapter_1 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,50);
-		CreateInvItems(slf,itrw_bow_l_01,1);
-		CreateInvItems(slf,itrw_bow_l_02,1);
-		CreateInvItems(slf,itrw_bow_l_03,1);
-		CreateInvItems(slf,itrw_arrow,30);
-		BOSPER_ITEMSGIVEN_CHAPTER_1 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,50);
+		CreateInvItems(slf,ItRw_Bow_L_01,1);
+		CreateInvItems(slf,ItRw_Bow_L_02,1);
+		CreateInvItems(slf,ItRw_Bow_L_03,1);
+		CreateInvItems(slf,ItRw_Arrow,30);
+		Bosper_ItemsGiven_Chapter_1 = TRUE;
 	};
-	if((KAPITEL >= 2) && (BOSPER_ITEMSGIVEN_CHAPTER_2 == FALSE))
+	if((Kapitel >= 2) && (Bosper_ItemsGiven_Chapter_2 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itrw_bow_l_03,1);
-		CreateInvItems(slf,itrw_bow_l_04,1);
-		CreateInvItems(slf,itrw_crossbow_l_02,1);
-		CreateInvItems(slf,itrw_arrow,50);
-		CreateInvItems(slf,itrw_bolt,50);
-		BOSPER_ITEMSGIVEN_CHAPTER_2 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItRw_Bow_L_03,1);
+		CreateInvItems(slf,ItRw_Bow_L_04,1);
+		CreateInvItems(slf,ItRw_Crossbow_L_02,1);
+		CreateInvItems(slf,ItRw_Arrow,50);
+		CreateInvItems(slf,ItRw_Bolt,50);
+		Bosper_ItemsGiven_Chapter_2 = TRUE;
 	};
-	if((KAPITEL >= 3) && (BOSPER_ITEMSGIVEN_CHAPTER_3 == FALSE))
+	if((Kapitel >= 3) && (Bosper_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itrw_bow_m_01,1);
-		CreateInvItems(slf,itrw_bow_m_02,1);
-		CreateInvItems(slf,itrw_crossbow_m_01,1);
-		CreateInvItems(slf,itrw_arrow,100);
-		CreateInvItems(slf,itrw_bolt,100);
-		BOSPER_ITEMSGIVEN_CHAPTER_3 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItRw_Bow_M_01,1);
+		CreateInvItems(slf,ItRw_Bow_M_02,1);
+		CreateInvItems(slf,ItRw_Crossbow_M_01,1);
+		CreateInvItems(slf,ItRw_Arrow,100);
+		CreateInvItems(slf,ItRw_Bolt,100);
+		Bosper_ItemsGiven_Chapter_3 = TRUE;
 	};
-	if((KAPITEL >= 4) && (BOSPER_ITEMSGIVEN_CHAPTER_4 == FALSE))
+	if((Kapitel >= 4) && (Bosper_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,150);
-		CreateInvItems(slf,itrw_bow_m_03,1);
-		CreateInvItems(slf,itrw_bow_m_04,1);
-		CreateInvItems(slf,itrw_bow_h_01,1);
-		CreateInvItems(slf,itrw_crossbow_m_02,1);
-		CreateInvItems(slf,itrw_crossbow_h_01,1);
-		CreateInvItems(slf,itrw_arrow,180);
-		CreateInvItems(slf,itrw_bolt,160);
-		BOSPER_ITEMSGIVEN_CHAPTER_4 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,150);
+		CreateInvItems(slf,ItRw_Bow_M_03,1);
+		CreateInvItems(slf,ItRw_Bow_M_04,1);
+		CreateInvItems(slf,ItRw_Bow_H_01,1);
+		CreateInvItems(slf,ItRw_Crossbow_M_02,1);
+		CreateInvItems(slf,ItRw_Crossbow_H_01,1);
+		CreateInvItems(slf,ItRw_Arrow,180);
+		CreateInvItems(slf,ItRw_Bolt,160);
+		Bosper_ItemsGiven_Chapter_4 = TRUE;
 	};
-	if((KAPITEL >= 5) && (BOSPER_ITEMSGIVEN_CHAPTER_5 == FALSE))
+	if((Kapitel >= 5) && (Bosper_ItemsGiven_Chapter_5 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,200);
-		CreateInvItems(slf,itrw_bow_h_02,1);
-		CreateInvItems(slf,itrw_bow_h_03,1);
-		CreateInvItems(slf,itrw_bow_h_04,1);
-		CreateInvItems(slf,itrw_crossbow_h_02,1);
-		CreateInvItems(slf,itrw_arrow,200);
-		CreateInvItems(slf,itrw_bolt,170);
-		BOSPER_ITEMSGIVEN_CHAPTER_5 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,200);
+		CreateInvItems(slf,ItRw_Bow_H_02,1);
+		CreateInvItems(slf,ItRw_Bow_H_03,1);
+		CreateInvItems(slf,ItRw_Bow_H_04,1);
+		CreateInvItems(slf,ItRw_Crossbow_H_02,1);
+		CreateInvItems(slf,ItRw_Arrow,200);
+		CreateInvItems(slf,ItRw_Bolt,170);
+		Bosper_ItemsGiven_Chapter_5 = TRUE;
 	};
 };
 

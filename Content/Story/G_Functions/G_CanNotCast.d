@@ -1,17 +1,17 @@
 
-func void g_cannotcast(var int bisplayer,var int ncircleneeded,var int ncirclepossessed)
+func void G_CanNotCast(var int bIsPlayer,var int nCircleNeeded,var int nCirclePossessed)
 {
-	var string strmessage;
-	var int ndifference;
-	var string strdifference;
-	ndifference = ncircleneeded - ncirclepossessed;
-	strdifference = IntToString(ndifference);
-	strmessage = ConcatStrings(strmessage,strdifference);
-	strmessage = ConcatStrings(strmessage," ");
-	strmessage = ConcatStrings(strmessage,PRINT_MAGCIRCLES_MISSING);
-	if(bisplayer)
+	var string strMessage;
+	var int nDifference;
+	var string strDifference;
+	nDifference = nCircleNeeded - nCirclePossessed;
+	strDifference = IntToString(nDifference);
+	strMessage = ConcatStrings(strMessage,strDifference);
+	strMessage = ConcatStrings(strMessage," ");
+	strMessage = ConcatStrings(strMessage,PRINT_MAGCIRCLES_MISSING);
+	if(bIsPlayer)
 	{
-		Print(strmessage);
+		Print(strMessage);
 	};
 };
 

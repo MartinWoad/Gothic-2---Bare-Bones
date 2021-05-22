@@ -1,9 +1,9 @@
 
-prototype MST_DEFAULT_GIANT_RAT(C_NPC)
+prototype Mst_Default_Giant_Rat(C_Npc)
 {
 	name[0] = "Olbrzymi Szczur";
-	guild = GIL_GIANT_RAT;
-	aivar[AIV_MM_REAL_ID] = ID_GIANT_RAT;
+	guild = GIL_Giant_Rat;
+	aivar[AIV_MM_REAL_ID] = ID_Giant_Rat;
 	level = 4;
 	attribute[ATR_STRENGTH] = 55;
 	attribute[ATR_DEXTERITY] = 55;
@@ -21,29 +21,29 @@ prototype MST_DEFAULT_GIANT_RAT(C_NPC)
 	fight_tactic = FAI_GIANT_RAT;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_SHORT;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	aivar[AIV_MM_PACKHUNTER] = TRUE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_SHORT;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar[AIV_MM_Packhunter] = TRUE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_giant_rat()
+func void B_SetVisuals_Giant_Rat()
 {
 	Mdl_SetVisual(self,"Giant_Rat.mds");
 	Mdl_SetVisualBody(self,"Giant_Rat_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance GIANT_RAT(MST_DEFAULT_GIANT_RAT)
+instance Giant_Rat(Mst_Default_Giant_Rat)
 {
-	b_setvisuals_giant_rat();
+	B_SetVisuals_Giant_Rat();
 	Npc_SetToFistMode(self);
 };
 
-instance YGIANT_RAT(MST_DEFAULT_GIANT_RAT)
+instance YGiant_Rat(Mst_Default_Giant_Rat)
 {
 	name[0] = "Przeroœniêty Szczur";
 	level = 2;
@@ -60,7 +60,7 @@ instance YGIANT_RAT(MST_DEFAULT_GIANT_RAT)
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 0;
 	fight_tactic = FAI_MONSTER_COWARD;
-	b_setvisuals_giant_rat();
+	B_SetVisuals_Giant_Rat();
 	Mdl_SetModelScale(self,0.9,0.9,0.9);
 	Npc_SetToFistMode(self);
 };

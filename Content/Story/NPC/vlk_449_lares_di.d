@@ -1,37 +1,37 @@
 
-instance VLK_449_LARES_DI(NPC_DEFAULT)
+instance VLK_449_Lares_DI(Npc_Default)
 {
 	name[0] = "Lares";
 	guild = GIL_NONE;
 	id = 4490;
 	voice = 9;
 	flags = 0;
-	npctype = NPCTYPE_FRIEND;
+	npcType = NPCTYPE_FRIEND;
 	aivar[AIV_PARTYMEMBER] = TRUE;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	aivar[AIV_TOUGHGUYNEWSOVERRIDE] = TRUE;
-	b_setattributestochapter(self,5);
+	aivar[AIV_ToughGuy] = TRUE;
+	aivar[AIV_ToughGuyNewsOverride] = TRUE;
+	B_SetAttributesToChapter(self,5);
 	fight_tactic = FAI_HUMAN_MASTER;
-	EquipItem(self,itmw_1h_sld_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Thief",FACE_N_LARES,BODYTEX_N,4820);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Thief",Face_N_Lares,BodyTex_N,ITAR_Vlk_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,70);
-	daily_routine = rtn_start_4490;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,70);
+	daily_routine = Rtn_Start_4490;
 };
 
 
-func void rtn_start_4490()
+func void Rtn_Start_4490()
 {
-	ta_smalltalk(8,0,23,0,"SHIP_CREW_05");
-	ta_smalltalk(23,0,8,0,"SHIP_CREW_05");
+	TA_Smalltalk(8,0,23,0,"SHIP_CREW_05");
+	TA_Smalltalk(23,0,8,0,"SHIP_CREW_05");
 };
 
-func void rtn_sittingshipdi_4490()
+func void Rtn_SittingShipDI_4490()
 {
-	ta_sit_bench(8,0,23,0,"SHIP_CREW_04");
-	ta_sit_bench(23,0,8,0,"SHIP_CREW_04");
+	TA_Sit_Bench(8,0,23,0,"SHIP_CREW_04");
+	TA_Sit_Bench(23,0,8,0,"SHIP_CREW_04");
 };
 

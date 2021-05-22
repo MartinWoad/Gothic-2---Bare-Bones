@@ -1,30 +1,30 @@
 
-instance DJG_715_FERROS(NPC_DEFAULT)
+instance DJG_715_Ferros(Npc_Default)
 {
 	name[0] = "Feros";
 	guild = GIL_DJG;
 	id = 715;
 	voice = 1;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,4);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_sld_sword);
-	EquipItem(self,itrw_crossbow_m_01);
-	CreateInvItems(self,itrw_bolt,13);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_B_NORMAL_ORIK,BODYTEX_B,4838);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	EquipItem(self,ItRw_Crossbow_M_01);
+	CreateInvItems(self,ItRw_Bolt,13);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_B_Normal_Orik,BodyTex_B,itar_djg_l);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,70);
-	daily_routine = rtn_start_715;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,70);
+	daily_routine = Rtn_Start_715;
 };
 
 
-func void rtn_start_715()
+func void Rtn_Start_715()
 {
-	ta_stand_eating(8,0,23,0,"OC_JAN");
-	ta_stand_eating(23,0,8,0,"OC_JAN");
+	TA_Stand_Eating(8,0,23,0,"OC_JAN");
+	TA_Stand_Eating(23,0,8,0,"OC_JAN");
 };
 

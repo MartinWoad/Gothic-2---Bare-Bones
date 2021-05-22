@@ -1,55 +1,55 @@
 
-instance DIA_DRAGON_ROCK_EXIT(C_INFO)
+instance DIA_Dragon_Rock_Exit(C_Info)
 {
 	nr = 999;
-	condition = dia_dragon_rock_exit_condition;
-	information = dia_dragon_rock_exit_info;
+	condition = DIA_Dragon_Rock_Exit_Condition;
+	information = DIA_Dragon_Rock_Exit_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dragon_rock_exit_condition()
+func int DIA_Dragon_Rock_Exit_Condition()
 {
-	if(DRAGONTALK_EXIT_FREE == TRUE)
+	if(DragonTalk_Exit_Free == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dragon_rock_exit_info()
+func void DIA_Dragon_Rock_Exit_Info()
 {
-	Npc_RemoveInvItems(other,itmi_innoseye_mis,1);
-	CreateInvItems(other,itmi_innoseye_discharged_mis,1);
+	Npc_RemoveInvItems(other,ItMi_InnosEye_MIS,1);
+	CreateInvItems(other,ItMi_InnosEye_Discharged_Mis,1);
 	AI_Output(self,other,"DIA_Dragon_Rock_Exit_20_00");	//Doœæ gadania. Oko straci³o sw¹ ochronn¹ moc. Przygotuj siê na œmieræ.
 	AI_StopProcessInfos(self);
-	DRAGONTALK_EXIT_FREE = FALSE;
+	DragonTalk_Exit_Free = FALSE;
 	self.flags = 0;
 };
 
 
-instance DIA_DRAGON_ROCK_HELLO(C_INFO)
+instance DIA_Dragon_Rock_Hello(C_Info)
 {
 	nr = 1;
-	condition = dia_dragon_rock_hello_condition;
-	information = dia_dragon_rock_hello_info;
+	condition = DIA_Dragon_Rock_Hello_Condition;
+	information = DIA_Dragon_Rock_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_dragon_rock_hello_condition()
+func int DIA_Dragon_Rock_Hello_Condition()
 {
-	if(Npc_HasItems(other,itmi_innoseye_mis) >= 1)
+	if(Npc_HasItems(other,ItMi_InnosEye_MIS) >= 1)
 	{
 		return 1;
 	};
 };
 
-func void dia_dragon_rock_hello_info()
+func void DIA_Dragon_Rock_Hello_Info()
 {
 	AI_Output(self,other,"DIA_Dragon_Rock_Hello_20_00");	//Jeszcze jeden zadufany w sobie karze³, który oœmieli³ siê wspi¹æ na moj¹ ska³ê... Ach, ludzie. Tacy waleczni... i tacy w¹tli.
-	if(MIS_KILLEDDRAGONS == 0)
+	if(MIS_KilledDragons == 0)
 	{
 		AI_Output(other,self,"DIA_Dragon_Rock_Hello_15_01");	//Ej, ty mówisz!
 	};
@@ -59,48 +59,48 @@ func void dia_dragon_rock_hello_info()
 };
 
 
-instance DIA_DRAGON_ROCK_WERBISTDU(C_INFO)
+instance DIA_Dragon_Rock_WERBISTDU(C_Info)
 {
 	nr = 6;
-	condition = dia_dragon_rock_werbistdu_condition;
-	information = dia_dragon_rock_werbistdu_info;
+	condition = DIA_Dragon_Rock_WERBISTDU_Condition;
+	information = DIA_Dragon_Rock_WERBISTDU_Info;
 	description = "Kim jesteœ?";
 };
 
 
-func int dia_dragon_rock_werbistdu_condition()
+func int DIA_Dragon_Rock_WERBISTDU_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_dragon_rock_hello))
+	if(Npc_KnowsInfo(other,DIA_Dragon_Rock_Hello))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dragon_rock_werbistdu_info()
+func void DIA_Dragon_Rock_WERBISTDU_Info()
 {
 	AI_Output(other,self,"DIA_Dragon_Rock_WERBISTDU_15_00");	//Kim jesteœ?
 	AI_Output(self,other,"DIA_Dragon_Rock_WERBISTDU_20_01");	//Nazywam siê Pedrakhan. Jak ciê dopadnê, obedrê ¿ywcem ze skóry!
 };
 
 
-instance DIA_DRAGON_ROCK_HIERARCHIE(C_INFO)
+instance DIA_Dragon_Rock_HIERARCHIE(C_Info)
 {
 	nr = 7;
-	condition = dia_dragon_rock_hierarchie_condition;
-	information = dia_dragon_rock_hierarchie_info;
+	condition = DIA_Dragon_Rock_HIERARCHIE_Condition;
+	information = DIA_Dragon_Rock_HIERARCHIE_Info;
 	description = "Który z was, smoków, jest najpotê¿niejszy?";
 };
 
 
-func int dia_dragon_rock_hierarchie_condition()
+func int DIA_Dragon_Rock_HIERARCHIE_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_dragon_rock_hello))
+	if(Npc_KnowsInfo(other,DIA_Dragon_Rock_Hello))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dragon_rock_hierarchie_info()
+func void DIA_Dragon_Rock_HIERARCHIE_Info()
 {
 	AI_Output(other,self,"DIA_Dragon_Rock_HIERARCHIE_15_00");	//Który z was, smoków, jest najpotê¿niejszy?
 	AI_Output(self,other,"DIA_Dragon_Rock_HIERARCHIE_20_01");	//Czerpiemy nasz¹ moc z ¿ywio³ów waszego œwiata. Ich hierarchia jest bardzo prosta.
@@ -110,12 +110,12 @@ func void dia_dragon_rock_hierarchie_info()
 	AI_Output(self,other,"DIA_Dragon_Rock_HIERARCHIE_20_05");	//Wszystkie ¿ywio³y maj¹ moc tworzenia i niszczenia. Ale tylko w wodzie, która sta³a siê twarda jak ska³a, wszystko stanie siê s³upem soli, na którym ¿ycie jest niemo¿liwe.
 };
 
-func void b_assigndragontalk_rock(var C_NPC slf)
+func void B_AssignDragonTalk_Rock(var C_Npc slf)
 {
-	dia_dragon_rock_exit.npc = Hlp_GetInstanceID(slf);
-	dia_dragon_rock_hello.npc = Hlp_GetInstanceID(slf);
-	dia_dragon_rock_werbistdu.npc = Hlp_GetInstanceID(slf);
-	dia_dragon_rock_hierarchie.npc = Hlp_GetInstanceID(slf);
-	b_assigndragontalk_main(slf);
+	DIA_Dragon_Rock_Exit.npc = Hlp_GetInstanceID(slf);
+	DIA_Dragon_Rock_Hello.npc = Hlp_GetInstanceID(slf);
+	DIA_Dragon_Rock_WERBISTDU.npc = Hlp_GetInstanceID(slf);
+	DIA_Dragon_Rock_HIERARCHIE.npc = Hlp_GetInstanceID(slf);
+	B_AssignDragonTalk_Main(slf);
 };
 

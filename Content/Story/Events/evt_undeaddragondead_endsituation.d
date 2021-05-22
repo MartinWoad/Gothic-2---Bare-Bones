@@ -1,18 +1,18 @@
 
-var int evt_undeaddragondead_endsituation_onetime;
+var int EVT_UNDEADDRAGONDEAD_ENDSITUATION_OneTime;
 
 func void evt_undeaddragondead_endsituation()
 {
-	if((evt_undeaddragondead_endsituation_onetime == FALSE) && Npc_IsDead(dragon_undead))
+	if((EVT_UNDEADDRAGONDEAD_ENDSITUATION_OneTime == FALSE) && Npc_IsDead(Dragon_Undead))
 	{
-		ANGAR_DI_PARTY = LOG_SUCCESS;
-		b_startotherroutine(angar_di,"FireDragonIsland");
-		b_startotherroutine(lee_di,"UNDEADDRAGONDEAD");
-		b_startotherroutine(diego_di,"UNDEADDRAGONDEAD");
-		b_startotherroutine(milten_di,"UNDEADDRAGONDEAD");
-		b_startotherroutine(gorn_di,"UNDEADDRAGONDEAD");
-		b_startotherroutine(lester_di,"UNDEADDRAGONDEAD");
-		evt_undeaddragondead_endsituation_onetime = TRUE;
+		Angar_DI_Party = LOG_SUCCESS;
+		B_StartOtherRoutine(Angar_DI,"FireDragonIsland");
+		B_StartOtherRoutine(Lee_DI,"UNDEADDRAGONDEAD");
+		B_StartOtherRoutine(Diego_DI,"UNDEADDRAGONDEAD");
+		B_StartOtherRoutine(Milten_DI,"UNDEADDRAGONDEAD");
+		B_StartOtherRoutine(Gorn_DI,"UNDEADDRAGONDEAD");
+		B_StartOtherRoutine(Lester_DI,"UNDEADDRAGONDEAD");
+		EVT_UNDEADDRAGONDEAD_ENDSITUATION_OneTime = TRUE;
 	};
 };
 

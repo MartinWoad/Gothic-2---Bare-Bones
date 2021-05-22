@@ -1,121 +1,121 @@
 
-instance DIA_MILTENOW_EXIT(C_INFO)
+instance DIA_MiltenOW_EXIT(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 999;
-	condition = dia_miltenow_exit_condition;
-	information = dia_miltenow_exit_info;
+	condition = DIA_MiltenOW_EXIT_Condition;
+	information = DIA_MiltenOW_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_miltenow_exit_condition()
+func int DIA_MiltenOW_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_miltenow_exit_info()
+func void DIA_MiltenOW_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MILTENOW_HELLO(C_INFO)
+instance DIA_MiltenOW_Hello(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = TRUE;
-	condition = dia_miltenow_hello_condition;
-	information = dia_miltenow_hello_info;
+	condition = DIA_MiltenOW_Hello_Condition;
+	information = DIA_MiltenOW_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_miltenow_hello_condition()
+func int DIA_MiltenOW_Hello_Condition()
 {
 	return TRUE;
 };
 
-func void dia_miltenow_hello_info()
+func void DIA_MiltenOW_Hello_Info()
 {
 	AI_Output(self,other,"DIA_MiltenOW_Hello_03_00");	//Kogo ja widzê! To nasz bohater zza Bariery!
-	Info_ClearChoices(dia_miltenow_hello);
-	Info_AddChoice(dia_miltenow_hello,"Mi³o ciê znowu widzieæ, Miltenie.",dia_miltenow_hello_yes);
-	Info_AddChoice(dia_miltenow_hello,"Czy my siê znamy?",dia_miltenow_hello_no);
+	Info_ClearChoices(DIA_MiltenOW_Hello);
+	Info_AddChoice(DIA_MiltenOW_Hello,"Mi³o ciê znowu widzieæ, Miltenie.",DIA_MiltenOW_Hello_YES);
+	Info_AddChoice(DIA_MiltenOW_Hello,"Czy my siê znamy?",DIA_MiltenOW_Hello_NO);
 };
 
-func void b_milten_gorndiegolester()
+func void B_Milten_GornDiegoLester()
 {
 	AI_Output(self,other,"DIA_MiltenOW_Hello_NO_03_02");	//Pamiêtasz jeszcze Gorna, Diega i Lestera?
 };
 
-func void dia_miltenow_hello_yes()
+func void DIA_MiltenOW_Hello_YES()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Hello_YES_15_00");	//Mi³o ciê znowu widzieæ, Miltenie. A ty - CI¥GLE tutaj, czy ZNOWU tutaj?
 	AI_Output(self,other,"DIA_MiltenOW_Hello_YES_03_01");	//Znowu. Po upadku Bariery wróci³em do klasztoru Magów Ognia.
 	AI_Output(self,other,"DIA_MiltenOW_Hello_YES_03_02");	//Ale gdy paladyni postanowili zejœæ do Doliny, moje doœwiadczenie i znajomoœæ terenu okaza³y siê bardzo przydatne.
 	AI_Output(self,other,"DIA_MiltenOW_Hello_YES_03_03");	//Dlatego Najwy¿sza Rada wys³a³a mnie tutaj jako magiczne wsparcie dla ca³ej ekspedycji.
-	b_milten_gorndiegolester();
-	Info_ClearChoices(dia_miltenow_hello);
-	Info_AddChoice(dia_miltenow_hello,"Oczywiœcie, ¿e ich pamiêtam!",dia_miltenow_hello_friends);
-	Info_AddChoice(dia_miltenow_hello,"Te imiona nic mi nie mówi¹.",dia_miltenow_hello_forget);
+	B_Milten_GornDiegoLester();
+	Info_ClearChoices(DIA_MiltenOW_Hello);
+	Info_AddChoice(DIA_MiltenOW_Hello,"Oczywiœcie, ¿e ich pamiêtam!",DIA_MiltenOW_Hello_Friends);
+	Info_AddChoice(DIA_MiltenOW_Hello,"Te imiona nic mi nie mówi¹.",DIA_MiltenOW_Hello_Forget);
 };
 
-func void dia_miltenow_hello_no()
+func void DIA_MiltenOW_Hello_NO()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Hello_NO_15_00");	//A powinienem ich pamiêtaæ?
 	AI_Output(self,other,"DIA_MiltenOW_Hello_NO_03_01");	//Przeszed³eœ przez niez³e piek³o, co?
-	b_milten_gorndiegolester();
-	Info_ClearChoices(dia_miltenow_hello);
-	Info_AddChoice(dia_miltenow_hello,"Jak siê maj¹ sprawy?",dia_miltenow_hello_friends);
-	Info_AddChoice(dia_miltenow_hello,"Te imiona nic mi nie mówi¹.",dia_miltenow_hello_forget);
+	B_Milten_GornDiegoLester();
+	Info_ClearChoices(DIA_MiltenOW_Hello);
+	Info_AddChoice(DIA_MiltenOW_Hello,"Jak siê maj¹ sprawy?",DIA_MiltenOW_Hello_Friends);
+	Info_AddChoice(DIA_MiltenOW_Hello,"Te imiona nic mi nie mówi¹.",DIA_MiltenOW_Hello_Forget);
 };
 
-func void dia_miltenow_hello_friends()
+func void DIA_MiltenOW_Hello_Friends()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Hello_Friends_15_00");	//Oczywiœcie, ¿e ich pamiêtam!
 	AI_Output(self,other,"DIA_MiltenOW_Hello_Friends_03_01");	//Có¿, Gorn i Diego daleko nie zaszli. Zostali schwytani w Dolinie przez paladynów.
 	AI_Output(self,other,"DIA_MiltenOW_Hello_Friends_03_02");	//Tylko Lesterowi uda³o siê prysn¹æ, chocia¿ nie wiem, gdzie siê teraz podziewa.
-	if(Npc_KnowsInfo(other,dia_lester_hello))
+	if(Npc_KnowsInfo(other,DIA_Lester_Hello))
 	{
 		AI_Output(other,self,"DIA_MiltenOW_Hello_Friends_15_03");	//Spotka³em Lestera. Jest u Xardasa.
 		AI_Output(self,other,"DIA_MiltenOW_Hello_Friends_03_04");	//Przynajmniej jedna dobra wiadomoœæ.
 	};
 	AI_Output(self,other,"DIA_MiltenOW_Hello_Friends_03_05");	//Có¿, nie mam dla ciebie ¿adnych dobrych wieœci.
-	KNOWS_DIEGO = TRUE;
-	Info_ClearChoices(dia_miltenow_hello);
+	Knows_Diego = TRUE;
+	Info_ClearChoices(DIA_MiltenOW_Hello);
 };
 
-func void dia_miltenow_hello_forget()
+func void DIA_MiltenOW_Hello_Forget()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Hello_Forget_15_00");	//Te imiona nic mi nie mówi¹.
 	AI_Output(self,other,"DIA_MiltenOW_Hello_Forget_03_01");	//Wiele zapomnia³eœ... Zostawmy zatem przesz³oœæ i skoncentrujmy siê na teraŸniejszoœci.
 	AI_Output(self,other,"DIA_MiltenOW_Hello_Forget_03_02");	//Mimo ¿e nie prezentuje siê ona najlepiej.
-	Info_ClearChoices(dia_miltenow_hello);
+	Info_ClearChoices(DIA_MiltenOW_Hello);
 };
 
 
-instance DIA_MILTENOW_BERICHT(C_INFO)
+instance DIA_MiltenOW_Bericht(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 3;
-	condition = dia_miltenow_bericht_condition;
-	information = dia_miltenow_bericht_info;
+	condition = DIA_MiltenOW_Bericht_Condition;
+	information = DIA_MiltenOW_Bericht_Info;
 	permanent = FALSE;
 	description = "Jak siê maj¹ sprawy?";
 };
 
 
-func int dia_miltenow_bericht_condition()
+func int DIA_MiltenOW_Bericht_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_miltenow_hello))
+	if(Npc_KnowsInfo(other,DIA_MiltenOW_Hello))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_miltenow_bericht_info()
+func void DIA_MiltenOW_Bericht_Info()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Bericht_15_00");	//Jak siê maj¹ sprawy?
 	AI_Output(self,other,"DIA_MiltenOW_Bericht_03_01");	//Paladyni przybyli tutaj, ¿eby zgromadziæ jak najwiêcej magicznej rudy.
@@ -126,26 +126,26 @@ func void dia_miltenow_bericht_info()
 };
 
 
-instance DIA_MILTENOW_ERZ(C_INFO)
+instance DIA_MiltenOW_Erz(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 4;
-	condition = dia_miltenow_erz_condition;
-	information = dia_miltenow_erz_info;
+	condition = DIA_MiltenOW_Erz_Condition;
+	information = DIA_MiltenOW_Erz_Info;
 	permanent = FALSE;
 	description = "Ile rudy zgromadziliœcie do tej pory?";
 };
 
 
-func int dia_miltenow_erz_condition()
+func int DIA_MiltenOW_Erz_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_miltenow_bericht))
+	if(Npc_KnowsInfo(other,DIA_MiltenOW_Bericht))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_miltenow_erz_info()
+func void DIA_MiltenOW_Erz_Info()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Erz_15_00");	//Ile rudy zgromadziliœcie do tej pory?
 	AI_Output(self,other,"DIA_MiltenOW_Erz_03_01");	//Ile rudy? Ani bry³ki! Od jakiegoœ czasu nie mamy ¿adnych wieœci od górników.
@@ -154,229 +154,229 @@ func void dia_miltenow_erz_info()
 };
 
 
-instance DIA_MILTENOW_WO(C_INFO)
+instance DIA_MiltenOW_Wo(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 5;
-	condition = dia_miltenow_wo_condition;
-	information = dia_miltenow_wo_info;
+	condition = DIA_MiltenOW_Wo_Condition;
+	information = DIA_MiltenOW_Wo_Info;
 	permanent = FALSE;
 	description = "Gdzie s¹ teraz Gorn i Diego?";
 };
 
 
-func int dia_miltenow_wo_condition()
+func int DIA_MiltenOW_Wo_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_miltenow_hello) && (KNOWS_DIEGO == TRUE))
+	if(Npc_KnowsInfo(other,DIA_MiltenOW_Hello) && (Knows_Diego == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_miltenow_wo_info()
+func void DIA_MiltenOW_Wo_Info()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Wo_Forget_15_00");	//Gdzie s¹ teraz Gorn i Diego?
 	AI_Output(self,other,"DIA_MiltenOW_Wo_Forget_03_01");	//Có¿. Gorn siedzi w tutejszym lochu za stawianie oporu paladynom.
 	AI_Output(self,other,"DIA_MiltenOW_Wo_Forget_03_02");	//Diego zosta³ przydzielony do grupy górników. Porozmawiaj z paladynem imieniem Parcival. To on dobiera³ ludzi.
-	KNOWSABOUTGORN = TRUE;
-	SEARCHFORDIEGO = LOG_RUNNING;
+	KnowsAboutGorn = TRUE;
+	SearchForDiego = LOG_Running;
 };
 
 
-instance DIA_MILTENOW_GORN(C_INFO)
+instance DIA_MiltenOW_Gorn(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 5;
-	condition = dia_miltenow_gorn_condition;
-	information = dia_miltenow_gorn_info;
+	condition = DIA_MiltenOW_Gorn_Condition;
+	information = DIA_MiltenOW_Gorn_Info;
 	permanent = FALSE;
 	description = "ChodŸmy uwolniæ Gorna!";
 };
 
 
-func int dia_miltenow_gorn_condition()
+func int DIA_MiltenOW_Gorn_Condition()
 {
-	if((KNOWSABOUTGORN == TRUE) && (KAPITEL == 2))
+	if((KnowsAboutGorn == TRUE) && (Kapitel == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_miltenow_gorn_info()
+func void DIA_MiltenOW_Gorn_Info()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Gorn_15_00");	//ChodŸmy uwolniæ Gorna!
 	AI_Output(self,other,"DIA_MiltenOW_Gorn_03_01");	//To nie takie proste! Gorn jest skazañcem.
 	AI_Output(self,other,"DIA_MiltenOW_Gorn_03_02");	//Przy odrobinie szczêœcia Garond wyznaczy jak¹œ grzywnê, po której zap³aceniu Gorn odzyska wolnoœæ.
 	AI_Output(other,self,"DIA_MiltenOW_Gorn_15_03");	//Tak, to mo¿liwe...
 	AI_Output(self,other,"DIA_MiltenOW_Gorn_03_04");	//Daj mi znaæ, gdybyœ siê czegoœ dowiedzia³.
-	Log_CreateTopic(TOPIC_RESCUEGORN,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_RESCUEGORN,LOG_RUNNING);
-	b_logentry(TOPIC_RESCUEGORN,"Kapitan Garond kaza³ wsadziæ Gorna do wiêzienia. Mo¿e uda nam siê go jakoœ uwolniæ.");
+	Log_CreateTopic(TOPIC_RescueGorn,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_RescueGorn,LOG_Running);
+	B_LogEntry(TOPIC_RescueGorn,"Kapitan Garond kaza³ wsadziæ Gorna do wiêzienia. Mo¿e uda nam siê go jakoœ uwolniæ.");
 };
 
 
-instance DIA_MILTENOW_PREIS(C_INFO)
+instance DIA_MiltenOW_Preis(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 5;
-	condition = dia_miltenow_preis_condition;
-	information = dia_miltenow_preis_info;
+	condition = DIA_MiltenOW_Preis_Condition;
+	information = DIA_MiltenOW_Preis_Info;
 	permanent = FALSE;
 	description = "Garond domaga siê 1000 sztuk z³ota za uwolnienie Gorna.";
 };
 
 
-func int dia_miltenow_preis_condition()
+func int DIA_MiltenOW_Preis_Condition()
 {
-	if((MIS_RESCUEGORN == LOG_RUNNING) && (KAPITEL == 2))
+	if((MIS_RescueGorn == LOG_Running) && (Kapitel == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_miltenow_preis_info()
+func void DIA_MiltenOW_Preis_Info()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Preis_15_00");	//Garond domaga siê 1000 sztuk z³ota za uwolnienie Gorna.
 	AI_Output(self,other,"DIA_MiltenOW_Preis_03_01");	//Niez³a sumka. Mogê dorzuciæ 250 sztuk z mojej kieszeni.
-	b_giveinvitems(self,other,5113,250);
-	b_logentry(TOPIC_RESCUEGORN,"Milten da³ mi 250 sztuk z³ota, abym zap³aci³ za wypuszczenie Gorna z wiêzienia.");
+	B_GiveInvItems(self,other,ItMi_Gold,250);
+	B_LogEntry(TOPIC_RescueGorn,"Milten da³ mi 250 sztuk z³ota, abym zap³aci³ za wypuszczenie Gorna z wiêzienia.");
 };
 
 
-instance DIA_MILTENOW_MEHR(C_INFO)
+instance DIA_MiltenOW_Mehr(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 5;
-	condition = dia_miltenow_mehr_condition;
-	information = dia_miltenow_mehr_info;
+	condition = DIA_MiltenOW_Mehr_Condition;
+	information = DIA_MiltenOW_Mehr_Info;
 	permanent = FALSE;
 	description = "To za ma³o. Muszê jakoœ zdobyæ ca³¹ resztê.";
 };
 
 
-func int dia_miltenow_mehr_condition()
+func int DIA_MiltenOW_Mehr_Condition()
 {
-	if((MIS_RESCUEGORN == LOG_RUNNING) && (KAPITEL == 2) && (Npc_HasItems(other,itmi_gold) < 1000) && Npc_KnowsInfo(other,dia_miltenow_preis))
+	if((MIS_RescueGorn == LOG_Running) && (Kapitel == 2) && (Npc_HasItems(other,ItMi_Gold) < 1000) && Npc_KnowsInfo(other,DIA_MiltenOW_Preis))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_miltenow_mehr_info()
+func void DIA_MiltenOW_Mehr_Info()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Mehr_15_00");	//To za ma³o. Muszê jakoœ zdobyæ ca³¹ resztê.
 	AI_Output(self,other,"DIA_MiltenOW_Mehr_03_01");	//Zdobyæ wiêcej z³ota... hmmm. Diego jest w tym specjalist¹, ale go tu nie ma...
 	AI_Output(self,other,"DIA_MiltenOW_Mehr_03_02");	//Mo¿e sam Gorn od³o¿y³ gdzieœ trochê z³ota? Powinniœmy siê tego dowiedzieæ.
 	AI_Output(self,other,"DIA_MiltenOW_Mehr_03_03");	//Czekaj. Napiszê do niego list. Spróbuj go jakoœ przemyciæ do lochu.
-	b_giveinvitems(self,other,5731,1);
-	b_logentry(TOPIC_RESCUEGORN,"Milten da³ mi wiadomoœæ dla Gorna. Jeœli zdo³am j¹ przemyciæ do wiêzienia, mo¿e dowiedziemy siê, czy Gorn posiada jakieœ zapasy z³ota.");
+	B_GiveInvItems(self,other,ItWr_LetterForGorn_MIS,1);
+	B_LogEntry(TOPIC_RescueGorn,"Milten da³ mi wiadomoœæ dla Gorna. Jeœli zdo³am j¹ przemyciæ do wiêzienia, mo¿e dowiedziemy siê, czy Gorn posiada jakieœ zapasy z³ota.");
 };
 
 
-instance DIA_MILTENOW_EQUIPMENT(C_INFO)
+instance DIA_MiltenOW_Equipment(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 5;
-	condition = dia_miltenow_equipment_condition;
-	information = dia_miltenow_equipment_info;
+	condition = DIA_MiltenOW_Equipment_Condition;
+	information = DIA_MiltenOW_Equipment_Info;
 	permanent = FALSE;
 	description = "Masz mo¿e dla mnie jakieœ wyposa¿enie?";
 };
 
 
-func int dia_miltenow_equipment_condition()
+func int DIA_MiltenOW_Equipment_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_garond_equipment) && (other.guild == GIL_KDF))
+	if(Npc_KnowsInfo(other,DIA_Garond_Equipment) && (other.guild == GIL_KDF))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_miltenow_equipment_info()
+func void DIA_MiltenOW_Equipment_Info()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Equipmentt_15_00");	//Masz mo¿e dla mnie jakieœ wyposa¿enie? Garond kaza³ mi odwiedziæ kopalnie.
 	AI_Output(self,other,"DIA_MiltenOW_Equipment_03_01");	//Sk¹d niby mia³bym je wzi¹æ? Jeœli chcesz, mogê ci daæ runiczny kamieñ.
-	b_giveinvitems(self,other,5086,1);
+	B_GiveInvItems(self,other,ItMi_RuneBlank,1);
 };
 
 
-instance DIA_MILTENOW_VERSTECK(C_INFO)
+instance DIA_MiltenOW_Versteck(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 1;
-	condition = dia_miltenow_versteck_condition;
-	information = dia_miltenow_versteck_info;
+	condition = DIA_MiltenOW_Versteck_Condition;
+	information = DIA_MiltenOW_Versteck_Info;
 	permanent = FALSE;
 	important = FALSE;
 	description = "Mam odpowiedŸ od Gorna...";
 };
 
 
-func int dia_miltenow_versteck_condition()
+func int DIA_MiltenOW_Versteck_Condition()
 {
-	if((GORNSTREASURE == TRUE) && (Npc_HasItems(other,itmi_gornstreasure_mis) <= 0) && (GORNS_BEUTEL == FALSE) && (KAPITEL == 2))
+	if((GornsTreasure == TRUE) && (Npc_HasItems(other,ItMi_GornsTreasure_MIS) <= 0) && (Gorns_Beutel == FALSE) && (Kapitel == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_miltenow_versteck_info()
+func void DIA_MiltenOW_Versteck_Info()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Versteck_15_00");	//Mam odpowiedŸ od Gorna. Podobno ukry³ z³oto gdzieœ przy po³udniowej bramie.
 	AI_Output(self,other,"DIA_MiltenOW_Versteck_03_01");	//DAWNEJ po³udniowej bramie, chcia³eœ powiedzieæ. Smok obróci³ j¹ w zupe³n¹ ruinê.
 	AI_Output(other,self,"DIA_MiltenOW_Versteck_15_02");	//Jak siê tam dostaæ?
 	AI_Output(self,other,"DIA_MiltenOW_Versteck_03_03");	//To niedaleko tarana orków. Po³udniowa brama by³a na prawo od niego.
 	AI_Output(self,other,"DIA_MiltenOW_Versteck_03_04");	//To nie bêdzie ³atwy spacerek. Uwa¿aj na siebie i œpiesz siê!
-	b_logentry(TOPIC_RESCUEGORN,"By³a po³udniowa brama znajduje siê na prawo od orkowego tarana. Gorn ukry³ z³oto gdzieœ w tej okolicy.");
+	B_LogEntry(TOPIC_RescueGorn,"By³a po³udniowa brama znajduje siê na prawo od orkowego tarana. Gorn ukry³ z³oto gdzieœ w tej okolicy.");
 };
 
 
-instance DIA_MILTENOW_FREI(C_INFO)
+instance DIA_MiltenOW_Frei(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 5;
-	condition = dia_miltenow_frei_condition;
-	information = dia_miltenow_frei_info;
+	condition = DIA_MiltenOW_Frei_Condition;
+	information = DIA_MiltenOW_Frei_Info;
 	permanent = FALSE;
 	description = "Uwolni³em Gorna.";
 };
 
 
-func int dia_miltenow_frei_condition()
+func int DIA_MiltenOW_Frei_Condition()
 {
-	if((MIS_RESCUEGORN == LOG_SUCCESS) && (KAPITEL == 2))
+	if((MIS_RescueGorn == LOG_SUCCESS) && (Kapitel == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_miltenow_frei_info()
+func void DIA_MiltenOW_Frei_Info()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Frei_15_00");	//Uwolni³em Gorna.
 	AI_Output(self,other,"DIA_MiltenOW_Frei_03_01");	//Dobra robota. Zastanówmy siê, co dalej.
 };
 
 
-instance DIA_MILTENOW_LEHREN(C_INFO)
+instance DIA_MiltenOW_Lehren(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 9;
-	condition = dia_miltenow_lehren_condition;
-	information = dia_miltenow_lehren_info;
+	condition = DIA_MiltenOW_Lehren_Condition;
+	information = DIA_MiltenOW_Lehren_Info;
 	permanent = FALSE;
 	description = "Mo¿esz mnie czegoœ nauczyæ?";
 };
 
 
-func int dia_miltenow_lehren_condition()
+func int DIA_MiltenOW_Lehren_Condition()
 {
-	if((other.guild == GIL_KDF) && (KAPITEL == 2))
+	if((other.guild == GIL_KDF) && (Kapitel == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_miltenow_lehren_info()
+func void DIA_MiltenOW_Lehren_Info()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Lehren_15_00");	//Mo¿esz mnie czegoœ nauczyæ?
 	AI_Output(self,other,"DIA_MiltenOW_Lehren_03_01");	//Mogê nauczyæ ciê niektórych zaklêæ z drugiego krêgu magii albo zwiêkszyæ trochê twoj¹ magiczn¹ moc.
@@ -384,31 +384,31 @@ func void dia_miltenow_lehren_info()
 };
 
 
-instance DIA_MILTENOW_TEACHCIRCLE2(C_INFO)
+instance DIA_MiltenOW_TeachCircle2(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 91;
-	condition = dia_miltenow_teachcircle2_condition;
-	information = dia_miltenow_teachcircle2_info;
+	condition = DIA_MiltenOW_TeachCircle2_Condition;
+	information = DIA_MiltenOW_TeachCircle2_Info;
 	permanent = TRUE;
 	description = "WprowadŸ mnie do drugiego krêgu magii!";
 };
 
 
-func int dia_miltenow_teachcircle2_condition()
+func int DIA_MiltenOW_TeachCircle2_Condition()
 {
-	if((other.guild == GIL_KDF) && Npc_KnowsInfo(other,dia_miltenow_lehren) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) < 2))
+	if((other.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_MiltenOW_Lehren) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) < 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_miltenow_teachcircle2_info()
+func void DIA_MiltenOW_TeachCircle2_Info()
 {
 	AI_Output(other,self,"DIA_Milten_Add_15_00");	//WprowadŸ mnie do drugiego krêgu magii!
 	AI_Output(self,other,"DIA_Milten_Add_03_01");	//W zasadzie powinien siê tym zaj¹æ któryœ z nauczycieli naszego zakonu...
 	AI_Output(self,other,"DIA_Milten_Add_03_02");	//... ale w tej sytuacji mo¿emy chyba zrobiæ wyj¹tek.
-	if(b_teachmagiccircle(self,other,2))
+	if(B_TeachMagicCircle(self,other,2))
 	{
 		AI_Output(self,other,"DIA_Milten_Add_03_03");	//Nie wiem, czy pamiêtam oficjaln¹ formu³kê...
 		AI_Output(self,other,"DIA_Milten_Add_03_04");	//Oto wkraczasz w drugi kr¹g magii... Eee... Magia wska¿e ci drogê, ale to twoje czyny ciê ni¹ poprowadz¹... Czy coœ w tym stylu...
@@ -417,43 +417,43 @@ func void dia_miltenow_teachcircle2_info()
 };
 
 
-instance DIA_MILTENOW_TEACH(C_INFO)
+instance DIA_MiltenOW_Teach(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 90;
-	condition = dia_miltenow_teach_condition;
-	information = dia_miltenow_teach_info;
+	condition = DIA_MiltenOW_Teach_Condition;
+	information = DIA_MiltenOW_Teach_Info;
 	permanent = TRUE;
 	description = "Chcê siê nauczyæ nowych zaklêæ.";
 };
 
 
-func int dia_miltenow_teach_condition()
+func int DIA_MiltenOW_Teach_Condition()
 {
-	if((other.guild == GIL_KDF) && Npc_KnowsInfo(other,dia_miltenow_lehren) && (KAPITEL == 2))
+	if((other.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_MiltenOW_Lehren) && (Kapitel == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_miltenow_teach_info()
+func void DIA_MiltenOW_Teach_Info()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Teach_15_00");	//Chcê siê nauczyæ nowych zaklêæ.
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 2)
 	{
-		Info_ClearChoices(dia_miltenow_teach);
-		Info_AddChoice(dia_miltenow_teach,DIALOG_BACK,dia_miltenow_teach_back);
-		if(PLAYER_TALENT_RUNES[SPL_WINDFIST] == FALSE)
+		Info_ClearChoices(DIA_MiltenOW_Teach);
+		Info_AddChoice(DIA_MiltenOW_Teach,Dialog_Back,DIA_MiltenOW_Teach_BACK);
+		if(PLAYER_TALENT_RUNES[SPL_WindFist] == FALSE)
 		{
-			Info_AddChoice(dia_miltenow_teach,b_buildlearnstring(NAME_SPL_WINDFIST,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_miltenow_teach_windfist);
+			Info_AddChoice(DIA_MiltenOW_Teach,B_BuildLearnString(NAME_SPL_WINDFIST,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_MiltenOW_Teach_Windfist);
 		};
-		if((PLAYER_TALENT_RUNES[SPL_INSTANTFIREBALL] == FALSE) && (PLAYER_TALENT_RUNES[SPL_FIREBOLT] == TRUE))
+		if((PLAYER_TALENT_RUNES[SPL_InstantFireball] == FALSE) && (PLAYER_TALENT_RUNES[SPL_Firebolt] == TRUE))
 		{
-			Info_AddChoice(dia_miltenow_teach,b_buildlearnstring(NAME_SPL_INSTANTFIREBALL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_miltenow_teach_feuerball);
+			Info_AddChoice(DIA_MiltenOW_Teach,B_BuildLearnString(NAME_SPL_InstantFireball,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_MiltenOW_Teach_Feuerball);
 		};
-		if(PLAYER_TALENT_RUNES[SPL_ICEBOLT] == FALSE)
+		if(PLAYER_TALENT_RUNES[SPL_Icebolt] == FALSE)
 		{
-			Info_AddChoice(dia_miltenow_teach,b_buildlearnstring(NAME_SPL_ICEBOLT,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_miltenow_teach_eispfeil);
+			Info_AddChoice(DIA_MiltenOW_Teach,B_BuildLearnString(NAME_SPL_Icebolt,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_MiltenOW_Teach_Eispfeil);
 		};
 	}
 	else
@@ -462,103 +462,103 @@ func void dia_miltenow_teach_info()
 	};
 };
 
-func void dia_miltenow_teach_back()
+func void DIA_MiltenOW_Teach_BACK()
 {
-	Info_ClearChoices(dia_miltenow_teach);
+	Info_ClearChoices(DIA_MiltenOW_Teach);
 };
 
-func void dia_miltenow_teach_windfist()
+func void DIA_MiltenOW_Teach_Windfist()
 {
-	b_teachplayertalentrunes(self,other,SPL_WINDFIST);
+	B_TeachPlayerTalentRunes(self,other,SPL_WindFist);
 };
 
-func void dia_miltenow_teach_feuerball()
+func void DIA_MiltenOW_Teach_Feuerball()
 {
-	b_teachplayertalentrunes(self,other,SPL_INSTANTFIREBALL);
+	B_TeachPlayerTalentRunes(self,other,SPL_InstantFireball);
 };
 
-func void dia_miltenow_teach_eispfeil()
+func void DIA_MiltenOW_Teach_Eispfeil()
 {
-	b_teachplayertalentrunes(self,other,SPL_ICEBOLT);
+	B_TeachPlayerTalentRunes(self,other,SPL_Icebolt);
 };
 
 
-instance DIA_MILTENOW_MANA(C_INFO)
+instance DIA_MiltenOW_Mana(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 100;
-	condition = dia_miltenow_mana_condition;
-	information = dia_miltenow_mana_info;
+	condition = DIA_MiltenOW_Mana_Condition;
+	information = DIA_MiltenOW_Mana_Info;
 	permanent = TRUE;
 	description = "Chcê zwiêkszyæ moj¹ magiczn¹ moc.";
 };
 
 
-func int dia_miltenow_mana_condition()
+func int DIA_MiltenOW_Mana_Condition()
 {
-	if((other.guild == GIL_KDF) && Npc_KnowsInfo(other,dia_miltenow_lehren) && (other.attribute[ATR_MANA_MAX] < 100) && (KAPITEL == 2))
+	if((other.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_MiltenOW_Lehren) && (other.attribute[ATR_MANA_MAX] < 100) && (Kapitel == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_miltenow_mana_info()
+func void DIA_MiltenOW_Mana_Info()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Mana_15_00");	//Chcê zwiêkszyæ moj¹ magiczn¹ moc.
-	Info_ClearChoices(dia_miltenow_mana);
-	Info_AddChoice(dia_miltenow_mana,DIALOG_BACK,dia_miltenow_mana_back);
-	Info_AddChoice(dia_miltenow_mana,b_buildlearnstring(PRINT_LEARNMANA1,b_getlearncostattribute(other,ATR_MANA_MAX)),dia_miltenow_mana_1);
-	Info_AddChoice(dia_miltenow_mana,b_buildlearnstring(PRINT_LEARNMANA5,b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_miltenow_mana_5);
+	Info_ClearChoices(DIA_MiltenOW_Mana);
+	Info_AddChoice(DIA_MiltenOW_Mana,Dialog_Back,DIA_MiltenOW_Mana_BACK);
+	Info_AddChoice(DIA_MiltenOW_Mana,B_BuildLearnString(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),DIA_MiltenOW_Mana_1);
+	Info_AddChoice(DIA_MiltenOW_Mana,B_BuildLearnString(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),DIA_MiltenOW_Mana_5);
 };
 
-func void dia_miltenow_mana_back()
+func void DIA_MiltenOW_Mana_BACK()
 {
 	if(other.attribute[ATR_MANA_MAX] >= 100)
 	{
 		AI_Output(self,other,"DIA_MiltenOW_Mana_03_00");	//Twoja magiczna moc i tak jest ogromna. Obawiam siê, ¿e nie mogê ci pomóc.
 	};
-	Info_ClearChoices(dia_miltenow_mana);
+	Info_ClearChoices(DIA_MiltenOW_Mana);
 };
 
-func void dia_miltenow_mana_1()
+func void DIA_MiltenOW_Mana_1()
 {
-	b_teachattributepoints(self,other,ATR_MANA_MAX,1,100);
-	Info_ClearChoices(dia_miltenow_mana);
-	Info_AddChoice(dia_miltenow_mana,DIALOG_BACK,dia_miltenow_mana_back);
-	Info_AddChoice(dia_miltenow_mana,b_buildlearnstring(PRINT_LEARNMANA1,b_getlearncostattribute(other,ATR_MANA_MAX)),dia_miltenow_mana_1);
-	Info_AddChoice(dia_miltenow_mana,b_buildlearnstring(PRINT_LEARNMANA5,b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_miltenow_mana_5);
+	B_TeachAttributePoints(self,other,ATR_MANA_MAX,1,100);
+	Info_ClearChoices(DIA_MiltenOW_Mana);
+	Info_AddChoice(DIA_MiltenOW_Mana,Dialog_Back,DIA_MiltenOW_Mana_BACK);
+	Info_AddChoice(DIA_MiltenOW_Mana,B_BuildLearnString(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),DIA_MiltenOW_Mana_1);
+	Info_AddChoice(DIA_MiltenOW_Mana,B_BuildLearnString(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),DIA_MiltenOW_Mana_5);
 };
 
-func void dia_miltenow_mana_5()
+func void DIA_MiltenOW_Mana_5()
 {
-	b_teachattributepoints(self,other,ATR_MANA_MAX,5,100);
-	Info_ClearChoices(dia_miltenow_mana);
-	Info_AddChoice(dia_miltenow_mana,DIALOG_BACK,dia_miltenow_mana_back);
-	Info_AddChoice(dia_miltenow_mana,b_buildlearnstring(PRINT_LEARNMANA1,b_getlearncostattribute(other,ATR_MANA_MAX)),dia_miltenow_mana_1);
-	Info_AddChoice(dia_miltenow_mana,b_buildlearnstring(PRINT_LEARNMANA5,b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_miltenow_mana_5);
+	B_TeachAttributePoints(self,other,ATR_MANA_MAX,5,100);
+	Info_ClearChoices(DIA_MiltenOW_Mana);
+	Info_AddChoice(DIA_MiltenOW_Mana,Dialog_Back,DIA_MiltenOW_Mana_BACK);
+	Info_AddChoice(DIA_MiltenOW_Mana,B_BuildLearnString(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),DIA_MiltenOW_Mana_1);
+	Info_AddChoice(DIA_MiltenOW_Mana,B_BuildLearnString(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),DIA_MiltenOW_Mana_5);
 };
 
 
-instance DIA_MILTENOW_PERM(C_INFO)
+instance DIA_MiltenOW_Perm(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 101;
-	condition = dia_miltenow_perm_condition;
-	information = dia_miltenow_perm_info;
+	condition = DIA_MiltenOW_Perm_Condition;
+	information = DIA_MiltenOW_Perm_Info;
 	permanent = TRUE;
 	description = "Czym siê tutaj zajmujesz?";
 };
 
 
-func int dia_miltenow_perm_condition()
+func int DIA_MiltenOW_Perm_Condition()
 {
-	if((KAPITEL == 2) && (Npc_KnowsInfo(other,dia_miltenow_frei) == FALSE))
+	if((Kapitel == 2) && (Npc_KnowsInfo(other,DIA_MiltenOW_Frei) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_miltenow_perm_info()
+func void DIA_MiltenOW_Perm_Info()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Perm_15_00");	//Czym siê tutaj zajmujesz?
 	AI_Output(self,other,"DIA_MiltenOW_Perm_03_01");	//Mia³em sprawdzaæ czystoœæ zgromadzonej rudy, ale na to przyjdzie mi chyba jeszcze poczekaæ.
@@ -566,26 +566,26 @@ func void dia_miltenow_perm_info()
 };
 
 
-instance DIA_MILTENOW_PLAN(C_INFO)
+instance DIA_MiltenOW_Plan(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 101;
-	condition = dia_miltenow_plan_condition;
-	information = dia_miltenow_plan_info;
+	condition = DIA_MiltenOW_Plan_Condition;
+	information = DIA_MiltenOW_Plan_Info;
 	permanent = TRUE;
 	description = "Co zamierzasz dalej robiæ?";
 };
 
 
-func int dia_miltenow_plan_condition()
+func int DIA_MiltenOW_Plan_Condition()
 {
-	if((KAPITEL == 2) && Npc_KnowsInfo(other,dia_miltenow_frei))
+	if((Kapitel == 2) && Npc_KnowsInfo(other,DIA_MiltenOW_Frei))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_miltenow_plan_info()
+func void DIA_MiltenOW_Plan_Info()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Plan_15_00");	//Co zamierzasz dalej robiæ?
 	AI_Output(self,other,"DIA_MiltenOW_Plan_03_01");	//Wróciæ do klasztoru. Zaczekam tutaj jeszcze trochê, ale skoro Gorn znów jest na wolnoœci, mogê siê z nim zabraæ.
@@ -596,51 +596,51 @@ func void dia_miltenow_plan_info()
 };
 
 
-instance DIA_MILTENOW_PICKPOCKET(C_INFO)
+instance DIA_MiltenOW_PICKPOCKET(C_Info)
 {
-	npc = pc_mage_ow;
+	npc = PC_Mage_OW;
 	nr = 888;
-	condition = dia_miltenow_pickpocket_condition;
-	information = dia_miltenow_pickpocket_info;
+	condition = DIA_MiltenOW_PICKPOCKET_Condition;
+	information = DIA_MiltenOW_PICKPOCKET_Info;
 	permanent = TRUE;
 	description = "(Kradzie¿ tej mikstury bêdzie trudnym zadaniem)";
 };
 
 
-func int dia_miltenow_pickpocket_condition()
+func int DIA_MiltenOW_PICKPOCKET_Condition()
 {
-	if((self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == FALSE) && (Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == TRUE) && (other.attribute[ATR_DEXTERITY] >= (80 - THEFTDIFF)))
+	if((self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == TRUE) && (other.attribute[ATR_DEXTERITY] >= (80 - Theftdiff)))
 	{
 		return 1;
 	};
 };
 
-func void dia_miltenow_pickpocket_info()
+func void DIA_MiltenOW_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_miltenow_pickpocket);
-	Info_AddChoice(dia_miltenow_pickpocket,DIALOG_BACK,dia_miltenow_pickpocket_back);
-	Info_AddChoice(dia_miltenow_pickpocket,DIALOG_PICKPOCKET,dia_miltenow_pickpocket_doit);
+	Info_ClearChoices(DIA_MiltenOW_PICKPOCKET);
+	Info_AddChoice(DIA_MiltenOW_PICKPOCKET,Dialog_Back,DIA_MiltenOW_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_MiltenOW_PICKPOCKET,DIALOG_PICKPOCKET,DIA_MiltenOW_PICKPOCKET_DoIt);
 };
 
-func void dia_miltenow_pickpocket_doit()
+func void DIA_MiltenOW_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 80)
 	{
-		CreateInvItems(self,itpo_perm_mana,1);
-		b_giveinvitems(self,other,5259,1);
-		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
-		b_giveplayerxp(XP_AMBIENT);
-		Info_ClearChoices(dia_miltenow_pickpocket);
+		CreateInvItems(self,ItPo_Perm_Mana,1);
+		B_GiveInvItems(self,other,ItPo_Perm_Mana,1);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+		B_GivePlayerXP(XP_Ambient);
+		Info_ClearChoices(DIA_MiltenOW_PICKPOCKET);
 	}
 	else
 	{
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_THEFT,1);
+		B_Attack(self,other,AR_Theft,1);
 	};
 };
 
-func void dia_miltenow_pickpocket_back()
+func void DIA_MiltenOW_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_miltenow_pickpocket);
+	Info_ClearChoices(DIA_MiltenOW_PICKPOCKET);
 };
 

@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_SWAMPSHARK(C_NPC)
+prototype Mst_Default_Swampshark(C_Npc)
 {
 	name[0] = "W¹¿ B³otny";
 	guild = GIL_SWAMPSHARK;
@@ -21,24 +21,24 @@ prototype MST_DEFAULT_SWAMPSHARK(C_NPC)
 	fight_tactic = FAI_SWAMPSHARK;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_swampshark()
+func void B_SetVisuals_Swampshark()
 {
 	Mdl_SetVisual(self,"Swampshark.mds");
 	Mdl_SetVisualBody(self,"Swa_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance SWAMPSHARK(MST_DEFAULT_SWAMPSHARK)
+instance Swampshark(Mst_Default_Swampshark)
 {
-	b_setvisuals_swampshark();
+	B_SetVisuals_Swampshark();
 	Npc_SetToFistMode(self);
 };
 

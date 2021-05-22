@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_WARG(C_NPC)
+prototype Mst_Default_Warg(C_Npc)
 {
 	name[0] = "Warg";
 	guild = GIL_WOLF;
@@ -21,35 +21,35 @@ prototype MST_DEFAULT_WARG(C_NPC)
 	fight_tactic = FAI_WOLF;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_LONG;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	aivar[AIV_MM_PACKHUNTER] = TRUE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_LONG;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar[AIV_MM_Packhunter] = TRUE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_warg()
+func void B_SetVisuals_WARG()
 {
 	Mdl_SetVisual(self,"Wolf.mds");
 	Mdl_SetVisualBody(self,"Warg_Body2",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
-func void b_setvisuals_blackwolf()
+func void B_SetVisuals_BLACKWOLF()
 {
 	Mdl_SetVisual(self,"Wolf.mds");
 	Mdl_SetVisualBody(self,"Warg_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance WARG(MST_DEFAULT_WARG)
+instance Warg(Mst_Default_Warg)
 {
-	b_setvisuals_warg();
+	B_SetVisuals_WARG();
 	Npc_SetToFistMode(self);
 };
 
-instance BLACKWOLF(MST_DEFAULT_WARG)
+instance BlackWolf(Mst_Default_Warg)
 {
 	name[0] = "Czarny Wilk";
 	level = 6;
@@ -66,7 +66,7 @@ instance BLACKWOLF(MST_DEFAULT_WARG)
 	protection[PROT_FIRE] = 12;
 	protection[PROT_FLY] = 12;
 	protection[PROT_MAGIC] = 12;
-	b_setvisuals_blackwolf();
+	B_SetVisuals_BLACKWOLF();
 	Npc_SetToFistMode(self);
 };
 

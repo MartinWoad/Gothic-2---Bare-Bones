@@ -1,117 +1,117 @@
 
-func void b_say_gold(var C_NPC slf,var C_NPC oth,var int goldamount)
+func void B_Say_Gold(var C_Npc slf,var C_Npc oth,var int goldAmount)
 {
-	if(goldamount == 1000)
+	if(goldAmount == 1000)
 	{
-		b_say(slf,oth,"$GOLD_1000");
+		B_Say(slf,oth,"$GOLD_1000");
 	};
-	if(goldamount == 950)
+	if(goldAmount == 950)
 	{
-		b_say(slf,oth,"$GOLD_950");
+		B_Say(slf,oth,"$GOLD_950");
 	};
-	if(goldamount == 900)
+	if(goldAmount == 900)
 	{
-		b_say(slf,oth,"$GOLD_900");
+		B_Say(slf,oth,"$GOLD_900");
 	};
-	if(goldamount == 850)
+	if(goldAmount == 850)
 	{
-		b_say(slf,oth,"$GOLD_850");
+		B_Say(slf,oth,"$GOLD_850");
 	};
-	if(goldamount == 800)
+	if(goldAmount == 800)
 	{
-		b_say(slf,oth,"$GOLD_800");
+		B_Say(slf,oth,"$GOLD_800");
 	};
-	if(goldamount == 750)
+	if(goldAmount == 750)
 	{
-		b_say(slf,oth,"$GOLD_750");
+		B_Say(slf,oth,"$GOLD_750");
 	};
-	if(goldamount == 700)
+	if(goldAmount == 700)
 	{
-		b_say(slf,oth,"$GOLD_700");
+		B_Say(slf,oth,"$GOLD_700");
 	};
-	if(goldamount == 650)
+	if(goldAmount == 650)
 	{
-		b_say(slf,oth,"$GOLD_650");
+		B_Say(slf,oth,"$GOLD_650");
 	};
-	if(goldamount == 600)
+	if(goldAmount == 600)
 	{
-		b_say(slf,oth,"$GOLD_600");
+		B_Say(slf,oth,"$GOLD_600");
 	};
-	if(goldamount == 550)
+	if(goldAmount == 550)
 	{
-		b_say(slf,oth,"$GOLD_550");
+		B_Say(slf,oth,"$GOLD_550");
 	};
-	if(goldamount == 500)
+	if(goldAmount == 500)
 	{
-		b_say(slf,oth,"$GOLD_500");
+		B_Say(slf,oth,"$GOLD_500");
 	};
-	if(goldamount == 450)
+	if(goldAmount == 450)
 	{
-		b_say(slf,oth,"$GOLD_450");
+		B_Say(slf,oth,"$GOLD_450");
 	};
-	if(goldamount == 400)
+	if(goldAmount == 400)
 	{
-		b_say(slf,oth,"$GOLD_400");
+		B_Say(slf,oth,"$GOLD_400");
 	};
-	if(goldamount == 350)
+	if(goldAmount == 350)
 	{
-		b_say(slf,oth,"$GOLD_350");
+		B_Say(slf,oth,"$GOLD_350");
 	};
-	if(goldamount == 300)
+	if(goldAmount == 300)
 	{
-		b_say(slf,oth,"$GOLD_300");
+		B_Say(slf,oth,"$GOLD_300");
 	};
-	if(goldamount == 250)
+	if(goldAmount == 250)
 	{
-		b_say(slf,oth,"$GOLD_250");
+		B_Say(slf,oth,"$GOLD_250");
 	};
-	if(goldamount == 200)
+	if(goldAmount == 200)
 	{
-		b_say(slf,oth,"$GOLD_200");
+		B_Say(slf,oth,"$GOLD_200");
 	};
-	if(goldamount == 150)
+	if(goldAmount == 150)
 	{
-		b_say(slf,oth,"$GOLD_150");
+		B_Say(slf,oth,"$GOLD_150");
 	};
-	if(goldamount == 100)
+	if(goldAmount == 100)
 	{
-		b_say(slf,oth,"$GOLD_100");
+		B_Say(slf,oth,"$GOLD_100");
 	};
-	if(goldamount == 90)
+	if(goldAmount == 90)
 	{
-		b_say(slf,oth,"$GOLD_90");
+		B_Say(slf,oth,"$GOLD_90");
 	};
-	if(goldamount == 80)
+	if(goldAmount == 80)
 	{
-		b_say(slf,oth,"$GOLD_80");
+		B_Say(slf,oth,"$GOLD_80");
 	};
-	if(goldamount == 70)
+	if(goldAmount == 70)
 	{
-		b_say(slf,oth,"$GOLD_70");
+		B_Say(slf,oth,"$GOLD_70");
 	};
-	if(goldamount == 60)
+	if(goldAmount == 60)
 	{
-		b_say(slf,oth,"$GOLD_60");
+		B_Say(slf,oth,"$GOLD_60");
 	};
-	if(goldamount == 50)
+	if(goldAmount == 50)
 	{
-		b_say(slf,oth,"$GOLD_50");
+		B_Say(slf,oth,"$GOLD_50");
 	};
-	if(goldamount == 40)
+	if(goldAmount == 40)
 	{
-		b_say(slf,oth,"$GOLD_40");
+		B_Say(slf,oth,"$GOLD_40");
 	};
-	if(goldamount == 30)
+	if(goldAmount == 30)
 	{
-		b_say(slf,oth,"$GOLD_30");
+		B_Say(slf,oth,"$GOLD_30");
 	};
-	if(goldamount == 20)
+	if(goldAmount == 20)
 	{
-		b_say(slf,oth,"$GOLD_20");
+		B_Say(slf,oth,"$GOLD_20");
 	};
-	if(goldamount == 10)
+	if(goldAmount == 10)
 	{
-		b_say(slf,oth,"$GOLD_10");
+		B_Say(slf,oth,"$GOLD_10");
 	};
 };
 

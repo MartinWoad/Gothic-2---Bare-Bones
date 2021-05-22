@@ -1,111 +1,111 @@
 
-instance DIA_ENGARDO_EXIT(C_INFO)
+instance DIA_Engardo_EXIT(C_Info)
 {
-	npc = sld_841_engardo;
+	npc = SLD_841_Engardo;
 	nr = 999;
-	condition = dia_engardo_exit_condition;
-	information = dia_engardo_exit_info;
+	condition = DIA_Engardo_EXIT_Condition;
+	information = DIA_Engardo_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_engardo_exit_condition()
+func int DIA_Engardo_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_engardo_exit_info()
+func void DIA_Engardo_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ENGARDO_HALLO(C_INFO)
+instance DIA_Engardo_HALLO(C_Info)
 {
-	npc = sld_841_engardo;
+	npc = SLD_841_Engardo;
 	nr = 4;
-	condition = dia_engardo_hallo_condition;
-	information = dia_engardo_hallo_info;
+	condition = DIA_Engardo_HALLO_Condition;
+	information = DIA_Engardo_HALLO_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_engardo_hallo_condition()
+func int DIA_Engardo_HALLO_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
 
-var int chance;
+var int Chance;
 
-func void dia_engardo_hallo_info()
+func void DIA_Engardo_HALLO_Info()
 {
-	AKILS_SLDSTILLTHERE = TRUE;
-	if((CHANCE == FALSE) && (other.guild == GIL_NONE))
+	Akils_SLDStillthere = TRUE;
+	if((Chance == FALSE) && (other.guild == GIL_NONE))
 	{
 		AI_Output(self,other,"DIA_Engardo_HALLO_13_00");	//Hej, prostaku, zgubi³eœ siê? Wracaj lepiej na pole, dogl¹daæ swojej brukwi.
-		CHANCE = 1;
+		Chance = 1;
 		AI_StopProcessInfos(self);
 	}
-	else if(CHANCE == 1)
+	else if(Chance == 1)
 	{
 		AI_Output(self,other,"DIA_Engardo_HALLO_13_01");	//Znalaz³eœ siê w niew³aœciwym miejscu w niew³aœciwym czasie...
 		AI_Output(self,other,"DIA_Engardo_HALLO_13_02");	//...wiêc jeœli chcesz prze¿yæ, to lepiej zabieraj siê st¹d czym prêdzej, jasne?
-		CHANCE = 2;
+		Chance = 2;
 		AI_StopProcessInfos(self);
 	}
-	else if(CHANCE == 2)
+	else if(Chance == 2)
 	{
 		AI_Output(self,other,"DIA_Engardo_HALLO_13_03");	//Coœ nie tak z twoimi uszami, czy ¿ycie ju¿ ca³kiem ci zbrzyd³o? Zreszt¹ niewa¿ne, ju¿ i tak za póŸno.
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_SUDDENENEMYINFERNO,1);
+		B_Attack(self,other,AR_SuddenEnemyInferno,1);
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Engardo_HALLO_13_01");	//Znalaz³eœ siê w niew³aœciwym miejscu w niew³aœciwym czasie...
 		AI_Output(self,other,"DIA_Engardo_HALLO_13_02");	//...wiêc jeœli chcesz prze¿yæ, to lepiej zabieraj siê st¹d czym prêdzej, jasne?
-		CHANCE = 2;
+		Chance = 2;
 		AI_StopProcessInfos(self);
 	};
 };
 
 
-instance DIA_ENGARDO_PICKPOCKET(C_INFO)
+instance DIA_Engardo_PICKPOCKET(C_Info)
 {
-	npc = sld_841_engardo;
+	npc = SLD_841_Engardo;
 	nr = 900;
-	condition = dia_engardo_pickpocket_condition;
-	information = dia_engardo_pickpocket_info;
+	condition = DIA_Engardo_PICKPOCKET_Condition;
+	information = DIA_Engardo_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_engardo_pickpocket_condition()
+func int DIA_Engardo_PICKPOCKET_Condition()
 {
-	return c_beklauen(34,45);
+	return C_Beklauen(34,45);
 };
 
-func void dia_engardo_pickpocket_info()
+func void DIA_Engardo_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_engardo_pickpocket);
-	Info_AddChoice(dia_engardo_pickpocket,DIALOG_BACK,dia_engardo_pickpocket_back);
-	Info_AddChoice(dia_engardo_pickpocket,DIALOG_PICKPOCKET,dia_engardo_pickpocket_doit);
+	Info_ClearChoices(DIA_Engardo_PICKPOCKET);
+	Info_AddChoice(DIA_Engardo_PICKPOCKET,Dialog_Back,DIA_Engardo_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Engardo_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Engardo_PICKPOCKET_DoIt);
 };
 
-func void dia_engardo_pickpocket_doit()
+func void DIA_Engardo_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_engardo_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Engardo_PICKPOCKET);
 };
 
-func void dia_engardo_pickpocket_back()
+func void DIA_Engardo_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_engardo_pickpocket);
+	Info_ClearChoices(DIA_Engardo_PICKPOCKET);
 };
 

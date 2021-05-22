@@ -1,64 +1,64 @@
 
-instance PC_PSIONIC(NPC_DEFAULT)
+instance PC_Psionic(Npc_Default)
 {
 	name[0] = "Lester";
 	guild = GIL_NONE;
 	id = 4;
 	voice = 13;
 	flags = NPC_FLAG_IMMORTAL;
-	npctype = NPCTYPE_FRIEND;
-	b_setattributestochapter(self,6);
+	npcType = NPCTYPE_FRIEND;
+	B_SetAttributesToChapter(self,6);
 	fight_tactic = FAI_HUMAN_MASTER;
-	b_createambientinv(self);
-	EquipItem(self,itmw_kriegshammer2);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_P_LESTER,BODYTEX_P,4849);
+	B_CreateAmbientInv(self);
+	EquipItem(self,ItMw_Kriegshammer2);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_P_Lester,BodyTex_P,ITAR_Lester);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_4;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_4;
 };
 
 
-func void rtn_start_4()
+func void Rtn_Start_4()
 {
-	ta_sit_campfire(8,0,23,0,"NW_XARDAS_TOWER_LESTER");
-	ta_sit_campfire(23,0,8,0,"NW_XARDAS_TOWER_LESTER");
+	TA_Sit_Campfire(8,0,23,0,"NW_XARDAS_TOWER_LESTER");
+	TA_Sit_Campfire(23,0,8,0,"NW_XARDAS_TOWER_LESTER");
 };
 
-func void rtn_xardas_4()
+func void Rtn_Xardas_4()
 {
-	ta_sleep(8,0,23,0,"NW_XARDAS_TOWER_IN1_31");
-	ta_sleep(23,0,8,0,"NW_XARDAS_TOWER_IN1_31");
+	TA_Sleep(8,0,23,0,"NW_XARDAS_TOWER_IN1_31");
+	TA_Sleep(23,0,8,0,"NW_XARDAS_TOWER_IN1_31");
 };
 
-func void rtn_xardasweg_4()
+func void Rtn_XardasWeg_4()
 {
-	ta_stand_guarding(8,0,23,0,"NW_XARDAS_TOWER_02");
-	ta_stand_guarding(23,0,8,0,"NW_XARDAS_TOWER_02");
+	TA_Stand_Guarding(8,0,23,0,"NW_XARDAS_TOWER_02");
+	TA_Stand_Guarding(23,0,8,0,"NW_XARDAS_TOWER_02");
 };
 
-func void rtn_waitforplayer_4()
+func void Rtn_WaitForPlayer_4()
 {
-	ta_stand_armscrossed(8,0,23,0,"LEVELCHANGE");
-	ta_stand_armscrossed(23,0,8,0,"LEVELCHANGE");
+	TA_Stand_ArmsCrossed(8,0,23,0,"LEVELCHANGE");
+	TA_Stand_ArmsCrossed(23,0,8,0,"LEVELCHANGE");
 };
 
-func void rtn_waitforship_4()
+func void Rtn_WaitForShip_4()
 {
-	ta_smalltalk(8,0,23,0,"NW_CITY_WAY_TO_SHIP_19");
-	ta_smalltalk(23,0,8,0,"NW_CITY_WAY_TO_SHIP_19");
+	TA_Smalltalk(8,0,23,0,"NW_CITY_WAY_TO_SHIP_19");
+	TA_Smalltalk(23,0,8,0,"NW_CITY_WAY_TO_SHIP_19");
 };
 
-func void rtn_shipoff_4()
+func void Rtn_ShipOff_4()
 {
-	ta_stand_guarding(8,0,23,0,"NW_XARDAS_TOWER_02");
-	ta_stand_guarding(23,0,8,0,"NW_XARDAS_TOWER_02");
+	TA_Stand_Guarding(8,0,23,0,"NW_XARDAS_TOWER_02");
+	TA_Stand_Guarding(23,0,8,0,"NW_XARDAS_TOWER_02");
 };
 
-func void rtn_ship_4()
+func void Rtn_Ship_4()
 {
-	ta_smalltalk(8,0,23,0,"SHIP_CREW_19");
-	ta_smalltalk(23,0,8,0,"SHIP_CREW_19");
+	TA_Smalltalk(8,0,23,0,"SHIP_CREW_19");
+	TA_Smalltalk(23,0,8,0,"SHIP_CREW_19");
 };
 

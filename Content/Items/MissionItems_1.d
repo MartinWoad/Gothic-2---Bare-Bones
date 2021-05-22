@@ -1,10 +1,10 @@
 
-instance ITKE_XARDAS(C_ITEM)
+instance ItKe_Xardas(C_Item)
 {
 	name = "Klucz";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -12,7 +12,7 @@ instance ITKE_XARDAS(C_ITEM)
 	text[3] = "Xardasa.";
 };
 
-instance ITWR_CANTHARS_KOMPROBRIEF_MIS(C_ITEM)
+instance ItWr_Canthars_KomproBrief_MIS(C_Item)
 {
 	name = "List";
 	mainflag = ITEM_KAT_DOCS;
@@ -20,136 +20,136 @@ instance ITWR_CANTHARS_KOMPROBRIEF_MIS(C_ITEM)
 	value = 0;
 	visual = "ItWr_Scroll_01.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = use_canthars_komprobrief;
-	scemename = "MAP";
+	on_state[0] = Use_Canthars_KomproBrief;
+	scemeName = "MAP";
 	description = "List Canthara do Sary.";
 };
 
 
-func void use_canthars_komprobrief()
+func void Use_Canthars_KomproBrief()
 {
-	var int ndocid;
-	ndocid = Doc_Create();
-	Doc_SetPages(ndocid,1);
-	Doc_SetPage(ndocid,0,"letters.TGA",0);
-	Doc_SetFont(ndocid,-1,FONT_BOOK);
-	Doc_SetMargins(ndocid,-1,50,50,50,50,1);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"     Ostatnie Ostrze¿enie");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_SetFont(ndocid,0,FONT_BOOK);
-	Doc_PrintLine(ndocid,0,"        Wielokrotnie ju¿ ostrzega³em ciê");
-	Doc_PrintLine(ndocid,0,"        w niezwykle przyjazny sposób,");
-	Doc_PrintLine(ndocid,0,"        ¿e broñ zamówiona u ciebie tydzieñ");
-	Doc_PrintLine(ndocid,0,"        temu jest mi wyj¹tkowo pilnie");
-	Doc_PrintLine(ndocid,0,"        potrzebna.");
-	Doc_PrintLine(ndocid,0,"        Jeœli szybko siê nie odezwiesz w tej");
-	Doc_PrintLine(ndocid,0,"        sprawie, to zmusisz mnie do zmiany");
-	Doc_PrintLine(ndocid,0,"        sposobu, w jaki ciê traktujê. Mam");
-	Doc_PrintLine(ndocid,0,"        nadziejê, ¿e siê dobrze rozumiemy!!!");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"            Onar");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_SetMargins(ndocid,-1,200,50,50,50,1);
-	Doc_Show(ndocid);
+	var int nDocID;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,1);
+	Doc_SetPage(nDocID,0,"letters.TGA",0);
+	Doc_SetFont(nDocID,-1,FONT_Book);
+	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"     Ostatnie Ostrze¿enie");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_SetFont(nDocID,0,FONT_Book);
+	Doc_PrintLine(nDocID,0,"        Wielokrotnie ju¿ ostrzega³em ciê");
+	Doc_PrintLine(nDocID,0,"        w niezwykle przyjazny sposób,");
+	Doc_PrintLine(nDocID,0,"        ¿e broñ zamówiona u ciebie tydzieñ");
+	Doc_PrintLine(nDocID,0,"        temu jest mi wyj¹tkowo pilnie");
+	Doc_PrintLine(nDocID,0,"        potrzebna.");
+	Doc_PrintLine(nDocID,0,"        Jeœli szybko siê nie odezwiesz w tej");
+	Doc_PrintLine(nDocID,0,"        sprawie, to zmusisz mnie do zmiany");
+	Doc_PrintLine(nDocID,0,"        sposobu, w jaki ciê traktujê. Mam");
+	Doc_PrintLine(nDocID,0,"        nadziejê, ¿e siê dobrze rozumiemy!!!");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"            Onar");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
+	Doc_Show(nDocID);
 };
 
 
-instance ITMW_2H_ROD(C_ITEM)
+instance ItMw_2h_Rod(C_Item)
 {
 	name = "Miecz Dwurêczny Roda";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_SLD2HSCHWERT;
-	damagetotal = 35;
+	value = Value_Sld2hSchwert;
+	damageTotal = 35;
 	damagetype = DAM_EDGE;
-	range = RANGE_SLD2HSCHWERT;
+	range = Range_Sld2hSchwert;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 30;
 	visual = "ItMw_035_2h_sld_sword_01.3DS";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_CORAGONSSILBER(C_ITEM)
+instance ItMi_CoragonsSilber(C_Item)
 {
 	name = "Srebro Coragona";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SILVERCUP;
+	value = Value_SilverCup;
 	visual = "ItMi_SilverCup.3DS";
 	material = MAT_METAL;
 	description = name;
 	text[3] = "";
 	text[4] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_THEKLASPAKET(C_ITEM)
+instance ItMi_TheklasPaket(C_Item)
 {
 	name = "Paczka Thekli";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 0;
 	visual = "ItMi_Packet.3ds";
-	scemename = "MAPSEALED";
+	scemeName = "MAPSEALED";
 	material = MAT_LEATHER;
-	on_state[0] = use_theklaspacket;
+	on_state[0] = Use_TheklasPacket;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void use_theklaspacket()
+func void Use_TheklasPacket()
 {
-	CreateInvItems(hero,itpl_mana_herb_01,3);
-	CreateInvItems(hero,itpl_health_herb_02,1);
-	CreateInvItems(hero,itpl_speed_herb_01,1);
-	CreateInvItems(hero,itpl_blueplant,2);
-	Print(PRINT_GOTPLANTS);
+	CreateInvItems(hero,ItPl_Mana_Herb_01,3);
+	CreateInvItems(hero,ItPl_Health_Herb_02,1);
+	CreateInvItems(hero,ItPl_Speed_Herb_01,1);
+	CreateInvItems(hero,ItPl_Blueplant,2);
+	Print(PRINT_GotPlants);
 };
 
 
-instance ITMI_MARIASGOLDPLATE(C_ITEM)
+instance ItMi_MariasGoldPlate(C_Item)
 {
 	name = "Ciê¿ki Z³oty Talerz";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_GOLDPLATE;
+	value = Value_GoldPlate;
 	visual = "ItMi_GoldPlate.3DS";
 	material = MAT_METAL;
 	description = name;
 	text[2] = "Ozdobiono go stylizowanymi";
 	text[3] = "imionami Onara i Marii.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRI_VALENTINOSRING(C_ITEM)
+instance ItRi_ValentinosRing(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_PROTEDGE;
+	value = Value_Ri_ProtEdge;
 	visual = "ItRi_Prot_Edge_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_valentinosring;
-	on_unequip = unequip_valentinosring;
+	on_equip = Equip_ValentinosRing;
+	on_unequip = UnEquip_ValentinosRing;
 	description = "Pierœcieñ Valentina";
-	text[2] = NAME_PROT_EDGE;
-	count[2] = RI_PROTEDGE;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Prot_Edge;
+	count[2] = Ri_ProtEdge;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -157,25 +157,25 @@ instance ITRI_VALENTINOSRING(C_ITEM)
 };
 
 
-func void equip_valentinosring()
+func void Equip_ValentinosRing()
 {
-	self.protection[PROT_EDGE] += RI_PROTEDGE;
-	self.protection[PROT_BLUNT] += RI_PROTEDGE;
+	self.protection[PROT_EDGE] += Ri_ProtEdge;
+	self.protection[PROT_BLUNT] += Ri_ProtEdge;
 };
 
-func void unequip_valentinosring()
+func void UnEquip_ValentinosRing()
 {
-	self.protection[PROT_EDGE] -= RI_PROTEDGE;
-	self.protection[PROT_BLUNT] -= RI_PROTEDGE;
+	self.protection[PROT_EDGE] -= Ri_ProtEdge;
+	self.protection[PROT_BLUNT] -= Ri_ProtEdge;
 };
 
 
-instance ITKE_DEXTER(C_ITEM)
+instance ItKe_Dexter(C_Item)
 {
 	name = "Klucz";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -183,7 +183,7 @@ instance ITKE_DEXTER(C_ITEM)
 	text[3] = "Dextera.";
 };
 
-instance ITWR_KRAEUTERLISTE(C_ITEM)
+instance ItWr_Kraeuterliste(C_Item)
 {
 	name = "Lista";
 	mainflag = ITEM_KAT_DOCS;
@@ -191,44 +191,44 @@ instance ITWR_KRAEUTERLISTE(C_ITEM)
 	value = 0;
 	visual = "ItWr_Scroll_01.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = use_kraeuterliste;
-	scemename = "MAP";
+	on_state[0] = Use_Kraeuterliste;
+	scemeName = "MAP";
 	description = "Lista Zió³ Constantina";
 };
 
 
-func void use_kraeuterliste()
+func void Use_Kraeuterliste()
 {
-	var int ndocid;
-	ndocid = Doc_Create();
-	Doc_SetPages(ndocid,1);
-	Doc_SetPage(ndocid,0,"letters.TGA",0);
-	Doc_SetFont(ndocid,-1,FONT_BOOK);
-	Doc_SetMargins(ndocid,-1,50,50,50,50,1);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"Zio³a alchemiczne");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"Roœlina lecznicza");
-	Doc_PrintLine(ndocid,0,"Ziele lecznicze");
-	Doc_PrintLine(ndocid,0,"Korzeñ leczniczy");
-	Doc_PrintLine(ndocid,0,"Ognista pokrzywa");
-	Doc_PrintLine(ndocid,0,"Ogniste ziele");
-	Doc_PrintLine(ndocid,0,"Ognisty korzeñ");
-	Doc_PrintLine(ndocid,0,"Goblinie jagody");
-	Doc_PrintLine(ndocid,0,"Smoczy korzeñ");
-	Doc_PrintLine(ndocid,0,"Zêbate ziele");
-	Doc_PrintLine(ndocid,0,"Rdest polny");
-	Doc_PrintLine(ndocid,0,"Szczaw królewski");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Niech roœliny zbiera dla ciebie kandydat na ucznia - przekonasz siê, czy siê do czegoœ nadaje. ");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"Z powa¿aniem, Zuris.");
-	Doc_SetMargins(ndocid,-1,200,50,50,50,1);
-	Doc_Show(ndocid);
+	var int nDocID;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,1);
+	Doc_SetPage(nDocID,0,"letters.TGA",0);
+	Doc_SetFont(nDocID,-1,FONT_Book);
+	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"Zio³a alchemiczne");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"Roœlina lecznicza");
+	Doc_PrintLine(nDocID,0,"Ziele lecznicze");
+	Doc_PrintLine(nDocID,0,"Korzeñ leczniczy");
+	Doc_PrintLine(nDocID,0,"Ognista pokrzywa");
+	Doc_PrintLine(nDocID,0,"Ogniste ziele");
+	Doc_PrintLine(nDocID,0,"Ognisty korzeñ");
+	Doc_PrintLine(nDocID,0,"Goblinie jagody");
+	Doc_PrintLine(nDocID,0,"Smoczy korzeñ");
+	Doc_PrintLine(nDocID,0,"Zêbate ziele");
+	Doc_PrintLine(nDocID,0,"Rdest polny");
+	Doc_PrintLine(nDocID,0,"Szczaw królewski");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"Niech roœliny zbiera dla ciebie kandydat na ucznia - przekonasz siê, czy siê do czegoœ nadaje. ");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"Z powa¿aniem, Zuris.");
+	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
+	Doc_Show(nDocID);
 };
 
 
-instance ITWR_MANAREZEPT(C_ITEM)
+instance ItWr_ManaRezept(C_Item)
 {
 	name = "Receptura";
 	mainflag = ITEM_KAT_DOCS;
@@ -236,38 +236,38 @@ instance ITWR_MANAREZEPT(C_ITEM)
 	value = 20;
 	visual = "ItWr_Scroll_01.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = use_manarezept;
-	scemename = "MAP";
+	on_state[0] = Use_ManaRezept;
+	scemeName = "MAP";
 	description = "Receptura Esencji Magicznej";
 };
 
 
-func void use_manarezept()
+func void Use_ManaRezept()
 {
-	var int ndocid;
-	ndocid = Doc_Create();
-	Doc_SetPages(ndocid,1);
-	Doc_SetPage(ndocid,0,"letters.TGA",0);
-	Doc_SetFont(ndocid,-1,FONT_BOOK);
-	Doc_SetMargins(ndocid,-1,50,50,50,50,1);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"Mikstury Magiczne");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Do warzenia mikstur magicznych alchemik potrzebuje - oprócz umiejêtnoœci - tak¿e:");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"Ognistej pokrzywy");
-	Doc_PrintLine(ndocid,0,"Ognistego ziela");
-	Doc_PrintLine(ndocid,0,"Ognistego korzenia");
-	Doc_PrintLines(ndocid,0,"oraz");
-	Doc_PrintLine(ndocid,0,"Rdestu polnego");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"Mistrz Neoras");
-	Doc_SetMargins(ndocid,-1,200,50,50,50,1);
-	Doc_Show(ndocid);
+	var int nDocID;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,1);
+	Doc_SetPage(nDocID,0,"letters.TGA",0);
+	Doc_SetFont(nDocID,-1,FONT_Book);
+	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"Mikstury Magiczne");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"Do warzenia mikstur magicznych alchemik potrzebuje - oprócz umiejêtnoœci - tak¿e:");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"Ognistej pokrzywy");
+	Doc_PrintLine(nDocID,0,"Ognistego ziela");
+	Doc_PrintLine(nDocID,0,"Ognistego korzenia");
+	Doc_PrintLines(nDocID,0,"oraz");
+	Doc_PrintLine(nDocID,0,"Rdestu polnego");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"Mistrz Neoras");
+	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
+	Doc_Show(nDocID);
 };
 
 
-instance ITWR_PASSIERSCHEIN(C_ITEM)
+instance ItWr_Passierschein(C_Item)
 {
 	name = "Przepustka";
 	mainflag = ITEM_KAT_DOCS;
@@ -275,46 +275,46 @@ instance ITWR_PASSIERSCHEIN(C_ITEM)
 	value = 50;
 	visual = "ItWr_Scroll_01.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = usepassierschein;
-	scemename = "MAP";
+	on_state[0] = UsePassierschein;
+	scemeName = "MAP";
 	description = name;
 	text[3] = "Dziêki tym dokumentom nie";
 	text[4] = "zatrzymaj¹ mnie stra¿nicy miejscy.";
 };
 
 
-func void usepassierschein()
+func void UsePassierschein()
 {
-	var int ndocid;
-	ndocid = Doc_Create();
-	Doc_SetPages(ndocid,1);
-	Doc_SetPage(ndocid,0,"letters.TGA",0);
-	Doc_SetFont(ndocid,-1,FONT_BOOKHEADLINE);
-	Doc_SetMargins(ndocid,-1,50,50,50,50,1);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"     Przepustka");
-	Doc_PrintLine(ndocid,0,"            Khorinis    ");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_SetFont(ndocid,0,FONT_BOOK);
-	Doc_PrintLine(ndocid,0,"        Ten dokument uprawnia jego posiadacza");
-	Doc_PrintLine(ndocid,0,"        do swobodnego poruszania siê po dolnej czêœci");
-	Doc_PrintLine(ndocid,0,"        Khorinis przez czas nieograniczony.");
-	Doc_PrintLine(ndocid,0,"		");
-	Doc_PrintLine(ndocid,0,"		");
-	Doc_PrintLine(ndocid,0,"		");
-	Doc_PrintLine(ndocid,0,"            Larius,");
-	Doc_PrintLine(ndocid,0,"		");
-	Doc_PrintLine(ndocid,0,"            gubernator królewski");
-	Doc_PrintLine(ndocid,0,"		");
-	Doc_PrintLine(ndocid,0,"		");
-	Doc_PrintLine(ndocid,0,"		");
-	Doc_SetMargins(ndocid,-1,200,50,50,50,1);
-	Doc_Show(ndocid);
+	var int nDocID;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,1);
+	Doc_SetPage(nDocID,0,"letters.TGA",0);
+	Doc_SetFont(nDocID,-1,FONT_BookHeadline);
+	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"     Przepustka");
+	Doc_PrintLine(nDocID,0,"            Khorinis    ");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_SetFont(nDocID,0,FONT_Book);
+	Doc_PrintLine(nDocID,0,"        Ten dokument uprawnia jego posiadacza");
+	Doc_PrintLine(nDocID,0,"        do swobodnego poruszania siê po dolnej czêœci");
+	Doc_PrintLine(nDocID,0,"        Khorinis przez czas nieograniczony.");
+	Doc_PrintLine(nDocID,0,"		");
+	Doc_PrintLine(nDocID,0,"		");
+	Doc_PrintLine(nDocID,0,"		");
+	Doc_PrintLine(nDocID,0,"            Larius,");
+	Doc_PrintLine(nDocID,0,"		");
+	Doc_PrintLine(nDocID,0,"            gubernator królewski");
+	Doc_PrintLine(nDocID,0,"		");
+	Doc_PrintLine(nDocID,0,"		");
+	Doc_PrintLine(nDocID,0,"		");
+	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
+	Doc_Show(nDocID);
 };
 
 
-instance ITMI_HERBPAKET(C_ITEM)
+instance ItMi_HerbPaket(C_Item)
 {
 	name = "Paczka Ziela";
 	mainflag = ITEM_KAT_NONE;
@@ -325,16 +325,16 @@ instance ITMI_HERBPAKET(C_ITEM)
 	description = name;
 	text[2] = "Ciê¿ka, lepi¹ca siê paczka,";
 	text[3] = "œmierdz¹ca bagiennym zielem.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = 200;
 };
 
-instance ITKE_STORAGE(C_ITEM)
+instance ItKe_Storage(C_Item)
 {
 	name = "Klucz do Magazynu";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -343,9 +343,9 @@ instance ITKE_STORAGE(C_ITEM)
 };
 
 
-const int HP_HERING = 20;
+const int HP_Hering = 20;
 
-instance ITFO_SMELLYFISH(C_ITEM)
+instance ItFo_SmellyFish(C_Item)
 {
 	name = "ŒledŸ";
 	mainflag = ITEM_KAT_NONE;
@@ -353,23 +353,23 @@ instance ITFO_SMELLYFISH(C_ITEM)
 	value = 0;
 	visual = "ItFo_Fish.3DS";
 	material = MAT_LEATHER;
-	scemename = "FOOD";
-	on_state[0] = use_smellyfish;
+	scemeName = "FOOD";
+	on_state[0] = Use_SmellyFish;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_HERING;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_FISH;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Hering;
+	text[5] = NAME_Value;
+	count[5] = Value_Fish;
 };
 
 
-func void use_smellyfish()
+func void Use_SmellyFish()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_HERING);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Hering);
 };
 
 
-instance ITFO_HALVORFISH_MIS(C_ITEM)
+instance ItFo_HalvorFish_MIS(C_Item)
 {
 	name = "Dziwna Ryba";
 	mainflag = ITEM_KAT_NONE;
@@ -377,22 +377,22 @@ instance ITFO_HALVORFISH_MIS(C_ITEM)
 	value = 0;
 	visual = "ItFo_Fish.3DS";
 	material = MAT_LEATHER;
-	scemename = "MAPSEALED";
-	on_state[0] = use_halvorfish;
+	scemeName = "MAPSEALED";
+	on_state[0] = Use_HalvorFish;
 	description = name;
 	text[2] = "Z t¹ ryb¹ jest coœ nie tak.";
 	text[3] = "Wygl¹da, jakby ktoœ j¹ pozszywa³...";
 };
 
 
-func void use_halvorfish()
+func void Use_HalvorFish()
 {
-	CreateInvItems(hero,itwr_halvormessage,1);
-	Print(PRINT_FISHLETTER);
+	CreateInvItems(hero,ItWr_HalvorMessage,1);
+	Print(PRINT_FishLetter);
 };
 
 
-instance ITWR_HALVORMESSAGE(C_ITEM)
+instance ItWr_HalvorMessage(C_Item)
 {
 	name = "Œmierdz¹ca Notatka";
 	mainflag = ITEM_KAT_DOCS;
@@ -400,72 +400,72 @@ instance ITWR_HALVORMESSAGE(C_ITEM)
 	value = 0;
 	visual = "ItWr_Scroll_01.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = usehalvormessage;
-	scemename = "MAP";
+	on_state[0] = UseHalvorMessage;
+	scemeName = "MAP";
 	description = name;
 	text[2] = "W rybie by³a schowana ta notatka.";
 };
 
 
-func void usehalvormessage()
+func void UseHalvorMessage()
 {
-	var int ndocid;
-	KNOWS_HALVOR = TRUE;
-	ndocid = Doc_Create();
-	Doc_SetPages(ndocid,1);
-	Doc_SetPage(ndocid,0,"letters.TGA",0);
-	Doc_SetFont(ndocid,-1,FONT_BOOK);
-	Doc_SetMargins(ndocid,-1,50,50,50,50,1);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"    Nie wychylajcie siê! ");
-	Doc_PrintLine(ndocid,0,"    Stra¿ zaczyna coœ podejrzewaæ.");
-	Doc_PrintLine(ndocid,0,"    Nic nie róbcie, dopóki znów siê nie odezwê!");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"                                                   Halvor");
-	Doc_Show(ndocid);
+	var int nDocID;
+	Knows_Halvor = TRUE;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,1);
+	Doc_SetPage(nDocID,0,"letters.TGA",0);
+	Doc_SetFont(nDocID,-1,FONT_Book);
+	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"    Nie wychylajcie siê! ");
+	Doc_PrintLine(nDocID,0,"    Stra¿ zaczyna coœ podejrzewaæ.");
+	Doc_PrintLine(nDocID,0,"    Nic nie róbcie, dopóki znów siê nie odezwê!");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"                                                   Halvor");
+	Doc_Show(nDocID);
 };
 
 
-instance ITMW_ALRIKSSWORD_MIS(C_ITEM)
+instance ItMw_AlriksSword_Mis(C_Item)
 {
 	name = "Miecz Alrika";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_MISSION | ITEM_SWD;
 	material = MAT_METAL;
 	value = 50;
-	damagetotal = 25;
+	damageTotal = 25;
 	damagetype = DAM_EDGE;
 	range = 70;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = 20;
 	visual = "ItMw_025_1h_Sld_Sword_01.3DS";
-	on_equip = equip_alrikssword;
-	on_unequip = unequip_alrikssword;
+	on_equip = Equip_AlriksSword;
+	on_unequip = UnEquip_AlriksSword;
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void equip_alrikssword()
+func void Equip_AlriksSword()
 {
 };
 
-func void unequip_alrikssword()
+func void UnEquip_AlriksSword()
 {
 };
 
 
-instance ITWR_VATRASMESSAGE(C_ITEM)
+instance ItWr_VatrasMessage(C_Item)
 {
 	name = "Zapieczêtowana Wiadomoœæ";
 	mainflag = ITEM_KAT_DOCS;
@@ -473,36 +473,36 @@ instance ITWR_VATRASMESSAGE(C_ITEM)
 	value = 0;
 	visual = "ItWr_Scroll_02.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = usevatrasmessage;
-	scemename = "MAPSEALED";
+	on_state[0] = UseVatrasMessage;
+	scemeName = "MAPSEALED";
 	description = name;
 	text[2] = "Wiadomoœæ od Vatrasa";
 	text[3] = "do Magów Ognia.";
 };
 
 
-func void usevatrasmessage()
+func void UseVatrasMessage()
 {
-	var int ndocid;
-	CreateInvItems(self,itwr_vatrasmessage_open,1);
-	ndocid = Doc_Create();
-	Doc_SetPages(ndocid,1);
-	Doc_SetPage(ndocid,0,"letters.TGA",0);
-	Doc_SetFont(ndocid,-1,FONT_BOOK);
-	Doc_SetMargins(ndocid,-1,50,50,50,50,1);
-	Doc_PrintLine(ndocid,0,"Drogi Isgarocie,");
-	Doc_PrintLines(ndocid,0,"wyczuwam coraz mocniej obecnoœæ nie znanej nam si³y.");
-	Doc_PrintLines(ndocid,0,"Czy to mo¿liwe, ¿e s³ugi Beliara nadchodz¹? Byæ mo¿e siê mylê,");
-	Doc_PrintLines(ndocid,0,"s¹dzê jednak, ¿e Ojciec Pyrokar powinien wzi¹æ sprawy w swoje rêce. ");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Oby nasze mod³y zosta³y wys³uchane.");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"Vatras");
-	Doc_Show(ndocid);
+	var int nDocID;
+	CreateInvItems(self,ItWr_VatrasMessage_Open,1);
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,1);
+	Doc_SetPage(nDocID,0,"letters.TGA",0);
+	Doc_SetFont(nDocID,-1,FONT_Book);
+	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
+	Doc_PrintLine(nDocID,0,"Drogi Isgarocie,");
+	Doc_PrintLines(nDocID,0,"wyczuwam coraz mocniej obecnoœæ nie znanej nam si³y.");
+	Doc_PrintLines(nDocID,0,"Czy to mo¿liwe, ¿e s³ugi Beliara nadchodz¹? Byæ mo¿e siê mylê,");
+	Doc_PrintLines(nDocID,0,"s¹dzê jednak, ¿e Ojciec Pyrokar powinien wzi¹æ sprawy w swoje rêce. ");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"Oby nasze mod³y zosta³y wys³uchane.");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"Vatras");
+	Doc_Show(nDocID);
 };
 
 
-instance ITWR_VATRASMESSAGE_OPEN(C_ITEM)
+instance ItWr_VatrasMessage_Open(C_Item)
 {
 	name = "Wiadomoœæ";
 	mainflag = ITEM_KAT_DOCS;
@@ -510,8 +510,8 @@ instance ITWR_VATRASMESSAGE_OPEN(C_ITEM)
 	value = 0;
 	visual = "ItWr_Scroll_01.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = usevatrasmessageopen;
-	scemename = "MAP";
+	on_state[0] = UseVatrasMessageOpen;
+	scemeName = "MAP";
 	description = name;
 	text[2] = "Wiadomoœæ od Vatrasa";
 	text[3] = "do Magów Ognia.";
@@ -519,27 +519,27 @@ instance ITWR_VATRASMESSAGE_OPEN(C_ITEM)
 };
 
 
-func void usevatrasmessageopen()
+func void UseVatrasMessageOpen()
 {
-	var int ndocid;
-	ndocid = Doc_Create();
-	Doc_SetPages(ndocid,1);
-	Doc_SetPage(ndocid,0,"letters.TGA",0);
-	Doc_SetFont(ndocid,-1,FONT_BOOK);
-	Doc_SetMargins(ndocid,-1,50,50,50,50,1);
-	Doc_PrintLine(ndocid,0,"Drogi Isgarocie,");
-	Doc_PrintLines(ndocid,0,"wyczuwam coraz mocniej obecnoœæ nie znanej nam si³y.");
-	Doc_PrintLines(ndocid,0,"Czy to mo¿liwe, ¿e s³ugi Beliara nadchodz¹? Byæ mo¿e siê mylê,");
-	Doc_PrintLines(ndocid,0,"s¹dzê jednak, ¿e Ojciec Pyrokar powinien wzi¹æ sprawy w swoje rêce. ");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Oby nasze mod³y zosta³y wys³uchane.");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"Vatras");
-	Doc_Show(ndocid);
+	var int nDocID;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,1);
+	Doc_SetPage(nDocID,0,"letters.TGA",0);
+	Doc_SetFont(nDocID,-1,FONT_Book);
+	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
+	Doc_PrintLine(nDocID,0,"Drogi Isgarocie,");
+	Doc_PrintLines(nDocID,0,"wyczuwam coraz mocniej obecnoœæ nie znanej nam si³y.");
+	Doc_PrintLines(nDocID,0,"Czy to mo¿liwe, ¿e s³ugi Beliara nadchodz¹? Byæ mo¿e siê mylê,");
+	Doc_PrintLines(nDocID,0,"s¹dzê jednak, ¿e Ojciec Pyrokar powinien wzi¹æ sprawy w swoje rêce. ");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"Oby nasze mod³y zosta³y wys³uchane.");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"Vatras");
+	Doc_Show(nDocID);
 };
 
 
-instance ITKE_HOTEL(C_ITEM)
+instance ItKe_Hotel(C_Item)
 {
 	name = "Klucz do Pokoju";
 	mainflag = ITEM_KAT_NONE;
@@ -552,7 +552,7 @@ instance ITKE_HOTEL(C_ITEM)
 	text[3] = "gospodzie.";
 };
 
-instance ITKE_THIEFGUILDKEY_MIS(C_ITEM)
+instance ItKe_ThiefGuildKey_MIS(C_Item)
 {
 	name = "Zardzewia³y Klucz";
 	mainflag = ITEM_KAT_NONE;
@@ -564,7 +564,7 @@ instance ITKE_THIEFGUILDKEY_MIS(C_ITEM)
 	text[2] = "Klucz ten nie opar³ siê dzia³aniu s³onej, morskiej wody.";
 };
 
-instance ITKE_THIEFGUILDKEY_HOTEL_MIS(C_ITEM)
+instance ItKe_ThiefGuildKey_Hotel_MIS(C_Item)
 {
 	name = "Zardzewia³y Klucz";
 	mainflag = ITEM_KAT_NONE;
@@ -576,7 +576,7 @@ instance ITKE_THIEFGUILDKEY_HOTEL_MIS(C_ITEM)
 	text[2] = "Klucz do piwnicy w gospodzie.";
 };
 
-instance ITKE_INNOS_MIS(C_ITEM)
+instance ItKe_Innos_MIS(C_Item)
 {
 	name = "Klucz";
 	mainflag = ITEM_KAT_NONE;
@@ -589,12 +589,12 @@ instance ITKE_INNOS_MIS(C_ITEM)
 	text[3] = "Innosa.";
 };
 
-instance ITKE_KLOSTERSCHATZ(C_ITEM)
+instance ItKe_KlosterSchatz(C_Item)
 {
 	name = "Klucz";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -602,12 +602,12 @@ instance ITKE_KLOSTERSCHATZ(C_ITEM)
 	text[3] = "klasztornego.";
 };
 
-instance ITKE_KLOSTERSTORE(C_ITEM)
+instance ItKe_KlosterStore(C_Item)
 {
 	name = "Klucz";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -615,12 +615,12 @@ instance ITKE_KLOSTERSTORE(C_ITEM)
 	text[3] = "klasztornej.";
 };
 
-instance ITKE_KDFPLAYER(C_ITEM)
+instance ItKe_KDFPlayer(C_Item)
 {
 	name = "Klucz";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -628,12 +628,12 @@ instance ITKE_KDFPLAYER(C_ITEM)
 	text[3] = "w klasztorze.";
 };
 
-instance ITKE_KLOSTERBIBLIOTHEK(C_ITEM)
+instance ItKe_KlosterBibliothek(C_Item)
 {
 	name = "Klucz";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -641,68 +641,68 @@ instance ITKE_KLOSTERBIBLIOTHEK(C_ITEM)
 	text[3] = "klasztornej.";
 };
 
-instance ITFO_SCHAFSWURST(C_ITEM)
+instance ItFo_Schafswurst(C_Item)
 {
 	name = "Owcza Kie³basa";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_SAUSAGE;
+	value = Value_Sausage;
 	visual = "ItFo_Sausage.3DS";
 	material = MAT_LEATHER;
-	scemename = "FOOD";
-	on_state[0] = use_schafswurst;
+	scemeName = "FOOD";
+	on_state[0] = Use_Schafswurst;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_SAUSAGE;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_SAUSAGE;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Sausage;
+	text[5] = NAME_Value;
+	count[5] = Value_Sausage;
 };
 
 
-func void use_schafswurst()
+func void Use_Schafswurst()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_SAUSAGE);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Sausage);
 };
 
 
-instance ITPO_PERM_LITTLEMANA(C_ITEM)
+instance ItPo_Perm_LittleMana(C_Item)
 {
-	name = NAME_TRANK;
+	name = NAME_Trank;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI;
 	value = 150;
 	visual = "ItPo_Perm_Mana.3ds";
 	material = MAT_GLAS;
-	on_state[0] = useitpo_littlemana;
-	scemename = "POTIONFAST";
+	on_state[0] = UseItPo_LittleMana;
+	scemeName = "POTIONFAST";
 	description = "Esencja Ducha";
-	text[1] = NAME_BONUS_MANAMAX;
+	text[1] = NAME_Bonus_ManaMax;
 	count[1] = 3;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void useitpo_littlemana()
+func void UseItPo_LittleMana()
 {
-	b_raiseattribute(self,ATR_MANA_MAX,1,TRUE,FALSE);
+	B_RaiseAttribute(self,ATR_MANA_MAX,1,TRUE,FALSE);
 	Npc_ChangeAttribute(self,ATR_MANA,1);
 };
 
 
-instance HOLY_HAMMER_MIS(C_ITEM)
+instance Holy_Hammer_MIS(C_Item)
 {
 	name = "Œwiêty M³ot";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_MISSION | ITEM_2HD_AXE;
 	material = MAT_METAL;
-	value = VALUE_HOLYHAMMER;
-	owner = nov_608_garwig;
-	damagetotal = DAMAGE_HOLYHAMMER;
+	value = Value_HolyHammer;
+	owner = Nov_608_Garwig;
+	damageTotal = Damage_HolyHammer;
 	damagetype = DAM_BLUNT;
-	range = RANGE_HOLYHAMMER;
+	range = Range_HolyHammer;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_HOLYHAMMER;
+	cond_value[2] = Condition_HolyHammer;
 	visual = "ItMw_030_2h_kdf_hammer_01.3DS";
 	description = name;
 	text[2] = "Obra¿enia:                   ??";
@@ -711,7 +711,7 @@ instance HOLY_HAMMER_MIS(C_ITEM)
 	text[5] = "Wartoœæ:  niemo¿liwa do ustalenia";
 };
 
-instance ITKE_MAGICCHEST(C_ITEM)
+instance ItKe_MagicChest(C_Item)
 {
 	name = "Stary Klucz";
 	mainflag = ITEM_KAT_NONE;
@@ -725,7 +725,7 @@ instance ITKE_MAGICCHEST(C_ITEM)
 	text[4] = "jak¹œ k³ódkê.";
 };
 
-instance ITWR_PASSAGE_MIS(C_ITEM)
+instance ItWr_Passage_MIS(C_Item)
 {
 	name = "Propozycja Lee dla Paladynów";
 	mainflag = ITEM_KAT_DOCS;
@@ -733,39 +733,39 @@ instance ITWR_PASSAGE_MIS(C_ITEM)
 	value = 0;
 	visual = "ItWr_Scroll_01.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = usepassage;
-	scemename = "MAP";
+	on_state[0] = UsePassage;
+	scemeName = "MAP";
 	description = name;
 	text[3] = "Dziêki tej wiadomoœci byæ mo¿e uda";
 	text[4] = "mi siê porozmawiaæ z Lordem Hagenem.";
 };
 
 
-func void usepassage()
+func void UsePassage()
 {
-	var int ndocid;
-	ndocid = Doc_Create();
-	Doc_SetPages(ndocid,1);
-	Doc_SetPage(ndocid,0,"letters.TGA",0);
-	Doc_SetFont(ndocid,-1,FONT_BOOK);
-	Doc_SetMargins(ndocid,-1,50,50,50,50,1);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"Szanowny Lordzie Hagenie,");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"obydwaj zdajemy sobie sprawê z sytuacji, wiêc przejdê od razu do rzeczy:");
-	Doc_PrintLines(ndocid,0,"uniewinnij mnie i moich ludzi wobec Jego Wysokoœci i samego Innosa.");
-	Doc_PrintLines(ndocid,0,"W zamian zobowi¹zujemy siê pomóc Ci w obronie miasta i okolicznych ziem.");
-	Doc_PrintLines(ndocid,0,"Osobiœcie dopilnujê te¿, by moi ludzie trzymali siê z dala od tutejszych farm - naturalnie oprócz zagród Onara, gdzie nadal bêdziemy stacjonowali.");
-	Doc_PrintLines(ndocid,0,"Wiem, ¿e statek, którym zamierzacie wróciæ na kontynent, mo¿e zabraæ kilka dodatkowych osób. Gdy bêdziecie ruszaæ w drogê, chcê pop³yn¹æ z wami.");
-	Doc_PrintLines(ndocid,0,"Zaklinam ciê: rozwa¿ dobrze moje s³owa i podejmij rozs¹dn¹ decyzjê.");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"Podpisano   Genera³ Lee");
-	Doc_SetMargins(ndocid,-1,200,50,50,50,1);
-	Doc_Show(ndocid);
+	var int nDocID;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,1);
+	Doc_SetPage(nDocID,0,"letters.TGA",0);
+	Doc_SetFont(nDocID,-1,FONT_Book);
+	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"Szanowny Lordzie Hagenie,");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"obydwaj zdajemy sobie sprawê z sytuacji, wiêc przejdê od razu do rzeczy:");
+	Doc_PrintLines(nDocID,0,"uniewinnij mnie i moich ludzi wobec Jego Wysokoœci i samego Innosa.");
+	Doc_PrintLines(nDocID,0,"W zamian zobowi¹zujemy siê pomóc Ci w obronie miasta i okolicznych ziem.");
+	Doc_PrintLines(nDocID,0,"Osobiœcie dopilnujê te¿, by moi ludzie trzymali siê z dala od tutejszych farm - naturalnie oprócz zagród Onara, gdzie nadal bêdziemy stacjonowali.");
+	Doc_PrintLines(nDocID,0,"Wiem, ¿e statek, którym zamierzacie wróciæ na kontynent, mo¿e zabraæ kilka dodatkowych osób. Gdy bêdziecie ruszaæ w drogê, chcê pop³yn¹æ z wami.");
+	Doc_PrintLines(nDocID,0,"Zaklinam ciê: rozwa¿ dobrze moje s³owa i podejmij rozs¹dn¹ decyzjê.");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"Podpisano   Genera³ Lee");
+	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
+	Doc_Show(nDocID);
 };
 
 
-instance ITWR_BANDITLETTER_MIS(C_ITEM)
+instance ItWr_BanditLetter_MIS(C_Item)
 {
 	name = "Wiadomoœæ";
 	mainflag = ITEM_KAT_DOCS;
@@ -773,49 +773,49 @@ instance ITWR_BANDITLETTER_MIS(C_ITEM)
 	value = 0;
 	visual = "ItWr_Scroll_01.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = usebanditletter;
-	scemename = "MAP";
+	on_state[0] = UseBanditLetter;
+	scemeName = "MAP";
 	description = name;
 	text[3] = "";
 	text[4] = "";
 };
 
 
-func void usebanditletter()
+func void UseBanditLetter()
 {
-	var int ndocid;
-	ndocid = Doc_Create();
-	Doc_SetPages(ndocid,1);
-	Doc_SetPage(ndocid,0,"letters.TGA",0);
-	Doc_SetMargins(ndocid,-1,50,50,50,50,1);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_SetFont(ndocid,0,FONT_BOOK);
-	Doc_PrintLine(ndocid,0,"Zatrzymujcie wszystkich, którzy");
-	Doc_PrintLine(ndocid,0,"przyjd¹ od strony gór.");
-	Doc_PrintLine(ndocid,0,"Jeœli ktoœ przekroczy prze³êcz,");
-	Doc_PrintLine(ndocid,0,"bêdzie to prawdopodobnie pewien");
-	Doc_PrintLine(ndocid,0,"starzec. Nie dajcie siê");
-	Doc_PrintLine(ndocid,0,"zwieœæ - to niebezpieczny mag.");
-	Doc_PrintLine(ndocid,0,"Miejcie na niego oko.");
-	Doc_PrintLine(ndocid,0,"		");
-	Doc_PrintLine(ndocid,0,"Mo¿e siê z nim skontaktowaæ cz³owiek,");
-	Doc_PrintLine(ndocid,0,"którego szukamy.");
-	Doc_PrintLine(ndocid,0,"Wraz z tym listem otrzymujecie");
-	Doc_PrintLine(ndocid,0,"30 sztuk z³ota.");
-	Doc_PrintLine(ndocid,0,"Kolejne 30 otrzyma osoba,");
-	Doc_PrintLine(ndocid,0,"która go zabije.");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"G³owê przynieœcie do starej kopalni.");
-	Doc_PrintLine(ndocid,0,"		");
-	Doc_PrintLine(ndocid,0,"D.");
-	Doc_PrintLine(ndocid,0,"		");
-	Doc_SetMargins(ndocid,-1,200,50,50,50,1);
-	Doc_Show(ndocid);
+	var int nDocID;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,1);
+	Doc_SetPage(nDocID,0,"letters.TGA",0);
+	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_SetFont(nDocID,0,FONT_Book);
+	Doc_PrintLine(nDocID,0,"Zatrzymujcie wszystkich, którzy");
+	Doc_PrintLine(nDocID,0,"przyjd¹ od strony gór.");
+	Doc_PrintLine(nDocID,0,"Jeœli ktoœ przekroczy prze³êcz,");
+	Doc_PrintLine(nDocID,0,"bêdzie to prawdopodobnie pewien");
+	Doc_PrintLine(nDocID,0,"starzec. Nie dajcie siê");
+	Doc_PrintLine(nDocID,0,"zwieœæ - to niebezpieczny mag.");
+	Doc_PrintLine(nDocID,0,"Miejcie na niego oko.");
+	Doc_PrintLine(nDocID,0,"		");
+	Doc_PrintLine(nDocID,0,"Mo¿e siê z nim skontaktowaæ cz³owiek,");
+	Doc_PrintLine(nDocID,0,"którego szukamy.");
+	Doc_PrintLine(nDocID,0,"Wraz z tym listem otrzymujecie");
+	Doc_PrintLine(nDocID,0,"30 sztuk z³ota.");
+	Doc_PrintLine(nDocID,0,"Kolejne 30 otrzyma osoba,");
+	Doc_PrintLine(nDocID,0,"która go zabije.");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"G³owê przynieœcie do starej kopalni.");
+	Doc_PrintLine(nDocID,0,"		");
+	Doc_PrintLine(nDocID,0,"D.");
+	Doc_PrintLine(nDocID,0,"		");
+	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
+	Doc_Show(nDocID);
 };
 
 
-instance ITWR_POSTER_MIS(C_ITEM)
+instance ItWr_Poster_MIS(C_Item)
 {
 	name = "List Goñczy";
 	mainflag = ITEM_KAT_DOCS;
@@ -823,30 +823,30 @@ instance ITWR_POSTER_MIS(C_ITEM)
 	value = 0;
 	visual = "ItWr_Scroll_01.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = useposter;
-	scemename = "MAP";
+	on_state[0] = UsePoster;
+	scemeName = "MAP";
 	description = name;
 	text[3] = "Moja podobizna!";
 	text[4] = "";
 };
 
 
-func void useposter()
+func void UsePoster()
 {
-	var int ndocid;
-	ndocid = Doc_Create();
-	Doc_SetPages(ndocid,1);
-	Doc_SetPage(ndocid,0,"Gesucht.TGA",0);
-	Doc_Show(ndocid);
+	var int nDocID;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,1);
+	Doc_SetPage(nDocID,0,"Gesucht.TGA",0);
+	Doc_Show(nDocID);
 };
 
 
-instance ITKE_BANDIT(C_ITEM)
+instance ItKe_Bandit(C_Item)
 {
 	name = "Klucz do Kufra";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -854,7 +854,7 @@ instance ITKE_BANDIT(C_ITEM)
 	text[3] = "do bandyty.";
 };
 
-instance ITMI_BALTRAMPAKET(C_ITEM)
+instance ItMi_BaltramPaket(C_Item)
 {
 	name = "Dostawa dla Baltrama";
 	mainflag = ITEM_KAT_NONE;
@@ -867,44 +867,44 @@ instance ITMI_BALTRAMPAKET(C_ITEM)
 	text[3] = "pe³na towarów.";
 };
 
-instance ITRW_BOW_L_03_MIS(C_ITEM)
+instance ItRw_Bow_L_03_MIS(C_Item)
 {
 	name = "£uk Myœliwski";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW | ITEM_MISSION;
 	material = MAT_WOOD;
-	value = VALUE_JAGDBOGEN;
-	damagetotal = DAMAGE_JAGDBOGEN;
+	value = Value_Jagdbogen;
+	damageTotal = Damage_Jagdbogen;
 	damagetype = DAM_POINT;
-	munition = itrw_arrow;
+	munition = ItRw_Arrow;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_JAGDBOGEN;
+	cond_value[2] = Condition_Jagdbogen;
 	visual = "ItRw_Bow_L_03.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
 	text[4] = "£uk myœliwski Bospera.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRI_PROT_POINT_01_MIS(C_ITEM)
+instance ItRi_Prot_Point_01_MIS(C_Item)
 {
 	name = "Pierœcieñ Constantina";
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING | ITEM_MISSION;
-	value = VALUE_RI_PROTPOINT;
+	value = Value_Ri_ProtPoint;
 	visual = "ItRi_Prot_Point_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_prot_point_01_mis;
-	on_unequip = unequip_itri_prot_point_01_mis;
+	on_equip = Equip_ItRi_Prot_Point_01_MIS;
+	on_unequip = UnEquip_ItRi_Prot_Point_01_MIS;
 	description = name;
-	text[2] = NAME_PROT_POINT;
-	count[2] = RI_PROTPOINT;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Prot_Point;
+	count[2] = Ri_ProtPoint;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -912,18 +912,18 @@ instance ITRI_PROT_POINT_01_MIS(C_ITEM)
 };
 
 
-func void equip_itri_prot_point_01_mis()
+func void Equip_ItRi_Prot_Point_01_MIS()
 {
-	self.protection[PROT_POINT] += RI_PROTPOINT;
+	self.protection[PROT_POINT] += Ri_ProtPoint;
 };
 
-func void unequip_itri_prot_point_01_mis()
+func void UnEquip_ItRi_Prot_Point_01_MIS()
 {
-	self.protection[PROT_POINT] -= RI_PROTPOINT;
+	self.protection[PROT_POINT] -= Ri_ProtPoint;
 };
 
 
-instance ITMI_EDDASSTATUE(C_ITEM)
+instance ItMi_EddasStatue(C_Item)
 {
 	name = "Pos¹¿ek Innosa";
 	mainflag = ITEM_KAT_NONE;
@@ -935,40 +935,40 @@ instance ITMI_EDDASSTATUE(C_ITEM)
 	text[2] = "Innosie, W³adco Prawoœci,";
 	text[3] = "pob³ogos³aw mnie,";
 	text[4] = "i chroñ przed wrogiem.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITKE_EVT_CRYPT_01(C_ITEM)
+instance ItKe_EVT_CRYPT_01(C_Item)
 {
 	name = "Stary Mosiê¿ny Klucz";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
 	text[2] = "Klucz ze szkieletu w pomieszczeniu pierwszym";
 };
 
-instance ITKE_EVT_CRYPT_02(C_ITEM)
+instance ItKe_EVT_CRYPT_02(C_Item)
 {
 	name = "Stary Mosiê¿ny Klucz";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
 	text[2] = "Klucz ze szkieletu w pomieszczeniu drugim";
 };
 
-instance ITKE_EVT_CRYPT_03(C_ITEM)
+instance ItKe_EVT_CRYPT_03(C_Item)
 {
 	name = "Stary Mosiê¿ny Klucz";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -978,7 +978,7 @@ instance ITKE_EVT_CRYPT_03(C_ITEM)
 
 const int VALUE_ITAR_PAL_SKEL = 500;
 
-instance ITAR_PAL_SKEL(C_ITEM)
+instance ITAR_PAL_SKEL(C_Item)
 {
 	name = "Stara Rycerska Zbroja";
 	mainflag = ITEM_KAT_ARMOR;
@@ -995,24 +995,24 @@ instance ITAR_PAL_SKEL(C_ITEM)
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
-	text[1] = NAME_PROT_EDGE;
+	text[1] = NAME_Prot_Edge;
 	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_PROT_POINT;
+	text[2] = NAME_Prot_Point;
 	count[2] = protection[PROT_POINT];
-	text[3] = NAME_PROT_FIRE;
+	text[3] = NAME_Prot_Fire;
 	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_PROT_MAGIC;
+	text[4] = NAME_Prot_Magic;
 	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITKE_VALENTINO(C_ITEM)
+instance ItKe_Valentino(C_Item)
 {
 	name = "Klucz do Kufra";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -1020,12 +1020,12 @@ instance ITKE_VALENTINO(C_ITEM)
 	text[3] = "Valentina.";
 };
 
-instance ITKE_BUERGER(C_ITEM)
+instance ItKe_Buerger(C_Item)
 {
 	name = "Klucz do Kufra";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -1033,12 +1033,12 @@ instance ITKE_BUERGER(C_ITEM)
 	text[3] = "";
 };
 
-instance ITKE_RICHTER(C_ITEM)
+instance ItKe_Richter(C_Item)
 {
 	name = "Klucz do Kufra";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -1046,12 +1046,12 @@ instance ITKE_RICHTER(C_ITEM)
 	text[3] = "sêdziego.";
 };
 
-instance ITKE_SALANDRIL(C_ITEM)
+instance ItKe_Salandril(C_Item)
 {
 	name = "Klucz do Kufra";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -1059,12 +1059,12 @@ instance ITKE_SALANDRIL(C_ITEM)
 	text[3] = "";
 };
 
-instance ITKE_PALADINTRUHE(C_ITEM)
+instance ItKe_PaladinTruhe(C_Item)
 {
 	name = "Klucz do Kufra";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -1072,24 +1072,24 @@ instance ITKE_PALADINTRUHE(C_ITEM)
 	text[3] = "z siedziby paladynów.";
 };
 
-instance ITKE_THIEFTREASURE(C_ITEM)
+instance ItKe_ThiefTreasure(C_Item)
 {
 	name = "Klucz";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION | ITEM_MULTI;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
 	description = name;
 	text[2] = "Ma³y klucz.";
 };
 
-instance ITKE_FINGERS(C_ITEM)
+instance ItKe_Fingers(C_Item)
 {
 	name = "Klucz";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -1097,7 +1097,7 @@ instance ITKE_FINGERS(C_ITEM)
 	text[3] = "z kana³ów.";
 };
 
-instance ITWR_SCHULDENBUCH(C_ITEM)
+instance ItWr_Schuldenbuch(C_Item)
 {
 	name = "Ksiêga D³ugów";
 	mainflag = ITEM_KAT_DOCS;
@@ -1105,69 +1105,69 @@ instance ITWR_SCHULDENBUCH(C_ITEM)
 	value = 100;
 	visual = "ItWr_Book_02_05.3ds";
 	material = MAT_LEATHER;
-	scemename = "MAP";
+	scemeName = "MAP";
 	description = "Ksiêga D³ugów Lehmara.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
-	on_state[0] = useschuldbuch;
+	on_state[0] = UseSchuldBuch;
 };
 
 
-func void useschuldbuch()
+func void UseSchuldBuch()
 {
-	var int ndocid;
-	ndocid = Doc_Create();
-	Doc_SetPages(ndocid,2);
-	Doc_SetPage(ndocid,0,"Book_Brown_L.tga",0);
-	Doc_SetPage(ndocid,1,"Book_Brown_R.tga",0);
-	Doc_SetMargins(ndocid,0,275,20,30,20,1);
-	Doc_SetFont(ndocid,0,FONT_BOOKHEADLINE);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Umowy i D³ugi");
-	Doc_SetFont(ndocid,0,FONT_BOOK);
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Ja, Mistrz Thorben, stolarz z Khorinis, jestem winien sz.p. Lehmarowi 200 monet.");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"          Thorben");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Ja, Coragon, w³aœciciel gospody w Khorinis, jestem winien sz.p. Lehmarowi 150 monet.");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"          Coragon");
-	Doc_PrintLine(ndocid,0,"");
-	Doc_SetMargins(ndocid,-1,30,20,275,20,1);
-	Doc_SetFont(ndocid,1,FONT_BOOK);
-	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLines(ndocid,1,"Ja, Hanna, w³aœcicielka gospody w Khorinis, jestem winna sz.p. Lehmarowi 250 monet.");
-	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLine(ndocid,1,"          Hanna");
-	Doc_PrintLines(ndocid,1,"");
-	Doc_Show(ndocid);
+	var int nDocID;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,2);
+	Doc_SetPage(nDocID,0,"Book_Brown_L.tga",0);
+	Doc_SetPage(nDocID,1,"Book_Brown_R.tga",0);
+	Doc_SetMargins(nDocID,0,275,20,30,20,1);
+	Doc_SetFont(nDocID,0,FONT_BookHeadline);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"Umowy i D³ugi");
+	Doc_SetFont(nDocID,0,FONT_Book);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"Ja, Mistrz Thorben, stolarz z Khorinis, jestem winien sz.p. Lehmarowi 200 monet.");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"          Thorben");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"Ja, Coragon, w³aœciciel gospody w Khorinis, jestem winien sz.p. Lehmarowi 150 monet.");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"          Coragon");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
+	Doc_SetFont(nDocID,1,FONT_Book);
+	Doc_PrintLine(nDocID,1,"");
+	Doc_PrintLine(nDocID,1,"");
+	Doc_PrintLine(nDocID,1,"");
+	Doc_PrintLines(nDocID,1,"Ja, Hanna, w³aœcicielka gospody w Khorinis, jestem winna sz.p. Lehmarowi 250 monet.");
+	Doc_PrintLine(nDocID,1,"");
+	Doc_PrintLine(nDocID,1,"          Hanna");
+	Doc_PrintLines(nDocID,1,"");
+	Doc_Show(nDocID);
 };
 
 
-instance ITPL_SAGITTA_HERB_MIS(C_ITEM)
+instance ItPl_Sagitta_Herb_MIS(C_Item)
 {
 	name = "S³oneczny Aloes";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_STRENGTH_HERB_01;
+	value = Value_Strength_Herb_01;
 	visual = "ItPl_Strength_Herb_01.3DS";
 	material = MAT_WOOD;
-	scemename = "FOOD";
+	scemeName = "FOOD";
 	description = name;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_STRENGTH_HERB_01;
+	text[5] = NAME_Value;
+	count[5] = Value_Strength_Herb_01;
 };
 
-instance ITKE_ORLAN_HOTELZIMMER(C_ITEM)
+instance ITKE_ORLAN_HOTELZIMMER(C_Item)
 {
 	name = "Klucz do Pokoju";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -1175,25 +1175,25 @@ instance ITKE_ORLAN_HOTELZIMMER(C_ITEM)
 	text[3] = "";
 };
 
-instance ITRW_DRAGOMIRSARMBRUST_MIS(C_ITEM)
+instance ItRw_DragomirsArmbrust_MIS(C_Item)
 {
 	name = "Kusza Dragomira";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW;
 	material = MAT_WOOD;
-	value = VALUE_LEICHTEARMBRUST;
-	damagetotal = DAMAGE_LEICHTEARMBRUST;
+	value = Value_LeichteArmbrust;
+	damageTotal = Damage_LeichteArmbrust;
 	damagetype = DAM_POINT;
-	munition = itrw_bolt;
+	munition = ItRw_Bolt;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_LEICHTEARMBRUST;
+	cond_value[2] = Condition_LeichteArmbrust;
 	visual = "ItRw_Crossbow_L_02.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 

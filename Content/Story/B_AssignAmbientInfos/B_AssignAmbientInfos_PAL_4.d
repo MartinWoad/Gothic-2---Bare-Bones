@@ -1,36 +1,36 @@
 
-instance DIA_PAL_4_EXIT(C_INFO)
+instance DIA_PAL_4_EXIT(C_Info)
 {
 	nr = 999;
-	condition = dia_pal_4_exit_condition;
-	information = dia_pal_4_exit_info;
+	condition = DIA_PAL_4_EXIT_Condition;
+	information = DIA_PAL_4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_pal_4_exit_condition()
+func int DIA_PAL_4_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pal_4_exit_info()
+func void DIA_PAL_4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PAL_4_JOIN(C_INFO)
+instance DIA_PAL_4_JOIN(C_Info)
 {
 	nr = 4;
-	condition = dia_pal_4_join_condition;
-	information = dia_pal_4_join_info;
+	condition = DIA_PAL_4_JOIN_Condition;
+	information = DIA_PAL_4_JOIN_Info;
 	permanent = TRUE;
 	description = "Jak mogê zostaæ paladynem?";
 };
 
 
-func int dia_pal_4_join_condition()
+func int DIA_PAL_4_JOIN_Condition()
 {
 	if(other.guild == GIL_NONE)
 	{
@@ -38,7 +38,7 @@ func int dia_pal_4_join_condition()
 	};
 };
 
-func void dia_pal_4_join_info()
+func void DIA_PAL_4_JOIN_Info()
 {
 	AI_Output(other,self,"DIA_PAL_4_JOIN_15_00");	//Jak mogê zostaæ paladynem?
 	AI_Output(self,other,"DIA_PAL_4_JOIN_04_01");	//Jeœli w istocie tego pragniesz, to powinieneœ do³¹czyæ do paladynów.
@@ -47,17 +47,17 @@ func void dia_pal_4_join_info()
 };
 
 
-instance DIA_PAL_4_PEOPLE(C_INFO)
+instance DIA_PAL_4_PEOPLE(C_Info)
 {
 	nr = 3;
-	condition = dia_pal_4_people_condition;
-	information = dia_pal_4_people_info;
+	condition = DIA_PAL_4_PEOPLE_Condition;
+	information = DIA_PAL_4_PEOPLE_Info;
 	permanent = TRUE;
 	description = "Kto tu dowodzi?";
 };
 
 
-func int dia_pal_4_people_condition()
+func int DIA_PAL_4_PEOPLE_Condition()
 {
 	if(other.guild != GIL_PAL)
 	{
@@ -65,7 +65,7 @@ func int dia_pal_4_people_condition()
 	};
 };
 
-func void dia_pal_4_people_info()
+func void DIA_PAL_4_PEOPLE_Info()
 {
 	AI_Output(other,self,"DIA_PAL_4_PEOPLE_15_00");	//Kto tu dowodzi?
 	AI_Output(self,other,"DIA_PAL_4_PEOPLE_04_01");	//Lord Hagen jest dowódc¹ wszystkich oddzia³ów na wyspie. Póki tu jesteœmy, sprawuje tak¿e urz¹d gubernatora.
@@ -73,52 +73,52 @@ func void dia_pal_4_people_info()
 };
 
 
-instance DIA_PAL_4_LOCATION(C_INFO)
+instance DIA_PAL_4_LOCATION(C_Info)
 {
 	nr = 2;
-	condition = dia_pal_4_location_condition;
-	information = dia_pal_4_location_info;
+	condition = DIA_PAL_4_LOCATION_Condition;
+	information = DIA_PAL_4_LOCATION_Info;
 	permanent = TRUE;
 	description = "Co paladyni robi¹ tutaj, w Khorinis?";
 };
 
 
-func int dia_pal_4_location_condition()
+func int DIA_PAL_4_LOCATION_Condition()
 {
-	if(KAPITEL == 1)
+	if(Kapitel == 1)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_4_location_info()
+func void DIA_PAL_4_LOCATION_Info()
 {
 	AI_Output(other,self,"DIA_PAL_4_LOCATION_15_00");	//Co paladyni robi¹ tutaj, w Khorinis?
 	AI_Output(self,other,"DIA_PAL_4_LOCATION_04_01");	//Nie wolno mi na ten temat rozmawiaæ.
 };
 
 
-instance DIA_PAL_4_STANDARD(C_INFO)
+instance DIA_PAL_4_STANDARD(C_Info)
 {
 	nr = 1;
-	condition = dia_pal_4_standard_condition;
-	information = dia_pal_4_standard_info;
+	condition = DIA_PAL_4_STANDARD_Condition;
+	information = DIA_PAL_4_STANDARD_Info;
 	permanent = TRUE;
 	description = "Co nowego?";
 };
 
 
-func int dia_pal_4_standard_condition()
+func int DIA_PAL_4_STANDARD_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pal_4_standard_info()
+func void DIA_PAL_4_STANDARD_Info()
 {
 	AI_Output(other,self,"DIA_PAL_4_STANDARD_15_00");	//Co s³ychaæ?
 	if((other.guild == GIL_PAL) || (other.guild == GIL_KDF))
 	{
-		if(KAPITEL <= 4)
+		if(Kapitel <= 4)
 		{
 			if(MIS_OLDWORLD == LOG_SUCCESS)
 			{
@@ -129,7 +129,7 @@ func void dia_pal_4_standard_info()
 				AI_Output(self,other,"DIA_PAL_4_STANDARD_04_02");	//Ci¹gle nie mamy ¿adnych wieœci z obozowiska w Górniczej Dolinie. To bardzo niepokoj¹ce.
 			};
 		};
-		if(KAPITEL >= 5)
+		if(Kapitel >= 5)
 		{
 			AI_Output(self,other,"DIA_PAL_4_STANDARD_04_03");	//B³ogos³awiony niech bêdzie Innos! Niebezpieczeñstwo ataku smoków zosta³o za¿egnane. ¯eby dotrzeæ do rudy, musimy siê ju¿ tylko zaj¹æ orkami.
 		};
@@ -140,7 +140,7 @@ func void dia_pal_4_standard_info()
 	};
 };
 
-func void b_assignambientinfos_pal_4(var C_NPC slf)
+func void B_AssignAmbientInfos_PAL_4(var C_Npc slf)
 {
 	dia_pal_4_exit.npc = Hlp_GetInstanceID(slf);
 	dia_pal_4_join.npc = Hlp_GetInstanceID(slf);

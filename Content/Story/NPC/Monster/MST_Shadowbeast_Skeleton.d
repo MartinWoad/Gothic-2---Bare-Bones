@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_SHADOWBEAST_SKELETON(C_NPC)
+prototype Mst_Default_Shadowbeast_Skeleton(C_Npc)
 {
 	name[0] = "Nieumar³y Cieniostwór";
 	guild = GIL_SHADOWBEAST_SKELETON;
@@ -21,29 +21,29 @@ prototype MST_DEFAULT_SHADOWBEAST_SKELETON(C_NPC)
 	fight_tactic = FAI_SHADOWBEAST;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_shadowbeast_skeleton()
+func void B_SetVisuals_Shadowbeast_Skeleton()
 {
 	Mdl_SetVisual(self,"Shadow.mds");
 	Mdl_SetVisualBody(self,"Shadowbeast_Skeleton_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance SHADOWBEAST_SKELETON(MST_DEFAULT_SHADOWBEAST_SKELETON)
+instance Shadowbeast_Skeleton(Mst_Default_Shadowbeast_Skeleton)
 {
-	b_setvisuals_shadowbeast_skeleton();
+	B_SetVisuals_Shadowbeast_Skeleton();
 	Npc_SetToFistMode(self);
 };
 
-instance SHADOWBEAST_SKELETON_ANGAR(MST_DEFAULT_SHADOWBEAST_SKELETON)
+instance Shadowbeast_Skeleton_Angar(Mst_Default_Shadowbeast_Skeleton)
 {
-	b_setvisuals_shadowbeast_skeleton();
+	B_SetVisuals_Shadowbeast_Skeleton();
 	Npc_SetToFistMode(self);
 };
 

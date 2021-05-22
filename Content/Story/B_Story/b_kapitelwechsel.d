@@ -1,66 +1,66 @@
 
-func void b_kapitelwechsel(var int neues_kapitel,var int aktuelles_level_zen)
+func void B_Kapitelwechsel(var int neues_Kapitel,var int aktuelles_Level_Zen)
 {
-	KAPITEL = neues_kapitel;
-	if(neues_kapitel == 1)
+	Kapitel = neues_Kapitel;
+	if(neues_Kapitel == 1)
 	{
-		IntroduceChapter(KAPWECHSEL_1,KAPWECHSEL_1_TEXT,"chapter1.tga","chapter_01.wav",6000);
-		pc_hero.attribute[ATR_MANA_MAX] = 0;
-		pc_hero.attribute[ATR_MANA] = 0;
+		IntroduceChapter(KapWechsel_1,KapWechsel_1_Text,"chapter1.tga","chapter_01.wav",6000);
+		PC_Hero.attribute[ATR_MANA_MAX] = 0;
+		PC_Hero.attribute[ATR_MANA] = 0;
 	}
-	else if(neues_kapitel == 2)
+	else if(neues_Kapitel == 2)
 	{
-		sekob.flags = 0;
-		bengar.flags = 0;
-		IntroduceChapter(KAPWECHSEL_2,KAPWECHSEL_2_TEXT,"chapter2.tga","chapter_01.wav",6000);
+		Sekob.flags = 0;
+		Bengar.flags = 0;
+		IntroduceChapter(KapWechsel_2,KapWechsel_2_Text,"chapter2.tga","chapter_01.wav",6000);
 	}
-	else if(neues_kapitel == 3)
+	else if(neues_Kapitel == 3)
 	{
 	}
-	else if(neues_kapitel == 4)
+	else if(neues_Kapitel == 4)
 	{
-		PLAYER_TALENT_ALCHEMY[CHARGE_INNOSEYE] = TRUE;
+		PLAYER_TALENT_ALCHEMY[CHARGE_Innoseye] = TRUE;
 	}
-	else if(neues_kapitel == 5)
+	else if(neues_Kapitel == 5)
 	{
-		PLAYER_TALENT_ALCHEMY[CHARGE_INNOSEYE] = TRUE;
+		PLAYER_TALENT_ALCHEMY[CHARGE_Innoseye] = TRUE;
 	}
-	else if(neues_kapitel == 6)
+	else if(neues_Kapitel == 6)
 	{
-		PLAYER_TALENT_ALCHEMY[CHARGE_INNOSEYE] = TRUE;
+		PLAYER_TALENT_ALCHEMY[CHARGE_Innoseye] = TRUE;
 	};
-	b_checklog();
-	if(aktuelles_level_zen == OLDWORLD_ZEN)
+	B_CheckLog();
+	if(aktuelles_Level_Zen == OldWorld_Zen)
 	{
 		b_enter_oldworld();
 	};
-	if(aktuelles_level_zen == NEWWORLD_ZEN)
+	if(aktuelles_Level_Zen == NEWWORLD_ZEN)
 	{
 		b_enter_newworld();
 	};
-	if(KAPITEL == 1)
+	if(Kapitel == 1)
 	{
-		XP_AMBIENT = XP_AMBIENTKAP1;
+		XP_Ambient = XP_AmbientKap1;
 	};
-	if(KAPITEL == 2)
+	if(Kapitel == 2)
 	{
-		XP_AMBIENT = XP_AMBIENTKAP2;
+		XP_Ambient = XP_AmbientKap2;
 	};
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
-		XP_AMBIENT = XP_AMBIENTKAP3;
+		XP_Ambient = XP_AmbientKap3;
 	};
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
-		XP_AMBIENT = XP_AMBIENTKAP4;
+		XP_Ambient = XP_AmbientKap4;
 	};
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
-		XP_AMBIENT = XP_AMBIENTKAP5;
+		XP_Ambient = XP_AmbientKap5;
 	};
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
-		XP_AMBIENT = XP_AMBIENTKAP6;
+		XP_Ambient = XP_AmbientKap6;
 	};
 };
 

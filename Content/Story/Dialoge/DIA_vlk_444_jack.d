@@ -1,83 +1,83 @@
 
-instance DIA_JACK_EXIT(C_INFO)
+instance DIA_Jack_EXIT(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 999;
-	condition = dia_jack_exit_condition;
-	information = dia_jack_exit_info;
+	condition = DIA_Jack_EXIT_Condition;
+	information = DIA_Jack_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_jack_exit_condition()
+func int DIA_Jack_EXIT_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jack_exit_info()
+func void DIA_Jack_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_JACK_PICKPOCKET(C_INFO)
+instance DIA_Jack_PICKPOCKET(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 900;
-	condition = dia_jack_pickpocket_condition;
-	information = dia_jack_pickpocket_info;
+	condition = DIA_Jack_PICKPOCKET_Condition;
+	information = DIA_Jack_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_jack_pickpocket_condition()
+func int DIA_Jack_PICKPOCKET_Condition()
 {
-	return c_beklauen(50,100);
+	return C_Beklauen(50,100);
 };
 
-func void dia_jack_pickpocket_info()
+func void DIA_Jack_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_jack_pickpocket);
-	Info_AddChoice(dia_jack_pickpocket,DIALOG_BACK,dia_jack_pickpocket_back);
-	Info_AddChoice(dia_jack_pickpocket,DIALOG_PICKPOCKET,dia_jack_pickpocket_doit);
+	Info_ClearChoices(DIA_Jack_PICKPOCKET);
+	Info_AddChoice(DIA_Jack_PICKPOCKET,Dialog_Back,DIA_Jack_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Jack_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Jack_PICKPOCKET_DoIt);
 };
 
-func void dia_jack_pickpocket_doit()
+func void DIA_Jack_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_jack_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Jack_PICKPOCKET);
 };
 
-func void dia_jack_pickpocket_back()
+func void DIA_Jack_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_jack_pickpocket);
+	Info_ClearChoices(DIA_Jack_PICKPOCKET);
 };
 
 
-instance DIA_JACK_GREET(C_INFO)
+instance DIA_Jack_GREET(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 4;
-	condition = dia_jack_greet_condition;
-	information = dia_jack_greet_info;
+	condition = DIA_Jack_GREET_Condition;
+	information = DIA_Jack_GREET_Info;
 	important = TRUE;
 };
 
 
-func int dia_jack_greet_condition()
+func int DIA_Jack_GREET_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jack_greet_info()
+func void DIA_Jack_GREET_Info()
 {
 	AI_Output(self,other,"DIA_Jack_GREET_14_00");	//Ahoj, szczurze l¹dowy! Utkn¹³eœ tu na dobre, co?
 	AI_Output(self,other,"DIA_Jack_GREET_14_01");	//He, he... Trochê blado wygl¹dasz.
@@ -85,25 +85,25 @@ func void dia_jack_greet_info()
 };
 
 
-instance DIA_JACK_JOB(C_INFO)
+instance DIA_Jack_Job(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 5;
-	condition = dia_jack_job_condition;
-	information = dia_jack_job_info;
+	condition = DIA_Jack_Job_Condition;
+	information = DIA_Jack_Job_Info;
 	description = "Co tu porabiasz?";
 };
 
 
-func int dia_jack_job_condition()
+func int DIA_Jack_Job_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_jack_greet))
+	if(Npc_KnowsInfo(other,DIA_Jack_GREET))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jack_job_info()
+func void DIA_Jack_Job_Info()
 {
 	AI_Output(other,self,"DIA_Jack_Job_15_00");	//Czym siê tu zajmujesz?
 	AI_Output(self,other,"DIA_Jack_Job_14_01");	//Dawno temu, gdy by³em takim m³odzikiem jak ty, wyruszy³em w morze i ¿eglowa³em przez niejeden sztorm.
@@ -116,32 +116,32 @@ func void dia_jack_job_info()
 	AI_Output(self,other,"DIA_Jack_Job_14_08");	//Najpierw po drugiej stronie gór by³ wielki huk, a potem ca³a ta zgraja zwali³a siê do miasta jak plaga szarañczy. Teraz kryj¹ siê, gdzie popadnie - nawet w mojej latarni.
 	AI_Output(self,other,"DIA_Jack_Job_14_09");	//Myœlê, ¿e wypatruj¹ jakiegoœ statku, który mogliby zaj¹æ.
 	AI_Output(self,other,"DIA_Jack_Job_14_10");	//I niech sobie zajmuj¹! Byle tylko wynieœli siê z mojej wie¿y.
-	Log_CreateTopic(TOPIC_KILLLIGHTHOUSEBANDITS,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_KILLLIGHTHOUSEBANDITS,LOG_RUNNING);
-	b_logentry(TOPIC_KILLLIGHTHOUSEBANDITS,"Stary marynarz, Jack, nie mo¿e wróciæ do latarni morskiej, dopóki przebywaj¹ tam bandyci.");
-	MIS_JACK_KILLLIGHTHOUSEBANDITS = LOG_RUNNING;
+	Log_CreateTopic(TOPIC_KillLighthouseBandits,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_KillLighthouseBandits,LOG_Running);
+	B_LogEntry(TOPIC_KillLighthouseBandits,"Stary marynarz, Jack, nie mo¿e wróciæ do latarni morskiej, dopóki przebywaj¹ tam bandyci.");
+	MIS_Jack_KillLighthouseBandits = LOG_Running;
 };
 
 
-instance DIA_JACK_CITY(C_INFO)
+instance DIA_Jack_City(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 6;
-	condition = dia_jack_city_condition;
-	information = dia_jack_city_info;
+	condition = DIA_Jack_City_Condition;
+	information = DIA_Jack_City_Info;
 	description = "Czêsto odwiedzasz miasto?";
 };
 
 
-func int dia_jack_city_condition()
+func int DIA_Jack_City_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_jack_job))
+	if(Npc_KnowsInfo(other,DIA_Jack_Job))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jack_city_info()
+func void DIA_Jack_City_Info()
 {
 	AI_Output(other,self,"DIA_Jack_City_15_00");	//Czêsto odwiedzasz miasto?
 	AI_Output(self,other,"DIA_Jack_City_14_01");	//Miasto jest tylko tak dobre, jak jego przystañ. Zawsze to mówiê.
@@ -150,43 +150,43 @@ func void dia_jack_city_info()
 };
 
 
-instance DIA_JACK_HARBOR(C_INFO)
+instance DIA_Jack_Harbor(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 70;
-	condition = dia_jack_harbor_condition;
-	information = dia_jack_harbor_info;
+	condition = DIA_Jack_Harbor_Condition;
+	information = DIA_Jack_Harbor_Info;
 	permanent = TRUE;
 	description = "Opowiedz mi o przystani.";
 };
 
 
-func int dia_jack_harbor_condition()
+func int DIA_Jack_Harbor_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_jack_city) && ((Npc_GetDistToWP(self,"LIGHTHOUSE") < 3000) == FALSE) && (JACKISCAPTAIN == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Jack_City) && ((Npc_GetDistToWP(self,"LIGHTHOUSE") < 3000) == FALSE) && (JackIsCaptain == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jack_harbor_info()
+func void DIA_Jack_Harbor_Info()
 {
 	AI_Output(other,self,"DIA_Jack_Harbor_15_00");	//Opowiedz mi o przystani.
 	AI_Output(self,other,"DIA_Jack_Harbor_14_01");	//Przystañ w Khorinis to ju¿ nie to samo co kiedyœ.
 	AI_Output(self,other,"DIA_Jack_Harbor_14_02");	//Zosta³y tu same szumowiny, statki przesta³y przyp³ywaæ, nie ma handlu. Ta przystañ to ju¿ stara historia.
-	Info_ClearChoices(dia_jack_harbor);
-	Info_AddChoice(dia_jack_harbor,DIALOG_BACK,dia_jack_harbor_back);
-	Info_AddChoice(dia_jack_harbor,"Dlaczego statki przesta³y tu przyp³ywaæ?",dia_jack_harbor_ships);
-	Info_AddChoice(dia_jack_harbor,"Co masz na myœli, mówi¹c 'szumowiny'?",dia_jack_harbor_rogue);
-	Info_AddChoice(dia_jack_harbor,"Wiêc dlaczego st¹d nie odp³yniesz?",dia_jack_harbor_leave);
+	Info_ClearChoices(DIA_Jack_Harbor);
+	Info_AddChoice(DIA_Jack_Harbor,Dialog_Back,DIA_Jack_Harbor_Back);
+	Info_AddChoice(DIA_Jack_Harbor,"Dlaczego statki przesta³y tu przyp³ywaæ?",DIA_Jack_Harbor_Ships);
+	Info_AddChoice(DIA_Jack_Harbor,"Co masz na myœli, mówi¹c 'szumowiny'?",DIA_Jack_Harbor_Rogue);
+	Info_AddChoice(DIA_Jack_Harbor,"Wiêc dlaczego st¹d nie odp³yniesz?",DIA_Jack_Harbor_Leave);
 };
 
-func void dia_jack_harbor_back()
+func void DIA_Jack_Harbor_Back()
 {
-	Info_ClearChoices(dia_jack_harbor);
+	Info_ClearChoices(DIA_Jack_Harbor);
 };
 
-func void dia_jack_harbor_ships()
+func void DIA_Jack_Harbor_Ships()
 {
 	AI_Output(other,self,"DIA_Jack_Harbor_Ships_15_00");	//Dlaczego statki przesta³y tu przyp³ywaæ?
 	AI_Output(self,other,"DIA_Jack_Harbor_Ships_14_01");	//Mówi¹, ¿e jak skoñczy siê wojna, wszystko bêdzie po staremu, ale to bzdury.
@@ -194,14 +194,14 @@ func void dia_jack_harbor_ships()
 	AI_Output(self,other,"DIA_Jack_Harbor_Ships_14_03");	//Czuje to we krwi. A powiadam - ta przystañ jest ju¿ stracona. Nigdy nie wróci do dawnej œwietnoœci.
 };
 
-func void dia_jack_harbor_rogue()
+func void DIA_Jack_Harbor_Rogue()
 {
 	AI_Output(other,self,"DIA_Jack_Harbor_Rogue_15_00");	//Co masz na myœli, mówi¹c 'szumowiny'?
 	AI_Output(self,other,"DIA_Jack_Harbor_Rogue_14_01");	//Popatrz tylko na nich: leniwe obwiesie! Wiêkszoœæ z nich nie wie, co to uczciwa praca. Ca³ymi dniami nic tylko ¿³opi¹ piwsko i przepuszczaj¹ ostatnie pieni¹dze w burdelu.
 	AI_Output(self,other,"DIA_Jack_Harbor_Rogue_14_02");	//Dobrze ci radzê - trzymaj siê od nich z dala!
 };
 
-func void dia_jack_harbor_leave()
+func void DIA_Jack_Harbor_Leave()
 {
 	AI_Output(other,self,"DIA_Jack_Harbor_Leave_15_00");	//Wiêc dlaczego st¹d nie odp³yniesz?
 	AI_Output(self,other,"DIA_Jack_Harbor_Leave_14_01");	//A kto by przyj¹³ na pok³ad takiego starego wilka jak ja?
@@ -211,230 +211,230 @@ func void dia_jack_harbor_leave()
 };
 
 
-instance DIA_JACK_BANDITENWEG(C_INFO)
+instance DIA_Jack_BANDITENWEG(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 7;
-	condition = dia_jack_banditenweg_condition;
-	information = dia_jack_banditenweg_info;
+	condition = DIA_Jack_BANDITENWEG_Condition;
+	information = DIA_Jack_BANDITENWEG_Info;
 	description = "Nie musisz siê ju¿ martwiæ o bandytów zajmuj¹cych twoj¹ latarniê.";
 };
 
 
-func int dia_jack_banditenweg_condition()
+func int DIA_Jack_BANDITENWEG_Condition()
 {
-	if(Npc_IsDead(leuchtturmbandit_1021) && Npc_IsDead(leuchtturmbandit_1022) && Npc_IsDead(leuchtturmbandit_1023) && (MIS_JACK_KILLLIGHTHOUSEBANDITS == LOG_RUNNING))
+	if(Npc_IsDead(LeuchtturmBandit_1021) && Npc_IsDead(LeuchtturmBandit_1022) && Npc_IsDead(LeuchtturmBandit_1023) && (MIS_Jack_KillLighthouseBandits == LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jack_banditenweg_info()
+func void DIA_Jack_BANDITENWEG_Info()
 {
 	AI_Output(other,self,"DIA_Jack_BANDITENWEG_15_00");	//Nie musisz siê ju¿ martwiæ o bandytów zajmuj¹cych twoj¹ latarniê.
 	AI_Output(self,other,"DIA_Jack_BANDITENWEG_14_01");	//Naprawdê? Œwietnie! Nareszcie mogê wróciæ do pracy!
 	AI_Output(self,other,"DIA_Jack_BANDITENWEG_14_02");	//ChodŸ ze mn¹ do latarni. Jest z niej wspania³y widok na morze.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Lighthouse");
-	MIS_JACK_KILLLIGHTHOUSEBANDITS = LOG_SUCCESS;
-	b_giveplayerxp(XP_KILLLIGHTHOUSEBANDITS);
+	MIS_Jack_KillLighthouseBandits = LOG_SUCCESS;
+	B_GivePlayerXP(XP_KillLighthouseBandits);
 };
 
 
-instance DIA_JACK_LIGHTHOUSEFREE(C_INFO)
+instance DIA_Jack_LIGHTHOUSEFREE(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 8;
-	condition = dia_jack_lighthousefree_condition;
-	information = dia_jack_lighthousefree_info;
+	condition = DIA_Jack_LIGHTHOUSEFREE_Condition;
+	information = DIA_Jack_LIGHTHOUSEFREE_Info;
 	permanent = TRUE;
 	description = "£adna latarnia.";
 };
 
 
-func int dia_jack_lighthousefree_condition()
+func int DIA_Jack_LIGHTHOUSEFREE_Condition()
 {
-	if((MIS_JACK_KILLLIGHTHOUSEBANDITS == LOG_SUCCESS) && (Npc_GetDistToWP(self,"LIGHTHOUSE") < 3000) && (MIS_SCKNOWSWAYTOIRDORATH == FALSE))
+	if((MIS_Jack_KillLighthouseBandits == LOG_SUCCESS) && (Npc_GetDistToWP(self,"LIGHTHOUSE") < 3000) && (MIS_SCKnowsWayToIrdorath == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jack_lighthousefree_info()
+func void DIA_Jack_LIGHTHOUSEFREE_Info()
 {
 	AI_Output(other,self,"DIA_Jack_LIGHTHOUSEFREE_15_00");	//£adna latarnia.
 	AI_Output(self,other,"DIA_Jack_LIGHTHOUSEFREE_14_01");	//Dziêki! Wdrap siê po schodach na górê, a zobaczysz widok jakich ma³o, ch³opcze. Czuj siê jak u siebie w domu.
 };
 
 
-instance DIA_JACK_KAP3_EXIT(C_INFO)
+instance DIA_Jack_KAP3_EXIT(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 999;
-	condition = dia_jack_kap3_exit_condition;
-	information = dia_jack_kap3_exit_info;
+	condition = DIA_Jack_KAP3_EXIT_Condition;
+	information = DIA_Jack_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_jack_kap3_exit_condition()
+func int DIA_Jack_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jack_kap3_exit_info()
+func void DIA_Jack_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_JACK_KAP4_EXIT(C_INFO)
+instance DIA_Jack_KAP4_EXIT(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 999;
-	condition = dia_jack_kap4_exit_condition;
-	information = dia_jack_kap4_exit_info;
+	condition = DIA_Jack_KAP4_EXIT_Condition;
+	information = DIA_Jack_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_jack_kap4_exit_condition()
+func int DIA_Jack_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jack_kap4_exit_info()
+func void DIA_Jack_KAP4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_JACK_KAP5_EXIT(C_INFO)
+instance DIA_Jack_KAP5_EXIT(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 999;
-	condition = dia_jack_kap5_exit_condition;
-	information = dia_jack_kap5_exit_info;
+	condition = DIA_Jack_KAP5_EXIT_Condition;
+	information = DIA_Jack_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_jack_kap5_exit_condition()
+func int DIA_Jack_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jack_kap5_exit_info()
+func void DIA_Jack_KAP5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_JACK_BEMYCAPTAIN(C_INFO)
+instance DIA_Jack_BEMYCAPTAIN(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 51;
-	condition = dia_jack_bemycaptain_condition;
-	information = dia_jack_bemycaptain_info;
+	condition = DIA_Jack_BEMYCAPTAIN_Condition;
+	information = DIA_Jack_BEMYCAPTAIN_Info;
 	permanent = TRUE;
 	description = "Nie chcia³byœ znowu wyp³yn¹æ w morze?";
 };
 
 
-func int dia_jack_bemycaptain_condition()
+func int DIA_Jack_BEMYCAPTAIN_Condition()
 {
-	if((KAPITEL == 5) && (MIS_SCKNOWSWAYTOIRDORATH == TRUE) && (MIS_JACK_KILLLIGHTHOUSEBANDITS == LOG_SUCCESS) && (MIS_JACK_NEWLIGHTHOUSEOFFICER == 0))
+	if((Kapitel == 5) && (MIS_SCKnowsWayToIrdorath == TRUE) && (MIS_Jack_KillLighthouseBandits == LOG_SUCCESS) && (MIS_Jack_NewLighthouseOfficer == 0))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jack_bemycaptain_info()
+func void DIA_Jack_BEMYCAPTAIN_Info()
 {
 	AI_Output(other,self,"DIA_Jack_BEMYCAPTAIN_15_00");	//Nie chcia³byœ znowu wyp³yn¹æ w morze?
 	AI_Output(self,other,"DIA_Jack_BEMYCAPTAIN_14_01");	//Ch³opcze, odda³bym praw¹ d³oñ, gdyby ktoœ zechcia³ wzi¹æ mnie na pok³ad porz¹dnej ³ajby.
 	AI_Output(self,other,"DIA_Jack_BEMYCAPTAIN_14_02");	//Ale w moim wieku nie mam ju¿ chyba o czym marzyæ. A poza tym - kto by siê zaj¹³ moj¹ latarni¹?
-	Info_ClearChoices(dia_jack_bemycaptain);
-	Info_AddChoice(dia_jack_bemycaptain,"Mniejsza z tym. Tak siê tylko zastanawia³em.",dia_jack_bemycaptain_no);
-	Info_AddChoice(dia_jack_bemycaptain,"Przyda mi siê taki doœwiadczony ¿eglarz jak ty.",dia_jack_bemycaptain_seaman);
+	Info_ClearChoices(DIA_Jack_BEMYCAPTAIN);
+	Info_AddChoice(DIA_Jack_BEMYCAPTAIN,"Mniejsza z tym. Tak siê tylko zastanawia³em.",DIA_Jack_BEMYCAPTAIN_no);
+	Info_AddChoice(DIA_Jack_BEMYCAPTAIN,"Przyda mi siê taki doœwiadczony ¿eglarz jak ty.",DIA_Jack_BEMYCAPTAIN_seaman);
 };
 
-func void dia_jack_bemycaptain_seaman()
+func void DIA_Jack_BEMYCAPTAIN_seaman()
 {
 	AI_Output(other,self,"DIA_Jack_BEMYCAPTAIN_seaman_15_00");	//Przyda mi siê taki doœwiadczony ¿eglarz jak ty.
 	AI_Output(self,other,"DIA_Jack_BEMYCAPTAIN_seaman_14_01");	//A niech mnie rekin! Co chcesz zrobiæ, ch³opcze? Chyba nie przymierzasz siê do porwania królewskiego okrêtu, co?
 	AI_Output(other,self,"DIA_Jack_BEMYCAPTAIN_seaman_15_02");	//Kto wie?
 	AI_Output(self,other,"DIA_Jack_BEMYCAPTAIN_seaman_14_03");	//A to ci dopiero heca! Ale nie mogê tak po prostu zostawiæ mojej latarni. Co z tym zrobimy, co?
-	Log_CreateTopic(TOPIC_CAPTAIN,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_CAPTAIN,LOG_RUNNING);
-	b_logentry(TOPIC_CAPTAIN,"Jack, stary ¿eglarz z portu, by³by dobrym kapitanem. Jednak najpierw muszê znaleŸæ kogoœ, kto popilnowa³by jego latarni morskiej.");
-	Info_ClearChoices(dia_jack_bemycaptain);
-	Info_AddChoice(dia_jack_bemycaptain,"Mniejsza z tym. Tak siê tylko zastanawia³em.",dia_jack_bemycaptain_no);
-	Info_AddChoice(dia_jack_bemycaptain,"A gdybym sprowadzi³ tu kogoœ...?",dia_jack_bemycaptain_seaman_newofficer);
+	Log_CreateTopic(Topic_Captain,LOG_MISSION);
+	Log_SetTopicStatus(Topic_Captain,LOG_Running);
+	B_LogEntry(Topic_Captain,"Jack, stary ¿eglarz z portu, by³by dobrym kapitanem. Jednak najpierw muszê znaleŸæ kogoœ, kto popilnowa³by jego latarni morskiej.");
+	Info_ClearChoices(DIA_Jack_BEMYCAPTAIN);
+	Info_AddChoice(DIA_Jack_BEMYCAPTAIN,"Mniejsza z tym. Tak siê tylko zastanawia³em.",DIA_Jack_BEMYCAPTAIN_no);
+	Info_AddChoice(DIA_Jack_BEMYCAPTAIN,"A gdybym sprowadzi³ tu kogoœ...?",DIA_Jack_BEMYCAPTAIN_seaman_NewOfficer);
 };
 
-func void dia_jack_bemycaptain_seaman_newofficer()
+func void DIA_Jack_BEMYCAPTAIN_seaman_NewOfficer()
 {
 	AI_Output(other,self,"DIA_Jack_BEMYCAPTAIN_seaman_NewOfficer_15_00");	//A gdybym sprowadzi³ tu kogoœ, kto zaj¹³by siê latarni¹ pod twoj¹ nieobecnoœæ?
 	AI_Output(self,other,"DIA_Jack_BEMYCAPTAIN_seaman_NewOfficer_14_01");	//Nieg³upi pomys³. Znam nawet odpowiedni¹ osobê.
 	AI_Output(self,other,"DIA_Jack_BEMYCAPTAIN_seaman_NewOfficer_14_02");	//Kowal Harad ma czeladnika imieniem Brian. Czêsto z nim rozmawia³em.
 	AI_Output(self,other,"DIA_Jack_BEMYCAPTAIN_seaman_NewOfficer_14_03");	//Tylko jemu mogê powierzyæ moj¹ latarniê. To sumienny ch³opak.
 	AI_Output(self,other,"DIA_Jack_BEMYCAPTAIN_seaman_NewOfficer_14_04");	//Porozmawiaj z nim. Mo¿e nam siê poszczêœci i zgodzi siê pomóc?
-	Info_ClearChoices(dia_jack_bemycaptain);
-	MIS_JACK_NEWLIGHTHOUSEOFFICER = LOG_RUNNING;
+	Info_ClearChoices(DIA_Jack_BEMYCAPTAIN);
+	MIS_Jack_NewLighthouseOfficer = LOG_Running;
 };
 
-func void dia_jack_bemycaptain_no()
+func void DIA_Jack_BEMYCAPTAIN_no()
 {
 	AI_Output(other,self,"DIA_Jack_BEMYCAPTAIN_no_15_00");	//Mniejsza z tym. Tak siê tylko zastanawia³em.
-	Info_ClearChoices(dia_jack_bemycaptain);
+	Info_ClearChoices(DIA_Jack_BEMYCAPTAIN);
 };
 
 
-instance DIA_JACK_BEMYCAPTAIN2(C_INFO)
+instance DIA_Jack_BEMYCAPTAIN2(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 52;
-	condition = dia_jack_bemycaptain2_condition;
-	information = dia_jack_bemycaptain2_info;
+	condition = DIA_Jack_BEMYCAPTAIN2_Condition;
+	information = DIA_Jack_BEMYCAPTAIN2_Info;
 	description = "Co do Briana...";
 };
 
 
-func int dia_jack_bemycaptain2_condition()
+func int DIA_Jack_BEMYCAPTAIN2_Condition()
 {
-	if((MIS_JACK_NEWLIGHTHOUSEOFFICER == LOG_SUCCESS) || ((MIS_JACK_NEWLIGHTHOUSEOFFICER == LOG_RUNNING) && Npc_IsDead(brian)))
+	if((MIS_Jack_NewLighthouseOfficer == LOG_SUCCESS) || ((MIS_Jack_NewLighthouseOfficer == LOG_Running) && Npc_IsDead(Brian)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jack_bemycaptain2_info()
+func void DIA_Jack_BEMYCAPTAIN2_Info()
 {
-	if(Npc_IsDead(brian))
+	if(Npc_IsDead(Brian))
 	{
 		AI_Output(other,self,"DIA_Jack_BEMYCAPTAIN2_15_00");	//Brian nie ¿yje.
 		AI_Output(self,other,"DIA_Jack_BEMYCAPTAIN2_14_01");	//O tak, ¿yjemy w paskudnych czasach. To by³ dobry cz³owiek.
-		MIS_JACK_NEWLIGHTHOUSEOFFICER = LOG_OBSOLETE;
+		MIS_Jack_NewLighthouseOfficer = LOG_OBSOLETE;
 	}
 	else
 	{
 		AI_Output(other,self,"DIA_Jack_BEMYCAPTAIN2_15_02");	//Od dziœ o twoj¹ latarniê bêdzie siê troszczy³ Brian.
 		AI_Output(self,other,"DIA_Jack_BEMYCAPTAIN2_14_03");	//Mia³em nadziejê, ¿e to powiesz.
-		b_giveplayerxp(XP_JACK_NEWLIGHTHOUSEOFFICER);
-		if(SCGOTCAPTAIN == FALSE)
+		B_GivePlayerXP(XP_Jack_NewLighthouseOfficer);
+		if(SCGotCaptain == FALSE)
 		{
 			AI_Output(self,other,"DIA_Jack_BEMYCAPTAIN2_14_04");	//Potrzebujesz mnie jeszcze?
 		}
@@ -447,25 +447,25 @@ func void dia_jack_bemycaptain2_info()
 };
 
 
-instance DIA_JACK_BEMYCAPTAIN3(C_INFO)
+instance DIA_Jack_BEMYCAPTAIN3(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 53;
-	condition = dia_jack_bemycaptain3_condition;
-	information = dia_jack_bemycaptain3_info;
+	condition = DIA_Jack_BEMYCAPTAIN3_Condition;
+	information = DIA_Jack_BEMYCAPTAIN3_Info;
 	description = "Zostañ kapitanem mojego statku.";
 };
 
 
-func int dia_jack_bemycaptain3_condition()
+func int DIA_Jack_BEMYCAPTAIN3_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_jack_bemycaptain2) && (SCGOTCAPTAIN == FALSE) && (MIS_JACK_NEWLIGHTHOUSEOFFICER == LOG_SUCCESS))
+	if(Npc_KnowsInfo(other,DIA_Jack_BEMYCAPTAIN2) && (SCGotCaptain == FALSE) && (MIS_Jack_NewLighthouseOfficer == LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jack_bemycaptain3_info()
+func void DIA_Jack_BEMYCAPTAIN3_Info()
 {
 	AI_Output(other,self,"DIA_Jack_BEMYCAPTAIN3_15_00");	//Zostañ kapitanem mojego statku.
 	AI_Output(self,other,"DIA_Jack_BEMYCAPTAIN3_14_01");	//Swego czasu przemierzy³em siedem mórz, ch³opcze, ale jeszcze nigdy nie dowodzi³em okrêtem.
@@ -475,44 +475,44 @@ func void dia_jack_bemycaptain3_info()
 	AI_Output(other,self,"DIA_Jack_BEMYCAPTAIN3_15_05");	//Czekaj na mnie na przystani. O resztê siê nie martw.
 	AI_Output(self,other,"DIA_Jack_BEMYCAPTAIN3_14_06");	//Jak uwa¿asz.
 	AI_StopProcessInfos(self);
-	SCGOTCAPTAIN = TRUE;
-	JACKISCAPTAIN = TRUE;
+	SCGotCaptain = TRUE;
+	JackIsCaptain = TRUE;
 	self.flags = NPC_FLAG_IMMORTAL;
 	Npc_ExchangeRoutine(self,"WaitForShipCaptain");
-	b_giveplayerxp(XP_CAPTAIN_SUCCESS);
+	B_GivePlayerXP(XP_Captain_Success);
 };
 
 
-instance DIA_JACK_LOSFAHREN(C_INFO)
+instance DIA_Jack_LOSFAHREN(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 59;
-	condition = dia_jack_losfahren_condition;
-	information = dia_jack_losfahren_info;
+	condition = DIA_Jack_LOSFAHREN_Condition;
+	information = DIA_Jack_LOSFAHREN_Info;
 	permanent = TRUE;
 	description = "No, staruszku. Ruszajmy w drogê.";
 };
 
 
-func int dia_jack_losfahren_condition()
+func int DIA_Jack_LOSFAHREN_Condition()
 {
-	if((JACKISCAPTAIN == TRUE) && (MIS_READYFORCHAPTER6 == FALSE))
+	if((JackIsCaptain == TRUE) && (MIS_ReadyforChapter6 == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jack_losfahren_info()
+func void DIA_Jack_LOSFAHREN_Info()
 {
 	AI_Output(other,self,"DIA_Jack_LOSFAHREN_15_00");	//No, staruszku. Ruszajmy w drogê.
-	if(b_captainconditions(self) == TRUE)
+	if(B_CaptainConditions(self) == TRUE)
 	{
 		AI_Output(self,other,"DIA_Jack_LOSFAHREN_14_01");	//Wszystko w najlepszym porz¹dku. Masz tê mapê?
 		AI_Output(self,other,"DIA_Jack_LOSFAHREN_14_02");	//Czeka nas niez³a przeprawa. Mam tylko nadziejê, ¿e dotrzemy na miejsce w jednym kawa³ku.
 		AI_Output(self,other,"DIA_Jack_LOSFAHREN_14_03");	//Na pewno masz wszystko, co trzeba? Nie bêdziemy zawracaæ, jeœli w po³owie drogi przypomnisz sobie o czymœ wa¿nym.
 		AI_Output(self,other,"DIA_Jack_LOSFAHREN_14_04");	//Jeœli jesteœ pewien, ¿e masz wszystko, idŸ do kajuty kapitana i walnij siê na kojê. Przyda ci siê trochê snu.
 		AI_StopProcessInfos(self);
-		b_captaincallsallonboard(self);
+		B_CaptainCallsAllOnBoard(self);
 	}
 	else
 	{
@@ -523,26 +523,26 @@ func void dia_jack_losfahren_info()
 };
 
 
-instance DIA_JACK_PERM5_NOTCAPTAIN(C_INFO)
+instance DIA_Jack_PERM5_NOTCAPTAIN(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 59;
-	condition = dia_jack_perm5_notcaptain_condition;
-	information = dia_jack_perm5_notcaptain_info;
+	condition = DIA_Jack_PERM5_NOTCAPTAIN_Condition;
+	information = DIA_Jack_PERM5_NOTCAPTAIN_Info;
 	permanent = TRUE;
 	description = "Co zamierzasz robiæ dalej?";
 };
 
 
-func int dia_jack_perm5_notcaptain_condition()
+func int DIA_Jack_PERM5_NOTCAPTAIN_Condition()
 {
-	if((Npc_KnowsInfo(other,dia_jack_bemycaptain2) && (SCGOTCAPTAIN == TRUE) && (JACKISCAPTAIN == FALSE)) || (MIS_JACK_NEWLIGHTHOUSEOFFICER == LOG_OBSOLETE))
+	if((Npc_KnowsInfo(other,DIA_Jack_BEMYCAPTAIN2) && (SCGotCaptain == TRUE) && (JackIsCaptain == FALSE)) || (MIS_Jack_NewLighthouseOfficer == LOG_OBSOLETE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jack_perm5_notcaptain_info()
+func void DIA_Jack_PERM5_NOTCAPTAIN_Info()
 {
 	AI_Output(other,self,"DIA_Jack_PERM5_NOTCAPTAIN_15_00");	//Co zamierzasz robiæ dalej?
 	AI_Output(self,other,"DIA_Jack_PERM5_NOTCAPTAIN_14_01");	//Przemyœla³em sobie parê spraw. Chyba jednak zostanê w mojej latarni.
@@ -550,26 +550,26 @@ func void dia_jack_perm5_notcaptain_info()
 };
 
 
-instance DIA_JACK_KAP6_EXIT(C_INFO)
+instance DIA_Jack_KAP6_EXIT(C_Info)
 {
-	npc = vlk_444_jack;
+	npc = VLK_444_Jack;
 	nr = 999;
-	condition = dia_jack_kap6_exit_condition;
-	information = dia_jack_kap6_exit_info;
+	condition = DIA_Jack_KAP6_EXIT_Condition;
+	information = DIA_Jack_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_jack_kap6_exit_condition()
+func int DIA_Jack_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_jack_kap6_exit_info()
+func void DIA_Jack_KAP6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };

@@ -1,5 +1,5 @@
 
-func int b_assessdrawweapon()
+func int B_AssessDrawWeapon()
 {
 	if(Npc_IsInFightMode(other,FMODE_NONE))
 	{
@@ -9,15 +9,15 @@ func int b_assessdrawweapon()
 	{
 		return FALSE;
 	};
-	if(!c_npcisbotheredbyweapon(self,other))
+	if(!C_NpcIsBotheredByWeapon(self,other))
 	{
 		return FALSE;
 	};
-	if(Npc_IsInState(self,zs_reacttoweapon))
+	if(Npc_IsInState(self,ZS_ReactToWeapon))
 	{
 		return FALSE;
 	};
-	if(Npc_IsInState(self,zs_observeplayer) && Npc_WasInState(self,zs_watchfight))
+	if(Npc_IsInState(self,ZS_ObservePlayer) && Npc_WasInState(self,ZS_WatchFight))
 	{
 		return FALSE;
 	};
@@ -26,8 +26,8 @@ func int b_assessdrawweapon()
 		return FALSE;
 	};
 	Npc_ClearAIQueue(self);
-	b_clearperceptions(self);
-	AI_StartState(self,zs_reacttoweapon,0,"");
+	B_ClearPerceptions(self);
+	AI_StartState(self,ZS_ReactToWeapon,0,"");
 	return TRUE;
 };
 

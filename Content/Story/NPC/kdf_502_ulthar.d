@@ -1,32 +1,32 @@
 
-instance KDF_502_ULTHAR(NPC_DEFAULT)
+instance KDF_502_Ulthar(Npc_Default)
 {
 	name[0] = "Ulthar";
 	guild = GIL_KDF;
 	id = 502;
 	voice = 5;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	aivar[AIV_TOUGHGUYNEWSOVERRIDE] = TRUE;
-	aivar[AIV_IGNORE_MURDER] = TRUE;
-	aivar[AIV_IGNORE_THEFT] = TRUE;
-	aivar[AIV_IGNORE_SHEEPKILLER] = TRUE;
-	b_setattributestochapter(self,6);
+	npcType = npctype_main;
+	aivar[AIV_ToughGuy] = TRUE;
+	aivar[AIV_ToughGuyNewsOverride] = TRUE;
+	aivar[AIV_IGNORE_Murder] = TRUE;
+	aivar[AIV_IGNORE_Theft] = TRUE;
+	aivar[AIV_IGNORE_Sheepkiller] = TRUE;
+	B_SetAttributesToChapter(self,6);
 	fight_tactic = FAI_HUMAN_STRONG;
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_L_NORMALBART01,BODYTEX_L,4844);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_L_NormalBart01,BodyTex_L,ItAr_KDF_H);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Mage.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_502;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_502;
 };
 
 
-func void rtn_start_502()
+func void Rtn_Start_502()
 {
-	ta_sit_throne(8,0,23,0,"NW_MONASTERY_THRONE_03");
-	ta_sit_throne(23,0,8,0,"NW_MONASTERY_THRONE_03");
+	TA_Sit_Throne(8,0,23,0,"NW_MONASTERY_THRONE_03");
+	TA_Sit_Throne(23,0,8,0,"NW_MONASTERY_THRONE_03");
 };
 

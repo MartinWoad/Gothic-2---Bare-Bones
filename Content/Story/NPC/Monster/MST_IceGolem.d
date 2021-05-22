@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_ICEGOLEM(C_NPC)
+prototype Mst_Default_IceGolem(C_Npc)
 {
 	name[0] = "Lodowy Golem";
 	guild = GIL_ICEGOLEM;
@@ -21,14 +21,14 @@ prototype MST_DEFAULT_ICEGOLEM(C_NPC)
 	fight_tactic = FAI_STONEGOLEM;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_icegolem()
+func void B_SetVisuals_IceGolem()
 {
 	Mdl_SetVisual(self,"Golem.mds");
 	Mdl_ApplyOverlayMds(self,"Golem_Icegolem.mds");
@@ -36,21 +36,21 @@ func void b_setvisuals_icegolem()
 };
 
 
-instance ICEGOLEM(MST_DEFAULT_ICEGOLEM)
+instance IceGolem(Mst_Default_IceGolem)
 {
-	b_setvisuals_icegolem();
+	B_SetVisuals_IceGolem();
 	Npc_SetToFistMode(self);
 };
 
-instance ICEGOLEM_SYLVIO1(MST_DEFAULT_ICEGOLEM)
+instance IceGolem_Sylvio1(Mst_Default_IceGolem)
 {
-	b_setvisuals_icegolem();
+	B_SetVisuals_IceGolem();
 	Npc_SetToFistMode(self);
 };
 
-instance ICEGOLEM_SYLVIO2(MST_DEFAULT_ICEGOLEM)
+instance IceGolem_Sylvio2(Mst_Default_IceGolem)
 {
-	b_setvisuals_icegolem();
+	B_SetVisuals_IceGolem();
 	Npc_SetToFistMode(self);
 };
 

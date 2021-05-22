@@ -1,25 +1,25 @@
 
-instance DIA_GESTATH_EXIT(C_INFO)
+instance DIA_Gestath_EXIT(C_Info)
 {
-	npc = vlk_4148_gestath;
+	npc = VLK_4148_Gestath;
 	nr = 999;
-	condition = dia_gestath_exit_condition;
-	information = dia_gestath_exit_info;
+	condition = DIA_Gestath_EXIT_Condition;
+	information = DIA_Gestath_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_gestath_exit_condition()
+func int DIA_Gestath_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_gestath_exit_info()
+func void DIA_Gestath_EXIT_Info()
 {
-	var C_ITEM heroarmor;
-	heroarmor = Npc_GetEquippedArmor(other);
-	if(Hlp_IsItem(heroarmor,itar_djg_crawler) == TRUE)
+	var C_Item heroArmor;
+	heroArmor = Npc_GetEquippedArmor(other);
+	if(Hlp_IsItem(heroArmor,ITAR_DJG_Crawler) == TRUE)
 	{
 		AI_Output(self,other,"DIA_Gestath_EXIT_09_00");	//Niez³a zbroja!
 	};
@@ -27,45 +27,45 @@ func void dia_gestath_exit_info()
 };
 
 
-instance DIA_GESTATH_HALLO(C_INFO)
+instance DIA_Gestath_HALLO(C_Info)
 {
-	npc = vlk_4148_gestath;
+	npc = VLK_4148_Gestath;
 	nr = 3;
-	condition = dia_gestath_hallo_condition;
-	information = dia_gestath_hallo_info;
+	condition = DIA_Gestath_HALLO_Condition;
+	information = DIA_Gestath_HALLO_Info;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_gestath_hallo_condition()
+func int DIA_Gestath_HALLO_Condition()
 {
 	return TRUE;
 };
 
-func void dia_gestath_hallo_info()
+func void DIA_Gestath_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Gestath_HALLO_15_00");	//Jak leci?
 	AI_Output(self,other,"DIA_Gestath_HALLO_09_01");	//Przyjœcie tutaj jest prawdziwym aktem odwagi. Pewnie siê zgubi³eœ, co?
-	GESTATH_TEACHANIMALTROPHY = TRUE;
-	Info_ClearChoices(dia_gestath_hallo);
-	Info_AddChoice(dia_gestath_hallo,"Jest tu coœ wartego zobaczenia?",dia_gestath_hallo_waszusehen);
-	Info_AddChoice(dia_gestath_hallo,"Co tutaj robisz?",dia_gestath_hallo_was);
+	Gestath_TeachAnimalTrophy = TRUE;
+	Info_ClearChoices(DIA_Gestath_HALLO);
+	Info_AddChoice(DIA_Gestath_HALLO,"Jest tu coœ wartego zobaczenia?",DIA_Gestath_HALLO_waszusehen);
+	Info_AddChoice(DIA_Gestath_HALLO,"Co tutaj robisz?",DIA_Gestath_HALLO_was);
 };
 
-func void dia_gestath_hallo_plate()
+func void DIA_Gestath_HALLO_plate()
 {
 	AI_Output(other,self,"DIA_Gestath_HALLO_plate_15_00");	//Niez³a zbroja.
 	AI_Output(self,other,"DIA_Gestath_HALLO_plate_09_01");	//Taak. Ciê¿ko coœ takiego dostaæ. Jest zrobiona z pancerza pe³zacza. Zrobi³ j¹ dla mnie pewien cz³owiek imieniem Wilk.
 	AI_Output(self,other,"DIA_Gestath_HALLO_plate_09_02");	//Wtedy by³em wiêŸniem w Kolonii. Da³em mu kilka ³usek pe³zacza, a parê dni póŸniej zbroja by³a ju¿ gotowa. Facet jest w porz¹dku.
-	WOLF_PRODUCECRAWLERARMOR = TRUE;
-	Info_AddChoice(dia_gestath_hallo,DIALOG_BACK,dia_gestath_hallo_back);
-	if(Npc_KnowsInfo(other,dia_wolf_hallo) == FALSE)
+	Wolf_ProduceCrawlerArmor = TRUE;
+	Info_AddChoice(DIA_Gestath_HALLO,Dialog_Back,DIA_Gestath_HALLO_Back);
+	if(Npc_KnowsInfo(other,DIA_Wolf_Hallo) == FALSE)
 	{
-		Info_AddChoice(dia_gestath_hallo,"Gdzie teraz przebywa Wilk?",dia_gestath_hallo_plate_wowolf);
+		Info_AddChoice(DIA_Gestath_HALLO,"Gdzie teraz przebywa Wilk?",DIA_Gestath_HALLO_plate_woWolf);
 	};
 };
 
-func void dia_gestath_hallo_plate_wowolf()
+func void DIA_Gestath_HALLO_plate_woWolf()
 {
 	AI_Output(other,self,"DIA_Gestath_HALLO_plate_woWolf_15_00");	//Gdzie teraz przebywa Wilk?
 	AI_Output(self,other,"DIA_Gestath_HALLO_plate_woWolf_09_01");	//Nie widzia³em go od czasu, kiedy by³ najemnikiem w Kolonii.
@@ -75,129 +75,129 @@ func void dia_gestath_hallo_plate_wowolf()
 	};
 };
 
-func void dia_gestath_hallo_was()
+func void DIA_Gestath_HALLO_was()
 {
 	AI_Output(other,self,"DIA_Gestath_HALLO_was_15_00");	//Co tutaj robisz?
 	AI_Output(self,other,"DIA_Gestath_HALLO_was_09_01");	//Zarabiam.
 	AI_Output(other,self,"DIA_Gestath_HALLO_was_15_02");	//W takim miejscu?
 	AI_Output(self,other,"DIA_Gestath_HALLO_was_09_03");	//Jestem myœliwym. Specjalizujê siê w trudnych zadaniach.
 	AI_Output(self,other,"DIA_Gestath_HALLO_was_09_04");	//Ogniste jaszczury, pe³zacze, zêbacze... Jednym s³owem - wszystko, na co nikt inny nie zechcia³by zapolowaæ.
-	Info_AddChoice(dia_gestath_hallo,"Niez³a zbroja.",dia_gestath_hallo_plate);
+	Info_AddChoice(DIA_Gestath_HALLO,"Niez³a zbroja.",DIA_Gestath_HALLO_plate);
 };
 
-func void dia_gestath_hallo_waszusehen()
+func void DIA_Gestath_HALLO_waszusehen()
 {
 	AI_Output(other,self,"DIA_Gestath_HALLO_waszusehen_15_00");	//Jest tu coœ wartego zobaczenia?
 	AI_Output(self,other,"DIA_Gestath_HALLO_waszusehen_09_01");	//Trochê ognistych jaszczurów, orków i cholera wie, czego jeszcze. Nie by³em jeszcze na wy¿ynach.
 	AI_Output(self,other,"DIA_Gestath_HALLO_waszusehen_09_02");	//Nie radzê jednak próbowaæ. Stworzenia, które ¿yj¹ tam na górze, nie wygl¹daj¹ zbyt przyjaŸnie.
 };
 
-func void dia_gestath_hallo_back()
+func void DIA_Gestath_HALLO_Back()
 {
-	Info_ClearChoices(dia_gestath_hallo);
+	Info_ClearChoices(DIA_Gestath_HALLO);
 };
 
 
-instance DIA_GESTATH_DRACHEN(C_INFO)
+instance DIA_Gestath_Drachen(C_Info)
 {
-	npc = vlk_4148_gestath;
+	npc = VLK_4148_Gestath;
 	nr = 3;
-	condition = dia_gestath_drachen_condition;
-	information = dia_gestath_drachen_info;
+	condition = DIA_Gestath_Drachen_Condition;
+	information = DIA_Gestath_Drachen_Info;
 	permanent = TRUE;
 	description = "Potrafisz oprawiaæ smoki?";
 };
 
 
-var int gestath_dragontrophy;
+var int Gestath_DragonTrophy;
 
-func int dia_gestath_drachen_condition()
+func int DIA_Gestath_Drachen_Condition()
 {
-	if((GESTATH_DRAGONTROPHY == FALSE) && (GESTATH_TEACHANIMALTROPHY == TRUE))
+	if((Gestath_DragonTrophy == FALSE) && (Gestath_TeachAnimalTrophy == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gestath_drachen_info()
+func void DIA_Gestath_Drachen_Info()
 {
-	var C_ITEM heroarmor;
+	var C_Item heroArmor;
 	AI_Output(other,self,"DIA_Gestath_Drachen_15_00");	//Potrafisz oprawiaæ smoki?
-	heroarmor = Npc_GetEquippedArmor(other);
-	if(KAPITEL >= 4)
+	heroArmor = Npc_GetEquippedArmor(other);
+	if(Kapitel >= 4)
 	{
 		AI_Output(self,other,"DIA_Gestath_Drachen_09_01");	//Kiedyœ, kiedy nabierzesz doœwiadczenia, mo¿e nawet nauczê ciê tej sztuki!
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Gestath_Drachen_09_02");	//Jasne.
-		GESTATH_DRAGONTROPHY = TRUE;
+		Gestath_DragonTrophy = TRUE;
 	};
 };
 
 
-instance DIA_GESTATH_TEACHHUNTING(C_INFO)
+instance DIA_Gestath_TEACHHUNTING(C_Info)
 {
-	npc = vlk_4148_gestath;
+	npc = VLK_4148_Gestath;
 	nr = 12;
-	condition = dia_gestath_teachhunting_condition;
-	information = dia_gestath_teachhunting_info;
+	condition = DIA_Gestath_TEACHHUNTING_Condition;
+	information = DIA_Gestath_TEACHHUNTING_Info;
 	permanent = TRUE;
 	description = "Naucz mnie sprawiaæ zwierzêta.";
 };
 
 
-func int dia_gestath_teachhunting_condition()
+func int DIA_Gestath_TEACHHUNTING_Condition()
 {
-	if(GESTATH_TEACHANIMALTROPHY == TRUE)
+	if(Gestath_TeachAnimalTrophy == TRUE)
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_gestath_teachhunting_onetime;
+var int DIA_Gestath_TEACHHUNTING_OneTime;
 
-func void dia_gestath_teachhunting_info()
+func void DIA_Gestath_TEACHHUNTING_Info()
 {
 	AI_Output(other,self,"DIA_Gestath_TEACHHUNTING_15_00");	//Naucz mnie sprawiaæ zwierzêta.
-	if((PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FIRETONGUE] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CRAWLERPLATE] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_MANDIBLES] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRGSNAPPERHORN] == FALSE) || ((GESTATH_DRAGONTROPHY == TRUE) && ((PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRAGONSCALE] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRAGONBLOOD] == FALSE))))
+	if((PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FireTongue] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CrawlerPlate] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Mandibles] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DrgSnapperHorn] == FALSE) || ((Gestath_DragonTrophy == TRUE) && ((PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DragonScale] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DragonBlood] == FALSE))))
 	{
-		if(DIA_GESTATH_TEACHHUNTING_ONETIME == FALSE)
+		if(DIA_Gestath_TEACHHUNTING_OneTime == FALSE)
 		{
 			AI_Output(self,other,"DIA_Gestath_TEACHHUNTING_09_01");	//Czemu nie? I tak mam chwilowo dosyæ wra¿eñ.
-			DIA_GESTATH_TEACHHUNTING_ONETIME = TRUE;
+			DIA_Gestath_TEACHHUNTING_OneTime = TRUE;
 		}
 		else
 		{
 			AI_Output(self,other,"DIA_Gestath_TEACHHUNTING_09_02");	//Co chcesz wiedzieæ?
 		};
-		Info_AddChoice(dia_gestath_teachhunting,DIALOG_BACK,dia_gestath_teachhunting_back);
-		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FIRETONGUE] == FALSE)
+		Info_AddChoice(DIA_Gestath_TEACHHUNTING,Dialog_Back,DIA_Gestath_TEACHHUNTING_BACK);
+		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FireTongue] == FALSE)
 		{
-			Info_AddChoice(dia_gestath_teachhunting,b_buildlearnstring("Jêzyk ognistego jaszczura",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),dia_gestath_teachhunting_firetongue);
+			Info_AddChoice(DIA_Gestath_TEACHHUNTING,B_BuildLearnString("Jêzyk ognistego jaszczura",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),DIA_Gestath_TEACHHUNTING_FireTongue);
 		};
-		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CRAWLERPLATE] == FALSE)
+		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CrawlerPlate] == FALSE)
 		{
-			Info_AddChoice(dia_gestath_teachhunting,b_buildlearnstring("Usuñ p³yty pancerza pe³zacza",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),dia_gestath_teachhunting_crawlerplate);
+			Info_AddChoice(DIA_Gestath_TEACHHUNTING,B_BuildLearnString("Usuñ p³yty pancerza pe³zacza",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),DIA_Gestath_TEACHHUNTING_CrawlerPlate);
 		};
-		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_MANDIBLES] == FALSE)
+		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Mandibles] == FALSE)
 		{
-			Info_AddChoice(dia_gestath_teachhunting,b_buildlearnstring("Usuñ ¿uwaczkê",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),dia_gestath_teachhunting_mandibles);
+			Info_AddChoice(DIA_Gestath_TEACHHUNTING,B_BuildLearnString("Usuñ ¿uwaczkê",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),DIA_Gestath_TEACHHUNTING_Mandibles);
 		};
-		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRGSNAPPERHORN] == FALSE)
+		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DrgSnapperHorn] == FALSE)
 		{
-			Info_AddChoice(dia_gestath_teachhunting,b_buildlearnstring("Róg smoczego zêbacza",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),dia_gestath_teachhunting_drgsnapperhorn);
+			Info_AddChoice(DIA_Gestath_TEACHHUNTING,B_BuildLearnString("Róg smoczego zêbacza",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),DIA_Gestath_TEACHHUNTING_DrgSnapperHorn);
 		};
-		if(GESTATH_DRAGONTROPHY == TRUE)
+		if(Gestath_DragonTrophy == TRUE)
 		{
-			if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRAGONSCALE] == FALSE)
+			if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DragonScale] == FALSE)
 			{
-				Info_AddChoice(dia_gestath_teachhunting,b_buildlearnstring("Usuñ smocze ³uski",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),dia_gestath_teachhunting_dragonscale);
+				Info_AddChoice(DIA_Gestath_TEACHHUNTING,B_BuildLearnString("Usuñ smocze ³uski",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),DIA_Gestath_TEACHHUNTING_DragonScale);
 			};
-			if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRAGONBLOOD] == FALSE)
+			if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DragonBlood] == FALSE)
 			{
-				Info_AddChoice(dia_gestath_teachhunting,b_buildlearnstring("Zbieraj smocz¹ krew",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),dia_gestath_teachhunting_dragonblood);
+				Info_AddChoice(DIA_Gestath_TEACHHUNTING,B_BuildLearnString("Zbieraj smocz¹ krew",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),DIA_Gestath_TEACHHUNTING_DragonBlood);
 			};
 		};
 	}
@@ -207,97 +207,97 @@ func void dia_gestath_teachhunting_info()
 	};
 };
 
-func void dia_gestath_teachhunting_back()
+func void DIA_Gestath_TEACHHUNTING_BACK()
 {
-	Info_ClearChoices(dia_gestath_teachhunting);
+	Info_ClearChoices(DIA_Gestath_TEACHHUNTING);
 };
 
-func void dia_gestath_teachhunting_firetongue()
+func void DIA_Gestath_TEACHHUNTING_FireTongue()
 {
-	if(b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_FIRETONGUE))
+	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_FireTongue))
 	{
 		AI_Output(self,other,"DIA_Gestath_TEACHHUNTING_FireTongue_09_00");	//Musisz przytrzymaæ jêzyk ognistego jaszczura rêk¹. Teraz odcinasz go jednym sprawnym ruchem.
 	};
-	Info_ClearChoices(dia_gestath_teachhunting);
+	Info_ClearChoices(DIA_Gestath_TEACHHUNTING);
 };
 
-func void dia_gestath_teachhunting_crawlerplate()
+func void DIA_Gestath_TEACHHUNTING_CrawlerPlate()
 {
-	if(b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_CRAWLERPLATE))
+	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_CrawlerPlate))
 	{
 		AI_Output(self,other,"DIA_Gestath_TEACHHUNTING_CrawlerPlate_09_00");	//¯eby zerwaæ pancerze pe³zaczy, potrzebujesz naprawdê ostrego no¿a.
 	};
-	Info_ClearChoices(dia_gestath_teachhunting);
+	Info_ClearChoices(DIA_Gestath_TEACHHUNTING);
 };
 
-func void dia_gestath_teachhunting_mandibles()
+func void DIA_Gestath_TEACHHUNTING_Mandibles()
 {
-	if(b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_MANDIBLES))
+	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Mandibles))
 	{
 		AI_Output(self,other,"DIA_Gestath_TEACHHUNTING_Mandibles_09_00");	//¯uwaczki przytwierdzone s¹ doœæ mocno do czaszki polnej bestii lub pe³zacza. Usuniêcie ich wymaga trochê wysi³ku.
 	};
-	Info_ClearChoices(dia_gestath_teachhunting);
+	Info_ClearChoices(DIA_Gestath_TEACHHUNTING);
 };
 
-func void dia_gestath_teachhunting_drgsnapperhorn()
+func void DIA_Gestath_TEACHHUNTING_DrgSnapperHorn()
 {
-	if(b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_DRGSNAPPERHORN))
+	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_DrgSnapperHorn))
 	{
 		AI_Output(self,other,"DIA_Gestath_TEACHHUNTING_DrgSnapperHorn_09_00");	//Aby odci¹æ zêbaczowi jego róg, potrzebujesz naprawdê mocnego no¿a. Wbij go w sam czubek g³owy.
 	};
-	Info_ClearChoices(dia_gestath_teachhunting);
+	Info_ClearChoices(DIA_Gestath_TEACHHUNTING);
 };
 
-func void dia_gestath_teachhunting_dragonscale()
+func void DIA_Gestath_TEACHHUNTING_DragonScale()
 {
-	if(b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_DRAGONSCALE))
+	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_DragonScale))
 	{
 		AI_Output(self,other,"DIA_Gestath_TEACHHUNTING_DragonScale_09_00");	//Smocze ³uski s¹ naprawdê trudne do wyrwania, ale te na plecach s¹ stosunkowo p³ytko osadzone.
 	};
-	Info_ClearChoices(dia_gestath_teachhunting);
+	Info_ClearChoices(DIA_Gestath_TEACHHUNTING);
 };
 
-func void dia_gestath_teachhunting_dragonblood()
+func void DIA_Gestath_TEACHHUNTING_DragonBlood()
 {
-	if(b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_DRAGONBLOOD))
+	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_DragonBlood))
 	{
 		AI_Output(self,other,"DIA_Gestath_TEACHHUNTING_DragonBlood_09_00");	//Krew naj³atwiej spuœcisz, przecinaj¹c brzuch lub gard³o zwierzêcia ostrym no¿em.
 	};
-	Info_ClearChoices(dia_gestath_teachhunting);
+	Info_ClearChoices(DIA_Gestath_TEACHHUNTING);
 };
 
 
-instance DIA_GESTATH_PICKPOCKET(C_INFO)
+instance DIA_Gestath_PICKPOCKET(C_Info)
 {
-	npc = vlk_4148_gestath;
+	npc = VLK_4148_Gestath;
 	nr = 900;
-	condition = dia_gestath_pickpocket_condition;
-	information = dia_gestath_pickpocket_info;
+	condition = DIA_Gestath_PICKPOCKET_Condition;
+	information = DIA_Gestath_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_100;
+	description = Pickpocket_100;
 };
 
 
-func int dia_gestath_pickpocket_condition()
+func int DIA_Gestath_PICKPOCKET_Condition()
 {
-	return c_beklauen(81,350);
+	return C_Beklauen(81,350);
 };
 
-func void dia_gestath_pickpocket_info()
+func void DIA_Gestath_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_gestath_pickpocket);
-	Info_AddChoice(dia_gestath_pickpocket,DIALOG_BACK,dia_gestath_pickpocket_back);
-	Info_AddChoice(dia_gestath_pickpocket,DIALOG_PICKPOCKET,dia_gestath_pickpocket_doit);
+	Info_ClearChoices(DIA_Gestath_PICKPOCKET);
+	Info_AddChoice(DIA_Gestath_PICKPOCKET,Dialog_Back,DIA_Gestath_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Gestath_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Gestath_PICKPOCKET_DoIt);
 };
 
-func void dia_gestath_pickpocket_doit()
+func void DIA_Gestath_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_gestath_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Gestath_PICKPOCKET);
 };
 
-func void dia_gestath_pickpocket_back()
+func void DIA_Gestath_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_gestath_pickpocket);
+	Info_ClearChoices(DIA_Gestath_PICKPOCKET);
 };
 

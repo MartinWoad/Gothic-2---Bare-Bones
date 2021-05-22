@@ -1,126 +1,126 @@
 
-instance DIA_FELLAN_EXIT(C_INFO)
+instance DIA_Fellan_EXIT(C_Info)
 {
-	npc = vlk_480_fellan;
+	npc = VLK_480_Fellan;
 	nr = 999;
-	condition = dia_fellan_exit_condition;
-	information = dia_fellan_exit_info;
+	condition = DIA_Fellan_EXIT_Condition;
+	information = DIA_Fellan_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_fellan_exit_condition()
+func int DIA_Fellan_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_fellan_exit_info()
+func void DIA_Fellan_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_FELLAN_PICKPOCKET(C_INFO)
+instance DIA_Fellan_PICKPOCKET(C_Info)
 {
-	npc = vlk_480_fellan;
+	npc = VLK_480_Fellan;
 	nr = 900;
-	condition = dia_fellan_pickpocket_condition;
-	information = dia_fellan_pickpocket_info;
+	condition = DIA_Fellan_PICKPOCKET_Condition;
+	information = DIA_Fellan_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_fellan_pickpocket_condition()
+func int DIA_Fellan_PICKPOCKET_Condition()
 {
-	return c_beklauen(40,40);
+	return C_Beklauen(40,40);
 };
 
-func void dia_fellan_pickpocket_info()
+func void DIA_Fellan_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_fellan_pickpocket);
-	Info_AddChoice(dia_fellan_pickpocket,DIALOG_BACK,dia_fellan_pickpocket_back);
-	Info_AddChoice(dia_fellan_pickpocket,DIALOG_PICKPOCKET,dia_fellan_pickpocket_doit);
+	Info_ClearChoices(DIA_Fellan_PICKPOCKET);
+	Info_AddChoice(DIA_Fellan_PICKPOCKET,Dialog_Back,DIA_Fellan_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Fellan_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Fellan_PICKPOCKET_DoIt);
 };
 
-func void dia_fellan_pickpocket_doit()
+func void DIA_Fellan_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_fellan_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Fellan_PICKPOCKET);
 };
 
-func void dia_fellan_pickpocket_back()
+func void DIA_Fellan_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_fellan_pickpocket);
+	Info_ClearChoices(DIA_Fellan_PICKPOCKET);
 };
 
 
-instance DIA_FELLAN_NEWS(C_INFO)
+instance DIA_Fellan_News(C_Info)
 {
-	npc = vlk_480_fellan;
+	npc = VLK_480_Fellan;
 	nr = 1;
-	condition = dia_fellan_news_condition;
-	information = dia_fellan_news_info;
+	condition = DIA_Fellan_News_Condition;
+	information = DIA_Fellan_News_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_fellan_news_condition()
+func int DIA_Fellan_News_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (self.aivar[AIV_LASTFIGHTAGAINSTPLAYER] != FIGHT_NONE) && (self.aivar[AIV_LASTFIGHTCOMMENT] == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (self.aivar[AIV_LastFightAgainstPlayer] != FIGHT_NONE) && (self.aivar[AIV_LastFightComment] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fellan_news_info()
+func void DIA_Fellan_News_Info()
 {
-	if(self.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_LOST)
+	if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
 	{
 		AI_Output(self,other,"DIA_Fellan_News_06_00");	//No dobrze, pokona³eœ mnie. Brawo, bohaterze.
-		if((MIS_ATTACKFELLAN == LOG_RUNNING) && (FELLANGESCHLAGEN == FALSE))
+		if((MIS_AttackFellan == LOG_Running) && (FellanGeschlagen == FALSE))
 		{
 			AI_Output(other,self,"DIA_Fellan_News_15_01");	//Przestaniesz waliæ tym m³otkiem, czy mam ci jeszcze raz spuœciæ lanie?
 			AI_Output(self,other,"DIA_Fellan_News_06_02");	//Nie, proszê, nie bij mnie. Ale jeœli cokolwiek siê zawali, to bêdzie to twoja wina!
-			FELLANGESCHLAGEN = TRUE;
+			FellanGeschlagen = TRUE;
 			Npc_ExchangeRoutine(self,"OHNEHAMMER");
 			AI_StopProcessInfos(self);
 		};
 	};
-	if(self.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_WON)
+	if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_WON)
 	{
 		AI_Output(self,other,"DIA_Fellan_News_06_03");	//Co z tob¹! Chcesz znowu oberwaæ?
 	};
-	if(self.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_CANCEL)
+	if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_CANCEL)
 	{
 		AI_Output(self,other,"DIA_Fellan_News_06_04");	//O co ci w³aœciwie chodzi? Chcesz siê biæ? Chcesz rozmawiaæ? Mo¿e chcesz siê wreszcie na coœ zdecydowaæ?
 	};
-	self.aivar[AIV_LASTFIGHTCOMMENT] = TRUE;
+	self.aivar[AIV_LastFightComment] = TRUE;
 };
 
 
-instance DIA_FELLAN_HALLO(C_INFO)
+instance DIA_Fellan_HALLO(C_Info)
 {
-	npc = vlk_480_fellan;
+	npc = VLK_480_Fellan;
 	nr = 2;
-	condition = dia_fellan_hallo_condition;
-	information = dia_fellan_hallo_info;
+	condition = DIA_Fellan_HALLO_Condition;
+	information = DIA_Fellan_HALLO_Info;
 	permanent = FALSE;
 	description = "Co tam przybijasz?";
 };
 
 
-func int dia_fellan_hallo_condition()
+func int DIA_Fellan_HALLO_Condition()
 {
-	if(FELLANGESCHLAGEN == FALSE)
+	if(FellanGeschlagen == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fellan_hallo_info()
+func void DIA_Fellan_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Fellan_HALLO_15_00");	//Co tam przybijasz?
 	AI_Output(self,other,"DIA_Fellan_HALLO_06_01");	//Od wielu dni próbujê naprawiaæ uszkodzenia dachu.
@@ -129,79 +129,79 @@ func void dia_fellan_hallo_info()
 };
 
 
-instance DIA_FELLAN_STOP(C_INFO)
+instance DIA_Fellan_Stop(C_Info)
 {
-	npc = vlk_480_fellan;
+	npc = VLK_480_Fellan;
 	nr = 3;
-	condition = dia_fellan_stop_condition;
-	information = dia_fellan_stop_info;
+	condition = DIA_Fellan_Stop_Condition;
+	information = DIA_Fellan_Stop_Info;
 	permanent = FALSE;
 	description = "Mo¿esz na moment przestaæ przybijaæ?";
 };
 
 
-func int dia_fellan_stop_condition()
+func int DIA_Fellan_Stop_Condition()
 {
-	if(MIS_ATTACKFELLAN == LOG_RUNNING)
+	if(MIS_AttackFellan == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fellan_stop_info()
+func void DIA_Fellan_Stop_Info()
 {
 	AI_Output(other,self,"DIA_Fellan_Stop_15_00");	//Mo¿esz na moment przestaæ przybijaæ?
 	AI_Output(self,other,"DIA_Fellan_Stop_06_01");	//Nie, muszê, MUSZÊ to skoñczyæ.
-	Info_ClearChoices(dia_fellan_stop);
-	Info_AddChoice(dia_fellan_stop,"Przestañ przybijaæ albo po³amiê ci wszystkie koœci.",dia_fellan_stop_bones);
-	Info_AddChoice(dia_fellan_stop,"Dam ci 10 sztuk z³ota, jeœli choæ na chwilê przestaniesz waliæ tym m³otkiem.",dia_fellan_stop_gold);
-	Info_AddChoice(dia_fellan_stop,"Po prostu przestañ t³uc tym m³otkiem, zrozumiano?",dia_fellan_stop_just);
+	Info_ClearChoices(DIA_Fellan_Stop);
+	Info_AddChoice(DIA_Fellan_Stop,"Przestañ przybijaæ albo po³amiê ci wszystkie koœci.",DIA_Fellan_Stop_Bones);
+	Info_AddChoice(DIA_Fellan_Stop,"Dam ci 10 sztuk z³ota, jeœli choæ na chwilê przestaniesz waliæ tym m³otkiem.",DIA_Fellan_Stop_Gold);
+	Info_AddChoice(DIA_Fellan_Stop,"Po prostu przestañ t³uc tym m³otkiem, zrozumiano?",DIA_Fellan_Stop_Just);
 };
 
-func void dia_fellan_stop_bones()
+func void DIA_Fellan_Stop_Bones()
 {
 	AI_Output(other,self,"DIA_Fellan_Stop_Bones_15_00");	//Przestañ przybijaæ albo po³amiê ci wszystkie koœci.
 	AI_Output(self,other,"DIA_Fellan_Stop_Bones_06_01");	//Zapomnij o tym. Chyba ¿e twoja g³owa równie¿ potrzebuje niewielkiej naprawy moim m³otkiem.
 	AI_StopProcessInfos(self);
 };
 
-func void dia_fellan_stop_gold()
+func void DIA_Fellan_Stop_Gold()
 {
 	AI_Output(other,self,"DIA_Fellan_Stop_Gold_15_00");	//Dam ci 10 sztuk z³ota, jeœli choæ na chwilê przestaniesz waliæ tym m³otkiem.
 	AI_Output(self,other,"DIA_Fellan_Stop_Gold_06_01");	//O, ho... To bardzo hojnie z twojej strony. Ale jeœli chodzi o twoje z³oto, to mo¿esz je sobie...
 	AI_Output(self,other,"DIA_Fellan_Stop_Gold_06_02");	//...no, wiesz, co mo¿esz z nim zrobiæ.
 };
 
-func void dia_fellan_stop_just()
+func void DIA_Fellan_Stop_Just()
 {
 	AI_Output(other,self,"DIA_Fellan_Stop_Just_15_00");	//Po prostu przestañ t³uc tym m³otkiem, zrozumiano?
 	AI_Output(self,other,"DIA_Fellan_Stop_Just_06_01");	//Po prostu przestañ mnie wkurzaæ, zrozumiano?
 };
 
 
-instance DIA_FELLAN_KLAR(C_INFO)
+instance DIA_Fellan_klar(C_Info)
 {
-	npc = vlk_480_fellan;
+	npc = VLK_480_Fellan;
 	nr = 5;
-	condition = dia_fellan_klar_condition;
-	information = dia_fellan_klar_info;
+	condition = DIA_Fellan_klar_Condition;
+	information = DIA_Fellan_klar_Info;
 	permanent = TRUE;
 	description = "Hej - wszystko w porz¹dku?";
 };
 
 
-func int dia_fellan_klar_condition()
+func int DIA_Fellan_klar_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_fellan_hallo))
+	if(Npc_KnowsInfo(other,DIA_Fellan_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fellan_klar_info()
+func void DIA_Fellan_klar_Info()
 {
 	AI_Output(other,self,"DIA_Fellan_klar_15_00");	//Hej - wszystko w porz¹dku?
-	if(FELLANGESCHLAGEN == FALSE)
+	if(FellanGeschlagen == FALSE)
 	{
 		AI_Output(self,other,"DIA_Fellan_klar_06_01");	//Taaa, muszê to tylko zreperowaæ na czas.
 	}

@@ -1,78 +1,78 @@
 
-instance DJG_713_BIFF(NPC_DEFAULT)
+instance DJG_713_Biff(Npc_Default)
 {
 	name[0] = "Biff";
 	guild = GIL_DJG;
 	id = 713;
 	voice = 7;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,5);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,5);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_2h_sld_axe);
-	b_createambientinv(self);
-	CreateInvItems(self,itpo_health_02,4);
-	CreateInvItems(self,itmi_oldcoin,1);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_NORMAL16,BODYTEX_N,4839);
+	EquipItem(self,ItMw_2h_Sld_Axe);
+	B_CreateAmbientInv(self);
+	CreateInvItems(self,ItPo_Health_02,4);
+	CreateInvItems(self,ItMi_OldCoin,1);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Normal16,BodyTex_N,itar_djg_m);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,65);
-	daily_routine = rtn_prestart_713;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,65);
+	daily_routine = Rtn_PreStart_713;
 };
 
 
-func void rtn_prestart_713()
+func void Rtn_PreStart_713()
 {
-	ta_smalltalk(8,0,23,0,"OW_DJG_STARTCAMP_01");
-	ta_smalltalk(23,0,8,0,"OW_DJG_STARTCAMP_01");
+	TA_Smalltalk(8,0,23,0,"OW_DJG_STARTCAMP_01");
+	TA_Smalltalk(23,0,8,0,"OW_DJG_STARTCAMP_01");
 };
 
-func void rtn_start_713()
+func void Rtn_Start_713()
 {
-	ta_stand_armscrossed(8,0,23,0,"OW_DJG_STARTCAMP_01");
-	ta_stand_armscrossed(23,0,8,0,"OW_DJG_STARTCAMP_01");
+	TA_Stand_ArmsCrossed(8,0,23,0,"OW_DJG_STARTCAMP_01");
+	TA_Stand_ArmsCrossed(23,0,8,0,"OW_DJG_STARTCAMP_01");
 };
 
-func void rtn_follow_713()
+func void Rtn_Follow_713()
 {
-	ta_follow_player(8,0,23,0,"OW_PATH_298");
-	ta_follow_player(23,0,8,0,"OW_PATH_298");
+	TA_Follow_Player(8,0,23,0,"OW_PATH_298");
+	TA_Follow_Player(23,0,8,0,"OW_PATH_298");
 };
 
-func void rtn_stay_swamp_713()
+func void Rtn_Stay_Swamp_713()
 {
-	ta_stand_guarding(8,0,23,0,"SWAMPDRAGON");
-	ta_stand_guarding(23,0,8,0,"SWAMPDRAGON");
+	TA_Stand_Guarding(8,0,23,0,"SWAMPDRAGON");
+	TA_Stand_Guarding(23,0,8,0,"SWAMPDRAGON");
 };
 
-func void rtn_stay_rock_713()
+func void Rtn_Stay_Rock_713()
 {
-	ta_stand_guarding(8,0,23,0,"LOCATION_19_01");
-	ta_stand_guarding(23,0,8,0,"LOCATION_19_01");
+	TA_Stand_Guarding(8,0,23,0,"LOCATION_19_01");
+	TA_Stand_Guarding(23,0,8,0,"LOCATION_19_01");
 };
 
-func void rtn_stay_fire_713()
+func void Rtn_Stay_Fire_713()
 {
-	ta_stand_guarding(8,0,23,0,"CASTLE_29");
-	ta_stand_guarding(23,0,8,0,"CASTLE_29");
+	TA_Stand_Guarding(8,0,23,0,"CASTLE_29");
+	TA_Stand_Guarding(23,0,8,0,"CASTLE_29");
 };
 
-func void rtn_stay_ice_713()
+func void Rtn_Stay_Ice_713()
 {
-	ta_stand_guarding(8,0,23,0,"OW_ICEDRAGON_09");
-	ta_stand_guarding(23,0,8,0,"OW_ICEDRAGON_09");
+	TA_Stand_Guarding(8,0,23,0,"OW_ICEDRAGON_09");
+	TA_Stand_Guarding(23,0,8,0,"OW_ICEDRAGON_09");
 };
 
-func void rtn_stay_awayfromoc_713()
+func void Rtn_Stay_AwayFromOC_713()
 {
-	ta_stand_guarding(8,0,23,0,"OW_PATH_298");
-	ta_stand_guarding(23,0,8,0,"OW_PATH_298");
+	TA_Stand_Guarding(8,0,23,0,"OW_PATH_298");
+	TA_Stand_Guarding(23,0,8,0,"OW_PATH_298");
 };
 
-func void rtn_runstopass_713()
+func void Rtn_RunsToPass_713()
 {
-	ta_runtowp(8,0,23,0,"START");
-	ta_runtowp(23,0,8,0,"START");
+	TA_RunToWP(8,0,23,0,"START");
+	TA_RunToWP(23,0,8,0,"START");
 };
 

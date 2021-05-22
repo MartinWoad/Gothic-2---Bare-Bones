@@ -1,46 +1,46 @@
 
-instance DIA_DRAAL_EXIT(C_INFO)
+instance DIA_Draal_EXIT(C_Info)
 {
-	npc = strf_1101_draal;
+	npc = STRF_1101_Draal;
 	nr = 999;
-	condition = dia_draal_exit_condition;
-	information = dia_draal_exit_info;
+	condition = DIA_Draal_EXIT_Condition;
+	information = DIA_Draal_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_draal_exit_condition()
+func int DIA_Draal_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_draal_exit_info()
+func void DIA_Draal_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_DRAAL_DRAGON(C_INFO)
+instance DIA_Draal_DRAGON(C_Info)
 {
-	npc = strf_1101_draal;
+	npc = STRF_1101_Draal;
 	nr = 1;
-	condition = dia_draal_dragon_condition;
-	information = dia_draal_dragon_info;
+	condition = DIA_Draal_DRAGON_Condition;
+	information = DIA_Draal_DRAGON_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_draal_dragon_condition()
+func int DIA_Draal_DRAGON_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_draal_dragon_info()
+func void DIA_Draal_DRAGON_Info()
 {
 	AI_Output(self,other,"DIA_Draal_DRAGON_03_00");	//By³em na zewn¹trz, kiedy smok zaatakowa³.
 	AI_Output(self,other,"DIA_Draal_DRAGON_03_01");	//Widzia³em go - by³ wielki niczym dziesiêciu ros³ych mê¿czyzn! Jego ognisty oddech w mgnieniu oka spopieli³ chaty!

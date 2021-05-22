@@ -1,28 +1,28 @@
 
-instance PAL_285_RITTER(NPC_DEFAULT)
+instance Pal_285_Ritter(Npc_Default)
 {
-	name[0] = NAME_RITTER;
+	name[0] = NAME_Ritter;
 	guild = GIL_PAL;
 	id = 285;
 	voice = 4;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,5);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,5);
 	fight_tactic = FAI_HUMAN_MASTER;
-	EquipItem(self,itmw_1h_pal_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fighter",FACE_N_NORMALBART05,BODYTEX_N,4829);
+	EquipItem(self,ItMw_1h_Pal_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart05,BodyTex_N,ItAr_PAl_H);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,80);
-	daily_routine = rtn_start_285;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,80);
+	daily_routine = Rtn_Start_285;
 };
 
 
-func void rtn_start_285()
+func void Rtn_Start_285()
 {
-	ta_stand_guarding(8,0,23,0,"NW_CITY_PALCAMP_08");
-	ta_stand_guarding(23,0,8,0,"NW_CITY_PALCAMP_08");
+	TA_Stand_Guarding(8,0,23,0,"NW_CITY_PALCAMP_08");
+	TA_Stand_Guarding(23,0,8,0,"NW_CITY_PALCAMP_08");
 };
 

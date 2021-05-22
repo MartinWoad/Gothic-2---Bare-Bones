@@ -1,79 +1,79 @@
 
-instance DIA_GIRION_EXIT(C_INFO)
+instance DIA_Girion_EXIT(C_Info)
 {
-	npc = pal_207_girion;
+	npc = Pal_207_Girion;
 	nr = 999;
-	condition = dia_girion_exit_condition;
-	information = dia_girion_exit_info;
+	condition = DIA_Girion_EXIT_Condition;
+	information = DIA_Girion_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_girion_exit_condition()
+func int DIA_Girion_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_girion_exit_info()
+func void DIA_Girion_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_GIRION_HALLO(C_INFO)
+instance DIA_Girion_Hallo(C_Info)
 {
-	npc = pal_207_girion;
+	npc = Pal_207_Girion;
 	nr = 2;
-	condition = dia_girion_hallo_condition;
-	information = dia_girion_hallo_info;
+	condition = DIA_Girion_Hallo_Condition;
+	information = DIA_Girion_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_girion_hallo_condition()
+func int DIA_Girion_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (MIS_SHIPISFREE == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (MIS_ShipIsFree == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_girion_hallo_info()
+func void DIA_Girion_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Girion_Hallo_08_00");	//Jestem Girion, mistrz walki broni¹ oburêczn¹ i królewski paladyn. Czemu mnie niepokoisz?
 };
 
 
-instance DIA_GIRION_CANTEACH(C_INFO)
+instance DIA_Girion_CanTeach(C_Info)
 {
-	npc = pal_207_girion;
+	npc = Pal_207_Girion;
 	nr = 5;
-	condition = dia_girion_canteach_condition;
-	information = dia_girion_canteach_info;
+	condition = DIA_Girion_CanTeach_Condition;
+	information = DIA_Girion_CanTeach_Info;
 	permanent = TRUE;
 	description = "Czy mo¿esz mnie wyszkoliæ?";
 };
 
 
-func int dia_girion_canteach_condition()
+func int DIA_Girion_CanTeach_Condition()
 {
-	if(GIRION_TEACH2H == FALSE)
+	if(Girion_Teach2H == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_girion_canteach_info()
+func void DIA_Girion_CanTeach_Info()
 {
 	AI_Output(other,self,"DIA_Girion_CanTeach_15_00");	//Czy mo¿esz udzieliæ mi lekcji?
 	if(hero.guild == GIL_PAL)
 	{
 		AI_Output(self,other,"DIA_Girion_CanTeach_08_01");	//Wybieraj¹c najszlachetniejsz¹ ze wszystkich sztuk walk, post¹pi³eœ jak prawdziwy wojownik Innosa.
 		AI_Output(self,other,"DIA_Girion_CanTeach_08_02");	//Udzielê ci kilku wskazówek. Daj mi znaæ, kiedy bêdziesz gotów do treningu.
-		GIRION_TEACH2H = TRUE;
-		b_logentry(TOPIC_CITYTEACHER,"Paladyn Girion mo¿e mnie nauczyæ, jak walczyæ orê¿em dwurêcznym.");
+		Girion_Teach2H = TRUE;
+		B_LogEntry(TOPIC_CityTeacher,"Paladyn Girion mo¿e mnie nauczyæ, jak walczyæ orê¿em dwurêcznym.");
 	}
 	else
 	{
@@ -83,22 +83,22 @@ func void dia_girion_canteach_info()
 };
 
 
-instance DIA_GIRION_TEACH(C_INFO)
+instance DIA_Girion_Teach(C_Info)
 {
-	npc = pal_207_girion;
+	npc = Pal_207_Girion;
 	nr = 100;
-	condition = dia_girion_teach_condition;
-	information = dia_girion_teach_info;
+	condition = DIA_Girion_Teach_Condition;
+	information = DIA_Girion_Teach_Info;
 	permanent = TRUE;
 	description = "Jestem gotów do treningu.";
 };
 
 
-var int dia_girion_teach_permanent;
+var int DIA_Girion_Teach_permanent;
 
-func int dia_girion_teach_condition()
+func int DIA_Girion_Teach_Condition()
 {
-	if((GIRION_TEACH2H == TRUE) && (DIA_GIRION_TEACH_PERMANENT == FALSE))
+	if((Girion_Teach2H == TRUE) && (DIA_Girion_Teach_permanent == FALSE))
 	{
 		return TRUE;
 	};
@@ -107,124 +107,124 @@ func int dia_girion_teach_condition()
 
 var int girion_merk2h;
 
-func void dia_girion_teach_info()
+func void DIA_Girion_Teach_Info()
 {
-	GIRION_MERK2H = other.hitchance[NPC_TALENT_2H];
+	girion_merk2h = other.HitChance[NPC_TALENT_2H];
 	AI_Output(other,self,"DIA_Girion_Teach_15_00");	//Jestem gotów do treningu.
-	Info_ClearChoices(dia_girion_teach);
-	Info_AddChoice(dia_girion_teach,DIALOG_BACK,dia_girion_teach_back);
-	Info_AddChoice(dia_girion_teach,b_buildlearnstring(PRINT_LEARN2H1,b_getlearncosttalent(other,NPC_TALENT_2H)),dia_girion_teach_2h_1);
-	Info_AddChoice(dia_girion_teach,b_buildlearnstring(PRINT_LEARN2H5,b_getlearncosttalent(other,NPC_TALENT_2H) * 5),dia_girion_teach_2h_5);
+	Info_ClearChoices(DIA_Girion_Teach);
+	Info_AddChoice(DIA_Girion_Teach,Dialog_Back,DIA_Girion_Teach_Back);
+	Info_AddChoice(DIA_Girion_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Girion_Teach_2H_1);
+	Info_AddChoice(DIA_Girion_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Girion_Teach_2H_5);
 };
 
-func void dia_girion_teach_back()
+func void DIA_Girion_Teach_Back()
 {
-	if(other.hitchance[NPC_TALENT_2H] >= 50)
+	if(other.HitChance[NPC_TALENT_2H] >= 50)
 	{
 		AI_Output(self,other,"DIA_DIA_Girion_Teach_08_00");	//Oczywiœcie, to jeszcze nie koniec twojej edukacji, ale ja nie potrafiê ciê nauczyæ niczego wiêcej.
 		AI_Output(self,other,"DIA_DIA_Girion_Teach_08_01");	//Jeœli chcesz dalej æwiczyæ walkê wrêcz, powinieneœ poszukaæ prawdziwego mistrza miecza.
 		AI_Output(other,self,"DIA_DIA_Girion_Teach_15_02");	//Gdzie mogê znaleŸæ kogoœ takiego?
 		AI_Output(self,other,"DIA_DIA_Girion_Teach_08_03");	//Lord Hagen jest mistrzem miecza. Z pewnoœci¹ udzieli ci lekcji.
-		DIA_GIRION_TEACH_PERMANENT = TRUE;
+		DIA_Girion_Teach_permanent = TRUE;
 	};
-	Info_ClearChoices(dia_girion_teach);
+	Info_ClearChoices(DIA_Girion_Teach);
 };
 
-func void dia_girion_teach_2h_1()
+func void DIA_Girion_Teach_2H_1()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_2H,1,50);
-	if(other.hitchance[NPC_TALENT_2H] > GIRION_MERK2H)
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,1,50);
+	if(other.HitChance[NPC_TALENT_2H] > girion_merk2h)
 	{
-		if(GIRION_LABERCOUNT == 0)
+		if(Girion_Labercount == 0)
 		{
 			AI_Output(self,other,"DIA_DIA_Girion_Teach_2H_1_08_00");	//Zawsze walcz honorowo. Walka to nasze ¿ycie - a czym jest ¿ycie bez honoru?
 		};
-		if(GIRION_LABERCOUNT == 1)
+		if(Girion_Labercount == 1)
 		{
 			AI_Output(self,other,"DIA_DIA_Girion_Teach_2H_1_08_01");	//W walce b¹dŸ szybki i ostro¿ny. Zaskakuj swoich przeciwników.
 		};
-		if(GIRION_LABERCOUNT == 2)
+		if(Girion_Labercount == 2)
 		{
 			AI_Output(self,other,"DIA_DIA_Girion_Teach_2H_1_08_02");	//Nigdy nie rozpoczynaj walki bez odpowiedniego przygotowania. Ka¿dy pojedynek mo¿e byæ twoim ostatnim.
 		};
-		if(GIRION_LABERCOUNT == 3)
+		if(Girion_Labercount == 3)
 		{
 			AI_Output(self,other,"DIA_DIA_Girion_Teach_2H_1_08_03");	//Paladyn jest zawsze gotów do walki. Jednak nigdy nie wdaje siê w pojedynki, w których nie ma ¿adnych szans na zwyciêstwo.
 		};
-		GIRION_LABERCOUNT = GIRION_LABERCOUNT + 1;
-		if(GIRION_LABERCOUNT >= 3)
+		Girion_Labercount = Girion_Labercount + 1;
+		if(Girion_Labercount >= 3)
 		{
-			GIRION_LABERCOUNT = 0;
+			Girion_Labercount = 0;
 		};
 	};
-	Info_ClearChoices(dia_girion_teach);
-	Info_AddChoice(dia_girion_teach,DIALOG_BACK,dia_girion_teach_back);
-	Info_AddChoice(dia_girion_teach,b_buildlearnstring(PRINT_LEARN2H1,b_getlearncosttalent(other,NPC_TALENT_2H)),dia_girion_teach_2h_1);
-	Info_AddChoice(dia_girion_teach,b_buildlearnstring(PRINT_LEARN2H5,b_getlearncosttalent(other,NPC_TALENT_2H) * 5),dia_girion_teach_2h_5);
+	Info_ClearChoices(DIA_Girion_Teach);
+	Info_AddChoice(DIA_Girion_Teach,Dialog_Back,DIA_Girion_Teach_Back);
+	Info_AddChoice(DIA_Girion_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Girion_Teach_2H_1);
+	Info_AddChoice(DIA_Girion_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Girion_Teach_2H_5);
 };
 
-func void dia_girion_teach_2h_5()
+func void DIA_Girion_Teach_2H_5()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_2H,5,50);
-	if(other.hitchance[NPC_TALENT_2H] > GIRION_MERK2H)
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,5,50);
+	if(other.HitChance[NPC_TALENT_2H] > girion_merk2h)
 	{
-		if(GIRION_LABERCOUNT == 0)
+		if(Girion_Labercount == 0)
 		{
 			AI_Output(self,other,"DIA_DIA_Girion_Teach_2H_5_08_00");	//Broni¹ paladyna jest nie tylko jego miecz, ale równie¿ sprawny umys³.
 		};
-		if(GIRION_LABERCOUNT == 1)
+		if(Girion_Labercount == 1)
 		{
 			AI_Output(self,other,"DIA_DIA_Girion_Teach_2H_5_08_01");	//Musisz wiedzieæ, kiedy mo¿esz siê wycofaæ.
 		};
-		if(GIRION_LABERCOUNT == 2)
+		if(Girion_Labercount == 2)
 		{
 			AI_Output(self,other,"DIA_DIA_Girion_Teach_2H_5_08_02");	//Pamiêtaj, dobra walka to taka, w której to ty kontrolujesz swojego przeciwnika, nie daj¹c mu najmniejszej szansy na przejêcie kontroli nad tob¹.
 		};
-		if(GIRION_LABERCOUNT == 3)
+		if(Girion_Labercount == 3)
 		{
 			AI_Output(self,other,"DIA_DIA_Girion_Teach_2H_5_08_03");	//Przegrywasz tylko wtedy, gdy siê poddasz.
 		};
-		GIRION_LABERCOUNT = GIRION_LABERCOUNT + 1;
-		if(GIRION_LABERCOUNT >= 3)
+		Girion_Labercount = Girion_Labercount + 1;
+		if(Girion_Labercount >= 3)
 		{
-			GIRION_LABERCOUNT = 0;
+			Girion_Labercount = 0;
 		};
 	};
-	Info_ClearChoices(dia_girion_teach);
-	Info_AddChoice(dia_girion_teach,DIALOG_BACK,dia_girion_teach_back);
-	Info_AddChoice(dia_girion_teach,b_buildlearnstring(PRINT_LEARN2H1,b_getlearncosttalent(other,NPC_TALENT_2H)),dia_girion_teach_2h_1);
-	Info_AddChoice(dia_girion_teach,b_buildlearnstring(PRINT_LEARN2H5,b_getlearncosttalent(other,NPC_TALENT_2H) * 5),dia_girion_teach_2h_5);
+	Info_ClearChoices(DIA_Girion_Teach);
+	Info_AddChoice(DIA_Girion_Teach,Dialog_Back,DIA_Girion_Teach_Back);
+	Info_AddChoice(DIA_Girion_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Girion_Teach_2H_1);
+	Info_AddChoice(DIA_Girion_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Girion_Teach_2H_5);
 };
 
 
-instance DIA_GIRION_CATCHPLAYERSTOLENSHIP(C_INFO)
+instance DIA_Girion_CATCHPLAYERSTOLENSHIP(C_Info)
 {
-	npc = pal_207_girion;
+	npc = Pal_207_Girion;
 	nr = 5;
-	condition = dia_girion_catchplayerstolenship_condition;
-	information = dia_girion_catchplayerstolenship_info;
+	condition = DIA_Girion_CATCHPLAYERSTOLENSHIP_Condition;
+	information = DIA_Girion_CATCHPLAYERSTOLENSHIP_Info;
 	important = TRUE;
 };
 
 
-func int dia_girion_catchplayerstolenship_condition()
+func int DIA_Girion_CATCHPLAYERSTOLENSHIP_Condition()
 {
-	if((KAPITEL >= 5) && (MIS_SHIPISFREE == TRUE) && (Npc_GetDistToWP(self,"NW_CITY_WAY_TO_SHIP_25") < 1000))
+	if((Kapitel >= 5) && (MIS_ShipIsFree == TRUE) && (Npc_GetDistToWP(self,"NW_CITY_WAY_TO_SHIP_25") < 1000))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_girion_catchplayerstolenship_info()
+func void DIA_Girion_CATCHPLAYERSTOLENSHIP_Info()
 {
 	AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_08_00");	//Hej! Mo¿esz mi powiedzieæ, co tutaj robisz?
-	Info_ClearChoices(dia_girion_catchplayerstolenship);
-	Info_AddChoice(dia_girion_catchplayerstolenship,"Nie wiem, o czym mówisz.",dia_girion_catchplayerstolenship_no);
-	Info_AddChoice(dia_girion_catchplayerstolenship,"ZejdŸ mi z drogi albo bêdê zmuszony ciê zabiæ.",dia_girion_catchplayerstolenship_weg);
-	Info_AddChoice(dia_girion_catchplayerstolenship,"Potrzebujê okrêtu.",dia_girion_catchplayerstolenship_ship);
+	Info_ClearChoices(DIA_Girion_CATCHPLAYERSTOLENSHIP);
+	Info_AddChoice(DIA_Girion_CATCHPLAYERSTOLENSHIP,"Nie wiem, o czym mówisz.",DIA_Girion_CATCHPLAYERSTOLENSHIP_no);
+	Info_AddChoice(DIA_Girion_CATCHPLAYERSTOLENSHIP,"ZejdŸ mi z drogi albo bêdê zmuszony ciê zabiæ.",DIA_Girion_CATCHPLAYERSTOLENSHIP_weg);
+	Info_AddChoice(DIA_Girion_CATCHPLAYERSTOLENSHIP,"Potrzebujê okrêtu.",DIA_Girion_CATCHPLAYERSTOLENSHIP_ship);
 };
 
-func void dia_girion_catchplayerstolenship_no()
+func void DIA_Girion_CATCHPLAYERSTOLENSHIP_no()
 {
 	AI_Output(other,self,"DIA_Girion_CATCHPLAYERSTOLENSHIP_no_15_00");	//Nie wiem, o czym mówisz.
 	AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_no_08_01");	//Mówiê o tym, co wykombinowa³eœ ze stra¿¹ okrêtow¹. Podejrzana sprawa.
@@ -235,9 +235,9 @@ func void dia_girion_catchplayerstolenship_no()
 };
 
 
-var int girion_wantstokillsc;
+var int Girion_WantstoKillSC;
 
-func void dia_girion_catchplayerstolenship_weg()
+func void DIA_Girion_CATCHPLAYERSTOLENSHIP_weg()
 {
 	AI_Output(other,self,"DIA_Girion_CATCHPLAYERSTOLENSHIP_weg_15_00");	//ZejdŸ mi z drogi albo bêdê zmuszony ciê zabiæ.
 	AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_weg_08_01");	//Mo¿esz byæ wystarczaj¹co sprytny, aby poradziæ sobie ze stra¿¹ okrêtow¹, ale ze mn¹ nie pójdzie ci tak ³atwo, ch³opcze.
@@ -246,16 +246,16 @@ func void dia_girion_catchplayerstolenship_weg()
 		AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_weg_08_02");	//Jeœli nawet jesteœ jednym z nas, nie daje ci to prawa do kradzie¿y królewskiej w³asnoœci. Giñ, przeklêty zdrajco.
 	};
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_NONE,1);
-	GIRION_WANTSTOKILLSC = TRUE;
+	B_Attack(self,other,AR_NONE,1);
+	Girion_WantstoKillSC = TRUE;
 };
 
-func void b_girionstayonship()
+func void B_GirionStayOnShip()
 {
 	AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_08_09");	//Kiedy skoñczymy interesy, statek wróci do mnie. Czy to jasne?
 };
 
-func void dia_girion_catchplayerstolenship_ship()
+func void DIA_Girion_CATCHPLAYERSTOLENSHIP_ship()
 {
 	AI_Output(other,self,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_15_00");	//Potrzebujê statku. Wiêc go sobie wezmê.
 	if((hero.guild == GIL_PAL) || (hero.guild == GIL_KDF))
@@ -272,100 +272,100 @@ func void dia_girion_catchplayerstolenship_ship()
 	AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_08_06");	//Hmmm. Wygl¹da na to, ¿e nie mam wyboru.
 	AI_Output(other,self,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_15_07");	//Dok³adnie tak.
 	AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_08_08");	//A zatem dobrze. Przy³¹czê siê do ciebie, ale tylko pod jednym warunkiem.
-	b_girionstayonship();
+	B_GirionStayOnShip();
 	AI_Output(other,self,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_15_10");	//Jakoœ to prze¿yjê.
 	AI_Output(self,other,"DIA_Girion_CATCHPLAYERSTOLENSHIP_ship_08_11");	//A zatem rób, co masz do zrobienia. Poczekam tutaj na ciebie.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Ship");
-	CREWMEMBER_COUNT = CREWMEMBER_COUNT + 1;
-	GIRION_ISONBOARD = LOG_SUCCESS;
+	Crewmember_Count = Crewmember_Count + 1;
+	Girion_IsOnBoard = LOG_SUCCESS;
 };
 
 
-instance DIA_GIRION_VERRAT(C_INFO)
+instance DIA_Girion_Verrat(C_Info)
 {
-	npc = pal_207_girion;
+	npc = Pal_207_Girion;
 	nr = 2;
-	condition = dia_girion_verrat_condition;
-	information = dia_girion_verrat_info;
+	condition = DIA_Girion_Verrat_Condition;
+	information = DIA_Girion_Verrat_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_girion_verrat_condition()
+func int DIA_Girion_Verrat_Condition()
 {
-	if(GIRION_WANTSTOKILLSC == TRUE)
+	if(Girion_WantstoKillSC == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_girion_verrat_info()
+func void DIA_Girion_Verrat_Info()
 {
 	AI_Output(self,other,"DIA_Girion_Verrat_08_00");	//Zdrajca!
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_NONE,1);
+	B_Attack(self,other,AR_NONE,1);
 };
 
 
-instance DIA_GIRION_ONSHIP(C_INFO)
+instance DIA_Girion_OnShip(C_Info)
 {
-	npc = pal_207_girion;
+	npc = Pal_207_Girion;
 	nr = 2;
-	condition = dia_girion_onship_condition;
-	information = dia_girion_onship_info;
+	condition = DIA_Girion_OnShip_Condition;
+	information = DIA_Girion_OnShip_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_girion_onship_condition()
+func int DIA_Girion_OnShip_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (GIRION_ISONBOARD == LOG_SUCCESS))
+	if(Npc_IsInState(self,ZS_Talk) && (Girion_IsOnBoard == LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_girion_onship_info()
+func void DIA_Girion_OnShip_Info()
 {
-	b_girionstayonship();
+	B_GirionStayOnShip();
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_GIRION_PICKPOCKET(C_INFO)
+instance DIA_Girion_PICKPOCKET(C_Info)
 {
-	npc = pal_207_girion;
+	npc = Pal_207_Girion;
 	nr = 900;
-	condition = dia_girion_pickpocket_condition;
-	information = dia_girion_pickpocket_info;
+	condition = DIA_Girion_PICKPOCKET_Condition;
+	information = DIA_Girion_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_80;
+	description = Pickpocket_80;
 };
 
 
-func int dia_girion_pickpocket_condition()
+func int DIA_Girion_PICKPOCKET_Condition()
 {
-	return c_beklauen(73,280);
+	return C_Beklauen(73,280);
 };
 
-func void dia_girion_pickpocket_info()
+func void DIA_Girion_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_girion_pickpocket);
-	Info_AddChoice(dia_girion_pickpocket,DIALOG_BACK,dia_girion_pickpocket_back);
-	Info_AddChoice(dia_girion_pickpocket,DIALOG_PICKPOCKET,dia_girion_pickpocket_doit);
+	Info_ClearChoices(DIA_Girion_PICKPOCKET);
+	Info_AddChoice(DIA_Girion_PICKPOCKET,Dialog_Back,DIA_Girion_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Girion_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Girion_PICKPOCKET_DoIt);
 };
 
-func void dia_girion_pickpocket_doit()
+func void DIA_Girion_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_girion_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Girion_PICKPOCKET);
 };
 
-func void dia_girion_pickpocket_back()
+func void DIA_Girion_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_girion_pickpocket);
+	Info_ClearChoices(DIA_Girion_PICKPOCKET);
 };
 

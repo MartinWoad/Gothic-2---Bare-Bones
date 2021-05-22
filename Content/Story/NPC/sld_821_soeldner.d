@@ -1,36 +1,36 @@
 
-instance SLD_821_SOELDNER(NPC_DEFAULT)
+instance SLD_821_Soeldner(Npc_Default)
 {
-	name[0] = NAME_SOELDNER;
+	name[0] = NAME_Soeldner;
 	guild = GIL_SLD;
 	id = 821;
 	voice = 6;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,4);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_sld_sword);
-	EquipItem(self,itrw_sld_bow);
-	CreateInvItems(self,itrw_arrow,2);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_GOMEZ,BODYTEX_N,4835);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	EquipItem(self,ItRw_Sld_Bow);
+	CreateInvItems(self,ItRw_Arrow,2);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Gomez,BodyTex_N,itar_sld_M);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,50);
-	daily_routine = rtn_start_821;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,50);
+	daily_routine = Rtn_Start_821;
 };
 
 
-func void rtn_start_821()
+func void Rtn_Start_821()
 {
-	ta_smalltalk(7,30,23,30,"NW_BIGFARM_PATH_04_1");
-	ta_sleep(23,30,7,30,"NW_BIGFARM_HOUSE_08");
+	TA_Smalltalk(7,30,23,30,"NW_BIGFARM_PATH_04_1");
+	TA_Sleep(23,30,7,30,"NW_BIGFARM_HOUSE_08");
 };
 
-func void rtn_rodweg_821()
+func void Rtn_RodWeg_821()
 {
-	ta_smalltalk(7,55,22,55,"NW_BIGFARM_PATH_02");
-	ta_sleep(22,55,7,55,"NW_BIGFARM_HOUSE_08");
+	TA_Smalltalk(7,55,22,55,"NW_BIGFARM_PATH_02");
+	TA_Sleep(22,55,7,55,"NW_BIGFARM_HOUSE_08");
 };
 

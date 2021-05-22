@@ -1,27 +1,27 @@
 
-instance KDF_510_HYGLAS(NPC_DEFAULT)
+instance KDF_510_Hyglas(Npc_Default)
 {
 	name[0] = "Hyglas";
 	guild = GIL_KDF;
 	id = 510;
 	voice = 14;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,5);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,5);
 	fight_tactic = FAI_HUMAN_STRONG;
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Thief",FACE_N_NORMALBART09,BODYTEX_N,4843);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Thief",Face_N_NormalBart09,BodyTex_N,ItAr_KDF_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Mage.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_510;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_510;
 };
 
 
-func void rtn_start_510()
+func void Rtn_Start_510()
 {
-	ta_read_bookstand(8,0,23,0,"NW_MONASTERY_RUNEMAKER_08");
-	ta_read_bookstand(23,0,8,0,"NW_MONASTERY_RUNEMAKER_08");
+	TA_Read_Bookstand(8,0,23,0,"NW_MONASTERY_RUNEMAKER_08");
+	TA_Read_Bookstand(23,0,8,0,"NW_MONASTERY_RUNEMAKER_08");
 };
 

@@ -1,65 +1,65 @@
 
-instance DIA_LESTER_DI_EXIT(C_INFO)
+instance DIA_Lester_DI_EXIT(C_Info)
 {
-	npc = pc_psionic_di;
+	npc = PC_Psionic_DI;
 	nr = 999;
-	condition = dia_lester_di_exit_condition;
-	information = dia_lester_di_exit_info;
+	condition = DIA_Lester_DI_EXIT_Condition;
+	information = DIA_Lester_DI_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_lester_di_exit_condition()
+func int DIA_Lester_DI_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_lester_di_exit_info()
+func void DIA_Lester_DI_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_LESTER_DI_HELLO(C_INFO)
+instance DIA_Lester_DI_Hello(C_Info)
 {
-	npc = pc_psionic_di;
+	npc = PC_Psionic_DI;
 	nr = 1;
-	condition = dia_lester_di_hello_condition;
-	information = dia_lester_di_hello_info;
+	condition = DIA_Lester_DI_Hello_Condition;
+	information = DIA_Lester_DI_Hello_Info;
 	permanent = TRUE;
 	description = "Jest coœ, o czym powinienem wiedzieæ?";
 };
 
 
-func int dia_lester_di_hello_condition()
+func int DIA_Lester_DI_Hello_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_lester_di_scgotwarning1;
-var int dia_lester_di_scgotwarning2;
+var int DIA_Lester_DI_SCGotWarning1;
+var int DIA_Lester_DI_SCGotWarning2;
 
-func void dia_lester_di_hello_info()
+func void DIA_Lester_DI_Hello_Info()
 {
 	AI_Output(other,self,"DIA_Lester_DI_Hello_15_00");	//Jest coœ, o czym powinienem wiedzieæ?
-	if((Npc_IsDead(mario_di) == FALSE) && (ORKSTURMDI == TRUE) && (DIA_LESTER_DI_SCGOTWARNING1 == FALSE))
+	if((Npc_IsDead(Mario_DI) == FALSE) && (ORkSturmDI == TRUE) && (DIA_Lester_DI_SCGotWarning1 == FALSE))
 	{
 		AI_Output(self,other,"DIA_Lester_DI_Hello_13_01");	//Mario wymkn¹³ siê ze statku podczas ataku orków. Mia³em na niego oko mimo ca³ego tego zamieszania.
 		AI_Output(self,other,"DIA_Lester_DI_Hello_13_02");	//Przemaszerowa³ sobie przez liniê orków i nikt go nie zatrzymywa³.
 		AI_Output(self,other,"DIA_Lester_DI_Hello_13_03");	//Od samego pocz¹tku coœ mi siê w nim nie podoba³o. To szpieg!
-		b_giveplayerxp(XP_AMBIENT);
-		DIA_LESTER_DI_SCGOTWARNING1 = TRUE;
+		B_GivePlayerXP(XP_Ambient);
+		DIA_Lester_DI_SCGotWarning1 = TRUE;
 	}
-	else if((Npc_IsDead(mario_di) == FALSE) && (DIA_LESTER_DI_SCGOTWARNING2 == FALSE))
+	else if((Npc_IsDead(Mario_DI) == FALSE) && (DIA_Lester_DI_SCGotWarning2 == FALSE))
 	{
 		AI_Output(self,other,"DIA_Lester_DI_Hello_13_04");	//Coœ mi siê nie podoba w tym ca³ym Mario. Facet roztacza wokó³ siebie jak¹œ dziwn¹ aurê.
 		AI_Output(self,other,"DIA_Lester_DI_Hello_13_05");	//Uwa¿aj na siebie, przyjacielu.
-		DIA_LESTER_DI_SCGOTWARNING2 = TRUE;
+		DIA_Lester_DI_SCGotWarning2 = TRUE;
 	}
 	else
 	{
@@ -68,59 +68,59 @@ func void dia_lester_di_hello_info()
 };
 
 
-instance DIA_LESTER_DI_MARIOARSCH(C_INFO)
+instance DIA_Lester_DI_MarioArsch(C_Info)
 {
-	npc = pc_psionic_di;
+	npc = PC_Psionic_DI;
 	nr = 2;
-	condition = dia_lester_di_marioarsch_condition;
-	information = dia_lester_di_marioarsch_info;
+	condition = DIA_Lester_DI_MarioArsch_Condition;
+	information = DIA_Lester_DI_MarioArsch_Info;
 	description = "Mia³eœ racjê. Mario nas zdradzi³!";
 };
 
 
-func int dia_lester_di_marioarsch_condition()
+func int DIA_Lester_DI_MarioArsch_Condition()
 {
-	if(((DIA_LESTER_DI_SCGOTWARNING2 == TRUE) || (DIA_LESTER_DI_SCGOTWARNING2 == TRUE)) && (MIS_MARIO_AMBUSH == LOG_SUCCESS))
+	if(((DIA_Lester_DI_SCGotWarning2 == TRUE) || (DIA_Lester_DI_SCGotWarning2 == TRUE)) && (MIS_Mario_Ambush == LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_di_marioarsch_info()
+func void DIA_Lester_DI_MarioArsch_Info()
 {
 	AI_Output(other,self,"DIA_Lester_DI_MarioArsch_15_00");	//Mia³eœ racjê. Mario nas zdradzi³!
 	AI_Output(self,other,"DIA_Lester_DI_MarioArsch_13_01");	//A widzisz? Mo¿e i nie jestem zbyt bystry, ale co do tego nie mia³em ¿adnych w¹tpliwoœci.
 	AI_Output(self,other,"DIA_Lester_DI_MarioArsch_13_02");	//Na przysz³oœæ staraj siê lepiej dobieraæ towarzyszy podró¿y.
-	b_giveplayerxp(XP_AMBIENT);
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_PC_LESTER_DI_UNDEADDRAGONDEAD(C_INFO)
+instance DIA_PC_Lester_DI_UndeadDragonDead(C_Info)
 {
-	npc = pc_psionic_di;
+	npc = PC_Psionic_DI;
 	nr = 5;
-	condition = dia_pc_lester_di_undeaddragondead_condition;
-	information = dia_pc_lester_di_undeaddragondead_info;
+	condition = DIA_PC_Lester_DI_UndeadDragonDead_Condition;
+	information = DIA_PC_Lester_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
 	description = "D³ugo tu ju¿ nie zabawimy.";
 };
 
 
-func int dia_pc_lester_di_undeaddragondead_condition()
+func int DIA_PC_Lester_DI_UndeadDragonDead_Condition()
 {
-	if(Npc_IsDead(undeaddragon))
+	if(Npc_IsDead(UndeadDragon))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_pc_lester_di_undeaddragondead_onetime;
+var int DIA_PC_Lester_DI_UndeadDragonDead_OneTime;
 
-func void dia_pc_lester_di_undeaddragondead_info()
+func void DIA_PC_Lester_DI_UndeadDragonDead_Info()
 {
 	AI_Output(other,self,"DIA_PC_Lester_DI_UndeadDragonDead_15_00");	//D³ugo tu ju¿ nie zabawimy.
-	if(DIA_PC_LESTER_DI_UNDEADDRAGONDEAD_ONETIME == FALSE)
+	if(DIA_PC_Lester_DI_UndeadDragonDead_OneTime == FALSE)
 	{
 		if(Npc_GetDistToWP(self,"DI_DRACONIANAREA_19") < 4000)
 		{
@@ -130,13 +130,13 @@ func void dia_pc_lester_di_undeaddragondead_info()
 			AI_Output(self,other,"DIA_PC_Lester_DI_UndeadDragonDead_13_04");	//To musia³o byæ coœ naprawdê potê¿nego. Co dok³adnie?
 			AI_Output(other,self,"DIA_PC_Lester_DI_UndeadDragonDead_15_05");	//Smok-o¿ywieniec.
 		};
-		if(SC_KNOWSMADPSI == TRUE)
+		if(SC_KnowsMadPsi == TRUE)
 		{
 			AI_Output(other,self,"DIA_PC_Lester_DI_UndeadDragonDead_15_06");	//Twoi dawni kompani z obozu na bagnie dali mi nieŸle popaliæ.
 			AI_Output(self,other,"DIA_PC_Lester_DI_UndeadDragonDead_13_07");	//Tak. Wiara czyni cuda. Zawsze tak by³o. Szkoda tylko, ¿e s³u¿yli z³emu.
 			AI_Output(self,other,"DIA_PC_Lester_DI_UndeadDragonDead_13_08");	//Sporo czasu minie, nim siê z tego otrz¹snê.
 		};
-		DIA_PC_LESTER_DI_UNDEADDRAGONDEAD_ONETIME = TRUE;
+		DIA_PC_Lester_DI_UndeadDragonDead_OneTime = TRUE;
 	};
 	AI_Output(self,other,"DIA_PC_Lester_DI_UndeadDragonDead_13_09");	//Mam nadziejê, ¿e coœ takiego ju¿ nigdy siê nie powtórzy. Na ca³ym œwiecie nie ma tyle ziela, ile mam teraz ochotê wypaliæ!
 	AI_StopProcessInfos(self);
@@ -144,37 +144,37 @@ func void dia_pc_lester_di_undeaddragondead_info()
 };
 
 
-instance DIA_PSIONIC_DI_PICKPOCKET(C_INFO)
+instance DIA_Psionic_DI_PICKPOCKET(C_Info)
 {
-	npc = pc_psionic_di;
+	npc = PC_Psionic_DI;
 	nr = 900;
-	condition = dia_psionic_di_pickpocket_condition;
-	information = dia_psionic_di_pickpocket_info;
+	condition = DIA_Psionic_DI_PICKPOCKET_Condition;
+	information = DIA_Psionic_DI_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_psionic_di_pickpocket_condition()
+func int DIA_Psionic_DI_PICKPOCKET_Condition()
 {
-	return c_beklauen(56,25);
+	return C_Beklauen(56,25);
 };
 
-func void dia_psionic_di_pickpocket_info()
+func void DIA_Psionic_DI_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_psionic_di_pickpocket);
-	Info_AddChoice(dia_psionic_di_pickpocket,DIALOG_BACK,dia_psionic_di_pickpocket_back);
-	Info_AddChoice(dia_psionic_di_pickpocket,DIALOG_PICKPOCKET,dia_psionic_di_pickpocket_doit);
+	Info_ClearChoices(DIA_Psionic_DI_PICKPOCKET);
+	Info_AddChoice(DIA_Psionic_DI_PICKPOCKET,Dialog_Back,DIA_Psionic_DI_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Psionic_DI_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Psionic_DI_PICKPOCKET_DoIt);
 };
 
-func void dia_psionic_di_pickpocket_doit()
+func void DIA_Psionic_DI_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_psionic_di_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Psionic_DI_PICKPOCKET);
 };
 
-func void dia_psionic_di_pickpocket_back()
+func void DIA_Psionic_DI_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_psionic_di_pickpocket);
+	Info_ClearChoices(DIA_Psionic_DI_PICKPOCKET);
 };
 

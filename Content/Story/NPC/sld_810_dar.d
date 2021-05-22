@@ -1,38 +1,38 @@
 
-instance SLD_810_DAR(NPC_DEFAULT)
+instance Sld_810_Dar(Npc_Default)
 {
 	name[0] = "Dar";
 	guild = GIL_SLD;
 	id = 810;
 	voice = 3;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_TOUGHGUYNEWSOVERRIDE] = TRUE;
-	b_setattributestochapter(self,1);
+	npcType = npctype_main;
+	aivar[AIV_ToughGuyNewsOverride] = TRUE;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_sld_sword);
-	EquipItem(self,itrw_sld_bow);
-	CreateInvItems(self,itrw_arrow,6);
-	b_createambientinv(self);
-	CreateInvItems(self,itmi_joint,10);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_NORMAL_SPASSVOGEL,BODYTEX_N,4834);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	EquipItem(self,ItRw_Sld_Bow);
+	CreateInvItems(self,ItRw_Arrow,6);
+	B_CreateAmbientInv(self);
+	CreateInvItems(self,ItMi_Joint,10);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Normal_Spassvogel,BodyTex_N,ItAr_Sld_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,40);
-	daily_routine = rtn_prestart_810;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,40);
+	daily_routine = Rtn_PreStart_810;
 };
 
 
-func void rtn_prestart_810()
+func void Rtn_PreStart_810()
 {
-	ta_smoke_joint(8,0,22,0,"NW_BIGFARM_KITCHEN_DAR");
-	ta_smoke_joint(22,0,8,0,"NW_BIGFARM_KITCHEN_DAR");
+	TA_Smoke_Joint(8,0,22,0,"NW_BIGFARM_KITCHEN_DAR");
+	TA_Smoke_Joint(22,0,8,0,"NW_BIGFARM_KITCHEN_DAR");
 };
 
-func void rtn_start_810()
+func void Rtn_Start_810()
 {
-	ta_smoke_joint(8,0,22,0,"NW_BIGFARM_KITCHEN_DAR");
-	ta_sit_chair(22,0,8,0,"NW_BIGFARM_HOUSE_12");
+	TA_Smoke_Joint(8,0,22,0,"NW_BIGFARM_KITCHEN_DAR");
+	TA_Sit_Chair(22,0,8,0,"NW_BIGFARM_HOUSE_12");
 };
 

@@ -1,30 +1,30 @@
 
-instance SLD_818_SOELDNER(NPC_DEFAULT)
+instance SLD_818_Soeldner(Npc_Default)
 {
-	name[0] = NAME_SOELDNER;
+	name[0] = NAME_Soeldner;
 	guild = GIL_SLD;
 	id = 818;
 	voice = 7;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,4);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_2h_sld_axe);
-	EquipItem(self,itrw_sld_bow);
-	CreateInvItems(self,itrw_arrow,5);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_L_NORMALBART02,BODYTEX_L,4835);
+	EquipItem(self,ItMw_2h_Sld_Axe);
+	EquipItem(self,ItRw_Sld_Bow);
+	CreateInvItems(self,ItRw_Arrow,5);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_L_NormalBart02,BodyTex_L,itar_sld_M);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,50);
-	daily_routine = rtn_start_818;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,50);
+	daily_routine = Rtn_Start_818;
 };
 
 
-func void rtn_start_818()
+func void Rtn_Start_818()
 {
-	ta_smalltalk(7,50,22,50,"NW_BIGFARM_PATH_02");
-	ta_sit_chair(22,50,7,50,"NW_BIGFARM_KITCHEN_09");
+	TA_Smalltalk(7,50,22,50,"NW_BIGFARM_PATH_02");
+	TA_Sit_Chair(22,50,7,50,"NW_BIGFARM_KITCHEN_09");
 };
 

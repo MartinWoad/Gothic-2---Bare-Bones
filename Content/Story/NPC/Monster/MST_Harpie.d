@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_HARPIE(C_NPC)
+prototype Mst_Default_Harpie(C_Npc)
 {
 	name[0] = "Harpia";
 	guild = GIL_HARPY;
@@ -21,24 +21,24 @@ prototype MST_DEFAULT_HARPIE(C_NPC)
 	fight_tactic = FAI_HARPY;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_harpie()
+func void B_SetVisuals_Harpie()
 {
 	Mdl_SetVisual(self,"Harpie.mds");
 	Mdl_SetVisualBody(self,"Har_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance HARPIE(MST_DEFAULT_HARPIE)
+instance Harpie(Mst_Default_Harpie)
 {
-	b_setvisuals_harpie();
+	B_SetVisuals_Harpie();
 	Npc_SetToFistMode(self);
 };
 

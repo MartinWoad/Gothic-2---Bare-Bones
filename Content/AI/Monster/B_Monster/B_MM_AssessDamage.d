@@ -1,29 +1,29 @@
 
-func void b_mm_assessdamage()
+func void B_MM_AssessDamage()
 {
-	var C_NPC maggol;
-	var C_ITEM othweap;
+	var C_Npc MagGol;
+	var C_Item OthWeap;
 	self.aivar[AIV_MM_PRIORITY] = PRIO_ATTACK;
-	if(Npc_HasItems(other,holy_hammer_mis) > 0)
+	if(Npc_HasItems(other,Holy_Hammer_MIS) > 0)
 	{
-		maggol = Hlp_GetNpc(magicgolem);
-		Npc_GetInvItem(other,holy_hammer_mis);
-		othweap = Npc_GetReadiedWeapon(other);
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(maggol)) && (Hlp_GetInstanceID(othweap) == Hlp_GetInstanceID(item)))
+		MagGol = Hlp_GetNpc(MagicGolem);
+		Npc_GetInvItem(other,Holy_Hammer_MIS);
+		OthWeap = Npc_GetReadiedWeapon(other);
+		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(MagGol)) && (Hlp_GetInstanceID(OthWeap) == Hlp_GetInstanceID(item)))
 		{
 			Npc_ChangeAttribute(self,ATR_HITPOINTS,-1000);
 			return;
 		};
 	};
-	if(c_predatorfoundprey(other,self))
+	if(C_PredatorFoundPrey(other,self))
 	{
 		Npc_ClearAIQueue(self);
 		Npc_SetTarget(self,other);
-		b_clearperceptions(self);
-		AI_StartState(self,zs_mm_flee,0,"");
+		B_ClearPerceptions(self);
+		AI_StartState(self,ZS_MM_Flee,0,"");
 		return;
 	};
-	if(Npc_IsInState(self,zs_mm_attack))
+	if(Npc_IsInState(self,ZS_MM_Attack))
 	{
 		if(Npc_IsPlayer(other) && (self.aivar[AIV_PARTYMEMBER] == TRUE))
 		{
@@ -35,20 +35,20 @@ func void b_mm_assessdamage()
 		};
 		if(Hlp_GetInstanceID(other) != self.aivar[AIV_LASTTARGET])
 		{
-			if(self.aivar[AIV_HITBYOTHERNPC] == Hlp_GetInstanceID(other))
+			if(self.aivar[AIV_HitByOtherNpc] == Hlp_GetInstanceID(other))
 			{
 				Npc_SetTarget(self,other);
 			}
 			else
 			{
-				self.aivar[AIV_HITBYOTHERNPC] = Hlp_GetInstanceID(other);
+				self.aivar[AIV_HitByOtherNpc] = Hlp_GetInstanceID(other);
 			};
 		};
 		return;
 	};
 	Npc_ClearAIQueue(self);
 	Npc_SetTarget(self,other);
-	b_clearperceptions(self);
-	AI_StartState(self,zs_mm_attack,0,"");
+	B_ClearPerceptions(self);
+	AI_StartState(self,ZS_MM_Attack,0,"");
 };
 

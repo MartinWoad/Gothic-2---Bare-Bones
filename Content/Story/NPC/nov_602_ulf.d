@@ -1,46 +1,46 @@
 
-instance NOV_602_ULF(NPC_DEFAULT)
+instance NOV_602_Ulf(Npc_Default)
 {
 	name[0] = "Ulf";
 	guild = GIL_NOV;
 	id = 602;
 	voice = 3;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_nov_mace);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_WEAK05,BODYTEX_N,4842);
+	EquipItem(self,ItMw_1h_Nov_Mace);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Weak05,BodyTex_N,ItAr_NOV_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Mage.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_602;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_602;
 };
 
 
-func void rtn_start_602()
+func void Rtn_Start_602()
 {
-	ta_stand_drinking(8,0,20,0,"NW_CITY_BEER_04");
-	ta_stand_drinking(20,0,8,0,"NW_CITY_BEER_04");
+	TA_Stand_Drinking(8,0,20,0,"NW_CITY_BEER_04");
+	TA_Stand_Drinking(20,0,8,0,"NW_CITY_BEER_04");
 };
 
-func void rtn_suche_602()
+func void Rtn_Suche_602()
 {
-	ta_stand_guarding(8,0,20,0,"NW_TROLLAREA_PATH_42");
-	ta_stand_guarding(20,0,8,0,"NW_TROLLAREA_PATH_42");
+	TA_Stand_Guarding(8,0,20,0,"NW_TROLLAREA_PATH_42");
+	TA_Stand_Guarding(20,0,8,0,"NW_TROLLAREA_PATH_42");
 };
 
-func void rtn_wait_602()
+func void Rtn_Wait_602()
 {
-	ta_stand_guarding(8,0,20,0,"NW_TROLLAREA_PATH_22");
-	ta_stand_guarding(20,0,8,0,"NW_TROLLAREA_PATH_22");
+	TA_Stand_Guarding(8,0,20,0,"NW_TROLLAREA_PATH_22");
+	TA_Stand_Guarding(20,0,8,0,"NW_TROLLAREA_PATH_22");
 };
 
-func void rtn_follow_602()
+func void Rtn_Follow_602()
 {
-	ta_follow_player(8,0,20,0,"NW_TROLLAREA_PATH_13");
-	ta_follow_player(20,0,8,0,"NW_TROLLAREA_PATH_13");
+	TA_Follow_Player(8,0,20,0,"NW_TROLLAREA_PATH_13");
+	TA_Follow_Player(20,0,8,0,"NW_TROLLAREA_PATH_13");
 };
 

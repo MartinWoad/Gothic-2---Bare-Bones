@@ -1,11 +1,11 @@
 
-func int c_npchasambientnews(var C_NPC slf)
+func int C_NpcHasAmbientNews(var C_Npc slf)
 {
-	if(slf.aivar[AIV_NEWSOVERRIDE] == TRUE)
+	if(slf.aivar[AIV_NewsOverride] == TRUE)
 	{
 		return FALSE;
 	};
-	if(b_getplayercrime(slf) == CRIME_NONE)
+	if(B_GetPlayerCrime(slf) == CRIME_NONE)
 	{
 		return FALSE;
 	};

@@ -1,7 +1,7 @@
 
-func int c_npcistoughguy(var C_NPC slf)
+func int C_NpcIsToughGuy(var C_Npc slf)
 {
-	if(slf.aivar[AIV_TOUGHGUY] == TRUE)
+	if(slf.aivar[AIV_ToughGuy] == TRUE)
 	{
 		return TRUE;
 	};

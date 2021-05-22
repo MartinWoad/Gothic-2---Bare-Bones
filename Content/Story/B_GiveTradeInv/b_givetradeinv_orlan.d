@@ -1,67 +1,67 @@
 
-var int orlan_itemsgiven_chapter_1;
-var int orlan_itemsgiven_chapter_2;
-var int orlan_itemsgiven_chapter_3;
-var int orlan_itemsgiven_chapter_4;
-var int orlan_itemsgiven_chapter_5;
+var int Orlan_ItemsGiven_Chapter_1;
+var int Orlan_ItemsGiven_Chapter_2;
+var int Orlan_ItemsGiven_Chapter_3;
+var int Orlan_ItemsGiven_Chapter_4;
+var int Orlan_ItemsGiven_Chapter_5;
 var int orlan_itemsgiven_chapter_6;
 
-func void b_givetradeinv_orlan(var C_NPC slf)
+func void B_GiveTradeInv_Orlan(var C_Npc slf)
 {
-	if((KAPITEL >= 1) && (ORLAN_ITEMSGIVEN_CHAPTER_1 == FALSE))
+	if((Kapitel >= 1) && (Orlan_ItemsGiven_Chapter_1 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,30);
-		CreateInvItems(slf,itmw_nagelkeule,1);
-		CreateInvItems(slf,itmw_kriegskeule,1);
-		CreateInvItems(slf,itrw_bow_l_01,1);
-		CreateInvItems(slf,itrw_arrow,21);
-		CreateInvItems(slf,itrw_bolt,5);
-		CreateInvItems(slf,itfo_water,4);
-		CreateInvItems(slf,itfo_beer,10);
-		CreateInvItems(slf,itfo_bread,4);
-		CreateInvItems(slf,itfo_milk,4);
-		CreateInvItems(slf,itfo_wine,2);
-		CreateInvItems(slf,itfo_bacon,2);
-		CreateInvItems(slf,itlstorch,3);
-		ORLAN_ITEMSGIVEN_CHAPTER_1 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,30);
+		CreateInvItems(slf,ItMw_Nagelkeule,1);
+		CreateInvItems(slf,ItMw_Kriegskeule,1);
+		CreateInvItems(slf,ItRw_Bow_L_01,1);
+		CreateInvItems(slf,ItRw_Arrow,21);
+		CreateInvItems(slf,ItRw_Bolt,5);
+		CreateInvItems(slf,ItFo_Water,4);
+		CreateInvItems(slf,ItFo_Beer,10);
+		CreateInvItems(slf,ItFo_Bread,4);
+		CreateInvItems(slf,ItFo_Milk,4);
+		CreateInvItems(slf,ItFo_Wine,2);
+		CreateInvItems(slf,ItFo_Bacon,2);
+		CreateInvItems(slf,ItLsTorch,3);
+		Orlan_ItemsGiven_Chapter_1 = TRUE;
 	};
-	if((KAPITEL >= 2) && (ORLAN_ITEMSGIVEN_CHAPTER_2 == FALSE))
+	if((Kapitel >= 2) && (Orlan_ItemsGiven_Chapter_2 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,50);
-		CreateInvItems(slf,itmw_zweihaender1,1);
-		CreateInvItems(slf,itmw_bartaxt,1);
-		CreateInvItems(slf,itrw_arrow,40);
-		CreateInvItems(slf,itrw_bolt,45);
-		ORLAN_ITEMSGIVEN_CHAPTER_2 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,50);
+		CreateInvItems(slf,ItMw_Zweihaender1,1);
+		CreateInvItems(slf,ItMw_Bartaxt,1);
+		CreateInvItems(slf,ItRw_Arrow,40);
+		CreateInvItems(slf,ItRw_Bolt,45);
+		Orlan_ItemsGiven_Chapter_2 = TRUE;
 	};
-	if((KAPITEL >= 3) && (ORLAN_ITEMSGIVEN_CHAPTER_3 == FALSE))
+	if((Kapitel >= 3) && (Orlan_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itmw_orkschlaechter,1);
-		CreateInvItems(slf,itmw_schlachtaxt,1);
-		CreateInvItems(slf,itmw_barbarenstreitaxt,1);
-		CreateInvItems(slf,itru_teleporttaverne,1);
-		CreateInvItems(slf,itrw_arrow,120);
-		CreateInvItems(slf,itrw_bolt,115);
-		ORLAN_ITEMSGIVEN_CHAPTER_3 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItMw_Orkschlaechter,1);
+		CreateInvItems(slf,ItMw_Schlachtaxt,1);
+		CreateInvItems(slf,ItMw_Barbarenstreitaxt,1);
+		CreateInvItems(slf,ItRu_TeleportTaverne,1);
+		CreateInvItems(slf,ItRw_Arrow,120);
+		CreateInvItems(slf,ItRw_Bolt,115);
+		Orlan_ItemsGiven_Chapter_3 = TRUE;
 	};
-	if((KAPITEL >= 4) && (ORLAN_ITEMSGIVEN_CHAPTER_4 == FALSE))
+	if((Kapitel >= 4) && (Orlan_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,200);
-		CreateInvItems(slf,itmw_zweihaender1,1);
-		CreateInvItems(slf,itmw_bartaxt,1);
-		ORLAN_ITEMSGIVEN_CHAPTER_4 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,200);
+		CreateInvItems(slf,ItMw_Zweihaender1,1);
+		CreateInvItems(slf,ItMw_Bartaxt,1);
+		Orlan_ItemsGiven_Chapter_4 = TRUE;
 	};
-	if((KAPITEL >= 5) && (ORLAN_ITEMSGIVEN_CHAPTER_5 == FALSE))
+	if((Kapitel >= 5) && (Orlan_ItemsGiven_Chapter_5 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,300);
-		CreateInvItems(slf,itrw_arrow,120);
-		CreateInvItems(slf,itrw_bolt,115);
-		ORLAN_ITEMSGIVEN_CHAPTER_5 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,300);
+		CreateInvItems(slf,ItRw_Arrow,120);
+		CreateInvItems(slf,ItRw_Bolt,115);
+		Orlan_ItemsGiven_Chapter_5 = TRUE;
 	};
-	if((KAPITEL >= 6) && (ORLAN_ITEMSGIVEN_CHAPTER_6 == FALSE))
+	if((Kapitel >= 6) && (ORLAN_ITEMSGIVEN_CHAPTER_6 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,300);
+		CreateInvItems(slf,ItMi_Gold,300);
 		ORLAN_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };

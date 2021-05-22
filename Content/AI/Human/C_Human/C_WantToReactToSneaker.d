@@ -1,5 +1,5 @@
 
-func int c_wanttoreacttosneaker(var C_NPC slf,var C_NPC oth)
+func int C_WantToReactToSneaker(var C_Npc slf,var C_Npc oth)
 {
 	if(Npc_GetDistToNpc(slf,oth) > 700)
 	{
@@ -9,7 +9,7 @@ func int c_wanttoreacttosneaker(var C_NPC slf,var C_NPC oth)
 	{
 		return FALSE;
 	};
-	if((slf.npctype == NPCTYPE_FRIEND) && Npc_IsPlayer(oth))
+	if((slf.npcType == NPCTYPE_FRIEND) && Npc_IsPlayer(oth))
 	{
 		return FALSE;
 	};
@@ -17,7 +17,7 @@ func int c_wanttoreacttosneaker(var C_NPC slf,var C_NPC oth)
 	{
 		return FALSE;
 	};
-	if(c_npcisgateguard(self))
+	if(C_NpcIsGateGuard(self))
 	{
 		return FALSE;
 	};

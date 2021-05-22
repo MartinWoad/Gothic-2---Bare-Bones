@@ -1,12 +1,12 @@
 
-instance VLK_4112_DEN(NPC_DEFAULT)
+instance VLK_4112_Den(Npc_Default)
 {
 	name[0] = "Den";
 	guild = GIL_MIL;
 	id = 4112;
 	voice = 5;
 	flags = 0;
-	npctype = NPCTYPE_OCAMBIENT;
+	npcType = NPCTYPE_OCAMBIENT;
 	attribute[ATR_STRENGTH] = 10;
 	attribute[ATR_DEXTERITY] = 10;
 	attribute[ATR_MANA_MAX] = 0;
@@ -14,24 +14,24 @@ instance VLK_4112_DEN(NPC_DEFAULT)
 	attribute[ATR_HITPOINTS_MAX] = 1;
 	attribute[ATR_HITPOINTS] = 1;
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_vlk_dagger);
-	CreateInvItems(self,itmi_gold,200);
-	CreateInvItems(self,itmi_silverring,1);
-	CreateInvItems(self,itmi_goldring,1);
-	CreateInvItems(self,itmi_silvercandleholder,1);
-	CreateInvItems(self,itmi_goldnecklace,1);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_N_NORMALBART_GRIM,BODYTEX_N,4826);
+	EquipItem(self,ItMw_1h_Vlk_Dagger);
+	CreateInvItems(self,ItMi_Gold,200);
+	CreateInvItems(self,ItMi_SilverRing,1);
+	CreateInvItems(self,ItMi_GoldRing,1);
+	CreateInvItems(self,ItMi_SilverCandleHolder,1);
+	CreateInvItems(self,ItMi_GoldNecklace,1);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_N_NormalBart_Grim,BodyTex_N,ITAR_Mil_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_4112;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_4112;
 };
 
 
-func void rtn_start_4112()
+func void Rtn_Start_4112()
 {
-	ta_stand_guarding(8,0,23,0,"OW_PATH_182");
-	ta_stand_guarding(23,0,8,0,"OW_PATH_182");
+	TA_Stand_Guarding(8,0,23,0,"OW_PATH_182");
+	TA_Stand_Guarding(23,0,8,0,"OW_PATH_182");
 };
 

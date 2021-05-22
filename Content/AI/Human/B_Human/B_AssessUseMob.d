@@ -1,7 +1,7 @@
 
-func void b_assessusemob()
+func void B_AssessUseMob()
 {
-	var string detmob;
+	var string detMob;
 	if(Wld_GetPlayerPortalGuild() >= GIL_NONE)
 	{
 		if(Npc_GetHeightToNpc(self,other) > PERC_DIST_INDOOR_HEIGHT)
@@ -19,13 +19,13 @@ func void b_assessusemob()
 			return;
 		};
 	};
-	if(!c_isusedmobmypossession(self,other))
+	if(!C_IsUsedMobMyPossession(self,other))
 	{
 		return;
 	};
 	if(!Npc_CanSeeNpc(self,other))
 	{
-		if(Npc_IsInPlayersRoom(self) && (Npc_IsInState(self,zs_observeplayer) || Npc_IsInState(self,zs_clearroom)))
+		if(Npc_IsInPlayersRoom(self) && (Npc_IsInState(self,ZS_ObservePlayer) || Npc_IsInState(self,ZS_ClearRoom)))
 		{
 		}
 		else
@@ -33,19 +33,19 @@ func void b_assessusemob()
 			return;
 		};
 	};
-	detmob = Npc_GetDetectedMob(other);
-	if((Hlp_StrCmp(detmob,"CHESTBIG") == FALSE) && (Hlp_StrCmp(detmob,"CHESTSMALL") == FALSE))
+	detMob = Npc_GetDetectedMob(other);
+	if((Hlp_StrCmp(detMob,"CHESTBIG") == FALSE) && (Hlp_StrCmp(detMob,"CHESTSMALL") == FALSE))
 	{
 		return;
 	};
-	if(!c_wanttoattackthief(self,other))
+	if(!C_WantToAttackThief(self,other))
 	{
-		if(c_npcisgateguard(self) && Npc_IsPlayer(other))
+		if(C_NpcIsGateGuard(self) && Npc_IsPlayer(other))
 		{
-			b_memorizeplayercrime(self,other,CRIME_THEFT);
+			B_MemorizePlayerCrime(self,other,CRIME_THEFT);
 		};
 		return;
 	};
-	b_attack(self,other,AR_USEMOB,0);
+	B_Attack(self,other,AR_UseMob,0);
 };
 

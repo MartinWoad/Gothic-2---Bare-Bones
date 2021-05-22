@@ -1,49 +1,49 @@
 
-instance DIA_HYGLAS_KAP1_EXIT(C_INFO)
+instance DIA_Hyglas_Kap1_EXIT(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 999;
-	condition = dia_hyglas_kap1_exit_condition;
-	information = dia_hyglas_kap1_exit_info;
+	condition = DIA_Hyglas_Kap1_EXIT_Condition;
+	information = DIA_Hyglas_Kap1_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hyglas_kap1_exit_condition()
+func int DIA_Hyglas_Kap1_EXIT_Condition()
 {
-	if(KAPITEL <= 1)
+	if(Kapitel <= 1)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hyglas_kap1_exit_info()
+func void DIA_Hyglas_Kap1_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HYGLAS_FEUER(C_INFO)
+instance DIA_Hyglas_Feuer(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 2;
-	condition = dia_hyglas_feuer_condition;
-	information = dia_hyglas_feuer_info;
+	condition = DIA_Hyglas_Feuer_Condition;
+	information = DIA_Hyglas_Feuer_Info;
 	permanent = FALSE;
 	description = "Proszê o Próbê Ognia.";
 };
 
 
-func int dia_hyglas_feuer_condition()
+func int DIA_Hyglas_Feuer_Condition()
 {
-	if((other.guild == GIL_NOV) && (KNOWS_FIRE_CONTEST == TRUE) && (Npc_KnowsInfo(other,dia_pyrokar_fire) == FALSE))
+	if((other.guild == GIL_NOV) && (KNOWS_FIRE_CONTEST == TRUE) && (Npc_KnowsInfo(other,DIA_Pyrokar_FIRE) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hyglas_feuer_info()
+func void DIA_Hyglas_Feuer_Info()
 {
 	AI_Output(other,self,"DIA_Hyglas_Feuer_15_00");	//Proszê o Próbê Ognia.
 	AI_Output(self,other,"DIA_Hyglas_Feuer_14_01");	//Próba Ognia nie by³a stosowana od zamierzch³ych czasów.
@@ -51,26 +51,26 @@ func void dia_hyglas_feuer_info()
 };
 
 
-instance DIA_HYGLAS_HALLO(C_INFO)
+instance DIA_Hyglas_Hallo(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 2;
-	condition = dia_hyglas_hallo_condition;
-	information = dia_hyglas_hallo_info;
+	condition = DIA_Hyglas_Hallo_Condition;
+	information = DIA_Hyglas_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_hyglas_hallo_condition()
+func int DIA_Hyglas_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hyglas_hallo_info()
+func void DIA_Hyglas_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Hyglas_Hallo_14_00");	//Jestem Mistrz Hyglas, Stra¿nik Ognia i Wiedzy.
 	if(other.guild == GIL_NOV)
@@ -81,23 +81,23 @@ func void dia_hyglas_hallo_info()
 };
 
 
-instance DIA_HYGLAS_JOB(C_INFO)
+instance DIA_Hyglas_JOB(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 2;
-	condition = dia_hyglas_job_condition;
-	information = dia_hyglas_job_info;
+	condition = DIA_Hyglas_JOB_Condition;
+	information = DIA_Hyglas_JOB_Info;
 	permanent = FALSE;
 	description = "Co studiujesz, Mistrzu?";
 };
 
 
-func int dia_hyglas_job_condition()
+func int DIA_Hyglas_JOB_Condition()
 {
 	return TRUE;
 };
 
-func void dia_hyglas_job_info()
+func void DIA_Hyglas_JOB_Info()
 {
 	AI_Output(other,self,"DIA_Hyglas_JOB_15_00");	//Co studiujesz, Mistrzu?
 	AI_Output(self,other,"DIA_Hyglas_JOB_14_01");	//Moje badania koncentruj¹ siê na ogniu - ¿ywiole Innosa.
@@ -110,85 +110,85 @@ func void dia_hyglas_job_info()
 };
 
 
-instance DIA_HYGLAS_CONTEST(C_INFO)
+instance DIA_Hyglas_CONTEST(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 9;
-	condition = dia_hyglas_contest_condition;
-	information = dia_hyglas_contest_info;
+	condition = DIA_Hyglas_CONTEST_Condition;
+	information = DIA_Hyglas_CONTEST_Info;
 	permanent = FALSE;
 	description = "Za¿¹da³em Próby Ognia.";
 };
 
 
-func int dia_hyglas_contest_condition()
+func int DIA_Hyglas_CONTEST_Condition()
 {
-	if(MIS_RUNE == LOG_RUNNING)
+	if(MIS_RUNE == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hyglas_contest_info()
+func void DIA_Hyglas_CONTEST_Info()
 {
 	AI_Output(other,self,"DIA_Hyglas_CONTEST_15_00");	//Za¿¹da³em próby ognia. Ulthar kaza³ mi stworzyæ runê ognistej strza³y.
 	AI_Output(self,other,"DIA_Hyglas_CONTEST_14_01");	//A teraz pewnie chcesz, abym nauczy³ ciê odpowiedniej formu³y?
 	AI_Output(other,self,"DIA_Hyglas_CONTEST_15_02");	//Nie za bardzo wiem, co jeszcze móg³bym zrobiæ.
 	AI_Output(self,other,"DIA_Hyglas_CONTEST_14_03");	//Hmmm...
 	AI_Output(self,other,"DIA_Hyglas_CONTEST_14_04");	//Dobrze, nauczê ciê tej formu³y. Ale najpierw musisz znaleŸæ niezbêdne sk³adniki.
-	b_logentry(TOPIC_RUNE,"Hyglas ma mnie nauczyæ formu³y runy ognistej strza³y, kiedy tylko zdobêdê wszystkie sk³adniki.");
+	B_LogEntry(TOPIC_Rune,"Hyglas ma mnie nauczyæ formu³y runy ognistej strza³y, kiedy tylko zdobêdê wszystkie sk³adniki.");
 };
 
 
-instance DIA_HYGLAS_FIREBOLT(C_INFO)
+instance DIA_Hyglas_FIREBOLT(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 9;
-	condition = dia_hyglas_firebolt_condition;
-	information = dia_hyglas_firebolt_info;
+	condition = DIA_Hyglas_FIREBOLT_Condition;
+	information = DIA_Hyglas_FIREBOLT_Info;
 	permanent = FALSE;
 	description = "Jakie sk³adniki potrzebne s¹ do stworzenia runy ognistej strza³y?";
 };
 
 
-func int dia_hyglas_firebolt_condition()
+func int DIA_Hyglas_FIREBOLT_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_hyglas_contest) && (MIS_RUNE == LOG_RUNNING) && (PLAYER_TALENT_RUNES[SPL_FIREBOLT] == FALSE))
+	if(Npc_KnowsInfo(hero,DIA_Hyglas_CONTEST) && (MIS_RUNE == LOG_Running) && (PLAYER_TALENT_RUNES[SPL_Firebolt] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hyglas_firebolt_info()
+func void DIA_Hyglas_FIREBOLT_Info()
 {
 	AI_Output(other,self,"DIA_Hyglas_FIREBOLT_15_00");	//Jakie sk³adniki potrzebne s¹ do stworzenia runy ognistej strza³y?
 	AI_Output(self,other,"DIA_Hyglas_FIREBOLT_14_01");	//Wszystkie odpowiedzi znajdziesz w ksiêgach.
 };
 
 
-instance DIA_HYGLAS_TALENT_FIREBOLT(C_INFO)
+instance DIA_Hyglas_TALENT_FIREBOLT(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 990;
-	condition = dia_hyglas_talent_firebolt_condition;
-	information = dia_hyglas_talent_firebolt_info;
+	condition = DIA_Hyglas_TALENT_FIREBOLT_Condition;
+	information = DIA_Hyglas_TALENT_FIREBOLT_Info;
 	permanent = TRUE;
 	description = "Naucz mnie, jak stworzyæ runê OGNISTEJ STRZA³Y.";
 };
 
 
-func int dia_hyglas_talent_firebolt_condition()
+func int DIA_Hyglas_TALENT_FIREBOLT_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_hyglas_contest) && (PLAYER_TALENT_RUNES[SPL_FIREBOLT] == FALSE) && (Npc_HasItems(other,itmi_runeblank) >= 1) && (Npc_HasItems(other,itsc_firebolt) >= 1) && (Npc_HasItems(other,itmi_sulfur) >= 1))
+	if(Npc_KnowsInfo(hero,DIA_Hyglas_CONTEST) && (PLAYER_TALENT_RUNES[SPL_Firebolt] == FALSE) && (Npc_HasItems(other,ItMi_RuneBlank) >= 1) && (Npc_HasItems(other,ItSc_Firebolt) >= 1) && (Npc_HasItems(other,ItMi_Sulfur) >= 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hyglas_talent_firebolt_info()
+func void DIA_Hyglas_TALENT_FIREBOLT_Info()
 {
 	AI_Output(other,self,"DIA_Hyglas_TALENT_FIREBOLT_15_00");	//Naucz mnie, jak stworzyæ runê OGNISTEJ STRZA£Y.
-	if(b_teachplayertalentrunes(self,other,SPL_FIREBOLT))
+	if(B_TeachPlayerTalentRunes(self,other,SPL_Firebolt))
 	{
 		AI_Output(self,other,"DIA_Hyglas_TALENT_FIREBOLT_14_01");	//Aby stworzyæ runê ognistej strza³y, musisz po³¹czyæ na stole runicznym siarkê z kamieniem runicznym.
 		AI_Output(self,other,"DIA_Hyglas_TALENT_FIREBOLT_14_02");	//Moc zaklêcia ognistej strza³y wniknie w runê, a ty dostaniesz narzêdzie Innosa.
@@ -197,72 +197,72 @@ func void dia_hyglas_talent_firebolt_info()
 };
 
 
-instance DIA_HYGLAS_BLANK_RUNE(C_INFO)
+instance DIA_Hyglas_BLANK_RUNE(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 9;
-	condition = dia_hyglas_blank_rune_condition;
-	information = dia_hyglas_blank_rune_info;
+	condition = DIA_Hyglas_BLANK_RUNE_Condition;
+	information = DIA_Hyglas_BLANK_RUNE_Info;
 	permanent = FALSE;
 	description = "Gdzie znajdê kamieñ runiczny?";
 };
 
 
-func int dia_hyglas_blank_rune_condition()
+func int DIA_Hyglas_BLANK_RUNE_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_hyglas_firebolt) && (MIS_RUNE == LOG_RUNNING) && (Npc_HasItems(other,itmi_runeblank) < 1) && (PLAYER_TALENT_RUNES[SPL_FIREBOLT] == FALSE))
+	if(Npc_KnowsInfo(hero,DIA_Hyglas_FIREBOLT) && (MIS_RUNE == LOG_Running) && (Npc_HasItems(other,ItMi_RuneBlank) < 1) && (PLAYER_TALENT_RUNES[SPL_Firebolt] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hyglas_blank_rune_info()
+func void DIA_Hyglas_BLANK_RUNE_Info()
 {
 	AI_Output(other,self,"DIA_Hyglas_BLANK_RUNE_15_00");	//Gdzie znajdê kamieñ runiczny?
 	AI_Output(self,other,"DIA_Hyglas_BLANK_RUNE_14_01");	//Hej hej, to twoja próba, nie moja. Znalezienie kamienia jest czêœci¹ zadania.
 };
 
 
-instance DIA_HYGLAS_GOTRUNE(C_INFO)
+instance DIA_Hyglas_GOTRUNE(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 2;
-	condition = dia_hyglas_gotrune_condition;
-	information = dia_hyglas_gotrune_info;
+	condition = DIA_Hyglas_GOTRUNE_Condition;
+	information = DIA_Hyglas_GOTRUNE_Info;
 	permanent = FALSE;
 	description = "Stworzy³em runê.";
 };
 
 
-func int dia_hyglas_gotrune_condition()
+func int DIA_Hyglas_GOTRUNE_Condition()
 {
-	if((Npc_KnowsInfo(hero,dia_ulthar_success) == FALSE) && (Npc_HasItems(hero,itru_firebolt) >= 1) && (other.guild == GIL_KDF))
+	if((Npc_KnowsInfo(hero,DIA_Ulthar_SUCCESS) == FALSE) && (Npc_HasItems(hero,ItRu_FireBolt) >= 1) && (other.guild == GIL_KDF))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hyglas_gotrune_info()
+func void DIA_Hyglas_GOTRUNE_Info()
 {
 	AI_Output(other,self,"DIA_Hyglas_GOTRUNE_15_00");	//Stworzy³em runê.
 	AI_Output(self,other,"DIA_Hyglas_GOTRUNE_14_01");	//No proszê. Zdaje siê, ¿e przeszed³eœ próbê. Nie by³o to chyba a¿ takie trudne.
 	AI_Output(self,other,"DIA_Hyglas_GOTRUNE_14_02");	//IdŸ do Ulthara i poka¿ mu swoje dzie³o.
-	b_logentry(TOPIC_RUNE,"Stworzy³em runê Ognistej Strza³y.");
+	B_LogEntry(TOPIC_Rune,"Stworzy³em runê Ognistej Strza³y.");
 };
 
 
-instance DIA_HYGLAS_TEACH(C_INFO)
+instance DIA_Hyglas_TEACH(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 15;
-	condition = dia_hyglas_teach_condition;
-	information = dia_hyglas_teach_info;
+	condition = DIA_Hyglas_TEACH_Condition;
+	information = DIA_Hyglas_TEACH_Info;
 	permanent = TRUE;
 	description = "Naucz mnie.";
 };
 
 
-func int dia_hyglas_teach_condition()
+func int DIA_Hyglas_TEACH_Condition()
 {
 	if(other.guild == GIL_KDF)
 	{
@@ -270,146 +270,146 @@ func int dia_hyglas_teach_condition()
 	};
 };
 
-func void dia_hyglas_teach_info()
+func void DIA_Hyglas_TEACH_Info()
 {
 	var int abletolearn;
 	abletolearn = 0;
 	AI_Output(other,self,"DIA_Hyglas_TEACH_15_00");	//Zostañ moim nauczycielem.
-	Info_ClearChoices(dia_hyglas_teach);
-	Info_AddChoice(dia_hyglas_teach,DIALOG_BACK,dia_hyglas_teach_back);
-	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 2) && (PLAYER_TALENT_RUNES[SPL_INSTANTFIREBALL] == FALSE) && (PLAYER_TALENT_RUNES[SPL_FIREBOLT] == TRUE))
+	Info_ClearChoices(DIA_Hyglas_TEACH);
+	Info_AddChoice(DIA_Hyglas_TEACH,Dialog_Back,DIA_Hyglas_TEACH_BACK);
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 2) && (PLAYER_TALENT_RUNES[SPL_InstantFireball] == FALSE) && (PLAYER_TALENT_RUNES[SPL_Firebolt] == TRUE))
 	{
-		Info_AddChoice(dia_hyglas_teach,b_buildlearnstring(NAME_SPL_INSTANTFIREBALL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_hyglas_teach_instantfireball);
+		Info_AddChoice(DIA_Hyglas_TEACH,B_BuildLearnString(NAME_SPL_InstantFireball,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Hyglas_TEACH_InstantFireball);
 		abletolearn = abletolearn + 1;
 	};
-	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 3) && (PLAYER_TALENT_RUNES[SPL_FIRESTORM] == FALSE) && (PLAYER_TALENT_RUNES[SPL_INSTANTFIREBALL] == TRUE))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 3) && (PLAYER_TALENT_RUNES[SPL_Firestorm] == FALSE) && (PLAYER_TALENT_RUNES[SPL_InstantFireball] == TRUE))
 	{
-		Info_AddChoice(dia_hyglas_teach,b_buildlearnstring(NAME_SPL_FIRESTORM,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_hyglas_teach_firestorm);
+		Info_AddChoice(DIA_Hyglas_TEACH,B_BuildLearnString(NAME_SPL_Firestorm,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Hyglas_TEACH_Firestorm);
 		abletolearn = abletolearn + 1;
 	};
-	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 4) && (PLAYER_TALENT_RUNES[SPL_CHARGEFIREBALL] == FALSE) && (PLAYER_TALENT_RUNES[SPL_INSTANTFIREBALL] == TRUE))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 4) && (PLAYER_TALENT_RUNES[SPL_ChargeFireball] == FALSE) && (PLAYER_TALENT_RUNES[SPL_InstantFireball] == TRUE))
 	{
-		Info_AddChoice(dia_hyglas_teach,b_buildlearnstring(NAME_SPL_CHARGEFIREBALL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_hyglas_teach_chargefireball);
+		Info_AddChoice(DIA_Hyglas_TEACH,B_BuildLearnString(NAME_SPL_ChargeFireball,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Hyglas_TEACH_ChargeFireball);
 		abletolearn = abletolearn + 1;
 	};
-	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 5) && (PLAYER_TALENT_RUNES[SPL_PYROKINESIS] == FALSE) && (PLAYER_TALENT_RUNES[SPL_FIRESTORM] == TRUE) && (PLAYER_TALENT_RUNES[SPL_CHARGEFIREBALL] == TRUE))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 5) && (PLAYER_TALENT_RUNES[SPL_Pyrokinesis] == FALSE) && (PLAYER_TALENT_RUNES[SPL_Firestorm] == TRUE) && (PLAYER_TALENT_RUNES[SPL_ChargeFireball] == TRUE))
 	{
-		Info_AddChoice(dia_hyglas_teach,b_buildlearnstring(NAME_SPL_PYROKINESIS,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_hyglas_teach_pyrokinesis);
+		Info_AddChoice(DIA_Hyglas_TEACH,B_BuildLearnString(NAME_SPL_Pyrokinesis,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Hyglas_TEACH_Pyrokinesis);
 		abletolearn = abletolearn + 1;
 	};
-	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 6) && (PLAYER_TALENT_RUNES[SPL_FIRERAIN] == FALSE) && (PLAYER_TALENT_RUNES[SPL_PYROKINESIS] == TRUE))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 6) && (PLAYER_TALENT_RUNES[SPL_Firerain] == FALSE) && (PLAYER_TALENT_RUNES[SPL_Pyrokinesis] == TRUE))
 	{
-		Info_AddChoice(dia_hyglas_teach,b_buildlearnstring(NAME_SPL_FIRERAIN,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_hyglas_teach_firerain);
+		Info_AddChoice(DIA_Hyglas_TEACH,B_BuildLearnString(NAME_SPL_Firerain,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Hyglas_TEACH_Firerain);
 		abletolearn = abletolearn + 1;
 	};
 	if(abletolearn < 1)
 	{
-		b_say(self,other,"$NOLEARNOVERPERSONALMAX");
-		Info_ClearChoices(dia_hyglas_teach);
+		B_Say(self,other,"$NOLEARNOVERPERSONALMAX");
+		Info_ClearChoices(DIA_Hyglas_TEACH);
 	};
 };
 
-func void dia_hyglas_teach_back()
+func void DIA_Hyglas_TEACH_BACK()
 {
-	Info_ClearChoices(dia_hyglas_teach);
+	Info_ClearChoices(DIA_Hyglas_TEACH);
 };
 
-func void dia_hyglas_teach_instantfireball()
+func void DIA_Hyglas_TEACH_InstantFireball()
 {
-	b_teachplayertalentrunes(self,other,SPL_INSTANTFIREBALL);
+	B_TeachPlayerTalentRunes(self,other,SPL_InstantFireball);
 };
 
-func void dia_hyglas_teach_chargefireball()
+func void DIA_Hyglas_TEACH_ChargeFireball()
 {
-	b_teachplayertalentrunes(self,other,SPL_CHARGEFIREBALL);
+	B_TeachPlayerTalentRunes(self,other,SPL_ChargeFireball);
 };
 
-func void dia_hyglas_teach_pyrokinesis()
+func void DIA_Hyglas_TEACH_Pyrokinesis()
 {
-	b_teachplayertalentrunes(self,other,SPL_PYROKINESIS);
+	B_TeachPlayerTalentRunes(self,other,SPL_Pyrokinesis);
 };
 
-func void dia_hyglas_teach_firestorm()
+func void DIA_Hyglas_TEACH_Firestorm()
 {
-	b_teachplayertalentrunes(self,other,SPL_FIRESTORM);
+	B_TeachPlayerTalentRunes(self,other,SPL_Firestorm);
 };
 
-func void dia_hyglas_teach_firerain()
+func void DIA_Hyglas_TEACH_Firerain()
 {
-	b_teachplayertalentrunes(self,other,SPL_FIRERAIN);
+	B_TeachPlayerTalentRunes(self,other,SPL_Firerain);
 };
 
 
-instance DIA_HYGLAS_KAP2_EXIT(C_INFO)
+instance DIA_Hyglas_Kap2_EXIT(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 999;
-	condition = dia_hyglas_kap2_exit_condition;
-	information = dia_hyglas_kap2_exit_info;
+	condition = DIA_Hyglas_Kap2_EXIT_Condition;
+	information = DIA_Hyglas_Kap2_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hyglas_kap2_exit_condition()
+func int DIA_Hyglas_Kap2_EXIT_Condition()
 {
-	if(KAPITEL == 2)
+	if(Kapitel == 2)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hyglas_kap2_exit_info()
+func void DIA_Hyglas_Kap2_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HYGLAS_KAP3_EXIT(C_INFO)
+instance DIA_Hyglas_Kap3_EXIT(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 999;
-	condition = dia_hyglas_kap3_exit_condition;
-	information = dia_hyglas_kap3_exit_info;
+	condition = DIA_Hyglas_Kap3_EXIT_Condition;
+	information = DIA_Hyglas_Kap3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hyglas_kap3_exit_condition()
+func int DIA_Hyglas_Kap3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hyglas_kap3_exit_info()
+func void DIA_Hyglas_Kap3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HYGLAS_BRINGBOOK(C_INFO)
+instance DIA_Hyglas_BringBook(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 38;
-	condition = dia_hyglas_bringbook_condition;
-	information = dia_hyglas_bringbook_info;
+	condition = DIA_Hyglas_BringBook_Condition;
+	information = DIA_Hyglas_BringBook_Info;
 	permanent = FALSE;
 	description = "Jakieœ wieœci?";
 };
 
 
-func int dia_hyglas_bringbook_condition()
+func int DIA_Hyglas_BringBook_Condition()
 {
-	if((KAPITEL >= 3) && (hero.guild != GIL_SLD) && (hero.guild != GIL_DJG))
+	if((Kapitel >= 3) && (hero.guild != GIL_SLD) && (hero.guild != GIL_DJG))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hyglas_bringbook_info()
+func void DIA_Hyglas_BringBook_Info()
 {
 	AI_Output(other,self,"DIA_Hyglas_BringBook_15_00");	//Jakieœ wieœci?
 	AI_Output(self,other,"DIA_Hyglas_BringBook_14_01");	//Hm, tak. No có¿, prawdopodobnie zauwa¿y³eœ te odziane na czarno postacie.
@@ -419,66 +419,66 @@ func void dia_hyglas_bringbook_info()
 	AI_Output(other,self,"DIA_Hyglas_BringBook_15_05");	//Hmmm. No có¿, szczerze mówi¹c...
 	AI_Output(self,other,"DIA_Hyglas_BringBook_14_06");	//Jasne, rozumiem. Nie bêdê siê teraz wdawa³ w szczegó³owe rozwa¿ania na temat takiej konfiguracji. Powiem tylko tyle, ¿e oznacza ona wielkie zmiany. A ja nie lubiê zmian.
 	AI_Output(self,other,"DIA_Hyglas_BringBook_14_07");	//Dlatego chcê, abyœ przyniós³ mi z miasta pewn¹ ksiêgê, zatytu³owan¹ 'Boska moc gwiazd'. Zdobycie jej mo¿e wymagaæ nieco wysi³ku, ale jestem pewien, ¿e sobie poradzisz.
-	Info_ClearChoices(dia_hyglas_bringbook);
-	Info_AddChoice(dia_hyglas_bringbook,"Sam sobie znajdŸ tê ksiêgê.",dia_hyglas_bringbook_getityourself);
-	Info_AddChoice(dia_hyglas_bringbook,"A co JA bêdê z tego mia³?",dia_hyglas_bringbook_getforit);
-	Info_AddChoice(dia_hyglas_bringbook,"Zobaczê, czy uda mi siê j¹ znaleŸæ.",dia_hyglas_bringbook_yes);
+	Info_ClearChoices(DIA_Hyglas_BringBook);
+	Info_AddChoice(DIA_Hyglas_BringBook,"Sam sobie znajdŸ tê ksiêgê.",DIA_Hyglas_BringBook_GetItYourself);
+	Info_AddChoice(DIA_Hyglas_BringBook,"A co JA bêdê z tego mia³?",DIA_Hyglas_BringBook_GetForIt);
+	Info_AddChoice(DIA_Hyglas_BringBook,"Zobaczê, czy uda mi siê j¹ znaleŸæ.",DIA_Hyglas_BringBook_Yes);
 };
 
-func void dia_hyglas_bringbook_getityourself()
+func void DIA_Hyglas_BringBook_GetItYourself()
 {
 	AI_Output(other,self,"DIA_Hyglas_BringBook_GetItYourself_15_00");	//Sam sobie znajdŸ tê ksiêgê.
 	AI_Output(self,other,"DIA_Hyglas_BringBook_GetItYourself_14_01");	//Jak œmiesz odzywaæ siê do mnie w ten sposób? Takim zachowaniem okazujesz brak nale¿nego mi szacunku.
 	AI_Output(self,other,"DIA_Hyglas_BringBook_GetItYourself_14_02");	//ZejdŸ mi z oczu i zastanów siê dobrze nad swoim postêpowaniem.
-	MIS_HYGLASBRINGBOOK = LOG_OBSOLETE;
-	Info_ClearChoices(dia_hyglas_bringbook);
+	MIS_HyglasBringBook = LOG_OBSOLETE;
+	Info_ClearChoices(DIA_Hyglas_BringBook);
 };
 
-func void dia_hyglas_bringbook_getforit()
+func void DIA_Hyglas_BringBook_GetForIt()
 {
 	AI_Output(other,self,"DIA_Hyglas_BringBook_GetForIt_15_00");	//A co z tego bêdê mia³?
 	AI_Output(self,other,"DIA_Hyglas_BringBook_GetForIt_14_01");	//Nie ca³kiem rozumiem...
 	AI_Output(other,self,"DIA_Hyglas_BringBook_GetForIt_15_02");	//Chcia³bym wiedzieæ, co zyskam, jeœli przyniosê ci ksiêgê.
 	AI_Output(self,other,"DIA_Hyglas_BringBook_GetForIt_14_03");	//Nic. A czego oczekiwa³eœ? Jeœli masz czas na wycieczkê do miasta, twoim obowi¹zkiem jest mi pomóc.
-	Info_ClearChoices(dia_hyglas_bringbook);
+	Info_ClearChoices(DIA_Hyglas_BringBook);
 };
 
-func void dia_hyglas_bringbook_yes()
+func void DIA_Hyglas_BringBook_Yes()
 {
 	AI_Output(other,self,"DIA_Hyglas_BringBook_Yes_15_00");	//Zobaczê, czy uda mi siê j¹ znaleŸæ.
 	AI_Output(self,other,"DIA_Hyglas_BringBook_Yes_14_01");	//Dobrze - dziêki temu bêdê mia³ wiêcej czasu na inne sprawy.
 	AI_Output(self,other,"DIA_Hyglas_BringBook_Yes_14_02");	//Spróbuj za³atwiæ to jak najszybciej. Obawiam siê, ¿e czas jest w tej chwili doœæ cennym towarem.
-	MIS_HYGLASBRINGBOOK = LOG_RUNNING;
-	Info_ClearChoices(dia_hyglas_bringbook);
-	Log_CreateTopic(TOPIC_HYGLASBRINGBOOK,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_HYGLASBRINGBOOK,LOG_RUNNING);
-	b_logentry(TOPIC_HYGLASBRINGBOOK,"Hyglas chce, abym przyniós³ mu ksiêgê zatytu³owan¹ 'Boska moc gwiazd'. Mo¿e ma j¹ któryœ z handlarzy w mieœcie.");
+	MIS_HyglasBringBook = LOG_Running;
+	Info_ClearChoices(DIA_Hyglas_BringBook);
+	Log_CreateTopic(TOPIC_HyglasBringBook,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_HyglasBringBook,LOG_Running);
+	B_LogEntry(TOPIC_HyglasBringBook,"Hyglas chce, abym przyniós³ mu ksiêgê zatytu³owan¹ 'Boska moc gwiazd'. Mo¿e ma j¹ któryœ z handlarzy w mieœcie.");
 };
 
 
-instance DIA_HYGLAS_HAVEBOOK(C_INFO)
+instance DIA_Hyglas_HaveBook(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 38;
-	condition = dia_hyglas_havebook_condition;
-	information = dia_hyglas_havebook_info;
+	condition = DIA_Hyglas_HaveBook_Condition;
+	information = DIA_Hyglas_HaveBook_Info;
 	permanent = FALSE;
 	description = "Przynios³em ci ksiêgê.";
 };
 
 
-func int dia_hyglas_havebook_condition()
+func int DIA_Hyglas_HaveBook_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_hyglas_bringbook) && (Npc_HasItems(other,itwr_astronomy_mis) >= 1))
+	if(Npc_KnowsInfo(other,DIA_Hyglas_BringBook) && (Npc_HasItems(other,ItWr_Astronomy_Mis) >= 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hyglas_havebook_info()
+func void DIA_Hyglas_HaveBook_Info()
 {
 	AI_Output(other,self,"DIA_Hyglas_HaveBook_15_00");	//Przynios³em ci ksiêgê.
-	if(MIS_HYGLASBRINGBOOK == LOG_RUNNING)
+	if(MIS_HyglasBringBook == LOG_Running)
 	{
 		AI_Output(self,other,"DIA_Hyglas_HaveBook_14_01");	//Bardzo dobrze, daj mi j¹.
 	}
@@ -486,69 +486,69 @@ func void dia_hyglas_havebook_info()
 	{
 		AI_Output(self,other,"DIA_Hyglas_HaveBook_14_02");	//A wiêc jednak zmieni³eœ zdanie. Bardzo dobrze. Gdzie jest ksiêga?
 	};
-	b_giveinvitems(other,self,5805,1);
-	MIS_HYGLASBRINGBOOK = LOG_SUCCESS;
-	b_giveplayerxp(XP_HYGLASBRINGBOOK);
+	B_GiveInvItems(other,self,ItWr_Astronomy_Mis,1);
+	MIS_HyglasBringBook = LOG_SUCCESS;
+	B_GivePlayerXP(XP_HyglasBringBook);
 	AI_Output(self,other,"DIA_Hyglas_HaveBook_14_03");	//Mo¿esz odejœæ. A ja zajmê siê badaniami.
 };
 
 
-instance DIA_HYGLAS_KAP4_EXIT(C_INFO)
+instance DIA_Hyglas_Kap4_EXIT(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 999;
-	condition = dia_hyglas_kap4_exit_condition;
-	information = dia_hyglas_kap4_exit_info;
+	condition = DIA_Hyglas_Kap4_EXIT_Condition;
+	information = DIA_Hyglas_Kap4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hyglas_kap4_exit_condition()
+func int DIA_Hyglas_Kap4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hyglas_kap4_exit_info()
+func void DIA_Hyglas_Kap4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HYGLAS_KAP4_PERM(C_INFO)
+instance DIA_Hyglas_Kap4_PERM(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 49;
-	condition = dia_hyglas_kap4_perm_condition;
-	information = dia_hyglas_kap4_perm_info;
+	condition = DIA_Hyglas_Kap4_PERM_Condition;
+	information = DIA_Hyglas_Kap4_PERM_Info;
 	permanent = TRUE;
 	description = "Dowiedzia³eœ siê czegoœ nowego?";
 };
 
 
-func int dia_hyglas_kap4_perm_condition()
+func int DIA_Hyglas_Kap4_PERM_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_hyglas_bringbook))
+	if(Npc_KnowsInfo(other,DIA_Hyglas_BringBook))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hyglas_kap4_perm_info()
+func void DIA_Hyglas_Kap4_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Hyglas_Kap4_PERM_15_00");	//Dowiedzia³eœ siê czegoœ nowego?
-	if(MIS_HYGLASBRINGBOOK == LOG_SUCCESS)
+	if(MIS_HyglasBringBook == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Hyglas_Kap4_PERM_14_01");	//Nie jestem do koñca pewien, ale wygl¹da na to, ¿e aktualny uk³ad gwiazd zwiastuje k³opoty.
 		AI_Output(other,self,"DIA_Hyglas_Kap4_PERM_15_02");	//Jakie problemy?
 		AI_Output(self,other,"DIA_Hyglas_Kap4_PERM_14_03");	//Materia rozdzielaj¹ca dwa œwiaty sta³a siê bardzo cienka. Gdyby ktoœ chcia³ otworzyæ przejœcie, móg³by to zrobiæ, u¿ywaj¹c zaledwie cz¹stki mocy potrzebnej do tego w innych okolicznoœciach.
 		AI_Output(self,other,"DIA_Hyglas_Kap4_PERM_14_04");	//Demony mog¹ u¿ywaæ takich przejœæ, aby przenikaæ do naszego œwiata.
-		HYGLAS_SENDSTOKARRAS = TRUE;
+		Hyglas_SendsToKarras = TRUE;
 	}
-	else if(MIS_HYGLASBRINGBOOK == LOG_RUNNING)
+	else if(MIS_HyglasBringBook == LOG_Running)
 	{
 		AI_Output(self,other,"DIA_Hyglas_Kap4_PERM_14_05");	//Nie, wci¹¿ czekam na tê ksiêgê.
 	}
@@ -559,62 +559,62 @@ func void dia_hyglas_kap4_perm_info()
 };
 
 
-instance DIA_HYGLAS_KAP5_EXIT(C_INFO)
+instance DIA_Hyglas_Kap5_EXIT(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 999;
-	condition = dia_hyglas_kap5_exit_condition;
-	information = dia_hyglas_kap5_exit_info;
+	condition = DIA_Hyglas_Kap5_EXIT_Condition;
+	information = DIA_Hyglas_Kap5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hyglas_kap5_exit_condition()
+func int DIA_Hyglas_Kap5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hyglas_kap5_exit_info()
+func void DIA_Hyglas_Kap5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HYGLAS_PICKPOCKET(C_INFO)
+instance DIA_Hyglas_PICKPOCKET(C_Info)
 {
-	npc = kdf_510_hyglas;
+	npc = KDF_510_Hyglas;
 	nr = 900;
-	condition = dia_hyglas_pickpocket_condition;
-	information = dia_hyglas_pickpocket_info;
+	condition = DIA_Hyglas_PICKPOCKET_Condition;
+	information = DIA_Hyglas_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_80;
+	description = Pickpocket_80;
 };
 
 
-func int dia_hyglas_pickpocket_condition()
+func int DIA_Hyglas_PICKPOCKET_Condition()
 {
-	return c_beklauen(73,200);
+	return C_Beklauen(73,200);
 };
 
-func void dia_hyglas_pickpocket_info()
+func void DIA_Hyglas_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_hyglas_pickpocket);
-	Info_AddChoice(dia_hyglas_pickpocket,DIALOG_BACK,dia_hyglas_pickpocket_back);
-	Info_AddChoice(dia_hyglas_pickpocket,DIALOG_PICKPOCKET,dia_hyglas_pickpocket_doit);
+	Info_ClearChoices(DIA_Hyglas_PICKPOCKET);
+	Info_AddChoice(DIA_Hyglas_PICKPOCKET,Dialog_Back,DIA_Hyglas_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Hyglas_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Hyglas_PICKPOCKET_DoIt);
 };
 
-func void dia_hyglas_pickpocket_doit()
+func void DIA_Hyglas_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_hyglas_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Hyglas_PICKPOCKET);
 };
 
-func void dia_hyglas_pickpocket_back()
+func void DIA_Hyglas_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_hyglas_pickpocket);
+	Info_ClearChoices(DIA_Hyglas_PICKPOCKET);
 };
 

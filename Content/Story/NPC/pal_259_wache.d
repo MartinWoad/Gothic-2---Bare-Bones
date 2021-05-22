@@ -1,28 +1,28 @@
 
-instance PAL_259_WACHE(NPC_DEFAULT)
+instance PAL_259_Wache(Npc_Default)
 {
-	name[0] = NAME_WACHE;
+	name[0] = NAME_Wache;
 	guild = GIL_PAL;
 	id = 259;
 	voice = 4;
 	flags = 0;
-	npctype = NPCTYPE_OCAMBIENT;
-	b_setattributestochapter(self,4);
+	npcType = NPCTYPE_OCAMBIENT;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_pal_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_P_TOUGHBALD_NEK,BODYTEX_P,4828);
+	EquipItem(self,ItMw_1h_Pal_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_P_ToughBald_Nek,BodyTex_P,ItAr_PAL_M);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,65);
-	daily_routine = rtn_start_259;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,65);
+	daily_routine = Rtn_Start_259;
 };
 
 
-func void rtn_start_259()
+func void Rtn_Start_259()
 {
-	ta_stand_guarding(8,0,23,0,"OC_OPEN_ROOM_GUARD_01");
-	ta_stand_guarding(23,0,8,0,"OC_OPEN_ROOM_GUARD_01");
+	TA_Stand_Guarding(8,0,23,0,"OC_OPEN_ROOM_GUARD_01");
+	TA_Stand_Guarding(23,0,8,0,"OC_OPEN_ROOM_GUARD_01");
 };
 

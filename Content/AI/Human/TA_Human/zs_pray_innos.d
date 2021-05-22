@@ -1,8 +1,8 @@
 
-func void zs_pray_innos()
+func void ZS_Pray_Innos()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == FALSE)
 	{
@@ -10,20 +10,20 @@ func void zs_pray_innos()
 	};
 };
 
-func int zs_pray_innos_loop()
+func int ZS_Pray_Innos_Loop()
 {
-	if(!c_bodystatecontains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"INNOS"))
+	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"INNOS"))
 	{
 		AI_UseMob(self,"INNOS",1);
 	};
-	if((Npc_GetStateTime(self) > 5) && c_bodystatecontains(self,BS_MOBINTERACT_INTERRUPT))
+	if((Npc_GetStateTime(self) > 5) && C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT))
 	{
 		Npc_SetStateTime(self,0);
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_pray_innos_end()
+func void ZS_Pray_Innos_End()
 {
 	AI_UseMob(self,"INNOS",-1);
 };

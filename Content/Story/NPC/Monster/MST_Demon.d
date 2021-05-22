@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_DEMON(C_NPC)
+prototype Mst_Default_Demon(C_Npc)
 {
 	name[0] = "Demon";
 	guild = GIL_DEMON;
@@ -21,67 +21,67 @@ prototype MST_DEFAULT_DEMON(C_NPC)
 	fight_tactic = FAI_DEMON;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	aivar[AIV_MM_PACKHUNTER] = FALSE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar[AIV_MM_Packhunter] = FALSE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_demon()
+func void B_SetVisuals_Demon()
 {
 	Mdl_SetVisual(self,"Demon.mds");
 	Mdl_SetVisualBody(self,"Dem_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance DEMON(MST_DEFAULT_DEMON)
+instance Demon(Mst_Default_Demon)
 {
-	b_setvisuals_demon();
+	B_SetVisuals_Demon();
 	Npc_SetToFistMode(self);
 };
 
-instance SUMMONED_DEMON(MST_DEFAULT_DEMON)
+instance Summoned_Demon(Mst_Default_Demon)
 {
 	name[0] = "Przyzwany Demon";
 	guild = gil_summoned_demon;
 	aivar[AIV_MM_REAL_ID] = id_summoned_demon;
 	level = 0;
 	aivar[AIV_PARTYMEMBER] = TRUE;
-	b_setattitude(self,ATT_FRIENDLY);
-	start_aistate = zs_mm_rtn_summoned;
-	b_setvisuals_demon();
+	B_SetAttitude(self,ATT_FRIENDLY);
+	start_aistate = ZS_MM_Rtn_Summoned;
+	B_SetVisuals_Demon();
 	Npc_SetToFistMode(self);
 };
 
-instance XARDAS_DT_DEMON1(MST_DEFAULT_DEMON)
+instance Xardas_DT_Demon1(Mst_Default_Demon)
 {
-	b_setvisuals_demon();
+	B_SetVisuals_Demon();
 	Npc_SetToFistMode(self);
 };
 
-instance XARDAS_DT_DEMON2(MST_DEFAULT_DEMON)
+instance Xardas_DT_Demon2(Mst_Default_Demon)
 {
-	b_setvisuals_demon();
+	B_SetVisuals_Demon();
 	Npc_SetToFistMode(self);
 };
 
-instance XARDAS_DT_DEMON3(MST_DEFAULT_DEMON)
+instance Xardas_DT_Demon3(Mst_Default_Demon)
 {
-	b_setvisuals_demon();
+	B_SetVisuals_Demon();
 	Npc_SetToFistMode(self);
 };
 
-instance XARDAS_DT_DEMON4(MST_DEFAULT_DEMON)
+instance Xardas_DT_Demon4(Mst_Default_Demon)
 {
-	b_setvisuals_demon();
+	B_SetVisuals_Demon();
 	Npc_SetToFistMode(self);
 };
 
-instance XARDAS_DT_DEMON5(MST_DEFAULT_DEMON)
+instance Xardas_DT_Demon5(Mst_Default_Demon)
 {
-	b_setvisuals_demon();
+	B_SetVisuals_Demon();
 	Npc_SetToFistMode(self);
 };
 

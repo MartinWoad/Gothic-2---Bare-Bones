@@ -1,17 +1,17 @@
 
-const int SPL_COST_PALHOLYBOLT = 15;
-const int SPL_DAMAGE_PALHOLYBOLT = 150;
+const int SPL_Cost_PalHolyBolt = 15;
+const int SPL_Damage_PalHolyBolt = 150;
 
-instance SPELL_PALHOLYBOLT(C_SPELL_PROTO)
+instance Spell_PalHolyBolt(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	damage_per_level = SPL_DAMAGE_PALHOLYBOLT;
+	damage_per_level = SPL_Damage_PalHolyBolt;
 };
 
 
-func int spell_logic_palholybolt(var int manainvested)
+func int Spell_Logic_PalHolyBolt(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_PALHOLYBOLT)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_PalHolyBolt)
 	{
 		return SPL_SENDCAST;
 	}
@@ -21,8 +21,8 @@ func int spell_logic_palholybolt(var int manainvested)
 	};
 };
 
-func void spell_cast_palholybolt()
+func void Spell_Cast_PalHolyBolt()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_PALHOLYBOLT;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_PalHolyBolt;
 };
 

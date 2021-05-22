@@ -7,30 +7,30 @@ const int COLL_APPLYDOUBLEDAMAGE = 8;
 const int COLL_APPLYVICTIMSTATE = 16;
 const int COLL_DONTKILL = 32;
 
-func int c_cannpccollidewithspell(var int spelltype)
+func int C_CanNpcCollideWithSpell(var int spellType)
 {
-	var C_NPC her;
-	if((spelltype == SPL_ZAP) || (spelltype == SPL_CHARGEZAP) || (spelltype == SPL_WINDFIST) || (spelltype == SPL_CONCUSSIONBOLT))
+	var C_Npc her;
+	if((spellType == SPL_Zap) || (spellType == SPL_ChargeZap) || (spellType == SPL_WindFist) || (spellType == SPL_ConcussionBolt))
 	{
-		if((spelltype == SPL_WINDFIST) && (Npc_GetDistToNpc(other,self) >= 1000))
+		if((spellType == SPL_WindFist) && (Npc_GetDistToNpc(other,self) >= 1000))
 		{
 			return COLL_DONOTHING;
 		};
-		if(c_npcisdown(self) || (self.guild == GIL_STONEGOLEM) || (self.guild == GIL_ICEGOLEM) || (self.guild == GIL_FIREGOLEM) || (self.guild == GIL_SUMMONED_GOLEM) || (self.guild == GIL_DEMON) || (self.guild == GIL_SUMMONED_DEMON) || (self.guild == GIL_TROLL) || (self.guild == GIL_SUMMONED_GOLEM) || (self.guild == GIL_DRAGON))
+		if(C_NpcIsDown(self) || (self.guild == GIL_STONEGOLEM) || (self.guild == GIL_ICEGOLEM) || (self.guild == GIL_FIREGOLEM) || (self.guild == GIL_SUMMONED_GOLEM) || (self.guild == GIL_DEMON) || (self.guild == GIL_SUMMONED_DEMON) || (self.guild == GIL_TROLL) || (self.guild == GIL_SUMMONED_GOLEM) || (self.guild == GIL_DRAGON))
 		{
 			return COLL_DONOTHING;
 		};
 		return COLL_APPLYDAMAGE | COLL_DONTKILL;
 	};
-	if((spelltype == SPL_CHARGEFIREBALL) || (spelltype == SPL_INSTANTFIREBALL) || (spelltype == SPL_FIRERAIN) || (spelltype == SPL_FIREBOLT) || (spelltype == SPL_FIRESTORM) || (spelltype == SPL_PYROKINESIS) || (spelltype == SPL_DEATHBOLT) || (spelltype == SPL_DEATHBALL))
+	if((spellType == SPL_ChargeFireball) || (spellType == SPL_InstantFireball) || (spellType == SPL_Firerain) || (spellType == SPL_Firebolt) || (spellType == SPL_Firestorm) || (spellType == SPL_Pyrokinesis) || (spellType == SPL_Deathbolt) || (spellType == SPL_Deathball))
 	{
-		if(c_npcisdown(self) || c_bodystatecontains(self,BS_SWIM) || c_bodystatecontains(self,BS_DIVE))
+		if(C_NpcIsDown(self) || C_BodyStateContains(self,BS_SWIM) || C_BodyStateContains(self,BS_DIVE))
 		{
 			return COLL_DONOTHING;
 		};
 		if((self.guild == GIL_FIREGOLEM) || (self.guild == GIL_STONEGOLEM) || (self.aivar[AIV_MM_REAL_ID] == ID_FIREWARAN) || (self.aivar[AIV_MM_REAL_ID] == ID_DRAGONSNAPPER) || (self.aivar[AIV_MM_REAL_ID] == ID_DRAGON_FIRE) || (self.guild == GIL_DEMON) || (self.guild == GIL_SUMMONED_DEMON))
 		{
-			if((spelltype == SPL_DEATHBOLT) || (spelltype == SPL_DEATHBALL))
+			if((spellType == SPL_Deathbolt) || (spellType == SPL_Deathball))
 			{
 				return COLL_APPLYHALVEDAMAGE;
 			};
@@ -45,9 +45,9 @@ func int c_cannpccollidewithspell(var int spelltype)
 			return COLL_APPLYDAMAGE;
 		};
 	};
-	if((spelltype == SPL_ICECUBE) || (spelltype == SPL_ICEWAVE) || (spelltype == SPL_ICEBOLT))
+	if((spellType == SPL_IceCube) || (spellType == SPL_IceWave) || (spellType == SPL_Icebolt))
 	{
-		if(c_npcisdown(self) || c_bodystatecontains(self,BS_SWIM) || c_bodystatecontains(self,BS_DIVE))
+		if(C_NpcIsDown(self) || C_BodyStateContains(self,BS_SWIM) || C_BodyStateContains(self,BS_DIVE))
 		{
 			return COLL_DONOTHING;
 		};
@@ -55,7 +55,7 @@ func int c_cannpccollidewithspell(var int spelltype)
 		{
 			return COLL_APPLYDOUBLEDAMAGE;
 		};
-		if((self.guild == GIL_ICEGOLEM) || (self.guild == GIL_STONEGOLEM) || (self.aivar[AIV_MM_REAL_ID] == ID_ICEWOLF) || (self.aivar[AIV_MM_REAL_ID] == ID_DRAGON_ICE))
+		if((self.guild == GIL_ICEGOLEM) || (self.guild == GIL_STONEGOLEM) || (self.aivar[AIV_MM_REAL_ID] == ID_Icewolf) || (self.aivar[AIV_MM_REAL_ID] == ID_DRAGON_ICE))
 		{
 			return COLL_DONOTHING;
 		};
@@ -63,35 +63,35 @@ func int c_cannpccollidewithspell(var int spelltype)
 		{
 			return COLL_APPLYDAMAGE;
 		};
-		if(c_npcisundead(self))
+		if(C_NpcIsUndead(self))
 		{
 			return COLL_APPLYVICTIMSTATE;
 		};
 		return COLL_DOEVERYTHING;
 	};
-	if(spelltype == SPL_LIGHTNINGFLASH)
+	if(spellType == SPL_LightningFlash)
 	{
-		if(c_npcisdown(self) || c_bodystatecontains(self,BS_SWIM) || c_bodystatecontains(self,BS_DIVE))
+		if(C_NpcIsDown(self) || C_BodyStateContains(self,BS_SWIM) || C_BodyStateContains(self,BS_DIVE))
 		{
 			return COLL_DONOTHING;
 		};
-		if(c_npcisdown(self) || (self.guild == GIL_STONEGOLEM) || (self.guild == GIL_ICEGOLEM) || (self.guild == GIL_FIREGOLEM) || (self.guild == GIL_SUMMONED_GOLEM) || (self.guild == GIL_DEMON) || (self.guild == GIL_SUMMONED_DEMON) || (self.guild == GIL_TROLL) || (self.guild == GIL_SUMMONED_GOLEM) || (self.guild == GIL_DRAGON))
+		if(C_NpcIsDown(self) || (self.guild == GIL_STONEGOLEM) || (self.guild == GIL_ICEGOLEM) || (self.guild == GIL_FIREGOLEM) || (self.guild == GIL_SUMMONED_GOLEM) || (self.guild == GIL_DEMON) || (self.guild == GIL_SUMMONED_DEMON) || (self.guild == GIL_TROLL) || (self.guild == GIL_SUMMONED_GOLEM) || (self.guild == GIL_DRAGON))
 		{
 			return COLL_APPLYDAMAGE;
 		};
 		return COLL_DOEVERYTHING;
 	};
-	if(spelltype == SPL_FEAR)
+	if(spellType == SPL_Fear)
 	{
-		if((self.guild != GIL_DEMON) && (self.guild != GIL_FIREGOLEM) && (self.guild != GIL_ICEGOLEM) && (self.guild != GIL_STONEGOLEM) && (self.guild != GIL_SUMMONED_GOLEM) && (self.guild != GIL_SWAMPSHARK) && (self.guild != GIL_TROLL) && (self.guild != GIL_SKELETON) && (self.guild != GIL_SUMMONED_SKELETON) && (self.guild != GIL_ZOMBIE) && (self.guild != GIL_SUMMONED_DEMON) && (self.guild != GIL_DRAGON) && (c_npcisgateguard(self) == FALSE))
+		if((self.guild != GIL_DEMON) && (self.guild != GIL_FIREGOLEM) && (self.guild != GIL_ICEGOLEM) && (self.guild != GIL_STONEGOLEM) && (self.guild != GIL_SUMMONED_GOLEM) && (self.guild != GIL_SWAMPSHARK) && (self.guild != GIL_TROLL) && (self.guild != GIL_SKELETON) && (self.guild != GIL_SUMMONED_SKELETON) && (self.guild != GIL_ZOMBIE) && (self.guild != GIL_SUMMONED_DEMON) && (self.guild != GIL_DRAGON) && (C_NpcIsGateGuard(self) == FALSE))
 		{
 			return COLL_DOEVERYTHING;
 		};
 		return COLL_DONOTHING;
 	};
-	if(spelltype == SPL_DESTROYUNDEAD)
+	if(spellType == SPL_DestroyUndead)
 	{
-		if(c_npcisundead(self))
+		if(C_NpcIsUndead(self))
 		{
 			return COLL_DOEVERYTHING;
 		}
@@ -104,10 +104,10 @@ func int c_cannpccollidewithspell(var int spelltype)
 			return COLL_DONOTHING;
 		};
 	};
-	her = Hlp_GetNpc(pc_hero);
-	if(spelltype == SPL_BREATHOFDEATH)
+	her = Hlp_GetNpc(PC_Hero);
+	if(spellType == SPL_BreathOfDeath)
 	{
-		if((Npc_GetDistToNpc(other,self) >= 1000) || c_npcisundead(self) || (self.aivar[AIV_MM_REAL_ID] == ID_DRAGON_UNDEAD) || (self.guild == GIL_DEMON) || (self.guild == GIL_SUMMONED_DEMON))
+		if((Npc_GetDistToNpc(other,self) >= 1000) || C_NpcIsUndead(self) || (self.aivar[AIV_MM_REAL_ID] == ID_DRAGON_UNDEAD) || (self.guild == GIL_DEMON) || (self.guild == GIL_SUMMONED_DEMON))
 		{
 			return COLL_DONOTHING;
 		};
@@ -121,31 +121,31 @@ func int c_cannpccollidewithspell(var int spelltype)
 		};
 		return COLL_DONOTHING;
 	};
-	if(spelltype == SPL_MASSDEATH)
+	if(spellType == SPL_MassDeath)
 	{
-		if((self.aivar[AIV_MM_REAL_ID] != ID_DRAGON_UNDEAD) && (self.guild != GIL_DEMON) && (self.guild != GIL_SUMMONED_DEMON) && !c_npcisundead(self) && (self.guild != GIL_STONEGOLEM) && (self.guild != GIL_ICEGOLEM) && (self.guild != GIL_FIREGOLEM) && (self.guild != GIL_SUMMONED_GOLEM))
+		if((self.aivar[AIV_MM_REAL_ID] != ID_DRAGON_UNDEAD) && (self.guild != GIL_DEMON) && (self.guild != GIL_SUMMONED_DEMON) && !C_NpcIsUndead(self) && (self.guild != GIL_STONEGOLEM) && (self.guild != GIL_ICEGOLEM) && (self.guild != GIL_FIREGOLEM) && (self.guild != GIL_SUMMONED_GOLEM))
 		{
 			return COLL_DOEVERYTHING;
 		};
 		return COLL_DONOTHING;
 	};
-	if(spelltype == SPL_MASTEROFDISASTER)
+	if(spellType == SPL_MasterOfDisaster)
 	{
-		if(c_npcisdown(self) || c_bodystatecontains(self,BS_SWIM) || c_bodystatecontains(self,BS_DIVE))
+		if(C_NpcIsDown(self) || C_BodyStateContains(self,BS_SWIM) || C_BodyStateContains(self,BS_DIVE))
 		{
 			return COLL_DONOTHING;
 		};
 	};
-	if(spelltype == SPL_SHRINK)
+	if(spellType == SPL_Shrink)
 	{
-		if(c_npcisdown(self) || c_bodystatecontains(self,BS_SWIM) || c_bodystatecontains(self,BS_DIVE) || (self.guild == GIL_DRAGON))
+		if(C_NpcIsDown(self) || C_BodyStateContains(self,BS_SWIM) || C_BodyStateContains(self,BS_DIVE) || (self.guild == GIL_DRAGON))
 		{
 			return COLL_DONOTHING;
 		};
 	};
-	if((spelltype == SPL_PALREPELEVIL) || (spelltype == SPL_PALDESTROYEVIL) || (spelltype == SPL_PALHOLYBOLT))
+	if((spellType == SPL_PalRepelEvil) || (spellType == SPL_PalDestroyEvil) || (spellType == SPL_PalHolyBolt))
 	{
-		if(c_npcisevil(self) && (self.guild != GIL_BDT) && (self.guild != GIL_ORC) && (self.guild != GIL_ORC) && (self.guild != GIL_DRACONIAN))
+		if(C_NpcIsEvil(self) && (self.guild != GIL_BDT) && (self.guild != GIL_ORC) && (self.guild != GIL_ORC) && (self.guild != GIL_DRACONIAN))
 		{
 			if((self.guild == GIL_DRAGON) || (self.aivar[AIV_MM_REAL_ID] == ID_DRAGONSNAPPER) || (self.aivar[AIV_MM_REAL_ID] == ID_WARG))
 			{

@@ -1,13 +1,13 @@
 
-func void b_magichurtnpc(var C_NPC attacker,var int damage)
+func void B_MagicHurtNpc(var C_Npc attacker,var int damage)
 {
 	Npc_ChangeAttribute(self,ATR_HITPOINTS,-damage);
 	if(Npc_IsDead(self))
 	{
-		if(Npc_IsPlayer(other) && (self.aivar[AIV_VICTORYXPGIVEN] == FALSE))
+		if(Npc_IsPlayer(other) && (self.aivar[AIV_VictoryXPGiven] == FALSE))
 		{
-			b_giveplayerxp(self.level * XP_PER_VICTORY);
-			self.aivar[AIV_VICTORYXPGIVEN] = TRUE;
+			B_GivePlayerXP(self.level * XP_PER_VICTORY);
+			self.aivar[AIV_VictoryXPGiven] = TRUE;
 		};
 	};
 };

@@ -1,14 +1,14 @@
 
 const int SPL_MAGICBURN_DAMAGE_PER_SEC = 1;
 
-func void b_stopmagicburn()
+func void B_StopMagicBurn()
 {
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
 	Npc_ClearAIQueue(self);
 	AI_Standup(self);
 	if(self.guild < GIL_SEPERATOR_HUM)
 	{
-		b_assessdamage();
+		B_AssessDamage();
 		AI_ContinueRoutine(self);
 	}
 	else
@@ -18,24 +18,24 @@ func void b_stopmagicburn()
 	};
 };
 
-func void b_restartburn()
+func void B_RestartBurn()
 {
-	if((Npc_GetActiveSpell(other) == SPL_FIRERAIN) || (Npc_GetActiveSpell(other) == SPL_CHARGEFIREBALL) || (Npc_GetActiveSpell(other) == SPL_INSTANTFIREBALL) || (Npc_GetActiveSpell(other) == SPL_FIREBOLT))
+	if((Npc_GetActiveSpell(other) == SPL_Firerain) || (Npc_GetActiveSpell(other) == SPL_ChargeFireball) || (Npc_GetActiveSpell(other) == SPL_InstantFireball) || (Npc_GetActiveSpell(other) == SPL_Firebolt))
 	{
 		Npc_SetStateTime(self,0);
 		return;
 	};
-	if((Npc_GetActiveSpell(other) == SPL_ICEWAVE) || (Npc_GetActiveSpell(other) == SPL_ICECUBE))
+	if((Npc_GetActiveSpell(other) == SPL_IceWave) || (Npc_GetActiveSpell(other) == SPL_IceCube))
 	{
 		Npc_ClearAIQueue(self);
-		b_clearperceptions(self);
-		AI_StartState(self,zs_magicfreeze,0,"");
+		B_ClearPerceptions(self);
+		AI_StartState(self,ZS_MagicFreeze,0,"");
 	};
 };
 
-func void zs_magicburn()
+func void ZS_MagicBurn()
 {
-	Npc_PercEnable(self,PERC_ASSESSSTOPMAGIC,b_stopmagicburn);
+	Npc_PercEnable(self,PERC_ASSESSSTOPMAGIC,B_StopMagicBurn);
 	if(!Npc_HasBodyFlag(self,BS_FLAG_INTERRUPTABLE))
 	{
 		AI_Standup(self);
@@ -46,13 +46,13 @@ func void zs_magicburn()
 	};
 };
 
-func int zs_magicburn_loop()
+func int ZS_MagicBurn_Loop()
 {
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_restartburn);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_RestartBurn);
 	if(Npc_GetStateTime(self) == 1)
 	{
 		Npc_SetStateTime(self,0);
-		b_magichurtnpc(other,SPL_MAGICBURN_DAMAGE_PER_SEC);
+		B_MagicHurtNpc(other,SPL_MAGICBURN_DAMAGE_PER_SEC);
 	};
 	if(self.attribute[ATR_HITPOINTS] <= 0)
 	{
@@ -63,7 +63,7 @@ func int zs_magicburn_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_magicburn_end()
+func void ZS_MagicBurn_End()
 {
 };
 

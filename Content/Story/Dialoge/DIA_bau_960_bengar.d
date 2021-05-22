@@ -1,48 +1,48 @@
 
-instance DIA_BENGAR_EXIT(C_INFO)
+instance DIA_Bengar_EXIT(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 999;
-	condition = dia_bengar_exit_condition;
-	information = dia_bengar_exit_info;
+	condition = DIA_Bengar_EXIT_Condition;
+	information = DIA_Bengar_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_bengar_exit_condition()
+func int DIA_Bengar_EXIT_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_exit_info()
+func void DIA_Bengar_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BENGAR_HALLO(C_INFO)
+instance DIA_Bengar_HALLO(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 3;
-	condition = dia_bengar_hallo_condition;
-	information = dia_bengar_hallo_info;
+	condition = DIA_Bengar_HALLO_Condition;
+	information = DIA_Bengar_HALLO_Info;
 	description = "Jesteœ tutaj farmerem?";
 };
 
 
-func int dia_bengar_hallo_condition()
+func int DIA_Bengar_HALLO_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_hallo_info()
+func void DIA_Bengar_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_HALLO_15_00");	//Jesteœ tutaj farmerem?
 	AI_Output(self,other,"DIA_Bengar_HALLO_10_01");	//Mo¿na by tak powiedzieæ, ale w³aœciwie to jestem tylko najêtym pracownikiem.
@@ -50,25 +50,25 @@ func void dia_bengar_hallo_info()
 };
 
 
-instance DIA_BENGAR_WOVONLEBTIHR(C_INFO)
+instance DIA_Bengar_WOVONLEBTIHR(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 5;
-	condition = dia_bengar_wovonlebtihr_condition;
-	information = dia_bengar_wovonlebtihr_info;
+	condition = DIA_Bengar_WOVONLEBTIHR_Condition;
+	information = DIA_Bengar_WOVONLEBTIHR_Info;
 	description = "Z czego ¿yjecie?";
 };
 
 
-func int dia_bengar_wovonlebtihr_condition()
+func int DIA_Bengar_WOVONLEBTIHR_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_bengar_hallo) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Bengar_HALLO) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_wovonlebtihr_info()
+func void DIA_Bengar_WOVONLEBTIHR_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_WOVONLEBTIHR_15_00");	//Z czego ¿yjecie?
 	AI_Output(self,other,"DIA_Bengar_WOVONLEBTIHR_10_01");	//G³ównie z polowania i wyrêbu drzew. Oczywiœcie, hodujemy te¿ owce i uprawiamy ziemiê.
@@ -76,25 +76,25 @@ func void dia_bengar_wovonlebtihr_info()
 };
 
 
-instance DIA_BENGAR_TAGELOEHNER(C_INFO)
+instance DIA_Bengar_TAGELOEHNER(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 6;
-	condition = dia_bengar_tageloehner_condition;
-	information = dia_bengar_tageloehner_info;
+	condition = DIA_Bengar_TAGELOEHNER_Condition;
+	information = DIA_Bengar_TAGELOEHNER_Info;
 	description = "Zatrudniacie pracowników na dniówkê?";
 };
 
 
-func int dia_bengar_tageloehner_condition()
+func int DIA_Bengar_TAGELOEHNER_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_bengar_wovonlebtihr) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Bengar_WOVONLEBTIHR) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_tageloehner_info()
+func void DIA_Bengar_TAGELOEHNER_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_TAGELOEHNER_15_00");	//Zatrudniacie pracowników na dniówkê?
 	AI_Output(self,other,"DIA_Bengar_TAGELOEHNER_10_01");	//Onar odsy³a robotników, którzy nie przydaj¹ mu siê w gospodarstwie.
@@ -102,25 +102,25 @@ func void dia_bengar_tageloehner_info()
 };
 
 
-instance DIA_BENGAR_REBELLIEREN(C_INFO)
+instance DIA_Bengar_REBELLIEREN(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 8;
-	condition = dia_bengar_rebellieren_condition;
-	information = dia_bengar_rebellieren_info;
+	condition = DIA_Bengar_REBELLIEREN_Condition;
+	information = DIA_Bengar_REBELLIEREN_Info;
 	description = "Co myœlisz o Onarze?";
 };
 
 
-func int dia_bengar_rebellieren_condition()
+func int DIA_Bengar_REBELLIEREN_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_bengar_hallo))
+	if(Npc_KnowsInfo(other,DIA_Bengar_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_rebellieren_info()
+func void DIA_Bengar_REBELLIEREN_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_REBELLIEREN_15_00");	//Co myœlisz o Onarze?
 	AI_Output(self,other,"DIA_Bengar_REBELLIEREN_10_01");	//Ach. To chciwy drañ, przez którego nas w koñcu wszystkich powiesz¹.
@@ -131,25 +131,25 @@ func void dia_bengar_rebellieren_info()
 };
 
 
-instance DIA_BENGAR_PALADINE(C_INFO)
+instance DIA_Bengar_PALADINE(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 9;
-	condition = dia_bengar_paladine_condition;
-	information = dia_bengar_paladine_info;
+	condition = DIA_Bengar_PALADINE_Condition;
+	information = DIA_Bengar_PALADINE_Info;
 	description = "Co masz przeciwko królewskim ¿o³nierzom?";
 };
 
 
-func int dia_bengar_paladine_condition()
+func int DIA_Bengar_PALADINE_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_bengar_rebellieren) && ((hero.guild != GIL_MIL) && (hero.guild != GIL_PAL)))
+	if(Npc_KnowsInfo(other,DIA_Bengar_REBELLIEREN) && ((hero.guild != GIL_MIL) && (hero.guild != GIL_PAL)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_paladine_info()
+func void DIA_Bengar_PALADINE_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_PALADINE_15_00");	//Co masz przeciwko królewskim ¿o³nierzom?
 	AI_Output(self,other,"DIA_Bengar_PALADINE_10_01");	//Wszystko! Od czasu, kiedy paladyni pojawili siê w mieœcie, nic siê nie poprawi³o. Wprost przeciwnie.
@@ -159,25 +159,25 @@ func void dia_bengar_paladine_info()
 };
 
 
-instance DIA_BENGAR_PASS(C_INFO)
+instance DIA_Bengar_PASS(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 10;
-	condition = dia_bengar_pass_condition;
-	information = dia_bengar_pass_info;
+	condition = DIA_Bengar_PASS_Condition;
+	information = DIA_Bengar_PASS_Info;
 	description = "Prze³êczy?";
 };
 
 
-func int dia_bengar_pass_condition()
+func int DIA_Bengar_PASS_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_bengar_paladine))
+	if(Npc_KnowsInfo(other,DIA_Bengar_PALADINE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_pass_info()
+func void DIA_Bengar_PASS_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_PASS_15_00");	//Prze³êczy?
 	AI_Output(self,other,"DIA_Bengar_PASS_10_01");	//Ano. Prze³êczy do starej Górniczej Doliny, ko³o wodospadów po drugiej stronie pastwisk na p³askowy¿u.
@@ -185,26 +185,26 @@ func void dia_bengar_pass_info()
 };
 
 
-instance DIA_BENGAR_MILIZ(C_INFO)
+instance DIA_Bengar_MILIZ(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 11;
-	condition = dia_bengar_miliz_condition;
-	information = dia_bengar_miliz_info;
+	condition = DIA_Bengar_MILIZ_Condition;
+	information = DIA_Bengar_MILIZ_Info;
 	permanent = FALSE;
 	description = "Mam rozwi¹zaæ wasze problemy ze stra¿¹.";
 };
 
 
-func int dia_bengar_miliz_condition()
+func int DIA_Bengar_MILIZ_Condition()
 {
-	if((MIS_TORLOF_BENGARMILIZKLATSCHEN == LOG_RUNNING) && Npc_KnowsInfo(other,dia_bengar_hallo))
+	if((MIS_Torlof_BengarMilizKlatschen == LOG_Running) && Npc_KnowsInfo(other,DIA_Bengar_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_miliz_info()
+func void DIA_Bengar_MILIZ_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_MILIZ_15_00");	//Mam rozwi¹zaæ wasze problemy ze stra¿¹.
 	if(other.guild == GIL_NONE)
@@ -224,52 +224,52 @@ func void dia_bengar_miliz_info()
 };
 
 
-instance DIA_BENGAR_SELBER(C_INFO)
+instance DIA_Bengar_Selber(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 11;
-	condition = dia_bengar_selber_condition;
-	information = dia_bengar_selber_info;
+	condition = DIA_Bengar_Selber_Condition;
+	information = DIA_Bengar_Selber_Info;
 	permanent = FALSE;
 	description = "Dlaczego sami nie staniecie przeciwko stra¿y?";
 };
 
 
-func int dia_bengar_selber_condition()
+func int DIA_Bengar_Selber_Condition()
 {
-	if((MIS_TORLOF_BENGARMILIZKLATSCHEN == LOG_RUNNING) && (BENGAR_MILSUCCESS == FALSE) && Npc_KnowsInfo(other,dia_bengar_hallo))
+	if((MIS_Torlof_BengarMilizKlatschen == LOG_Running) && (Bengar_MilSuccess == FALSE) && Npc_KnowsInfo(other,DIA_Bengar_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_selber_info()
+func void DIA_Bengar_Selber_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_Selber_15_00");	//Sporo was. Dlaczego sami nie staniecie przeciwko stra¿y?
 	AI_Output(self,other,"DIA_Bengar_Selber_10_01");	//To prawda, jest nas wielu. Ale nie jesteœmy zawodowymi ¿o³nierzami jak stra¿nicy.
 };
 
 
-instance DIA_BENGAR_MILIZKLATSCHEN(C_INFO)
+instance DIA_Bengar_MILIZKLATSCHEN(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 12;
-	condition = dia_bengar_milizklatschen_condition;
-	information = dia_bengar_milizklatschen_info;
+	condition = DIA_Bengar_MILIZKLATSCHEN_Condition;
+	information = DIA_Bengar_MILIZKLATSCHEN_Info;
 	permanent = FALSE;
 	description = "Niech no stra¿nicy przyjd¹, zajmê siê nimi!";
 };
 
 
-func int dia_bengar_milizklatschen_condition()
+func int DIA_Bengar_MILIZKLATSCHEN_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_bengar_miliz) && !Npc_IsDead(rick) && !Npc_IsDead(rumbold) && (RUMBOLD_BEZAHLT == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Bengar_MILIZ) && !Npc_IsDead(Rick) && !Npc_IsDead(Rumbold) && (Rumbold_Bezahlt == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_milizklatschen_info()
+func void DIA_Bengar_MILIZKLATSCHEN_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_MILIZKLATSCHEN_15_00");	//Niech no stra¿nicy przyjd¹, zajmê siê nimi!
 	AI_Output(self,other,"DIA_Bengar_MILIZKLATSCHEN_10_01");	//Nie mogê siê doczekaæ. Nadchodz¹! Widzisz, a nie mówi³em!
@@ -283,47 +283,47 @@ func void dia_bengar_milizklatschen_info()
 	};
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"MilComing");
-	if(Hlp_IsValidNpc(rick) && !Npc_IsDead(rick))
+	if(Hlp_IsValidNpc(Rick) && !Npc_IsDead(Rick))
 	{
-		Npc_ExchangeRoutine(rick,"MilComing");
-		AI_ContinueRoutine(rick);
+		Npc_ExchangeRoutine(Rick,"MilComing");
+		AI_ContinueRoutine(Rick);
 	};
-	if(Hlp_IsValidNpc(rumbold) && !Npc_IsDead(rumbold))
+	if(Hlp_IsValidNpc(Rumbold) && !Npc_IsDead(Rumbold))
 	{
-		Npc_ExchangeRoutine(rumbold,"MilComing");
-		AI_ContinueRoutine(rumbold);
+		Npc_ExchangeRoutine(Rumbold,"MilComing");
+		AI_ContinueRoutine(Rumbold);
 	};
 };
 
 
-var int bengar_milsuccess;
+var int Bengar_MilSuccess;
 
-instance DIA_BENGAR_MILIZWEG(C_INFO)
+instance DIA_Bengar_MILIZWEG(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 12;
-	condition = dia_bengar_milizweg_condition;
-	information = dia_bengar_milizweg_info;
+	condition = DIA_Bengar_MILIZWEG_Condition;
+	information = DIA_Bengar_MILIZWEG_Info;
 	permanent = TRUE;
 	description = "Wasze problemy ze stra¿¹ nale¿¹ ju¿ do przesz³oœci.";
 };
 
 
-func int dia_bengar_milizweg_condition()
+func int DIA_Bengar_MILIZWEG_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_bengar_miliz) && (BENGAR_MILSUCCESS == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Bengar_MILIZ) && (Bengar_MilSuccess == FALSE))
 	{
-		if((Npc_IsDead(rick) && Npc_IsDead(rumbold)) || (RUMBOLD_BEZAHLT == TRUE))
+		if((Npc_IsDead(Rick) && Npc_IsDead(Rumbold)) || (Rumbold_Bezahlt == TRUE))
 		{
 			return TRUE;
 		};
 	};
 };
 
-func void dia_bengar_milizweg_info()
+func void DIA_Bengar_MILIZWEG_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_MILIZWEG_15_00");	//Wasze problemy ze stra¿¹ nale¿¹ ju¿ do przesz³oœci.
-	if((RUMBOLD_BEZAHLT == TRUE) && (Npc_IsDead(rumbold) == FALSE))
+	if((Rumbold_Bezahlt == TRUE) && (Npc_IsDead(Rumbold) == FALSE))
 	{
 		AI_Output(self,other,"DIA_Bengar_MILIZWEG_10_01");	//Oszala³eœ? Wiesz, co mi zrobi¹, jeœli ciebie nie bêdzie?
 		AI_Output(self,other,"DIA_Bengar_MILIZWEG_10_02");	//Ci¹gle tam stoj¹. Powiedz im, ¿e powinni st¹d CA£KOWICIE znikn¹æ!
@@ -331,98 +331,98 @@ func void dia_bengar_milizweg_info()
 	else
 	{
 		AI_Output(self,other,"DIA_Bengar_MILIZWEG_10_03");	//NieŸle. Teraz mo¿e zostan¹ nam jakieœ drobne na koniec miesi¹ca. Dziêki.
-		if(RUMBOLD_BEZAHLT == TRUE)
+		if(Rumbold_Bezahlt == TRUE)
 		{
 			AI_Output(self,other,"DIA_Bengar_MILIZWEG_10_04");	//Chcia³eœ nawet za mnie zap³aciæ. To bardzo mi³e z twojej strony.
-			b_giveplayerxp(XP_BENGAR_MILIZKLATSCHEN + 50);
+			B_GivePlayerXP(XP_Bengar_MILIZKLATSCHEN + 50);
 		}
 		else
 		{
-			b_giveplayerxp(XP_BENGAR_MILIZKLATSCHEN);
+			B_GivePlayerXP(XP_Bengar_MILIZKLATSCHEN);
 		};
-		BENGAR_MILSUCCESS = TRUE;
+		Bengar_MilSuccess = TRUE;
 	};
 };
 
 
-instance DIA_BENGAR_BALTHASAR(C_INFO)
+instance DIA_Bengar_BALTHASAR(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 13;
-	condition = dia_bengar_balthasar_condition;
-	information = dia_bengar_balthasar_info;
+	condition = DIA_Bengar_BALTHASAR_Condition;
+	information = DIA_Bengar_BALTHASAR_Info;
 	description = "Pasterz Balthasar nie mo¿e paœæ owiec na twoich pastwiskach?";
 };
 
 
-func int dia_bengar_balthasar_condition()
+func int DIA_Bengar_BALTHASAR_Condition()
 {
-	if((MIS_BALTHASAR_BENGARSWEIDE == LOG_RUNNING) && Npc_KnowsInfo(other,dia_bengar_wovonlebtihr))
+	if((MIS_Balthasar_BengarsWeide == LOG_Running) && Npc_KnowsInfo(other,DIA_Bengar_WOVONLEBTIHR))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_balthasar_info()
+func void DIA_Bengar_BALTHASAR_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_BALTHASAR_15_00");	//Pasterz Balthasar nie mo¿e paœæ owiec na twoich pastwiskach?
 	AI_Output(self,other,"DIA_Bengar_BALTHASAR_10_01");	//Ach, o to chodzi. Powiedzia³em mu, ¿e Sekob powinien mi p³aciæ, jeœli chce korzystaæ z moich pastwisk.
 	AI_Output(self,other,"DIA_Bengar_BALTHASAR_10_02");	//Mówi¹c prawdê, to tylko dokuczanie. Po prostu nie cierpiê Balthasara.
-	b_logentry(TOPIC_BALTHASARSSCHAFE,"Jeœli mam przekonaæ Bengara, aby wpuœci³ Balthasara z powrotem na swoje pastwiska, bêdê musia³ wyœwiadczyæ mu przys³ugê. Na pewno wkrótce nadarzy siê ku temu jakaœ okazja.");
-	b_giveplayerxp(XP_AMBIENT);
+	B_LogEntry(TOPIC_BalthasarsSchafe,"Jeœli mam przekonaæ Bengara, aby wpuœci³ Balthasara z powrotem na swoje pastwiska, bêdê musia³ wyœwiadczyæ mu przys³ugê. Na pewno wkrótce nadarzy siê ku temu jakaœ okazja.");
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_BENGAR_BALTHASARDARFAUFWEIDE(C_INFO)
+instance DIA_Bengar_BALTHASARDARFAUFWEIDE(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 14;
-	condition = dia_bengar_balthasardarfaufweide_condition;
-	information = dia_bengar_balthasardarfaufweide_info;
+	condition = DIA_Bengar_BALTHASARDARFAUFWEIDE_Condition;
+	information = DIA_Bengar_BALTHASARDARFAUFWEIDE_Info;
 	description = "Stra¿ników ju¿ nie ma, a Balthasar znowu mo¿e korzystaæ z twoich pastwisk.";
 };
 
 
-func int dia_bengar_balthasardarfaufweide_condition()
+func int DIA_Bengar_BALTHASARDARFAUFWEIDE_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_bengar_balthasar) && (MIS_TORLOF_BENGARMILIZKLATSCHEN == LOG_SUCCESS) && (BENGAR_MILSUCCESS == TRUE))
+	if(Npc_KnowsInfo(other,DIA_Bengar_BALTHASAR) && (MIS_Torlof_BengarMilizKlatschen == LOG_SUCCESS) && (Bengar_MilSuccess == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_balthasardarfaufweide_info()
+func void DIA_Bengar_BALTHASARDARFAUFWEIDE_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_BALTHASARDARFAUFWEIDE_15_00");	//Stra¿ników ju¿ nie ma, a Balthasar znowu mo¿e korzystaæ z twoich pastwisk.
 	AI_Output(self,other,"DIA_Bengar_BALTHASARDARFAUFWEIDE_10_01");	//Dlaczego?
 	AI_Output(other,self,"DIA_Bengar_BALTHASARDARFAUFWEIDE_15_02");	//Bo ja tak powiedzia³em.
 	AI_Output(self,other,"DIA_Bengar_BALTHASARDARFAUFWEIDE_10_03");	//Hmmm. W porz¹dku, jak sobie ¿yczysz.
 	AI_Output(self,other,"DIA_Bengar_BALTHASARDARFAUFWEIDE_10_04");	//Niech wyprowadza swoje zwierzêta gdzieœ za pola uprawne.
-	MIS_BALTHASAR_BENGARSWEIDE = LOG_SUCCESS;
-	b_giveplayerxp(XP_AMBIENT);
+	MIS_Balthasar_BengarsWeide = LOG_SUCCESS;
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_BENGAR_PERMKAP1(C_INFO)
+instance DIA_Bengar_PERMKAP1(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 15;
-	condition = dia_bengar_permkap1_condition;
-	information = dia_bengar_permkap1_info;
+	condition = DIA_Bengar_PERMKAP1_Condition;
+	information = DIA_Bengar_PERMKAP1_Info;
 	permanent = TRUE;
 	description = "Trzymaj siê.";
 };
 
 
-func int dia_bengar_permkap1_condition()
+func int DIA_Bengar_PERMKAP1_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_bengar_balthasardarfaufweide) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Bengar_BALTHASARDARFAUFWEIDE) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_permkap1_info()
+func void DIA_Bengar_PERMKAP1_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_PERMKAP1_15_00");	//Trzymaj siê.
 	AI_Output(self,other,"DIA_Bengar_PERMKAP1_10_01");	//Ty te¿.
@@ -430,57 +430,57 @@ func void dia_bengar_permkap1_info()
 };
 
 
-instance DIA_BENGAR_KAP3_EXIT(C_INFO)
+instance DIA_Bengar_KAP3_EXIT(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 999;
-	condition = dia_bengar_kap3_exit_condition;
-	information = dia_bengar_kap3_exit_info;
+	condition = DIA_Bengar_KAP3_EXIT_Condition;
+	information = DIA_Bengar_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_bengar_kap3_exit_condition()
+func int DIA_Bengar_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_kap3_exit_info()
+func void DIA_Bengar_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BENGAR_ALLEIN(C_INFO)
+instance DIA_Bengar_ALLEIN(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 30;
-	condition = dia_bengar_allein_condition;
-	information = dia_bengar_allein_info;
+	condition = DIA_Bengar_ALLEIN_Condition;
+	information = DIA_Bengar_ALLEIN_Info;
 	description = "Jak wygl¹da sytuacja?";
 };
 
 
-func int dia_bengar_allein_condition()
+func int DIA_Bengar_ALLEIN_Condition()
 {
-	if(KAPITEL >= 3)
+	if(Kapitel >= 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_allein_info()
+func void DIA_Bengar_ALLEIN_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_ALLEIN_15_00");	//Jak wygl¹da sytuacja?
-	if((MALAK_ISALIVE_KAP3 == TRUE) && ((Npc_GetDistToWP(malak,"FARM3") < 3000) == FALSE))
+	if((Malak_isAlive_Kap3 == TRUE) && ((Npc_GetDistToWP(Malak,"FARM3") < 3000) == FALSE))
 	{
 		AI_Output(self,other,"DIA_Bengar_ALLEIN_10_01");	//Malak znikn¹³ i zabra³ ze sob¹ wszystko, i wszystkich, którzy mogli dla mnie pracowaæ. Mówi³, ¿e kieruje siê w góry.
 		AI_Output(self,other,"DIA_Bengar_ALLEIN_10_02");	//Nie móg³ ju¿ tu wytrzymaæ.
-		MIS_GETMALAKBACK = LOG_RUNNING;
+		MIS_GetMalakBack = LOG_Running;
 	}
 	else
 	{
@@ -489,248 +489,248 @@ func void dia_bengar_allein_info()
 	AI_Output(self,other,"DIA_Bengar_ALLEIN_10_04");	//Codziennie z prze³êczy wypadaj¹ hordy potworów i grasuj¹ na p³askowy¿u. To mnie wykoñczy.
 	AI_Output(self,other,"DIA_Bengar_ALLEIN_10_05");	//Gdybym tak mia³ przynajmniej kilku pomocników albo najemników.
 	AI_Output(self,other,"DIA_Bengar_ALLEIN_10_06");	//By³ nawet taki jeden, co chcia³ dla mnie pracowaæ. Ale chyba zmieni³ zdanie. Zdaje siê, ¿e nazywa³ siê Wilk.
-	MIS_BENGARSHELPINGSLD = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_BENGARALLEIN,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_BENGARALLEIN,LOG_RUNNING);
-	b_logentry(TOPIC_BENGARALLEIN,"Bengar zosta³ na farmie sam. Jego przyjaciel Malak odszed³ i zabra³ ze sob¹ pozosta³ych. Bengar s¹dzi, ¿e schronili siê gdzieœ w górach.");
-	b_logentry(TOPIC_BENGARALLEIN,"Jego farma zosta³a bez ¿adnej ochrony. Prosi³ mnie o pomoc, wspomnia³ te¿ coœ o najemniku imieniem Wilk. Czy ja przypadkiem nie znam tego cz³owieka?");
+	MIS_BengarsHelpingSLD = LOG_Running;
+	Log_CreateTopic(TOPIC_BengarALLEIN,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_BengarALLEIN,LOG_Running);
+	B_LogEntry(TOPIC_BengarALLEIN,"Bengar zosta³ na farmie sam. Jego przyjaciel Malak odszed³ i zabra³ ze sob¹ pozosta³ych. Bengar s¹dzi, ¿e schronili siê gdzieœ w górach.");
+	B_LogEntry(TOPIC_BengarALLEIN,"Jego farma zosta³a bez ¿adnej ochrony. Prosi³ mnie o pomoc, wspomnia³ te¿ coœ o najemniku imieniem Wilk. Czy ja przypadkiem nie znam tego cz³owieka?");
 };
 
 
-instance DIA_BENGAR_MALAKTOT(C_INFO)
+instance DIA_Bengar_MALAKTOT(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 32;
-	condition = dia_bengar_malaktot_condition;
-	information = dia_bengar_malaktot_info;
+	condition = DIA_Bengar_MALAKTOT_Condition;
+	information = DIA_Bengar_MALAKTOT_Info;
 	description = "Malak nie ¿yje.";
 };
 
 
-func int dia_bengar_malaktot_condition()
+func int DIA_Bengar_MALAKTOT_Condition()
 {
-	if(Npc_IsDead(malak) && (MALAK_ISALIVE_KAP3 == TRUE))
+	if(Npc_IsDead(Malak) && (Malak_isAlive_Kap3 == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_malaktot_info()
+func void DIA_Bengar_MALAKTOT_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_MALAKTOT_15_00");	//Malak nie ¿yje.
 	AI_Output(self,other,"DIA_Bengar_MALAKTOT_10_01");	//A wiêc sytuacja jeszcze bardziej siê pogorszy.
 };
 
 
-instance DIA_BENGAR_SLDDA(C_INFO)
+instance DIA_Bengar_SLDDA(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 32;
-	condition = dia_bengar_sldda_condition;
-	information = dia_bengar_sldda_info;
+	condition = DIA_Bengar_SLDDA_Condition;
+	information = DIA_Bengar_SLDDA_Info;
 	description = "Znalaz³em ci najemnika.";
 };
 
 
-func int dia_bengar_sldda_condition()
+func int DIA_Bengar_SLDDA_Condition()
 {
-	if((Npc_GetDistToWP(sld_wolf,"FARM3") < 3000) && (MIS_BENGARSHELPINGSLD == LOG_SUCCESS) && (Npc_IsDead(sld_wolf) == FALSE))
+	if((Npc_GetDistToWP(SLD_Wolf,"FARM3") < 3000) && (MIS_BengarsHelpingSLD == LOG_SUCCESS) && (Npc_IsDead(SLD_Wolf) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_sldda_info()
+func void DIA_Bengar_SLDDA_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_SLDDA_15_00");	//Znalaz³em ci najemnika.
 	AI_Output(self,other,"DIA_Bengar_SLDDA_10_01");	//Nie mia³em u siebie jeszcze nigdy kogoœ takiego. Mam nadziejê, ¿e to siê uda.
 	AI_Output(self,other,"DIA_Bengar_SLDDA_10_02");	//Proszê, weŸ to. S¹dzê, ¿e ci siê przyda.
-	CreateInvItems(self,itmi_gold,400);
-	b_giveinvitems(self,other,5113,400);
-	b_giveplayerxp(XP_BENGARSHELPINGSLDARRIVED);
+	CreateInvItems(self,ItMi_Gold,400);
+	B_GiveInvItems(self,other,ItMi_Gold,400);
+	B_GivePlayerXP(XP_BengarsHelpingSLDArrived);
 };
 
 
-instance DIA_BENGAR_MALAKWIEDERDA(C_INFO)
+instance DIA_Bengar_MALAKWIEDERDA(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 35;
-	condition = dia_bengar_malakwiederda_condition;
-	information = dia_bengar_malakwiederda_info;
+	condition = DIA_Bengar_MALAKWIEDERDA_Condition;
+	information = DIA_Bengar_MALAKWIEDERDA_Info;
 	description = "Malak wróci³.";
 };
 
 
-func int dia_bengar_malakwiederda_condition()
+func int DIA_Bengar_MALAKWIEDERDA_Condition()
 {
-	if((Npc_GetDistToWP(malak,"FARM3") < 3000) && ((MIS_GETMALAKBACK == LOG_SUCCESS) || (NPCOBSESSEDBYDMT_MALAK == TRUE)) && (Npc_IsDead(malak) == FALSE))
+	if((Npc_GetDistToWP(Malak,"FARM3") < 3000) && ((MIS_GetMalakBack == LOG_SUCCESS) || (NpcObsessedByDMT_Malak == TRUE)) && (Npc_IsDead(Malak) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_malakwiederda_info()
+func void DIA_Bengar_MALAKWIEDERDA_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_MALAKWIEDERDA_15_00");	//Malak wróci³.
 	AI_Output(self,other,"DIA_Bengar_MALAKWIEDERDA_10_01");	//Najwy¿sza pora. Myœla³em, ¿e ju¿ nigdy go nie zobaczê.
-	b_giveplayerxp(XP_GETMALAKBACK);
+	B_GivePlayerXP(XP_GetMalakBack);
 };
 
 
-instance DIA_BENGAR_PERM(C_INFO)
+instance DIA_Bengar_PERM(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 80;
-	condition = dia_bengar_perm_condition;
-	information = dia_bengar_perm_info;
+	condition = DIA_Bengar_PERM_Condition;
+	information = DIA_Bengar_PERM_Info;
 	permanent = TRUE;
 	description = "Wszystko bêdzie dobrze.";
 };
 
 
-func int dia_bengar_perm_condition()
+func int DIA_Bengar_PERM_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_bengar_allein) && (KAPITEL >= 3))
+	if(Npc_KnowsInfo(other,DIA_Bengar_ALLEIN) && (Kapitel >= 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_perm_info()
+func void DIA_Bengar_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Bengar_PERM_15_00");	//Wszystko bêdzie dobrze.
-	if((Npc_GetDistToWP(malak,"FARM3") < 3000) && (Npc_IsDead(malak) == FALSE))
+	if((Npc_GetDistToWP(Malak,"FARM3") < 3000) && (Npc_IsDead(Malak) == FALSE))
 	{
 		AI_Output(self,other,"DIA_Bengar_PERM_10_01");	//Malak wróci³, ale sytuacja niewiele siê zmieni³a.
 		AI_Output(self,other,"DIA_Bengar_PERM_10_02");	//Jeœli nie zdarzy siê jakiœ cud, wszyscy tu zginiemy.
 	}
-	else if(Npc_KnowsInfo(other,dia_bengar_sldda) && (Npc_IsDead(sld_wolf) == FALSE) && (Npc_GetDistToWP(sld_wolf,"FARM3") < 3000))
+	else if(Npc_KnowsInfo(other,DIA_Bengar_SLDDA) && (Npc_IsDead(SLD_Wolf) == FALSE) && (Npc_GetDistToWP(SLD_Wolf,"FARM3") < 3000))
 	{
 		AI_Output(self,other,"DIA_Bengar_PERM_10_03");	//Wilk to dziwny facet, ale chyba sobie poradzi.
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Bengar_PERM_10_04");	//Bez Malaka nic tu nie zostanie zrobione. Jeœli wkrótce coœ siê nie wydarzy, bêdê musia³ opuœciæ swoje gospodarstwo.
-		if((MALAK_ISALIVE_KAP3 == TRUE) && (Npc_IsDead(malak) == FALSE))
+		if((Malak_isAlive_Kap3 == TRUE) && (Npc_IsDead(Malak) == FALSE))
 		{
 			AI_Output(self,other,"DIA_Bengar_PERM_10_05");	//Mam nadziejê, ¿e nied³ugo wróci.
 		};
 	};
 	AI_StopProcessInfos(self);
-	if(Npc_IsDead(sld_wolf) && (MIS_BENGARSHELPINGSLD == LOG_SUCCESS))
+	if(Npc_IsDead(SLD_Wolf) && (MIS_BengarsHelpingSLD == LOG_SUCCESS))
 	{
-		b_startotherroutine(sld_815_soeldner,"Start");
-		b_startotherroutine(sld_817_soeldner,"Start");
+		B_StartOtherRoutine(SLD_815_Soeldner,"Start");
+		B_StartOtherRoutine(SLD_817_Soeldner,"Start");
 	};
 };
 
 
-instance DIA_BENGAR_KAP4_EXIT(C_INFO)
+instance DIA_Bengar_KAP4_EXIT(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 999;
-	condition = dia_bengar_kap4_exit_condition;
-	information = dia_bengar_kap4_exit_info;
+	condition = DIA_Bengar_KAP4_EXIT_Condition;
+	information = DIA_Bengar_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_bengar_kap4_exit_condition()
+func int DIA_Bengar_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_kap4_exit_info()
+func void DIA_Bengar_KAP4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BENGAR_KAP5_EXIT(C_INFO)
+instance DIA_Bengar_KAP5_EXIT(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 999;
-	condition = dia_bengar_kap5_exit_condition;
-	information = dia_bengar_kap5_exit_info;
+	condition = DIA_Bengar_KAP5_EXIT_Condition;
+	information = DIA_Bengar_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_bengar_kap5_exit_condition()
+func int DIA_Bengar_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_kap5_exit_info()
+func void DIA_Bengar_KAP5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BENGAR_KAP6_EXIT(C_INFO)
+instance DIA_Bengar_KAP6_EXIT(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 999;
-	condition = dia_bengar_kap6_exit_condition;
-	information = dia_bengar_kap6_exit_info;
+	condition = DIA_Bengar_KAP6_EXIT_Condition;
+	information = DIA_Bengar_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_bengar_kap6_exit_condition()
+func int DIA_Bengar_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bengar_kap6_exit_info()
+func void DIA_Bengar_KAP6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BENGAR_PICKPOCKET(C_INFO)
+instance DIA_Bengar_PICKPOCKET(C_Info)
 {
-	npc = bau_960_bengar;
+	npc = BAU_960_Bengar;
 	nr = 900;
-	condition = dia_bengar_pickpocket_condition;
-	information = dia_bengar_pickpocket_info;
+	condition = DIA_Bengar_PICKPOCKET_Condition;
+	information = DIA_Bengar_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_bengar_pickpocket_condition()
+func int DIA_Bengar_PICKPOCKET_Condition()
 {
-	return c_beklauen(28,50);
+	return C_Beklauen(28,50);
 };
 
-func void dia_bengar_pickpocket_info()
+func void DIA_Bengar_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_bengar_pickpocket);
-	Info_AddChoice(dia_bengar_pickpocket,DIALOG_BACK,dia_bengar_pickpocket_back);
-	Info_AddChoice(dia_bengar_pickpocket,DIALOG_PICKPOCKET,dia_bengar_pickpocket_doit);
+	Info_ClearChoices(DIA_Bengar_PICKPOCKET);
+	Info_AddChoice(DIA_Bengar_PICKPOCKET,Dialog_Back,DIA_Bengar_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Bengar_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Bengar_PICKPOCKET_DoIt);
 };
 
-func void dia_bengar_pickpocket_doit()
+func void DIA_Bengar_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_bengar_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Bengar_PICKPOCKET);
 };
 
-func void dia_bengar_pickpocket_back()
+func void DIA_Bengar_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_bengar_pickpocket);
+	Info_ClearChoices(DIA_Bengar_PICKPOCKET);
 };
 

@@ -1,68 +1,68 @@
 
-instance DIA_WASILI_EXIT(C_INFO)
+instance DIA_Wasili_EXIT(C_Info)
 {
-	npc = bau_907_wasili;
+	npc = BAU_907_Wasili;
 	nr = 999;
-	condition = dia_wasili_exit_condition;
-	information = dia_wasili_exit_info;
+	condition = DIA_Wasili_EXIT_Condition;
+	information = DIA_Wasili_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_wasili_exit_condition()
+func int DIA_Wasili_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_wasili_exit_info()
+func void DIA_Wasili_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_WASILI_HALLO(C_INFO)
+instance DIA_Wasili_HALLO(C_Info)
 {
-	npc = bau_907_wasili;
+	npc = BAU_907_Wasili;
 	nr = 1;
-	condition = dia_wasili_hallo_condition;
-	information = dia_wasili_hallo_info;
+	condition = DIA_Wasili_HALLO_Condition;
+	information = DIA_Wasili_HALLO_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_wasili_hallo_condition()
+func int DIA_Wasili_HALLO_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (self.aivar[AIV_TALKEDTOPLAYER] == FALSE) && (other.guild == GIL_NONE))
+	if(Npc_IsInState(self,ZS_Talk) && (self.aivar[AIV_TalkedToPlayer] == FALSE) && (other.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_wasili_hallo_info()
+func void DIA_Wasili_HALLO_Info()
 {
 	AI_Output(self,other,"DIA_Wasili_HALLO_01_00");	//Nie próbuj tu nawet niczego dotykaæ. W przeciwnym razie oberwiesz w ³eb, rozumiesz?
 };
 
 
-instance DIA_WASILI_JOB(C_INFO)
+instance DIA_Wasili_Job(C_Info)
 {
-	npc = bau_907_wasili;
+	npc = BAU_907_Wasili;
 	nr = 1;
-	condition = dia_wasili_job_condition;
-	information = dia_wasili_job_info;
+	condition = DIA_Wasili_Job_Condition;
+	information = DIA_Wasili_Job_Info;
 	permanent = FALSE;
 	description = "Na czym polega twoja praca?";
 };
 
 
-func int dia_wasili_job_condition()
+func int DIA_Wasili_Job_Condition()
 {
 	return TRUE;
 };
 
-func void dia_wasili_job_info()
+func void DIA_Wasili_Job_Info()
 {
 	AI_Output(other,self,"DIA_Wasili_Job_15_00");	//Na czym polega twoja praca?
 	AI_Output(self,other,"DIA_Wasili_Job_01_01");	//Onar ka¿e mi nadzorowaæ jego w³asnoœæ.
@@ -72,72 +72,72 @@ func void dia_wasili_job_info()
 };
 
 
-instance DIA_WASILI_SAMMLER(C_INFO)
+instance DIA_Wasili_Sammler(C_Info)
 {
-	npc = bau_907_wasili;
+	npc = BAU_907_Wasili;
 	nr = 4;
-	condition = dia_wasili_sammler_condition;
-	information = dia_wasili_sammler_info;
+	condition = DIA_Wasili_Sammler_Condition;
+	information = DIA_Wasili_Sammler_Info;
 	permanent = FALSE;
 	description = "Jest tu mnóstwo ró¿nych rupieci.";
 };
 
 
-func int dia_wasili_sammler_condition()
+func int DIA_Wasili_Sammler_Condition()
 {
 	return TRUE;
 };
 
-func void dia_wasili_sammler_info()
+func void DIA_Wasili_Sammler_Info()
 {
 	AI_Output(other,self,"DIA_Wasili_Sammler_15_00");	//Jest tu mnóstwo ró¿nych rupieci.
 	AI_Output(self,other,"DIA_Wasili_Sammler_01_01");	//To prawda, zaœ wiêkszoœæ z nich to doœæ cenne rupiecie. Onar kolekcjonuje wartoœciowe przedmioty.
 	AI_Output(self,other,"DIA_Wasili_Sammler_01_02");	//Prostemu cz³owiekowi, jak ja, trudno by³oby sobie pozwoliæ na te wszystkie luksusy. Zbieram inne rzeczy.
 	AI_Output(other,self,"DIA_Wasili_Sammler_15_03");	//Na przyk³ad co?
 	AI_Output(self,other,"DIA_Wasili_Sammler_01_04");	//Stare monety.
-	MIS_WASILI_BRINGOLDCOIN = LOG_RUNNING;
+	MIS_Wasili_BringOldCoin = LOG_Running;
 };
 
 
-instance DIA_WASILI_FIRSTOLDCOIN(C_INFO)
+instance DIA_Wasili_FirstOldCoin(C_Info)
 {
-	npc = bau_907_wasili;
+	npc = BAU_907_Wasili;
 	nr = 5;
-	condition = dia_wasili_firstoldcoin_condition;
-	information = dia_wasili_firstoldcoin_info;
+	condition = DIA_Wasili_FirstOldCoin_Condition;
+	information = DIA_Wasili_FirstOldCoin_Info;
 	permanent = TRUE;
 	description = "Mam przy sobie pewn¹ star¹ monetê.";
 };
 
 
-var int wasili_bringoldcoin_nomore;
+var int Wasili_BringOldCoin_NoMore;
 
-func int dia_wasili_firstoldcoin_condition()
+func int DIA_Wasili_FirstOldCoin_Condition()
 {
-	if((MIS_WASILI_BRINGOLDCOIN == LOG_RUNNING) && (WASILISOLDCOINOFFER == 0) && (Npc_HasItems(other,itmi_oldcoin) >= 1) && (WASILI_BRINGOLDCOIN_NOMORE == FALSE))
+	if((MIS_Wasili_BringOldCoin == LOG_Running) && (WasilisOldCoinOffer == 0) && (Npc_HasItems(other,ItMi_OldCoin) >= 1) && (Wasili_BringOldCoin_NoMore == FALSE))
 	{
 		return TRUE;
 	};
 };
 
 
-var int wasilisoldcoinoffer;
-var int firstoldcoin_angebotenxp_onetime;
-var int dia_wasili_firstoldcoin_mehr_onetime;
+var int WasilisOldCoinOffer;
+var int FirstOldCoin_angebotenXP_OneTime;
+var int DIA_Wasili_FirstOldCoin_mehr_OneTime;
 
-func void dia_wasili_firstoldcoin_info()
+func void DIA_Wasili_FirstOldCoin_Info()
 {
 	AI_Output(other,self,"DIA_Wasili_FirstOldCoin_15_00");	//Mam przy sobie pewn¹ star¹ monetê.
-	if(FIRSTOLDCOIN_ANGEBOTENXP_ONETIME == FALSE)
+	if(FirstOldCoin_angebotenXP_OneTime == FALSE)
 	{
 		AI_Output(self,other,"DIA_Wasili_FirstOldCoin_01_01");	//Mmm. Poka¿ mi j¹, proszê.
 	};
-	b_giveinvitems(other,self,5114,1);
-	if(FIRSTOLDCOIN_ANGEBOTENXP_ONETIME == FALSE)
+	B_GiveInvItems(other,self,ItMi_OldCoin,1);
+	if(FirstOldCoin_angebotenXP_OneTime == FALSE)
 	{
 		AI_Output(self,other,"DIA_Wasili_FirstOldCoin_01_02");	//Och, tak. Niewiele móg³byœ za ni¹ kupiæ.
 	};
-	if(DIA_WASILI_FIRSTOLDCOIN_MEHR_ONETIME == FALSE)
+	if(DIA_Wasili_FirstOldCoin_mehr_OneTime == FALSE)
 	{
 		AI_Output(self,other,"DIA_Wasili_FirstOldCoin_01_03");	//Dam ci za ni¹ jedn¹ sztukê z³ota, zgodnie z nomina³em.
 	}
@@ -145,167 +145,167 @@ func void dia_wasili_firstoldcoin_info()
 	{
 		AI_Output(self,other,"DIA_Wasili_FirstOldCoin_01_04");	//Wiesz ile ci za ni¹ zap³acê. Jedna sztuka z³ota, nie wiêcej.
 	};
-	Info_ClearChoices(dia_wasili_firstoldcoin);
-	Info_AddChoice(dia_wasili_firstoldcoin,"Niee, chyba j¹ jednak zachowam.",dia_wasili_firstoldcoin_nein);
-	Info_AddChoice(dia_wasili_firstoldcoin,"Trochê to ma³o, co powiesz na dwie?",dia_wasili_firstoldcoin_mehr);
-	Info_AddChoice(dia_wasili_firstoldcoin,"Umowa stoi.",dia_wasili_firstoldcoin_ok);
-	if(FIRSTOLDCOIN_ANGEBOTENXP_ONETIME == FALSE)
+	Info_ClearChoices(DIA_Wasili_FirstOldCoin);
+	Info_AddChoice(DIA_Wasili_FirstOldCoin,"Niee, chyba j¹ jednak zachowam.",DIA_Wasili_FirstOldCoin_nein);
+	Info_AddChoice(DIA_Wasili_FirstOldCoin,"Trochê to ma³o, co powiesz na dwie?",DIA_Wasili_FirstOldCoin_mehr);
+	Info_AddChoice(DIA_Wasili_FirstOldCoin,"Umowa stoi.",DIA_Wasili_FirstOldCoin_ok);
+	if(FirstOldCoin_angebotenXP_OneTime == FALSE)
 	{
-		b_giveplayerxp(XP_BRINGOLDCOIN);
-		FIRSTOLDCOIN_ANGEBOTENXP_ONETIME = TRUE;
+		B_GivePlayerXP(XP_BringOldCoin);
+		FirstOldCoin_angebotenXP_OneTime = TRUE;
 	};
 };
 
-func void dia_wasili_firstoldcoin_ok()
+func void DIA_Wasili_FirstOldCoin_ok()
 {
 	AI_Output(other,self,"DIA_Wasili_FirstOldCoin_ok_15_00");	//Umowa stoi.
 	AI_Output(self,other,"DIA_Wasili_FirstOldCoin_ok_01_01");	//Wspaniale.
-	if(WASILISOLDCOINOFFER == 2)
+	if(WasilisOldCoinOffer == 2)
 	{
 		AI_Output(self,other,"DIA_Wasili_FirstOldCoin_ok_01_02");	//Oto dwie sztuki z³ota.
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Wasili_FirstOldCoin_ok_01_03");	//Jeœli bêdziesz mia³ takich wiêcej, przynieœ je MNIE.
-		WASILISOLDCOINOFFER = 1;
+		WasilisOldCoinOffer = 1;
 	};
-	CreateInvItems(self,itmi_gold,WASILISOLDCOINOFFER);
-	b_giveinvitems(self,other,5113,WASILISOLDCOINOFFER);
-	Info_ClearChoices(dia_wasili_firstoldcoin);
+	CreateInvItems(self,ItMi_Gold,WasilisOldCoinOffer);
+	B_GiveInvItems(self,other,ItMi_Gold,WasilisOldCoinOffer);
+	Info_ClearChoices(DIA_Wasili_FirstOldCoin);
 };
 
-func void dia_wasili_firstoldcoin_mehr()
+func void DIA_Wasili_FirstOldCoin_mehr()
 {
 	AI_Output(other,self,"DIA_Wasili_FirstOldCoin_mehr_15_00");	//Trochê to ma³o, co powiesz na dwie?
-	if(dia_wasili_firstoldcoin_mehr_onetime == FALSE)
+	if(DIA_Wasili_FirstOldCoin_mehr_OneTime == FALSE)
 	{
 		AI_Output(self,other,"DIA_Wasili_FirstOldCoin_mehr_01_01");	//Chyba ¿artujesz! Jeszcze do reszty nie zg³upia³em! Wynocha.
-		dia_wasili_firstoldcoin_mehr_onetime = TRUE;
-		b_giveinvitems(self,other,5114,1);
+		DIA_Wasili_FirstOldCoin_mehr_OneTime = TRUE;
+		B_GiveInvItems(self,other,ItMi_OldCoin,1);
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Wasili_FirstOldCoin_mehr_01_02");	//Ach. Cholera. Niech bêdzie. Dwie sztuki z³ota za ka¿d¹ star¹ monetê, któr¹ do mnie przyniesiesz. To moja ostateczna oferta.
-		WASILISOLDCOINOFFER = 2;
-		Info_AddChoice(dia_wasili_firstoldcoin,"W tej sytuacji trzy to chyba niez³a oferta.",dia_wasili_firstoldcoin_zumteufel);
+		WasilisOldCoinOffer = 2;
+		Info_AddChoice(DIA_Wasili_FirstOldCoin,"W tej sytuacji trzy to chyba niez³a oferta.",DIA_Wasili_FirstOldCoin_ZumTeufel);
 	};
 };
 
-func void dia_wasili_firstoldcoin_nein()
+func void DIA_Wasili_FirstOldCoin_nein()
 {
 	AI_Output(other,self,"DIA_Wasili_FirstOldCoin_nein_15_00");	//Niee, chyba j¹ jednak zachowam.
 	AI_Output(self,other,"DIA_Wasili_FirstOldCoin_nein_01_01");	//Zobaczysz, jeszcze wrócisz. Dla ciebie nie maj¹ one ¿adnej wartoœci.
-	b_giveinvitems(self,other,5114,1);
-	WASILISOLDCOINOFFER = 0;
-	Info_ClearChoices(dia_wasili_firstoldcoin);
+	B_GiveInvItems(self,other,ItMi_OldCoin,1);
+	WasilisOldCoinOffer = 0;
+	Info_ClearChoices(DIA_Wasili_FirstOldCoin);
 };
 
-func void dia_wasili_firstoldcoin_zumteufel()
+func void DIA_Wasili_FirstOldCoin_ZumTeufel()
 {
 	AI_Output(other,self,"DIA_Wasili_FirstOldCoin_ZumTeufel_15_00");	//W tej sytuacji trzy to chyba niez³a oferta.
 	AI_Output(self,other,"DIA_Wasili_FirstOldCoin_ZumTeufel_01_01");	//IdŸ do diab³a, obdartusie.
 	AI_StopProcessInfos(self);
-	WASILI_BRINGOLDCOIN_NOMORE = TRUE;
-	WASILISOLDCOINOFFER = 0;
+	Wasili_BringOldCoin_NoMore = TRUE;
+	WasilisOldCoinOffer = 0;
 };
 
 
-instance DIA_WASILI_BRINGOLDCOIN(C_INFO)
+instance DIA_Wasili_BringOldCoin(C_Info)
 {
-	npc = bau_907_wasili;
+	npc = BAU_907_Wasili;
 	nr = 5;
-	condition = dia_wasili_bringoldcoin_condition;
-	information = dia_wasili_bringoldcoin_info;
+	condition = DIA_Wasili_BringOldCoin_Condition;
+	information = DIA_Wasili_BringOldCoin_Info;
 	permanent = TRUE;
 	description = "Interesuj¹ ciê jeszcze stare monety?";
 };
 
 
-func int dia_wasili_bringoldcoin_condition()
+func int DIA_Wasili_BringOldCoin_Condition()
 {
-	if((WASILISOLDCOINOFFER > 0) && (Npc_HasItems(other,itmi_oldcoin) >= 1) && (WASILI_BRINGOLDCOIN_NOMORE == FALSE))
+	if((WasilisOldCoinOffer > 0) && (Npc_HasItems(other,ItMi_OldCoin) >= 1) && (Wasili_BringOldCoin_NoMore == FALSE))
 	{
 		return TRUE;
 	};
 };
 
 
-var int oldcoincounter;
+var int OldCoinCounter;
 
-func void dia_wasili_bringoldcoin_info()
+func void DIA_Wasili_BringOldCoin_Info()
 {
-	var int oldcoincount;
-	var int xp_bringoldcoins;
-	var int oldcoingeld;
+	var int OldCoinCount;
+	var int XP_BringOldCoins;
+	var int OldCoinGeld;
 	AI_Output(other,self,"DIA_Wasili_BringOldCoin_15_00");	//Interesuj¹ ciê jeszcze stare monety?
 	AI_Output(self,other,"DIA_Wasili_BringOldCoin_01_01");	//Jasne. Masz jakieœ?
-	oldcoincount = Npc_HasItems(other,itmi_oldcoin);
-	if(oldcoincount == 1)
+	OldCoinCount = Npc_HasItems(other,ItMi_OldCoin);
+	if(OldCoinCount == 1)
 	{
 		AI_Output(other,self,"DIA_Wasili_BringOldCoin_15_02");	//Jedn¹.
-		b_giveplayerxp(XP_BRINGOLDCOIN);
-		b_giveinvitems(other,self,5114,1);
-		Npc_RemoveInvItems(self,itmi_oldcoin,Npc_HasItems(self,itmi_oldcoin));
-		OLDCOINCOUNTER = OLDCOINCOUNTER + 1;
+		B_GivePlayerXP(XP_BringOldCoin);
+		B_GiveInvItems(other,self,ItMi_OldCoin,1);
+		Npc_RemoveInvItems(self,ItMi_OldCoin,Npc_HasItems(self,ItMi_OldCoin));
+		OldCoinCounter = OldCoinCounter + 1;
 	}
 	else
 	{
 		AI_Output(other,self,"DIA_Wasili_BringOldCoin_15_03");	//Kilka.
-		b_giveinvitems(other,self,5114,oldcoincount);
-		Npc_RemoveInvItems(self,itmi_oldcoin,Npc_HasItems(self,itmi_oldcoin));
-		xp_bringoldcoins = oldcoincount * XP_BRINGOLDCOIN;
-		OLDCOINCOUNTER = OLDCOINCOUNTER + oldcoincount;
-		b_giveplayerxp(xp_bringoldcoins);
+		B_GiveInvItems(other,self,ItMi_OldCoin,OldCoinCount);
+		Npc_RemoveInvItems(self,ItMi_OldCoin,Npc_HasItems(self,ItMi_OldCoin));
+		XP_BringOldCoins = OldCoinCount * XP_BringOldCoin;
+		OldCoinCounter = OldCoinCounter + OldCoinCount;
+		B_GivePlayerXP(XP_BringOldCoins);
 	};
 	AI_Output(self,other,"DIA_Wasili_BringOldCoin_01_04");	//Dziêki. Oto twoje pieni¹dze. Przynieœ mi wszystkie, które znajdziesz.
-	oldcoingeld = oldcoincount * WASILISOLDCOINOFFER;
-	CreateInvItems(self,itmi_gold,oldcoingeld);
-	b_giveinvitems(self,other,5113,oldcoingeld);
+	OldCoinGeld = OldCoinCount * WasilisOldCoinOffer;
+	CreateInvItems(self,ItMi_Gold,OldCoinGeld);
+	B_GiveInvItems(self,other,ItMi_Gold,OldCoinGeld);
 };
 
 
-instance DIA_WASILI_PERM(C_INFO)
+instance DIA_Wasili_PERM(C_Info)
 {
-	npc = bau_907_wasili;
+	npc = BAU_907_Wasili;
 	nr = 900;
-	condition = dia_wasili_perm_condition;
-	information = dia_wasili_perm_info;
+	condition = DIA_Wasili_PERM_Condition;
+	information = DIA_Wasili_PERM_Info;
 	permanent = TRUE;
 	description = "Czy ktoœ próbowa³ ju¿ coœ ukraœæ?";
 };
 
 
-func int dia_wasili_perm_condition()
+func int DIA_Wasili_PERM_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_wasili_job))
+	if(Npc_KnowsInfo(other,DIA_Wasili_Job))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_wasili_perm_info()
+func void DIA_Wasili_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Wasili_PERM_15_00");	//Czy ktoœ próbowa³ ju¿ coœ ukraœæ?
-	if(KAPITEL <= 2)
+	if(Kapitel <= 2)
 	{
-		if(PETZCOUNTER_FARM_THEFT > 0)
+		if(PETZCOUNTER_Farm_Theft > 0)
 		{
 			AI_Output(self,other,"DIA_Wasili_PERM_01_01");	//Oprócz ciebie, ma siê rozumieæ?
 		};
 		AI_Output(self,other,"DIA_Wasili_PERM_01_02");	//By³o kilku! Ale wszystkich z³apa³em!
 	};
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		AI_Output(self,other,"DIA_Wasili_PERM_01_03");	//Kilka wieczorów temu jeden z najemników zakrad³ siê do domu.
 		AI_Output(self,other,"DIA_Wasili_PERM_01_04");	//Mia³ na sobie czarn¹ szatê z kapturem, przez co nie mog³em dojrzeæ jego twarzy.
 		AI_Output(self,other,"DIA_Wasili_PERM_01_05");	//Uda³o mi siê jednak go sp³oszyæ.
 	};
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		AI_Output(self,other,"DIA_Wasili_perm_01_06");	//Nie. Ostatnimi czasy nie.
 	};
-	if(KAPITEL >= 5)
+	if(Kapitel >= 5)
 	{
 		AI_Output(self,other,"DIA_Wasili_perm_01_07");	//Wydaje siê, ¿e czêœæ najemników chce siê oderwaæ od reszty.
 		AI_Output(self,other,"DIA_Wasili_perm_01_08");	//Nie zdziwi³bym siê, gdyby Lee i jego ch³opcy pewnej nocy po prostu odeszli bez s³owa.
@@ -313,37 +313,37 @@ func void dia_wasili_perm_info()
 };
 
 
-instance DIA_WASILI_PICKPOCKET(C_INFO)
+instance DIA_Wasili_PICKPOCKET(C_Info)
 {
-	npc = bau_907_wasili;
+	npc = BAU_907_Wasili;
 	nr = 900;
-	condition = dia_wasili_pickpocket_condition;
-	information = dia_wasili_pickpocket_info;
+	condition = DIA_Wasili_PICKPOCKET_Condition;
+	information = DIA_Wasili_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_wasili_pickpocket_condition()
+func int DIA_Wasili_PICKPOCKET_Condition()
 {
-	return c_beklauen(55,90);
+	return C_Beklauen(55,90);
 };
 
-func void dia_wasili_pickpocket_info()
+func void DIA_Wasili_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_wasili_pickpocket);
-	Info_AddChoice(dia_wasili_pickpocket,DIALOG_BACK,dia_wasili_pickpocket_back);
-	Info_AddChoice(dia_wasili_pickpocket,DIALOG_PICKPOCKET,dia_wasili_pickpocket_doit);
+	Info_ClearChoices(DIA_Wasili_PICKPOCKET);
+	Info_AddChoice(DIA_Wasili_PICKPOCKET,Dialog_Back,DIA_Wasili_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Wasili_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Wasili_PICKPOCKET_DoIt);
 };
 
-func void dia_wasili_pickpocket_doit()
+func void DIA_Wasili_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_wasili_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Wasili_PICKPOCKET);
 };
 
-func void dia_wasili_pickpocket_back()
+func void DIA_Wasili_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_wasili_pickpocket);
+	Info_ClearChoices(DIA_Wasili_PICKPOCKET);
 };
 

@@ -1,7 +1,7 @@
 
-func void b_resetall(var C_NPC slf)
+func void B_ResetAll(var C_Npc slf)
 {
-	b_stoplookat(slf);
+	B_StopLookAt(slf);
 	AI_RemoveWeapon(slf);
 };
 

@@ -1,21 +1,21 @@
 
-var int evt_archoldead_func_onetime;
+var int EVT_ARCHOLDEAD_FUNC_OneTime;
 
 func void evt_archoldead_func()
 {
-	if(Npc_IsDead(skeleton_lord_archol))
+	if(Npc_IsDead(Skeleton_Lord_Archol))
 	{
-		skeleton_archol1.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-		skeleton_archol2.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-		skeleton_archol3.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-		skeleton_archol4.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-		skeleton_archol5.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-		skeleton_archol6.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+		Skeleton_Archol1.aivar[AIV_EnemyOverride] = FALSE;
+		Skeleton_Archol2.aivar[AIV_EnemyOverride] = FALSE;
+		Skeleton_Archol3.aivar[AIV_EnemyOverride] = FALSE;
+		Skeleton_Archol4.aivar[AIV_EnemyOverride] = FALSE;
+		Skeleton_Archol5.aivar[AIV_EnemyOverride] = FALSE;
+		Skeleton_Archol6.aivar[AIV_EnemyOverride] = FALSE;
 	};
-	if(evt_archoldead_func_onetime == FALSE)
+	if(EVT_ARCHOLDEAD_FUNC_OneTime == FALSE)
 	{
-		b_logentry(TOPIC_HALLENVONIRDORATH,"Odkry³em tutaj œwi¹tyniê, w której pe³no jest o¿ywieñców. Dziwnie przypomina mi orkow¹ œwi¹tyniê Œni¹cego. Tym razem jednak nie zawiodê. Nie tym razem!");
-		evt_archoldead_func_onetime = TRUE;
+		B_LogEntry(TOPIC_HallenVonIrdorath,"Odkry³em tutaj œwi¹tyniê, w której pe³no jest o¿ywieñców. Dziwnie przypomina mi orkow¹ œwi¹tyniê Œni¹cego. Tym razem jednak nie zawiodê. Nie tym razem!");
+		EVT_ARCHOLDEAD_FUNC_OneTime = TRUE;
 	};
 };
 

@@ -1,50 +1,50 @@
 
-instance DIA_GORNNW_KAP3_EXIT(C_INFO)
+instance DIA_GornNW_KAP3_EXIT(C_Info)
 {
-	npc = pc_fighter_nw_vor_djg;
+	npc = PC_Fighter_NW_vor_DJG;
 	nr = 999;
-	condition = dia_gornnw_kap3_exit_condition;
-	information = dia_gornnw_kap3_exit_info;
+	condition = DIA_GornNW_KAP3_EXIT_Condition;
+	information = DIA_GornNW_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_gornnw_kap3_exit_condition()
+func int DIA_GornNW_KAP3_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_gornnw_kap3_exit_info()
+func void DIA_GornNW_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_GORNNW_HALLO(C_INFO)
+instance DIA_GornNW_Hallo(C_Info)
 {
-	npc = pc_fighter_nw_vor_djg;
+	npc = PC_Fighter_NW_vor_DJG;
 	nr = 1;
-	condition = dia_gornnw_hallo_condition;
-	information = dia_gornnw_hallo_info;
+	condition = DIA_GornNW_Hallo_Condition;
+	information = DIA_GornNW_Hallo_Info;
 	permanent = FALSE;
 	description = "Wszystko w porz¹dku?";
 };
 
 
-func int dia_gornnw_hallo_condition()
+func int DIA_GornNW_Hallo_Condition()
 {
 	return TRUE;
 };
 
-func void dia_gornnw_hallo_info()
+func void DIA_GornNW_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_GornNW_Add_15_00");	//Wszystko w porz¹dku?
-	if(MIS_RESCUEGORN == LOG_SUCCESS)
+	if(MIS_RescueGorn == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_GornNW_Add_12_01");	//Uratowa³eœ mój ty³ek, kolego.
 		AI_Output(self,other,"DIA_GornNW_Add_12_02");	//Nigdy ci tego nie zapomnê.
-		b_giveplayerxp(XP_AMBIENT);
+		B_GivePlayerXP(XP_Ambient);
 	}
 	else
 	{
@@ -54,23 +54,23 @@ func void dia_gornnw_hallo_info()
 };
 
 
-instance DIA_GORNNW_WHATNEXT(C_INFO)
+instance DIA_GornNW_WhatNext(C_Info)
 {
-	npc = pc_fighter_nw_vor_djg;
+	npc = PC_Fighter_NW_vor_DJG;
 	nr = 1;
-	condition = dia_gornnw_whatnext_condition;
-	information = dia_gornnw_whatnext_info;
+	condition = DIA_GornNW_WhatNext_Condition;
+	information = DIA_GornNW_WhatNext_Info;
 	permanent = TRUE;
 	description = "Co bêdziesz teraz robi³?";
 };
 
 
-func int dia_gornnw_whatnext_condition()
+func int DIA_GornNW_WhatNext_Condition()
 {
 	return TRUE;
 };
 
-func void dia_gornnw_whatnext_info()
+func void DIA_GornNW_WhatNext_Info()
 {
 	AI_Output(other,self,"DIA_GornNW_Add_15_05");	//Co bêdziesz teraz robi³?
 	AI_Output(self,other,"DIA_GornNW_Add_12_06");	//Najpierw zamierzam porz¹dnie siê najeœæ.

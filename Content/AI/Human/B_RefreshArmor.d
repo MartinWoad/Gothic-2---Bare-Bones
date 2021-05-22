@@ -1,5 +1,5 @@
 
-func void b_refresharmor()
+func void B_RefreshArmor()
 {
 };
 

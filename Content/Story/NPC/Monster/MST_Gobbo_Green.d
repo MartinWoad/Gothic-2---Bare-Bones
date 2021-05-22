@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_GOBBO_GREEN(C_NPC)
+prototype Mst_Default_Gobbo_Green(C_Npc)
 {
 	name[0] = "Goblin";
 	guild = GIL_GOBBO;
@@ -21,29 +21,29 @@ prototype MST_DEFAULT_GOBBO_GREEN(C_NPC)
 	fight_tactic = FAI_GOBBO;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	aivar[AIV_MM_PACKHUNTER] = TRUE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar[AIV_MM_Packhunter] = TRUE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_gobbo_green()
+func void B_SetVisuals_Gobbo_Green()
 {
 	Mdl_SetVisual(self,"Gobbo.mds");
 	Mdl_SetVisualBody(self,"Gob_Body",0,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance GOBBO_GREEN(MST_DEFAULT_GOBBO_GREEN)
+instance Gobbo_Green(Mst_Default_Gobbo_Green)
 {
-	b_setvisuals_gobbo_green();
-	Npc_SetToFightMode(self,itmw_1h_bau_mace);
+	B_SetVisuals_Gobbo_Green();
+	Npc_SetToFightMode(self,ItMw_1h_Bau_Mace);
 };
 
-instance YGOBBO_GREEN(MST_DEFAULT_GOBBO_GREEN)
+instance YGobbo_Green(Mst_Default_Gobbo_Green)
 {
 	level = 3;
 	attribute[ATR_STRENGTH] = 15;
@@ -59,7 +59,7 @@ instance YGOBBO_GREEN(MST_DEFAULT_GOBBO_GREEN)
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 0;
 	fight_tactic = FAI_MONSTER_COWARD;
-	b_setvisuals_gobbo_green();
-	Npc_SetToFightMode(self,itmw_1h_bau_mace);
+	B_SetVisuals_Gobbo_Green();
+	Npc_SetToFightMode(self,ItMw_1h_Bau_Mace);
 };
 

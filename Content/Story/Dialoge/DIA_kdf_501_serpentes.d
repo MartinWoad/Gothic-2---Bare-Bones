@@ -1,57 +1,57 @@
 
-instance DIA_SERPENTES_KAP1_EXIT(C_INFO)
+instance DIA_Serpentes_Kap1_EXIT(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 999;
-	condition = dia_serpentes_kap1_exit_condition;
-	information = dia_serpentes_kap1_exit_info;
+	condition = DIA_Serpentes_Kap1_EXIT_Condition;
+	information = DIA_Serpentes_Kap1_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_serpentes_kap1_exit_condition()
+func int DIA_Serpentes_Kap1_EXIT_Condition()
 {
-	if(KAPITEL <= 1)
+	if(Kapitel <= 1)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_serpentes_kap1_exit_info()
+func void DIA_Serpentes_Kap1_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SERPENTES_NOTALK(C_INFO)
+instance DIA_Serpentes_NOTALK(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 10;
-	condition = dia_serpentes_notalk_condition;
-	information = dia_serpentes_notalk_info;
+	condition = DIA_Serpentes_NOTALK_Condition;
+	information = DIA_Serpentes_NOTALK_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_serpentes_notalk_condition()
+func int DIA_Serpentes_NOTALK_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (KNOWS_FIRE_CONTEST == FALSE) && (hero.guild == GIL_NOV))
+	if(Npc_IsInState(self,ZS_Talk) && (KNOWS_FIRE_CONTEST == FALSE) && (hero.guild == GIL_NOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_serpentes_notalk_info()
+func void DIA_Serpentes_NOTALK_Info()
 {
 	AI_Output(self,other,"DIA_Serpentes_NOTALK_10_00");	//Jak œmiesz siê do mnie odzywaæ, nowicjuszu? Wracaj do pracy!
-	Info_ClearChoices(dia_serpentes_notalk);
-	Info_AddChoice(dia_serpentes_notalk,"Ja tylko... (KONIEC)",dia_serpentes_notalk_exit);
-	Info_AddChoice(dia_serpentes_notalk,"Mam jeszcze jedno pytanie...",dia_serpentes_notalk_question);
+	Info_ClearChoices(DIA_Serpentes_NOTALK);
+	Info_AddChoice(DIA_Serpentes_NOTALK,"Ja tylko... (KONIEC)",DIA_Serpentes_NOTALK_EXIT);
+	Info_AddChoice(DIA_Serpentes_NOTALK,"Mam jeszcze jedno pytanie...",DIA_Serpentes_NOTALK_QUESTION);
 };
 
-func void dia_serpentes_notalk_question()
+func void DIA_Serpentes_NOTALK_QUESTION()
 {
 	AI_Output(other,self,"DIA_Serpentes_NOTALK_QUESTION_15_00");	//Mam jeszcze jedno pytanie...
 	AI_Output(self,other,"DIA_Serpentes_NOTALK_QUESTION_10_01");	//Chyba nie rozumiesz. To ja decydujê, czy chcê z tob¹ rozmawiaæ, czy te¿ nie. Co ty sobie wyobra¿asz?
@@ -59,58 +59,58 @@ func void dia_serpentes_notalk_question()
 	AI_StopProcessInfos(self);
 };
 
-func void dia_serpentes_notalk_exit()
+func void DIA_Serpentes_NOTALK_EXIT()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SERPENTES_GOAWAY(C_INFO)
+instance DIA_Serpentes_GOAWAY(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 10;
-	condition = dia_serpentes_goaway_condition;
-	information = dia_serpentes_goaway_info;
+	condition = DIA_Serpentes_GOAWAY_Condition;
+	information = DIA_Serpentes_GOAWAY_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_serpentes_goaway_condition()
+func int DIA_Serpentes_GOAWAY_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_serpentes_notalk) && Npc_IsInState(self,zs_talk) && !Npc_KnowsInfo(hero,dia_pyrokar_fire) && (hero.guild == GIL_NOV))
+	if(Npc_KnowsInfo(hero,DIA_Serpentes_NOTALK) && Npc_IsInState(self,ZS_Talk) && !Npc_KnowsInfo(hero,DIA_Pyrokar_FIRE) && (hero.guild == GIL_NOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_serpentes_goaway_info()
+func void DIA_Serpentes_GOAWAY_Info()
 {
 	AI_Output(self,other,"DIA_Serpentes_GOAWAY_10_00");	//Twoja obecnoœæ tutaj to nie tylko oznaka braku szacunku, ale i g³upoty, nowicjuszu!
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SERPENTES_YOURSTORY(C_INFO)
+instance DIA_Serpentes_YOURSTORY(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 24;
-	condition = dia_serpentes_yourstory_condition;
-	information = dia_serpentes_yourstory_info;
+	condition = DIA_Serpentes_YOURSTORY_Condition;
+	information = DIA_Serpentes_YOURSTORY_Info;
 	permanent = FALSE;
 	description = "S³ysza³em, ¿e przeszed³eœ Próbê Ognia?";
 };
 
 
-func int dia_serpentes_yourstory_condition()
+func int DIA_Serpentes_YOURSTORY_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_ulthar_test) && (other.guild == GIL_NOV) && (Npc_KnowsInfo(hero,dia_pyrokar_magican) == FALSE) && (MIS_GOLEM != LOG_SUCCESS))
+	if(Npc_KnowsInfo(hero,DIA_Ulthar_TEST) && (other.guild == GIL_NOV) && (Npc_KnowsInfo(hero,DIA_Pyrokar_MAGICAN) == FALSE) && (MIS_GOLEM != LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_serpentes_yourstory_info()
+func void DIA_Serpentes_YOURSTORY_Info()
 {
 	AI_Output(other,self,"DIA_Serpentes_YOURSTORY_15_00");	//S³ysza³em, ¿e przeszed³eœ Próbê Ognia?
 	AI_Output(self,other,"DIA_Serpentes_YOURSTORY_10_01");	//Z ca³¹ pokor¹ muszê przyznaæ, ¿e wszyscy inni, którzy tego próbowali, ponieœli klêskê.
@@ -120,26 +120,26 @@ func void dia_serpentes_yourstory_info()
 };
 
 
-instance DIA_SERPENTES_TEST(C_INFO)
+instance DIA_Serpentes_TEST(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 10;
-	condition = dia_serpentes_test_condition;
-	information = dia_serpentes_test_info;
+	condition = DIA_Serpentes_TEST_Condition;
+	information = DIA_Serpentes_TEST_Info;
 	permanent = FALSE;
 	description = "Mistrzu, jestem gotów poddaæ siê Próbie.";
 };
 
 
-func int dia_serpentes_test_condition()
+func int DIA_Serpentes_TEST_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_pyrokar_fire) && (hero.guild == GIL_NOV))
+	if(Npc_KnowsInfo(hero,DIA_Pyrokar_FIRE) && (hero.guild == GIL_NOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_serpentes_test_info()
+func void DIA_Serpentes_TEST_Info()
 {
 	AI_Output(other,self,"DIA_Serpentes_TEST_15_00");	//Mistrzu, jestem gotów poddaæ siê próbie.
 	AI_Output(self,other,"DIA_Serpentes_TEST_10_01");	//Mówisz wiêc, ¿e chcesz przejœæ próbê. Jedynie najodwa¿niejszy z odwa¿nych nowicjuszy mo¿e o ni¹ prosiæ. Odwaga to jednak nie wszystko.
@@ -147,33 +147,33 @@ func void dia_serpentes_test_info()
 	AI_Output(self,other,"DIA_Serpentes_TEST_10_03");	//Jeœli nie, zap³acisz za to w³asnym ¿yciem.
 	AI_Output(self,other,"DIA_Serpentes_TEST_10_04");	//Pos³uchaj wiêc, co ciê czeka: w Miejscu z Kamienia szukaj tego, który siê nie narodzi³ - znajdŸ tego, którego przywo³ano.
 	AI_Output(self,other,"DIA_Serpentes_TEST_10_05");	//Pokonaj tego, który nie mo¿e zostaæ pokonany - zmierz siê z ¿yw¹ ska³¹, walcz z nieœmiertelnym kamieniem - i zniszcz go.
-	MIS_GOLEM = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_GOLEM,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_GOLEM,LOG_RUNNING);
-	b_logentry(TOPIC_GOLEM,"Serpentes poddaje mnie próbie. Chce, abym znalaz³ 'tego, którego onegdaj przywo³ano', ¿ywy g³az, i pokona³ go.");
+	MIS_GOLEM = LOG_Running;
+	Log_CreateTopic(TOPIC_Golem,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Golem,LOG_Running);
+	B_LogEntry(TOPIC_Golem,"Serpentes poddaje mnie próbie. Chce, abym znalaz³ 'tego, którego onegdaj przywo³ano', ¿ywy g³az, i pokona³ go.");
 };
 
 
-instance DIA_SERPENTES_NOIDEA(C_INFO)
+instance DIA_Serpentes_NOIDEA(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 10;
-	condition = dia_serpentes_noidea_condition;
-	information = dia_serpentes_noidea_info;
+	condition = DIA_Serpentes_NOIDEA_Condition;
+	information = DIA_Serpentes_NOIDEA_Info;
 	permanent = FALSE;
 	description = "A có¿ to za stworzenie?";
 };
 
 
-func int dia_serpentes_noidea_condition()
+func int DIA_Serpentes_NOIDEA_Condition()
 {
-	if((MIS_GOLEM == LOG_RUNNING) && (hero.guild == GIL_NOV))
+	if((MIS_GOLEM == LOG_Running) && (hero.guild == GIL_NOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_serpentes_noidea_info()
+func void DIA_Serpentes_NOIDEA_Info()
 {
 	AI_Output(other,self,"DIA_Serpentes_NOIDEA_15_00");	//¯yw¹ ska³¹... ? A có¿ to za stworzenie?
 	AI_Output(self,other,"DIA_Serpentes_NOIDEA_10_01");	//Powiedzia³em ci ju¿ wszystko. Mo¿e próba wydaje ci siê zbyt trudna?
@@ -182,99 +182,99 @@ func void dia_serpentes_noidea_info()
 };
 
 
-instance DIA_SERPENTES_NOHELP(C_INFO)
+instance DIA_Serpentes_NOHELP(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 10;
-	condition = dia_serpentes_nohelp_condition;
-	information = dia_serpentes_nohelp_info;
+	condition = DIA_Serpentes_NOHELP_Condition;
+	information = DIA_Serpentes_NOHELP_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_serpentes_nohelp_condition()
+func int DIA_Serpentes_NOHELP_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_serpentes_noidea) && (Npc_IsDead(magic_golem) == FALSE) && (MIS_GOLEM == LOG_RUNNING) && Npc_IsInState(self,zs_talk) && (other.guild == GIL_NOV) && ((Npc_KnowsInfo(other,dia_ulthar_test) == FALSE) || Npc_KnowsInfo(other,dia_serpentes_yourstory)))
+	if(Npc_KnowsInfo(hero,DIA_Serpentes_NOIDEA) && (Npc_IsDead(Magic_Golem) == FALSE) && (MIS_GOLEM == LOG_Running) && Npc_IsInState(self,ZS_Talk) && (other.guild == GIL_NOV) && ((Npc_KnowsInfo(other,DIA_Ulthar_TEST) == FALSE) || Npc_KnowsInfo(other,DIA_Serpentes_YOURSTORY)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_serpentes_nohelp_info()
+func void DIA_Serpentes_NOHELP_Info()
 {
 	AI_Output(self,other,"DIA_Serpentes_NOHELP_10_00");	//IdŸ, nowicjuszu. Wykonaj swoje zadanie.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SERPENTES_SUCCESS(C_INFO)
+instance DIA_Serpentes_SUCCESS(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 3;
-	condition = dia_serpentes_success_condition;
-	information = dia_serpentes_success_info;
+	condition = DIA_Serpentes_SUCCESS_Condition;
+	information = DIA_Serpentes_SUCCESS_Info;
 	permanent = FALSE;
 	description = "Uda³o mi siê pokonaæ golema.";
 };
 
 
-func int dia_serpentes_success_condition()
+func int DIA_Serpentes_SUCCESS_Condition()
 {
-	if(Npc_IsDead(magicgolem) && (MIS_GOLEM == LOG_RUNNING) && (hero.guild == GIL_NOV))
+	if(Npc_IsDead(MagicGolem) && (MIS_GOLEM == LOG_Running) && (hero.guild == GIL_NOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_serpentes_success_info()
+func void DIA_Serpentes_SUCCESS_Info()
 {
-	var C_NPC garwig;
-	garwig = Hlp_GetNpc(nov_608_garwig);
+	var C_Npc Garwig;
+	Garwig = Hlp_GetNpc(Nov_608_Garwig);
 	AI_Output(other,self,"DIA_Serpentes_SUCCESS_15_00");	//Uda³o mi siê pokonaæ golema.
 	AI_Output(self,other,"DIA_Serpentes_SUCCESS_10_01");	//Co? Naprawdê? Przecie¿ bez m³ota Innosa nie by³byœ w stanie tego dokonaæ!
-	if(Npc_IsDead(garwig))
+	if(Npc_IsDead(Garwig))
 	{
 		AI_Output(self,other,"DIA_Serpentes_SUCCESS_10_02");	//Zdradzi³eœ siê! To ty zamordowa³eœ Garwiga!
 		AI_Output(self,other,"DIA_Serpentes_SUCCESS_10_03");	//NIECH SPOTKA CIÊ KARA ZA ZAMORDOWANIE S£UGI INNOSA!!!
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_KILL,0);
+		B_Attack(self,other,AR_KILL,0);
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Serpentes_SUCCESS_10_04");	//Niemniej muszê przyznaæ, ¿e wykona³eœ powierzone ci zadanie.
 	};
-	if(Npc_HasItems(other,holy_hammer_mis) >= 1)
+	if(Npc_HasItems(other,Holy_Hammer_MIS) >= 1)
 	{
 		AI_Output(self,other,"DIA_Serpentes_SUCCESS_10_05");	//Pozwól, ¿e wezmê m³ot.
-		Npc_RemoveInvItems(other,holy_hammer_mis,1);
-		Wld_InsertItem(holy_hammer_mis,"FP_HAMMER");
+		Npc_RemoveInvItems(other,Holy_Hammer_MIS,1);
+		Wld_InsertItem(Holy_Hammer_MIS,"FP_HAMMER");
 	};
 	MIS_GOLEM = LOG_SUCCESS;
-	b_giveplayerxp(XP_GOLEM);
+	B_GivePlayerXP(XP_GOLEM);
 };
 
 
-instance DIA_SERPENTES_PERM(C_INFO)
+instance DIA_Serpentes_PERM(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 99;
-	condition = dia_serpentes_perm_condition;
-	information = dia_serpentes_perm_info;
+	condition = DIA_Serpentes_PERM_Condition;
+	information = DIA_Serpentes_PERM_Info;
 	permanent = TRUE;
 	description = "Czy chcia³byœ powiedzieæ mi coœ jeszcze?";
 };
 
 
-func int dia_serpentes_perm_condition()
+func int DIA_Serpentes_PERM_Condition()
 {
-	if((KAPITEL >= 3) || Npc_KnowsInfo(other,dia_serpentes_success))
+	if((Kapitel >= 3) || Npc_KnowsInfo(other,DIA_Serpentes_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_serpentes_perm_info()
+func void DIA_Serpentes_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Serpentes_PERM_15_00");	//Czy chcia³byœ mi powiedzieæ coœ jeszcze?
 	if(hero.guild == GIL_KDF)
@@ -289,75 +289,75 @@ func void dia_serpentes_perm_info()
 };
 
 
-instance DIA_SERPENTES_KAP2_EXIT(C_INFO)
+instance DIA_Serpentes_Kap2_EXIT(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 999;
-	condition = dia_serpentes_kap2_exit_condition;
-	information = dia_serpentes_kap2_exit_info;
+	condition = DIA_Serpentes_Kap2_EXIT_Condition;
+	information = DIA_Serpentes_Kap2_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_serpentes_kap2_exit_condition()
+func int DIA_Serpentes_Kap2_EXIT_Condition()
 {
-	if(KAPITEL == 2)
+	if(Kapitel == 2)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_serpentes_kap2_exit_info()
+func void DIA_Serpentes_Kap2_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SERPENTES_KAP3_EXIT(C_INFO)
+instance DIA_Serpentes_Kap3_EXIT(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 999;
-	condition = dia_serpentes_kap3_exit_condition;
-	information = dia_serpentes_kap3_exit_info;
+	condition = DIA_Serpentes_Kap3_EXIT_Condition;
+	information = DIA_Serpentes_Kap3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_serpentes_kap3_exit_condition()
+func int DIA_Serpentes_Kap3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_serpentes_kap3_exit_info()
+func void DIA_Serpentes_Kap3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SERPENTES_MINENANTEILE(C_INFO)
+instance DIA_Serpentes_MinenAnteile(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 30;
-	condition = dia_serpentes_minenanteile_condition;
-	information = dia_serpentes_minenanteile_info;
+	condition = DIA_Serpentes_MinenAnteile_Condition;
+	information = DIA_Serpentes_MinenAnteile_Info;
 	important = TRUE;
 };
 
 
-func int dia_serpentes_minenanteile_condition()
+func int DIA_Serpentes_MinenAnteile_Condition()
 {
-	if((PEDRO_TRAITOR == TRUE) && ((hero.guild == GIL_KDF) || (hero.guild == GIL_SLD) || (hero.guild == GIL_DJG)) && (KAPITEL >= 3))
+	if((Pedro_Traitor == TRUE) && ((hero.guild == GIL_KDF) || (hero.guild == GIL_SLD) || (hero.guild == GIL_DJG)) && (Kapitel >= 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_serpentes_minenanteile_info()
+func void DIA_Serpentes_MinenAnteile_Info()
 {
 	AI_Output(self,other,"DIA_Serpentes_MinenAnteile_10_00");	//Nie tak szybko, mam dla ciebie kolejne zadanie.
 	if(hero.guild == GIL_KDF)
@@ -366,27 +366,27 @@ func void dia_serpentes_minenanteile_info()
 		AI_Output(self,other,"DIA_Serpentes_MinenAnteile_10_02");	//Przynale¿noœæ do Bractwa Ognia niesie ze sob¹ wielk¹ odpowiedzialnoœæ. S¹ pewne obowi¹zki, które ka¿dy z nas musi wype³niaæ.
 		AI_Output(self,other,"DIA_Serpentes_MinenAnteile_10_03");	//Jak wiesz, nasz koœció³ zajmuje siê nie tylko sprawami magii - jest równie¿ najwy¿szym organem w³adzy s¹downiczej.
 		AI_Output(self,other,"DIA_Serpentes_MinenAnteile_10_04");	//Wydarzenia ostatnich dni zaleg³y nam na sercu ogromnym ciê¿arem, a problem ten musi zostaæ rozwi¹zany raz na zawsze.
-		Info_ClearChoices(dia_serpentes_minenanteile);
-		Info_AddChoice(dia_serpentes_minenanteile,"Nie mam czasu na takie drobiazgi. ZnajdŸ sobie kogoœ innego.",dia_serpentes_minenanteile_nein);
-		Info_AddChoice(dia_serpentes_minenanteile,"O co chodzi?",dia_serpentes_minenanteile_was);
-		Info_AddChoice(dia_serpentes_minenanteile,"Czy stra¿ miejska nie powinna siê tym zaj¹æ?",dia_serpentes_minenanteile_miliz);
+		Info_ClearChoices(DIA_Serpentes_MinenAnteile);
+		Info_AddChoice(DIA_Serpentes_MinenAnteile,"Nie mam czasu na takie drobiazgi. ZnajdŸ sobie kogoœ innego.",DIA_Serpentes_MinenAnteile_nein);
+		Info_AddChoice(DIA_Serpentes_MinenAnteile,"O co chodzi?",DIA_Serpentes_MinenAnteile_was);
+		Info_AddChoice(DIA_Serpentes_MinenAnteile,"Czy stra¿ miejska nie powinna siê tym zaj¹æ?",DIA_Serpentes_MinenAnteile_miliz);
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Serpentes_MinenAnteile_10_05");	//Najemnik taki jak ty by³by tu bardzo przydatny.
-		Info_ClearChoices(dia_serpentes_minenanteile);
-		Info_AddChoice(dia_serpentes_minenanteile,"Nie mam czasu na takie drobiazgi. ZnajdŸ sobie kogoœ innego.",dia_serpentes_minenanteile_nein);
-		Info_AddChoice(dia_serpentes_minenanteile,"To kogo mam zlikwidowaæ?",dia_serpentes_minenanteile_killsld);
+		Info_ClearChoices(DIA_Serpentes_MinenAnteile);
+		Info_AddChoice(DIA_Serpentes_MinenAnteile,"Nie mam czasu na takie drobiazgi. ZnajdŸ sobie kogoœ innego.",DIA_Serpentes_MinenAnteile_nein);
+		Info_AddChoice(DIA_Serpentes_MinenAnteile,"To kogo mam zlikwidowaæ?",DIA_Serpentes_MinenAnteile_KillSLD);
 	};
 };
 
-func void dia_serpentes_minenanteile_miliz()
+func void DIA_Serpentes_MinenAnteile_miliz()
 {
 	AI_Output(other,self,"DIA_Serpentes_MinenAnteile_miliz_15_00");	//Czy stra¿ miejska nie powinna siê tym zaj¹æ?
 	AI_Output(self,other,"DIA_Serpentes_MinenAnteile_miliz_10_01");	//Stra¿ odpowiada za bezpieczeñstwo w mieœcie. Ta sprawa wykracza daleko poza jej jurysdykcjê.
 };
 
-func void dia_serpentes_minenanteile_nein()
+func void DIA_Serpentes_MinenAnteile_nein()
 {
 	AI_Output(other,self,"DIA_Serpentes_MinenAnteile_nein_15_00");	//Nie mam czasu na takie drobiazgi. ZnajdŸ sobie kogoœ innego.
 	AI_Output(self,other,"DIA_Serpentes_MinenAnteile_nein_10_01");	//To oburzaj¹ce. Jeœli nie bêdziesz wykonywa³ zleceñ Bractwa, wy¿sze krêgi magii na zawsze pozostan¹ dla ciebie tajemnic¹.
@@ -394,7 +394,7 @@ func void dia_serpentes_minenanteile_nein()
 	AI_StopProcessInfos(self);
 };
 
-func void dia_serpentes_minenanteile_was()
+func void DIA_Serpentes_MinenAnteile_was()
 {
 	AI_Output(other,self,"DIA_Serpentes_MinenAnteile_was_15_00");	//O co dok³adnie chodzi?
 	AI_Output(self,other,"DIA_Serpentes_MinenAnteile_was_10_01");	//Ktoœ w mieœcie sprzedaje fa³szywe udzia³y w kopalniach rudy znajduj¹cych siê w by³ej kolonii karnej.
@@ -402,214 +402,214 @@ func void dia_serpentes_minenanteile_was()
 	AI_Output(self,other,"DIA_Serpentes_MinenAnteile_was_10_03");	//Dosz³y mnie s³uchy, ¿e oszustowi uda³o siê dotrzeæ do kilku najbardziej wp³ywowych kupców w mieœcie i kraju. Ba! Zdo³a³ im nawet sprzedaæ fa³szywe udzia³y!
 	AI_Output(self,other,"DIA_Serpentes_MinenAnteile_was_10_04");	//Musisz odnaleŸæ tego z³oczyñcê i doprowadziæ go przed nasze oblicze. W tak ciê¿kich czasach nie mo¿emy pozwoliæ, by oszuœci i hochsztaplerzy czuli siê bezkarni.
 	AI_Output(self,other,"DIA_Serpentes_MinenAnteile_was_10_05");	//Niech kara, jaka go spotka, bêdzie ostrze¿eniem dla reszty zuchwalców.
-	Info_AddChoice(dia_serpentes_minenanteile,"Postaram siê zaj¹æ t¹ spraw¹.",dia_serpentes_minenanteile_was_ja);
+	Info_AddChoice(DIA_Serpentes_MinenAnteile,"Postaram siê zaj¹æ t¹ spraw¹.",DIA_Serpentes_MinenAnteile_was_ja);
 };
 
-func void dia_serpentes_minenanteile_was_ja()
+func void DIA_Serpentes_MinenAnteile_was_ja()
 {
 	AI_Output(other,self,"DIA_Serpentes_MinenAnteile_was_ja_15_00");	//Postaram siê zaj¹æ t¹ spraw¹.
 	AI_Output(self,other,"DIA_Serpentes_MinenAnteile_was_ja_10_01");	//Jest jeszcze coœ. Kupcy nie powinni siê dowiedzieæ, ¿e interesuje ciê sprawa udzia³ów w kopalniach.
 	AI_Output(self,other,"DIA_Serpentes_MinenAnteile_was_ja_10_02");	//Jeœli dowiedz¹ siê, ¿e dzia³asz w imieniu koœcio³a, nie bêd¹ ci chcieli zaproponowaæ takiego towaru. Chyba to rozumiesz?
 	AI_Output(other,self,"DIA_Serpentes_MinenAnteile_was_ja_15_03");	//Rozumiem.
 	AI_Output(self,other,"DIA_Serpentes_MinenAnteile_was_ja_10_04");	//W takim razie bierz siê do pracy, Bracie. ¯yczê szczêœcia.
-	Info_ClearChoices(dia_serpentes_minenanteile);
-	MIS_SERPENTES_MINENANTEIL_KDF = LOG_RUNNING;
-	if(Npc_IsDead(salandril) == FALSE)
+	Info_ClearChoices(DIA_Serpentes_MinenAnteile);
+	MIS_Serpentes_MinenAnteil_KDF = LOG_Running;
+	if(Npc_IsDead(Salandril) == FALSE)
 	{
-		CreateInvItems(salandril,itwr_minenanteil_mis,2);
-		SALANDRILMINENANTEIL_MAINCOUNTER = SALANDRILMINENANTEIL_MAINCOUNTER + 2;
+		CreateInvItems(Salandril,ItWr_MinenAnteil_Mis,2);
+		SalandrilMinenAnteil_MAINCounter = SalandrilMinenAnteil_MAINCounter + 2;
 	};
-	if(Npc_IsDead(vlk_416_matteo) == FALSE)
+	if(Npc_IsDead(VLK_416_Matteo) == FALSE)
 	{
-		CreateInvItems(vlk_416_matteo,itwr_minenanteil_mis,1);
-		SALANDRILMINENANTEIL_MAINCOUNTER = SALANDRILMINENANTEIL_MAINCOUNTER + 1;
+		CreateInvItems(VLK_416_Matteo,ItWr_MinenAnteil_Mis,1);
+		SalandrilMinenAnteil_MAINCounter = SalandrilMinenAnteil_MAINCounter + 1;
 	};
-	if(Npc_IsDead(vlk_413_bosper) == FALSE)
+	if(Npc_IsDead(VLK_413_Bosper) == FALSE)
 	{
-		CreateInvItems(vlk_413_bosper,itwr_minenanteil_mis,1);
-		SALANDRILMINENANTEIL_MAINCOUNTER = SALANDRILMINENANTEIL_MAINCOUNTER + 1;
+		CreateInvItems(VLK_413_Bosper,ItWr_MinenAnteil_Mis,1);
+		SalandrilMinenAnteil_MAINCounter = SalandrilMinenAnteil_MAINCounter + 1;
 	};
-	if(Npc_IsDead(vlk_409_zuris) == FALSE)
+	if(Npc_IsDead(VLK_409_Zuris) == FALSE)
 	{
-		CreateInvItems(vlk_409_zuris,itwr_minenanteil_mis,1);
-		SALANDRILMINENANTEIL_MAINCOUNTER = SALANDRILMINENANTEIL_MAINCOUNTER + 1;
+		CreateInvItems(VLK_409_Zuris,ItWr_MinenAnteil_Mis,1);
+		SalandrilMinenAnteil_MAINCounter = SalandrilMinenAnteil_MAINCounter + 1;
 	};
-	if(Npc_IsDead(bau_911_elena) == FALSE)
+	if(Npc_IsDead(BAU_911_Elena) == FALSE)
 	{
-		CreateInvItems(bau_911_elena,itwr_minenanteil_mis,2);
-		SALANDRILMINENANTEIL_MAINCOUNTER = SALANDRILMINENANTEIL_MAINCOUNTER + 2;
+		CreateInvItems(BAU_911_Elena,ItWr_MinenAnteil_Mis,2);
+		SalandrilMinenAnteil_MAINCounter = SalandrilMinenAnteil_MAINCounter + 2;
 	};
-	if(Npc_IsDead(bau_970_orlan) == FALSE)
+	if(Npc_IsDead(BAU_970_Orlan) == FALSE)
 	{
-		CreateInvItems(bau_970_orlan,itwr_minenanteil_mis,1);
-		SALANDRILMINENANTEIL_MAINCOUNTER = SALANDRILMINENANTEIL_MAINCOUNTER + 1;
+		CreateInvItems(BAU_970_Orlan,ItWr_MinenAnteil_Mis,1);
+		SalandrilMinenAnteil_MAINCounter = SalandrilMinenAnteil_MAINCounter + 1;
 	};
-	if(Npc_IsDead(vlk_407_hakon) == FALSE)
+	if(Npc_IsDead(VLK_407_Hakon) == FALSE)
 	{
-		CreateInvItems(vlk_407_hakon,itwr_minenanteil_mis,1);
-		SALANDRILMINENANTEIL_MAINCOUNTER = SALANDRILMINENANTEIL_MAINCOUNTER + 1;
+		CreateInvItems(VLK_407_Hakon,ItWr_MinenAnteil_Mis,1);
+		SalandrilMinenAnteil_MAINCounter = SalandrilMinenAnteil_MAINCounter + 1;
 	};
-	if(Npc_IsDead(bau_936_rosi) == FALSE)
+	if(Npc_IsDead(BAU_936_Rosi) == FALSE)
 	{
-		CreateInvItems(bau_936_rosi,itwr_minenanteil_mis,1);
-		SALANDRILMINENANTEIL_MAINCOUNTER = SALANDRILMINENANTEIL_MAINCOUNTER + 1;
+		CreateInvItems(BAU_936_Rosi,ItWr_MinenAnteil_Mis,1);
+		SalandrilMinenAnteil_MAINCounter = SalandrilMinenAnteil_MAINCounter + 1;
 	};
-	if(Npc_IsDead(vlk_468_canthar) == FALSE)
+	if(Npc_IsDead(VLK_468_Canthar) == FALSE)
 	{
-		CreateInvItems(vlk_468_canthar,itwr_minenanteil_mis,3);
-		SALANDRILMINENANTEIL_MAINCOUNTER = SALANDRILMINENANTEIL_MAINCOUNTER + 3;
+		CreateInvItems(VLK_468_Canthar,ItWr_MinenAnteil_Mis,3);
+		SalandrilMinenAnteil_MAINCounter = SalandrilMinenAnteil_MAINCounter + 3;
 	};
-	SALANDRILVERTEILTEMINENANTEIL = SALANDRILMINENANTEIL_MAINCOUNTER;
-	Log_CreateTopic(TOPIC_MINENANTEILE,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_MINENANTEILE,LOG_RUNNING);
-	b_logentry(TOPIC_MINENANTEILE,"Ktoœ sprzedaje fa³szywe udzia³y w kopalni rudy. Muszê siê dowiedzieæ, u kogo zaopatruj¹ siê miejscowi kupcy, a Serpentes chce dostaæ wszystkie nielegalne udzia³y.");
+	SalandrilVerteilteMinenAnteil = SalandrilMinenAnteil_MAINCounter;
+	Log_CreateTopic(TOPIC_MinenAnteile,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_MinenAnteile,LOG_Running);
+	B_LogEntry(TOPIC_MinenAnteile,"Ktoœ sprzedaje fa³szywe udzia³y w kopalni rudy. Muszê siê dowiedzieæ, u kogo zaopatruj¹ siê miejscowi kupcy, a Serpentes chce dostaæ wszystkie nielegalne udzia³y.");
 };
 
-func void dia_serpentes_minenanteile_killsld()
+func void DIA_Serpentes_MinenAnteile_KillSLD()
 {
 	AI_Output(other,self,"DIA_Serpentes_MinenAnteile_Kill_15_00");	//To kogo mam zlikwidowaæ?
 	AI_Output(self,other,"DIA_Serpentes_MinenAnteile_Kill_10_01");	//Na Innosa! Nikogo! Ta sprawa wymaga nieco delikatnoœci, nie rozwi¹zañ si³owych.
 	AI_Output(self,other,"DIA_Serpentes_MinenAnteile_Kill_10_02");	//Salandril, alchemik z górnego miasta, dopuœci³ siê powa¿nych przestêpstw i musi zostaæ ukarany.
 	AI_Output(self,other,"DIA_Serpentes_MinenAnteile_Kill_10_03");	//Mimo to odmawia stawienia siê w klasztorze na swój proces. PrzyprowadŸ go tutaj.
 	AI_Output(self,other,"DIA_Serpentes_MinenAnteile_Kill_10_04");	//Nie ma znaczenia, jak tego dokonasz. Za swe starania zostaniesz oczywiœcie odpowiednio wynagrodzony.
-	Info_AddChoice(dia_serpentes_minenanteile,"Czy stra¿ miejska nie powinna siê tym zaj¹æ?",dia_serpentes_minenanteile_miliz);
-	Info_AddChoice(dia_serpentes_minenanteile,"¯aden problem. Zajmê siê tym.",dia_serpentes_minenanteile_was_jasld);
+	Info_AddChoice(DIA_Serpentes_MinenAnteile,"Czy stra¿ miejska nie powinna siê tym zaj¹æ?",DIA_Serpentes_MinenAnteile_miliz);
+	Info_AddChoice(DIA_Serpentes_MinenAnteile,"¯aden problem. Zajmê siê tym.",DIA_Serpentes_MinenAnteile_was_jaSLD);
 };
 
 
-var int mis_serpentes_bringsalandril_sld;
+var int MIS_Serpentes_BringSalandril_SLD;
 
-func void dia_serpentes_minenanteile_was_jasld()
+func void DIA_Serpentes_MinenAnteile_was_jaSLD()
 {
 	AI_Output(other,self,"DIA_Serpentes_MinenAnteile_was_jaSLD_15_00");	//¯aden problem. Zajmê siê tym.
 	AI_Output(self,other,"DIA_Serpentes_MinenAnteile_was_jaSLD_10_01");	//Doskonale. Do zobaczenia za kilka dni.
-	MIS_SERPENTES_BRINGSALANDRIL_SLD = LOG_RUNNING;
-	Info_ClearChoices(dia_serpentes_minenanteile);
-	Log_CreateTopic(TOPIC_MINENANTEILE,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_MINENANTEILE,LOG_RUNNING);
-	b_logentry(TOPIC_MINENANTEILE,"Mam przyprowadziæ Salandrila - alchemika z górnego miasta Khorinis - do klasztoru, gdzie zostanie os¹dzony. Nie interesuje mnie, jakie pope³ni³ wykroczenie, o ile dostanê swoj¹ zap³atê.");
+	MIS_Serpentes_BringSalandril_SLD = LOG_Running;
+	Info_ClearChoices(DIA_Serpentes_MinenAnteile);
+	Log_CreateTopic(TOPIC_MinenAnteile,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_MinenAnteile,LOG_Running);
+	B_LogEntry(TOPIC_MinenAnteile,"Mam przyprowadziæ Salandrila - alchemika z górnego miasta Khorinis - do klasztoru, gdzie zostanie os¹dzony. Nie interesuje mnie, jakie pope³ni³ wykroczenie, o ile dostanê swoj¹ zap³atê.");
 };
 
 
-instance DIA_SERPENTES_MINENANTEILEBRINGEN(C_INFO)
+instance DIA_Serpentes_MinenAnteileBringen(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 2;
-	condition = dia_serpentes_minenanteilebringen_condition;
-	information = dia_serpentes_minenanteilebringen_info;
+	condition = DIA_Serpentes_MinenAnteileBringen_Condition;
+	information = DIA_Serpentes_MinenAnteileBringen_Info;
 	permanent = TRUE;
 	description = "Co do tych fa³szywych udzia³ów w kopalni...";
 };
 
 
-func int dia_serpentes_minenanteilebringen_condition()
+func int DIA_Serpentes_MinenAnteileBringen_Condition()
 {
-	if((MIS_SERPENTES_MINENANTEIL_KDF == LOG_RUNNING) && Npc_HasItems(other,itwr_minenanteil_mis) && (hero.guild == GIL_KDF))
+	if((MIS_Serpentes_MinenAnteil_KDF == LOG_Running) && Npc_HasItems(other,ItWr_MinenAnteil_Mis) && (hero.guild == GIL_KDF))
 	{
 		return TRUE;
 	};
 };
 
 
-var int serpentesminenanteilcounter;
+var int SerpentesMinenAnteilCounter;
 
-func void dia_serpentes_minenanteilebringen_info()
+func void DIA_Serpentes_MinenAnteileBringen_Info()
 {
-	var int serpentesminenanteilcount;
-	var int xp_bringserpentesminenanteils;
-	var int serpentesminenanteiloffer;
-	var int serpentesminenanteilgeld;
-	var string minenanteiltext;
-	var string minenanteilleft;
-	serpentesminenanteilcount = Npc_HasItems(other,itwr_minenanteil_mis);
-	serpentesminenanteiloffer = 200;
-	if(serpentesminenanteilcount == 1)
+	var int SerpentesMinenAnteilCount;
+	var int XP_BringSerpentesMinenAnteils;
+	var int SerpentesMinenAnteilOffer;
+	var int SerpentesMinenAnteilGeld;
+	var string MinenAnteilText;
+	var string MinenAnteilLeft;
+	SerpentesMinenAnteilCount = Npc_HasItems(other,ItWr_MinenAnteil_Mis);
+	SerpentesMinenAnteilOffer = 200;
+	if(SerpentesMinenAnteilCount == 1)
 	{
 		AI_Output(other,self,"DIA_Serpentes_MinenAnteileBringen_15_00");	//Odzyska³em jeden z udzia³ów w kopalni.
-		b_giveplayerxp(XP_BRINGSERPENTESMINENANTEIL);
-		b_giveinvitems(other,self,5824,1);
-		SERPENTESMINENANTEILCOUNTER = SERPENTESMINENANTEILCOUNTER + 1;
+		B_GivePlayerXP(XP_BringSerpentesMinenAnteil);
+		B_GiveInvItems(other,self,ItWr_MinenAnteil_Mis,1);
+		SerpentesMinenAnteilCounter = SerpentesMinenAnteilCounter + 1;
 	}
 	else
 	{
 		AI_Output(other,self,"DIA_Serpentes_MinenAnteileBringen_15_01");	//Uda³o mi siê odzyskaæ kilka udzia³ów w kopalni.
-		b_giveinvitems(other,self,5824,serpentesminenanteilcount);
-		xp_bringserpentesminenanteils = serpentesminenanteilcount * XP_BRINGSERPENTESMINENANTEIL;
-		SERPENTESMINENANTEILCOUNTER = SERPENTESMINENANTEILCOUNTER + serpentesminenanteilcount;
-		b_giveplayerxp(xp_bringserpentesminenanteils);
+		B_GiveInvItems(other,self,ItWr_MinenAnteil_Mis,SerpentesMinenAnteilCount);
+		XP_BringSerpentesMinenAnteils = SerpentesMinenAnteilCount * XP_BringSerpentesMinenAnteil;
+		SerpentesMinenAnteilCounter = SerpentesMinenAnteilCounter + SerpentesMinenAnteilCount;
+		B_GivePlayerXP(XP_BringSerpentesMinenAnteils);
 	};
-	SALANDRILMINENANTEIL_MAINCOUNTER = SALANDRILMINENANTEIL_MAINCOUNTER - serpentesminenanteilcount;
-	minenanteilleft = IntToString(SALANDRILMINENANTEIL_MAINCOUNTER);
-	minenanteiltext = ConcatStrings(minenanteilleft,PRINT_NUMBERLEFT);
-	AI_PrintScreen(minenanteiltext,-1,YPOS_GOLDGIVEN,FONT_SCREENSMALL,4);
-	if(SERPENTESMINENANTEILCOUNTER < SALANDRILVERTEILTEMINENANTEIL)
+	SalandrilMinenAnteil_MAINCounter = SalandrilMinenAnteil_MAINCounter - SerpentesMinenAnteilCount;
+	MinenAnteilLeft = IntToString(SalandrilMinenAnteil_MAINCounter);
+	MinenAnteilText = ConcatStrings(MinenAnteilLeft,PRINT_NumberLeft);
+	AI_PrintScreen(MinenAnteilText,-1,YPOS_GoldGiven,FONT_ScreenSmall,4);
+	if(SerpentesMinenAnteilCounter < SalandrilVerteilteMinenAnteil)
 	{
 		AI_Output(self,other,"DIA_Serpentes_MinenAnteileBringen_10_02");	//Doskonale. Nale¿y je jak najszybciej wycofaæ z obiegu. Przynieœ je wszystkie do mnie.
 		AI_Output(self,other,"DIA_Serpentes_MinenAnteileBringen_10_03");	//Proszê. Zapewniê ci niezbêdne œrodki.
 	}
-	else if(SERPENTESMINENANTEILCOUNTER == SALANDRILVERTEILTEMINENANTEIL)
+	else if(SerpentesMinenAnteilCounter == SalandrilVerteilteMinenAnteil)
 	{
 		AI_Output(other,self,"DIA_Serpentes_MinenAnteileBringen_15_04");	//Myœlê, ¿e to ju¿ wszystkie.
 		AI_Output(self,other,"DIA_Serpentes_MinenAnteileBringen_10_05");	//Doskonale, zas³u¿y³eœ na nagrodê.
 		AI_Output(self,other,"DIA_Serpentes_MinenAnteileBringen_10_06");	//WeŸ ten ochronny amulet. Na pewno przyda ci siê w twoich dalszych wyprawach.
-		CreateInvItems(self,itam_prot_mage_01,1);
-		b_giveinvitems(self,other,4680,1);
+		CreateInvItems(self,ItAm_Prot_Mage_01,1);
+		B_GiveInvItems(self,other,ItAm_Prot_Mage_01,1);
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Serpentes_MinenAnteileBringen_10_07");	//To ju¿ chyba ostatni, prawda?
 	};
-	serpentesminenanteilgeld = serpentesminenanteilcount * serpentesminenanteiloffer;
-	CreateInvItems(self,itmi_gold,serpentesminenanteilgeld);
-	b_giveinvitems(self,other,5113,serpentesminenanteilgeld);
+	SerpentesMinenAnteilGeld = SerpentesMinenAnteilCount * SerpentesMinenAnteilOffer;
+	CreateInvItems(self,ItMi_Gold,SerpentesMinenAnteilGeld);
+	B_GiveInvItems(self,other,ItMi_Gold,SerpentesMinenAnteilGeld);
 };
 
 
-instance DIA_SERPENTES_GOTSALANDRIL(C_INFO)
+instance DIA_Serpentes_GOTSalandril(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 32;
-	condition = dia_serpentes_gotsalandril_condition;
-	information = dia_serpentes_gotsalandril_info;
+	condition = DIA_Serpentes_GOTSalandril_Condition;
+	information = DIA_Serpentes_GOTSalandril_Info;
 	description = "Wiem, kto wprowadzi³ fa³szywe udzia³y do obrotu.";
 };
 
 
-func int dia_serpentes_gotsalandril_condition()
+func int DIA_Serpentes_GOTSalandril_Condition()
 {
-	if((SC_KNOWSPROSPEKTORSALANDRIL == TRUE) && (hero.guild == GIL_KDF))
+	if((SC_KnowsProspektorSalandril == TRUE) && (hero.guild == GIL_KDF))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_serpentes_gotsalandril_info()
+func void DIA_Serpentes_GOTSalandril_Info()
 {
 	AI_Output(other,self,"DIA_Serpentes_GOTSalandril_15_00");	//Wiem, kto wprowadzi³ fa³szywe udzia³y do obrotu. To Salandril, alchemik z górnego miasta.
 	AI_Output(self,other,"DIA_Serpentes_GOTSalandril_10_01");	//PrzyprowadŸ go tutaj. Musimy z nim powa¿nie porozmawiaæ.
-	b_giveplayerxp(XP_AMBIENT);
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_SERPENTES_SALANDRILHERE(C_INFO)
+instance DIA_Serpentes_SalandrilHERE(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 33;
-	condition = dia_serpentes_salandrilhere_condition;
-	information = dia_serpentes_salandrilhere_info;
+	condition = DIA_Serpentes_SalandrilHERE_Condition;
+	information = DIA_Serpentes_SalandrilHERE_Info;
 	description = "Salandril jest tutaj, w klasztorze.";
 };
 
 
-func int dia_serpentes_salandrilhere_condition()
+func int DIA_Serpentes_SalandrilHERE_Condition()
 {
-	if(Npc_GetDistToWP(salandril,"ALTAR") < 10000)
+	if(Npc_GetDistToWP(Salandril,"ALTAR") < 10000)
 	{
 		if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
 		{
 			return TRUE;
 		}
-		else if(Npc_KnowsInfo(other,dia_serpentes_gotsalandril) && (hero.guild == GIL_KDF))
+		else if(Npc_KnowsInfo(other,DIA_Serpentes_GOTSalandril) && (hero.guild == GIL_KDF))
 		{
 			return TRUE;
 		}
@@ -620,129 +620,129 @@ func int dia_serpentes_salandrilhere_condition()
 	};
 };
 
-func void dia_serpentes_salandrilhere_info()
+func void DIA_Serpentes_SalandrilHERE_Info()
 {
 	AI_Output(other,self,"DIA_Serpentes_SalandrilHERE_15_00");	//Salandril jest tutaj, w klasztorze.
 	AI_Output(self,other,"DIA_Serpentes_SalandrilHERE_10_01");	//Dobra robota. Zajmiemy siê nim póŸniej.
 	if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
 	{
 		AI_Output(self,other,"DIA_Serpentes_SalandrilHERE_10_02");	//Oto twoja nagroda. I pamiêtaj, nikomu ani s³owa.
-		CreateInvItems(self,itmi_gold,400);
-		b_giveinvitems(self,other,5113,400);
+		CreateInvItems(self,ItMi_Gold,400);
+		B_GiveInvItems(self,other,ItMi_Gold,400);
 	};
-	TOPIC_END_MINENANTEILE = TRUE;
-	b_giveplayerxp(XP_SALANDRILINKLOSTER);
+	TOPIC_END_MinenAnteile = TRUE;
+	B_GivePlayerXP(XP_SalandrilInKloster);
 };
 
 
-instance DIA_SERPENTES_SALANDRILDEAD(C_INFO)
+instance DIA_Serpentes_SalandrilDEAD(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 33;
-	condition = dia_serpentes_salandrildead_condition;
-	information = dia_serpentes_salandrildead_info;
+	condition = DIA_Serpentes_SalandrilDEAD_Condition;
+	information = DIA_Serpentes_SalandrilDEAD_Info;
 	description = "Salandril nie ¿yje.";
 };
 
 
-func int dia_serpentes_salandrildead_condition()
+func int DIA_Serpentes_SalandrilDEAD_Condition()
 {
-	if((Npc_KnowsInfo(other,dia_serpentes_gotsalandril) || (((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG)) && (MIS_SERPENTES_BRINGSALANDRIL_SLD == LOG_RUNNING))) && Npc_IsDead(salandril))
+	if((Npc_KnowsInfo(other,DIA_Serpentes_GOTSalandril) || (((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG)) && (MIS_Serpentes_BringSalandril_SLD == LOG_Running))) && Npc_IsDead(Salandril))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_serpentes_salandrildead_info()
+func void DIA_Serpentes_SalandrilDEAD_Info()
 {
 	AI_Output(other,self,"DIA_Serpentes_SalandrilDEAD_15_00");	//Salandril nie ¿yje.
 	AI_Output(self,other,"DIA_Serpentes_SalandrilDEAD_10_01");	//Có¿, jego wystêpki zosta³y ukarane. Niech Innos zlituje siê nad dusz¹ tego nieszczêœnika.
-	TOPIC_END_MINENANTEILE = TRUE;
-	b_giveplayerxp(XP_AMBIENT);
+	TOPIC_END_MinenAnteile = TRUE;
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_SERPENTES_KAP4_EXIT(C_INFO)
+instance DIA_Serpentes_Kap4_EXIT(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 999;
-	condition = dia_serpentes_kap4_exit_condition;
-	information = dia_serpentes_kap4_exit_info;
+	condition = DIA_Serpentes_Kap4_EXIT_Condition;
+	information = DIA_Serpentes_Kap4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_serpentes_kap4_exit_condition()
+func int DIA_Serpentes_Kap4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_serpentes_kap4_exit_info()
+func void DIA_Serpentes_Kap4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SERPENTES_KAP5_EXIT(C_INFO)
+instance DIA_Serpentes_Kap5_EXIT(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 999;
-	condition = dia_serpentes_kap5_exit_condition;
-	information = dia_serpentes_kap5_exit_info;
+	condition = DIA_Serpentes_Kap5_EXIT_Condition;
+	information = DIA_Serpentes_Kap5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_serpentes_kap5_exit_condition()
+func int DIA_Serpentes_Kap5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_serpentes_kap5_exit_info()
+func void DIA_Serpentes_Kap5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SERPENTES_PICKPOCKET(C_INFO)
+instance DIA_Serpentes_PICKPOCKET(C_Info)
 {
-	npc = kdf_501_serpentes;
+	npc = KDF_501_Serpentes;
 	nr = 900;
-	condition = dia_serpentes_pickpocket_condition;
-	information = dia_serpentes_pickpocket_info;
+	condition = DIA_Serpentes_PICKPOCKET_Condition;
+	information = DIA_Serpentes_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_100;
+	description = Pickpocket_100;
 };
 
 
-func int dia_serpentes_pickpocket_condition()
+func int DIA_Serpentes_PICKPOCKET_Condition()
 {
-	return c_beklauen(86,380);
+	return C_Beklauen(86,380);
 };
 
-func void dia_serpentes_pickpocket_info()
+func void DIA_Serpentes_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_serpentes_pickpocket);
-	Info_AddChoice(dia_serpentes_pickpocket,DIALOG_BACK,dia_serpentes_pickpocket_back);
-	Info_AddChoice(dia_serpentes_pickpocket,DIALOG_PICKPOCKET,dia_serpentes_pickpocket_doit);
+	Info_ClearChoices(DIA_Serpentes_PICKPOCKET);
+	Info_AddChoice(DIA_Serpentes_PICKPOCKET,Dialog_Back,DIA_Serpentes_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Serpentes_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Serpentes_PICKPOCKET_DoIt);
 };
 
-func void dia_serpentes_pickpocket_doit()
+func void DIA_Serpentes_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_serpentes_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Serpentes_PICKPOCKET);
 };
 
-func void dia_serpentes_pickpocket_back()
+func void DIA_Serpentes_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_serpentes_pickpocket);
+	Info_ClearChoices(DIA_Serpentes_PICKPOCKET);
 };
 

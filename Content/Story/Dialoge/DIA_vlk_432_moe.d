@@ -1,130 +1,130 @@
 
-instance DIA_MOE_EXIT(C_INFO)
+instance DIA_Moe_EXIT(C_Info)
 {
-	npc = vlk_432_moe;
+	npc = VLK_432_Moe;
 	nr = 999;
-	condition = dia_moe_exit_condition;
-	information = dia_moe_exit_info;
+	condition = DIA_Moe_EXIT_Condition;
+	information = DIA_Moe_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_moe_exit_condition()
+func int DIA_Moe_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_moe_exit_info()
+func void DIA_Moe_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MOE_PICKPOCKET(C_INFO)
+instance DIA_Moe_PICKPOCKET(C_Info)
 {
-	npc = vlk_432_moe;
+	npc = VLK_432_Moe;
 	nr = 900;
-	condition = dia_moe_pickpocket_condition;
-	information = dia_moe_pickpocket_info;
+	condition = DIA_Moe_PICKPOCKET_Condition;
+	information = DIA_Moe_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_moe_pickpocket_condition()
+func int DIA_Moe_PICKPOCKET_Condition()
 {
-	return c_beklauen(25,30);
+	return C_Beklauen(25,30);
 };
 
-func void dia_moe_pickpocket_info()
+func void DIA_Moe_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_moe_pickpocket);
-	Info_AddChoice(dia_moe_pickpocket,DIALOG_BACK,dia_moe_pickpocket_back);
-	Info_AddChoice(dia_moe_pickpocket,DIALOG_PICKPOCKET,dia_moe_pickpocket_doit);
+	Info_ClearChoices(DIA_Moe_PICKPOCKET);
+	Info_AddChoice(DIA_Moe_PICKPOCKET,Dialog_Back,DIA_Moe_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Moe_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Moe_PICKPOCKET_DoIt);
 };
 
-func void dia_moe_pickpocket_doit()
+func void DIA_Moe_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_moe_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Moe_PICKPOCKET);
 };
 
-func void dia_moe_pickpocket_back()
+func void DIA_Moe_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_moe_pickpocket);
+	Info_ClearChoices(DIA_Moe_PICKPOCKET);
 };
 
 
-instance DIA_MOE_HALLO(C_INFO)
+instance DIA_Moe_Hallo(C_Info)
 {
-	npc = vlk_432_moe;
+	npc = VLK_432_Moe;
 	nr = 2;
-	condition = dia_moe_hallo_condition;
-	information = dia_moe_hallo_info;
+	condition = DIA_Moe_Hallo_Condition;
+	information = DIA_Moe_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_moe_hallo_condition()
+func int DIA_Moe_Hallo_Condition()
 {
-	if((Npc_GetDistToNpc(self,other) <= ZIVILANQUATSCHDIST) && (hero.guild != GIL_PAL) && (hero.guild != GIL_KDF) && (hero.guild != GIL_MIL) && (hero.guild != GIL_NOV) && (Npc_RefuseTalk(self) == FALSE))
+	if((Npc_GetDistToNpc(self,other) <= ZivilAnquatschDist) && (hero.guild != GIL_PAL) && (hero.guild != GIL_KDF) && (hero.guild != GIL_MIL) && (hero.guild != GIL_NOV) && (Npc_RefuseTalk(self) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_moe_hallo_info()
+func void DIA_Moe_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Moe_Hallo_01_00");	//Hej, nie znam ciê... Czego tutaj szukasz? Mo¿e knajpy?
-	Info_ClearChoices(dia_moe_hallo);
-	Info_AddChoice(dia_moe_hallo,"Nie, nie idê do knajpy... (KONIEC)",dia_moe_hallo_gehen);
-	Info_AddChoice(dia_moe_hallo,"Wiêc to tutaj zbiera siê ca³e towarzystwo...",dia_moe_hallo_witz);
-	Info_AddChoice(dia_moe_hallo,"Tak, masz coœ przeciwko?",dia_moe_hallo_reizen);
+	Info_ClearChoices(DIA_Moe_Hallo);
+	Info_AddChoice(DIA_Moe_Hallo,"Nie, nie idê do knajpy... (KONIEC)",DIA_Moe_Hallo_Gehen);
+	Info_AddChoice(DIA_Moe_Hallo,"Wiêc to tutaj zbiera siê ca³e towarzystwo...",DIA_Moe_Hallo_Witz);
+	Info_AddChoice(DIA_Moe_Hallo,"Tak, masz coœ przeciwko?",DIA_Moe_Hallo_Reizen);
 };
 
-func void dia_moe_hallo_gehen()
+func void DIA_Moe_Hallo_Gehen()
 {
 	AI_Output(other,self,"DIA_Moe_Hallo_Gehen_15_00");	//Nie, nie szukam knajpy...
 	AI_Output(self,other,"DIA_Moe_Hallo_Gehen_01_01");	//Tak, te¿ bym tak powiedzia³. Ale to nie ma znaczenia - i dlatego mo¿emy od razu przejœæ do interesów.
 	AI_Output(self,other,"DIA_Moe_Hallo_Gehen_01_02");	//Poniewa¿ jesteœ tu nowy, mam dla ciebie propozycjê. Zap³acisz mi 50 sztuk z³ota, a ja pozwolê ci wejœæ.
 	AI_Output(self,other,"DIA_Moe_Hallo_Gehen_01_03");	//Tyle kosztuje wejœcie do knajpy.
-	Info_ClearChoices(dia_moe_hallo);
-	Info_AddChoice(dia_moe_hallo,"Dowiedzmy siê, co na ten temat s¹dzi stra¿…",dia_moe_hallo_miliz);
-	Info_AddChoice(dia_moe_hallo,"Zapomnij o tym, nie dostaniesz nawet z³amanego grosza!",dia_moe_hallo_vergisses);
-	Info_AddChoice(dia_moe_hallo,"W porz¹dku, zap³acê.",dia_moe_hallo_zahlen);
-	Info_AddChoice(dia_moe_hallo,"Ale ja nie chcê wejœæ do knajpy!",dia_moe_hallo_kneipe);
+	Info_ClearChoices(DIA_Moe_Hallo);
+	Info_AddChoice(DIA_Moe_Hallo,"Dowiedzmy siê, co na ten temat s¹dzi stra¿…",DIA_Moe_Hallo_Miliz);
+	Info_AddChoice(DIA_Moe_Hallo,"Zapomnij o tym, nie dostaniesz nawet z³amanego grosza!",DIA_Moe_Hallo_Vergisses);
+	Info_AddChoice(DIA_Moe_Hallo,"W porz¹dku, zap³acê.",DIA_Moe_Hallo_Zahlen);
+	Info_AddChoice(DIA_Moe_Hallo,"Ale ja nie chcê wejœæ do knajpy!",DIA_Moe_Hallo_Kneipe);
 };
 
-func void dia_moe_hallo_kneipe()
+func void DIA_Moe_Hallo_Kneipe()
 {
 	AI_Output(other,self,"DIA_Moe_Hallo_Kneipe_15_00");	//Ale ja nie chcê wejœæ do knajpy!
 	AI_Output(self,other,"DIA_Moe_Hallo_Kneipe_01_01");	//Taaak, prêdzej czy póŸniej ka¿dy chce wejœæ do knajpy. Wiêc równie dobrze mo¿esz mi zap³aciæ ju¿ teraz - i potem bêdziesz mia³ spokój.
 };
 
-func void dia_moe_hallo_witz()
+func void DIA_Moe_Hallo_Witz()
 {
 	AI_Output(other,self,"DIA_Moe_Hallo_Witz_15_00");	//Ach, wiêc to tutaj zbiera siê ca³e towarzystwo. £atwo pomyliæ to miejsce z pa³acem gubernatora...
 	AI_Output(self,other,"DIA_Moe_Hallo_Witz_01_01");	//Hej, daruj sobie te kiepskie dowcipy, jeœli nie chcesz zbieraæ zêbów z ulicy.
-	Info_ClearChoices(dia_moe_hallo);
-	Info_AddChoice(dia_moe_hallo,"Widzê, ¿e nie obêdzie siê bez bijatyki...",dia_moe_hallo_pruegel);
-	Info_AddChoice(dia_moe_hallo,"Za ma³o masz problemów?",dia_moe_hallo_aerger);
-	Info_AddChoice(dia_moe_hallo,"Uspokój siê, chcê tylko wypiæ piwo.",dia_moe_hallo_ruhig);
-	Info_AddChoice(dia_moe_hallo,"Ale ja nie chcê wejœæ do knajpy!",dia_moe_hallo_kneipe);
+	Info_ClearChoices(DIA_Moe_Hallo);
+	Info_AddChoice(DIA_Moe_Hallo,"Widzê, ¿e nie obêdzie siê bez bijatyki...",DIA_Moe_Hallo_Pruegel);
+	Info_AddChoice(DIA_Moe_Hallo,"Za ma³o masz problemów?",DIA_Moe_Hallo_Aerger);
+	Info_AddChoice(DIA_Moe_Hallo,"Uspokój siê, chcê tylko wypiæ piwo.",DIA_Moe_Hallo_Ruhig);
+	Info_AddChoice(DIA_Moe_Hallo,"Ale ja nie chcê wejœæ do knajpy!",DIA_Moe_Hallo_Kneipe);
 };
 
-func void dia_moe_hallo_reizen()
+func void DIA_Moe_Hallo_Reizen()
 {
 	AI_Output(other,self,"DIA_Moe_Hallo_Reizen_15_00");	//Tak, masz coœ przeciwko?
 	AI_Output(self,other,"DIA_Moe_Hallo_Reizen_01_01");	//Nie masz tu czego szukaæ, kurduplu.
-	Info_ClearChoices(dia_moe_hallo);
-	Info_AddChoice(dia_moe_hallo,"Widzê, ¿e nie obêdzie siê bez bijatyki...",dia_moe_hallo_pruegel);
-	Info_AddChoice(dia_moe_hallo,"Za ma³o masz problemów?",dia_moe_hallo_aerger);
-	Info_AddChoice(dia_moe_hallo,"Uspokój siê, chcê tylko wypiæ piwo.",dia_moe_hallo_ruhig);
+	Info_ClearChoices(DIA_Moe_Hallo);
+	Info_AddChoice(DIA_Moe_Hallo,"Widzê, ¿e nie obêdzie siê bez bijatyki...",DIA_Moe_Hallo_Pruegel);
+	Info_AddChoice(DIA_Moe_Hallo,"Za ma³o masz problemów?",DIA_Moe_Hallo_Aerger);
+	Info_AddChoice(DIA_Moe_Hallo,"Uspokój siê, chcê tylko wypiæ piwo.",DIA_Moe_Hallo_Ruhig);
 };
 
-func void dia_moe_hallo_miliz()
+func void DIA_Moe_Hallo_Miliz()
 {
 	AI_Output(other,self,"DIA_Moe_Hallo_Miliz_15_00");	//Dowiedzmy siê, co na ten temat s¹dzi stra¿...
 	AI_Output(self,other,"DIA_Moe_Hallo_Miliz_01_01");	//Na twoim miejscu nie liczy³bym na stra¿. Stra¿nicy tu nie przychodz¹.
@@ -132,48 +132,48 @@ func void dia_moe_hallo_miliz()
 	AI_Output(self,other,"DIA_Moe_Hallo_Miliz_01_03");	//Stra¿nicy mog¹ co najwy¿ej chodziæ do 'Czerwonej Latarni'. A zatem, jak sam widzisz, to sprawa tylko miêdzy nami.
 };
 
-func void dia_moe_hallo_pruegel()
+func void DIA_Moe_Hallo_Pruegel()
 {
 	AI_Output(other,self,"DIA_Moe_Hallo_Pruegel_15_00");	//Rozumiem. Widzê, ¿e nie obejdzie siê bez bijatyki.
 	AI_Output(self,other,"DIA_Moe_Hallo_Pruegel_01_01");	//Proszê bardzo, spróbuj. Poka¿, co potrafisz!
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_NONE,1);
+	B_Attack(self,other,AR_NONE,1);
 };
 
-func void dia_moe_hallo_aerger()
+func void DIA_Moe_Hallo_Aerger()
 {
 	AI_Output(other,self,"DIA_Moe_Hallo_Aerger_15_00");	//Za ma³o masz problemów?
 	AI_Output(self,other,"DIA_Moe_Hallo_Aerger_01_01");	//Jasne, problemy to moje drugie imiê. Broñ siê, kurduplu!
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_NONE,1);
+	B_Attack(self,other,AR_NONE,1);
 };
 
-func void dia_moe_hallo_ruhig()
+func void DIA_Moe_Hallo_Ruhig()
 {
 	AI_Output(other,self,"DIA_Moe_Hallo_Ruhig_15_00");	//Uspokój siê, chcê tylko wypiæ piwo.
 	AI_Output(self,other,"DIA_Moe_Hallo_Ruhig_01_01");	//Dobrze, ale ¿eby wejœæ do œrodka, musisz mi zap³aciæ 50 sztuk z³ota.
-	Info_ClearChoices(dia_moe_hallo);
-	Info_AddChoice(dia_moe_hallo,"Zapomnij o tym, nie dostaniesz nawet z³amanego grosza!",dia_moe_hallo_vergisses);
-	Info_AddChoice(dia_moe_hallo,"W porz¹dku, zap³acê.",dia_moe_hallo_zahlen);
+	Info_ClearChoices(DIA_Moe_Hallo);
+	Info_AddChoice(DIA_Moe_Hallo,"Zapomnij o tym, nie dostaniesz nawet z³amanego grosza!",DIA_Moe_Hallo_Vergisses);
+	Info_AddChoice(DIA_Moe_Hallo,"W porz¹dku, zap³acê.",DIA_Moe_Hallo_Zahlen);
 };
 
-func void dia_moe_hallo_zahlen()
+func void DIA_Moe_Hallo_Zahlen()
 {
 	AI_Output(other,self,"DIA_Moe_Hallo_Zahlen_15_00");	//W porz¹dku, zap³acê.
-	if(b_giveinvitems(other,self,5113,50))
+	if(B_GiveInvItems(other,self,ItMi_Gold,50))
 	{
 		AI_Output(self,other,"DIA_Moe_Hallo_Zahlen_01_01");	//Wspaniale. A skoro ju¿ posz³o nam tak ³atwo, mo¿esz mi teraz oddaæ resztê swoich pieniêdzy.
-		Info_ClearChoices(dia_moe_hallo);
-		Info_AddChoice(dia_moe_hallo,"Zapomnij o tym, nie dostaniesz nawet z³amanego grosza!",dia_moe_hallo_vergisses);
-		Info_AddChoice(dia_moe_hallo,"Proszê, to wszystko, co mam.",dia_moe_hallo_alles);
+		Info_ClearChoices(DIA_Moe_Hallo);
+		Info_AddChoice(DIA_Moe_Hallo,"Zapomnij o tym, nie dostaniesz nawet z³amanego grosza!",DIA_Moe_Hallo_Vergisses);
+		Info_AddChoice(DIA_Moe_Hallo,"Proszê, to wszystko, co mam.",DIA_Moe_Hallo_Alles);
 	}
-	else if(Npc_HasItems(hero,itmi_gold) > 9)
+	else if(Npc_HasItems(hero,ItMi_Gold) > 9)
 	{
 		AI_Output(other,self,"DIA_Moe_Hallo_Zahlen_15_02");	//...ale nie mam przy sobie tylu pieniêdzy.
 		AI_Output(self,other,"DIA_Moe_Hallo_Zahlen_01_03");	//To nie ma znaczenia. Po prostu daj mi wszystko, co masz.
-		Info_ClearChoices(dia_moe_hallo);
-		Info_AddChoice(dia_moe_hallo,"Zapomnij o tym, nie dostaniesz nawet z³amanego grosza!",dia_moe_hallo_vergisses);
-		Info_AddChoice(dia_moe_hallo,"Proszê, to wszystko, co mam.",dia_moe_hallo_alles);
+		Info_ClearChoices(DIA_Moe_Hallo);
+		Info_AddChoice(DIA_Moe_Hallo,"Zapomnij o tym, nie dostaniesz nawet z³amanego grosza!",DIA_Moe_Hallo_Vergisses);
+		Info_AddChoice(DIA_Moe_Hallo,"Proszê, to wszystko, co mam.",DIA_Moe_Hallo_Alles);
 	}
 	else
 	{
@@ -184,76 +184,76 @@ func void dia_moe_hallo_zahlen()
 	};
 };
 
-func void dia_moe_hallo_vergisses()
+func void DIA_Moe_Hallo_Vergisses()
 {
 	AI_Output(other,self,"DIA_Moe_Hallo_Vergisses_15_00");	//Zapomnij o tym, nie dostaniesz nawet z³amanego grosza!
 	AI_Output(self,other,"DIA_Moe_Hallo_Vergisses_01_01");	//Wiêc zabiorê wszystko, co masz - ale najpierw spuszczê ci porz¹dne lanie.
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_NONE,1);
+	B_Attack(self,other,AR_NONE,1);
 };
 
-func void dia_moe_hallo_alles()
+func void DIA_Moe_Hallo_Alles()
 {
 	AI_Output(other,self,"DIA_Moe_Hallo_Alles_15_00");	//Proszê, to wszystko, co mam.
-	b_giveinvitems(other,self,5113,Npc_HasItems(other,itmi_gold));
+	B_GiveInvItems(other,self,ItMi_Gold,Npc_HasItems(other,ItMi_Gold));
 	AI_Output(self,other,"DIA_Moe_Hallo_Alles_01_01");	//Dobrze, to wystarczy. Chodz¹ca pob³a¿liwoœæ - oto ca³y ja.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MOE_HARBOR(C_INFO)
+instance DIA_Moe_Harbor(C_Info)
 {
-	npc = vlk_432_moe;
+	npc = VLK_432_Moe;
 	nr = 998;
-	condition = dia_moe_harbor_condition;
-	information = dia_moe_harbor_info;
+	condition = DIA_Moe_Harbor_Condition;
+	information = DIA_Moe_Harbor_Info;
 	permanent = TRUE;
 	description = "Wiesz, co dzieje siê w porcie, prawda?";
 };
 
 
-func int dia_moe_harbor_condition()
+func int DIA_Moe_Harbor_Condition()
 {
 	return TRUE;
 };
 
-func void dia_moe_harbor_info()
+func void DIA_Moe_Harbor_Info()
 {
 	AI_Output(other,self,"DIA_Moe_Harbor_15_00");	//Wiesz, co dzieje siê w porcie, prawda?
 	AI_Output(self,other,"DIA_Moe_Harbor_01_01");	//Pewnie. A dlaczego pytasz?
-	Info_ClearChoices(dia_moe_harbor);
-	Info_AddChoice(dia_moe_harbor,DIALOG_BACK,dia_moe_harbor_back);
-	Info_AddChoice(dia_moe_harbor,"Du¿o tu macie statków?",dia_moe_harbor_ship);
-	Info_AddChoice(dia_moe_harbor,"Czemu nie widzê tu ¿adnej stra¿y?",dia_moe_harbor_militia);
-	Info_AddChoice(dia_moe_harbor,"S³ysza³eœ ostatnio jakieœ plotki?",dia_moe_harbor_rumors);
+	Info_ClearChoices(DIA_Moe_Harbor);
+	Info_AddChoice(DIA_Moe_Harbor,Dialog_Back,DIA_Moe_Harbor_Back);
+	Info_AddChoice(DIA_Moe_Harbor,"Du¿o tu macie statków?",DIA_Moe_Harbor_Ship);
+	Info_AddChoice(DIA_Moe_Harbor,"Czemu nie widzê tu ¿adnej stra¿y?",DIA_Moe_Harbor_Militia);
+	Info_AddChoice(DIA_Moe_Harbor,"S³ysza³eœ ostatnio jakieœ plotki?",DIA_Moe_Harbor_Rumors);
 };
 
-func void dia_moe_harbor_back()
+func void DIA_Moe_Harbor_Back()
 {
-	Info_ClearChoices(dia_moe_harbor);
+	Info_ClearChoices(DIA_Moe_Harbor);
 };
 
-func void dia_moe_harbor_ship()
+func void DIA_Moe_Harbor_Ship()
 {
 	AI_Output(other,self,"DIA_Moe_Harbor_Ship_15_00");	//Du¿o tu macie statków?
 	AI_Output(self,other,"DIA_Moe_Harbor_Ship_01_01");	//Jedyny statek w tym mieœcie nale¿y do paladynów.
 	AI_Output(self,other,"DIA_Moe_Harbor_Ship_01_02");	//Jest zacumowany na po³udniowym zachodzie.
 };
 
-func void dia_moe_harbor_militia()
+func void DIA_Moe_Harbor_Militia()
 {
 	AI_Output(other,self,"DIA_Moe_Harbor_Militia_15_00");	//Czemu nie widzê tu ¿adnej stra¿y?
 	AI_Output(self,other,"DIA_Moe_Harbor_Militia_01_01");	//Stra¿ tutaj nie przychodzi. Sami za³atwiamy nasze spory.
 };
 
-func void dia_moe_harbor_rumors()
+func void DIA_Moe_Harbor_Rumors()
 {
 	AI_Output(other,self,"DIA_Moe_Harbor_Rumors_15_00");	//S³ysza³eœ ostatnio jakieœ plotki?
-	if(KAPITEL == 1)
+	if(Kapitel == 1)
 	{
 		AI_Output(self,other,"DIA_Moe_Harbor_Rumors_01_01");	//W tych okolicach nie lubimy, kiedy ktoœ zadaje zbyt du¿o pytañ. Szczególnie jeœli jest to ktoœ obcy.
 	}
-	else if(KAPITEL == 2)
+	else if(Kapitel == 2)
 	{
 		if(hero.guild == GIL_MIL)
 		{
@@ -271,9 +271,9 @@ func void dia_moe_harbor_rumors()
 			AI_Output(self,other,"DIA_Moe_Harbor_Rumors_01_07");	//Taki elegancik nigdy nie zrozumie, co siê tutaj dzieje.
 		};
 	}
-	else if(KAPITEL == 3)
+	else if(Kapitel == 3)
 	{
-		if(MIS_RESCUEBENNET == LOG_SUCCESS)
+		if(MIS_RescueBennet == LOG_SUCCESS)
 		{
 			if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL) || (hero.guild == GIL_KDF))
 			{
@@ -293,7 +293,7 @@ func void dia_moe_harbor_rumors()
 			AI_Output(self,other,"DIA_Moe_Harbor_Rumors_01_14");	//Pewnie obawiaj¹ siê tych paru mieszkaj¹cych tutaj pijaków, he, he. I dobrze.
 		};
 	}
-	else if(KAPITEL == 4)
+	else if(Kapitel == 4)
 	{
 		AI_Output(self,other,"DIA_Moe_Harbor_Rumors_01_15");	//Nic siê tu nie dzieje.
 	}
@@ -304,29 +304,29 @@ func void dia_moe_harbor_rumors()
 };
 
 
-instance DIA_MOE_LEHMARGELDEINTREIBEN(C_INFO)
+instance DIA_Moe_LEHMARGELDEINTREIBEN(C_Info)
 {
-	npc = vlk_432_moe;
+	npc = VLK_432_Moe;
 	nr = 2;
-	condition = dia_moe_lehmargeldeintreiben_condition;
-	information = dia_moe_lehmargeldeintreiben_info;
+	condition = DIA_Moe_LEHMARGELDEINTREIBEN_Condition;
+	information = DIA_Moe_LEHMARGELDEINTREIBEN_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_moe_lehmargeldeintreiben_condition()
+func int DIA_Moe_LEHMARGELDEINTREIBEN_Condition()
 {
-	if((LEHMAR_GELDGELIEHEN_DAY <= (Wld_GetDay() - 2)) && (LEHMAR_GELDGELIEHEN != 0))
+	if((Lehmar_GeldGeliehen_Day <= (Wld_GetDay() - 2)) && (Lehmar_GeldGeliehen != 0))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_moe_lehmargeldeintreiben_info()
+func void DIA_Moe_LEHMARGELDEINTREIBEN_Info()
 {
 	AI_Output(self,other,"DIA_Moe_LEHMARGELDEINTREIBEN_01_00");	//Hej, ty! Pozdrowienia od Lehmara.
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_NONE,1);
+	B_Attack(self,other,AR_NONE,1);
 };
 

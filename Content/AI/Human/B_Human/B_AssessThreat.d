@@ -1,16 +1,16 @@
 
-func void b_assessthreat()
+func void B_AssessThreat()
 {
 	if(!Npc_CanSeeNpc(self,other))
 	{
 		return;
 	};
-	if(!c_npcisbotheredbyweapon(self,other))
+	if(!C_NpcIsBotheredByWeapon(self,other))
 	{
 		return;
 	};
 	Npc_ClearAIQueue(self);
-	b_clearperceptions(self);
-	AI_StartState(self,zs_reacttoweapon,0,"");
+	B_ClearPerceptions(self);
+	AI_StartState(self,ZS_ReactToWeapon,0,"");
 };
 

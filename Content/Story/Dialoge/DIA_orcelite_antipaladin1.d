@@ -1,38 +1,38 @@
 
-instance DIA_ORC_ANTIPALADIN1_EXIT(C_INFO)
+instance DIA_ORC_AntiPaladin1_EXIT(C_Info)
 {
-	npc = orcelite_antipaladin1;
+	npc = OrcElite_AntiPaladin1;
 	nr = 999;
-	condition = dia_orc_antipaladin1_exit_condition;
-	information = dia_orc_antipaladin1_exit_info;
+	condition = DIA_ORC_AntiPaladin1_EXIT_Condition;
+	information = DIA_ORC_AntiPaladin1_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_orc_antipaladin1_exit_condition()
+func int DIA_ORC_AntiPaladin1_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_orc_antipaladin1_exit_info()
+func void DIA_ORC_AntiPaladin1_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ORC_ANTIPALADIN1(C_INFO)
+instance DIA_ORC_AntiPaladin1(C_Info)
 {
-	npc = orcelite_antipaladin1;
+	npc = OrcElite_AntiPaladin1;
 	nr = 1;
-	condition = dia_orc_antipaladin1_condition;
-	information = dia_orc_antipaladin1_info;
+	condition = DIA_ORC_AntiPaladin1_Condition;
+	information = DIA_ORC_AntiPaladin1_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_orc_antipaladin1_condition()
+func int DIA_ORC_AntiPaladin1_Condition()
 {
 	if(Npc_RefuseTalk(self) == FALSE)
 	{
@@ -40,46 +40,46 @@ func int dia_orc_antipaladin1_condition()
 	};
 };
 
-func void dia_orc_antipaladin1_info()
+func void DIA_ORC_AntiPaladin1_Info()
 {
-	b_assignorc_antipaladintalk(self);
+	B_AssignORC_AntiPaladinTalk(self);
 };
 
 
-instance DIA_ORC_ANTIPALADIN2_EXIT(C_INFO)
+instance DIA_ORC_AntiPaladin2_EXIT(C_Info)
 {
-	npc = orcelite_antipaladin2;
+	npc = OrcElite_AntiPaladin2;
 	nr = 999;
-	condition = dia_orc_antipaladin2_exit_condition;
-	information = dia_orc_antipaladin2_exit_info;
+	condition = DIA_ORC_AntiPaladin2_EXIT_Condition;
+	information = DIA_ORC_AntiPaladin2_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_orc_antipaladin2_exit_condition()
+func int DIA_ORC_AntiPaladin2_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_orc_antipaladin2_exit_info()
+func void DIA_ORC_AntiPaladin2_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ORC_ANTIPALADIN2(C_INFO)
+instance DIA_ORC_AntiPaladin2(C_Info)
 {
-	npc = orcelite_antipaladin2;
+	npc = OrcElite_AntiPaladin2;
 	nr = 1;
-	condition = dia_orc_antipaladin2_condition;
-	information = dia_orc_antipaladin2_info;
+	condition = DIA_ORC_AntiPaladin2_Condition;
+	information = DIA_ORC_AntiPaladin2_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_orc_antipaladin2_condition()
+func int DIA_ORC_AntiPaladin2_Condition()
 {
 	if(Npc_RefuseTalk(self) == FALSE)
 	{
@@ -87,46 +87,46 @@ func int dia_orc_antipaladin2_condition()
 	};
 };
 
-func void dia_orc_antipaladin2_info()
+func void DIA_ORC_AntiPaladin2_Info()
 {
-	b_assignorc_antipaladintalk(self);
+	B_AssignORC_AntiPaladinTalk(self);
 };
 
 
-instance DIA_ORC_ANTIPALADIN3_EXIT(C_INFO)
+instance DIA_ORC_AntiPaladin3_EXIT(C_Info)
 {
-	npc = orcelite_antipaladin3;
+	npc = OrcElite_AntiPaladin3;
 	nr = 999;
-	condition = dia_orc_antipaladin3_exit_condition;
-	information = dia_orc_antipaladin3_exit_info;
+	condition = DIA_ORC_AntiPaladin3_EXIT_Condition;
+	information = DIA_ORC_AntiPaladin3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_orc_antipaladin3_exit_condition()
+func int DIA_ORC_AntiPaladin3_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_orc_antipaladin3_exit_info()
+func void DIA_ORC_AntiPaladin3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ORC_ANTIPALADIN3(C_INFO)
+instance DIA_ORC_AntiPaladin3(C_Info)
 {
-	npc = orcelite_antipaladin3;
+	npc = OrcElite_AntiPaladin3;
 	nr = 1;
-	condition = dia_orc_antipaladin3_condition;
-	information = dia_orc_antipaladin3_info;
+	condition = DIA_ORC_AntiPaladin3_Condition;
+	information = DIA_ORC_AntiPaladin3_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_orc_antipaladin3_condition()
+func int DIA_ORC_AntiPaladin3_Condition()
 {
 	if(Npc_RefuseTalk(self) == FALSE)
 	{
@@ -134,8 +134,8 @@ func int dia_orc_antipaladin3_condition()
 	};
 };
 
-func void dia_orc_antipaladin3_info()
+func void DIA_ORC_AntiPaladin3_Info()
 {
-	b_assignorc_antipaladintalk(self);
+	B_AssignORC_AntiPaladinTalk(self);
 };
 

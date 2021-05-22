@@ -1,28 +1,28 @@
 
-instance BAU_900_ONAR(NPC_DEFAULT)
+instance Bau_900_Onar(Npc_Default)
 {
 	name[0] = "Onar";
 	guild = GIL_BAU;
 	id = 900;
 	voice = 14;
 	flags = NPC_FLAG_IMMORTAL;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,2);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,2);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_bau_mace);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_N_OLDBALD_JEREMIAH,BODYTEX_N,4822);
+	EquipItem(self,ItMw_1h_Bau_Mace);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_N_OldBald_Jeremiah,BodyTex_N,ITAR_Vlk_H);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Arrogance.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,70);
-	daily_routine = rtn_start_900;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,70);
+	daily_routine = Rtn_Start_900;
 };
 
 
-func void rtn_start_900()
+func void Rtn_Start_900()
 {
-	ta_sit_throne(9,0,21,0,"NW_BIGFARM_HOUSE_ONAR_SIT");
-	ta_sleep(21,0,9,0,"NW_BIGFARM_HOUSE_UP1_04");
+	TA_Sit_Throne(9,0,21,0,"NW_BIGFARM_HOUSE_ONAR_SIT");
+	TA_Sleep(21,0,9,0,"NW_BIGFARM_HOUSE_UP1_04");
 };
 

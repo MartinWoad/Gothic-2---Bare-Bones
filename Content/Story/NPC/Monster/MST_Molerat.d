@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_MOLERAT(C_NPC)
+prototype Mst_Default_Molerat(C_Npc)
 {
 	name[0] = "Kretoszczur";
 	guild = GIL_MOLERAT;
@@ -21,23 +21,23 @@ prototype MST_DEFAULT_MOLERAT(C_NPC)
 	fight_tactic = FAI_MOLERAT;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_SHORT;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_SHORT;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_molerat()
+func void B_SetVisuals_Molerat()
 {
 	Mdl_SetVisual(self,"Molerat.mds");
 	Mdl_SetVisualBody(self,"Mol_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance MOLERAT(MST_DEFAULT_MOLERAT)
+instance Molerat(Mst_Default_Molerat)
 {
-	b_setvisuals_molerat();
+	B_SetVisuals_Molerat();
 	Npc_SetToFistMode(self);
 };
 

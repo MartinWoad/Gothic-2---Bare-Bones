@@ -1,5 +1,5 @@
 
-func void b_assessmurder()
+func void B_AssessMurder()
 {
 	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(other))
 	{
@@ -17,20 +17,20 @@ func void b_assessmurder()
 	{
 		return;
 	};
-	if(b_assessenemy())
+	if(B_AssessEnemy())
 	{
 		return;
 	};
-	if((victim.guild == GIL_SHEEP) && (victim.aivar[AIV_TOUGHGUY] == FALSE))
+	if((victim.guild == GIL_SHEEP) && (victim.aivar[AIV_ToughGuy] == FALSE))
 	{
-		if(c_wanttoattacksheepkiller(self,other))
+		if(C_WantToAttackSheepKiller(self,other))
 		{
-			b_attack(self,other,AR_SHEEPKILLER,0);
+			B_Attack(self,other,AR_SheepKiller,0);
 			return;
 		}
-		else if(c_npcisgateguard(self))
+		else if(C_NpcIsGateGuard(self))
 		{
-			b_memorizeplayercrime(self,other,CRIME_SHEEPKILLER);
+			B_MemorizePlayerCrime(self,other,CRIME_SHEEPKILLER);
 		};
 	};
 	if((other.guild > GIL_SEPERATOR_HUM) && (victim.guild > GIL_SEPERATOR_HUM))
@@ -39,21 +39,21 @@ func void b_assessmurder()
 	};
 	if(other.guild > GIL_SEPERATOR_HUM)
 	{
-		b_attack(self,other,AR_MONSTERMURDEREDHUMAN,0);
+		B_Attack(self,other,AR_MonsterMurderedHuman,0);
 		return;
 	};
 	if(victim.guild > GIL_SEPERATOR_HUM)
 	{
 		return;
 	};
-	if(self.aivar[AIV_ENEMYOVERRIDE] == TRUE)
+	if(self.aivar[AIV_EnemyOverride] == TRUE)
 	{
-		self.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+		self.aivar[AIV_EnemyOverride] = FALSE;
 		Npc_PerceiveAll(self);
 		Npc_GetNextTarget(self);
-		if(Hlp_IsValidNpc(other) && !c_npcisdown(other))
+		if(Hlp_IsValidNpc(other) && !C_NpcIsDown(other))
 		{
-			b_attack(self,other,AR_GUILDENEMY,0);
+			B_Attack(self,other,AR_GuildEnemy,0);
 			return;
 		};
 		return;
@@ -62,19 +62,19 @@ func void b_assessmurder()
 	{
 		return;
 	};
-	if(Npc_IsPlayer(other) && (self.npctype == NPCTYPE_FRIEND))
+	if(Npc_IsPlayer(other) && (self.npcType == NPCTYPE_FRIEND))
 	{
 		return;
 	};
-	if(!c_wanttoattackmurder(self,other))
+	if(!C_WantToAttackMurder(self,other))
 	{
-		if(c_npcisgateguard(self))
+		if(C_NpcIsGateGuard(self))
 		{
-			b_memorizeplayercrime(self,other,CRIME_MURDER);
+			B_MemorizePlayerCrime(self,other,CRIME_MURDER);
 		};
 		return;
 	};
-	if((other.aivar[AIV_DROPDEADANDKILL] == TRUE) || (victim.aivar[AIV_DROPDEADANDKILL] == TRUE))
+	if((other.aivar[AIV_DropDeadAndKill] == TRUE) || (victim.aivar[AIV_DropDeadAndKill] == TRUE))
 	{
 		return;
 	};
@@ -82,6 +82,6 @@ func void b_assessmurder()
 	{
 		return;
 	};
-	b_attack(self,other,AR_HUMANMURDEREDHUMAN,0);
+	B_Attack(self,other,AR_HumanMurderedHuman,0);
 };
 

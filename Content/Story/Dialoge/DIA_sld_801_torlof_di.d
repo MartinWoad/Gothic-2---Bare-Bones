@@ -1,214 +1,214 @@
 
-instance DIA_TORLOF_DI_KAP3_EXIT(C_INFO)
+instance DIA_Torlof_DI_KAP3_EXIT(C_Info)
 {
-	npc = sld_801_torlof_di;
+	npc = SLD_801_Torlof_DI;
 	nr = 999;
-	condition = dia_torlof_di_kap3_exit_condition;
-	information = dia_torlof_di_kap3_exit_info;
+	condition = DIA_Torlof_DI_KAP3_EXIT_Condition;
+	information = DIA_Torlof_DI_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_torlof_di_kap3_exit_condition()
+func int DIA_Torlof_DI_KAP3_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_torlof_di_kap3_exit_info()
+func void DIA_Torlof_DI_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_TORLOF_DI_HALLO(C_INFO)
+instance DIA_Torlof_DI_Hallo(C_Info)
 {
-	npc = sld_801_torlof_di;
+	npc = SLD_801_Torlof_DI;
 	nr = 4;
-	condition = dia_torlof_di_hallo_condition;
-	information = dia_torlof_di_hallo_info;
+	condition = DIA_Torlof_DI_Hallo_Condition;
+	information = DIA_Torlof_DI_Hallo_Info;
 	permanent = TRUE;
 	description = "Wszystko w porz¹dku?";
 };
 
 
-func int dia_torlof_di_hallo_condition()
+func int DIA_Torlof_DI_Hallo_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_torlof_di_hallo_info()
+func void DIA_Torlof_DI_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Torlof_DI_Hallo_15_00");	//Wszystko w porz¹dku?
-	if(ORKSTURMDI == FALSE)
+	if(ORkSturmDI == FALSE)
 	{
 		AI_Output(self,other,"DIA_Torlof_DI_Hallo_01_01");	//Jak na razie... Ale to siê mo¿e szybko zmieniæ. Uwa¿aj na siebie.
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Torlof_DI_Hallo_01_02");	//Jeœli ci przeklêci orkowie bêd¹ siê trzymaæ z dala, wszystko bêdzie w porz¹dku.
-		b_startotherroutine(torlof_di,"Start");
+		B_StartOtherRoutine(Torlof_DI,"Start");
 	};
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_TORLOF_DI_TEACH(C_INFO)
+instance DIA_Torlof_DI_Teach(C_Info)
 {
-	npc = sld_801_torlof_di;
+	npc = SLD_801_Torlof_DI;
 	nr = 150;
-	condition = dia_torlof_di_teach_condition;
-	information = dia_torlof_di_teach_info;
+	condition = DIA_Torlof_DI_Teach_Condition;
+	information = DIA_Torlof_DI_Teach_Info;
 	permanent = TRUE;
 	description = "Pomó¿ mi popracowaæ nad moimi umiejêtnoœciami.";
 };
 
 
-func int dia_torlof_di_teach_condition()
+func int DIA_Torlof_DI_Teach_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_torlof_di_teach_info()
+func void DIA_Torlof_DI_Teach_Info()
 {
 	AI_Output(other,self,"DIA_Torlof_DI_Teach_15_00");	//Pomó¿ mi popracowaæ nad moimi umiejêtnoœciami.
-	Info_ClearChoices(dia_torlof_di_teach);
-	Info_AddChoice(dia_torlof_di_teach,DIALOG_BACK,dia_torlof_di_teach_back);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNDEX1,b_getlearncostattribute(other,ATR_DEXTERITY)),dia_torlof_di_teach_dex_1);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNDEX5,b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_torlof_di_teach_dex_5);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNSTR1,b_getlearncostattribute(other,ATR_STRENGTH)),dia_torlof_di_teach_str_1);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNSTR5,b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_torlof_di_teach_str_5);
+	Info_ClearChoices(DIA_Torlof_DI_Teach);
+	Info_AddChoice(DIA_Torlof_DI_Teach,Dialog_Back,DIA_Torlof_DI_Teach_Back);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_Torlof_DI_Teach_DEX_1);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_Torlof_DI_Teach_DEX_5);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Torlof_DI_Teach_STR_1);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Torlof_DI_Teach_STR_5);
 };
 
-func void dia_torlof_di_teach_back()
+func void DIA_Torlof_DI_Teach_Back()
 {
-	Info_ClearChoices(dia_torlof_di_teach);
+	Info_ClearChoices(DIA_Torlof_DI_Teach);
 };
 
-func void dia_torlof_di_teach_dex_1()
+func void DIA_Torlof_DI_Teach_DEX_1()
 {
-	b_teachattributepoints(self,other,ATR_DEXTERITY,1,80);
-	Info_ClearChoices(dia_torlof_di_teach);
-	Info_AddChoice(dia_torlof_di_teach,DIALOG_BACK,dia_torlof_di_teach_back);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNDEX1,b_getlearncostattribute(other,ATR_DEXTERITY)),dia_torlof_di_teach_dex_1);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNDEX5,b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_torlof_di_teach_dex_5);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNSTR1,b_getlearncostattribute(other,ATR_STRENGTH)),dia_torlof_di_teach_str_1);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNSTR5,b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_torlof_di_teach_str_5);
+	B_TeachAttributePoints(self,other,ATR_DEXTERITY,1,80);
+	Info_ClearChoices(DIA_Torlof_DI_Teach);
+	Info_AddChoice(DIA_Torlof_DI_Teach,Dialog_Back,DIA_Torlof_DI_Teach_Back);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_Torlof_DI_Teach_DEX_1);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_Torlof_DI_Teach_DEX_5);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Torlof_DI_Teach_STR_1);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Torlof_DI_Teach_STR_5);
 };
 
-func void dia_torlof_di_teach_dex_5()
+func void DIA_Torlof_DI_Teach_DEX_5()
 {
-	b_teachattributepoints(self,other,ATR_DEXTERITY,5,80);
-	Info_ClearChoices(dia_torlof_di_teach);
-	Info_AddChoice(dia_torlof_di_teach,DIALOG_BACK,dia_torlof_di_teach_back);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNDEX1,b_getlearncostattribute(other,ATR_DEXTERITY)),dia_torlof_di_teach_dex_1);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNDEX5,b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_torlof_di_teach_dex_5);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNSTR1,b_getlearncostattribute(other,ATR_STRENGTH)),dia_torlof_di_teach_str_1);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNSTR5,b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_torlof_di_teach_str_5);
+	B_TeachAttributePoints(self,other,ATR_DEXTERITY,5,80);
+	Info_ClearChoices(DIA_Torlof_DI_Teach);
+	Info_AddChoice(DIA_Torlof_DI_Teach,Dialog_Back,DIA_Torlof_DI_Teach_Back);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_Torlof_DI_Teach_DEX_1);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_Torlof_DI_Teach_DEX_5);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Torlof_DI_Teach_STR_1);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Torlof_DI_Teach_STR_5);
 };
 
-func void dia_torlof_di_teach_str_1()
+func void DIA_Torlof_DI_Teach_STR_1()
 {
-	b_teachattributepoints(self,other,ATR_STRENGTH,1,80);
-	Info_ClearChoices(dia_torlof_di_teach);
-	Info_AddChoice(dia_torlof_di_teach,DIALOG_BACK,dia_torlof_di_teach_back);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNDEX1,b_getlearncostattribute(other,ATR_DEXTERITY)),dia_torlof_di_teach_dex_1);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNDEX5,b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_torlof_di_teach_dex_5);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNSTR1,b_getlearncostattribute(other,ATR_STRENGTH)),dia_torlof_di_teach_str_1);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNSTR5,b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_torlof_di_teach_str_5);
+	B_TeachAttributePoints(self,other,ATR_STRENGTH,1,80);
+	Info_ClearChoices(DIA_Torlof_DI_Teach);
+	Info_AddChoice(DIA_Torlof_DI_Teach,Dialog_Back,DIA_Torlof_DI_Teach_Back);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_Torlof_DI_Teach_DEX_1);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_Torlof_DI_Teach_DEX_5);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Torlof_DI_Teach_STR_1);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Torlof_DI_Teach_STR_5);
 };
 
-func void dia_torlof_di_teach_str_5()
+func void DIA_Torlof_DI_Teach_STR_5()
 {
-	b_teachattributepoints(self,other,ATR_STRENGTH,5,80);
-	Info_ClearChoices(dia_torlof_di_teach);
-	Info_AddChoice(dia_torlof_di_teach,DIALOG_BACK,dia_torlof_di_teach_back);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNDEX1,b_getlearncostattribute(other,ATR_DEXTERITY)),dia_torlof_di_teach_dex_1);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNDEX5,b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_torlof_di_teach_dex_5);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNSTR1,b_getlearncostattribute(other,ATR_STRENGTH)),dia_torlof_di_teach_str_1);
-	Info_AddChoice(dia_torlof_di_teach,b_buildlearnstring(PRINT_LEARNSTR5,b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_torlof_di_teach_str_5);
+	B_TeachAttributePoints(self,other,ATR_STRENGTH,5,80);
+	Info_ClearChoices(DIA_Torlof_DI_Teach);
+	Info_AddChoice(DIA_Torlof_DI_Teach,Dialog_Back,DIA_Torlof_DI_Teach_Back);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_Torlof_DI_Teach_DEX_1);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_Torlof_DI_Teach_DEX_5);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Torlof_DI_Teach_STR_1);
+	Info_AddChoice(DIA_Torlof_DI_Teach,B_BuildLearnString(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Torlof_DI_Teach_STR_5);
 };
 
 
-instance DIA_TORLOF_DI_UNDEADDRAGONDEAD(C_INFO)
+instance DIA_Torlof_DI_UndeadDragonDead(C_Info)
 {
-	npc = sld_801_torlof_di;
+	npc = SLD_801_Torlof_DI;
 	nr = 4;
-	condition = dia_torlof_di_undeaddragondead_condition;
-	information = dia_torlof_di_undeaddragondead_info;
+	condition = DIA_Torlof_DI_UndeadDragonDead_Condition;
+	information = DIA_Torlof_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
 	description = "Wróg zosta³ pokonany.";
 };
 
 
-func int dia_torlof_di_undeaddragondead_condition()
+func int DIA_Torlof_DI_UndeadDragonDead_Condition()
 {
-	if(Npc_IsDead(undeaddragon))
+	if(Npc_IsDead(UndeadDragon))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_torlof_di_undeaddragondead_info()
+func void DIA_Torlof_DI_UndeadDragonDead_Info()
 {
 	AI_Output(other,self,"DIA_Torlof_DI_UndeadDragonDead_15_00");	//Wróg zosta³ pokonany.
 	AI_Output(self,other,"DIA_Torlof_DI_UndeadDragonDead_01_01");	//Wcale mnie to nie dziwi. To jak? Mo¿emy ju¿ odbijaæ od brzegu?
-	Info_ClearChoices(dia_torlof_di_undeaddragondead);
-	Info_AddChoice(dia_torlof_di_undeaddragondead,"Muszê jeszcze coœ za³atwiæ.",dia_torlof_di_undeaddragondead_moment);
-	Info_AddChoice(dia_torlof_di_undeaddragondead,"Tak, to ju¿ koniec. ChodŸmy.",dia_torlof_di_undeaddragondead_over);
+	Info_ClearChoices(DIA_Torlof_DI_UndeadDragonDead);
+	Info_AddChoice(DIA_Torlof_DI_UndeadDragonDead,"Muszê jeszcze coœ za³atwiæ.",DIA_Torlof_DI_UndeadDragonDead_moment);
+	Info_AddChoice(DIA_Torlof_DI_UndeadDragonDead,"Tak, to ju¿ koniec. ChodŸmy.",DIA_Torlof_DI_UndeadDragonDead_over);
 };
 
-func void dia_torlof_di_undeaddragondead_moment()
+func void DIA_Torlof_DI_UndeadDragonDead_moment()
 {
 	AI_Output(other,self,"DIA_Torlof_DI_UndeadDragonDead_moment_15_00");	//Muszê jeszcze coœ za³atwiæ.
 	AI_Output(self,other,"DIA_Torlof_DI_UndeadDragonDead_moment_01_01");	//No to siê poœpiesz!
 	AI_StopProcessInfos(self);
 };
 
-func void dia_torlof_di_undeaddragondead_over()
+func void DIA_Torlof_DI_UndeadDragonDead_over()
 {
 	AI_StopProcessInfos(self);
-	b_extro_avi();
+	B_Extro_Avi();
 };
 
 
-instance DIA_TORLOF_DI_PICKPOCKET(C_INFO)
+instance DIA_Torlof_DI_PICKPOCKET(C_Info)
 {
-	npc = sld_801_torlof_di;
+	npc = SLD_801_Torlof_DI;
 	nr = 900;
-	condition = dia_torlof_di_pickpocket_condition;
-	information = dia_torlof_di_pickpocket_info;
+	condition = DIA_Torlof_DI_PICKPOCKET_Condition;
+	information = DIA_Torlof_DI_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_80;
+	description = Pickpocket_80;
 };
 
 
-func int dia_torlof_di_pickpocket_condition()
+func int DIA_Torlof_DI_PICKPOCKET_Condition()
 {
-	return c_beklauen(76,120);
+	return C_Beklauen(76,120);
 };
 
-func void dia_torlof_di_pickpocket_info()
+func void DIA_Torlof_DI_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_torlof_di_pickpocket);
-	Info_AddChoice(dia_torlof_di_pickpocket,DIALOG_BACK,dia_torlof_di_pickpocket_back);
-	Info_AddChoice(dia_torlof_di_pickpocket,DIALOG_PICKPOCKET,dia_torlof_di_pickpocket_doit);
+	Info_ClearChoices(DIA_Torlof_DI_PICKPOCKET);
+	Info_AddChoice(DIA_Torlof_DI_PICKPOCKET,Dialog_Back,DIA_Torlof_DI_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Torlof_DI_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Torlof_DI_PICKPOCKET_DoIt);
 };
 
-func void dia_torlof_di_pickpocket_doit()
+func void DIA_Torlof_DI_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_torlof_di_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Torlof_DI_PICKPOCKET);
 };
 
-func void dia_torlof_di_pickpocket_back()
+func void DIA_Torlof_DI_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_torlof_di_pickpocket);
+	Info_ClearChoices(DIA_Torlof_DI_PICKPOCKET);
 };
 

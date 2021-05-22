@@ -1,21 +1,21 @@
 
-instance BDT_1004_BANDIT_M(NPC_DEFAULT)
+instance BDT_1004_Bandit_M(Npc_Default)
 {
-	name[0] = NAME_BANDIT;
+	name[0] = NAME_Bandit;
 	guild = GIL_BDT;
 	id = 1004;
 	voice = 13;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,2);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,2);
 	fight_tactic = FAI_HUMAN_NORMAL;
-	EquipItem(self,itmw_1h_vlk_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_L_TOUGH02,BODYTEX_L,4846);
+	EquipItem(self,ItMw_1h_Vlk_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_L_Tough02,BodyTex_L,ItAr_BDT_M);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,45);
-	start_aistate = zs_bandit;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,45);
+	start_aistate = ZS_Bandit;
 };
 

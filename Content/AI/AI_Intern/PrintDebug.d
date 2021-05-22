@@ -21,13 +21,13 @@ const int PD_SPELL = 23;
 const int PD_ITEM_MOBSI = 24;
 const int PD_MAGIC = 25;
 
-func void printdebugs(var string txt)
+func void PrintDebugS(var string txt)
 {
 	PrintDebug(self.name);
 	PrintDebug(txt);
 };
 
-func void printdebugnpc(var int type,var string text)
+func void PrintDebugNpc(var int type,var string text)
 {
 	var string pipe;
 	var int instance_id;
@@ -43,93 +43,93 @@ func void printdebugnpc(var int type,var string text)
 	PrintDebugInstCh(type,pipe);
 };
 
-func void printglobals(var int channel)
+func void PrintGlobals(var int channel)
 {
 	var string pipe;
-	printdebugnpc(channel,"PrintGlobals");
+	PrintDebugNpc(channel,"PrintGlobals");
 	if(Hlp_IsValidNpc(self))
 	{
 		pipe = ConcatStrings("...self:   ",self.name);
-		printdebugnpc(channel,pipe);
+		PrintDebugNpc(channel,pipe);
 	};
 	if(Hlp_IsValidNpc(other))
 	{
 		pipe = ConcatStrings("...other:  ",other.name);
-		printdebugnpc(channel,pipe);
+		PrintDebugNpc(channel,pipe);
 	};
 	if(Hlp_IsValidNpc(victim))
 	{
 		pipe = ConcatStrings("...victim: ",victim.name);
-		printdebugnpc(channel,pipe);
+		PrintDebugNpc(channel,pipe);
 	};
 	if(Hlp_IsValidNpc(hero))
 	{
 		pipe = ConcatStrings("...hero:   ",hero.name);
-		printdebugnpc(channel,pipe);
+		PrintDebugNpc(channel,pipe);
 	};
 	if(Hlp_IsValidItem(item))
 	{
 		pipe = ConcatStrings("...item:   ",item.name);
-		printdebugnpc(channel,pipe);
+		PrintDebugNpc(channel,pipe);
 	};
 };
 
-func void printguild(var int channel,var int guild)
+func void PrintGuild(var int channel,var int guild)
 {
-	printdebugnpc(channel,"PrintGuild");
+	PrintDebugNpc(channel,"PrintGuild");
 };
 
-func void printattitudes(var int channel)
+func void PrintAttitudes(var int channel)
 {
 	var int temp_attitude;
 	var int perm_attitude;
-	printdebugnpc(channel,"PrintAttitudes");
+	PrintDebugNpc(channel,"PrintAttitudes");
 	temp_attitude = Npc_GetAttitude(self,hero);
 	perm_attitude = Npc_GetPermAttitude(self,hero);
 	if(temp_attitude == ATT_HOSTILE)
 	{
-		printdebugnpc(channel,"TempAttitude == ATT_HOSTILE");
+		PrintDebugNpc(channel,"TempAttitude == ATT_HOSTILE");
 	};
 	if(temp_attitude == ATT_ANGRY)
 	{
-		printdebugnpc(channel,"TempAttitude == ATT_ANGRY");
+		PrintDebugNpc(channel,"TempAttitude == ATT_ANGRY");
 	};
 	if(temp_attitude == ATT_NEUTRAL)
 	{
-		printdebugnpc(channel,"TempAttitude == ATT_NEUTRAL");
+		PrintDebugNpc(channel,"TempAttitude == ATT_NEUTRAL");
 	};
 	if(temp_attitude == ATT_FRIENDLY)
 	{
-		printdebugnpc(channel,"TempAttitude == ATT_FRIENDLY");
+		PrintDebugNpc(channel,"TempAttitude == ATT_FRIENDLY");
 	};
 	if(perm_attitude == ATT_HOSTILE)
 	{
-		printdebugnpc(channel,"PermAttitude == ATT_HOSTILE");
+		PrintDebugNpc(channel,"PermAttitude == ATT_HOSTILE");
 	};
 	if(perm_attitude == ATT_ANGRY)
 	{
-		printdebugnpc(channel,"PermAttitude == ATT_ANGRY");
+		PrintDebugNpc(channel,"PermAttitude == ATT_ANGRY");
 	};
 	if(perm_attitude == ATT_NEUTRAL)
 	{
-		printdebugnpc(channel,"PermAttitude == ATT_NEUTRAL");
+		PrintDebugNpc(channel,"PermAttitude == ATT_NEUTRAL");
 	};
 	if(perm_attitude == ATT_FRIENDLY)
 	{
-		printdebugnpc(channel,"PermAttitude == ATT_FRIENDLY");
+		PrintDebugNpc(channel,"PermAttitude == ATT_FRIENDLY");
 	};
 };
 
-func void printdebugint(var int channel,var string pretext,var int value)
+func void PrintDebugInt(var int channel,var string preText,var int value)
 {
-	var string printtext;
-	printtext = IntToString(value);
-	printtext = ConcatStrings(pretext,printtext);
-	printdebugnpc(channel,printtext);
+	var string printText;
+	printText = IntToString(value);
+	printText = ConcatStrings(preText,printText);
+	PrintDebugNpc(channel,printText);
 };
 
-func void printdebugstring(var int channel,var string pretext,var string text)
+func void PrintDebugString(var int channel,var string preText,var string text)
 {
-	printdebugnpc(channel,ConcatStrings(pretext,text));
+	PrintDebugNpc(channel,ConcatStrings(preText,text));
 };
 

@@ -1,46 +1,46 @@
 
-instance DIA_FED_EXIT(C_INFO)
+instance DIA_Fed_EXIT(C_Info)
 {
-	npc = strf_1106_fed;
+	npc = STRF_1106_Fed;
 	nr = 999;
-	condition = dia_fed_exit_condition;
-	information = dia_fed_exit_info;
+	condition = DIA_Fed_EXIT_Condition;
+	information = DIA_Fed_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_fed_exit_condition()
+func int DIA_Fed_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_fed_exit_info()
+func void DIA_Fed_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_FED_HALLO(C_INFO)
+instance DIA_Fed_HALLO(C_Info)
 {
-	npc = strf_1106_fed;
+	npc = STRF_1106_Fed;
 	nr = 2;
-	condition = dia_fed_hallo_condition;
-	information = dia_fed_hallo_info;
+	condition = DIA_Fed_HALLO_Condition;
+	information = DIA_Fed_HALLO_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_fed_hallo_condition()
+func int DIA_Fed_HALLO_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (MIS_FAJETH_KILL_SNAPPER != LOG_SUCCESS))
+	if(Npc_IsInState(self,ZS_Talk) && (MIS_Fajeth_Kill_Snapper != LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fed_hallo_info()
+func void DIA_Fed_HALLO_Info()
 {
 	AI_Output(self,other,"DIA_Fed_HALLO_08_00");	//Czego ode mnie chcesz? Nigdzie nie idê!
 	AI_Output(other,self,"DIA_Fed_HALLO_15_01");	//Spokojnie, odprê¿ siê - nikt nie wymaga od ciebie, ¿ebyœ siê st¹d rusza³.
@@ -49,26 +49,26 @@ func void dia_fed_hallo_info()
 };
 
 
-instance DIA_FED_SNAPPER(C_INFO)
+instance DIA_Fed_Snapper(C_Info)
 {
-	npc = strf_1106_fed;
+	npc = STRF_1106_Fed;
 	nr = 3;
-	condition = dia_fed_snapper_condition;
-	information = dia_fed_snapper_info;
+	condition = DIA_Fed_Snapper_Condition;
+	information = DIA_Fed_Snapper_Info;
 	permanent = FALSE;
 	description = "Co wiesz o zêbaczach?";
 };
 
 
-func int dia_fed_snapper_condition()
+func int DIA_Fed_Snapper_Condition()
 {
-	if(MIS_FAJETH_KILL_SNAPPER == LOG_RUNNING)
+	if(MIS_Fajeth_Kill_Snapper == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fed_snapper_info()
+func void DIA_Fed_Snapper_Info()
 {
 	AI_Output(other,self,"DIA_Fed_Snapper_15_00");	//Co wiesz o zêbaczach?
 	AI_Output(self,other,"DIA_Fed_Snapper_08_01");	//Bilgot obserwuje je przez ca³¹ noc. Kilka z nich jest na dole, w stawie obok mrocznej wie¿y.
@@ -78,26 +78,26 @@ func void dia_fed_snapper_info()
 };
 
 
-instance DIA_FED_PERM(C_INFO)
+instance DIA_Fed_Perm(C_Info)
 {
-	npc = strf_1106_fed;
+	npc = STRF_1106_Fed;
 	nr = 5;
-	condition = dia_fed_perm_condition;
-	information = dia_fed_perm_info;
+	condition = DIA_Fed_Perm_Condition;
+	information = DIA_Fed_Perm_Info;
 	permanent = TRUE;
 	description = "Wszystko w porz¹dku?";
 };
 
 
-func int dia_fed_perm_condition()
+func int DIA_Fed_Perm_Condition()
 {
 	return TRUE;
 };
 
-func void dia_fed_perm_info()
+func void DIA_Fed_Perm_Info()
 {
 	AI_Output(other,self,"DIA_Fed_Perm_15_00");	//Wszystko w porz¹dku?
-	if(MIS_FAJETH_KILL_SNAPPER != LOG_SUCCESS)
+	if(MIS_Fajeth_Kill_Snapper != LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Fed_Perm_08_01");	//Wszêdzie dooko³a czaj¹ siê zêbacze. Potrafisz je wyczuæ? Ja potrafiê... Czujê ich smród...
 	}
@@ -110,37 +110,37 @@ func void dia_fed_perm_info()
 };
 
 
-instance DIA_FED_PICKPOCKET(C_INFO)
+instance DIA_Fed_PICKPOCKET(C_Info)
 {
-	npc = strf_1106_fed;
+	npc = STRF_1106_Fed;
 	nr = 900;
-	condition = dia_fed_pickpocket_condition;
-	information = dia_fed_pickpocket_info;
+	condition = DIA_Fed_PICKPOCKET_Condition;
+	information = DIA_Fed_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_fed_pickpocket_condition()
+func int DIA_Fed_PICKPOCKET_Condition()
 {
-	return c_beklauen(32,8);
+	return C_Beklauen(32,8);
 };
 
-func void dia_fed_pickpocket_info()
+func void DIA_Fed_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_fed_pickpocket);
-	Info_AddChoice(dia_fed_pickpocket,DIALOG_BACK,dia_fed_pickpocket_back);
-	Info_AddChoice(dia_fed_pickpocket,DIALOG_PICKPOCKET,dia_fed_pickpocket_doit);
+	Info_ClearChoices(DIA_Fed_PICKPOCKET);
+	Info_AddChoice(DIA_Fed_PICKPOCKET,Dialog_Back,DIA_Fed_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Fed_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Fed_PICKPOCKET_DoIt);
 };
 
-func void dia_fed_pickpocket_doit()
+func void DIA_Fed_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_fed_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Fed_PICKPOCKET);
 };
 
-func void dia_fed_pickpocket_back()
+func void DIA_Fed_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_fed_pickpocket);
+	Info_ClearChoices(DIA_Fed_PICKPOCKET);
 };
 

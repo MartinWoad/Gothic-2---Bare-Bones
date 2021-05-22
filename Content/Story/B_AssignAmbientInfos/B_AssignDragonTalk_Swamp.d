@@ -1,69 +1,69 @@
 
-instance DIA_DRAGON_SWAMP_EXIT(C_INFO)
+instance DIA_Dragon_Swamp_Exit(C_Info)
 {
 	nr = 999;
-	condition = dia_dragon_swamp_exit_condition;
-	information = dia_dragon_swamp_exit_info;
+	condition = DIA_Dragon_Swamp_Exit_Condition;
+	information = DIA_Dragon_Swamp_Exit_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dragon_swamp_exit_condition()
+func int DIA_Dragon_Swamp_Exit_Condition()
 {
-	if(DRAGONTALK_EXIT_FREE == TRUE)
+	if(DragonTalk_Exit_Free == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dragon_swamp_exit_info()
+func void DIA_Dragon_Swamp_Exit_Info()
 {
-	Npc_RemoveInvItems(other,itmi_innoseye_mis,1);
-	CreateInvItems(other,itmi_innoseye_discharged_mis,1);
+	Npc_RemoveInvItems(other,ItMi_InnosEye_MIS,1);
+	CreateInvItems(other,ItMi_InnosEye_Discharged_Mis,1);
 	AI_Output(self,other,"DIA_Dragon_Swamp_Exit_20_00");	//Wyczerpa³a siê moc Oka. Nadszed³ twój kres, cz³owieku.
-	SWAMPDRAGON = Hlp_GetNpc(dragon_swamp);
-	swampdragon.flags = 0;
+	SwampDragon = Hlp_GetNpc(Dragon_Swamp);
+	SwampDragon.flags = 0;
 	AI_StopProcessInfos(self);
-	DRAGONTALK_EXIT_FREE = FALSE;
-	if(DJG_SWAMPPARTY_GOGOGO == TRUE)
+	DragonTalk_Exit_Free = FALSE;
+	if(DJG_SwampParty_GoGoGo == TRUE)
 	{
-		if((DJG_SWAMPPARTY == TRUE) && (Npc_IsDead(djg_cipher) == FALSE))
+		if((DJG_SwampParty == TRUE) && (Npc_IsDead(DJG_Cipher) == FALSE))
 		{
-			b_startotherroutine(djg_rod,"SwampDragon");
+			B_StartOtherRoutine(DJG_Rod,"SwampDragon");
 		};
-		b_startotherroutine(djg_cipher,"SwampDragon");
+		B_StartOtherRoutine(DJG_Cipher,"SwampDragon");
 	};
-	if(DJG_BIFF_STAY == TRUE)
+	if(DJG_Biff_Stay == TRUE)
 	{
-		b_startotherroutine(biff,"Follow");
-		DJG_BIFF_STAY = FALSE;
+		B_StartOtherRoutine(Biff,"Follow");
+		DJG_Biff_Stay = FALSE;
 	};
 };
 
 
-instance DIA_DRAGON_SWAMP_HELLO(C_INFO)
+instance DIA_Dragon_Swamp_Hello(C_Info)
 {
 	nr = 5;
-	condition = dia_dragon_swamp_hello_condition;
-	information = dia_dragon_swamp_hello_info;
+	condition = DIA_Dragon_Swamp_Hello_Condition;
+	information = DIA_Dragon_Swamp_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_dragon_swamp_hello_condition()
+func int DIA_Dragon_Swamp_Hello_Condition()
 {
-	if(Npc_HasItems(other,itmi_innoseye_mis) >= 1)
+	if(Npc_HasItems(other,ItMi_InnosEye_MIS) >= 1)
 	{
 		return 1;
 	};
 };
 
-func void dia_dragon_swamp_hello_info()
+func void DIA_Dragon_Swamp_Hello_Info()
 {
 	AI_Output(self,other,"DIA_Dragon_Swamp_Hello_20_00");	//Biada ci, jeœli zbli¿ysz siê jeszcze o krok!
-	if(MIS_KILLEDDRAGONS == 0)
+	if(MIS_KilledDragons == 0)
 	{
 		AI_Output(other,self,"DIA_Dragon_Swamp_Hello_15_01");	//Ha. Oko Innosa najwyraŸniej dzia³a.
 	};
@@ -76,48 +76,48 @@ func void dia_dragon_swamp_hello_info()
 };
 
 
-instance DIA_DRAGON_SWAMP_WERBISTDU(C_INFO)
+instance DIA_Dragon_Swamp_WERBISTDU(C_Info)
 {
 	nr = 6;
-	condition = dia_dragon_swamp_werbistdu_condition;
-	information = dia_dragon_swamp_werbistdu_info;
+	condition = DIA_Dragon_Swamp_WERBISTDU_Condition;
+	information = DIA_Dragon_Swamp_WERBISTDU_Info;
 	description = "Kim jesteœ?";
 };
 
 
-func int dia_dragon_swamp_werbistdu_condition()
+func int DIA_Dragon_Swamp_WERBISTDU_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_dragon_swamp_hello))
+	if(Npc_KnowsInfo(other,DIA_Dragon_Swamp_Hello))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dragon_swamp_werbistdu_info()
+func void DIA_Dragon_Swamp_WERBISTDU_Info()
 {
 	AI_Output(other,self,"DIA_Dragon_Swamp_WERBISTDU_15_00");	//Kim jesteœ?
 	AI_Output(self,other,"DIA_Dragon_Swamp_WERBISTDU_20_01");	//Nazywam siê Pandrodor. Dobrze ci radzê: uciekaj st¹d, póki jeszcze mo¿esz!
 };
 
 
-instance DIA_DRAGON_SWAMP_WOSINDDIEANDEREN(C_INFO)
+instance DIA_Dragon_Swamp_WOSINDDIEANDEREN(C_Info)
 {
 	nr = 7;
-	condition = dia_dragon_swamp_wosinddieanderen_condition;
-	information = dia_dragon_swamp_wosinddieanderen_info;
+	condition = DIA_Dragon_Swamp_WOSINDDIEANDEREN_Condition;
+	information = DIA_Dragon_Swamp_WOSINDDIEANDEREN_Info;
 	description = "Gdzie znajdê resztê twoich ohydnych pobratymców?";
 };
 
 
-func int dia_dragon_swamp_wosinddieanderen_condition()
+func int DIA_Dragon_Swamp_WOSINDDIEANDEREN_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_dragon_swamp_hello))
+	if(Npc_KnowsInfo(other,DIA_Dragon_Swamp_Hello))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dragon_swamp_wosinddieanderen_info()
+func void DIA_Dragon_Swamp_WOSINDDIEANDEREN_Info()
 {
 	AI_Output(other,self,"DIA_Dragon_Swamp_WOSINDDIEANDEREN_15_00");	//Gdzie znajdê resztê twoich ohydnych pobratymców?
 	AI_Output(self,other,"DIA_Dragon_Swamp_WOSINDDIEANDEREN_20_01");	//¯ywio³y, od których wszystko pochodzi, utrzymuj¹ ten œwiat w harmonii.
@@ -125,12 +125,12 @@ func void dia_dragon_swamp_wosinddieanderen_info()
 	AI_Output(self,other,"DIA_Dragon_Swamp_WOSINDDIEANDEREN_20_03");	//Szukaj ¿ywio³ów, a znajdziesz moich braci.
 };
 
-func void b_assigndragontalk_swamp(var C_NPC slf)
+func void B_AssignDragonTalk_Swamp(var C_Npc slf)
 {
-	dia_dragon_swamp_exit.npc = Hlp_GetInstanceID(slf);
-	dia_dragon_swamp_hello.npc = Hlp_GetInstanceID(slf);
-	dia_dragon_swamp_werbistdu.npc = Hlp_GetInstanceID(slf);
-	dia_dragon_swamp_wosinddieanderen.npc = Hlp_GetInstanceID(slf);
-	b_assigndragontalk_main(slf);
+	DIA_Dragon_Swamp_Exit.npc = Hlp_GetInstanceID(slf);
+	DIA_Dragon_Swamp_Hello.npc = Hlp_GetInstanceID(slf);
+	DIA_Dragon_Swamp_WERBISTDU.npc = Hlp_GetInstanceID(slf);
+	DIA_Dragon_Swamp_WOSINDDIEANDEREN.npc = Hlp_GetInstanceID(slf);
+	B_AssignDragonTalk_Main(slf);
 };
 

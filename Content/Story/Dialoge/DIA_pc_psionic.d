@@ -1,93 +1,93 @@
 
-instance DIA_LESTER_EXIT(C_INFO)
+instance DIA_Lester_EXIT(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 999;
-	condition = dia_lester_exit_condition;
-	information = dia_lester_exit_info;
+	condition = DIA_Lester_EXIT_Condition;
+	information = DIA_Lester_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_lester_exit_condition()
+func int DIA_Lester_EXIT_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_exit_info()
+func void DIA_Lester_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_LESTER_HELLO(C_INFO)
+instance DIA_Lester_Hello(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 1;
-	condition = dia_lester_hello_condition;
-	information = dia_lester_hello_info;
+	condition = DIA_Lester_Hello_Condition;
+	information = DIA_Lester_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_lester_hello_condition()
+func int DIA_Lester_Hello_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_hello_info()
+func void DIA_Lester_Hello_Info()
 {
-	if(c_bodystatecontains(self,BS_SIT))
+	if(C_BodyStateContains(self,BS_SIT))
 	{
 		AI_Standup(self);
-		b_turntonpc(self,other);
+		B_TurnToNpc(self,other);
 	};
 	AI_Output(self,other,"DIA_Lester_Hello_13_00");	//To naprawdê TY? Cz³owieku, jak siê cieszê, ¿e ciê widzê!
-	Info_ClearChoices(dia_lester_hello);
-	Info_AddChoice(dia_lester_hello,"Czy my siê znamy?",dia_lester_hello_youknowme);
-	Info_AddChoice(dia_lester_hello,"Lester! Sk¹d siê tu wzi¹³eœ?",dia_lester_hello_lester);
+	Info_ClearChoices(DIA_Lester_Hello);
+	Info_AddChoice(DIA_Lester_Hello,"Czy my siê znamy?",DIA_Lester_Hello_YouKnowMe);
+	Info_AddChoice(DIA_Lester_Hello,"Lester! Sk¹d siê tu wzi¹³eœ?",DIA_Lester_Hello_Lester);
 };
 
-func void dia_lester_hello_lester()
+func void DIA_Lester_Hello_Lester()
 {
-	Info_ClearChoices(dia_lester_hello);
+	Info_ClearChoices(DIA_Lester_Hello);
 	AI_Output(other,self,"DIA_Lester_Hello_Lester_15_00");	//Lester! Sk¹d siê tu wzi¹³eœ?
 	AI_Output(self,other,"DIA_Lester_Hello_Lester_13_01");	//To ci dopiero niez³a historia! Po upadku Bariery przez d³ugi czas b³¹ka³em siê po okolicy, nie wiedz¹c, co ze sob¹ zrobiæ.
 	AI_Output(self,other,"DIA_Lester_Hello_Lester_13_02");	//Przez kolejne kilka dni przedziera³em siê przez lasy, a¿ wreszcie znalaz³em tê kotlinkê.
 	AI_Output(self,other,"DIA_Lester_Hello_Lester_13_03");	//Diego, Milten i Gorn nadal s¹ w Górniczej Dolinie. Tak mi siê w ka¿dym razie wydaje.
 };
 
-func void dia_lester_hello_youknowme()
+func void DIA_Lester_Hello_YouKnowMe()
 {
-	Info_ClearChoices(dia_lester_hello);
+	Info_ClearChoices(DIA_Lester_Hello);
 	AI_Output(other,self,"DIA_Lester_Hello_YouKnowMe_15_00");	//Czy my siê znamy?
 	AI_Output(self,other,"DIA_Lester_Hello_YouKnowMe_13_01");	//Halo? Jest tam kto?! Nadstawia³em karku, ¿ebyœ móg³ dostaæ ten swój dziwny kamieñ.
 	AI_Output(self,other,"DIA_Lester_Hello_YouKnowMe_13_02");	//Jesteœ mi coœ winny. To przynajmniej móg³byœ pamiêtaæ!
 	AI_Output(self,other,"DIA_Lester_Hello_YouKnowMe_13_03");	//Pamiêtasz chyba Diego, Miltena i Gorna?
-	Info_AddChoice(dia_lester_hello,"Diego, Milten i KTO?",dia_lester_hello_whofourfriends);
-	Info_AddChoice(dia_lester_hello,"Jasne. Co siê z nimi dzieje?",dia_lester_hello_knowfourfriends);
+	Info_AddChoice(DIA_Lester_Hello,"Diego, Milten i KTO?",DIA_Lester_Hello_WhoFourFriends);
+	Info_AddChoice(DIA_Lester_Hello,"Jasne. Co siê z nimi dzieje?",DIA_Lester_Hello_KnowFourFriends);
 };
 
-func void dia_lester_hello_knowfourfriends()
+func void DIA_Lester_Hello_KnowFourFriends()
 {
-	Info_ClearChoices(dia_lester_hello);
+	Info_ClearChoices(DIA_Lester_Hello);
 	AI_Output(other,self,"DIA_Lester_Hello_KnowFourFriends_15_00");	//Jasne. Co siê z nimi dzieje?
 	AI_Output(self,other,"DIA_Lester_Hello_KnowFourFriends_13_01");	//Jeœli siê nie mylê, wszyscy trzej prze¿yli upadek Bariery.
 	AI_Output(self,other,"DIA_Lester_Hello_KnowFourFriends_13_02");	//Nie mam pojêcia, gdzie siê teraz podziewaj¹. Pewnie s¹ nadal w Górniczej Dolinie.
 	AI_Output(self,other,"DIA_Lester_Hello_KnowFourFriends_13_03");	//Gdybyœ ich spotka³, daj mi znaæ.
 };
 
-func void dia_lester_hello_whofourfriends()
+func void DIA_Lester_Hello_WhoFourFriends()
 {
-	Info_ClearChoices(dia_lester_hello);
+	Info_ClearChoices(DIA_Lester_Hello);
 	AI_Output(other,self,"DIA_Lester_Hello_WhoFourFriends_15_00");	//Diego, Milten i KTO?
 	AI_Output(self,other,"DIA_Lester_Hello_WhoFourFriends_13_01");	//Nie mów mi, ¿e o wszystkim zapomnia³eœ?! Kamienie ogniskuj¹ce? Troll? Kopiec rudy wodnych magów? Nic?!
 	AI_Output(other,self,"DIA_Lester_Hello_WhoFourFriends_15_02");	//Sam ju¿ nie wiem.
@@ -95,26 +95,26 @@ func void dia_lester_hello_whofourfriends()
 };
 
 
-instance DIA_LESTER_WHATHAPPENED(C_INFO)
+instance DIA_Lester_WhatHappened(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 1;
-	condition = dia_lester_whathappened_condition;
-	information = dia_lester_whathappened_info;
+	condition = DIA_Lester_WhatHappened_Condition;
+	information = DIA_Lester_WhatHappened_Info;
 	permanent = FALSE;
 	description = "Co siê sta³o?";
 };
 
 
-func int dia_lester_whathappened_condition()
+func int DIA_Lester_WhatHappened_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_lester_hello) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Lester_Hello) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_whathappened_info()
+func void DIA_Lester_WhatHappened_Info()
 {
 	AI_Output(other,self,"DIA_Lester_WhatHappened_15_00");	//Co ci siê sta³o?
 	AI_Output(self,other,"DIA_Lester_WhatHappened_13_01");	//Po upadku Œni¹cego, ca³e Bractwo wpad³o w sza³.
@@ -128,26 +128,26 @@ func void dia_lester_whathappened_info()
 };
 
 
-instance DIA_LESTER_MINECOLONY(C_INFO)
+instance DIA_Lester_MineColony(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 2;
-	condition = dia_lester_minecolony_condition;
-	information = dia_lester_minecolony_info;
+	condition = DIA_Lester_MineColony_Condition;
+	information = DIA_Lester_MineColony_Info;
 	permanent = FALSE;
 	description = "Jak d³ugo siê tutaj ukrywasz?";
 };
 
 
-func int dia_lester_minecolony_condition()
+func int DIA_Lester_MineColony_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_lester_hello) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Lester_Hello) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_minecolony_info()
+func void DIA_Lester_MineColony_Info()
 {
 	AI_Output(other,self,"DIA_Lester_ReturnToColony_15_00");	//Jak d³ugo siê tu ukrywasz?
 	AI_Output(self,other,"DIA_Lester_ReturnToColony_13_01");	//Nie wiem dok³adnie. Mo¿e tydzieñ. Ale jest jeszcze coœ:
@@ -159,26 +159,26 @@ func void dia_lester_minecolony_info()
 };
 
 
-instance DIA_LESTER_SEND_XARDAS(C_INFO)
+instance DIA_Lester_SEND_XARDAS(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 4;
-	condition = dia_lester_send_xardas_condition;
-	information = dia_lester_send_xardas_info;
+	condition = DIA_Lester_SEND_XARDAS_Condition;
+	information = DIA_Lester_SEND_XARDAS_Info;
 	permanent = FALSE;
 	description = "Musisz porozmawiaæ z Xardasem o tym cieniu...";
 };
 
 
-func int dia_lester_send_xardas_condition()
+func int DIA_Lester_SEND_XARDAS_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_lester_whathappened) && Npc_KnowsInfo(other,dia_lester_minecolony) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Lester_WhatHappened) && Npc_KnowsInfo(other,DIA_Lester_MineColony) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_send_xardas_info()
+func void DIA_Lester_SEND_XARDAS_Info()
 {
 	AI_Output(other,self,"DIA_Lester_SEND_XARDAS_15_00");	//Musisz porozmawiaæ z Xardasem o tym cieniu. To mo¿e byæ coœ wa¿nego.
 	AI_Output(self,other,"DIA_Lester_SEND_XARDAS_13_01");	//Myœlisz, ¿e sobie tego nie ubzdura³em? Myœlisz, ¿e naprawdê widzia³em...
@@ -192,26 +192,26 @@ func void dia_lester_send_xardas_info()
 };
 
 
-instance DIA_LESTER_PERM(C_INFO)
+instance DIA_Lester_Perm(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 99;
-	condition = dia_lester_perm_condition;
-	information = dia_lester_perm_info;
+	condition = DIA_Lester_Perm_Condition;
+	information = DIA_Lester_Perm_Info;
 	permanent = TRUE;
 	description = "Co mo¿esz mi powiedzieæ o pobliskich terenach?";
 };
 
 
-func int dia_lester_perm_condition()
+func int DIA_Lester_Perm_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_lester_hello) && (KAPITEL < 3) && (Npc_GetDistToWP(self,"NW_XARDAS_TOWER_LESTER") <= 2000))
+	if(Npc_KnowsInfo(other,DIA_Lester_Hello) && (Kapitel < 3) && (Npc_GetDistToWP(self,"NW_XARDAS_TOWER_LESTER") <= 2000))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_perm_info()
+func void DIA_Lester_Perm_Info()
 {
 	AI_Output(other,self,"DIA_Lester_Perm_15_00");	//Co mo¿esz mi powiedzieæ o pobliskich terenach?
 	AI_Output(self,other,"DIA_Lester_Perm_13_01");	//Id¹c w dó³ tamtej drogi, dojdziesz do farmy. Za ni¹ le¿y miasto.
@@ -219,26 +219,26 @@ func void dia_lester_perm_info()
 };
 
 
-instance DIA_LESTER_SLEEP(C_INFO)
+instance DIA_Lester_Sleep(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 99;
-	condition = dia_lester_sleep_condition;
-	information = dia_lester_sleep_info;
+	condition = DIA_Lester_Sleep_Condition;
+	information = DIA_Lester_Sleep_Info;
 	permanent = TRUE;
 	description = "Ci¹gle zmêczony?";
 };
 
 
-func int dia_lester_sleep_condition()
+func int DIA_Lester_Sleep_Condition()
 {
-	if((KAPITEL < 3) && (Npc_GetDistToWP(self,"NW_XARDAS_TOWER_IN1_31") <= 500))
+	if((Kapitel < 3) && (Npc_GetDistToWP(self,"NW_XARDAS_TOWER_IN1_31") <= 500))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_sleep_info()
+func void DIA_Lester_Sleep_Info()
 {
 	AI_Output(other,self,"DIA_Lester_Sleep_15_00");	//Ci¹gle zmêczony?
 	AI_Output(self,other,"DIA_Lester_Sleep_13_01");	//I to jak! Powiedzia³em Xardasowi wszystko, co wiem. Teraz muszê siê trochê zdrzemn¹æ. Jeden dzieñ powinien wystarczyæ...
@@ -247,95 +247,95 @@ func void dia_lester_sleep_info()
 };
 
 
-instance DIA_LESTER_KAP3_EXIT(C_INFO)
+instance DIA_Lester_KAP3_EXIT(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 999;
-	condition = dia_lester_kap3_exit_condition;
-	information = dia_lester_kap3_exit_info;
+	condition = DIA_Lester_KAP3_EXIT_Condition;
+	information = DIA_Lester_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_lester_kap3_exit_condition()
+func int DIA_Lester_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_kap3_exit_info()
+func void DIA_Lester_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_LESTER_BACKINTOWN(C_INFO)
+instance DIA_Lester_BACKINTOWN(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 2;
-	condition = dia_lester_backintown_condition;
-	information = dia_lester_backintown_info;
+	condition = DIA_Lester_BACKINTOWN_Condition;
+	information = DIA_Lester_BACKINTOWN_Info;
 	important = TRUE;
 };
 
 
-func int dia_lester_backintown_condition()
+func int DIA_Lester_BACKINTOWN_Condition()
 {
-	if((Npc_GetDistToWP(self,"LEVELCHANGE") <= 500) && (KAPITEL == 3))
+	if((Npc_GetDistToWP(self,"LEVELCHANGE") <= 500) && (Kapitel == 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_backintown_info()
+func void DIA_Lester_BACKINTOWN_Info()
 {
 	AI_Output(self,other,"DIA_Lester_BACKINTOWN_13_00");	//No, jesteœ nareszcie! IdŸ lepiej od razu do Xardasa. Mamy problem!
 	AI_Output(other,self,"DIA_Lester_BACKINTOWN_15_01");	//W to akurat ³atwo mi uwierzyæ.
 	AI_Output(self,other,"DIA_Lester_BACKINTOWN_13_02");	//Od twojej ostatniej wizyty rozpêta³o siê prawdziwe piek³o.
 	AI_Output(self,other,"DIA_Lester_BACKINTOWN_13_03");	//Porozmawiaj z Xardasem. Czeka ju¿ na ciebie!
 	AI_Output(self,other,"DIA_Lester_BACKINTOWN_13_04");	//Xardas kaza³ mi przekazaæ ci tê runê. Dziêki niej szybciej do niego wrócisz. Spotkamy siê na miejscu.
-	CreateInvItems(self,itru_teleportxardas,1);
-	b_giveinvitems(self,other,5455,1);
+	CreateInvItems(self,ItRu_TeleportXardas,1);
+	B_GiveInvItems(self,other,ItRu_TeleportXardas,1);
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"START");
 };
 
 
-instance DIA_LESTER_PERM3(C_INFO)
+instance DIA_Lester_PERM3(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 900;
-	condition = dia_lester_perm3_condition;
-	information = dia_lester_perm3_info;
+	condition = DIA_Lester_PERM3_Condition;
+	information = DIA_Lester_PERM3_Info;
 	permanent = TRUE;
 	description = "Nie wygl¹dasz najlepiej.";
 };
 
 
-func int dia_lester_perm3_condition()
+func int DIA_Lester_PERM3_Condition()
 {
-	if((KAPITEL >= 3) && (LESTER_ISONBOARD != LOG_SUCCESS))
+	if((Kapitel >= 3) && (Lester_IsOnBoard != LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_lester_perm3_onetime;
+var int DIA_Lester_PERM3_OneTime;
 
-func void dia_lester_perm3_info()
+func void DIA_Lester_PERM3_Info()
 {
 	AI_Output(other,self,"DIA_Lester_PERM3_15_00");	//Nie wygl¹dasz najlepiej.
 	if(hero.guild == GIL_KDF)
 	{
-		if(DIA_LESTER_PERM3_ONETIME == FALSE)
+		if(DIA_Lester_PERM3_OneTime == FALSE)
 		{
 			AI_Output(self,other,"DIA_Lester_PERM3_13_01");	//I nie najlepiej siê czujê. Jestem zupe³nie wycieñczony i ci¹gle mam ten ból g³owy.
 			AI_Output(self,other,"DIA_Lester_PERM3_13_02");	//Za ka¿dym razem, gdy pojawi¹ siê tu te czarne kaptury, jest jeszcze gorzej!
-			if(SC_KNOWSMADPSI == TRUE)
+			if(SC_KnowsMadPsi == TRUE)
 			{
 				AI_Output(other,self,"DIA_Lester_PERM3_15_03");	//Mogê ci nawet powiedzieæ, dlaczego tak siê dzieje.
 				AI_Output(self,other,"DIA_Lester_PERM3_13_04");	//Tak? Chyba nie chcê tego wiedzieæ...
@@ -346,13 +346,13 @@ func void dia_lester_perm3_info()
 				AI_Output(self,other,"DIA_Lester_PERM3_13_09");	//Podejrzewa³em to, ale mia³em nadziejê, ¿e siê mylê. Czy to znaczy, ¿e ON powróci³? Czy Œni¹cy znów jest w naszym œwiecie?
 				AI_Output(other,self,"DIA_Lester_PERM3_15_10");	//Dobre pytanie. Wiem tylko, ¿e trzeba za wszelk¹ cenê powstrzymaæ Poszukiwaczy, nim stan¹ siê zbyt potê¿ni.
 				AI_Output(self,other,"DIA_Lester_PERM3_13_11");	//Nie podoba mi siê to wszystko, ale chyba masz racjê. Przepraszam... Mo¿na przez to wszystko oszaleæ.
-				b_logentry(TOPIC_DEMENTOREN,"Moje podejrzenia potwierdzi³y siê. Nawet Lester nie ma ¿adnych w¹tpliwoœci, ¿e Poszukiwacze i wyznawcy œni¹cego przychodz¹ ze starego obozowiska na mokrad³ach.");
-				b_giveplayerxp(XP_LESTER_KNOWSMADPSI);
-				DIA_LESTER_PERM3_ONETIME = TRUE;
+				B_LogEntry(TOPIC_DEMENTOREN,"Moje podejrzenia potwierdzi³y siê. Nawet Lester nie ma ¿adnych w¹tpliwoœci, ¿e Poszukiwacze i wyznawcy œni¹cego przychodz¹ ze starego obozowiska na mokrad³ach.");
+				B_GivePlayerXP(XP_Lester_KnowsMadPsi);
+				DIA_Lester_PERM3_OneTime = TRUE;
 			};
 		};
 	}
-	else if(LESTER_ISONBOARD == LOG_SUCCESS)
+	else if(Lester_IsOnBoard == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Lester_PERM3_13_12");	//G³owa ci¹gle mi pêka, ale miejmy nadziejê, ¿e ten problem wkrótce siê rozwi¹¿e.
 		AI_Output(self,other,"DIA_Lester_PERM3_13_13");	//W ten, czy inny sposób.
@@ -369,117 +369,117 @@ func void dia_lester_perm3_info()
 };
 
 
-instance DIA_LESTER_KAP4_EXIT(C_INFO)
+instance DIA_Lester_KAP4_EXIT(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 999;
-	condition = dia_lester_kap4_exit_condition;
-	information = dia_lester_kap4_exit_info;
+	condition = DIA_Lester_KAP4_EXIT_Condition;
+	information = DIA_Lester_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_lester_kap4_exit_condition()
+func int DIA_Lester_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_kap4_exit_info()
+func void DIA_Lester_KAP4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_LESTER_KAP5_EXIT(C_INFO)
+instance DIA_Lester_KAP5_EXIT(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 999;
-	condition = dia_lester_kap5_exit_condition;
-	information = dia_lester_kap5_exit_info;
+	condition = DIA_Lester_KAP5_EXIT_Condition;
+	information = DIA_Lester_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_lester_kap5_exit_condition()
+func int DIA_Lester_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_kap5_exit_info()
+func void DIA_Lester_KAP5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_LESTER_XARDASWEG(C_INFO)
+instance DIA_Lester_XARDASWEG(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 2;
-	condition = dia_lester_xardasweg_condition;
-	information = dia_lester_xardasweg_info;
+	condition = DIA_Lester_XARDASWEG_Condition;
+	information = DIA_Lester_XARDASWEG_Info;
 	description = "Gdzie jest Xardas?";
 };
 
 
-func int dia_lester_xardasweg_condition()
+func int DIA_Lester_XARDASWEG_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_xardasweg_info()
+func void DIA_Lester_XARDASWEG_Info()
 {
 	AI_Output(other,self,"DIA_Lester_XARDASWEG_15_00");	//Gdzie jest Xardas?
 	AI_Output(self,other,"DIA_Lester_XARDASWEG_13_01");	//Znikn¹³ gdzieœ, ale zostawi³ na stra¿y swoje demony.
 	AI_Output(self,other,"DIA_Lester_XARDASWEG_13_02");	//Chyba nie chce, ¿eby ktoœ w³óczy³ siê po wie¿y pod jego nieobecnoœæ.
 	AI_Output(other,self,"DIA_Lester_XARDASWEG_15_03");	//Dok¹d siê uda³?
 	AI_Output(self,other,"DIA_Lester_XARDASWEG_13_04");	//Tego nie powiedzia³. Kaza³ tylko przekazaæ ci ten list.
-	CreateInvItems(self,itwr_xardaslettertoopenbook_mis,1);
-	b_giveinvitems(self,other,5866,1);
+	CreateInvItems(self,ItWr_XardasLetterToOpenBook_MIS,1);
+	B_GiveInvItems(self,other,ItWr_XardasLetterToOpenBook_MIS,1);
 	AI_Output(self,other,"DIA_Lester_XARDASWEG_13_05");	//Przepraszam... Przeczyta³em go.
 	AI_Output(other,self,"DIA_Lester_XARDASWEG_15_06");	//I co?
 	AI_Output(self,other,"DIA_Lester_XARDASWEG_13_07");	//I nic. Nie zrozumia³em ani s³owa. Jedno jest pewne - zbyt prêdko go nie zobaczymy.
 	AI_Output(self,other,"DIA_Lester_XARDASWEG_13_08");	//Myœlê, ¿e zrobi³o siê tu dla niego za gor¹co i postanowi³ daæ nogê.
-	b_logentry(TOPIC_BUCHHALLENVONIRDORATH,"Xardas znikn¹³. Lester przekaza³ mi od niego list.");
+	B_LogEntry(TOPIC_BuchHallenVonIrdorath,"Xardas znikn¹³. Lester przekaza³ mi od niego list.");
 };
 
 
-instance DIA_LESTER_KNOWWHEREENEMY(C_INFO)
+instance DIA_Lester_KnowWhereEnemy(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 2;
-	condition = dia_lester_knowwhereenemy_condition;
-	information = dia_lester_knowwhereenemy_info;
+	condition = DIA_Lester_KnowWhereEnemy_Condition;
+	information = DIA_Lester_KnowWhereEnemy_Info;
 	permanent = TRUE;
 	description = "Dowiedzia³em siê, gdzie szukaæ naszego nieprzyjaciela.";
 };
 
 
-func int dia_lester_knowwhereenemy_condition()
+func int DIA_Lester_KnowWhereEnemy_Condition()
 {
-	if((MIS_SCKNOWSWAYTOIRDORATH == TRUE) && (LESTER_ISONBOARD == FALSE))
+	if((MIS_SCKnowsWayToIrdorath == TRUE) && (Lester_IsOnBoard == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_knowwhereenemy_info()
+func void DIA_Lester_KnowWhereEnemy_Info()
 {
 	AI_Output(other,self,"DIA_Lester_KnowWhereEnemy_15_00");	//Dowiedzia³em siê, gdzie szukaæ naszego nieprzyjaciela.
 	AI_Output(self,other,"DIA_Lester_KnowWhereEnemy_13_01");	//Nie wiem dlaczego, ale mam wra¿enie, ¿e powinienem pójœæ z tob¹.
 	AI_Output(other,self,"DIA_Lester_KnowWhereEnemy_15_02");	//Co przez to rozumiesz?
 	AI_Output(self,other,"DIA_Lester_KnowWhereEnemy_13_03");	//Nie potrafiê tego wyjaœniæ, ale wydaje mi siê, ¿e odpowiedzi na moje pytania poznam, id¹c z tob¹.
-	if(CREWMEMBER_COUNT >= MAX_CREW)
+	if(Crewmember_Count >= Max_Crew)
 	{
 		AI_Output(other,self,"DIA_Lester_KnowWhereEnemy_15_04");	//Przykro mi, ale mam ju¿ pe³n¹ za³ogê.
 		AI_Output(self,other,"DIA_Lester_KnowWhereEnemy_13_05");	//Mo¿e tak jest... A mo¿e mój los nic nie znaczy wobec wydarzeñ, które czekaj¹ nas w najbli¿szej przysz³oœci...
@@ -488,21 +488,21 @@ func void dia_lester_knowwhereenemy_info()
 	}
 	else
 	{
-		Info_ClearChoices(dia_lester_knowwhereenemy);
-		Info_AddChoice(dia_lester_knowwhereenemy,"Nie mogê ciê zabraæ ze sob¹.",dia_lester_knowwhereenemy_no);
-		Info_AddChoice(dia_lester_knowwhereenemy,"Wiêc chodŸ ze mn¹ i poszukaj swoich odpowiedzi!",dia_lester_knowwhereenemy_yes);
+		Info_ClearChoices(DIA_Lester_KnowWhereEnemy);
+		Info_AddChoice(DIA_Lester_KnowWhereEnemy,"Nie mogê ciê zabraæ ze sob¹.",DIA_Lester_KnowWhereEnemy_No);
+		Info_AddChoice(DIA_Lester_KnowWhereEnemy,"Wiêc chodŸ ze mn¹ i poszukaj swoich odpowiedzi!",DIA_Lester_KnowWhereEnemy_Yes);
 	};
 };
 
-func void dia_lester_knowwhereenemy_yes()
+func void DIA_Lester_KnowWhereEnemy_Yes()
 {
 	AI_Output(other,self,"DIA_Lester_KnowWhereEnemy_Yes_15_00");	//Wiêc chodŸ ze mn¹ i poszukaj swoich odpowiedzi!
 	AI_Output(other,self,"DIA_Lester_KnowWhereEnemy_Yes_15_01");	//Spotkamy siê w zatoce. Zejdê tam, gdy tylko bêdê gotów.
 	AI_Output(self,other,"DIA_Lester_KnowWhereEnemy_Yes_13_02");	//Spiesz siê! Mamy ma³o czasu.
 	self.flags = NPC_FLAG_IMMORTAL;
-	LESTER_ISONBOARD = LOG_SUCCESS;
-	CREWMEMBER_COUNT = CREWMEMBER_COUNT + 1;
-	if(MIS_READYFORCHAPTER6 == TRUE)
+	Lester_IsOnBoard = LOG_SUCCESS;
+	Crewmember_Count = Crewmember_Count + 1;
+	if(MIS_ReadyforChapter6 == TRUE)
 	{
 		Npc_ExchangeRoutine(self,"SHIP");
 	}
@@ -510,80 +510,80 @@ func void dia_lester_knowwhereenemy_yes()
 	{
 		Npc_ExchangeRoutine(self,"WAITFORSHIP");
 	};
-	Info_ClearChoices(dia_lester_knowwhereenemy);
+	Info_ClearChoices(DIA_Lester_KnowWhereEnemy);
 };
 
-func void dia_lester_knowwhereenemy_no()
+func void DIA_Lester_KnowWhereEnemy_No()
 {
 	AI_Output(other,self,"DIA_Lester_KnowWhereEnemy_No_15_00");	//Nie mogê ciê zabraæ ze sob¹.
 	AI_Output(self,other,"DIA_Lester_KnowWhereEnemy_No_13_01");	//Rozumiem. Pewnie i tak nie na wiele bym ci siê przyda³.
 	AI_Output(self,other,"DIA_Lester_KnowWhereEnemy_No_13_02");	//Niewa¿ne, kogo zabierasz ze sob¹, tak d³ugo, jak mo¿esz im zaufaæ.
 	AI_Output(self,other,"DIA_Lester_KnowWhereEnemy_No_13_03");	//Uwa¿aj na siebie.
-	LESTER_ISONBOARD = LOG_OBSOLETE;
-	Info_ClearChoices(dia_lester_knowwhereenemy);
+	Lester_IsOnBoard = LOG_OBSOLETE;
+	Info_ClearChoices(DIA_Lester_KnowWhereEnemy);
 };
 
 
-instance DIA_LESTER_LEAVEMYSHIP(C_INFO)
+instance DIA_Lester_LeaveMyShip(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 4;
-	condition = dia_lester_leavemyship_condition;
-	information = dia_lester_leavemyship_info;
+	condition = DIA_Lester_LeaveMyShip_Condition;
+	information = DIA_Lester_LeaveMyShip_Info;
 	permanent = TRUE;
 	description = "Jednak zabrak³o dla ciebie miejsca na statku.";
 };
 
 
-func int dia_lester_leavemyship_condition()
+func int DIA_Lester_LeaveMyShip_Condition()
 {
-	if((LESTER_ISONBOARD == LOG_SUCCESS) && (MIS_READYFORCHAPTER6 == FALSE))
+	if((Lester_IsOnBoard == LOG_SUCCESS) && (MIS_ReadyforChapter6 == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_leavemyship_info()
+func void DIA_Lester_LeaveMyShip_Info()
 {
 	AI_Output(other,self,"DIA_Lester_LeaveMyShip_15_00");	//Jednak zabrak³o dla ciebie miejsca na statku.
 	AI_Output(self,other,"DIA_Lester_LeaveMyShip_13_01");	//Rozumiem. Na twoim miejscu post¹pi³bym pewnie tak samo.
 	AI_Output(self,other,"DIA_Lester_LeaveMyShip_13_02");	//Gdybyœ mnie potrzebowa³, wiesz, gdzie mnie znaleŸæ.
-	LESTER_ISONBOARD = LOG_OBSOLETE;
-	CREWMEMBER_COUNT = CREWMEMBER_COUNT - 1;
+	Lester_IsOnBoard = LOG_OBSOLETE;
+	Crewmember_Count = Crewmember_Count - 1;
 	Npc_ExchangeRoutine(self,"ShipOff");
 };
 
 
-instance DIA_LESTER_STILLNEEDYOU(C_INFO)
+instance DIA_Lester_StillNeedYou(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 4;
-	condition = dia_lester_stillneedyou_condition;
-	information = dia_lester_stillneedyou_info;
+	condition = DIA_Lester_StillNeedYou_Condition;
+	information = DIA_Lester_StillNeedYou_Info;
 	permanent = TRUE;
 	description = "Przyda³aby mi siê twoja pomoc.";
 };
 
 
-func int dia_lester_stillneedyou_condition()
+func int DIA_Lester_StillNeedYou_Condition()
 {
-	if(((LESTER_ISONBOARD == LOG_OBSOLETE) || (LESTER_ISONBOARD == LOG_FAILED)) && (CREWMEMBER_COUNT < MAX_CREW))
+	if(((Lester_IsOnBoard == LOG_OBSOLETE) || (Lester_IsOnBoard == LOG_FAILED)) && (Crewmember_Count < Max_Crew))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_stillneedyou_info()
+func void DIA_Lester_StillNeedYou_Info()
 {
 	AI_Output(other,self,"DIA_Lester_StillNeedYou_15_00");	//Przyda³aby mi siê twoja pomoc.
-	if(LESTER_ISONBOARD == LOG_OBSOLETE)
+	if(Lester_IsOnBoard == LOG_OBSOLETE)
 	{
 		AI_Output(self,other,"DIA_Lester_StillNeedYou_13_01");	//Wiedzia³em! Zupe³nie jak za dawnych czasów, co?
 		AI_Output(self,other,"DIA_Lester_StillNeedYou_13_02");	//Si³y z³a powinny siê mieæ na bacznoœci. Wkrótce bêd¹ mia³y do czynienia Z NAMI!
 		self.flags = NPC_FLAG_IMMORTAL;
-		LESTER_ISONBOARD = LOG_SUCCESS;
-		CREWMEMBER_COUNT = CREWMEMBER_COUNT + 1;
-		if(MIS_READYFORCHAPTER6 == TRUE)
+		Lester_IsOnBoard = LOG_SUCCESS;
+		Crewmember_Count = Crewmember_Count + 1;
+		if(MIS_ReadyforChapter6 == TRUE)
 		{
 			Npc_ExchangeRoutine(self,"SHIP");
 		}
@@ -600,62 +600,62 @@ func void dia_lester_stillneedyou_info()
 };
 
 
-instance DIA_LESTER_KAP6_EXIT(C_INFO)
+instance DIA_Lester_KAP6_EXIT(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 999;
-	condition = dia_lester_kap6_exit_condition;
-	information = dia_lester_kap6_exit_info;
+	condition = DIA_Lester_KAP6_EXIT_Condition;
+	information = DIA_Lester_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_lester_kap6_exit_condition()
+func int DIA_Lester_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lester_kap6_exit_info()
+func void DIA_Lester_KAP6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PC_PSIONIC_PICKPOCKET(C_INFO)
+instance DIA_PC_Psionic_PICKPOCKET(C_Info)
 {
-	npc = pc_psionic;
+	npc = PC_Psionic;
 	nr = 900;
-	condition = dia_pc_psionic_pickpocket_condition;
-	information = dia_pc_psionic_pickpocket_info;
+	condition = DIA_PC_Psionic_PICKPOCKET_Condition;
+	information = DIA_PC_Psionic_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_80;
+	description = Pickpocket_80;
 };
 
 
-func int dia_pc_psionic_pickpocket_condition()
+func int DIA_PC_Psionic_PICKPOCKET_Condition()
 {
-	return c_beklauen(76,20);
+	return C_Beklauen(76,20);
 };
 
-func void dia_pc_psionic_pickpocket_info()
+func void DIA_PC_Psionic_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_pc_psionic_pickpocket);
-	Info_AddChoice(dia_pc_psionic_pickpocket,DIALOG_BACK,dia_pc_psionic_pickpocket_back);
-	Info_AddChoice(dia_pc_psionic_pickpocket,DIALOG_PICKPOCKET,dia_pc_psionic_pickpocket_doit);
+	Info_ClearChoices(DIA_PC_Psionic_PICKPOCKET);
+	Info_AddChoice(DIA_PC_Psionic_PICKPOCKET,Dialog_Back,DIA_PC_Psionic_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_PC_Psionic_PICKPOCKET,DIALOG_PICKPOCKET,DIA_PC_Psionic_PICKPOCKET_DoIt);
 };
 
-func void dia_pc_psionic_pickpocket_doit()
+func void DIA_PC_Psionic_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_pc_psionic_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_PC_Psionic_PICKPOCKET);
 };
 
-func void dia_pc_psionic_pickpocket_back()
+func void DIA_PC_Psionic_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_pc_psionic_pickpocket);
+	Info_ClearChoices(DIA_PC_Psionic_PICKPOCKET);
 };
 

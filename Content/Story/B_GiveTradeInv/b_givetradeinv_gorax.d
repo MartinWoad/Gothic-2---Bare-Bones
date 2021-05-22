@@ -1,136 +1,136 @@
 
-var int gorax_itemsgiven_chapter_1;
-var int gorax_itemsgiven_chapter_2;
-var int gorax_itemsgiven_chapter_3;
-var int gorax_itemsgiven_chapter_4;
-var int gorax_itemsgiven_chapter_5;
+var int Gorax_ItemsGiven_Chapter_1;
+var int Gorax_ItemsGiven_Chapter_2;
+var int Gorax_ItemsGiven_Chapter_3;
+var int Gorax_ItemsGiven_Chapter_4;
+var int Gorax_ItemsGiven_Chapter_5;
 var int gorax_itemsgiven_chapter_6;
 
-func void b_givetradeinv_gorax(var C_NPC slf)
+func void B_GiveTradeInv_Gorax(var C_Npc slf)
 {
-	if((KAPITEL >= 1) && (GORAX_ITEMSGIVEN_CHAPTER_1 == FALSE))
+	if((Kapitel >= 1) && (Gorax_ItemsGiven_Chapter_1 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itsc_sleep,1);
-		CreateInvItems(slf,itmi_sulfur,2);
-		CreateInvItems(slf,itpo_mana_01,2);
-		CreateInvItems(slf,itpo_health_01,3);
-		CreateInvItems(slf,itsc_light,5);
-		CreateInvItems(slf,itsc_firebolt,5);
-		CreateInvItems(slf,itsc_lightheal,5);
-		CreateInvItems(slf,itsc_sumgobskel,5);
-		CreateInvItems(slf,itsc_windfist,1);
-		CreateInvItems(slf,itwr_map_newworld,1);
-		CreateInvItems(slf,itsc_zap,5);
-		CreateInvItems(slf,itfo_wine,3);
-		GORAX_ITEMSGIVEN_CHAPTER_1 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItSc_Sleep,1);
+		CreateInvItems(slf,ItMi_Sulfur,2);
+		CreateInvItems(slf,ItPo_Mana_01,2);
+		CreateInvItems(slf,ItPo_Health_01,3);
+		CreateInvItems(slf,ItSc_Light,5);
+		CreateInvItems(slf,ItSc_Firebolt,5);
+		CreateInvItems(slf,ItSc_LightHeal,5);
+		CreateInvItems(slf,ItSc_SumGobSkel,5);
+		CreateInvItems(slf,ItSc_Windfist,1);
+		CreateInvItems(slf,ItWr_Map_NewWorld,1);
+		CreateInvItems(slf,ItSc_Zap,5);
+		CreateInvItems(slf,ItFo_Wine,3);
+		Gorax_ItemsGiven_Chapter_1 = TRUE;
 	};
-	if((KAPITEL >= 2) && (GORAX_ITEMSGIVEN_CHAPTER_2 == FALSE))
+	if((Kapitel >= 2) && (Gorax_ItemsGiven_Chapter_2 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itmi_sulfur,2);
-		CreateInvItems(slf,itmi_quartz,2);
-		CreateInvItems(slf,itmi_pitch,1);
-		CreateInvItems(slf,itsc_icebolt,5);
-		CreateInvItems(slf,itpo_health_01,7);
-		CreateInvItems(slf,itpo_health_02,2);
-		CreateInvItems(slf,itpo_mana_01,14);
-		CreateInvItems(slf,itsc_instantfireball,5);
-		CreateInvItems(slf,itsc_sumwolf,5);
-		CreateInvItems(slf,itsc_windfist,4);
-		CreateInvItems(slf,itsc_sleep,2);
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItMi_Sulfur,2);
+		CreateInvItems(slf,ItMi_Quartz,2);
+		CreateInvItems(slf,ItMi_Pitch,1);
+		CreateInvItems(slf,ItSc_Icebolt,5);
+		CreateInvItems(slf,ItPo_Health_01,7);
+		CreateInvItems(slf,ItPo_Health_02,2);
+		CreateInvItems(slf,ItPo_Mana_01,14);
+		CreateInvItems(slf,ItSc_InstantFireball,5);
+		CreateInvItems(slf,ItSc_SumWolf,5);
+		CreateInvItems(slf,ItSc_Windfist,4);
+		CreateInvItems(slf,ItSc_Sleep,2);
 		if((hero.guild != GIL_NONE) && (hero.guild != GIL_NOV))
 		{
-			CreateInvItems(slf,itmi_runeblank,2);
+			CreateInvItems(slf,ItMi_RuneBlank,2);
 		};
 		if((hero.guild == GIL_PAL) || (hero.guild == GIL_MIL))
 		{
-			CreateInvItems(slf,itwr_map_shrine_mis,1);
+			CreateInvItems(slf,ItWr_Map_Shrine_MIS,1);
 		};
-		GORAX_ITEMSGIVEN_CHAPTER_2 = TRUE;
+		Gorax_ItemsGiven_Chapter_2 = TRUE;
 	};
-	if((KAPITEL >= 3) && (GORAX_ITEMSGIVEN_CHAPTER_3 == FALSE))
+	if((Kapitel >= 3) && (Gorax_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itmi_sulfur,2);
-		CreateInvItems(slf,itmi_quartz,2);
-		CreateInvItems(slf,itmi_rockcrystal,2);
-		CreateInvItems(slf,itmi_coal,2);
-		CreateInvItems(slf,itmi_pitch,1);
-		CreateInvItems(slf,itpo_health_02,9);
-		CreateInvItems(slf,itpo_health_03,6);
-		CreateInvItems(slf,itpo_mana_01,30);
-		CreateInvItems(slf,itsc_mediumheal,5);
-		CreateInvItems(slf,itsc_firestorm,4);
-		CreateInvItems(slf,itsc_thunderball,2);
-		CreateInvItems(slf,itsc_sumskel,3);
-		CreateInvItems(slf,itsc_fear,2);
-		CreateInvItems(slf,itsc_icecube,3);
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItMi_Sulfur,2);
+		CreateInvItems(slf,ItMi_Quartz,2);
+		CreateInvItems(slf,ItMi_Rockcrystal,2);
+		CreateInvItems(slf,ItMi_Coal,2);
+		CreateInvItems(slf,ItMi_Pitch,1);
+		CreateInvItems(slf,ItPo_Health_02,9);
+		CreateInvItems(slf,ItPo_Health_03,6);
+		CreateInvItems(slf,ItPo_Mana_01,30);
+		CreateInvItems(slf,ItSc_MediumHeal,5);
+		CreateInvItems(slf,ItSc_Firestorm,4);
+		CreateInvItems(slf,ItSc_ThunderBall,2);
+		CreateInvItems(slf,ItSc_SumSkel,3);
+		CreateInvItems(slf,ItSc_Fear,2);
+		CreateInvItems(slf,ItSc_IceCube,3);
 		if((hero.guild != GIL_NONE) && (hero.guild != GIL_NOV))
 		{
-			CreateInvItems(slf,itmi_runeblank,2);
+			CreateInvItems(slf,ItMi_RuneBlank,2);
 		};
-		CreateInvItems(slf,itsc_trfgiantbug,1);
-		CreateInvItems(slf,itsc_trfwolf,1);
-		CreateInvItems(slf,itsc_trfsheep,1);
-		CreateInvItems(slf,itsc_trfscavenger,1);
+		CreateInvItems(slf,ItSc_TrfGiantBug,1);
+		CreateInvItems(slf,ItSc_TrfWolf,1);
+		CreateInvItems(slf,ItSc_TrfSheep,1);
+		CreateInvItems(slf,ItSc_TrfScavenger,1);
 		if((hero.guild == GIL_PAL) || (hero.guild == GIL_MIL))
 		{
-			CreateInvItems(slf,itwr_map_shrine_mis,1);
+			CreateInvItems(slf,ItWr_Map_Shrine_MIS,1);
 		};
-		GORAX_ITEMSGIVEN_CHAPTER_3 = TRUE;
+		Gorax_ItemsGiven_Chapter_3 = TRUE;
 	};
-	if((KAPITEL >= 4) && (GORAX_ITEMSGIVEN_CHAPTER_4 == FALSE))
+	if((Kapitel >= 4) && (Gorax_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,150);
-		CreateInvItems(slf,itmi_sulfur,5);
-		CreateInvItems(slf,itmi_quartz,6);
-		CreateInvItems(slf,itmi_rockcrystal,3);
-		CreateInvItems(slf,itmi_coal,4);
-		CreateInvItems(slf,itmi_aquamarine,2);
-		CreateInvItems(slf,itmi_pitch,1);
-		CreateInvItems(slf,itpo_health_02,15);
-		CreateInvItems(slf,itpo_health_03,10);
-		CreateInvItems(slf,itpo_mana_01,30);
-		CreateInvItems(slf,itpo_mana_02,30);
-		CreateInvItems(slf,itsc_lightningflash,5);
-		CreateInvItems(slf,itsc_sumgol,4);
-		CreateInvItems(slf,itsc_harmundead,2);
-		CreateInvItems(slf,itsc_chargefireball,3);
-		CreateInvItems(slf,itmi_runeblank,2);
-		GORAX_ITEMSGIVEN_CHAPTER_4 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,150);
+		CreateInvItems(slf,ItMi_Sulfur,5);
+		CreateInvItems(slf,ItMi_Quartz,6);
+		CreateInvItems(slf,ItMi_Rockcrystal,3);
+		CreateInvItems(slf,ItMi_Coal,4);
+		CreateInvItems(slf,ItMi_Aquamarine,2);
+		CreateInvItems(slf,ItMi_Pitch,1);
+		CreateInvItems(slf,ItPo_Health_02,15);
+		CreateInvItems(slf,ItPo_Health_03,10);
+		CreateInvItems(slf,ItPo_Mana_01,30);
+		CreateInvItems(slf,ItPo_Mana_02,30);
+		CreateInvItems(slf,ItSc_LightningFlash,5);
+		CreateInvItems(slf,ItSc_SumGol,4);
+		CreateInvItems(slf,ItSc_HarmUndead,2);
+		CreateInvItems(slf,ItSc_ChargeFireBall,3);
+		CreateInvItems(slf,ItMi_RuneBlank,2);
+		Gorax_ItemsGiven_Chapter_4 = TRUE;
 	};
-	if((KAPITEL >= 5) && (GORAX_ITEMSGIVEN_CHAPTER_5 == FALSE))
+	if((Kapitel >= 5) && (Gorax_ItemsGiven_Chapter_5 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,200);
-		CreateInvItems(slf,itmi_sulfur,6);
-		CreateInvItems(slf,itmi_quartz,4);
-		CreateInvItems(slf,itmi_rockcrystal,6);
-		CreateInvItems(slf,itmi_coal,3);
-		CreateInvItems(slf,itmi_aquamarine,3);
-		CreateInvItems(slf,itmi_darkpearl,1);
-		CreateInvItems(slf,itmi_holywater,3);
-		CreateInvItems(slf,itpo_health_02,20);
-		CreateInvItems(slf,itpo_health_03,15);
-		CreateInvItems(slf,itpo_mana_01,50);
-		CreateInvItems(slf,itpo_mana_02,40);
-		CreateInvItems(slf,itsc_pyrokinesis,5);
-		CreateInvItems(slf,itsc_icewave,4);
-		CreateInvItems(slf,itsc_sumdemon,2);
-		CreateInvItems(slf,itsc_fullheal,3);
-		CreateInvItems(slf,itmi_runeblank,4);
-		GORAX_ITEMSGIVEN_CHAPTER_5 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,200);
+		CreateInvItems(slf,ItMi_Sulfur,6);
+		CreateInvItems(slf,ItMi_Quartz,4);
+		CreateInvItems(slf,ItMi_Rockcrystal,6);
+		CreateInvItems(slf,ItMi_Coal,3);
+		CreateInvItems(slf,ItMi_Aquamarine,3);
+		CreateInvItems(slf,ItMi_DarkPearl,1);
+		CreateInvItems(slf,ItMi_HolyWater,3);
+		CreateInvItems(slf,ItPo_Health_02,20);
+		CreateInvItems(slf,ItPo_Health_03,15);
+		CreateInvItems(slf,ItPo_Mana_01,50);
+		CreateInvItems(slf,ItPo_Mana_02,40);
+		CreateInvItems(slf,ItSc_Pyrokinesis,5);
+		CreateInvItems(slf,ItSc_IceWave,4);
+		CreateInvItems(slf,ItSc_SumDemon,2);
+		CreateInvItems(slf,ItSc_FullHeal,3);
+		CreateInvItems(slf,ItMi_RuneBlank,4);
+		Gorax_ItemsGiven_Chapter_5 = TRUE;
 	};
-	if((KAPITEL >= 6) && (GORAX_ITEMSGIVEN_CHAPTER_6 == FALSE))
+	if((Kapitel >= 6) && (GORAX_ITEMSGIVEN_CHAPTER_6 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,300);
-		CreateInvItems(slf,itmi_aquamarine,2);
-		CreateInvItems(slf,itmi_coal,2);
-		CreateInvItems(slf,itpo_health_02,30);
-		CreateInvItems(slf,itpo_health_03,20);
-		CreateInvItems(slf,itpo_mana_01,70);
-		CreateInvItems(slf,itpo_mana_02,70);
-		CreateInvItems(slf,itmi_runeblank,2);
+		CreateInvItems(slf,ItMi_Gold,300);
+		CreateInvItems(slf,ItMi_Aquamarine,2);
+		CreateInvItems(slf,ItMi_Coal,2);
+		CreateInvItems(slf,ItPo_Health_02,30);
+		CreateInvItems(slf,ItPo_Health_03,20);
+		CreateInvItems(slf,ItPo_Mana_01,70);
+		CreateInvItems(slf,ItPo_Mana_02,70);
+		CreateInvItems(slf,ItMi_RuneBlank,2);
 		GORAX_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };

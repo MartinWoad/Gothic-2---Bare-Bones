@@ -1,326 +1,322 @@
 
-const int VALUE_HPESSENZ = 25;
-const int HP_ESSENZ = 50;
-const int VALUE_HPEXTRAKT = 35;
-const int HP_EXTRAKT = 70;
-const int VALUE_HPELIXIER = 50;
-const int HP_ELIXIER = 100;
-const int VALUE_MANAESSENZ = 25;
-const int MANA_ESSENZ = 50;
-const int VALUE_MANAEXTRAKT = 40;
-const int MANA_EXTRAKT = 75;
-const int VALUE_MANAELIXIER = 60;
-const int MANA_ELIXIER = 100;
-const int VALUE_STRELIXIER = 800;
-const int STR_ELIXIER = 2;
-const int VALUE_DEXELIXIER = 800;
-const int DEX_ELIXIER = 2;
-const int VALUE_HPMAXELIXIER = 1500;
-const int HPMAX_ELIXIER = 5;
-const int VALUE_MANAMAXELIXIER = 1500;
-const int MANAMAX_ELIXIER = 2;
-const int VALUE_MEGADRINK = 1800;
-const int STRORDEX_MEGADRINK = 5;
-const int VALUE_SPEED = 200;
-const int TIME_SPEED = 300000;
+const int Value_HpEssenz = 25;
+const int HP_Essenz = 50;
+const int Value_HpExtrakt = 35;
+const int HP_Extrakt = 70;
+const int Value_HpElixier = 50;
+const int HP_Elixier = 100;
+const int Value_ManaEssenz = 25;
+const int Mana_Essenz = 50;
+const int Value_ManaExtrakt = 40;
+const int Mana_Extrakt = 75;
+const int Value_ManaElixier = 60;
+const int Mana_Elixier = 100;
+const int Value_StrElixier = 800;
+const int STR_Elixier = 2;
+const int Value_DexElixier = 800;
+const int DEX_Elixier = 2;
+const int Value_HpMaxElixier = 1500;
+const int HPMax_Elixier = 5;
+const int Value_ManaMaxElixier = 1500;
+const int ManaMax_Elixier = 2;
+const int Value_MegaDrink = 1800;
+const int STRorDEX_MegaDrink = 5;
+const int Value_Speed = 200;
+const int Time_Speed = 300000;
 
-const int TOXICITY_ESSENZ = 10;
-
-instance ITPO_MANA_01(C_ITEM)
+instance ItPo_Mana_01(C_Item)
 {
-	name = NAME_TRANK;
+	name = NAME_Trank;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI;
-	value = VALUE_MANAESSENZ;
+	value = Value_ManaEssenz;
 	visual = "ItPo_Mana_01.3ds";
 	material = MAT_GLAS;
-	on_state[0] = useitpo_mana_01;
-	scemename = "POTIONFAST";
+	on_state[0] = UseItPo_Mana_01;
+	scemeName = "POTIONFAST";
 	description = "Esencja Many";
-	text[1] = NAME_BONUS_MANA;
-	count[1] = MANA_ESSENZ;
-	text[2] = NAME_TOXICITY;
-	count[2] = TOXICITY_ESSENZ;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_MANAESSENZ;
+	text[1] = NAME_Bonus_Mana;
+	count[1] = Mana_Essenz;
+	text[5] = NAME_Value;
+	count[5] = Value_ManaEssenz;
 };
 
 
-func void useitpo_mana_01()
+func void UseItPo_Mana_01()
 {
-	Npc_ChangeAttribute(self,ATR_MANA,MANA_ESSENZ);
+	Npc_ChangeAttribute(self,ATR_MANA,Mana_Essenz);
 };
 
 
-instance ITPO_MANA_02(C_ITEM)
+instance ItPo_Mana_02(C_Item)
 {
-	name = NAME_TRANK;
+	name = NAME_Trank;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI;
-	value = VALUE_MANAEXTRAKT;
+	value = Value_ManaExtrakt;
 	visual = "ItPo_Mana_02.3ds";
 	material = MAT_GLAS;
-	on_state[0] = useitpo_mana_02;
-	scemename = "POTIONFAST";
+	on_state[0] = UseItPo_Mana_02;
+	scemeName = "POTIONFAST";
 	description = "Ekstrakt Many";
-	text[1] = NAME_BONUS_MANA;
-	count[1] = MANA_EXTRAKT;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_MANAEXTRAKT;
+	text[1] = NAME_Bonus_Mana;
+	count[1] = Mana_Extrakt;
+	text[5] = NAME_Value;
+	count[5] = Value_ManaExtrakt;
 };
 
 
-func void useitpo_mana_02()
+func void UseItPo_Mana_02()
 {
-	Npc_ChangeAttribute(self,ATR_MANA,MANA_EXTRAKT);
+	Npc_ChangeAttribute(self,ATR_MANA,Mana_Extrakt);
 };
 
 
-instance ITPO_MANA_03(C_ITEM)
+instance ItPo_Mana_03(C_Item)
 {
-	name = NAME_TRANK;
+	name = NAME_Trank;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI;
-	value = VALUE_MANAELIXIER;
+	value = Value_ManaElixier;
 	visual = "ItPo_Mana_03.3ds";
 	material = MAT_GLAS;
-	on_state[0] = useitpo_mana_03;
-	scemename = "POTIONFAST";
+	on_state[0] = UseItPo_Mana_03;
+	scemeName = "POTIONFAST";
 	description = "Eliksir Many";
-	text[1] = NAME_BONUS_MANA;
-	count[1] = MANA_ELIXIER;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_MANAELIXIER;
+	text[1] = NAME_Bonus_Mana;
+	count[1] = Mana_Elixier;
+	text[5] = NAME_Value;
+	count[5] = Value_ManaElixier;
 };
 
 
-func void useitpo_mana_03()
+func void UseItPo_Mana_03()
 {
-	Npc_ChangeAttribute(self,ATR_MANA,MANA_ELIXIER);
+	Npc_ChangeAttribute(self,ATR_MANA,Mana_Elixier);
 };
 
 
-instance ITPO_HEALTH_01(C_ITEM)
+instance ItPo_Health_01(C_Item)
 {
-	name = NAME_TRANK;
+	name = NAME_Trank;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI;
-	value = VALUE_HPESSENZ;
+	value = Value_HpEssenz;
 	visual = "ItPo_Health_01.3ds";
 	material = MAT_GLAS;
-	on_state[0] = useitpo_health_01;
-	scemename = "POTIONFAST";
+	on_state[0] = UseItPo_Health_01;
+	scemeName = "POTIONFAST";
 	description = "Esencja Lecznicza";
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_ESSENZ;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_HPESSENZ;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Essenz;
+	text[5] = NAME_Value;
+	count[5] = Value_HpEssenz;
 };
 
 
-func void useitpo_health_01()
+func void UseItPo_Health_01()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_ESSENZ);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Essenz);
 };
 
 
-instance ITPO_HEALTH_02(C_ITEM)
+instance ItPo_Health_02(C_Item)
 {
-	name = NAME_TRANK;
+	name = NAME_Trank;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI;
-	value = VALUE_HPEXTRAKT;
+	value = Value_HpExtrakt;
 	visual = "ItPo_Health_02.3ds";
 	material = MAT_GLAS;
-	on_state[0] = useitpo_health_02;
-	scemename = "POTIONFAST";
+	on_state[0] = UseItPo_Health_02;
+	scemeName = "POTIONFAST";
 	description = "Ekstrakt Leczniczy";
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_EXTRAKT;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_HPEXTRAKT;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Extrakt;
+	text[5] = NAME_Value;
+	count[5] = Value_HpExtrakt;
 };
 
 
-func void useitpo_health_02()
+func void UseItPo_Health_02()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_EXTRAKT);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Extrakt);
 };
 
 
-instance ITPO_HEALTH_03(C_ITEM)
+instance ItPo_Health_03(C_Item)
 {
-	name = NAME_TRANK;
+	name = NAME_Trank;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI;
-	value = VALUE_HPELIXIER;
+	value = Value_HpElixier;
 	visual = "ItPo_Health_03.3ds";
 	material = MAT_GLAS;
-	on_state[0] = useitpo_health_03;
-	scemename = "POTIONFAST";
+	on_state[0] = UseItPo_Health_03;
+	scemeName = "POTIONFAST";
 	description = "Eliksir Leczniczy";
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_ELIXIER;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_HPELIXIER;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Elixier;
+	text[5] = NAME_Value;
+	count[5] = Value_HpElixier;
 };
 
 
-func void useitpo_health_03()
+func void UseItPo_Health_03()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_ELIXIER);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Elixier);
 };
 
 
-instance ITPO_PERM_STR(C_ITEM)
+instance ItPo_Perm_STR(C_Item)
 {
-	name = NAME_TRANK;
+	name = NAME_Trank;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI;
-	value = VALUE_STRELIXIER;
+	value = Value_StrElixier;
 	visual = "ItPo_Perm_STR.3ds";
 	material = MAT_GLAS;
-	on_state[0] = useitpo_perm_str;
-	scemename = "POTIONFAST";
+	on_state[0] = UseItPo_Perm_STR;
+	scemeName = "POTIONFAST";
 	description = "Eliksir Si³y";
-	text[1] = NAME_BONUS_STR;
-	count[1] = STR_ELIXIER;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_STRELIXIER;
+	text[1] = NAME_Bonus_Str;
+	count[1] = STR_Elixier;
+	text[5] = NAME_Value;
+	count[5] = Value_StrElixier;
 };
 
 
-func void useitpo_perm_str()
+func void UseItPo_Perm_STR()
 {
-	b_raiseattribute(self,ATR_STRENGTH,STR_ELIXIER,TRUE,FALSE);
+	B_RaiseAttribute(self,ATR_STRENGTH,STR_Elixier,TRUE,FALSE);
 };
 
 
-instance ITPO_PERM_DEX(C_ITEM)
+instance ItPo_Perm_DEX(C_Item)
 {
-	name = NAME_TRANK;
+	name = NAME_Trank;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI;
-	value = VALUE_DEXELIXIER;
+	value = Value_DexElixier;
 	visual = "ItPo_Perm_DEX.3ds";
 	material = MAT_GLAS;
-	on_state[0] = useitpo_perm_dex;
-	scemename = "POTIONFAST";
+	on_state[0] = UseItPo_Perm_DEX;
+	scemeName = "POTIONFAST";
 	description = "Eliksir Zrêcznoœci";
-	text[1] = NAME_BONUS_DEX;
-	count[1] = DEX_ELIXIER;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_DEXELIXIER;
+	text[1] = NAME_Bonus_Dex;
+	count[1] = DEX_Elixier;
+	text[5] = NAME_Value;
+	count[5] = Value_DexElixier;
 };
 
 
-func void useitpo_perm_dex()
+func void UseItPo_Perm_DEX()
 {
-	b_raiseattribute(self,ATR_DEXTERITY,DEX_ELIXIER,TRUE,FALSE);
+	B_RaiseAttribute(self,ATR_DEXTERITY,DEX_Elixier,TRUE,FALSE);
 };
 
 
-instance ITPO_PERM_HEALTH(C_ITEM)
+instance ItPo_Perm_Health(C_Item)
 {
-	name = NAME_TRANK;
+	name = NAME_Trank;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI;
-	value = VALUE_HPMAXELIXIER;
+	value = Value_HpMaxElixier;
 	visual = "ItPo_Perm_Health.3ds";
 	material = MAT_GLAS;
-	on_state[0] = useitpo_perm_health;
-	scemename = "POTIONFAST";
+	on_state[0] = UseItPo_Perm_Health;
+	scemeName = "POTIONFAST";
 	description = "Eliksir ¯ycia";
-	text[1] = NAME_BONUS_HPMAX;
-	count[1] = HPMAX_ELIXIER;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_HPMAXELIXIER;
+	text[1] = NAME_Bonus_HpMax;
+	count[1] = HPMax_Elixier;
+	text[5] = NAME_Value;
+	count[5] = Value_HpMaxElixier;
 };
 
 
-func void useitpo_perm_health()
+func void UseItPo_Perm_Health()
 {
-	b_raiseattribute(self,ATR_HITPOINTS_MAX,HPMAX_ELIXIER,TRUE,FALSE);
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HPMAX_ELIXIER);
+	B_RaiseAttribute(self,ATR_HITPOINTS_MAX,HPMax_Elixier,TRUE,FALSE);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HPMax_Elixier);
 };
 
 
-instance ITPO_PERM_MANA(C_ITEM)
+instance ItPo_Perm_Mana(C_Item)
 {
-	name = NAME_TRANK;
+	name = NAME_Trank;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI;
-	value = VALUE_MANAMAXELIXIER;
+	value = Value_ManaMaxElixier;
 	visual = "ItPo_Perm_Mana.3ds";
 	material = MAT_GLAS;
-	on_state[0] = useitpo_perm_mana;
-	scemename = "POTIONFAST";
+	on_state[0] = UseItPo_Perm_Mana;
+	scemeName = "POTIONFAST";
 	description = "Eliksir Ducha";
-	text[1] = NAME_BONUS_MANAMAX;
-	count[1] = MANAMAX_ELIXIER;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_MANAMAXELIXIER;
+	text[1] = NAME_Bonus_ManaMax;
+	count[1] = ManaMax_Elixier;
+	text[5] = NAME_Value;
+	count[5] = Value_ManaMaxElixier;
 };
 
 
-func void useitpo_perm_mana()
+func void UseItPo_Perm_Mana()
 {
-	b_raiseattribute(self,ATR_MANA_MAX,MANAMAX_ELIXIER,TRUE,FALSE);
-	Npc_ChangeAttribute(self,ATR_MANA,MANAMAX_ELIXIER);
+	B_RaiseAttribute(self,ATR_MANA_MAX,ManaMax_Elixier,TRUE,FALSE);
+	Npc_ChangeAttribute(self,ATR_MANA,ManaMax_Elixier);
 };
 
 
-instance ITPO_SPEED(C_ITEM)
+instance ItPo_Speed(C_Item)
 {
-	name = NAME_TRANK;
+	name = NAME_Trank;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI;
-	value = VALUE_SPEED;
+	value = Value_Speed;
 	visual = "ItPo_Speed.3ds";
 	material = MAT_GLAS;
-	on_state[0] = useitpo_speed;
-	scemename = "POTIONFAST";
+	on_state[0] = UseItPo_Speed;
+	scemeName = "POTIONFAST";
 	description = "Mikstura Szybkoœci";
 	text[1] = "Tymczasowo zwiêksza twoj¹ szybkoœæ.";
-	text[3] = NAME_DURATION;
-	count[3] = TIME_SPEED / 60000;
-	text[5] = NAME_VALUE;
+	text[3] = NAME_Duration;
+	count[3] = Time_Speed / 60000;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void useitpo_speed()
+func void UseItPo_Speed()
 {
-	Mdl_ApplyOverlayMdsTimed(self,"HUMANS_SPRINT.MDS",TIME_SPEED);
+	Mdl_ApplyOverlayMdsTimed(self,"HUMANS_SPRINT.MDS",Time_Speed);
 };
 
 
-instance ITPO_MEGADRINK(C_ITEM)
+instance ItPo_MegaDrink(C_Item)
 {
 	name = "Embarla Firgasto";
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI;
-	value = VALUE_MEGADRINK;
+	value = Value_MegaDrink;
 	visual = "ItPo_Perm_Mana.3ds";
 	material = MAT_GLAS;
-	on_state[0] = useitpo_megadrink;
-	scemename = "POTIONFAST";
+	on_state[0] = UseItPo_MegaDrink;
+	scemeName = "POTIONFAST";
 	description = name;
 	text[3] = "Skutki nieznane.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void useitpo_megadrink()
+func void UseItPo_MegaDrink()
 {
 	if(self.attribute[ATR_STRENGTH] < self.attribute[ATR_DEXTERITY])
 	{
-		b_raiseattribute(self,ATR_DEXTERITY,STRORDEX_MEGADRINK,TRUE,FALSE);
+		B_RaiseAttribute(self,ATR_DEXTERITY,STRorDEX_MegaDrink,TRUE,FALSE);
 	}
 	else
 	{
-		b_raiseattribute(self,ATR_STRENGTH,STRORDEX_MEGADRINK,TRUE,FALSE);
+		B_RaiseAttribute(self,ATR_STRENGTH,STRorDEX_MegaDrink,TRUE,FALSE);
 	};
 	Npc_ChangeAttribute(self,ATR_MANA,-ATR_MANA);
 	Snd_Play("DEM_Warn");

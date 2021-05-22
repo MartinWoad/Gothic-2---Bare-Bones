@@ -1,48 +1,48 @@
 
-instance DIA_MALAK_EXIT(C_INFO)
+instance DIA_Malak_EXIT(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 999;
-	condition = dia_malak_exit_condition;
-	information = dia_malak_exit_info;
+	condition = DIA_Malak_EXIT_Condition;
+	information = DIA_Malak_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_malak_exit_condition()
+func int DIA_Malak_EXIT_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_exit_info()
+func void DIA_Malak_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MALAK_HALLO(C_INFO)
+instance DIA_Malak_HALLO(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 3;
-	condition = dia_malak_hallo_condition;
-	information = dia_malak_hallo_info;
+	condition = DIA_Malak_HALLO_Condition;
+	information = DIA_Malak_HALLO_Info;
 	description = "Wszystko w porz¹dku?";
 };
 
 
-func int dia_malak_hallo_condition()
+func int DIA_Malak_HALLO_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_hallo_info()
+func void DIA_Malak_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Malak_HALLO_15_00");	//Wszystko w porz¹dku?
 	if(hero.guild == GIL_NONE)
@@ -56,25 +56,25 @@ func void dia_malak_hallo_info()
 };
 
 
-instance DIA_MALAK_WASMACHSTDU(C_INFO)
+instance DIA_Malak_WASMACHSTDU(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 4;
-	condition = dia_malak_wasmachstdu_condition;
-	information = dia_malak_wasmachstdu_info;
+	condition = DIA_Malak_WASMACHSTDU_Condition;
+	information = DIA_Malak_WASMACHSTDU_Info;
 	description = "Co tu porabiasz?";
 };
 
 
-func int dia_malak_wasmachstdu_condition()
+func int DIA_Malak_WASMACHSTDU_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_malak_hallo) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Malak_HALLO) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_wasmachstdu_info()
+func void DIA_Malak_WASMACHSTDU_Info()
 {
 	AI_Output(other,self,"DIA_Malak_WASMACHSTDU_15_00");	//Czym siê zajmujesz?
 	AI_Output(self,other,"DIA_Malak_WASMACHSTDU_08_01");	//Jestem pasterzem. Nie jest to bardzo wymagaj¹ca praca.
@@ -82,25 +82,25 @@ func void dia_malak_wasmachstdu_info()
 };
 
 
-instance DIA_MALAK_PASS(C_INFO)
+instance DIA_Malak_PASS(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 5;
-	condition = dia_malak_pass_condition;
-	information = dia_malak_pass_info;
+	condition = DIA_Malak_PASS_Condition;
+	information = DIA_Malak_PASS_Info;
 	description = "Co wiesz na temat prze³êczy?";
 };
 
 
-func int dia_malak_pass_condition()
+func int DIA_Malak_PASS_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_malak_wasmachstdu) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Malak_WASMACHSTDU) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_pass_info()
+func void DIA_Malak_PASS_Info()
 {
 	AI_Output(other,self,"DIA_Malak_PASS_15_00");	//Co wiesz na temat prze³êczy?
 	AI_Output(self,other,"DIA_Malak_PASS_08_01");	//Niewiele. Wiem tylko, ¿e prowadzi do starej Górniczej Doliny, która jeszcze parê tygodni temu by³a otoczona przez Barierê.
@@ -109,50 +109,50 @@ func void dia_malak_pass_info()
 };
 
 
-instance DIA_MALAK_WOPASS(C_INFO)
+instance DIA_Malak_WOPASS(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 6;
-	condition = dia_malak_wopass_condition;
-	information = dia_malak_wopass_info;
+	condition = DIA_Malak_WOPASS_Condition;
+	information = DIA_Malak_WOPASS_Info;
 	description = "Gdzie dok³adnie znajduje siê prze³êcz wiod¹ca do Górniczej Doliny?";
 };
 
 
-func int dia_malak_wopass_condition()
+func int DIA_Malak_WOPASS_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_malak_hallo) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Malak_HALLO) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_wopass_info()
+func void DIA_Malak_WOPASS_Info()
 {
 	AI_Output(other,self,"DIA_Malak_WOPASS_15_00");	//Gdzie dok³adnie znajduje siê prze³êcz wiod¹ca do Górniczej Doliny?
 	AI_Output(self,other,"DIA_Malak_WOPASS_08_01");	//Tu¿ obok dwóch wodospadów po drugiej stronie pastwisk.
 };
 
 
-instance DIA_MALAK_MINENTAL(C_INFO)
+instance DIA_Malak_MINENTAL(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 7;
-	condition = dia_malak_minental_condition;
-	information = dia_malak_minental_info;
+	condition = DIA_Malak_MINENTAL_Condition;
+	information = DIA_Malak_MINENTAL_Info;
 	description = "Jakie opowieœci kr¹¿¹ o Górniczej Dolinie?";
 };
 
 
-func int dia_malak_minental_condition()
+func int DIA_Malak_MINENTAL_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_malak_pass) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Malak_PASS) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_minental_info()
+func void DIA_Malak_MINENTAL_Info()
 {
 	AI_Output(other,self,"DIA_Malak_MINENTAL_15_00");	//Jakie opowieœci kr¹¿¹ o Górniczej Dolinie?
 	AI_Output(self,other,"DIA_Malak_MINENTAL_08_01");	//Przeró¿ne. Podobno niektórzy s³yszeli tam w nocy krzyki, inni opowiadaj¹ o dziwnych œwiat³ach ponad górami.
@@ -160,25 +160,25 @@ func void dia_malak_minental_info()
 };
 
 
-instance DIA_MALAK_WARSTDUSCHONDA(C_INFO)
+instance DIA_Malak_WARSTDUSCHONDA(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 8;
-	condition = dia_malak_warstduschonda_condition;
-	information = dia_malak_warstduschonda_info;
+	condition = DIA_Malak_WARSTDUSCHONDA_Condition;
+	information = DIA_Malak_WARSTDUSCHONDA_Info;
 	description = "Czy kiedykolwiek by³eœ w Górniczej Dolinie?";
 };
 
 
-func int dia_malak_warstduschonda_condition()
+func int DIA_Malak_WARSTDUSCHONDA_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_malak_pass) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Malak_PASS) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_warstduschonda_info()
+func void DIA_Malak_WARSTDUSCHONDA_Info()
 {
 	AI_Output(other,self,"DIA_Malak_WARSTDUSCHONDA_15_00");	//Czy kiedykolwiek by³eœ w Górniczej Dolinie?
 	AI_Output(self,other,"DIA_Malak_WARSTDUSCHONDA_08_01");	//Nie. Ale od czasu do czasu zdarza mi siê przechodziæ w pobli¿u prze³êczy. Zawsze stoi tam na warcie dwóch paladynów.
@@ -187,25 +187,25 @@ func void dia_malak_warstduschonda_info()
 };
 
 
-instance DIA_MALAK_PALADINE(C_INFO)
+instance DIA_Malak_PALADINE(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 9;
-	condition = dia_malak_paladine_condition;
-	information = dia_malak_paladine_info;
+	condition = DIA_Malak_PALADINE_Condition;
+	information = DIA_Malak_PALADINE_Info;
 	description = "Powiedz mi coœ wiêcej o paladynach.";
 };
 
 
-func int dia_malak_paladine_condition()
+func int DIA_Malak_PALADINE_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_malak_warstduschonda) && Npc_KnowsInfo(other,dia_malak_minental) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Malak_WARSTDUSCHONDA) && Npc_KnowsInfo(other,DIA_Malak_MINENTAL) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_paladine_info()
+func void DIA_Malak_PALADINE_Info()
 {
 	AI_Output(other,self,"DIA_Malak_PALADINE_15_00");	//Opowiedz mi wiêcej o paladynach. Od kiedy tu stacjonuj¹?
 	AI_Output(self,other,"DIA_Malak_PALADINE_08_01");	//Tydzieñ lub dwa... Nie pamiêtam dok³adnie, kiedy siê tu pojawili.
@@ -213,51 +213,51 @@ func void dia_malak_paladine_info()
 };
 
 
-instance DIA_MALAK_KEINEFRAUEN(C_INFO)
+instance DIA_Malak_KEINEFRAUEN(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 10;
-	condition = dia_malak_keinefrauen_condition;
-	information = dia_malak_keinefrauen_info;
+	condition = DIA_Malak_KEINEFRAUEN_Condition;
+	information = DIA_Malak_KEINEFRAUEN_Info;
 	description = "Nie widzê tu ¿adnych kobiet.";
 };
 
 
-func int dia_malak_keinefrauen_condition()
+func int DIA_Malak_KEINEFRAUEN_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_malak_wasmachstdu) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Malak_WASMACHSTDU) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_keinefrauen_info()
+func void DIA_Malak_KEINEFRAUEN_Info()
 {
 	AI_Output(other,self,"DIA_Malak_KEINEFRAUEN_15_00");	//Nie widzê tu ¿adnych kobiet.
 	AI_Output(self,other,"DIA_Malak_KEINEFRAUEN_08_01");	//Masz racjê. Ta farma nale¿y do mê¿czyzn. Jeœli o mnie chodzi, sprawdza siê to ca³kiem nieŸle.
 };
 
 
-instance DIA_MALAK_PERMKAP1(C_INFO)
+instance DIA_Malak_PERMKAP1(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 11;
-	condition = dia_malak_permkap1_condition;
-	information = dia_malak_permkap1_info;
+	condition = DIA_Malak_PERMKAP1_Condition;
+	information = DIA_Malak_PERMKAP1_Info;
 	permanent = TRUE;
 	description = "Tylko siê nie przepracuj.";
 };
 
 
-func int dia_malak_permkap1_condition()
+func int DIA_Malak_PERMKAP1_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_malak_hallo) && Npc_KnowsInfo(other,dia_malak_wasmachstdu) && Npc_KnowsInfo(other,dia_malak_pass) && Npc_KnowsInfo(other,dia_malak_minental) && Npc_KnowsInfo(other,dia_malak_warstduschonda) && Npc_KnowsInfo(other,dia_malak_paladine) && Npc_KnowsInfo(other,dia_malak_keinefrauen) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Malak_HALLO) && Npc_KnowsInfo(other,DIA_Malak_WASMACHSTDU) && Npc_KnowsInfo(other,DIA_Malak_PASS) && Npc_KnowsInfo(other,DIA_Malak_MINENTAL) && Npc_KnowsInfo(other,DIA_Malak_WARSTDUSCHONDA) && Npc_KnowsInfo(other,DIA_Malak_PALADINE) && Npc_KnowsInfo(other,DIA_Malak_KEINEFRAUEN) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_permkap1_info()
+func void DIA_Malak_PERMKAP1_Info()
 {
 	AI_Output(other,self,"DIA_Malak_PERMKAP1_15_00");	//Tylko siê nie przepracuj.
 	AI_Output(self,other,"DIA_Malak_PERMKAP1_08_01");	//Postaram siê.
@@ -265,54 +265,54 @@ func void dia_malak_permkap1_info()
 };
 
 
-instance DIA_MALAK_KAP3_EXIT(C_INFO)
+instance DIA_Malak_KAP3_EXIT(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 999;
-	condition = dia_malak_kap3_exit_condition;
-	information = dia_malak_kap3_exit_info;
+	condition = DIA_Malak_KAP3_EXIT_Condition;
+	information = DIA_Malak_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_malak_kap3_exit_condition()
+func int DIA_Malak_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_kap3_exit_info()
+func void DIA_Malak_KAP3_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_MALAK_FLEEFROMPASS(C_INFO)
+instance DIA_Malak_FLEEFROMPASS(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 30;
-	condition = dia_malak_fleefrompass_condition;
-	information = dia_malak_fleefrompass_info;
+	condition = DIA_Malak_FLEEFROMPASS_Condition;
+	information = DIA_Malak_FLEEFROMPASS_Info;
 	description = "Co tu porabiasz?";
 };
 
 
-func int dia_malak_fleefrompass_condition()
+func int DIA_Malak_FLEEFROMPASS_Condition()
 {
-	if(KAPITEL >= 3)
+	if(Kapitel >= 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_fleefrompass_info()
+func void DIA_Malak_FLEEFROMPASS_Info()
 {
-	if((NPCOBSESSEDBYDMT_MALAK == FALSE) && (hero.guild == GIL_KDF))
+	if((NpcObsessedByDMT_Malak == FALSE) && (hero.guild == GIL_KDF))
 	{
-		b_npcobsessedbydmt(self);
+		B_NpcObsessedByDMT(self);
 	}
 	else
 	{
@@ -320,270 +320,270 @@ func void dia_malak_fleefrompass_info()
 		AI_Output(self,other,"DIA_Malak_FLEEFROMPASS_08_01");	//Uciek³em z farmy Bengara. Nie chcia³em zostaæ rozszarpany przez jakieœ stworzenie, które mo¿e w ka¿dej chwili przekroczyæ prze³êcz.
 		AI_Output(self,other,"DIA_Malak_FLEEFROMPASS_08_02");	//Nawet sobie nie wyobra¿asz, jakie paskudztwa wy³oni³y siê stamt¹d w ci¹gu kilku ostatnich dni.
 		AI_Output(other,self,"DIA_Malak_FLEEFROMPASS_15_03");	//Chyba jednak mogê to sobie wyobraziæ.
-		b_logentry(TOPIC_BENGARALLEIN,"Malak schroni³ siê na po³udniu, poniewa¿ obawia siê stworzeñ przybywaj¹cych na pastwiska od strony prze³êczy.");
-		b_giveplayerxp(XP_FOUNDMALAKFLEEFROMPASS);
+		B_LogEntry(TOPIC_BengarALLEIN,"Malak schroni³ siê na po³udniu, poniewa¿ obawia siê stworzeñ przybywaj¹cych na pastwiska od strony prze³êczy.");
+		B_GivePlayerXP(XP_FoundMalakFLEEFROMPASS);
 	};
 };
 
 
-instance DIA_MALAK_HEILUNG(C_INFO)
+instance DIA_Malak_Heilung(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 55;
-	condition = dia_malak_heilung_condition;
-	information = dia_malak_heilung_info;
+	condition = DIA_Malak_Heilung_Condition;
+	information = DIA_Malak_Heilung_Info;
 	permanent = TRUE;
 	description = "Potrzebujesz pomocy.";
 };
 
 
-func int dia_malak_heilung_condition()
+func int DIA_Malak_Heilung_Condition()
 {
-	if((NPCOBSESSEDBYDMT_MALAK == TRUE) && (NPCOBSESSEDBYDMT == FALSE) && (hero.guild == GIL_KDF) && (KAPITEL >= 3))
+	if((NpcObsessedByDMT_Malak == TRUE) && (NpcObsessedByDMT == FALSE) && (hero.guild == GIL_KDF) && (Kapitel >= 3))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_malak_heilung_onetime;
+var int DIA_Malak_Heilung_oneTime;
 
-func void dia_malak_heilung_info()
+func void DIA_Malak_Heilung_Info()
 {
 	AI_Output(other,self,"DIA_Malak_Heilung_15_00");	//Potrzebujesz pomocy.
-	if(DIA_MALAK_HEILUNG_ONETIME == FALSE)
+	if(DIA_Malak_Heilung_oneTime == FALSE)
 	{
 		AI_Output(self,other,"DIA_Malak_Heilung_08_01");	//Po prostu chcê wróciæ do domu. Do Bengara. Mam nadziejê, ¿e jeszcze ¿yje.
-		b_npcclearobsessionbydmt(self);
+		B_NpcClearObsessionByDMT(self);
 		Npc_ExchangeRoutine(self,"Start");
-		b_startotherroutine(bau_962_bauer,"Start");
-		b_startotherroutine(bau_964_bauer,"Start");
-		b_startotherroutine(bau_965_bauer,"Start");
-		b_startotherroutine(bau_966_bauer,"Start");
-		b_startotherroutine(bau_967_bauer,"Start");
-		b_startotherroutine(bau_968_bauer,"Start");
-		b_startotherroutine(bau_969_bauer,"Start");
-		DIA_MALAK_HEILUNG_ONETIME = TRUE;
+		B_StartOtherRoutine(BAU_962_Bauer,"Start");
+		B_StartOtherRoutine(BAU_964_Bauer,"Start");
+		B_StartOtherRoutine(BAU_965_Bauer,"Start");
+		B_StartOtherRoutine(BAU_966_Bauer,"Start");
+		B_StartOtherRoutine(BAU_967_Bauer,"Start");
+		B_StartOtherRoutine(BAU_968_Bauer,"Start");
+		B_StartOtherRoutine(BAU_969_Bauer,"Start");
+		DIA_Malak_Heilung_oneTime = TRUE;
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Malak_Heilung_08_02");	//Zostaw mnie w spokoju, magu. Sam sobie poradzê.
-		b_npcclearobsessionbydmt(self);
+		B_NpcClearObsessionByDMT(self);
 	};
 };
 
 
-instance DIA_MALAK_PERMCASTLE(C_INFO)
+instance DIA_Malak_PERMCASTLE(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 31;
-	condition = dia_malak_permcastle_condition;
-	information = dia_malak_permcastle_info;
+	condition = DIA_Malak_PERMCASTLE_Condition;
+	information = DIA_Malak_PERMCASTLE_Info;
 	permanent = TRUE;
 	description = "Jak ci siê tu ¿yje?";
 };
 
 
-func int dia_malak_permcastle_condition()
+func int DIA_Malak_PERMCASTLE_Condition()
 {
-	if((Npc_GetDistToWP(self,"CASTLEMINE") < 4000) && (MIS_GETMALAKBACK != LOG_SUCCESS) && Npc_KnowsInfo(other,dia_malak_fleefrompass) && (NPCOBSESSEDBYDMT_MALAK == FALSE) && (hero.guild != GIL_KDF) && (KAPITEL >= 3))
+	if((Npc_GetDistToWP(self,"CASTLEMINE") < 4000) && (MIS_GetMalakBack != LOG_SUCCESS) && Npc_KnowsInfo(other,DIA_Malak_FLEEFROMPASS) && (NpcObsessedByDMT_Malak == FALSE) && (hero.guild != GIL_KDF) && (Kapitel >= 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_permcastle_info()
+func void DIA_Malak_PERMCASTLE_Info()
 {
 	AI_Output(other,self,"DIA_Malak_PERMCASTLE_15_00");	//Jak ci siê tu ¿yje?
 	AI_Output(self,other,"DIA_Malak_PERMCASTLE_08_01");	//Muszê tylko uwa¿aæ na bandytów. Z dwojga z³ego - wolê to.
 };
 
 
-instance DIA_MALAK_BACKTOBENGAR(C_INFO)
+instance DIA_Malak_BACKTOBENGAR(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 31;
-	condition = dia_malak_backtobengar_condition;
-	information = dia_malak_backtobengar_info;
+	condition = DIA_Malak_BACKTOBENGAR_Condition;
+	information = DIA_Malak_BACKTOBENGAR_Info;
 	permanent = TRUE;
 	description = "Bengar ciê potrzebuje.";
 };
 
 
-func int dia_malak_backtobengar_condition()
+func int DIA_Malak_BACKTOBENGAR_Condition()
 {
-	if((MIS_GETMALAKBACK == LOG_RUNNING) && Npc_KnowsInfo(other,dia_malak_fleefrompass) && (Npc_IsDead(bengar) == FALSE) && (NPCOBSESSEDBYDMT_MALAK == FALSE) && (hero.guild != GIL_KDF) && (KAPITEL >= 3))
+	if((MIS_GetMalakBack == LOG_Running) && Npc_KnowsInfo(other,DIA_Malak_FLEEFROMPASS) && (Npc_IsDead(Bengar) == FALSE) && (NpcObsessedByDMT_Malak == FALSE) && (hero.guild != GIL_KDF) && (Kapitel >= 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_backtobengar_info()
+func void DIA_Malak_BACKTOBENGAR_Info()
 {
 	AI_Output(other,self,"DIA_Malak_BACKTOBENGAR_15_00");	//Bengar ciê potrzebuje. Chce, abyœ wróci³ na jego farmê.
 	AI_Output(self,other,"DIA_Malak_BACKTOBENGAR_08_01");	//Jeszcze nie zwariowa³em. Tam jest niebezpiecznie! Nigdzie siê st¹d nie ruszam.
-	b_logentry(TOPIC_BENGARALLEIN,"Malak nie chce powróciæ na farmê Bengara, poniewa¿ nie ma ona ¿adnej ochrony.");
-	if(MIS_BENGARSHELPINGSLD == LOG_SUCCESS)
+	B_LogEntry(TOPIC_BengarALLEIN,"Malak nie chce powróciæ na farmê Bengara, poniewa¿ nie ma ona ¿adnej ochrony.");
+	if(MIS_BengarsHelpingSLD == LOG_SUCCESS)
 	{
 		AI_Output(other,self,"DIA_Malak_BACKTOBENGAR_15_02");	//Zatrudni³em najemnika, który bêdzie pilnowa³ farmy.
 		AI_Output(self,other,"DIA_Malak_BACKTOBENGAR_08_03");	//To zupe³nie co innego. Ale zaraz, kto bêdzie go op³aca³?
 		AI_Output(other,self,"DIA_Malak_BACKTOBENGAR_15_04");	//To ju¿ mój problem.
 		AI_Output(self,other,"DIA_Malak_BACKTOBENGAR_08_05");	//Chyba odebra³eœ mi wszystkie argumenty, prawda?
-		Info_AddChoice(dia_malak_backtobengar,"Nie.",dia_malak_backtobengar_los);
+		Info_AddChoice(DIA_Malak_BACKTOBENGAR,"Nie.",DIA_Malak_BACKTOBENGAR_los);
 	};
 };
 
-func void dia_malak_backtobengar_los()
+func void DIA_Malak_BACKTOBENGAR_los()
 {
 	AI_Output(other,self,"DIA_Malak_BACKTOBENGAR_los_15_00");	//Prawda.
 	AI_Output(self,other,"DIA_Malak_BACKTOBENGAR_los_08_01");	//Dobrze. A zatem wrócê na farmê. Mam nadziejê, ¿e ten twój najemnik zna siê na rzeczy.
-	MIS_GETMALAKBACK = LOG_SUCCESS;
-	b_giveplayerxp(XP_MALAK_BACKTOBENGAR);
-	b_npcclearobsessionbydmt(self);
+	MIS_GetMalakBack = LOG_SUCCESS;
+	B_GivePlayerXP(XP_Malak_BACKTOBENGAR);
+	B_NpcClearObsessionByDMT(self);
 	Npc_ExchangeRoutine(self,"Start");
-	b_startotherroutine(bau_962_bauer,"Start");
-	b_startotherroutine(bau_964_bauer,"Start");
-	b_startotherroutine(bau_965_bauer,"Start");
-	b_startotherroutine(bau_966_bauer,"Start");
-	b_startotherroutine(bau_967_bauer,"Start");
-	b_startotherroutine(bau_968_bauer,"Start");
-	b_startotherroutine(bau_969_bauer,"Start");
+	B_StartOtherRoutine(BAU_962_Bauer,"Start");
+	B_StartOtherRoutine(BAU_964_Bauer,"Start");
+	B_StartOtherRoutine(BAU_965_Bauer,"Start");
+	B_StartOtherRoutine(BAU_966_Bauer,"Start");
+	B_StartOtherRoutine(BAU_967_Bauer,"Start");
+	B_StartOtherRoutine(BAU_968_Bauer,"Start");
+	B_StartOtherRoutine(BAU_969_Bauer,"Start");
 };
 
 
-instance DIA_MALAK_BACK(C_INFO)
+instance DIA_Malak_BACK(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 32;
-	condition = dia_malak_back_condition;
-	information = dia_malak_back_info;
+	condition = DIA_Malak_BACK_Condition;
+	information = DIA_Malak_BACK_Info;
 	permanent = TRUE;
 	description = "Czy teraz zamieszkasz na farmie Bengara?";
 };
 
 
-func int dia_malak_back_condition()
+func int DIA_Malak_BACK_Condition()
 {
-	if((MIS_GETMALAKBACK == LOG_SUCCESS) && (NPCOBSESSEDBYDMT_MALAK == FALSE) && (hero.guild != GIL_KDF) && (KAPITEL >= 3))
+	if((MIS_GetMalakBack == LOG_SUCCESS) && (NpcObsessedByDMT_Malak == FALSE) && (hero.guild != GIL_KDF) && (Kapitel >= 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_back_info()
+func void DIA_Malak_BACK_Info()
 {
 	AI_Output(other,self,"DIA_Malak_BACK_15_00");	//Czy teraz zamieszkasz na farmie Bengara?
 	AI_Output(self,other,"DIA_Malak_BACK_08_01");	//Pewnie. Dodatkowa para r¹k na pewno siê tam przyda. Razem jakoœ damy sobie radê.
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_MALAK_KAP4_EXIT(C_INFO)
+instance DIA_Malak_KAP4_EXIT(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 999;
-	condition = dia_malak_kap4_exit_condition;
-	information = dia_malak_kap4_exit_info;
+	condition = DIA_Malak_KAP4_EXIT_Condition;
+	information = DIA_Malak_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_malak_kap4_exit_condition()
+func int DIA_Malak_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_kap4_exit_info()
+func void DIA_Malak_KAP4_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_MALAK_KAP5_EXIT(C_INFO)
+instance DIA_Malak_KAP5_EXIT(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 999;
-	condition = dia_malak_kap5_exit_condition;
-	information = dia_malak_kap5_exit_info;
+	condition = DIA_Malak_KAP5_EXIT_Condition;
+	information = DIA_Malak_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_malak_kap5_exit_condition()
+func int DIA_Malak_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_kap5_exit_info()
+func void DIA_Malak_KAP5_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_MALAK_KAP6_EXIT(C_INFO)
+instance DIA_Malak_KAP6_EXIT(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 999;
-	condition = dia_malak_kap6_exit_condition;
-	information = dia_malak_kap6_exit_info;
+	condition = DIA_Malak_KAP6_EXIT_Condition;
+	information = DIA_Malak_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_malak_kap6_exit_condition()
+func int DIA_Malak_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_malak_kap6_exit_info()
+func void DIA_Malak_KAP6_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_MALAK_PICKPOCKET(C_INFO)
+instance DIA_Malak_PICKPOCKET(C_Info)
 {
-	npc = bau_963_malak;
+	npc = BAU_963_Malak;
 	nr = 900;
-	condition = dia_malak_pickpocket_condition;
-	information = dia_malak_pickpocket_info;
+	condition = DIA_Malak_PICKPOCKET_Condition;
+	information = DIA_Malak_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_malak_pickpocket_condition()
+func int DIA_Malak_PICKPOCKET_Condition()
 {
-	return c_beklauen(43,40);
+	return C_Beklauen(43,40);
 };
 
-func void dia_malak_pickpocket_info()
+func void DIA_Malak_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_malak_pickpocket);
-	Info_AddChoice(dia_malak_pickpocket,DIALOG_BACK,dia_malak_pickpocket_back);
-	Info_AddChoice(dia_malak_pickpocket,DIALOG_PICKPOCKET,dia_malak_pickpocket_doit);
+	Info_ClearChoices(DIA_Malak_PICKPOCKET);
+	Info_AddChoice(DIA_Malak_PICKPOCKET,Dialog_Back,DIA_Malak_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Malak_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Malak_PICKPOCKET_DoIt);
 };
 
-func void dia_malak_pickpocket_doit()
+func void DIA_Malak_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_malak_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Malak_PICKPOCKET);
 };
 
-func void dia_malak_pickpocket_back()
+func void DIA_Malak_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_malak_pickpocket);
+	Info_ClearChoices(DIA_Malak_PICKPOCKET);
 };
 

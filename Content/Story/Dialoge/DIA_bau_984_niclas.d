@@ -1,43 +1,43 @@
 
-instance DIA_NICLAS_EXIT(C_INFO)
+instance DIA_Niclas_EXIT(C_Info)
 {
-	npc = bau_984_niclas;
+	npc = BAU_984_Niclas;
 	nr = 999;
-	condition = dia_niclas_exit_condition;
-	information = dia_niclas_exit_info;
+	condition = DIA_Niclas_EXIT_Condition;
+	information = DIA_Niclas_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_niclas_exit_condition()
+func int DIA_Niclas_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_niclas_exit_info()
+func void DIA_Niclas_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_NICLAS_HELLO(C_INFO)
+instance DIA_Niclas_Hello(C_Info)
 {
-	npc = bau_984_niclas;
+	npc = BAU_984_Niclas;
 	nr = 1;
-	condition = dia_niclas_hello_condition;
-	information = dia_niclas_hello_info;
+	condition = DIA_Niclas_Hello_Condition;
+	information = DIA_Niclas_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_niclas_hello_condition()
+func int DIA_Niclas_Hello_Condition()
 {
 	return TRUE;
 };
 
-func void dia_niclas_hello_info()
+func void DIA_Niclas_Hello_Info()
 {
 	AI_Output(self,other,"DIA_Niclas_Hello_03_00");	//Ty te¿ uciek³eœ?
 	AI_Output(other,self,"DIA_Niclas_Hello_15_01");	//Dlaczego tak uwa¿asz?
@@ -45,92 +45,92 @@ func void dia_niclas_hello_info()
 };
 
 
-instance DIA_NICLAS_HAVEALOOK(C_INFO)
+instance DIA_Niclas_HaveALook(C_Info)
 {
-	npc = bau_984_niclas;
+	npc = BAU_984_Niclas;
 	nr = 1;
-	condition = dia_niclas_havealook_condition;
-	information = dia_niclas_havealook_info;
+	condition = DIA_Niclas_HaveALook_Condition;
+	information = DIA_Niclas_HaveALook_Info;
 	permanent = FALSE;
 	description = "Chcê siê tylko trochê rozejrzeæ.";
 };
 
 
-func int dia_niclas_havealook_condition()
+func int DIA_Niclas_HaveALook_Condition()
 {
 	return TRUE;
 };
 
-func void dia_niclas_havealook_info()
+func void DIA_Niclas_HaveALook_Info()
 {
 	AI_Output(other,self,"DIA_Niclas_HaveALook_15_00");	//Chcê siê tylko trochê rozejrzeæ.
 	AI_Output(self,other,"DIA_Niclas_HaveALook_03_01");	//Proszê bardzo. Mo¿e kawa³ek pieczystego?
-	CreateInvItems(self,itfomutton,1);
-	Info_ClearChoices(dia_niclas_havealook);
-	Info_AddChoice(dia_niclas_havealook,"Nie, dziêkujê.",dia_niclas_havealook_no);
-	Info_AddChoice(dia_niclas_havealook,"Chêtnie.",dia_niclas_havealook_yes);
+	CreateInvItems(self,ItFoMutton,1);
+	Info_ClearChoices(DIA_Niclas_HaveALook);
+	Info_AddChoice(DIA_Niclas_HaveALook,"Nie, dziêkujê.",DIA_Niclas_HaveALook_No);
+	Info_AddChoice(DIA_Niclas_HaveALook,"Chêtnie.",DIA_Niclas_HaveALook_Yes);
 };
 
-func void dia_niclas_havealook_no()
+func void DIA_Niclas_HaveALook_No()
 {
 	AI_Output(other,self,"DIA_Niclas_HaveALook_No_15_00");	//Nie, dziêkujê.
 	AI_Output(self,other,"DIA_Niclas_HaveALook_No_03_01");	//Czuj siê jak u siebie. Mam nadzieje, ¿e nie bêdzie ci przeszkadzaæ, jeœli coœ zjem.
-	b_useitem(self,4904);
-	Info_ClearChoices(dia_niclas_havealook);
+	B_UseItem(self,ItFoMutton);
+	Info_ClearChoices(DIA_Niclas_HaveALook);
 };
 
-func void dia_niclas_havealook_yes()
+func void DIA_Niclas_HaveALook_Yes()
 {
 	AI_Output(other,self,"DIA_Niclas_HaveALook_Yes_15_00");	//Chêtnie.
 	AI_Output(self,other,"DIA_Niclas_HaveALook_Yes_03_01");	//Proszê, najprzedniejszy udziec kretoszczura. Wed³ug mojego w³asnego przepisu.
-	b_giveinvitems(self,other,4904,1);
-	Info_ClearChoices(dia_niclas_havealook);
+	B_GiveInvItems(self,other,ItFoMutton,1);
+	Info_ClearChoices(DIA_Niclas_HaveALook);
 };
 
 
-instance DIA_NICLAS_WHYHERE(C_INFO)
+instance DIA_Niclas_WhyHere(C_Info)
 {
-	npc = bau_984_niclas;
+	npc = BAU_984_Niclas;
 	nr = 2;
-	condition = dia_niclas_whyhere_condition;
-	information = dia_niclas_whyhere_info;
+	condition = DIA_Niclas_WhyHere_Condition;
+	information = DIA_Niclas_WhyHere_Info;
 	permanent = FALSE;
 	description = "Wiêc co tu w³aœciwie robisz?";
 };
 
 
-func int dia_niclas_whyhere_condition()
+func int DIA_Niclas_WhyHere_Condition()
 {
 	return TRUE;
 };
 
-func void dia_niclas_whyhere_info()
+func void DIA_Niclas_WhyHere_Info()
 {
 	AI_Output(other,self,"DIA_Niclas_WhyHere_15_00");	//Wiêc co tu w³aœciwie robisz?
 	AI_Output(self,other,"DIA_Niclas_WhyHere_03_01");	//Jedynie tutaj odnajdujê spokój. W mieœcie czujê siê zniewolony i zaszczuty.
 };
 
 
-instance DIA_NICLAS_SHOULDNTWORK(C_INFO)
+instance DIA_Niclas_ShouldntWork(C_Info)
 {
-	npc = bau_984_niclas;
+	npc = BAU_984_Niclas;
 	nr = 2;
-	condition = dia_niclas_shouldntwork_condition;
-	information = dia_niclas_shouldntwork_info;
+	condition = DIA_Niclas_ShouldntWork_Condition;
+	information = DIA_Niclas_ShouldntWork_Info;
 	permanent = FALSE;
 	description = "Nie musisz pracowaæ?";
 };
 
 
-func int dia_niclas_shouldntwork_condition()
+func int DIA_Niclas_ShouldntWork_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_niclas_whyhere))
+	if(Npc_KnowsInfo(other,DIA_Niclas_WhyHere))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_niclas_shouldntwork_info()
+func void DIA_Niclas_ShouldntWork_Info()
 {
 	AI_Output(other,self,"DIA_Niclas_ShouldntWork_15_00");	//Nie musisz pracowaæ?
 	AI_Output(self,other,"DIA_Niclas_ShouldntWork_03_01");	//Wszystko, czego potrzebujê, zdobywam sam. Robiê strza³y, a natura dostarcza mi po¿ywienia.
@@ -139,128 +139,128 @@ func void dia_niclas_shouldntwork_info()
 };
 
 
-instance DIA_NICLAS_CANTEACHME(C_INFO)
+instance DIA_Niclas_CanTeachMe(C_Info)
 {
-	npc = bau_984_niclas;
+	npc = BAU_984_Niclas;
 	nr = 2;
-	condition = dia_niclas_canteachme_condition;
-	information = dia_niclas_canteachme_info;
+	condition = DIA_Niclas_CanTeachMe_Condition;
+	information = DIA_Niclas_CanTeachMe_Info;
 	permanent = FALSE;
 	description = "Mo¿e móg³byœ mnie czegoœ nauczyæ.";
 };
 
 
-func int dia_niclas_canteachme_condition()
+func int DIA_Niclas_CanTeachMe_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_niclas_shouldntwork))
+	if(Npc_KnowsInfo(other,DIA_Niclas_ShouldntWork))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_niclas_canteachme_info()
+func void DIA_Niclas_CanTeachMe_Info()
 {
 	AI_Output(other,self,"DIA_Niclas_CanTeachMe_15_00");	//Mo¿e móg³byœ mnie czegoœ nauczyæ.
 	AI_Output(self,other,"DIA_Niclas_CanTeachMe_03_01");	//W³aœciwie, czemu nie. Mogê ci pokazaæ, jak siê pos³ugiwaæ ³ukiem.
-	Log_CreateTopic(TOPIC_TEACHER,LOG_NOTE);
-	b_logentry(TOPIC_TEACHER,"Niclas mo¿e mi pokazaæ, jak skuteczniej pos³ugiwaæ siê ³ukiem.");
+	Log_CreateTopic(TOPIC_Teacher,LOG_NOTE);
+	B_LogEntry(TOPIC_Teacher,"Niclas mo¿e mi pokazaæ, jak skuteczniej pos³ugiwaæ siê ³ukiem.");
 };
 
 
-instance DIA_NICLAS_TEACH(C_INFO)
+instance DIA_Niclas_Teach(C_Info)
 {
-	npc = bau_984_niclas;
+	npc = BAU_984_Niclas;
 	nr = 2;
-	condition = dia_niclas_teach_condition;
-	information = dia_niclas_teach_info;
+	condition = DIA_Niclas_Teach_Condition;
+	information = DIA_Niclas_Teach_Info;
 	permanent = TRUE;
 	description = "Poka¿ mi proszê, jak siê pos³ugiwaæ ³ukiem.";
 };
 
 
-func int dia_niclas_teach_condition()
+func int DIA_Niclas_Teach_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_niclas_canteachme))
+	if(Npc_KnowsInfo(other,DIA_Niclas_CanTeachMe))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_niclas_teach_info()
+func void DIA_Niclas_Teach_Info()
 {
 	AI_Output(other,self,"DIA_Niclas_Teach_15_00");	//Poka¿ mi proszê, jak siê pos³ugiwaæ ³ukiem.
-	if(other.hitchance[NPC_TALENT_BOW] >= 30)
+	if(other.HitChance[NPC_TALENT_BOW] >= 30)
 	{
 		AI_Output(self,other,"DIA_Niclas_Teach_03_01");	//Nauczy³em ciê ju¿ wszystkiego, co sam umia³em. Musisz sobie poszukaæ innego nauczyciela.
 	}
 	else
 	{
-		Info_ClearChoices(dia_niclas_teach);
-		Info_AddChoice(dia_niclas_teach,DIALOG_BACK,dia_niclas_teach_back);
-		Info_AddChoice(dia_niclas_teach,b_buildlearnstring(PRINT_LEARNBOW1,b_getlearncosttalent(other,NPC_TALENT_BOW)),dia_niclas_teach_bow_1);
-		Info_AddChoice(dia_niclas_teach,b_buildlearnstring(PRINT_LEARNBOW5,b_getlearncosttalent(other,NPC_TALENT_BOW) * 5),dia_niclas_teach_bow_5);
+		Info_ClearChoices(DIA_Niclas_Teach);
+		Info_AddChoice(DIA_Niclas_Teach,Dialog_Back,DIA_Niclas_Teach_Back);
+		Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBow1,B_GetLearnCostTalent(other,NPC_TALENT_BOW)),DIA_Niclas_Teach_BOW_1);
+		Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBow5,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BOW_5);
 	};
 };
 
-func void dia_niclas_teach_back()
+func void DIA_Niclas_Teach_Back()
 {
-	if(other.hitchance[NPC_TALENT_BOW] >= 30)
+	if(other.HitChance[NPC_TALENT_BOW] >= 30)
 	{
 		AI_Output(self,other,"DIA_Niclas_Teach_03_00");	//Niczego wiêcej nie mogê ciê ju¿ nauczyæ.
 	};
-	Info_ClearChoices(dia_niclas_teach);
+	Info_ClearChoices(DIA_Niclas_Teach);
 };
 
-func void dia_niclas_teach_bow_1()
+func void DIA_Niclas_Teach_BOW_1()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_BOW,1,30);
-	Info_ClearChoices(dia_niclas_teach);
-	Info_AddChoice(dia_niclas_teach,DIALOG_BACK,dia_niclas_teach_back);
-	Info_AddChoice(dia_niclas_teach,b_buildlearnstring(PRINT_LEARNBOW1,b_getlearncosttalent(other,NPC_TALENT_BOW)),dia_niclas_teach_bow_1);
-	Info_AddChoice(dia_niclas_teach,b_buildlearnstring(PRINT_LEARNBOW5,b_getlearncosttalent(other,NPC_TALENT_BOW) * 5),dia_niclas_teach_bow_5);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_BOW,1,30);
+	Info_ClearChoices(DIA_Niclas_Teach);
+	Info_AddChoice(DIA_Niclas_Teach,Dialog_Back,DIA_Niclas_Teach_Back);
+	Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBow1,B_GetLearnCostTalent(other,NPC_TALENT_BOW)),DIA_Niclas_Teach_BOW_1);
+	Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBow5,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BOW_5);
 };
 
-func void dia_niclas_teach_bow_5()
+func void DIA_Niclas_Teach_BOW_5()
 {
-	b_teachfighttalentpercent(self,other,NPC_TALENT_BOW,5,30);
-	Info_ClearChoices(dia_niclas_teach);
-	Info_AddChoice(dia_niclas_teach,DIALOG_BACK,dia_niclas_teach_back);
-	Info_AddChoice(dia_niclas_teach,b_buildlearnstring(PRINT_LEARNBOW1,b_getlearncosttalent(other,NPC_TALENT_BOW)),dia_niclas_teach_bow_1);
-	Info_AddChoice(dia_niclas_teach,b_buildlearnstring(PRINT_LEARNBOW5,b_getlearncosttalent(other,NPC_TALENT_BOW) * 5),dia_niclas_teach_bow_5);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_BOW,5,30);
+	Info_ClearChoices(DIA_Niclas_Teach);
+	Info_AddChoice(DIA_Niclas_Teach,Dialog_Back,DIA_Niclas_Teach_Back);
+	Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBow1,B_GetLearnCostTalent(other,NPC_TALENT_BOW)),DIA_Niclas_Teach_BOW_1);
+	Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBow5,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BOW_5);
 };
 
 
-instance DIA_NICLAS_PICKPOCKET(C_INFO)
+instance DIA_Niclas_PICKPOCKET(C_Info)
 {
-	npc = bau_984_niclas;
+	npc = BAU_984_Niclas;
 	nr = 900;
-	condition = dia_niclas_pickpocket_condition;
-	information = dia_niclas_pickpocket_info;
+	condition = DIA_Niclas_PICKPOCKET_Condition;
+	information = DIA_Niclas_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_niclas_pickpocket_condition()
+func int DIA_Niclas_PICKPOCKET_Condition()
 {
-	return c_beklauen(27,20);
+	return C_Beklauen(27,20);
 };
 
-func void dia_niclas_pickpocket_info()
+func void DIA_Niclas_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_niclas_pickpocket);
-	Info_AddChoice(dia_niclas_pickpocket,DIALOG_BACK,dia_niclas_pickpocket_back);
-	Info_AddChoice(dia_niclas_pickpocket,DIALOG_PICKPOCKET,dia_niclas_pickpocket_doit);
+	Info_ClearChoices(DIA_Niclas_PICKPOCKET);
+	Info_AddChoice(DIA_Niclas_PICKPOCKET,Dialog_Back,DIA_Niclas_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Niclas_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Niclas_PICKPOCKET_DoIt);
 };
 
-func void dia_niclas_pickpocket_doit()
+func void DIA_Niclas_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_niclas_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Niclas_PICKPOCKET);
 };
 
-func void dia_niclas_pickpocket_back()
+func void DIA_Niclas_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_niclas_pickpocket);
+	Info_ClearChoices(DIA_Niclas_PICKPOCKET);
 };
 

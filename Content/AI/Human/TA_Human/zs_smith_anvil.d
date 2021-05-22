@@ -1,8 +1,8 @@
 
-func void zs_smith_anvil()
+func void ZS_Smith_Anvil()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == FALSE)
 	{
@@ -10,16 +10,16 @@ func void zs_smith_anvil()
 	};
 };
 
-func int zs_smith_anvil_loop()
+func int ZS_Smith_Anvil_Loop()
 {
-	if(!c_bodystatecontains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSANVIL"))
+	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSANVIL"))
 	{
 		AI_UseMob(self,"BSANVIL",1);
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_smith_anvil_end()
+func void ZS_Smith_Anvil_End()
 {
 	AI_UseMob(self,"BSANVIL",-1);
 };

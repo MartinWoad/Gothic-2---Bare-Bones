@@ -1,10 +1,10 @@
 
-func void b_closetopics_hoshi()
+func void B_CloseTopics_Hoshi()
 {
-	b_closetopic(TOPIC_RESCUEBENNET,MIS_RESCUEBENNET,0,4);
-	b_closetopic(TOPIC_SHIP,0,MIS_READYFORCHAPTER6,6);
-	b_closetopic(TOPIC_CAPTAIN,0,SCGOTCAPTAIN,6);
-	b_closetopic(TOPIC_CREW,0,MIS_SHIPISFREE,6);
-	b_closetopic(TOPIC_CREW,0,MIS_READYFORCHAPTER6,6);
+	B_CloseTopic(TOPIC_RescueBennet,MIS_RescueBennet,0,4);
+	B_CloseTopic(Topic_Ship,0,MIS_ReadyforChapter6,6);
+	B_CloseTopic(Topic_Captain,0,SCGotCaptain,6);
+	B_CloseTopic(Topic_Crew,0,MIS_ShipIsFree,6);
+	B_CloseTopic(Topic_Crew,0,MIS_ReadyforChapter6,6);
 };
 

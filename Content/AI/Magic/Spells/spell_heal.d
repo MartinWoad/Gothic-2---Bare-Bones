@@ -1,37 +1,37 @@
 
-const int SPL_COST_PALLIGHTHEAL = 5;
-const int SPL_COST_PALMEDIUMHEAL = 10;
-const int SPL_COST_PALFULLHEAL = 15;
-const int SPL_COST_LIGHTHEAL = 5;
-const int SPL_COST_MEDIUMHEAL = 7;
-const int SPL_COST_FULLHEAL = 15;
-const int SPL_HEAL_PALLIGHTHEAL = 100;
-const int SPL_HEAL_PALMEDIUMHEAL = 200;
-const int SPL_HEAL_PALFULLHEAL = 400;
-const int SPL_HEAL_LIGHTHEAL = 100;
-const int SPL_HEAL_MEDIUMHEAL = 200;
-const int SPL_HEAL_FULLHEAL = 400;
+const int SPL_Cost_PalLightHeal = 5;
+const int SPL_Cost_PalMediumHeal = 10;
+const int SPL_Cost_PalFullHeal = 15;
+const int SPL_Cost_LightHeal = 5;
+const int SPL_Cost_MediumHeal = 7;
+const int SPL_Cost_FullHeal = 15;
+const int SPL_Heal_PalLightHeal = 100;
+const int SPL_Heal_PalMediumHeal = 200;
+const int SPL_Heal_PalFullHeal = 400;
+const int SPL_Heal_LightHeal = 100;
+const int SPL_Heal_MediumHeal = 200;
+const int SPL_Heal_FullHeal = 400;
 
-instance SPELL_HEAL(C_SPELL_PROTO)
+instance Spell_Heal(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	spelltype = SPELL_NEUTRAL;
-	targetcollectalgo = TARGET_COLLECT_CASTER;
-	canturnduringinvest = 0;
+	spellType = SPELL_NEUTRAL;
+	targetCollectAlgo = TARGET_COLLECT_CASTER;
+	canTurnDuringInvest = 0;
 };
 
-instance SPELL_PALHEAL(C_SPELL_PROTO)
+instance Spell_PalHeal(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	spelltype = SPELL_NEUTRAL;
-	targetcollectalgo = TARGET_COLLECT_CASTER;
-	canturnduringinvest = 0;
+	spellType = SPELL_NEUTRAL;
+	targetCollectAlgo = TARGET_COLLECT_CASTER;
+	canTurnDuringInvest = 0;
 };
 
 
-func int spell_logic_pallightheal(var int manainvested)
+func int Spell_Logic_PalLightHeal(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_PALLIGHTHEAL)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_PalLightHeal)
 	{
 		return SPL_SENDCAST;
 	}
@@ -41,9 +41,9 @@ func int spell_logic_pallightheal(var int manainvested)
 	};
 };
 
-func int spell_logic_palmediumheal(var int manainvested)
+func int Spell_Logic_PalMediumHeal(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_PALMEDIUMHEAL)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_PalMediumHeal)
 	{
 		return SPL_SENDCAST;
 	}
@@ -53,9 +53,9 @@ func int spell_logic_palmediumheal(var int manainvested)
 	};
 };
 
-func int spell_logic_palfullheal(var int manainvested)
+func int Spell_Logic_PalFullHeal(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_PALFULLHEAL)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_PalFullHeal)
 	{
 		return SPL_SENDCAST;
 	}
@@ -65,9 +65,9 @@ func int spell_logic_palfullheal(var int manainvested)
 	};
 };
 
-func int spell_logic_lightheal(var int manainvested)
+func int Spell_Logic_LightHeal(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_LIGHTHEAL)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_LightHeal)
 	{
 		return SPL_SENDCAST;
 	}
@@ -77,9 +77,9 @@ func int spell_logic_lightheal(var int manainvested)
 	};
 };
 
-func int spell_logic_mediumheal(var int manainvested)
+func int Spell_Logic_MediumHeal(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_MEDIUMHEAL)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_MediumHeal)
 	{
 		return SPL_SENDCAST;
 	}
@@ -89,9 +89,9 @@ func int spell_logic_mediumheal(var int manainvested)
 	};
 };
 
-func int spell_logic_fullheal(var int manainvested)
+func int Spell_Logic_FullHeal(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_FULLHEAL)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_FullHeal)
 	{
 		return SPL_SENDCAST;
 	}
@@ -101,46 +101,46 @@ func int spell_logic_fullheal(var int manainvested)
 	};
 };
 
-func void spell_cast_heal()
+func void Spell_Cast_Heal()
 {
-	if(Npc_GetActiveSpell(self) == SPL_LIGHTHEAL)
+	if(Npc_GetActiveSpell(self) == SPL_LightHeal)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_LIGHTHEAL;
-		Npc_ChangeAttribute(self,ATR_HITPOINTS,SPL_HEAL_LIGHTHEAL);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_LightHeal;
+		Npc_ChangeAttribute(self,ATR_HITPOINTS,SPL_Heal_LightHeal);
 		return;
 	};
-	if(Npc_GetActiveSpell(self) == SPL_MEDIUMHEAL)
+	if(Npc_GetActiveSpell(self) == SPL_MediumHeal)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_MEDIUMHEAL;
-		Npc_ChangeAttribute(self,ATR_HITPOINTS,SPL_HEAL_MEDIUMHEAL);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_MediumHeal;
+		Npc_ChangeAttribute(self,ATR_HITPOINTS,SPL_Heal_MediumHeal);
 		return;
 	};
-	if(Npc_GetActiveSpell(self) == SPL_FULLHEAL)
+	if(Npc_GetActiveSpell(self) == SPL_FullHeal)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_FULLHEAL;
-		Npc_ChangeAttribute(self,ATR_HITPOINTS,SPL_HEAL_FULLHEAL);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_FullHeal;
+		Npc_ChangeAttribute(self,ATR_HITPOINTS,SPL_Heal_FullHeal);
 		return;
 	};
 };
 
-func void spell_cast_palheal()
+func void Spell_Cast_PalHeal()
 {
-	if(Npc_GetActiveSpell(self) == SPL_PALLIGHTHEAL)
+	if(Npc_GetActiveSpell(self) == SPL_PalLightHeal)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_PALLIGHTHEAL;
-		Npc_ChangeAttribute(self,ATR_HITPOINTS,SPL_HEAL_PALLIGHTHEAL);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_PalLightHeal;
+		Npc_ChangeAttribute(self,ATR_HITPOINTS,SPL_Heal_PalLightHeal);
 		return;
 	};
-	if(Npc_GetActiveSpell(self) == SPL_PALMEDIUMHEAL)
+	if(Npc_GetActiveSpell(self) == SPL_PalMediumHeal)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_PALMEDIUMHEAL;
-		Npc_ChangeAttribute(self,ATR_HITPOINTS,SPL_HEAL_PALMEDIUMHEAL);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_PalMediumHeal;
+		Npc_ChangeAttribute(self,ATR_HITPOINTS,SPL_Heal_PalMediumHeal);
 		return;
 	};
-	if(Npc_GetActiveSpell(self) == SPL_PALFULLHEAL)
+	if(Npc_GetActiveSpell(self) == SPL_PalFullHeal)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_PALFULLHEAL;
-		Npc_ChangeAttribute(self,ATR_HITPOINTS,SPL_HEAL_PALFULLHEAL);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_PalFullHeal;
+		Npc_ChangeAttribute(self,ATR_HITPOINTS,SPL_Heal_PalFullHeal);
 		return;
 	};
 };

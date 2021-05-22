@@ -1,49 +1,49 @@
 
-instance DIA_IGARANZ_KAP1_EXIT(C_INFO)
+instance DIA_Igaranz_Kap1_EXIT(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 999;
-	condition = dia_igaraz_kap1_exit_condition;
-	information = dia_igaraz_kap1_exit_info;
+	condition = DIA_Igaraz_Kap1_EXIT_Condition;
+	information = DIA_Igaraz_Kap1_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_igaraz_kap1_exit_condition()
+func int DIA_Igaraz_Kap1_EXIT_Condition()
 {
-	if(KAPITEL == 1)
+	if(Kapitel == 1)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_kap1_exit_info()
+func void DIA_Igaraz_Kap1_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_IGARANZ_HELLO(C_INFO)
+instance DIA_Igaranz_Hello(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 2;
-	condition = dia_igaraz_hello_condition;
-	information = dia_igaraz_hello_info;
+	condition = DIA_Igaraz_Hello_Condition;
+	information = DIA_Igaraz_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_igaraz_hello_condition()
+func int DIA_Igaraz_Hello_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (KNOWS_FIRE_CONTEST == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (KNOWS_FIRE_CONTEST == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_hello_info()
+func void DIA_Igaraz_Hello_Info()
 {
 	if(other.guild == GIL_NOV)
 	{
@@ -56,53 +56,53 @@ func void dia_igaraz_hello_info()
 };
 
 
-instance DIA_IGARAZ_WURST(C_INFO)
+instance DIA_Igaraz_Wurst(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 2;
-	condition = dia_igaraz_wurst_condition;
-	information = dia_igaraz_wurst_info;
+	condition = DIA_Igaraz_Wurst_Condition;
+	information = DIA_Igaraz_Wurst_Info;
 	permanent = FALSE;
 	description = "Jestem zajêty roznoszeniem kie³bas.";
 };
 
 
-func int dia_igaraz_wurst_condition()
+func int DIA_Igaraz_Wurst_Condition()
 {
-	if((KAPITEL < 3) && (MIS_GORAXESSEN == LOG_RUNNING) && (Npc_HasItems(self,itfo_schafswurst) == 0) && (Npc_HasItems(other,itfo_schafswurst) >= 1))
+	if((Kapitel < 3) && (MIS_GoraxEssen == LOG_Running) && (Npc_HasItems(self,ItFo_Schafswurst) == 0) && (Npc_HasItems(other,ItFo_Schafswurst) >= 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_wurst_info()
+func void DIA_Igaraz_Wurst_Info()
 {
-	var string novizetext;
-	var string novizeleft;
+	var string NovizeText;
+	var string NovizeLeft;
 	AI_Output(other,self,"DIA_Igaraz_Wurst_15_00");	//Jestem zajêty roznoszeniem kie³bas.
 	AI_Output(self,other,"DIA_Igaraz_Wurst_13_01");	//A zatem pracujesz dla Goraxa, tak? Dobrze, poproszê o kie³basê.
-	b_giveinvitems(other,self,5687,1);
-	WURST_GEGEBEN = WURST_GEGEBEN + 1;
-	CreateInvItems(self,itfo_sausage,1);
-	b_useitem(self,4914);
-	novizeleft = IntToString(13 - WURST_GEGEBEN);
-	novizetext = ConcatStrings(novizeleft,PRINT_NOVIZENLEFT);
-	AI_PrintScreen(novizetext,-1,YPOS_GOLDGIVEN,FONT_SCREENSMALL,3);
+	B_GiveInvItems(other,self,ItFo_Schafswurst,1);
+	Wurst_Gegeben = Wurst_Gegeben + 1;
+	CreateInvItems(self,ItFo_Sausage,1);
+	B_UseItem(self,ItFo_Sausage);
+	NovizeLeft = IntToString(13 - Wurst_Gegeben);
+	NovizeText = ConcatStrings(NovizeLeft,PRINT_NovizenLeft);
+	AI_PrintScreen(NovizeText,-1,YPOS_GoldGiven,FONT_ScreenSmall,3);
 };
 
 
-instance DIA_IGARANZ_NOTWORK(C_INFO)
+instance DIA_Igaranz_NotWork(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 3;
-	condition = dia_igaraz_notwork_condition;
-	information = dia_igaraz_notwork_info;
+	condition = DIA_Igaraz_NotWork_Condition;
+	information = DIA_Igaraz_NotWork_Info;
 	permanent = FALSE;
 	description = "Dlaczego nie pracujesz?";
 };
 
 
-func int dia_igaraz_notwork_condition()
+func int DIA_Igaraz_NotWork_Condition()
 {
 	if((Npc_GetDistToWP(self,"NW_MONASTERY_GRASS_01") <= 500) && (KNOWS_FIRE_CONTEST == FALSE) && (other.guild == GIL_NOV))
 	{
@@ -110,7 +110,7 @@ func int dia_igaraz_notwork_condition()
 	};
 };
 
-func void dia_igaraz_notwork_info()
+func void DIA_Igaraz_NotWork_Info()
 {
 	AI_Output(other,self,"DIA_Igaranz_NotWork_15_00");	//Dlaczego nie pracujesz?
 	AI_Output(self,other,"DIA_Igaranz_NotWork_13_01");	//Dosta³em pozwolenie na studiowanie nauk Innosa. Zg³êbiam m¹droœæ zawart¹ w jego s³owach.
@@ -118,42 +118,42 @@ func void dia_igaraz_notwork_info()
 };
 
 
-instance DIA_IGARANZ_CHOOSEN(C_INFO)
+instance DIA_Igaranz_Choosen(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 2;
-	condition = dia_igaraz_choosen_condition;
-	information = dia_igaraz_choosen_info;
+	condition = DIA_Igaraz_Choosen_Condition;
+	information = DIA_Igaraz_Choosen_Info;
 	permanent = TRUE;
 	description = "Kim s¹ Wybrañcy?";
 };
 
 
-func int dia_igaraz_choosen_condition()
+func int DIA_Igaraz_Choosen_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_igaranz_notwork) && (Npc_GetDistToWP(self,"NW_MONASTERY_GRASS_01") <= 500) && (KNOWS_FIRE_CONTEST == FALSE) && (hero.guild == GIL_NOV))
+	if(Npc_KnowsInfo(other,DIA_Igaranz_NotWork) && (Npc_GetDistToWP(self,"NW_MONASTERY_GRASS_01") <= 500) && (KNOWS_FIRE_CONTEST == FALSE) && (hero.guild == GIL_NOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_choosen_info()
+func void DIA_Igaraz_Choosen_Info()
 {
 	AI_Output(other,self,"DIA_Igaranz_Choosen_15_00");	//Kim s¹ Wybrañcy?
 	AI_Output(self,other,"DIA_Igaranz_Choosen_13_01");	//Nowicjusze, których Innos wybra³ do Próby Magii.
 	AI_Output(self,other,"DIA_Igaranz_Choosen_13_02");	//Ten, kto j¹ przejdzie, zostaje wprowadzony do krêgu Magów Ognia.
-	Info_ClearChoices(dia_igaranz_choosen);
-	Info_AddChoice(dia_igaranz_choosen,DIALOG_BACK,dia_igaranz_choosen_back);
-	Info_AddChoice(dia_igaranz_choosen,"Czym jest Próba Magii?",dia_igaranz_choosen_testofmagic);
-	Info_AddChoice(dia_igaranz_choosen,"Jak mo¿na zostaæ Wybrañcem?",dia_igaranz_choosen_howchoosen);
+	Info_ClearChoices(DIA_Igaranz_Choosen);
+	Info_AddChoice(DIA_Igaranz_Choosen,Dialog_Back,DIA_Igaranz_Choosen_back);
+	Info_AddChoice(DIA_Igaranz_Choosen,"Czym jest Próba Magii?",DIA_Igaranz_Choosen_TestOfMagic);
+	Info_AddChoice(DIA_Igaranz_Choosen,"Jak mo¿na zostaæ Wybrañcem?",DIA_Igaranz_Choosen_HowChoosen);
 };
 
-func void dia_igaranz_choosen_back()
+func void DIA_Igaranz_Choosen_back()
 {
-	Info_ClearChoices(dia_igaranz_choosen);
+	Info_ClearChoices(DIA_Igaranz_Choosen);
 };
 
-func void dia_igaranz_choosen_testofmagic()
+func void DIA_Igaranz_Choosen_TestOfMagic()
 {
 	AI_Output(other,self,"DIA_Igaranz_Choosen_TestOfMagic_15_00");	//Czym jest Próba Magii?
 	AI_Output(self,other,"DIA_Igaranz_Choosen_TestOfMagic_13_01");	//To sprawdzian, który musz¹ przejœæ wybrani nowicjusze.
@@ -161,33 +161,33 @@ func void dia_igaranz_choosen_testofmagic()
 	AI_Output(self,other,"DIA_Igaranz_Choosen_TestOfMagic_13_03");	//Bior¹ w niej udzia³ wszyscy wybrani nowicjusze - jednak tylko jeden mo¿e z niej wyjœæ zwyciêsko.
 };
 
-func void dia_igaranz_choosen_howchoosen()
+func void DIA_Igaranz_Choosen_HowChoosen()
 {
 	AI_Output(other,self,"DIA_Igaranz_Choosen_HowChoosen_15_00");	//Jak mo¿na zostaæ Wybrañcem?
 	AI_Output(self,other,"DIA_Igaranz_Choosen_HowChoosen_13_01");	//Nie masz na to ¿adnego wp³ywu. Tylko Innos mo¿e wyznaczaæ nowicjuszy, a Najwy¿sza Rada jedynie oznajmia jego wolê.
 };
 
 
-instance DIA_IGARANZ_STUDYINNOS(C_INFO)
+instance DIA_Igaranz_StudyInnos(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 2;
-	condition = dia_igaraz_studyinnos_condition;
-	information = dia_igaraz_studyinnos_info;
+	condition = DIA_Igaraz_StudyInnos_Condition;
+	information = DIA_Igaraz_StudyInnos_Info;
 	permanent = FALSE;
 	description = "Jak mogê uzyskaæ dostêp do pism?";
 };
 
 
-func int dia_igaraz_studyinnos_condition()
+func int DIA_Igaraz_StudyInnos_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_igaranz_notwork) && (Npc_GetDistToWP(self,"NW_MONASTERY_GRASS_01") <= 500) && (PARLAN_ERLAUBNIS == FALSE) && (other.guild == GIL_NOV))
+	if(Npc_KnowsInfo(other,DIA_Igaranz_NotWork) && (Npc_GetDistToWP(self,"NW_MONASTERY_GRASS_01") <= 500) && (Parlan_Erlaubnis == FALSE) && (other.guild == GIL_NOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_studyinnos_info()
+func void DIA_Igaraz_StudyInnos_Info()
 {
 	AI_Output(other,self,"DIA_Igaranz_StudyInnos_15_00");	//Jak mogê uzyskaæ dostêp do pism?
 	AI_Output(self,other,"DIA_Igaranz_StudyInnos_13_01");	//Musisz siê dostaæ do biblioteki.
@@ -195,44 +195,44 @@ func void dia_igaraz_studyinnos_info()
 };
 
 
-instance DIA_IGARAZ_IMTHEMAN(C_INFO)
+instance DIA_Igaraz_IMTHEMAN(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 2;
-	condition = dia_igaraz_imtheman_condition;
-	information = dia_igaraz_imtheman_info;
+	condition = DIA_Igaraz_IMTHEMAN_Condition;
+	information = DIA_Igaraz_IMTHEMAN_Info;
 	important = TRUE;
 };
 
 
-func int dia_igaraz_imtheman_condition()
+func int DIA_Igaraz_IMTHEMAN_Condition()
 {
-	if((Npc_GetDistToWP(self,"NW_TAVERNE_TROLLAREA_05") <= 3500) && Npc_IsInState(self,zs_talk) && (other.guild == GIL_NOV))
+	if((Npc_GetDistToWP(self,"NW_TAVERNE_TROLLAREA_05") <= 3500) && Npc_IsInState(self,ZS_Talk) && (other.guild == GIL_NOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_imtheman_info()
+func void DIA_Igaraz_IMTHEMAN_Info()
 {
 	AI_Output(self,other,"DIA_Igaraz_IMTHEMAN_13_00");	//Sta³o siê. Innos wybra³ mnie i wezmê udzia³ w próbie magii.
 };
 
 
-instance DIA_IGARAZ_METOO(C_INFO)
+instance DIA_Igaraz_METOO(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 19;
-	condition = dia_igaraz_metoo_condition;
-	information = dia_igaraz_metoo_info;
+	condition = DIA_Igaraz_METOO_Condition;
+	information = DIA_Igaraz_METOO_Info;
 	permanent = FALSE;
 	description = "Ja te¿ biorê w niej udzia³.";
 };
 
 
-var int dia_igaraz_metoo_noperm;
+var int DIA_Igaraz_METOO_NOPERM;
 
-func int dia_igaraz_metoo_condition()
+func int DIA_Igaraz_METOO_Condition()
 {
 	if((Npc_GetDistToWP(self,"NW_TAVERNE_TROLLAREA_05") <= 3500) && (other.guild == GIL_NOV))
 	{
@@ -240,64 +240,64 @@ func int dia_igaraz_metoo_condition()
 	};
 };
 
-func void dia_igaraz_metoo_info()
+func void DIA_Igaraz_METOO_Info()
 {
 	AI_Output(other,self,"DIA_Igaraz_METOO_15_00");	//Ja te¿ biorê w niej udzia³. Za¿¹da³em Próby Ognia.
 	AI_Output(self,other,"DIA_Igaraz_METOO_13_01");	//Za¿¹da³eœ CZEGO? Albo jesteœ ulubieñcem Innosa, albo kompletnym szaleñcem.
 	AI_Output(other,self,"DIA_Igaraz_METOO_15_02");	//Zrobi³em wiele szalonych rzeczy, wiêc tym razem mo¿e te¿ mi siê jakoœ uda...
 	AI_Output(self,other,"DIA_Igaraz_METOO_13_03");	//Strze¿e mnie Innos - zatem nie mogê przegraæ.
-	Info_ClearChoices(dia_igaraz_metoo);
-	Info_AddChoice(dia_igaraz_metoo,DIALOG_BACK,dia_igaraz_metoo_back);
-	Info_AddChoice(dia_igaraz_metoo,"Mo¿e moglibyœmy po³¹czyæ si³y…",dia_igaraz_metoo_help);
-	Info_AddChoice(dia_igaraz_metoo,"Dowiedzia³eœ siê czegoœ nowego?",dia_igaraz_metoo_tell);
-	Info_AddChoice(dia_igaraz_metoo,"Widzia³eœ mo¿e Agona lub Ulfa?",dia_igaraz_metoo_agon);
+	Info_ClearChoices(DIA_Igaraz_METOO);
+	Info_AddChoice(DIA_Igaraz_METOO,Dialog_Back,DIA_Igaraz_METOO_BACK);
+	Info_AddChoice(DIA_Igaraz_METOO,"Mo¿e moglibyœmy po³¹czyæ si³y…",DIA_Igaraz_METOO_HELP);
+	Info_AddChoice(DIA_Igaraz_METOO,"Dowiedzia³eœ siê czegoœ nowego?",DIA_Igaraz_METOO_TELL);
+	Info_AddChoice(DIA_Igaraz_METOO,"Widzia³eœ mo¿e Agona lub Ulfa?",DIA_Igaraz_METOO_AGON);
 };
 
-func void dia_igaraz_metoo_back()
+func void DIA_Igaraz_METOO_BACK()
 {
-	Info_ClearChoices(dia_igaraz_metoo);
+	Info_ClearChoices(DIA_Igaraz_METOO);
 };
 
-func void dia_igaraz_metoo_tell()
+func void DIA_Igaraz_METOO_TELL()
 {
 	AI_Output(other,self,"DIA_Igaraz_METOO_TELL_15_00");	//Znalaz³eœ ju¿ coœ?
 	AI_Output(self,other,"DIA_Igaraz_METOO_TELL_13_01");	//Poniewa¿ i tak nie masz ¿adnych szans, mogê ci chyba udzieliæ pewnej wskazówki:
 	AI_Output(self,other,"DIA_Igaraz_METOO_TELL_13_02");	//Nie masz co szukaæ w pobli¿u farm, tam nic nie ma.
 };
 
-func void dia_igaraz_metoo_help()
+func void DIA_Igaraz_METOO_HELP()
 {
 	AI_Output(other,self,"DIA_Igaraz_METOO_HELP_15_00");	//Mo¿e moglibyœmy po³¹czyæ si³y...
 	AI_Output(self,other,"DIA_Igaraz_METOO_HELP_13_01");	//Zapomnij o tym. Muszê wykonaæ moje zadanie sam. Tylko byœ mi przeszkadza³.
 };
 
-func void dia_igaraz_metoo_agon()
+func void DIA_Igaraz_METOO_AGON()
 {
 	AI_Output(other,self,"DIA_Igaraz_METOO_AGON_15_00");	//Widzia³eœ mo¿e Agona lub Ulfa?
 	AI_Output(self,other,"DIA_Igaraz_METOO_AGON_13_01");	//Rozdzieliliœmy siê w gospodzie. Ja uda³em siê w stronê farm, a tamci poszli razem, ale nie wiem gdzie.
 };
 
 
-instance DIA_IGARAZ_ADD(C_INFO)
+instance DIA_Igaraz_ADD(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 23;
-	condition = dia_igaraz_add_condition;
-	information = dia_igaraz_add_info;
+	condition = DIA_Igaraz_ADD_Condition;
+	information = DIA_Igaraz_ADD_Info;
 	permanent = FALSE;
 	description = "Czy wiesz coœ na temat '¿ywej ska³y'?";
 };
 
 
-func int dia_igaraz_add_condition()
+func int DIA_Igaraz_ADD_Condition()
 {
-	if((Npc_GetDistToWP(self,"NW_TAVERNE_TROLLAREA_05") <= 3500) && (MIS_GOLEM == LOG_RUNNING) && (Npc_IsDead(magic_golem) == FALSE) && (Npc_KnowsInfo(other,dia_igaraz_stein) == FALSE) && Npc_KnowsInfo(other,dia_igaraz_metoo))
+	if((Npc_GetDistToWP(self,"NW_TAVERNE_TROLLAREA_05") <= 3500) && (MIS_GOLEM == LOG_Running) && (Npc_IsDead(Magic_Golem) == FALSE) && (Npc_KnowsInfo(other,DIA_Igaraz_Stein) == FALSE) && Npc_KnowsInfo(other,DIA_Igaraz_METOO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_add_info()
+func void DIA_Igaraz_ADD_Info()
 {
 	AI_Output(other,self,"DIA_Igaraz_Add_15_00");	//Czy wiesz coœ na temat '¿ywej ska³y'?
 	AI_Output(self,other,"DIA_Igaraz_Add_13_01");	//Nie! Czy to Serpentes da³ ci to zadanie?
@@ -313,63 +313,63 @@ func void dia_igaraz_add_info()
 };
 
 
-instance DIA_IGARAZ_PRUEFUNG(C_INFO)
+instance DIA_Igaraz_Pruefung(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 22;
-	condition = dia_igaraz_pruefung_condition;
-	information = dia_igaraz_pruefung_info;
+	condition = DIA_Igaraz_Pruefung_Condition;
+	information = DIA_Igaraz_Pruefung_Info;
 	description = "Dowiedzia³eœ siê czegoœ nowego?";
 };
 
 
-func int dia_igaraz_pruefung_condition()
+func int DIA_Igaraz_Pruefung_Condition()
 {
-	if((other.guild == GIL_NOV) && (Npc_HasItems(other,itmi_runeblank) < 1) && Npc_KnowsInfo(other,dia_igaraz_metoo))
+	if((other.guild == GIL_NOV) && (Npc_HasItems(other,ItMi_RuneBlank) < 1) && Npc_KnowsInfo(other,DIA_Igaraz_METOO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_pruefung_info()
+func void DIA_Igaraz_Pruefung_Info()
 {
 	AI_Output(other,self,"DIA_Igaraz_Pruefung_15_00");	//Dowiedzia³eœ siê czegoœ nowego?
 	AI_Output(self,other,"DIA_Igaraz_Pruefung_13_01");	//Nie, ale wci¹¿ szukam odpowiedzi.
 	AI_StopProcessInfos(self);
-	if(IGARAZ_WAIT == FALSE)
+	if(Igaraz_Wait == FALSE)
 	{
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(self,"CONTESTWAIT");
-		IGARAZ_WAIT = TRUE;
+		Igaraz_Wait = TRUE;
 	};
 };
 
 
-instance DIA_IGARAZ_STEIN(C_INFO)
+instance DIA_Igaraz_Stein(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 1;
-	condition = dia_igaraz_stein_condition;
-	information = dia_igaraz_stein_info;
+	condition = DIA_Igaraz_Stein_Condition;
+	information = DIA_Igaraz_Stein_Info;
 	important = TRUE;
 	permanent = FALSE;
 };
 
 
-func int dia_igaraz_stein_condition()
+func int DIA_Igaraz_Stein_Condition()
 {
-	if((Npc_GetDistToWP(self,"NW_TAVERNE_TROLLAREA_66") <= 3500) && (other.guild == GIL_NOV) && (Npc_HasItems(other,itmi_runeblank) >= 1))
+	if((Npc_GetDistToWP(self,"NW_TAVERNE_TROLLAREA_66") <= 3500) && (other.guild == GIL_NOV) && (Npc_HasItems(other,ItMi_RuneBlank) >= 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_stein_info()
+func void DIA_Igaraz_Stein_Info()
 {
 	AI_Output(self,other,"DIA_Igaraz_Seufz_13_00");	//Hej, zaczekaj. Musimy porozmawiaæ...
 	AI_Output(other,self,"DIA_Igaraz_Seufz_15_01");	//Nie s¹dzê...
 	AI_Output(self,other,"DIA_Igaraz_Seufz_13_02");	//Straci³em ca³e lata, czekaj¹c na tê próbê. Innos jest po mojej stronie, MUSZÊ wygraæ ten test.
-	if(Npc_KnowsInfo(other,dia_ulf_abrechnung))
+	if(Npc_KnowsInfo(other,DIA_Ulf_Abrechnung))
 	{
 		AI_Output(other,self,"DIA_Igaraz_Seufz_15_03");	//To brzmi znajomo.
 	}
@@ -379,106 +379,106 @@ func void dia_igaraz_stein_info()
 	};
 	AI_Output(self,other,"DIA_Igaraz_Seufz_13_05");	//Doœæ gadania. Potrzebujê twojego znaleziska. Przygotuj siê na œmieræ!
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_KILL,0);
+	B_Attack(self,other,AR_KILL,0);
 };
 
 
-instance DIA_IGARANZ_KAP2_EXIT(C_INFO)
+instance DIA_Igaranz_Kap2_EXIT(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 999;
-	condition = dia_igaraz_kap2_exit_condition;
-	information = dia_igaraz_kap2_exit_info;
+	condition = DIA_Igaraz_Kap2_EXIT_Condition;
+	information = DIA_Igaraz_Kap2_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_igaraz_kap2_exit_condition()
+func int DIA_Igaraz_Kap2_EXIT_Condition()
 {
-	if(KAPITEL == 2)
+	if(Kapitel == 2)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_kap2_exit_info()
+func void DIA_Igaraz_Kap2_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_IGARANZ_KAP3_EXIT(C_INFO)
+instance DIA_Igaranz_Kap3_EXIT(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 999;
-	condition = dia_igaraz_kap3_exit_condition;
-	information = dia_igaraz_kap3_exit_info;
+	condition = DIA_Igaraz_Kap3_EXIT_Condition;
+	information = DIA_Igaraz_Kap3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_igaraz_kap3_exit_condition()
+func int DIA_Igaraz_Kap3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_kap3_exit_info()
+func void DIA_Igaraz_Kap3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_IGARANZ_TALKABOUTBABO(C_INFO)
+instance DIA_Igaranz_TalkAboutBabo(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 31;
-	condition = dia_igaraz_talkaboutbabo_condition;
-	information = dia_igaraz_talkaboutbabo_info;
+	condition = DIA_Igaraz_TalkAboutBabo_Condition;
+	information = DIA_Igaraz_TalkAboutBabo_Info;
 	permanent = FALSE;
 	description = "Musimy porozmawiaæ o Babo.";
 };
 
 
-func int dia_igaraz_talkaboutbabo_condition()
+func int DIA_Igaraz_TalkAboutBabo_Condition()
 {
-	if(MIS_BABOSDOCS == LOG_RUNNING)
+	if(MIS_BabosDocs == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_talkaboutbabo_info()
+func void DIA_Igaraz_TalkAboutBabo_Info()
 {
 	AI_Output(other,self,"DIA_Igaranz_TalkAboutBabo_15_00");	//Musimy porozmawiaæ o Babo.
 	AI_Output(self,other,"DIA_Igaranz_TalkAboutBabo_13_01");	//Tak, coœ siê sta³o?
 };
 
 
-instance DIA_IGARANZ_BABOSBELONGINGS(C_INFO)
+instance DIA_Igaranz_BabosBelongings(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 31;
-	condition = dia_igaraz_babosbelongings_condition;
-	information = dia_igaraz_babosbelongings_info;
+	condition = DIA_Igaraz_BabosBelongings_Condition;
+	information = DIA_Igaraz_BabosBelongings_Info;
 	permanent = FALSE;
 	description = "Masz coœ, co nale¿y do Babo.";
 };
 
 
-func int dia_igaraz_babosbelongings_condition()
+func int DIA_Igaraz_BabosBelongings_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_igaranz_talkaboutbabo))
+	if(Npc_KnowsInfo(other,DIA_Igaranz_TalkAboutBabo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_babosbelongings_info()
+func void DIA_Igaraz_BabosBelongings_Info()
 {
 	AI_Output(other,self,"DIA_Igaranz_BabosBelongings_15_00");	//Masz coœ, co nale¿y do Babo.
 	AI_Output(self,other,"DIA_Igaranz_BabosBelongings_13_01");	//A có¿ to niby takiego?
@@ -487,26 +487,26 @@ func void dia_igaraz_babosbelongings_info()
 };
 
 
-instance DIA_IGARANZ_WHEREDOCS(C_INFO)
+instance DIA_Igaranz_WhereDocs(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 31;
-	condition = dia_igaraz_wheredocs_condition;
-	information = dia_igaraz_wheredocs_info;
+	condition = DIA_Igaraz_WhereDocs_Condition;
+	information = DIA_Igaraz_WhereDocs_Info;
 	permanent = FALSE;
 	description = "Gdzie trzymasz te papiery?";
 };
 
 
-func int dia_igaraz_wheredocs_condition()
+func int DIA_Igaraz_WhereDocs_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_igaranz_babosbelongings))
+	if(Npc_KnowsInfo(other,DIA_Igaranz_BabosBelongings))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_wheredocs_info()
+func void DIA_Igaraz_WhereDocs_Info()
 {
 	AI_Output(other,self,"DIA_Igaranz_WhereDocs_15_00");	//Gdzie trzymasz te papiery?
 	AI_Output(self,other,"DIA_Igaranz_WhereDocs_13_01");	//Oczywiœcie nie noszê ich przy sobie. Obawiam siê, ¿e nie mogê ci pomóc.
@@ -515,26 +515,26 @@ func void dia_igaraz_wheredocs_info()
 };
 
 
-instance DIA_IGARANZ_BABOSJOB(C_INFO)
+instance DIA_Igaranz_BabosJob(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 31;
-	condition = dia_igaraz_babosjob_condition;
-	information = dia_igaraz_babosjob_info;
+	condition = DIA_Igaraz_BabosJob_Condition;
+	information = DIA_Igaraz_BabosJob_Info;
 	permanent = FALSE;
 	description = "Co mia³ dla ciebie zrobiæ Babo?";
 };
 
 
-func int dia_igaraz_babosjob_condition()
+func int DIA_Igaraz_BabosJob_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_igaranz_babosbelongings))
+	if(Npc_KnowsInfo(other,DIA_Igaranz_BabosBelongings))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_babosjob_info()
+func void DIA_Igaraz_BabosJob_Info()
 {
 	AI_Output(other,self,"DIA_Igaranz_BabosJob_15_00");	//Co mia³ dla ciebie zrobiæ Babo?
 	AI_Output(self,other,"DIA_Igaranz_BabosJob_13_01");	//Gdybym wiedzia³, ¿e ten dzieciak narobi w gacie z powodu odrobiny bagiennego ziela, dopilnowa³bym, ¿eby ktoœ inny zaj¹³ siê klasztornym ogrodem.
@@ -544,26 +544,26 @@ func void dia_igaraz_babosjob_info()
 };
 
 
-instance DIA_IGARANZ_PRICE(C_INFO)
+instance DIA_Igaranz_Price(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 31;
-	condition = dia_igaraz_price_condition;
-	information = dia_igaraz_price_info;
+	condition = DIA_Igaraz_Price_Condition;
+	information = DIA_Igaraz_Price_Info;
 	permanent = FALSE;
 	description = "Ile chcesz za  te papiery?";
 };
 
 
-func int dia_igaraz_price_condition()
+func int DIA_Igaraz_Price_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_igaranz_babosbelongings))
+	if(Npc_KnowsInfo(other,DIA_Igaranz_BabosBelongings))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_price_info()
+func void DIA_Igaraz_Price_Info()
 {
 	AI_Output(other,self,"DIA_Igaranz_Price_15_00");	//Ile chcesz za  te papiery?
 	AI_Output(self,other,"DIA_Igaranz_Price_13_01");	//Widzisz, tak naprawdê to te papiery s¹ bezcenne. Rzadko siê tutaj spotyka coœ takiego.
@@ -572,152 +572,152 @@ func void dia_igaraz_price_info()
 };
 
 
-instance DIA_IGARANZ_BUYIT(C_INFO)
+instance DIA_Igaranz_BuyIt(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 31;
-	condition = dia_igaraz_buyit_condition;
-	information = dia_igaraz_buyit_info;
+	condition = DIA_Igaraz_BuyIt_Condition;
+	information = DIA_Igaraz_BuyIt_Info;
 	permanent = FALSE;
 	description = "Kupiê od ciebie te papiery.";
 };
 
 
-func int dia_igaraz_buyit_condition()
+func int DIA_Igaraz_BuyIt_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_igaranz_price) && (Npc_HasItems(other,itmi_gold) >= 300))
+	if(Npc_KnowsInfo(other,DIA_Igaranz_Price) && (Npc_HasItems(other,ItMi_Gold) >= 300))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_buyit_info()
+func void DIA_Igaraz_BuyIt_Info()
 {
 	AI_Output(other,self,"DIA_Igaranz_BuyIt_15_00");	//Kupiê od ciebie te papiery.
 	AI_Output(self,other,"DIA_Igaranz_BuyIt_13_01");	//S³uchaj, w tej chwili nie mogê siê st¹d ruszyæ. Dam ci klucz do mojego kufra, to wystarczy.
-	b_giveinvitems(other,self,5113,300);
-	b_giveinvitems(self,other,5804,1);
+	B_GiveInvItems(other,self,ItMi_Gold,300);
+	B_GiveInvItems(self,other,ItKe_IgarazChest_Mis,1);
 };
 
 
-instance DIA_IGARAZ_PICKPOCKET(C_INFO)
+instance DIA_Igaraz_PICKPOCKET(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 900;
-	condition = dia_igaraz_pickpocket_condition;
-	information = dia_igaraz_pickpocket_info;
+	condition = DIA_Igaraz_PICKPOCKET_Condition;
+	information = DIA_Igaraz_PICKPOCKET_Info;
 	permanent = TRUE;
 	description = "(Kradzie¿ tego klucza bêdzie doœæ ³atwa)";
 };
 
 
-func int dia_igaraz_pickpocket_condition()
+func int DIA_Igaraz_PICKPOCKET_Condition()
 {
-	if((MIS_BABOSDOCS == LOG_RUNNING) && (Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == FALSE) && (Npc_HasItems(self,itke_igarazchest_mis) >= 1) && (other.attribute[ATR_DEXTERITY] >= (40 - THEFTDIFF)))
+	if((MIS_BabosDocs == LOG_Running) && (Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_HasItems(self,ItKe_IgarazChest_Mis) >= 1) && (other.attribute[ATR_DEXTERITY] >= (40 - Theftdiff)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_pickpocket_info()
+func void DIA_Igaraz_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_igaraz_pickpocket);
-	Info_AddChoice(dia_igaraz_pickpocket,DIALOG_BACK,dia_igaraz_pickpocket_back);
-	Info_AddChoice(dia_igaraz_pickpocket,DIALOG_PICKPOCKET,dia_igaraz_pickpocket_doit);
+	Info_ClearChoices(DIA_Igaraz_PICKPOCKET);
+	Info_AddChoice(DIA_Igaraz_PICKPOCKET,Dialog_Back,DIA_Igaraz_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Igaraz_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Igaraz_PICKPOCKET_DoIt);
 };
 
-func void dia_igaraz_pickpocket_doit()
+func void DIA_Igaraz_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 40)
 	{
-		b_giveinvitems(self,other,5804,1);
-		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
-		b_giveplayerxp(XP_AMBIENT);
-		Info_ClearChoices(dia_igaraz_pickpocket);
+		B_GiveInvItems(self,other,ItKe_IgarazChest_Mis,1);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+		B_GivePlayerXP(XP_Ambient);
+		Info_ClearChoices(DIA_Igaraz_PICKPOCKET);
 	}
 	else
 	{
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_THEFT,1);
+		B_Attack(self,other,AR_Theft,1);
 	};
 };
 
-func void dia_igaraz_pickpocket_back()
+func void DIA_Igaraz_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_igaraz_pickpocket);
+	Info_ClearChoices(DIA_Igaraz_PICKPOCKET);
 };
 
 
-instance DIA_IGARANZ_KAP4_EXIT(C_INFO)
+instance DIA_Igaranz_Kap4_EXIT(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 999;
-	condition = dia_igaraz_kap4_exit_condition;
-	information = dia_igaraz_kap4_exit_info;
+	condition = DIA_Igaraz_Kap4_EXIT_Condition;
+	information = DIA_Igaraz_Kap4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_igaraz_kap4_exit_condition()
+func int DIA_Igaraz_Kap4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_kap4_exit_info()
+func void DIA_Igaraz_Kap4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_IGARANZ_KAP5_EXIT(C_INFO)
+instance DIA_Igaranz_Kap5_EXIT(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 999;
-	condition = dia_igaraz_kap5_exit_condition;
-	information = dia_igaraz_kap5_exit_info;
+	condition = DIA_Igaraz_Kap5_EXIT_Condition;
+	information = DIA_Igaraz_Kap5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_igaraz_kap5_exit_condition()
+func int DIA_Igaraz_Kap5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_kap5_exit_info()
+func void DIA_Igaraz_Kap5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_IGARANZ_PERM(C_INFO)
+instance DIA_Igaranz_Perm(C_Info)
 {
-	npc = nov_601_igaraz;
+	npc = NOV_601_Igaraz;
 	nr = 2;
-	condition = dia_igaraz_perm_condition;
-	information = dia_igaraz_perm_info;
+	condition = DIA_Igaraz_Perm_Condition;
+	information = DIA_Igaraz_Perm_Info;
 	permanent = FALSE;
 	description = "Masz dla mnie coœ ciekawego?";
 };
 
 
-func int dia_igaraz_perm_condition()
+func int DIA_Igaraz_Perm_Condition()
 {
-	if((KAPITEL >= 3) && (other.guild != GIL_KDF) && (MIS_BABOSDOCS != LOG_RUNNING))
+	if((Kapitel >= 3) && (other.guild != GIL_KDF) && (MIS_BabosDocs != LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_igaraz_perm_info()
+func void DIA_Igaraz_Perm_Info()
 {
 	AI_Output(other,self,"DIA_Igaranz_Perm_15_00");	//Czy masz dla mnie coœ ciekawego?
 	AI_Output(self,other,"DIA_Igaranz_Perm_13_01");	//Ehm... nie.

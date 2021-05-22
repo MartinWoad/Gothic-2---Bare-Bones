@@ -1,44 +1,44 @@
 
-instance DIA_OUT_13_EXIT(C_INFO)
+instance DIA_OUT_13_EXIT(C_Info)
 {
 	nr = 999;
-	condition = dia_out_13_exit_condition;
-	information = dia_out_13_exit_info;
+	condition = DIA_OUT_13_EXIT_Condition;
+	information = DIA_OUT_13_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_out_13_exit_condition()
+func int DIA_OUT_13_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_out_13_exit_info()
+func void DIA_OUT_13_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_OUT_13_STANDARD(C_INFO)
+instance DIA_OUT_13_STANDARD(C_Info)
 {
 	nr = 2;
-	condition = dia_out_13_standard_condition;
-	information = dia_out_13_standard_info;
+	condition = DIA_OUT_13_STANDARD_Condition;
+	information = DIA_OUT_13_STANDARD_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_out_13_standard_condition()
+func int DIA_OUT_13_STANDARD_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_out_13_standard_info()
+func void DIA_OUT_13_STANDARD_Info()
 {
 	var int randy;
 	randy = Hlp_Random(3);
@@ -57,7 +57,7 @@ func void dia_out_13_standard_info()
 	AI_StopProcessInfos(self);
 };
 
-func void b_assignambientinfos_out_13(var C_NPC slf)
+func void B_AssignAmbientInfos_OUT_13(var C_Npc slf)
 {
 	dia_out_13_exit.npc = Hlp_GetInstanceID(slf);
 	dia_out_13_standard.npc = Hlp_GetInstanceID(slf);

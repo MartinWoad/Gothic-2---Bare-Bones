@@ -1,5 +1,5 @@
 
-func void b_assessquietsound()
+func void B_AssessQuietSound()
 {
 	if(!Hlp_IsValidNpc(other))
 	{
@@ -13,11 +13,11 @@ func void b_assessquietsound()
 	{
 		return;
 	};
-	if(b_assessenterroom())
+	if(B_AssessEnterRoom())
 	{
 		return;
 	};
-	if(c_npcisgateguard(self))
+	if(C_NpcIsGateGuard(self))
 	{
 		return;
 	};
@@ -25,7 +25,7 @@ func void b_assessquietsound()
 	{
 		return;
 	};
-	if((Npc_GetAttitude(self,other) == ATT_HOSTILE) && (self.aivar[AIV_ENEMYOVERRIDE] == TRUE))
+	if((Npc_GetAttitude(self,other) == ATT_HOSTILE) && (self.aivar[AIV_EnemyOverride] == TRUE))
 	{
 		return;
 	};
@@ -34,7 +34,7 @@ func void b_assessquietsound()
 		return;
 	};
 	Npc_ClearAIQueue(self);
-	b_clearperceptions(self);
-	AI_StartState(self,zs_observeplayer,1,"");
+	B_ClearPerceptions(self);
+	AI_StartState(self,ZS_ObservePlayer,1,"");
 };
 

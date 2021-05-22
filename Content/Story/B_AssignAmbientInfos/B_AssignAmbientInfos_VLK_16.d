@@ -1,44 +1,44 @@
 
-instance DIA_VLK_16_EXIT(C_INFO)
+instance DIA_VLK_16_EXIT(C_Info)
 {
 	nr = 999;
-	condition = dia_vlk_16_exit_condition;
-	information = dia_vlk_16_exit_info;
+	condition = DIA_VLK_16_EXIT_Condition;
+	information = DIA_VLK_16_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_vlk_16_exit_condition()
+func int DIA_VLK_16_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_vlk_16_exit_info()
+func void DIA_VLK_16_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_VLK_16_JOIN(C_INFO)
+instance DIA_VLK_16_JOIN(C_Info)
 {
 	nr = 4;
-	condition = dia_vlk_16_join_condition;
-	information = dia_vlk_16_join_info;
+	condition = DIA_VLK_16_JOIN_Condition;
+	information = DIA_VLK_16_JOIN_Info;
 	permanent = TRUE;
 	description = "Chcia³bym zostaæ obywatelem tego miasta!";
 };
 
 
-func int dia_vlk_16_join_condition()
+func int DIA_VLK_16_JOIN_Condition()
 {
-	if((hero.guild == GIL_NONE) && (PLAYER_ISAPPRENTICE == APP_NONE))
+	if((hero.guild == GIL_NONE) && (Player_IsApprentice == APP_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vlk_16_join_info()
+func void DIA_VLK_16_JOIN_Info()
 {
 	AI_Output(other,self,"DIA_VLK_16_JOIN_15_00");	//Chcia³bym zostaæ obywatelem miasta!
 	AI_Output(self,other,"DIA_VLK_16_JOIN_16_01");	//Czy pomo¿esz nam w obronie miasta przed atakami orków?
@@ -46,76 +46,76 @@ func void dia_vlk_16_join_info()
 };
 
 
-instance DIA_VLK_16_PEOPLE(C_INFO)
+instance DIA_VLK_16_PEOPLE(C_Info)
 {
 	nr = 3;
-	condition = dia_vlk_16_people_condition;
-	information = dia_vlk_16_people_info;
+	condition = DIA_VLK_16_PEOPLE_Condition;
+	information = DIA_VLK_16_PEOPLE_Info;
 	permanent = TRUE;
 	description = "Kto jest najwa¿niejszy w mieœcie?";
 };
 
 
-func int dia_vlk_16_people_condition()
+func int DIA_VLK_16_PEOPLE_Condition()
 {
 	return TRUE;
 };
 
-func void dia_vlk_16_people_info()
+func void DIA_VLK_16_PEOPLE_Info()
 {
 	AI_Output(other,self,"DIA_VLK_16_PEOPLE_15_00");	//Kto jest najwa¿niejszy w mieœcie?
 	AI_Output(self,other,"DIA_VLK_16_PEOPLE_16_01");	//Paladyni, ich siedziba znajduje siê w górnym mieœcie.
 };
 
 
-instance DIA_VLK_16_LOCATION(C_INFO)
+instance DIA_VLK_16_LOCATION(C_Info)
 {
 	nr = 2;
-	condition = dia_vlk_16_location_condition;
-	information = dia_vlk_16_location_info;
+	condition = DIA_VLK_16_LOCATION_Condition;
+	information = DIA_VLK_16_LOCATION_Info;
 	permanent = TRUE;
 	description = "Czy s¹ tutaj jakieœ interesuj¹ce rzeczy?";
 };
 
 
-func int dia_vlk_16_location_condition()
+func int DIA_VLK_16_LOCATION_Condition()
 {
 	return TRUE;
 };
 
-func void dia_vlk_16_location_info()
+func void DIA_VLK_16_LOCATION_Info()
 {
 	AI_Output(other,self,"DIA_VLK_16_LOCATION_15_00");	//Które miejsca warto tutaj odwiedziæ?
 	AI_Output(self,other,"DIA_VLK_16_LOCATION_16_01");	//Na targowisku odnajdziesz wszelkie mo¿liwe towary.
 };
 
 
-instance DIA_VLK_16_STANDARD(C_INFO)
+instance DIA_VLK_16_STANDARD(C_Info)
 {
 	nr = 1;
-	condition = dia_vlk_16_standard_condition;
-	information = dia_vlk_16_standard_info;
+	condition = DIA_VLK_16_STANDARD_Condition;
+	information = DIA_VLK_16_STANDARD_Info;
 	permanent = TRUE;
 	description = "Co nowego?";
 };
 
 
-func int dia_vlk_16_standard_condition()
+func int DIA_VLK_16_STANDARD_Condition()
 {
 	return TRUE;
 };
 
-func void dia_vlk_16_standard_info()
+func void DIA_VLK_16_STANDARD_Info()
 {
 	AI_Output(other,self,"DIA_VLK_16_STANDARD_15_00");	//Co nowego?
-	if((KAPITEL == 1) || (KAPITEL == 2))
+	if((Kapitel == 1) || (Kapitel == 2))
 	{
 		AI_Output(self,other,"DIA_VLK_16_STANDARD_16_01");	//Nie s³ysza³eœ, ¿e ponoæ na obrze¿ach miasta dostrze¿ono orków? Miejmy nadziejê, ¿e paladyni sobie z nimi poradz¹.
 		AI_Output(self,other,"DIA_VLK_16_STANDARD_16_02");	//Zastanawiam siê, czy w³aœnie to jest powodem, dla którego farmerzy nie zjawiaj¹ siê na targu.
 	};
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
-		if(MIS_RESCUEBENNET == LOG_SUCCESS)
+		if(MIS_RescueBennet == LOG_SUCCESS)
 		{
 			AI_Output(self,other,"DIA_VLK_16_STANDARD_16_03");	//Najemnik, którego oskar¿ono o zabójstwo Lothara, jest niewinny. Znaleziono dowód na to, ¿e biedaka wrobiono! S³ysza³am o tym na targowisku...
 		}
@@ -125,17 +125,17 @@ func void dia_vlk_16_standard_info()
 			AI_Output(self,other,"DIA_VLK_16_STANDARD_16_05");	//Jednak sprawiedliwa rêka Innosa dosiêgnie tych grzeszników. Nikt nie ma prawa podnosiæ miecza na wojowników naszego Pana.
 		};
 	};
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		AI_Output(self,other,"DIA_VLK_16_STANDARD_16_06");	//Ponoæ przestêpcy opuszczaj¹ farmê Onara. Mówi¹, ¿e boj¹ siê ludzi Lorda Hagena, i dlatego wracaj¹ do Górniczej Doliny.
 	};
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		AI_Output(self,other,"DIA_VLK_16_STANDARD_16_07");	//Dosz³y mnie s³uchy, ¿e straszliwe smoki w Górniczej Dolinie zosta³y pokonane przez oddzia³y paladynów.
 	};
 };
 
-func void b_assignambientinfos_vlk_16(var C_NPC slf)
+func void B_AssignAmbientInfos_VLK_16(var C_Npc slf)
 {
 	dia_vlk_16_exit.npc = Hlp_GetInstanceID(slf);
 	dia_vlk_16_join.npc = Hlp_GetInstanceID(slf);

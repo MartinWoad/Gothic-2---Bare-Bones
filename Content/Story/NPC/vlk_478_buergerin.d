@@ -1,28 +1,28 @@
 
-instance VLK_478_BUERGERIN(NPC_DEFAULT)
+instance VLK_478_Buergerin(Npc_Default)
 {
-	name[0] = NAME_BUERGERIN;
+	name[0] = NAME_Buergerin;
 	guild = GIL_VLK;
 	id = 478;
 	voice = 17;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,1);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	b_createambientinv(self);
-	EquipItem(self,itmw_1h_vlk_dagger);
-	b_setnpcvisual(self,FEMALE,"Hum_Head_Babe1",FACEBABE_N_OLDBROWN,BODYTEX_N,4823);
+	B_CreateAmbientInv(self);
+	EquipItem(self,ItMw_1h_Vlk_Dagger);
+	B_SetNpcVisual(self,FEMALE,"Hum_Head_Babe1",FaceBabe_N_OldBrown,BodyTex_N,ITAR_VlkBabe_L);
 	Mdl_ApplyOverlayMds(self,"Humans_Babe.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,15);
-	daily_routine = rtn_start_478;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,15);
+	daily_routine = Rtn_Start_478;
 };
 
 
-func void rtn_start_478()
+func void Rtn_Start_478()
 {
-	ta_pick_fp(5,0,17,0,"NW_CITY_PICK_01");
-	ta_stomp_herb(17,0,22,0,"NW_CITY_HABOUR_STOMPER_02");
-	ta_sleep(22,0,5,0,"NW_CITY_HABOUR_HUT_05_BED_02");
+	TA_Pick_FP(5,0,17,0,"NW_CITY_PICK_01");
+	TA_Stomp_Herb(17,0,22,0,"NW_CITY_HABOUR_STOMPER_02");
+	TA_Sleep(22,0,5,0,"NW_CITY_HABOUR_HUT_05_BED_02");
 };
 

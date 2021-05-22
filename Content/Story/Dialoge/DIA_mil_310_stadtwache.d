@@ -1,76 +1,76 @@
 
-instance DIA_MIL_310_STADTWACHE_EXIT(C_INFO)
+instance DIA_Mil_310_Stadtwache_EXIT(C_Info)
 {
-	npc = mil_310_stadtwache;
+	npc = Mil_310_Stadtwache;
 	nr = 999;
-	condition = dia_mil_310_stadtwache_exit_condition;
-	information = dia_mil_310_stadtwache_exit_info;
+	condition = DIA_Mil_310_Stadtwache_EXIT_Condition;
+	information = DIA_Mil_310_Stadtwache_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_mil_310_stadtwache_exit_condition()
+func int DIA_Mil_310_Stadtwache_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_mil_310_stadtwache_exit_info()
+func void DIA_Mil_310_Stadtwache_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-const string MIL_310_CHECKPOINT = "NW_CITY_ENTRANCE_MAIN";
+const string Mil_310_Checkpoint = "NW_CITY_ENTRANCE_MAIN";
 
-var int mil_310_personal_absolutionlevel;
+var int MIL_310_Personal_AbsolutionLevel;
 
-instance DIA_MIL_310_STADTWACHE_FIRSTWARN(C_INFO)
+instance DIA_Mil_310_Stadtwache_FirstWarn(C_Info)
 {
-	npc = mil_310_stadtwache;
+	npc = Mil_310_Stadtwache;
 	nr = 1;
-	condition = dia_mil_310_stadtwache_firstwarn_condition;
-	information = dia_mil_310_stadtwache_firstwarn_info;
+	condition = DIA_Mil_310_Stadtwache_FirstWarn_Condition;
+	information = DIA_Mil_310_Stadtwache_FirstWarn_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_mil_310_stadtwache_firstwarn_condition()
+func int DIA_Mil_310_Stadtwache_FirstWarn_Condition()
 {
-	if((b_getgreatestpetzcrime(self) >= CRIME_ATTACK) && (b_getcurrentabsolutionlevel(self) == MIL_310_PERSONAL_ABSOLUTIONLEVEL))
+	if((B_GetGreatestPetzCrime(self) >= CRIME_ATTACK) && (B_GetCurrentAbsolutionLevel(self) == MIL_310_Personal_AbsolutionLevel))
 	{
 		self.aivar[AIV_PASSGATE] = FALSE;
 	}
-	else if(MIL_310_SCHONMALREINGELASSEN == TRUE)
+	else if(Mil_310_schonmalreingelassen == TRUE)
 	{
 		self.aivar[AIV_PASSGATE] = TRUE;
 	};
-	if((self.aivar[AIV_GUARDPASSAGE_STATUS] == GP_NONE) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_RefuseTalk(self) == FALSE))
+	if((self.aivar[AIV_Guardpassage_Status] == GP_NONE) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_RefuseTalk(self) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mil_310_stadtwache_firstwarn_info()
+func void DIA_Mil_310_Stadtwache_FirstWarn_Info()
 {
-	var C_ITEM itm;
+	var C_Item itm;
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_FirstWarn_07_00");	//STAÆ!
 	AI_GotoWP(other,"NW_FARM1_CONNECT_CITY");
 	AI_TurnToNPC(other,self);
-	if(b_getgreatestpetzcrime(self) >= CRIME_ATTACK)
+	if(B_GetGreatestPetzCrime(self) >= CRIME_ATTACK)
 	{
 		AI_Output(other,self,"DIA_Mil_310_Stadtwache_FirstWarn_15_01");	//O co chodzi?
 		AI_Output(self,other,"DIA_Mil_310_Stadtwache_FirstWarn_07_02");	//Dobrze wiesz o co!
-		if(b_getgreatestpetzcrime(self) == CRIME_MURDER)
+		if(B_GetGreatestPetzCrime(self) == CRIME_MURDER)
 		{
 			AI_Output(self,other,"DIA_Mil_310_Stadtwache_FirstWarn_07_03");	//Jesteœ poszukiwany w mieœcie za morderstwo.
 		};
-		if(b_getgreatestpetzcrime(self) == CRIME_THEFT)
+		if(B_GetGreatestPetzCrime(self) == CRIME_THEFT)
 		{
 			AI_Output(self,other,"DIA_Mil_310_Stadtwache_FirstWarn_07_04");	//Nie potrzebujemy to ¿adnych brudnych z³odziei!
 		};
-		if(b_getgreatestpetzcrime(self) == CRIME_ATTACK)
+		if(B_GetGreatestPetzCrime(self) == CRIME_ATTACK)
 		{
 			AI_Output(self,other,"DIA_Mil_310_Stadtwache_FirstWarn_07_05");	//Nie trzeba nam w mieœcie pieniaczy!
 		};
@@ -85,13 +85,13 @@ func void dia_mil_310_stadtwache_firstwarn_info()
 			AI_Output(other,self,"DIA_Mil_310_Stadtwache_FirstWarn_15_09");	//Dlaczego nie?
 			AI_Output(self,other,"DIA_Mil_310_Stadtwache_FirstWarn_07_10");	//Ju¿ po twoim obszarpanym wygl¹dzie widzê, ¿e jedyne co ze sob¹ przynosisz to k³opoty.
 			AI_Output(self,other,"DIA_Mil_310_Stadtwache_FirstWarn_07_11");	//W mieœcie mamy ju¿ dostatecznie du¿o k³opotów. Nie ma tu miejsca dla ludzi bez pieniêdzy.
-			Log_CreateTopic(TOPIC_CITY,LOG_MISSION);
-			Log_SetTopicStatus(TOPIC_CITY,LOG_RUNNING);
-			b_logentry(TOPIC_CITY,"Stra¿nicy strzeg¹cy bram miasta nie wpuszcz¹ mnie, jeœli bêdê wygl¹da³ jak nêdzarz. Muszê zrobiæ coœ ze swoim wygl¹dem albo poszukaæ innej drogi do miasta.");
+			Log_CreateTopic(TOPIC_City,LOG_MISSION);
+			Log_SetTopicStatus(TOPIC_City,LOG_Running);
+			B_LogEntry(TOPIC_City,"Stra¿nicy strzeg¹cy bram miasta nie wpuszcz¹ mnie, jeœli bêdê wygl¹da³ jak nêdzarz. Muszê zrobiæ coœ ze swoim wygl¹dem albo poszukaæ innej drogi do miasta.");
 		}
-		else if((Hlp_IsItem(itm,itar_bau_l) == TRUE) || (Hlp_IsItem(itm,itar_bau_m) == TRUE))
+		else if((Hlp_IsItem(itm,ITAR_Bau_L) == TRUE) || (Hlp_IsItem(itm,ITAR_Bau_M) == TRUE))
 		{
-			if(self.aivar[AIV_TALKEDTOPLAYER] == TRUE)
+			if(self.aivar[AIV_TalkedToPlayer] == TRUE)
 			{
 				AI_Output(self,other,"DIA_Mil_310_Stadtwache_FirstWarn_07_12");	//Czego chcesz tym razem?
 				AI_Output(other,self,"DIA_Mil_310_Stadtwache_FirstWarn_15_13");	//Przys³ano mnie z farmy.
@@ -118,88 +118,88 @@ func void dia_mil_310_stadtwache_firstwarn_info()
 				AI_Output(self,other,"DIA_Mil_310_Stadtwache_FirstWarn_07_22");	//Chcia³em ci siê tylko przyjrzeæ. Wygl¹da na to, ¿e masz pieni¹dze. Mo¿esz wejœæ.
 			};
 			self.aivar[AIV_PASSGATE] = TRUE;
-			stadtwache_333.aivar[AIV_PASSGATE] = TRUE;
-			MIL_310_SCHONMALREINGELASSEN = TRUE;
-			b_checklog();
+			Stadtwache_333.aivar[AIV_PASSGATE] = TRUE;
+			Mil_310_schonmalreingelassen = TRUE;
+			B_CheckLog();
 			AI_StopProcessInfos(self);
 		};
 	};
-	other.aivar[AIV_LASTDISTTOWP] = Npc_GetDistToWP(other,MIL_310_CHECKPOINT);
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_FIRSTWARNGIVEN;
+	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,Mil_310_Checkpoint);
+	self.aivar[AIV_Guardpassage_Status] = GP_FirstWarnGiven;
 };
 
 
-instance DIA_MIL_310_STADTWACHE_SECONDWARN(C_INFO)
+instance DIA_Mil_310_Stadtwache_SecondWarn(C_Info)
 {
-	npc = mil_310_stadtwache;
+	npc = Mil_310_Stadtwache;
 	nr = 2;
-	condition = dia_mil_310_stadtwache_secondwarn_condition;
-	information = dia_mil_310_stadtwache_secondwarn_info;
+	condition = DIA_Mil_310_Stadtwache_SecondWarn_Condition;
+	information = DIA_Mil_310_Stadtwache_SecondWarn_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_mil_310_stadtwache_secondwarn_condition()
+func int DIA_Mil_310_Stadtwache_SecondWarn_Condition()
 {
-	if((self.aivar[AIV_GUARDPASSAGE_STATUS] == GP_FIRSTWARNGIVEN) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,MIL_310_CHECKPOINT) < (other.aivar[AIV_LASTDISTTOWP] - 50)))
+	if((self.aivar[AIV_Guardpassage_Status] == GP_FirstWarnGiven) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,Mil_310_Checkpoint) < (other.aivar[AIV_LastDistToWP] - 50)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mil_310_stadtwache_secondwarn_info()
+func void DIA_Mil_310_Stadtwache_SecondWarn_Info()
 {
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_SecondWarn_07_00");	//Nie masz tu czego szukaæ. Jeden krok dalej, a posiekam ciê na kawa³ki.
 	AI_GotoWP(other,"NW_FARM1_CONNECT_CITY");
 	AI_TurnToNPC(other,self);
-	other.aivar[AIV_LASTDISTTOWP] = Npc_GetDistToWP(other,MIL_310_CHECKPOINT);
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_SECONDWARNGIVEN;
+	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,Mil_310_Checkpoint);
+	self.aivar[AIV_Guardpassage_Status] = GP_SecondWarnGiven;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MIL_310_STADTWACHE_ATTACK(C_INFO)
+instance DIA_Mil_310_Stadtwache_Attack(C_Info)
 {
-	npc = mil_310_stadtwache;
+	npc = Mil_310_Stadtwache;
 	nr = 3;
-	condition = dia_mil_310_stadtwache_attack_condition;
-	information = dia_mil_310_stadtwache_attack_info;
+	condition = DIA_Mil_310_Stadtwache_Attack_Condition;
+	information = DIA_Mil_310_Stadtwache_Attack_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_mil_310_stadtwache_attack_condition()
+func int DIA_Mil_310_Stadtwache_Attack_Condition()
 {
-	if((self.aivar[AIV_GUARDPASSAGE_STATUS] == GP_SECONDWARNGIVEN) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,MIL_310_CHECKPOINT) < (other.aivar[AIV_LASTDISTTOWP] - 50)))
+	if((self.aivar[AIV_Guardpassage_Status] == GP_SecondWarnGiven) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,Mil_310_Checkpoint) < (other.aivar[AIV_LastDistToWP] - 50)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mil_310_stadtwache_attack_info()
+func void DIA_Mil_310_Stadtwache_Attack_Info()
 {
-	other.aivar[AIV_LASTDISTTOWP] = 0;
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_NONE;
+	other.aivar[AIV_LastDistToWP] = 0;
+	self.aivar[AIV_Guardpassage_Status] = GP_NONE;
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Attack_07_00");	//Sam siê o to prosi³eœ...
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_GUARDSTOPSINTRUDER,0);
+	B_Attack(self,other,AR_GuardStopsIntruder,0);
 };
 
 
-instance DIA_MIL_310_STADTWACHE_BRIBE(C_INFO)
+instance DIA_Mil_310_Stadtwache_Bribe(C_Info)
 {
-	npc = mil_310_stadtwache;
+	npc = Mil_310_Stadtwache;
 	nr = 5;
-	condition = dia_mil_310_stadtwache_bribe_condition;
-	information = dia_mil_310_stadtwache_bribe_info;
+	condition = DIA_Mil_310_Stadtwache_Bribe_Condition;
+	information = DIA_Mil_310_Stadtwache_Bribe_Info;
 	permanent = TRUE;
 	description = "Masz tu 100 sztuk z³ota i wpuœæ mnie!";
 };
 
 
-func int dia_mil_310_stadtwache_bribe_condition()
+func int DIA_Mil_310_Stadtwache_Bribe_Condition()
 {
 	if(self.aivar[AIV_PASSGATE] == FALSE)
 	{
@@ -207,21 +207,21 @@ func int dia_mil_310_stadtwache_bribe_condition()
 	};
 };
 
-func void dia_mil_310_stadtwache_bribe_info()
+func void DIA_Mil_310_Stadtwache_Bribe_Info()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Bribe_15_00");	//Oto 100 sztuk z³ota. Pozwól mi przejœæ!
-	if(b_giveinvitems(other,self,5113,100))
+	if(B_GiveInvItems(other,self,ItMi_Gold,100))
 	{
 		AI_Output(self,other,"DIA_Mil_310_Stadtwache_Bribe_07_01");	//Brzmi rozs¹dnie, w porz¹dku - wchodŸ.
-		if(b_getgreatestpetzcrime(self) >= CRIME_ATTACK)
+		if(B_GetGreatestPetzCrime(self) >= CRIME_ATTACK)
 		{
 			AI_Output(self,other,"DIA_Mil_310_Stadtwache_Bribe_07_02");	//I kieruj siê od razu do Lorda Andre! W przeciwnym wypadku nastêpny taki numer bêdzie ciê kosztowa³ 100 sztuk wiêcej!
 		};
 		self.aivar[AIV_PASSGATE] = TRUE;
-		stadtwache_333.aivar[AIV_PASSGATE] = TRUE;
-		MIL_310_SCHONMALREINGELASSEN = TRUE;
-		b_checklog();
-		MIL_310_PERSONAL_ABSOLUTIONLEVEL = b_getcurrentabsolutionlevel(self) + 1;
+		Stadtwache_333.aivar[AIV_PASSGATE] = TRUE;
+		Mil_310_schonmalreingelassen = TRUE;
+		B_CheckLog();
+		MIL_310_Personal_AbsolutionLevel = B_GetCurrentAbsolutionLevel(self) + 1;
 	}
 	else
 	{
@@ -231,26 +231,26 @@ func void dia_mil_310_stadtwache_bribe_info()
 };
 
 
-instance DIA_MIL_310_STADTWACHE_PASSIERSCHEIN(C_INFO)
+instance DIA_Mil_310_Stadtwache_Passierschein(C_Info)
 {
-	npc = mil_310_stadtwache;
+	npc = Mil_310_Stadtwache;
 	nr = 4;
-	condition = dia_mil_310_stadtwache_passierschein_condition;
-	information = dia_mil_310_stadtwache_passierschein_info;
+	condition = DIA_Mil_310_Stadtwache_Passierschein_Condition;
+	information = DIA_Mil_310_Stadtwache_Passierschein_Info;
 	permanent = FALSE;
 	description = "Mam przepustkê!";
 };
 
 
-func int dia_mil_310_stadtwache_passierschein_condition()
+func int DIA_Mil_310_Stadtwache_Passierschein_Condition()
 {
-	if(Npc_HasItems(other,itwr_passierschein) && (b_getgreatestpetzcrime(self) < CRIME_ATTACK) && (MIL_310_SCHONMALREINGELASSEN == FALSE))
+	if(Npc_HasItems(other,ItWr_Passierschein) && (B_GetGreatestPetzCrime(self) < CRIME_ATTACK) && (Mil_310_schonmalreingelassen == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mil_310_stadtwache_passierschein_info()
+func void DIA_Mil_310_Stadtwache_Passierschein_Info()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Passierschein_15_00");	//Mam przepustkê!
 	if(Npc_HasEquippedArmor(other) == FALSE)
@@ -264,38 +264,38 @@ func void dia_mil_310_stadtwache_passierschein_info()
 		AI_Output(self,other,"DIA_Mil_310_Stadtwache_Passierschein_07_04");	//Wygl¹da na orygina³. Mo¿esz przejœæ.
 	};
 	self.aivar[AIV_PASSGATE] = TRUE;
-	stadtwache_333.aivar[AIV_PASSGATE] = TRUE;
-	MIL_310_SCHONMALREINGELASSEN = TRUE;
-	b_checklog();
+	Stadtwache_333.aivar[AIV_PASSGATE] = TRUE;
+	Mil_310_schonmalreingelassen = TRUE;
+	B_CheckLog();
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MIL_310_STADTWACHE_ZUMSCHMIED(C_INFO)
+instance DIA_Mil_310_Stadtwache_ZumSchmied(C_Info)
 {
-	npc = mil_310_stadtwache;
+	npc = Mil_310_Stadtwache;
 	nr = 3;
-	condition = dia_mil_310_stadtwache_zumschmied_condition;
-	information = dia_mil_310_stadtwache_zumschmied_info;
+	condition = DIA_Mil_310_Stadtwache_ZumSchmied_Condition;
+	information = DIA_Mil_310_Stadtwache_ZumSchmied_Info;
 	permanent = FALSE;
 	description = "Chcia³bym zobaczyæ siê z kowalem, muszê naprawiæ ekwipunek.";
 };
 
 
-func int dia_mil_310_stadtwache_zumschmied_condition()
+func int DIA_Mil_310_Stadtwache_ZumSchmied_Condition()
 {
-	var C_ITEM itm;
+	var C_Item itm;
 	itm = Npc_GetEquippedArmor(other);
-	if(((Hlp_IsItem(itm,itar_bau_l) == TRUE) || (Hlp_IsItem(itm,itar_bau_m) == TRUE)) && Npc_KnowsInfo(other,dia_maleth_tothecity) && (MIL_310_SCHONMALREINGELASSEN == FALSE))
+	if(((Hlp_IsItem(itm,ITAR_Bau_L) == TRUE) || (Hlp_IsItem(itm,ITAR_Bau_M) == TRUE)) && Npc_KnowsInfo(other,DIA_Maleth_ToTheCity) && (Mil_310_schonmalreingelassen == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mil_310_stadtwache_zumschmied_info()
+func void DIA_Mil_310_Stadtwache_ZumSchmied_Info()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_ZumSchmied_15_00");	//Chcia³bym zobaczyæ siê z kowalem, muszê naprawiæ ekwipunek.
-	if(MIL_310_SCHEISSE_ERZAEHLT == TRUE)
+	if(Mil_310_Scheisse_erzaehlt == TRUE)
 	{
 		AI_Output(self,other,"DIA_Mil_310_Stadtwache_ZumSchmied_07_01");	//Ach tak? Dlaczegoœ od razu tak nie gada³?
 		AI_Output(other,self,"DIA_Mil_310_Stadtwache_ZumSchmied_15_02");	//Zastanawia³em siê, jak zareagujesz.
@@ -307,126 +307,126 @@ func void dia_mil_310_stadtwache_zumschmied_info()
 	};
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_ZumSchmied_07_05");	//Gdybyœ spotka³ Lobarta, ka¿ mu porz¹dnie karmiæ owce, nied³ugo wracamy!
 	self.aivar[AIV_PASSGATE] = TRUE;
-	stadtwache_333.aivar[AIV_PASSGATE] = TRUE;
-	MIL_310_SCHONMALREINGELASSEN = TRUE;
-	b_checklog();
-	b_giveplayerxp(XP_AMBIENT);
+	Stadtwache_333.aivar[AIV_PASSGATE] = TRUE;
+	Mil_310_schonmalreingelassen = TRUE;
+	B_CheckLog();
+	B_GivePlayerXP(XP_Ambient);
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MIL_310_STADTWACHE_MILIZWERDEN(C_INFO)
+instance DIA_Mil_310_Stadtwache_MilizWerden(C_Info)
 {
-	npc = mil_310_stadtwache;
+	npc = Mil_310_Stadtwache;
 	nr = 2;
-	condition = dia_mil_310_stadtwache_milizwerden_condition;
-	information = dia_mil_310_stadtwache_milizwerden_info;
+	condition = DIA_Mil_310_Stadtwache_MilizWerden_Condition;
+	information = DIA_Mil_310_Stadtwache_MilizWerden_Info;
 	permanent = FALSE;
 	description = "Chcê siê przy³¹czyæ do stra¿y!";
 };
 
 
-func int dia_mil_310_stadtwache_milizwerden_condition()
+func int DIA_Mil_310_Stadtwache_MilizWerden_Condition()
 {
-	if(MIL_310_SCHONMALREINGELASSEN == FALSE)
+	if(Mil_310_schonmalreingelassen == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mil_310_stadtwache_milizwerden_info()
+func void DIA_Mil_310_Stadtwache_MilizWerden_Info()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_MilizWerden_15_00");	//Chcê siê przy³¹czyæ do stra¿y!
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_MilizWerden_07_01");	//A to dobre! Spróbuj przy innej bramie, mo¿e TAM ci uwierz¹.
-	MIL_310_SCHEISSE_ERZAEHLT = TRUE;
+	Mil_310_Scheisse_erzaehlt = TRUE;
 };
 
 
-instance DIA_MIL_310_STADTWACHE_PALADINE(C_INFO)
+instance DIA_Mil_310_Stadtwache_Paladine(C_Info)
 {
-	npc = mil_310_stadtwache;
+	npc = Mil_310_Stadtwache;
 	nr = 1;
-	condition = dia_mil_310_stadtwache_paladine_condition;
-	information = dia_mil_310_stadtwache_paladine_info;
+	condition = DIA_Mil_310_Stadtwache_Paladine_Condition;
+	information = DIA_Mil_310_Stadtwache_Paladine_Info;
 	permanent = FALSE;
 	description = "Muszê porozmawiaæ z przywódc¹ paladynów!";
 };
 
 
-func int dia_mil_310_stadtwache_paladine_condition()
+func int DIA_Mil_310_Stadtwache_Paladine_Condition()
 {
-	if(MIL_310_SCHONMALREINGELASSEN == FALSE)
+	if(Mil_310_schonmalreingelassen == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mil_310_stadtwache_paladine_info()
+func void DIA_Mil_310_Stadtwache_Paladine_Info()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Paladine_15_00");	//Muszê siê zobaczyæ z przywódc¹ paladynów! Mam dla niego bardzo wa¿ne informacje!
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_07_01");	//Och? A có¿ to za informacje?
-	MIL_310_SCHEISSE_ERZAEHLT = TRUE;
-	Info_ClearChoices(dia_mil_310_stadtwache_paladine);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Wkrótce miasto zostanie zaatakowane!",dia_mil_310_stadtwache_paladine_attacksoon);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Chmara orków zbiera siê w dolinie Khorinis!",dia_mil_310_stadtwache_paladine_evilarmy);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Przybywam, aby zdobyæ Oko Innosa!",dia_mil_310_stadtwache_paladine_eyeinnos);
+	Mil_310_Scheisse_erzaehlt = TRUE;
+	Info_ClearChoices(DIA_Mil_310_Stadtwache_Paladine);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Wkrótce miasto zostanie zaatakowane!",DIA_Mil_310_Stadtwache_Paladine_AttackSoon);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Chmara orków zbiera siê w dolinie Khorinis!",DIA_Mil_310_Stadtwache_Paladine_EvilArmy);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Przybywam, aby zdobyæ Oko Innosa!",DIA_Mil_310_Stadtwache_Paladine_EyeInnos);
 };
 
-func void dia_mil_310_stadtwache_paladine_eyeinnos()
+func void DIA_Mil_310_Stadtwache_Paladine_EyeInnos()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Paladine_EyeInnos_15_00");	//Przyszed³em po Oko Innosa!
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_EyeInnos_07_01");	//Po co? Nigdy o czymœ takim nie s³ysza³em - có¿ to w³aœciwie jest?
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Paladine_EyeInnos_15_02");	//Bardzo wa¿ny artefakt.
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_EyeInnos_07_03");	//Nie wygl¹dasz mi na powa¿nego pos³añca. A masz coœ, co potwierdzi twoj¹ to¿samoœæ?
-	if(!Npc_HasItems(other,itwr_passierschein) > 0)
+	if(!Npc_HasItems(other,ItWr_Passierschein) > 0)
 	{
 		AI_Output(other,self,"DIA_Mil_310_Stadtwache_Paladine_EyeInnos_15_04");	//Nie, nie mam!
 		AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_EyeInnos_07_05");	//W takim razie nie marnuj mojego cennego czasu.
 	};
-	Info_ClearChoices(dia_mil_310_stadtwache_paladine);
+	Info_ClearChoices(DIA_Mil_310_Stadtwache_Paladine);
 };
 
-func void dia_mil_310_stadtwache_paladine_evilarmy()
+func void DIA_Mil_310_Stadtwache_Paladine_EvilArmy()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Paladine_EvilArmy_15_00");	//Chmara orków zbiera siê w dolinie Khorinis!
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_EvilArmy_07_01");	//W Górniczej Dolinie? Czy stamt¹d w³aœnie przybywasz? Widzia³eœ ich armiê?
-	Info_ClearChoices(dia_mil_310_stadtwache_paladine);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Nie, ale przys³a³ mnie ktoœ, kto widzia³.",dia_mil_310_stadtwache_paladine_nosomeone);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Nie, ale wiem, ¿e orkami dowodz¹ smoki!",dia_mil_310_stadtwache_paladine_nodragons);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Tak. By³em w dolinie Khorinis. Widzia³em kilka potê¿nych smoków!",dia_mil_310_stadtwache_paladine_yesdragons);
+	Info_ClearChoices(DIA_Mil_310_Stadtwache_Paladine);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Nie, ale przys³a³ mnie ktoœ, kto widzia³.",DIA_Mil_310_Stadtwache_Paladine_NoSomeone);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Nie, ale wiem, ¿e orkami dowodz¹ smoki!",DIA_Mil_310_Stadtwache_Paladine_NoDragons);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Tak. By³em w dolinie Khorinis. Widzia³em kilka potê¿nych smoków!",DIA_Mil_310_Stadtwache_Paladine_YesDragons);
 };
 
-func void dia_mil_310_stadtwache_paladine_attacksoon()
+func void DIA_Mil_310_Stadtwache_Paladine_AttackSoon()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Paladine_AttackSoon_15_00");	//Wkrótce miasto zostanie zaatakowane!
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_AttackSoon_07_01");	//Co? Przez kogo? Orków? Widzia³eœ jak¹œ armiê?
-	Info_ClearChoices(dia_mil_310_stadtwache_paladine);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Nie, ale przys³a³ mnie ktoœ, kto widzia³.",dia_mil_310_stadtwache_paladine_nosomeone);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Nie, ale wiem, ¿e orkami dowodz¹ smoki!",dia_mil_310_stadtwache_paladine_nodragons);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Tak. By³em w dolinie Khorinis. Widzia³em kilka potê¿nych smoków!",dia_mil_310_stadtwache_paladine_yesdragons);
+	Info_ClearChoices(DIA_Mil_310_Stadtwache_Paladine);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Nie, ale przys³a³ mnie ktoœ, kto widzia³.",DIA_Mil_310_Stadtwache_Paladine_NoSomeone);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Nie, ale wiem, ¿e orkami dowodz¹ smoki!",DIA_Mil_310_Stadtwache_Paladine_NoDragons);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Tak. By³em w dolinie Khorinis. Widzia³em kilka potê¿nych smoków!",DIA_Mil_310_Stadtwache_Paladine_YesDragons);
 };
 
-func void dia_mil_310_stadtwache_paladine_nodragons()
+func void DIA_Mil_310_Stadtwache_Paladine_NoDragons()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Paladine_NoDragons_15_00");	//Nie, ale wiem, ¿e orkami dowodz¹ smoki!
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_NoDragons_07_01");	//Jasne! A moja babka robi u orkowych genera³ów za adiutanta.
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_NoDragons_07_02");	//Chyba nie myœlisz, ¿e wpuœcimy ciê do Lorda Hagena z tak¹ naci¹gan¹ historyjk¹.
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_NoDragons_07_03");	//Spadaj!
-	PLAYER_KNOWSLORDHAGEN = TRUE;
+	Player_KnowsLordHagen = TRUE;
 	AI_StopProcessInfos(self);
 };
 
-func void dia_mil_310_stadtwache_paladine_nosomeone()
+func void DIA_Mil_310_Stadtwache_Paladine_NoSomeone()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Paladine_NoSomeone_15_00");	//Nie, ale przys³a³ mnie ktoœ, kto widzia³.
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_NoSomeone_07_01");	//KTO ciê przys³a³?
-	Info_ClearChoices(dia_mil_310_stadtwache_paladine);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Nie mogê ci nic powiedzieæ.",dia_mil_310_stadtwache_paladine_canttellyou);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Paladyn.",dia_mil_310_stadtwache_paladine_apaladin);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Pewien mag.",dia_mil_310_stadtwache_paladine_amage);
+	Info_ClearChoices(DIA_Mil_310_Stadtwache_Paladine);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Nie mogê ci nic powiedzieæ.",DIA_Mil_310_Stadtwache_Paladine_CantTellYou);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Paladyn.",DIA_Mil_310_Stadtwache_Paladine_APaladin);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Pewien mag.",DIA_Mil_310_Stadtwache_Paladine_AMage);
 };
 
-func void dia_mil_310_stadtwache_paladine_yesdragons()
+func void DIA_Mil_310_Stadtwache_Paladine_YesDragons()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Paladine_YesDragons_15_00");	//Tak. By³em w dolinie Khorinis. Widzia³em kilka potê¿nych smoków!
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_YesDragons_07_01");	//K³amco! Prze³êcz prowadz¹ca do doliny jest zamkniêta z obydwu stron. Nikt nie mo¿e przez ni¹ przejœæ.
@@ -434,7 +434,7 @@ func void dia_mil_310_stadtwache_paladine_yesdragons()
 	AI_StopProcessInfos(self);
 };
 
-func void dia_mil_310_stadtwache_paladine_amage()
+func void DIA_Mil_310_Stadtwache_Paladine_AMage()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Paladine_AMage_15_00");	//Pewien mag.
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_AMage_07_01");	//Otrzyma³eœ te informacje od maga? Masz wiêc pewnie pieczêæ potwierdzaj¹c¹ jego s³owa!
@@ -442,50 +442,50 @@ func void dia_mil_310_stadtwache_paladine_amage()
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_AMage_07_03");	//Jak to? Magowie ZAWSZE daj¹ swym pos³añcom pieczêæ.
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Paladine_AMage_15_04");	//Nie ten.
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_AMage_07_05");	//Nie wierzê ci. Jeœli naprawdê jesteœ pos³añcem, to mów, co masz do powiedzenia, tu i teraz.
-	Info_ClearChoices(dia_mil_310_stadtwache_paladine);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Tê wiadomoœæ mogê przekazaæ jedynie paladynom!",dia_mil_310_stadtwache_paladine_onlypaladins);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Armi¹ Z³a dowodz¹ smoki!",dia_mil_310_stadtwache_paladine_depechedragons);
+	Info_ClearChoices(DIA_Mil_310_Stadtwache_Paladine);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Tê wiadomoœæ mogê przekazaæ jedynie paladynom!",DIA_Mil_310_Stadtwache_Paladine_OnlyPaladins);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Armi¹ Z³a dowodz¹ smoki!",DIA_Mil_310_Stadtwache_Paladine_DepecheDragons);
 };
 
-func void dia_mil_310_stadtwache_paladine_apaladin()
+func void DIA_Mil_310_Stadtwache_Paladine_APaladin()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Paladine_APaladin_15_00");	//Paladyn.
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_APaladin_07_01");	//Hm, to ca³kiem mo¿liwe - paladyni strzeg¹ prze³êczy prowadz¹cej do Górniczej Doliny.
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_APaladin_07_02");	//Przeka¿ mi wiadomoœæ, a ja zameldujê o twoim przybyciu.
-	Info_ClearChoices(dia_mil_310_stadtwache_paladine);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Tê wiadomoœæ mogê przekazaæ jedynie paladynom!",dia_mil_310_stadtwache_paladine_onlypaladins);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Armi¹ Z³a dowodz¹ smoki!",dia_mil_310_stadtwache_paladine_depechedragons);
+	Info_ClearChoices(DIA_Mil_310_Stadtwache_Paladine);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Tê wiadomoœæ mogê przekazaæ jedynie paladynom!",DIA_Mil_310_Stadtwache_Paladine_OnlyPaladins);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Armi¹ Z³a dowodz¹ smoki!",DIA_Mil_310_Stadtwache_Paladine_DepecheDragons);
 };
 
-func void dia_mil_310_stadtwache_paladine_canttellyou()
+func void DIA_Mil_310_Stadtwache_Paladine_CantTellYou()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Paladine_CantTellYou_15_00");	//Nie mogê ci nic powiedzieæ.
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_CantTellYou_07_01");	//Nie denerwuj mnie ch³opcze, jestem stra¿nikiem miejskim!
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_CantTellYou_07_02");	//Mnie mo¿esz powiedzieæ WSZYSTKO. Mów wiêc, kto ciê przys³a³?
 };
 
-func void dia_mil_310_stadtwache_paladine_depechedragons()
+func void DIA_Mil_310_Stadtwache_Paladine_DepecheDragons()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Paladine_DepecheDragons_15_00");	//Armi¹ Z³a dowodz¹ smoki!
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_DepecheDragons_07_01");	//Co? To nie mo¿e byæ prawda. A ju¿ prawie mia³em ciê wpuœciæ.
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_DepecheDragons_07_02");	//Gdybyœ opowiedzia³ tê historiê Lordowi Hagenowi, kaza³by sobie przynieœæ moj¹ g³owê na srebrnej tacy.
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_DepecheDragons_07_03");	//Spadaj!
-	PLAYER_KNOWSLORDHAGEN = TRUE;
+	Player_KnowsLordHagen = TRUE;
 	AI_StopProcessInfos(self);
 };
 
-func void dia_mil_310_stadtwache_paladine_onlypaladins()
+func void DIA_Mil_310_Stadtwache_Paladine_OnlyPaladins()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Paladine_OnlyPaladins_15_00");	//Tê wiadomoœæ mogê przekazaæ jedynie paladynom!
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_OnlyPaladins_07_01");	//Nic z tego, ch³opcze!
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_OnlyPaladins_07_02");	//Jak mam ciê u diab³a wpuœciæ do Lorda Hagena, jeœli nie bêdê mia³ pewnoœci, ¿e nie zmarnujesz jego cennego czasu?
-	PLAYER_KNOWSLORDHAGEN = TRUE;
-	Info_ClearChoices(dia_mil_310_stadtwache_paladine);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Nic z tego. Te informacje przeznaczone s¹ TYLKO dla paladynów.",dia_mil_310_stadtwache_paladine_only2);
-	Info_AddChoice(dia_mil_310_stadtwache_paladine,"Armi¹ Z³a dowodz¹ smoki!",dia_mil_310_stadtwache_paladine_depechedragons);
+	Player_KnowsLordHagen = TRUE;
+	Info_ClearChoices(DIA_Mil_310_Stadtwache_Paladine);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Nic z tego. Te informacje przeznaczone s¹ TYLKO dla paladynów.",DIA_Mil_310_Stadtwache_Paladine_Only2);
+	Info_AddChoice(DIA_Mil_310_Stadtwache_Paladine,"Armi¹ Z³a dowodz¹ smoki!",DIA_Mil_310_Stadtwache_Paladine_DepecheDragons);
 };
 
-func void dia_mil_310_stadtwache_paladine_only2()
+func void DIA_Mil_310_Stadtwache_Paladine_Only2()
 {
 	AI_Output(other,self,"DIA_Mil_310_Stadtwache_Paladine_Only2_15_00");	//Nic z tego. Te informacje przeznaczone s¹ TYLKO dla paladynów.
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_Paladine_Only2_07_01");	//Twoja podró¿ koñczy siê tutaj, obcy.
@@ -493,26 +493,26 @@ func void dia_mil_310_stadtwache_paladine_only2()
 };
 
 
-instance DIA_MIL_310_STADTWACHE_PERM(C_INFO)
+instance DIA_Mil_310_Stadtwache_PERM(C_Info)
 {
-	npc = mil_310_stadtwache;
+	npc = Mil_310_Stadtwache;
 	nr = 5;
-	condition = dia_mil_310_stadtwache_perm_condition;
-	information = dia_mil_310_stadtwache_perm_info;
+	condition = DIA_Mil_310_Stadtwache_PERM_Condition;
+	information = DIA_Mil_310_Stadtwache_PERM_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_mil_310_stadtwache_perm_condition()
+func int DIA_Mil_310_Stadtwache_PERM_Condition()
 {
-	if((self.aivar[AIV_PASSGATE] == TRUE) && Npc_IsInState(self,zs_talk))
+	if((self.aivar[AIV_PASSGATE] == TRUE) && Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mil_310_stadtwache_perm_info()
+func void DIA_Mil_310_Stadtwache_PERM_Info()
 {
 	AI_Output(self,other,"DIA_Mil_310_Stadtwache_PERM_07_00");	//Dalej, ruszaj st¹d.
 	AI_StopProcessInfos(self);

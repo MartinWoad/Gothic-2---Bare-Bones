@@ -1,11 +1,11 @@
 
-func int c_isusedmobmypossession(var C_NPC slf,var C_NPC oth)
+func int C_IsUsedMobMyPossession(var C_Npc slf,var C_Npc oth)
 {
 	if(Npc_IsDetectedMobOwnedByNpc(other,self))
 	{
 		return TRUE;
 	};
-	if(c_npcisbotheredbyplayerroomguild(self) || (Wld_GetPlayerPortalGuild() == GIL_PUBLIC))
+	if(C_NpcIsBotheredByPlayerRoomGuild(self) || (Wld_GetPlayerPortalGuild() == GIL_PUBLIC))
 	{
 		return TRUE;
 	};

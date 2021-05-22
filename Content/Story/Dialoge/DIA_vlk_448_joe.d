@@ -1,84 +1,84 @@
 
-instance DIA_JOE_EXIT(C_INFO)
+instance DIA_Joe_EXIT(C_Info)
 {
-	npc = vlk_448_joe;
+	npc = VLK_448_Joe;
 	nr = 999;
-	condition = dia_joe_exit_condition;
-	information = dia_joe_exit_info;
+	condition = DIA_Joe_EXIT_Condition;
+	information = DIA_Joe_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_joe_exit_condition()
+func int DIA_Joe_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_joe_exit_info()
+func void DIA_Joe_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_JOE_PICKPOCKET(C_INFO)
+instance DIA_Joe_PICKPOCKET(C_Info)
 {
-	npc = vlk_448_joe;
+	npc = VLK_448_Joe;
 	nr = 900;
-	condition = dia_joe_pickpocket_condition;
-	information = dia_joe_pickpocket_info;
+	condition = DIA_Joe_PICKPOCKET_Condition;
+	information = DIA_Joe_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_joe_pickpocket_condition()
+func int DIA_Joe_PICKPOCKET_Condition()
 {
-	return c_beklauen(25,25);
+	return C_Beklauen(25,25);
 };
 
-func void dia_joe_pickpocket_info()
+func void DIA_Joe_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_joe_pickpocket);
-	Info_AddChoice(dia_joe_pickpocket,DIALOG_BACK,dia_joe_pickpocket_back);
-	Info_AddChoice(dia_joe_pickpocket,DIALOG_PICKPOCKET,dia_joe_pickpocket_doit);
+	Info_ClearChoices(DIA_Joe_PICKPOCKET);
+	Info_AddChoice(DIA_Joe_PICKPOCKET,Dialog_Back,DIA_Joe_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Joe_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Joe_PICKPOCKET_DoIt);
 };
 
-func void dia_joe_pickpocket_doit()
+func void DIA_Joe_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_joe_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Joe_PICKPOCKET);
 };
 
-func void dia_joe_pickpocket_back()
+func void DIA_Joe_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_joe_pickpocket);
+	Info_ClearChoices(DIA_Joe_PICKPOCKET);
 };
 
 
-instance DIA_JOE_HALLO(C_INFO)
+instance DIA_Joe_Hallo(C_Info)
 {
-	npc = vlk_448_joe;
+	npc = VLK_448_Joe;
 	nr = 2;
-	condition = dia_joe_hallo_condition;
-	information = dia_joe_hallo_info;
+	condition = DIA_Joe_Hallo_Condition;
+	information = DIA_Joe_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_joe_hallo_condition()
+func int DIA_Joe_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_joe_hallo_info()
+func void DIA_Joe_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Joe_Hallo_10_00");	//Hej, dziêki, cz³owieku! Naprawdê wielkie dziêki. Ju¿ myœla³em, ¿e nigdy siê st¹d nie wydostanê...
-	b_giveplayerxp(XP_AMBIENT * 4);
+	B_GivePlayerXP(XP_Ambient * 4);
 	AI_Output(other,self,"DIA_Joe_Hallo_15_01");	//Co ty TUTAJ robisz?
 	AI_Output(self,other,"DIA_Joe_Hallo_10_02");	//Da³em siê zamkn¹æ. Drzwi by³y otwarte i chcia³em siê jedynie trochê rozejrzeæ, ale kiedy tylko wszed³em do œrodka, pojawi³a siê stra¿ i zamknê³a te cholerne drzwi.
 	AI_Output(self,other,"DIA_Joe_Hallo_10_03");	//To doœæ krêpuj¹ca sytuacja. By³bym bardzo wdziêczny, gdyby pozosta³o to miêdzy nami.
@@ -89,18 +89,18 @@ func void dia_joe_hallo_info()
 };
 
 
-instance DIA_JOE_PERM(C_INFO)
+instance DIA_Joe_Perm(C_Info)
 {
-	npc = vlk_448_joe;
+	npc = VLK_448_Joe;
 	nr = 2;
-	condition = dia_joe_perm_condition;
-	information = dia_joe_perm_info;
+	condition = DIA_Joe_Perm_Condition;
+	information = DIA_Joe_Perm_Info;
 	permanent = TRUE;
 	description = "Wszystko w porz¹dku?";
 };
 
 
-func int dia_joe_perm_condition()
+func int DIA_Joe_Perm_Condition()
 {
 	if(Npc_GetDistToWP(self,"NW_CITY_HABOUR_TAVERN01_08") <= 500)
 	{
@@ -108,7 +108,7 @@ func int dia_joe_perm_condition()
 	};
 };
 
-func void dia_joe_perm_info()
+func void DIA_Joe_Perm_Info()
 {
 	AI_Output(other,self,"DIA_Joe_Perm_15_00");	//Wszystko w porz¹dku?
 	AI_Output(self,other,"DIA_Joe_Perm_10_01");	//Dziêki za uwolnienie.
@@ -116,31 +116,31 @@ func void dia_joe_perm_info()
 };
 
 
-instance DIA_JOE_SIGN(C_INFO)
+instance DIA_Joe_Sign(C_Info)
 {
-	npc = vlk_448_joe;
+	npc = VLK_448_Joe;
 	nr = 2;
-	condition = dia_joe_sign_condition;
-	information = dia_joe_sign_info;
+	condition = DIA_Joe_Sign_Condition;
+	information = DIA_Joe_Sign_Info;
 	permanent = FALSE;
 	description = "(Poka¿ z³odziejski gest)";
 };
 
 
-func int dia_joe_sign_condition()
+func int DIA_Joe_Sign_Condition()
 {
-	if((Npc_GetDistToWP(self,"NW_CITY_HABOUR_TAVERN01_08") <= 500) && (KNOWS_SECRETSIGN == TRUE))
+	if((Npc_GetDistToWP(self,"NW_CITY_HABOUR_TAVERN01_08") <= 500) && (Knows_SecretSign == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_joe_sign_info()
+func void DIA_Joe_Sign_Info()
 {
 	AI_PlayAni(other,"T_YES");
 	AI_Output(self,other,"DIA_Joe_Sign_10_00");	//Hej, wiesz co - mamy wspólnych znajomych. W takim razie pozwól mi wyraziæ wdziêcznoœæ za uratowanie.
 	AI_Output(self,other,"DIA_Joe_Sign_10_01");	//Proszê, weŸ te wytrychy. Na pewno ci siê przydadz¹.
-	b_giveinvitems(self,other,4932,5);
+	B_GiveInvItems(self,other,ItKE_lockpick,5);
 	AI_StopProcessInfos(self);
 };
 

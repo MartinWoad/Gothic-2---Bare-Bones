@@ -1,16 +1,16 @@
 
-func void b_mm_assessenemy()
+func void B_MM_AssessEnemy()
 {
-	var C_NPC pcl;
-	if((self.guild == GIL_DRAGON) && (Npc_HasItems(hero,itmi_innoseye_mis) >= 1))
+	var C_Npc pcl;
+	if((self.guild == GIL_DRAGON) && (Npc_HasItems(hero,ItMi_InnosEye_MIS) >= 1))
 	{
 		return;
 	};
-	if((self.aivar[AIV_ENEMYOVERRIDE] == TRUE) && (other.guild < GIL_SEPERATOR_HUM))
+	if((self.aivar[AIV_EnemyOverride] == TRUE) && (other.guild < GIL_SEPERATOR_HUM))
 	{
 		return;
 	};
-	pcl = Hlp_GetNpc(pc_levelinspektor);
+	pcl = Hlp_GetNpc(PC_Levelinspektor);
 	if(Hlp_GetInstanceID(other) == Hlp_GetInstanceID(pcl))
 	{
 		return;
@@ -23,7 +23,7 @@ func void b_mm_assessenemy()
 	{
 		return;
 	};
-	if((c_bodystatecontains(other,BS_SWIM) || c_bodystatecontains(other,BS_DIVE)) && (self.aivar[AIV_MM_FOLLOWINWATER] == FALSE))
+	if((C_BodyStateContains(other,BS_SWIM) || C_BodyStateContains(other,BS_DIVE)) && (self.aivar[AIV_MM_FollowInWater] == FALSE))
 	{
 		return;
 	};
@@ -50,7 +50,7 @@ func void b_mm_assessenemy()
 	};
 	if((self.guild == GIL_ORC) || (self.guild == GIL_FRIENDLY_ORC))
 	{
-		if(c_bodystatecontains(other,BS_SNEAK) || c_bodystatecontains(other,BS_STAND))
+		if(C_BodyStateContains(other,BS_SNEAK) || C_BodyStateContains(other,BS_STAND))
 		{
 			if(!Npc_CanSeeNpc(self,other))
 			{
@@ -64,44 +64,44 @@ func void b_mm_assessenemy()
 	};
 	if(self.aivar[AIV_PARTYMEMBER] == TRUE)
 	{
-		if(other.npctype == NPCTYPE_FRIEND)
+		if(other.npcType == NPCTYPE_FRIEND)
 		{
 			return;
 		};
 		Npc_ClearAIQueue(self);
 		Npc_SetTarget(self,other);
-		b_clearperceptions(self);
-		AI_StartState(self,zs_mm_attack,0,"");
+		B_ClearPerceptions(self);
+		AI_StartState(self,ZS_MM_Attack,0,"");
 		return;
 	};
-	if(self.aivar[AIV_MM_THREATENBEFOREATTACK] == FALSE)
+	if(self.aivar[AIV_MM_ThreatenBeforeAttack] == FALSE)
 	{
 		Npc_ClearAIQueue(self);
 		Npc_SetTarget(self,other);
-		b_clearperceptions(self);
-		AI_StartState(self,zs_mm_attack,0,"");
+		B_ClearPerceptions(self);
+		AI_StartState(self,ZS_MM_Attack,0,"");
 		return;
 	};
-	if(Npc_IsInState(self,zs_mm_eatbody))
+	if(Npc_IsInState(self,ZS_MM_EatBody))
 	{
 		if(Npc_GetDistToNpc(self,other) <= FIGHT_DIST_MONSTER_ATTACKRANGE)
 		{
 			Npc_ClearAIQueue(self);
 			Npc_SetTarget(self,other);
-			b_clearperceptions(self);
-			AI_StartState(self,zs_mm_attack,0,"");
+			B_ClearPerceptions(self);
+			AI_StartState(self,ZS_MM_Attack,0,"");
 			return;
 		};
 		return;
 	};
-	if(Npc_IsInState(self,zs_mm_hunt))
+	if(Npc_IsInState(self,ZS_MM_Hunt))
 	{
 		if(Npc_GetDistToNpc(self,other) <= FIGHT_DIST_MONSTER_ATTACKRANGE)
 		{
 			Npc_ClearAIQueue(self);
 			Npc_SetTarget(self,other);
-			b_clearperceptions(self);
-			AI_StartState(self,zs_mm_attack,0,"");
+			B_ClearPerceptions(self);
+			AI_StartState(self,ZS_MM_Attack,0,"");
 			return;
 		}
 		else
@@ -109,22 +109,22 @@ func void b_mm_assessenemy()
 			return;
 		};
 	};
-	if(c_predatorfoundprey(self,other))
+	if(C_PredatorFoundPrey(self,other))
 	{
 		Npc_ClearAIQueue(self);
 		Npc_SetTarget(self,other);
-		b_clearperceptions(self);
-		AI_StartState(self,zs_mm_hunt,0,"");
+		B_ClearPerceptions(self);
+		AI_StartState(self,ZS_MM_Hunt,0,"");
 		return;
 	};
-	if(c_predatorfoundprey(other,self))
+	if(C_PredatorFoundPrey(other,self))
 	{
-		if(!Npc_IsInState(other,zs_mm_hunt) && (Npc_GetDistToNpc(self,other) <= FIGHT_DIST_MONSTER_FLEE))
+		if(!Npc_IsInState(other,ZS_MM_Hunt) && (Npc_GetDistToNpc(self,other) <= FIGHT_DIST_MONSTER_FLEE))
 		{
 			Npc_ClearAIQueue(self);
 			Npc_SetTarget(self,other);
-			b_clearperceptions(self);
-			AI_StartState(self,zs_mm_flee,0,"");
+			B_ClearPerceptions(self);
+			AI_StartState(self,ZS_MM_Flee,0,"");
 			return;
 		}
 		else
@@ -133,7 +133,7 @@ func void b_mm_assessenemy()
 		};
 	};
 	Npc_ClearAIQueue(self);
-	b_clearperceptions(self);
-	AI_StartState(self,zs_mm_threatenenemy,0,"");
+	B_ClearPerceptions(self);
+	AI_StartState(self,ZS_MM_ThreatenEnemy,0,"");
 };
 

@@ -1,135 +1,135 @@
 
-instance DIA_CONSTANTINO_EXIT(C_INFO)
+instance DIA_Constantino_EXIT(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 999;
-	condition = dia_constantino_exit_condition;
-	information = dia_constantino_exit_info;
+	condition = DIA_Constantino_EXIT_Condition;
+	information = DIA_Constantino_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_constantino_exit_condition()
+func int DIA_Constantino_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_constantino_exit_info()
+func void DIA_Constantino_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_CONSTANTINO_PICKPOCKET(C_INFO)
+instance DIA_Constantino_PICKPOCKET(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 900;
-	condition = dia_constantino_pickpocket_condition;
-	information = dia_constantino_pickpocket_info;
+	condition = DIA_Constantino_PICKPOCKET_Condition;
+	information = DIA_Constantino_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_constantino_pickpocket_condition()
+func int DIA_Constantino_PICKPOCKET_Condition()
 {
-	return c_beklauen(59,90);
+	return C_Beklauen(59,90);
 };
 
-func void dia_constantino_pickpocket_info()
+func void DIA_Constantino_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_constantino_pickpocket);
-	Info_AddChoice(dia_constantino_pickpocket,DIALOG_BACK,dia_constantino_pickpocket_back);
-	Info_AddChoice(dia_constantino_pickpocket,DIALOG_PICKPOCKET,dia_constantino_pickpocket_doit);
+	Info_ClearChoices(DIA_Constantino_PICKPOCKET);
+	Info_AddChoice(DIA_Constantino_PICKPOCKET,Dialog_Back,DIA_Constantino_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Constantino_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Constantino_PICKPOCKET_DoIt);
 };
 
-func void dia_constantino_pickpocket_doit()
+func void DIA_Constantino_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_constantino_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Constantino_PICKPOCKET);
 };
 
-func void dia_constantino_pickpocket_back()
+func void DIA_Constantino_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_constantino_pickpocket);
+	Info_ClearChoices(DIA_Constantino_PICKPOCKET);
 };
 
 
-instance DIA_CONSTANTINO_HALLO(C_INFO)
+instance DIA_Constantino_Hallo(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 2;
-	condition = dia_constantino_hallo_condition;
-	information = dia_constantino_hallo_info;
+	condition = DIA_Constantino_Hallo_Condition;
+	information = DIA_Constantino_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_constantino_hallo_condition()
+func int DIA_Constantino_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (self.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (self.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_constantino_hallo_info()
+func void DIA_Constantino_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Constantino_Hallo_10_00");	//Czego chcesz? Tutaj nie ma nic za darmo, a ja i tak nie zamierzam ci nic sprzedaæ.
 };
 
 
-instance DIA_CONSTANTINO_ABOUTLEHRLING(C_INFO)
+instance DIA_Constantino_AboutLehrling(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 1;
-	condition = dia_constantino_aboutlehrling_condition;
-	information = dia_constantino_aboutlehrling_info;
+	condition = DIA_Constantino_AboutLehrling_Condition;
+	information = DIA_Constantino_AboutLehrling_Info;
 	permanent = FALSE;
 	description = "Chcê zostaæ czeladnikiem.";
 };
 
 
-func int dia_constantino_aboutlehrling_condition()
+func int DIA_Constantino_AboutLehrling_Condition()
 {
 	return TRUE;
 };
 
-func void dia_constantino_aboutlehrling_info()
+func void DIA_Constantino_AboutLehrling_Info()
 {
 	AI_Output(other,self,"DIA_Constantino_AboutLehrling_15_00");	//Chcê zostaæ czeladnikiem.
 	AI_Output(self,other,"DIA_Constantino_AboutLehrling_10_01");	//Naprawdê? A u kogo chcesz terminowaæ?
 };
 
 
-instance DIA_CONSTANTINO_HEILUNG(C_INFO)
+instance DIA_Constantino_Heilung(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 5;
-	condition = dia_constantino_heilung_condition;
-	information = dia_constantino_heilung_info;
+	condition = DIA_Constantino_Heilung_Condition;
+	information = DIA_Constantino_Heilung_Info;
 	permanent = FALSE;
 	description = "Potrzebujê leczenia.";
 };
 
 
-func int dia_constantino_heilung_condition()
+func int DIA_Constantino_Heilung_Condition()
 {
 	return TRUE;
 };
 
-func void dia_constantino_heilung_info()
+func void DIA_Constantino_Heilung_Info()
 {
 	AI_Output(other,self,"DIA_Constantino_Heilung_15_00");	//Potrzebujê leczenia.
 	AI_Output(self,other,"DIA_Constantino_Heilung_10_01");	//Co, jesteœ ranny?
-	Info_ClearChoices(dia_constantino_heilung);
-	Info_AddChoice(dia_constantino_heilung,"Nie.",dia_constantino_heilung_nein);
-	Info_AddChoice(dia_constantino_heilung,"Tak.",dia_constantino_heilung_ja);
+	Info_ClearChoices(DIA_Constantino_Heilung);
+	Info_AddChoice(DIA_Constantino_Heilung,"Nie.",DIA_Constantino_Heilung_Nein);
+	Info_AddChoice(DIA_Constantino_Heilung,"Tak.",DIA_Constantino_Heilung_Ja);
 };
 
-func void dia_constantino_heilung_ja()
+func void DIA_Constantino_Heilung_Ja()
 {
 	AI_Output(other,self,"DIA_Constantino_Heilung_Ja_15_00");	//Tak.
 	if(other.attribute[ATR_HITPOINTS] < other.attribute[ATR_HITPOINTS_MAX])
@@ -143,7 +143,7 @@ func void dia_constantino_heilung_ja()
 	AI_StopProcessInfos(self);
 };
 
-func void dia_constantino_heilung_nein()
+func void DIA_Constantino_Heilung_Nein()
 {
 	AI_Output(other,self,"DIA_Constantino_Heilung_Nein_15_00");	//Nie.
 	AI_Output(self,other,"DIA_Constantino_Heilung_Nein_10_01");	//Wynoœ siê wiêc, bo zaraz BÊDZIESZ ranny.
@@ -151,56 +151,56 @@ func void dia_constantino_heilung_nein()
 };
 
 
-instance DIA_CONSTANTINO_TRADE(C_INFO)
+instance DIA_Constantino_Trade(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 700;
-	condition = dia_constantino_trade_condition;
-	information = dia_constantino_trade_info;
+	condition = DIA_Constantino_Trade_Condition;
+	information = DIA_Constantino_Trade_Info;
 	permanent = TRUE;
 	description = "Poka¿ mi swoje towary.";
 	trade = TRUE;
 };
 
 
-func int dia_constantino_trade_condition()
+func int DIA_Constantino_Trade_Condition()
 {
 	return TRUE;
 };
 
-func void dia_constantino_trade_info()
+func void DIA_Constantino_Trade_Info()
 {
-	b_givetradeinv(self);
+	B_GiveTradeInv(self);
 	AI_Output(other,self,"DIA_Constantino_Trade_15_00");	//Poka¿ mi swoje towary.
-	if(CONSTANTINO_LOGPATCH1 == FALSE)
+	if(Constantino_Logpatch1 == FALSE)
 	{
-		Log_CreateTopic(TOPIC_CITYTRADER,LOG_NOTE);
-		b_logentry(TOPIC_CITYTRADER,"Constantino sprzedaje towary alchemiczne.");
-		CONSTANTINO_LOGPATCH1 = TRUE;
+		Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
+		B_LogEntry(TOPIC_CityTrader,"Constantino sprzedaje towary alchemiczne.");
+		Constantino_Logpatch1 = TRUE;
 	};
 };
 
 
-instance DIA_CONSTANTINO_BEIDIR(C_INFO)
+instance DIA_Constantino_BeiDir(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 1;
-	condition = dia_constantino_beidir_condition;
-	information = dia_constantino_beidir_info;
+	condition = DIA_Constantino_BeiDir_Condition;
+	information = DIA_Constantino_BeiDir_Info;
 	permanent = FALSE;
 	description = "Chcê terminowaæ jako czeladnik... u ciebie.";
 };
 
 
-func int dia_constantino_beidir_condition()
+func int DIA_Constantino_BeiDir_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_constantino_aboutlehrling) && (PLAYER_ISAPPRENTICE == APP_NONE))
+	if(Npc_KnowsInfo(other,DIA_Constantino_AboutLehrling) && (Player_IsApprentice == APP_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_constantino_beidir_info()
+func void DIA_Constantino_BeiDir_Info()
 {
 	AI_Output(other,self,"DIA_Constantino_BeiDir_15_00");	//Chcê terminowaæ jako czeladnik... u ciebie.
 	AI_Output(self,other,"DIA_Constantino_BeiDir_10_01");	//U MNIE? Nie! Mia³em ju¿ w¹tpliw¹ przyjemnoœæ posiadania czeladnika. Jeden raz mi wystarczy.
@@ -209,30 +209,30 @@ func void dia_constantino_beidir_info()
 };
 
 
-instance DIA_CONSTANTINO_ZUSTIMMUNG(C_INFO)
+instance DIA_Constantino_ZUSTIMMUNG(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 2;
-	condition = dia_constantino_zustimmung_condition;
-	information = dia_constantino_zustimmung_info;
+	condition = DIA_Constantino_ZUSTIMMUNG_Condition;
+	information = DIA_Constantino_ZUSTIMMUNG_Info;
 	permanent = TRUE;
 	description = "Chcê siê uczyæ u innego mistrza.";
 };
 
 
-func int dia_constantino_zustimmung_condition()
+func int DIA_Constantino_ZUSTIMMUNG_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_constantino_aboutlehrling) && (PLAYER_ISAPPRENTICE == APP_NONE))
+	if(Npc_KnowsInfo(other,DIA_Constantino_AboutLehrling) && (Player_IsApprentice == APP_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_constantino_zustimmung_info()
+func void DIA_Constantino_ZUSTIMMUNG_Info()
 {
 	AI_Output(other,self,"DIA_Constantino_ZUSTIMMUNG_15_00");	//Chcê siê uczyæ u innego mistrza.
 	AI_Output(self,other,"DIA_Constantino_ZUSTIMMUNG_10_01");	//Przyszed³eœ po moj¹ zgodê?
-	if(b_getgreatestpetzcrime(self) == CRIME_NONE)
+	if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
 	{
 		AI_Output(self,other,"DIA_Constantino_ZUSTIMMUNG_10_02");	//Hmmm - jeœli chodzi o mnie, mo¿esz siê uczyæ u kogo tylko chcesz.
 	}
@@ -242,137 +242,137 @@ func void dia_constantino_zustimmung_info()
 		AI_Output(self,other,"DIA_Constantino_ZUSTIMMUNG_10_04");	//Nie bêdê g³osowa³, ¿eby taki kryminalista jak ty uzyska³ szanowan¹ pozycjê w naszym mieœcie.
 		AI_Output(self,other,"DIA_Constantino_ZUSTIMMUNG_10_05");	//Do czasu a¿ za³atwisz tê sprawê z komendantem stra¿y miejskiej, moja odpowiedŸ brzmi nie!
 	};
-	if(CONSTANTINO_LOGPATCH2 == FALSE)
+	if(Constantino_Logpatch2 == FALSE)
 	{
-		Log_CreateTopic(TOPIC_LEHRLING,LOG_MISSION);
-		Log_SetTopicStatus(TOPIC_LEHRLING,LOG_RUNNING);
-		b_logentry(TOPIC_LEHRLING,"Constantino udzieli mi swojego poparcia, o ile nie bêdê zamieszany w ¿adne przestêpstwo.");
-		CONSTANTINO_LOGPATCH2 = TRUE;
+		Log_CreateTopic(TOPIC_Lehrling,LOG_MISSION);
+		Log_SetTopicStatus(TOPIC_Lehrling,LOG_Running);
+		B_LogEntry(TOPIC_Lehrling,"Constantino udzieli mi swojego poparcia, o ile nie bêdê zamieszany w ¿adne przestêpstwo.");
+		Constantino_Logpatch2 = TRUE;
 	};
 };
 
 
-instance DIA_CONSTANTINO_BRINGHERBS(C_INFO)
+instance DIA_Constantino_BringHerbs(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 1;
-	condition = dia_constantino_bringherbs_condition;
-	information = dia_constantino_bringherbs_info;
+	condition = DIA_Constantino_BringHerbs_Condition;
+	information = DIA_Constantino_BringHerbs_Info;
 	permanent = FALSE;
 	description = "Co muszê zrobiæ, ¿eby zostaæ TWOIM czeladnikiem?";
 };
 
 
-func int dia_constantino_bringherbs_condition()
+func int DIA_Constantino_BringHerbs_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_constantino_beidir) && (PLAYER_ISAPPRENTICE == APP_NONE))
+	if(Npc_KnowsInfo(other,DIA_Constantino_BeiDir) && (Player_IsApprentice == APP_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_constantino_bringherbs_info()
+func void DIA_Constantino_BringHerbs_Info()
 {
 	AI_Output(other,self,"DIA_Constantino_BringHerbs_15_00");	//Co muszê zrobiæ, ¿eby zostaæ TWOIM czeladnikiem?
 	AI_Output(self,other,"DIA_Constantino_BringHerbs_10_01");	//Moje sumienie nie znios³oby ciê¿aru œmierci KOLEJNEGO dyletanta.
 	AI_Output(self,other,"DIA_Constantino_BringHerbs_10_02");	//W okolicy roœnie mnóstwo ró¿norodnych zió³. Wykorzystane w ró¿nych kombinacjach daj¹ zdumiewaj¹ce efekty.
 	AI_Output(self,other,"DIA_Constantino_BringHerbs_10_03");	//Prawdopodobnie nie znasz nawet po³owy z nich.
 	AI_Output(self,other,"DIA_Constantino_BringHerbs_10_04");	//Masz - oto lista najwa¿niejszych roœlin.
-	b_giveinvitems(self,other,5651,1);
+	B_GiveInvItems(self,other,ItWr_Kraeuterliste,1);
 	AI_Output(self,other,"DIA_Constantino_BringHerbs_10_05");	//Przynieœ mi po jednej z ka¿dego rodzaju, a wtedy zastanowiê siê, czy przyj¹æ ciê na czeladnika.
-	MIS_CONSTANTINO_BRINGHERBS = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_CONSTANTINOPLANTS,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_CONSTANTINOPLANTS,LOG_RUNNING);
-	b_logentry(TOPIC_CONSTANTINOPLANTS,"Constantino nie przyjmie mnie na swojego czeladnika, jeœli nie dostarczê mu po jednym egzemplarzu ka¿dej roœliny.");
+	MIS_Constantino_BringHerbs = LOG_Running;
+	Log_CreateTopic(TOPIC_ConstantinoPlants,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_ConstantinoPlants,LOG_Running);
+	B_LogEntry(TOPIC_ConstantinoPlants,"Constantino nie przyjmie mnie na swojego czeladnika, jeœli nie dostarczê mu po jednym egzemplarzu ka¿dej roœliny.");
 };
 
 
-instance DIA_CONSTANTINO_HERBSRUNNING(C_INFO)
+instance DIA_Constantino_HerbsRunning(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 1;
-	condition = dia_constantino_herbsrunning_condition;
-	information = dia_constantino_herbsrunning_info;
+	condition = DIA_Constantino_HerbsRunning_Condition;
+	information = DIA_Constantino_HerbsRunning_Info;
 	permanent = TRUE;
 	description = "Jeœli chodzi o te roœliny…";
 };
 
 
-func int dia_constantino_herbsrunning_condition()
+func int DIA_Constantino_HerbsRunning_Condition()
 {
-	if(MIS_CONSTANTINO_BRINGHERBS == LOG_RUNNING)
+	if(MIS_Constantino_BringHerbs == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_constantino_herbsrunning_info()
+func void DIA_Constantino_HerbsRunning_Info()
 {
 	AI_Output(other,self,"DIA_Constantino_HerbsRunning_15_00");	//Jeœli chodzi o te roœliny...
 	AI_Output(self,other,"DIA_Constantino_HerbsRunning_10_01");	//Je¿eli sam nie potrafisz sobie z tym poradziæ, to nie nadajesz siê na alchemika!
-	Info_ClearChoices(dia_constantino_herbsrunning);
-	Info_AddChoice(dia_constantino_herbsrunning,"Rozumiem.",dia_constantino_herbsrunning_running);
-	if((Npc_HasItems(other,itpl_mana_herb_01) > 0) && (Npc_HasItems(other,itpl_mana_herb_02) > 0) && (Npc_HasItems(other,itpl_mana_herb_03) > 0) && (Npc_HasItems(other,itpl_health_herb_01) > 0) && (Npc_HasItems(other,itpl_health_herb_02) > 0) && (Npc_HasItems(other,itpl_health_herb_03) > 0) && (Npc_HasItems(other,itpl_dex_herb_01) > 0) && (Npc_HasItems(other,itpl_strength_herb_01) > 0) && (Npc_HasItems(other,itpl_speed_herb_01) > 0) && (Npc_HasItems(other,itpl_temp_herb) > 0) && (Npc_HasItems(other,itpl_perm_herb) > 0))
+	Info_ClearChoices(DIA_Constantino_HerbsRunning);
+	Info_AddChoice(DIA_Constantino_HerbsRunning,"Rozumiem.",DIA_Constantino_HerbsRunning_Running);
+	if((Npc_HasItems(other,ItPl_Mana_Herb_01) > 0) && (Npc_HasItems(other,ItPl_Mana_Herb_02) > 0) && (Npc_HasItems(other,ItPl_Mana_Herb_03) > 0) && (Npc_HasItems(other,ItPl_Health_Herb_01) > 0) && (Npc_HasItems(other,ItPl_Health_Herb_02) > 0) && (Npc_HasItems(other,ItPl_Health_Herb_03) > 0) && (Npc_HasItems(other,ItPl_Dex_Herb_01) > 0) && (Npc_HasItems(other,ItPl_Strength_Herb_01) > 0) && (Npc_HasItems(other,ItPl_Speed_Herb_01) > 0) && (Npc_HasItems(other,ItPl_Temp_Herb) > 0) && (Npc_HasItems(other,ItPl_Perm_Herb) > 0))
 	{
-		Info_AddChoice(dia_constantino_herbsrunning,"Mam wszystkie roœliny, które mia³em przynieœæ!",dia_constantino_herbsrunning_success);
+		Info_AddChoice(DIA_Constantino_HerbsRunning,"Mam wszystkie roœliny, które mia³em przynieœæ!",DIA_Constantino_HerbsRunning_Success);
 	};
 };
 
-func void dia_constantino_herbsrunning_success()
+func void DIA_Constantino_HerbsRunning_Success()
 {
 	AI_Output(other,self,"DIA_Constantino_HerbsRunning_Success_15_00");	//Mam wszystkie roœliny, które mia³em przynieœæ!
 	AI_Output(self,other,"DIA_Constantino_HerbsRunning_Success_10_01");	//Co? ¯artujesz sobie ze mnie, tak?
 	AI_Output(self,other,"DIA_Constantino_HerbsRunning_Success_10_02");	//Na Adanosa! Wszystko tu jest.
 	AI_Output(self,other,"DIA_Constantino_HerbsRunning_Success_10_03");	//Kto wie, mo¿e pewnego dnia bêdzie z ciebie jednak porz¹dny alchemik.
-	MIS_CONSTANTINO_BRINGHERBS = LOG_SUCCESS;
-	b_giveplayerxp(XP_CONSTANTINO_HERBS);
-	Log_CreateTopic(TOPIC_LEHRLING,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_LEHRLING,LOG_RUNNING);
-	b_logentry(TOPIC_LEHRLING,"Constantino przyjmie mnie na swojego czeladnika, jeœli zyskam poparcie pozosta³ych mistrzów.");
-	Info_ClearChoices(dia_constantino_herbsrunning);
+	MIS_Constantino_BringHerbs = LOG_SUCCESS;
+	B_GivePlayerXP(XP_Constantino_Herbs);
+	Log_CreateTopic(TOPIC_Lehrling,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Lehrling,LOG_Running);
+	B_LogEntry(TOPIC_Lehrling,"Constantino przyjmie mnie na swojego czeladnika, jeœli zyskam poparcie pozosta³ych mistrzów.");
+	Info_ClearChoices(DIA_Constantino_HerbsRunning);
 };
 
-func void dia_constantino_herbsrunning_running()
+func void DIA_Constantino_HerbsRunning_Running()
 {
 	AI_Output(other,self,"DIA_Constantino_HerbsRunning_Running_15_00");	//Rozumiem.
-	Info_ClearChoices(dia_constantino_herbsrunning);
+	Info_ClearChoices(DIA_Constantino_HerbsRunning);
 };
 
 
-var int constantino_startguild;
+var int Constantino_StartGuild;
 
-instance DIA_CONSTANTINO_LEHRLING(C_INFO)
+instance DIA_Constantino_LEHRLING(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 1;
-	condition = dia_constantino_lehrling_condition;
-	information = dia_constantino_lehrling_info;
+	condition = DIA_Constantino_LEHRLING_Condition;
+	information = DIA_Constantino_LEHRLING_Info;
 	permanent = TRUE;
 	description = "Mogê teraz zostaæ twoim czeladnikiem?";
 };
 
 
-func int dia_constantino_lehrling_condition()
+func int DIA_Constantino_LEHRLING_Condition()
 {
-	if((MIS_CONSTANTINO_BRINGHERBS == LOG_SUCCESS) && (PLAYER_ISAPPRENTICE == APP_NONE))
+	if((MIS_Constantino_BringHerbs == LOG_SUCCESS) && (Player_IsApprentice == APP_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_constantino_lehrling_info()
+func void DIA_Constantino_LEHRLING_Info()
 {
 	var int stimmen;
 	stimmen = 0;
 	AI_Output(other,self,"DIA_Constantino_LEHRLING_15_00");	//Mogê teraz zostaæ twoim czeladnikiem?
-	if(b_getgreatestpetzcrime(self) == CRIME_NONE)
+	if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
 	{
 		AI_Output(self,other,"DIA_Constantino_LEHRLING_10_01");	//Jeœli chodzi o mnie, to tak!
 		stimmen = stimmen + 1;
-		if(harad.aivar[AIV_TALKEDTOPLAYER] == TRUE)
+		if(Harad.aivar[AIV_TalkedToPlayer] == TRUE)
 		{
 			AI_Output(self,other,"DIA_Constantino_LEHRLING_10_02");	//Harada obchodzi tylko to, czy w razie ataku orków bêdziesz w stanie broniæ miasta.
-			if((MIS_HARAD_ORC == LOG_SUCCESS) || (MIS_HAKONBANDITS == LOG_SUCCESS))
+			if((MIS_Harad_Orc == LOG_SUCCESS) || (MIS_HakonBandits == LOG_SUCCESS))
 			{
 				AI_Output(self,other,"DIA_Constantino_LEHRLING_10_03");	//Wygl¹da na to, ¿e uda³o ci siê go o tym przekonaæ.
 				stimmen = stimmen + 1;
@@ -386,11 +386,11 @@ func void dia_constantino_lehrling_info()
 		{
 			AI_Output(self,other,"DIA_Constantino_LEHRLING_10_05");	//Harad twierdzi jednak, ¿e nigdy wczeœniej ciê nie widzia³.
 		};
-		if(bosper.aivar[AIV_TALKEDTOPLAYER] == TRUE)
+		if(Bosper.aivar[AIV_TalkedToPlayer] == TRUE)
 		{
 			AI_Output(self,other,"DIA_Constantino_LEHRLING_10_06");	//Bosper nie chcia³ nic powiedzieæ o twoich zdolnoœciach.
 			AI_Output(self,other,"DIA_Constantino_LEHRLING_10_07");	//Myœlê, ¿e sam chêtnie widzia³by ciê jako swojego czeladnika.
-			if((MIS_BOSPER_BOGEN == LOG_SUCCESS) || (MIS_BOSPER_WOLFFURS == LOG_SUCCESS))
+			if((MIS_Bosper_Bogen == LOG_SUCCESS) || (MIS_Bosper_WolfFurs == LOG_SUCCESS))
 			{
 				AI_Output(self,other,"DIA_Constantino_LEHRLING_10_08");	//Koniec koñców jednak siê zgodzi³.
 				stimmen = stimmen + 1;
@@ -405,10 +405,10 @@ func void dia_constantino_lehrling_info()
 		{
 			AI_Output(self,other,"DIA_Constantino_LEHRLING_10_11");	//Bosper jeszcze ciê nie zna.
 		};
-		if(thorben.aivar[AIV_TALKEDTOPLAYER] == TRUE)
+		if(Thorben.aivar[AIV_TalkedToPlayer] == TRUE)
 		{
 			AI_Output(self,other,"DIA_Constantino_LEHRLING_10_12");	//Thorben to bardzo pobo¿ny cz³owiek.
-			if(MIS_THORBEN_GETBLESSINGS == LOG_SUCCESS)
+			if(MIS_Thorben_GetBlessings == LOG_SUCCESS)
 			{
 				AI_Output(self,other,"DIA_Constantino_LEHRLING_10_13");	//Da³ ci swoje b³ogos³awieñstwo. To dobry znak.
 				stimmen = stimmen + 1;
@@ -422,14 +422,14 @@ func void dia_constantino_lehrling_info()
 		{
 			AI_Output(self,other,"DIA_Constantino_LEHRLING_10_15");	//Thorben nie wie, kim jesteœ.
 		};
-		if(matteo.aivar[AIV_TALKEDTOPLAYER] == TRUE)
+		if(Matteo.aivar[AIV_TalkedToPlayer] == TRUE)
 		{
-			if(MIS_MATTEO_GOLD == LOG_SUCCESS)
+			if(MIS_Matteo_Gold == LOG_SUCCESS)
 			{
 				AI_Output(self,other,"DIA_Constantino_LEHRLING_10_16");	//Jeœli chodzi o Mattea, to wychwala ciê pod niebiosa.
 				stimmen = stimmen + 1;
 			}
-			else if(MIS_MATTEO_GOLD == LOG_RUNNING)
+			else if(MIS_Matteo_Gold == LOG_Running)
 			{
 				AI_Output(self,other,"DIA_Constantino_LEHRLING_10_17");	//Matteo powiedzia³, ¿e jesteœ mu coœ winien. Jeœli zale¿y ci na jego g³osie, to lepiej zajmij siê tym drobiazgiem.
 			}
@@ -453,9 +453,9 @@ func void dia_constantino_lehrling_info()
 				AI_Output(self,other,"DIA_Constantino_LEHRLING_10_21");	//Masz zgodê czterech mistrzów. To wystarczy, byœ móg³ zostaæ czeladnikiem.
 			};
 			AI_Output(self,other,"DIA_Constantino_LEHRLING_10_22");	//Jesteœ gotów, by rozpocz¹æ terminowanie jako mój czeladnik?
-			Info_ClearChoices(dia_constantino_lehrling);
-			Info_AddChoice(dia_constantino_lehrling,"Muszê siê najpierw z tym przespaæ.",dia_constantino_lehrling_later);
-			Info_AddChoice(dia_constantino_lehrling,"Tak, mistrzu.",dia_constantino_lehrling_yes);
+			Info_ClearChoices(DIA_Constantino_LEHRLING);
+			Info_AddChoice(DIA_Constantino_LEHRLING,"Muszê siê najpierw z tym przespaæ.",DIA_Constantino_LEHRLING_Later);
+			Info_AddChoice(DIA_Constantino_LEHRLING,"Tak, mistrzu.",DIA_Constantino_LEHRLING_Yes);
 		}
 		else
 		{
@@ -470,111 +470,111 @@ func void dia_constantino_lehrling_info()
 	};
 };
 
-func void dia_constantino_lehrling_yes()
+func void DIA_Constantino_LEHRLING_Yes()
 {
 	AI_Output(other,self,"DIA_Constantino_LEHRLING_Yes_15_00");	//Tak, mistrzu.
 	AI_Output(self,other,"DIA_Constantino_LEHRLING_Yes_10_01");	//Dobrze wiêc! Mam nadziejê, ¿e nie bêdê ¿a³owaæ tej decyzji.
 	AI_Output(self,other,"DIA_Constantino_LEHRLING_Yes_10_02");	//Od tej chwili mo¿esz siê uwa¿aæ za mojego czeladnika.
-	PLAYER_ISAPPRENTICE = APP_CONSTANTINO;
-	CONSTANTINO_STARTGUILD = other.guild;
-	CONSTANTINO_LEHRLING_DAY = Wld_GetDay();
+	Player_IsApprentice = APP_Constantino;
+	Constantino_StartGuild = other.guild;
+	Constantino_Lehrling_Day = Wld_GetDay();
 	Wld_AssignRoomToGuild("alchemist",GIL_NONE);
-	MIS_APPRENTICE = LOG_SUCCESS;
-	b_giveplayerxp(XP_LEHRLING);
-	b_logentry(TOPIC_BONUS,"Constantino przyj¹³ mnie na czeladnika. Droga do górnego miasta stoi przede mn¹ otworem.");
-	Info_ClearChoices(dia_constantino_lehrling);
+	MIS_Apprentice = LOG_SUCCESS;
+	B_GivePlayerXP(XP_Lehrling);
+	B_LogEntry(Topic_Bonus,"Constantino przyj¹³ mnie na czeladnika. Droga do górnego miasta stoi przede mn¹ otworem.");
+	Info_ClearChoices(DIA_Constantino_LEHRLING);
 };
 
-func void dia_constantino_lehrling_later()
+func void DIA_Constantino_LEHRLING_Later()
 {
 	AI_Output(other,self,"DIA_Constantino_LEHRLING_Later_15_00");	//Muszê siê najpierw z tym przespaæ.
 	AI_Output(self,other,"DIA_Constantino_LEHRLING_Later_10_01");	//Dobrze! Ale jeœli nie potrafisz oddaæ siê temu ca³ym sercem, to powinieneœ zaj¹æ siê czymœ innym.
-	Info_ClearChoices(dia_constantino_lehrling);
+	Info_ClearChoices(DIA_Constantino_LEHRLING);
 };
 
 
-var int constantino_milkommentar;
-var int constantino_innoskommentar;
+var int Constantino_MILKommentar;
+var int Constantino_INNOSKommentar;
 
-instance DIA_CONSTANTINO_ALSLEHRLING(C_INFO)
+instance DIA_Constantino_AlsLehrling(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 1;
-	condition = dia_constantino_alslehrling_condition;
-	information = dia_constantino_alslehrling_info;
+	condition = DIA_Constantino_AlsLehrling_Condition;
+	information = DIA_Constantino_AlsLehrling_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_constantino_alslehrling_condition()
+func int DIA_Constantino_AlsLehrling_Condition()
 {
-	if((PLAYER_ISAPPRENTICE == APP_CONSTANTINO) && Npc_IsInState(self,zs_talk))
+	if((Player_IsApprentice == APP_Constantino) && Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_constantino_alslehrling_info()
+func void DIA_Constantino_AlsLehrling_Info()
 {
-	if(b_getgreatestpetzcrime(self) > CRIME_NONE)
+	if(B_GetGreatestPetzCrime(self) > CRIME_NONE)
 	{
 		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_00");	//Nie mam zamiaru ciê uczyæ, dopóki jesteœ oskar¿ony o pope³nienie przestêpstwa.
 		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_01");	//IdŸ do Lorda Andre i wyjaœnij sytuacjê.
-		CONSTANTINO_LEHRLING_DAY = Wld_GetDay();
+		Constantino_Lehrling_Day = Wld_GetDay();
 		AI_StopProcessInfos(self);
 	}
-	else if((other.guild == GIL_MIL) && (CONSTANTINO_STARTGUILD != GIL_MIL) && (CONSTANTINO_MILKOMMENTAR == FALSE))
+	else if((other.guild == GIL_MIL) && (Constantino_StartGuild != GIL_MIL) && (Constantino_MILKommentar == FALSE))
 	{
 		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_02");	//Wst¹pi³eœ do stra¿y? Ju¿ o tym s³ysza³em.
 		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_03");	//Najpierw czeladnik, a potem, hops, i do stra¿y? Nie zamierzam ci niczego u³atwiaæ.
 		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_04");	//Oczekujê, ¿e bêdziesz siê trzyma³ naszej umowy i regularnie dostarcza³ mi roœliny, i grzyby.
 		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_05");	//Jeœli nie bêdziesz sobie radziæ z dwoma zadaniami jednoczeœnie, to bêdziesz musia³ mniej spaæ!
-		CONSTANTINO_MILKOMMENTAR = TRUE;
-		CONSTANTINO_LEHRLING_DAY = Wld_GetDay();
+		Constantino_MILKommentar = TRUE;
+		Constantino_Lehrling_Day = Wld_GetDay();
 	}
-	else if(((other.guild == GIL_NOV) || (other.guild == GIL_KDF) || (other.guild == GIL_PAL)) && (CONSTANTINO_STARTGUILD != GIL_NOV) && (CONSTANTINO_STARTGUILD != GIL_KDF) && (CONSTANTINO_STARTGUILD != GIL_PAL) && (CONSTANTINO_INNOSKOMMENTAR == FALSE))
+	else if(((other.guild == GIL_NOV) || (other.guild == GIL_KDF) || (other.guild == GIL_PAL)) && (Constantino_StartGuild != GIL_NOV) && (Constantino_StartGuild != GIL_KDF) && (Constantino_StartGuild != GIL_PAL) && (Constantino_INNOSKommentar == FALSE))
 	{
 		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_06");	//Widzê, ¿e wst¹pi³eœ na s³u¿bê do Innosa. Domyœlam siê, ¿e od tej pory nie bêdziesz móg³ poœwiêcaæ zbyt du¿o czasu na dostarczanie zió³ staremu cz³owiekowi.
 		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_07");	//Mimo to czujê siê zaszczycony, ¿e mog³em ciê wspieraæ.
 		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_08");	//Je¿eli, pomimo nowych obowi¹zków, znajdziesz czas na zajmowanie siê alchemi¹, to pamiêtaj, ¿e jesteœ tu zawsze mile widziany.
-		CONSTANTINO_INNOSKOMMENTAR = TRUE;
+		Constantino_INNOSKommentar = TRUE;
 	}
-	else if((CONSTANTINO_LEHRLING_DAY <= (Wld_GetDay() - 4)) && (CONSTANTINO_INNOSKOMMENTAR == FALSE))
+	else if((Constantino_Lehrling_Day <= (Wld_GetDay() - 4)) && (Constantino_INNOSKommentar == FALSE))
 	{
 		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_09");	//Co chcesz zrobiæ?
 		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_10");	//Od swojego czeladnika spodziewam siê czegoœ wiêcej ni¿ zagl¹dania tutaj tylko od œwiêta!
 		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_11");	//Czy przynios³eœ chocia¿ trochê grzybów?
-		CONSTANTINO_LEHRLING_DAY = Wld_GetDay();
+		Constantino_Lehrling_Day = Wld_GetDay();
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_12");	//To znowu ty...
-		CONSTANTINO_LEHRLING_DAY = Wld_GetDay();
+		Constantino_Lehrling_Day = Wld_GetDay();
 	};
 };
 
 
-instance DIA_CONSTANTINO_AUFGABEN(C_INFO)
+instance DIA_Constantino_Aufgaben(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 2;
-	condition = dia_constantino_aufgaben_condition;
-	information = dia_constantino_aufgaben_info;
+	condition = DIA_Constantino_Aufgaben_Condition;
+	information = DIA_Constantino_Aufgaben_Info;
 	permanent = FALSE;
 	description = "Jakie s¹ moje obowi¹zki?";
 };
 
 
-func int dia_constantino_aufgaben_condition()
+func int DIA_Constantino_Aufgaben_Condition()
 {
-	if(PLAYER_ISAPPRENTICE == APP_CONSTANTINO)
+	if(Player_IsApprentice == APP_Constantino)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_constantino_aufgaben_info()
+func void DIA_Constantino_Aufgaben_Info()
 {
 	AI_Output(other,self,"DIA_Constantino_Aufgaben_15_00");	//Jakie s¹ moje obowi¹zki?
 	AI_Output(self,other,"DIA_Constantino_Aufgaben_10_01");	//Zdajê sobie sprawê, ¿e nie mogê oczekiwaæ od m³odego cz³owieka, ¿eby spêdza³ tu ze mn¹ ca³y dzieñ.
@@ -584,86 +584,86 @@ func void dia_constantino_aufgaben_info()
 };
 
 
-instance DIA_CONSTANTINO_MUSHROOMS(C_INFO)
+instance DIA_Constantino_Mushrooms(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 2;
-	condition = dia_constantino_mushrooms_condition;
-	information = dia_constantino_mushrooms_info;
+	condition = DIA_Constantino_Mushrooms_Condition;
+	information = DIA_Constantino_Mushrooms_Info;
 	permanent = FALSE;
 	description = "Jakie roœliny mam przynosiæ?";
 };
 
 
-func int dia_constantino_mushrooms_condition()
+func int DIA_Constantino_Mushrooms_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_constantino_aufgaben))
+	if(Npc_KnowsInfo(other,DIA_Constantino_Aufgaben))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_constantino_mushrooms_info()
+func void DIA_Constantino_Mushrooms_Info()
 {
 	AI_Output(other,self,"DIA_Constantino_Mushrooms_15_00");	//Jakie roœliny mam przynosiæ?
 	AI_Output(self,other,"DIA_Constantino_Mushrooms_10_01");	//Kupiê wszystko, co mi przyniesiesz - i dam ci za to normaln¹ cenê.
 	AI_Output(self,other,"DIA_Constantino_Mushrooms_10_02");	//Za grzyby dostaniesz jednak specjalne wynagrodzenie.
-	MIS_CONSTANTINO_MUSHROOMS = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_BONUS,LOG_NOTE);
-	b_logentry(TOPIC_BONUS,"Constantino kupi ode mnie grzyby po wyj¹tkowo dobrej cenie.");
+	MIS_Constantino_Mushrooms = LOG_Running;
+	Log_CreateTopic(Topic_Bonus,LOG_NOTE);
+	B_LogEntry(Topic_Bonus,"Constantino kupi ode mnie grzyby po wyj¹tkowo dobrej cenie.");
 };
 
 
-instance DIA_CONSTANTINO_MUSHROOMSRUNNING(C_INFO)
+instance DIA_Constantino_MushroomsRunning(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 2;
-	condition = dia_constantino_mushroomsrunning_condition;
-	information = dia_constantino_mushroomsrunning_info;
+	condition = DIA_Constantino_MushroomsRunning_Condition;
+	information = DIA_Constantino_MushroomsRunning_Info;
 	permanent = TRUE;
 	description = "Chcia³eœ grzybów…";
 };
 
 
-func int dia_constantino_mushroomsrunning_condition()
+func int DIA_Constantino_MushroomsRunning_Condition()
 {
-	if(MIS_CONSTANTINO_MUSHROOMS == LOG_RUNNING)
+	if(MIS_Constantino_Mushrooms == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_constantino_mushroomsrunning_info()
+func void DIA_Constantino_MushroomsRunning_Info()
 {
 	AI_Output(other,self,"DIA_Constantino_MushroomsRunning_15_00");	//Chcia³eœ grzybów...
-	Info_ClearChoices(dia_constantino_mushroomsrunning);
-	Info_AddChoice(dia_constantino_mushroomsrunning,"Przyniosê ci ich trochê.",dia_constantino_mushroomsrunning_later);
-	if(PLAYER_KNOWSDUNKELPILZBONUS == FALSE)
+	Info_ClearChoices(DIA_Constantino_MushroomsRunning);
+	Info_AddChoice(DIA_Constantino_MushroomsRunning,"Przyniosê ci ich trochê.",DIA_Constantino_MushroomsRunning_Later);
+	if(Player_KnowsDunkelpilzBonus == FALSE)
 	{
-		Info_AddChoice(dia_constantino_mushroomsrunning,"Te nie s¹ tak dobre jak mu³owe grzyby, ale i tak je wezmê.",dia_constantino_mushroomsrunning_why);
+		Info_AddChoice(DIA_Constantino_MushroomsRunning,"Te nie s¹ tak dobre jak mu³owe grzyby, ale i tak je wezmê.",DIA_Constantino_MushroomsRunning_Why);
 	};
-	if((Npc_HasItems(other,itpl_mushroom_01) > 0) || (Npc_HasItems(other,itpl_mushroom_02) > 0))
+	if((Npc_HasItems(other,ItPl_Mushroom_01) > 0) || (Npc_HasItems(other,ItPl_Mushroom_02) > 0))
 	{
-		Info_AddChoice(dia_constantino_mushroomsrunning,"Mam kilka...",dia_constantino_mushroomsrunning_sell);
+		Info_AddChoice(DIA_Constantino_MushroomsRunning,"Mam kilka...",DIA_Constantino_MushroomsRunning_Sell);
 	};
 };
 
-func void dia_constantino_mushroomsrunning_sell()
+func void DIA_Constantino_MushroomsRunning_Sell()
 {
-	var int dunkelpilz_dabei;
-	dunkelpilz_dabei = FALSE;
-	if(Npc_HasItems(other,itpl_mushroom_01) > 0)
+	var int Dunkelpilz_dabei;
+	Dunkelpilz_dabei = FALSE;
+	if(Npc_HasItems(other,ItPl_Mushroom_01) > 0)
 	{
 		AI_Output(other,self,"DIA_Constantino_MushroomsRunning_Sell_15_00");	//Mam tu kilka mu³owych grzybów...
 		AI_Output(self,other,"DIA_Constantino_MushroomsRunning_Sell_10_01");	//Ach! Te s¹ najlepsze! Dobra robota! Oto twoje z³oto!
-		dunkelpilz_dabei = TRUE;
-		CONSTANTINO_DUNKELPILZCOUNTER = CONSTANTINO_DUNKELPILZCOUNTER + Npc_HasItems(other,itpl_mushroom_01);
-		b_giveinvitems(self,other,5113,Npc_HasItems(other,itpl_mushroom_01) * VALUE_MUSHROOM_01);
-		b_giveinvitems(other,self,5203,Npc_HasItems(other,itpl_mushroom_01));
+		Dunkelpilz_dabei = TRUE;
+		Constantino_DunkelpilzCounter = Constantino_DunkelpilzCounter + Npc_HasItems(other,ItPl_Mushroom_01);
+		B_GiveInvItems(self,other,ItMi_Gold,Npc_HasItems(other,ItPl_Mushroom_01) * Value_Mushroom_01);
+		B_GiveInvItems(other,self,ItPl_Mushroom_01,Npc_HasItems(other,ItPl_Mushroom_01));
 	};
-	if(Npc_HasItems(other,itpl_mushroom_02) > 0)
+	if(Npc_HasItems(other,ItPl_Mushroom_02) > 0)
 	{
-		if(dunkelpilz_dabei == TRUE)
+		if(Dunkelpilz_dabei == TRUE)
 		{
 			AI_Output(other,self,"DIA_Constantino_MushroomsRunning_Sell_15_02");	//A tu kilka innych...
 		}
@@ -672,28 +672,28 @@ func void dia_constantino_mushroomsrunning_sell()
 			AI_Output(other,self,"DIA_Constantino_MushroomsRunning_Sell_15_03");	//Mam tu kilka grzybów!
 		};
 		AI_Output(self,other,"DIA_Constantino_MushroomsRunning_Sell_10_04");	//Te nie s¹ tak dobre jak mu³owe grzyby, ale i tak je wezmê.
-		b_giveinvitems(self,other,5113,Npc_HasItems(other,itpl_mushroom_02) * VALUE_MUSHROOM_02);
-		b_giveinvitems(other,self,5205,Npc_HasItems(other,itpl_mushroom_02));
+		B_GiveInvItems(self,other,ItMi_Gold,Npc_HasItems(other,ItPl_Mushroom_02) * Value_Mushroom_02);
+		B_GiveInvItems(other,self,ItPl_Mushroom_02,Npc_HasItems(other,ItPl_Mushroom_02));
 	};
-	Info_ClearChoices(dia_constantino_mushroomsrunning);
+	Info_ClearChoices(DIA_Constantino_MushroomsRunning);
 };
 
-func void dia_constantino_mushroomsrunning_why()
+func void DIA_Constantino_MushroomsRunning_Why()
 {
 	AI_Output(other,self,"DIA_Constantino_MushroomsRunning_Why_15_00");	//Dlaczego te grzyby s¹ takie wa¿ne?
-	if(CONSTANTINO_DUNKELPILZCOUNTER == 0)
+	if(Constantino_DunkelpilzCounter == 0)
 	{
 		AI_Output(self,other,"DIA_Constantino_MushroomsRunning_Why_10_01");	//Jesteœ moim czeladnikiem, ale i tak nie zdradzê ci wszystkiego.
 	}
-	else if(CONSTANTINO_DUNKELPILZCOUNTER >= 50)
+	else if(Constantino_DunkelpilzCounter >= 50)
 	{
 		AI_Output(self,other,"DIA_Constantino_MushroomsRunning_Why_10_02");	//Dobrze - powiem ci wiêc. Musisz to jednak zachowaæ dla siebie.
 		AI_Output(self,other,"DIA_Constantino_MushroomsRunning_Why_10_03");	//Mu³owe grzyby s¹ przepe³nione magiczn¹ energi¹. Za ka¿dym razem, kiedy zjadasz taki grzyb, jej niewielka czêœæ odk³ada siê w twoim ciele.
 		AI_Output(self,other,"DIA_Constantino_MushroomsRunning_Why_10_04");	//Kiedy zjesz ich dostatecznie du¿o, twoja energia magiczna wzroœnie...
 		AI_Output(self,other,"DIA_Constantino_MushroomsRunning_Why_10_05");	//Gdybym powiedzia³ ci to wczeœniej, to pewnie sam byœ ze¿ar³ wszystkie te grzyby, prawda?
 		AI_Output(other,self,"DIA_Constantino_MushroomsRunning_Why_15_06");	//O rany!
-		PLAYER_KNOWSDUNKELPILZBONUS = TRUE;
-		Info_ClearChoices(dia_constantino_mushroomsrunning);
+		Player_KnowsDunkelpilzBonus = TRUE;
+		Info_ClearChoices(DIA_Constantino_MushroomsRunning);
 	}
 	else
 	{
@@ -701,34 +701,34 @@ func void dia_constantino_mushroomsrunning_why()
 	};
 };
 
-func void dia_constantino_mushroomsrunning_later()
+func void DIA_Constantino_MushroomsRunning_Later()
 {
 	AI_Output(other,self,"DIA_Constantino_MushroomsRunning_Later_15_00");	//Przyniosê ci ich trochê.
 	AI_Output(self,other,"DIA_Constantino_MushroomsRunning_Later_10_01");	//Œwietnie! Przynieœ mi tyle, ile tylko zdo³asz znaleŸæ...
-	Info_ClearChoices(dia_constantino_mushroomsrunning);
+	Info_ClearChoices(DIA_Constantino_MushroomsRunning);
 };
 
 
-instance DIA_CONSTANTINO_ALCHEMY(C_INFO)
+instance DIA_Constantino_Alchemy(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 2;
-	condition = dia_constantino_alchemy_condition;
-	information = dia_constantino_alchemy_info;
+	condition = DIA_Constantino_Alchemy_Condition;
+	information = DIA_Constantino_Alchemy_Info;
 	permanent = FALSE;
 	description = "Naucz mnie sztuki alchemicznej!";
 };
 
 
-func int dia_constantino_alchemy_condition()
+func int DIA_Constantino_Alchemy_Condition()
 {
-	if(PLAYER_ISAPPRENTICE == APP_CONSTANTINO)
+	if(Player_IsApprentice == APP_Constantino)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_constantino_alchemy_info()
+func void DIA_Constantino_Alchemy_Info()
 {
 	AI_Output(other,self,"DIA_Constantino_Alchemy_15_00");	//Naucz mnie sztuki alchemicznej!
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_01");	//Dobrze. Najpierw podstawy.
@@ -739,177 +739,177 @@ func void dia_constantino_alchemy_info()
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_06");	//Jest ca³kiem sporo formu³, których mogê ciê nauczyæ.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_07");	//S¹ mikstury, które przywracaj¹ stracone si³y, a nawet takie, które trwale je wzmacniaj¹.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_08");	//Nie mo¿na jednak nauczyæ siê wszystkiego na raz.
-	CONSTANTINO_TEACHALCHEMY = TRUE;
-	Log_CreateTopic(TOPIC_CITYTEACHER,LOG_NOTE);
-	b_logentry(TOPIC_CITYTEACHER,"Constantino mo¿e mi udzieliæ szkolenia w zakresie alchemii.");
+	Constantino_TeachAlchemy = TRUE;
+	Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
+	B_LogEntry(TOPIC_CityTeacher,"Constantino mo¿e mi udzieliæ szkolenia w zakresie alchemii.");
 };
 
 
-instance DIA_CONSTANTINO_NEWRECIPES(C_INFO)
+instance DIA_Constantino_NewRecipes(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 2;
-	condition = dia_constantino_newrecipes_condition;
-	information = dia_constantino_newrecipes_info;
+	condition = DIA_Constantino_NewRecipes_Condition;
+	information = DIA_Constantino_NewRecipes_Info;
 	permanent = FALSE;
 	description = "Chcia³bym poznaæ nowe receptury tworzenia mikstur.";
 };
 
 
-func int dia_constantino_newrecipes_condition()
+func int DIA_Constantino_NewRecipes_Condition()
 {
-	if((PLAYER_ISAPPRENTICE != APP_CONSTANTINO) && (PLAYER_ISAPPRENTICE > APP_NONE) && (Npc_GetTalentSkill(other,NPC_TALENT_ALCHEMY) > 0))
+	if((Player_IsApprentice != APP_Constantino) && (Player_IsApprentice > APP_NONE) && (Npc_GetTalentSkill(other,NPC_TALENT_ALCHEMY) > 0))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_constantino_newrecipes_info()
+func void DIA_Constantino_NewRecipes_Info()
 {
 	AI_Output(other,self,"DIA_Constantino_NewRecipes_15_00");	//Chcia³bym poznaæ nowe receptury tworzenia mikstur.
 	AI_Output(self,other,"DIA_Constantino_NewRecipes_10_01");	//Mia³eœ ju¿ wczeœniej jakiœ kontakt z alchemi¹?
 	AI_Output(other,self,"DIA_Constantino_NewRecipes_15_02");	//Tak.
 	AI_Output(self,other,"DIA_Constantino_NewRecipes_10_03");	//I wci¹¿ jeszcze ¿yjesz... nie najgorsze kwalifikacje.
 	AI_Output(self,other,"DIA_Constantino_NewRecipes_10_04");	//Myœlê, ¿e mogê ci podaæ kilka formu³. Oczywiœcie zale¿y, co chcesz wiedzieæ.
-	CONSTANTINO_TEACHALCHEMY = TRUE;
-	Log_CreateTopic(TOPIC_CITYTEACHER,LOG_NOTE);
-	b_logentry(TOPIC_CITYTEACHER,"Constantino mo¿e mi udzieliæ szkolenia w zakresie alchemii.");
+	Constantino_TeachAlchemy = TRUE;
+	Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
+	B_LogEntry(TOPIC_CityTeacher,"Constantino mo¿e mi udzieliæ szkolenia w zakresie alchemii.");
 };
 
 
-instance DIA_CONSTANTINO_TEACH(C_INFO)
+instance DIA_Constantino_TEACH(C_Info)
 {
-	npc = vlk_417_constantino;
+	npc = VLK_417_Constantino;
 	nr = 2;
-	condition = dia_constantino_teach_condition;
-	information = dia_constantino_teach_info;
+	condition = DIA_Constantino_TEACH_Condition;
+	information = DIA_Constantino_TEACH_Info;
 	permanent = TRUE;
 	description = "Jakich receptur mo¿esz mnie nauczyæ?";
 };
 
 
-func int dia_constantino_teach_condition()
+func int DIA_Constantino_TEACH_Condition()
 {
-	if(CONSTANTINO_TEACHALCHEMY == TRUE)
+	if(Constantino_TeachAlchemy == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_constantino_teach_info()
+func void DIA_Constantino_TEACH_Info()
 {
 	AI_Output(other,self,"DIA_Constantino_TEACH_15_00");	//Jakich receptur mo¿esz mnie nauczyæ?
-	if((PLAYER_TALENT_ALCHEMY[POTION_HEALTH_01] == TRUE) && (PLAYER_TALENT_ALCHEMY[POTION_HEALTH_02] == TRUE) && (PLAYER_TALENT_ALCHEMY[POTION_HEALTH_03] == TRUE) && (PLAYER_TALENT_ALCHEMY[POTION_PERM_HEALTH] == TRUE) && (PLAYER_TALENT_ALCHEMY[POTION_MANA_01] == TRUE) && (PLAYER_TALENT_ALCHEMY[POTION_MANA_02] == TRUE) && (PLAYER_TALENT_ALCHEMY[POTION_PERM_STR] == TRUE))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Health_01] == TRUE) && (PLAYER_TALENT_ALCHEMY[POTION_Health_02] == TRUE) && (PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE) && (PLAYER_TALENT_ALCHEMY[POTION_Perm_Health] == TRUE) && (PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == TRUE) && (PLAYER_TALENT_ALCHEMY[POTION_Mana_02] == TRUE) && (PLAYER_TALENT_ALCHEMY[POTION_Perm_STR] == TRUE))
 	{
 		AI_Output(self,other,"DIA_Constantino_TEACH_10_01");	//Przykro mi. Niczego wiêcej nie mogê ciê nauczyæ.
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Constantino_TEACH_10_02");	//Znam kilka - musisz sam wybraæ.
-		Info_ClearChoices(dia_constantino_teach);
-		Info_AddChoice(dia_constantino_teach,DIALOG_BACK,dia_constantino_teach_back);
+		Info_ClearChoices(DIA_Constantino_TEACH);
+		Info_AddChoice(DIA_Constantino_TEACH,Dialog_Back,DIA_Constantino_Teach_BACK);
 	};
-	if(PLAYER_TALENT_ALCHEMY[POTION_HEALTH_01] == FALSE)
+	if(PLAYER_TALENT_ALCHEMY[POTION_Health_01] == FALSE)
 	{
-		Info_AddChoice(dia_constantino_teach,b_buildlearnstring("Esencja lecznicza",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_constantino_teach_health01);
+		Info_AddChoice(DIA_Constantino_TEACH,B_BuildLearnString("Esencja lecznicza",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Constantino_TEACH_Health01);
 	};
-	if((PLAYER_TALENT_ALCHEMY[POTION_HEALTH_01] == TRUE) && (PLAYER_TALENT_ALCHEMY[POTION_HEALTH_02] == FALSE))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Health_01] == TRUE) && (PLAYER_TALENT_ALCHEMY[POTION_Health_02] == FALSE))
 	{
-		Info_AddChoice(dia_constantino_teach,b_buildlearnstring("Ekstrakt leczniczy",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_constantino_teach_health02);
+		Info_AddChoice(DIA_Constantino_TEACH,B_BuildLearnString("Ekstrakt leczniczy",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Constantino_TEACH_Health02);
 	};
-	if((PLAYER_TALENT_ALCHEMY[POTION_HEALTH_02] == TRUE) && (PLAYER_TALENT_ALCHEMY[POTION_HEALTH_03] == FALSE))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Health_02] == TRUE) && (PLAYER_TALENT_ALCHEMY[POTION_Health_03] == FALSE))
 	{
-		Info_AddChoice(dia_constantino_teach,b_buildlearnstring("Eliksir leczniczy",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_constantino_teach_health03);
+		Info_AddChoice(DIA_Constantino_TEACH,B_BuildLearnString("Eliksir leczniczy",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Constantino_TEACH_Health03);
 	};
-	if((PLAYER_TALENT_ALCHEMY[POTION_PERM_HEALTH] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_HEALTH_03] == TRUE))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_Health] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE))
 	{
-		Info_AddChoice(dia_constantino_teach,b_buildlearnstring("Eliksir ¿ycia",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_constantino_teach_permhealth);
+		Info_AddChoice(DIA_Constantino_TEACH,B_BuildLearnString("Eliksir ¿ycia",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Constantino_TEACH_PermHealth);
 	};
-	if(PLAYER_TALENT_ALCHEMY[POTION_MANA_01] == FALSE)
+	if(PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == FALSE)
 	{
-		Info_AddChoice(dia_constantino_teach,b_buildlearnstring("Esencja many",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_constantino_teach_mana01);
+		Info_AddChoice(DIA_Constantino_TEACH,B_BuildLearnString("Esencja many",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Constantino_TEACH_Mana01);
 	};
-	if((PLAYER_TALENT_ALCHEMY[POTION_MANA_02] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_MANA_01] == TRUE))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_02] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == TRUE))
 	{
-		Info_AddChoice(dia_constantino_teach,b_buildlearnstring("Ekstrakt many",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_constantino_teach_mana02);
+		Info_AddChoice(DIA_Constantino_TEACH,B_BuildLearnString("Ekstrakt many",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Constantino_TEACH_Mana02);
 	};
-	if((PLAYER_TALENT_ALCHEMY[POTION_PERM_STR] == FALSE) && ((PLAYER_TALENT_ALCHEMY[POTION_HEALTH_03] == TRUE) || (PLAYER_TALENT_ALCHEMY[POTION_MANA_03] == TRUE)))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_STR] == FALSE) && ((PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE) || (PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == TRUE)))
 	{
-		Info_AddChoice(dia_constantino_teach,b_buildlearnstring("Eliksir si³y",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_constantino_teach_permstr);
+		Info_AddChoice(DIA_Constantino_TEACH,B_BuildLearnString("Eliksir si³y",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Constantino_TEACH_PermSTR);
 	};
 };
 
-func void dia_constantino_teach_back()
+func void DIA_Constantino_Teach_BACK()
 {
-	Info_ClearChoices(dia_constantino_teach);
+	Info_ClearChoices(DIA_Constantino_TEACH);
 };
 
-func void dia_constantino_teach_health01()
+func void DIA_Constantino_TEACH_Health01()
 {
-	if(b_teachplayertalentalchemy(self,other,POTION_HEALTH_01))
+	if(B_TeachPlayerTalentAlchemy(self,other,POTION_Health_01))
 	{
 		AI_Output(self,other,"DIA_Constantino_TEACH_Health01_10_00");	//Sk³adnikami esencji leczniczej s¹ roœliny lecznicze i rdest polny.
 	};
-	Info_ClearChoices(dia_constantino_teach);
+	Info_ClearChoices(DIA_Constantino_TEACH);
 };
 
-func void dia_constantino_teach_health02()
+func void DIA_Constantino_TEACH_Health02()
 {
-	if(b_teachplayertalentalchemy(self,other,POTION_HEALTH_02))
+	if(B_TeachPlayerTalentAlchemy(self,other,POTION_Health_02))
 	{
 		AI_Output(self,other,"DIA_Constantino_TEACH_Health02_10_00");	//Aby przygotowaæ ekstrakt leczniczy, potrzebujesz zió³ leczniczych i rdestu polnego.
 		AI_Output(self,other,"DIA_Constantino_TEACH_Health02_10_01");	//Pamiêtaj, ¿e ten wywar trzeba bardzo ostro¿nie podgrzewaæ.
 	};
-	Info_ClearChoices(dia_constantino_teach);
+	Info_ClearChoices(DIA_Constantino_TEACH);
 };
 
-func void dia_constantino_teach_health03()
+func void DIA_Constantino_TEACH_Health03()
 {
-	if(b_teachplayertalentalchemy(self,other,POTION_HEALTH_03))
+	if(B_TeachPlayerTalentAlchemy(self,other,POTION_Health_03))
 	{
 		AI_Output(self,other,"DIA_Constantino_TEACH_Health03_10_00");	//Stworzenie eliksiru leczniczego wymaga nieco doœwiadczenia.
 		AI_Output(self,other,"DIA_Constantino_TEACH_Health03_10_01");	//Bêd¹ ci potrzebne korzenie lecznicze i rdest polny. Bardzo uwa¿aj przy podgrzewaniu.
 	};
-	Info_ClearChoices(dia_constantino_teach);
+	Info_ClearChoices(DIA_Constantino_TEACH);
 };
 
-func void dia_constantino_teach_permhealth()
+func void DIA_Constantino_TEACH_PermHealth()
 {
-	if(b_teachplayertalentalchemy(self,other,POTION_PERM_HEALTH))
+	if(B_TeachPlayerTalentAlchemy(self,other,POTION_Perm_Health))
 	{
 		AI_Output(self,other,"DIA_Constantino_TEACH_PermHealth_10_00");	//Eliksir ¿ycia! To prawdziwa rzadkoœæ, ale wcale nie tak trudno go przyrz¹dziæ.
 		AI_Output(self,other,"DIA_Constantino_TEACH_PermHealth_10_01");	//Prawdziwym problemem jest zdobycie sk³adników. Potrzebne s¹ korzenie lecznicze i szczaw królewski.
 	};
-	Info_ClearChoices(dia_constantino_teach);
+	Info_ClearChoices(DIA_Constantino_TEACH);
 };
 
-func void dia_constantino_teach_mana01()
+func void DIA_Constantino_TEACH_Mana01()
 {
-	if(b_teachplayertalentalchemy(self,other,POTION_MANA_01))
+	if(B_TeachPlayerTalentAlchemy(self,other,POTION_Mana_01))
 	{
 		AI_Output(self,other,"DIA_Constantino_TEACH_Mana01_10_00");	//Esencja magiczna to najprostsza z wszystkich mikstur.
 		AI_Output(self,other,"DIA_Constantino_TEACH_Mana01_10_01");	//WeŸ ogniste pokrzywy oraz rdest polny i powoli je podgrzewaj.
 	};
-	Info_ClearChoices(dia_constantino_teach);
+	Info_ClearChoices(DIA_Constantino_TEACH);
 };
 
-func void dia_constantino_teach_mana02()
+func void DIA_Constantino_TEACH_Mana02()
 {
-	if(b_teachplayertalentalchemy(self,other,POTION_MANA_02))
+	if(B_TeachPlayerTalentAlchemy(self,other,POTION_Mana_02))
 	{
 		AI_Output(self,other,"DIA_Constantino_TEACH_Mana02_10_00");	//Skoro potrafisz ju¿ przygotowaæ esencjê, przy niewielkim wysi³ku powinieneœ byæ w stanie otrzymaæ tak¿e ekstrakt.
 		AI_Output(self,other,"DIA_Constantino_TEACH_Mana02_10_01");	//Ten wywar trzeba robiæ z sercem. Aby stworzyæ ten eliksir, u¿yj ognistego ziela i rdestu polnego.
 	};
-	Info_ClearChoices(dia_constantino_teach);
+	Info_ClearChoices(DIA_Constantino_TEACH);
 };
 
-func void dia_constantino_teach_permstr()
+func void DIA_Constantino_TEACH_PermSTR()
 {
-	if(b_teachplayertalentalchemy(self,other,POTION_PERM_STR))
+	if(B_TeachPlayerTalentAlchemy(self,other,POTION_Perm_STR))
 	{
 		AI_Output(self,other,"DIA_Constantino_TEACH_PermSTR_10_00");	//Eliksir si³y! Wspania³a mikstura. Bêdziesz potrzebowa³ rzadko spotykanego smoczego korzenia i szczawiu królewskiego.
 		AI_Output(self,other,"DIA_Constantino_TEACH_PermSTR_10_01");	//Gotuj¹c wywar, nie mo¿esz pozwoliæ, ¿eby doszed³ do wrzenia, bo spotka ciê paskudna niespodzianka!
 	};
-	Info_ClearChoices(dia_constantino_teach);
+	Info_ClearChoices(DIA_Constantino_TEACH);
 };
 

@@ -1,40 +1,40 @@
 
-instance VLK_492_RENGARU(NPC_DEFAULT)
+instance VLK_492_Rengaru(Npc_Default)
 {
 	name[0] = "Rengaru";
 	guild = GIL_VLK;
 	id = 492;
 	voice = 7;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,2);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,2);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_vlk_sword);
-	CreateInvItems(self,itmi_gold,50);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_TOUGHBART01,BODYTEX_N,4820);
+	EquipItem(self,ItMw_1h_Vlk_Sword);
+	CreateInvItems(self,ItMi_Gold,50);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_ToughBart01,BodyTex_N,ITAR_Vlk_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_492;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_492;
 };
 
 
-func void rtn_start_492()
+func void Rtn_Start_492()
 {
-	ta_stand_armscrossed(5,15,20,15,"NW_CITY_MERCHANT_PATH_36");
-	ta_stand_drinking(20,15,5,15,"NW_CITY_MERCHANT_PATH_33_B");
+	TA_Stand_ArmsCrossed(5,15,20,15,"NW_CITY_MERCHANT_PATH_36");
+	TA_Stand_Drinking(20,15,5,15,"NW_CITY_MERCHANT_PATH_33_B");
 };
 
-func void rtn_runaway_492()
+func void Rtn_RunAway_492()
 {
-	ta_fleetowp(8,0,23,0,"NW_CITY_HABOUR_KASERN_05_01");
-	ta_fleetowp(23,0,8,0,"NW_CITY_HABOUR_KASERN_05_01");
+	TA_FleeToWp(8,0,23,0,"NW_CITY_HABOUR_KASERN_05_01");
+	TA_FleeToWp(23,0,8,0,"NW_CITY_HABOUR_KASERN_05_01");
 };
 
-func void rtn_prison_492()
+func void Rtn_Prison_492()
 {
-	ta_stand_armscrossed(8,0,23,0,"NW_CITY_HABOUR_KASERN_RENGARU");
-	ta_stand_armscrossed(23,0,8,0,"NW_CITY_HABOUR_KASERN_RENGARU");
+	TA_Stand_ArmsCrossed(8,0,23,0,"NW_CITY_HABOUR_KASERN_RENGARU");
+	TA_Stand_ArmsCrossed(23,0,8,0,"NW_CITY_HABOUR_KASERN_RENGARU");
 };
 

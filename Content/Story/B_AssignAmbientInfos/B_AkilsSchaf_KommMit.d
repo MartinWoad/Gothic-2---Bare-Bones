@@ -1,15 +1,15 @@
 
-instance DIA_AKILSSCHAF_KOMMMIT(C_INFO)
+instance DIA_AkilsSchaf_KommMit(C_Info)
 {
-	npc = follow_sheep_akil;
+	npc = Follow_Sheep_AKIL;
 	nr = 1;
-	condition = dia_akilsschaf_kommmit_condition;
-	information = dia_akilsschaf_kommmit_info;
+	condition = DIA_AkilsSchaf_KommMit_Condition;
+	information = DIA_AkilsSchaf_KommMit_Info;
 	description = "Chodü ze mnπ.";
 };
 
 
-func int dia_akilsschaf_kommmit_condition()
+func int DIA_AkilsSchaf_KommMit_Condition()
 {
 	if(self.aivar[AIV_PARTYMEMBER] == FALSE)
 	{
@@ -17,18 +17,18 @@ func int dia_akilsschaf_kommmit_condition()
 	};
 };
 
-func void dia_akilsschaf_kommmit_info()
+func void DIA_AkilsSchaf_KommMit_Info()
 {
-	b_kommmit();
-	b_lieselmaeh();
+	B_KommMit();
+	B_LieselMaeh();
 	self.aivar[AIV_PARTYMEMBER] = TRUE;
-	if(Npc_IsDead(bdt_1025_bandit_h) == FALSE)
+	if(Npc_IsDead(BDT_1025_Bandit_H) == FALSE)
 	{
-		bdt_1025_bandit_h.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+		BDT_1025_Bandit_H.aivar[AIV_EnemyOverride] = FALSE;
 	};
-	if(Npc_IsDead(bdt_1026_bandit_h) == FALSE)
+	if(Npc_IsDead(BDT_1026_Bandit_H) == FALSE)
 	{
-		bdt_1026_bandit_h.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+		BDT_1026_Bandit_H.aivar[AIV_EnemyOverride] = FALSE;
 	};
 	AI_StopProcessInfos(self);
 };

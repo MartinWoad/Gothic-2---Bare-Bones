@@ -1,9 +1,9 @@
 
-func void zs_stand_eating()
+func void ZS_Stand_Eating()
 {
 	var int random;
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
@@ -13,39 +13,39 @@ func void zs_stand_eating()
 	random = Hlp_Random(4);
 	if(random == 0)
 	{
-		if(Npc_HasItems(self,itfo_apple) == 0)
+		if(Npc_HasItems(self,ItFo_Apple) == 0)
 		{
-			CreateInvItem(self,itfo_apple);
+			CreateInvItem(self,ItFo_Apple);
 		};
-		self.aivar[AIV_FOOD] = FOOD_APPLE;
+		self.aivar[AIV_Food] = FOOD_Apple;
 	}
 	else if(random == 1)
 	{
-		if(Npc_HasItems(self,itfo_cheese) == 0)
+		if(Npc_HasItems(self,ItFo_Cheese) == 0)
 		{
-			CreateInvItem(self,itfo_cheese);
+			CreateInvItem(self,ItFo_Cheese);
 		};
-		self.aivar[AIV_FOOD] = FOOD_CHEESE;
+		self.aivar[AIV_Food] = FOOD_Cheese;
 	}
 	else if(random == 2)
 	{
-		if(Npc_HasItems(self,itfo_bacon) == 0)
+		if(Npc_HasItems(self,ItFo_Bacon) == 0)
 		{
-			CreateInvItem(self,itfo_bacon);
+			CreateInvItem(self,ItFo_Bacon);
 		};
-		self.aivar[AIV_FOOD] = FOOD_BACON;
+		self.aivar[AIV_Food] = FOOD_Bacon;
 	}
 	else if(random == 3)
 	{
-		if(Npc_HasItems(self,itfomutton) == 0)
+		if(Npc_HasItems(self,ItFoMutton) == 0)
 		{
-			CreateInvItem(self,itfomutton);
+			CreateInvItem(self,ItFoMutton);
 		};
-		self.aivar[AIV_FOOD] = FOOD_BREAD;
+		self.aivar[AIV_Food] = FOOD_Bread;
 	};
 };
 
-func int zs_stand_eating_loop()
+func int ZS_Stand_Eating_Loop()
 {
 	if(Npc_IsOnFP(self,"STAND"))
 	{
@@ -72,35 +72,35 @@ func int zs_stand_eating_loop()
 	};
 	if(self.aivar[AIV_TAPOSITION] == NOTINPOS)
 	{
-		if(self.aivar[AIV_FOOD] == FOOD_APPLE)
+		if(self.aivar[AIV_Food] == FOOD_Apple)
 		{
-			AI_UseItemToState(self,itfo_apple,0);
+			AI_UseItemToState(self,ItFo_Apple,0);
 			AI_PlayAniBS(self,"T_FOOD_RANDOM_2",BS_ITEMINTERACT);
 			self.aivar[AIV_TAPOSITION] = ISINPOS;
 		};
-		if(self.aivar[AIV_FOOD] == FOOD_CHEESE)
+		if(self.aivar[AIV_Food] == FOOD_Cheese)
 		{
-			AI_UseItemToState(self,itfo_cheese,0);
+			AI_UseItemToState(self,ItFo_Cheese,0);
 			self.aivar[AIV_TAPOSITION] = ISINPOS;
 		};
-		if(self.aivar[AIV_FOOD] == FOOD_BACON)
+		if(self.aivar[AIV_Food] == FOOD_Bacon)
 		{
-			AI_UseItemToState(self,itfo_bacon,0);
+			AI_UseItemToState(self,ItFo_Bacon,0);
 			self.aivar[AIV_TAPOSITION] = ISINPOS;
 		};
-		if(self.aivar[AIV_FOOD] == FOOD_BREAD)
+		if(self.aivar[AIV_Food] == FOOD_Bread)
 		{
-			AI_UseItemToState(self,itfomutton,0);
+			AI_UseItemToState(self,ItFoMutton,0);
 			self.aivar[AIV_TAPOSITION] = ISINPOS;
 		};
 	};
 	if((Npc_GetStateTime(self) > 5) && (self.aivar[AIV_TAPOSITION] == ISINPOS))
 	{
-		if(self.aivar[AIV_FOOD] == FOOD_APPLE)
+		if(self.aivar[AIV_Food] == FOOD_Apple)
 		{
 			AI_PlayAniBS(self,"T_FOOD_RANDOM_1",BS_ITEMINTERACT);
 		}
-		else if((self.aivar[AIV_FOOD] == FOOD_BACON) || (self.aivar[AIV_FOOD] == FOOD_BREAD))
+		else if((self.aivar[AIV_Food] == FOOD_Bacon) || (self.aivar[AIV_Food] == FOOD_Bread))
 		{
 			AI_PlayAniBS(self,"T_MEAT_RANDOM_1",BS_ITEMINTERACT);
 		}
@@ -113,24 +113,24 @@ func int zs_stand_eating_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_stand_eating_end()
+func void ZS_Stand_Eating_End()
 {
 	AI_PlayAniBS(self,"T_POTION_RANDOM_2",BS_ITEMINTERACT);
-	if(self.aivar[AIV_FOOD] == FOOD_APPLE)
+	if(self.aivar[AIV_Food] == FOOD_Apple)
 	{
-		AI_UseItemToState(self,itfo_apple,-1);
+		AI_UseItemToState(self,ItFo_Apple,-1);
 	};
-	if(self.aivar[AIV_FOOD] == FOOD_CHEESE)
+	if(self.aivar[AIV_Food] == FOOD_Cheese)
 	{
-		AI_UseItemToState(self,itfo_cheese,-1);
+		AI_UseItemToState(self,ItFo_Cheese,-1);
 	};
-	if(self.aivar[AIV_FOOD] == FOOD_BACON)
+	if(self.aivar[AIV_Food] == FOOD_Bacon)
 	{
-		AI_UseItemToState(self,itfo_bacon,-1);
+		AI_UseItemToState(self,ItFo_Bacon,-1);
 	};
-	if(self.aivar[AIV_FOOD] == FOOD_BREAD)
+	if(self.aivar[AIV_Food] == FOOD_Bread)
 	{
-		AI_UseItemToState(self,itfomutton,-1);
+		AI_UseItemToState(self,ItFoMutton,-1);
 	};
 };
 

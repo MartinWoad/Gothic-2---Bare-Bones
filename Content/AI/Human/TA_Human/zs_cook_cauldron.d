@@ -1,29 +1,29 @@
 
-func void zs_cook_cauldron()
+func void ZS_Cook_Cauldron()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == FALSE)
 	{
 		AI_GotoWP(self,self.wp);
 	};
-	if(Npc_HasItems(self,itmi_scoop) == 0)
+	if(Npc_HasItems(self,ItMi_Scoop) == 0)
 	{
-		CreateInvItem(self,itmi_scoop);
+		CreateInvItem(self,ItMi_Scoop);
 	};
 };
 
-func int zs_cook_cauldron_loop()
+func int ZS_Cook_Cauldron_Loop()
 {
-	if(!c_bodystatecontains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"CAULDRON"))
+	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"CAULDRON"))
 	{
 		AI_UseMob(self,"CAULDRON",1);
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_cook_cauldron_end()
+func void ZS_Cook_Cauldron_End()
 {
 	AI_UseMob(self,"CAULDRON",-1);
 };

@@ -1,24 +1,24 @@
 
-func void b_dragonkillcounter(var C_NPC current_dragon)
+func void B_DragonKillCounter(var C_Npc current_dragon)
 {
 	if(current_dragon.guild == GIL_DRAGON)
 	{
-		MIS_KILLEDDRAGONS = MIS_KILLEDDRAGONS + 1;
+		MIS_KilledDragons = MIS_KilledDragons + 1;
 	};
-	if(MIS_KILLEDDRAGONS == 4)
+	if(MIS_KilledDragons == 4)
 	{
-		MIS_ALLDRAGONSDEAD = TRUE;
-		if((DJG_BIFFPARTY == TRUE) && (Npc_IsDead(biff) == FALSE))
+		MIS_AllDragonsDead = TRUE;
+		if((DJG_BiffParty == TRUE) && (Npc_IsDead(Biff) == FALSE))
 		{
-			DJG_BIFFSURVIVEDLASTDRAGON = TRUE;
+			DJG_BiffSurvivedLastDragon = TRUE;
 		};
 	};
 	if(current_dragon.aivar[AIV_MM_REAL_ID] == ID_DRAGON_UNDEAD)
 	{
-		UNDEADDRAGONISDEAD = TRUE;
-		Log_CreateTopic(TOPIC_BACKTOSHIP,LOG_MISSION);
-		Log_SetTopicStatus(TOPIC_BACKTOSHIP,LOG_RUNNING);
-		b_logentry(TOPIC_BACKTOSHIP,PRINT_DRAGKILLCOUNT);
+		UndeadDragonIsDead = TRUE;
+		Log_CreateTopic(TOPIC_BackToShip,LOG_MISSION);
+		Log_SetTopicStatus(TOPIC_BackToShip,LOG_Running);
+		B_LogEntry(TOPIC_BackToShip,PRINT_DragKillCount);
 		AI_Teleport(hero,"UNDEAD_ENDTELEPORT");
 		if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
 		{

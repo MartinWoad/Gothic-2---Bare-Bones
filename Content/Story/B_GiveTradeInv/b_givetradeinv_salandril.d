@@ -1,65 +1,65 @@
 
-var int salandril_itemsgiven_chapter_1;
-var int salandril_itemsgiven_chapter_2;
-var int salandril_itemsgiven_chapter_3;
-var int salandril_itemsgiven_chapter_4;
-var int salandril_itemsgiven_chapter_5;
+var int Salandril_ItemsGiven_Chapter_1;
+var int Salandril_ItemsGiven_Chapter_2;
+var int Salandril_ItemsGiven_Chapter_3;
+var int Salandril_ItemsGiven_Chapter_4;
+var int Salandril_ItemsGiven_Chapter_5;
 var int salandril_itemsgiven_chapter_6;
 
-func void b_givetradeinv_salandril(var C_NPC slf)
+func void B_GiveTradeInv_Salandril(var C_Npc slf)
 {
-	if((KAPITEL >= 1) && (SALANDRIL_ITEMSGIVEN_CHAPTER_1 == FALSE))
+	if((Kapitel >= 1) && (Salandril_ItemsGiven_Chapter_1 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itpo_mana_02,5);
-		CreateInvItems(slf,itpo_health_02,5);
-		CreateInvItems(slf,itpo_mana_03,2);
-		CreateInvItems(slf,itpo_health_03,2);
-		CreateInvItems(slf,itpl_speed_herb_01,2);
-		SALANDRIL_ITEMSGIVEN_CHAPTER_1 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItPo_Mana_02,5);
+		CreateInvItems(slf,ItPo_Health_02,5);
+		CreateInvItems(slf,ItPo_Mana_03,2);
+		CreateInvItems(slf,ItPo_Health_03,2);
+		CreateInvItems(slf,ItPl_Speed_Herb_01,2);
+		Salandril_ItemsGiven_Chapter_1 = TRUE;
 	};
-	if((KAPITEL >= 2) && (SALANDRIL_ITEMSGIVEN_CHAPTER_2 == FALSE))
+	if((Kapitel >= 2) && (Salandril_ItemsGiven_Chapter_2 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itpo_mana_02,5);
-		CreateInvItems(slf,itpo_health_02,5);
-		CreateInvItems(slf,itpo_mana_03,2);
-		CreateInvItems(slf,itpo_health_03,2);
-		SALANDRIL_ITEMSGIVEN_CHAPTER_2 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItPo_Mana_02,5);
+		CreateInvItems(slf,ItPo_Health_02,5);
+		CreateInvItems(slf,ItPo_Mana_03,2);
+		CreateInvItems(slf,ItPo_Health_03,2);
+		Salandril_ItemsGiven_Chapter_2 = TRUE;
 	};
-	if((KAPITEL >= 3) && (SALANDRIL_ITEMSGIVEN_CHAPTER_3 == FALSE))
+	if((Kapitel >= 3) && (Salandril_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itpo_mana_02,5);
-		CreateInvItems(slf,itpo_health_02,5);
-		CreateInvItems(slf,itpo_mana_03,2);
-		CreateInvItems(slf,itpo_health_03,2);
-		SALANDRIL_ITEMSGIVEN_CHAPTER_3 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItPo_Mana_02,5);
+		CreateInvItems(slf,ItPo_Health_02,5);
+		CreateInvItems(slf,ItPo_Mana_03,2);
+		CreateInvItems(slf,ItPo_Health_03,2);
+		Salandril_ItemsGiven_Chapter_3 = TRUE;
 	};
-	if((KAPITEL >= 4) && (SALANDRIL_ITEMSGIVEN_CHAPTER_4 == FALSE))
+	if((Kapitel >= 4) && (Salandril_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,200);
-		CreateInvItems(slf,itpo_mana_02,2);
-		CreateInvItems(slf,itpo_health_02,2);
-		CreateInvItems(slf,itpo_mana_03,5);
-		CreateInvItems(slf,itpo_health_03,5);
-		SALANDRIL_ITEMSGIVEN_CHAPTER_4 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,200);
+		CreateInvItems(slf,ItPo_Mana_02,2);
+		CreateInvItems(slf,ItPo_Health_02,2);
+		CreateInvItems(slf,ItPo_Mana_03,5);
+		CreateInvItems(slf,ItPo_Health_03,5);
+		Salandril_ItemsGiven_Chapter_4 = TRUE;
 	};
-	if((KAPITEL >= 5) && (SALANDRIL_ITEMSGIVEN_CHAPTER_5 == FALSE))
+	if((Kapitel >= 5) && (Salandril_ItemsGiven_Chapter_5 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,300);
-		CreateInvItems(slf,itpo_mana_02,2);
-		CreateInvItems(slf,itpo_health_02,2);
-		CreateInvItems(slf,itpo_mana_03,5);
-		CreateInvItems(slf,itpo_health_03,5);
-		SALANDRIL_ITEMSGIVEN_CHAPTER_5 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,300);
+		CreateInvItems(slf,ItPo_Mana_02,2);
+		CreateInvItems(slf,ItPo_Health_02,2);
+		CreateInvItems(slf,ItPo_Mana_03,5);
+		CreateInvItems(slf,ItPo_Health_03,5);
+		Salandril_ItemsGiven_Chapter_5 = TRUE;
 	};
-	if((KAPITEL >= 6) && (SALANDRIL_ITEMSGIVEN_CHAPTER_6 == FALSE))
+	if((Kapitel >= 6) && (SALANDRIL_ITEMSGIVEN_CHAPTER_6 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,400);
-		CreateInvItems(slf,itpo_mana_03,8);
-		CreateInvItems(slf,itpo_health_03,8);
-		CreateInvItems(slf,itpo_perm_health,1);
+		CreateInvItems(slf,ItMi_Gold,400);
+		CreateInvItems(slf,ItPo_Mana_03,8);
+		CreateInvItems(slf,ItPo_Health_03,8);
+		CreateInvItems(slf,ItPo_Perm_Health,1);
 		SALANDRIL_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };

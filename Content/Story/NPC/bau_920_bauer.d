@@ -1,28 +1,28 @@
 
-instance BAU_920_BAUER(NPC_DEFAULT)
+instance BAU_920_Bauer(Npc_Default)
 {
-	name[0] = NAME_BAUER;
+	name[0] = NAME_Bauer;
 	guild = GIL_BAU;
 	id = 920;
 	voice = 7;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,1);
-	b_givenpctalents(self);
-	b_setfightskills(self,15);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,1);
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,15);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_bau_axe);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_NORMALBART_GRAHAM,BODYTEX_N,4831);
+	EquipItem(self,ItMw_1h_Bau_Axe);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_NormalBart_Graham,BodyTex_N,ITAR_Bau_M);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	daily_routine = rtn_start_920;
+	daily_routine = Rtn_Start_920;
 };
 
 
-func void rtn_start_920()
+func void Rtn_Start_920()
 {
-	ta_smalltalk(7,50,21,50,"NW_BIGFARM_HOUSE_OUT_04");
-	ta_smalltalk(21,50,7,50,"NW_BIGFARM_STABLE_01");
+	TA_Smalltalk(7,50,21,50,"NW_BIGFARM_HOUSE_OUT_04");
+	TA_Smalltalk(21,50,7,50,"NW_BIGFARM_STABLE_01");
 };
 

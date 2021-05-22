@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_GIANT_BUG(C_NPC)
+prototype Mst_Default_Giant_Bug(C_Npc)
 {
 	name[0] = "Polna Bestia";
 	guild = GIL_GIANT_BUG;
@@ -21,28 +21,28 @@ prototype MST_DEFAULT_GIANT_BUG(C_NPC)
 	fight_tactic = FAI_GIANT_BUG;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_SHORT;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_SHORT;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_giant_bug()
+func void B_SetVisuals_Giant_Bug()
 {
 	Mdl_SetVisual(self,"Giant_Bug.mds");
 	Mdl_SetVisualBody(self,"Giant_Bug_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance GIANT_BUG(MST_DEFAULT_GIANT_BUG)
+instance Giant_Bug(Mst_Default_Giant_Bug)
 {
-	b_setvisuals_giant_bug();
+	B_SetVisuals_Giant_Bug();
 	Npc_SetToFistMode(self);
 };
 
-instance YGIANT_BUG(MST_DEFAULT_GIANT_BUG)
+instance YGiant_Bug(Mst_Default_Giant_Bug)
 {
 	name[0] = "M³oda Polna Bestia";
 	level = 4;
@@ -57,12 +57,12 @@ instance YGIANT_BUG(MST_DEFAULT_GIANT_BUG)
 	protection[PROT_FLY] = 100;
 	protection[PROT_MAGIC] = 0;
 	fight_tactic = FAI_GIANT_BUG;
-	b_setvisuals_giant_bug();
+	B_SetVisuals_Giant_Bug();
 	Mdl_SetModelScale(self,0.9,0.9,0.9);
 	Npc_SetToFistMode(self);
 };
 
-instance YGIANT_BUG_VINORITUAL1(MST_DEFAULT_GIANT_BUG)
+instance YGiant_Bug_VinoRitual1(Mst_Default_Giant_Bug)
 {
 	name[0] = "M³oda Polna Bestia";
 	level = 4;
@@ -77,12 +77,12 @@ instance YGIANT_BUG_VINORITUAL1(MST_DEFAULT_GIANT_BUG)
 	protection[PROT_FLY] = 100;
 	protection[PROT_MAGIC] = 0;
 	fight_tactic = FAI_GIANT_BUG;
-	b_setvisuals_giant_bug();
+	B_SetVisuals_Giant_Bug();
 	Mdl_SetModelScale(self,0.9,0.9,0.9);
 	Npc_SetToFistMode(self);
 };
 
-instance YGIANT_BUG_VINORITUAL2(MST_DEFAULT_GIANT_BUG)
+instance YGiant_Bug_VinoRitual2(Mst_Default_Giant_Bug)
 {
 	name[0] = "M³oda Polna Bestia";
 	level = 4;
@@ -97,50 +97,50 @@ instance YGIANT_BUG_VINORITUAL2(MST_DEFAULT_GIANT_BUG)
 	protection[PROT_FLY] = 100;
 	protection[PROT_MAGIC] = 0;
 	fight_tactic = FAI_GIANT_BUG;
-	b_setvisuals_giant_bug();
+	B_SetVisuals_Giant_Bug();
 	Mdl_SetModelScale(self,0.9,0.9,0.9);
 	Npc_SetToFistMode(self);
 };
 
-instance LOBARTS_GIANT_BUG1(MST_DEFAULT_GIANT_BUG)
+instance Lobarts_Giant_Bug1(Mst_Default_Giant_Bug)
 {
-	b_setvisuals_giant_bug();
+	B_SetVisuals_Giant_Bug();
 	Npc_SetToFistMode(self);
 };
 
-instance LOBARTS_GIANT_BUG2(MST_DEFAULT_GIANT_BUG)
+instance Lobarts_Giant_Bug2(Mst_Default_Giant_Bug)
 {
-	b_setvisuals_giant_bug();
+	B_SetVisuals_Giant_Bug();
 	Npc_SetToFistMode(self);
 };
 
-instance LOBARTS_GIANT_BUG3(MST_DEFAULT_GIANT_BUG)
+instance Lobarts_Giant_Bug3(Mst_Default_Giant_Bug)
 {
-	b_setvisuals_giant_bug();
+	B_SetVisuals_Giant_Bug();
 	Npc_SetToFistMode(self);
 };
 
-instance LOBARTS_GIANT_BUG4(MST_DEFAULT_GIANT_BUG)
+instance Lobarts_Giant_Bug4(Mst_Default_Giant_Bug)
 {
-	b_setvisuals_giant_bug();
+	B_SetVisuals_Giant_Bug();
 	Npc_SetToFistMode(self);
 };
 
-instance LOBARTS_GIANT_BUG5(MST_DEFAULT_GIANT_BUG)
+instance Lobarts_Giant_Bug5(Mst_Default_Giant_Bug)
 {
-	b_setvisuals_giant_bug();
+	B_SetVisuals_Giant_Bug();
 	Npc_SetToFistMode(self);
 };
 
-instance LOBARTS_GIANT_BUG6(MST_DEFAULT_GIANT_BUG)
+instance Lobarts_Giant_Bug6(Mst_Default_Giant_Bug)
 {
-	b_setvisuals_giant_bug();
+	B_SetVisuals_Giant_Bug();
 	Npc_SetToFistMode(self);
 };
 
-instance LOBARTS_GIANT_BUG7(MST_DEFAULT_GIANT_BUG)
+instance Lobarts_Giant_Bug7(Mst_Default_Giant_Bug)
 {
-	b_setvisuals_giant_bug();
+	B_SetVisuals_Giant_Bug();
 	Npc_SetToFistMode(self);
 };
 

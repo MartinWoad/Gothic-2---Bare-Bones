@@ -1,188 +1,188 @@
 
-instance DIA_MATTEO_EXIT(C_INFO)
+instance DIA_Matteo_EXIT(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 999;
-	condition = dia_matteo_exit_condition;
-	information = dia_matteo_exit_info;
+	condition = DIA_Matteo_EXIT_Condition;
+	information = DIA_MAtteo_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_matteo_exit_condition()
+func int DIA_Matteo_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_matteo_exit_info()
+func void DIA_MAtteo_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MATTEO_PICKPOCKET(C_INFO)
+instance DIA_Matteo_PICKPOCKET(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 900;
-	condition = dia_matteo_pickpocket_condition;
-	information = dia_matteo_pickpocket_info;
+	condition = DIA_Matteo_PICKPOCKET_Condition;
+	information = DIA_Matteo_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_80;
+	description = Pickpocket_80;
 };
 
 
-func int dia_matteo_pickpocket_condition()
+func int DIA_Matteo_PICKPOCKET_Condition()
 {
-	return c_beklauen(80,150);
+	return C_Beklauen(80,150);
 };
 
-func void dia_matteo_pickpocket_info()
+func void DIA_Matteo_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_matteo_pickpocket);
-	Info_AddChoice(dia_matteo_pickpocket,DIALOG_BACK,dia_matteo_pickpocket_back);
-	Info_AddChoice(dia_matteo_pickpocket,DIALOG_PICKPOCKET,dia_matteo_pickpocket_doit);
+	Info_ClearChoices(DIA_Matteo_PICKPOCKET);
+	Info_AddChoice(DIA_Matteo_PICKPOCKET,Dialog_Back,DIA_Matteo_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Matteo_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Matteo_PICKPOCKET_DoIt);
 };
 
-func void dia_matteo_pickpocket_doit()
+func void DIA_Matteo_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_matteo_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Matteo_PICKPOCKET);
 };
 
-func void dia_matteo_pickpocket_back()
+func void DIA_Matteo_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_matteo_pickpocket);
+	Info_ClearChoices(DIA_Matteo_PICKPOCKET);
 };
 
 
-instance DIA_MATTEO_HALLO(C_INFO)
+instance DIA_Matteo_Hallo(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 1;
-	condition = dia_matteo_hallo_condition;
-	information = dia_matteo_hallo_info;
+	condition = DIA_Matteo_Hallo_Condition;
+	information = DIA_MAtteo_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_matteo_hallo_condition()
+func int DIA_Matteo_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_matteo_hallo_info()
+func void DIA_MAtteo_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Matteo_Hallo_09_00");	//Co mogê dla ciebie zrobiæ?
 };
 
 
-instance DIA_MATTEO_SELLWHAT(C_INFO)
+instance DIA_Matteo_SellWhat(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 1;
-	condition = dia_matteo_sellwhat_condition;
-	information = dia_matteo_sellwhat_info;
+	condition = DIA_Matteo_SellWhat_Condition;
+	information = DIA_MAtteo_SellWhat_Info;
 	permanent = FALSE;
 	description = "Co sprzedajesz?";
 };
 
 
-func int dia_matteo_sellwhat_condition()
+func int DIA_Matteo_SellWhat_Condition()
 {
 	return TRUE;
 };
 
-func void dia_matteo_sellwhat_info()
+func void DIA_MAtteo_SellWhat_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_SellWhat_15_00");	//Co sprzedajesz?
 	AI_Output(self,other,"DIA_Matteo_SellWhat_09_01");	//Mogê ci zaproponowaæ wszystko, czego bêdziesz potrzebowaæ, ¿eby przetrwaæ w dziczy. Broñ, pochodnie, ¿ywnoœæ... nawet pancerz.
 	AI_Output(self,other,"DIA_Matteo_SellWhat_09_02");	//Mam na stanie coœ specjalnego.
 	AI_Output(self,other,"DIA_Matteo_SellWhat_09_03");	//Pancerz z podwójnie utwardzanej skóry zêbacza - nieu¿ywany. Zainteresowany?
-	if(KNOWS_MATTEO == FALSE)
+	if(Knows_Matteo == FALSE)
 	{
-		Log_CreateTopic(TOPIC_CITYTRADER,LOG_NOTE);
-		b_logentry(TOPIC_CITYTRADER,"Sklep Mattea znajduje siê przy po³udniowej bramie miasta. Mo¿na tam kupiæ orê¿, ¿ywnoœæ oraz wyposa¿enie.");
-		KNOWS_MATTEO = TRUE;
+		Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
+		B_LogEntry(TOPIC_CityTrader,"Sklep Mattea znajduje siê przy po³udniowej bramie miasta. Mo¿na tam kupiæ orê¿, ¿ywnoœæ oraz wyposa¿enie.");
+		Knows_Matteo = TRUE;
 	};
 };
 
 
-instance DIA_MATTEO_TRADE(C_INFO)
+instance DIA_Matteo_TRADE(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 800;
-	condition = dia_matteo_trade_condition;
-	information = dia_matteo_trade_info;
+	condition = DIA_Matteo_TRADE_Condition;
+	information = DIA_Matteo_TRADE_Info;
 	permanent = TRUE;
 	description = "Poka¿ mi swoje towary.";
 	trade = TRUE;
 };
 
 
-func int dia_matteo_trade_condition()
+func int DIA_Matteo_TRADE_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_matteo_sellwhat))
+	if(Npc_KnowsInfo(other,DIA_Matteo_SellWhat))
 	{
 		return TRUE;
 	};
 };
 
 
-var int matteo_tradenewspermanent;
+var int Matteo_TradeNewsPermanent;
 
-func void dia_matteo_trade_info()
+func void DIA_Matteo_TRADE_Info()
 {
-	b_givetradeinv(self);
+	B_GiveTradeInv(self);
 	AI_Output(other,self,"DIA_Matteo_TRADE_15_00");	//Poka¿ mi swoje towary.
-	if((KAPITEL == 3) && (MIS_RESCUEBENNET != LOG_SUCCESS) && (MATTEO_TRADENEWSPERMANENT == FALSE))
+	if((Kapitel == 3) && (MIS_RescueBennet != LOG_SUCCESS) && (Matteo_TradeNewsPermanent == FALSE))
 	{
 		AI_Output(self,other,"DIA_Matteo_TRADE_09_01");	//Od czasu jak najemnicy za³atwili paladyna Lothara, inspekcje paladynów s¹ coraz bardziej nieprzyjemne.
 		AI_Output(self,other,"DIA_Matteo_TRADE_09_02");	//Mam nadziejê, ¿e jak ju¿ powiesz¹ mordercê, sytuacja siê uspokoi.
-		MATTEO_TRADENEWSPERMANENT = 1;
+		Matteo_TradeNewsPermanent = 1;
 	};
-	if((KAPITEL == 5) && (MATTEO_TRADENEWSPERMANENT < 2))
+	if((Kapitel == 5) && (Matteo_TradeNewsPermanent < 2))
 	{
 		AI_Output(self,other,"DIA_Matteo_TRADE_09_03");	//Wygl¹da na to, ¿e tym razem paladyni traktuj¹ to naprawdê powa¿nie. Wycofali nawet swoich stra¿ników ze statku.
 		AI_Output(self,other,"DIA_Matteo_TRADE_09_04");	//Dobrze, ¿e uzupe³niasz zapasy. Kto wie, czy miasto utrzyma siê jeszcze tydzieñ.
-		MATTEO_TRADENEWSPERMANENT = 2;
+		Matteo_TradeNewsPermanent = 2;
 	};
 };
 
 
-var int matteo_leatherbought;
+var int Matteo_LeatherBought;
 
-instance DIA_MATTEO_LEATHER(C_INFO)
+instance DIA_Matteo_LEATHER(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 850;
-	condition = dia_matteo_leather_condition;
-	information = dia_matteo_leather_info;
+	condition = DIA_Matteo_LEATHER_Condition;
+	information = DIA_Matteo_LEATHER_Info;
 	permanent = TRUE;
 	description = "Kup skórzany pancerz. 250 sztuk z³ota.";
 };
 
 
-func int dia_matteo_leather_condition()
+func int DIA_Matteo_LEATHER_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_matteo_sellwhat) && (MATTEO_LEATHERBOUGHT == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Matteo_SellWhat) && (Matteo_LeatherBought == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_matteo_leather_info()
+func void DIA_Matteo_LEATHER_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_LEATHER_15_00");	//Dobra, daj mi pancerz.
-	if(b_giveinvitems(other,self,5113,250))
+	if(B_GiveInvItems(other,self,ItMi_Gold,250))
 	{
 		AI_Output(self,other,"DIA_Matteo_LEATHER_09_01");	//Na pewno ci siê spodoba.
-		b_giveinvitems(self,other,4845,1);
-		MATTEO_LEATHERBOUGHT = TRUE;
+		B_GiveInvItems(self,other,ITAR_Leather_L,1);
+		Matteo_LeatherBought = TRUE;
 	}
 	else
 	{
@@ -191,18 +191,18 @@ func void dia_matteo_leather_info()
 };
 
 
-instance DIA_MATTEO_PALADINE(C_INFO)
+instance DIA_Matteo_Paladine(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 2;
-	condition = dia_matteo_paladine_condition;
-	information = dia_matteo_paladine_info;
+	condition = DIA_Matteo_Paladine_Condition;
+	information = DIA_MAtteo_Paladine_Info;
 	permanent = FALSE;
 	description = "Co wiesz o paladynach?";
 };
 
 
-func int dia_matteo_paladine_condition()
+func int DIA_Matteo_Paladine_Condition()
 {
 	if(other.guild != GIL_PAL)
 	{
@@ -210,7 +210,7 @@ func int dia_matteo_paladine_condition()
 	};
 };
 
-func void dia_matteo_paladine_info()
+func void DIA_MAtteo_Paladine_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_Paladine_15_00");	//Co wiesz o paladynach?
 	AI_Output(self,other,"DIA_Matteo_Paladine_09_01");	//Od czasu, jak te bydlaki przysz³y do miasta, mam same k³opoty.
@@ -222,26 +222,26 @@ func void dia_matteo_paladine_info()
 };
 
 
-instance DIA_MATTEO_CONFISCATED(C_INFO)
+instance DIA_Matteo_Confiscated(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 2;
-	condition = dia_matteo_confiscated_condition;
-	information = dia_matteo_confiscated_info;
+	condition = DIA_Matteo_Confiscated_Condition;
+	information = DIA_MAtteo_Confiscated_Info;
 	permanent = FALSE;
 	description = "Paladyni zabrali twoje towary?";
 };
 
 
-func int dia_matteo_confiscated_condition()
+func int DIA_Matteo_Confiscated_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_matteo_paladine))
+	if(Npc_KnowsInfo(other,DIA_Matteo_Paladine))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_matteo_confiscated_info()
+func void DIA_MAtteo_Confiscated_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_Confiscated_15_00");	//Paladyni zabrali twoje towary?
 	AI_Output(self,other,"DIA_Matteo_Confiscated_09_01");	//Wszystko, co mia³em na podwórku.
@@ -250,32 +250,32 @@ func void dia_matteo_confiscated_info()
 };
 
 
-instance DIA_MATTEO_HELPMETOOV(C_INFO)
+instance DIA_Matteo_HelpMeToOV(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 3;
-	condition = dia_matteo_helpmetoov_condition;
-	information = dia_matteo_helpmetoov_info;
+	condition = DIA_Matteo_HelpMeToOV_Condition;
+	information = DIA_MAtteo_HelpMeToOV_Info;
 	permanent = FALSE;
 	description = "Czy mo¿esz mi pomóc dostaæ siê do górnego miasta?";
 };
 
 
-func int dia_matteo_helpmetoov_condition()
+func int DIA_Matteo_HelpMeToOV_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_matteo_paladine) && (PLAYER_ISAPPRENTICE == APP_NONE) && (other.guild == GIL_NONE))
+	if(Npc_KnowsInfo(other,DIA_Matteo_Paladine) && (Player_IsApprentice == APP_NONE) && (other.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_matteo_helpmetoov_info()
+func void DIA_MAtteo_HelpMeToOV_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_HelpMeToOV_15_00");	//Mo¿esz mi pomóc dostaæ siê do górnego miasta?
 	AI_Output(self,other,"DIA_Matteo_HelpMeToOV_09_01");	//Co? Co bêdziesz TAM robi³?
 	AI_Output(other,self,"DIA_Matteo_HelpMeToOV_15_02");	//Mam wa¿n¹ wiadomoœæ...
 	AI_Output(self,other,"DIA_Matteo_HelpMeToOV_09_03");	//No, no, no. Próbowa³eœ przemkn¹æ siê ko³o stra¿ników?
-	if(torwache_305.aivar[AIV_TALKEDTOPLAYER] == TRUE)
+	if(Torwache_305.aivar[AIV_TalkedToPlayer] == TRUE)
 	{
 		AI_Output(other,self,"DIA_Matteo_HelpMeToOV_15_04");	//Cz³owieku, zapomnij!
 		AI_Output(self,other,"DIA_Matteo_HelpMeToOV_09_05");	//To TYPOWE dla tych ¿ebraków!
@@ -290,7 +290,7 @@ func void dia_matteo_helpmetoov_info()
 	AI_Output(self,other,"DIA_Matteo_HelpMeToOV_09_10");	//Bo maj¹ swoje ROZKAZY.
 };
 
-func void b_matteo_preis()
+func void B_Matteo_Preis()
 {
 	AI_Output(self,other,"DIA_Matteo_HelpMeNow_09_01");	//Wygl¹da na to, ¿e to dla ciebie wa¿ne.
 	AI_Output(self,other,"DIA_Matteo_HelpMeNow_09_02");	//Pytanie tylko, JAK wa¿ne?
@@ -300,87 +300,87 @@ func void b_matteo_preis()
 };
 
 
-instance DIA_MATTEO_HELPMENOW(C_INFO)
+instance DIA_Matteo_HelpMeNow(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 3;
-	condition = dia_matteo_helpmenow_condition;
-	information = dia_matteo_helpmenow_info;
+	condition = DIA_Matteo_HelpMeNow_Condition;
+	information = DIA_MAtteo_HelpMeNow_Info;
 	permanent = FALSE;
 	description = "No to jak? Mo¿esz mi pomóc dostaæ siê do górnego miasta?";
 };
 
 
-func int dia_matteo_helpmenow_condition()
+func int DIA_Matteo_HelpMeNow_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_matteo_helpmetoov) && (PLAYER_ISAPPRENTICE == APP_NONE) && (other.guild == GIL_NONE))
+	if(Npc_KnowsInfo(other,DIA_Matteo_HelpMeToOV) && (Player_IsApprentice == APP_NONE) && (other.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_matteo_helpmenow_info()
+func void DIA_MAtteo_HelpMeNow_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_HelpMeNow_15_00");	//No to jak? Mo¿esz mi pomóc dostaæ siê do górnego miasta?
-	b_matteo_preis();
+	B_Matteo_Preis();
 };
 
 
-instance DIA_MATTEO_LEHRLINGLATER(C_INFO)
+instance DIA_Matteo_LehrlingLater(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 3;
-	condition = dia_matteo_lehrlinglater_condition;
-	information = dia_matteo_lehrlinglater_info;
+	condition = DIA_Matteo_LehrlingLater_Condition;
+	information = DIA_MAtteo_LehrlingLater_Info;
 	permanent = FALSE;
 	description = "Pomó¿ mi zostaæ czeladnikiem u jednego z mistrzów!";
 };
 
 
-func int dia_matteo_lehrlinglater_condition()
+func int DIA_Matteo_LehrlingLater_Condition()
 {
-	if((PLAYER_ISAPPRENTICE == APP_NONE) && (other.guild != GIL_NONE))
+	if((Player_IsApprentice == APP_NONE) && (other.guild != GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_matteo_lehrlinglater_info()
+func void DIA_MAtteo_LehrlingLater_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_LehrlingLater_15_00");	//Pomó¿ mi zostaæ czeladnikiem u jednego z mistrzów.
-	b_matteo_preis();
+	B_Matteo_Preis();
 };
 
 
-instance DIA_MATTEO_PRICEOFHELP(C_INFO)
+instance DIA_Matteo_PriceOfHelp(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 3;
-	condition = dia_matteo_priceofhelp_condition;
-	information = dia_matteo_priceofhelp_info;
+	condition = DIA_Matteo_PriceOfHelp_Condition;
+	information = DIA_MAtteo_PriceOfHelp_Info;
 	permanent = FALSE;
 	description = "Co chcesz w zamian za pomoc?";
 };
 
 
-func int dia_matteo_priceofhelp_condition()
+func int DIA_Matteo_PriceOfHelp_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_matteo_helpmenow) || Npc_KnowsInfo(other,dia_matteo_lehrlinglater))
+	if(Npc_KnowsInfo(other,DIA_Matteo_HelpMeNow) || Npc_KnowsInfo(other,DIA_Matteo_LehrlingLater))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_matteo_priceofhelp_info()
+func void DIA_MAtteo_PriceOfHelp_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_PriceOfHelp_15_00");	//Co chcesz w zamian za pomoc?
 	AI_Output(self,other,"DIA_Matteo_PriceOfHelp_09_01");	//100 sztuk z³ota.
-	Info_ClearChoices(dia_matteo_priceofhelp);
-	Info_AddChoice(dia_matteo_priceofhelp,"To cholernie du¿o...",dia_matteo_priceofhelp_wow);
-	Info_AddChoice(dia_matteo_priceofhelp,"Ty pijawko!",dia_matteo_priceofhelp_cutthroat);
+	Info_ClearChoices(DIA_Matteo_PriceOfHelp);
+	Info_AddChoice(DIA_Matteo_PriceOfHelp,"To cholernie du¿o...",DIA_Matteo_PriceOfHelp_Wow);
+	Info_AddChoice(DIA_Matteo_PriceOfHelp,"Ty pijawko!",DIA_Matteo_PriceOfHelp_Cutthroat);
 };
 
-func void b_matteo_regdichab()
+func void B_Matteo_RegDichAb()
 {
 	AI_Output(self,other,"B_Matteo_RegDichAb_09_00");	//Spokojnie! Nie TWOJE z³oto mia³em na myœli.
 	AI_Output(other,self,"B_Matteo_RegDichAb_15_01");	//Ale.
@@ -389,87 +389,87 @@ func void b_matteo_regdichab()
 	AI_Output(self,other,"B_Matteo_RegDichAb_09_04");	//Ta ma³a lisica krêci siê po okolicy w nowych ciuszkach - a to znaczy, ¿e ma pieni¹dze.
 	AI_Output(self,other,"B_Matteo_RegDichAb_09_05");	//Wywlek³bym jej te pieni¹dze z gard³a, ale Mistrz Thorben - stolarz - to bardzo wp³ywowy cz³owiek.
 	AI_Output(self,other,"B_Matteo_RegDichAb_09_06");	//Za³atw mi te pieni¹dze, to ci pomogê.
-	MIS_MATTEO_GOLD = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_MATTEO,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_MATTEO,LOG_RUNNING);
-	b_logentry(TOPIC_MATTEO,"Jeœli Matteo dostanie od siostrzenicy stolarza Thorbena, Gritty, 100 sztuk z³ota, które jest mu winna, pomo¿e mi dostaæ siê do górnego miasta.");
+	MIS_Matteo_Gold = LOG_Running;
+	Log_CreateTopic(TOPIC_Matteo,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Matteo,LOG_Running);
+	B_LogEntry(TOPIC_Matteo,"Jeœli Matteo dostanie od siostrzenicy stolarza Thorbena, Gritty, 100 sztuk z³ota, które jest mu winna, pomo¿e mi dostaæ siê do górnego miasta.");
 };
 
-func void dia_matteo_priceofhelp_cutthroat()
+func void DIA_Matteo_PriceOfHelp_Cutthroat()
 {
 	AI_Output(other,self,"DIA_Matteo_PriceOfHelp_Cutthroat_15_00");	//Ty pijawko!
-	b_matteo_regdichab();
-	Info_ClearChoices(dia_matteo_priceofhelp);
+	B_Matteo_RegDichAb();
+	Info_ClearChoices(DIA_Matteo_PriceOfHelp);
 };
 
-func void dia_matteo_priceofhelp_wow()
+func void DIA_Matteo_PriceOfHelp_Wow()
 {
 	AI_Output(other,self,"DIA_Matteo_PriceOfHelp_Wow_15_00");	//To cholernie du¿o...
-	b_matteo_regdichab();
-	Info_ClearChoices(dia_matteo_priceofhelp);
+	B_Matteo_RegDichAb();
+	Info_ClearChoices(DIA_Matteo_PriceOfHelp);
 };
 
 
-instance DIA_MATTEO_WOGRITTA(C_INFO)
+instance DIA_Matteo_WoGritta(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 2;
-	condition = dia_matteo_wogritta_condition;
-	information = dia_matteo_wogritta_info;
+	condition = DIA_Matteo_WoGritta_Condition;
+	information = DIA_MAtteo_WoGritta_Info;
 	permanent = FALSE;
 	description = "Gdzie znajdê tê Grittê?";
 };
 
 
-func int dia_matteo_wogritta_condition()
+func int DIA_Matteo_WoGritta_Condition()
 {
-	if((MIS_MATTEO_GOLD == LOG_RUNNING) && (gritta.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if((MIS_Matteo_Gold == LOG_Running) && (Gritta.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_matteo_wogritta_info()
+func void DIA_MAtteo_WoGritta_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_WoGritta_15_00");	//Gdzie znajdê tê Grittê?
 	AI_Output(self,other,"DIA_Matteo_WoGritta_09_01");	//Tak jak powiedzia³em, to siostrzenica stolarza. Jego dom stoi przy tej ulicy. To ostatni budynek po prawej stronie przed kuŸni¹.
 };
 
 
-instance DIA_MATTEO_GOLDRUNNING(C_INFO)
+instance DIA_Matteo_GoldRunning(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 500;
-	condition = dia_matteo_goldrunning_condition;
-	information = dia_matteo_goldrunning_info;
+	condition = DIA_Matteo_GoldRunning_Condition;
+	information = DIA_MAtteo_GoldRunning_Info;
 	permanent = TRUE;
 	description = "Oto twoje 100 sztuk z³ota!";
 };
 
 
-func int dia_matteo_goldrunning_condition()
+func int DIA_Matteo_GoldRunning_Condition()
 {
-	if((MIS_MATTEO_GOLD == LOG_RUNNING) && (Npc_KnowsInfo(other,dia_gritta_wantsmoney) || Npc_IsDead(gritta)))
+	if((MIS_Matteo_Gold == LOG_Running) && (Npc_KnowsInfo(other,DIA_Gritta_WantsMoney) || Npc_IsDead(Gritta)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_matteo_goldrunning_info()
+func void DIA_MAtteo_GoldRunning_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_GoldRunning_15_00");	//Oto twoje 100 sztuk z³ota!
-	if(Npc_IsDead(gritta))
+	if(Npc_IsDead(Gritta))
 	{
 		AI_Output(self,other,"DIA_Matteo_GoldRunning_09_01");	//Na tym z³ocie jest krew Gritty! Nie kaza³em ci jej zabijaæ!
 		AI_Output(self,other,"DIA_Matteo_GoldRunning_09_02");	//Nie chcê mieæ z tym nic wspólnego. Mo¿esz zapomnieæ o naszej umowie. Nigdy wiêcej nie próbuj ze mn¹ rozmawiaæ.
-		MIS_MATTEO_GOLD = LOG_FAILED;
-		b_checklog();
+		MIS_Matteo_Gold = LOG_FAILED;
+		B_CheckLog();
 		AI_StopProcessInfos(self);
 		return;
 	};
-	if(b_giveinvitems(other,self,5113,100))
+	if(B_GiveInvItems(other,self,ItMi_Gold,100))
 	{
-		if(Npc_HasItems(gritta,itmi_gold) < 100)
+		if(Npc_HasItems(Gritta,ItMi_Gold) < 100)
 		{
 			AI_Output(self,other,"DIA_Matteo_GoldRunning_09_03");	//I co? Robi³a jakieœ problemy?
 			AI_Output(other,self,"DIA_Matteo_GoldRunning_15_04");	//Nic, o czym warto wspominaæ.
@@ -481,8 +481,8 @@ func void dia_matteo_goldrunning_info()
 			AI_Output(self,other,"DIA_Matteo_GoldRunning_09_07");	//Mimo to 100 sztuk z³ota, to ci¹gle 100 sztuk z³ota.
 			AI_Output(self,other,"DIA_Matteo_GoldRunning_09_08");	//Dotrzyma³eœ swojej czêœci umowy.
 		};
-		MIS_MATTEO_GOLD = LOG_SUCCESS;
-		b_giveplayerxp(XP_MATTEO_GOLD);
+		MIS_Matteo_Gold = LOG_SUCCESS;
+		B_GivePlayerXP(XP_Matteo_Gold);
 	}
 	else
 	{
@@ -491,37 +491,37 @@ func void dia_matteo_goldrunning_info()
 };
 
 
-instance DIA_MATTEO_ZUSTIMMUNG(C_INFO)
+instance DIA_Matteo_Zustimmung(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 4;
-	condition = dia_matteo_zustimmung_condition;
-	information = dia_matteo_zustimmung_info;
+	condition = DIA_Matteo_Zustimmung_Condition;
+	information = DIA_MAtteo_Zustimmung_Info;
 	permanent = TRUE;
 	description = "Pomó¿ mi zostaæ czeladnikiem u jednego z mistrzów!";
 };
 
 
-var int dia_matteo_zustimmung_perm;
+var int DIA_Matteo_Zustimmung_perm;
 
-func int dia_matteo_zustimmung_condition()
+func int DIA_Matteo_Zustimmung_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_matteo_howcanyouhelp) && ((MIS_MATTEO_GOLD == LOG_RUNNING) || (MIS_MATTEO_GOLD == LOG_SUCCESS)) && (PLAYER_ISAPPRENTICE == APP_NONE) && (DIA_MATTEO_ZUSTIMMUNG_PERM == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Matteo_HowCanYouHelp) && ((MIS_Matteo_Gold == LOG_Running) || (MIS_Matteo_Gold == LOG_SUCCESS)) && (Player_IsApprentice == APP_NONE) && (DIA_Matteo_Zustimmung_perm == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_matteo_zustimmung_info()
+func void DIA_MAtteo_Zustimmung_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_Zustimmung_15_00");	//Pomó¿ mi zostaæ czeladnikiem u jednego z mistrzów!
-	if(MIS_MATTEO_GOLD == LOG_SUCCESS)
+	if(MIS_Matteo_Gold == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Matteo_Zustimmung_09_01");	//Nie martw siê. Dotrzymam umowy.
 		AI_Output(self,other,"DIA_Matteo_Zustimmung_09_02");	//Inni mistrzowie us³ysz¹ o tobie same dobre rzeczy.
-		b_giveplayerxp(XP_ZUSTIMMUNG);
-		b_logentry(TOPIC_LEHRLING,"Jeœli zechcê zostaæ czeladnikiem, Matteo udzieli mi swojego poparcia.");
-		DIA_MATTEO_ZUSTIMMUNG_PERM = TRUE;
+		B_GivePlayerXP(XP_Zustimmung);
+		B_LogEntry(TOPIC_Lehrling,"Jeœli zechcê zostaæ czeladnikiem, Matteo udzieli mi swojego poparcia.");
+		DIA_Matteo_Zustimmung_perm = TRUE;
 	}
 	else
 	{
@@ -530,26 +530,26 @@ func void dia_matteo_zustimmung_info()
 };
 
 
-instance DIA_MATTEO_HOWCANYOUHELP(C_INFO)
+instance DIA_Matteo_HowCanYouHelp(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 4;
-	condition = dia_matteo_howcanyouhelp_condition;
-	information = dia_matteo_howcanyouhelp_info;
+	condition = DIA_Matteo_HowCanYouHelp_Condition;
+	information = DIA_MAtteo_HowCanYouHelp_Info;
 	permanent = FALSE;
 	description = "Na czym DOK³ADNIE ma polegaæ twoja pomoc?";
 };
 
 
-func int dia_matteo_howcanyouhelp_condition()
+func int DIA_Matteo_HowCanYouHelp_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_matteo_helpmenow) && (PLAYER_ISAPPRENTICE == APP_NONE))
+	if(Npc_KnowsInfo(other,DIA_Matteo_HelpMeNow) && (Player_IsApprentice == APP_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_matteo_howcanyouhelp_info()
+func void DIA_MAtteo_HowCanYouHelp_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_HowCanYouHelp_15_00");	//Na czym DOK£ADNIE ma polegaæ twoja pomoc?
 	AI_Output(self,other,"DIA_Matteo_HowCanYouHelp_09_01");	//To doœæ proste. Wykorzystam swoje wp³ywy, ¿eby jeden z mistrzów przyj¹³ ciê na czeladnika.
@@ -557,93 +557,93 @@ func void dia_matteo_howcanyouhelp_info()
 	{
 		AI_Output(self,other,"DIA_Matteo_HowCanYouHelp_09_02");	//A wtedy praktycznie rzecz bior¹c, bêdziesz obywatelem miasta i górna jego czêœæ stanie przed tob¹ otworem. Poza tym bêdziesz móg³ coœ zarobiæ.
 	};
-	Log_CreateTopic(TOPIC_LEHRLING,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_LEHRLING,LOG_RUNNING);
-	b_logentry(TOPIC_LEHRLING,"Matteo mo¿e mi pomóc zostaæ czeladnikiem u jednego z mistrzów.");
+	Log_CreateTopic(TOPIC_Lehrling,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Lehrling,LOG_Running);
+	B_LogEntry(TOPIC_Lehrling,"Matteo mo¿e mi pomóc zostaæ czeladnikiem u jednego z mistrzów.");
 };
 
 
-instance DIA_MATTEO_WOALSLEHRLING(C_INFO)
+instance DIA_Matteo_WoAlsLehrling(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 4;
-	condition = dia_matteo_woalslehrling_condition;
-	information = dia_matteo_woalslehrling_info;
+	condition = DIA_Matteo_WoAlsLehrling_Condition;
+	information = DIA_MAtteo_WoAlsLehrling_Info;
 	permanent = FALSE;
 	description = "Kto w takim razie mo¿e przyj¹æ mnie na czeladnika?";
 };
 
 
-func int dia_matteo_woalslehrling_condition()
+func int DIA_Matteo_WoAlsLehrling_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_matteo_howcanyouhelp) && (PLAYER_ISAPPRENTICE == APP_NONE))
+	if(Npc_KnowsInfo(other,DIA_Matteo_HowCanYouHelp) && (Player_IsApprentice == APP_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_matteo_woalslehrling_info()
+func void DIA_MAtteo_WoAlsLehrling_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_WoAlsLehrling_15_00");	//Kto w takim razie mo¿e przyj¹æ mnie na czeladnika?
 	AI_Output(self,other,"DIA_Matteo_WoAlsLehrling_09_01");	//Mo¿e to byæ którykolwiek z mistrzów mieszkaj¹cych przy g³ównej ulicy.
 	AI_Output(self,other,"DIA_Matteo_WoAlsLehrling_09_02");	//Harad kowal, Bosper ³uczarz, Thorben stolarz albo Constantino alchemik.
 	AI_Output(self,other,"DIA_Matteo_WoAlsLehrling_09_03");	//Jeden z nich musi ciê przyj¹æ.
 	AI_Output(self,other,"DIA_Matteo_WoAlsLehrling_09_04");	//Wa¿ne jednak, ¿eby zgodzili siê na to pozostali mistrzowie. W Khorinis panuje taki zwyczaj.
-	Log_CreateTopic(TOPIC_LEHRLING,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_LEHRLING,LOG_RUNNING);
-	b_logentry(TOPIC_LEHRLING,"Mogê zostaæ czeladnikiem u ³uczarza Bospera, kowala Harada, stolarza Thorbena lub alchemika Constantina.");
-	b_logentry(TOPIC_LEHRLING,"Zanim zostanê czeladnikiem, muszê zyskaæ poparcie pozosta³ych mistrzów.");
+	Log_CreateTopic(TOPIC_Lehrling,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Lehrling,LOG_Running);
+	B_LogEntry(TOPIC_Lehrling,"Mogê zostaæ czeladnikiem u ³uczarza Bospera, kowala Harada, stolarza Thorbena lub alchemika Constantina.");
+	B_LogEntry(TOPIC_Lehrling,"Zanim zostanê czeladnikiem, muszê zyskaæ poparcie pozosta³ych mistrzów.");
 };
 
 
-instance DIA_MATTEO_WIEZUSTIMMUNG(C_INFO)
+instance DIA_Matteo_WieZustimmung(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 5;
-	condition = dia_matteo_wiezustimmung_condition;
-	information = dia_matteo_wiezustimmung_info;
+	condition = DIA_Matteo_WieZustimmung_Condition;
+	information = DIA_MAtteo_WieZustimmung_Info;
 	permanent = FALSE;
 	description = "Jak uzyskam zgodê pozosta³ych mistrzów?";
 };
 
 
-func int dia_matteo_wiezustimmung_condition()
+func int DIA_Matteo_WieZustimmung_Condition()
 {
-	if((Npc_KnowsInfo(other,dia_matteo_woalslehrling) || Npc_KnowsInfo(other,dia_matteo_warumnichtbeidir)) && (PLAYER_ISAPPRENTICE == APP_NONE))
+	if((Npc_KnowsInfo(other,DIA_Matteo_WoAlsLehrling) || Npc_KnowsInfo(other,DIA_Matteo_WarumNichtBeiDir)) && (Player_IsApprentice == APP_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_matteo_wiezustimmung_info()
+func void DIA_MAtteo_WieZustimmung_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_WieZustimmung_15_00");	//Jak uzyskam zgodê pozosta³ych mistrzów?
 	AI_Output(self,other,"DIA_Matteo_WieZustimmung_09_01");	//Musisz ich do tego przekonaæ. IdŸ z nimi porozmawiaæ.
 	AI_Output(self,other,"DIA_Matteo_WieZustimmung_09_02");	//Wystarczy jednak, ¿ebyœ mia³ przeciw sobie wiêcej ni¿ jednego z nich, a nie bêdziesz mia³ szans! Wiêc lepiej siê zachowuj!
-	b_logentry(TOPIC_LEHRLING,"Aby zyskaæ poparcie pozosta³ych mistrzów, muszê dowieœæ swojej wartoœci.");
+	B_LogEntry(TOPIC_Lehrling,"Aby zyskaæ poparcie pozosta³ych mistrzów, muszê dowieœæ swojej wartoœci.");
 };
 
 
-instance DIA_MATTEO_WARUMNICHTBEIDIR(C_INFO)
+instance DIA_Matteo_WarumNichtBeiDir(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 6;
-	condition = dia_matteo_warumnichtbeidir_condition;
-	information = dia_matteo_warumnichtbeidir_info;
+	condition = DIA_Matteo_WarumNichtBeiDir_Condition;
+	information = DIA_MAtteo_WarumNichtBeiDir_Info;
 	permanent = FALSE;
 	description = "A dlaczego TY mnie nie weŸmiesz na czeladnika?";
 };
 
 
-func int dia_matteo_warumnichtbeidir_condition()
+func int DIA_Matteo_WarumNichtBeiDir_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_matteo_howcanyouhelp) && (PLAYER_ISAPPRENTICE == APP_NONE))
+	if(Npc_KnowsInfo(other,DIA_Matteo_HowCanYouHelp) && (Player_IsApprentice == APP_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_matteo_warumnichtbeidir_info()
+func void DIA_MAtteo_WarumNichtBeiDir_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_WarumNichtBeiDir_15_00");	//A dlaczego TY mnie nie weŸmiesz na czeladnika?
 	AI_Output(self,other,"DIA_Matteo_WarumNichtBeiDir_09_01");	//Ja nie mam nic przeciwko, ale inni mistrzowie nie zgadzaj¹ siê.
@@ -651,54 +651,54 @@ func void dia_matteo_warumnichtbeidir_info()
 };
 
 
-instance DIA_MATTEO_OTHERWAY(C_INFO)
+instance DIA_Matteo_OtherWay(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 6;
-	condition = dia_matteo_otherway_condition;
-	information = dia_matteo_otherway_info;
+	condition = DIA_Matteo_OtherWay_Condition;
+	information = DIA_MAtteo_OtherWay_Info;
 	permanent = FALSE;
 	description = "Czy jest jakiœ inny sposób, ¿eby dostaæ siê do górnego miasta?";
 };
 
 
-func int dia_matteo_otherway_condition()
+func int DIA_Matteo_OtherWay_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_matteo_howcanyouhelp) && (MIL_305_SCHONMALREINGELASSEN == FALSE) && (PLAYER_ISAPPRENTICE == APP_NONE) && (other.guild == GIL_NONE))
+	if(Npc_KnowsInfo(other,DIA_Matteo_HowCanYouHelp) && (Mil_305_schonmalreingelassen == FALSE) && (Player_IsApprentice == APP_NONE) && (other.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_matteo_otherway_info()
+func void DIA_MAtteo_OtherWay_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_OtherWay_15_00");	//Czy jest jakiœ inny sposób, ¿eby dostaæ siê do górnego miasta?
 	AI_Output(self,other,"DIA_Matteo_OtherWay_09_01");	//Mo¿e... dam ci znaæ, jak coœ wymyœlê.
 };
 
 
-instance DIA_MATTEO_MINENANTEIL(C_INFO)
+instance DIA_Matteo_Minenanteil(C_Info)
 {
-	npc = vlk_416_matteo;
+	npc = VLK_416_Matteo;
 	nr = 3;
-	condition = dia_matteo_minenanteil_condition;
-	information = dia_matteo_minenanteil_info;
+	condition = DIA_Matteo_Minenanteil_Condition;
+	information = DIA_MAtteo_Minenanteil_Info;
 	description = "Wœród rzeczy na sprzeda¿ zauwa¿y³em udzia³y w kopalni.";
 };
 
 
-func int dia_matteo_minenanteil_condition()
+func int DIA_Matteo_Minenanteil_Condition()
 {
-	if((other.guild == GIL_KDF) && (MIS_SERPENTES_MINENANTEIL_KDF == LOG_RUNNING) && Npc_KnowsInfo(other,dia_matteo_sellwhat))
+	if((other.guild == GIL_KDF) && (MIS_Serpentes_MinenAnteil_KDF == LOG_Running) && Npc_KnowsInfo(other,DIA_Matteo_SellWhat))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_matteo_minenanteil_info()
+func void DIA_MAtteo_Minenanteil_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_Minenanteil_15_00");	//Wœród rzeczy na sprzeda¿ zauwa¿y³em udzia³y w kopalni. Od kogo je masz?
 	AI_Output(self,other,"DIA_Matteo_Minenanteil_09_01");	//Udzia³y w kopalni? Eeee. Sk¹d siê wziê³y? Nie mam pojêcia, sk¹d je mam. Naprawdê, Panie.
-	b_giveplayerxp(XP_AMBIENT);
+	B_GivePlayerXP(XP_Ambient);
 };
 

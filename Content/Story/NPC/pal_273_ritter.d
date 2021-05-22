@@ -1,28 +1,28 @@
 
-instance PAL_273_RITTER(NPC_DEFAULT)
+instance PAL_273_Ritter(Npc_Default)
 {
-	name[0] = NAME_RITTER;
+	name[0] = NAME_Ritter;
 	guild = GIL_PAL;
 	id = 273;
 	voice = 4;
 	flags = 0;
-	npctype = NPCTYPE_OCAMBIENT;
-	b_setattributestochapter(self,4);
+	npcType = NPCTYPE_OCAMBIENT;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_2h_pal_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_MORDRAG,BODYTEX_P,4828);
+	EquipItem(self,ItMw_2h_Pal_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Mordrag,BodyTex_P,ItAr_PAL_M);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,75);
-	daily_routine = rtn_start_273;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,75);
+	daily_routine = Rtn_Start_273;
 };
 
 
-func void rtn_start_273()
+func void Rtn_Start_273()
 {
-	ta_smalltalk(8,0,23,0,"OC_TO_MAGE");
-	ta_smalltalk(23,0,8,0,"OC_KNECHTCAMP_02");
+	TA_Smalltalk(8,0,23,0,"OC_TO_MAGE");
+	TA_Smalltalk(23,0,8,0,"OC_KNECHTCAMP_02");
 };
 

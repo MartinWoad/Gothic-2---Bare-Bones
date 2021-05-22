@@ -1,71 +1,71 @@
 
-instance DIA_OCVLK_6_EXIT(C_INFO)
+instance DIA_OCVLK_6_EXIT(C_Info)
 {
 	nr = 999;
-	condition = dia_ocvlk_6_exit_condition;
-	information = dia_ocvlk_6_exit_info;
+	condition = DIA_OCVLK_6_EXIT_Condition;
+	information = DIA_OCVLK_6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_ocvlk_6_exit_condition()
+func int DIA_OCVLK_6_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_ocvlk_6_exit_info()
+func void DIA_OCVLK_6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_OCVLK_6_PEOPLE(C_INFO)
+instance DIA_OCVLK_6_PEOPLE(C_Info)
 {
 	nr = 3;
-	condition = dia_ocvlk_6_people_condition;
-	information = dia_ocvlk_6_people_info;
+	condition = DIA_OCVLK_6_PEOPLE_Condition;
+	information = DIA_OCVLK_6_PEOPLE_Info;
 	permanent = TRUE;
 	description = "Kto tu dowodzi?";
 };
 
 
-func int dia_ocvlk_6_people_condition()
+func int DIA_OCVLK_6_PEOPLE_Condition()
 {
 	return TRUE;
 };
 
-func void dia_ocvlk_6_people_info()
+func void DIA_OCVLK_6_PEOPLE_Info()
 {
 	AI_Output(other,self,"DIA_OCVLK_6_PEOPLE_15_00");	//Kto tu dowodzi?
 	AI_Output(self,other,"DIA_OCVLK_6_PEOPLE_06_01");	//Fortem, a w³aœciwie tym, co z niego zosta³o, zarz¹dza Garond.
 	AI_Output(self,other,"DIA_OCVLK_6_PEOPLE_06_02");	//Jednak niczym nie zajmuje siê osobiœcie - chyba ¿e któryœ z jego ludzi wpadnie w jakiœ tarapaty.
-	if(Npc_IsDead(engor) == FALSE)
+	if(Npc_IsDead(Engor) == FALSE)
 	{
 		AI_Output(self,other,"DIA_OCVLK_6_PEOPLE_06_03");	//Jeœli szukasz wyposa¿enia, porozmawiaj lepiej z Engorem. Znajdziesz go w budynku naprzeciw siedziby Garonda.
 	};
 };
 
 
-instance DIA_OCVLK_6_LOCATION(C_INFO)
+instance DIA_OCVLK_6_LOCATION(C_Info)
 {
 	nr = 2;
-	condition = dia_ocvlk_6_location_condition;
-	information = dia_ocvlk_6_location_info;
+	condition = DIA_OCVLK_6_LOCATION_Condition;
+	information = DIA_OCVLK_6_LOCATION_Info;
 	permanent = TRUE;
 	description = "Powiedz mi coœ na temat sytuacji w Górniczej Dolinie.";
 };
 
 
-func int dia_ocvlk_6_location_condition()
+func int DIA_OCVLK_6_LOCATION_Condition()
 {
-	if((KAPITEL <= 4) && (MIS_KILLEDDRAGONS < 4))
+	if((Kapitel <= 4) && (MIS_KilledDragons < 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ocvlk_6_location_info()
+func void DIA_OCVLK_6_LOCATION_Info()
 {
 	AI_Output(other,self,"DIA_OCVLK_6_LOCATION_15_00");	//Powiedz mi coœ na temat sytuacji w Górniczej Dolinie.
 	AI_Output(self,other,"DIA_OCVLK_6_LOCATION_06_01");	//Martwiê siê orkow¹ palisad¹. Nie wiem nawet, co siê za ni¹ kryje.
@@ -75,33 +75,33 @@ func void dia_ocvlk_6_location_info()
 };
 
 
-instance DIA_OCVLK_6_STANDARD(C_INFO)
+instance DIA_OCVLK_6_STANDARD(C_Info)
 {
 	nr = 1;
-	condition = dia_ocvlk_6_standard_condition;
-	information = dia_ocvlk_6_standard_info;
+	condition = DIA_OCVLK_6_STANDARD_Condition;
+	information = DIA_OCVLK_6_STANDARD_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_ocvlk_6_standard_condition()
+func int DIA_OCVLK_6_STANDARD_Condition()
 {
 	return TRUE;
 };
 
-func void dia_ocvlk_6_standard_info()
+func void DIA_OCVLK_6_STANDARD_Info()
 {
 	AI_Output(other,self,"DIA_OCVLK_6_STANDARD_15_00");	//Jak leci?
-	if(KAPITEL <= 3)
+	if(Kapitel <= 3)
 	{
 		AI_Output(self,other,"DIA_OCVLK_6_STANDARD_06_01");	//Przy³¹cz siê do armii, mówili, zasmakuj przygody, mówili. A teraz... no, sam popatrz.
 		AI_Output(self,other,"DIA_OCVLK_6_STANDARD_06_02");	//W tej chwili nawet za zbli¿enie siê do zapasów jedzenia grozi kara œmierci. Garond chyba siê obawia, ¿e ukradniemy co siê da i damy drapaka.
 		AI_Output(self,other,"DIA_OCVLK_6_STANDARD_06_03");	//Jeœli te przeklête smoki nas nie pozabijaj¹, to pewnie wszyscy zdechniemy tu z g³odu.
 	};
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
-		if(MIS_KILLEDDRAGONS < 4)
+		if(MIS_KilledDragons < 4)
 		{
 			AI_Output(self,other,"DIA_OCVLK_6_STANDARD_06_04");	//£owcy smoków! Nie rozœmieszaj mnie! Ci ludzie niczego tu nie zmieni¹.
 		}
@@ -110,9 +110,9 @@ func void dia_ocvlk_6_standard_info()
 			AI_Output(self,other,"DIA_OCVLK_6_STANDARD_06_05");	//Podobno smoki zosta³y zg³adzone. Mo¿e jednak jest dla nas jakaœ nadzieja!
 		};
 	};
-	if(KAPITEL >= 5)
+	if(Kapitel >= 5)
 	{
-		if(MIS_OCGATEOPEN == FALSE)
+		if(MIS_OCGateOpen == FALSE)
 		{
 			AI_Output(self,other,"DIA_OCVLK_6_STANDARD_06_06");	//Przeklêta ruda. Powinniœmy zrzuciæ ca³y jej zapas z barykad. Mo¿e wtedy orkowie zostawiliby nas w spokoju.
 		}
@@ -123,7 +123,7 @@ func void dia_ocvlk_6_standard_info()
 	};
 };
 
-func void b_assignambientinfos_ocvlk_6(var C_NPC slf)
+func void B_AssignAmbientInfos_OCVLK_6(var C_Npc slf)
 {
 	dia_ocvlk_6_exit.npc = Hlp_GetInstanceID(slf);
 	dia_ocvlk_6_people.npc = Hlp_GetInstanceID(slf);

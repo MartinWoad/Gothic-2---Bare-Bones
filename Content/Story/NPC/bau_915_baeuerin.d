@@ -1,28 +1,28 @@
 
-instance BAU_915_BAEUERIN(NPC_DEFAULT)
+instance BAU_915_Baeuerin(Npc_Default)
 {
-	name[0] = NAME_BAEUERIN;
+	name[0] = NAME_Baeuerin;
 	guild = GIL_BAU;
 	id = 915;
 	voice = 16;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,1);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_bau_mace);
-	b_createambientinv(self);
-	b_setnpcvisual(self,FEMALE,"Hum_Head_Babe4",FACEBABE_N_VLKBLONDE,BODYTEXBABE_N,4832);
+	EquipItem(self,ItMw_1h_Bau_Mace);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,FEMALE,"Hum_Head_Babe4",FaceBabe_N_VlkBlonde,BodyTexBabe_N,ITAR_BauBabe_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Babe.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,20);
-	daily_routine = rtn_start_915;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,20);
+	daily_routine = Rtn_Start_915;
 };
 
 
-func void rtn_start_915()
+func void Rtn_Start_915()
 {
-	ta_pick_fp(6,0,22,0,"NW_BIGFARM_FIELD_01");
-	ta_sleep(22,0,6,0,"NW_BIGFARM_STABLE_SLEEP_03");
+	TA_Pick_FP(6,0,22,0,"NW_BIGFARM_FIELD_01");
+	TA_Sleep(22,0,6,0,"NW_BIGFARM_STABLE_SLEEP_03");
 };
 

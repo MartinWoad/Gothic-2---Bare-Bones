@@ -1,49 +1,49 @@
 
-instance DIA_HILDA_EXIT(C_INFO)
+instance DIA_Hilda_EXIT(C_Info)
 {
-	npc = bau_951_hilda;
+	npc = BAU_951_Hilda;
 	nr = 999;
-	condition = dia_hilda_exit_condition;
-	information = dia_hilda_exit_info;
+	condition = DIA_Hilda_EXIT_Condition;
+	information = DIA_Hilda_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hilda_exit_condition()
+func int DIA_Hilda_EXIT_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hilda_exit_info()
+func void DIA_Hilda_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HILDA_HALLO(C_INFO)
+instance DIA_Hilda_Hallo(C_Info)
 {
-	npc = bau_951_hilda;
+	npc = BAU_951_Hilda;
 	nr = 2;
-	condition = dia_hilda_hallo_condition;
-	information = dia_hilda_hallo_info;
+	condition = DIA_Hilda_Hallo_Condition;
+	information = DIA_Hilda_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_hilda_hallo_condition()
+func int DIA_Hilda_Hallo_Condition()
 {
-	if((MIS_LOBART_RUEBEN != LOG_SUCCESS) && (KAPITEL < 3))
+	if((MIS_Lobart_Rueben != LOG_SUCCESS) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hilda_hallo_info()
+func void DIA_Hilda_Hallo_Info()
 {
 	if(hero.guild == GIL_NONE)
 	{
@@ -57,49 +57,49 @@ func void dia_hilda_hallo_info()
 };
 
 
-instance DIA_HILDA_WASZUESSEN(C_INFO)
+instance DIA_Hilda_WasZuEssen(C_Info)
 {
-	npc = bau_951_hilda;
+	npc = BAU_951_Hilda;
 	nr = 2;
-	condition = dia_hilda_waszuessen_condition;
-	information = dia_hilda_waszuessen_info;
+	condition = DIA_Hilda_WasZuEssen_Condition;
+	information = DIA_Hilda_WasZuEssen_Info;
 	permanent = TRUE;
 	description = "Czy mo¿esz mi daæ coœ do jedzenia?";
 };
 
 
-func int dia_hilda_waszuessen_condition()
+func int DIA_Hilda_WasZuEssen_Condition()
 {
-	if((Npc_KnowsInfo(other,dia_hilda_hallo) || (MIS_LOBART_RUEBEN == LOG_SUCCESS)) && (KAPITEL < 3))
+	if((Npc_KnowsInfo(other,DIA_Hilda_Hallo) || (MIS_Lobart_Rueben == LOG_SUCCESS)) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hilda_waszuessen_info()
+func void DIA_Hilda_WasZuEssen_Info()
 {
-	var int rueben_tagnull;
+	var int Rueben_TagNull;
 	if(hero.guild == GIL_NONE)
 	{
 		AI_Output(other,self,"DIA_Hilda_WasZuEssen_15_00");	//Czy mo¿esz mi daæ coœ do jedzenia?
-		if(MIS_LOBART_RUEBEN == LOG_SUCCESS)
+		if(MIS_Lobart_Rueben == LOG_SUCCESS)
 		{
-			if(!Npc_KnowsInfo(other,dia_hilda_pfannetoolate))
+			if(!Npc_KnowsInfo(other,DIA_Hilda_PfanneTooLate))
 			{
-				if(HILDA_STEW_DAY != Wld_GetDay())
+				if(Hilda_Stew_Day != Wld_GetDay())
 				{
-					b_giveinvitems(self,other,4906,1);
+					B_GiveInvItems(self,other,ItFo_Stew,1);
 					AI_Output(self,other,"DIA_Hilda_WasZuEssen_17_01");	//Proszê, to dla ciebie.
-					HILDA_STEW_DAY = Wld_GetDay();
+					Hilda_Stew_Day = Wld_GetDay();
 				}
-				else if((Wld_GetDay() == 0) && (rueben_tagnull == FALSE))
+				else if((Wld_GetDay() == 0) && (Rueben_TagNull == FALSE))
 				{
 					AI_Output(self,other,"DIA_Hilda_WasZuEssen_17_02");	//Jutro mo¿esz wróciæ po wiêcej.
-					b_giveinvitems(self,other,4906,1);
-					HILDA_STEW_DAY = Wld_GetDay();
-					rueben_tagnull = TRUE;
-					Log_CreateTopic(TOPIC_BONUS,LOG_NOTE);
-					b_logentry(TOPIC_BONUS,"Codziennie mogê dostaæ u Hildy trochê gotowanej rzepy.");
+					B_GiveInvItems(self,other,ItFo_Stew,1);
+					Hilda_Stew_Day = Wld_GetDay();
+					Rueben_TagNull = TRUE;
+					Log_CreateTopic(Topic_Bonus,LOG_NOTE);
+					B_LogEntry(Topic_Bonus,"Codziennie mogê dostaæ u Hildy trochê gotowanej rzepy.");
 				}
 				else
 				{
@@ -124,36 +124,36 @@ func void dia_hilda_waszuessen_info()
 };
 
 
-instance DIA_HILDA_BRINGBEET(C_INFO)
+instance DIA_Hilda_BringBeet(C_Info)
 {
-	npc = bau_951_hilda;
+	npc = BAU_951_Hilda;
 	nr = 1;
-	condition = dia_hilda_bringbeet_condition;
-	information = dia_hilda_bringbeet_info;
+	condition = DIA_Hilda_BringBeet_Condition;
+	information = DIA_Hilda_BringBeet_Info;
 	permanent = FALSE;
 	description = "Mam tu dla ciebie kilka rzep…";
 };
 
 
-func int dia_hilda_bringbeet_condition()
+func int DIA_Hilda_BringBeet_Condition()
 {
-	if((MIS_LOBART_RUEBENTOHILDA == LOG_RUNNING) && (Npc_HasItems(other,itpl_beet) >= 1) && (KAPITEL < 3))
+	if((MIS_Lobart_RuebenToHilda == LOG_Running) && (Npc_HasItems(other,ItPl_Beet) >= 1) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hilda_bringbeet_info()
+func void DIA_Hilda_BringBeet_Info()
 {
 	AI_Output(other,self,"DIA_Hilda_BringBeet_15_00");	//Mam tu dla ciebie kilka rzep...
-	if(Npc_HasItems(other,itpl_beet) >= 20)
+	if(Npc_HasItems(other,ItPl_Beet) >= 20)
 	{
-		b_giveinvitems(other,self,5181,Npc_HasItems(other,itpl_beet));
+		B_GiveInvItems(other,self,ItPl_Beet,Npc_HasItems(other,ItPl_Beet));
 		AI_Output(self,other,"DIA_Hilda_BringBeet_17_01");	//Œwietnie! To powinno wystarczyæ do nakarmienia tych wszystkich g³odomorów!
 		AI_Output(self,other,"DIA_Hilda_BringBeet_17_02");	//Skoro ju¿ tu jesteœ - kilka minut temu przechodzi³ têdy wêdrowny handlarz.
 		AI_Output(self,other,"DIA_Hilda_BringBeet_17_03");	//Chyba zatrzyma³ siê gdzieœ po drodze do miasta. ZnajdŸ go i zapytaj, czy nie ma dla mnie jakiejœ porz¹dnej patelni.
-		MIS_LOBART_RUEBENTOHILDA = LOG_SUCCESS;
-		b_giveplayerxp(XP_AMBIENT);
+		MIS_Lobart_RuebenToHilda = LOG_SUCCESS;
+		B_GivePlayerXP(XP_Ambient);
 	}
 	else
 	{
@@ -171,90 +171,90 @@ func void dia_hilda_bringbeet_info()
 };
 
 
-instance DIA_HILDA_EINKAUFEN(C_INFO)
+instance DIA_Hilda_Einkaufen(C_Info)
 {
-	npc = bau_951_hilda;
+	npc = BAU_951_Hilda;
 	nr = 2;
-	condition = dia_hilda_einkaufen_condition;
-	information = dia_hilda_einkaufen_info;
+	condition = DIA_Hilda_Einkaufen_Condition;
+	information = DIA_Hilda_Einkaufen_Info;
 	permanent = FALSE;
 	description = "Daj mi z³oto, a znajdê tego handlarza…";
 };
 
 
-func int dia_hilda_einkaufen_condition()
+func int DIA_Hilda_Einkaufen_Condition()
 {
-	if((MIS_LOBART_RUEBENTOHILDA == LOG_SUCCESS) && (KAPITEL < 3))
+	if((MIS_Lobart_RuebenToHilda == LOG_SUCCESS) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hilda_einkaufen_info()
+func void DIA_Hilda_Einkaufen_Info()
 {
 	AI_Output(other,self,"DIA_Hilda_Einkaufen_15_00");	//Daj mi z³oto, a znajdê tego handlarza...
 	if(hero.guild == GIL_NONE)
 	{
 		AI_Output(self,other,"DIA_Hilda_Einkaufen_17_01");	//Chyba mogê ci zaufaæ... Tylko nie wydaj wszystkiego na gorza³ê! S³yszysz?!
 	};
-	b_giveinvitems(self,other,5113,20);
-	MIS_HILDA_PFANNEKAUFEN = LOG_RUNNING;
-	MIS_HILDA_PFANNEKAUFEN_DAY = b_getdayplus();
-	Log_CreateTopic(TOPIC_HILDA,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_HILDA,LOG_RUNNING);
-	b_logentry(TOPIC_HILDA,"Hilda, ¿ona farmera Lobarta, chce, abym kupi³ dla niej u wêdrownego handlarza patelniê.");
+	B_GiveInvItems(self,other,ItMi_Gold,20);
+	MIS_Hilda_PfanneKaufen = LOG_Running;
+	MIS_Hilda_PfanneKaufen_Day = B_GetDayPlus();
+	Log_CreateTopic(TOPIC_Hilda,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Hilda,LOG_Running);
+	B_LogEntry(TOPIC_Hilda,"Hilda, ¿ona farmera Lobarta, chce, abym kupi³ dla niej u wêdrownego handlarza patelniê.");
 };
 
 
-instance DIA_HILDA_PFANNEGEHOLT(C_INFO)
+instance DIA_Hilda_PfanneGeholt(C_Info)
 {
-	npc = bau_951_hilda;
+	npc = BAU_951_Hilda;
 	nr = 2;
-	condition = dia_hilda_pfannegeholt_condition;
-	information = dia_hilda_pfannegeholt_info;
+	condition = DIA_Hilda_PfanneGeholt_Condition;
+	information = DIA_Hilda_PfanneGeholt_Info;
 	permanent = FALSE;
 	description = "Oto twoja patelnia.";
 };
 
 
-func int dia_hilda_pfannegeholt_condition()
+func int DIA_Hilda_PfanneGeholt_Condition()
 {
-	if((MIS_HILDA_PFANNEKAUFEN == LOG_RUNNING) && (Npc_HasItems(other,itmi_pan) > 0) && (KAPITEL < 3))
+	if((MIS_Hilda_PfanneKaufen == LOG_Running) && (Npc_HasItems(other,ItMi_Pan) > 0) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hilda_pfannegeholt_info()
+func void DIA_Hilda_PfanneGeholt_Info()
 {
 	AI_Output(other,self,"DIA_Hilda_PfanneGeholt_15_00");	//Oto twoja patelnia.
-	b_giveinvitems(other,self,5091,1);
+	B_GiveInvItems(other,self,ItMi_Pan,1);
 	AI_Output(self,other,"DIA_Hilda_PfanneGeholt_17_01");	//Dobrze. Wypróbujmy j¹...
-	MIS_HILDA_PFANNEKAUFEN = LOG_SUCCESS;
-	b_giveplayerxp(XP_HILDAHOLPFANNE);
+	MIS_Hilda_PfanneKaufen = LOG_SUCCESS;
+	B_GivePlayerXP(XP_HildaHolPfanne);
 };
 
 
-instance DIA_HILDA_PFANNETOOLATE(C_INFO)
+instance DIA_Hilda_PfanneTooLate(C_Info)
 {
-	npc = bau_951_hilda;
+	npc = BAU_951_Hilda;
 	nr = 1;
-	condition = dia_hilda_pfannetoolate_condition;
-	information = dia_hilda_pfannetoolate_info;
+	condition = DIA_Hilda_PfanneTooLate_Condition;
+	information = DIA_Hilda_PfanneTooLate_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_hilda_pfannetoolate_condition()
+func int DIA_Hilda_PfanneTooLate_Condition()
 {
-	if((MIS_HILDA_PFANNEKAUFEN == LOG_RUNNING) && (MIS_HILDA_PFANNEKAUFEN_DAY <= (Wld_GetDay() - 1)) && (KAPITEL < 3))
+	if((MIS_Hilda_PfanneKaufen == LOG_Running) && (MIS_Hilda_PfanneKaufen_Day <= (Wld_GetDay() - 1)) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hilda_pfannetoolate_info()
+func void DIA_Hilda_PfanneTooLate_Info()
 {
 	if(hero.guild == GIL_NONE)
 	{
@@ -264,172 +264,172 @@ func void dia_hilda_pfannetoolate_info()
 	{
 		AI_Output(self,other,"DIA_Hilda_PfanneTooLate_17_01");	//Wystarczy tego dobrego. Gdzie s¹ pieni¹dze, za które mia³eœ kupiæ patelniê?
 	};
-	if(Npc_HasItems(other,itmi_pan) > 0)
+	if(Npc_HasItems(other,ItMi_Pan) > 0)
 	{
 		AI_Output(other,self,"DIA_Hilda_PfanneTooLate_15_02");	//Przepraszam, ¿e zajê³o mi to tyle czasu. Oto twoja patelnia!
-		b_giveinvitems(other,self,5091,1);
+		B_GiveInvItems(other,self,ItMi_Pan,1);
 		AI_Output(self,other,"DIA_Hilda_PfanneTooLate_17_03");	//Daj j¹ tutaj wreszcie. Coœ niebywa³ego!
-		MIS_HILDA_PFANNEKAUFEN = LOG_SUCCESS;
-		b_giveplayerxp(XP_HILDAHOLPFANNE / 2);
+		MIS_Hilda_PfanneKaufen = LOG_SUCCESS;
+		B_GivePlayerXP(XP_HildaHolPfanne / 2);
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		if(Npc_HasItems(other,itmi_gold) >= 20)
+		if(Npc_HasItems(other,ItMi_Gold) >= 20)
 		{
 			AI_Output(self,other,"DIA_Hilda_PfanneTooLate_17_04");	//Ach! Jeszcze j¹ masz. Oddaj mi j¹. W tej chwili.
-			b_giveinvitems(other,self,5113,20);
+			B_GiveInvItems(other,self,ItMi_Gold,20);
 			AI_Output(self,other,"DIA_Hilda_PfanneTooLate_17_05");	//Coœ niebywa³ego!
 		}
 		else
 		{
 			AI_Output(self,other,"DIA_Hilda_PfanneTooLate_17_06");	//Gdzie jest moja patelnia? Dosta³eœ na ni¹ 20 sztuk z³ota!
 			AI_Output(self,other,"DIA_Hilda_PfanneTooLate_17_07");	//Wynoœ siê st¹d, wstrêtny z³odzieju!
-			b_memorizeplayercrime(self,other,CRIME_THEFT);
+			B_MemorizePlayerCrime(self,other,CRIME_THEFT);
 		};
-		MIS_HILDA_PFANNEKAUFEN = LOG_FAILED;
-		b_checklog();
+		MIS_Hilda_PfanneKaufen = LOG_FAILED;
+		B_CheckLog();
 		AI_StopProcessInfos(self);
 	};
 };
 
 
-instance DIA_HILDA_KAP3_EXIT(C_INFO)
+instance DIA_Hilda_KAP3_EXIT(C_Info)
 {
-	npc = bau_951_hilda;
+	npc = BAU_951_Hilda;
 	nr = 999;
-	condition = dia_hilda_kap3_exit_condition;
-	information = dia_hilda_kap3_exit_info;
+	condition = DIA_Hilda_KAP3_EXIT_Condition;
+	information = DIA_Hilda_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hilda_kap3_exit_condition()
+func int DIA_Hilda_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hilda_kap3_exit_info()
+func void DIA_Hilda_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HILDA_KRANK(C_INFO)
+instance DIA_Hilda_KRANK(C_Info)
 {
-	npc = bau_951_hilda;
+	npc = BAU_951_Hilda;
 	nr = 30;
-	condition = dia_hilda_krank_condition;
-	information = dia_hilda_krank_info;
+	condition = DIA_Hilda_KRANK_Condition;
+	information = DIA_Hilda_KRANK_Info;
 	permanent = TRUE;
 	description = "le siê czujesz?";
 };
 
 
-func int dia_hilda_krank_condition()
+func int DIA_Hilda_KRANK_Condition()
 {
-	if((KAPITEL >= 3) && ((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL) || (hero.guild == GIL_KDF)) && (MIS_HEALHILDA != LOG_SUCCESS))
+	if((Kapitel >= 3) && ((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL) || (hero.guild == GIL_KDF)) && (MIS_HealHilda != LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_hilda_krank_ontime;
+var int DIA_Hilda_KRANK_OnTime;
 
-func void dia_hilda_krank_info()
+func void DIA_Hilda_KRANK_Info()
 {
 	AI_Output(other,self,"DIA_Hilda_KRANK_15_00");	//le siê czujesz?
 	AI_Output(self,other,"DIA_Hilda_KRANK_17_01");	//Nie najlepiej. Znowu mam tê okropn¹ gor¹czkê.
 	AI_Output(self,other,"DIA_Hilda_KRANK_17_02");	//Powinnam pójœæ do uzdrawiacza, ale nawet na to jestem za s³aba.
-	if(DIA_HILDA_KRANK_ONTIME == FALSE)
+	if(DIA_Hilda_KRANK_OnTime == FALSE)
 	{
-		Info_ClearChoices(dia_hilda_krank);
-		Info_AddChoice(dia_hilda_krank,"Wracaj do zdrowia. Ja muszê ju¿ iœæ.",dia_hilda_krank_besserung);
-		Info_AddChoice(dia_hilda_krank,"Czy mogê jakoœ pomóc?",dia_hilda_krank_helfen);
-		DIA_HILDA_KRANK_ONTIME = TRUE;
+		Info_ClearChoices(DIA_Hilda_KRANK);
+		Info_AddChoice(DIA_Hilda_KRANK,"Wracaj do zdrowia. Ja muszê ju¿ iœæ.",DIA_Hilda_KRANK_besserung);
+		Info_AddChoice(DIA_Hilda_KRANK,"Czy mogê jakoœ pomóc?",DIA_Hilda_KRANK_helfen);
+		DIA_Hilda_KRANK_OnTime = TRUE;
 	};
-	MIS_HEALHILDA = LOG_RUNNING;
+	MIS_HealHilda = LOG_Running;
 };
 
-func void dia_hilda_krank_besserung()
+func void DIA_Hilda_KRANK_besserung()
 {
 	AI_Output(other,self,"DIA_Hilda_KRANK_besserung_15_00");	//Wracaj do zdrowia. Ja muszê ju¿ iœæ.
 	AI_Output(self,other,"DIA_Hilda_KRANK_besserung_17_01");	//Miejmy nadziejê, ¿e wkrótce przyjd¹ lepsze czasy.
 	AI_StopProcessInfos(self);
 };
 
-func void dia_hilda_krank_helfen()
+func void DIA_Hilda_KRANK_helfen()
 {
 	AI_Output(other,self,"DIA_Hilda_KRANK_helfen_15_00");	//Czy mogê jakoœ pomóc?
 	AI_Output(self,other,"DIA_Hilda_KRANK_helfen_17_01");	//By³oby wspaniale, gdybyœ uda³ siê do Vatrasa i przyniós³ mi od niego moje lekarstwo.
 	AI_Output(self,other,"DIA_Hilda_KRANK_helfen_17_02");	//On bêdzie wiedzia³, co zrobiæ!
-	Log_CreateTopic(TOPIC_HEALHILDA,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_HEALHILDA,LOG_RUNNING);
-	b_logentry(TOPIC_HEALHILDA,"¯ona Lobarta, Hilda, zachorowa³a. Vatras ma lekarstwo, które mo¿e j¹ wyleczyæ.");
+	Log_CreateTopic(TOPIC_HealHilda,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_HealHilda,LOG_Running);
+	B_LogEntry(TOPIC_HealHilda,"¯ona Lobarta, Hilda, zachorowa³a. Vatras ma lekarstwo, które mo¿e j¹ wyleczyæ.");
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HILDA_HEILUNGBRINGEN(C_INFO)
+instance DIA_Hilda_HEILUNGBRINGEN(C_Info)
 {
-	npc = bau_951_hilda;
+	npc = BAU_951_Hilda;
 	nr = 31;
-	condition = dia_hilda_heilungbringen_condition;
-	information = dia_hilda_heilungbringen_info;
+	condition = DIA_Hilda_HEILUNGBRINGEN_Condition;
+	information = DIA_Hilda_HEILUNGBRINGEN_Info;
 	description = "Przynios³em twoje lekarstwo.";
 };
 
 
-func int dia_hilda_heilungbringen_condition()
+func int DIA_Hilda_HEILUNGBRINGEN_Condition()
 {
-	if(Npc_HasItems(other,itpo_healhilda_mis))
+	if(Npc_HasItems(other,ItPo_HealHilda_MIS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hilda_heilungbringen_info()
+func void DIA_Hilda_HEILUNGBRINGEN_Info()
 {
 	AI_Output(other,self,"DIA_Hilda_HEILUNGBRINGEN_15_00");	//Przynios³em twoje lekarstwo.
-	b_giveinvitems(other,self,5790,1);
+	B_GiveInvItems(other,self,ItPo_HealHilda_MIS,1);
 	AI_Output(self,other,"DIA_Hilda_HEILUNGBRINGEN_17_01");	//Naprawdê, gdyby wszyscy byli tacy uczynni jak ty... Strasznie ci dziêkujê.
-	b_useitem(self,5790);
+	B_UseItem(self,ItPo_HealHilda_MIS);
 	AI_Output(self,other,"DIA_Hilda_HEILUNGBRINGEN_17_02");	//Mam nadziejê, ¿e tych kilka monet wystarczy.
-	CreateInvItems(self,itmi_gold,50);
-	b_giveinvitems(self,other,5113,50);
-	MIS_HEALHILDA = LOG_SUCCESS;
-	b_giveplayerxp(XP_HEALHILDA);
+	CreateInvItems(self,ItMi_Gold,50);
+	B_GiveInvItems(self,other,ItMi_Gold,50);
+	MIS_HealHilda = LOG_SUCCESS;
+	B_GivePlayerXP(XP_HealHilda);
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HILDA_DISTURB(C_INFO)
+instance DIA_Hilda_DISTURB(C_Info)
 {
-	npc = bau_951_hilda;
+	npc = BAU_951_Hilda;
 	nr = 32;
-	condition = dia_hilda_disturb_condition;
-	information = dia_hilda_disturb_info;
+	condition = DIA_Hilda_DISTURB_Condition;
+	information = DIA_Hilda_DISTURB_Info;
 	permanent = TRUE;
 	description = "Jak siê masz?";
 };
 
 
-func int dia_hilda_disturb_condition()
+func int DIA_Hilda_DISTURB_Condition()
 {
-	if((MIS_HEALHILDA == LOG_SUCCESS) || (((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG)) && (KAPITEL > 3)))
+	if((MIS_HealHilda == LOG_SUCCESS) || (((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG)) && (Kapitel > 3)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hilda_disturb_info()
+func void DIA_Hilda_DISTURB_Info()
 {
-	if(MIS_HEALHILDA == LOG_SUCCESS)
+	if(MIS_HealHilda == LOG_SUCCESS)
 	{
 		AI_Output(other,self,"DIA_Hilda_DISTURB_15_00");	//Jak siê czujesz?
 		AI_Output(self,other,"DIA_Hilda_DISTURB_17_01");	//Dziêkujê, dziêki tobie wracam do zdrowia.
@@ -441,112 +441,112 @@ func void dia_hilda_disturb_info()
 };
 
 
-instance DIA_HILDA_KAP4_EXIT(C_INFO)
+instance DIA_Hilda_KAP4_EXIT(C_Info)
 {
-	npc = bau_951_hilda;
+	npc = BAU_951_Hilda;
 	nr = 999;
-	condition = dia_hilda_kap4_exit_condition;
-	information = dia_hilda_kap4_exit_info;
+	condition = DIA_Hilda_KAP4_EXIT_Condition;
+	information = DIA_Hilda_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hilda_kap4_exit_condition()
+func int DIA_Hilda_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hilda_kap4_exit_info()
+func void DIA_Hilda_KAP4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HILDA_KAP5_EXIT(C_INFO)
+instance DIA_Hilda_KAP5_EXIT(C_Info)
 {
-	npc = bau_951_hilda;
+	npc = BAU_951_Hilda;
 	nr = 999;
-	condition = dia_hilda_kap5_exit_condition;
-	information = dia_hilda_kap5_exit_info;
+	condition = DIA_Hilda_KAP5_EXIT_Condition;
+	information = DIA_Hilda_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hilda_kap5_exit_condition()
+func int DIA_Hilda_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hilda_kap5_exit_info()
+func void DIA_Hilda_KAP5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HILDA_KAP6_EXIT(C_INFO)
+instance DIA_Hilda_KAP6_EXIT(C_Info)
 {
-	npc = bau_951_hilda;
+	npc = BAU_951_Hilda;
 	nr = 999;
-	condition = dia_hilda_kap6_exit_condition;
-	information = dia_hilda_kap6_exit_info;
+	condition = DIA_Hilda_KAP6_EXIT_Condition;
+	information = DIA_Hilda_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hilda_kap6_exit_condition()
+func int DIA_Hilda_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hilda_kap6_exit_info()
+func void DIA_Hilda_KAP6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HILDA_PICKPOCKET(C_INFO)
+instance DIA_Hilda_PICKPOCKET(C_Info)
 {
-	npc = bau_951_hilda;
+	npc = BAU_951_Hilda;
 	nr = 900;
-	condition = dia_hilda_pickpocket_condition;
-	information = dia_hilda_pickpocket_info;
+	condition = DIA_Hilda_PICKPOCKET_Condition;
+	information = DIA_Hilda_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40_FEMALE;
+	description = Pickpocket_40_Female;
 };
 
 
-func int dia_hilda_pickpocket_condition()
+func int DIA_Hilda_PICKPOCKET_Condition()
 {
-	return c_beklauen(26,35);
+	return C_Beklauen(26,35);
 };
 
-func void dia_hilda_pickpocket_info()
+func void DIA_Hilda_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_hilda_pickpocket);
-	Info_AddChoice(dia_hilda_pickpocket,DIALOG_BACK,dia_hilda_pickpocket_back);
-	Info_AddChoice(dia_hilda_pickpocket,DIALOG_PICKPOCKET,dia_hilda_pickpocket_doit);
+	Info_ClearChoices(DIA_Hilda_PICKPOCKET);
+	Info_AddChoice(DIA_Hilda_PICKPOCKET,Dialog_Back,DIA_Hilda_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Hilda_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Hilda_PICKPOCKET_DoIt);
 };
 
-func void dia_hilda_pickpocket_doit()
+func void DIA_Hilda_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_hilda_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Hilda_PICKPOCKET);
 };
 
-func void dia_hilda_pickpocket_back()
+func void DIA_Hilda_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_hilda_pickpocket);
+	Info_ClearChoices(DIA_Hilda_PICKPOCKET);
 };
 

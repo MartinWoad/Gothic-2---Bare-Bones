@@ -1,15 +1,15 @@
 
-func void zs_preach_vatras()
+func void ZS_Preach_Vatras()
 {
-	perception_set_normal();
+	Perception_Set_Normal();
 	Npc_PercDisable(self,PERC_ASSESSQUIETSOUND);
-	b_resetall(self);
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	AI_GotoWP(self,self.wp);
 	AI_AlignToWP(self);
 };
 
-func int zs_preach_vatras_loop()
+func int ZS_Preach_Vatras_loop()
 {
 	if(Npc_GetStateTime(self) >= 13)
 	{
@@ -17,14 +17,14 @@ func int zs_preach_vatras_loop()
 		{
 			self.aivar[AIV_TAPOSITION] = 0;
 		};
-		b_preach_vatras(self.aivar[AIV_TAPOSITION]);
+		B_Preach_Vatras(self.aivar[AIV_TAPOSITION]);
 		self.aivar[AIV_TAPOSITION] = self.aivar[AIV_TAPOSITION] + 1;
 		Npc_SetStateTime(self,0);
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_preach_vatras_end()
+func void ZS_Preach_Vatras_end()
 {
 };
 

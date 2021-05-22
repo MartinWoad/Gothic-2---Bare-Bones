@@ -1,78 +1,78 @@
 
-instance DIA_TANDOR_EXIT(C_INFO)
+instance DIA_Tandor_EXIT(C_Info)
 {
-	npc = pal_260_tandor;
+	npc = PAL_260_Tandor;
 	nr = 999;
-	condition = dia_tandor_exit_condition;
-	information = dia_tandor_exit_info;
+	condition = DIA_Tandor_EXIT_Condition;
+	information = DIA_Tandor_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_tandor_exit_condition()
+func int DIA_Tandor_EXIT_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_tandor_exit_info()
+func void DIA_Tandor_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_TANDOR_HALLO(C_INFO)
+instance DIA_Tandor_Hallo(C_Info)
 {
-	npc = pal_260_tandor;
+	npc = PAL_260_Tandor;
 	nr = 2;
-	condition = dia_tandor_hallo_condition;
-	information = dia_tandor_hallo_info;
+	condition = DIA_Tandor_Hallo_Condition;
+	information = DIA_Tandor_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_tandor_hallo_condition()
+func int DIA_Tandor_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_tandor_hallo_info()
+func void DIA_Tandor_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Tandor_Hallo_08_00");	//Uda³o ci siê przedostaæ przez prze³êcz? Doskonale, straciliœmy tam ju¿ zbyt wielu dobrych ludzi.
 	AI_Output(self,other,"DIA_Tandor_Hallo_08_01");	//Wiem, jak tam jest. Przez krótki czas towarzyszy³em oddzia³om zwiadowczym.
 	AI_Output(self,other,"DIA_Tandor_Hallo_08_02");	//Masz jak¹œ broñ? Jeœli potrzebujesz dobrej broni, to œwietnie trafi³eœ.
-	Log_CreateTopic(TOPIC_TRADER_OC,LOG_NOTE);
-	b_logentry(TOPIC_TRADER_OC,"Tandor handluje na zamku broni¹.");
+	Log_CreateTopic(TOPIC_Trader_OC,LOG_NOTE);
+	B_LogEntry(TOPIC_Trader_OC,"Tandor handluje na zamku broni¹.");
 };
 
 
-instance DIA_TANDOR_TRUPP(C_INFO)
+instance DIA_Tandor_Trupp(C_Info)
 {
-	npc = pal_260_tandor;
+	npc = PAL_260_Tandor;
 	nr = 2;
-	condition = dia_tandor_trupp_condition;
-	information = dia_tandor_trupp_info;
+	condition = DIA_Tandor_Trupp_Condition;
+	information = DIA_Tandor_Trupp_Info;
 	permanent = FALSE;
 	description = "Co siê sta³o z oddzia³em?";
 };
 
 
-func int dia_tandor_trupp_condition()
+func int DIA_Tandor_Trupp_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_tandor_hallo))
+	if(Npc_KnowsInfo(other,DIA_Tandor_Hallo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_tandor_trupp_info()
+func void DIA_Tandor_Trupp_Info()
 {
 	AI_Output(other,self,"DIA_Tandor_Trupp_15_00");	//Co siê sta³o z oddzia³em?
 	AI_Output(self,other,"DIA_Tandor_Trupp_08_01");	//Prowadziliœmy zwiad w terenie, chcieliœmy przedostaæ siê na wybrze¿e. Nasz obóz rozbiliœmy w jaskini.
@@ -82,180 +82,180 @@ func void dia_tandor_trupp_info()
 };
 
 
-instance DIA_TANDOR_TRADE(C_INFO)
+instance DIA_Tandor_Trade(C_Info)
 {
-	npc = pal_260_tandor;
+	npc = PAL_260_Tandor;
 	nr = 900;
-	condition = dia_tandor_trade_condition;
-	information = dia_tandor_trade_info;
+	condition = DIA_Tandor_Trade_Condition;
+	information = DIA_Tandor_Trade_Info;
 	permanent = TRUE;
 	trade = TRUE;
 	description = "Poka¿ mi swoje towary.";
 };
 
 
-func int dia_tandor_trade_condition()
+func int DIA_Tandor_Trade_Condition()
 {
 	return TRUE;
 };
 
-func void dia_tandor_trade_info()
+func void DIA_Tandor_Trade_Info()
 {
-	b_givetradeinv(self);
+	B_GiveTradeInv(self);
 	AI_Output(other,self,"DIA_Tandor_Trade_15_00");	//Poka¿, co masz na sprzeda¿.
 };
 
 
-instance DIA_TANDOR_EQUIPMENT(C_INFO)
+instance DIA_Tandor_Equipment(C_Info)
 {
-	npc = pal_260_tandor;
+	npc = PAL_260_Tandor;
 	nr = 3;
-	condition = dia_tandor_equipment_condition;
-	information = dia_tandor_equipment_info;
+	condition = DIA_Tandor_Equipment_Condition;
+	information = DIA_Tandor_Equipment_Info;
 	description = "Przysy³a mnie Garond - potrzebujê wyposa¿enia.";
 };
 
 
-func int dia_tandor_equipment_condition()
+func int DIA_Tandor_Equipment_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_garond_equipment) && (other.guild == GIL_MIL) && (KAPITEL == 2))
+	if(Npc_KnowsInfo(hero,DIA_Garond_Equipment) && (other.guild == GIL_MIL) && (Kapitel == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_tandor_equipment_info()
+func void DIA_Tandor_Equipment_Info()
 {
 	AI_Output(other,self,"DIA_Tandor_Equipment_15_00");	//Przysy³a mnie Garond - potrzebujê wyposa¿enia.
 	AI_Output(self,other,"DIA_Tandor_Equipment_08_01");	//Broñ do walki w zwarciu czy na dystans?
-	Info_ClearChoices(dia_tandor_equipment);
-	Info_AddChoice(dia_tandor_equipment,"Do walki w zwarciu.",dia_tandor_equipment_nah);
-	Info_AddChoice(dia_tandor_equipment,"Dystansowa.",dia_tandor_equipment_fern);
+	Info_ClearChoices(DIA_Tandor_Equipment);
+	Info_AddChoice(DIA_Tandor_Equipment,"Do walki w zwarciu.",DIA_Tandor_Equipment_Nah);
+	Info_AddChoice(DIA_Tandor_Equipment,"Dystansowa.",DIA_Tandor_Equipment_Fern);
 };
 
-func void dia_tandor_equipment_nah()
+func void DIA_Tandor_Equipment_Nah()
 {
 	AI_Output(other,self,"DIA_Tandor_Equipment_Nah_15_00");	//Do walki w zwarciu.
 	AI_Output(self,other,"DIA_Tandor_Equipment_Nah_08_01");	//Jednorêczna czy dwurêczna?
-	Info_ClearChoices(dia_tandor_equipment);
-	Info_AddChoice(dia_tandor_equipment,"Jednorêczna.",dia_tandor_equipment_ein);
-	Info_AddChoice(dia_tandor_equipment,"Dwurêczna.",dia_tandor_equipment_zwei);
+	Info_ClearChoices(DIA_Tandor_Equipment);
+	Info_AddChoice(DIA_Tandor_Equipment,"Jednorêczna.",DIA_Tandor_Equipment_Ein);
+	Info_AddChoice(DIA_Tandor_Equipment,"Dwurêczna.",DIA_Tandor_Equipment_Zwei);
 };
 
-func void dia_tandor_equipment_fern()
+func void DIA_Tandor_Equipment_Fern()
 {
 	AI_Output(other,self,"DIA_Tandor_Equipment_Fern_15_00");	//Dystansowa.
 	AI_Output(self,other,"DIA_Tandor_Equipment_Fern_08_01");	//£uk czy kusza?
-	Info_ClearChoices(dia_tandor_equipment);
-	Info_AddChoice(dia_tandor_equipment,"£uk.",dia_tandor_equipment_bow);
-	Info_AddChoice(dia_tandor_equipment,"Kusza.",dia_tandor_equipment_crossbow);
+	Info_ClearChoices(DIA_Tandor_Equipment);
+	Info_AddChoice(DIA_Tandor_Equipment,"£uk.",DIA_Tandor_Equipment_Bow);
+	Info_AddChoice(DIA_Tandor_Equipment,"Kusza.",DIA_Tandor_Equipment_Crossbow);
 };
 
-func void dia_tandor_equipment_ein()
+func void DIA_Tandor_Equipment_Ein()
 {
 	AI_Output(other,self,"DIA_Tandor_Equipment_Ein_15_00");	//Jednorêczna.
 	AI_Output(self,other,"DIA_Tandor_Equipment_Ein_08_01");	//W takim razie na pewno przyda ci siê taka broñ!
-	b_giveinvitems(self,other,4990,1);
-	Info_ClearChoices(dia_tandor_equipment);
+	B_GiveInvItems(self,other,ItMw_Steinbrecher,1);
+	Info_ClearChoices(DIA_Tandor_Equipment);
 };
 
-func void dia_tandor_equipment_zwei()
+func void DIA_Tandor_Equipment_Zwei()
 {
 	AI_Output(other,self,"DIA_Tandor_Equipment_Zwei_15_00");	//Dwurêczna.
 	AI_Output(self,other,"DIA_Tandor_Equipment_Zwei_08_01");	//Z t¹ broni¹ bêdziesz œwietnie zabezpieczony.
-	b_giveinvitems(self,other,4989,1);
-	Info_ClearChoices(dia_tandor_equipment);
+	B_GiveInvItems(self,other,ItMw_Zweihaender1,1);
+	Info_ClearChoices(DIA_Tandor_Equipment);
 };
 
-func void dia_tandor_equipment_bow()
+func void DIA_Tandor_Equipment_Bow()
 {
 	AI_Output(other,self,"DIA_Tandor_Equipment_Bow_15_00");	//£uk.
 	AI_Output(self,other,"DIA_Tandor_Equipment_Bow_08_01");	//Ten ³uk myœliwski z pewnoœci¹ ci siê spodoba. Dam ci te¿ kilka strza³.
-	b_giveinvitems(self,other,5271,1);
-	b_giveinvitems(self,other,5265,50);
-	Info_ClearChoices(dia_tandor_equipment);
+	B_GiveInvItems(self,other,ItRw_Bow_L_03,1);
+	B_GiveInvItems(self,other,ItRw_Arrow,50);
+	Info_ClearChoices(DIA_Tandor_Equipment);
 };
 
-func void dia_tandor_equipment_crossbow()
+func void DIA_Tandor_Equipment_Crossbow()
 {
 	AI_Output(other,self,"DIA_Tandor_Equipment_Crossbow_15_00");	//Kusza.
 	AI_Output(self,other,"DIA_Tandor_Equipment_Crossbow_08_01");	//WeŸ proszê tê lekk¹ kuszê. Dorzucê te¿ do niej be³ty.
-	b_giveinvitems(self,other,5282,1);
-	b_giveinvitems(self,other,5266,50);
-	Info_ClearChoices(dia_tandor_equipment);
+	B_GiveInvItems(self,other,ItRw_Crossbow_L_02,1);
+	B_GiveInvItems(self,other,ItRw_Bolt,50);
+	Info_ClearChoices(DIA_Tandor_Equipment);
 };
 
 
-instance DIA_TANDOR_KAP3_EXIT(C_INFO)
+instance DIA_Tandor_KAP3_EXIT(C_Info)
 {
-	npc = pal_260_tandor;
+	npc = PAL_260_Tandor;
 	nr = 999;
-	condition = dia_tandor_kap3_exit_condition;
-	information = dia_tandor_kap3_exit_info;
+	condition = DIA_Tandor_KAP3_EXIT_Condition;
+	information = DIA_Tandor_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_tandor_kap3_exit_condition()
+func int DIA_Tandor_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_tandor_kap3_exit_info()
+func void DIA_Tandor_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_TANDOR_KAP4_EXIT(C_INFO)
+instance DIA_Tandor_KAP4_EXIT(C_Info)
 {
-	npc = pal_260_tandor;
+	npc = PAL_260_Tandor;
 	nr = 999;
-	condition = dia_tandor_kap4_exit_condition;
-	information = dia_tandor_kap4_exit_info;
+	condition = DIA_Tandor_KAP4_EXIT_Condition;
+	information = DIA_Tandor_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_tandor_kap4_exit_condition()
+func int DIA_Tandor_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_tandor_kap4_exit_info()
+func void DIA_Tandor_KAP4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_TANDOR_NEWS(C_INFO)
+instance DIA_Tandor_News(C_Info)
 {
-	npc = pal_260_tandor;
+	npc = PAL_260_Tandor;
 	nr = 40;
-	condition = dia_tandor_news_condition;
-	information = dia_tandor_news_info;
+	condition = DIA_Tandor_News_Condition;
+	information = DIA_Tandor_News_Info;
 	permanent = TRUE;
 	description = "Masz jakieœ wieœci?";
 };
 
 
-func int dia_tandor_news_condition()
+func int DIA_Tandor_News_Condition()
 {
-	if((KAPITEL == 4) && Npc_KnowsInfo(hero,dia_tandor_hallo))
+	if((Kapitel == 4) && Npc_KnowsInfo(hero,DIA_Tandor_Hallo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_tandor_news_info()
+func void DIA_Tandor_News_Info()
 {
 	AI_Output(other,self,"DIA_Tandor_News_15_00");	//Masz jakieœ wieœci?
 	if(hero.guild == GIL_DJG)
@@ -270,54 +270,54 @@ func void dia_tandor_news_info()
 };
 
 
-instance DIA_TANDOR_KAP5_EXIT(C_INFO)
+instance DIA_Tandor_KAP5_EXIT(C_Info)
 {
-	npc = pal_260_tandor;
+	npc = PAL_260_Tandor;
 	nr = 999;
-	condition = dia_tandor_kap5_exit_condition;
-	information = dia_tandor_kap5_exit_info;
+	condition = DIA_Tandor_KAP5_EXIT_Condition;
+	information = DIA_Tandor_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_tandor_kap5_exit_condition()
+func int DIA_Tandor_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_tandor_kap5_exit_info()
+func void DIA_Tandor_KAP5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_TANDOR_WASISTLOS(C_INFO)
+instance DIA_Tandor_WASISTLOS(C_Info)
 {
-	npc = pal_260_tandor;
+	npc = PAL_260_Tandor;
 	nr = 51;
-	condition = dia_tandor_wasistlos_condition;
-	information = dia_tandor_wasistlos_info;
+	condition = DIA_Tandor_WASISTLOS_Condition;
+	information = DIA_Tandor_WASISTLOS_Info;
 	permanent = TRUE;
 	description = "Czemu jesteœ taki przybity?";
 };
 
 
-func int dia_tandor_wasistlos_condition()
+func int DIA_Tandor_WASISTLOS_Condition()
 {
-	if((KAPITEL == 5) && Npc_KnowsInfo(hero,dia_tandor_hallo))
+	if((Kapitel == 5) && Npc_KnowsInfo(hero,DIA_Tandor_Hallo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_tandor_wasistlos_info()
+func void DIA_Tandor_WASISTLOS_Info()
 {
 	AI_Output(other,self,"DIA_Tandor_WASISTLOS_15_00");	//Czemu jesteœ taki przybity?
-	if(MIS_OCGATEOPEN == TRUE)
+	if(MIS_OCGateOpen == TRUE)
 	{
 		AI_Output(self,other,"DIA_Tandor_WASISTLOS_08_01");	//To przez orków, tych kreatur jest coraz wiêcej, w koñcu wszystkich nas pozabijaj¹.
 	}
@@ -328,62 +328,62 @@ func void dia_tandor_wasistlos_info()
 };
 
 
-instance DIA_TANDOR_KAP6_EXIT(C_INFO)
+instance DIA_Tandor_KAP6_EXIT(C_Info)
 {
-	npc = pal_260_tandor;
+	npc = PAL_260_Tandor;
 	nr = 999;
-	condition = dia_tandor_kap6_exit_condition;
-	information = dia_tandor_kap6_exit_info;
+	condition = DIA_Tandor_KAP6_EXIT_Condition;
+	information = DIA_Tandor_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_tandor_kap6_exit_condition()
+func int DIA_Tandor_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_tandor_kap6_exit_info()
+func void DIA_Tandor_KAP6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_TANDOR_PICKPOCKET(C_INFO)
+instance DIA_Tandor_PICKPOCKET(C_Info)
 {
-	npc = pal_260_tandor;
+	npc = PAL_260_Tandor;
 	nr = 900;
-	condition = dia_tandor_pickpocket_condition;
-	information = dia_tandor_pickpocket_info;
+	condition = DIA_Tandor_PICKPOCKET_Condition;
+	information = DIA_Tandor_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_tandor_pickpocket_condition()
+func int DIA_Tandor_PICKPOCKET_Condition()
 {
-	return c_beklauen(47,90);
+	return C_Beklauen(47,90);
 };
 
-func void dia_tandor_pickpocket_info()
+func void DIA_Tandor_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_tandor_pickpocket);
-	Info_AddChoice(dia_tandor_pickpocket,DIALOG_BACK,dia_tandor_pickpocket_back);
-	Info_AddChoice(dia_tandor_pickpocket,DIALOG_PICKPOCKET,dia_tandor_pickpocket_doit);
+	Info_ClearChoices(DIA_Tandor_PICKPOCKET);
+	Info_AddChoice(DIA_Tandor_PICKPOCKET,Dialog_Back,DIA_Tandor_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Tandor_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Tandor_PICKPOCKET_DoIt);
 };
 
-func void dia_tandor_pickpocket_doit()
+func void DIA_Tandor_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_tandor_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Tandor_PICKPOCKET);
 };
 
-func void dia_tandor_pickpocket_back()
+func void DIA_Tandor_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_tandor_pickpocket);
+	Info_ClearChoices(DIA_Tandor_PICKPOCKET);
 };
 

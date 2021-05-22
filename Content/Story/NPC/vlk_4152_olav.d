@@ -1,12 +1,12 @@
 
-instance VLK_4152_OLAV(NPC_DEFAULT)
+instance VLK_4152_Olav(Npc_Default)
 {
 	name[0] = "Olav";
 	guild = GIL_MIL;
 	id = 4152;
 	voice = 4;
 	flags = 0;
-	npctype = NPCTYPE_OCAMBIENT;
+	npcType = NPCTYPE_OCAMBIENT;
 	attribute[ATR_STRENGTH] = 10;
 	attribute[ATR_DEXTERITY] = 10;
 	attribute[ATR_MANA_MAX] = 0;
@@ -14,20 +14,20 @@ instance VLK_4152_OLAV(NPC_DEFAULT)
 	attribute[ATR_HITPOINTS_MAX] = 1;
 	attribute[ATR_HITPOINTS] = 1;
 	fight_tactic = FAI_HUMAN_COWARD;
-	b_createambientinv(self);
-	CreateInvItems(self,itse_olav,1);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_NORMALBART22,BODYTEX_N,4826);
+	B_CreateAmbientInv(self);
+	CreateInvItems(self,ItSe_Olav,1);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_NormalBart22,BodyTex_N,ITAR_Mil_L);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_4152;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_4152;
 };
 
 
-func void rtn_start_4152()
+func void Rtn_Start_4152()
 {
-	ta_stand_guarding(8,0,23,0,"OW_WOLFHUT_01");
-	ta_stand_guarding(23,0,8,0,"OW_WOLFHUT_01");
+	TA_Stand_Guarding(8,0,23,0,"OW_WOLFHUT_01");
+	TA_Stand_Guarding(23,0,8,0,"OW_WOLFHUT_01");
 };
 

@@ -1,8 +1,8 @@
 
-func void zs_pray_sleeper()
+func void ZS_Pray_Sleeper()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == FALSE)
 	{
@@ -10,16 +10,16 @@ func void zs_pray_sleeper()
 	};
 };
 
-func int zs_pray_sleeper_loop()
+func int ZS_Pray_Sleeper_Loop()
 {
-	if(!c_bodystatecontains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"IDOL"))
+	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"IDOL"))
 	{
 		AI_UseMob(self,"IDOL",1);
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_pray_sleeper_end()
+func void ZS_Pray_Sleeper_End()
 {
 	AI_UseMob(self,"IDOL",-1);
 };

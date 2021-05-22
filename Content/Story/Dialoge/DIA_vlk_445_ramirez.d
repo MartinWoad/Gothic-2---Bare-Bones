@@ -1,146 +1,146 @@
 
-instance DIA_RAMIREZ_EXIT(C_INFO)
+instance DIA_Ramirez_EXIT(C_Info)
 {
-	npc = vlk_445_ramirez;
+	npc = VLK_445_Ramirez;
 	nr = 999;
-	condition = dia_ramirez_exit_condition;
-	information = dia_ramirez_exit_info;
+	condition = DIA_Ramirez_EXIT_Condition;
+	information = DIA_Ramirez_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_ramirez_exit_condition()
+func int DIA_Ramirez_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_ramirez_exit_info()
+func void DIA_Ramirez_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_RAMIREZ_PICKPOCKET(C_INFO)
+instance DIA_Ramirez_PICKPOCKET(C_Info)
 {
-	npc = vlk_445_ramirez;
+	npc = VLK_445_Ramirez;
 	nr = 900;
-	condition = dia_ramirez_pickpocket_condition;
-	information = dia_ramirez_pickpocket_info;
+	condition = DIA_Ramirez_PICKPOCKET_Condition;
+	information = DIA_Ramirez_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_100;
+	description = Pickpocket_100;
 };
 
 
-func int dia_ramirez_pickpocket_condition()
+func int DIA_Ramirez_PICKPOCKET_Condition()
 {
-	return c_beklauen(90,300);
+	return C_Beklauen(90,300);
 };
 
-func void dia_ramirez_pickpocket_info()
+func void DIA_Ramirez_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_ramirez_pickpocket);
-	Info_AddChoice(dia_ramirez_pickpocket,DIALOG_BACK,dia_ramirez_pickpocket_back);
-	Info_AddChoice(dia_ramirez_pickpocket,DIALOG_PICKPOCKET,dia_ramirez_pickpocket_doit);
+	Info_ClearChoices(DIA_Ramirez_PICKPOCKET);
+	Info_AddChoice(DIA_Ramirez_PICKPOCKET,Dialog_Back,DIA_Ramirez_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Ramirez_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Ramirez_PICKPOCKET_DoIt);
 };
 
-func void dia_ramirez_pickpocket_doit()
+func void DIA_Ramirez_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_ramirez_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Ramirez_PICKPOCKET);
 };
 
-func void dia_ramirez_pickpocket_back()
+func void DIA_Ramirez_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_ramirez_pickpocket);
+	Info_ClearChoices(DIA_Ramirez_PICKPOCKET);
 };
 
 
-instance DIA_RAMIREZ_ZEICHEN(C_INFO)
+instance DIA_Ramirez_Zeichen(C_Info)
 {
-	npc = vlk_445_ramirez;
+	npc = VLK_445_Ramirez;
 	nr = 2;
-	condition = dia_ramirez_zeichen_condition;
-	information = dia_ramirez_zeichen_info;
+	condition = DIA_Ramirez_Zeichen_Condition;
+	information = DIA_Ramirez_Zeichen_Info;
 	permanent = FALSE;
 	description = "(Poka¿ z³odziejski gest)";
 };
 
 
-func int dia_ramirez_zeichen_condition()
+func int DIA_Ramirez_Zeichen_Condition()
 {
-	if(KNOWS_SECRETSIGN == TRUE)
+	if(Knows_SecretSign == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ramirez_zeichen_info()
+func void DIA_Ramirez_Zeichen_Info()
 {
 	AI_PlayAni(other,"T_YES");
 	AI_Output(self,other,"DIA_Ramirez_Zeichen_14_00");	//No, no, widzê, ¿e ktoœ pokaza³ ci znak. Jestem pod wra¿eniem.
 };
 
 
-instance DIA_RAMIREZ_HALLO(C_INFO)
+instance DIA_Ramirez_Hallo(C_Info)
 {
-	npc = vlk_445_ramirez;
+	npc = VLK_445_Ramirez;
 	nr = 2;
-	condition = dia_ramirez_hallo_condition;
-	information = dia_ramirez_hallo_info;
+	condition = DIA_Ramirez_Hallo_Condition;
+	information = DIA_Ramirez_Hallo_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-var int dia_ramirez_hallo_permanent;
+var int DIA_Ramirez_Hallo_permanent;
 
-func int dia_ramirez_hallo_condition()
+func int DIA_Ramirez_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (DIA_RAMIREZ_HALLO_PERMANENT == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (DIA_Ramirez_Hallo_permanent == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ramirez_hallo_info()
+func void DIA_Ramirez_Hallo_Info()
 {
-	if((self.aivar[AIV_TALKEDTOPLAYER] == FALSE) && (JOIN_THIEFS == FALSE))
+	if((self.aivar[AIV_TalkedToPlayer] == FALSE) && (Join_Thiefs == FALSE))
 	{
 		AI_Output(self,other,"DIA_Ramirez_Hallo_14_00");	//Zab³¹dzi³eœ? To chyba nie jest odpowiednie miejsce dla ciebie.
 		AI_Output(self,other,"DIA_Ramirez_Hallo_14_01");	//Jeœli coœ ci siê tutaj stanie, to mo¿esz byæ pewien, ¿e nikt nie przyjdzie ci na ratunek. Wiêc lepiej uwa¿aj.
 	};
-	if(JOIN_THIEFS == TRUE)
+	if(Join_Thiefs == TRUE)
 	{
 		AI_Output(self,other,"DIA_Ramirez_Hallo_14_02");	//Uda³o ci siê wejœæ. Có¿, ¿yczê szczêœcia - i uwa¿aj na siebie, cokolwiek bêdziesz robi³.
 		AI_Output(self,other,"DIA_Ramirez_Hallo_14_03");	//Och, i jeszcze coœ - nie obchodzi mnie, kim jesteœ na górze, ani dla kogo pracujesz.
 		AI_Output(self,other,"DIA_Ramirez_Hallo_14_04");	//Tu, na dole, wszyscy jesteœmy z³odziejami. Ni mniej, ni wiêcej.
-		DIA_RAMIREZ_HALLO_PERMANENT = TRUE;
+		DIA_Ramirez_Hallo_permanent = TRUE;
 	};
-	DG_GEFUNDEN = TRUE;
+	DG_gefunden = TRUE;
 };
 
 
-instance DIA_RAMIREZ_BEUTE(C_INFO)
+instance DIA_Ramirez_Beute(C_Info)
 {
-	npc = vlk_445_ramirez;
+	npc = VLK_445_Ramirez;
 	nr = 3;
-	condition = dia_ramirez_beute_condition;
-	information = dia_ramirez_beute_info;
+	condition = DIA_Ramirez_Beute_Condition;
+	information = DIA_Ramirez_Beute_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_ramirez_beute_condition()
+func int DIA_Ramirez_Beute_Condition()
 {
-	if((Mob_HasItems("THIEF_CHEST_01",itmi_gold) < 50) || (Mob_HasItems("THIEF_CHEST_02",itmi_gold) < 100) || (Mob_HasItems("THIEF_CHEST_02",itmi_silvercup) == FALSE) || (Mob_HasItems("THIEF_CHEST_03",itmi_gold) < 75))
+	if((Mob_HasItems("THIEF_CHEST_01",ItMi_Gold) < 50) || (Mob_HasItems("THIEF_CHEST_02",ItMi_Gold) < 100) || (Mob_HasItems("THIEF_CHEST_02",ItMi_SilverCup) == FALSE) || (Mob_HasItems("THIEF_CHEST_03",ItMi_Gold) < 75))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ramirez_beute_info()
+func void DIA_Ramirez_Beute_Info()
 {
 	AI_Output(self,other,"DIA_Ramirez_Beute_14_00");	//S³uchaj, ty chyba nie masz w sobie za grosz godnoœci, co? Kradniesz nam nasze w³asne z³oto?
 	AI_Output(other,self,"DIA_Ramirez_Beute_15_01");	//Nie gor¹czkuj siê tak z powodu kilku monet.
@@ -153,36 +153,36 @@ func void dia_ramirez_beute_info()
 };
 
 
-instance DIA_RAMIREZ_BEZAHLEN(C_INFO)
+instance DIA_Ramirez_Bezahlen(C_Info)
 {
-	npc = vlk_445_ramirez;
+	npc = VLK_445_Ramirez;
 	nr = 9;
-	condition = dia_ramirez_bezahlen_condition;
-	information = dia_ramirez_bezahlen_info;
+	condition = DIA_Ramirez_Bezahlen_Condition;
+	information = DIA_Ramirez_Bezahlen_Info;
 	permanent = TRUE;
 	description = "Mo¿esz mnie czegoœ nauczyæ?";
 };
 
 
-var int dia_ramirez_bezahlen_permanent;
+var int DIA_Ramirez_Bezahlen_permanent;
 
-func int dia_ramirez_bezahlen_condition()
+func int DIA_Ramirez_Bezahlen_Condition()
 {
-	if((JOIN_THIEFS == TRUE) && (DIA_RAMIREZ_BEZAHLEN_PERMANENT == FALSE) && Npc_KnowsInfo(other,dia_cassia_lernen))
+	if((Join_Thiefs == TRUE) && (DIA_Ramirez_Bezahlen_permanent == FALSE) && Npc_KnowsInfo(other,DIA_Cassia_Lernen))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ramirez_bezahlen_info()
+func void DIA_Ramirez_Bezahlen_Info()
 {
-	if(MIS_THIEFGUILD_SUCKED == FALSE)
+	if(MIS_ThiefGuild_sucked == FALSE)
 	{
-		RAMIREZ_COST = 150;
+		Ramirez_Cost = 150;
 	}
 	else
 	{
-		RAMIREZ_COST = 300;
+		Ramirez_Cost = 300;
 	};
 	AI_Output(other,self,"DIA_Ramirez_Bezahlen_15_00");	//Czy móg³byœ mnie czegoœ nauczyæ?
 	if(Npc_GetTalentSkill(other,NPC_TALENT_PICKLOCK) == TRUE)
@@ -192,73 +192,73 @@ func void dia_ramirez_bezahlen_info()
 		{
 			AI_Output(self,other,"DIA_Ramirez_Add_14_00");	//Teraz musisz ju¿ tylko poprawiæ swoj¹ zrêcznoœæ.
 		};
-		DIA_RAMIREZ_BEZAHLEN_PERMANENT = TRUE;
-		Info_ClearChoices(dia_ramirez_bezahlen);
+		DIA_Ramirez_Bezahlen_permanent = TRUE;
+		Info_ClearChoices(DIA_Ramirez_Bezahlen);
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Ramirez_Bezahlen_14_02");	//Mogê ci pokazaæ, jak otwieraæ zamki. Bêdzie ciê to kosztowaæ jakieœ...
-		b_say_gold(self,other,RAMIREZ_COST);
-		Info_ClearChoices(dia_ramirez_bezahlen);
-		Info_AddChoice(dia_ramirez_bezahlen,"Mo¿e póŸniej... (POWRÓT)",dia_ramirez_bezahlen_spaeter);
-		Info_AddChoice(dia_ramirez_bezahlen,"Dobra, zap³acê...",dia_ramirez_bezahlen_okay);
+		B_Say_Gold(self,other,Ramirez_Cost);
+		Info_ClearChoices(DIA_Ramirez_Bezahlen);
+		Info_AddChoice(DIA_Ramirez_Bezahlen,"Mo¿e póŸniej... (POWRÓT)",DIA_Ramirez_Bezahlen_Spaeter);
+		Info_AddChoice(DIA_Ramirez_Bezahlen,"Dobra, zap³acê...",DIA_Ramirez_Bezahlen_Okay);
 	};
 };
 
-func void dia_ramirez_bezahlen_spaeter()
+func void DIA_Ramirez_Bezahlen_Spaeter()
 {
-	Info_ClearChoices(dia_ramirez_bezahlen);
+	Info_ClearChoices(DIA_Ramirez_Bezahlen);
 };
 
-func void dia_ramirez_bezahlen_okay()
+func void DIA_Ramirez_Bezahlen_Okay()
 {
 	AI_Output(other,self,"DIA_Ramirez_Bezahlen_Okay_15_00");	//Dobra, zap³acê...
-	if(b_giveinvitems(other,self,5113,RAMIREZ_COST))
+	if(B_GiveInvItems(other,self,ItMi_Gold,Ramirez_Cost))
 	{
 		AI_Output(other,self,"DIA_Ramirez_Bezahlen_Okay_15_01");	//... Oto twoje z³oto.
 		AI_Output(self,other,"DIA_Ramirez_Bezahlen_Okay_14_02");	//Œwietnie. S³u¿ê pomoc¹.
-		RAMIREZ_TEACHPLAYER = TRUE;
-		DIA_RAMIREZ_BEZAHLEN_PERMANENT = TRUE;
-		Info_ClearChoices(dia_ramirez_bezahlen);
+		Ramirez_TeachPlayer = TRUE;
+		DIA_Ramirez_Bezahlen_permanent = TRUE;
+		Info_ClearChoices(DIA_Ramirez_Bezahlen);
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Ramirez_Bezahlen_Okay_14_03");	//Bierz wiêc z³oto i wracaj.
-		Info_ClearChoices(dia_ramirez_bezahlen);
+		Info_ClearChoices(DIA_Ramirez_Bezahlen);
 	};
 };
 
 
-instance DIA_RAMIREZ_TEACH(C_INFO)
+instance DIA_Ramirez_Teach(C_Info)
 {
-	npc = vlk_445_ramirez;
+	npc = VLK_445_Ramirez;
 	nr = 99;
-	condition = dia_ramirez_teach_condition;
-	information = dia_ramirez_teach_info;
+	condition = DIA_Ramirez_Teach_Condition;
+	information = DIA_Ramirez_Teach_Info;
 	permanent = TRUE;
 	description = "Naucz mnie otwieraæ zamki!";
 };
 
 
-func int dia_ramirez_teach_condition()
+func int DIA_Ramirez_Teach_Condition()
 {
-	if((RAMIREZ_TEACHPLAYER == TRUE) && (Npc_GetTalentSkill(other,NPC_TALENT_PICKLOCK) == FALSE))
+	if((Ramirez_TeachPlayer == TRUE) && (Npc_GetTalentSkill(other,NPC_TALENT_PICKLOCK) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ramirez_teach_info()
+func void DIA_Ramirez_Teach_Info()
 {
 	AI_Output(other,self,"DIA_Ramirez_Teach_15_00");	//Poka¿ mi, jak otwieraæ zamki.
-	if(RAMIREZ_ZWEIMAL == FALSE)
+	if(Ramirez_Zweimal == FALSE)
 	{
 		AI_Output(self,other,"DIA_Ramirez_Teach_14_06");	//Umiejêtnoœæ otwierania zamków to niemal sztuka.
 		AI_Output(self,other,"DIA_Ramirez_Teach_14_01");	//Potrzeba do tego wiele uczucia i intuicji. No, i kilka dobrych wytrychów.
 		AI_Output(self,other,"DIA_Ramirez_Teach_14_02");	//Niektóre skrzynie s¹ jednak zabezpieczone zamkami, daj¹cymi siê otworzyæ tylko przez u¿ycie odpowiedniego klucza.
-		RAMIREZ_ZWEIMAL = TRUE;
+		Ramirez_Zweimal = TRUE;
 	};
-	if(b_teachthieftalent(self,other,NPC_TALENT_PICKLOCK))
+	if(B_TeachThiefTalent(self,other,NPC_TALENT_PICKLOCK))
 	{
 		AI_Output(self,other,"DIA_Ramirez_Teach_14_03");	//Tak wiêc, klêcz¹c przy zamku, nale¿y ³agodnie obróciæ wytrych, w lewo i w prawo.
 		AI_Output(self,other,"DIA_Ramirez_Teach_14_04");	//Jeœli obrócisz go zbyt szybko lub zbyt mocno - z³amie siê.
@@ -267,26 +267,26 @@ func void dia_ramirez_teach_info()
 };
 
 
-instance DIA_RAMIREZ_VIERTEL(C_INFO)
+instance DIA_Ramirez_Viertel(C_Info)
 {
-	npc = vlk_445_ramirez;
+	npc = VLK_445_Ramirez;
 	nr = 8;
-	condition = dia_ramirez_viertel_condition;
-	information = dia_ramirez_viertel_info;
+	condition = DIA_Ramirez_Viertel_Condition;
+	information = DIA_Ramirez_Viertel_Info;
 	permanent = FALSE;
 	description = "Gdzie warto siê w³amywaæ?";
 };
 
 
-func int dia_ramirez_viertel_condition()
+func int DIA_Ramirez_Viertel_Condition()
 {
-	if(KNOWS_SECRETSIGN == TRUE)
+	if(Knows_SecretSign == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ramirez_viertel_info()
+func void DIA_Ramirez_Viertel_Info()
 {
 	AI_Output(other,self,"DIA_Ramirez_Viertel_15_00");	//Gdzie warto siê w³amywaæ?
 	AI_Output(self,other,"DIA_Ramirez_Viertel_14_01");	//Oczywiœcie w górnym mieœcie.
@@ -296,66 +296,66 @@ func void dia_ramirez_viertel_info()
 };
 
 
-instance DIA_RAMIREZ_SEXTANT(C_INFO)
+instance DIA_Ramirez_Sextant(C_Info)
 {
-	npc = vlk_445_ramirez;
+	npc = VLK_445_Ramirez;
 	nr = 2;
-	condition = dia_ramirez_sextant_condition;
-	information = dia_ramirez_sextant_info;
+	condition = DIA_Ramirez_Sextant_Condition;
+	information = DIA_Ramirez_Sextant_Info;
 	permanent = FALSE;
 	description = "Masz dla mnie jak¹œ robotê?";
 };
 
 
-func int dia_ramirez_sextant_condition()
+func int DIA_Ramirez_Sextant_Condition()
 {
-	if((KNOWS_SECRETSIGN == TRUE) && (MIS_CASSIARING == LOG_SUCCESS) && (KAPITEL >= 2))
+	if((Knows_SecretSign == TRUE) && (MIS_CassiaRing == LOG_SUCCESS) && (Kapitel >= 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ramirez_sextant_info()
+func void DIA_Ramirez_Sextant_Info()
 {
 	AI_Output(other,self,"DIA_Ramirez_Sextant_15_00");	//Czy masz dla mnie jak¹œ pracê?
 	AI_Output(self,other,"DIA_Ramirez_Sextant_14_01");	//Hmmm... Jest pewna rzecz, która mnie interesuje. Jednak dotychczas nie uda³o mi siê jej zdobyæ.
 	AI_Output(other,self,"DIA_Ramirez_Sextant_15_02");	//Có¿ to takiego?
 	AI_Output(self,other,"DIA_Ramirez_Sextant_14_03");	//Sekstans. Przynieœ mi go, a dobrze zap³acê.
-	Log_CreateTopic(TOPIC_RAMIREZSEXTANT,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_RAMIREZSEXTANT,LOG_RUNNING);
-	b_logentry(TOPIC_RAMIREZSEXTANT,"Ramirez chce, abym przyniós³ mu sekstans.");
-	MIS_RAMIREZSEXTANT = LOG_RUNNING;
+	Log_CreateTopic(Topic_RamirezSextant,LOG_MISSION);
+	Log_SetTopicStatus(Topic_RamirezSextant,LOG_Running);
+	B_LogEntry(Topic_RamirezSextant,"Ramirez chce, abym przyniós³ mu sekstans.");
+	MIS_RamirezSextant = LOG_Running;
 };
 
 
-instance DIA_RAMIREZ_SUCCESS(C_INFO)
+instance DIA_Ramirez_Success(C_Info)
 {
-	npc = vlk_445_ramirez;
+	npc = VLK_445_Ramirez;
 	nr = 2;
-	condition = dia_ramirez_success_condition;
-	information = dia_ramirez_success_info;
+	condition = DIA_Ramirez_Success_Condition;
+	information = DIA_Ramirez_Success_Info;
 	permanent = FALSE;
 	description = "Mam dla ciebie sekstans.";
 };
 
 
-func int dia_ramirez_success_condition()
+func int DIA_Ramirez_Success_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_ramirez_sextant) && (Npc_HasItems(other,itmi_sextant) > 0))
+	if(Npc_KnowsInfo(other,DIA_Ramirez_Sextant) && (Npc_HasItems(other,ItMi_Sextant) > 0))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ramirez_success_info()
+func void DIA_Ramirez_Success_Info()
 {
 	AI_Output(other,self,"DIA_Ramirez_Success_15_00");	//Mam dla ciebie sekstans.
-	b_giveinvitems(other,self,5129,1);
+	B_GiveInvItems(other,self,ItMi_Sextant,1);
 	AI_Output(self,other,"DIA_Ramirez_Success_14_01");	//Niewiarygodne. Naprawdê uda³o ci siê go zdobyæ.
 	AI_Output(self,other,"DIA_Ramirez_Success_14_02");	//Proszê, naprawdê zas³u¿y³eœ sobie na te pieni¹dze.
-	b_giveinvitems(self,other,5113,VALUE_SEXTANT / 2);
-	RAMIREZ_SEXTANT = TRUE;
-	MIS_RAMIREZSEXTANT = LOG_SUCCESS;
-	b_giveplayerxp(XP_RAMIREZSEXTANT);
+	B_GiveInvItems(self,other,ItMi_Gold,Value_Sextant / 2);
+	Ramirez_Sextant = TRUE;
+	MIS_RamirezSextant = LOG_SUCCESS;
+	B_GivePlayerXP(XP_RamirezSextant);
 };
 

@@ -1,80 +1,80 @@
 
-instance DIA_BORKA_EXIT(C_INFO)
+instance DIA_Borka_EXIT(C_Info)
 {
-	npc = vlk_434_borka;
+	npc = VLK_434_Borka;
 	nr = 999;
-	condition = dia_borka_exit_condition;
-	information = dia_borka_exit_info;
+	condition = DIA_Borka_EXIT_Condition;
+	information = DIA_Borka_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_borka_exit_condition()
+func int DIA_Borka_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_borka_exit_info()
+func void DIA_Borka_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BORKA_PICKPOCKET(C_INFO)
+instance DIA_Borka_PICKPOCKET(C_Info)
 {
-	npc = vlk_434_borka;
+	npc = VLK_434_Borka;
 	nr = 900;
-	condition = dia_borka_pickpocket_condition;
-	information = dia_borka_pickpocket_info;
+	condition = DIA_Borka_PICKPOCKET_Condition;
+	information = DIA_Borka_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_80;
+	description = Pickpocket_80;
 };
 
 
-func int dia_borka_pickpocket_condition()
+func int DIA_Borka_PICKPOCKET_Condition()
 {
-	return c_beklauen(80,120);
+	return C_Beklauen(80,120);
 };
 
-func void dia_borka_pickpocket_info()
+func void DIA_Borka_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_borka_pickpocket);
-	Info_AddChoice(dia_borka_pickpocket,DIALOG_BACK,dia_borka_pickpocket_back);
-	Info_AddChoice(dia_borka_pickpocket,DIALOG_PICKPOCKET,dia_borka_pickpocket_doit);
+	Info_ClearChoices(DIA_Borka_PICKPOCKET);
+	Info_AddChoice(DIA_Borka_PICKPOCKET,Dialog_Back,DIA_Borka_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Borka_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Borka_PICKPOCKET_DoIt);
 };
 
-func void dia_borka_pickpocket_doit()
+func void DIA_Borka_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_borka_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Borka_PICKPOCKET);
 };
 
-func void dia_borka_pickpocket_back()
+func void DIA_Borka_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_borka_pickpocket);
+	Info_ClearChoices(DIA_Borka_PICKPOCKET);
 };
 
 
-instance DIA_BORKA_PISSOFF(C_INFO)
+instance DIA_Borka_PISSOFF(C_Info)
 {
-	npc = vlk_434_borka;
-	condition = dia_borka_pissoff_condition;
-	information = dia_borka_pissoff_info;
+	npc = VLK_434_Borka;
+	condition = DIA_Borka_PISSOFF_Condition;
+	information = DIA_Borka_PISSOFF_Info;
 	important = TRUE;
 	permanent = FALSE;
 };
 
 
-func int dia_borka_pissoff_condition()
+func int DIA_Borka_PISSOFF_Condition()
 {
-	if((KNOWS_BORKA_DEALER != TRUE) && (Npc_GetDistToNpc(self,other) <= ZIVILANQUATSCHDIST))
+	if((Knows_Borka_Dealer != TRUE) && (Npc_GetDistToNpc(self,other) <= ZivilAnquatschDist))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_borka_pissoff_info()
+func void DIA_Borka_PISSOFF_Info()
 {
 	AI_Output(self,other,"DIA_Borka_PISSOFF_11_00");	//Ej, ty! Gdzie idziesz? Niewa¿ne, co zamierzasz - zd¹¿ysz zrobiæ to póŸniej.
 	AI_Output(self,other,"DIA_Borka_PISSOFF_11_01");	//Stoisz przed klejnotem Khorinis - CZERWON¥ LATARNI¥. To najcudowniejszy zamtuz w ca³ej Myrtanie, do diaska!
@@ -85,26 +85,26 @@ func void dia_borka_pissoff_info()
 };
 
 
-instance DIA_BORKA_TROUBLE(C_INFO)
+instance DIA_Borka_TROUBLE(C_Info)
 {
-	npc = vlk_434_borka;
+	npc = VLK_434_Borka;
 	nr = 3;
-	condition = dia_borka_trouble_condition;
-	information = dia_borka_trouble_info;
+	condition = DIA_Borka_TROUBLE_Condition;
+	information = DIA_Borka_TROUBLE_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_borka_trouble_condition()
+func int DIA_Borka_TROUBLE_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (MIS_ANDRE_REDLIGHT != LOG_RUNNING) && (Npc_IsDead(nadja) == FALSE) && (Npc_GetDistToWP(self,"NW_CITY_HABOUR_PUFF_ENTRANCE") <= 500))
+	if(Npc_IsInState(self,ZS_Talk) && (MIS_Andre_REDLIGHT != LOG_Running) && (Npc_IsDead(Nadja) == FALSE) && (Npc_GetDistToWP(self,"NW_CITY_HABOUR_PUFF_ENTRANCE") <= 500))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_borka_trouble_info()
+func void DIA_Borka_TROUBLE_Info()
 {
 	AI_Output(self,other,"DIA_Borka_TROUBLE_11_00");	//Dlaczego tam tak stoisz? WejdŸ i spotkaj siê z nasz¹ namiêtn¹ Nadi¹.
 	AI_Output(self,other,"DIA_Borka_TROUBLE_11_01");	//Ta rozpalona królowa nocy nada nowe znaczenie twojemu ¿yciu!
@@ -112,26 +112,26 @@ func void dia_borka_trouble_info()
 };
 
 
-instance DIA_BORKA_SMOKE(C_INFO)
+instance DIA_Borka_Smoke(C_Info)
 {
-	npc = vlk_434_borka;
+	npc = VLK_434_Borka;
 	nr = 3;
-	condition = dia_borka_smoke_condition;
-	information = dia_borka_smoke_info;
+	condition = DIA_Borka_Smoke_Condition;
+	information = DIA_Borka_Smoke_Info;
 	permanent = TRUE;
 	description = "Nie wiesz, gdzie móg³bym kupiæ trochê ziela?";
 };
 
 
-func int dia_borka_smoke_condition()
+func int DIA_Borka_Smoke_Condition()
 {
-	if((MIS_ANDRE_REDLIGHT == LOG_RUNNING) && (KNOWS_BORKA_DEALER == FALSE))
+	if((MIS_Andre_REDLIGHT == LOG_Running) && (Knows_Borka_Dealer == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_borka_smoke_info()
+func void DIA_Borka_Smoke_Info()
 {
 	AI_Output(other,self,"DIA_Borka_Smoke_15_00");	//Nie wiesz, gdzie móg³bym kupiæ trochê ziela?
 	AI_Output(self,other,"DIA_Borka_Smoke_11_01");	//Nie. Zje¿d¿aj!
@@ -139,102 +139,102 @@ func void dia_borka_smoke_info()
 };
 
 
-instance DIA_BORKA_BUYHERB(C_INFO)
+instance DIA_Borka_BUYHERB(C_Info)
 {
-	npc = vlk_434_borka;
+	npc = VLK_434_Borka;
 	nr = 2;
-	condition = dia_borka_buyherb_condition;
-	information = dia_borka_buyherb_info;
+	condition = DIA_Borka_BUYHERB_Condition;
+	information = DIA_Borka_BUYHERB_Info;
 	permanent = TRUE;
 	description = "S³ysza³em, ¿e sprzedajesz ziele.";
 };
 
 
-func int dia_borka_buyherb_condition()
+func int DIA_Borka_BUYHERB_Condition()
 {
-	if((KNOWS_BORKA_DEALER == TRUE) && (MIS_ANDRE_REDLIGHT == LOG_RUNNING) && (BORKA_DEAL == FALSE) && (UNDERCOVER_FAILED == FALSE))
+	if((Knows_Borka_Dealer == TRUE) && (MIS_Andre_REDLIGHT == LOG_Running) && (Borka_Deal == FALSE) && (Undercover_Failed == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_borka_buyherb_info()
+func void DIA_Borka_BUYHERB_Info()
 {
-	var C_ITEM heroarmor;
-	heroarmor = Npc_GetEquippedArmor(other);
+	var C_Item heroArmor;
+	heroArmor = Npc_GetEquippedArmor(other);
 	AI_Output(other,self,"DIA_Borka_BUYHERB_15_00");	//S³ysza³em, ¿e sprzedajesz ziele.
-	if((Hlp_IsItem(heroarmor,itar_mil_l) == TRUE) || (Hlp_IsItem(heroarmor,itar_mil_m) == TRUE) || (Hlp_IsItem(heroarmor,itar_pal_m) == TRUE) || (Hlp_IsItem(heroarmor,itar_pal_h) == TRUE))
+	if((Hlp_IsItem(heroArmor,ITAR_Mil_L) == TRUE) || (Hlp_IsItem(heroArmor,ItAr_MIL_M) == TRUE) || (Hlp_IsItem(heroArmor,ItAr_PAL_M) == TRUE) || (Hlp_IsItem(heroArmor,ItAr_PAl_H) == TRUE))
 	{
 		AI_Output(self,other,"DIA_Borka_BUYHERB_11_01");	//Przepraszam, panie Stra¿niku. To jakaœ pomy³ka. Ja nic nie wiem o zielu.
-		UNDERCOVER_FAILED = TRUE;
+		Undercover_Failed = TRUE;
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Borka_BUYHERB_11_02");	//Kto tak powiedzia³?
-		Info_ClearChoices(dia_borka_buyherb);
-		Info_AddChoice(dia_borka_buyherb,"To nieistotne.",dia_borka_buyherb_egal);
-		Info_AddChoice(dia_borka_buyherb,"Tak mówi Nadja.",dia_borka_buyherb_nadja);
+		Info_ClearChoices(DIA_Borka_BUYHERB);
+		Info_AddChoice(DIA_Borka_BUYHERB,"To nieistotne.",DIA_Borka_BUYHERB_Egal);
+		Info_AddChoice(DIA_Borka_BUYHERB,"Tak mówi Nadja.",DIA_Borka_BUYHERB_Nadja);
 	};
 };
 
-func void dia_borka_buyherb_egal()
+func void DIA_Borka_BUYHERB_Egal()
 {
 	AI_Output(other,self,"DIA_Borka_BUYHERB_Egal_15_00");	//To nieistotne.
 	AI_Output(self,other,"DIA_Borka_BUYHERB_Egal_11_01");	//Chcê siê po prostu upewniæ, kto ciê przys³a³.
-	Info_ClearChoices(dia_borka_buyherb);
-	Info_AddChoice(dia_borka_buyherb,"Tak mówi Nadja.",dia_borka_buyherb_nadja);
-	Info_AddChoice(dia_borka_buyherb,"No to chcesz dobiæ targu, czy nie?",dia_borka_buyherb_deal);
+	Info_ClearChoices(DIA_Borka_BUYHERB);
+	Info_AddChoice(DIA_Borka_BUYHERB,"Tak mówi Nadja.",DIA_Borka_BUYHERB_Nadja);
+	Info_AddChoice(DIA_Borka_BUYHERB,"No to chcesz dobiæ targu, czy nie?",DIA_Borka_BUYHERB_Deal);
 };
 
-func void dia_borka_buyherb_nadja()
+func void DIA_Borka_BUYHERB_Nadja()
 {
 	AI_Output(other,self,"DIA_Borka_BUYHERB_NADJA_15_00");	//Tak mówi Nadja.
 	AI_Output(self,other,"DIA_Borka_BUYHERB_NADJA_11_01");	//No proszê, ma³y ptaszek zaœpiewa³. Wiesz co, nie powinieneœ wierzyæ we wszystko, co ta dziewka wygaduje.
-	NADJA_VICTIM = TRUE;
-	UNDERCOVER_FAILED = TRUE;
-	Info_ClearChoices(dia_borka_buyherb);
+	Nadja_Victim = TRUE;
+	Undercover_Failed = TRUE;
+	Info_ClearChoices(DIA_Borka_BUYHERB);
 };
 
-func void dia_borka_buyherb_deal()
+func void DIA_Borka_BUYHERB_Deal()
 {
 	AI_Output(other,self,"DIA_Borka_BUYHERB_Deal_15_00");	//No to chcesz dobiæ targu, czy nie?
 	AI_PlayAni(self,"T_SEARCH");
 	AI_Output(self,other,"DIA_Borka_BUYHERB_Deal_11_01");	//...w porz¹dku ... dogadajmy siê. Ty dajesz mi 50 sztuk z³ota, wtedy ja ci dajê ziele. Bez targowania siê.
-	Info_ClearChoices(dia_borka_buyherb);
-	BORKA_DEAL = TRUE;
+	Info_ClearChoices(DIA_Borka_BUYHERB);
+	Borka_Deal = TRUE;
 };
 
 
-instance DIA_BORKA_SECOND_CHANCE(C_INFO)
+instance DIA_Borka_SECOND_CHANCE(C_Info)
 {
-	npc = vlk_434_borka;
+	npc = VLK_434_Borka;
 	nr = 2;
-	condition = dia_borka_second_chance_condition;
-	information = dia_borka_second_chance_info;
+	condition = DIA_Borka_SECOND_CHANCE_Condition;
+	information = DIA_Borka_SECOND_CHANCE_Info;
 	permanent = TRUE;
 	description = "Dogadajmy siê (zap³aæ 50 sztuk z³ota).";
 };
 
 
-func int dia_borka_second_chance_condition()
+func int DIA_Borka_SECOND_CHANCE_Condition()
 {
-	var C_ITEM heroarmor;
-	heroarmor = Npc_GetEquippedArmor(other);
-	if((BORKA_DEAL == TRUE) && (Npc_HasItems(other,itmi_gold) >= 50) && (Hlp_IsItem(heroarmor,itar_mil_l) == FALSE) && (Hlp_IsItem(heroarmor,itar_mil_m) == FALSE) && (Hlp_IsItem(heroarmor,itar_pal_m) == FALSE) && (Hlp_IsItem(heroarmor,itar_pal_h) == FALSE))
+	var C_Item heroArmor;
+	heroArmor = Npc_GetEquippedArmor(other);
+	if((Borka_Deal == TRUE) && (Npc_HasItems(other,ItMi_Gold) >= 50) && (Hlp_IsItem(heroArmor,ITAR_Mil_L) == FALSE) && (Hlp_IsItem(heroArmor,ItAr_MIL_M) == FALSE) && (Hlp_IsItem(heroArmor,ItAr_PAL_M) == FALSE) && (Hlp_IsItem(heroArmor,ItAr_PAl_H) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_borka_second_chance_info()
+func void DIA_Borka_SECOND_CHANCE_Info()
 {
 	AI_Output(other,self,"DIA_Borka_SECOND_CHANCE_15_00");	//Dobijmy targu. Tu mam z³oto.
-	b_giveinvitems(hero,self,5113,50);
+	B_GiveInvItems(hero,self,ItMi_Gold,50);
 	AI_Output(self,other,"DIA_Borka_SECOND_CHANCE_11_01");	//W porz¹dku...
 	AI_PlayAni(self,"T_SEARCH");
 	AI_Output(self,other,"DIA_Borka_SECOND_CHANCE_11_02");	//...oto œwie¿a soczysta ³odyga ziela.
-	b_giveinvitems(self,hero,5106,1);
-	BORKA_DEAL = 2;
+	B_GiveInvItems(self,hero,ItMi_Joint,1);
+	Borka_Deal = 2;
 	AI_StopProcessInfos(self);
 };
 

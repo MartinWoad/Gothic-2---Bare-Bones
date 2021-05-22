@@ -1,14 +1,14 @@
 
 const int SPL_MAGICBURNSHORT_DAMAGE_PER_SEC = 1;
 
-func void b_stopmagicburnshort()
+func void B_StopMagicBurnShort()
 {
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
 	Npc_ClearAIQueue(self);
 	AI_Standup(self);
 	if(self.guild < GIL_SEPERATOR_HUM)
 	{
-		b_assessdamage();
+		B_AssessDamage();
 		AI_ContinueRoutine(self);
 	}
 	else
@@ -18,24 +18,24 @@ func void b_stopmagicburnshort()
 	};
 };
 
-func void b_restartburnshort()
+func void B_RestartBurnShort()
 {
-	if((Npc_GetActiveSpell(other) == SPL_CHARGEFIREBALL) || (Npc_GetActiveSpell(other) == SPL_FIRESTORM))
+	if((Npc_GetActiveSpell(other) == SPL_ChargeFireball) || (Npc_GetActiveSpell(other) == SPL_Firestorm))
 	{
 		Npc_SetStateTime(self,0);
 		return;
 	};
-	if((Npc_GetActiveSpell(other) == SPL_ICEWAVE) || (Npc_GetActiveSpell(other) == SPL_ICECUBE))
+	if((Npc_GetActiveSpell(other) == SPL_IceWave) || (Npc_GetActiveSpell(other) == SPL_IceCube))
 	{
 		Npc_ClearAIQueue(self);
-		b_clearperceptions(self);
-		AI_StartState(self,zs_magicfreeze,0,"");
+		B_ClearPerceptions(self);
+		AI_StartState(self,ZS_MagicFreeze,0,"");
 	};
 };
 
-func void zs_magicburnshort()
+func void ZS_MagicBurnShort()
 {
-	Npc_PercEnable(self,PERC_ASSESSSTOPMAGIC,b_stopmagicburnshort);
+	Npc_PercEnable(self,PERC_ASSESSSTOPMAGIC,B_StopMagicBurnShort);
 	if(!Npc_HasBodyFlag(self,BS_FLAG_INTERRUPTABLE))
 	{
 		AI_Standup(self);
@@ -50,13 +50,13 @@ func void zs_magicburnshort()
 	};
 };
 
-func int zs_magicburnshort_loop()
+func int ZS_MagicBurnShort_Loop()
 {
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_restartburnshort);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_RestartBurnShort);
 	if(Npc_GetStateTime(self) == 1)
 	{
 		Npc_SetStateTime(self,0);
-		b_magichurtnpc(other,SPL_MAGICBURNSHORT_DAMAGE_PER_SEC);
+		B_MagicHurtNpc(other,SPL_MAGICBURNSHORT_DAMAGE_PER_SEC);
 		Npc_ClearAIQueue(self);
 		AI_Standup(self);
 		return LOOP_END;
@@ -74,7 +74,7 @@ func int zs_magicburnshort_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_magicburnshort_end()
+func void ZS_MagicBurnShort_End()
 {
 	Npc_ClearAIQueue(self);
 	AI_Standup(self);

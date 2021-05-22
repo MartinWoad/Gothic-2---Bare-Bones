@@ -1,43 +1,43 @@
 
-instance DIA_LEHMAR_EXIT(C_INFO)
+instance DIA_Lehmar_EXIT(C_Info)
 {
-	npc = vlk_484_lehmar;
+	npc = VLK_484_Lehmar;
 	nr = 999;
-	condition = dia_lehmar_exit_condition;
-	information = dia_lehmar_exit_info;
+	condition = DIA_Lehmar_EXIT_Condition;
+	information = DIA_Lehmar_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_lehmar_exit_condition()
+func int DIA_Lehmar_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_lehmar_exit_info()
+func void DIA_Lehmar_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_LEHMAR_ENTSCHULDIGUNG(C_INFO)
+instance DIA_Lehmar_ENTSCHULDIGUNG(C_Info)
 {
-	npc = vlk_484_lehmar;
+	npc = VLK_484_Lehmar;
 	nr = 2;
-	condition = dia_lehmar_entschuldigung_condition;
-	information = dia_lehmar_entschuldigung_info;
+	condition = DIA_Lehmar_ENTSCHULDIGUNG_Condition;
+	information = DIA_Lehmar_ENTSCHULDIGUNG_Info;
 	permanent = FALSE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_lehmar_entschuldigung_condition()
+func int DIA_Lehmar_ENTSCHULDIGUNG_Condition()
 {
 	return TRUE;
 };
 
-func void dia_lehmar_entschuldigung_info()
+func void DIA_Lehmar_ENTSCHULDIGUNG_Info()
 {
 	AI_Output(other,self,"DIA_Lehmar_ENTSCHULDIGUNG_15_00");	//Co s³ychaæ?
 	AI_Output(self,other,"DIA_Lehmar_ENTSCHULDIGUNG_09_01");	//Ile chcesz?
@@ -46,103 +46,103 @@ func void dia_lehmar_entschuldigung_info()
 };
 
 
-instance DIA_LEHMAR_GELDLEIHEN(C_INFO)
+instance DIA_Lehmar_GELDLEIHEN(C_Info)
 {
-	npc = vlk_484_lehmar;
+	npc = VLK_484_Lehmar;
 	nr = 3;
-	condition = dia_lehmar_geldleihen_condition;
-	information = dia_lehmar_geldleihen_info;
+	condition = DIA_Lehmar_GELDLEIHEN_Condition;
+	information = DIA_Lehmar_GELDLEIHEN_Info;
 	permanent = TRUE;
 	description = "Po¿ycz mi trochê pieniêdzy!";
 };
 
 
-var int dia_lehmar_geldleihen_noperm;
+var int DIA_Lehmar_GELDLEIHEN_noPerm;
 
-func int dia_lehmar_geldleihen_condition()
+func int DIA_Lehmar_GELDLEIHEN_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_lehmar_entschuldigung) && (DIA_LEHMAR_GELDLEIHEN_NOPERM == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Lehmar_ENTSCHULDIGUNG) && (DIA_Lehmar_GELDLEIHEN_noPerm == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lehmar_geldleihen_info()
+func void DIA_Lehmar_GELDLEIHEN_Info()
 {
 	AI_Output(other,self,"DIA_Lehmar_GELDLEIHEN_15_00");	//Po¿ycz mi trochê pieniêdzy!
 	AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_09_01");	//Jasne. Ile chcesz? Pobieram 20 procent od po¿yczanej sumy.
-	Info_ClearChoices(dia_lehmar_geldleihen);
-	Info_AddChoice(dia_lehmar_geldleihen,"Muszê siê zastanowiæ.",dia_lehmar_geldleihen_back);
-	Info_AddChoice(dia_lehmar_geldleihen,"1000 sztuk z³ota.",dia_lehmar_geldleihen_1000);
-	Info_AddChoice(dia_lehmar_geldleihen," 200 sztuk z³ota.",dia_lehmar_geldleihen_200);
-	Info_AddChoice(dia_lehmar_geldleihen,"   50 sztuk z³ota.",dia_lehmar_geldleihen_50);
+	Info_ClearChoices(DIA_Lehmar_GELDLEIHEN);
+	Info_AddChoice(DIA_Lehmar_GELDLEIHEN,"Muszê siê zastanowiæ.",DIA_Lehmar_GELDLEIHEN_back);
+	Info_AddChoice(DIA_Lehmar_GELDLEIHEN,"1000 sztuk z³ota.",DIA_Lehmar_GELDLEIHEN_1000);
+	Info_AddChoice(DIA_Lehmar_GELDLEIHEN," 200 sztuk z³ota.",DIA_Lehmar_GELDLEIHEN_200);
+	Info_AddChoice(DIA_Lehmar_GELDLEIHEN,"   50 sztuk z³ota.",DIA_Lehmar_GELDLEIHEN_50);
 };
 
-func void dia_lehmar_geldleihen_back()
+func void DIA_Lehmar_GELDLEIHEN_back()
 {
 	AI_Output(other,self,"DIA_Lehmar_GELDLEIHEN_back_15_00");	//Muszê siê zastanowiæ.
 	AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_back_09_01");	//Zdecyduj siê! Nie marnuj mojego czasu!
 	AI_StopProcessInfos(self);
 };
 
-func void dia_lehmar_geldleihen_50()
+func void DIA_Lehmar_GELDLEIHEN_50()
 {
 	AI_Output(other,self,"DIA_Lehmar_GELDLEIHEN_50_15_00");	//50 sztuk z³ota.
 	AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_50_09_01");	//Tak na próbê, co? Jutro chcê je z powrotem, jasne?
-	CreateInvItems(self,itmi_gold,50);
-	b_giveinvitems(self,other,5113,50);
-	DIA_LEHMAR_GELDLEIHEN_NOPERM = TRUE;
-	LEHMAR_GELDGELIEHEN_DAY = Wld_GetDay();
-	LEHMAR_GELDGELIEHEN = 50;
-	Info_ClearChoices(dia_lehmar_geldleihen);
+	CreateInvItems(self,ItMi_Gold,50);
+	B_GiveInvItems(self,other,ItMi_Gold,50);
+	DIA_Lehmar_GELDLEIHEN_noPerm = TRUE;
+	Lehmar_GeldGeliehen_Day = Wld_GetDay();
+	Lehmar_GeldGeliehen = 50;
+	Info_ClearChoices(DIA_Lehmar_GELDLEIHEN);
 };
 
-func void dia_lehmar_geldleihen_200()
+func void DIA_Lehmar_GELDLEIHEN_200()
 {
 	AI_Output(other,self,"DIA_Lehmar_GELDLEIHEN_200_15_00");	//200 sztuk z³ota.
 	AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_200_09_01");	//To sporo pieniêdzy. Jutro masz siê tutaj zjawiæ wraz z moim z³otem, jasne?
-	CreateInvItems(self,itmi_gold,200);
-	b_giveinvitems(self,other,5113,200);
-	DIA_LEHMAR_GELDLEIHEN_NOPERM = TRUE;
-	LEHMAR_GELDGELIEHEN_DAY = Wld_GetDay();
-	LEHMAR_GELDGELIEHEN = 200;
-	Info_ClearChoices(dia_lehmar_geldleihen);
+	CreateInvItems(self,ItMi_Gold,200);
+	B_GiveInvItems(self,other,ItMi_Gold,200);
+	DIA_Lehmar_GELDLEIHEN_noPerm = TRUE;
+	Lehmar_GeldGeliehen_Day = Wld_GetDay();
+	Lehmar_GeldGeliehen = 200;
+	Info_ClearChoices(DIA_Lehmar_GELDLEIHEN);
 };
 
-func void dia_lehmar_geldleihen_1000()
+func void DIA_Lehmar_GELDLEIHEN_1000()
 {
 	AI_Output(other,self,"DIA_Lehmar_GELDLEIHEN_1000_15_00");	//1000 sztuk z³ota.
 	AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_1000_09_01");	//Chyba nie masz zbyt równo pod sufitem?
 	AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_1000_09_02");	//Dam ci 100. I pamiêtaj, jutro chcê je z powrotem!
-	CreateInvItems(self,itmi_gold,100);
-	b_giveinvitems(self,other,5113,100);
-	DIA_LEHMAR_GELDLEIHEN_NOPERM = TRUE;
-	LEHMAR_GELDGELIEHEN_DAY = Wld_GetDay();
-	LEHMAR_GELDGELIEHEN = 100;
-	Info_ClearChoices(dia_lehmar_geldleihen);
+	CreateInvItems(self,ItMi_Gold,100);
+	B_GiveInvItems(self,other,ItMi_Gold,100);
+	DIA_Lehmar_GELDLEIHEN_noPerm = TRUE;
+	Lehmar_GeldGeliehen_Day = Wld_GetDay();
+	Lehmar_GeldGeliehen = 100;
+	Info_ClearChoices(DIA_Lehmar_GELDLEIHEN);
 };
 
 
-instance DIA_LEHMAR_WARUMGELD(C_INFO)
+instance DIA_Lehmar_WARUMGELD(C_Info)
 {
-	npc = vlk_484_lehmar;
+	npc = VLK_484_Lehmar;
 	nr = 3;
-	condition = dia_lehmar_warumgeld_condition;
-	information = dia_lehmar_warumgeld_info;
+	condition = DIA_Lehmar_WARUMGELD_Condition;
+	information = DIA_Lehmar_WARUMGELD_Info;
 	permanent = FALSE;
 	description = "Czy po¿yczasz pieni¹dze ka¿demu, kto o nie prosi?";
 };
 
 
-func int dia_lehmar_warumgeld_condition()
+func int DIA_Lehmar_WARUMGELD_Condition()
 {
-	if(LEHMAR_GELDGELIEHEN != 0)
+	if(Lehmar_GeldGeliehen != 0)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lehmar_warumgeld_info()
+func void DIA_Lehmar_WARUMGELD_Info()
 {
 	AI_Output(other,self,"DIA_Lehmar_WARUMGELD_15_00");	//Czy po¿yczasz pieni¹dze ka¿demu, kto o nie prosi?
 	AI_Output(self,other,"DIA_Lehmar_WARUMGELD_09_01");	//Spokojnie, wszyscy zwracaj¹ je na czas. Ty te¿ jutro tu przyjdziesz albo znajdê ciê i zabijê. Proste, prawda?
@@ -151,62 +151,62 @@ func void dia_lehmar_warumgeld_info()
 };
 
 
-instance DIA_LEHMAR_GELDEINTREIBEN(C_INFO)
+instance DIA_Lehmar_GELDEINTREIBEN(C_Info)
 {
-	npc = vlk_484_lehmar;
+	npc = VLK_484_Lehmar;
 	nr = 5;
-	condition = dia_lehmar_geldeintreiben_condition;
-	information = dia_lehmar_geldeintreiben_info;
+	condition = DIA_Lehmar_GELDEINTREIBEN_Condition;
+	information = DIA_Lehmar_GELDEINTREIBEN_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_lehmar_geldeintreiben_condition()
+func int DIA_Lehmar_GELDEINTREIBEN_Condition()
 {
-	if((LEHMAR_GELDGELIEHEN_DAY <= (Wld_GetDay() - 2)) && (LEHMAR_GELDGELIEHEN != 0))
+	if((Lehmar_GeldGeliehen_Day <= (Wld_GetDay() - 2)) && (Lehmar_GeldGeliehen != 0))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lehmar_geldeintreiben_info()
+func void DIA_Lehmar_GELDEINTREIBEN_Info()
 {
 	AI_Output(self,other,"DIA_Lehmar_GELDEINTREIBEN_09_00");	//Ty draniu, oddawaj moje pieni¹dze! A poniewa¿ spóŸni³eœ siê ze sp³at¹, twój d³ug w³aœnie urós³.
 	AI_Output(self,other,"DIA_Lehmar_GELDEINTREIBEN_09_01");	//Zamiast standardowych 20 procent bêdziesz mi teraz musia³ oddaæ 30.
-	Info_AddChoice(dia_lehmar_geldeintreiben,"Chcê sp³aciæ moje d³ugi.",dia_lehmar_geldeintreiben_schuldenzahlen);
-	Info_AddChoice(dia_lehmar_geldeintreiben,"Nic z tego, nie oddam ci ¿adnych pieniêdzy.",dia_lehmar_geldeintreiben_kannstmich);
+	Info_AddChoice(DIA_Lehmar_GELDEINTREIBEN,"Chcê sp³aciæ moje d³ugi.",DIA_Lehmar_GELDEINTREIBEN_schuldenzahlen);
+	Info_AddChoice(DIA_Lehmar_GELDEINTREIBEN,"Nic z tego, nie oddam ci ¿adnych pieniêdzy.",DIA_Lehmar_GELDEINTREIBEN_kannstmich);
 };
 
-func void dia_lehmar_geldeintreiben_kannstmich()
+func void DIA_Lehmar_GELDEINTREIBEN_kannstmich()
 {
 	AI_Output(other,self,"DIA_Lehmar_GELDEINTREIBEN_kannstmich_15_00");	//Nic z tego, nie oddam ci ¿adnych pieniêdzy.
 	AI_Output(self,other,"DIA_Lehmar_GELDEINTREIBEN_kannstmich_09_01");	//O tak, zapewniam ciê, ¿e dasz.
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_NONE,1);
+	B_Attack(self,other,AR_NONE,1);
 };
 
-func void dia_lehmar_geldeintreiben_schuldenzahlen()
+func void DIA_Lehmar_GELDEINTREIBEN_schuldenzahlen()
 {
 	AI_Output(other,self,"DIA_Lehmar_GELDEINTREIBEN_schuldenzahlen_15_00");	//Chcê sp³aciæ moje d³ugi.
-	if(LEHMAR_GELDGELIEHEN == 50)
+	if(Lehmar_GeldGeliehen == 50)
 	{
-		LEHMAR_GELDGELIEHEN_MITZINSEN = 65;
+		Lehmar_GeldGeliehen_MitZinsen = 65;
 	};
-	if(LEHMAR_GELDGELIEHEN == 200)
+	if(Lehmar_GeldGeliehen == 200)
 	{
-		LEHMAR_GELDGELIEHEN_MITZINSEN = 260;
+		Lehmar_GeldGeliehen_MitZinsen = 260;
 	};
-	if(LEHMAR_GELDGELIEHEN == 100)
+	if(Lehmar_GeldGeliehen == 100)
 	{
-		LEHMAR_GELDGELIEHEN_MITZINSEN = 130;
+		Lehmar_GeldGeliehen_MitZinsen = 130;
 	};
-	IntToFloat(LEHMAR_GELDGELIEHEN_MITZINSEN);
-	if(Npc_HasItems(other,itmi_gold) >= LEHMAR_GELDGELIEHEN_MITZINSEN)
+	IntToFloat(Lehmar_GeldGeliehen_MitZinsen);
+	if(Npc_HasItems(other,ItMi_Gold) >= Lehmar_GeldGeliehen_MitZinsen)
 	{
-		b_giveinvitems(other,self,5113,LEHMAR_GELDGELIEHEN_MITZINSEN);
+		B_GiveInvItems(other,self,ItMi_Gold,Lehmar_GeldGeliehen_MitZinsen);
 		AI_Output(self,other,"DIA_Lehmar_GELDEINTREIBEN_schuldenzahlen_09_01");	//Twoje szczêœcie! A teraz spadaj!
-		LEHMAR_GELDGELIEHEN = 0;
+		Lehmar_GeldGeliehen = 0;
 		AI_StopProcessInfos(self);
 	}
 	else
@@ -214,51 +214,51 @@ func void dia_lehmar_geldeintreiben_schuldenzahlen()
 		AI_Output(self,other,"DIA_Lehmar_GELDEINTREIBEN_schuldenzahlen_09_02");	//Nie masz wystarczaj¹co du¿o pieniêdzy! No dobrze, widzê, ¿e bêdê musia³ daæ ci nauczkê.
 		AI_Output(self,other,"DIA_Lehmar_GELDEINTREIBEN_schuldenzahlen_09_03");	//Nie bierz tego do siebie. Po prostu muszê dbaæ o swoj¹ z³¹ reputacjê.
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_NONE,1);
+		B_Attack(self,other,AR_NONE,1);
 	};
 };
 
 
-instance DIA_LEHMAR_GELDZURUECK(C_INFO)
+instance DIA_Lehmar_GELDZURUECK(C_Info)
 {
-	npc = vlk_484_lehmar;
+	npc = VLK_484_Lehmar;
 	nr = 6;
-	condition = dia_lehmar_geldzurueck_condition;
-	information = dia_lehmar_geldzurueck_info;
+	condition = DIA_Lehmar_GELDZURUECK_Condition;
+	information = DIA_Lehmar_GELDZURUECK_Info;
 	permanent = TRUE;
 	description = "Oto twoje pieni¹dze!";
 };
 
 
-func int dia_lehmar_geldzurueck_condition()
+func int DIA_Lehmar_GELDZURUECK_Condition()
 {
-	if(!Npc_KnowsInfo(other,dia_lehmar_geldeintreiben) && (LEHMAR_GELDGELIEHEN != 0))
+	if(!Npc_KnowsInfo(other,DIA_Lehmar_GELDEINTREIBEN) && (Lehmar_GeldGeliehen != 0))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lehmar_geldzurueck_info()
+func void DIA_Lehmar_GELDZURUECK_Info()
 {
 	AI_Output(other,self,"DIA_Lehmar_GELDZURUECK_15_00");	//Oto twoje pieni¹dze!
-	if(LEHMAR_GELDGELIEHEN == 50)
+	if(Lehmar_GeldGeliehen == 50)
 	{
-		LEHMAR_GELDGELIEHEN_MITZINSEN = 60;
+		Lehmar_GeldGeliehen_MitZinsen = 60;
 	};
-	if(LEHMAR_GELDGELIEHEN == 200)
+	if(Lehmar_GeldGeliehen == 200)
 	{
-		LEHMAR_GELDGELIEHEN_MITZINSEN = 240;
+		Lehmar_GeldGeliehen_MitZinsen = 240;
 	};
-	if(LEHMAR_GELDGELIEHEN == 100)
+	if(Lehmar_GeldGeliehen == 100)
 	{
-		LEHMAR_GELDGELIEHEN_MITZINSEN = 120;
+		Lehmar_GeldGeliehen_MitZinsen = 120;
 	};
-	IntToFloat(LEHMAR_GELDGELIEHEN_MITZINSEN);
-	if(Npc_HasItems(other,itmi_gold) >= LEHMAR_GELDGELIEHEN_MITZINSEN)
+	IntToFloat(Lehmar_GeldGeliehen_MitZinsen);
+	if(Npc_HasItems(other,ItMi_Gold) >= Lehmar_GeldGeliehen_MitZinsen)
 	{
-		b_giveinvitems(other,self,5113,LEHMAR_GELDGELIEHEN_MITZINSEN);
+		B_GiveInvItems(other,self,ItMi_Gold,Lehmar_GeldGeliehen_MitZinsen);
 		AI_Output(self,other,"DIA_Lehmar_GELDZURUECK_09_01");	//Wspaniale! Interesy z tob¹ to czysta przyjemnoœæ.
-		LEHMAR_GELDGELIEHEN = 0;
+		Lehmar_GeldGeliehen = 0;
 		AI_StopProcessInfos(self);
 	}
 	else
@@ -269,29 +269,29 @@ func void dia_lehmar_geldzurueck_info()
 };
 
 
-instance DIA_LEHMAR_NOCHMALGELD(C_INFO)
+instance DIA_Lehmar_NOCHMALGELD(C_Info)
 {
-	npc = vlk_484_lehmar;
+	npc = VLK_484_Lehmar;
 	nr = 8;
-	condition = dia_lehmar_nochmalgeld_condition;
-	information = dia_lehmar_nochmalgeld_info;
+	condition = DIA_Lehmar_NOCHMALGELD_Condition;
+	information = DIA_Lehmar_NOCHMALGELD_Info;
 	permanent = TRUE;
 	description = "Czy móg³bym od ciebie po¿yczyæ trochê pieniêdzy?";
 };
 
 
-func int dia_lehmar_nochmalgeld_condition()
+func int DIA_Lehmar_NOCHMALGELD_Condition()
 {
-	if((LEHMAR_GELDGELIEHEN == 0) && (LEHMAR_GELDGELIEHEN_MITZINSEN != 0))
+	if((Lehmar_GeldGeliehen == 0) && (Lehmar_GeldGeliehen_MitZinsen != 0))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lehmar_nochmalgeld_info()
+func void DIA_Lehmar_NOCHMALGELD_Info()
 {
 	AI_Output(other,self,"DIA_Lehmar_NOCHMALGELD_15_00");	//Czy móg³bym od ciebie po¿yczyæ trochê pieniêdzy?
-	if(Npc_KnowsInfo(other,dia_lehmar_geldeintreiben) || Npc_KnowsInfo(other,dia_lehmar_buchweg))
+	if(Npc_KnowsInfo(other,DIA_Lehmar_GELDEINTREIBEN) || Npc_KnowsInfo(other,DIA_Lehmar_BuchWeg))
 	{
 		AI_Output(self,other,"DIA_Lehmar_NOCHMALGELD_09_01");	//Czy masz mnie za g³upca? Spadaj st¹d!
 	}
@@ -303,74 +303,74 @@ func void dia_lehmar_nochmalgeld_info()
 };
 
 
-instance DIA_LEHMAR_PICKPOCKET(C_INFO)
+instance DIA_Lehmar_PICKPOCKET(C_Info)
 {
-	npc = vlk_484_lehmar;
+	npc = VLK_484_Lehmar;
 	nr = 900;
-	condition = dia_lehmar_pickpocket_condition;
-	information = dia_lehmar_pickpocket_info;
+	condition = DIA_Lehmar_PICKPOCKET_Condition;
+	information = DIA_Lehmar_PICKPOCKET_Info;
 	permanent = TRUE;
 	description = "(Kradzie¿ tej ma³ej ksi¹¿eczki bêdzie dziecinnie ³atwa)";
 };
 
 
-func int dia_lehmar_pickpocket_condition()
+func int DIA_Lehmar_PICKPOCKET_Condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == FALSE) && (Npc_HasItems(self,itwr_schuldenbuch) >= 1) && (other.attribute[ATR_DEXTERITY] >= (20 - THEFTDIFF)))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_HasItems(self,ItWr_Schuldenbuch) >= 1) && (other.attribute[ATR_DEXTERITY] >= (20 - Theftdiff)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lehmar_pickpocket_info()
+func void DIA_Lehmar_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_lehmar_pickpocket);
-	Info_AddChoice(dia_lehmar_pickpocket,DIALOG_BACK,dia_lehmar_pickpocket_back);
-	Info_AddChoice(dia_lehmar_pickpocket,DIALOG_PICKPOCKET,dia_lehmar_pickpocket_doit);
+	Info_ClearChoices(DIA_Lehmar_PICKPOCKET);
+	Info_AddChoice(DIA_Lehmar_PICKPOCKET,Dialog_Back,DIA_Lehmar_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Lehmar_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Lehmar_PICKPOCKET_DoIt);
 };
 
-func void dia_lehmar_pickpocket_doit()
+func void DIA_Lehmar_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 20)
 	{
-		b_giveinvitems(self,other,5721,1);
-		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
-		b_giveplayerxp(10);
-		Info_ClearChoices(dia_lehmar_pickpocket);
+		B_GiveInvItems(self,other,ItWr_Schuldenbuch,1);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+		B_GivePlayerXP(10);
+		Info_ClearChoices(DIA_Lehmar_PICKPOCKET);
 	}
 	else
 	{
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_THEFT,1);
+		B_Attack(self,other,AR_Theft,1);
 	};
 };
 
-func void dia_lehmar_pickpocket_back()
+func void DIA_Lehmar_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_canthar_pickpocket);
+	Info_ClearChoices(DIA_Canthar_PICKPOCKET);
 };
 
 
-instance DIA_LEHMAR_BUCHWEG(C_INFO)
+instance DIA_Lehmar_BuchWeg(C_Info)
 {
-	npc = vlk_484_lehmar;
+	npc = VLK_484_Lehmar;
 	nr = 1;
-	condition = dia_lehmar_buchweg_condition;
-	information = dia_lehmar_buchweg_info;
+	condition = DIA_Lehmar_BuchWeg_Condition;
+	information = DIA_Lehmar_BuchWeg_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_lehmar_buchweg_condition()
+func int DIA_Lehmar_BuchWeg_Condition()
 {
-	if((self.aivar[AIV_DEFEATEDBYPLAYER] == FALSE) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == TRUE))
+	if((self.aivar[AIV_DefeatedByPlayer] == FALSE) && (self.aivar[AIV_PlayerHasPickedMyPocket] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lehmar_buchweg_info()
+func void DIA_Lehmar_BuchWeg_Info()
 {
 	AI_Output(self,other,"DIA_Lehmar_Add_09_00");	//Jakiœ drañ ukrad³ moj¹ ksiêgê rachunkow¹...
 	AI_Output(self,other,"DIA_Lehmar_Add_09_01");	//Nie mia³eœ z tym chyba nic wspólnego, prawda?

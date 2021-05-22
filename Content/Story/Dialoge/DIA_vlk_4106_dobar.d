@@ -1,63 +1,63 @@
 
-instance DIA_DOBAR_EXIT(C_INFO)
+instance DIA_Dobar_EXIT(C_Info)
 {
-	npc = vlk_4106_dobar;
+	npc = VLK_4106_Dobar;
 	nr = 999;
-	condition = dia_dobar_exit_condition;
-	information = dia_dobar_exit_info;
+	condition = DIA_Dobar_EXIT_Condition;
+	information = DIA_Dobar_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dobar_exit_condition()
+func int DIA_Dobar_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_dobar_exit_info()
+func void DIA_Dobar_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_DOBAR_HALLO(C_INFO)
+instance DIA_Dobar_HALLO(C_Info)
 {
-	npc = vlk_4106_dobar;
+	npc = VLK_4106_Dobar;
 	nr = 2;
-	condition = dia_dobar_hallo_condition;
-	information = dia_dobar_hallo_info;
+	condition = DIA_Dobar_HALLO_Condition;
+	information = DIA_Dobar_HALLO_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_dobar_hallo_condition()
+func int DIA_Dobar_HALLO_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dobar_hallo_info()
+func void DIA_Dobar_HALLO_Info()
 {
 	AI_Output(self,other,"DIA_Dobar_HALLO_08_00");	//Czego?
 };
 
 
-instance DIA_DOBAR_TALENT(C_INFO)
+instance DIA_Dobar_Talent(C_Info)
 {
-	npc = vlk_4106_dobar;
+	npc = VLK_4106_Dobar;
 	nr = 3;
-	condition = dia_dobar_talent_condition;
-	information = dia_dobar_talent_info;
+	condition = DIA_Dobar_Talent_Condition;
+	information = DIA_Dobar_Talent_Info;
 	permanent = FALSE;
 	description = "Wiem co nieco na temat pracy w kuŸni.";
 };
 
 
-func int dia_dobar_talent_condition()
+func int DIA_Dobar_Talent_Condition()
 {
 	if(Npc_GetTalentSkill(other,NPC_TALENT_SMITH) > 0)
 	{
@@ -65,33 +65,33 @@ func int dia_dobar_talent_condition()
 	};
 };
 
-func void dia_dobar_talent_info()
+func void DIA_Dobar_Talent_Info()
 {
 	AI_Output(other,self,"DIA_Dobar_Talent_15_00");	//Wiem co nieco na temat pracy w kuŸni.
 	AI_Output(self,other,"DIA_Dobar_Talent_08_01");	//Œwietnie... i co z tego?
 };
 
 
-instance DIA_DOBAR_SCHMIEDE(C_INFO)
+instance DIA_Dobar_Schmiede(C_Info)
 {
-	npc = vlk_4106_dobar;
+	npc = VLK_4106_Dobar;
 	nr = 3;
-	condition = dia_dobar_schmiede_condition;
-	information = dia_dobar_schmiede_info;
+	condition = DIA_Dobar_Schmiede_Condition;
+	information = DIA_Dobar_Schmiede_Info;
 	permanent = FALSE;
 	description = "Czy mogê skorzystaæ z twojej kuŸni?";
 };
 
 
-func int dia_dobar_schmiede_condition()
+func int DIA_Dobar_Schmiede_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_dobar_talent))
+	if(Npc_KnowsInfo(other,DIA_Dobar_Talent))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dobar_schmiede_info()
+func void DIA_Dobar_Schmiede_Info()
 {
 	AI_Output(other,self,"DIA_Dobar_Schmiede_15_00");	//Czy mogê skorzystaæ z twojej kuŸni?
 	AI_Output(self,other,"DIA_Dobar_Schmiede_08_01");	//Mam wiele do zrobienia. Tylko wchodzilibyœmy sobie nawzajem w drogê. Zaczekaj, a¿ siê œciemni.
@@ -99,59 +99,59 @@ func void dia_dobar_schmiede_info()
 };
 
 
-instance DIA_DOBAR_BEIBRINGEN(C_INFO)
+instance DIA_Dobar_beibringen(C_Info)
 {
-	npc = vlk_4106_dobar;
+	npc = VLK_4106_Dobar;
 	nr = 2;
-	condition = dia_dobar_beibringen_condition;
-	information = dia_dobar_beibringen_info;
+	condition = DIA_Dobar_beibringen_Condition;
+	information = DIA_Dobar_beibringen_Info;
 	permanent = FALSE;
 	description = "Mo¿esz mnie czegoœ nauczyæ?";
 };
 
 
-func int dia_dobar_beibringen_condition()
+func int DIA_Dobar_beibringen_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_dobar_talent))
+	if(Npc_KnowsInfo(other,DIA_Dobar_Talent))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dobar_beibringen_info()
+func void DIA_Dobar_beibringen_Info()
 {
 	AI_Output(other,self,"DIA_Dobar_beibringen_15_00");	//Czy mo¿esz mnie czegoœ nauczyæ?
 	AI_Output(self,other,"DIA_Dobar_beibringen_08_01");	//Tak wiêc znasz ju¿ podstawy. Mogê ci pomóc udoskonaliæ twoje umiejêtnoœci.
 	AI_Output(self,other,"DIA_Dobar_beibringen_08_02");	//Bêdziesz móg³ wtedy wyrabiaæ lepsz¹ broñ.
-	DOBAR_LEARNSMITH = TRUE;
-	Log_CreateTopic(TOPIC_TEACHER_OC,LOG_NOTE);
-	b_logentry(TOPIC_TEACHER_OC,"Dobar mo¿e mnie nauczyæ, jak wykuwaæ lepszy orê¿.");
+	Dobar_Learnsmith = TRUE;
+	Log_CreateTopic(TOPIC_Teacher_OC,LOG_NOTE);
+	B_LogEntry(TOPIC_Teacher_OC,"Dobar mo¿e mnie nauczyæ, jak wykuwaæ lepszy orê¿.");
 };
 
 
-instance DIA_DOBAR_TEACH(C_INFO)
+instance DIA_Dobar_Teach(C_Info)
 {
-	npc = vlk_4106_dobar;
+	npc = VLK_4106_Dobar;
 	nr = 3;
-	condition = dia_dobar_teach_condition;
-	information = dia_dobar_teach_info;
-	description = b_buildlearnstring("Poka¿ mi, jak wykuæ dobry miecz!",b_getlearncosttalent(other,NPC_TALENT_SMITH));
+	condition = DIA_Dobar_Teach_Condition;
+	information = DIA_Dobar_Teach_Info;
+	description = B_BuildLearnString("Poka¿ mi, jak wykuæ dobry miecz!",B_GetLearnCostTalent(other,NPC_TALENT_SMITH));
 	permanent = TRUE;
 };
 
 
-func int dia_dobar_teach_condition()
+func int DIA_Dobar_Teach_Condition()
 {
-	if((DOBAR_LEARNSMITH == TRUE) && (PLAYER_TALENT_SMITH[WEAPON_1H_SPECIAL_01] == FALSE))
+	if((Dobar_Learnsmith == TRUE) && (PLAYER_TALENT_SMITH[WEAPON_1H_Special_01] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dobar_teach_info()
+func void DIA_Dobar_Teach_Info()
 {
 	AI_Output(other,self,"DIA_Dobar_Teach_15_00");	//Poka¿ mi, jak wykuæ dobry miecz!
-	if(b_teachplayertalentsmith(self,hero,WEAPON_1H_SPECIAL_01))
+	if(B_TeachPlayerTalentSmith(self,hero,WEAPON_1H_Special_01))
 	{
 		AI_Output(self,other,"DIA_Dobar_Teach_08_01");	//Upewnij siê, ¿e stal jest równomiernie rozgrzana - pozwoli ci to uzyskaæ równe, g³adkie ostrze.
 		AI_Output(self,other,"DIA_Dobar_Teach_08_02");	//Jeœli bêdziesz o tym pamiêta³, twoje miecze stan¹ siê twardsze i ostrzejsze.
@@ -160,61 +160,61 @@ func void dia_dobar_teach_info()
 };
 
 
-instance DIA_DOBAR_WAFFE(C_INFO)
+instance DIA_Dobar_Waffe(C_Info)
 {
-	npc = vlk_4106_dobar;
+	npc = VLK_4106_Dobar;
 	nr = 80;
-	condition = dia_dobar_waffe_condition;
-	information = dia_dobar_waffe_info;
+	condition = DIA_Dobar_Waffe_Condition;
+	information = DIA_Dobar_Waffe_Info;
 	permanent = FALSE;
 	description = "Mo¿esz zrobiæ dla mnie broñ?";
 };
 
 
-func int dia_dobar_waffe_condition()
+func int DIA_Dobar_Waffe_Condition()
 {
 	return TRUE;
 };
 
-func void dia_dobar_waffe_info()
+func void DIA_Dobar_Waffe_Info()
 {
 	AI_Output(other,self,"DIA_Dobar_Waffe_15_00");	//Mo¿esz zrobiæ dla mnie broñ?
 	AI_Output(self,other,"DIA_Dobar_Waffe_08_01");	//Nie mam na to czasu. Ja tylko kujê broñ, a Parlaf j¹ ostrzy. Wydawaniem orê¿a zajmuje siê Tandor.
-	Log_CreateTopic(TOPIC_TRADER_OC,LOG_NOTE);
-	b_logentry(TOPIC_TRADER_OC,"Tandor handluje na zamku broni¹.");
+	Log_CreateTopic(TOPIC_Trader_OC,LOG_NOTE);
+	B_LogEntry(TOPIC_Trader_OC,"Tandor handluje na zamku broni¹.");
 };
 
 
-instance DIA_DOBAR_NEWS(C_INFO)
+instance DIA_Dobar_NEWS(C_Info)
 {
-	npc = vlk_4106_dobar;
+	npc = VLK_4106_Dobar;
 	nr = 900;
-	condition = dia_dobar_news_condition;
-	information = dia_dobar_news_info;
+	condition = DIA_Dobar_NEWS_Condition;
+	information = DIA_Dobar_NEWS_Info;
 	permanent = TRUE;
 	description = "Jak praca?";
 };
 
 
-func int dia_dobar_news_condition()
+func int DIA_Dobar_NEWS_Condition()
 {
 	return TRUE;
 };
 
-func void dia_dobar_news_info()
+func void DIA_Dobar_NEWS_Info()
 {
 	AI_Output(other,self,"DIA_Dobar_NEWS_15_00");	//Jak praca?
-	if(DOBAR_EINMALIG == FALSE)
+	if(Dobar_einmalig == FALSE)
 	{
 		AI_Output(self,other,"DIA_Dobar_NEWS_08_01");	//Zajmujê siê kuciem orê¿a dla zamkowych rycerzy. Odk¹d siê tu znaleŸliœmy, wci¹¿ produkujê now¹ broñ.
 		AI_Output(self,other,"DIA_Dobar_NEWS_08_02");	//Bêdzie nam potrzebna. Poka¿emy tym przeklêtym orkom, jak smakuje stal naszych mieczy!
-		if(Npc_IsDead(parlaf) == FALSE)
+		if(Npc_IsDead(Parlaf) == FALSE)
 		{
-			b_turntonpc(self,parlaf);
+			B_TurnToNpc(self,Parlaf);
 			AI_Output(self,other,"DIA_Dobar_NEWS_08_03");	//Hej, Parlaf, pamiêtaj, ¿eby dobrze naostrzyæ te miecze - tacy orkowie potrafi¹ byæ naprawdê twardzi!
-			b_turntonpc(self,other);
+			B_TurnToNpc(self,other);
 		};
-		DOBAR_EINMALIG = TRUE;
+		Dobar_einmalig = TRUE;
 	}
 	else
 	{
@@ -223,50 +223,50 @@ func void dia_dobar_news_info()
 };
 
 
-instance DIA_DOBAR_PICKPOCKET(C_INFO)
+instance DIA_Dobar_PICKPOCKET(C_Info)
 {
-	npc = vlk_4106_dobar;
+	npc = VLK_4106_Dobar;
 	nr = 900;
-	condition = dia_dobar_pickpocket_condition;
-	information = dia_dobar_pickpocket_info;
+	condition = DIA_Dobar_PICKPOCKET_Condition;
+	information = DIA_Dobar_PICKPOCKET_Info;
 	permanent = TRUE;
 	description = "(Kradzie¿ tej bry³ki rudy bêdzie trudna)";
 };
 
 
-func int dia_dobar_pickpocket_condition()
+func int DIA_Dobar_PICKPOCKET_Condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == FALSE) && (Npc_HasItems(self,itmi_nugget) >= 1) && (other.attribute[ATR_DEXTERITY] >= (79 - THEFTDIFF)))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_HasItems(self,ItMi_Nugget) >= 1) && (other.attribute[ATR_DEXTERITY] >= (79 - Theftdiff)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dobar_pickpocket_info()
+func void DIA_Dobar_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_dobar_pickpocket);
-	Info_AddChoice(dia_dobar_pickpocket,DIALOG_BACK,dia_dobar_pickpocket_back);
-	Info_AddChoice(dia_dobar_pickpocket,DIALOG_PICKPOCKET,dia_dobar_pickpocket_doit);
+	Info_ClearChoices(DIA_Dobar_PICKPOCKET);
+	Info_AddChoice(DIA_Dobar_PICKPOCKET,Dialog_Back,DIA_Dobar_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Dobar_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Dobar_PICKPOCKET_DoIt);
 };
 
-func void dia_dobar_pickpocket_doit()
+func void DIA_Dobar_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 79)
 	{
-		b_giveinvitems(self,other,5112,1);
-		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
-		b_giveplayerxp(XP_AMBIENT);
-		Info_ClearChoices(dia_dobar_pickpocket);
+		B_GiveInvItems(self,other,ItMi_Nugget,1);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+		B_GivePlayerXP(XP_Ambient);
+		Info_ClearChoices(DIA_Dobar_PICKPOCKET);
 	}
 	else
 	{
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_THEFT,1);
+		B_Attack(self,other,AR_Theft,1);
 	};
 };
 
-func void dia_dobar_pickpocket_back()
+func void DIA_Dobar_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_dobar_pickpocket);
+	Info_ClearChoices(DIA_Dobar_PICKPOCKET);
 };
 

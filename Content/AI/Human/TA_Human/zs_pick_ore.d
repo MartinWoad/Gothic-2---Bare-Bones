@@ -1,30 +1,30 @@
 
-func void zs_pick_ore()
+func void ZS_Pick_Ore()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == FALSE)
 	{
 		AI_GotoWP(self,self.wp);
 	};
-	if(Npc_HasItems(self,itmw_2h_axe_l_01) == 0)
+	if(Npc_HasItems(self,ItMw_2H_Axe_L_01) == 0)
 	{
-		CreateInvItem(self,itmw_2h_axe_l_01);
+		CreateInvItem(self,ItMw_2H_Axe_L_01);
 	};
-	EquipItem(self,itmw_2h_axe_l_01);
+	EquipItem(self,ItMw_2H_Axe_L_01);
 };
 
-func int zs_pick_ore_loop()
+func int ZS_Pick_Ore_Loop()
 {
-	if(!c_bodystatecontains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"ORE"))
+	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"ORE"))
 	{
 		AI_UseMob(self,"ORE",1);
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_pick_ore_end()
+func void ZS_Pick_Ore_End()
 {
 	AI_UseMob(self,"ORE",-1);
 };

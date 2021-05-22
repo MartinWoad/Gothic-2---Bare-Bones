@@ -1,8 +1,8 @@
 
-func void zs_circle()
+func void ZS_Circle()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	Npc_SetPercTime(self,0.3);
 	AI_Standup(self);
 	AI_SetWalkMode(self,NPC_WALK);
@@ -10,7 +10,7 @@ func void zs_circle()
 	AI_AlignToWP(self);
 };
 
-func int zs_circle_loop()
+func int ZS_Circle_Loop()
 {
 	var int randy;
 	if(self.guild == GIL_DMT)
@@ -25,7 +25,7 @@ func int zs_circle_loop()
 			AI_PlayAni(self,"T_PRACTICEMAGIC5");
 		};
 	}
-	else if(MIS_RITUALINNOSEYEREPAIR != LOG_SUCCESS)
+	else if(MIS_RitualInnosEyeRepair != LOG_SUCCESS)
 	{
 		randy = Hlp_Random(1000);
 		if(Npc_GetStateTime(self) > randy)
@@ -34,11 +34,11 @@ func int zs_circle_loop()
 			Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 			Wld_PlayEffect("SFX_Circle",self,self,0,0,0,FALSE);
 			AI_PlayAni(self,"T_PRACTICEMAGIC5");
-			if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(xardas))
+			if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Xardas))
 			{
 				Wld_PlayEffect("spellFX_INCOVATION_VIOLET",self,self,0,0,0,FALSE);
 			}
-			else if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pyrokar))
+			else if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Pyrokar))
 			{
 				Wld_PlayEffect("spellFX_INCOVATION_RED",self,self,0,0,0,FALSE);
 			}
@@ -51,7 +51,7 @@ func int zs_circle_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_circle_end()
+func void ZS_Circle_End()
 {
 };
 

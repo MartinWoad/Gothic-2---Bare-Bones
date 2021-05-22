@@ -1,426 +1,426 @@
 
-func void b_givetradeinv(var C_NPC slf)
+func void B_GiveTradeInv(var C_Npc slf)
 {
-	var C_NPC trd_engor;
-	var C_NPC trd_matteo;
-	var C_NPC trd_halvor;
-	var C_NPC trd_bosper;
-	var C_NPC trd_harad;
-	var C_NPC trd_brian;
-	var C_NPC trd_brahim;
-	var C_NPC trd_constantino;
-	var C_NPC trd_kardif;
-	var C_NPC trd_zuris;
-	var C_NPC trd_baltram;
-	var C_NPC trd_canthar;
-	var C_NPC trd_sarah;
-	var C_NPC trd_jora;
-	var C_NPC trd_hakon;
-	var C_NPC trd_coragon;
-	var C_NPC trd_gorax;
-	var C_NPC trd_orlan;
-	var C_NPC trd_bennet;
-	var C_NPC trd_bennet_di;
-	var C_NPC trd_elena;
-	var C_NPC trd_sagitta;
-	var C_NPC trd_kjorn;
-	var C_NPC trd_rethon;
-	var C_NPC trd_rosi;
-	var C_NPC trd_ignaz;
-	var C_NPC trd_milten_di;
-	var C_NPC trd_vatras_di;
-	var C_NPC trd_diego_di;
-	var C_NPC trd_tandor;
-	var C_NPC trd_sengrath;
-	var C_NPC trd_isgaroth;
-	var C_NPC trd_fenia;
-	var C_NPC trd_khaled;
-	var C_NPC trd_karras;
-	var C_NPC trd_salandril;
-	var C_NPC trd_gaertner;
-	var C_NPC trd_lutero;
-	trd_engor = Hlp_GetNpc(vlk_4108_engor);
-	trd_matteo = Hlp_GetNpc(vlk_416_matteo);
-	trd_halvor = Hlp_GetNpc(vlk_469_halvor);
-	trd_bosper = Hlp_GetNpc(vlk_413_bosper);
-	trd_harad = Hlp_GetNpc(vlk_412_harad);
-	trd_brian = Hlp_GetNpc(vlk_457_brian);
-	trd_brahim = Hlp_GetNpc(vlk_437_brahim);
-	trd_constantino = Hlp_GetNpc(vlk_417_constantino);
-	trd_kardif = Hlp_GetNpc(vlk_431_kardif);
-	trd_zuris = Hlp_GetNpc(vlk_409_zuris);
-	trd_baltram = Hlp_GetNpc(vlk_410_baltram);
-	trd_canthar = Hlp_GetNpc(vlk_468_canthar);
-	trd_sarah = Hlp_GetNpc(vlk_470_sarah);
-	trd_jora = Hlp_GetNpc(vlk_408_jora);
-	trd_hakon = Hlp_GetNpc(vlk_407_hakon);
-	trd_coragon = Hlp_GetNpc(vlk_420_coragon);
-	trd_gorax = Hlp_GetNpc(kdf_508_gorax);
-	trd_orlan = Hlp_GetNpc(bau_970_orlan);
-	trd_bennet = Hlp_GetNpc(sld_809_bennet);
-	trd_bennet_di = Hlp_GetNpc(sld_809_bennet_di);
-	trd_elena = Hlp_GetNpc(bau_911_elena);
-	trd_sagitta = Hlp_GetNpc(bau_980_sagitta);
-	trd_kjorn = Hlp_GetNpc(djg_710_kjorn);
-	trd_rethon = Hlp_GetNpc(djg_709_rethon);
-	trd_rosi = Hlp_GetNpc(bau_936_rosi);
-	trd_ignaz = Hlp_GetNpc(vlk_498_ignaz);
-	trd_milten_di = Hlp_GetNpc(pc_mage_di);
-	trd_vatras_di = Hlp_GetNpc(vlk_439_vatras_di);
-	trd_diego_di = Hlp_GetNpc(pc_thief_di);
-	trd_tandor = Hlp_GetNpc(pal_260_tandor);
-	trd_sengrath = Hlp_GetNpc(pal_267_sengrath);
-	trd_isgaroth = Hlp_GetNpc(kdf_509_isgaroth);
-	trd_fenia = Hlp_GetNpc(vlk_476_fenia);
-	trd_khaled = Hlp_GetNpc(sld_823_khaled);
-	trd_karras = Hlp_GetNpc(kdf_503_karras);
-	trd_salandril = Hlp_GetNpc(vlk_422_salandril);
-	trd_gaertner = Hlp_GetNpc(vlk_411_gaertner);
-	trd_lutero = Hlp_GetNpc(vlk_404_lutero);
-	b_clearruneinv(slf);
-	if(slf.aivar[AIV_CHAPTERINV] <= KAPITEL)
+	var C_Npc Trd_Engor;
+	var C_Npc Trd_Matteo;
+	var C_Npc Trd_Halvor;
+	var C_Npc Trd_Bosper;
+	var C_Npc Trd_Harad;
+	var C_Npc Trd_Brian;
+	var C_Npc Trd_Brahim;
+	var C_Npc Trd_Constantino;
+	var C_Npc Trd_Kardif;
+	var C_Npc Trd_Zuris;
+	var C_Npc Trd_Baltram;
+	var C_Npc Trd_Canthar;
+	var C_Npc Trd_Sarah;
+	var C_Npc Trd_Jora;
+	var C_Npc Trd_Hakon;
+	var C_Npc Trd_Coragon;
+	var C_Npc Trd_Gorax;
+	var C_Npc Trd_Orlan;
+	var C_Npc Trd_Bennet;
+	var C_Npc Trd_Bennet_DI;
+	var C_Npc Trd_Elena;
+	var C_Npc Trd_Sagitta;
+	var C_Npc Trd_Kjorn;
+	var C_Npc Trd_Rethon;
+	var C_Npc Trd_Rosi;
+	var C_Npc Trd_Ignaz;
+	var C_Npc Trd_Milten_DI;
+	var C_Npc Trd_Vatras_DI;
+	var C_Npc Trd_Diego_DI;
+	var C_Npc Trd_Tandor;
+	var C_Npc Trd_Sengrath;
+	var C_Npc Trd_Isgaroth;
+	var C_Npc Trd_Fenia;
+	var C_Npc Trd_Khaled;
+	var C_Npc Trd_Karras;
+	var C_Npc Trd_Salandril;
+	var C_Npc Trd_Gaertner;
+	var C_Npc Trd_Lutero;
+	Trd_Engor = Hlp_GetNpc(VLK_4108_Engor);
+	Trd_Matteo = Hlp_GetNpc(VLK_416_Matteo);
+	Trd_Halvor = Hlp_GetNpc(VLK_469_Halvor);
+	Trd_Bosper = Hlp_GetNpc(VLK_413_Bosper);
+	Trd_Harad = Hlp_GetNpc(VLK_412_Harad);
+	Trd_Brian = Hlp_GetNpc(VLK_457_Brian);
+	Trd_Brahim = Hlp_GetNpc(VLK_437_Brahim);
+	Trd_Constantino = Hlp_GetNpc(VLK_417_Constantino);
+	Trd_Kardif = Hlp_GetNpc(VLK_431_Kardif);
+	Trd_Zuris = Hlp_GetNpc(VLK_409_Zuris);
+	Trd_Baltram = Hlp_GetNpc(VLK_410_Baltram);
+	Trd_Canthar = Hlp_GetNpc(VLK_468_Canthar);
+	Trd_Sarah = Hlp_GetNpc(VLK_470_Sarah);
+	Trd_Jora = Hlp_GetNpc(VLK_408_Jora);
+	Trd_Hakon = Hlp_GetNpc(VLK_407_Hakon);
+	Trd_Coragon = Hlp_GetNpc(VLK_420_Coragon);
+	Trd_Gorax = Hlp_GetNpc(KDF_508_Gorax);
+	Trd_Orlan = Hlp_GetNpc(BAU_970_Orlan);
+	Trd_Bennet = Hlp_GetNpc(SLD_809_Bennet);
+	Trd_Bennet_DI = Hlp_GetNpc(SLD_809_Bennet_DI);
+	Trd_Elena = Hlp_GetNpc(BAU_911_Elena);
+	Trd_Sagitta = Hlp_GetNpc(BAU_980_Sagitta);
+	Trd_Kjorn = Hlp_GetNpc(DJG_710_Kjorn);
+	Trd_Rethon = Hlp_GetNpc(DJG_709_Rethon);
+	Trd_Rosi = Hlp_GetNpc(BAU_936_Rosi);
+	Trd_Ignaz = Hlp_GetNpc(VLK_498_Ignaz);
+	Trd_Milten_DI = Hlp_GetNpc(PC_Mage_DI);
+	Trd_Vatras_DI = Hlp_GetNpc(VLK_439_Vatras_DI);
+	Trd_Diego_DI = Hlp_GetNpc(PC_Thief_DI);
+	Trd_Tandor = Hlp_GetNpc(PAL_260_Tandor);
+	Trd_Sengrath = Hlp_GetNpc(PAL_267_Sengrath);
+	Trd_Isgaroth = Hlp_GetNpc(KDF_509_Isgaroth);
+	Trd_Fenia = Hlp_GetNpc(VLK_476_Fenia);
+	Trd_Khaled = Hlp_GetNpc(SLD_823_Khaled);
+	Trd_Karras = Hlp_GetNpc(KDF_503_Karras);
+	Trd_Salandril = Hlp_GetNpc(VLK_422_Salandril);
+	Trd_Gaertner = Hlp_GetNpc(VLK_411_Gaertner);
+	Trd_Lutero = Hlp_GetNpc(VLK_404_Lutero);
+	B_ClearRuneInv(slf);
+	if(slf.aivar[AIV_ChapterInv] <= Kapitel)
 	{
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_engor))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Engor))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_engor(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Engor(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_matteo))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Matteo))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_matteo(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Matteo(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_halvor))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Halvor))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_halvor(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Halvor(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_bosper))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Bosper))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_bosper(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Bosper(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_harad))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Harad))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_harad(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Harad(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_brian))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Brian))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_brian(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Brian(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_brahim))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Brahim))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_brahim(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Brahim(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_constantino))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Constantino))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_constantino(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Constantino(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_kardif))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Kardif))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_kardif(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Kardif(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_zuris))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Zuris))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_zuris(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Zuris(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_baltram))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Baltram))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_baltram(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Baltram(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_canthar))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Canthar))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_canthar(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Canthar(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_sarah))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Sarah))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_sarah(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Sarah(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_jora))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Jora))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_jora(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Jora(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_hakon))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Hakon))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_hakon(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Hakon(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_coragon))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Coragon))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_coragon(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Coragon(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_gorax))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Gorax))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_gorax(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Gorax(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_orlan))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Orlan))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_orlan(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Orlan(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_bennet))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Bennet))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_bennet(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Bennet(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_bennet_di))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Bennet_DI))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_bennet_di(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Bennet_DI(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_elena))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Elena))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_elena(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Elena(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_sagitta))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Sagitta))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_sagitta(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Sagitta(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_kjorn))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Kjorn))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_kjorn(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Kjorn(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_rethon))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Rethon))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_rethon(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Rethon(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_rosi))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Rosi))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_rosi(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Rosi(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_ignaz))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Ignaz))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_ignaz(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Ignaz(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_milten_di))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Milten_DI))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_milten_di(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Milten_DI(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_vatras_di))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Vatras_DI))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_vatras_di(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Vatras_DI(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_diego_di))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Diego_DI))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_diego_di(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Diego_DI(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_tandor))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Tandor))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_tandor(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Tandor(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_sengrath))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Sengrath))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_sengrath(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Sengrath(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_isgaroth))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Isgaroth))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_isgaroth(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Isgaroth(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_fenia))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Fenia))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_fenia(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Fenia(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_khaled))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Khaled))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_khaled(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Khaled(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_karras))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Karras))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_karras(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Karras(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_salandril))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Salandril))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_salandril(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Salandril(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_gaertner))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Gaertner))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_gaertner(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Gaertner(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_lutero))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Lutero))
 		{
-			b_clearjunktradeinv(slf);
-			b_givetradeinv_lutero(slf);
+			B_ClearJunkTradeInv(slf);
+			B_GiveTradeInv_Lutero(slf);
 		};
-		slf.aivar[AIV_CHAPTERINV] = KAPITEL + 1;
+		slf.aivar[AIV_ChapterInv] = Kapitel + 1;
 	};
-	if(Npc_IsInState(slf,zs_dead) || Npc_IsInState(slf,zs_unconscious))
+	if(Npc_IsInState(slf,ZS_Dead) || Npc_IsInState(slf,ZS_Unconscious))
 	{
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_engor))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Engor))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_matteo))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Matteo))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_halvor))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Halvor))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_bosper))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Bosper))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_harad))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Harad))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_brian))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Brian))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_brahim))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Brahim))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_constantino))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Constantino))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_kardif))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Kardif))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_zuris))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Zuris))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_baltram))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Baltram))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_canthar))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Canthar))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_sarah))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Sarah))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_jora))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Jora))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_hakon))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Hakon))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_coragon))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Coragon))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_gorax))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Gorax))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_orlan))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Orlan))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_bennet))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Bennet))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_bennet_di))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Bennet_DI))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_elena))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Elena))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_sagitta))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Sagitta))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_kjorn))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Kjorn))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_rethon))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Rethon))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_rosi))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Rosi))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_ignaz))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Ignaz))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_milten_di))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Milten_DI))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_vatras_di))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Vatras_DI))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_diego_di))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Diego_DI))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_tandor))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Tandor))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_sengrath))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Sengrath))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_isgaroth))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Isgaroth))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_fenia))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Fenia))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_khaled))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Khaled))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_karras))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Karras))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_salandril))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Salandril))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(trd_gaertner))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(Trd_Gaertner))
 		{
-			b_cleardeadtrader(slf);
+			B_ClearDeadTrader(slf);
 		};
 	};
 };

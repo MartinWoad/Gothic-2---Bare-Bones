@@ -1,61 +1,61 @@
 
 var int urshak_sucked;
 
-instance DIA_URSHAK_EXIT(C_INFO)
+instance DIA_Urshak_EXIT(C_Info)
 {
-	npc = none_110_urshak;
+	npc = NONE_110_Urshak;
 	nr = 999;
-	condition = dia_urshak_exit_condition;
-	information = dia_urshak_exit_info;
+	condition = DIA_Urshak_EXIT_Condition;
+	information = DIA_Urshak_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_urshak_exit_condition()
+func int DIA_Urshak_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_urshak_exit_info()
+func void DIA_Urshak_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_URSHAK_HALLO(C_INFO)
+instance DIA_Urshak_HALLO(C_Info)
 {
-	npc = none_110_urshak;
+	npc = NONE_110_Urshak;
 	nr = 5;
-	condition = dia_urshak_hallo_condition;
-	information = dia_urshak_hallo_info;
+	condition = DIA_Urshak_HALLO_Condition;
+	information = DIA_Urshak_HALLO_Info;
 	important = TRUE;
 };
 
 
-func int dia_urshak_hallo_condition()
+func int DIA_Urshak_HALLO_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (URSHAK_SUCKED == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (URSHAK_SUCKED == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_urshak_hallo_info()
+func void DIA_Urshak_HALLO_Info()
 {
 	AI_Output(self,other,"DIA_Urshak_HALLO_18_00");	//KHROTOK JABARTH!!!
 	AI_Output(self,other,"DIA_Urshak_HALLO_18_01");	//Stój! Ciebie znaæ! Ty przyjaciel-cz³owiek, z ³agodny g³os.
 	AI_Output(self,other,"DIA_Urshak_HALLO_18_02");	//Przyjaciel co zabiæ demon KRUSHAK!
-	b_giveplayerxp(XP_URSHAKFOUND);
-	Log_CreateTopic(TOPIC_URSHAK,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_URSHAK,LOG_RUNNING);
-	b_logentry(TOPIC_URSHAK,"Odnalaz³em mego starego orkowego przyjaciela, Ur-Shaka.");
-	Info_ClearChoices(dia_urshak_hallo);
-	Info_AddChoice(dia_urshak_hallo,"Co tu porabiasz?",dia_urshak_hallo_freund);
-	Info_AddChoice(dia_urshak_hallo,"Gadaj¹cy ork?",dia_urshak_hallo_wer);
+	B_GivePlayerXP(XP_UrshakFound);
+	Log_CreateTopic(TOPIC_Urshak,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Urshak,LOG_Running);
+	B_LogEntry(TOPIC_Urshak,"Odnalaz³em mego starego orkowego przyjaciela, Ur-Shaka.");
+	Info_ClearChoices(DIA_Urshak_HALLO);
+	Info_AddChoice(DIA_Urshak_HALLO,"Co tu porabiasz?",DIA_Urshak_HALLO_freund);
+	Info_AddChoice(DIA_Urshak_HALLO,"Gadaj¹cy ork?",DIA_Urshak_HALLO_wer);
 };
 
-func void dia_urshak_hallo_wer()
+func void DIA_Urshak_HALLO_wer()
 {
 	AI_Output(other,self,"DIA_Urshak_HALLO_wer_15_00");	//Gadaj¹cy ork?
 	AI_Output(self,other,"DIA_Urshak_HALLO_wer_18_01");	//Zapomnia³ Ur-Shak? Ur-Shak smutny.
@@ -63,86 +63,86 @@ func void dia_urshak_hallo_wer()
 	AI_Output(self,other,"DIA_Urshak_HALLO_wer_18_03");	//Przyjaciel by³ w œwi¹tynia orków i pokona³ demon. Du¿o dni wczeœniej! Nie pamiêta?
 };
 
-func void dia_urshak_hallo_freund()
+func void DIA_Urshak_HALLO_freund()
 {
 	AI_Output(other,self,"DIA_Urshak_HALLO_freund_15_00");	//Szkoda, ¿e okolicznoœci nie s¹ bardziej sprzyjaj¹ce. O ma³o ciê nie zabi³em. Co tu robisz?
 	AI_Output(self,other,"DIA_Urshak_HALLO_freund_18_01");	//Ur-Shak idzie, ¿eby zobaczyæ, co siê sta³o z jego bracia.
-	Info_ClearChoices(dia_urshak_hallo);
+	Info_ClearChoices(DIA_Urshak_HALLO);
 };
 
 
-instance DIA_URSHAK_WASMACHENORKS(C_INFO)
+instance DIA_Urshak_WASMACHENORKS(C_Info)
 {
-	npc = none_110_urshak;
+	npc = NONE_110_Urshak;
 	nr = 6;
-	condition = dia_urshak_wasmachenorks_condition;
-	information = dia_urshak_wasmachenorks_info;
+	condition = DIA_Urshak_WASMACHENORKS_Condition;
+	information = DIA_Urshak_WASMACHENORKS_Info;
 	description = "Dlaczego orkowie atakuj¹ ludzi?";
 };
 
 
-func int dia_urshak_wasmachenorks_condition()
+func int DIA_Urshak_WASMACHENORKS_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_urshak_hallo) && (URSHAK_SUCKED == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Urshak_HALLO) && (URSHAK_SUCKED == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_urshak_wasmachenorks_info()
+func void DIA_Urshak_WASMACHENORKS_Info()
 {
 	AI_Output(other,self,"DIA_Urshak_WASMACHENORKS_15_00");	//Dlaczego orkowie atakuj¹ ludzi?
 	AI_Output(self,other,"DIA_Urshak_WASMACHENORKS_18_01");	//Ur-Shak zawsze mówi³, ¿e ludzie nie z³e, ¿e tam te¿ przyjaciele.
 	AI_Output(self,other,"DIA_Urshak_WASMACHENORKS_18_02");	//Ale szaman nie s³uchaæ Ur-Shak, a bracia ci¹gle nie lubiæ Ur-Shak.
 	AI_Output(self,other,"DIA_Urshak_WASMACHENORKS_18_03");	//Ur-Shak nie wie, czemu wielka wojna z ludzie.
-	b_logentry(TOPIC_URSHAK,"Wci¹¿ nie przekona³ swego ludu do wys³uchania jego racji. Ci¹gle jest wygnañcem.");
+	B_LogEntry(TOPIC_Urshak,"Wci¹¿ nie przekona³ swego ludu do wys³uchania jego racji. Ci¹gle jest wygnañcem.");
 };
 
 
-instance DIA_URSHAK_SOVIELE(C_INFO)
+instance DIA_Urshak_SOVIELE(C_Info)
 {
-	npc = none_110_urshak;
+	npc = NONE_110_Urshak;
 	nr = 7;
-	condition = dia_urshak_soviele_condition;
-	information = dia_urshak_soviele_info;
+	condition = DIA_Urshak_SOVIELE_Condition;
+	information = DIA_Urshak_SOVIELE_Info;
 	description = "Sk¹d siê was tu tylu wziê³o?";
 };
 
 
-func int dia_urshak_soviele_condition()
+func int DIA_Urshak_SOVIELE_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_urshak_hallo) && (URSHAK_SUCKED == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Urshak_HALLO) && (URSHAK_SUCKED == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_urshak_soviele_info()
+func void DIA_Urshak_SOVIELE_Info()
 {
 	AI_Output(other,self,"DIA_Urshak_SOVIELE_15_00");	//Sk¹d siê was tu tylu wziê³o?
 	AI_Output(self,other,"DIA_Urshak_SOVIELE_18_01");	//Jedne orki id¹ z gór, a inne ze statków. Wszystkie robi¹ wielkie ogrodzenie.
 };
 
 
-instance DIA_URSHAK_ZAUN(C_INFO)
+instance DIA_Urshak_ZAUN(C_Info)
 {
-	npc = none_110_urshak;
+	npc = NONE_110_Urshak;
 	nr = 8;
-	condition = dia_urshak_zaun_condition;
-	information = dia_urshak_zaun_info;
+	condition = DIA_Urshak_ZAUN_Condition;
+	information = DIA_Urshak_ZAUN_Info;
 	description = "Co siê kryje za palisad¹ orków na wschodzie?";
 };
 
 
-func int dia_urshak_zaun_condition()
+func int DIA_Urshak_ZAUN_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_urshak_hallo) && (URSHAK_SUCKED == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Urshak_HALLO) && (URSHAK_SUCKED == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_urshak_zaun_info()
+func void DIA_Urshak_ZAUN_Info()
 {
 	AI_Output(other,self,"DIA_Urshak_ZAUN_15_00");	//Co siê kryje za palisad¹ orków na wschodzie?
 	AI_Output(self,other,"DIA_Urshak_ZAUN_18_01");	//U orków zawsze du¿y pali-sada. Tam wojenny obóz.
@@ -150,38 +150,38 @@ func void dia_urshak_zaun_info()
 };
 
 
-instance DIA_URSHAK_WASHASTDUVOR(C_INFO)
+instance DIA_Urshak_WASHASTDUVOR(C_Info)
 {
-	npc = none_110_urshak;
+	npc = NONE_110_Urshak;
 	nr = 9;
-	condition = dia_urshak_washastduvor_condition;
-	information = dia_urshak_washastduvor_info;
+	condition = DIA_Urshak_WASHASTDUVOR_Condition;
+	information = DIA_Urshak_WASHASTDUVOR_Info;
 	description = "Co zamierzasz teraz zrobiæ?";
 };
 
 
-func int dia_urshak_washastduvor_condition()
+func int DIA_Urshak_WASHASTDUVOR_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_urshak_hallo) && (URSHAK_SUCKED == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Urshak_HALLO) && (URSHAK_SUCKED == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_urshak_washastduvor_info()
+func void DIA_Urshak_WASHASTDUVOR_Info()
 {
 	AI_Output(other,self,"DIA_Urshak_WASHASTDUVOR_15_00");	//Co zamierzasz teraz zrobiæ?
 	AI_Output(self,other,"DIA_Urshak_WASHASTDUVOR_18_01");	//Ur-Shak poczeka, a¿ zwiadowcy zaprowadziæ go do Hosh-Pak.
 	AI_Output(other,self,"DIA_Urshak_WASHASTDUVOR_15_02");	//Kim jest ten Hosh-Pak?
 	AI_Output(self,other,"DIA_Urshak_WASHASTDUVOR_18_03");	//Bardzo du¿y szaman. Wielki wp³yw ma na wojownicy. Wielki plan ma dla orków.
-	b_logentry(TOPIC_URSHAK,"Ur-Shak planuje spotkaæ siê z orkowym szamanem, Hosh-Pakiem. Chce otrzymaæ pozwolenie na ponowne do³¹czenie do Rady Szamanów.");
-	Info_ClearChoices(dia_urshak_washastduvor);
-	Info_AddChoice(dia_urshak_washastduvor,DIALOG_BACK,dia_urshak_washastduvor_weiter);
-	Info_AddChoice(dia_urshak_washastduvor,"Gdzie znajdê tego Hosh-Paka?",dia_urshak_washastduvor_);
-	Info_AddChoice(dia_urshak_washastduvor,"Wiêc dlaczego sam do niego nie pójdziesz?",dia_urshak_washastduvor_hoshpak);
+	B_LogEntry(TOPIC_Urshak,"Ur-Shak planuje spotkaæ siê z orkowym szamanem, Hosh-Pakiem. Chce otrzymaæ pozwolenie na ponowne do³¹czenie do Rady Szamanów.");
+	Info_ClearChoices(DIA_Urshak_WASHASTDUVOR);
+	Info_AddChoice(DIA_Urshak_WASHASTDUVOR,Dialog_Back,DIA_Urshak_WASHASTDUVOR_weiter);
+	Info_AddChoice(DIA_Urshak_WASHASTDUVOR,"Gdzie znajdê tego Hosh-Paka?",DIA_Urshak_WASHASTDUVOR_);
+	Info_AddChoice(DIA_Urshak_WASHASTDUVOR,"Wiêc dlaczego sam do niego nie pójdziesz?",DIA_Urshak_WASHASTDUVOR_hoshpak);
 };
 
-func void dia_urshak_washastduvor_hoshpak()
+func void DIA_Urshak_WASHASTDUVOR_hoshpak()
 {
 	AI_Output(other,self,"DIA_Urshak_WASHASTDUVOR_hoshpak_15_00");	//Wiêc dlaczego sam do niego nie pójdziesz?
 	AI_Output(self,other,"DIA_Urshak_WASHASTDUVOR_hoshpak_18_01");	//Ur-Shak próbowaæ i próbowaæ oddostaæ honor, i byæ znów w rada szamanów.
@@ -189,37 +189,37 @@ func void dia_urshak_washastduvor_hoshpak()
 	AI_Output(self,other,"DIA_Urshak_WASHASTDUVOR_hoshpak_18_03");	//Mo¿e dzisiaj udaæ.
 };
 
-func void dia_urshak_washastduvor_()
+func void DIA_Urshak_WASHASTDUVOR_()
 {
 	AI_Output(other,self,"DIA_Urshak_WASHASTDUVOR_Urshak_15_00");	//Gdzie znajdê tego Hosh-Paka?
 	AI_Output(self,other,"DIA_Urshak_WASHASTDUVOR_Urshak_18_01");	//On ma miejsce, gdzie widzi wojownicy - nad fortec¹, przy ognista góra. Tam Hosh-Pak dowodzi wojownicy.
 };
 
-func void dia_urshak_washastduvor_weiter()
+func void DIA_Urshak_WASHASTDUVOR_weiter()
 {
-	Info_ClearChoices(dia_urshak_washastduvor);
+	Info_ClearChoices(DIA_Urshak_WASHASTDUVOR);
 };
 
 
-instance DIA_URSHAK_HOSHPAKDEAD(C_INFO)
+instance DIA_Urshak_HOSHPAKDEAD(C_Info)
 {
-	npc = none_110_urshak;
+	npc = NONE_110_Urshak;
 	nr = 9;
-	condition = dia_urshak_hoshpakdead_condition;
-	information = dia_urshak_hoshpakdead_info;
+	condition = DIA_Urshak_HOSHPAKDEAD_Condition;
+	information = DIA_Urshak_HOSHPAKDEAD_Info;
 	description = "Hosh-Pak nie ¿yje.";
 };
 
 
-func int dia_urshak_hoshpakdead_condition()
+func int DIA_Urshak_HOSHPAKDEAD_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_urshak_washastduvor) && Npc_IsDead(hosh_pak) && (URSHAK_SUCKED == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Urshak_WASHASTDUVOR) && Npc_IsDead(Hosh_Pak) && (URSHAK_SUCKED == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_urshak_hoshpakdead_info()
+func void DIA_Urshak_HOSHPAKDEAD_Info()
 {
 	AI_Output(other,self,"DIA_Urshak_HOSHPAKDEAD_15_00");	//Hosh-Pak nie ¿yje.
 	AI_Output(self,other,"DIA_Urshak_HOSHPAKDEAD_18_01");	//Hosh-Pak nie ¿yje? RUSHTASOK!
@@ -228,34 +228,34 @@ func void dia_urshak_hoshpakdead_info()
 	AI_Output(self,other,"DIA_Urshak_HOSHPAKDEAD_18_04");	//Ur-Shak musi nieœæ swój smutek. Musi pogrzebaæ Hosh-Pak. Ur-Shak musi ju¿ iœæ.
 	AI_Output(self,other,"DIA_Urshak_HOSHPAKDEAD_18_05");	//Przyjaciel lepiej iœæ na prze³êcz. Tu niebezpiecznie.
 	AI_Output(self,other,"DIA_Urshak_HOSHPAKDEAD_18_06");	//Ur-Shak bardzo smutny, jeœli przyjaciel-cz³owiek te¿ zgin¹æ.
-	b_logentry(TOPIC_URSHAK,"Hosh-Pak nie ¿yje. Mój orkowy przyjaciel zmierza do jego namiotów, pogr¹¿ony w ¿a³obie po swoim mentorze. Nie powinienem mu przeszkadzaæ.");
+	B_LogEntry(TOPIC_Urshak,"Hosh-Pak nie ¿yje. Mój orkowy przyjaciel zmierza do jego namiotów, pogr¹¿ony w ¿a³obie po swoim mentorze. Nie powinienem mu przeszkadzaæ.");
 	AI_StopProcessInfos(self);
 	Npc_SetRefuseTalk(self,20);
 	Npc_ExchangeRoutine(self,"Start");
-	Wld_InsertNpc(orcwarrior_rest,"FP_CAMPFIRE_HOSHPAK_01");
-	Wld_InsertNpc(orcwarrior_rest,"FP_CAMPFIRE_HOSHPAK_02");
+	Wld_InsertNpc(OrcWarrior_Rest,"FP_CAMPFIRE_HOSHPAK_01");
+	Wld_InsertNpc(OrcWarrior_Rest,"FP_CAMPFIRE_HOSHPAK_02");
 };
 
 
-instance DIA_URSHAK_GEH(C_INFO)
+instance DIA_Urshak_GEH(C_Info)
 {
-	npc = none_110_urshak;
-	condition = dia_urshak_geh_condition;
-	information = dia_urshak_geh_info;
+	npc = NONE_110_Urshak;
+	condition = DIA_Urshak_GEH_Condition;
+	information = DIA_Urshak_GEH_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_urshak_geh_condition()
+func int DIA_Urshak_GEH_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_urshak_hoshpakdead) && ((Npc_GetDistToWP(self,"OW_HOSHPAK_04") < 1000) == FALSE) && (Npc_RefuseTalk(self) == FALSE) && (URSHAK_SUCKED == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Urshak_HOSHPAKDEAD) && ((Npc_GetDistToWP(self,"OW_HOSHPAK_04") < 1000) == FALSE) && (Npc_RefuseTalk(self) == FALSE) && (URSHAK_SUCKED == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_urshak_geh_info()
+func void DIA_Urshak_GEH_Info()
 {
 	AI_Output(self,other,"DIA_Urshak_GEH_18_00");	//Przyjaciel lepiej iœæ przez prze³êcz.
 	Npc_SetRefuseTalk(self,10);
@@ -263,24 +263,24 @@ func void dia_urshak_geh_info()
 };
 
 
-instance DIA_URSHAK_HOSHPAKRACHE(C_INFO)
+instance DIA_Urshak_HOSHPAKRACHE(C_Info)
 {
-	npc = none_110_urshak;
-	condition = dia_urshak_hoshpakrache_condition;
-	information = dia_urshak_hoshpakrache_info;
+	npc = NONE_110_Urshak;
+	condition = DIA_Urshak_HOSHPAKRACHE_Condition;
+	information = DIA_Urshak_HOSHPAKRACHE_Info;
 	important = TRUE;
 };
 
 
-func int dia_urshak_hoshpakrache_condition()
+func int DIA_Urshak_HOSHPAKRACHE_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_urshak_hoshpakdead) && (Npc_GetDistToWP(self,"OW_HOSHPAK_04") <= 1000) && (URSHAK_SUCKED == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Urshak_HOSHPAKDEAD) && (Npc_GetDistToWP(self,"OW_HOSHPAK_04") <= 1000) && (URSHAK_SUCKED == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_urshak_hoshpakrache_info()
+func void DIA_Urshak_HOSHPAKRACHE_Info()
 {
 	AI_Output(self,other,"DIA_Urshak_HOSHPAKRACHE_18_00");	//KHROTOK! Ja wiem, ¿e ty by³, gdzie zabili Hosh-Pak. Du¿y b³¹d, obcy cz³owiek!
 	AI_Output(other,self,"DIA_Urshak_HOSHPAKRACHE_15_01");	//Widzê, ¿e zaj¹³eœ tu jego miejsce. Od pocz¹tku mn¹ manipulowa³eœ.
@@ -291,30 +291,30 @@ func void dia_urshak_hoshpakrache_info()
 	AI_Output(self,other,"DIA_Urshak_HOSHPAKRACHE_18_06");	//Nastêpnym razem bêdziemy wrogi. Ty ju¿ lepiej iœæ.
 	AI_StopProcessInfos(self);
 	URSHAK_SUCKED = TRUE;
-	b_logentry(TOPIC_URSHAK,"Rada orkowych szamanów ponownie przyjê³a w swe szeregi Ur-Shaka. Walczy on teraz po stronie wroga... Nie wiem, jak zareaguje na mój widok. Nie powinienem mu chyba wchodziæ w drogê, dopóki nie rozstrzygnê moich spraw z orkami - do tego czasu powinien siê ju¿ uspokoiæ.");
-	b_giveplayerxp(XP_URSHAKBECOMESSHAMAN);
+	B_LogEntry(TOPIC_Urshak,"Rada orkowych szamanów ponownie przyjê³a w swe szeregi Ur-Shaka. Walczy on teraz po stronie wroga... Nie wiem, jak zareaguje na mój widok. Nie powinienem mu chyba wchodziæ w drogê, dopóki nie rozstrzygnê moich spraw z orkami - do tego czasu powinien siê ju¿ uspokoiæ.");
+	B_GivePlayerXP(XP_UrshakBecomesShaman);
 };
 
 
-instance DIA_URSHAK_KEINEWAHL(C_INFO)
+instance DIA_Urshak_KEINEWAHL(C_Info)
 {
-	npc = none_110_urshak;
-	condition = dia_urshak_keinewahl_condition;
-	information = dia_urshak_keinewahl_info;
+	npc = NONE_110_Urshak;
+	condition = DIA_Urshak_KEINEWAHL_Condition;
+	information = DIA_Urshak_KEINEWAHL_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_urshak_keinewahl_condition()
+func int DIA_Urshak_KEINEWAHL_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_urshak_hoshpakrache) && Npc_IsInState(self,zs_talk))
+	if(Npc_KnowsInfo(other,DIA_Urshak_HOSHPAKRACHE) && Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_urshak_keinewahl_info()
+func void DIA_Urshak_KEINEWAHL_Info()
 {
 	AI_Output(self,other,"DIA_Urshak_KEINEWAHL_18_00");	//Ty iœæ. Nie rozmawiaæ z obcy.
 	AI_StopProcessInfos(self);

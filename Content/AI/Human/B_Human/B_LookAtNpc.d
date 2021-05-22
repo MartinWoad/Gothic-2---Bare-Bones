@@ -1,7 +1,7 @@
 
-func void b_stoplookat(var C_NPC slf)
+func void B_StopLookAt(var C_Npc slf)
 {
-	var C_NPC target;
+	var C_Npc target;
 	target = Npc_GetLookAtTarget(slf);
 	if(Hlp_IsValidNpc(target))
 	{
@@ -9,13 +9,13 @@ func void b_stoplookat(var C_NPC slf)
 	};
 };
 
-func void b_lookatnpc(var C_NPC slf,var C_NPC oth)
+func void B_LookAtNpc(var C_Npc slf,var C_Npc oth)
 {
-	b_stoplookat(slf);
+	B_StopLookAt(slf);
 	AI_LookAtNpc(slf,oth);
 };
 
-func void b_turntonpc(var C_NPC slf,var C_NPC oth)
+func void B_TurnToNpc(var C_Npc slf,var C_Npc oth)
 {
 	AI_TurnToNPC(slf,oth);
 };

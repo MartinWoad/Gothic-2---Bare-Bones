@@ -1,8 +1,8 @@
 
-func void zs_bandit()
+func void ZS_Bandit()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
@@ -11,7 +11,7 @@ func void zs_bandit()
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func int zs_bandit_loop()
+func int ZS_Bandit_loop()
 {
 	var int random;
 	if(self.aivar[AIV_TAPOSITION] == NOTINPOS)
@@ -35,7 +35,7 @@ func int zs_bandit_loop()
 		};
 		self.aivar[AIV_TAPOSITION] = ISINPOS;
 	};
-	if((Npc_GetStateTime(self) > 5) && (self.aivar[AIV_TAPOSITION] == ISINPOS) && !c_bodystatecontains(self,BS_SIT))
+	if((Npc_GetStateTime(self) > 5) && (self.aivar[AIV_TAPOSITION] == ISINPOS) && !C_BodyStateContains(self,BS_SIT))
 	{
 		random = Hlp_Random(3);
 		if(random == 0)
@@ -47,9 +47,9 @@ func int zs_bandit_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_bandit_end()
+func void ZS_Bandit_end()
 {
-	if(c_bodystatecontains(self,BS_SIT))
+	if(C_BodyStateContains(self,BS_SIT))
 	{
 		AI_PlayAniBS(self,"T_SIT_2_STAND",BS_STAND);
 	}

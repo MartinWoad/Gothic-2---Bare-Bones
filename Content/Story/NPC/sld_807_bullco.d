@@ -1,56 +1,56 @@
 
-instance SLD_807_BULLCO(NPC_DEFAULT)
+instance Sld_807_Bullco(Npc_Default)
 {
 	name[0] = "Bullko";
 	guild = GIL_SLD;
 	id = 807;
 	voice = 6;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_TOUGHGUYNEWSOVERRIDE] = TRUE;
-	aivar[AIV_IGNORE_SHEEPKILLER] = TRUE;
-	aivar[AIV_IGNORE_THEFT] = TRUE;
-	b_setattributestochapter(self,4);
+	npcType = npctype_main;
+	aivar[AIV_ToughGuyNewsOverride] = TRUE;
+	aivar[AIV_IGNORE_Sheepkiller] = TRUE;
+	aivar[AIV_IGNORE_Theft] = TRUE;
+	B_SetAttributesToChapter(self,4);
 	level = 24;
 	fight_tactic = FAI_HUMAN_MASTER;
-	EquipItem(self,itmw_1h_sld_axe);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_N_NORMAL_OLLI_KAHN,BODYTEX_N,4835);
+	EquipItem(self,ItMw_1h_Sld_Axe);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_N_Normal_Olli_Kahn,BodyTex_N,itar_sld_M);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Arrogance.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,50);
-	daily_routine = rtn_start_807;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,50);
+	daily_routine = Rtn_Start_807;
 };
 
 
-func void rtn_start_807()
+func void Rtn_Start_807()
 {
-	ta_sit_chair(8,0,22,0,"NW_BIGFARM_KITCHEN_SYLVIO");
-	ta_sit_chair(22,0,8,0,"NW_BIGFARM_KITCHEN_SYLVIO");
+	TA_Sit_Chair(8,0,22,0,"NW_BIGFARM_KITCHEN_SYLVIO");
+	TA_Sit_Chair(22,0,8,0,"NW_BIGFARM_KITCHEN_SYLVIO");
 };
 
-func void rtn_pee_807()
+func void Rtn_Pee_807()
 {
-	ta_pee(8,0,8,15,"NW_BIGFARM_TREE");
-	ta_sit_chair(8,15,10,0,"NW_BIGFARM_KITCHEN_SYLVIO");
-	ta_pee(10,0,10,15,"NW_BIGFARM_TREE");
-	ta_sit_chair(10,15,12,0,"NW_BIGFARM_KITCHEN_SYLVIO");
-	ta_pee(12,0,12,15,"NW_BIGFARM_TREE");
-	ta_sit_chair(12,15,14,0,"NW_BIGFARM_KITCHEN_SYLVIO");
-	ta_pee(14,0,14,15,"NW_BIGFARM_TREE");
-	ta_sit_chair(14,15,16,0,"NW_BIGFARM_KITCHEN_SYLVIO");
-	ta_pee(16,0,16,15,"NW_BIGFARM_TREE");
-	ta_sit_chair(16,15,18,0,"NW_BIGFARM_KITCHEN_SYLVIO");
-	ta_pee(18,0,18,15,"NW_BIGFARM_TREE");
-	ta_sit_chair(18,15,20,0,"NW_BIGFARM_KITCHEN_SYLVIO");
-	ta_pee(20,0,20,15,"NW_BIGFARM_TREE");
-	ta_sit_chair(20,15,8,0,"NW_BIGFARM_KITCHEN_SYLVIO");
+	TA_Pee(8,0,8,15,"NW_BIGFARM_TREE");
+	TA_Sit_Chair(8,15,10,0,"NW_BIGFARM_KITCHEN_SYLVIO");
+	TA_Pee(10,0,10,15,"NW_BIGFARM_TREE");
+	TA_Sit_Chair(10,15,12,0,"NW_BIGFARM_KITCHEN_SYLVIO");
+	TA_Pee(12,0,12,15,"NW_BIGFARM_TREE");
+	TA_Sit_Chair(12,15,14,0,"NW_BIGFARM_KITCHEN_SYLVIO");
+	TA_Pee(14,0,14,15,"NW_BIGFARM_TREE");
+	TA_Sit_Chair(14,15,16,0,"NW_BIGFARM_KITCHEN_SYLVIO");
+	TA_Pee(16,0,16,15,"NW_BIGFARM_TREE");
+	TA_Sit_Chair(16,15,18,0,"NW_BIGFARM_KITCHEN_SYLVIO");
+	TA_Pee(18,0,18,15,"NW_BIGFARM_TREE");
+	TA_Sit_Chair(18,15,20,0,"NW_BIGFARM_KITCHEN_SYLVIO");
+	TA_Pee(20,0,20,15,"NW_BIGFARM_TREE");
+	TA_Sit_Chair(20,15,8,0,"NW_BIGFARM_KITCHEN_SYLVIO");
 };
 
-func void rtn_tot_807()
+func void Rtn_Tot_807()
 {
-	ta_sleep(8,0,23,0,"TOT");
-	ta_sleep(23,0,8,0,"TOT");
+	TA_Sleep(8,0,23,0,"TOT");
+	TA_Sleep(23,0,8,0,"TOT");
 };
 

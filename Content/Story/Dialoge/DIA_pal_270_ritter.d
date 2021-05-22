@@ -1,52 +1,52 @@
 
-instance DIA_PAL_270_EXIT(C_INFO)
+instance DIA_PAL_270_EXIT(C_Info)
 {
-	npc = pal_270_ritter;
+	npc = PAL_270_Ritter;
 	nr = 999;
-	condition = dia_pal_270_exit_condition;
-	information = dia_pal_270_exit_info;
+	condition = DIA_PAL_270_EXIT_Condition;
+	information = DIA_PAL_270_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_pal_270_exit_condition()
+func int DIA_PAL_270_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pal_270_exit_info()
+func void DIA_PAL_270_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_RITTER_OUT(C_INFO)
+instance DIA_Ritter_OUT(C_Info)
 {
-	npc = pal_270_ritter;
-	condition = dia_ritter_out_condition;
-	information = dia_ritter_out_info;
+	npc = PAL_270_Ritter;
+	condition = DIA_Ritter_OUT_Condition;
+	information = DIA_Ritter_OUT_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-var int dia_ritter_out_noperm;
+var int DIA_Ritter_OUT_NoPerm;
 
-func int dia_ritter_out_condition()
+func int DIA_Ritter_OUT_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ritter_out_info()
+func void DIA_Ritter_OUT_Info()
 {
-	if(DIA_RITTER_OUT_NOPERM == FALSE)
+	if(DIA_Ritter_OUT_NoPerm == FALSE)
 	{
 		AI_Output(self,other,"DIA_Ritter_OUT_06_00");	//Przybywasz z Khorinis, prawda? Gdy to wszystko siê skoñczy, chcê tam powróciæ.
-		DIA_RITTER_OUT_NOPERM = TRUE;
+		DIA_Ritter_OUT_NoPerm = TRUE;
 	};
 	if(hero.guild == GIL_KDF)
 	{

@@ -1,39 +1,39 @@
 
-instance PAL_200_HAGEN(NPC_DEFAULT)
+instance PAL_200_Hagen(Npc_Default)
 {
 	name[0] = "Lord Hagen";
 	guild = GIL_PAL;
 	id = 200;
 	voice = 4;
 	flags = NPC_FLAG_IMMORTAL;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	aivar[AIV_TOUGHGUYNEWSOVERRIDE] = TRUE;
-	aivar[AIV_IGNORE_MURDER] = TRUE;
-	aivar[AIV_IGNORE_THEFT] = TRUE;
-	aivar[AIV_IGNORE_SHEEPKILLER] = TRUE;
-	b_setattributestochapter(self,6);
+	npcType = npctype_main;
+	aivar[AIV_ToughGuy] = TRUE;
+	aivar[AIV_ToughGuyNewsOverride] = TRUE;
+	aivar[AIV_IGNORE_Murder] = TRUE;
+	aivar[AIV_IGNORE_Theft] = TRUE;
+	aivar[AIV_IGNORE_Sheepkiller] = TRUE;
+	B_SetAttributesToChapter(self,6);
 	fight_tactic = FAI_HUMAN_MASTER;
-	EquipItem(self,itmw_2h_pal_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fighter",FACE_N_TOUGH_OKYL,BODYTEX_N,4829);
+	EquipItem(self,ItMw_2h_Pal_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_Tough_Okyl,BodyTex_N,ItAr_PAl_H);
 	Mdl_SetModelFatness(self,1.5);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,80);
-	daily_routine = rtn_start_200;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,80);
+	daily_routine = Rtn_Start_200;
 };
 
 
-func void rtn_start_200()
+func void Rtn_Start_200()
 {
-	ta_stand_armscrossed(8,0,20,0,"NW_CITY_HAGEN");
-	ta_stand_armscrossed(20,0,8,0,"NW_CITY_HAGEN");
+	TA_Stand_ArmsCrossed(8,0,20,0,"NW_CITY_HAGEN");
+	TA_Stand_ArmsCrossed(20,0,8,0,"NW_CITY_HAGEN");
 };
 
-func void rtn_shipfree_200()
+func void Rtn_ShipFree_200()
 {
-	ta_stand_guarding(8,0,23,0,"NW_CITY_UPTOWNPARADE_HAGEN");
-	ta_stand_guarding(23,0,8,0,"NW_CITY_UPTOWNPARADE_HAGEN");
+	TA_Stand_Guarding(8,0,23,0,"NW_CITY_UPTOWNPARADE_HAGEN");
+	TA_Stand_Guarding(23,0,8,0,"NW_CITY_UPTOWNPARADE_HAGEN");
 };
 

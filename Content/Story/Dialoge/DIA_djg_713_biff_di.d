@@ -1,48 +1,48 @@
 
-instance DIA_BIFF_DI_EXIT(C_INFO)
+instance DIA_Biff_DI_EXIT(C_Info)
 {
-	npc = djg_713_biff_di;
+	npc = DJG_713_Biff_DI;
 	nr = 999;
-	condition = dia_biff_di_exit_condition;
-	information = dia_biff_di_exit_info;
+	condition = DIA_Biff_DI_EXIT_Condition;
+	information = DIA_Biff_DI_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_biff_di_exit_condition()
+func int DIA_Biff_DI_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_biff_di_exit_info()
+func void DIA_Biff_DI_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BIFF_DI_HALLO(C_INFO)
+instance DIA_Biff_DI_HALLO(C_Info)
 {
-	npc = djg_713_biff_di;
+	npc = DJG_713_Biff_DI;
 	nr = 10;
-	condition = dia_biff_di_hallo_condition;
-	information = dia_biff_di_hallo_info;
+	condition = DIA_Biff_DI_HALLO_Condition;
+	information = DIA_Biff_DI_HALLO_Info;
 	important = TRUE;
 };
 
 
-func int dia_biff_di_hallo_condition()
+func int DIA_Biff_DI_HALLO_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (Npc_IsDead(undeaddragon) == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (Npc_IsDead(UndeadDragon) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_biff_di_hallo_info()
+func void DIA_Biff_DI_HALLO_Info()
 {
 	AI_Output(self,other,"DIA_Biff_DI_HALLO_07_00");	//No i? Gdzie s¹ te bogactwa, które mi obiecywa³eœ?
-	if(Npc_KnowsInfo(other,dia_biff_di_orks) == FALSE)
+	if(Npc_KnowsInfo(other,DIA_Biff_DI_ORKS) == FALSE)
 	{
 		AI_Output(other,self,"DIA_Biff_DI_HALLO_15_01");	//A co ci mówi³em wczeœniej, na morzu?
 	};
@@ -53,26 +53,26 @@ func void dia_biff_di_hallo_info()
 };
 
 
-instance DIA_BIFF_DI_PERM(C_INFO)
+instance DIA_Biff_DI_perm(C_Info)
 {
-	npc = djg_713_biff_di;
+	npc = DJG_713_Biff_DI;
 	nr = 5;
-	condition = dia_biff_di_perm_condition;
-	information = dia_biff_di_perm_info;
+	condition = DIA_Biff_DI_perm_Condition;
+	information = DIA_Biff_DI_perm_Info;
 	permanent = TRUE;
 	description = "Wszystko w porz¹dku na pok³adzie?";
 };
 
 
-func int dia_biff_di_perm_condition()
+func int DIA_Biff_DI_perm_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_biff_di_hallo) && (Npc_IsDead(undeaddragon) == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Biff_DI_HALLO) && (Npc_IsDead(UndeadDragon) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_biff_di_perm_info()
+func void DIA_Biff_DI_perm_Info()
 {
 	AI_Output(other,self,"DIA_Biff_DI_perm_15_00");	//Wszystko w porz¹dku na pok³adzie?
 	AI_Output(self,other,"DIA_Biff_DI_perm_07_01");	//Taa, taa. Wszystko w porz¹dku.
@@ -80,54 +80,54 @@ func void dia_biff_di_perm_info()
 };
 
 
-instance DIA_BIFF_DI_ORKS(C_INFO)
+instance DIA_Biff_DI_ORKS(C_Info)
 {
-	npc = djg_713_biff_di;
+	npc = DJG_713_Biff_DI;
 	nr = 5;
-	condition = dia_biff_di_orks_condition;
-	information = dia_biff_di_orks_info;
+	condition = DIA_Biff_DI_ORKS_Condition;
+	information = DIA_Biff_DI_ORKS_Info;
 	important = TRUE;
 };
 
 
-func int dia_biff_di_orks_condition()
+func int DIA_Biff_DI_ORKS_Condition()
 {
-	if((Npc_GetDistToWP(self,"DI_SHIP_03") < 1000) && (ORKSTURMDI == TRUE) && (Npc_IsDead(undeaddragon) == FALSE))
+	if((Npc_GetDistToWP(self,"DI_SHIP_03") < 1000) && (ORkSturmDI == TRUE) && (Npc_IsDead(UndeadDragon) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_biff_di_orks_info()
+func void DIA_Biff_DI_ORKS_Info()
 {
 	AI_Output(self,other,"DIA_Biff_DI_ORKS_07_00");	//Te parszywe bestie!
 	AI_Output(other,self,"DIA_Biff_DI_ORKS_15_01");	//Do diab³a, co tu robisz? Mia³eœ pilnowaæ statku.
 	AI_Output(self,other,"DIA_Biff_DI_ORKS_07_02");	//Nie utonie przez te parê chwil, stary.
-	b_giveplayerxp(XP_AMBIENT);
+	B_GivePlayerXP(XP_Ambient);
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
 };
 
 
-instance DIA_BIFF_DI_UNDEADDRGDEAD(C_INFO)
+instance DIA_Biff_DI_UNDEADDRGDEAD(C_Info)
 {
-	npc = djg_713_biff_di;
+	npc = DJG_713_Biff_DI;
 	nr = 4;
-	condition = dia_biff_di_undeaddrgdead_condition;
-	information = dia_biff_di_undeaddrgdead_info;
+	condition = DIA_Biff_DI_UNDEADDRGDEAD_Condition;
+	information = DIA_Biff_DI_UNDEADDRGDEAD_Info;
 	important = TRUE;
 };
 
 
-func int dia_biff_di_undeaddrgdead_condition()
+func int DIA_Biff_DI_UNDEADDRGDEAD_Condition()
 {
-	if(Npc_IsDead(undeaddragon))
+	if(Npc_IsDead(UndeadDragon))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_biff_di_undeaddrgdead_info()
+func void DIA_Biff_DI_UNDEADDRGDEAD_Info()
 {
 	AI_Output(self,other,"DIA_Biff_DI_UNDEADDRGDEAD_07_00");	//Czyli to wszystko?
 	AI_Output(other,self,"DIA_Biff_DI_UNDEADDRGDEAD_15_01");	//Na razie to wszystko.
@@ -139,62 +139,62 @@ func void dia_biff_di_undeaddrgdead_info()
 };
 
 
-instance DIA_BIFF_DI_PLUNDER(C_INFO)
+instance DIA_Biff_DI_plunder(C_Info)
 {
-	npc = djg_713_biff_di;
+	npc = DJG_713_Biff_DI;
 	nr = 5;
-	condition = dia_biff_di_plunder_condition;
-	information = dia_biff_di_plunder_info;
+	condition = DIA_Biff_DI_plunder_Condition;
+	information = DIA_Biff_DI_plunder_Info;
 	important = TRUE;
 };
 
 
-func int dia_biff_di_plunder_condition()
+func int DIA_Biff_DI_plunder_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && Npc_KnowsInfo(other,dia_biff_di_plunder) && Npc_IsDead(undeaddragon))
+	if(Npc_IsInState(self,ZS_Talk) && Npc_KnowsInfo(other,DIA_Biff_DI_plunder) && Npc_IsDead(UndeadDragon))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_biff_di_plunder_info()
+func void DIA_Biff_DI_plunder_Info()
 {
 	AI_Output(self,other,"DIA_Biff_DI_plunder_07_00");	//Do diab³a. Nie teraz.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BIFF_DI_PICKPOCKET(C_INFO)
+instance DIA_Biff_DI_PICKPOCKET(C_Info)
 {
-	npc = djg_713_biff_di;
+	npc = DJG_713_Biff_DI;
 	nr = 900;
-	condition = dia_biff_di_pickpocket_condition;
-	information = dia_biff_di_pickpocket_info;
+	condition = DIA_Biff_DI_PICKPOCKET_Condition;
+	information = DIA_Biff_DI_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_100;
+	description = Pickpocket_100;
 };
 
 
-func int dia_biff_di_pickpocket_condition()
+func int DIA_Biff_DI_PICKPOCKET_Condition()
 {
-	return c_beklauen(92,450);
+	return C_Beklauen(92,450);
 };
 
-func void dia_biff_di_pickpocket_info()
+func void DIA_Biff_DI_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_biff_di_pickpocket);
-	Info_AddChoice(dia_biff_di_pickpocket,DIALOG_BACK,dia_biff_di_pickpocket_back);
-	Info_AddChoice(dia_biff_di_pickpocket,DIALOG_PICKPOCKET,dia_biff_di_pickpocket_doit);
+	Info_ClearChoices(DIA_Biff_DI_PICKPOCKET);
+	Info_AddChoice(DIA_Biff_DI_PICKPOCKET,Dialog_Back,DIA_Biff_DI_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Biff_DI_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Biff_DI_PICKPOCKET_DoIt);
 };
 
-func void dia_biff_di_pickpocket_doit()
+func void DIA_Biff_DI_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_biff_di_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Biff_DI_PICKPOCKET);
 };
 
-func void dia_biff_di_pickpocket_back()
+func void DIA_Biff_DI_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_biff_di_pickpocket);
+	Info_ClearChoices(DIA_Biff_DI_PICKPOCKET);
 };
 

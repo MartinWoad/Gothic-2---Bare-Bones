@@ -1,27 +1,27 @@
 
-instance VLK_4200_BUERGERIN(NPC_DEFAULT)
+instance VLK_4200_Buergerin(Npc_Default)
 {
-	name[0] = NAME_BUERGERIN;
+	name[0] = NAME_Buergerin;
 	guild = GIL_VLK;
 	id = 4200;
 	voice = 17;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,1);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	b_createambientinv(self);
-	b_setnpcvisual(self,FEMALE,"Hum_Head_Babe",FACEBABE_N_PINKHAIR,BODYTEX_N,4825);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,FEMALE,"Hum_Head_Babe",FaceBabe_N_PinkHair,BodyTex_N,ITAR_VlkBabe_H);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Tired.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_4200;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_4200;
 };
 
 
-func void rtn_start_4200()
+func void Rtn_Start_4200()
 {
-	ta_smalltalk(8,0,22,0,"NW_CITY_MAINSTREET_05_B");
-	ta_sleep(22,0,8,0,"NW_CITY_UPTOWN_PATH_08");
+	TA_Smalltalk(8,0,22,0,"NW_CITY_MAINSTREET_05_B");
+	TA_Sleep(22,0,8,0,"NW_CITY_UPTOWN_PATH_08");
 };
 

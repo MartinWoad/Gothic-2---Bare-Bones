@@ -1,109 +1,109 @@
 
-instance DIA_BRIAN_EXIT(C_INFO)
+instance DIA_Brian_EXIT(C_Info)
 {
-	npc = vlk_457_brian;
+	npc = VLK_457_Brian;
 	nr = 999;
-	condition = dia_brian_exit_condition;
-	information = dia_brian_exit_info;
+	condition = DIA_Brian_EXIT_Condition;
+	information = DIA_Brian_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_brian_exit_condition()
+func int DIA_Brian_EXIT_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_brian_exit_info()
+func void DIA_Brian_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BRIAN_PICKPOCKET(C_INFO)
+instance DIA_Brian_PICKPOCKET(C_Info)
 {
-	npc = vlk_457_brian;
+	npc = VLK_457_Brian;
 	nr = 900;
-	condition = dia_brian_pickpocket_condition;
-	information = dia_brian_pickpocket_info;
+	condition = DIA_Brian_PICKPOCKET_Condition;
+	information = DIA_Brian_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_brian_pickpocket_condition()
+func int DIA_Brian_PICKPOCKET_Condition()
 {
-	return c_beklauen(55,100);
+	return C_Beklauen(55,100);
 };
 
-func void dia_brian_pickpocket_info()
+func void DIA_Brian_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_brian_pickpocket);
-	Info_AddChoice(dia_brian_pickpocket,DIALOG_BACK,dia_brian_pickpocket_back);
-	Info_AddChoice(dia_brian_pickpocket,DIALOG_PICKPOCKET,dia_brian_pickpocket_doit);
+	Info_ClearChoices(DIA_Brian_PICKPOCKET);
+	Info_AddChoice(DIA_Brian_PICKPOCKET,Dialog_Back,DIA_Brian_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Brian_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Brian_PICKPOCKET_DoIt);
 };
 
-func void dia_brian_pickpocket_doit()
+func void DIA_Brian_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_brian_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Brian_PICKPOCKET);
 };
 
-func void dia_brian_pickpocket_back()
+func void DIA_Brian_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_brian_pickpocket);
+	Info_ClearChoices(DIA_Brian_PICKPOCKET);
 };
 
 
-instance DIA_BRIAN_HALLO(C_INFO)
+instance DIA_Brian_HALLO(C_Info)
 {
-	npc = vlk_457_brian;
+	npc = VLK_457_Brian;
 	nr = 1;
-	condition = dia_brian_hallo_condition;
-	information = dia_brian_hallo_info;
+	condition = DIA_Brian_HALLO_Condition;
+	information = DIA_Brian_HALLO_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_brian_hallo_condition()
+func int DIA_Brian_HALLO_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (self.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (self.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_brian_hallo_info()
+func void DIA_Brian_HALLO_Info()
 {
 	AI_Output(self,other,"DIA_Brian_HALLO_04_00");	//Nowa twarz w mieœcie, co? Nazywam siê Brian! Jestem  czeladnikiem mistrza Harada.
 };
 
 
-instance DIA_BRIAN_ABOUTLEHRLING(C_INFO)
+instance DIA_Brian_AboutLehrling(C_Info)
 {
-	npc = vlk_457_brian;
+	npc = VLK_457_Brian;
 	nr = 1;
-	condition = dia_brian_aboutlehrling_condition;
-	information = dia_brian_aboutlehrling_info;
+	condition = DIA_Brian_AboutLehrling_Condition;
+	information = DIA_Brian_AboutLehrling_Info;
 	permanent = FALSE;
 	description = "Jak to jest byæ czeladnikiem u kowala?";
 };
 
 
-func int dia_brian_aboutlehrling_condition()
+func int DIA_Brian_AboutLehrling_Condition()
 {
-	if((hero.guild == GIL_NONE) && (PLAYER_ISAPPRENTICE == APP_NONE))
+	if((hero.guild == GIL_NONE) && (Player_IsApprentice == APP_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_brian_aboutlehrling_info()
+func void DIA_Brian_AboutLehrling_Info()
 {
 	AI_Output(other,self,"DIA_Brian_AboutLehrling_15_00");	//Jak to jest byæ czeladnikiem u kowala?
 	AI_Output(self,other,"DIA_Brian_AboutLehrling_04_01");	//Dlaczego pytasz? Chcesz zostaæ moim nastêpc¹?
@@ -113,26 +113,26 @@ func void dia_brian_aboutlehrling_info()
 };
 
 
-instance DIA_BRIAN_WHYLEAVE(C_INFO)
+instance DIA_Brian_WhyLeave(C_Info)
 {
-	npc = vlk_457_brian;
+	npc = VLK_457_Brian;
 	nr = 1;
-	condition = dia_brian_whyleave_condition;
-	information = dia_brian_whyleave_info;
+	condition = DIA_Brian_WhyLeave_Condition;
+	information = DIA_Brian_WhyLeave_Info;
 	permanent = FALSE;
 	description = "Dlaczego chcesz wyjechaæ z miasta?";
 };
 
 
-func int dia_brian_whyleave_condition()
+func int DIA_Brian_WhyLeave_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_brian_aboutlehrling))
+	if(Npc_KnowsInfo(other,DIA_Brian_AboutLehrling))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_brian_whyleave_info()
+func void DIA_Brian_WhyLeave_Info()
 {
 	AI_Output(other,self,"DIA_Brian_WhyLeave_15_00");	//Dlaczego chcesz wyjechaæ z miasta?
 	AI_Output(self,other,"DIA_Brian_WhyLeave_04_00");	//Bo tutejsi mieszkañcy dzia³aj¹ mi na nerwy! Nie wspominaj¹c o pozosta³ych mistrzach.
@@ -142,26 +142,26 @@ func void dia_brian_whyleave_info()
 };
 
 
-instance DIA_BRIAN_OTHERMASTERS(C_INFO)
+instance DIA_Brian_OtherMasters(C_Info)
 {
-	npc = vlk_457_brian;
+	npc = VLK_457_Brian;
 	nr = 1;
-	condition = dia_brian_othermasters_condition;
-	information = dia_brian_othermasters_info;
+	condition = DIA_Brian_OtherMasters_Condition;
+	information = DIA_Brian_OtherMasters_Info;
 	permanent = FALSE;
 	description = "Kim s¹ pozostali mistrzowie?";
 };
 
 
-func int dia_brian_othermasters_condition()
+func int DIA_Brian_OtherMasters_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_brian_whyleave) && (PLAYER_ISAPPRENTICE == APP_NONE))
+	if(Npc_KnowsInfo(other,DIA_Brian_WhyLeave) && (Player_IsApprentice == APP_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_brian_othermasters_info()
+func void DIA_Brian_OtherMasters_Info()
 {
 	AI_Output(other,self,"DIA_Brian_Add_15_00");	//Kim s¹ pozostali mistrzowie?
 	AI_Output(self,other,"DIA_Brian_Add_04_01");	//Jest Thorben - stolarz, Bosper - ³uczarz, Constantino - alchemik i Matteo.
@@ -171,26 +171,26 @@ func void dia_brian_othermasters_info()
 };
 
 
-instance DIA_BRIAN_ABOUTHARAD(C_INFO)
+instance DIA_Brian_AboutHarad(C_Info)
 {
-	npc = vlk_457_brian;
+	npc = VLK_457_Brian;
 	nr = 2;
-	condition = dia_brian_aboutharad_condition;
-	information = dia_brian_aboutharad_info;
+	condition = DIA_Brian_AboutHarad_Condition;
+	information = DIA_Brian_AboutHarad_Info;
 	permanent = FALSE;
 	description = "Powiedz mi coœ wiêcej o Mistrzu Haradzie.";
 };
 
 
-func int dia_brian_aboutharad_condition()
+func int DIA_Brian_AboutHarad_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_brian_aboutlehrling))
+	if(Npc_KnowsInfo(other,DIA_Brian_AboutLehrling))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_brian_aboutharad_info()
+func void DIA_Brian_AboutHarad_Info()
 {
 	AI_Output(other,self,"DIA_Brian_AboutHarad_15_00");	//Powiedz mi coœ wiêcej o Mistrzu Haradzie.
 	AI_Output(self,other,"DIA_Brian_AboutHarad_04_01");	//Jest teraz w kiepskim humorze.
@@ -200,23 +200,23 @@ func void dia_brian_aboutharad_info()
 };
 
 
-instance DIA_BRIAN_NEEDWEAPONS(C_INFO)
+instance DIA_Brian_NEEDWEAPONS(C_Info)
 {
-	npc = vlk_457_brian;
+	npc = VLK_457_Brian;
 	nr = 4;
-	condition = dia_brian_needweapons_condition;
-	information = dia_brian_needweapons_info;
+	condition = DIA_Brian_NEEDWEAPONS_Condition;
+	information = DIA_Brian_NEEDWEAPONS_Info;
 	permanent = FALSE;
 	description = "Mogê od ciebie kupiæ broñ?";
 };
 
 
-func int dia_brian_needweapons_condition()
+func int DIA_Brian_NEEDWEAPONS_Condition()
 {
 	return TRUE;
 };
 
-func void dia_brian_needweapons_info()
+func void DIA_Brian_NEEDWEAPONS_Info()
 {
 	AI_Output(other,self,"DIA_Brian_NEEDWEAPONS_15_00");	//Mogê od ciebie kupiæ broñ?
 	AI_Output(self,other,"DIA_Brian_NEEDWEAPONS_04_01");	//Raczej nie. Jestem tylko czeladnikiem.
@@ -225,36 +225,36 @@ func void dia_brian_needweapons_info()
 };
 
 
-var int brian_trade_einmal;
+var int Brian_Trade_einmal;
 
-instance DIA_BRIAN_WASKAUFEN(C_INFO)
+instance DIA_Brian_WASKAUFEN(C_Info)
 {
-	npc = vlk_457_brian;
+	npc = VLK_457_Brian;
 	nr = 4;
-	condition = dia_brian_waskaufen_condition;
-	information = dia_brian_waskaufen_info;
+	condition = DIA_Brian_WASKAUFEN_Condition;
+	information = DIA_Brian_WASKAUFEN_Info;
 	permanent = TRUE;
 	description = "Co mogê u ciebie dostaæ?";
 	trade = TRUE;
 };
 
 
-func int dia_brian_waskaufen_condition()
+func int DIA_Brian_WASKAUFEN_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_brian_needweapons))
+	if(Npc_KnowsInfo(other,DIA_Brian_NEEDWEAPONS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_brian_waskaufen_info()
+func void DIA_Brian_WASKAUFEN_Info()
 {
 	AI_Output(other,self,"DIA_Brian_WASKAUFEN_15_00");	//Co mogê u ciebie dostaæ?
-	b_givetradeinv(self);
-	if(Npc_IsDead(harad))
+	B_GiveTradeInv(self);
+	if(Npc_IsDead(Harad))
 	{
 		AI_Output(self,other,"DIA_Brian_WASKAUFEN_04_01");	//Wci¹¿ mam jeszcze kilka stalowych prêtów, jeœli chcesz, mog¹ byæ twoje.
-		if(MIS_JACK_NEWLIGHTHOUSEOFFICER == 0)
+		if(MIS_Jack_NewLighthouseOfficer == 0)
 		{
 			AI_Output(self,other,"DIA_Brian_WASKAUFEN_04_02");	//Odk¹d Harada ju¿ tu nie ma, stra¿ ca³y czas mnie obserwuje.
 			AI_Output(self,other,"DIA_Brian_WASKAUFEN_04_03");	//Nie wolno mi prowadziæ kuŸni. Boj¹ siê, ¿e sprzedam wszystko i ucieknê.
@@ -264,141 +264,141 @@ func void dia_brian_waskaufen_info()
 	{
 		AI_Output(self,other,"DIA_Brian_WASKAUFEN_04_05");	//Mogê ci sprzedaæ kilka stalowych prêtów.
 	};
-	if(BRIAN_TRADE_EINMAL == FALSE)
+	if(Brian_Trade_einmal == FALSE)
 	{
-		Log_CreateTopic(TOPIC_CITYTRADER,LOG_NOTE);
-		b_logentry(TOPIC_CITYTRADER,"Brian, asystent Harada, sprzedaje stalowe prêty.");
-		BRIAN_TRADE_EINMAL = TRUE;
+		Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
+		B_LogEntry(TOPIC_CityTrader,"Brian, asystent Harada, sprzedaje stalowe prêty.");
+		Brian_Trade_einmal = TRUE;
 	};
-	Npc_RemoveInvItems(self,itmiswordblade,Npc_HasItems(self,itmiswordblade));
+	Npc_RemoveInvItems(self,ItMiSwordblade,Npc_HasItems(self,ItMiSwordblade));
 };
 
 
-instance DIA_BRIAN_KAP3_EXIT(C_INFO)
+instance DIA_Brian_KAP3_EXIT(C_Info)
 {
-	npc = vlk_457_brian;
+	npc = VLK_457_Brian;
 	nr = 999;
-	condition = dia_brian_kap3_exit_condition;
-	information = dia_brian_kap3_exit_info;
+	condition = DIA_Brian_KAP3_EXIT_Condition;
+	information = DIA_Brian_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_brian_kap3_exit_condition()
+func int DIA_Brian_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_brian_kap3_exit_info()
+func void DIA_Brian_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BRIAN_REPAIRNECKLACE(C_INFO)
+instance DIA_Brian_RepairNecklace(C_Info)
 {
-	npc = vlk_457_brian;
+	npc = VLK_457_Brian;
 	nr = 8;
-	condition = dia_brian_repairnecklace_condition;
-	information = dia_brian_repairnecklace_info;
+	condition = DIA_Brian_RepairNecklace_Condition;
+	information = DIA_Brian_RepairNecklace_Info;
 	permanent = FALSE;
 	description = "Potrafisz naprawiæ bi¿uteriê?";
 };
 
 
-func int dia_brian_repairnecklace_condition()
+func int DIA_Brian_RepairNecklace_Condition()
 {
-	if((MIS_BENNET_INNOSEYEREPAIREDSETTING != LOG_SUCCESS) && (Npc_HasItems(other,itmi_innoseye_broken_mis) || (MIS_SCKNOWSINNOSEYEISBROKEN == TRUE)))
+	if((MIS_Bennet_InnosEyeRepairedSetting != LOG_SUCCESS) && (Npc_HasItems(other,ItMi_InnosEye_Broken_Mis) || (MIS_SCKnowsInnosEyeIsBroken == TRUE)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_brian_repairnecklace_info()
+func void DIA_Brian_RepairNecklace_Info()
 {
 	AI_Output(other,self,"DIA_Brian_RepairNecklace_15_00");	//Potrafisz naprawiæ bi¿uteriê?
 	AI_Output(self,other,"DIA_Brian_RepairNecklace_04_01");	//Jestem tylko czeladnikiem. Cieszê siê, gdy pozwol¹ mi zrobiæ choæ sztylet.
-	if(Npc_IsDead(harad) == FALSE)
+	if(Npc_IsDead(Harad) == FALSE)
 	{
 		AI_Output(self,other,"DIA_Brian_RepairNecklace_04_02");	//Bi¿uteriê? Musisz zapytaæ mistrza.
 	};
-	MIS_SCKNOWSINNOSEYEISBROKEN = TRUE;
+	MIS_SCKnowsInnosEyeIsBroken = TRUE;
 };
 
 
-instance DIA_BRIAN_KAP4_EXIT(C_INFO)
+instance DIA_Brian_KAP4_EXIT(C_Info)
 {
-	npc = vlk_457_brian;
+	npc = VLK_457_Brian;
 	nr = 999;
-	condition = dia_brian_kap4_exit_condition;
-	information = dia_brian_kap4_exit_info;
+	condition = DIA_Brian_KAP4_EXIT_Condition;
+	information = DIA_Brian_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_brian_kap4_exit_condition()
+func int DIA_Brian_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_brian_kap4_exit_info()
+func void DIA_Brian_KAP4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BRIAN_KAP5_EXIT(C_INFO)
+instance DIA_Brian_KAP5_EXIT(C_Info)
 {
-	npc = vlk_457_brian;
+	npc = VLK_457_Brian;
 	nr = 999;
-	condition = dia_brian_kap5_exit_condition;
-	information = dia_brian_kap5_exit_info;
+	condition = DIA_Brian_KAP5_EXIT_Condition;
+	information = DIA_Brian_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_brian_kap5_exit_condition()
+func int DIA_Brian_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_brian_kap5_exit_info()
+func void DIA_Brian_KAP5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BRIAN_NEWLIGHTHOUSEOFFICER(C_INFO)
+instance DIA_Brian_NEWLIGHTHOUSEOFFICER(C_Info)
 {
-	npc = vlk_457_brian;
+	npc = VLK_457_Brian;
 	nr = 51;
-	condition = dia_brian_newlighthouseofficer_condition;
-	information = dia_brian_newlighthouseofficer_info;
+	condition = DIA_Brian_NEWLIGHTHOUSEOFFICER_Condition;
+	information = DIA_Brian_NEWLIGHTHOUSEOFFICER_Info;
 	description = "Podobno interesuje ciê stara latarnia morska Jacka.";
 };
 
 
-func int dia_brian_newlighthouseofficer_condition()
+func int DIA_Brian_NEWLIGHTHOUSEOFFICER_Condition()
 {
-	if((KAPITEL == 5) && (MIS_JACK_NEWLIGHTHOUSEOFFICER == LOG_RUNNING) && Npc_KnowsInfo(other,dia_brian_needweapons))
+	if((Kapitel == 5) && (MIS_Jack_NewLighthouseOfficer == LOG_Running) && Npc_KnowsInfo(other,DIA_Brian_NEEDWEAPONS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_brian_newlighthouseofficer_info()
+func void DIA_Brian_NEWLIGHTHOUSEOFFICER_Info()
 {
 	AI_Output(other,self,"DIA_Brian_NEWLIGHTHOUSEOFFICER_15_00");	//Podobno interesuje ciê stara latarnia morska Jacka.
 	AI_Output(other,self,"DIA_Brian_NEWLIGHTHOUSEOFFICER_15_01");	//Jack rozwa¿a mo¿liwoœæ powrotu na morze, ale wtedy jego latarnia by³aby niestrze¿ona.
@@ -406,32 +406,32 @@ func void dia_brian_newlighthouseofficer_info()
 	AI_Output(other,self,"DIA_Brian_NEWLIGHTHOUSEOFFICER_15_03");	//Jakiœ problem?
 	AI_Output(self,other,"DIA_Brian_NEWLIGHTHOUSEOFFICER_04_04");	//Nie dla mnie. Ja i tak nie dostanê kuŸni Harada. Ju¿ dawno przyj¹³em to do wiadomoœci.
 	AI_Output(self,other,"DIA_Brian_NEWLIGHTHOUSEOFFICER_04_05");	//Zgoda. Spotkamy siê u Jacka.
-	MIS_JACK_NEWLIGHTHOUSEOFFICER = LOG_SUCCESS;
+	MIS_Jack_NewLighthouseOfficer = LOG_SUCCESS;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Lighthouse");
 };
 
 
-instance DIA_BRIAN_LIGHTHOUSEFREE(C_INFO)
+instance DIA_Brian_LIGHTHOUSEFREE(C_Info)
 {
-	npc = vlk_457_brian;
+	npc = VLK_457_Brian;
 	nr = 8;
-	condition = dia_brian_lighthousefree_condition;
-	information = dia_brian_lighthousefree_info;
+	condition = DIA_Brian_LIGHTHOUSEFREE_Condition;
+	information = DIA_Brian_LIGHTHOUSEFREE_Info;
 	permanent = TRUE;
 	description = "I co ty na to?";
 };
 
 
-func int dia_brian_lighthousefree_condition()
+func int DIA_Brian_LIGHTHOUSEFREE_Condition()
 {
-	if((MIS_JACK_NEWLIGHTHOUSEOFFICER == LOG_SUCCESS) && (Npc_GetDistToWP(self,"NW_LIGHTHOUSE_IN_01") < 1000) && (KAPITEL == 5))
+	if((MIS_Jack_NewLighthouseOfficer == LOG_SUCCESS) && (Npc_GetDistToWP(self,"NW_LIGHTHOUSE_IN_01") < 1000) && (Kapitel == 5))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_brian_lighthousefree_info()
+func void DIA_Brian_LIGHTHOUSEFREE_Info()
 {
 	AI_Output(other,self,"DIA_Brian_LIGHTHOUSEFREE_15_00");	//I co ty na to?
 	AI_Output(self,other,"DIA_Brian_LIGHTHOUSEFREE_04_01");	//Ale ba³agan. Jak skoñczê, Jack nie rozpozna tego miejsca.

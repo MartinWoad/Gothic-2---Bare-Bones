@@ -1,35 +1,35 @@
 
-instance BAU_960_BENGAR(NPC_DEFAULT)
+instance BAU_960_Bengar(Npc_Default)
 {
 	name[0] = "Bengar";
 	guild = GIL_OUT;
 	id = 960;
 	voice = 10;
 	flags = NPC_FLAG_IMMORTAL;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,2);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,2);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_bau_axe);
-	EquipItem(self,itrw_sld_bow);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_NORMAL_OLLI_KAHN,BODYTEX_N,4831);
+	EquipItem(self,ItMw_1h_Bau_Axe);
+	EquipItem(self,ItRw_Sld_Bow);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Normal_Olli_Kahn,BodyTex_N,ITAR_Bau_M);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,25);
-	daily_routine = rtn_start_960;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,25);
+	daily_routine = Rtn_Start_960;
 };
 
 
-func void rtn_start_960()
+func void Rtn_Start_960()
 {
-	ta_stand_guarding(8,0,22,0,"NW_FARM3_BENGAR");
-	ta_stand_guarding(22,0,8,0,"NW_FARM3_BENGAR");
+	TA_Stand_Guarding(8,0,22,0,"NW_FARM3_BENGAR");
+	TA_Stand_Guarding(22,0,8,0,"NW_FARM3_BENGAR");
 };
 
-func void rtn_milcoming_960()
+func void Rtn_MilComing_960()
 {
-	ta_smalltalk(8,0,22,0,"NW_FARM3_BENGAR");
-	ta_smalltalk(22,0,8,0,"NW_FARM3_BENGAR");
+	TA_Smalltalk(8,0,22,0,"NW_FARM3_BENGAR");
+	TA_Smalltalk(22,0,8,0,"NW_FARM3_BENGAR");
 };
 

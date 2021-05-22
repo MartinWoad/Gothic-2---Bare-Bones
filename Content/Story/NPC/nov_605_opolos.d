@@ -1,34 +1,34 @@
 
-instance NOV_605_OPOLOS(NPC_DEFAULT)
+instance NOV_605_Opolos(Npc_Default)
 {
 	name[0] = "Opolos";
 	guild = GIL_NOV;
 	id = 605;
 	voice = 12;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,2);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,2);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_nov_mace);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fighter",FACE_B_TOUGH_SILAS,BODYTEX_B,4842);
+	EquipItem(self,ItMw_1h_Nov_Mace);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_B_Tough_Silas,BodyTex_B,ItAr_NOV_L);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Mage.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_605;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_605;
 };
 
 
-func void rtn_start_605()
+func void Rtn_Start_605()
 {
-	ta_stand_guarding(8,0,23,0,"NW_MONASTERY_SHEEP_05");
-	ta_stand_guarding(23,0,8,0,"NW_MONASTERY_SHEEP_05");
+	TA_Stand_Guarding(8,0,23,0,"NW_MONASTERY_SHEEP_05");
+	TA_Stand_Guarding(23,0,8,0,"NW_MONASTERY_SHEEP_05");
 };
 
-func void rtn_favour_605()
+func void Rtn_Favour_605()
 {
-	ta_read_bookstand(8,0,23,0,"NW_MONASTERY_RUNEMAKER_07");
-	ta_read_bookstand(23,0,8,0,"NW_MONASTERY_RUNEMAKER_07");
+	TA_Read_Bookstand(8,0,23,0,"NW_MONASTERY_RUNEMAKER_07");
+	TA_Read_Bookstand(23,0,8,0,"NW_MONASTERY_RUNEMAKER_07");
 };
 

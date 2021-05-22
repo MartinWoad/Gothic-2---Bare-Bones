@@ -1,94 +1,94 @@
 
-instance DIA_FERNANDO_EXIT(C_INFO)
+instance DIA_Fernando_EXIT(C_Info)
 {
-	npc = vlk_405_fernando;
+	npc = VLK_405_Fernando;
 	nr = 999;
-	condition = dia_fernando_exit_condition;
-	information = dia_fernando_exit_info;
+	condition = DIA_Fernando_EXIT_Condition;
+	information = DIA_Fernando_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_fernando_exit_condition()
+func int DIA_Fernando_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_fernando_exit_info()
+func void DIA_Fernando_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_FERNANDO_PICKPOCKET(C_INFO)
+instance DIA_Fernando_PICKPOCKET(C_Info)
 {
-	npc = vlk_405_fernando;
+	npc = VLK_405_Fernando;
 	nr = 900;
-	condition = dia_fernando_pickpocket_condition;
-	information = dia_fernando_pickpocket_info;
+	condition = DIA_Fernando_PICKPOCKET_Condition;
+	information = DIA_Fernando_PICKPOCKET_Info;
 	permanent = TRUE;
 	description = "(Kradzie¿ tego mieszka bêdzie ryzykownym zadaniem)";
 };
 
 
-func int dia_fernando_pickpocket_condition()
+func int DIA_Fernando_PICKPOCKET_Condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == FALSE) && (Npc_HasItems(self,itse_goldpocket100) >= 1) && (other.attribute[ATR_DEXTERITY] >= (50 - THEFTDIFF)))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_HasItems(self,ItSe_GoldPocket100) >= 1) && (other.attribute[ATR_DEXTERITY] >= (50 - Theftdiff)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fernando_pickpocket_info()
+func void DIA_Fernando_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_fernando_pickpocket);
-	Info_AddChoice(dia_fernando_pickpocket,DIALOG_BACK,dia_fernando_pickpocket_back);
-	Info_AddChoice(dia_fernando_pickpocket,DIALOG_PICKPOCKET,dia_fernando_pickpocket_doit);
+	Info_ClearChoices(DIA_Fernando_PICKPOCKET);
+	Info_AddChoice(DIA_Fernando_PICKPOCKET,Dialog_Back,DIA_Fernando_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Fernando_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Fernando_PICKPOCKET_DoIt);
 };
 
-func void dia_fernando_pickpocket_doit()
+func void DIA_Fernando_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 50)
 	{
-		b_giveinvitems(self,other,5606,1);
-		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
-		b_giveplayerxp(XP_AMBIENT);
-		Info_ClearChoices(dia_fernando_pickpocket);
+		B_GiveInvItems(self,other,ItSe_GoldPocket100,1);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+		B_GivePlayerXP(XP_Ambient);
+		Info_ClearChoices(DIA_Fernando_PICKPOCKET);
 	}
 	else
 	{
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_THEFT,1);
+		B_Attack(self,other,AR_Theft,1);
 	};
 };
 
-func void dia_fernando_pickpocket_back()
+func void DIA_Fernando_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_fernando_pickpocket);
+	Info_ClearChoices(DIA_Fernando_PICKPOCKET);
 };
 
 
-instance DIA_FERNANDO_HELLO(C_INFO)
+instance DIA_Fernando_Hello(C_Info)
 {
-	npc = vlk_405_fernando;
+	npc = VLK_405_Fernando;
 	nr = 5;
-	condition = dia_fernando_hello_condition;
-	information = dia_fernando_hello_info;
+	condition = DIA_Fernando_Hello_Condition;
+	information = DIA_Fernando_Hello_Info;
 	permanent = FALSE;
 	description = "Jak idzie interes?";
 };
 
 
-func int dia_fernando_hello_condition()
+func int DIA_Fernando_Hello_Condition()
 {
-	if(NPCOBSESSEDBYDMT_FERNANDO == FALSE)
+	if(NpcObsessedByDMT_Fernando == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fernando_hello_info()
+func void DIA_Fernando_Hello_Info()
 {
 	AI_Output(other,self,"DIA_Fernando_Hello_15_00");	//Jak interesy?
 	AI_Output(self,other,"DIA_Fernando_Hello_14_01");	//Nie za dobrze. Wszystko by³o du¿o ³atwiejsze, zanim zniknê³a Bariera.
@@ -98,29 +98,29 @@ func void dia_fernando_hello_info()
 };
 
 
-instance DIA_FERNANDO_PERM(C_INFO)
+instance DIA_Fernando_Perm(C_Info)
 {
-	npc = vlk_405_fernando;
+	npc = VLK_405_Fernando;
 	nr = 850;
-	condition = dia_fernando_perm_condition;
-	information = dia_fernando_perm_info;
+	condition = DIA_Fernando_Perm_Condition;
+	information = DIA_Fernando_Perm_Info;
 	permanent = TRUE;
 	description = "Z czego siê teraz utrzymujesz?";
 };
 
 
-func int dia_fernando_perm_condition()
+func int DIA_Fernando_Perm_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_fernando_hello) && (NPCOBSESSEDBYDMT_FERNANDO == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Fernando_Hello) && (NpcObsessedByDMT_Fernando == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fernando_perm_info()
+func void DIA_Fernando_Perm_Info()
 {
 	AI_Output(other,self,"DIA_Fernando_Perm_15_00");	//Z czego siê teraz utrzymujesz?
-	if(Npc_KnowsInfo(other,dia_fernando_success) == FALSE)
+	if(Npc_KnowsInfo(other,DIA_Fernando_Success) == FALSE)
 	{
 		AI_Output(self,other,"DIA_Fernando_Perm_14_01");	//Na razie ¿yjê z oszczêdnoœci. Jednak jeœli nie uda mi siê szybko stan¹æ na nogi, wkrótce bêdê mia³ powa¿ne problemy finansowe.
 	}
@@ -131,26 +131,26 @@ func void dia_fernando_perm_info()
 };
 
 
-instance DIA_FERNANDO_MINENTAL(C_INFO)
+instance DIA_Fernando_Minental(C_Info)
 {
-	npc = vlk_405_fernando;
+	npc = VLK_405_Fernando;
 	nr = 2;
-	condition = dia_fernando_minental_condition;
-	information = dia_fernando_minental_info;
+	condition = DIA_Fernando_Minental_Condition;
+	information = DIA_Fernando_Minental_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_fernando_minental_condition()
+func int DIA_Fernando_Minental_Condition()
 {
-	if((NPCOBSESSEDBYDMT_FERNANDO == FALSE) && (MIS_OLDWORLD == LOG_RUNNING) && (KAPITEL == 2) && (ENTEROW_KAPITEL2 == FALSE))
+	if((NpcObsessedByDMT_Fernando == FALSE) && (MIS_OLDWORLD == LOG_Running) && (Kapitel == 2) && (EnterOW_Kapitel2 == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fernando_minental_info()
+func void DIA_Fernando_Minental_Info()
 {
 	AI_Output(self,other,"DIA_Fernando_Minental_14_00");	//Ej, ty - zaczekaj chwilê. Podró¿ujesz do Górniczej Doliny, prawda?
 	AI_Output(other,self,"DIA_Fernando_Minental_15_01");	//Co w zwi¹zku z tym?
@@ -166,36 +166,36 @@ func void dia_fernando_minental_info()
 	AI_Output(other,self,"DIA_Fernando_Minental_15_05");	//Zobaczê, co da siê zrobiæ.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"START");
-	Log_CreateTopic(TOPIC_FERNANDO,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_FERNANDO,LOG_RUNNING);
-	b_logentry(TOPIC_FERNANDO,"Kupiec Fernando chce wiedzieæ, co dzieje siê z rud¹ w Górniczej Dolinie.");
+	Log_CreateTopic(TOPIC_Fernando,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Fernando,LOG_Running);
+	B_LogEntry(TOPIC_Fernando,"Kupiec Fernando chce wiedzieæ, co dzieje siê z rud¹ w Górniczej Dolinie.");
 };
 
 
-instance DIA_FERNANDO_SUCCESS(C_INFO)
+instance DIA_Fernando_Success(C_Info)
 {
-	npc = vlk_405_fernando;
+	npc = VLK_405_Fernando;
 	nr = 5;
-	condition = dia_fernando_success_condition;
-	information = dia_fernando_success_info;
+	condition = DIA_Fernando_Success_Condition;
+	information = DIA_Fernando_Success_Info;
 	permanent = FALSE;
 	description = "By³em w Górniczej Dolinie.";
 };
 
 
-func int dia_fernando_success_condition()
+func int DIA_Fernando_Success_Condition()
 {
-	if((NPCOBSESSEDBYDMT_FERNANDO == FALSE) && (KAPITEL >= 3) && Npc_KnowsInfo(other,dia_fernando_minental))
+	if((NpcObsessedByDMT_Fernando == FALSE) && (Kapitel >= 3) && Npc_KnowsInfo(other,DIA_Fernando_Minental))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fernando_success_info()
+func void DIA_Fernando_Success_Info()
 {
 	AI_Output(other,self,"DIA_Fernando_Success_15_00");	//By³em w Górniczej Dolinie.
-	FERNANDO_ERZ = TRUE;
-	b_giveplayerxp(XP_AMBIENT);
+	Fernando_Erz = TRUE;
+	B_GivePlayerXP(XP_Ambient);
 	AI_Output(self,other,"DIA_Fernando_Success_14_01");	//I co? Jak wygl¹da sytuacja?
 	AI_Output(other,self,"DIA_Fernando_Success_15_02");	//Z³o¿a siê wyczerpa³y, nie warto prowadziæ prac dla kilku skrzyñ rudy.
 	AI_Output(self,other,"DIA_Fernando_Success_14_03");	//To niemo¿liwe! A wiêc jestem zrujnowany...
@@ -204,29 +204,29 @@ func void dia_fernando_success_info()
 	if(other.guild == GIL_KDF)
 	{
 		AI_Output(self,other,"DIA_Fernando_Minental_14_06");	//Proszê, weŸ ten kamieñ runiczny.
-		b_giveinvitems(self,other,5086,1);
+		B_GiveInvItems(self,other,ItMi_RuneBlank,1);
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Fernando_Minental_14_07");	//Proszê, weŸ ten pierœcieñ.
-		b_giveinvitems(self,other,5374,1);
+		B_GiveInvItems(self,other,ItRi_Hp_02,1);
 	};
 };
 
 
-instance DIA_FERNANDO_OBSESSION(C_INFO)
+instance DIA_Fernando_Obsession(C_Info)
 {
-	npc = vlk_405_fernando;
+	npc = VLK_405_Fernando;
 	nr = 30;
-	condition = dia_fernando_obsession_condition;
-	information = dia_fernando_obsession_info;
+	condition = DIA_Fernando_Obsession_Condition;
+	information = DIA_Fernando_Obsession_Info;
 	description = "Wszystko w porz¹dku?";
 };
 
 
-func int dia_fernando_obsession_condition()
+func int DIA_Fernando_Obsession_Condition()
 {
-	if((KAPITEL >= 3) && (NPCOBSESSEDBYDMT_FERNANDO == FALSE) && (hero.guild == GIL_KDF))
+	if((Kapitel >= 3) && (NpcObsessedByDMT_Fernando == FALSE) && (hero.guild == GIL_KDF))
 	{
 		return TRUE;
 	};
@@ -235,35 +235,35 @@ func int dia_fernando_obsession_condition()
 
 var int dia_fernando_obsession_gotmoney;
 
-func void dia_fernando_obsession_info()
+func void DIA_Fernando_Obsession_Info()
 {
-	b_npcobsessedbydmt(self);
+	B_NpcObsessedByDMT(self);
 };
 
 
-instance DIA_FERNANDO_HEILUNG(C_INFO)
+instance DIA_Fernando_Heilung(C_Info)
 {
-	npc = vlk_405_fernando;
+	npc = VLK_405_Fernando;
 	nr = 55;
-	condition = dia_fernando_heilung_condition;
-	information = dia_fernando_heilung_info;
+	condition = DIA_Fernando_Heilung_Condition;
+	information = DIA_Fernando_Heilung_Info;
 	permanent = TRUE;
 	description = "Jesteœ opêtany!";
 };
 
 
-func int dia_fernando_heilung_condition()
+func int DIA_Fernando_Heilung_Condition()
 {
-	if((NPCOBSESSEDBYDMT_FERNANDO == TRUE) && (NPCOBSESSEDBYDMT == FALSE) && (hero.guild == GIL_KDF))
+	if((NpcObsessedByDMT_Fernando == TRUE) && (NpcObsessedByDMT == FALSE) && (hero.guild == GIL_KDF))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_fernando_heilung_info()
+func void DIA_Fernando_Heilung_Info()
 {
 	AI_Output(other,self,"DIA_Fernando_Heilung_15_00");	//Jesteœ opêtany!
 	AI_Output(self,other,"DIA_Fernando_Heilung_14_01");	//IdŸ. No idŸ wreszcie!
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 

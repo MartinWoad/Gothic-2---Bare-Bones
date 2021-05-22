@@ -1,73 +1,73 @@
 
-instance DIA_GARWIG_EXIT(C_INFO)
+instance DIA_Garwig_EXIT(C_Info)
 {
-	npc = nov_608_garwig;
+	npc = Nov_608_Garwig;
 	nr = 999;
-	condition = dia_garwig_exit_condition;
-	information = dia_garwig_exit_info;
+	condition = DIA_Garwig_EXIT_Condition;
+	information = DIA_Garwig_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_garwig_exit_condition()
+func int DIA_Garwig_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_garwig_exit_info()
+func void DIA_Garwig_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_GARWIG_WURST(C_INFO)
+instance DIA_Garwig_Wurst(C_Info)
 {
-	npc = nov_608_garwig;
+	npc = Nov_608_Garwig;
 	nr = 3;
-	condition = dia_garwig_wurst_condition;
-	information = dia_garwig_wurst_info;
+	condition = DIA_Garwig_Wurst_Condition;
+	information = DIA_Garwig_Wurst_Info;
 	permanent = FALSE;
 	description = "Chcesz spróbowaæ kie³basy?";
 };
 
 
-func int dia_garwig_wurst_condition()
+func int DIA_Garwig_Wurst_Condition()
 {
-	if((KAPITEL < 3) && (MIS_GORAXESSEN == LOG_RUNNING) && (Npc_HasItems(self,itfo_schafswurst) == 0) && (Npc_HasItems(other,itfo_schafswurst) >= 1))
+	if((Kapitel < 3) && (MIS_GoraxEssen == LOG_Running) && (Npc_HasItems(self,ItFo_Schafswurst) == 0) && (Npc_HasItems(other,ItFo_Schafswurst) >= 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garwig_wurst_info()
+func void DIA_Garwig_Wurst_Info()
 {
-	var string novizetext;
-	var string novizeleft;
+	var string NovizeText;
+	var string NovizeLeft;
 	AI_Output(other,self,"DIA_Garwig_Wurst_15_00");	//Chcesz spróbowaæ kie³basy?
 	AI_Output(self,other,"DIA_Garwig_Wurst_06_01");	//Jest pyszna. Bardzo dziêkujê, Bracie.
-	b_giveinvitems(other,self,5687,1);
-	WURST_GEGEBEN = WURST_GEGEBEN + 1;
-	CreateInvItems(self,itfo_sausage,1);
-	b_useitem(self,4914);
-	novizeleft = IntToString(13 - WURST_GEGEBEN);
-	novizetext = ConcatStrings(novizeleft,PRINT_NOVIZENLEFT);
-	AI_PrintScreen(novizetext,-1,YPOS_GOLDGIVEN,FONT_SCREENSMALL,3);
+	B_GiveInvItems(other,self,ItFo_Schafswurst,1);
+	Wurst_Gegeben = Wurst_Gegeben + 1;
+	CreateInvItems(self,ItFo_Sausage,1);
+	B_UseItem(self,ItFo_Sausage);
+	NovizeLeft = IntToString(13 - Wurst_Gegeben);
+	NovizeText = ConcatStrings(NovizeLeft,PRINT_NovizenLeft);
+	AI_PrintScreen(NovizeText,-1,YPOS_GoldGiven,FONT_ScreenSmall,3);
 };
 
 
-instance DIA_GARWIG_HELLO(C_INFO)
+instance DIA_Garwig_Hello(C_Info)
 {
-	npc = nov_608_garwig;
+	npc = Nov_608_Garwig;
 	nr = 3;
-	condition = dia_garwig_hello_condition;
-	information = dia_garwig_hello_info;
+	condition = DIA_Garwig_Hello_Condition;
+	information = DIA_Garwig_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_garwig_hello_condition()
+func int DIA_Garwig_Hello_Condition()
 {
 	if(other.guild == GIL_NOV)
 	{
@@ -75,7 +75,7 @@ func int dia_garwig_hello_condition()
 	};
 };
 
-func void dia_garwig_hello_info()
+func void DIA_Garwig_Hello_Info()
 {
 	AI_Output(self,other,"DIA_Garwig_Hello_06_00");	//Niech Innos bêdzie z tob¹. Nie znam ciê, jesteœ tu nowy?
 	AI_Output(other,self,"DIA_Garwig_Hello_15_01");	//Tak, dopiero siê do was przy³¹czy³em.
@@ -83,23 +83,23 @@ func void dia_garwig_hello_info()
 };
 
 
-instance DIA_GARWIG_ROOM(C_INFO)
+instance DIA_Garwig_Room(C_Info)
 {
-	npc = nov_608_garwig;
+	npc = Nov_608_Garwig;
 	nr = 5;
-	condition = dia_garwig_room_condition;
-	information = dia_garwig_room_info;
+	condition = DIA_Garwig_Room_Condition;
+	information = DIA_Garwig_Room_Info;
 	permanent = FALSE;
 	description = "Co to za pomieszczenie?";
 };
 
 
-func int dia_garwig_room_condition()
+func int DIA_Garwig_Room_Condition()
 {
 	return TRUE;
 };
 
-func void dia_garwig_room_info()
+func void DIA_Garwig_Room_Info()
 {
 	AI_Output(other,self,"DIA_Garwig_Room_15_00");	//Co to za pomieszczenie?
 	AI_Output(self,other,"DIA_Garwig_Room_06_01");	//Tutaj przechowywane s¹ klasztorne relikwie.
@@ -108,26 +108,26 @@ func void dia_garwig_room_info()
 };
 
 
-instance DIA_GARWIG_HAMMER(C_INFO)
+instance DIA_Garwig_Hammer(C_Info)
 {
-	npc = nov_608_garwig;
+	npc = Nov_608_Garwig;
 	nr = 99;
-	condition = dia_garwig_hammer_condition;
-	information = dia_garwig_hammer_info;
+	condition = DIA_Garwig_Hammer_Condition;
+	information = DIA_Garwig_Hammer_Info;
 	permanent = TRUE;
 	description = "Opowiedz mi o tym M³ocie.";
 };
 
 
-func int dia_garwig_hammer_condition()
+func int DIA_Garwig_Hammer_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_garwig_room))
+	if(Npc_KnowsInfo(other,DIA_Garwig_Room))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garwig_hammer_info()
+func void DIA_Garwig_Hammer_Info()
 {
 	AI_Output(other,self,"DIA_Garwig_Hammer_15_00");	//Opowiedz mi o tym M³ocie.
 	AI_Output(self,other,"DIA_Garwig_Hammer_06_01");	//Oto œwiêty M³ot Innosa. To w³aœnie nim Œwiêty Rhobar zabi³ Kamiennego Stra¿nika.
@@ -136,26 +136,26 @@ func void dia_garwig_hammer_info()
 };
 
 
-instance DIA_GARWIG_SHIELD(C_INFO)
+instance DIA_Garwig_Shield(C_Info)
 {
-	npc = nov_608_garwig;
+	npc = Nov_608_Garwig;
 	nr = 98;
-	condition = dia_garwig_shield_condition;
-	information = dia_garwig_shield_info;
+	condition = DIA_Garwig_Shield_Condition;
+	information = DIA_Garwig_Shield_Info;
 	permanent = FALSE;
 	description = "Opowiedz mi o tej Tarczy.";
 };
 
 
-func int dia_garwig_shield_condition()
+func int DIA_Garwig_Shield_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_garwig_room))
+	if(Npc_KnowsInfo(other,DIA_Garwig_Room))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garwig_shield_info()
+func void DIA_Garwig_Shield_Info()
 {
 	AI_Output(other,self,"DIA_Garwig_Shield_15_00");	//Opowiedz mi o tej Tarczy.
 	AI_Output(self,other,"DIA_Garwig_Shield_06_01");	//Tarcza Ognia zosta³a u¿yta przez Dominique w czasie bitwy na Po³udniowych Wyspach.
@@ -163,44 +163,44 @@ func void dia_garwig_shield_info()
 };
 
 
-instance DIA_GARWIG_AUGE(C_INFO)
+instance DIA_Garwig_Auge(C_Info)
 {
-	npc = nov_608_garwig;
+	npc = Nov_608_Garwig;
 	nr = 4;
-	condition = dia_garwig_auge_condition;
-	information = dia_garwig_auge_info;
+	condition = DIA_Garwig_Auge_Condition;
+	information = DIA_Garwig_Auge_Info;
 	permanent = FALSE;
 	description = "Czy znajduje siê tutaj tak¿e Oko Innosa?";
 };
 
 
-func int dia_garwig_auge_condition()
+func int DIA_Garwig_Auge_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_garwig_room) && (KAPITEL <= 2))
+	if(Npc_KnowsInfo(other,DIA_Garwig_Room) && (Kapitel <= 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garwig_auge_info()
+func void DIA_Garwig_Auge_Info()
 {
 	AI_Output(other,self,"DIA_Garwig_Auge_15_00");	//Czy znajduje siê tutaj tak¿e Oko Innosa?
 	AI_Output(self,other,"DIA_Garwig_Auge_06_01");	//Oczywiœcie, ¿e nie. Co za dziwaczny pomys³. Nikt nie wie, gdzie siê znajduje najœwiêtszy artefakt.
 };
 
 
-instance DIA_GARWIG_SLEEP(C_INFO)
+instance DIA_Garwig_SLEEP(C_Info)
 {
-	npc = nov_608_garwig;
+	npc = Nov_608_Garwig;
 	nr = 23;
-	condition = dia_garwig_sleep_condition;
-	information = dia_garwig_sleep_info;
+	condition = DIA_Garwig_SLEEP_Condition;
+	information = DIA_Garwig_SLEEP_Info;
 	permanent = TRUE;
 	description = "Co tu porabiasz?";
 };
 
 
-func int dia_garwig_sleep_condition()
+func int DIA_Garwig_SLEEP_Condition()
 {
 	if(other.guild == GIL_NOV)
 	{
@@ -208,46 +208,46 @@ func int dia_garwig_sleep_condition()
 	};
 };
 
-func void dia_garwig_sleep_info()
+func void DIA_Garwig_SLEEP_Info()
 {
 	AI_Output(other,self,"DIA_Garwig_SLEEP_15_00");	//Czym siê tu zajmujesz?
 	AI_Output(self,other,"DIA_Garwig_SLEEP_06_01");	//Jestem stra¿nikiem œwiêtych artefaktów.
-	Info_ClearChoices(dia_garwig_sleep);
-	Info_AddChoice(dia_garwig_sleep,DIALOG_BACK,dia_garwig_sleep_back);
-	Info_AddChoice(dia_garwig_sleep,"Chcesz, ¿ebym na moment ciê zast¹pi³?",dia_garwig_sleep_exchange);
-	Info_AddChoice(dia_garwig_sleep,"Czemu te artefakty s¹ tak pilnie strze¿one?",dia_garwig_sleep_thief);
-	Info_AddChoice(dia_garwig_sleep,"Czy ty nigdy nie sypiasz?",dia_garwig_sleep_never);
+	Info_ClearChoices(DIA_Garwig_SLEEP);
+	Info_AddChoice(DIA_Garwig_SLEEP,Dialog_Back,DIA_Garwig_SLEEP_BACK);
+	Info_AddChoice(DIA_Garwig_SLEEP,"Chcesz, ¿ebym na moment ciê zast¹pi³?",DIA_Garwig_SLEEP_EXCHANGE);
+	Info_AddChoice(DIA_Garwig_SLEEP,"Czemu te artefakty s¹ tak pilnie strze¿one?",DIA_Garwig_SLEEP_THIEF);
+	Info_AddChoice(DIA_Garwig_SLEEP,"Czy ty nigdy nie sypiasz?",DIA_Garwig_SLEEP_NEVER);
 };
 
-func void dia_garwig_sleep_back()
+func void DIA_Garwig_SLEEP_BACK()
 {
-	Info_ClearChoices(dia_garwig_sleep);
+	Info_ClearChoices(DIA_Garwig_SLEEP);
 };
 
-func void dia_garwig_sleep_exchange()
+func void DIA_Garwig_SLEEP_EXCHANGE()
 {
 	AI_Output(other,self,"DIA_Garwig_SLEEP_EXCHANGE_15_00");	//Chcesz, ¿ebym na moment ciê zast¹pi³?
 	AI_Output(self,other,"DIA_Garwig_SLEEP_EXCHANGE_06_01");	//Czy to jakaœ próba? Magowie ciê tu przys³ali, abyœ wystawi³ mnie na próbê, prawda? Och - wiedzia³em od pocz¹tku!
 	AI_Output(self,other,"DIA_Garwig_SLEEP_EXCHANGE_06_02");	//Ale ja siê nie ugnê. Powiedz swoim magom, ¿e stojê tu na stra¿y niewzruszony niczym kamienny pos¹g, opieraj¹c siê wszelkim pokusom, albowiem jestem godny tej zaszczytnej misji.
 };
 
-func void dia_garwig_sleep_thief()
+func void DIA_Garwig_SLEEP_THIEF()
 {
 	AI_Output(other,self,"DIA_Garwig_SLEEP_THIEF_15_00");	//Czemu te artefakty s¹ tak pilnie strze¿one? Czy istnieje jakieœ niebezpieczeñstwo, ¿e ktoœ chcia³by je ukraœæ?
 	AI_Output(self,other,"DIA_Garwig_SLEEP_THIEF_06_01");	//Co za niezwyk³y pomys³. Czemu ktoœ mia³by je ukraœæ?
 	AI_Output(self,other,"DIA_Garwig_SLEEP_THIEF_06_02");	//Tylko s³udzy Innosa maj¹ wstêp do klasztoru. Zapewniam ciê, ¿e ¿aden wyznawca nie odwa¿y³by siê na takie œwiêtokradztwo.
 };
 
-func void dia_garwig_sleep_never()
+func void DIA_Garwig_SLEEP_NEVER()
 {
 	AI_Output(other,self,"DIA_Garwig_SLEEP_NEVER_15_00");	//Nigdy nie œpisz?
 	AI_Output(self,other,"DIA_Garwig_SLEEP_NEVER_06_01");	//Co za dziwne pytanie. Oczywiœcie, ¿e nigdy nie sypiam. Innos sprawia, ¿e nie potrzebujê snu.
 	AI_Output(self,other,"DIA_Garwig_SLEEP_NEVER_06_02");	//Jak inaczej móg³bym pe³niæ moje œwiête powo³anie stra¿nika?
-	Info_ClearChoices(dia_garwig_sleep);
-	Info_AddChoice(dia_garwig_sleep,"Naprawdê NIGDY nie sypiasz?",dia_garwig_sleep_again);
+	Info_ClearChoices(DIA_Garwig_SLEEP);
+	Info_AddChoice(DIA_Garwig_SLEEP,"Naprawdê NIGDY nie sypiasz?",DIA_Garwig_SLEEP_AGAIN);
 };
 
-func void dia_garwig_sleep_again()
+func void DIA_Garwig_SLEEP_AGAIN()
 {
 	AI_Output(other,self,"DIA_Garwig_SLEEP_AGAIN_15_00");	//Naprawdê NIGDY nie sypiasz?
 	AI_Output(self,other,"DIA_Garwig_SLEEP_AGAIN_06_01");	//Nie. Jeœli stra¿nik zapada w sen, oznacza to jego ca³kowit¹ pora¿kê.
@@ -255,28 +255,28 @@ func void dia_garwig_sleep_again()
 };
 
 
-instance DIA_GARWIG_THIEF(C_INFO)
+instance DIA_Garwig_THIEF(C_Info)
 {
-	npc = nov_608_garwig;
+	npc = Nov_608_Garwig;
 	nr = 2;
-	condition = dia_garwig_thief_condition;
-	information = dia_garwig_thief_info;
+	condition = DIA_Garwig_THIEF_Condition;
+	information = DIA_Garwig_THIEF_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_garwig_thief_condition()
+func int DIA_Garwig_THIEF_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (Npc_HasItems(hero,holy_hammer_mis) == 1))
+	if(Npc_IsInState(self,ZS_Talk) && (Npc_HasItems(hero,Holy_Hammer_MIS) == 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garwig_thief_info()
+func void DIA_Garwig_THIEF_Info()
 {
-	if(HAMMER_TAKEN == TRUE)
+	if(Hammer_Taken == TRUE)
 	{
 		AI_Output(self,other,"DIA_Garwig_THIEF_06_00");	//Z³odzieju! Zniewa¿y³eœ nie tylko mnie i siebie, lecz równie¿ ca³y ten klasztor!
 		AI_Output(self,other,"DIA_Garwig_THIEF_06_01");	//Odpokutujesz za to œwiêtokradztwo. Ale przede wszystkim - ODDAJ MI TEN M£OT!!!
@@ -289,29 +289,29 @@ func void dia_garwig_thief_info()
 };
 
 
-instance DIA_GARWIG_ABGEBEN(C_INFO)
+instance DIA_Garwig_Abgeben(C_Info)
 {
-	npc = nov_608_garwig;
+	npc = Nov_608_Garwig;
 	nr = 2;
-	condition = dia_garwig_abgeben_condition;
-	information = dia_garwig_abgeben_info;
+	condition = DIA_Garwig_Abgeben_Condition;
+	information = DIA_Garwig_Abgeben_Info;
 	permanent = TRUE;
 	description = "Przyszed³em oddaæ ci twój M³ot.";
 };
 
 
-func int dia_garwig_abgeben_condition()
+func int DIA_Garwig_Abgeben_Condition()
 {
-	if(Npc_HasItems(other,holy_hammer_mis) >= 1)
+	if(Npc_HasItems(other,Holy_Hammer_MIS) >= 1)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garwig_abgeben_info()
+func void DIA_Garwig_Abgeben_Info()
 {
 	AI_Output(other,self,"DIA_Garwig_Abgeben_15_00");	//Przyszed³em oddaæ ci twój M³ot.
-	if(HAMMER_TAKEN == TRUE)
+	if(Hammer_Taken == TRUE)
 	{
 		AI_Output(self,other,"DIA_Garwig_Abgeben_06_01");	//Ty wstrêtny z³odzieju!
 	}
@@ -320,42 +320,42 @@ func void dia_garwig_abgeben_info()
 		AI_Output(self,other,"DIA_Garwig_Abgeben_06_02");	//A wiêc to ty mnie okrad³eœ...
 	};
 	AI_Output(self,other,"DIA_Garwig_Abgeben_06_03");	//Jednak nie mnie s¹dziæ twoje czyny. Innos bêdzie twym sêdzi¹ i zeœle na ciebie sprawiedliw¹ karê!
-	b_giveinvitems(other,self,5691,1);
-	HAMMER_TAKEN = FALSE;
+	B_GiveInvItems(other,self,Holy_Hammer_MIS,1);
+	Hammer_Taken = FALSE;
 };
 
 
-instance DIA_GARWIG_PICKPOCKET(C_INFO)
+instance DIA_Garwig_PICKPOCKET(C_Info)
 {
-	npc = nov_608_garwig;
+	npc = Nov_608_Garwig;
 	nr = 900;
-	condition = dia_garwig_pickpocket_condition;
-	information = dia_garwig_pickpocket_info;
+	condition = DIA_Garwig_PICKPOCKET_Condition;
+	information = DIA_Garwig_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_garwig_pickpocket_condition()
+func int DIA_Garwig_PICKPOCKET_Condition()
 {
-	return c_beklauen(52,80);
+	return C_Beklauen(52,80);
 };
 
-func void dia_garwig_pickpocket_info()
+func void DIA_Garwig_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_garwig_pickpocket);
-	Info_AddChoice(dia_garwig_pickpocket,DIALOG_BACK,dia_garwig_pickpocket_back);
-	Info_AddChoice(dia_garwig_pickpocket,DIALOG_PICKPOCKET,dia_garwig_pickpocket_doit);
+	Info_ClearChoices(DIA_Garwig_PICKPOCKET);
+	Info_AddChoice(DIA_Garwig_PICKPOCKET,Dialog_Back,DIA_Garwig_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Garwig_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Garwig_PICKPOCKET_DoIt);
 };
 
-func void dia_garwig_pickpocket_doit()
+func void DIA_Garwig_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_garwig_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Garwig_PICKPOCKET);
 };
 
-func void dia_garwig_pickpocket_back()
+func void DIA_Garwig_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_garwig_pickpocket);
+	Info_ClearChoices(DIA_Garwig_PICKPOCKET);
 };
 

@@ -1,9 +1,9 @@
 
-var int zstalkbugfix;
+var int zsTalkBugfix;
 
-func void zs_talk()
+func void ZS_Talk()
 {
-	var C_NPC target;
+	var C_Npc target;
 	if(other.aivar[AIV_INVINCIBLE] == TRUE)
 	{
 		return;
@@ -12,7 +12,7 @@ func void zs_talk()
 	other.aivar[AIV_INVINCIBLE] = TRUE;
 	if(self.guild < GIL_SEPERATOR_HUM)
 	{
-		if(c_bodystatecontains(self,BS_SIT))
+		if(C_BodyStateContains(self,BS_SIT))
 		{
 			target = Npc_GetLookAtTarget(self);
 			if(!Hlp_IsValidNpc(target))
@@ -22,17 +22,17 @@ func void zs_talk()
 		}
 		else
 		{
-			b_lookatnpc(self,other);
+			B_LookAtNpc(self,other);
 		};
 		AI_RemoveWeapon(self);
 	};
-	if(!c_bodystatecontains(self,BS_SIT))
+	if(!C_BodyStateContains(self,BS_SIT))
 	{
-		b_turntonpc(self,other);
+		B_TurnToNpc(self,other);
 	};
-	if(!c_bodystatecontains(other,BS_SIT))
+	if(!C_BodyStateContains(other,BS_SIT))
 	{
-		b_turntonpc(other,self);
+		B_TurnToNpc(other,self);
 		if(Npc_GetDistToNpc(other,self) < 80)
 		{
 			AI_Dodge(other);
@@ -44,21 +44,21 @@ func void zs_talk()
 		{
 			Mdl_StartFaceAni(self,"S_ANGRY",1,-1);
 		};
-		if((self.npctype == NPCTYPE_AMBIENT) || (self.npctype == NPCTYPE_OCAMBIENT))
+		if((self.npcType == NPCTYPE_AMBIENT) || (self.npcType == NPCTYPE_OCAMBIENT))
 		{
-			b_assignambientinfos(self);
-			if(c_npcbelongstocity(self))
+			B_AssignAmbientInfos(self);
+			if(C_NpcBelongsToCity(self))
 			{
-				b_assigncityguide(self);
+				B_AssignCityGuide(self);
 			};
 		};
-		if(c_npcistoughguy(self) && (self.aivar[AIV_TOUGHGUYNEWSOVERRIDE] == FALSE))
+		if(C_NpcIsToughGuy(self) && (self.aivar[AIV_ToughGuyNewsOverride] == FALSE))
 		{
-			b_assigntoughguynews(self);
+			B_AssignToughGuyNEWS(self);
 		};
-		if(c_npchasambientnews(self))
+		if(C_NpcHasAmbientNews(self))
 		{
-			b_assignambientnews(self);
+			B_AssignAmbientNEWS(self);
 		};
 	};
 	if(self.guild == GIL_DRAGON)
@@ -66,20 +66,20 @@ func void zs_talk()
 		AI_PlayAni(self,"T_STAND_2_TALK");
 	};
 	AI_ProcessInfos(self);
-	ZSTALKBUGFIX = FALSE;
+	zsTalkBugfix = FALSE;
 };
 
-func int zs_talk_loop()
+func int ZS_Talk_Loop()
 {
-	if(InfoManager_HasFinished() && (ZSTALKBUGFIX == TRUE))
+	if(InfoManager_HasFinished() && (zsTalkBugfix == TRUE))
 	{
 		self.aivar[AIV_INVINCIBLE] = FALSE;
 		other.aivar[AIV_INVINCIBLE] = FALSE;
-		self.aivar[AIV_NPCSTARTEDTALK] = FALSE;
-		self.aivar[AIV_TALKEDTOPLAYER] = TRUE;
+		self.aivar[AIV_NpcStartedTalk] = FALSE;
+		self.aivar[AIV_TalkedToPlayer] = TRUE;
 		if(self.guild < GIL_SEPERATOR_HUM)
 		{
-			b_stoplookat(self);
+			B_StopLookAt(self);
 			Mdl_StartFaceAni(self,"S_NEUTRAL",1,-1);
 		};
 		if(self.guild == GIL_DRAGON)
@@ -90,17 +90,17 @@ func int zs_talk_loop()
 	}
 	else
 	{
-		ZSTALKBUGFIX = TRUE;
+		zsTalkBugfix = TRUE;
 		return LOOP_CONTINUE;
 	};
 };
 
-func void zs_talk_end()
+func void ZS_Talk_End()
 {
 	Npc_SetRefuseTalk(other,20);
-	if(c_npcisbotheredbyplayerroomguild(self) || ((Wld_GetPlayerPortalGuild() == GIL_PUBLIC) && (Npc_GetAttitude(self,other) != ATT_FRIENDLY)))
+	if(C_NpcIsBotheredByPlayerRoomGuild(self) || ((Wld_GetPlayerPortalGuild() == GIL_PUBLIC) && (Npc_GetAttitude(self,other) != ATT_FRIENDLY)))
 	{
-		AI_StartState(self,zs_observeplayer,0,"");
+		AI_StartState(self,ZS_ObservePlayer,0,"");
 	}
 	else
 	{

@@ -1,16 +1,16 @@
 
-const int SPL_COST_SUMMONSKELETON = 30;
+const int SPL_Cost_SummonSkeleton = 30;
 
-instance SPELL_SUMMONSKELETON(C_SPELL_PROTO)
+instance Spell_SummonSkeleton(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	targetcollectalgo = TARGET_COLLECT_NONE;
+	targetCollectAlgo = TARGET_COLLECT_NONE;
 };
 
 
-func int spell_logic_summonskeleton(var int manainvested)
+func int Spell_Logic_SummonSkeleton(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_SUMMONSKELETON)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_SummonSkeleton)
 	{
 		return SPL_SENDCAST;
 	}
@@ -20,13 +20,13 @@ func int spell_logic_summonskeleton(var int manainvested)
 	};
 };
 
-func void spell_cast_summonskeleton()
+func void Spell_Cast_SummonSkeleton()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_SUMMONSKELETON;
-	self.aivar[AIV_SELECTSPELL] = self.aivar[AIV_SELECTSPELL] + 1;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_SummonSkeleton;
+	self.aivar[AIV_SelectSpell] = self.aivar[AIV_SelectSpell] + 1;
 	if(Npc_IsPlayer(self))
 	{
-		Wld_SpawnNpcRange(self,summoned_skeleton,1,500);
+		Wld_SpawnNpcRange(self,Summoned_Skeleton,1,500);
 	}
 	else
 	{

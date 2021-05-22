@@ -1,27 +1,27 @@
 
-instance MIL_332_STADTWACHE(NPC_DEFAULT)
+instance Mil_332_Stadtwache(Npc_Default)
 {
-	name[0] = NAME_STADTWACHE;
+	name[0] = NAME_Stadtwache;
 	guild = GIL_MIL;
 	id = 332;
 	voice = 4;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_mil_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_N_NORMAL_STONE,BODYTEX_N,4826);
+	EquipItem(self,ItMw_1h_Mil_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_N_Normal_Stone,BodyTex_N,ITAR_Mil_L);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,50);
-	daily_routine = rtn_start_332;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,50);
+	daily_routine = Rtn_Start_332;
 };
 
 
-func void rtn_start_332()
+func void Rtn_Start_332()
 {
-	ta_stand_wp(8,0,22,0,"NW_CITY_ENTRANCE_BACK_GUARD_01");
-	ta_stand_wp(22,0,8,0,"NW_CITY_ENTRANCE_BACK_GUARD_01");
+	TA_Stand_WP(8,0,22,0,"NW_CITY_ENTRANCE_BACK_GUARD_01");
+	TA_Stand_WP(22,0,8,0,"NW_CITY_ENTRANCE_BACK_GUARD_01");
 };
 

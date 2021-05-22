@@ -1,23 +1,23 @@
 
-func int c_wanttoattackthief(var C_NPC slf,var C_NPC oth)
+func int C_WantToAttackThief(var C_Npc slf,var C_Npc oth)
 {
 	if((slf.guild == GIL_DMT) || (slf.guild == GIL_STRF) || (slf.guild == GIL_BDT) || (slf.guild == GIL_DJG))
 	{
 		return FALSE;
 	};
-	if(slf.aivar[AIV_IGNORE_THEFT] == TRUE)
+	if(slf.aivar[AIV_IGNORE_Theft] == TRUE)
 	{
 		return FALSE;
 	};
-	if(slf.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_LOST)
+	if(slf.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
 	{
 		return FALSE;
 	};
-	if(Npc_IsPlayer(oth) && (slf.npctype == NPCTYPE_FRIEND))
+	if(Npc_IsPlayer(oth) && (slf.npcType == NPCTYPE_FRIEND))
 	{
 		return FALSE;
 	};
-	if(c_npcisgateguard(slf))
+	if(C_NpcIsGateGuard(slf))
 	{
 		return FALSE;
 	};

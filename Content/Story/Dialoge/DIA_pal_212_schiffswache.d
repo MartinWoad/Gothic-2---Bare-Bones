@@ -1,36 +1,36 @@
 
-instance DIA_PAL_212_SCHIFFSWACHE_EXIT(C_INFO)
+instance DIA_Pal_212_Schiffswache_EXIT(C_Info)
 {
-	npc = pal_212_schiffswache;
+	npc = PAL_212_Schiffswache;
 	nr = 999;
-	condition = dia_pal_212_schiffswache_exit_condition;
-	information = dia_pal_212_schiffswache_exit_info;
+	condition = DIA_Pal_212_Schiffswache_EXIT_Condition;
+	information = DIA_Pal_212_Schiffswache_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_pal_212_schiffswache_exit_condition()
+func int DIA_Pal_212_Schiffswache_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pal_212_schiffswache_exit_info()
+func void DIA_Pal_212_Schiffswache_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PAL_212_SCHIFFSWACHE_WERSEIDIHR(C_INFO)
+instance DIA_Pal_212_Schiffswache_WERSEIDIHR(C_Info)
 {
-	npc = pal_212_schiffswache;
-	condition = dia_pal_212_schiffswache_werseidihr_condition;
-	information = dia_pal_212_schiffswache_werseidihr_info;
+	npc = PAL_212_Schiffswache;
+	condition = DIA_Pal_212_Schiffswache_WERSEIDIHR_Condition;
+	information = DIA_Pal_212_Schiffswache_WERSEIDIHR_Info;
 	description = "Kim jesteœ?";
 };
 
 
-func int dia_pal_212_schiffswache_werseidihr_condition()
+func int DIA_Pal_212_Schiffswache_WERSEIDIHR_Condition()
 {
 	if((hero.guild != GIL_PAL) && (hero.guild != GIL_KDF))
 	{
@@ -38,31 +38,31 @@ func int dia_pal_212_schiffswache_werseidihr_condition()
 	};
 };
 
-func void dia_pal_212_schiffswache_werseidihr_info()
+func void DIA_Pal_212_Schiffswache_WERSEIDIHR_Info()
 {
 	AI_Output(other,self,"DIA_Pal_212_Schiffswache_WERSEIDIHR_15_00");	//Kim jesteœcie?
 	AI_Output(self,other,"DIA_Pal_212_Schiffswache_WERSEIDIHR_08_01");	//Jesteœmy emisariuszami Króla Rhobara, s³ugami Innosa, ludzie nazywaj¹ nas tak¿e paladynami.
 };
 
 
-instance DIA_PAL_212_SCHIFFSWACHE_WASMACHSTDU2(C_INFO)
+instance DIA_Pal_212_Schiffswache_WASMACHSTDU2(C_Info)
 {
-	npc = pal_212_schiffswache;
-	condition = dia_pal_212_schiffswache_wasmachstdu2_condition;
-	information = dia_pal_212_schiffswache_wasmachstdu2_info;
+	npc = PAL_212_Schiffswache;
+	condition = DIA_Pal_212_Schiffswache_WASMACHSTDU2_Condition;
+	information = DIA_Pal_212_Schiffswache_WASMACHSTDU2_Info;
 	description = "Co tu porabiasz?";
 };
 
 
-func int dia_pal_212_schiffswache_wasmachstdu2_condition()
+func int DIA_Pal_212_Schiffswache_WASMACHSTDU2_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pal_212_schiffswache_wasmachstdu2_info()
+func void DIA_Pal_212_Schiffswache_WASMACHSTDU2_Info()
 {
 	AI_Output(other,self,"DIA_Pal_212_Schiffswache_WASMACHSTDU2_15_00");	//Co tu robicie?
-	if(MIS_SHIPISFREE == FALSE)
+	if(MIS_ShipIsFree == FALSE)
 	{
 		if((hero.guild != GIL_PAL) && (hero.guild != GIL_KDF))
 		{

@@ -1,46 +1,46 @@
 
-instance DIA_VATRAS_DI_EXIT(C_INFO)
+instance DIA_Vatras_DI_EXIT(C_Info)
 {
-	npc = vlk_439_vatras_di;
+	npc = VLK_439_Vatras_DI;
 	nr = 999;
-	condition = dia_vatras_di_exit_condition;
-	information = dia_vatras_di_exit_info;
+	condition = DIA_Vatras_DI_EXIT_Condition;
+	information = DIA_Vatras_DI_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_vatras_di_exit_condition()
+func int DIA_Vatras_DI_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_vatras_di_exit_info()
+func void DIA_Vatras_DI_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_VATRAS_DI_HEAL(C_INFO)
+instance DIA_Vatras_DI_HEAL(C_Info)
 {
-	npc = vlk_439_vatras_di;
+	npc = VLK_439_Vatras_DI;
 	nr = 99;
-	condition = dia_vatras_di_heal_condition;
-	information = dia_vatras_di_heal_info;
+	condition = DIA_Vatras_DI_HEAL_Condition;
+	information = DIA_Vatras_DI_HEAL_Info;
 	permanent = TRUE;
 	description = "Ulecz moje rany.";
 };
 
 
-func int dia_vatras_di_heal_condition()
+func int DIA_Vatras_DI_HEAL_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vatras_di_heal_info()
+func void DIA_Vatras_DI_HEAL_Info()
 {
 	AI_Output(other,self,"DIA_Vatras_DI_HEAL_15_00");	//Ulecz moje rany.
 	if(hero.attribute[ATR_HITPOINTS] < hero.attribute[ATR_HITPOINTS_MAX])
@@ -55,7 +55,7 @@ func void dia_vatras_di_heal_info()
 			VATRAS_HEAL_DAY = Wld_GetDay();
 			AI_Output(self,other,"DIA_Vatras_DI_HEAL_05_01");	//Adanosie, pob³ogos³aw to cia³o i uwolnij je od ran, by mog³o przywróciæ równowagê temu œwiatu!
 			hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-			PrintScreen(PRINT_FULLYHEALED,-1,-1,FONT_SCREEN,2);
+			PrintScreen(PRINT_FullyHealed,-1,-1,FONT_Screen,2);
 		};
 	}
 	else
@@ -65,72 +65,72 @@ func void dia_vatras_di_heal_info()
 };
 
 
-instance DIA_VATRAS_DI_TRADE(C_INFO)
+instance DIA_Vatras_DI_TRADE(C_Info)
 {
-	npc = vlk_439_vatras_di;
+	npc = VLK_439_Vatras_DI;
 	nr = 12;
-	condition = dia_vatras_di_trade_condition;
-	information = dia_vatras_di_trade_info;
+	condition = DIA_Vatras_DI_TRADE_Condition;
+	information = DIA_Vatras_DI_TRADE_Info;
 	permanent = TRUE;
 	trade = TRUE;
 	description = "Masz coœ na sprzeda¿?";
 };
 
 
-func int dia_vatras_di_trade_condition()
+func int DIA_Vatras_DI_TRADE_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vatras_di_trade_info()
+func void DIA_Vatras_DI_TRADE_Info()
 {
 	AI_Output(other,self,"DIA_Vatras_DI_TRADE_15_00");	//Masz coœ na sprzeda¿?
-	b_givetradeinv(self);
+	B_GiveTradeInv(self);
 	AI_Output(self,other,"DIA_Vatras_DI_TRADE_05_01");	//A czego potrzebujesz?
 };
 
 
-instance DIA_VATRAS_DI_OBSESSION(C_INFO)
+instance DIA_Vatras_DI_OBSESSION(C_Info)
 {
-	npc = vlk_439_vatras_di;
+	npc = VLK_439_Vatras_DI;
 	nr = 35;
-	condition = dia_vatras_di_obsession_condition;
-	information = dia_vatras_di_obsession_info;
+	condition = DIA_Vatras_DI_OBSESSION_Condition;
+	information = DIA_Vatras_DI_OBSESSION_Info;
 	permanent = TRUE;
 	description = "Pomó¿ mi! Jestem opêtany!";
 };
 
 
-func int dia_vatras_di_obsession_condition()
+func int DIA_Vatras_DI_OBSESSION_Condition()
 {
-	if((SC_ISOBSESSED == TRUE) && (Npc_IsDead(undeaddragon) == FALSE))
+	if((SC_IsObsessed == TRUE) && (Npc_IsDead(UndeadDragon) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_vatras_di_obsession_info_onetime;
+var int DIA_Vatras_DI_OBSESSION_Info_OneTime;
 
-func void dia_vatras_di_obsession_info()
+func void DIA_Vatras_DI_OBSESSION_Info()
 {
 	AI_Output(other,self,"DIA_Vatras_DI_OBSESSION_15_00");	//Pomó¿ mi! Jestem opêtany!
-	if(GOT_HEALOBSESSION_DAY <= (Wld_GetDay() - 2))
+	if(Got_HealObsession_Day <= (Wld_GetDay() - 2))
 	{
-		if(dia_vatras_di_obsession_info_onetime <= 1)
+		if(DIA_Vatras_DI_OBSESSION_Info_OneTime <= 1)
 		{
-			CreateInvItems(self,itpo_healobsession_mis,1);
-			dia_vatras_di_obsession_info_onetime = dia_vatras_di_obsession_info_onetime + 1;
+			CreateInvItems(self,ItPo_HealObsession_MIS,1);
+			DIA_Vatras_DI_OBSESSION_Info_OneTime = DIA_Vatras_DI_OBSESSION_Info_OneTime + 1;
 		};
-		if(Npc_HasItems(self,itpo_healobsession_mis))
+		if(Npc_HasItems(self,ItPo_HealObsession_MIS))
 		{
 			AI_Output(self,other,"DIA_Vatras_DI_OBSESSION_05_01");	//WeŸ tê Miksturê Wyzwolenia. Pyrokar da³ mi kilka swoich magicznych eliksirów.
 			AI_Output(self,other,"DIA_Vatras_DI_OBSESSION_05_02");	//Pamiêtaj jednak, ¿e mogê ci pomóc tylko ograniczon¹ liczbê razy.
-			b_giveinvitems(self,other,5810,1);
-			GOT_HEALOBSESSION_DAY = Wld_GetDay();
+			B_GiveInvItems(self,other,ItPo_HealObsession_MIS,1);
+			Got_HealObsession_Day = Wld_GetDay();
 		}
 		else
 		{
@@ -144,29 +144,29 @@ func void dia_vatras_di_obsession_info()
 };
 
 
-instance DIA_VATRAS_DI_RAT(C_INFO)
+instance DIA_Vatras_DI_RAT(C_Info)
 {
-	npc = vlk_439_vatras_di;
+	npc = VLK_439_Vatras_DI;
 	nr = 99;
-	condition = dia_vatras_di_rat_condition;
-	information = dia_vatras_di_rat_info;
+	condition = DIA_Vatras_DI_RAT_Condition;
+	information = DIA_Vatras_DI_RAT_Info;
 	description = "Masz dla mnie jakieœ rady?";
 };
 
 
-func int dia_vatras_di_rat_condition()
+func int DIA_Vatras_DI_RAT_Condition()
 {
-	if((Npc_IsDead(undeaddragon) == FALSE) && (SC_ISOBSESSED == FALSE))
+	if((Npc_IsDead(UndeadDragon) == FALSE) && (SC_IsObsessed == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vatras_di_rat_info()
+func void DIA_Vatras_DI_RAT_Info()
 {
 	AI_Output(other,self,"DIA_Vatras_DI_RAT_15_00");	//Masz dla mnie jakieœ rady?
 	AI_Output(self,other,"DIA_Vatras_DI_RAT_05_01");	//Trzymaj siê z dala od Poszukiwaczy. Pamiêtaj, ¿e ich spojrzenie mo¿e siê okazaæ zabójcze tak daleko od klasztoru.
-	if(Npc_HasItems(other,itam_prot_blackeye_mis))
+	if(Npc_HasItems(other,ItAm_Prot_BlackEye_Mis))
 	{
 		AI_Output(other,self,"DIA_Vatras_DI_RAT_15_02");	//Nie obawiaj siê, mam amulet przywo³ywania dusz.
 	};
@@ -174,44 +174,44 @@ func void dia_vatras_di_rat_info()
 };
 
 
-instance DIA_VATRAS_DI_PEDROTOT(C_INFO)
+instance DIA_Vatras_DI_PEDROTOT(C_Info)
 {
-	npc = vlk_439_vatras_di;
+	npc = VLK_439_Vatras_DI;
 	nr = 3;
-	condition = dia_vatras_di_pedrotot_condition;
-	information = dia_vatras_di_pedrotot_info;
+	condition = DIA_Vatras_DI_PEDROTOT_Condition;
+	information = DIA_Vatras_DI_PEDROTOT_Info;
 	description = "Znalaz³em tego zdrajcê, Pedra.";
 };
 
 
-func int dia_vatras_di_pedrotot_condition()
+func int DIA_Vatras_DI_PEDROTOT_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_pedro_di_you))
+	if(Npc_KnowsInfo(other,DIA_Pedro_DI_YOU))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_vatras_di_pedrotot_vatrassucked;
+var int DIA_Vatras_DI_PEDROTOT_VatrasSucked;
 
-func void dia_vatras_di_pedrotot_info()
+func void DIA_Vatras_DI_PEDROTOT_Info()
 {
 	AI_Output(other,self,"DIA_Vatras_DI_PEDROTOT_15_00");	//Znalaz³em tego zdrajcê, Pedra.
-	b_giveplayerxp(XP_AMBIENT);
-	if((MIS_GORAX_KILLPEDRO == LOG_SUCCESS) && Npc_IsDead(pedro_di))
+	B_GivePlayerXP(XP_Ambient);
+	if((MIS_Gorax_KillPedro == LOG_SUCCESS) && Npc_IsDead(Pedro_DI))
 	{
 		AI_Output(other,self,"DIA_Vatras_DI_PEDROTOT_15_01");	//Ju¿ nie ¿yje.
 		AI_Output(self,other,"DIA_Vatras_DI_PEDROTOT_05_02");	//Rozczarowa³eœ mnie. Myœla³em, ¿e jesteœ inny.
 		AI_Output(other,self,"DIA_Vatras_DI_PEDROTOT_15_03");	//Jak to?
 		AI_Output(self,other,"DIA_Vatras_DI_PEDROTOT_05_04");	//Wiem o twej niecnej umowie z Serpentesem. Nie zdajesz sobie nawet sprawy, jak straszliwie siê na tobie zawiod³em.
-		DIA_VATRAS_DI_PEDROTOT_VATRASSUCKED = TRUE;
+		DIA_Vatras_DI_PEDROTOT_VatrasSucked = TRUE;
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Vatras_DI_PEDROTOT_05_05");	//Zatem przyprowadŸ go tutaj, na statek. Oddamy go w rêce odpowiednich w³adz w Khorinis.
-		if(Npc_IsDead(pedro_di))
+		if(Npc_IsDead(Pedro_DI))
 		{
 			AI_Output(other,self,"DIA_Vatras_DI_PEDROTOT_15_06");	//Na to ju¿ trochê za póŸno. Nie ¿yje.
 			AI_Output(self,other,"DIA_Vatras_DI_PEDROTOT_05_07");	//Och, wielka szkoda. Bêdê siê modli³ za jego biedn¹ duszê.
@@ -224,309 +224,309 @@ func void dia_vatras_di_pedrotot_info()
 };
 
 
-instance DIA_VATRAS_DI_VATRASSUCKED(C_INFO)
+instance DIA_Vatras_DI_VatrasSucked(C_Info)
 {
-	npc = vlk_439_vatras_di;
+	npc = VLK_439_Vatras_DI;
 	nr = 1;
-	condition = dia_vatras_di_vatrassucked_condition;
-	information = dia_vatras_di_vatrassucked_info;
+	condition = DIA_Vatras_DI_VatrasSucked_Condition;
+	information = DIA_Vatras_DI_VatrasSucked_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_vatras_di_vatrassucked_condition()
+func int DIA_Vatras_DI_VatrasSucked_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && ((DIA_VATRAS_DI_PEDROTOT_VATRASSUCKED == TRUE) || (PETZCOUNTER_OLDCAMP_MURDER > 0) || (PETZCOUNTER_CITY_MURDER > 0) || (PETZCOUNTER_MONASTERY_MURDER > 0) || (PETZCOUNTER_FARM_MURDER > 0)))
+	if(Npc_IsInState(self,ZS_Talk) && ((DIA_Vatras_DI_PEDROTOT_VatrasSucked == TRUE) || (PETZCOUNTER_OldCamp_Murder > 0) || (PETZCOUNTER_City_Murder > 0) || (PETZCOUNTER_Monastery_Murder > 0) || (PETZCOUNTER_Farm_Murder > 0)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vatras_di_vatrassucked_info()
+func void DIA_Vatras_DI_VatrasSucked_Info()
 {
 	AI_Output(self,other,"DIA_Vatras_DI_VatrasSucked_05_00");	//ZejdŸ mi z oczu, morderco. Na moj¹ pomoc nie masz co liczyæ.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_VATRAS_DI_TALENTE(C_INFO)
+instance DIA_Vatras_DI_Talente(C_Info)
 {
-	npc = vlk_439_vatras_di;
-	condition = dia_vatras_di_talente_condition;
-	information = dia_vatras_di_talente_info;
+	npc = VLK_439_Vatras_DI;
+	condition = DIA_Vatras_DI_Talente_Condition;
+	information = DIA_Vatras_DI_Talente_Info;
 	permanent = TRUE;
 	description = "Naucz mnie tego, co potrafisz.";
 };
 
 
-func int dia_vatras_di_talente_condition()
+func int DIA_Vatras_DI_Talente_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vatras_di_talente_info()
+func void DIA_Vatras_DI_Talente_Info()
 {
 	AI_Output(other,self,"DIA_Vatras_DI_Talente_15_00");	//Naucz mnie czegoœ.
 	AI_Output(self,other,"DIA_Vatras_DI_Talente_05_01");	//Zrobiê, co w mojej mocy.
-	Info_ClearChoices(dia_vatras_di_talente);
-	Info_AddChoice(dia_vatras_di_talente,DIALOG_BACK,dia_vatras_di_talente_back);
+	Info_ClearChoices(DIA_Vatras_DI_Talente);
+	Info_AddChoice(DIA_Vatras_DI_Talente,Dialog_Back,DIA_Vatras_DI_Talente_BACK);
 	if(hero.guild == GIL_KDF)
 	{
-		Info_AddChoice(dia_vatras_di_talente,"Krêgi magii",dia_vatras_di_talente_circles);
+		Info_AddChoice(DIA_Vatras_DI_Talente,"Krêgi magii",DIA_Vatras_DI_Talente_CIRCLES);
 	};
-	Info_AddChoice(dia_vatras_di_talente,"Alchemia - sztuka warzenia mikstur",dia_vatras_di_talente_alchimie);
+	Info_AddChoice(DIA_Vatras_DI_Talente,"Alchemia - sztuka warzenia mikstur",DIA_Vatras_DI_Talente_ALCHIMIE);
 };
 
-func void dia_vatras_di_talente_circles()
+func void DIA_Vatras_DI_Talente_CIRCLES()
 {
-	Info_ClearChoices(dia_vatras_di_talente);
-	Info_AddChoice(dia_vatras_di_talente,DIALOG_BACK,dia_vatras_di_talente_back);
+	Info_ClearChoices(DIA_Vatras_DI_Talente);
+	Info_AddChoice(DIA_Vatras_DI_Talente,Dialog_Back,DIA_Vatras_DI_Talente_BACK);
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) < 1)
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Pierwszy kr¹g magii",b_getlearncosttalent(other,NPC_TALENT_MAGE)),dia_vatras_di_talente_circle_1);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Pierwszy kr¹g magii",B_GetLearnCostTalent(other,NPC_TALENT_MAGE)),DIA_Vatras_DI_Talente_Circle_1);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 1)
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Drugi kr¹g magii",b_getlearncosttalent(other,NPC_TALENT_MAGE)),dia_vatras_di_talente_circle_2);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Drugi kr¹g magii",B_GetLearnCostTalent(other,NPC_TALENT_MAGE)),DIA_Vatras_DI_Talente_Circle_2);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 2)
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Trzeci kr¹g magii",b_getlearncosttalent(other,NPC_TALENT_MAGE)),dia_vatras_di_talente_circle_3);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Trzeci kr¹g magii",B_GetLearnCostTalent(other,NPC_TALENT_MAGE)),DIA_Vatras_DI_Talente_Circle_3);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 3)
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Czwarty kr¹g magii",b_getlearncosttalent(other,NPC_TALENT_MAGE)),dia_vatras_di_talente_circle_4);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Czwarty kr¹g magii",B_GetLearnCostTalent(other,NPC_TALENT_MAGE)),DIA_Vatras_DI_Talente_Circle_4);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 4)
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Pi¹ty kr¹g magii",b_getlearncosttalent(other,NPC_TALENT_MAGE)),dia_vatras_di_talente_circle_5);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Pi¹ty kr¹g magii",B_GetLearnCostTalent(other,NPC_TALENT_MAGE)),DIA_Vatras_DI_Talente_Circle_5);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 5)
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Szósty kr¹g magii",b_getlearncosttalent(other,NPC_TALENT_MAGE)),dia_vatras_di_talente_circle_6);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Szósty kr¹g magii",B_GetLearnCostTalent(other,NPC_TALENT_MAGE)),DIA_Vatras_DI_Talente_Circle_6);
 	};
 };
 
-func void dia_vatras_di_talente_alchimie()
+func void DIA_Vatras_DI_Talente_ALCHIMIE()
 {
-	Info_ClearChoices(dia_vatras_di_talente);
-	Info_AddChoice(dia_vatras_di_talente,DIALOG_BACK,dia_vatras_di_talente_back);
-	if(PLAYER_TALENT_ALCHEMY[POTION_HEALTH_01] == FALSE)
+	Info_ClearChoices(DIA_Vatras_DI_Talente);
+	Info_AddChoice(DIA_Vatras_DI_Talente,Dialog_Back,DIA_Vatras_DI_Talente_BACK);
+	if(PLAYER_TALENT_ALCHEMY[POTION_Health_01] == FALSE)
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Esencja lecznicza",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_vatras_di_talente_potion_health_01);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Esencja lecznicza",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Vatras_DI_Talente_POTION_Health_01);
 	};
-	if((PLAYER_TALENT_ALCHEMY[POTION_HEALTH_02] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_HEALTH_01] == TRUE))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Health_02] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_Health_01] == TRUE))
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Ekstrakt leczniczy",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_vatras_di_talente_potion_health_02);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Ekstrakt leczniczy",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Vatras_DI_Talente_POTION_Health_02);
 	};
-	if((PLAYER_TALENT_ALCHEMY[POTION_HEALTH_03] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_HEALTH_02] == TRUE))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Health_03] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_Health_02] == TRUE))
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Eliksir leczniczy",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_vatras_di_talente_potion_health_03);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Eliksir leczniczy",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Vatras_DI_Talente_POTION_Health_03);
 	};
-	if(PLAYER_TALENT_ALCHEMY[POTION_MANA_01] == FALSE)
+	if(PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == FALSE)
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Esencja many",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_vatras_di_talente_potion_mana_01);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Esencja many",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Vatras_DI_Talente_POTION_Mana_01);
 	};
-	if((PLAYER_TALENT_ALCHEMY[POTION_MANA_02] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_MANA_01] == TRUE))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_02] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == TRUE))
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Ekstrakt many",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_vatras_di_talente_potion_mana_02);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Ekstrakt many",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Vatras_DI_Talente_POTION_Mana_02);
 	};
-	if((PLAYER_TALENT_ALCHEMY[POTION_MANA_03] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_MANA_02] == TRUE))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_Mana_02] == TRUE))
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Eliksir many",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_vatras_di_talente_potion_mana_03);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Eliksir many",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Vatras_DI_Talente_POTION_Mana_03);
 	};
-	if((PLAYER_TALENT_ALCHEMY[POTION_SPEED] == FALSE) && ((PLAYER_TALENT_ALCHEMY[POTION_HEALTH_01] == TRUE) || (PLAYER_TALENT_ALCHEMY[POTION_MANA_01] == TRUE)))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Speed] == FALSE) && ((PLAYER_TALENT_ALCHEMY[POTION_Health_01] == TRUE) || (PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == TRUE)))
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Mikstura szybkoœci",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_vatras_di_talente_potion_speed);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Mikstura szybkoœci",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Vatras_DI_Talente_POTION_Speed);
 	};
-	if((PLAYER_TALENT_ALCHEMY[POTION_PERM_STR] == FALSE) && ((PLAYER_TALENT_ALCHEMY[POTION_HEALTH_03] == TRUE) || (PLAYER_TALENT_ALCHEMY[POTION_MANA_03] == TRUE)))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_STR] == FALSE) && ((PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE) || (PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == TRUE)))
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Eliksir si³y",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_vatras_di_talente_potion_perm_str);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Eliksir si³y",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Vatras_DI_Talente_POTION_Perm_STR);
 	};
-	if((PLAYER_TALENT_ALCHEMY[POTION_PERM_DEX] == FALSE) && ((PLAYER_TALENT_ALCHEMY[POTION_HEALTH_03] == TRUE) || (PLAYER_TALENT_ALCHEMY[POTION_MANA_03] == TRUE)))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_DEX] == FALSE) && ((PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE) || (PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == TRUE)))
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Eliksir zrêcznoœci",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_vatras_di_talente_potion_perm_dex);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Eliksir zrêcznoœci",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Vatras_DI_Talente_POTION_Perm_DEX);
 	};
-	if((PLAYER_TALENT_ALCHEMY[POTION_PERM_MANA] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_MANA_03] == TRUE))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_Mana] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == TRUE))
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Eliksir ducha",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_vatras_di_talente_potion_perm_mana);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Eliksir ducha",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Vatras_DI_Talente_POTION_Perm_Mana);
 	};
-	if((PLAYER_TALENT_ALCHEMY[POTION_PERM_HEALTH] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_HEALTH_03] == TRUE))
+	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_Health] == FALSE) && (PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE))
 	{
-		Info_AddChoice(dia_vatras_di_talente,b_buildlearnstring("Eliksir ¿ycia",b_getlearncosttalent(other,NPC_TALENT_ALCHEMY)),dia_vatras_di_talente_potion_perm_health);
+		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("Eliksir ¿ycia",B_GetLearnCostTalent(other,NPC_TALENT_ALCHEMY)),DIA_Vatras_DI_Talente_POTION_Perm_Health);
 	};
 };
 
-func void dia_vatras_di_talente_circle_1()
+func void DIA_Vatras_DI_Talente_Circle_1()
 {
-	Info_ClearChoices(dia_vatras_di_talente);
-	b_teachmagiccircle(self,other,1);
+	Info_ClearChoices(DIA_Vatras_DI_Talente);
+	B_TeachMagicCircle(self,other,1);
 };
 
-func void dia_vatras_di_talente_circle_2()
+func void DIA_Vatras_DI_Talente_Circle_2()
 {
-	Info_ClearChoices(dia_vatras_di_talente);
-	b_teachmagiccircle(self,other,2);
+	Info_ClearChoices(DIA_Vatras_DI_Talente);
+	B_TeachMagicCircle(self,other,2);
 };
 
-func void dia_vatras_di_talente_circle_3()
+func void DIA_Vatras_DI_Talente_Circle_3()
 {
-	Info_ClearChoices(dia_vatras_di_talente);
-	b_teachmagiccircle(self,other,3);
+	Info_ClearChoices(DIA_Vatras_DI_Talente);
+	B_TeachMagicCircle(self,other,3);
 };
 
-func void dia_vatras_di_talente_circle_4()
+func void DIA_Vatras_DI_Talente_Circle_4()
 {
-	Info_ClearChoices(dia_vatras_di_talente);
-	b_teachmagiccircle(self,other,4);
+	Info_ClearChoices(DIA_Vatras_DI_Talente);
+	B_TeachMagicCircle(self,other,4);
 };
 
-func void dia_vatras_di_talente_circle_5()
+func void DIA_Vatras_DI_Talente_Circle_5()
 {
 	AI_Output(self,other,"DIA_Vatras_DI_Talente_Circle_5_05_00");	//Jesteœ teraz magiem pi¹tego krêgu. Wykorzystuj swoje umiejêtnoœci z nale¿n¹ rozwag¹.
-	Info_ClearChoices(dia_vatras_di_talente);
-	b_teachmagiccircle(self,other,5);
+	Info_ClearChoices(DIA_Vatras_DI_Talente);
+	B_TeachMagicCircle(self,other,5);
 };
 
-func void dia_vatras_di_talente_circle_6()
+func void DIA_Vatras_DI_Talente_Circle_6()
 {
 	AI_Output(self,other,"DIA_Vatras_DI_Talente_Circle_6_05_00");	//Zyska³eœ dostêp do najwy¿szych tajników magii.
 	AI_Output(self,other,"DIA_Vatras_DI_Talente_Circle_6_05_01");	//Zachowaj rozs¹dek i zwalczaj swoje ludzkie s³aboœci, by nie przyæmi³y ci prawdy.
-	Info_ClearChoices(dia_vatras_di_talente);
-	b_teachmagiccircle(self,other,6);
+	Info_ClearChoices(DIA_Vatras_DI_Talente);
+	B_TeachMagicCircle(self,other,6);
 };
 
-func void dia_vatras_di_talente_potion_health_01()
+func void DIA_Vatras_DI_Talente_POTION_Health_01()
 {
-	b_teachplayertalentalchemy(self,other,POTION_HEALTH_01);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Health_01);
 };
 
-func void dia_vatras_di_talente_potion_health_02()
+func void DIA_Vatras_DI_Talente_POTION_Health_02()
 {
-	b_teachplayertalentalchemy(self,other,POTION_HEALTH_02);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Health_02);
 };
 
-func void dia_vatras_di_talente_potion_health_03()
+func void DIA_Vatras_DI_Talente_POTION_Health_03()
 {
-	b_teachplayertalentalchemy(self,other,POTION_HEALTH_03);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Health_03);
 };
 
-func void dia_vatras_di_talente_potion_mana_01()
+func void DIA_Vatras_DI_Talente_POTION_Mana_01()
 {
-	b_teachplayertalentalchemy(self,other,POTION_MANA_01);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Mana_01);
 };
 
-func void dia_vatras_di_talente_potion_mana_02()
+func void DIA_Vatras_DI_Talente_POTION_Mana_02()
 {
-	b_teachplayertalentalchemy(self,other,POTION_MANA_02);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Mana_02);
 };
 
-func void dia_vatras_di_talente_potion_mana_03()
+func void DIA_Vatras_DI_Talente_POTION_Mana_03()
 {
-	b_teachplayertalentalchemy(self,other,POTION_MANA_03);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Mana_03);
 };
 
-func void dia_vatras_di_talente_potion_speed()
+func void DIA_Vatras_DI_Talente_POTION_Speed()
 {
-	b_teachplayertalentalchemy(self,other,POTION_SPEED);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Speed);
 };
 
-func void dia_vatras_di_talente_potion_perm_str()
+func void DIA_Vatras_DI_Talente_POTION_Perm_STR()
 {
-	b_teachplayertalentalchemy(self,other,POTION_PERM_STR);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Perm_STR);
 };
 
-func void dia_vatras_di_talente_potion_perm_dex()
+func void DIA_Vatras_DI_Talente_POTION_Perm_DEX()
 {
-	b_teachplayertalentalchemy(self,other,POTION_PERM_DEX);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Perm_DEX);
 };
 
-func void dia_vatras_di_talente_potion_perm_mana()
+func void DIA_Vatras_DI_Talente_POTION_Perm_Mana()
 {
-	b_teachplayertalentalchemy(self,other,POTION_PERM_MANA);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Perm_Mana);
 };
 
-func void dia_vatras_di_talente_potion_perm_health()
+func void DIA_Vatras_DI_Talente_POTION_Perm_Health()
 {
-	b_teachplayertalentalchemy(self,other,POTION_PERM_HEALTH);
+	B_TeachPlayerTalentAlchemy(self,other,POTION_Perm_Health);
 };
 
-func void dia_vatras_di_talente_back()
+func void DIA_Vatras_DI_Talente_BACK()
 {
-	Info_ClearChoices(dia_vatras_di_talente);
+	Info_ClearChoices(DIA_Vatras_DI_Talente);
 };
 
 
-instance DIA_VATRAS_DI_DEMENTOROBSESSIONBOOK(C_INFO)
+instance DIA_Vatras_DI_DementorObsessionBook(C_Info)
 {
-	npc = vlk_439_vatras_di;
+	npc = VLK_439_Vatras_DI;
 	nr = 99;
-	condition = dia_vatras_di_dementorobsessionbook_condition;
-	information = dia_vatras_di_dementorobsessionbook_info;
+	condition = DIA_Vatras_DI_DementorObsessionBook_Condition;
+	information = DIA_Vatras_DI_DementorObsessionBook_Info;
 	permanent = TRUE;
 	description = "Mam tutaj Almanach Opêtanych.";
 };
 
 
-func int dia_vatras_di_dementorobsessionbook_condition()
+func int DIA_Vatras_DI_DementorObsessionBook_Condition()
 {
-	if(Npc_HasItems(other,itwr_dementorobsessionbook_mis))
+	if(Npc_HasItems(other,ITWR_DementorObsessionBook_MIS))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_vatras_di_dementorobsessionbook_onetime;
+var int DIA_Vatras_DI_DementorObsessionBook_OneTime;
 
-func void dia_vatras_di_dementorobsessionbook_info()
+func void DIA_Vatras_DI_DementorObsessionBook_Info()
 {
 	AI_Output(other,self,"DIA_Vatras_DI_DementorObsessionBook_15_00");	//Mam tutaj almanach opêtanych.
-	if(DIA_VATRAS_DI_DEMENTOROBSESSIONBOOK_ONETIME == FALSE)
+	if(DIA_Vatras_DI_DementorObsessionBook_OneTime == FALSE)
 	{
 		AI_Output(self,other,"DIA_Vatras_DI_DementorObsessionBook_05_01");	//Hmmm... Jeœli siê st¹d wydostaniemy, zabiorê go do klasztoru, do Pyrokara.
-		DIA_VATRAS_DI_DEMENTOROBSESSIONBOOK_ONETIME = TRUE;
+		DIA_Vatras_DI_DementorObsessionBook_OneTime = TRUE;
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Vatras_DI_DementorObsessionBook_05_02");	//Znalaz³eœ ich wiêcej? Przynieœ mi wszystkie, które zdo³asz znaleŸæ!
 	};
-	b_giveinvitems(other,self,5784,1);
-	Npc_RemoveInvItem(self,itwr_dementorobsessionbook_mis);
-	b_giveplayerxp(XP_AMBIENT);
+	B_GiveInvItems(other,self,ITWR_DementorObsessionBook_MIS,1);
+	Npc_RemoveInvItem(self,ITWR_DementorObsessionBook_MIS);
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_VATRAS_DI_UNDEADDRAGONDEAD(C_INFO)
+instance DIA_Vatras_DI_UndeadDragonDead(C_Info)
 {
-	npc = vlk_439_vatras_di;
+	npc = VLK_439_Vatras_DI;
 	nr = 99;
-	condition = dia_vatras_di_undeaddragondead_condition;
-	information = dia_vatras_di_undeaddragondead_info;
+	condition = DIA_Vatras_DI_UndeadDragonDead_Condition;
+	information = DIA_Vatras_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
 	description = "Zwyciê¿y³em!";
 };
 
 
-func int dia_vatras_di_undeaddragondead_condition()
+func int DIA_Vatras_DI_UndeadDragonDead_Condition()
 {
-	if(Npc_IsDead(undeaddragon))
+	if(Npc_IsDead(UndeadDragon))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_vatras_di_undeaddragondead_onetime;
+var int DIA_Vatras_DI_UndeadDragonDead_OneTime;
 
-func void dia_vatras_di_undeaddragondead_info()
+func void DIA_Vatras_DI_UndeadDragonDead_Info()
 {
 	AI_Output(other,self,"DIA_Vatras_DI_UndeadDragonDead_15_00");	//Zwyciê¿y³em!
-	if(DIA_VATRAS_DI_UNDEADDRAGONDEAD_ONETIME == FALSE)
+	if(DIA_Vatras_DI_UndeadDragonDead_OneTime == FALSE)
 	{
 		AI_Output(self,other,"DIA_Vatras_DI_UndeadDragonDead_05_01");	//Wiem, czujê to!
 		AI_Output(self,other,"DIA_Vatras_DI_UndeadDragonDead_05_02");	//Zada³eœ Beliarowi straszliwy cios, po którym szybko siê nie otrz¹œnie.
@@ -546,7 +546,7 @@ func void dia_vatras_di_undeaddragondead_info()
 		AI_Output(self,other,"DIA_Vatras_Add_05_15");	//Tylko Adanos stoi miêdzy zwaœnionymi bogami, by zapewniæ równowagê si³.
 		AI_Output(other,self,"DIA_Vatras_Add_15_16");	//Zamiast tego móg³ mi nieco pomóc.
 		AI_Output(self,other,"DIA_Vatras_Add_05_17");	//Ale¿ tak w³aœnie zrobi³. Mo¿esz byæ tego pewien.
-		DIA_VATRAS_DI_UNDEADDRAGONDEAD_ONETIME = TRUE;
+		DIA_Vatras_DI_UndeadDragonDead_OneTime = TRUE;
 	};
 	AI_Output(self,other,"DIA_Vatras_DI_UndeadDragonDead_05_09");	//Powiedz kapitanowi, by podnosi³ kotwicê. Ta cisza i spokój mog¹ byæ tylko z³udne.
 };

@@ -1,49 +1,49 @@
 
-var int brahim_itemsgiven_chapter_1;
-var int brahim_itemsgiven_chapter_2;
-var int brahim_itemsgiven_chapter_3;
-var int brahim_itemsgiven_chapter_4;
-var int brahim_itemsgiven_chapter_5;
+var int Brahim_ItemsGiven_Chapter_1;
+var int Brahim_ItemsGiven_Chapter_2;
+var int Brahim_ItemsGiven_Chapter_3;
+var int Brahim_ItemsGiven_Chapter_4;
+var int Brahim_ItemsGiven_Chapter_5;
 var int brahim_itemsgiven_chapter_6;
 
-func void b_givetradeinv_brahim(var C_NPC slf)
+func void B_GiveTradeInv_Brahim(var C_Npc slf)
 {
-	if((KAPITEL >= 1) && (BRAHIM_ITEMSGIVEN_CHAPTER_1 == FALSE))
+	if((Kapitel >= 1) && (Brahim_ItemsGiven_Chapter_1 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,50);
-		CreateInvItems(slf,itwr_map_newworld,1);
-		CreateInvItems(slf,itwr_map_newworld_city,2);
-		BRAHIM_ITEMSGIVEN_CHAPTER_1 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,50);
+		CreateInvItems(slf,ItWr_Map_NewWorld,1);
+		CreateInvItems(slf,ItWr_Map_NewWorld_City,2);
+		Brahim_ItemsGiven_Chapter_1 = TRUE;
 	};
-	if((KAPITEL >= 2) && (BRAHIM_ITEMSGIVEN_CHAPTER_2 == FALSE))
+	if((Kapitel >= 2) && (Brahim_ItemsGiven_Chapter_2 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,50);
-		CreateInvItems(slf,itwr_map_shrine_mis,1);
-		CreateInvItems(slf,itwr_map_newworld,1);
-		BRAHIM_ITEMSGIVEN_CHAPTER_2 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,50);
+		CreateInvItems(slf,ItWr_Map_Shrine_MIS,1);
+		CreateInvItems(slf,ItWr_Map_NewWorld,1);
+		Brahim_ItemsGiven_Chapter_2 = TRUE;
 	};
-	if((KAPITEL >= 3) && (BRAHIM_ITEMSGIVEN_CHAPTER_3 == FALSE))
+	if((Kapitel >= 3) && (Brahim_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems(slf,itwr_shatteredgolem_mis,1);
-		CreateInvItems(slf,itwr_map_newworld,1);
-		CreateInvItems(slf,itwr_map_oldworld,1);
-		CreateInvItems(slf,itmi_gold,50);
-		BRAHIM_ITEMSGIVEN_CHAPTER_3 = TRUE;
+		CreateInvItems(slf,ItWr_ShatteredGolem_MIS,1);
+		CreateInvItems(slf,ItWr_Map_NewWorld,1);
+		CreateInvItems(slf,ItWr_Map_OldWorld,1);
+		CreateInvItems(slf,ItMi_Gold,50);
+		Brahim_ItemsGiven_Chapter_3 = TRUE;
 	};
-	if((KAPITEL >= 4) && (BRAHIM_ITEMSGIVEN_CHAPTER_4 == FALSE))
+	if((Kapitel >= 4) && (Brahim_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itwr_map_caves_mis,1);
-		BRAHIM_ITEMSGIVEN_CHAPTER_4 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItWr_Map_Caves_MIS,1);
+		Brahim_ItemsGiven_Chapter_4 = TRUE;
 	};
-	if((KAPITEL >= 5) && (BRAHIM_ITEMSGIVEN_CHAPTER_5 == FALSE))
+	if((Kapitel >= 5) && (Brahim_ItemsGiven_Chapter_5 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		BRAHIM_ITEMSGIVEN_CHAPTER_5 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		Brahim_ItemsGiven_Chapter_5 = TRUE;
 	};
-	if((KAPITEL >= 6) && (BRAHIM_ITEMSGIVEN_CHAPTER_6 == FALSE))
+	if((Kapitel >= 6) && (BRAHIM_ITEMSGIVEN_CHAPTER_6 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
+		CreateInvItems(slf,ItMi_Gold,100);
 		BRAHIM_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };

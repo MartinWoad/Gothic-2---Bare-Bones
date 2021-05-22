@@ -1,28 +1,28 @@
 
-instance BAU_981_GROM(NPC_DEFAULT)
+instance BAU_981_Grom(Npc_Default)
 {
 	name[0] = "Grom";
 	guild = GIL_OUT;
 	id = 981;
 	voice = 8;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_sld_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_P_GILBERT,BODYTEX_P,4830);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_P_Gilbert,BodyTex_P,ITAR_Bau_L);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,40);
-	daily_routine = rtn_start_981;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,40);
+	daily_routine = Rtn_Start_981;
 };
 
 
-func void rtn_start_981()
+func void Rtn_Start_981()
 {
-	ta_saw(8,0,23,0,"NW_CASTLEMINE_TROLL_04_C");
-	ta_sleep(23,0,8,0,"NW_CASTLEMINE_TROLL_04_B");
+	TA_Saw(8,0,23,0,"NW_CASTLEMINE_TROLL_04_C");
+	TA_Sleep(23,0,8,0,"NW_CASTLEMINE_TROLL_04_B");
 };
 

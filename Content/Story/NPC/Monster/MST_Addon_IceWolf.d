@@ -1,9 +1,9 @@
 
-prototype MST_DEFAULT_ICEWOLF(C_NPC)
+prototype Mst_Default_Icewolf(C_Npc)
 {
 	name[0] = "Lodowy Wilk";
 	guild = GIL_WOLF;
-	aivar[AIV_MM_REAL_ID] = ID_ICEWOLF;
+	aivar[AIV_MM_REAL_ID] = ID_Icewolf;
 	level = 15;
 	attribute[ATR_STRENGTH] = 120;
 	attribute[ATR_DEXTERITY] = 120;
@@ -21,26 +21,26 @@ prototype MST_DEFAULT_ICEWOLF(C_NPC)
 	fight_tactic = FAI_WOLF;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_LONG;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	aivar[AIV_MM_PACKHUNTER] = TRUE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_LONG;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar[AIV_MM_Packhunter] = TRUE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_icewolf()
+func void B_SetVisuals_Icewolf()
 {
 	Mdl_SetVisual(self,"Wolf.mds");
 	Mdl_SetVisualBody(self,"SnoWol_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance ICEWOLF(MST_DEFAULT_ICEWOLF)
+instance Icewolf(Mst_Default_Icewolf)
 {
-	b_setvisuals_icewolf();
+	B_SetVisuals_Icewolf();
 	Npc_SetToFistMode(self);
-	CreateInvItems(self,itfomuttonraw,1);
+	CreateInvItems(self,ItFoMuttonRaw,1);
 };
 

@@ -1,62 +1,62 @@
 
-var int fenia_itemsgiven_chapter_1;
-var int fenia_itemsgiven_chapter_2;
-var int fenia_itemsgiven_chapter_3;
-var int fenia_itemsgiven_chapter_4;
-var int fenia_itemsgiven_chapter_5;
+var int Fenia_ItemsGiven_Chapter_1;
+var int Fenia_ItemsGiven_Chapter_2;
+var int Fenia_ItemsGiven_Chapter_3;
+var int Fenia_ItemsGiven_Chapter_4;
+var int Fenia_ItemsGiven_Chapter_5;
 var int fenia_itemsgiven_chapter_6;
 
-func void b_givetradeinv_fenia(var C_NPC slf)
+func void B_GiveTradeInv_Fenia(var C_Npc slf)
 {
-	if((KAPITEL >= 1) && (FENIA_ITEMSGIVEN_CHAPTER_1 == FALSE))
+	if((Kapitel >= 1) && (Fenia_ItemsGiven_Chapter_1 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,50);
-		CreateInvItems(slf,itfo_water,5);
-		CreateInvItems(slf,itfo_bread,3);
-		CreateInvItems(slf,itfo_fish,5);
-		FENIA_ITEMSGIVEN_CHAPTER_1 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,50);
+		CreateInvItems(slf,ItFo_Water,5);
+		CreateInvItems(slf,ItFo_Bread,3);
+		CreateInvItems(slf,ItFo_Fish,5);
+		Fenia_ItemsGiven_Chapter_1 = TRUE;
 	};
-	if((KAPITEL >= 2) && (FENIA_ITEMSGIVEN_CHAPTER_2 == FALSE))
+	if((Kapitel >= 2) && (Fenia_ItemsGiven_Chapter_2 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,50);
-		CreateInvItems(slf,itfo_cheese,5);
-		CreateInvItems(slf,itfo_fishsoup,5);
-		CreateInvItems(slf,itfo_fish,3);
-		FENIA_ITEMSGIVEN_CHAPTER_2 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,50);
+		CreateInvItems(slf,ItFo_Cheese,5);
+		CreateInvItems(slf,ItFo_FishSoup,5);
+		CreateInvItems(slf,ItFo_Fish,3);
+		Fenia_ItemsGiven_Chapter_2 = TRUE;
 	};
-	if((KAPITEL >= 3) && (FENIA_ITEMSGIVEN_CHAPTER_3 == FALSE))
+	if((Kapitel >= 3) && (Fenia_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itfomutton,2);
-		CreateInvItems(slf,itfo_stew,5);
-		CreateInvItems(slf,itfo_fish,2);
-		CreateInvItems(slf,itfo_sausage,5);
-		CreateInvItems(slf,itfo_booze,5);
-		FENIA_ITEMSGIVEN_CHAPTER_3 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItFoMutton,2);
+		CreateInvItems(slf,ItFo_Stew,5);
+		CreateInvItems(slf,ItFo_Fish,2);
+		CreateInvItems(slf,ItFo_Sausage,5);
+		CreateInvItems(slf,ItFo_Booze,5);
+		Fenia_ItemsGiven_Chapter_3 = TRUE;
 	};
-	if((KAPITEL >= 4) && (FENIA_ITEMSGIVEN_CHAPTER_4 == FALSE))
+	if((Kapitel >= 4) && (Fenia_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,150);
-		CreateInvItems(slf,itfo_wine,5);
-		CreateInvItems(slf,itfomutton,5);
-		CreateInvItems(slf,itfo_stew,5);
-		CreateInvItems(slf,itfo_bacon,5);
-		CreateInvItems(slf,itfo_fish,5);
-		FENIA_ITEMSGIVEN_CHAPTER_4 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,150);
+		CreateInvItems(slf,ItFo_Wine,5);
+		CreateInvItems(slf,ItFoMutton,5);
+		CreateInvItems(slf,ItFo_Stew,5);
+		CreateInvItems(slf,ItFo_Bacon,5);
+		CreateInvItems(slf,ItFo_Fish,5);
+		Fenia_ItemsGiven_Chapter_4 = TRUE;
 	};
-	if((KAPITEL >= 5) && (FENIA_ITEMSGIVEN_CHAPTER_5 == FALSE))
+	if((Kapitel >= 5) && (Fenia_ItemsGiven_Chapter_5 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,200);
-		CreateInvItems(slf,itfo_wine,2);
-		CreateInvItems(slf,itfomutton,2);
-		CreateInvItems(slf,itfo_stew,2);
-		CreateInvItems(slf,itfo_fish,5);
-		FENIA_ITEMSGIVEN_CHAPTER_5 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,200);
+		CreateInvItems(slf,ItFo_Wine,2);
+		CreateInvItems(slf,ItFoMutton,2);
+		CreateInvItems(slf,ItFo_Stew,2);
+		CreateInvItems(slf,ItFo_Fish,5);
+		Fenia_ItemsGiven_Chapter_5 = TRUE;
 	};
-	if((KAPITEL >= 6) && (FENIA_ITEMSGIVEN_CHAPTER_6 == FALSE))
+	if((Kapitel >= 6) && (FENIA_ITEMSGIVEN_CHAPTER_6 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,300);
-		CreateInvItems(slf,itfo_fish,5);
+		CreateInvItems(slf,ItMi_Gold,300);
+		CreateInvItems(slf,ItFo_Fish,5);
 		FENIA_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };

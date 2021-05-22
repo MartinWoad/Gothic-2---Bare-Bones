@@ -1,8 +1,8 @@
 
-func void zs_smoke_waterpipe()
+func void ZS_Smoke_Waterpipe()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
@@ -10,16 +10,16 @@ func void zs_smoke_waterpipe()
 	};
 };
 
-func int zs_smoke_waterpipe_loop()
+func int ZS_Smoke_Waterpipe_Loop()
 {
-	if(!c_bodystatecontains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"SMOKE"))
+	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"SMOKE"))
 	{
 		AI_UseMob(self,"SMOKE",1);
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_smoke_waterpipe_end()
+func void ZS_Smoke_Waterpipe_End()
 {
 	AI_UseMob(self,"SMOKE",-1);
 };

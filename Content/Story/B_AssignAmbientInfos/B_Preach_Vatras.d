@@ -1,5 +1,5 @@
 
-func void b_preach_vatras(var int satz)
+func void B_Preach_Vatras(var int satz)
 {
 	if(satz == 0)
 	{

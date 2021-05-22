@@ -1,29 +1,29 @@
 
-instance VLK_424_ALWIN(NPC_DEFAULT)
+instance Vlk_424_Alwin(Npc_Default)
 {
 	name[0] = "Alwin";
 	guild = GIL_VLK;
 	id = 424;
 	voice = 12;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	aivar[AIV_ToughGuy] = TRUE;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_vlk_axe);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_P_NORMALBART_RIORDIAN,BODYTEX_P,4819);
+	EquipItem(self,ItMw_1h_Vlk_Axe);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_P_NormalBart_Riordian,BodyTex_P,ITAR_Barkeeper);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_424;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_424;
 };
 
 
-func void rtn_start_424()
+func void Rtn_Start_424()
 {
-	ta_sit_bench(8,0,22,0,"NW_CITY_PATH_HABOUR_18");
-	ta_sleep(22,0,8,0,"NW_CITY_HABOUR_HUT_07_BED_01");
+	TA_Sit_Bench(8,0,22,0,"NW_CITY_PATH_HABOUR_18");
+	TA_Sleep(22,0,8,0,"NW_CITY_HABOUR_HUT_07_BED_01");
 };
 

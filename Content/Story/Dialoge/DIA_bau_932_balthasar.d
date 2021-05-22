@@ -1,42 +1,42 @@
 
-instance DIA_BALTHASAR_EXIT(C_INFO)
+instance DIA_Balthasar_EXIT(C_Info)
 {
-	npc = bau_932_balthasar;
+	npc = BAU_932_Balthasar;
 	nr = 999;
-	condition = dia_balthasar_exit_condition;
-	information = dia_balthasar_exit_info;
+	condition = DIA_Balthasar_EXIT_Condition;
+	information = DIA_Balthasar_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_balthasar_exit_condition()
+func int DIA_Balthasar_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_balthasar_exit_info()
+func void DIA_Balthasar_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BALTHASAR_HALLO(C_INFO)
+instance DIA_Balthasar_HALLO(C_Info)
 {
-	npc = bau_932_balthasar;
+	npc = BAU_932_Balthasar;
 	nr = 3;
-	condition = dia_balthasar_hallo_condition;
-	information = dia_balthasar_hallo_info;
+	condition = DIA_Balthasar_HALLO_Condition;
+	information = DIA_Balthasar_HALLO_Info;
 	description = "Jak leci?";
 };
 
 
-func int dia_balthasar_hallo_condition()
+func int DIA_Balthasar_HALLO_Condition()
 {
 	return TRUE;
 };
 
-func void dia_balthasar_hallo_info()
+func void DIA_Balthasar_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Balthasar_HALLO_15_00");	//Co s³ychaæ?
 	AI_Output(self,other,"DIA_Balthasar_HALLO_05_01");	//O, nowy w gospodarstwie! Czy¿by stary sknera w koñcu za³atwi³ mi pomocnika?
@@ -46,25 +46,25 @@ func void dia_balthasar_hallo_info()
 };
 
 
-instance DIA_BALTHASAR_WASMACHSTDU(C_INFO)
+instance DIA_Balthasar_WASMACHSTDU(C_Info)
 {
-	npc = bau_932_balthasar;
+	npc = BAU_932_Balthasar;
 	nr = 4;
-	condition = dia_balthasar_wasmachstdu_condition;
-	information = dia_balthasar_wasmachstdu_info;
+	condition = DIA_Balthasar_WASMACHSTDU_Condition;
+	information = DIA_Balthasar_WASMACHSTDU_Info;
 	description = "Na czym polega twoja praca?";
 };
 
 
-func int dia_balthasar_wasmachstdu_condition()
+func int DIA_Balthasar_WASMACHSTDU_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_balthasar_hallo))
+	if(Npc_KnowsInfo(other,DIA_Balthasar_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_balthasar_wasmachstdu_info()
+func void DIA_Balthasar_WASMACHSTDU_Info()
 {
 	AI_Output(other,self,"DIA_Balthasar_WASMACHSTDU_15_00");	//Na czym polega twoja praca?
 	AI_Output(self,other,"DIA_Balthasar_WASMACHSTDU_05_01");	//Och, pilnujê owiec. Robiê to, odk¹d pamiêtam.
@@ -72,25 +72,25 @@ func void dia_balthasar_wasmachstdu_info()
 };
 
 
-instance DIA_BALTHASAR_AERGERMITNACHBARN(C_INFO)
+instance DIA_Balthasar_AERGERMITNACHBARN(C_Info)
 {
-	npc = bau_932_balthasar;
+	npc = BAU_932_Balthasar;
 	nr = 5;
-	condition = dia_balthasar_aergermitnachbarn_condition;
-	information = dia_balthasar_aergermitnachbarn_info;
+	condition = DIA_Balthasar_AERGERMITNACHBARN_Condition;
+	information = DIA_Balthasar_AERGERMITNACHBARN_Info;
 	description = "Masz jakieœ k³opoty z s¹siadami?";
 };
 
 
-func int dia_balthasar_aergermitnachbarn_condition()
+func int DIA_Balthasar_AERGERMITNACHBARN_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_balthasar_wasmachstdu) && ((hero.guild == GIL_NONE) || (hero.guild == GIL_SLD) || (hero.guild == GIL_DJG)) && ((Npc_IsDead(balthasarsheep1) == FALSE) || (Npc_IsDead(balthasarsheep2) == FALSE) || (Npc_IsDead(balthasarsheep3) == FALSE)))
+	if(Npc_KnowsInfo(other,DIA_Balthasar_WASMACHSTDU) && ((hero.guild == GIL_NONE) || (hero.guild == GIL_SLD) || (hero.guild == GIL_DJG)) && ((Npc_IsDead(BalthasarSheep1) == FALSE) || (Npc_IsDead(BalthasarSheep2) == FALSE) || (Npc_IsDead(BalthasarSheep3) == FALSE)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_balthasar_aergermitnachbarn_info()
+func void DIA_Balthasar_AERGERMITNACHBARN_Info()
 {
 	AI_Output(other,self,"DIA_Balthasar_AERGERMITNACHBARN_15_00");	//Masz jakieœ k³opoty z s¹siadami?
 	AI_Output(self,other,"DIA_Balthasar_AERGERMITNACHBARN_05_01");	//Trawa po tej stronie wielkiego pola jest zawsze wysuszona i rzadka. Wiêc zazwyczaj chodzê na pastwiska innych farmerów.
@@ -100,25 +100,25 @@ func void dia_balthasar_aergermitnachbarn_info()
 };
 
 
-instance DIA_BALTHASAR_WOBENGAR(C_INFO)
+instance DIA_Balthasar_WOBENGAR(C_Info)
 {
-	npc = bau_932_balthasar;
+	npc = BAU_932_Balthasar;
 	nr = 10;
-	condition = dia_balthasar_wobengar_condition;
-	information = dia_balthasar_wobengar_info;
+	condition = DIA_Balthasar_WOBENGAR_Condition;
+	information = DIA_Balthasar_WOBENGAR_Info;
 	description = "Gdzie mogê znaleŸæ te pastwiska i gospodarstwo Bengara?";
 };
 
 
-func int dia_balthasar_wobengar_condition()
+func int DIA_Balthasar_WOBENGAR_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_balthasar_aergermitnachbarn) && ((hero.guild == GIL_NONE) || (hero.guild == GIL_SLD) || (hero.guild == GIL_DJG)))
+	if(Npc_KnowsInfo(other,DIA_Balthasar_AERGERMITNACHBARN) && ((hero.guild == GIL_NONE) || (hero.guild == GIL_SLD) || (hero.guild == GIL_DJG)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_balthasar_wobengar_info()
+func void DIA_Balthasar_WOBENGAR_Info()
 {
 	AI_Output(other,self,"DIA_Balthasar_WOBENGAR_15_00");	//Gdzie mogê znaleŸæ te pastwiska i gospodarstwo Bengara?
 	AI_Output(self,other,"DIA_Balthasar_WOBENGAR_05_01");	//IdŸ t¹ œcie¿k¹ i przejdŸ przez du¿e rozstaje.
@@ -126,108 +126,108 @@ func void dia_balthasar_wobengar_info()
 };
 
 
-instance DIA_BALTHASAR_TALKTOBENGAR(C_INFO)
+instance DIA_Balthasar_TALKTOBENGAR(C_Info)
 {
-	npc = bau_932_balthasar;
+	npc = BAU_932_Balthasar;
 	nr = 6;
-	condition = dia_balthasar_talktobengar_condition;
-	information = dia_balthasar_talktobengar_info;
+	condition = DIA_Balthasar_TALKTOBENGAR_Condition;
+	information = DIA_Balthasar_TALKTOBENGAR_Info;
 	description = "Mo¿e powinienem pomówiæ z Bengarem.";
 };
 
 
-func int dia_balthasar_talktobengar_condition()
+func int DIA_Balthasar_TALKTOBENGAR_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_balthasar_aergermitnachbarn) && ((hero.guild == GIL_NONE) || (hero.guild == GIL_SLD) || (hero.guild == GIL_DJG)) && ((Npc_IsDead(balthasarsheep1) == FALSE) || (Npc_IsDead(balthasarsheep2) == FALSE) || (Npc_IsDead(balthasarsheep3) == FALSE)))
+	if(Npc_KnowsInfo(other,DIA_Balthasar_AERGERMITNACHBARN) && ((hero.guild == GIL_NONE) || (hero.guild == GIL_SLD) || (hero.guild == GIL_DJG)) && ((Npc_IsDead(BalthasarSheep1) == FALSE) || (Npc_IsDead(BalthasarSheep2) == FALSE) || (Npc_IsDead(BalthasarSheep3) == FALSE)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_balthasar_talktobengar_info()
+func void DIA_Balthasar_TALKTOBENGAR_Info()
 {
 	AI_Output(other,self,"DIA_Balthasar_TALKTOBENGAR_15_00");	//Mo¿e powinienem pomówiæ z Bengarem.
 	AI_Output(self,other,"DIA_Balthasar_TALKTOBENGAR_05_01");	//Zrobisz to dla mnie? A co mu powiesz? To znaczy, wiesz, nie chcê ¿adnych k³opotów.
 	AI_Output(other,self,"DIA_Balthasar_TALKTOBENGAR_15_02");	//Zobaczymy.
-	Log_CreateTopic(TOPIC_BALTHASARSSCHAFE,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_BALTHASARSSCHAFE,LOG_RUNNING);
-	b_logentry(TOPIC_BALTHASARSSCHAFE,"Farmer Bengar zabroni³ pasterzowi Balthasarowi zabieraæ owce na p³askowy¿.");
-	MIS_BALTHASAR_BENGARSWEIDE = LOG_RUNNING;
+	Log_CreateTopic(TOPIC_BalthasarsSchafe,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_BalthasarsSchafe,LOG_Running);
+	B_LogEntry(TOPIC_BalthasarsSchafe,"Farmer Bengar zabroni³ pasterzowi Balthasarowi zabieraæ owce na p³askowy¿.");
+	MIS_Balthasar_BengarsWeide = LOG_Running;
 };
 
 
-instance DIA_BALTHASAR_BENGARUEBERREDET(C_INFO)
+instance DIA_Balthasar_BENGARUEBERREDET(C_Info)
 {
-	npc = bau_932_balthasar;
+	npc = BAU_932_Balthasar;
 	nr = 8;
-	condition = dia_balthasar_bengarueberredet_condition;
-	information = dia_balthasar_bengarueberredet_info;
+	condition = DIA_Balthasar_BENGARUEBERREDET_Condition;
+	information = DIA_Balthasar_BENGARUEBERREDET_Info;
 	description = "Mo¿esz znowu wyprowadzaæ owce na pastwiska Bengara.";
 };
 
 
-func int dia_balthasar_bengarueberredet_condition()
+func int DIA_Balthasar_BENGARUEBERREDET_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_balthasar_talktobengar) && (MIS_BALTHASAR_BENGARSWEIDE == LOG_SUCCESS) && ((hero.guild == GIL_NONE) || (hero.guild == GIL_SLD) || (hero.guild == GIL_DJG)) && ((Npc_IsDead(balthasarsheep1) == FALSE) || (Npc_IsDead(balthasarsheep2) == FALSE) || (Npc_IsDead(balthasarsheep3) == FALSE)))
+	if(Npc_KnowsInfo(other,DIA_Balthasar_TALKTOBENGAR) && (MIS_Balthasar_BengarsWeide == LOG_SUCCESS) && ((hero.guild == GIL_NONE) || (hero.guild == GIL_SLD) || (hero.guild == GIL_DJG)) && ((Npc_IsDead(BalthasarSheep1) == FALSE) || (Npc_IsDead(BalthasarSheep2) == FALSE) || (Npc_IsDead(BalthasarSheep3) == FALSE)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_balthasar_bengarueberredet_info()
+func void DIA_Balthasar_BENGARUEBERREDET_Info()
 {
 	AI_Output(other,self,"DIA_Balthasar_BENGARUEBERREDET_15_00");	//Mo¿esz znowu wprowadziæ owce na pastwiska Bengara. Rozmawia³em z nim.
 	AI_Output(self,other,"DIA_Balthasar_BENGARUEBERREDET_05_01");	//Dziêkujê! Od razu ruszam w drogê.
 	AI_Output(self,other,"DIA_Balthasar_BENGARUEBERREDET_05_02");	//A ty weŸ w podziêce za pomoc te baranie skóry.
-	b_giveinvitems(self,other,4741,10);
+	B_GiveInvItems(self,other,ItAt_SheepFur,10);
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"BengarsWeide");
-	b_giveplayerxp(XP_BALTHASAR_BENGARSWEIDE);
-	Wld_InsertNpc(sheep,"NW_BIGMILL_FARM3_BALTHASAR");
-	Wld_InsertNpc(sheep,"NW_BIGMILL_FARM3_BALTHASAR");
-	Wld_InsertNpc(hammel,"NW_BIGMILL_FARM3_BALTHASAR");
-	BALTHASARSHEEP1 = Hlp_GetNpc(balthasar_sheep1);
-	if(Hlp_IsValidNpc(balthasarsheep1) && !Npc_IsDead(balthasarsheep1))
+	B_GivePlayerXP(XP_Balthasar_BengarsWeide);
+	Wld_InsertNpc(Sheep,"NW_BIGMILL_FARM3_BALTHASAR");
+	Wld_InsertNpc(Sheep,"NW_BIGMILL_FARM3_BALTHASAR");
+	Wld_InsertNpc(Hammel,"NW_BIGMILL_FARM3_BALTHASAR");
+	BalthasarSheep1 = Hlp_GetNpc(Balthasar_Sheep1);
+	if(Hlp_IsValidNpc(BalthasarSheep1) && !Npc_IsDead(BalthasarSheep1))
 	{
-		AI_StartState(balthasarsheep1,zs_mm_rtn_follow_sheep_balthasar,1,"");
+		AI_StartState(BalthasarSheep1,ZS_MM_Rtn_Follow_Sheep_Balthasar,1,"");
 	};
-	BALTHASARSHEEP2 = Hlp_GetNpc(balthasar_sheep2);
-	if(Hlp_IsValidNpc(balthasarsheep2) && !Npc_IsDead(balthasarsheep2))
+	BalthasarSheep2 = Hlp_GetNpc(Balthasar_Sheep2);
+	if(Hlp_IsValidNpc(BalthasarSheep2) && !Npc_IsDead(BalthasarSheep2))
 	{
-		AI_StartState(balthasarsheep2,zs_mm_rtn_follow_sheep_balthasar,1,"");
+		AI_StartState(BalthasarSheep2,ZS_MM_Rtn_Follow_Sheep_Balthasar,1,"");
 	};
-	BALTHASARSHEEP3 = Hlp_GetNpc(balthasar_sheep3);
-	if(Hlp_IsValidNpc(balthasarsheep3) && !Npc_IsDead(balthasarsheep3))
+	BalthasarSheep3 = Hlp_GetNpc(Balthasar_Sheep3);
+	if(Hlp_IsValidNpc(BalthasarSheep3) && !Npc_IsDead(BalthasarSheep3))
 	{
-		AI_StartState(balthasarsheep3,zs_mm_rtn_follow_sheep_balthasar,1,"");
+		AI_StartState(BalthasarSheep3,ZS_MM_Rtn_Follow_Sheep_Balthasar,1,"");
 	};
 };
 
 
-instance DIA_BALTHASAR_PERMKAP1(C_INFO)
+instance DIA_Balthasar_PERMKAP1(C_Info)
 {
-	npc = bau_932_balthasar;
+	npc = BAU_932_Balthasar;
 	nr = 70;
-	condition = dia_balthasar_permkap1_condition;
-	information = dia_balthasar_permkap1_info;
+	condition = DIA_Balthasar_PERMKAP1_Condition;
+	information = DIA_Balthasar_PERMKAP1_Info;
 	permanent = TRUE;
 	description = "Oprócz tego, wszystko w porz¹dku?";
 };
 
 
-func int dia_balthasar_permkap1_condition()
+func int DIA_Balthasar_PERMKAP1_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_balthasar_wasmachstdu))
+	if(Npc_KnowsInfo(other,DIA_Balthasar_WASMACHSTDU))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_balthasar_permkap1_info()
+func void DIA_Balthasar_PERMKAP1_Info()
 {
 	AI_Output(other,self,"DIA_Balthasar_PERMKAP1_15_00");	//A poza tym, wszystko w porz¹dku?
 	Npc_PerceiveAll(self);
-	if((Wld_DetectNpc(self,balthasar_sheep1,NOFUNC,-1) && (Npc_GetDistToNpc(self,other) < 2000)) || (Wld_DetectNpc(self,balthasar_sheep2,NOFUNC,-1) && (Npc_GetDistToNpc(self,other) < 2000)) || (Wld_DetectNpc(self,balthasar_sheep3,NOFUNC,-1) && (Npc_GetDistToNpc(self,other) < 2000)) || (Wld_DetectNpc(self,sheep,NOFUNC,-1) && (Npc_GetDistToNpc(self,other) < 2000)) || (Wld_DetectNpc(self,hammel,NOFUNC,-1) && (Npc_GetDistToNpc(self,other) < 2000)))
+	if((Wld_DetectNpc(self,Balthasar_Sheep1,NOFUNC,-1) && (Npc_GetDistToNpc(self,other) < 2000)) || (Wld_DetectNpc(self,Balthasar_Sheep2,NOFUNC,-1) && (Npc_GetDistToNpc(self,other) < 2000)) || (Wld_DetectNpc(self,Balthasar_Sheep3,NOFUNC,-1) && (Npc_GetDistToNpc(self,other) < 2000)) || (Wld_DetectNpc(self,Sheep,NOFUNC,-1) && (Npc_GetDistToNpc(self,other) < 2000)) || (Wld_DetectNpc(self,Hammel,NOFUNC,-1) && (Npc_GetDistToNpc(self,other) < 2000)))
 	{
 		AI_Output(self,hero,"DIA_Balthasar_PERMKAP1_05_01");	//Nie mogê narzekaæ. Dziêkujê za troskê.
 		AI_StopProcessInfos(self);
@@ -235,7 +235,7 @@ func void dia_balthasar_permkap1_info()
 	else
 	{
 		AI_Output(self,hero,"DIA_Balthasar_PERMKAP1_05_02");	//Czasy s¹ ciê¿kie. Nie mogê znaleŸæ moich owiec!
-		if(Npc_IsDead(sekob) == FALSE)
+		if(Npc_IsDead(Sekob) == FALSE)
 		{
 			AI_Output(self,hero,"DIA_Balthasar_PERMKAP1_05_03");	//Chyba muszê siê wyspowiadaæ Sekobowi.
 		};
@@ -245,37 +245,37 @@ func void dia_balthasar_permkap1_info()
 };
 
 
-instance DIA_BALTHASAR_PICKPOCKET(C_INFO)
+instance DIA_Balthasar_PICKPOCKET(C_Info)
 {
-	npc = bau_932_balthasar;
+	npc = BAU_932_Balthasar;
 	nr = 900;
-	condition = dia_balthasar_pickpocket_condition;
-	information = dia_balthasar_pickpocket_info;
+	condition = DIA_Balthasar_PICKPOCKET_Condition;
+	information = DIA_Balthasar_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_20;
+	description = Pickpocket_20;
 };
 
 
-func int dia_balthasar_pickpocket_condition()
+func int DIA_Balthasar_PICKPOCKET_Condition()
 {
-	return c_beklauen(10,10);
+	return C_Beklauen(10,10);
 };
 
-func void dia_balthasar_pickpocket_info()
+func void DIA_Balthasar_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_balthasar_pickpocket);
-	Info_AddChoice(dia_balthasar_pickpocket,DIALOG_BACK,dia_balthasar_pickpocket_back);
-	Info_AddChoice(dia_balthasar_pickpocket,DIALOG_PICKPOCKET,dia_balthasar_pickpocket_doit);
+	Info_ClearChoices(DIA_Balthasar_PICKPOCKET);
+	Info_AddChoice(DIA_Balthasar_PICKPOCKET,Dialog_Back,DIA_Balthasar_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Balthasar_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Balthasar_PICKPOCKET_DoIt);
 };
 
-func void dia_balthasar_pickpocket_doit()
+func void DIA_Balthasar_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_balthasar_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Balthasar_PICKPOCKET);
 };
 
-func void dia_balthasar_pickpocket_back()
+func void DIA_Balthasar_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_balthasar_pickpocket);
+	Info_ClearChoices(DIA_Balthasar_PICKPOCKET);
 };
 

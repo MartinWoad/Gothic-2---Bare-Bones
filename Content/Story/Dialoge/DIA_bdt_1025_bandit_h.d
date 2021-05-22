@@ -1,46 +1,46 @@
 
-instance DIA_NAME_BANDIT_EXIT(C_INFO)
+instance DIA_NAME_BANDIT_EXIT(C_Info)
 {
-	npc = bdt_1025_bandit_h;
+	npc = BDT_1025_Bandit_H;
 	nr = 999;
-	condition = dia_name_bandit_exit_condition;
-	information = dia_name_bandit_exit_info;
+	condition = DIA_NAME_BANDIT_EXIT_Condition;
+	information = DIA_NAME_BANDIT_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_name_bandit_exit_condition()
+func int DIA_NAME_BANDIT_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_name_bandit_exit_info()
+func void DIA_NAME_BANDIT_EXIT_Info()
 {
-	hero.aivar[AIV_LASTDISTTOWP] = Npc_GetDistToWP(hero,"NW_FOREST_CAVE1_IN_01");
+	hero.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(hero,"NW_FOREST_CAVE1_IN_01");
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_NAME_BANDIT_SCHAFBLEIBTHIER(C_INFO)
+instance DIA_NAME_BANDIT_SCHAFBLEIBTHIER(C_Info)
 {
-	npc = bdt_1025_bandit_h;
+	npc = BDT_1025_Bandit_H;
 	nr = 30;
-	condition = dia_name_bandit_schafbleibthier_condition;
-	information = dia_name_bandit_schafbleibthier_info;
+	condition = DIA_NAME_BANDIT_SCHAFBLEIBTHIER_Condition;
+	information = DIA_NAME_BANDIT_SCHAFBLEIBTHIER_Info;
 	important = TRUE;
 };
 
 
-func int dia_name_bandit_schafbleibthier_condition()
+func int DIA_NAME_BANDIT_SCHAFBLEIBTHIER_Condition()
 {
 	return TRUE;
 };
 
-func void dia_name_bandit_schafbleibthier_info()
+func void DIA_NAME_BANDIT_SCHAFBLEIBTHIER_Info()
 {
 	AI_Output(self,other,"DIA_NAME_BANDIT_SCHAFBLEIBTHIER_09_00");	//Te, koleœ... Chyba nie jesteœ tu z powodu tej g³upiej owcy, co?
-	if(MIS_AKIL_SCHAFDIEBE == 0)
+	if(MIS_Akil_SchafDiebe == 0)
 	{
 		AI_Output(other,self,"DIA_NAME_BANDIT_SCHAFBLEIBTHIER_15_01");	//Owcy, jakiej owcy?
 		AI_Output(self,other,"DIA_NAME_BANDIT_SCHAFBLEIBTHIER_09_02");	//To rozumiem. Teraz won, nic tu po tobie.
@@ -48,86 +48,86 @@ func void dia_name_bandit_schafbleibthier_info()
 };
 
 
-instance DIA_NAME_BANDIT_SCHAFKLAU(C_INFO)
+instance DIA_NAME_BANDIT_SchafKlau(C_Info)
 {
-	npc = bdt_1025_bandit_h;
+	npc = BDT_1025_Bandit_H;
 	nr = 30;
-	condition = dia_name_bandit_schafklau_condition;
-	information = dia_name_bandit_schafklau_info;
+	condition = DIA_NAME_BANDIT_SchafKlau_Condition;
+	information = DIA_NAME_BANDIT_SchafKlau_Info;
 	important = TRUE;
 };
 
 
-func int dia_name_bandit_schafklau_condition()
+func int DIA_NAME_BANDIT_SchafKlau_Condition()
 {
-	if(Npc_GetDistToWP(hero,"NW_FOREST_CAVE1_IN_01") < (hero.aivar[AIV_LASTDISTTOWP] - 50))
+	if(Npc_GetDistToWP(hero,"NW_FOREST_CAVE1_IN_01") < (hero.aivar[AIV_LastDistToWP] - 50))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_name_bandit_schafklau_info()
+func void DIA_NAME_BANDIT_SchafKlau_Info()
 {
 	AI_Output(self,other,"DIA_NAME_BANDIT_SchafKlau_09_00");	//Hej! Do ciebie mówiê.
-	Info_AddChoice(dia_name_bandit_schafklau,DIALOG_ENDE,dia_name_bandit_schafklau_weiter);
+	Info_AddChoice(DIA_NAME_BANDIT_SchafKlau,Dialog_Ende,DIA_NAME_BANDIT_SchafKlau_weiter);
 };
 
-func void dia_name_bandit_schafklau_weiter()
+func void DIA_NAME_BANDIT_SchafKlau_weiter()
 {
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_SUDDENENEMYINFERNO,1);
-	bdt_1025_bandit_h.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-	bdt_1026_bandit_h.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+	B_Attack(self,other,AR_SuddenEnemyInferno,1);
+	BDT_1025_Bandit_H.aivar[AIV_EnemyOverride] = FALSE;
+	BDT_1026_Bandit_H.aivar[AIV_EnemyOverride] = FALSE;
 };
 
 
-instance DIA_NAME_BANDIT_RUECKDASSCHAFRAUS(C_INFO)
+instance DIA_NAME_BANDIT_RUECKDASSCHAFRAUS(C_Info)
 {
-	npc = bdt_1025_bandit_h;
+	npc = BDT_1025_Bandit_H;
 	nr = 30;
-	condition = dia_name_bandit_rueckdasschafraus_condition;
-	information = dia_name_bandit_rueckdasschafraus_info;
+	condition = DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_Condition;
+	information = DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_Info;
 	permanent = TRUE;
 	description = "Ukrad³eœ owcê z farmy Akila.";
 };
 
 
-func int dia_name_bandit_rueckdasschafraus_condition()
+func int DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_Condition()
 {
-	if((MIS_AKIL_SCHAFDIEBE == LOG_RUNNING) && (DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_NOPERM == FALSE))
+	if((MIS_Akil_SchafDiebe == LOG_Running) && (DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_NoPerm == FALSE))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_name_bandit_rueckdasschafraus_noperm;
+var int DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_NoPerm;
 
-func void dia_name_bandit_rueckdasschafraus_info()
+func void DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_Info()
 {
 	AI_Output(other,self,"DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_15_00");	//Ukrad³eœ owcê z farmy Akila.
 	AI_Output(self,other,"DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_09_01");	//I co z tego? Co mi zrobisz?
 	Info_ClearChoices(dia_name_bandit_rueckdasschafraus);
-	Info_AddChoice(dia_name_bandit_rueckdasschafraus,"W³aœciwie, co mnie obchodzi jakaœ g³upia owca.",dia_name_bandit_rueckdasschafraus_nichts);
-	Info_AddChoice(dia_name_bandit_rueckdasschafraus,"Oddawaj owcê albo dostaniesz po makówce.",dia_name_bandit_rueckdasschafraus_schaf);
+	Info_AddChoice(dia_name_bandit_rueckdasschafraus,"W³aœciwie, co mnie obchodzi jakaœ g³upia owca.",DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_nichts);
+	Info_AddChoice(dia_name_bandit_rueckdasschafraus,"Oddawaj owcê albo dostaniesz po makówce.",DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_schaf);
 };
 
-func void dia_name_bandit_rueckdasschafraus_schaf()
+func void DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_schaf()
 {
 	AI_Output(other,self,"DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_schaf_15_00");	//Oddawaj owcê albo dostaniesz po makówce.
 	AI_Output(self,other,"DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_schaf_09_01");	//Patrzcie go. Ch³optasiu, w³aœnie œci¹gn¹³eœ na siebie mój gniew.
 	AI_StopProcessInfos(self);
-	DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_NOPERM = TRUE;
-	b_attack(self,other,AR_SUDDENENEMYINFERNO,1);
-	bdt_1025_bandit_h.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-	bdt_1026_bandit_h.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+	DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_NoPerm = TRUE;
+	B_Attack(self,other,AR_SuddenEnemyInferno,1);
+	BDT_1025_Bandit_H.aivar[AIV_EnemyOverride] = FALSE;
+	BDT_1026_Bandit_H.aivar[AIV_EnemyOverride] = FALSE;
 };
 
-func void dia_name_bandit_rueckdasschafraus_nichts()
+func void DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_nichts()
 {
 	AI_Output(other,self,"DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_nichts_15_00");	//W³aœciwie, co mnie obchodzi jakaœ g³upia owca.
 	AI_Output(self,other,"DIA_NAME_BANDIT_RUECKDASSCHAFRAUS_nichts_09_01");	//W takim razie nie wkurzaj mnie i zejdŸ mi z oczu!
-	hero.aivar[AIV_LASTDISTTOWP] = Npc_GetDistToWP(hero,"NW_FOREST_CAVE1_IN_01");
+	hero.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(hero,"NW_FOREST_CAVE1_IN_01");
 	AI_StopProcessInfos(self);
 };
 

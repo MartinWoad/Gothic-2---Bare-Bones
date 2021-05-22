@@ -1,70 +1,70 @@
 
-instance DIA_DRAGON_FIRE_ISLAND_EXIT(C_INFO)
+instance DIA_Dragon_Fire_Island_Exit(C_Info)
 {
-	npc = dragon_fire_island;
+	npc = Dragon_Fire_Island;
 	nr = 999;
-	condition = dia_dragon_fire_island_exit_condition;
-	information = dia_dragon_fire_island_exit_info;
+	condition = DIA_Dragon_Fire_Island_Exit_Condition;
+	information = DIA_Dragon_Fire_Island_Exit_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dragon_fire_island_exit_condition()
+func int DIA_Dragon_Fire_Island_Exit_Condition()
 {
-	if(DRAGONTALK_EXIT_FREE == TRUE)
+	if(DragonTalk_Exit_Free == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dragon_fire_island_exit_info()
+func void DIA_Dragon_Fire_Island_Exit_Info()
 {
 	AI_StopProcessInfos(self);
-	DRAGONTALK_EXIT_FREE = FALSE;
+	DragonTalk_Exit_Free = FALSE;
 	self.flags = 0;
 };
 
 
-instance DIA_DRAGON_FIRE_ISLAND_HELLO(C_INFO)
+instance DIA_Dragon_Fire_Island_Hello(C_Info)
 {
-	npc = dragon_fire_island;
+	npc = Dragon_Fire_Island;
 	nr = 5;
-	condition = dia_dragon_fire_island_hello_condition;
-	information = dia_dragon_fire_island_hello_info;
+	condition = DIA_Dragon_Fire_Island_Hello_Condition;
+	information = DIA_Dragon_Fire_Island_Hello_Info;
 	important = TRUE;
 };
 
 
-func int dia_dragon_fire_island_hello_condition()
+func int DIA_Dragon_Fire_Island_Hello_Condition()
 {
-	if(Npc_HasItems(other,itmi_innoseye_mis) >= 1)
+	if(Npc_HasItems(other,ItMi_InnosEye_MIS) >= 1)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dragon_fire_island_hello_info()
+func void DIA_Dragon_Fire_Island_Hello_Info()
 {
 	AI_Output(self,other,"DIA_Dragon_Fire_Island_Hello_20_00");	//Zostañ, cz³owieku. Moje zmys³y podpowiadaj¹ mi, ¿e to ty unicestwi³eœ moich najbli¿szych.
 	AI_Output(other,self,"DIA_Dragon_Fire_Island_Hello_15_01");	//Czy¿by? Kogo nazywasz zabójc¹, pomiocie piekie³?
-	if((hero.guild == GIL_DJG) && (DRAGONEGGCOUNTER >= 7))
+	if((hero.guild == GIL_DJG) && (DragonEggCounter >= 7))
 	{
 		AI_Output(self,other,"DIA_Dragon_Fire_Island_Hello_20_02");	//Nie wystarczy ci, ¿e zniszczy³eœ niemal ca³e nasze potomstwo?
 	};
 	AI_Output(self,other,"DIA_Dragon_Fire_Island_Hello_20_03");	//Masz na sumieniu mojego brata, Feomathara, i za to mi zap³acisz.
-	if((hero.guild == GIL_DJG) && (DRAGONEGGCOUNTER >= 7))
+	if((hero.guild == GIL_DJG) && (DragonEggCounter >= 7))
 	{
 		AI_Output(other,self,"DIA_Dragon_Fire_Island_Hello_15_04");	//Bez obaw. Resztê twoich pobratymców te¿ dopadnê.
 		AI_Output(self,other,"DIA_Dragon_Fire_Island_Hello_20_05");	//Arrrrh. Spalê ciê na popió³ i zrobiê to z prawdziw¹ przyjemnoœci¹.
 	};
 	AI_Output(other,self,"DIA_Dragon_Fire_Island_Hello_15_06");	//Wiêc daruj sobie tê przemowê i przejdŸmy od razu do rzeczy.
 	AI_Output(self,other,"DIA_Dragon_Fire_Island_Hello_20_07");	//Daleko zaszed³eœ, ma³y cz³owieczku, ale ju¿ nigdy nie opuœcisz tych sal.
-	Npc_RemoveInvItems(other,itmi_innoseye_mis,1);
-	CreateInvItems(other,itmi_innoseye_discharged_mis,1);
+	Npc_RemoveInvItems(other,ItMi_InnosEye_MIS,1);
+	CreateInvItems(other,ItMi_InnosEye_Discharged_Mis,1);
 	AI_StopProcessInfos(self);
-	b_logentry(TOPIC_HALLENVONIRDORATH,"Nastêpny ognisty smok. Zaczynam ich mieæ po dziurki w nosie. Jedyne, czego teraz chcê, to przedostaæ siê przez rozpadlinê, któr¹ widaæ za smokiem.");
-	DRAGONTALK_EXIT_FREE = FALSE;
+	B_LogEntry(TOPIC_HallenVonIrdorath,"Nastêpny ognisty smok. Zaczynam ich mieæ po dziurki w nosie. Jedyne, czego teraz chcê, to przedostaæ siê przez rozpadlinê, któr¹ widaæ za smokiem.");
+	DragonTalk_Exit_Free = FALSE;
 	self.flags = 0;
 };
 

@@ -1,43 +1,43 @@
 
-instance NOV_604_DYRIAN(NPC_DEFAULT)
+instance NOV_604_Dyrian(Npc_Default)
 {
 	name[0] = "Dyrian";
 	guild = GIL_NOV;
 	id = 604;
 	voice = 13;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,2);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,2);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_nov_mace);
-	b_createambientinv(self);
-	CreateInvItems(self,itsc_sleep,1);
-	b_setnpcvisual(self,MALE,"Hum_Head_Thief",FACE_P_TOUGH_TORREZ,BODYTEX_P,4842);
+	EquipItem(self,ItMw_1h_Nov_Mace);
+	B_CreateAmbientInv(self);
+	CreateInvItems(self,ItSc_Sleep,1);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Thief",Face_P_Tough_Torrez,BodyTex_P,ItAr_NOV_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Mage.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_604;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_604;
 };
 
 
-func void rtn_start_604()
+func void Rtn_Start_604()
 {
-	ta_stand_wp(8,0,10,0,"NW_MONASTERY_GRASS_04");
-	ta_pray_innos_fp(10,0,11,0,"NW_MONASTERY_CHURCH_03");
-	ta_stand_wp(11,0,23,30,"NW_MONASTERY_GRASS_04");
-	ta_sleep(23,30,8,0,"NW_MONASTERY_NOVICE01_04");
+	TA_Stand_WP(8,0,10,0,"NW_MONASTERY_GRASS_04");
+	TA_Pray_Innos_FP(10,0,11,0,"NW_MONASTERY_CHURCH_03");
+	TA_Stand_WP(11,0,23,30,"NW_MONASTERY_GRASS_04");
+	TA_Sleep(23,30,8,0,"NW_MONASTERY_NOVICE01_04");
 };
 
-func void rtn_favour_604()
+func void Rtn_Favour_604()
 {
-	ta_rake_fp(8,0,23,30,"NW_MONASTERY_HERB_05");
-	ta_sleep(23,30,8,0,"NW_MONASTERY_NOVICE01_04");
+	TA_Rake_FP(8,0,23,30,"NW_MONASTERY_HERB_05");
+	TA_Sleep(23,30,8,0,"NW_MONASTERY_NOVICE01_04");
 };
 
-func void rtn_nofavour_604()
+func void Rtn_NoFavour_604()
 {
-	ta_stand_drinking(8,0,23,30,"TAVERNE");
-	ta_stand_drinking(23,30,8,0,"TAVERNE");
+	TA_Stand_Drinking(8,0,23,30,"TAVERNE");
+	TA_Stand_Drinking(23,30,8,0,"TAVERNE");
 };
 

@@ -1,42 +1,42 @@
 
-instance SLD_841_ENGARDO(NPC_DEFAULT)
+instance SLD_841_Engardo(Npc_Default)
 {
 	name[0] = "Engardo";
 	guild = GIL_BDT;
 	id = 841;
 	voice = 13;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,2);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,2);
 	level = 8;
 	fight_tactic = FAI_HUMAN_NORMAL;
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	EquipItem(self,itmw_2h_sld_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_NORMAL_ERPRESSER,BODYTEX_N,4834);
+	aivar[AIV_EnemyOverride] = TRUE;
+	EquipItem(self,ItMw_2h_Sld_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Pony",Face_N_Normal_Erpresser,BodyTex_N,ItAr_Sld_L);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,40);
-	daily_routine = rtn_prestart_841;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,40);
+	daily_routine = Rtn_PreStart_841;
 };
 
 
-func void rtn_prestart_841()
+func void Rtn_PreStart_841()
 {
-	ta_stand_guarding(8,0,22,0,"NW_FARM2_PATH_02");
-	ta_stand_guarding(22,0,8,0,"NW_FARM2_PATH_02");
+	TA_Stand_Guarding(8,0,22,0,"NW_FARM2_PATH_02");
+	TA_Stand_Guarding(22,0,8,0,"NW_FARM2_PATH_02");
 };
 
-func void rtn_start_841()
+func void Rtn_Start_841()
 {
-	ta_smalltalk(8,0,22,0,"NW_FARM2_TO_TAVERN_08");
-	ta_smalltalk(22,0,8,0,"NW_FARM2_TO_TAVERN_08");
+	TA_Smalltalk(8,0,22,0,"NW_FARM2_TO_TAVERN_08");
+	TA_Smalltalk(22,0,8,0,"NW_FARM2_TO_TAVERN_08");
 };
 
-func void rtn_bigfarm_841()
+func void Rtn_Bigfarm_841()
 {
-	ta_smalltalk(8,0,22,0,"NW_BIGFARM_HOUSE_OUT_05");
-	ta_sit_chair(22,0,8,0,"NW_BIGFARM_HOUSE_12");
+	TA_Smalltalk(8,0,22,0,"NW_BIGFARM_HOUSE_OUT_05");
+	TA_Sit_Chair(22,0,8,0,"NW_BIGFARM_HOUSE_12");
 };
 

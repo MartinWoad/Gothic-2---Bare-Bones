@@ -1,12 +1,12 @@
 
-var int foundvinoskellerei;
+var int FoundVinosKellerei;
 
 func void evt_vinoskellerei_func_s1()
 {
-	if(FOUNDVINOSKELLEREI == FALSE)
+	if(FoundVinosKellerei == FALSE)
 	{
-		FOUNDVINOSKELLEREI = TRUE;
-		b_giveplayerxp(XP_FOUNDVINOSKELLEREI);
+		FoundVinosKellerei = TRUE;
+		B_GivePlayerXP(XP_FoundVinosKellerei);
 	};
 };
 

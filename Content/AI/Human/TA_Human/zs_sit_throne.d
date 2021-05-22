@@ -1,9 +1,9 @@
 
-func void zs_sit_throne()
+func void ZS_Sit_Throne()
 {
-	perception_set_normal();
-	b_resetall(self);
-	if(!c_bodystatecontains(self,BS_SIT))
+	Perception_Set_Normal();
+	B_ResetAll(self);
+	if(!C_BodyStateContains(self,BS_SIT))
 	{
 		AI_SetWalkMode(self,NPC_WALK);
 		if(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == FALSE)
@@ -13,16 +13,16 @@ func void zs_sit_throne()
 	};
 };
 
-func int zs_sit_throne_loop()
+func int ZS_Sit_Throne_Loop()
 {
-	if(!c_bodystatecontains(self,BS_SIT) && Wld_IsMobAvailable(self,"THRONE"))
+	if(!C_BodyStateContains(self,BS_SIT) && Wld_IsMobAvailable(self,"THRONE"))
 	{
 		AI_UseMob(self,"THRONE",1);
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_sit_throne_end()
+func void ZS_Sit_Throne_End()
 {
 	AI_UseMob(self,"THRONE",-1);
 };

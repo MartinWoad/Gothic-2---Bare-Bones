@@ -1,49 +1,49 @@
 
-instance DIA_1015_BANDIT_EXIT(C_INFO)
+instance DIA_1015_BANDIT_EXIT(C_Info)
 {
-	npc = bdt_1015_bandit_l;
+	npc = Bdt_1015_Bandit_L;
 	nr = 999;
-	condition = dia_1015_bandit_exit_condition;
-	information = dia_1015_bandit_exit_info;
+	condition = DIA_1015_BANDIT_EXIT_Condition;
+	information = DIA_1015_BANDIT_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_1015_bandit_exit_condition()
+func int DIA_1015_BANDIT_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_1015_bandit_exit_info()
+func void DIA_1015_BANDIT_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_1015_BANDIT_AMBUSH(C_INFO)
+instance DIA_1015_BANDIT_AMBUSH(C_Info)
 {
-	npc = bdt_1015_bandit_l;
+	npc = Bdt_1015_Bandit_L;
 	nr = 2;
-	condition = dia_1015_bandit_ambush_condition;
-	information = dia_1015_bandit_ambush_info;
+	condition = DIA_1015_BANDIT_AMBUSH_Condition;
+	information = DIA_1015_BANDIT_AMBUSH_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_1015_bandit_ambush_condition()
+func int DIA_1015_BANDIT_AMBUSH_Condition()
 {
-	if(Npc_IsDead(ambusher_1014) || Npc_IsInState(self,zs_talk))
+	if(Npc_IsDead(Ambusher_1014) || Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_1015_bandit_ambush_info()
+func void DIA_1015_BANDIT_AMBUSH_Info()
 {
 	AI_Output(self,other,"DIA_1015_BANDIT_AMBUSH_06_00");	//Hej, chyba widzia³em ju¿ tê gêbê...
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_SUDDENENEMYINFERNO,1);
+	B_Attack(self,other,AR_SuddenEnemyInferno,1);
 };
 

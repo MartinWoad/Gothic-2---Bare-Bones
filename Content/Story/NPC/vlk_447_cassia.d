@@ -1,32 +1,32 @@
 
-instance VLK_447_CASSIA(NPC_DEFAULT)
+instance VLK_447_Cassia(Npc_Default)
 {
 	name[0] = "Cassia";
 	guild = GIL_OUT;
 	id = 447;
 	voice = 16;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_DROPDEADANDKILL] = TRUE;
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setattributestochapter(self,5);
+	npcType = npctype_main;
+	aivar[AIV_DropDeadAndKill] = TRUE;
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetAttributesToChapter(self,5);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_meisterdegen);
-	b_createambientinv(self);
-	CreateInvItems(self,itke_thiefguildkey_hotel_mis,1);
-	CreateInvItems(self,itke_thieftreasure,1);
-	b_setnpcvisual(self,FEMALE,"Hum_Head_Babe",FACEBABE_N_BLACKHAIR,BODYTEXBABE_N,4825);
+	EquipItem(self,ItMw_Meisterdegen);
+	B_CreateAmbientInv(self);
+	CreateInvItems(self,ItKe_ThiefGuildKey_Hotel_MIS,1);
+	CreateInvItems(self,ItKe_ThiefTreasure,1);
+	B_SetNpcVisual(self,FEMALE,"Hum_Head_Babe",FaceBabe_N_BlackHair,BodyTexBabe_N,ITAR_VlkBabe_H);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Babe.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,90);
-	daily_routine = rtn_start_447;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,90);
+	daily_routine = Rtn_Start_447;
 };
 
 
-func void rtn_start_447()
+func void Rtn_Start_447()
 {
-	ta_read_bookstand(7,0,23,0,"NW_CITY_KANAL_ROOM_05_02");
-	ta_sleep(23,0,7,0,"NW_CITY_KANAL_ROOM_05_BED_01");
+	TA_Read_Bookstand(7,0,23,0,"NW_CITY_KANAL_ROOM_05_02");
+	TA_Sleep(23,0,7,0,"NW_CITY_KANAL_ROOM_05_BED_01");
 };
 

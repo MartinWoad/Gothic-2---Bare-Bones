@@ -1,5 +1,5 @@
 
-func int b_getlearncostattribute(var C_NPC oth,var int attribut)
+func int B_GetLearnCostAttribute(var C_Npc oth,var int attribut)
 {
 	var int kosten;
 	if((attribut == ATR_STRENGTH) || (attribut == ATR_DEXTERITY) || (attribut == ATR_MANA_MAX))

@@ -1,8 +1,8 @@
 
-func void zs_dance()
+func void ZS_Dance()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
@@ -11,43 +11,43 @@ func void zs_dance()
 	};
 };
 
-func int zs_dance_loop()
+func int ZS_Dance_Loop()
 {
-	var int dancestyle;
-	dancestyle = Hlp_Random(9);
-	if(dancestyle == 0)
+	var int danceStyle;
+	danceStyle = Hlp_Random(9);
+	if(danceStyle == 0)
 	{
 		AI_PlayAni(self,"T_DANCE_01");
 	};
-	if(dancestyle == 1)
+	if(danceStyle == 1)
 	{
 		AI_PlayAni(self,"T_DANCE_02");
 	};
-	if(dancestyle == 2)
+	if(danceStyle == 2)
 	{
 		AI_PlayAni(self,"T_DANCE_03");
 	};
-	if(dancestyle == 3)
+	if(danceStyle == 3)
 	{
 		AI_PlayAni(self,"T_DANCE_04");
 	};
-	if(dancestyle == 4)
+	if(danceStyle == 4)
 	{
 		AI_PlayAni(self,"T_DANCE_05");
 	};
-	if(dancestyle == 5)
+	if(danceStyle == 5)
 	{
 		AI_PlayAni(self,"T_DANCE_06");
 	};
-	if(dancestyle == 6)
+	if(danceStyle == 6)
 	{
 		AI_PlayAni(self,"T_DANCE_07");
 	};
-	if(dancestyle == 7)
+	if(danceStyle == 7)
 	{
 		AI_PlayAni(self,"T_DANCE_08");
 	};
-	if(dancestyle == 8)
+	if(danceStyle == 8)
 	{
 		AI_PlayAni(self,"T_DANCE_09");
 	};
@@ -56,7 +56,7 @@ func int zs_dance_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_dance_end()
+func void ZS_Dance_End()
 {
 	AI_Standup(self);
 };

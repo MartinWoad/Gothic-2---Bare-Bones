@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_GOBBO_SKELETON(C_NPC)
+prototype Mst_Default_Gobbo_Skeleton(C_Npc)
 {
 	name[0] = "Goblin Szkielet";
 	guild = GIL_GOBBO_SKELETON;
@@ -21,42 +21,42 @@ prototype MST_DEFAULT_GOBBO_SKELETON(C_NPC)
 	fight_tactic = FAI_GOBBO;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_gobbo_skeleton()
+func void B_SetVisuals_Gobbo_Skeleton()
 {
 	Mdl_SetVisual(self,"Gobbo.mds");
 	Mdl_SetVisualBody(self,"Gobbo_Skeleton_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance GOBBO_SKELETON(MST_DEFAULT_GOBBO_SKELETON)
+instance Gobbo_Skeleton(Mst_Default_Gobbo_Skeleton)
 {
-	b_setvisuals_gobbo_skeleton();
-	Npc_SetToFightMode(self,itmw_1h_bau_mace);
+	B_SetVisuals_Gobbo_Skeleton();
+	Npc_SetToFightMode(self,ItMw_1h_Bau_Mace);
 };
 
-instance SUMMONED_GOBBO_SKELETON(MST_DEFAULT_GOBBO_SKELETON)
+instance Summoned_Gobbo_Skeleton(Mst_Default_Gobbo_Skeleton)
 {
 	name[0] = "Przyzwany Goblin Szkielet";
 	guild = gil_summoned_gobbo_skeleton;
 	aivar[AIV_MM_REAL_ID] = id_summoned_gobbo_skeleton;
 	level = 0;
 	aivar[AIV_PARTYMEMBER] = TRUE;
-	b_setattitude(self,ATT_FRIENDLY);
-	start_aistate = zs_mm_rtn_summoned;
-	b_setvisuals_gobbo_skeleton();
-	Npc_SetToFightMode(self,itmw_1h_bau_mace);
+	B_SetAttitude(self,ATT_FRIENDLY);
+	start_aistate = ZS_MM_Rtn_Summoned;
+	B_SetVisuals_Gobbo_Skeleton();
+	Npc_SetToFightMode(self,ItMw_1h_Bau_Mace);
 };
 
-instance GOBBO_SKELETONOWDEMONTOWER(MST_DEFAULT_GOBBO_SKELETON)
+instance Gobbo_SkeletonOWDemonTower(Mst_Default_Gobbo_Skeleton)
 {
-	b_setvisuals_gobbo_skeleton();
-	Npc_SetToFightMode(self,itmw_1h_bau_mace);
+	B_SetVisuals_Gobbo_Skeleton();
+	Npc_SetToFightMode(self,ItMw_1h_Bau_Mace);
 };
 

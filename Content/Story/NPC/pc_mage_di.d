@@ -1,42 +1,42 @@
 
-instance PC_MAGE_DI(NPC_DEFAULT)
+instance PC_Mage_DI(Npc_Default)
 {
 	name[0] = "Milten";
 	guild = GIL_KDF;
 	id = 22;
 	voice = 3;
 	flags = 0;
-	npctype = NPCTYPE_FRIEND;
+	npcType = NPCTYPE_FRIEND;
 	aivar[AIV_PARTYMEMBER] = TRUE;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	aivar[AIV_TOUGHGUYNEWSOVERRIDE] = TRUE;
-	b_setattributestochapter(self,6);
+	aivar[AIV_ToughGuy] = TRUE;
+	aivar[AIV_ToughGuyNewsOverride] = TRUE;
+	B_SetAttributesToChapter(self,6);
 	fight_tactic = FAI_HUMAN_STRONG;
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_MILTEN,BODYTEX_N,4843);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Milten,BodyTex_N,ItAr_KDF_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Mage.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_22;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_22;
 };
 
 
-func void rtn_start_22()
+func void Rtn_Start_22()
 {
-	ta_smalltalk(8,0,23,0,"SHIP_CREW_19");
-	ta_smalltalk(23,0,8,0,"SHIP_CREW_19");
+	TA_Smalltalk(8,0,23,0,"SHIP_CREW_19");
+	TA_Smalltalk(23,0,8,0,"SHIP_CREW_19");
 };
 
-func void rtn_undeaddragondead_22()
+func void Rtn_UNDEADDRAGONDEAD_22()
 {
-	ta_stand_wp(8,0,23,0,"SKELETTE");
-	ta_stand_wp(23,0,8,0,"SKELETTE");
+	TA_Stand_WP(8,0,23,0,"SKELETTE");
+	TA_Stand_WP(23,0,8,0,"SKELETTE");
 };
 
-func void rtn_sittingshipdi_22()
+func void Rtn_SittingShipDI_22()
 {
-	ta_sit_bench(8,0,23,0,"SHIP_CREW_19");
-	ta_sit_bench(23,0,8,0,"SHIP_CREW_19");
+	TA_Sit_Bench(8,0,23,0,"SHIP_CREW_19");
+	TA_Sit_Bench(23,0,8,0,"SHIP_CREW_19");
 };
 

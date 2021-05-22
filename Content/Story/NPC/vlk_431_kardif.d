@@ -1,30 +1,30 @@
 
-instance VLK_431_KARDIF(NPC_DEFAULT)
+instance VLK_431_Kardif(Npc_Default)
 {
 	name[0] = "Kardif";
 	guild = GIL_VLK;
 	id = 431;
 	voice = 14;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	b_setattributestochapter(self,2);
+	npcType = npctype_main;
+	aivar[AIV_ToughGuy] = TRUE;
+	B_SetAttributesToChapter(self,2);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_bau_mace);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_N_NORMALBART04,BODYTEX_N,4818);
+	EquipItem(self,ItMw_1h_Bau_Mace);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_N_NormalBart04,BodyTex_N,ITAR_Smith);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_431;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_431;
 };
 
 
-func void rtn_start_431()
+func void Rtn_Start_431()
 {
-	ta_stand_sweeping(8,0,11,0,"NW_CITY_HABOUR_TAVERN01_SMALLTALK_01");
-	ta_stand_armscrossed(11,0,13,0,"NW_CITY_KARDIF");
-	ta_stand_sweeping(13,0,16,0,"NW_CITY_HABOUR_TAVERN01_SMALLTALK_01");
-	ta_stand_armscrossed(16,0,8,0,"NW_CITY_KARDIF");
+	TA_Stand_Sweeping(8,0,11,0,"NW_CITY_HABOUR_TAVERN01_SMALLTALK_01");
+	TA_Stand_ArmsCrossed(11,0,13,0,"NW_CITY_KARDIF");
+	TA_Stand_Sweeping(13,0,16,0,"NW_CITY_HABOUR_TAVERN01_SMALLTALK_01");
+	TA_Stand_ArmsCrossed(16,0,8,0,"NW_CITY_KARDIF");
 };
 

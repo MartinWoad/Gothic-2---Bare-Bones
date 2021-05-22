@@ -1,46 +1,46 @@
 
-instance DIA_ORIC_EXIT(C_INFO)
+instance DIA_Oric_EXIT(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 999;
-	condition = dia_oric_exit_condition;
-	information = dia_oric_exit_info;
+	condition = DIA_Oric_EXIT_Condition;
+	information = DIA_Oric_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_oric_exit_condition()
+func int DIA_Oric_EXIT_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_oric_exit_info()
+func void DIA_Oric_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ORIC_HALLO(C_INFO)
+instance DIA_Oric_HALLO(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 4;
-	condition = dia_oric_hallo_condition;
-	information = dia_oric_hallo_info;
+	condition = DIA_Oric_HALLO_Condition;
+	information = DIA_Oric_HALLO_Info;
 	permanent = FALSE;
 	description = "Na czym polega twoje zadanie?";
 };
 
 
-func int dia_oric_hallo_condition()
+func int DIA_Oric_HALLO_Condition()
 {
 	return TRUE;
 };
 
-func void dia_oric_hallo_info()
+func void DIA_Oric_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Oric_HALLO_15_00");	//Na czym polega twoje zadanie?
 	AI_Output(self,other,"DIA_Oric_HALLO_11_01");	//Jestem oficerem strategicznym Króla, aktualnie podlegam wielmo¿nemu kapitanowi Garondowi.
@@ -49,26 +49,26 @@ func void dia_oric_hallo_info()
 };
 
 
-instance DIA_ORIC_BRUDER(C_INFO)
+instance DIA_Oric_Bruder(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 4;
-	condition = dia_oric_bruder_condition;
-	information = dia_oric_bruder_info;
+	condition = DIA_Oric_Bruder_Condition;
+	information = DIA_Oric_Bruder_Info;
 	permanent = FALSE;
 	description = "Mam dla ciebie wiadomoœæ.";
 };
 
 
-func int dia_oric_bruder_condition()
+func int DIA_Oric_Bruder_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_jergan_burg) && Npc_KnowsInfo(other,dia_oric_hallo))
+	if(Npc_KnowsInfo(other,DIA_Jergan_Burg) && Npc_KnowsInfo(other,DIA_Oric_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_oric_bruder_info()
+func void DIA_Oric_Bruder_Info()
 {
 	AI_Output(other,self,"DIA_Oric_Bruder_15_00");	//Mam dla ciebie wiadomoœæ.
 	AI_Output(self,other,"DIA_Oric_Bruder_11_01");	//O co chodzi?
@@ -76,31 +76,31 @@ func void dia_oric_bruder_info()
 	AI_Output(self,other,"DIA_Oric_Bruder_11_03");	//... mój brat ...
 	AI_Output(self,other,"DIA_Oric_Bruder_11_04");	//Innos wystawia mnie na ciê¿k¹ próbê. Mój brat zgin¹³ jako jego oddany s³uga.
 	AI_Output(self,other,"DIA_Oric_Bruder_11_05");	//Ta wiadomoœæ przeszy³a me serce jak strza³a. Jedynie w modlitwie odnajdê si³ê.
-	ORICBRUDER = TRUE;
-	b_giveplayerxp(XP_AMBIENT);
+	OricBruder = TRUE;
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_ORIC_SCOUTMINE(C_INFO)
+instance DIA_Oric_ScoutMine(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 1;
-	condition = dia_oric_scoutmine_condition;
-	information = dia_oric_scoutmine_info;
+	condition = DIA_Oric_ScoutMine_Condition;
+	information = DIA_Oric_ScoutMine_Info;
 	permanent = FALSE;
 	description = "Wybieram siê w okolice kopalni.";
 };
 
 
-func int dia_oric_scoutmine_condition()
+func int DIA_Oric_ScoutMine_Condition()
 {
-	if((MIS_SCOUTMINE == LOG_RUNNING) && (KAPITEL < 3) && Npc_KnowsInfo(other,dia_oric_hallo) && (FAJETH_ORE == FALSE) && (MARCOS_ORE == FALSE) && (SILVESTRO_ORE == FALSE))
+	if((MIS_ScoutMine == LOG_Running) && (Kapitel < 3) && Npc_KnowsInfo(other,DIA_Oric_HALLO) && (Fajeth_Ore == FALSE) && (Marcos_Ore == FALSE) && (Silvestro_Ore == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_oric_scoutmine_info()
+func void DIA_Oric_ScoutMine_Info()
 {
 	AI_Output(other,self,"DIA_Oric_ScoutMine_15_00");	//Wybieram siê w okolice kopalni.
 	AI_Output(self,other,"DIA_Oric_ScoutMine_11_01");	//Uwa¿aj, to nie przelewki. Przede wszystkim, postaraj siê odnaleŸæ paladynów. Dowodz¹ trzema grupami.
@@ -108,33 +108,33 @@ func void dia_oric_scoutmine_info()
 };
 
 
-instance DIA_ORIC_PERM(C_INFO)
+instance DIA_Oric_Perm(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 99;
-	condition = dia_oric_perm_condition;
-	information = dia_oric_perm_info;
+	condition = DIA_Oric_Perm_Condition;
+	information = DIA_Oric_Perm_Info;
 	permanent = TRUE;
 	description = "Jak wygl¹da sytuacja?";
 };
 
 
-func int dia_oric_perm_condition()
+func int DIA_Oric_Perm_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_oric_hallo) && (KAPITEL <= 3))
+	if(Npc_KnowsInfo(other,DIA_Oric_HALLO) && (Kapitel <= 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_oric_perm_info()
+func void DIA_Oric_Perm_Info()
 {
 	AI_Output(other,self,"DIA_Oric_Perm_15_00");	//Jak wygl¹da sytuacja?
-	if(MIS_SCOUTMINE == LOG_RUNNING)
+	if(MIS_ScoutMine == LOG_Running)
 	{
 		AI_Output(self,other,"DIA_Oric_Perm_11_01");	//Musisz odnaleŸæ krety i rudê. Potem zastanowimy siê nad drog¹ odwrotu.
 	}
-	else if(MIS_SCOUTMINE == LOG_SUCCESS)
+	else if(MIS_ScoutMine == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Oric_Perm_11_02");	//Ekspedycja ponios³a klêskê. Ale nie poddamy siê, Innos jest z nami. On bezpiecznie wyprowadzi nas z doliny.
 	}
@@ -146,75 +146,75 @@ func void dia_oric_perm_info()
 };
 
 
-instance DIA_ORIC_KAP3_EXIT(C_INFO)
+instance DIA_Oric_KAP3_EXIT(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 999;
-	condition = dia_oric_kap3_exit_condition;
-	information = dia_oric_kap3_exit_info;
+	condition = DIA_Oric_KAP3_EXIT_Condition;
+	information = DIA_Oric_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_oric_kap3_exit_condition()
+func int DIA_Oric_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_oric_kap3_exit_info()
+func void DIA_Oric_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ORIC_KAP4_EXIT(C_INFO)
+instance DIA_Oric_KAP4_EXIT(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 999;
-	condition = dia_oric_kap4_exit_condition;
-	information = dia_oric_kap4_exit_info;
+	condition = DIA_Oric_KAP4_EXIT_Condition;
+	information = DIA_Oric_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_oric_kap4_exit_condition()
+func int DIA_Oric_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_oric_kap4_exit_info()
+func void DIA_Oric_KAP4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ORIC_IAMBACK(C_INFO)
+instance DIA_Oric_IAmBack(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 4;
-	condition = dia_oric_iamback_condition;
-	information = dia_oric_iamback_info;
+	condition = DIA_Oric_IAmBack_Condition;
+	information = DIA_Oric_IAmBack_Info;
 	description = "Wróci³em.";
 };
 
 
-func int dia_oric_iamback_condition()
+func int DIA_Oric_IAmBack_Condition()
 {
-	if((KAPITEL >= 4) && Npc_KnowsInfo(other,dia_oric_hallo))
+	if((Kapitel >= 4) && Npc_KnowsInfo(other,DIA_Oric_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_oric_iamback_info()
+func void DIA_Oric_IAmBack_Info()
 {
 	AI_Output(other,self,"DIA_Oric_IAmBack_15_00");	//Wróci³em.
 	AI_Output(self,other,"DIA_Oric_IAmBack_11_01");	//Nie przypuszcza³em, ¿e jeszcze ciê tu zobaczê, szczególnie po tym, co siê sta³o podczas twojej poprzedniej wizyty.
@@ -230,42 +230,42 @@ func void dia_oric_iamback_info()
 };
 
 
-instance DIA_ORIC_CANHELP(C_INFO)
+instance DIA_Oric_CanHelp(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 4;
-	condition = dia_oric_canhelp_condition;
-	information = dia_oric_canhelp_info;
+	condition = DIA_Oric_CanHelp_Condition;
+	information = DIA_Oric_CanHelp_Info;
 	description = "Czy mogê jakoœ pomóc?";
 };
 
 
-func int dia_oric_canhelp_condition()
+func int DIA_Oric_CanHelp_Condition()
 {
-	if((KAPITEL >= 4) && Npc_KnowsInfo(other,dia_oric_iamback) && (MIS_KILLHOSHPAK == FALSE))
+	if((Kapitel >= 4) && Npc_KnowsInfo(other,DIA_Oric_IAmBack) && (MIS_KillHoshPak == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_oric_canhelp_info()
+func void DIA_Oric_CanHelp_Info()
 {
 	AI_Output(other,self,"DIA_Oric_CanHelp_15_00");	//Czy mogê jakoœ pomóc?
 	AI_Output(self,other,"DIA_Oric_CanHelp_11_01");	//Wydaje mi siê, ¿e uczyniliœmy ju¿ wszystko, co by³o mo¿na.
 	AI_Output(self,other,"DIA_Oric_CanHelp_11_02");	//Jest jednak pewna sprawa. Móg³byœ siê nam przydaæ poza murami zamku.
 	AI_Output(self,other,"DIA_Oric_CanHelp_11_03");	//Planujemy urwaæ ³eb hydrze.
-	Info_ClearChoices(dia_oric_canhelp);
-	Info_AddChoice(dia_oric_canhelp,"Poszukaj lepiej kogoœ innego.",dia_oric_canhelp_notyourman);
-	Info_AddChoice(dia_oric_canhelp,"Co przez to rozumiesz?",dia_oric_canhelp_whatyoumean);
+	Info_ClearChoices(DIA_Oric_CanHelp);
+	Info_AddChoice(DIA_Oric_CanHelp,"Poszukaj lepiej kogoœ innego.",DIA_Oric_CanHelp_NotYourMan);
+	Info_AddChoice(DIA_Oric_CanHelp,"Co przez to rozumiesz?",DIA_Oric_CanHelp_WhatYouMean);
 };
 
-func void dia_oric_canhelp_notyourman()
+func void DIA_Oric_CanHelp_NotYourMan()
 {
 	AI_Output(other,self,"DIA_Oric_CanHelp_NotYourMan_15_00");	//Chyba bêdziecie musieli poszukaæ kogoœ innego.
 	AI_Output(self,other,"DIA_Oric_CanHelp_NotYourMan_11_01");	//Nie mogê sobie pozwoliæ na stracenie chocia¿ jednego obroñcy, jesteœ nasz¹ jedyn¹ nadziej¹.
 };
 
-func void dia_oric_canhelp_whatyoumean()
+func void DIA_Oric_CanHelp_WhatYouMean()
 {
 	AI_Output(other,self,"DIA_Oric_CanHelp_WhatYouMean_15_00");	//Co masz na myœli?
 	AI_Output(self,other,"DIA_Oric_CanHelp_WhatYouMean_11_01");	//Znamy jednego z ich przywódców. Nazywa siê Hosh-Pak.
@@ -287,97 +287,97 @@ func void dia_oric_canhelp_whatyoumean()
 	};
 	AI_Output(self,other,"DIA_Oric_CanHelp_WhatYouMean_11_09");	//Namiot Hosh-Paka znajduje siê poza liniami oblê¿enia, na klifie na po³udnie st¹d.
 	AI_Output(self,other,"DIA_Oric_CanHelp_WhatYouMean_11_10");	//Niemal widaæ go z naszych okien.
-	Info_ClearChoices(dia_oric_canhelp);
-	ORIKTOLDMISSIONCHAPTER4 = TRUE;
+	Info_ClearChoices(DIA_Oric_CanHelp);
+	OrikToldMissionChapter4 = TRUE;
 };
 
 
-instance DIA_ORIC_NEEDSTUFF(C_INFO)
+instance DIA_Oric_NeedStuff(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 6;
-	condition = dia_oric_needstuff_condition;
-	information = dia_oric_needstuff_info;
+	condition = DIA_Oric_NeedStuff_Condition;
+	information = DIA_Oric_NeedStuff_Info;
 	description = "Potrzebujê wyposa¿enia.";
 };
 
 
-func int dia_oric_needstuff_condition()
+func int DIA_Oric_NeedStuff_Condition()
 {
-	if((ORIKTOLDMISSIONCHAPTER4 == TRUE) && (MIS_KILLHOSHPAK == FALSE))
+	if((OrikToldMissionChapter4 == TRUE) && (MIS_KillHoshPak == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_oric_needstuff_info()
+func void DIA_Oric_NeedStuff_Info()
 {
 	AI_Output(other,self,"DIA_Oric_NeedStuff_15_00");	//Potrzebujê wyposa¿enia.
 	AI_Output(self,other,"DIA_Oric_NeedStuff_11_01");	//Niewiele mo¿emy ci zaoferowaæ.
 	AI_Output(self,other,"DIA_Oric_NeedStuff_11_02");	//Mam tylko to.
-	Info_ClearChoices(dia_oric_needstuff);
-	Info_AddChoice(dia_oric_needstuff,"lub 1 eliksir zrêcznoœci",dia_oric_needstuff_dexterity);
-	Info_AddChoice(dia_oric_needstuff,"lub 1 eliksir si³y",dia_oric_needstuff_strength);
-	Info_AddChoice(dia_oric_needstuff,"lub 3 eliksiry many",dia_oric_needstuff_mana);
-	Info_AddChoice(dia_oric_needstuff,"3 eliksiry lecznicze",dia_oric_needstuff_health);
+	Info_ClearChoices(DIA_Oric_NeedStuff);
+	Info_AddChoice(DIA_Oric_NeedStuff,"lub 1 eliksir zrêcznoœci",DIA_Oric_NeedStuff_Dexterity);
+	Info_AddChoice(DIA_Oric_NeedStuff,"lub 1 eliksir si³y",DIA_Oric_NeedStuff_Strength);
+	Info_AddChoice(DIA_Oric_NeedStuff,"lub 3 eliksiry many",DIA_Oric_NeedStuff_Mana);
+	Info_AddChoice(DIA_Oric_NeedStuff,"3 eliksiry lecznicze",DIA_Oric_NeedStuff_Health);
 };
 
-func void dia_oric_needstuff_health()
+func void DIA_Oric_NeedStuff_Health()
 {
 	AI_Output(other,self,"DIA_Oric_NeedStuff_Health_15_00");	//Wezmê mikstury lecznicze.
 	AI_Output(self,other,"DIA_Oric_NeedStuff_Health_11_01");	//Doskona³y wybór. Mam nadziejê, ¿e ci siê przydadz¹.
-	CreateInvItems(self,itpo_health_03,3);
-	b_giveinvitems(self,other,5251,3);
-	Info_ClearChoices(dia_oric_needstuff);
+	CreateInvItems(self,ItPo_Health_03,3);
+	B_GiveInvItems(self,other,ItPo_Health_03,3);
+	Info_ClearChoices(DIA_Oric_NeedStuff);
 };
 
-func void dia_oric_needstuff_mana()
+func void DIA_Oric_NeedStuff_Mana()
 {
 	AI_Output(other,self,"DIA_Oric_NeedStuff_Mana_15_00");	//Wezmê mikstury many.
 	AI_Output(self,other,"DIA_Oric_NeedStuff_Mana_11_01");	//Mam nadziejê, ¿e dobrze je wykorzystasz. Niech Innos ciê prowadzi.
-	CreateInvItems(self,itpo_mana_03,3);
-	b_giveinvitems(self,other,5251,3);
-	Info_ClearChoices(dia_oric_needstuff);
+	CreateInvItems(self,ItPo_Mana_03,3);
+	B_GiveInvItems(self,other,ItPo_Health_03,3);
+	Info_ClearChoices(DIA_Oric_NeedStuff);
 };
 
-func void dia_oric_needstuff_strength()
+func void DIA_Oric_NeedStuff_Strength()
 {
 	AI_Output(other,self,"DIA_Oric_NeedStuff_Strength_15_00");	//Wezmê eliksir si³y.
 	AI_Output(self,other,"DIA_Oric_NeedStuff_Strength_11_01");	//Proszê, na pewno siê przyda. ¯yczê ci szczêœcia.
-	CreateInvItems(self,itpo_perm_str,1);
-	b_giveinvitems(self,other,5253,1);
-	Info_ClearChoices(dia_oric_needstuff);
+	CreateInvItems(self,ItPo_Perm_STR,1);
+	B_GiveInvItems(self,other,ItPo_Perm_STR,1);
+	Info_ClearChoices(DIA_Oric_NeedStuff);
 };
 
-func void dia_oric_needstuff_dexterity()
+func void DIA_Oric_NeedStuff_Dexterity()
 {
 	AI_Output(other,self,"DIA_Oric_NeedStuff_Dexterity_15_00");	//Wezmê eliksir zrêcznoœci.
 	AI_Output(self,other,"DIA_Oric_NeedStuff_Dexterity_11_01");	//Niech twe strza³y nigdy nie chybiaj¹ celu. Proszê.
-	CreateInvItems(self,itpo_perm_dex,1);
-	b_giveinvitems(self,other,5255,1);
-	Info_ClearChoices(dia_oric_needstuff);
+	CreateInvItems(self,ItPo_Perm_DEX,1);
+	B_GiveInvItems(self,other,ItPo_Perm_DEX,1);
+	Info_ClearChoices(DIA_Oric_NeedStuff);
 };
 
 
-instance DIA_ORIC_NOMURDER(C_INFO)
+instance DIA_Oric_NoMurder(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 7;
-	condition = dia_oric_nomurder_condition;
-	information = dia_oric_nomurder_info;
+	condition = DIA_Oric_NoMurder_Condition;
+	information = DIA_Oric_NoMurder_Info;
 	description = "Nie zamordujê Hosh-Paka jak ostatni tchórz.";
 };
 
 
-func int dia_oric_nomurder_condition()
+func int DIA_Oric_NoMurder_Condition()
 {
-	if((ORIKTOLDMISSIONCHAPTER4 == TRUE) && (MIS_KILLHOSHPAK == FALSE))
+	if((OrikToldMissionChapter4 == TRUE) && (MIS_KillHoshPak == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_oric_nomurder_info()
+func void DIA_Oric_NoMurder_Info()
 {
 	AI_Output(other,self,"DIA_Oric_NoMurder_15_00");	//Nie zamordujê Hosh-Paka jak ostatni tchórz.
 	AI_Output(self,other,"DIA_Oric_NoMurder_11_01");	//Czy zdajesz sobie sprawê w jak trudnej sytuacji siê znajdujemy?
@@ -387,98 +387,98 @@ func void dia_oric_nomurder_info()
 };
 
 
-instance DIA_ORIC_WILLHELP(C_INFO)
+instance DIA_Oric_WillHelp(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 5;
-	condition = dia_oric_willhelp_condition;
-	information = dia_oric_willhelp_info;
+	condition = DIA_Oric_WillHelp_Condition;
+	information = DIA_Oric_WillHelp_Info;
 	permanent = FALSE;
 	description = "Dobrze. Zg³adzê Hosh-Paka.";
 };
 
 
-func int dia_oric_willhelp_condition()
+func int DIA_Oric_WillHelp_Condition()
 {
-	if((ORIKTOLDMISSIONCHAPTER4 == TRUE) && (MIS_KILLHOSHPAK == FALSE))
+	if((OrikToldMissionChapter4 == TRUE) && (MIS_KillHoshPak == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_oric_willhelp_info()
+func void DIA_Oric_WillHelp_Info()
 {
 	AI_Output(other,self,"DIA_Oric_WillHelp_15_00");	//Dobrze. Zg³adzê Hosh-Paka.
 	AI_Output(self,other,"DIA_Oric_WillHelp_11_01");	//Mi³o mi to s³yszeæ.
 	AI_Output(self,other,"DIA_Oric_WillHelp_11_02");	//Namiot Hosh-Paka stoi na niewielkim klifie. Na pewno ju¿ go widzia³eœ.
 	AI_Output(self,other,"DIA_Oric_WillHelp_11_03");	//To niedaleko œcie¿ki prowadz¹cej do kopalni. W cieniu wielkiej góry.
-	Log_CreateTopic(TOPIC_KILLHOSHPAK,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_KILLHOSHPAK,LOG_RUNNING);
-	b_logentry(TOPIC_KILLHOSHPAK,"Orik chce rozprawiæ siê z orkowym szamanem Hosh-Pakiem. Jego namiot znajduje siê na niewielkim klifie niedaleko zamku.");
-	MIS_KILLHOSHPAK = LOG_RUNNING;
+	Log_CreateTopic(TOPIC_KillHoshPak,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_KillHoshPak,LOG_Running);
+	B_LogEntry(TOPIC_KillHoshPak,"Orik chce rozprawiæ siê z orkowym szamanem Hosh-Pakiem. Jego namiot znajduje siê na niewielkim klifie niedaleko zamku.");
+	MIS_KillHoshPak = LOG_Running;
 };
 
 
-instance DIA_ORIC_HOSHDEAD(C_INFO)
+instance DIA_Oric_HoshDead(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 8;
-	condition = dia_oric_hoshdead_condition;
-	information = dia_oric_hoshdead_info;
+	condition = DIA_Oric_HoshDead_Condition;
+	information = DIA_Oric_HoshDead_Info;
 	permanent = FALSE;
 	description = "Hosh-Pak nie ¿yje.";
 };
 
 
-func int dia_oric_hoshdead_condition()
+func int DIA_Oric_HoshDead_Condition()
 {
-	if(Npc_IsDead(hosh_pak) && (MIS_KILLHOSHPAK == LOG_RUNNING))
+	if(Npc_IsDead(Hosh_Pak) && (MIS_KillHoshPak == LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_oric_hoshdead_info()
+func void DIA_Oric_HoshDead_Info()
 {
 	AI_Output(other,self,"DIA_Oric_HoshDead_15_00");	//Hosh-Pak nie ¿yje.
 	AI_Output(self,other,"DIA_Oric_HoshDead_11_01");	//Wspaniale, to powinno zasiaæ zamêt wœród orków. Mo¿e, mimo wszystko, jest jeszcze dla nas nadzieja.
 	AI_Output(self,other,"DIA_Oric_HoshDead_11_02");	//Mam nadziejê, ¿e to wydarzenie pozwoli nam nadrobiæ straty ostatniego tygodnia.
-	MIS_KILLHOSHPAK = LOG_SUCCESS;
-	b_giveplayerxp(XP_KILLHOSH_PAK);
+	MIS_KillHoshPak = LOG_SUCCESS;
+	B_GivePlayerXP(XP_KillHosh_Pak);
 };
 
 
-instance DIA_ORIC_ANYNEWS(C_INFO)
+instance DIA_Oric_AnyNews(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 9;
-	condition = dia_oric_anynews_condition;
-	information = dia_oric_anynews_info;
+	condition = DIA_Oric_AnyNews_Condition;
+	information = DIA_Oric_AnyNews_Info;
 	permanent = TRUE;
 	description = "Jakieœ wieœci?";
 };
 
 
-func int dia_oric_anynews_condition()
+func int DIA_Oric_AnyNews_Condition()
 {
-	if((KAPITEL >= 4) && Npc_KnowsInfo(other,dia_oric_iamback))
+	if((Kapitel >= 4) && Npc_KnowsInfo(other,DIA_Oric_IAmBack))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_oric_anynews_info()
+func void DIA_Oric_AnyNews_Info()
 {
 	AI_Output(other,self,"DIA_Oric_AnyNews_15_00");	//Jakieœ wieœci?
-	if(MIS_OCGATEOPEN == TRUE)
+	if(MIS_OCGateOpen == TRUE)
 	{
 		AI_Output(self,other,"DIA_Oric_AnyNews_11_01");	//Poza tym, ¿e najechali na nas orkowie?
 	}
-	else if(MIS_ALLDRAGONSDEAD == TRUE)
+	else if(MIS_AllDragonsDead == TRUE)
 	{
 		AI_Output(self,other,"DIA_Oric_AnyNews_11_02");	//Tak. Jesteœ tu bohaterem. Pozbycie siê smoków to niew¹tpliwie nie³atwe zadanie.
 	}
-	else if(MIS_KILLHOSHPAK == LOG_SUCCESS)
+	else if(MIS_KillHoshPak == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Oric_AnyNews_11_03");	//Po œmierci Hosh-Paka w orkowych szeregach zapanowa³ chaos.
 	}
@@ -489,73 +489,73 @@ func void dia_oric_anynews_info()
 };
 
 
-instance DIA_ORIC_DRAGONPLETTBERICHT(C_INFO)
+instance DIA_Oric_DragonPlettBericht(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 3;
-	condition = dia_oric_dragonplettbericht_condition;
-	information = dia_oric_dragonplettbericht_info;
+	condition = DIA_Oric_DragonPlettBericht_Condition;
+	information = DIA_Oric_DragonPlettBericht_Info;
 	permanent = TRUE;
 	description = "Potrzebujê wiêcej informacji o smokach.";
 };
 
 
-func int dia_oric_dragonplettbericht_condition()
+func int DIA_Oric_DragonPlettBericht_Condition()
 {
-	if((KAPITEL >= 4) && Npc_KnowsInfo(other,dia_oric_iamback) && (MIS_ALLDRAGONSDEAD == FALSE))
+	if((Kapitel >= 4) && Npc_KnowsInfo(other,DIA_Oric_IAmBack) && (MIS_AllDragonsDead == FALSE))
 	{
 		return TRUE;
 	};
 };
 
 
-var int oric_swampdragoninfo_onetime;
-var int oric_rockdragoninfo_onetime;
-var int oric_firedragoninfo_onetime;
-var int oric_icedragoninfo_onetime;
-var int oric_dragoncounter;
-var int oric_firstquestion;
+var int Oric_SwampdragonInfo_OneTime;
+var int Oric_RockdragonInfo_OneTime;
+var int Oric_FiredragonInfo_OneTime;
+var int Oric_IcedragonInfo_OneTime;
+var int Oric_DragonCounter;
+var int Oric_FirstQuestion;
 
-func void dia_oric_dragonplettbericht_info()
+func void DIA_Oric_DragonPlettBericht_Info()
 {
 	AI_Output(other,self,"DIA_Oric_DragonPlettBericht_15_00");	//Potrzebujê wiêcej informacji o smokach.
-	if(MIS_KILLEDDRAGONS == 1)
+	if(MIS_KilledDragons == 1)
 	{
 		AI_Output(other,self,"DIA_Oric_DragonPlettBericht_15_01");	//Jednego uda³o mi siê zg³adziæ. Czy mo¿esz mi powiedzieæ, gdzie szukaæ nastêpnych?
 	}
-	else if(MIS_KILLEDDRAGONS != 0)
+	else if(MIS_KilledDragons != 0)
 	{
 		AI_Output(other,self,"DIA_Oric_DragonPlettBericht_15_02");	//Wydaje mi siê, ¿e nie dotar³em jeszcze do wszystkich smoków. Mo¿e coœ usz³o mojej uwadze?
 	};
-	if(((ORIC_DRAGONCOUNTER < MIS_KILLEDDRAGONS) || (ORIC_FIRSTQUESTION == FALSE)) && ((ORIC_SWAMPDRAGONINFO_ONETIME == FALSE) || (ORIC_ROCKDRAGONINFO_ONETIME == FALSE) || (ORIC_FIREDRAGONINFO_ONETIME == FALSE) || (ORIC_ICEDRAGONINFO_ONETIME == FALSE)))
+	if(((Oric_DragonCounter < MIS_KilledDragons) || (Oric_FirstQuestion == FALSE)) && ((Oric_SwampdragonInfo_OneTime == FALSE) || (Oric_RockdragonInfo_OneTime == FALSE) || (Oric_FiredragonInfo_OneTime == FALSE) || (Oric_IcedragonInfo_OneTime == FALSE)))
 	{
-		if((Npc_IsDead(swampdragon) == FALSE) && (ORIC_SWAMPDRAGONINFO_ONETIME == FALSE))
+		if((Npc_IsDead(SwampDragon) == FALSE) && (Oric_SwampdragonInfo_OneTime == FALSE))
 		{
 			AI_Output(self,other,"DIA_Oric_DragonPlettBericht_11_03");	//W ci¹gu kilku ostatnich dni na zachód od zamku pojawi³o siê wielkie bagno. Jest w tym coœ podejrzanego, nie s¹dzisz?
-			b_logentry(TOPIC_DRACHENJAGD,"Orik da³ mi wskazówkê: kilka dni temu na zachód od zamku pojawi³o siê wielkie bagno. Ca³a ta sprawa jest doœæ podejrzana.");
-			ORIC_SWAMPDRAGONINFO_ONETIME = TRUE;
+			B_LogEntry(TOPIC_DRACHENJAGD,"Orik da³ mi wskazówkê: kilka dni temu na zachód od zamku pojawi³o siê wielkie bagno. Ca³a ta sprawa jest doœæ podejrzana.");
+			Oric_SwampdragonInfo_OneTime = TRUE;
 		}
-		else if((Npc_IsDead(rockdragon) == FALSE) && (ORIC_ROCKDRAGONINFO_ONETIME == FALSE))
+		else if((Npc_IsDead(RockDragon) == FALSE) && (Oric_RockdragonInfo_OneTime == FALSE))
 		{
 			AI_Output(self,other,"DIA_Oric_DragonPlettBericht_11_04");	//Na po³udnie st¹d, daleko za wulkanem, wznosi siê kamienna forteca.
 			AI_Output(self,other,"DIA_Oric_DragonPlettBericht_11_05");	//Nasi szpiedzy donieœli, ¿e jest silnie strze¿ona. Byæ mo¿e tam ukrywa siê jeden ze smoków?
-			b_logentry(TOPIC_DRACHENJAGD,"Zwiadowcy donieœli Orikowi, ¿e skalna forteca za wulkanem na po³udniu jest dobrze chroniona. Orik podejrzewa, ¿e mo¿e tam przebywaæ smok.");
-			ORIC_ROCKDRAGONINFO_ONETIME = TRUE;
+			B_LogEntry(TOPIC_DRACHENJAGD,"Zwiadowcy donieœli Orikowi, ¿e skalna forteca za wulkanem na po³udniu jest dobrze chroniona. Orik podejrzewa, ¿e mo¿e tam przebywaæ smok.");
+			Oric_RockdragonInfo_OneTime = TRUE;
 		}
-		else if((Npc_IsDead(firedragon) == FALSE) && (ORIC_FIREDRAGONINFO_ONETIME == FALSE))
+		else if((Npc_IsDead(FireDragon) == FALSE) && (Oric_FiredragonInfo_OneTime == FALSE))
 		{
 			AI_Output(self,other,"DIA_Oric_DragonPlettBericht_11_06");	//Po ostatnim ataku dosz³y mnie wieœci, jakoby jeden ze smoków znikn¹³ gdzieœ na po³udniu, za wulkanem. Wydaje mi siê, ¿e tam powinieneœ skierowaæ swe kroki.
-			b_logentry(TOPIC_DRACHENJAGD,"Podobno smok, który zaatakowa³ zamek w Górniczej Dolinie, pojawi³ siê póŸniej w okolicach wulkanu.");
-			ORIC_FIREDRAGONINFO_ONETIME = TRUE;
+			B_LogEntry(TOPIC_DRACHENJAGD,"Podobno smok, który zaatakowa³ zamek w Górniczej Dolinie, pojawi³ siê póŸniej w okolicach wulkanu.");
+			Oric_FiredragonInfo_OneTime = TRUE;
 		}
-		else if((Npc_IsDead(icedragon) == FALSE) && (ORIC_ICEDRAGONINFO_ONETIME == FALSE))
+		else if((Npc_IsDead(IceDragon) == FALSE) && (Oric_IcedragonInfo_OneTime == FALSE))
 		{
 			AI_Output(self,other,"DIA_Oric_DragonPlettBericht_11_07");	//Na zachód st¹d rozci¹ga siê wielka po³aæ pokrytych lodem pustkowi. Nie zdziwi³oby mnie, gdyby jeden ze smoków ukry³ siê w³aœnie tam.
-			b_logentry(TOPIC_DRACHENJAGD,"Orik twierdzi, ¿e lodowe pustkowie na zachodzie mo¿e byæ siedzib¹ smoka.");
-			ORIC_ICEDRAGONINFO_ONETIME = TRUE;
+			B_LogEntry(TOPIC_DRACHENJAGD,"Orik twierdzi, ¿e lodowe pustkowie na zachodzie mo¿e byæ siedzib¹ smoka.");
+			Oric_IcedragonInfo_OneTime = TRUE;
 		};
-		ORIC_DRAGONCOUNTER = MIS_KILLEDDRAGONS;
-		ORIC_FIRSTQUESTION = TRUE;
+		Oric_DragonCounter = MIS_KilledDragons;
+		Oric_FirstQuestion = TRUE;
 	}
 	else
 	{
@@ -564,100 +564,100 @@ func void dia_oric_dragonplettbericht_info()
 };
 
 
-instance DIA_ORIC_KAP5_EXIT(C_INFO)
+instance DIA_Oric_KAP5_EXIT(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 999;
-	condition = dia_oric_kap5_exit_condition;
-	information = dia_oric_kap5_exit_info;
+	condition = DIA_Oric_KAP5_EXIT_Condition;
+	information = DIA_Oric_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_oric_kap5_exit_condition()
+func int DIA_Oric_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_oric_kap5_exit_info()
+func void DIA_Oric_KAP5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ORIC_KAP6_EXIT(C_INFO)
+instance DIA_Oric_KAP6_EXIT(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 999;
-	condition = dia_oric_kap6_exit_condition;
-	information = dia_oric_kap6_exit_info;
+	condition = DIA_Oric_KAP6_EXIT_Condition;
+	information = DIA_Oric_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_oric_kap6_exit_condition()
+func int DIA_Oric_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_oric_kap6_exit_info()
+func void DIA_Oric_KAP6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ORIC_PICKPOCKET(C_INFO)
+instance DIA_Oric_PICKPOCKET(C_Info)
 {
-	npc = pal_251_oric;
+	npc = PAL_251_Oric;
 	nr = 900;
-	condition = dia_oric_pickpocket_condition;
-	information = dia_oric_pickpocket_info;
+	condition = DIA_Oric_PICKPOCKET_Condition;
+	information = DIA_Oric_PICKPOCKET_Info;
 	permanent = TRUE;
 	description = "(Kradzie¿ tego zwoju bêdzie bardzo trudna)";
 };
 
 
-func int dia_oric_pickpocket_condition()
+func int DIA_Oric_PICKPOCKET_Condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == FALSE) && (other.attribute[ATR_DEXTERITY] >= (85 - THEFTDIFF)))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (other.attribute[ATR_DEXTERITY] >= (85 - Theftdiff)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_oric_pickpocket_info()
+func void DIA_Oric_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_oric_pickpocket);
-	Info_AddChoice(dia_oric_pickpocket,DIALOG_BACK,dia_oric_pickpocket_back);
-	Info_AddChoice(dia_oric_pickpocket,DIALOG_PICKPOCKET,dia_oric_pickpocket_doit);
+	Info_ClearChoices(DIA_Oric_PICKPOCKET);
+	Info_AddChoice(DIA_Oric_PICKPOCKET,Dialog_Back,DIA_Oric_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Oric_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Oric_PICKPOCKET_DoIt);
 };
 
-func void dia_oric_pickpocket_doit()
+func void DIA_Oric_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 85)
 	{
-		b_giveinvitems(self,other,5549,1);
-		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
-		b_giveplayerxp(XP_AMBIENT);
-		Info_ClearChoices(dia_oric_pickpocket);
+		B_GiveInvItems(self,other,ItSc_PalRepelEvil,1);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+		B_GivePlayerXP(XP_Ambient);
+		Info_ClearChoices(DIA_Oric_PICKPOCKET);
 	}
 	else
 	{
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_THEFT,1);
+		B_Attack(self,other,AR_Theft,1);
 	};
 };
 
-func void dia_oric_pickpocket_back()
+func void DIA_Oric_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_oric_pickpocket);
+	Info_ClearChoices(DIA_Oric_PICKPOCKET);
 };
 

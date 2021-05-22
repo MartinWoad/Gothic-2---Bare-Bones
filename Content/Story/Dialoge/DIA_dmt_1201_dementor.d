@@ -1,38 +1,38 @@
 
-instance DIA_DMT_1201_DEMENTOR_EXIT(C_INFO)
+instance DIA_DMT_1201_Dementor_EXIT(C_Info)
 {
-	npc = dmt_1201_dementor;
+	npc = DMT_1201_Dementor;
 	nr = 999;
-	condition = dia_dmt_1201_dementor_exit_condition;
-	information = dia_dmt_1201_dementor_exit_info;
+	condition = DIA_DMT_1201_Dementor_EXIT_Condition;
+	information = DIA_DMT_1201_Dementor_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dmt_1201_dementor_exit_condition()
+func int DIA_DMT_1201_Dementor_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_dmt_1201_dementor_exit_info()
+func void DIA_DMT_1201_Dementor_EXIT_Info()
 {
-	b_assigndementortalk_ritual_exit();
+	B_AssignDementorTalk_Ritual_Exit();
 };
 
 
-instance DIA_DMT_1201_DEMENTOR(C_INFO)
+instance DIA_DMT_1201_Dementor(C_Info)
 {
-	npc = dmt_1201_dementor;
+	npc = DMT_1201_Dementor;
 	nr = 1;
-	condition = dia_dmt_1201_dementor_condition;
-	information = dia_dmt_1201_dementor_info;
+	condition = DIA_DMT_1201_Dementor_Condition;
+	information = DIA_DMT_1201_Dementor_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_dmt_1201_dementor_condition()
+func int DIA_DMT_1201_Dementor_Condition()
 {
 	if(Npc_RefuseTalk(self) == FALSE)
 	{
@@ -40,46 +40,46 @@ func int dia_dmt_1201_dementor_condition()
 	};
 };
 
-func void dia_dmt_1201_dementor_info()
+func void DIA_DMT_1201_Dementor_Info()
 {
-	b_assigndementortalk_ritual();
+	B_AssignDementorTalk_Ritual();
 };
 
 
-instance DIA_DMT_1202_DEMENTOR_EXIT(C_INFO)
+instance DIA_DMT_1202_Dementor_EXIT(C_Info)
 {
-	npc = dmt_1202_dementor;
+	npc = DMT_1202_Dementor;
 	nr = 999;
-	condition = dia_dmt_1202_dementor_exit_condition;
-	information = dia_dmt_1202_dementor_exit_info;
+	condition = DIA_DMT_1202_Dementor_EXIT_Condition;
+	information = DIA_DMT_1202_Dementor_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dmt_1202_dementor_exit_condition()
+func int DIA_DMT_1202_Dementor_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_dmt_1202_dementor_exit_info()
+func void DIA_DMT_1202_Dementor_EXIT_Info()
 {
-	b_assigndementortalk_ritual_exit();
+	B_AssignDementorTalk_Ritual_Exit();
 };
 
 
-instance DIA_DMT_1202_DEMENTOR(C_INFO)
+instance DIA_DMT_1202_Dementor(C_Info)
 {
-	npc = dmt_1202_dementor;
+	npc = DMT_1202_Dementor;
 	nr = 1;
-	condition = dia_dmt_1202_dementor_condition;
-	information = dia_dmt_1202_dementor_info;
+	condition = DIA_DMT_1202_Dementor_Condition;
+	information = DIA_DMT_1202_Dementor_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_dmt_1202_dementor_condition()
+func int DIA_DMT_1202_Dementor_Condition()
 {
 	if(Npc_RefuseTalk(self) == FALSE)
 	{
@@ -87,46 +87,46 @@ func int dia_dmt_1202_dementor_condition()
 	};
 };
 
-func void dia_dmt_1202_dementor_info()
+func void DIA_DMT_1202_Dementor_Info()
 {
-	b_assigndementortalk_ritual();
+	B_AssignDementorTalk_Ritual();
 };
 
 
-instance DIA_DMT_1203_DEMENTOR_EXIT(C_INFO)
+instance DIA_DMT_1203_Dementor_EXIT(C_Info)
 {
-	npc = dmt_1203_dementor;
+	npc = DMT_1203_Dementor;
 	nr = 999;
-	condition = dia_dmt_1203_dementor_exit_condition;
-	information = dia_dmt_1203_dementor_exit_info;
+	condition = DIA_DMT_1203_Dementor_EXIT_Condition;
+	information = DIA_DMT_1203_Dementor_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dmt_1203_dementor_exit_condition()
+func int DIA_DMT_1203_Dementor_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_dmt_1203_dementor_exit_info()
+func void DIA_DMT_1203_Dementor_EXIT_Info()
 {
-	b_assigndementortalk_ritual_exit();
+	B_AssignDementorTalk_Ritual_Exit();
 };
 
 
-instance DIA_DMT_1203_DEMENTOR(C_INFO)
+instance DIA_DMT_1203_Dementor(C_Info)
 {
-	npc = dmt_1203_dementor;
+	npc = DMT_1203_Dementor;
 	nr = 1;
-	condition = dia_dmt_1203_dementor_condition;
-	information = dia_dmt_1203_dementor_info;
+	condition = DIA_DMT_1203_Dementor_Condition;
+	information = DIA_DMT_1203_Dementor_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_dmt_1203_dementor_condition()
+func int DIA_DMT_1203_Dementor_Condition()
 {
 	if(Npc_RefuseTalk(self) == FALSE)
 	{
@@ -134,46 +134,46 @@ func int dia_dmt_1203_dementor_condition()
 	};
 };
 
-func void dia_dmt_1203_dementor_info()
+func void DIA_DMT_1203_Dementor_Info()
 {
-	b_assigndementortalk_ritual();
+	B_AssignDementorTalk_Ritual();
 };
 
 
-instance DIA_DMT_1204_DEMENTOR_EXIT(C_INFO)
+instance DIA_DMT_1204_Dementor_EXIT(C_Info)
 {
-	npc = dmt_1204_dementor;
+	npc = DMT_1204_Dementor;
 	nr = 999;
-	condition = dia_dmt_1204_dementor_exit_condition;
-	information = dia_dmt_1204_dementor_exit_info;
+	condition = DIA_DMT_1204_Dementor_EXIT_Condition;
+	information = DIA_DMT_1204_Dementor_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dmt_1204_dementor_exit_condition()
+func int DIA_DMT_1204_Dementor_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_dmt_1204_dementor_exit_info()
+func void DIA_DMT_1204_Dementor_EXIT_Info()
 {
-	b_assigndementortalk_ritual_exit();
+	B_AssignDementorTalk_Ritual_Exit();
 };
 
 
-instance DIA_DMT_1204_DEMENTOR(C_INFO)
+instance DIA_DMT_1204_Dementor(C_Info)
 {
-	npc = dmt_1204_dementor;
+	npc = DMT_1204_Dementor;
 	nr = 1;
-	condition = dia_dmt_1204_dementor_condition;
-	information = dia_dmt_1204_dementor_info;
+	condition = DIA_DMT_1204_Dementor_Condition;
+	information = DIA_DMT_1204_Dementor_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_dmt_1204_dementor_condition()
+func int DIA_DMT_1204_Dementor_Condition()
 {
 	if(Npc_RefuseTalk(self) == FALSE)
 	{
@@ -181,46 +181,46 @@ func int dia_dmt_1204_dementor_condition()
 	};
 };
 
-func void dia_dmt_1204_dementor_info()
+func void DIA_DMT_1204_Dementor_Info()
 {
-	b_assigndementortalk_ritual();
+	B_AssignDementorTalk_Ritual();
 };
 
 
-instance DIA_DMT_1205_DEMENTOR_EXIT(C_INFO)
+instance DIA_DMT_1205_Dementor_EXIT(C_Info)
 {
-	npc = dmt_1205_dementor;
+	npc = DMT_1205_Dementor;
 	nr = 999;
-	condition = dia_dmt_1205_dementor_exit_condition;
-	information = dia_dmt_1205_dementor_exit_info;
+	condition = DIA_DMT_1205_Dementor_EXIT_Condition;
+	information = DIA_DMT_1205_Dementor_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dmt_1205_dementor_exit_condition()
+func int DIA_DMT_1205_Dementor_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_dmt_1205_dementor_exit_info()
+func void DIA_DMT_1205_Dementor_EXIT_Info()
 {
-	b_assigndementortalk_ritual_exit();
+	B_AssignDementorTalk_Ritual_Exit();
 };
 
 
-instance DIA_DMT_1205_DEMENTOR(C_INFO)
+instance DIA_DMT_1205_Dementor(C_Info)
 {
-	npc = dmt_1205_dementor;
+	npc = DMT_1205_Dementor;
 	nr = 1;
-	condition = dia_dmt_1205_dementor_condition;
-	information = dia_dmt_1205_dementor_info;
+	condition = DIA_DMT_1205_Dementor_Condition;
+	information = DIA_DMT_1205_Dementor_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_dmt_1205_dementor_condition()
+func int DIA_DMT_1205_Dementor_Condition()
 {
 	if(Npc_RefuseTalk(self) == FALSE)
 	{
@@ -228,46 +228,46 @@ func int dia_dmt_1205_dementor_condition()
 	};
 };
 
-func void dia_dmt_1205_dementor_info()
+func void DIA_DMT_1205_Dementor_Info()
 {
-	b_assigndementortalk_ritual();
+	B_AssignDementorTalk_Ritual();
 };
 
 
-instance DIA_DMT_1206_DEMENTOR_EXIT(C_INFO)
+instance DIA_DMT_1206_Dementor_EXIT(C_Info)
 {
-	npc = dmt_1206_dementor;
+	npc = DMT_1206_Dementor;
 	nr = 999;
-	condition = dia_dmt_1206_dementor_exit_condition;
-	information = dia_dmt_1206_dementor_exit_info;
+	condition = DIA_DMT_1206_Dementor_EXIT_Condition;
+	information = DIA_DMT_1206_Dementor_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dmt_1206_dementor_exit_condition()
+func int DIA_DMT_1206_Dementor_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_dmt_1206_dementor_exit_info()
+func void DIA_DMT_1206_Dementor_EXIT_Info()
 {
-	b_assigndementortalk_ritual_exit();
+	B_AssignDementorTalk_Ritual_Exit();
 };
 
 
-instance DIA_DMT_1206_DEMENTOR(C_INFO)
+instance DIA_DMT_1206_Dementor(C_Info)
 {
-	npc = dmt_1206_dementor;
+	npc = DMT_1206_Dementor;
 	nr = 1;
-	condition = dia_dmt_1206_dementor_condition;
-	information = dia_dmt_1206_dementor_info;
+	condition = DIA_DMT_1206_Dementor_Condition;
+	information = DIA_DMT_1206_Dementor_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_dmt_1206_dementor_condition()
+func int DIA_DMT_1206_Dementor_Condition()
 {
 	if(Npc_RefuseTalk(self) == FALSE)
 	{
@@ -275,46 +275,46 @@ func int dia_dmt_1206_dementor_condition()
 	};
 };
 
-func void dia_dmt_1206_dementor_info()
+func void DIA_DMT_1206_Dementor_Info()
 {
-	b_assigndementortalk_ritual();
+	B_AssignDementorTalk_Ritual();
 };
 
 
-instance DIA_DMT_1207_DEMENTOR_EXIT(C_INFO)
+instance DIA_DMT_1207_Dementor_EXIT(C_Info)
 {
-	npc = dmt_1207_dementor;
+	npc = DMT_1207_Dementor;
 	nr = 999;
-	condition = dia_dmt_1207_dementor_exit_condition;
-	information = dia_dmt_1207_dementor_exit_info;
+	condition = DIA_DMT_1207_Dementor_EXIT_Condition;
+	information = DIA_DMT_1207_Dementor_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dmt_1207_dementor_exit_condition()
+func int DIA_DMT_1207_Dementor_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_dmt_1207_dementor_exit_info()
+func void DIA_DMT_1207_Dementor_EXIT_Info()
 {
-	b_assigndementortalk_ritual_exit();
+	B_AssignDementorTalk_Ritual_Exit();
 };
 
 
-instance DIA_DMT_1207_DEMENTOR(C_INFO)
+instance DIA_DMT_1207_Dementor(C_Info)
 {
-	npc = dmt_1207_dementor;
+	npc = DMT_1207_Dementor;
 	nr = 1;
-	condition = dia_dmt_1207_dementor_condition;
-	information = dia_dmt_1207_dementor_info;
+	condition = DIA_DMT_1207_Dementor_Condition;
+	information = DIA_DMT_1207_Dementor_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_dmt_1207_dementor_condition()
+func int DIA_DMT_1207_Dementor_Condition()
 {
 	if(Npc_RefuseTalk(self) == FALSE)
 	{
@@ -322,46 +322,46 @@ func int dia_dmt_1207_dementor_condition()
 	};
 };
 
-func void dia_dmt_1207_dementor_info()
+func void DIA_DMT_1207_Dementor_Info()
 {
-	b_assigndementortalk_ritual();
+	B_AssignDementorTalk_Ritual();
 };
 
 
-instance DIA_DMT_1208_DEMENTOR_EXIT(C_INFO)
+instance DIA_DMT_1208_Dementor_EXIT(C_Info)
 {
-	npc = dmt_1208_dementor;
+	npc = DMT_1208_Dementor;
 	nr = 999;
-	condition = dia_dmt_1208_dementor_exit_condition;
-	information = dia_dmt_1208_dementor_exit_info;
+	condition = DIA_DMT_1208_Dementor_EXIT_Condition;
+	information = DIA_DMT_1208_Dementor_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dmt_1208_dementor_exit_condition()
+func int DIA_DMT_1208_Dementor_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_dmt_1208_dementor_exit_info()
+func void DIA_DMT_1208_Dementor_EXIT_Info()
 {
-	b_assigndementortalk_ritual_exit();
+	B_AssignDementorTalk_Ritual_Exit();
 };
 
 
-instance DIA_DMT_1208_DEMENTOR(C_INFO)
+instance DIA_DMT_1208_Dementor(C_Info)
 {
-	npc = dmt_1208_dementor;
+	npc = DMT_1208_Dementor;
 	nr = 1;
-	condition = dia_dmt_1208_dementor_condition;
-	information = dia_dmt_1208_dementor_info;
+	condition = DIA_DMT_1208_Dementor_Condition;
+	information = DIA_DMT_1208_Dementor_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_dmt_1208_dementor_condition()
+func int DIA_DMT_1208_Dementor_Condition()
 {
 	if(Npc_RefuseTalk(self) == FALSE)
 	{
@@ -369,46 +369,46 @@ func int dia_dmt_1208_dementor_condition()
 	};
 };
 
-func void dia_dmt_1208_dementor_info()
+func void DIA_DMT_1208_Dementor_Info()
 {
-	b_assigndementortalk_ritual();
+	B_AssignDementorTalk_Ritual();
 };
 
 
-instance DIA_DMT_1209_DEMENTOR_EXIT(C_INFO)
+instance DIA_DMT_1209_Dementor_EXIT(C_Info)
 {
-	npc = dmt_1209_dementor;
+	npc = DMT_1209_Dementor;
 	nr = 999;
-	condition = dia_dmt_1209_dementor_exit_condition;
-	information = dia_dmt_1209_dementor_exit_info;
+	condition = DIA_DMT_1209_Dementor_EXIT_Condition;
+	information = DIA_DMT_1209_Dementor_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dmt_1209_dementor_exit_condition()
+func int DIA_DMT_1209_Dementor_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_dmt_1209_dementor_exit_info()
+func void DIA_DMT_1209_Dementor_EXIT_Info()
 {
-	b_assigndementortalk_ritual_exit();
+	B_AssignDementorTalk_Ritual_Exit();
 };
 
 
-instance DIA_DMT_1209_DEMENTOR(C_INFO)
+instance DIA_DMT_1209_Dementor(C_Info)
 {
-	npc = dmt_1209_dementor;
+	npc = DMT_1209_Dementor;
 	nr = 1;
-	condition = dia_dmt_1209_dementor_condition;
-	information = dia_dmt_1209_dementor_info;
+	condition = DIA_DMT_1209_Dementor_Condition;
+	information = DIA_DMT_1209_Dementor_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_dmt_1209_dementor_condition()
+func int DIA_DMT_1209_Dementor_Condition()
 {
 	if(Npc_RefuseTalk(self) == FALSE)
 	{
@@ -416,46 +416,46 @@ func int dia_dmt_1209_dementor_condition()
 	};
 };
 
-func void dia_dmt_1209_dementor_info()
+func void DIA_DMT_1209_Dementor_Info()
 {
-	b_assigndementortalk_ritual();
+	B_AssignDementorTalk_Ritual();
 };
 
 
-instance DIA_DMT_1210_DEMENTOR_EXIT(C_INFO)
+instance DIA_DMT_1210_Dementor_EXIT(C_Info)
 {
-	npc = dmt_1210_dementor;
+	npc = DMT_1210_Dementor;
 	nr = 999;
-	condition = dia_dmt_1210_dementor_exit_condition;
-	information = dia_dmt_1210_dementor_exit_info;
+	condition = DIA_DMT_1210_Dementor_EXIT_Condition;
+	information = DIA_DMT_1210_Dementor_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dmt_1210_dementor_exit_condition()
+func int DIA_DMT_1210_Dementor_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_dmt_1210_dementor_exit_info()
+func void DIA_DMT_1210_Dementor_EXIT_Info()
 {
-	b_assigndementortalk_ritual_exit();
+	B_AssignDementorTalk_Ritual_Exit();
 };
 
 
-instance DIA_DMT_1210_DEMENTOR(C_INFO)
+instance DIA_DMT_1210_Dementor(C_Info)
 {
-	npc = dmt_1210_dementor;
+	npc = DMT_1210_Dementor;
 	nr = 1;
-	condition = dia_dmt_1210_dementor_condition;
-	information = dia_dmt_1210_dementor_info;
+	condition = DIA_DMT_1210_Dementor_Condition;
+	information = DIA_DMT_1210_Dementor_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_dmt_1210_dementor_condition()
+func int DIA_DMT_1210_Dementor_Condition()
 {
 	if(Npc_RefuseTalk(self) == FALSE)
 	{
@@ -463,46 +463,46 @@ func int dia_dmt_1210_dementor_condition()
 	};
 };
 
-func void dia_dmt_1210_dementor_info()
+func void DIA_DMT_1210_Dementor_Info()
 {
-	b_assigndementortalk_ritual();
+	B_AssignDementorTalk_Ritual();
 };
 
 
-instance DIA_DMT_1211_DEMENTOR_EXIT(C_INFO)
+instance DIA_DMT_1211_Dementor_EXIT(C_Info)
 {
-	npc = dmt_1211_dementor;
+	npc = DMT_1211_Dementor;
 	nr = 999;
-	condition = dia_dmt_1211_dementor_exit_condition;
-	information = dia_dmt_1211_dementor_exit_info;
+	condition = DIA_DMT_1211_Dementor_EXIT_Condition;
+	information = DIA_DMT_1211_Dementor_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dmt_1211_dementor_exit_condition()
+func int DIA_DMT_1211_Dementor_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_dmt_1211_dementor_exit_info()
+func void DIA_DMT_1211_Dementor_EXIT_Info()
 {
-	b_assigndementortalk_ritual_exit();
+	B_AssignDementorTalk_Ritual_Exit();
 };
 
 
-instance DIA_DMT_1211_DEMENTOR(C_INFO)
+instance DIA_DMT_1211_Dementor(C_Info)
 {
-	npc = dmt_1211_dementor;
+	npc = DMT_1211_Dementor;
 	nr = 1;
-	condition = dia_dmt_1211_dementor_condition;
-	information = dia_dmt_1211_dementor_info;
+	condition = DIA_DMT_1211_Dementor_Condition;
+	information = DIA_DMT_1211_Dementor_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_dmt_1211_dementor_condition()
+func int DIA_DMT_1211_Dementor_Condition()
 {
 	if(Npc_RefuseTalk(self) == FALSE)
 	{
@@ -510,8 +510,8 @@ func int dia_dmt_1211_dementor_condition()
 	};
 };
 
-func void dia_dmt_1211_dementor_info()
+func void DIA_DMT_1211_Dementor_Info()
 {
-	b_assigndementortalk_ritual();
+	B_AssignDementorTalk_Ritual();
 };
 

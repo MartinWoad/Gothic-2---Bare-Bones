@@ -1,45 +1,45 @@
 
-instance DIA_MILTEN_DI_EXIT(C_INFO)
+instance DIA_Milten_DI_EXIT(C_Info)
 {
-	npc = pc_mage_di;
+	npc = PC_Mage_DI;
 	nr = 999;
-	condition = dia_milten_di_exit_condition;
-	information = dia_milten_di_exit_info;
+	condition = DIA_Milten_DI_EXIT_Condition;
+	information = DIA_Milten_DI_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_milten_di_exit_condition()
+func int DIA_Milten_DI_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_milten_di_exit_info()
+func void DIA_Milten_DI_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MILTEN_DI_HELLO(C_INFO)
+instance DIA_Milten_DI_Hello(C_Info)
 {
-	npc = pc_mage_di;
+	npc = PC_Mage_DI;
 	nr = 3;
-	condition = dia_milten_di_hello_condition;
-	information = dia_milten_di_hello_info;
+	condition = DIA_Milten_DI_Hello_Condition;
+	information = DIA_Milten_DI_Hello_Info;
 	description = "Zupe³nie jak za dawnych czasów.";
 };
 
 
-func int dia_milten_di_hello_condition()
+func int DIA_Milten_DI_Hello_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_milten_di_hello_info()
+func void DIA_Milten_DI_Hello_Info()
 {
 	AI_Output(other,self,"DIA_Milten_DI_Hello_15_00");	//Zupe³nie jak za dawnych czasów.
 	AI_Output(self,other,"DIA_Milten_DI_Hello_03_01");	//Œwiête s³owa. Ciekawe, czy i tym razem ci siê uda...
@@ -48,115 +48,115 @@ func void dia_milten_di_hello_info()
 };
 
 
-instance DIA_MILTEN_DI_TRADE(C_INFO)
+instance DIA_Milten_DI_TRADE(C_Info)
 {
-	npc = pc_mage_di;
+	npc = PC_Mage_DI;
 	nr = 12;
-	condition = dia_milten_di_trade_condition;
-	information = dia_milten_di_trade_info;
+	condition = DIA_Milten_DI_TRADE_Condition;
+	information = DIA_Milten_DI_TRADE_Info;
 	permanent = TRUE;
 	trade = TRUE;
 	description = "Nie masz paru mikstur na sprzeda¿?";
 };
 
 
-func int dia_milten_di_trade_condition()
+func int DIA_Milten_DI_TRADE_Condition()
 {
-	if((Npc_IsDead(undeaddragon) == FALSE) && Npc_KnowsInfo(other,dia_milten_di_hello))
+	if((Npc_IsDead(UndeadDragon) == FALSE) && Npc_KnowsInfo(other,DIA_Milten_DI_Hello))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_milten_di_trade_info()
+func void DIA_Milten_DI_TRADE_Info()
 {
 	AI_Output(other,self,"DIA_Milten_DI_TRADE_15_00");	//Nie masz paru mikstur na sprzeda¿?
-	b_givetradeinv(self);
-	Npc_RemoveInvItems(self,itpo_health_02,Npc_HasItems(self,itpo_health_02));
-	CreateInvItems(self,itpo_health_02,15);
-	Npc_RemoveInvItems(self,itpo_mana_02,Npc_HasItems(self,itpo_mana_02));
-	CreateInvItems(self,itpo_mana_02,15);
+	B_GiveTradeInv(self);
+	Npc_RemoveInvItems(self,ItPo_Health_02,Npc_HasItems(self,ItPo_Health_02));
+	CreateInvItems(self,ItPo_Health_02,15);
+	Npc_RemoveInvItems(self,ItPo_Mana_02,Npc_HasItems(self,ItPo_Mana_02));
+	CreateInvItems(self,ItPo_Mana_02,15);
 	AI_Output(self,other,"DIA_Milten_DI_TRADE_03_01");	//Trochê zapasów jeszcze mi zosta³o.
 };
 
 
-instance DIA_MILTEN_DI_RAT(C_INFO)
+instance DIA_Milten_DI_Rat(C_Info)
 {
-	npc = pc_mage_di;
+	npc = PC_Mage_DI;
 	nr = 3;
-	condition = dia_milten_di_rat_condition;
-	information = dia_milten_di_rat_info;
+	condition = DIA_Milten_DI_Rat_Condition;
+	information = DIA_Milten_DI_Rat_Info;
 	description = "Masz dla mnie jakieœ rady?";
 };
 
 
-func int dia_milten_di_rat_condition()
+func int DIA_Milten_DI_Rat_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_milten_di_hello) && (Npc_IsDead(undeaddragon) == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Milten_DI_Hello) && (Npc_IsDead(UndeadDragon) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_milten_di_rat_info()
+func void DIA_Milten_DI_Rat_Info()
 {
 	AI_Output(other,self,"DIA_Milten_DI_Rat_15_00");	//Masz dla mnie jakieœ rady?
 	AI_Output(self,other,"DIA_Milten_DI_Rat_03_01");	//Hmmm... To mi³o, ¿e pytasz o radê w³aœnie mnie. Przyznam, ¿e jedna rzecz nie daje mi od pewnego czasu spokoju.
 	AI_Output(self,other,"DIA_Milten_DI_Rat_03_02");	//Masz ze sob¹ Oko Innosa?
-	Info_ClearChoices(dia_milten_di_rat);
-	if(SC_INNOSEYEVERGESSEN_DI == TRUE)
+	Info_ClearChoices(DIA_Milten_DI_Rat);
+	if(SC_InnosEyeVergessen_DI == TRUE)
 	{
-		Info_AddChoice(dia_milten_di_rat,"Nie.",dia_milten_di_rat_nein);
+		Info_AddChoice(DIA_Milten_DI_Rat,"Nie.",DIA_Milten_DI_Rat_nein);
 	}
 	else
 	{
-		Info_AddChoice(dia_milten_di_rat,"Oczywiœcie.",dia_milten_di_rat_ja);
+		Info_AddChoice(DIA_Milten_DI_Rat,"Oczywiœcie.",DIA_Milten_DI_Rat_ja);
 	};
 };
 
-func void dia_milten_di_rat_nein()
+func void DIA_Milten_DI_Rat_nein()
 {
 	AI_Output(other,self,"DIA_Milten_DI_Rat_nein_15_00");	//Nie.
 	AI_Output(self,other,"DIA_Milten_DI_Rat_nein_03_01");	//Jak mo¿na byæ tak... A co zamierzasz zrobiæ, gdy natkniesz siê na jakiegoœ smoka?
 	AI_Output(self,other,"DIA_Milten_DI_Rat_nein_03_02");	//Widzê, ¿e nie zm¹drza³eœ od naszego ostatniego spotkania. Mamy tutaj nawet pracowniê alchemiczn¹, w której mo¿na by nape³niæ amulet energi¹!
 	AI_Output(self,other,"DIA_Milten_DI_Rat_nein_03_03");	//Co ty sobie wyobra¿asz?! Ech, mam nadziejê, ¿e twoja g³upota nie bêdzie nas zbyt drogo kosztowaæ.
-	Info_ClearChoices(dia_milten_di_rat);
+	Info_ClearChoices(DIA_Milten_DI_Rat);
 };
 
-func void dia_milten_di_rat_ja()
+func void DIA_Milten_DI_Rat_ja()
 {
 	AI_Output(other,self,"DIA_Milten_DI_Rat_ja_15_00");	//Oczywiœcie, ¿e tak!
 	AI_Output(self,other,"DIA_Milten_DI_Rat_ja_03_01");	//Wybacz, g³upie pytanie. Robiê siê trochê nerwowy.
-	b_giveplayerxp(XP_AMBIENT);
-	Info_ClearChoices(dia_milten_di_rat);
+	B_GivePlayerXP(XP_Ambient);
+	Info_ClearChoices(DIA_Milten_DI_Rat);
 };
 
 
-instance DIA_MILTEN_DI_PEDROTOT(C_INFO)
+instance DIA_Milten_DI_PEDROTOT(C_Info)
 {
-	npc = pc_mage_di;
+	npc = PC_Mage_DI;
 	nr = 3;
-	condition = dia_milten_di_pedrotot_condition;
-	information = dia_milten_di_pedrotot_info;
+	condition = DIA_Milten_DI_PEDROTOT_Condition;
+	information = DIA_Milten_DI_PEDROTOT_Info;
 	description = "Spotka³em Pedra.";
 };
 
 
-func int dia_milten_di_pedrotot_condition()
+func int DIA_Milten_DI_PEDROTOT_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_pedro_di_you))
+	if(Npc_KnowsInfo(other,DIA_Pedro_DI_YOU))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_milten_di_pedrotot_info()
+func void DIA_Milten_DI_PEDROTOT_Info()
 {
 	AI_Output(other,self,"DIA_Milten_DI_PEDROTOT_15_00");	//Spotka³em Pedra.
 	AI_Output(self,other,"DIA_Milten_DI_PEDROTOT_03_01");	//Co?! Gdzie?! Tu, na wyspie? Niech go szlag. Ten cz³owiek jest niesamowity.
 	AI_Output(self,other,"DIA_Milten_DI_PEDROTOT_03_02");	//Nie przypuszcza³em, ¿e taka z niego twarda sztuka.
-	b_giveplayerxp(XP_AMBIENT);
-	if(Npc_IsDead(pedro_di))
+	B_GivePlayerXP(XP_Ambient);
+	if(Npc_IsDead(Pedro_DI))
 	{
 		AI_Output(other,self,"DIA_Milten_DI_PEDROTOT_15_03");	//Ju¿ nie ¿yje.
 		AI_Output(self,other,"DIA_Milten_DI_PEDROTOT_03_04");	//Tak? Trudno, pokój jego duszy. Nie powiem, ¿eby mi go brakowa³o, ale chêtnie zamieni³bym z nim s³owo.
@@ -168,102 +168,102 @@ func void dia_milten_di_pedrotot_info()
 };
 
 
-instance DIA_MILTEN_DI_TEACHMAGIC(C_INFO)
+instance DIA_Milten_DI_TeachMagic(C_Info)
 {
-	npc = pc_mage_di;
+	npc = PC_Mage_DI;
 	nr = 31;
-	condition = dia_milten_di_teachmagic_condition;
-	information = dia_milten_di_teachmagic_info;
+	condition = DIA_Milten_DI_TeachMagic_Condition;
+	information = DIA_Milten_DI_TeachMagic_Info;
 	permanent = TRUE;
 	description = "Chcê popracowaæ nad moimi zdolnoœciami magicznymi.";
 };
 
 
-func int dia_milten_di_teachmagic_condition()
+func int DIA_Milten_DI_TeachMagic_Condition()
 {
-	if((Npc_IsDead(undeaddragon) == FALSE) && Npc_KnowsInfo(other,dia_milten_di_hello))
+	if((Npc_IsDead(UndeadDragon) == FALSE) && Npc_KnowsInfo(other,DIA_Milten_DI_Hello))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_milten_di_teachmagic_onetime;
+var int DIA_Milten_DI_TeachMagic_OneTime;
 
-func void dia_milten_di_teachmagic_info()
+func void DIA_Milten_DI_TeachMagic_Info()
 {
 	AI_Output(other,self,"DIA_Milten_DI_TeachMagic_15_00");	//Chcê popracowaæ nad moimi zdolnoœciami magicznymi.
-	if(ORKSTURMDI == FALSE)
+	if(ORkSturmDI == FALSE)
 	{
 		AI_Output(self,other,"DIA_Milten_DI_TeachMagic_03_01");	//Zrobiê, co w mojej mocy.
 	}
-	else if(DIA_MILTEN_DI_TEACHMAGIC_ONETIME == FALSE)
+	else if(DIA_Milten_DI_TeachMagic_OneTime == FALSE)
 	{
 		AI_Output(self,other,"DIA_Milten_DI_TeachMagic_03_02");	//Pomogê ci, ale pod jednym warunkiem: postarasz siê, ¿eby orkowie zostali tam, gdzie s¹.
-		DIA_MILTEN_DI_TEACHMAGIC_ONETIME = TRUE;
+		DIA_Milten_DI_TeachMagic_OneTime = TRUE;
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Milten_DI_TeachMagic_03_03");	//W porz¹dku. Czego potrzebujesz?
 	};
-	Info_ClearChoices(dia_milten_di_teachmagic);
-	Info_AddChoice(dia_milten_di_teachmagic,DIALOG_BACK,dia_milten_di_teachmagic_back);
-	Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(PRINT_LEARNMANA1,b_getlearncostattribute(other,ATR_MANA_MAX)),dia_milten_di_teachmagic_mana_1);
-	Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(PRINT_LEARNMANA5,b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_milten_di_teachmagic_mana_5);
+	Info_ClearChoices(DIA_Milten_DI_TeachMagic);
+	Info_AddChoice(DIA_Milten_DI_TeachMagic,Dialog_Back,DIA_Milten_DI_TeachMagic_BACK);
+	Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),DIA_Milten_DI_TeachMagic_MANA_1);
+	Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),DIA_Milten_DI_TeachMagic_MANA_5);
 	if(hero.guild == GIL_KDF)
 	{
-		Info_AddChoice(dia_milten_di_teachmagic,"Tworzenie run",dia_milten_di_teachmagic_runes);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,"Tworzenie run",DIA_Milten_DI_TeachMagic_RUNES);
 	};
 };
 
-func void dia_milten_di_teachmagic_mana_1()
+func void DIA_Milten_DI_TeachMagic_MANA_1()
 {
-	if(b_teachattributepoints(self,other,ATR_MANA_MAX,1,200))
+	if(B_TeachAttributePoints(self,other,ATR_MANA_MAX,1,200))
 	{
 		AI_Output(self,other,"DIA_Milten_DI_TeachMagic_MANA_1_03_00");	//Niech Innos wskazuje ci w³aœciw¹ drogê.
 	};
-	Info_ClearChoices(dia_milten_di_teachmagic);
-	Info_AddChoice(dia_milten_di_teachmagic,DIALOG_BACK,dia_milten_di_teachmagic_back);
-	Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(PRINT_LEARNMANA1,b_getlearncostattribute(other,ATR_MANA_MAX)),dia_milten_di_teachmagic_mana_1);
-	Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(PRINT_LEARNMANA5,b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_milten_di_teachmagic_mana_5);
+	Info_ClearChoices(DIA_Milten_DI_TeachMagic);
+	Info_AddChoice(DIA_Milten_DI_TeachMagic,Dialog_Back,DIA_Milten_DI_TeachMagic_BACK);
+	Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),DIA_Milten_DI_TeachMagic_MANA_1);
+	Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),DIA_Milten_DI_TeachMagic_MANA_5);
 	if(hero.guild == GIL_KDF)
 	{
-		Info_AddChoice(dia_milten_di_teachmagic,"Tworzenie run",dia_milten_di_teachmagic_runes);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,"Tworzenie run",DIA_Milten_DI_TeachMagic_RUNES);
 	};
 };
 
-func void dia_milten_di_teachmagic_mana_5()
+func void DIA_Milten_DI_TeachMagic_MANA_5()
 {
-	if(b_teachattributepoints(self,other,ATR_MANA_MAX,5,200))
+	if(B_TeachAttributePoints(self,other,ATR_MANA_MAX,5,200))
 	{
 		AI_Output(self,other,"DIA_Milten_DI_TeachMagic_MANA_5_03_00");	//Niech œwiat³o Innosa rozœwietla tw¹ drogê.
 	};
-	Info_ClearChoices(dia_milten_di_teachmagic);
-	Info_AddChoice(dia_milten_di_teachmagic,DIALOG_BACK,dia_milten_di_teachmagic_back);
-	Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(PRINT_LEARNMANA1,b_getlearncostattribute(other,ATR_MANA_MAX)),dia_milten_di_teachmagic_mana_1);
-	Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(PRINT_LEARNMANA5,b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_milten_di_teachmagic_mana_5);
+	Info_ClearChoices(DIA_Milten_DI_TeachMagic);
+	Info_AddChoice(DIA_Milten_DI_TeachMagic,Dialog_Back,DIA_Milten_DI_TeachMagic_BACK);
+	Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),DIA_Milten_DI_TeachMagic_MANA_1);
+	Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),DIA_Milten_DI_TeachMagic_MANA_5);
 	if(hero.guild == GIL_KDF)
 	{
-		Info_AddChoice(dia_milten_di_teachmagic,"Tworzenie run",dia_milten_di_teachmagic_runes);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,"Tworzenie run",DIA_Milten_DI_TeachMagic_RUNES);
 	};
 };
 
-func void dia_milten_di_teachmagic_runes()
+func void DIA_Milten_DI_TeachMagic_RUNES()
 {
-	Info_ClearChoices(dia_milten_di_teachmagic);
-	Info_AddChoice(dia_milten_di_teachmagic,DIALOG_BACK,dia_milten_di_teachmagic_back);
+	Info_ClearChoices(DIA_Milten_DI_TeachMagic);
+	Info_AddChoice(DIA_Milten_DI_TeachMagic,Dialog_Back,DIA_Milten_DI_TeachMagic_BACK);
 	AI_Output(self,other,"DIA_Milten_DI_TeachMagic_RUNES_03_00");	//Nie jest to moja specjalnoœæ, ale jakoœ sobie poradzimy.
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 4)
 	{
-		Info_AddChoice(dia_milten_di_teachmagic," czwarty kr¹g",dia_milten_di_teachmagic_runen_circle_4);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic," czwarty kr¹g",DIA_Milten_DI_TeachMagic_Runen_Circle_4);
 	}
 	else if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 5)
 	{
-		Info_AddChoice(dia_milten_di_teachmagic," pi¹ty kr¹g",dia_milten_di_teachmagic_runen_circle_5);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic," pi¹ty kr¹g",DIA_Milten_DI_TeachMagic_Runen_Circle_5);
 	}
 	else if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 6)
 	{
-		Info_AddChoice(dia_milten_di_teachmagic," szósty kr¹g",dia_milten_di_teachmagic_runen_circle_6);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic," szósty kr¹g",DIA_Milten_DI_TeachMagic_Runen_Circle_6);
 	}
 	else
 	{
@@ -271,296 +271,296 @@ func void dia_milten_di_teachmagic_runes()
 	};
 };
 
-func void dia_milten_di_teachmagic_runen_paladin()
+func void DIA_Milten_DI_TeachMagic_Runen_Paladin()
 {
-	Info_ClearChoices(dia_milten_di_teachmagic);
-	Info_AddChoice(dia_milten_di_teachmagic,DIALOG_BACK,dia_milten_di_teachmagic_back);
-	if(PLAYER_TALENT_RUNES[SPL_PALLIGHT] == FALSE)
+	Info_ClearChoices(DIA_Milten_DI_TeachMagic);
+	Info_AddChoice(DIA_Milten_DI_TeachMagic,Dialog_Back,DIA_Milten_DI_TeachMagic_BACK);
+	if(PLAYER_TALENT_RUNES[SPL_PalLight] == FALSE)
 	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring("Œwiat³o",b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_paladin_spl_pallight);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString("Œwiat³o",B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Paladin_SPL_PalLight);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_PALLIGHTHEAL] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_PalLightHeal] == FALSE)
 	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring("Pomniejsze uleczenie",b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_paladin_spl_pallightheal);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString("Pomniejsze uleczenie",B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Paladin_SPL_PalLightHeal);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_PALHOLYBOLT] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_PalHolyBolt] == FALSE)
 	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring("Œwiêta strza³a",b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_paladin_spl_palholybolt);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString("Œwiêta strza³a",B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Paladin_SPL_PalHolyBolt);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_PALMEDIUMHEAL] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_PalMediumHeal] == FALSE)
 	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring("Œrednie uleczenie",b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_paladin_spl_palmediumheal);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString("Œrednie uleczenie",B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Paladin_SPL_PalMediumHeal);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_PALREPELEVIL] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_PalRepelEvil] == FALSE)
 	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring("Wypêdzenie z³a",b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_paladin_spl_palrepelevil);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString("Wypêdzenie z³a",B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Paladin_SPL_PalRepelEvil);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_PALFULLHEAL] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_PalFullHeal] == FALSE)
 	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring("Wiêksze uleczenie",b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_paladin_spl_palfullheal);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString("Wiêksze uleczenie",B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Paladin_SPL_PalFullHeal);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_PALDESTROYEVIL] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_PalDestroyEvil] == FALSE)
 	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring("Zniszczenie z³a",b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_paladin_spl_paldestroyevil);
-	};
-};
-
-func void dia_milten_di_teachmagic_runen_paladin_spl_pallight()
-{
-	b_teachplayertalentrunes(self,other,SPL_PALLIGHT);
-};
-
-func void dia_milten_di_teachmagic_runen_paladin_spl_pallightheal()
-{
-	b_teachplayertalentrunes(self,other,SPL_PALLIGHTHEAL);
-};
-
-func void dia_milten_di_teachmagic_runen_paladin_spl_palholybolt()
-{
-	b_teachplayertalentrunes(self,other,SPL_PALHOLYBOLT);
-};
-
-func void dia_milten_di_teachmagic_runen_paladin_spl_palmediumheal()
-{
-	b_teachplayertalentrunes(self,other,SPL_PALMEDIUMHEAL);
-};
-
-func void dia_milten_di_teachmagic_runen_paladin_spl_palrepelevil()
-{
-	b_teachplayertalentrunes(self,other,SPL_PALREPELEVIL);
-};
-
-func void dia_milten_di_teachmagic_runen_paladin_spl_palfullheal()
-{
-	b_teachplayertalentrunes(self,other,SPL_PALFULLHEAL);
-};
-
-func void dia_milten_di_teachmagic_runen_paladin_spl_paldestroyevil()
-{
-	b_teachplayertalentrunes(self,other,SPL_PALDESTROYEVIL);
-};
-
-func void dia_milten_di_teachmagic_runen_circle_4()
-{
-	Info_ClearChoices(dia_milten_di_teachmagic);
-	Info_AddChoice(dia_milten_di_teachmagic,DIALOG_BACK,dia_milten_di_teachmagic_back);
-	if((PLAYER_TALENT_RUNES[SPL_SUMMONGOLEM] == FALSE) && (PLAYER_TALENT_RUNES[SPL_SUMMONWOLF] == TRUE))
-	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(NAME_SPL_SUMMONGOLEM,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_circle_4_spl_summongolem);
-	};
-	if(PLAYER_TALENT_RUNES[SPL_DESTROYUNDEAD] == FALSE)
-	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(NAME_SPL_DESTROYUNDEAD,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_circle_4_spl_destroyundead);
-	};
-	if((PLAYER_TALENT_RUNES[SPL_LIGHTNINGFLASH] == FALSE) && (PLAYER_TALENT_RUNES[SPL_ZAP] == TRUE))
-	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(NAME_SPL_LIGHTNINGFLASH,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_circle_4_spl_lightningflash);
-	};
-	if((PLAYER_TALENT_RUNES[SPL_CHARGEFIREBALL] == FALSE) && (PLAYER_TALENT_RUNES[SPL_INSTANTFIREBALL] == TRUE))
-	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(NAME_SPL_CHARGEFIREBALL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_circle_4_spl_chargefireball);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString("Zniszczenie z³a",B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Paladin_SPL_PalDestroyEvil);
 	};
 };
 
-func void dia_milten_di_teachmagic_runen_circle_4_spl_chargefireball()
+func void DIA_Milten_DI_TeachMagic_Runen_Paladin_SPL_PalLight()
 {
-	b_teachplayertalentrunes(self,other,SPL_CHARGEFIREBALL);
+	B_TeachPlayerTalentRunes(self,other,SPL_PalLight);
 };
 
-func void dia_milten_di_teachmagic_runen_circle_4_spl_summongolem()
+func void DIA_Milten_DI_TeachMagic_Runen_Paladin_SPL_PalLightHeal()
 {
-	b_teachplayertalentrunes(self,other,SPL_SUMMONGOLEM);
+	B_TeachPlayerTalentRunes(self,other,SPL_PalLightHeal);
 };
 
-func void dia_milten_di_teachmagic_runen_circle_4_spl_destroyundead()
+func void DIA_Milten_DI_TeachMagic_Runen_Paladin_SPL_PalHolyBolt()
 {
-	b_teachplayertalentrunes(self,other,SPL_DESTROYUNDEAD);
+	B_TeachPlayerTalentRunes(self,other,SPL_PalHolyBolt);
 };
 
-func void dia_milten_di_teachmagic_runen_circle_4_spl_lightningflash()
+func void DIA_Milten_DI_TeachMagic_Runen_Paladin_SPL_PalMediumHeal()
 {
-	b_teachplayertalentrunes(self,other,SPL_LIGHTNINGFLASH);
+	B_TeachPlayerTalentRunes(self,other,SPL_PalMediumHeal);
 };
 
-func void dia_milten_di_teachmagic_runen_circle_5()
+func void DIA_Milten_DI_TeachMagic_Runen_Paladin_SPL_PalRepelEvil()
 {
-	Info_ClearChoices(dia_milten_di_teachmagic);
-	Info_AddChoice(dia_milten_di_teachmagic,DIALOG_BACK,dia_milten_di_teachmagic_back);
-	if((PLAYER_TALENT_RUNES[SPL_ICEWAVE] == FALSE) && (PLAYER_TALENT_RUNES[SPL_ICECUBE] == TRUE))
+	B_TeachPlayerTalentRunes(self,other,SPL_PalRepelEvil);
+};
+
+func void DIA_Milten_DI_TeachMagic_Runen_Paladin_SPL_PalFullHeal()
+{
+	B_TeachPlayerTalentRunes(self,other,SPL_PalFullHeal);
+};
+
+func void DIA_Milten_DI_TeachMagic_Runen_Paladin_SPL_PalDestroyEvil()
+{
+	B_TeachPlayerTalentRunes(self,other,SPL_PalDestroyEvil);
+};
+
+func void DIA_Milten_DI_TeachMagic_Runen_Circle_4()
+{
+	Info_ClearChoices(DIA_Milten_DI_TeachMagic);
+	Info_AddChoice(DIA_Milten_DI_TeachMagic,Dialog_Back,DIA_Milten_DI_TeachMagic_BACK);
+	if((PLAYER_TALENT_RUNES[SPL_SummonGolem] == FALSE) && (PLAYER_TALENT_RUNES[SPL_SummonWolf] == TRUE))
 	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(NAME_SPL_ICEWAVE,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_circle_5_spl_icewave);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(NAME_SPL_SummonGolem,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Circle_4_SPL_SummonGolem);
 	};
-	if((PLAYER_TALENT_RUNES[SPL_SUMMONDEMON] == FALSE) && (PLAYER_TALENT_RUNES[SPL_SUMMONSKELETON] == TRUE) && (PLAYER_TALENT_RUNES[SPL_SUMMONGOLEM] == TRUE))
+	if(PLAYER_TALENT_RUNES[SPL_DestroyUndead] == FALSE)
 	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(NAME_SPL_SUMMONDEMON,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_circle_5_spl_summondemon);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(NAME_SPL_DestroyUndead,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Circle_4_SPL_DestroyUndead);
 	};
-	if((PLAYER_TALENT_RUNES[SPL_FULLHEAL] == FALSE) && (PLAYER_TALENT_RUNES[SPL_MEDIUMHEAL] == TRUE))
+	if((PLAYER_TALENT_RUNES[SPL_LightningFlash] == FALSE) && (PLAYER_TALENT_RUNES[SPL_Zap] == TRUE))
 	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(NAME_SPL_FULLHEAL,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_circle_5_spl_fullheal);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(NAME_SPL_LightningFlash,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Circle_4_SPL_LightningFlash);
 	};
-	if((PLAYER_TALENT_RUNES[SPL_PYROKINESIS] == FALSE) && (PLAYER_TALENT_RUNES[SPL_FIRESTORM] == TRUE) && (PLAYER_TALENT_RUNES[SPL_CHARGEFIREBALL] == TRUE))
+	if((PLAYER_TALENT_RUNES[SPL_ChargeFireball] == FALSE) && (PLAYER_TALENT_RUNES[SPL_InstantFireball] == TRUE))
 	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(NAME_SPL_PYROKINESIS,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_circle_5_spl_pyrokinesis);
-	};
-};
-
-func void dia_milten_di_teachmagic_runen_circle_5_spl_pyrokinesis()
-{
-	b_teachplayertalentrunes(self,other,SPL_PYROKINESIS);
-};
-
-func void dia_milten_di_teachmagic_runen_circle_5_spl_icewave()
-{
-	b_teachplayertalentrunes(self,other,SPL_ICEWAVE);
-};
-
-func void dia_milten_di_teachmagic_runen_circle_5_spl_summondemon()
-{
-	b_teachplayertalentrunes(self,other,SPL_SUMMONDEMON);
-};
-
-func void dia_milten_di_teachmagic_runen_circle_5_spl_fullheal()
-{
-	b_teachplayertalentrunes(self,other,SPL_FULLHEAL);
-};
-
-func void dia_milten_di_teachmagic_runen_circle_6()
-{
-	Info_ClearChoices(dia_milten_di_teachmagic);
-	Info_AddChoice(dia_milten_di_teachmagic,DIALOG_BACK,dia_milten_di_teachmagic_back);
-	if((PLAYER_TALENT_RUNES[SPL_FIRERAIN] == FALSE) && (PLAYER_TALENT_RUNES[SPL_PYROKINESIS] == TRUE))
-	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(NAME_SPL_FIRERAIN,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_circle_6_spl_firerain);
-	};
-	if(PLAYER_TALENT_RUNES[SPL_BREATHOFDEATH] == FALSE)
-	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(NAME_SPL_BREATHOFDEATH,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_circle_6_spl_breathofdeath);
-	};
-	if((PLAYER_TALENT_RUNES[SPL_MASSDEATH] == FALSE) && (PLAYER_TALENT_RUNES[SPL_BREATHOFDEATH] == TRUE))
-	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(NAME_SPL_MASSDEATH,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_circle_6_spl_massdeath);
-	};
-	if((PLAYER_TALENT_RUNES[SPL_ARMYOFDARKNESS] == FALSE) && (PLAYER_TALENT_RUNES[SPL_SUMMONSKELETON] == TRUE))
-	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(NAME_SPL_ARMYOFDARKNESS,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_circle_6_spl_armyofdarkness);
-	};
-	if(PLAYER_TALENT_RUNES[SPL_SHRINK] == FALSE)
-	{
-		Info_AddChoice(dia_milten_di_teachmagic,b_buildlearnstring(NAME_SPL_SHRINK,b_getlearncosttalent(other,NPC_TALENT_RUNES)),dia_milten_di_teachmagic_runen_circle_6_spl_shrink);
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(NAME_SPL_ChargeFireball,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Circle_4_SPL_ChargeFireball);
 	};
 };
 
-func void dia_milten_di_teachmagic_runen_circle_6_spl_firerain()
+func void DIA_Milten_DI_TeachMagic_Runen_Circle_4_SPL_ChargeFireball()
 {
-	b_teachplayertalentrunes(self,other,SPL_FIRERAIN);
+	B_TeachPlayerTalentRunes(self,other,SPL_ChargeFireball);
 };
 
-func void dia_milten_di_teachmagic_runen_circle_6_spl_breathofdeath()
+func void DIA_Milten_DI_TeachMagic_Runen_Circle_4_SPL_SummonGolem()
 {
-	b_teachplayertalentrunes(self,other,SPL_BREATHOFDEATH);
+	B_TeachPlayerTalentRunes(self,other,SPL_SummonGolem);
 };
 
-func void dia_milten_di_teachmagic_runen_circle_6_spl_massdeath()
+func void DIA_Milten_DI_TeachMagic_Runen_Circle_4_SPL_DestroyUndead()
 {
-	b_teachplayertalentrunes(self,other,SPL_MASSDEATH);
+	B_TeachPlayerTalentRunes(self,other,SPL_DestroyUndead);
 };
 
-func void dia_milten_di_teachmagic_runen_circle_6_spl_armyofdarkness()
+func void DIA_Milten_DI_TeachMagic_Runen_Circle_4_SPL_LightningFlash()
 {
-	b_teachplayertalentrunes(self,other,SPL_ARMYOFDARKNESS);
+	B_TeachPlayerTalentRunes(self,other,SPL_LightningFlash);
 };
 
-func void dia_milten_di_teachmagic_runen_circle_6_spl_shrink()
+func void DIA_Milten_DI_TeachMagic_Runen_Circle_5()
 {
-	b_teachplayertalentrunes(self,other,SPL_SHRINK);
+	Info_ClearChoices(DIA_Milten_DI_TeachMagic);
+	Info_AddChoice(DIA_Milten_DI_TeachMagic,Dialog_Back,DIA_Milten_DI_TeachMagic_BACK);
+	if((PLAYER_TALENT_RUNES[SPL_IceWave] == FALSE) && (PLAYER_TALENT_RUNES[SPL_IceCube] == TRUE))
+	{
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(NAME_SPL_IceWave,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Circle_5_SPL_IceWave);
+	};
+	if((PLAYER_TALENT_RUNES[SPL_SummonDemon] == FALSE) && (PLAYER_TALENT_RUNES[SPL_SummonSkeleton] == TRUE) && (PLAYER_TALENT_RUNES[SPL_SummonGolem] == TRUE))
+	{
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(NAME_SPL_SummonDemon,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Circle_5_SPL_SummonDemon);
+	};
+	if((PLAYER_TALENT_RUNES[SPL_FullHeal] == FALSE) && (PLAYER_TALENT_RUNES[SPL_MediumHeal] == TRUE))
+	{
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(NAME_SPL_FullHeal,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Circle_5_SPL_FullHeal);
+	};
+	if((PLAYER_TALENT_RUNES[SPL_Pyrokinesis] == FALSE) && (PLAYER_TALENT_RUNES[SPL_Firestorm] == TRUE) && (PLAYER_TALENT_RUNES[SPL_ChargeFireball] == TRUE))
+	{
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(NAME_SPL_Pyrokinesis,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Circle_5_SPL_Pyrokinesis);
+	};
 };
 
-func void dia_milten_di_teachmagic_back()
+func void DIA_Milten_DI_TeachMagic_Runen_Circle_5_SPL_Pyrokinesis()
 {
-	Info_ClearChoices(dia_milten_di_teachmagic);
+	B_TeachPlayerTalentRunes(self,other,SPL_Pyrokinesis);
+};
+
+func void DIA_Milten_DI_TeachMagic_Runen_Circle_5_SPL_IceWave()
+{
+	B_TeachPlayerTalentRunes(self,other,SPL_IceWave);
+};
+
+func void DIA_Milten_DI_TeachMagic_Runen_Circle_5_SPL_SummonDemon()
+{
+	B_TeachPlayerTalentRunes(self,other,SPL_SummonDemon);
+};
+
+func void DIA_Milten_DI_TeachMagic_Runen_Circle_5_SPL_FullHeal()
+{
+	B_TeachPlayerTalentRunes(self,other,SPL_FullHeal);
+};
+
+func void DIA_Milten_DI_TeachMagic_Runen_Circle_6()
+{
+	Info_ClearChoices(DIA_Milten_DI_TeachMagic);
+	Info_AddChoice(DIA_Milten_DI_TeachMagic,Dialog_Back,DIA_Milten_DI_TeachMagic_BACK);
+	if((PLAYER_TALENT_RUNES[SPL_Firerain] == FALSE) && (PLAYER_TALENT_RUNES[SPL_Pyrokinesis] == TRUE))
+	{
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(NAME_SPL_Firerain,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Circle_6_SPL_Firerain);
+	};
+	if(PLAYER_TALENT_RUNES[SPL_BreathOfDeath] == FALSE)
+	{
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(NAME_SPL_BreathOfDeath,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Circle_6_SPL_BreathOfDeath);
+	};
+	if((PLAYER_TALENT_RUNES[SPL_MassDeath] == FALSE) && (PLAYER_TALENT_RUNES[SPL_BreathOfDeath] == TRUE))
+	{
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(NAME_SPL_MassDeath,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Circle_6_SPL_MassDeath);
+	};
+	if((PLAYER_TALENT_RUNES[SPL_ArmyOfDarkness] == FALSE) && (PLAYER_TALENT_RUNES[SPL_SummonSkeleton] == TRUE))
+	{
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(NAME_SPL_ArmyOfDarkness,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Circle_6_SPL_ArmyOfDarkness);
+	};
+	if(PLAYER_TALENT_RUNES[SPL_Shrink] == FALSE)
+	{
+		Info_AddChoice(DIA_Milten_DI_TeachMagic,B_BuildLearnString(NAME_SPL_Shrink,B_GetLearnCostTalent(other,NPC_TALENT_RUNES)),DIA_Milten_DI_TeachMagic_Runen_Circle_6_SPL_Shrink);
+	};
+};
+
+func void DIA_Milten_DI_TeachMagic_Runen_Circle_6_SPL_Firerain()
+{
+	B_TeachPlayerTalentRunes(self,other,SPL_Firerain);
+};
+
+func void DIA_Milten_DI_TeachMagic_Runen_Circle_6_SPL_BreathOfDeath()
+{
+	B_TeachPlayerTalentRunes(self,other,SPL_BreathOfDeath);
+};
+
+func void DIA_Milten_DI_TeachMagic_Runen_Circle_6_SPL_MassDeath()
+{
+	B_TeachPlayerTalentRunes(self,other,SPL_MassDeath);
+};
+
+func void DIA_Milten_DI_TeachMagic_Runen_Circle_6_SPL_ArmyOfDarkness()
+{
+	B_TeachPlayerTalentRunes(self,other,SPL_ArmyOfDarkness);
+};
+
+func void DIA_Milten_DI_TeachMagic_Runen_Circle_6_SPL_Shrink()
+{
+	B_TeachPlayerTalentRunes(self,other,SPL_Shrink);
+};
+
+func void DIA_Milten_DI_TeachMagic_BACK()
+{
+	Info_ClearChoices(DIA_Milten_DI_TeachMagic);
 };
 
 
-instance DIA_MILTEN_DI_DEMENTOROBSESSIONBOOK(C_INFO)
+instance DIA_Milten_DI_DementorObsessionBook(C_Info)
 {
-	npc = pc_mage_di;
+	npc = PC_Mage_DI;
 	nr = 99;
-	condition = dia_milten_di_dementorobsessionbook_condition;
-	information = dia_milten_di_dementorobsessionbook_info;
+	condition = DIA_Milten_DI_DementorObsessionBook_Condition;
+	information = DIA_Milten_DI_DementorObsessionBook_Info;
 	description = "Co mo¿esz mi powiedzieæ na temat tego almanachu opêtanych?";
 };
 
 
-func int dia_milten_di_dementorobsessionbook_condition()
+func int DIA_Milten_DI_DementorObsessionBook_Condition()
 {
-	if(Npc_HasItems(other,itwr_dementorobsessionbook_mis))
+	if(Npc_HasItems(other,ITWR_DementorObsessionBook_MIS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_milten_di_dementorobsessionbook_info()
+func void DIA_Milten_DI_DementorObsessionBook_Info()
 {
 	AI_Output(other,self,"DIA_Milten_DI_DementorObsessionBook_15_00");	//Co mo¿esz mi powiedzieæ na temat tego almanachu opêtanych?
 	AI_Output(self,other,"DIA_Milten_DI_DementorObsessionBook_03_01");	//W takich sprawach ekspertem jest Pyrokar.
 	AI_Output(self,other,"DIA_Milten_DI_DementorObsessionBook_03_02");	//Przykro mi, ale zbyt ma³o wiem na ten temat.
-	b_giveplayerxp(XP_AMBIENT);
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_MILTEN_DI_DRAGONEGG(C_INFO)
+instance DIA_Milten_DI_DragonEgg(C_Info)
 {
-	npc = pc_mage_di;
+	npc = PC_Mage_DI;
 	nr = 99;
-	condition = dia_milten_di_dragonegg_condition;
-	information = dia_milten_di_dragonegg_info;
+	condition = DIA_Milten_DI_DragonEgg_Condition;
+	information = DIA_Milten_DI_DragonEgg_Info;
 	description = "Co mo¿esz mi powiedzieæ o smoczych jajach?";
 };
 
 
-func int dia_milten_di_dragonegg_condition()
+func int DIA_Milten_DI_DragonEgg_Condition()
 {
-	if(Npc_HasItems(other,itat_dragonegg_mis))
+	if(Npc_HasItems(other,ItAt_DragonEgg_MIS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_milten_di_dragonegg_info()
+func void DIA_Milten_DI_DragonEgg_Info()
 {
 	AI_Output(other,self,"DIA_Milten_DI_DragonEgg_15_00");	//Co mo¿esz mi powiedzieæ o smoczych jajach?
 	AI_Output(self,other,"DIA_Milten_DI_DragonEgg_03_01");	//Niewiele. S³ysza³em, ¿e pewnemu alchemikowi uda³o siê pozyskaæ z nich potê¿n¹ miksturê.
 	AI_Output(self,other,"DIA_Milten_DI_DragonEgg_03_02");	//Ale nie znam szczegó³ów ani - tym bardziej - receptury.
-	b_giveplayerxp(XP_AMBIENT);
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_MILTEN_DI_UNDEADDRAGONDEAD(C_INFO)
+instance DIA_Milten_DI_UndeadDragonDead(C_Info)
 {
-	npc = pc_mage_di;
+	npc = PC_Mage_DI;
 	nr = 31;
-	condition = dia_milten_di_undeaddragondead_condition;
-	information = dia_milten_di_undeaddragondead_info;
+	condition = DIA_Milten_DI_UndeadDragonDead_Condition;
+	information = DIA_Milten_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
 	description = "Dobra. Doœæ tego!";
 };
 
 
-func int dia_milten_di_undeaddragondead_condition()
+func int DIA_Milten_DI_UndeadDragonDead_Condition()
 {
-	if(Npc_IsDead(undeaddragon))
+	if(Npc_IsDead(UndeadDragon))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_milten_di_undeaddragondead_onetime;
+var int DIA_Milten_DI_UndeadDragonDead_OneTime;
 
-func void dia_milten_di_undeaddragondead_info()
+func void DIA_Milten_DI_UndeadDragonDead_Info()
 {
 	AI_Output(other,self,"DIA_Milten_DI_UndeadDragonDead_15_00");	//Œwietnie! Œwi¹tynia straci³a teraz swoj¹ moc!
-	if(DIA_MILTEN_DI_UNDEADDRAGONDEAD_ONETIME == FALSE)
+	if(DIA_Milten_DI_UndeadDragonDead_OneTime == FALSE)
 	{
 		AI_Output(self,other,"DIA_Milten_DI_UndeadDragonDead_03_01");	//Powiesz mi, jak ty to robisz?
 		AI_Output(other,self,"DIA_Milten_DI_UndeadDragonDead_15_02");	//Cholera, sam nie wiem!
@@ -575,7 +575,7 @@ func void dia_milten_di_undeaddragondead_info()
 			AI_Output(other,self,"DIA_Milten_DI_UndeadDragonDead_15_09");	//Hmmm... Mo¿e.
 		};
 		AI_Output(self,other,"DIA_Milten_DI_UndeadDragonDead_03_10");	//A niech ciê, marudo. Myœlê, ¿e na pocz¹tek przyda ci siê trochê snu.
-		DIA_MILTEN_DI_UNDEADDRAGONDEAD_ONETIME = TRUE;
+		DIA_Milten_DI_UndeadDragonDead_OneTime = TRUE;
 	};
 	AI_Output(self,other,"DIA_Milten_DI_UndeadDragonDead_03_11");	//IdŸ do kapitana i ka¿ mu podnosiæ kotwicê.
 	AI_StopProcessInfos(self);
@@ -583,37 +583,37 @@ func void dia_milten_di_undeaddragondead_info()
 };
 
 
-instance DIA_MAGE_DI_PICKPOCKET(C_INFO)
+instance DIA_Mage_DI_PICKPOCKET(C_Info)
 {
-	npc = pc_mage_di;
+	npc = PC_Mage_DI;
 	nr = 900;
-	condition = dia_mage_di_pickpocket_condition;
-	information = dia_mage_di_pickpocket_info;
+	condition = DIA_Mage_DI_PICKPOCKET_Condition;
+	information = DIA_Mage_DI_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_mage_di_pickpocket_condition()
+func int DIA_Mage_DI_PICKPOCKET_Condition()
 {
-	return c_beklauen(45,120);
+	return C_Beklauen(45,120);
 };
 
-func void dia_mage_di_pickpocket_info()
+func void DIA_Mage_DI_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_mage_di_pickpocket);
-	Info_AddChoice(dia_mage_di_pickpocket,DIALOG_BACK,dia_mage_di_pickpocket_back);
-	Info_AddChoice(dia_mage_di_pickpocket,DIALOG_PICKPOCKET,dia_mage_di_pickpocket_doit);
+	Info_ClearChoices(DIA_Mage_DI_PICKPOCKET);
+	Info_AddChoice(DIA_Mage_DI_PICKPOCKET,Dialog_Back,DIA_Mage_DI_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Mage_DI_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Mage_DI_PICKPOCKET_DoIt);
 };
 
-func void dia_mage_di_pickpocket_doit()
+func void DIA_Mage_DI_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_mage_di_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Mage_DI_PICKPOCKET);
 };
 
-func void dia_mage_di_pickpocket_back()
+func void DIA_Mage_DI_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_mage_di_pickpocket);
+	Info_ClearChoices(DIA_Mage_DI_PICKPOCKET);
 };
 

@@ -1,16 +1,16 @@
 
-const int SPL_COST_ARMYOFDARKNESS = 60;
+const int SPL_Cost_ArmyOfDarkness = 60;
 
-instance SPELL_ARMYOFDARKNESS(C_SPELL_PROTO)
+instance Spell_ArmyOfDarkness(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	targetcollectalgo = TARGET_COLLECT_NONE;
+	targetCollectAlgo = TARGET_COLLECT_NONE;
 };
 
 
-func int spell_logic_armyofdarkness(var int manainvested)
+func int Spell_Logic_ArmyOfDarkness(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_ARMYOFDARKNESS)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_ArmyOfDarkness)
 	{
 		return SPL_SENDCAST;
 	}
@@ -20,16 +20,16 @@ func int spell_logic_armyofdarkness(var int manainvested)
 	};
 };
 
-func void spell_cast_armyofdarkness(var int spelllevel)
+func void Spell_Cast_ArmyOfDarkness(var int spellLevel)
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_ARMYOFDARKNESS;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_ArmyOfDarkness;
 	if(Npc_IsPlayer(self))
 	{
-		Wld_SpawnNpcRange(self,summoned_skeleton,6,800);
+		Wld_SpawnNpcRange(self,Summoned_Skeleton,6,800);
 	}
 	else
 	{
-		Wld_SpawnNpcRange(self,skeleton,6,800);
+		Wld_SpawnNpcRange(self,Skeleton,6,800);
 	};
 };
 

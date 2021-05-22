@@ -1,23 +1,23 @@
 
-func void zs_reacttodamage()
+func void ZS_ReactToDamage()
 {
-	perception_set_normal();
-	b_lookatnpc(self,other);
-	b_selectweapon(self,other);
-	b_turntonpc(self,other);
-	b_say(self,other,"$WHATAREYOUDOING");
-	self.aivar[AIV_STATETIME] = 0;
+	Perception_Set_Normal();
+	B_LookAtNpc(self,other);
+	B_SelectWeapon(self,other);
+	B_TurnToNpc(self,other);
+	B_Say(self,other,"$WHATAREYOUDOING");
+	self.aivar[AIV_StateTime] = 0;
 };
 
-func int zs_reacttodamage_loop()
+func int ZS_ReactToDamage_Loop()
 {
-	if(Npc_GetStateTime(self) > self.aivar[AIV_STATETIME])
+	if(Npc_GetStateTime(self) > self.aivar[AIV_StateTime])
 	{
 		if(!Npc_CanSeeNpc(self,other))
 		{
 			AI_TurnToNPC(self,other);
 		};
-		self.aivar[AIV_STATETIME] = self.aivar[AIV_STATETIME] + 1;
+		self.aivar[AIV_StateTime] = self.aivar[AIV_StateTime] + 1;
 	};
 	if(Npc_GetStateTime(self) > 10)
 	{
@@ -29,9 +29,9 @@ func int zs_reacttodamage_loop()
 	};
 };
 
-func void zs_reacttodamage_end()
+func void ZS_ReactToDamage_End()
 {
 	AI_RemoveWeapon(self);
-	b_stoplookat(self);
+	B_StopLookAt(self);
 };
 

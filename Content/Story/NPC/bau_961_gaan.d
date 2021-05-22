@@ -1,36 +1,36 @@
 
-instance BAU_961_GAAN(NPC_DEFAULT)
+instance BAU_961_Gaan(Npc_Default)
 {
 	name[0] = "Gaan";
 	guild = GIL_OUT;
 	id = 961;
 	voice = 3;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,2);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,2);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_bau_mace);
-	EquipItem(self,itrw_sld_bow);
-	CreateInvItems(self,itrw_arrow,41);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_NORMAL02,BODYTEX_N,4830);
+	EquipItem(self,ItMw_1h_Bau_Mace);
+	EquipItem(self,ItRw_Sld_Bow);
+	CreateInvItems(self,ItRw_Arrow,41);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Normal02,BodyTex_N,ITAR_Bau_L);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,25);
-	daily_routine = rtn_prestart_961;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,25);
+	daily_routine = Rtn_PreStart_961;
 };
 
 
-func void rtn_prestart_961()
+func void Rtn_PreStart_961()
 {
-	ta_stand_armscrossed(8,0,22,0,"NW_FARM3_PATH_LEVELCHANGE_02");
-	ta_stand_armscrossed(22,0,8,0,"NW_FARM3_PATH_LEVELCHANGE_02");
+	TA_Stand_ArmsCrossed(8,0,22,0,"NW_FARM3_PATH_LEVELCHANGE_02");
+	TA_Stand_ArmsCrossed(22,0,8,0,"NW_FARM3_PATH_LEVELCHANGE_02");
 };
 
-func void rtn_start_961()
+func void Rtn_Start_961()
 {
-	ta_stand_armscrossed(8,0,22,0,"NW_FARM3_GAAN");
-	ta_stand_armscrossed(22,0,8,0,"NW_FARM3_STABLE_REST_01");
+	TA_Stand_ArmsCrossed(8,0,22,0,"NW_FARM3_GAAN");
+	TA_Stand_ArmsCrossed(22,0,8,0,"NW_FARM3_STABLE_REST_01");
 };
 

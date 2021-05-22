@@ -1,5 +1,5 @@
 
-func void b_removeweapon(var C_NPC slf)
+func void B_RemoveWeapon(var C_Npc slf)
 {
 	AI_RemoveWeapon(slf);
 };

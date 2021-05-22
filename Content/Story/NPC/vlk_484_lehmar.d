@@ -1,30 +1,30 @@
 
-instance VLK_484_LEHMAR(NPC_DEFAULT)
+instance VLK_484_Lehmar(Npc_Default)
 {
 	name[0] = "Lehmar";
 	guild = GIL_VLK;
 	id = 484;
 	voice = 9;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	aivar[AIV_ToughGuy] = TRUE;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_sld_sword);
-	b_createambientinv(self);
-	CreateInvItems(self,itwr_schuldenbuch,1);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_N_WHISTLER,BODYTEX_N,4821);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	B_CreateAmbientInv(self);
+	CreateInvItems(self,ItWr_Schuldenbuch,1);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_N_Whistler,BodyTex_N,ITAR_Vlk_M);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,50);
-	daily_routine = rtn_start_484;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,50);
+	daily_routine = Rtn_Start_484;
 };
 
 
-func void rtn_start_484()
+func void Rtn_Start_484()
 {
-	ta_sit_throne(6,30,0,30,"NW_CITY_HABOUR_HUT_08_IN_C");
-	ta_sleep(0,30,6,30,"NW_CITY_HABOUR_HUT_08_BED_02");
+	TA_Sit_Throne(6,30,0,30,"NW_CITY_HABOUR_HUT_08_IN_C");
+	TA_Sleep(0,30,6,30,"NW_CITY_HABOUR_HUT_08_BED_02");
 };
 

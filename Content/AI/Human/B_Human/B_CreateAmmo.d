@@ -1,23 +1,23 @@
 
-func void b_createammo(var C_NPC slf)
+func void B_CreateAmmo(var C_Npc slf)
 {
-	var C_ITEM rangedweapon;
+	var C_Item rangedWeapon;
 	if(Npc_IsInFightMode(slf,FMODE_FAR))
 	{
-		rangedweapon = Npc_GetReadiedWeapon(slf);
+		rangedWeapon = Npc_GetReadiedWeapon(slf);
 	}
 	else if(Npc_HasEquippedRangedWeapon(slf))
 	{
-		rangedweapon = Npc_GetEquippedRangedWeapon(slf);
+		rangedWeapon = Npc_GetEquippedRangedWeapon(slf);
 	}
 	else
 	{
 		return;
 	};
-	if(rangedweapon.munition == itrw_arrow)
+	if(rangedWeapon.munition == ItRw_Arrow)
 	{
 	}
-	else if(rangedweapon.munition == itrw_bolt)
+	else if(rangedWeapon.munition == ItRw_Bolt)
 	{
 	};
 };

@@ -1,83 +1,83 @@
 
-var int lutero_itemsgiven_chapter_1;
-var int lutero_itemsgiven_chapter_2;
-var int lutero_itemsgiven_chapter_3;
-var int lutero_itemsgiven_chapter_4;
-var int lutero_itemsgiven_chapter_5;
+var int Lutero_ItemsGiven_Chapter_1;
+var int Lutero_ItemsGiven_Chapter_2;
+var int Lutero_ItemsGiven_Chapter_3;
+var int Lutero_ItemsGiven_Chapter_4;
+var int Lutero_ItemsGiven_Chapter_5;
 var int lutero_itemsgiven_chapter_6;
 
-func void b_givetradeinv_lutero(var C_NPC slf)
+func void B_GiveTradeInv_Lutero(var C_Npc slf)
 {
-	if((KAPITEL >= 1) && (LUTERO_ITEMSGIVEN_CHAPTER_1 == FALSE))
+	if((Kapitel >= 1) && (Lutero_ItemsGiven_Chapter_1 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itmi_quartz,1);
-		CreateInvItems(slf,itpl_temp_herb,1);
-		CreateInvItems(slf,itlstorch,10);
-		CreateInvItems(slf,itsc_charm,1);
-		CreateInvItems(slf,itmi_holywater,1);
-		CreateInvItems(slf,itmi_sulfur,1);
-		CreateInvItems(slf,itpo_speed,1);
-		CreateInvItems(slf,itmi_pitch,1);
-		CreateInvItems(slf,itmi_coal,1);
-		CreateInvItems(slf,itmi_apfeltabak,1);
-		CreateInvItems(slf,itat_crawlermandibles,1);
-		LUTERO_ITEMSGIVEN_CHAPTER_1 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItMi_Quartz,1);
+		CreateInvItems(slf,ItPl_Temp_Herb,1);
+		CreateInvItems(slf,ItLsTorch,10);
+		CreateInvItems(slf,ItSc_Charm,1);
+		CreateInvItems(slf,ItMi_HolyWater,1);
+		CreateInvItems(slf,ItMi_Sulfur,1);
+		CreateInvItems(slf,ItPo_Speed,1);
+		CreateInvItems(slf,ItMi_Pitch,1);
+		CreateInvItems(slf,ItMi_Coal,1);
+		CreateInvItems(slf,ItMi_ApfelTabak,1);
+		CreateInvItems(slf,ItAt_CrawlerMandibles,1);
+		Lutero_ItemsGiven_Chapter_1 = TRUE;
 	};
-	if((KAPITEL >= 2) && (LUTERO_ITEMSGIVEN_CHAPTER_2 == FALSE))
+	if((Kapitel >= 2) && (Lutero_ItemsGiven_Chapter_2 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itmi_holywater,1);
-		CreateInvItems(slf,itsc_sleep,1);
-		CreateInvItems(slf,itmi_aquamarine,1);
-		CreateInvItems(slf,itmi_quartz,1);
-		CreateInvItems(slf,itpl_temp_herb,1);
-		CreateInvItems(slf,itlstorch,10);
-		CreateInvItems(slf,itsc_charm,2);
-		CreateInvItems(slf,itat_sting,1);
-		CreateInvItems(slf,itpo_speed,2);
-		CreateInvItems(slf,itwr_zweihandbuch,1);
-		CreateInvItems(slf,itwr_einhandbuch,1);
-		LUTERO_ITEMSGIVEN_CHAPTER_2 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItMi_HolyWater,1);
+		CreateInvItems(slf,ItSc_Sleep,1);
+		CreateInvItems(slf,ItMi_Aquamarine,1);
+		CreateInvItems(slf,ItMi_Quartz,1);
+		CreateInvItems(slf,ItPl_Temp_Herb,1);
+		CreateInvItems(slf,ItLsTorch,10);
+		CreateInvItems(slf,ItSc_Charm,2);
+		CreateInvItems(slf,ItAt_Sting,1);
+		CreateInvItems(slf,ItPo_Speed,2);
+		CreateInvItems(slf,ItWr_ZweihandBuch,1);
+		CreateInvItems(slf,ItWr_EinhandBuch,1);
+		Lutero_ItemsGiven_Chapter_2 = TRUE;
 	};
-	if((KAPITEL >= 3) && (LUTERO_ITEMSGIVEN_CHAPTER_3 == FALSE))
+	if((Kapitel >= 3) && (Lutero_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itpo_speed,1);
-		CreateInvItems(slf,itmi_darkpearl,1);
-		CreateInvItems(slf,itpl_temp_herb,1);
-		CreateInvItems(slf,itlstorch,10);
-		CreateInvItems(slf,itpo_speed,3);
-		CreateInvItems(slf,itsc_charm,3);
-		CreateInvItems(slf,itat_crawlermandibles,1);
-		LUTERO_ITEMSGIVEN_CHAPTER_3 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItPo_Speed,1);
+		CreateInvItems(slf,ItMi_DarkPearl,1);
+		CreateInvItems(slf,ItPl_Temp_Herb,1);
+		CreateInvItems(slf,ItLsTorch,10);
+		CreateInvItems(slf,ItPo_Speed,3);
+		CreateInvItems(slf,ItSc_Charm,3);
+		CreateInvItems(slf,ItAt_CrawlerMandibles,1);
+		Lutero_ItemsGiven_Chapter_3 = TRUE;
 	};
-	if((KAPITEL >= 4) && (LUTERO_ITEMSGIVEN_CHAPTER_4 == FALSE))
+	if((Kapitel >= 4) && (Lutero_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,150);
-		CreateInvItems(slf,itmi_rockcrystal,1);
-		CreateInvItems(slf,itat_stonegolemheart,1);
-		CreateInvItems(slf,itpo_speed,1);
-		CreateInvItems(slf,itpl_temp_herb,1);
-		CreateInvItems(slf,itpo_speed,4);
-		CreateInvItems(slf,itlstorch,10);
-		CreateInvItems(slf,itsc_charm,3);
-		LUTERO_ITEMSGIVEN_CHAPTER_4 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,150);
+		CreateInvItems(slf,ItMi_Rockcrystal,1);
+		CreateInvItems(slf,ItAt_StoneGolemHeart,1);
+		CreateInvItems(slf,ItPo_Speed,1);
+		CreateInvItems(slf,ItPl_Temp_Herb,1);
+		CreateInvItems(slf,ItPo_Speed,4);
+		CreateInvItems(slf,ItLsTorch,10);
+		CreateInvItems(slf,ItSc_Charm,3);
+		Lutero_ItemsGiven_Chapter_4 = TRUE;
 	};
-	if((KAPITEL >= 5) && (LUTERO_ITEMSGIVEN_CHAPTER_5 == FALSE))
+	if((Kapitel >= 5) && (Lutero_ItemsGiven_Chapter_5 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,200);
-		CreateInvItems(slf,itsc_armyofdarkness,1);
-		CreateInvItems(slf,itat_demonheart,1);
-		CreateInvItems(slf,itpl_perm_herb,1);
-		CreateInvItems(slf,itmi_runeblank,1);
-		CreateInvItems(slf,itpo_speed,1);
-		LUTERO_ITEMSGIVEN_CHAPTER_5 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,200);
+		CreateInvItems(slf,ItSc_ArmyOfDarkness,1);
+		CreateInvItems(slf,ItAt_DemonHeart,1);
+		CreateInvItems(slf,ItPl_Perm_Herb,1);
+		CreateInvItems(slf,ItMi_RuneBlank,1);
+		CreateInvItems(slf,ItPo_Speed,1);
+		Lutero_ItemsGiven_Chapter_5 = TRUE;
 	};
-	if((KAPITEL >= 6) && (LUTERO_ITEMSGIVEN_CHAPTER_6 == FALSE))
+	if((Kapitel >= 6) && (LUTERO_ITEMSGIVEN_CHAPTER_6 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,300);
-		CreateInvItems(slf,itmi_darkpearl,1);
+		CreateInvItems(slf,ItMi_Gold,300);
+		CreateInvItems(slf,ItMi_DarkPearl,1);
 		LUTERO_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };

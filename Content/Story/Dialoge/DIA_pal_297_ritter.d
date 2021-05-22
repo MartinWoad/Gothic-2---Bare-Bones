@@ -1,46 +1,46 @@
 
-instance DIA_PAL_297_EXIT(C_INFO)
+instance DIA_PAL_297_EXIT(C_Info)
 {
-	npc = pal_297_ritter;
+	npc = PAL_297_Ritter;
 	nr = 999;
-	condition = dia_pal_297_exit_condition;
-	information = dia_pal_297_exit_info;
+	condition = DIA_PAL_297_EXIT_Condition;
+	information = DIA_PAL_297_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_pal_297_exit_condition()
+func int DIA_PAL_297_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pal_297_exit_info()
+func void DIA_PAL_297_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PAL_297_TRESPAS(C_INFO)
+instance DIA_PAL_297_TRESPAS(C_Info)
 {
-	npc = pal_297_ritter;
+	npc = PAL_297_Ritter;
 	nr = 2;
-	condition = dia_pal_297_trespas_condition;
-	information = dia_pal_297_trespas_info;
+	condition = DIA_PAL_297_TRESPAS_Condition;
+	information = DIA_PAL_297_TRESPAS_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_pal_297_trespas_condition()
+func int DIA_PAL_297_TRESPAS_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pal_297_trespas_info()
+func void DIA_PAL_297_TRESPAS_Info()
 {
 	AI_Output(other,self,"DIA_PAL_297_TRESPAS_15_00");	//Jak leci?
-	if(KAPITEL == 1)
+	if(Kapitel == 1)
 	{
 		AI_Output(self,other,"DIA_PAL_297_TRESPAS_04_01");	//Te tereny s¹ wyj¹tkowo niebezpieczne, musisz wiêc na siebie uwa¿aæ. Nie chcielibyœmy, by coœ ci siê sta³o.
 	}

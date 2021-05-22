@@ -1,31 +1,31 @@
 
-instance SLD_802_BUSTER(NPC_DEFAULT)
+instance SLD_802_Buster(Npc_Default)
 {
 	name[0] = "Buster";
 	guild = GIL_SLD;
 	id = 802;
 	voice = 13;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,2);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,2);
 	level = 8;
 	fight_tactic = FAI_HUMAN_NORMAL;
-	EquipItem(self,itmw_1h_sld_axe);
-	EquipItem(self,itrw_sld_bow);
-	CreateInvItems(self,itrw_arrow,9);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_N_DRAX,BODYTEX_N,4834);
+	EquipItem(self,ItMw_1h_Sld_Axe);
+	EquipItem(self,ItRw_Sld_Bow);
+	CreateInvItems(self,ItRw_Arrow,9);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_N_Drax,BodyTex_N,ItAr_Sld_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_802;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_802;
 };
 
 
-func void rtn_start_802()
+func void Rtn_Start_802()
 {
-	ta_smalltalk(7,0,21,0,"NW_BIGFARM_HUT_01");
-	ta_sit_bench(21,0,7,0,"NW_BIGFARM_HUT_BENCH_02");
+	TA_Smalltalk(7,0,21,0,"NW_BIGFARM_HUT_01");
+	TA_Sit_Bench(21,0,7,0,"NW_BIGFARM_HUT_BENCH_02");
 };
 

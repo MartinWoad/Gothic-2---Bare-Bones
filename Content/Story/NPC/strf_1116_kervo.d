@@ -1,34 +1,34 @@
 
-instance STRF_1116_KERVO(NPC_DEFAULT)
+instance STRF_1116_Kervo(Npc_Default)
 {
 	name[0] = "Kervo";
 	guild = GIL_STRF;
 	id = 1116;
 	voice = 13;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,1);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_vlk_axe);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_WEAK12,BODYTEX_N,4854);
+	EquipItem(self,ItMw_1h_Vlk_Axe);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Weak12,BodyTex_N,ITAR_Prisoner);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Tired.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,5);
-	daily_routine = rtn_start_1116;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,5);
+	daily_routine = Rtn_Start_1116;
 };
 
 
-func void rtn_start_1116()
+func void Rtn_Start_1116()
 {
-	ta_sit_bench(8,0,23,0,"OW_DJG_VORPOSTEN_01");
-	ta_sit_bench(23,0,8,0,"OW_DJG_VORPOSTEN_01");
+	TA_Sit_Bench(8,0,23,0,"OW_DJG_VORPOSTEN_01");
+	TA_Sit_Bench(23,0,8,0,"OW_DJG_VORPOSTEN_01");
 };
 
-func void rtn_tot_1116()
+func void Rtn_Tot_1116()
 {
-	ta_sleep(8,0,23,0,"TOT");
-	ta_sleep(23,0,8,0,"TOT");
+	TA_Sleep(8,0,23,0,"TOT");
+	TA_Sleep(23,0,8,0,"TOT");
 };
 

@@ -1,5 +1,5 @@
 
-func void b_video()
+func void B_Video()
 {
 	AI_Output(self,other,"INTRO_Xardas_Speech_14_00");	//Jeden cz³owiek odmieni³ losy wielu setek...
 	AI_Output(self,other,"INTRO_Xardas_Speech_14_01");	//Ale zap³aci³ za to wysok¹ cenê.

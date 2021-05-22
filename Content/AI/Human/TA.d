@@ -1,261 +1,261 @@
 
-func void ta_announce_herold(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Announce_Herold(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_announce_herold,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Announce_Herold,waypoint);
 };
 
-func void ta_cook_cauldron(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Cook_Cauldron(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_cook_cauldron,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Cook_Cauldron,waypoint);
 };
 
-func void ta_cook_pan(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Cook_Pan(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_cook_pan,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Cook_Pan,waypoint);
 };
 
-func void ta_dance(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Dance(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_dance,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Dance,waypoint);
 };
 
-func void ta_fleetowp(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_FleeToWp(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_fleetowp,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_FleeToWp,waypoint);
 };
 
-func void ta_follow_player(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Follow_Player(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_follow_player,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Follow_Player,waypoint);
 };
 
-func void ta_guard_passage(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Guard_Passage(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_guard_passage,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Guard_Passage,waypoint);
 };
 
-func void ta_guide_player(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Guide_Player(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_guide_player,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Guide_Player,waypoint);
 };
 
-func void ta_pee(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Pee(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_pee,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Pee,waypoint);
 };
 
-func void ta_pick_fp(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Pick_FP(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_pick_fp,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Pick_FP,waypoint);
 };
 
-func void ta_pick_ore(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Pick_Ore(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_pick_ore,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Pick_Ore,waypoint);
 };
 
-func void ta_play_lute(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Play_Lute(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_play_lute,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Play_Lute,waypoint);
 };
 
-func void ta_potion_alchemy(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Potion_Alchemy(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_potion_alchemy,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Potion_Alchemy,waypoint);
 };
 
-func void ta_practice_magic(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Practice_Magic(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_practice_magic,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Practice_Magic,waypoint);
 };
 
-func void ta_practice_sword(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Practice_Sword(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_practice_sword,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Practice_Sword,waypoint);
 };
 
-func void ta_pray_sleeper_fp(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Pray_Sleeper_FP(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_pray_sleeper_fp,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Pray_Sleeper_FP,waypoint);
 };
 
-func void ta_pray_sleeper(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Pray_Sleeper(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_pray_sleeper,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Pray_Sleeper,waypoint);
 };
 
-func void ta_pray_innos_fp(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Pray_Innos_FP(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_pray_innos_fp,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Pray_Innos_FP,waypoint);
 };
 
-func void ta_pray_innos(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Pray_Innos(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_pray_innos,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Pray_Innos,waypoint);
 };
 
-func void ta_preach_vatras(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Preach_Vatras(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_preach_vatras,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Preach_Vatras,waypoint);
 };
 
-func void ta_read_bookstand(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Read_Bookstand(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_read_bookstand,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Read_Bookstand,waypoint);
 };
 
-func void ta_repair_hut(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Repair_Hut(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_repair_hut,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Repair_Hut,waypoint);
 };
 
-func void ta_roast_scavenger(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Roast_Scavenger(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_roast_scavenger,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Roast_Scavenger,waypoint);
 };
 
-func void ta_runtowp(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_RunToWP(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_runtowp,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_RunToWP,waypoint);
 };
 
-func void ta_sit_bench(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Sit_Bench(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_sit_bench,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Sit_Bench,waypoint);
 };
 
-func void ta_sit_campfire(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Sit_Campfire(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_sit_campfire,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Sit_Campfire,waypoint);
 };
 
-func void ta_sit_chair(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Sit_Chair(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_sit_chair,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Sit_Chair,waypoint);
 };
 
-func void ta_sit_throne(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Sit_Throne(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_sit_throne,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Sit_Throne,waypoint);
 };
 
-func void ta_sleep(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Sleep(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_gotobed,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_GotoBed,waypoint);
 };
 
-func void ta_smalltalk(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Smalltalk(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_smalltalk,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Smalltalk,waypoint);
 };
 
-func void ta_smith_anvil(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Smith_Anvil(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_smith_anvil,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Smith_Anvil,waypoint);
 };
 
-func void ta_smith_cool(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Smith_Cool(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_smith_cool,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Smith_Cool,waypoint);
 };
 
-func void ta_smith_fire(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Smith_Fire(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_smith_fire,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Smith_Fire,waypoint);
 };
 
-func void ta_smith_sharp(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Smith_Sharp(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_smith_sharp,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Smith_Sharp,waypoint);
 };
 
-func void ta_smoke_joint(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Smoke_Joint(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_smoke_joint,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Smoke_Joint,waypoint);
 };
 
-func void ta_smoke_waterpipe(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Smoke_Waterpipe(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_smoke_waterpipe,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Smoke_Waterpipe,waypoint);
 };
 
-func void ta_spit_fire(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Spit_Fire(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_spit_fire,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Spit_Fire,waypoint);
 };
 
-func void ta_stand_armscrossed(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Stand_ArmsCrossed(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_stand_armscrossed,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Stand_ArmsCrossed,waypoint);
 };
 
-func void ta_stand_drinking(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Stand_Drinking(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_stand_drinking,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Stand_Drinking,waypoint);
 };
 
-func void ta_stand_eating(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Stand_Eating(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_stand_eating,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Stand_Eating,waypoint);
 };
 
-func void ta_stand_guarding(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Stand_Guarding(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_stand_guarding,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Stand_Guarding,waypoint);
 };
 
-func void ta_stand_wp(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Stand_WP(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_stand_wp,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Stand_WP,waypoint);
 };
 
-func void ta_stomp_herb(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Stomp_Herb(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_stomp_herb,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Stomp_Herb,waypoint);
 };
 
-func void ta_sweep_fp(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Sweep_FP(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_sweep_fp,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Sweep_FP,waypoint);
 };
 
-func void ta_wash_fp(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Wash_FP(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_wash_fp,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Wash_FP,waypoint);
 };
 
-func void ta_stand_sweeping(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Stand_Sweeping(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_stand_sweeping,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Stand_Sweeping,waypoint);
 };
 
-func void ta_rake_fp(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Rake_FP(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_rake_fp,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Rake_FP,waypoint);
 };
 
-func void ta_cook_stove(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Cook_Stove(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_cook_stove,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Cook_Stove,waypoint);
 };
 
-func void ta_saw(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Saw(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_saw,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Saw,waypoint);
 };
 
-func void ta_circle(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Circle(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_circle,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Circle,waypoint);
 };
 
-func void ta_stand_dementor(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Stand_Dementor(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_stand_dementor,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Stand_Dementor,waypoint);
 };
 
-func void ta_guard_hammer(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
+func void TA_Guard_Hammer(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
-	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_guard_hammer,waypoint);
+	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Guard_Hammer,waypoint);
 };
 

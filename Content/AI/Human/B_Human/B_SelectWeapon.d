@@ -1,12 +1,12 @@
 
-func void b_selectweapon(var C_NPC slf,var C_NPC oth)
+func void B_SelectWeapon(var C_Npc slf,var C_Npc oth)
 {
-	var C_ITEM weapon;
-	if(c_bodystatecontains(slf,BS_FALL) || c_bodystatecontains(slf,BS_SWIM) || c_bodystatecontains(slf,BS_DIVE))
+	var C_Item weapon;
+	if(C_BodyStateContains(slf,BS_FALL) || C_BodyStateContains(slf,BS_SWIM) || C_BodyStateContains(slf,BS_DIVE))
 	{
 		return;
 	};
-	if(b_selectspell(slf,oth))
+	if(B_SelectSpell(slf,oth))
 	{
 		return;
 	};
@@ -43,7 +43,7 @@ func void b_selectweapon(var C_NPC slf,var C_NPC oth)
 		AI_ReadyMeleeWeapon(slf);
 		return;
 	};
-	if(Npc_HasEquippedRangedWeapon(slf) && (Npc_GetDistToNpc(slf,oth) > FIGHT_DIST_RANGED_INNER) && c_npchasattackreasontokill(slf) && (Npc_HasItems(slf,weapon.munition) > 0))
+	if(Npc_HasEquippedRangedWeapon(slf) && (Npc_GetDistToNpc(slf,oth) > FIGHT_DIST_RANGED_INNER) && C_NpcHasAttackReasonToKill(slf) && (Npc_HasItems(slf,weapon.munition) > 0))
 	{
 		if(!Npc_IsInFightMode(slf,FMODE_NONE))
 		{

@@ -1,60 +1,60 @@
 
-instance DIA_GAROND_EXIT(C_INFO)
+instance DIA_garond_EXIT(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 999;
-	condition = dia_garond_exit_condition;
-	information = dia_garond_exit_info;
+	condition = DIA_Garond_EXIT_Condition;
+	information = DIA_Garond_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_garond_exit_condition()
+func int DIA_Garond_EXIT_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_exit_info()
+func void DIA_Garond_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-var int garond_lastpetzcounter;
-var int garond_lastpetzcrime;
+var int Garond_LastPetzCounter;
+var int Garond_LastPetzCrime;
 
-instance DIA_GAROND_PMSCHULDEN(C_INFO)
+instance DIA_Garond_PMSchulden(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 1;
-	condition = dia_garond_pmschulden_condition;
-	information = dia_garond_pmschulden_info;
+	condition = DIA_Garond_PMSchulden_Condition;
+	information = DIA_Garond_PMSchulden_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_garond_pmschulden_condition()
+func int DIA_Garond_PMSchulden_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (GAROND_SCHULDEN > 0) && (b_getgreatestpetzcrime(self) <= GAROND_LASTPETZCRIME))
+	if(Npc_IsInState(self,ZS_Talk) && (Garond_Schulden > 0) && (B_GetGreatestPetzCrime(self) <= Garond_LastPetzCrime))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_pmschulden_info()
+func void DIA_Garond_PMSchulden_Info()
 {
 	var int diff;
 	AI_Output(self,other,"DIA_Garond_PMSchulden_10_00");	//Nie mamy o czym rozmawiaæ, póki nie uiœcisz grzywny.
-	if(b_gettotalpetzcounter(self) > GAROND_LASTPETZCOUNTER)
+	if(B_GetTotalPetzCounter(self) > Garond_LastPetzCounter)
 	{
 		AI_Output(self,other,"DIA_Garond_PMSchulden_10_01");	//A wzros³a ona jeszcze w œwietle ostatnich wydarzeñ.
 		AI_Output(self,other,"DIA_Garond_PMSchulden_10_02");	//Wpakowa³eœ siê w kolejne k³opoty.
-		if(GAROND_SCHULDEN < 1000)
+		if(Garond_Schulden < 1000)
 		{
 			AI_Output(self,other,"DIA_Garond_PMSchulden_10_03");	//Mam nadziejê, ¿e wreszcie za wszystko zap³acisz. W sumie wychodzi...
 		}
@@ -62,114 +62,114 @@ func void dia_garond_pmschulden_info()
 		{
 			AI_Output(self,other,"DIA_Garond_PMSchulden_10_04");	//Zawiod³em siê na tobie. Twoja grzywna wyniesie...
 		};
-		diff = b_gettotalpetzcounter(self) - GAROND_LASTPETZCOUNTER;
+		diff = B_GetTotalPetzCounter(self) - Garond_LastPetzCounter;
 		if(diff > 0)
 		{
-			GAROND_SCHULDEN = GAROND_SCHULDEN + (diff * 50);
+			Garond_Schulden = Garond_Schulden + (diff * 50);
 		};
-		if(GAROND_SCHULDEN > 1000)
+		if(Garond_Schulden > 1000)
 		{
-			GAROND_SCHULDEN = 1000;
+			Garond_Schulden = 1000;
 		};
-		b_say_gold(self,other,GAROND_SCHULDEN);
+		B_Say_Gold(self,other,Garond_Schulden);
 	}
-	else if(b_getgreatestpetzcrime(self) < GAROND_LASTPETZCRIME)
+	else if(B_GetGreatestPetzCrime(self) < Garond_LastPetzCrime)
 	{
 		AI_Output(self,other,"DIA_Garond_PMSchulden_10_05");	//Sytuacja powa¿nie siê zmieni³a.
-		if(GAROND_LASTPETZCRIME == CRIME_MURDER)
+		if(Garond_LastPetzCrime == CRIME_MURDER)
 		{
 			AI_Output(self,other,"DIA_Garond_PMSchulden_10_06");	//Nie jesteœ ju¿ oskar¿ony o morderstwo.
 		};
-		if((GAROND_LASTPETZCRIME == CRIME_THEFT) || ((GAROND_LASTPETZCRIME > CRIME_THEFT) && (b_getgreatestpetzcrime(self) < CRIME_THEFT)))
+		if((Garond_LastPetzCrime == CRIME_THEFT) || ((Garond_LastPetzCrime > CRIME_THEFT) && (B_GetGreatestPetzCrime(self) < CRIME_THEFT)))
 		{
 			AI_Output(self,other,"DIA_Garond_PMSchulden_10_07");	//Nikt nie przypomina sobie ciebie na miejscu kradzie¿y.
 		};
-		if((GAROND_LASTPETZCRIME == CRIME_ATTACK) || ((GAROND_LASTPETZCRIME > CRIME_ATTACK) && (b_getgreatestpetzcrime(self) < CRIME_ATTACK)))
+		if((Garond_LastPetzCrime == CRIME_ATTACK) || ((Garond_LastPetzCrime > CRIME_ATTACK) && (B_GetGreatestPetzCrime(self) < CRIME_ATTACK)))
 		{
 			AI_Output(self,other,"DIA_Garond_PMSchulden_10_08");	//¯aden œwiadek nie mo¿e potwierdziæ, ¿e bra³eœ udzia³ w bijatyce.
 		};
-		if(b_getgreatestpetzcrime(self) == CRIME_NONE)
+		if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
 		{
 			AI_Output(self,other,"DIA_Garond_PMSchulden_10_09");	//Wygl¹da na to, ¿e wszystkie zarzuty wobec ciebie zosta³y wycofane.
 		};
 		AI_Output(self,other,"DIA_Garond_PMSchulden_10_10");	//Nie wiem, co siê dzieje, ale ostrzegam: nie posuwaj siê za daleko!
-		if(b_getgreatestpetzcrime(self) == CRIME_NONE)
+		if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
 		{
 			AI_Output(self,other,"DIA_Garond_PMSchulden_10_11");	//Postanowi³em umorzyæ twój d³ug.
 			AI_Output(self,other,"DIA_Garond_PMSchulden_10_12");	//Tylko ju¿ nigdy nie sprawiaj k³opotów na terenie zamku!
-			GAROND_SCHULDEN = 0;
-			GAROND_LASTPETZCOUNTER = 0;
-			GAROND_LASTPETZCRIME = CRIME_NONE;
+			Garond_Schulden = 0;
+			Garond_LastPetzCounter = 0;
+			Garond_LastPetzCrime = CRIME_NONE;
 		}
 		else
 		{
 			AI_Output(self,other,"DIA_Garond_PMSchulden_10_13");	//¯eby wszystko by³o jasne: I TAK zap³acisz ca³¹ grzywnê. Co do grosza!
-			b_say_gold(self,other,GAROND_SCHULDEN);
+			B_Say_Gold(self,other,Garond_Schulden);
 			AI_Output(self,other,"DIA_Garond_PMSchulden_10_14");	//Wiêc jak?
 		};
 	};
-	if(b_getgreatestpetzcrime(self) != CRIME_NONE)
+	if(B_GetGreatestPetzCrime(self) != CRIME_NONE)
 	{
-		Info_ClearChoices(dia_garond_pmschulden);
-		Info_ClearChoices(dia_garond_petzmaster);
-		Info_AddChoice(dia_garond_pmschulden,"Nie mam tyle pieniêdzy!",dia_garond_petzmaster_paylater);
-		Info_AddChoice(dia_garond_pmschulden,"Ile to mia³o byæ?",dia_garond_pmschulden_howmuchagain);
-		if(Npc_HasItems(other,itmi_gold) >= GAROND_SCHULDEN)
+		Info_ClearChoices(DIA_Garond_PMSchulden);
+		Info_ClearChoices(DIA_Garond_PETZMASTER);
+		Info_AddChoice(DIA_Garond_PMSchulden,"Nie mam tyle pieniêdzy!",DIA_Garond_PETZMASTER_PayLater);
+		Info_AddChoice(DIA_Garond_PMSchulden,"Ile to mia³o byæ?",DIA_Garond_PMSchulden_HowMuchAgain);
+		if(Npc_HasItems(other,ItMi_Gold) >= Garond_Schulden)
 		{
-			Info_AddChoice(dia_garond_pmschulden,"Chcê zap³aciæ grzywnê!",dia_garond_petzmaster_paynow);
+			Info_AddChoice(DIA_Garond_PMSchulden,"Chcê zap³aciæ grzywnê!",DIA_Garond_PETZMASTER_PayNow);
 		};
 	};
 };
 
-func void dia_garond_pmschulden_howmuchagain()
+func void DIA_Garond_PMSchulden_HowMuchAgain()
 {
 	AI_Output(other,self,"DIA_Garond_PMSchulden_HowMuchAgain_15_00");	//Ile wynosi ta grzywna?
-	b_say_gold(self,other,GAROND_SCHULDEN);
-	Info_ClearChoices(dia_garond_pmschulden);
-	Info_ClearChoices(dia_garond_petzmaster);
-	Info_AddChoice(dia_garond_pmschulden,"Nie mam tyle pieniêdzy!",dia_garond_petzmaster_paylater);
-	Info_AddChoice(dia_garond_pmschulden,"Ile to mia³o byæ?",dia_garond_pmschulden_howmuchagain);
-	if(Npc_HasItems(other,itmi_gold) >= GAROND_SCHULDEN)
+	B_Say_Gold(self,other,Garond_Schulden);
+	Info_ClearChoices(DIA_Garond_PMSchulden);
+	Info_ClearChoices(DIA_Garond_PETZMASTER);
+	Info_AddChoice(DIA_Garond_PMSchulden,"Nie mam tyle pieniêdzy!",DIA_Garond_PETZMASTER_PayLater);
+	Info_AddChoice(DIA_Garond_PMSchulden,"Ile to mia³o byæ?",DIA_Garond_PMSchulden_HowMuchAgain);
+	if(Npc_HasItems(other,ItMi_Gold) >= Garond_Schulden)
 	{
-		Info_AddChoice(dia_garond_pmschulden,"Chcê zap³aciæ grzywnê!",dia_garond_petzmaster_paynow);
+		Info_AddChoice(DIA_Garond_PMSchulden,"Chcê zap³aciæ grzywnê!",DIA_Garond_PETZMASTER_PayNow);
 	};
 };
 
 
-instance DIA_GAROND_PETZMASTER(C_INFO)
+instance DIA_Garond_PETZMASTER(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 1;
-	condition = dia_garond_petzmaster_condition;
-	information = dia_garond_petzmaster_info;
+	condition = DIA_Garond_PETZMASTER_Condition;
+	information = DIA_Garond_PETZMASTER_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_garond_petzmaster_condition()
+func int DIA_Garond_PETZMASTER_Condition()
 {
-	if(b_getgreatestpetzcrime(self) > GAROND_LASTPETZCRIME)
+	if(B_GetGreatestPetzCrime(self) > Garond_LastPetzCrime)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_petzmaster_info()
+func void DIA_Garond_PETZMASTER_Info()
 {
-	GAROND_SCHULDEN = 0;
-	if(self.aivar[AIV_TALKEDTOPLAYER] == FALSE)
+	Garond_Schulden = 0;
+	if(self.aivar[AIV_TalkedToPlayer] == FALSE)
 	{
 		AI_Output(self,other,"DIA_Garond_PETZMASTER_10_00");	//Podobno stwarza³eœ problemy moim podw³adnym.
 	};
-	if(b_getgreatestpetzcrime(self) == CRIME_MURDER)
+	if(B_GetGreatestPetzCrime(self) == CRIME_MURDER)
 	{
 		AI_Output(self,other,"DIA_Garond_PETZMASTER_10_01");	//By³em ciekaw, ile czasu minie, zanim trafisz do mnie.
 		AI_Output(self,other,"DIA_Garond_PETZMASTER_10_02");	//Morderstwo to ostatnia rzecz, której nam tutaj potrzeba.
 		AI_Output(self,other,"DIA_Garond_PETZMASTER_10_03");	//Ka¿dy z moich ludzi jest mi teraz potrzebny, a ty zabi³eœ jednego z nich!
-		GAROND_SCHULDEN = b_gettotalpetzcounter(self) * 50;
-		GAROND_SCHULDEN = GAROND_SCHULDEN + 500;
-		if((PETZCOUNTER_CITY_THEFT + PETZCOUNTER_CITY_ATTACK + PETZCOUNTER_CITY_SHEEPKILLER) > 0)
+		Garond_Schulden = B_GetTotalPetzCounter(self) * 50;
+		Garond_Schulden = Garond_Schulden + 500;
+		if((PETZCOUNTER_City_Theft + PETZCOUNTER_City_Attack + PETZCOUNTER_City_Sheepkiller) > 0)
 		{
 			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_04");	//Nie wspomnê ju¿ o twoich pozosta³ych wybrykach.
 		};
@@ -178,92 +178,92 @@ func void dia_garond_petzmaster_info()
 		AI_Output(self,other,"DIA_Garond_PETZMASTER_10_07");	//Jeœli ju¿ musisz kogoœ zabiæ, wyjdŸ za mury. Tam a¿ roi siê od orków!
 		AI_Output(self,other,"DIA_Garond_PETZMASTER_10_08");	//Wyznaczê ci grzywnê, choæ prawdê mówi¹c, brzydzê siê grzebaniem w takim gównie.
 	};
-	if(b_getgreatestpetzcrime(self) == CRIME_THEFT)
+	if(B_GetGreatestPetzCrime(self) == CRIME_THEFT)
 	{
 		AI_Output(self,other,"DIA_Garond_PETZMASTER_10_09");	//Plotka g³osi, ¿e po¿yczy³eœ sobie st¹d kilka rzeczy.
-		if((PETZCOUNTER_CITY_ATTACK + PETZCOUNTER_CITY_SHEEPKILLER) > 0)
+		if((PETZCOUNTER_City_Attack + PETZCOUNTER_City_Sheepkiller) > 0)
 		{
 			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_10");	//Nie wspominaj¹c ju¿ o innych twoich wybrykach.
 		};
 		AI_Output(self,other,"DIA_Garond_PETZMASTER_10_11");	//Nie puszczê tego p³azem. Chyba nie zdajesz sobie sprawy z powagi sytuacji.
 		AI_Output(self,other,"DIA_Garond_PETZMASTER_10_12");	//Zap³acisz grzywnê za wszystkie swoje wystêpki.
-		GAROND_SCHULDEN = b_gettotalpetzcounter(self) * 50;
+		Garond_Schulden = B_GetTotalPetzCounter(self) * 50;
 	};
-	if(b_getgreatestpetzcrime(self) == CRIME_ATTACK)
+	if(B_GetGreatestPetzCrime(self) == CRIME_ATTACK)
 	{
 		AI_Output(self,other,"DIA_Garond_PETZMASTER_10_13");	//Nie tolerujê bijatyk miêdzy moimi ludŸmi.
-		if(PETZCOUNTER_CITY_SHEEPKILLER > 0)
+		if(PETZCOUNTER_City_Sheepkiller > 0)
 		{
 			AI_Output(self,other,"DIA_Garond_PETZMASTER_10_14");	//A ta sprawa z owcami wcale nie poprawia twojej sytuacji.
 		};
 		AI_Output(self,other,"DIA_Garond_PETZMASTER_10_15");	//Dlatego zap³acisz odpowiedni¹ grzywnê.
-		GAROND_SCHULDEN = b_gettotalpetzcounter(self) * 50;
+		Garond_Schulden = B_GetTotalPetzCounter(self) * 50;
 	};
-	if(b_getgreatestpetzcrime(self) == CRIME_SHEEPKILLER)
+	if(B_GetGreatestPetzCrime(self) == CRIME_SHEEPKILLER)
 	{
 		AI_Output(self,other,"DIA_Garond_PETZMASTER_10_16");	//Dlaczego zabijasz nasze owce, pozbawiaj¹c nas ¿ywnoœci?
 		AI_Output(self,other,"DIA_Garond_PETZMASTER_10_17");	//Zap³acisz mi za to miêso.
-		GAROND_SCHULDEN = 100;
+		Garond_Schulden = 100;
 	};
 	AI_Output(other,self,"DIA_Garond_PETZMASTER_15_18");	//Ile?
-	if(GAROND_SCHULDEN > 1000)
+	if(Garond_Schulden > 1000)
 	{
-		GAROND_SCHULDEN = 1000;
+		Garond_Schulden = 1000;
 	};
-	b_say_gold(self,other,GAROND_SCHULDEN);
-	Info_ClearChoices(dia_garond_pmschulden);
-	Info_ClearChoices(dia_garond_petzmaster);
-	Info_AddChoice(dia_garond_petzmaster,"Nie mam tyle pieniêdzy!",dia_garond_petzmaster_paylater);
-	if(Npc_HasItems(other,itmi_gold) >= GAROND_SCHULDEN)
+	B_Say_Gold(self,other,Garond_Schulden);
+	Info_ClearChoices(DIA_Garond_PMSchulden);
+	Info_ClearChoices(DIA_Garond_PETZMASTER);
+	Info_AddChoice(DIA_Garond_PETZMASTER,"Nie mam tyle pieniêdzy!",DIA_Garond_PETZMASTER_PayLater);
+	if(Npc_HasItems(other,ItMi_Gold) >= Garond_Schulden)
 	{
-		Info_AddChoice(dia_garond_petzmaster,"Chcê zap³aciæ grzywnê!",dia_garond_petzmaster_paynow);
+		Info_AddChoice(DIA_Garond_PETZMASTER,"Chcê zap³aciæ grzywnê!",DIA_Garond_PETZMASTER_PayNow);
 	};
 };
 
-func void dia_garond_petzmaster_paynow()
+func void DIA_Garond_PETZMASTER_PayNow()
 {
 	AI_Output(other,self,"DIA_Garond_PETZMASTER_PayNow_15_00");	//Chcê zap³aciæ grzywnê.
-	b_giveinvitems(other,self,5113,GAROND_SCHULDEN);
+	B_GiveInvItems(other,self,ItMi_Gold,Garond_Schulden);
 	AI_Output(self,other,"DIA_Garond_PETZMASTER_PayNow_10_01");	//Dobrze. Uprzedzê ch³opców, ¿eby dali ci spokój. Tylko ju¿ nigdy nie próbuj tutaj takich sztuczek!
-	b_grantabsolution(LOC_OLDCAMP);
-	GAROND_SCHULDEN = 0;
-	GAROND_LASTPETZCOUNTER = 0;
-	GAROND_LASTPETZCRIME = CRIME_NONE;
-	Info_ClearChoices(dia_garond_petzmaster);
-	Info_ClearChoices(dia_garond_pmschulden);
+	B_GrantAbsolution(LOC_OLDCAMP);
+	Garond_Schulden = 0;
+	Garond_LastPetzCounter = 0;
+	Garond_LastPetzCrime = CRIME_NONE;
+	Info_ClearChoices(DIA_Garond_PETZMASTER);
+	Info_ClearChoices(DIA_Garond_PMSchulden);
 };
 
-func void dia_garond_petzmaster_paylater()
+func void DIA_Garond_PETZMASTER_PayLater()
 {
 	AI_Output(other,self,"DIA_Garond_PETZMASTER_PayLater_15_00");	//Nie mam tyle z³ota!
 	AI_Output(self,other,"DIA_Garond_PETZMASTER_PayLater_10_01");	//Wiêc postaraj siê czym prêdzej je zdobyæ.
 	AI_Output(self,other,"DIA_Garond_PETZMASTER_PayLater_10_02");	//Ale ostrzegam: kolejna awantura znacznie podniesie cenê!
-	GAROND_LASTPETZCOUNTER = b_gettotalpetzcounter(self);
-	GAROND_LASTPETZCRIME = b_getgreatestpetzcrime(self);
+	Garond_LastPetzCounter = B_GetTotalPetzCounter(self);
+	Garond_LastPetzCrime = B_GetGreatestPetzCrime(self);
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_GAROND_HELLO(C_INFO)
+instance DIA_Garond_Hello(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 4;
-	condition = dia_garond_hello_condition;
-	information = dia_garond_hello_info;
+	condition = DIA_Garond_Hello_Condition;
+	information = DIA_Garond_Hello_Info;
 	important = TRUE;
 	permanent = FALSE;
 };
 
 
-func int dia_garond_hello_condition()
+func int DIA_Garond_Hello_Condition()
 {
-	if((KAPITEL == 2) && Npc_IsInState(self,zs_talk))
+	if((Kapitel == 2) && Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_hello_info()
+func void DIA_Garond_Hello_Info()
 {
 	AI_Output(self,other,"DIA_Garond_Hello_10_00");	//Sk¹d siê tu wzi¹³eœ? Nie jesteœ górnikiem ani jednym z moich ludzi. No, s³ucham?
 	AI_Output(other,self,"DIA_Garond_Hello_15_01");	//Przeszed³em przez prze³êcz.
@@ -283,25 +283,25 @@ func void dia_garond_hello_info()
 };
 
 
-instance DIA_GAROND_NEEDPROOF(C_INFO)
+instance DIA_Garond_NeedProof(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 1;
-	condition = dia_garond_needproof_condition;
-	information = dia_garond_needproof_info;
+	condition = DIA_Garond_NeedProof_Condition;
+	information = DIA_Garond_NeedProof_Info;
 	description = "Przysy³a mnie Lord Hagen.";
 };
 
 
-func int dia_garond_needproof_condition()
+func int DIA_Garond_NeedProof_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_garond_hello) && (MIS_OLDWORLD == LOG_RUNNING) && (KAPITEL == 2))
+	if(Npc_KnowsInfo(other,DIA_Garond_Hello) && (MIS_OLDWORLD == LOG_Running) && (Kapitel == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_needproof_info()
+func void DIA_Garond_NeedProof_Info()
 {
 	AI_Output(other,self,"DIA_Garond_NeedProof_15_00");	//Przybywam na polecenie Lorda Hagena. Mam mu dostarczyæ dowód na istnienie smoków.
 	AI_Output(self,other,"DIA_Garond_NeedProof_10_01");	//Zamierzasz wiêc znaleŸæ taki dowód, a potem wróciæ do bezpiecznego miasta, co?
@@ -313,36 +313,36 @@ func void dia_garond_needproof_info()
 	AI_Output(self,other,"DIA_Garond_NeedProof_10_07");	//Udasz siê do ka¿dej z nich i wybadasz, jak przebiega wydobycie.
 	AI_Output(self,other,"DIA_Garond_NeedProof_10_08");	//Potem napiszê list, który zaniesiesz Lordowi Hagenowi.
 	AI_Output(other,self,"DIA_Garond_NeedProof_15_09");	//Có¿, chyba nie mam wyboru...
-	MIS_SCOUTMINE = LOG_RUNNING;
-	b_startotherroutine(jergan,"FAJETH");
-	b_logentry(TOPIC_MISOLDWORLD,"Kapitan Garond chce, abym odnalaz³ trzy ekipy górnicze i dowiedzia³ siê, ile rudy uda³o im siê wydobyæ.");
-	Log_CreateTopic(TOPIC_SCOUTMINE,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_SCOUTMINE,LOG_RUNNING);
-	b_logentry(TOPIC_SCOUTMINE,"Kapitan Garond wys³a³ trzy ekipy górników na poszukiwania magicznej rudy. ¿adna z nich nie wróci³a.");
-	b_logentry(TOPIC_SCOUTMINE,"Moim zadaniem jest odnalezienie wszystkich trzech ekip i sprawdzenie, ile rudy uda³o im siê wydobyæ.");
+	MIS_ScoutMine = LOG_Running;
+	B_StartOtherRoutine(Jergan,"FAJETH");
+	B_LogEntry(Topic_MISOLDWORLD,"Kapitan Garond chce, abym odnalaz³ trzy ekipy górnicze i dowiedzia³ siê, ile rudy uda³o im siê wydobyæ.");
+	Log_CreateTopic(TOPIC_ScoutMine,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_ScoutMine,LOG_Running);
+	B_LogEntry(TOPIC_ScoutMine,"Kapitan Garond wys³a³ trzy ekipy górników na poszukiwania magicznej rudy. ¿adna z nich nie wróci³a.");
+	B_LogEntry(TOPIC_ScoutMine,"Moim zadaniem jest odnalezienie wszystkich trzech ekip i sprawdzenie, ile rudy uda³o im siê wydobyæ.");
 };
 
 
-instance DIA_GAROND_WHY(C_INFO)
+instance DIA_Garond_Why(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 4;
-	condition = dia_garond_why_condition;
-	information = dia_garond_why_info;
+	condition = DIA_Garond_Why_Condition;
+	information = DIA_Garond_Why_Info;
 	permanent = FALSE;
 	description = "Ale dlaczego w³aœnie ja?";
 };
 
 
-func int dia_garond_why_condition()
+func int DIA_Garond_Why_Condition()
 {
-	if((MIS_SCOUTMINE == LOG_RUNNING) && (KAPITEL == 2))
+	if((MIS_ScoutMine == LOG_Running) && (Kapitel == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_why_info()
+func void DIA_Garond_Why_Info()
 {
 	AI_Output(other,self,"DIA_Garond_Why_15_00");	//Ale dlaczego w³aœnie ja?
 	AI_Output(self,other,"DIA_Garond_Why_10_01");	//Bo potrafisz przeœlizgn¹æ siê przez linie wroga. Moi ludzie nie mieliby ¿adnych szans na twoim miejscu.
@@ -350,26 +350,26 @@ func void dia_garond_why_info()
 };
 
 
-instance DIA_GAROND_EQUIPMENT(C_INFO)
+instance DIA_Garond_Equipment(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 4;
-	condition = dia_garond_equipment_condition;
-	information = dia_garond_equipment_info;
+	condition = DIA_Garond_Equipment_Condition;
+	information = DIA_Garond_Equipment_Info;
 	permanent = FALSE;
 	description = "Potrzebujê lepszego wyposa¿enia.";
 };
 
 
-func int dia_garond_equipment_condition()
+func int DIA_Garond_Equipment_Condition()
 {
-	if((MIS_SCOUTMINE == LOG_RUNNING) && (KAPITEL == 2) && ((other.guild == GIL_KDF) || (other.guild == GIL_MIL)))
+	if((MIS_ScoutMine == LOG_Running) && (Kapitel == 2) && ((other.guild == GIL_KDF) || (other.guild == GIL_MIL)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_equipment_info()
+func void DIA_Garond_Equipment_Info()
 {
 	AI_Output(other,self,"DIA_Garond_Equipment_15_00");	//Potrzebujê lepszego wyposa¿enia.
 	if(other.guild == GIL_KDF)
@@ -379,32 +379,32 @@ func void dia_garond_equipment_info()
 	if(other.guild == GIL_MIL)
 	{
 		AI_Output(self,other,"DIA_Garond_Equipment_10_02");	//Zg³oœ siê w tej sprawie do Tandora. On da ci wszystko, czego potrzebujesz.
-		Log_CreateTopic(TOPIC_TRADER_OC,LOG_NOTE);
-		b_logentry(TOPIC_TRADER_OC,"Tandor handluje na zamku broni¹.");
+		Log_CreateTopic(TOPIC_Trader_OC,LOG_NOTE);
+		B_LogEntry(TOPIC_Trader_OC,"Tandor handluje na zamku broni¹.");
 	};
 };
 
 
-instance DIA_GAROND_ZAHLEN(C_INFO)
+instance DIA_Garond_zahlen(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 4;
-	condition = dia_garond_zahlen_condition;
-	information = dia_garond_zahlen_info;
+	condition = DIA_Garond_zahlen_Condition;
+	information = DIA_Garond_zahlen_Info;
 	permanent = FALSE;
 	description = "Co dostanê za wykonanie tego zadania?";
 };
 
 
-func int dia_garond_zahlen_condition()
+func int DIA_Garond_zahlen_Condition()
 {
-	if((MIS_SCOUTMINE == LOG_RUNNING) && (KAPITEL == 2) && (other.guild == GIL_SLD))
+	if((MIS_ScoutMine == LOG_Running) && (Kapitel == 2) && (other.guild == GIL_SLD))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_zahlen_info()
+func void DIA_Garond_zahlen_Info()
 {
 	AI_Output(other,self,"DIA_Garond_zahlen_15_00");	//Co dostanê za wykonanie tego zadania?
 	AI_Output(self,other,"DIA_Garond_zahlen_10_01");	//Nie zwyk³em targowaæ siê z najemnikami!
@@ -412,36 +412,36 @@ func void dia_garond_zahlen_info()
 };
 
 
-instance DIA_GAROND_WO(C_INFO)
+instance DIA_Garond_Wo(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 4;
-	condition = dia_garond_wo_condition;
-	information = dia_garond_wo_info;
+	condition = DIA_Garond_Wo_Condition;
+	information = DIA_Garond_Wo_Info;
 	permanent = FALSE;
 	description = "Gdzie mam szukaæ twoich górników?";
 };
 
 
-func int dia_garond_wo_condition()
+func int DIA_Garond_Wo_Condition()
 {
-	if((MIS_SCOUTMINE == LOG_RUNNING) && (KAPITEL == 2))
+	if((MIS_ScoutMine == LOG_Running) && (Kapitel == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_wo_info()
+func void DIA_Garond_Wo_Info()
 {
 	AI_Output(other,self,"DIA_Garond_Wo_15_00");	//Gdzie mam szukaæ twoich górników?
 	AI_Output(self,other,"DIA_Garond_Wo_10_01");	//WeŸ tê mapê. Zaznaczy³em na niej dwa rejony, w których prowadzimy wydobycie.
-	CreateInvItems(self,itwr_map_oldworld_oremines_mis,1);
-	b_giveinvitems(self,other,5756,1);
+	CreateInvItems(self,ItWr_Map_OldWorld_Oremines_MIS,1);
+	B_GiveInvItems(self,other,ItWr_Map_OldWorld_Oremines_MIS,1);
 	AI_Output(self,other,"DIA_Garond_Wo_10_02");	//Gdybyœ mia³ jeszcze jakieœ pytania, porozmawiaj z Parcivalem. On powie ci wszystko na temat górników.
-	b_logentry(TOPIC_SCOUTMINE,"Paladyn Parcival mo¿e udzieliæ mi informacji o górnikach.");
+	B_LogEntry(TOPIC_ScoutMine,"Paladyn Parcival mo¿e udzieliæ mi informacji o górnikach.");
 };
 
-func void b_garond_orecounter3()
+func void B_Garond_OreCounter3()
 {
 	AI_Output(self,other,"B_Garond_OreCounter3_10_00");	//Niech to diabli! Co siê tu dzieje? Czy¿by sam Beliar przyby³, by siê z nami zmierzyæ?
 	AI_Output(self,other,"B_Garond_OreCounter3_10_01");	//Wiêkszoœæ moich ludzi zginê³a. Dziêki tej garstce rudy nie powstrzymamy nawet jednego orka, a co dopiero ca³¹ armiê!
@@ -449,26 +449,26 @@ func void b_garond_orecounter3()
 };
 
 
-instance DIA_GAROND_FAJETH(C_INFO)
+instance DIA_Garond_Fajeth(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 2;
-	condition = dia_garond_fajeth_condition;
-	information = dia_garond_fajeth_info;
+	condition = DIA_Garond_Fajeth_Condition;
+	information = DIA_Garond_Fajeth_Info;
 	permanent = FALSE;
 	description = "Rozmawia³em z Fajethem.";
 };
 
 
-func int dia_garond_fajeth_condition()
+func int DIA_Garond_Fajeth_Condition()
 {
-	if((MIS_SCOUTMINE == LOG_RUNNING) && (KAPITEL == 2) && (FAJETH_ORE == TRUE))
+	if((MIS_ScoutMine == LOG_Running) && (Kapitel == 2) && (Fajeth_Ore == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_fajeth_info()
+func void DIA_Garond_Fajeth_Info()
 {
 	AI_Output(other,self,"DIA_Garond_Fajeth_15_00");	//Rozmawia³em z Fajethem.
 	AI_Output(self,other,"DIA_Garond_Fajeth_10_01");	//Co u niego s³ychaæ?
@@ -476,35 +476,35 @@ func void dia_garond_fajeth_info()
 	AI_Output(self,other,"DIA_Garond_Fajeth_10_03");	//Hmmm... dwie skrzynie?! Ja potrzebujê DWUSTU skrzyñ!
 	AI_Output(other,self,"DIA_Garond_Fajeth_15_04");	//Mam ci te¿ przekazaæ, ¿e potrzebuje dodatkowych ludzi.
 	AI_Output(self,other,"DIA_Garond_Fajeth_10_05");	//Co? Mam wys³aæ kolejnych ludzi na pewn¹ œmieræ? Nie ma mowy!
-	ORE_COUNTER = ORE_COUNTER + 1;
-	b_giveplayerxp(XP_FAJETH_ORE);
-	if(ORE_COUNTER >= 3)
+	Ore_Counter = Ore_Counter + 1;
+	B_GivePlayerXP(XP_Fajeth_Ore);
+	if(Ore_Counter >= 3)
 	{
-		b_garond_orecounter3();
+		B_Garond_OreCounter3();
 	};
 };
 
 
-instance DIA_GAROND_SILVESTRO(C_INFO)
+instance DIA_Garond_Silvestro(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 2;
-	condition = dia_garond_silvestro_condition;
-	information = dia_garond_silvestro_info;
+	condition = DIA_Garond_Silvestro_Condition;
+	information = DIA_Garond_Silvestro_Info;
 	permanent = FALSE;
 	description = "Jeœli chodzi o grupê Silvestra...";
 };
 
 
-func int dia_garond_silvestro_condition()
+func int DIA_Garond_Silvestro_Condition()
 {
-	if((MIS_SCOUTMINE == LOG_RUNNING) && (KAPITEL == 2) && (SILVESTRO_ORE == TRUE))
+	if((MIS_ScoutMine == LOG_Running) && (Kapitel == 2) && (Silvestro_Ore == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_silvestro_info()
+func void DIA_Garond_Silvestro_Info()
 {
 	AI_Output(other,self,"DIA_Garond_Silvestro_15_00");	//Jeœli chodzi o grupê Silvestra...
 	AI_Output(self,other,"DIA_Garond_Silvestro_10_01");	//Widzia³eœ go? Rozmawia³eœ z nim?
@@ -512,35 +512,35 @@ func void dia_garond_silvestro_info()
 	AI_Output(self,other,"DIA_Garond_Silvestro_10_03");	//A co z rud¹? Wiesz, ile zdo³ali wydobyæ?
 	AI_Output(other,self,"DIA_Garond_Silvestro_15_04");	//Zd¹¿yli zabezpieczyæ kilka skrzyñ. Ukryli je w jaskini, przy œcie¿ce prowadz¹cej z zamku do miejsca wydobycia.
 	AI_Output(self,other,"DIA_Garond_Silvestro_10_05");	//Do diaska... To byli dobrzy ludzie. Niech Innos ulituje siê nad ich duszami.
-	ORE_COUNTER = ORE_COUNTER + 1;
-	b_giveplayerxp(XP_SILVESTRO_ORE);
-	if(ORE_COUNTER >= 3)
+	Ore_Counter = Ore_Counter + 1;
+	B_GivePlayerXP(XP_Silvestro_Ore);
+	if(Ore_Counter >= 3)
 	{
-		b_garond_orecounter3();
+		B_Garond_OreCounter3();
 	};
 };
 
 
-instance DIA_GAROND_MARCOS(C_INFO)
+instance DIA_Garond_Marcos(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 2;
-	condition = dia_garond_marcos_condition;
-	information = dia_garond_marcos_info;
+	condition = DIA_Garond_Marcos_Condition;
+	information = DIA_Garond_Marcos_Info;
 	permanent = FALSE;
 	description = "Rozmawia³em z Marcosem.";
 };
 
 
-func int dia_garond_marcos_condition()
+func int DIA_Garond_Marcos_Condition()
 {
-	if((MIS_SCOUTMINE == LOG_RUNNING) && (KAPITEL == 2) && (MARCOS_ORE == TRUE))
+	if((MIS_ScoutMine == LOG_Running) && (Kapitel == 2) && (Marcos_Ore == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_marcos_info()
+func void DIA_Garond_Marcos_Info()
 {
 	AI_Output(other,self,"DIA_Garond_Marcos_15_00");	//Rozmawia³em z Marcosem.
 	AI_Output(self,other,"DIA_Garond_Marcos_10_01");	//I jakie wieœci? Ile rudy zdo³ali wydobyæ?
@@ -548,111 +548,111 @@ func void dia_garond_marcos_info()
 	AI_Output(other,self,"DIA_Garond_Marcos_15_03");	//Teraz strze¿e jej w ma³ej dolinie za liniami orków. Prosi o posi³ki.
 	AI_Output(self,other,"DIA_Garond_Marcos_10_04");	//Tylko cztery skrzynie? I opuœci³ ju¿ kopalniê? Niedobrze. Bardzo niedobrze.
 	AI_Output(self,other,"DIA_Garond_Marcos_10_05");	//Mam mu wys³aæ dodatkowych ludzi? Trudno... dwóch bêdzie musia³o mu wystarczyæ.
-	marcos_guard1.flags = 0;
-	marcos_guard2.flags = 0;
-	b_startotherroutine(marcos_guard1,"MARCOS");
-	b_startotherroutine(marcos_guard2,"MARCOS");
-	AI_Teleport(marcos_guard1,"OW_STAND_GUARDS");
-	AI_Teleport(marcos_guard1,"OW_STAND_GUARDS");
-	ORE_COUNTER = ORE_COUNTER + 1;
-	MIS_MARCOS_JUNGS = LOG_SUCCESS;
-	b_giveplayerxp(XP_MARCOS_ORE);
-	if(ORE_COUNTER >= 3)
+	Marcos_Guard1.flags = 0;
+	Marcos_Guard2.flags = 0;
+	B_StartOtherRoutine(Marcos_Guard1,"MARCOS");
+	B_StartOtherRoutine(Marcos_Guard2,"MARCOS");
+	AI_Teleport(Marcos_Guard1,"OW_STAND_GUARDS");
+	AI_Teleport(Marcos_Guard1,"OW_STAND_GUARDS");
+	Ore_Counter = Ore_Counter + 1;
+	MIS_Marcos_Jungs = LOG_SUCCESS;
+	B_GivePlayerXP(XP_Marcos_Ore);
+	if(Ore_Counter >= 3)
 	{
-		b_garond_orecounter3();
+		B_Garond_OreCounter3();
 	};
 };
 
 
-instance DIA_GAROND_SUCCESS(C_INFO)
+instance DIA_Garond_Success(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 4;
-	condition = dia_garond_success_condition;
-	information = dia_garond_success_info;
+	condition = DIA_Garond_Success_Condition;
+	information = DIA_Garond_Success_Info;
 	permanent = FALSE;
 	description = "Co z listem do Lorda Hagena?";
 };
 
 
-func int dia_garond_success_condition()
+func int DIA_Garond_Success_Condition()
 {
-	if((MIS_SCOUTMINE == LOG_RUNNING) && (KAPITEL == 2) && (ORE_COUNTER >= 3))
+	if((MIS_ScoutMine == LOG_Running) && (Kapitel == 2) && (Ore_Counter >= 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_success_info()
+func void DIA_Garond_Success_Info()
 {
 	AI_Output(other,self,"DIA_Garond_Success_15_00");	//Co z listem do Lorda Hagena?
 	AI_Output(self,other,"DIA_Garond_Success_10_01");	//Mamy w sumie dziesiêæ marnych skrzyñ rudy, a straciliœmy dwa razy tyle dobrych ludzi.
 	AI_Output(self,other,"DIA_Garond_Success_10_02");	//Dostaniesz swój list. Lord Hagen MUSI siê o tym dowiedzieæ. Ta dolina jest przeklêta. To siedlisko z³a.
-	CreateInvItems(self,itwr_paladinletter_mis,1);
-	b_giveinvitems(self,other,5728,1);
-	KNOWSPALADINS_ORE = TRUE;
-	b_logentry(TOPIC_MISOLDWORLD,"Kapitan Garond wrêczy³ mi list. Muszê zanieœæ go Lordowi Hagenowi - mam nadziejê, ¿e taki dowód mu wystarczy.");
-	MIS_SCOUTMINE = LOG_SUCCESS;
-	b_giveplayerxp(XP_SCOUTMINE);
-	MIS_READYFORCHAPTER3 = TRUE;
-	b_npc_isalivecheck(OLDWORLD_ZEN);
+	CreateInvItems(self,ItWr_PaladinLetter_MIS,1);
+	B_GiveInvItems(self,other,ItWr_PaladinLetter_MIS,1);
+	KnowsPaladins_Ore = TRUE;
+	B_LogEntry(Topic_MISOLDWORLD,"Kapitan Garond wrêczy³ mi list. Muszê zanieœæ go Lordowi Hagenowi - mam nadziejê, ¿e taki dowód mu wystarczy.");
+	MIS_ScoutMine = LOG_SUCCESS;
+	B_GivePlayerXP(XP_ScoutMine);
+	MIS_ReadyForChapter3 = TRUE;
+	B_NPC_IsAliveCheck(OldWorld_Zen);
 };
 
 
-instance DIA_GAROND_SLD(C_INFO)
+instance DIA_Garond_SLD(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 4;
-	condition = dia_garond_sld_condition;
-	information = dia_garond_sld_info;
+	condition = DIA_Garond_SLD_Condition;
+	information = DIA_Garond_SLD_Info;
 	permanent = FALSE;
 	description = "Co z moj¹ zap³at¹?";
 };
 
 
-func int dia_garond_sld_condition()
+func int DIA_Garond_SLD_Condition()
 {
-	if((MIS_SCOUTMINE == LOG_SUCCESS) && (other.guild == GIL_SLD))
+	if((MIS_ScoutMine == LOG_SUCCESS) && (other.guild == GIL_SLD))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_sld_info()
+func void DIA_Garond_SLD_Info()
 {
 	AI_Output(other,self,"DIA_Garond_SLD_15_00");	//Co z moj¹ zap³at¹?
 	AI_Output(self,other,"DIA_Garond_SLD_10_01");	//Ach, tak, prawda. Jestem ci winien trochê z³ota. Oto twoja nagroda.
-	b_giveinvitems(self,other,5113,500);
+	B_GiveInvItems(self,other,ItMi_Gold,500);
 };
 
 
-instance DIA_GAROND_RUNNING(C_INFO)
+instance DIA_Garond_Running(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 10;
-	condition = dia_garond_running_condition;
-	information = dia_garond_running_info;
+	condition = DIA_Garond_Running_Condition;
+	information = DIA_Garond_Running_Info;
 	permanent = TRUE;
 	description = "Jak wygl¹da sytuacja?";
 };
 
 
-func int dia_garond_running_condition()
+func int DIA_Garond_Running_Condition()
 {
-	if((MIS_SCOUTMINE == LOG_RUNNING) && (KAPITEL == 2) && (ORE_COUNTER < 3))
+	if((MIS_ScoutMine == LOG_Running) && (Kapitel == 2) && (Ore_Counter < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_running_info()
+func void DIA_Garond_Running_Info()
 {
 	AI_Output(other,self,"DIA_Garond_Running_15_00");	//Jak siê maj¹ sprawy?
-	if(ORE_COUNTER == 2)
+	if(Ore_Counter == 2)
 	{
 		AI_Output(self,other,"DIA_Garond_Running_10_01");	//Czekam jeszcze na raport o ostatniej grupie. Mam nadziejê, ¿e bêd¹ to wreszcie dobre wiadomoœci.
 	}
-	else if(ORE_COUNTER == 1)
+	else if(Ore_Counter == 1)
 	{
 		AI_Output(self,other,"DIA_Garond_Running_10_02");	//Czekam na raport o pozosta³ych dwóch grupach. Wtedy zobaczymy.
 	}
@@ -663,26 +663,26 @@ func void dia_garond_running_info()
 };
 
 
-instance DIA_GAROND_GORN(C_INFO)
+instance DIA_Garond_Gorn(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 4;
-	condition = dia_garond_gorn_condition;
-	information = dia_garond_gorn_info;
+	condition = DIA_Garond_Gorn_Condition;
+	information = DIA_Garond_Gorn_Info;
 	permanent = FALSE;
 	description = "Chcê, ¿ebyœ wypuœci³ na wolnoœæ Gorna.";
 };
 
 
-func int dia_garond_gorn_condition()
+func int DIA_Garond_Gorn_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_miltenow_gorn) && (KAPITEL == 2) && Npc_KnowsInfo(other,dia_garond_needproof))
+	if(Npc_KnowsInfo(other,DIA_MiltenOW_Gorn) && (Kapitel == 2) && Npc_KnowsInfo(other,DIA_Garond_NeedProof))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_gorn_info()
+func void DIA_Garond_Gorn_Info()
 {
 	AI_Output(other,self,"DIA_Garond_Gorn_15_00");	//Chcê, ¿ebyœ wypuœci³ na wolnoœæ Gorna.
 	AI_Output(self,other,"DIA_Garond_Gorn_10_01");	//To niemo¿liwe. Pope³ni³ wiele przestêpstw i musi za nie odpokutowaæ.
@@ -690,38 +690,38 @@ func void dia_garond_gorn_info()
 	AI_Output(self,other,"DIA_Garond_Gorn_10_03");	//Có¿, istnieje taka mo¿liwoœæ, ale jego wolnoœæ bêdzie ciê drogo kosztowaæ. 1000 sztuk z³ota, to moja cena.
 	AI_Output(other,self,"DIA_Garond_Gorn_15_04");	//To du¿o pieniêdzy.
 	AI_Output(self,other,"DIA_Garond_Gorn_10_05");	//A Gorn du¿o narozrabia³. Przynieœ mi pieni¹dze, a ja puszczê go wolno.
-	MIS_RESCUEGORN = LOG_RUNNING;
-	b_logentry(TOPIC_RESCUEGORN,"Za uwolnienie Gorna Garond domaga siê tysi¹ca sztuk z³ota.");
+	MIS_RescueGorn = LOG_Running;
+	B_LogEntry(TOPIC_RescueGorn,"Za uwolnienie Gorna Garond domaga siê tysi¹ca sztuk z³ota.");
 };
 
 
-instance DIA_GAROND_PAY(C_INFO)
+instance DIA_Garond_Pay(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 4;
-	condition = dia_garond_pay_condition;
-	information = dia_garond_pay_info;
+	condition = DIA_Garond_Pay_Condition;
+	information = DIA_Garond_Pay_Info;
 	permanent = TRUE;
 	description = "Chcê wykupiæ Gorna (zap³aæ 1000 sztuk z³ota).";
 };
 
 
-func int dia_garond_pay_condition()
+func int DIA_Garond_Pay_Condition()
 {
-	if((MIS_RESCUEGORN == LOG_RUNNING) && (KAPITEL == 2) && (GAROND_KERKERAUF == FALSE))
+	if((MIS_RescueGorn == LOG_Running) && (Kapitel == 2) && (Garond_Kerkerauf == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_pay_info()
+func void DIA_Garond_Pay_Info()
 {
 	AI_Output(other,self,"DIA_Garond_Pay_15_00");	//Chcê wykupiæ Gorna.
-	if(b_giveinvitems(other,self,5113,1000))
+	if(B_GiveInvItems(other,self,ItMi_Gold,1000))
 	{
 		AI_Output(self,other,"DIA_Garond_Pay_10_01");	//Dobrze. IdŸ do Gerolda i powiedz mu, ¿e z mojego rozkazu ma wypuœciæ wiêŸnia.
-		GAROND_KERKERAUF = TRUE;
-		b_logentry(TOPIC_RESCUEGORN,"Zap³aci³em Garondowi. Teraz mogê pójœæ po Gorna do wiêzienia. Stra¿nik Gerold go wypuœci.");
+		Garond_Kerkerauf = TRUE;
+		B_LogEntry(TOPIC_RescueGorn,"Zap³aci³em Garondowi. Teraz mogê pójœæ po Gorna do wiêzienia. Stra¿nik Gerold go wypuœci.");
 	}
 	else
 	{
@@ -730,26 +730,26 @@ func void dia_garond_pay_info()
 };
 
 
-instance DIA_GAROND_PERM2(C_INFO)
+instance DIA_Garond_Perm2(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 9;
-	condition = dia_garond_perm2_condition;
-	information = dia_garond_perm2_info;
+	condition = DIA_Garond_Perm2_Condition;
+	information = DIA_Garond_Perm2_Info;
 	permanent = TRUE;
 	description = "Co zamierzasz teraz zrobiæ?";
 };
 
 
-func int dia_garond_perm2_condition()
+func int DIA_Garond_Perm2_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_garond_success) && (KAPITEL == 2))
+	if(Npc_KnowsInfo(other,DIA_Garond_Success) && (Kapitel == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_perm2_info()
+func void DIA_Garond_Perm2_Info()
 {
 	AI_Output(other,self,"DIA_Garond_Perm2_15_00");	//Co zamierzasz teraz zrobiæ?
 	AI_Output(self,other,"DIA_Garond_Perm2_10_01");	//Próbowa³em wszystkiego. Teraz ca³a nadzieja w tobie, i w posi³kach od Lorda Hagena.
@@ -757,51 +757,51 @@ func void dia_garond_perm2_info()
 };
 
 
-instance DIA_GAROND_KAP3_EXIT(C_INFO)
+instance DIA_Garond_KAP3_EXIT(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 999;
-	condition = dia_garond_kap3_exit_condition;
-	information = dia_garond_kap3_exit_info;
+	condition = DIA_Garond_KAP3_EXIT_Condition;
+	information = DIA_Garond_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_garond_kap3_exit_condition()
+func int DIA_Garond_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_kap3_exit_info()
+func void DIA_Garond_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_GAROND_WASGIBTSNEUES(C_INFO)
+instance DIA_Garond_WASGIBTSNEUES(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 30;
-	condition = dia_garond_wasgibtsneues_condition;
-	information = dia_garond_wasgibtsneues_info;
+	condition = DIA_Garond_WASGIBTSNEUES_Condition;
+	information = DIA_Garond_WASGIBTSNEUES_Info;
 	permanent = TRUE;
 	description = "Co nowego?";
 };
 
 
-func int dia_garond_wasgibtsneues_condition()
+func int DIA_Garond_WASGIBTSNEUES_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_wasgibtsneues_info()
+func void DIA_Garond_WASGIBTSNEUES_Info()
 {
 	AI_Output(other,self,"DIA_Garond_WASGIBTSNEUES_15_00");	//Co nowego?
 	AI_Output(self,other,"DIA_Garond_WASGIBTSNEUES_10_01");	//Niech ciê szlag! Czego tu jeszcze szukasz? Potrzebujê tych cholernych posi³ków!
@@ -809,51 +809,51 @@ func void dia_garond_wasgibtsneues_info()
 };
 
 
-instance DIA_GAROND_KAP4_EXIT(C_INFO)
+instance DIA_Garond_KAP4_EXIT(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 999;
-	condition = dia_garond_kap4_exit_condition;
-	information = dia_garond_kap4_exit_info;
+	condition = DIA_Garond_KAP4_EXIT_Condition;
+	information = DIA_Garond_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_garond_kap4_exit_condition()
+func int DIA_Garond_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_kap4_exit_info()
+func void DIA_Garond_KAP4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_GAROND_BACKINKAP4(C_INFO)
+instance DIA_Garond_BACKINKAP4(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 12;
-	condition = dia_garond_backinkap4_condition;
-	information = dia_garond_backinkap4_info;
+	condition = DIA_Garond_BACKINKAP4_Condition;
+	information = DIA_Garond_BACKINKAP4_Info;
 	permanent = FALSE;
 	description = "Wróci³em.";
 };
 
 
-func int dia_garond_backinkap4_condition()
+func int DIA_Garond_BACKINKAP4_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_backinkap4_info()
+func void DIA_Garond_BACKINKAP4_Info()
 {
 	AI_Output(other,self,"DIA_Garond_BACKINKAP4_15_00");	//Wróci³em.
 	AI_Output(self,other,"DIA_Garond_BACKINKAP4_10_01");	//Przecie¿ widzê. Gdzie s¹ posi³ki?
@@ -870,106 +870,106 @@ func void dia_garond_backinkap4_info()
 		AI_Output(self,other,"DIA_Garond_BACKINKAP4_10_07");	//Masz na myœli tych ³owców smoków na zewn¹trz? Mog¹ nam pomóc, ale i tak to nie wystarczy!
 	};
 	AI_Output(self,other,"DIA_Garond_BACKINKAP4_10_08");	//Jeœli Hagen nie przyœle mi wkrótce ludzi, w¹tpiê, byœmy wype³nili zadanie.
-	b_initnpcglobals();
-	AI_Teleport(djg_angar,"OW_DJG_WATCH_STONEHENGE_01");
-	b_startotherroutine(djg_angar,"Start");
-	DJG_ANGAR_SENTTOSTONES = TRUE;
-	b_startotherroutine(kjorn,"START");
-	b_startotherroutine(godar,"START");
-	b_startotherroutine(hokurn,"START");
-	b_startotherroutine(pc_fighter_djg,"START");
-	b_startotherroutine(kurgan,"START");
-	if(DJG_BIFFPARTY == FALSE)
+	B_InitNpcGlobals();
+	AI_Teleport(DJG_Angar,"OW_DJG_WATCH_STONEHENGE_01");
+	B_StartOtherRoutine(DJG_Angar,"Start");
+	DJG_Angar_SentToStones = TRUE;
+	B_StartOtherRoutine(Kjorn,"START");
+	B_StartOtherRoutine(Godar,"START");
+	B_StartOtherRoutine(Hokurn,"START");
+	B_StartOtherRoutine(PC_Fighter_DJG,"START");
+	B_StartOtherRoutine(Kurgan,"START");
+	if(DJG_BiffParty == FALSE)
 	{
-		b_startotherroutine(biff,"START");
+		B_StartOtherRoutine(Biff,"START");
 	};
 };
 
 
-instance DIA_GAROND_DRAGONPLETTBERICHT(C_INFO)
+instance DIA_Garond_DragonPlettBericht(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 11;
-	condition = dia_garond_dragonplettbericht_condition;
-	information = dia_garond_dragonplettbericht_info;
+	condition = DIA_Garond_DragonPlettBericht_Condition;
+	information = DIA_Garond_DragonPlettBericht_Info;
 	permanent = TRUE;
 	description = "Co do tych smoków...";
 };
 
 
-var int dia_garond_dragonplettbericht_noperm;
+var int DIA_Garond_DragonPlettBericht_NoPerm;
 
-func int dia_garond_dragonplettbericht_condition()
+func int DIA_Garond_DragonPlettBericht_Condition()
 {
-	if((KAPITEL >= 4) && Npc_KnowsInfo(other,dia_garond_backinkap4) && (DIA_GAROND_DRAGONPLETTBERICHT_NOPERM == FALSE))
+	if((Kapitel >= 4) && Npc_KnowsInfo(other,DIA_Garond_BACKINKAP4) && (DIA_Garond_DragonPlettBericht_NoPerm == FALSE))
 	{
 		return TRUE;
 	};
 };
 
 
-var int garond_dragoncounter;
-var int garond_swampdragonkilled_onetime;
-var int garond_rockdragonkilled_onetime;
-var int garond_firedragonkilled_onetime;
-var int garond_icedragonkilled_onetime;
-var int garond_oricexperte_onetime;
+var int Garond_DragonCounter;
+var int Garond_SwampdragonKilled_OneTime;
+var int Garond_RockdragonKilled_OneTime;
+var int Garond_FireDragonKilled_OneTime;
+var int Garond_IcedragonKilled_OneTime;
+var int Garond_OricExperte_OneTime;
 
-func void dia_garond_dragonplettbericht_info()
+func void DIA_Garond_DragonPlettBericht_Info()
 {
-	var int currentdragoncount;
-	var int drachengeld;
-	var int xp_localgarond;
-	b_logentry(TOPIC_DRACHENJAGD,"Garond powinien byæ zainteresowany problemem smoków, tymczasem sprawia wra¿enie, jakby ta sprawa w ogóle go nie obchodzi³a.");
-	if(GAROND_DRAGONCOUNTER < MIS_KILLEDDRAGONS)
+	var int CurrentDragonCount;
+	var int Drachengeld;
+	var int XP_LocalGarond;
+	B_LogEntry(TOPIC_DRACHENJAGD,"Garond powinien byæ zainteresowany problemem smoków, tymczasem sprawia wra¿enie, jakby ta sprawa w ogóle go nie obchodzi³a.");
+	if(Garond_DragonCounter < MIS_KilledDragons)
 	{
 		AI_Output(other,self,"DIA_Garond_DragonPlettBericht_15_00");	//Mam wiadomoœci dotycz¹ce smoków.
 		AI_Output(self,other,"DIA_Garond_DragonPlettBericht_10_01");	//Mów.
-		currentdragoncount = 0;
-		if(Npc_IsDead(swampdragon) && (GAROND_SWAMPDRAGONKILLED_ONETIME == FALSE))
+		CurrentDragonCount = 0;
+		if(Npc_IsDead(SwampDragon) && (Garond_SwampdragonKilled_OneTime == FALSE))
 		{
 			AI_Output(other,self,"DIA_Garond_DragonPlettBericht_15_02");	//Zabi³em smoka z bagien na wschód st¹d.
-			GAROND_SWAMPDRAGONKILLED_ONETIME = TRUE;
-			currentdragoncount = currentdragoncount + 1;
+			Garond_SwampdragonKilled_OneTime = TRUE;
+			CurrentDragonCount = CurrentDragonCount + 1;
 		};
-		if(Npc_IsDead(rockdragon) && (GAROND_ROCKDRAGONKILLED_ONETIME == FALSE))
+		if(Npc_IsDead(RockDragon) && (Garond_RockdragonKilled_OneTime == FALSE))
 		{
 			AI_Output(other,self,"DIA_Garond_DragonPlettBericht_15_03");	//Smok z fortecy na po³udniu ju¿ nie ¿yje.
-			GAROND_ROCKDRAGONKILLED_ONETIME = TRUE;
-			currentdragoncount = currentdragoncount + 1;
+			Garond_RockdragonKilled_OneTime = TRUE;
+			CurrentDragonCount = CurrentDragonCount + 1;
 		};
-		if(Npc_IsDead(firedragon) && (GAROND_FIREDRAGONKILLED_ONETIME == FALSE))
+		if(Npc_IsDead(FireDragon) && (Garond_FireDragonKilled_OneTime == FALSE))
 		{
 			AI_Output(other,self,"DIA_Garond_DragonPlettBericht_15_04");	//Ognisty smok z wulkanu na po³udniu ju¿ nikogo nie zaatakuje.
-			GAROND_FIREDRAGONKILLED_ONETIME = TRUE;
-			currentdragoncount = currentdragoncount + 1;
+			Garond_FireDragonKilled_OneTime = TRUE;
+			CurrentDragonCount = CurrentDragonCount + 1;
 		};
-		if(Npc_IsDead(icedragon) && (GAROND_ICEDRAGONKILLED_ONETIME == FALSE))
+		if(Npc_IsDead(IceDragon) && (Garond_IcedragonKilled_OneTime == FALSE))
 		{
 			AI_Output(other,self,"DIA_Garond_DragonPlettBericht_15_05");	//Uda³em siê na zachód i rozprawi³em siê z lodowym smokiem.
-			GAROND_ICEDRAGONKILLED_ONETIME = TRUE;
-			currentdragoncount = currentdragoncount + 1;
+			Garond_IcedragonKilled_OneTime = TRUE;
+			CurrentDragonCount = CurrentDragonCount + 1;
 		};
 		AI_Output(self,other,"DIA_Garond_DragonPlettBericht_10_06");	//To dobra wiadomoœæ. Masz tu trochê pieniêdzy na lepszy ekwipunek.
-		drachengeld = currentdragoncount * GAROND_KILLEDDRAGONGELD;
-		xp_localgarond = currentdragoncount * XP_GAROND_KILLEDDRAGON;
-		b_giveplayerxp(xp_localgarond);
-		CreateInvItems(self,itmi_gold,drachengeld);
-		b_giveinvitems(self,other,5113,drachengeld);
-		GAROND_DRAGONCOUNTER = MIS_KILLEDDRAGONS;
-		if(MIS_ALLDRAGONSDEAD == TRUE)
+		Drachengeld = CurrentDragonCount * Garond_KilledDragonGeld;
+		XP_LocalGarond = CurrentDragonCount * XP_Garond_KilledDragon;
+		B_GivePlayerXP(XP_LocalGarond);
+		CreateInvItems(self,ItMi_Gold,Drachengeld);
+		B_GiveInvItems(self,other,ItMi_Gold,Drachengeld);
+		Garond_DragonCounter = MIS_KilledDragons;
+		if(MIS_AllDragonsDead == TRUE)
 		{
-			DIA_GAROND_DRAGONPLETTBERICHT_NOPERM = TRUE;
+			DIA_Garond_DragonPlettBericht_NoPerm = TRUE;
 		};
 	};
-	if((GAROND_ORICEXPERTE_ONETIME == FALSE) && (Npc_IsDead(oric) == FALSE) && (MIS_ALLDRAGONSDEAD == FALSE))
+	if((Garond_OricExperte_OneTime == FALSE) && (Npc_IsDead(Oric) == FALSE) && (MIS_AllDragonsDead == FALSE))
 	{
 		AI_Output(other,self,"DIA_Garond_DragonPlettBericht_15_07");	//Mo¿esz mi powiedzieæ coœ wiêcej na temat tych smoków?
 		AI_Output(self,other,"DIA_Garond_DragonPlettBericht_10_08");	//Mam teraz inne zmartwienie. Mój doradca, Orik, powie ci o wszystkim.
-		b_logentry(TOPIC_DRACHENJAGD,"Doradca Garonda, Orik, mo¿e mieæ dla mnie po¿yteczne informacje.");
-		GAROND_ORICEXPERTE_ONETIME = TRUE;
+		B_LogEntry(TOPIC_DRACHENJAGD,"Doradca Garonda, Orik, mo¿e mieæ dla mnie po¿yteczne informacje.");
+		Garond_OricExperte_OneTime = TRUE;
 	}
-	else if(MIS_ALLDRAGONSDEAD == FALSE)
+	else if(MIS_AllDragonsDead == FALSE)
 	{
 		AI_Output(other,self,"DIA_Garond_DragonPlettBericht_15_09");	//Czy w miêdzyczasie zaatakowa³y was smoki?
 		AI_Output(self,other,"DIA_Garond_DragonPlettBericht_10_10");	//Na szczêœcie nie. Na razie mamy spokój.
@@ -977,26 +977,26 @@ func void dia_garond_dragonplettbericht_info()
 };
 
 
-instance DIA_GAROND_ALLDRAGONDEAD(C_INFO)
+instance DIA_Garond_AllDragonDead(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 12;
-	condition = dia_garond_alldragondead_condition;
-	information = dia_garond_alldragondead_info;
+	condition = DIA_Garond_AllDragonDead_Condition;
+	information = DIA_Garond_AllDragonDead_Info;
 	permanent = FALSE;
 	description = "Wszystkie smoki nie ¿yj¹.";
 };
 
 
-func int dia_garond_alldragondead_condition()
+func int DIA_Garond_AllDragonDead_Condition()
 {
-	if((MIS_ALLDRAGONSDEAD == TRUE) && (DIA_GAROND_DRAGONPLETTBERICHT_NOPERM == TRUE) && (KAPITEL >= 4))
+	if((MIS_AllDragonsDead == TRUE) && (DIA_Garond_DragonPlettBericht_NoPerm == TRUE) && (Kapitel >= 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_alldragondead_info()
+func void DIA_Garond_AllDragonDead_Info()
 {
 	AI_Output(other,self,"DIA_Garond_AllDragonDead_15_00");	//Wszystkie smoki nie ¿yj¹.
 	AI_Output(self,other,"DIA_Garond_AllDragonDead_10_01");	//Wszystkie? A wiêc Z³o zosta³o ostatecznie pokonane?
@@ -1009,26 +1009,26 @@ func void dia_garond_alldragondead_info()
 };
 
 
-instance DIA_GAROND_JANBECOMESMITH(C_INFO)
+instance DIA_Garond_JanBecomeSmith(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 12;
-	condition = dia_garond_janbecomesmith_condition;
-	information = dia_garond_janbecomesmith_info;
+	condition = DIA_Garond_JanBecomeSmith_Condition;
+	information = DIA_Garond_JanBecomeSmith_Info;
 	permanent = TRUE;
 	description = "Jest pewien problem z kowalem.";
 };
 
 
-func int dia_garond_janbecomesmith_condition()
+func int DIA_Garond_JanBecomeSmith_Condition()
 {
-	if((MIS_JANBECOMESSMITH == LOG_RUNNING) && (KAPITEL >= 4))
+	if((MIS_JanBecomesSmith == LOG_Running) && (Kapitel >= 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_janbecomesmith_info()
+func void DIA_Garond_JanBecomeSmith_Info()
 {
 	AI_Output(other,self,"DIA_Garond_JanBecomeSmith_15_00");	//Jest pewien problem z kowalem.
 	AI_Output(self,other,"DIA_Garond_JanBecomeSmith_10_01");	//Jakim kowalem? Kowal zbieg³! Uciek³ do lasu.
@@ -1048,77 +1048,77 @@ func void dia_garond_janbecomesmith_info()
 	AI_Output(other,self,"DIA_Garond_JanBecomeSmith_15_09");	//Tak.
 	AI_Output(self,other,"DIA_Garond_JanBecomeSmith_10_10");	//Rêczysz za niego?
 	AI_Output(self,other,"DIA_Garond_JanBecomeSmith_10_11");	//Jeœli zacznie sprawiaæ k³opoty, to ty poniesiesz konsekwencje, jasne?
-	Info_ClearChoices(dia_garond_janbecomesmith);
-	Info_AddChoice(dia_garond_janbecomesmith,"Muszê siê zastanowiæ.",dia_garond_janbecomesmith_no);
-	Info_AddChoice(dia_garond_janbecomesmith,"Rêczê za niego.",dia_garond_janbecomesmith_yes);
+	Info_ClearChoices(DIA_Garond_JanBecomeSmith);
+	Info_AddChoice(DIA_Garond_JanBecomeSmith,"Muszê siê zastanowiæ.",DIA_Garond_JanBecomeSmith_No);
+	Info_AddChoice(DIA_Garond_JanBecomeSmith,"Rêczê za niego.",DIA_Garond_JanBecomeSmith_Yes);
 };
 
-func void dia_garond_janbecomesmith_no()
+func void DIA_Garond_JanBecomeSmith_No()
 {
 	AI_Output(other,self,"DIA_Garond_JanBecomeSmith_No_15_00");	//Jeszcze siê nad tym zastanowiê.
 	AI_Output(self,other,"DIA_Garond_JanBecomeSmith_No_10_01");	//Jak mam mu zaufaæ, skoro nawet ty nie mo¿esz?
 	AI_Output(self,other,"DIA_Garond_JanBecomeSmith_No_10_02");	//Dopóki ktoœ nie weŸmie za niego odpowiedzialnoœci, ma siê trzymaæ z dala od kuŸni!
-	Info_ClearChoices(dia_garond_janbecomesmith);
+	Info_ClearChoices(DIA_Garond_JanBecomeSmith);
 };
 
-func void dia_garond_janbecomesmith_yes()
+func void DIA_Garond_JanBecomeSmith_Yes()
 {
 	AI_Output(other,self,"DIA_Garond_JanBecomeSmith_Yes_15_00");	//Rêczê za niego.
 	AI_Output(self,other,"DIA_Garond_JanBecomeSmith_Yes_10_01");	//Dobrze. Mo¿e od razu zacz¹æ pracê w kuŸni. Liczê, ¿e zaopatrzy moich ludzi w solidny orê¿.
-	Info_ClearChoices(dia_garond_janbecomesmith);
-	MIS_JANBECOMESSMITH = LOG_SUCCESS;
-	b_giveplayerxp(XP_AMBIENT);
+	Info_ClearChoices(DIA_Garond_JanBecomeSmith);
+	MIS_JanBecomesSmith = LOG_SUCCESS;
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_GAROND_KAP5_EXIT(C_INFO)
+instance DIA_Garond_KAP5_EXIT(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 999;
-	condition = dia_garond_kap5_exit_condition;
-	information = dia_garond_kap5_exit_info;
+	condition = DIA_Garond_KAP5_EXIT_Condition;
+	information = DIA_Garond_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_garond_kap5_exit_condition()
+func int DIA_Garond_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_kap5_exit_info()
+func void DIA_Garond_KAP5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_GAROND_PERM5(C_INFO)
+instance DIA_Garond_PERM5(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 59;
-	condition = dia_garond_perm5_condition;
-	information = dia_garond_perm5_info;
+	condition = DIA_Garond_PERM5_Condition;
+	information = DIA_Garond_PERM5_Info;
 	permanent = TRUE;
 	description = "Jak wygl¹da sytuacja?";
 };
 
 
-func int dia_garond_perm5_condition()
+func int DIA_Garond_PERM5_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_perm5_info()
+func void DIA_Garond_PERM5_Info()
 {
 	AI_Output(other,self,"DIA_Garond_PERM5_15_00");	//Co nowego?
-	if(MIS_OCGATEOPEN == TRUE)
+	if(MIS_OCGateOpen == TRUE)
 	{
 		AI_Output(self,other,"DIA_Garond_PERM5_10_01");	//Przeklête miejsce! Jakiœ sukinsyn otworzy³ g³ówn¹ bramê! Teraz mo¿emy ju¿ tylko czekaæ na egzekucjê.
 		AI_Output(self,other,"DIA_Garond_PERM5_10_02");	//Jak siê dowiem, kto nas zdradzi³...
@@ -1130,26 +1130,26 @@ func void dia_garond_perm5_info()
 };
 
 
-instance DIA_GAROND_KAP6_EXIT(C_INFO)
+instance DIA_Garond_KAP6_EXIT(C_Info)
 {
-	npc = pal_250_garond;
+	npc = PAL_250_Garond;
 	nr = 999;
-	condition = dia_garond_kap6_exit_condition;
-	information = dia_garond_kap6_exit_info;
+	condition = DIA_Garond_KAP6_EXIT_Condition;
+	information = DIA_Garond_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_garond_kap6_exit_condition()
+func int DIA_Garond_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_garond_kap6_exit_info()
+func void DIA_Garond_KAP6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };

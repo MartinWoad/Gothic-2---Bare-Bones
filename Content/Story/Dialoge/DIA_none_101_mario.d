@@ -1,46 +1,46 @@
 
-instance DIA_NONE_101_MARIO_EXIT(C_INFO)
+instance DIA_None_101_Mario_EXIT(C_Info)
 {
-	npc = none_101_mario;
+	npc = None_101_Mario;
 	nr = 999;
-	condition = dia_none_101_mario_exit_condition;
-	information = dia_none_101_mario_exit_info;
+	condition = DIA_None_101_Mario_EXIT_Condition;
+	information = DIA_None_101_Mario_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_none_101_mario_exit_condition()
+func int DIA_None_101_Mario_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_none_101_mario_exit_info()
+func void DIA_None_101_Mario_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_NONE_101_MARIO_JOB(C_INFO)
+instance DIA_None_101_Mario_Job(C_Info)
 {
-	npc = none_101_mario;
+	npc = None_101_Mario;
 	nr = 4;
-	condition = dia_none_101_mario_job_condition;
-	information = dia_none_101_mario_job_info;
+	condition = DIA_None_101_Mario_Job_Condition;
+	information = DIA_None_101_Mario_Job_Info;
 	permanent = TRUE;
 	description = "Co tu porabiasz?";
 };
 
 
-func int dia_none_101_mario_job_condition()
+func int DIA_None_101_Mario_Job_Condition()
 {
-	if((KAPITEL == 5) && (MIS_SCKNOWSWAYTOIRDORATH == FALSE) && (Npc_KnowsInfo(other,dia_none_101_mario_youneedme) == FALSE))
+	if((Kapitel == 5) && (MIS_SCKnowsWayToIrdorath == FALSE) && (Npc_KnowsInfo(other,DIA_None_101_Mario_YouNeedMe) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_none_101_mario_job_info()
+func void DIA_None_101_Mario_Job_Info()
 {
 	AI_Output(other,self,"DIA_None_101_Mario_Job_15_00");	//Co porabiasz?
 	AI_Output(self,other,"DIA_None_101_Mario_Job_07_01");	//Czekam w nadziei, ¿e ju¿ nied³ugo zawinie do portu jakiœ statek, na który mo¿na bêdzie siê zaci¹gn¹æ.
@@ -48,56 +48,56 @@ func void dia_none_101_mario_job_info()
 };
 
 
-instance DIA_NONE_101_MARIO_YOUNEEDME(C_INFO)
+instance DIA_None_101_Mario_YouNeedMe(C_Info)
 {
-	npc = none_101_mario;
+	npc = None_101_Mario;
 	nr = 4;
-	condition = dia_none_101_mario_youneedme_condition;
-	information = dia_none_101_mario_youneedme_info;
+	condition = DIA_None_101_Mario_YouNeedMe_Condition;
+	information = DIA_None_101_Mario_YouNeedMe_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_none_101_mario_youneedme_condition()
+func int DIA_None_101_Mario_YouNeedMe_Condition()
 {
-	if((KAPITEL == 5) && (MIS_SCKNOWSWAYTOIRDORATH == TRUE))
+	if((Kapitel == 5) && (MIS_SCKnowsWayToIrdorath == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_none_101_mario_youneedme_info()
+func void DIA_None_101_Mario_YouNeedMe_Info()
 {
 	AI_Output(self,other,"DIA_None_101_Mario_YouNeedMe_07_00");	//S³ysza³em, ¿e szukasz za³ogi na statek, czy to prawda?
 	AI_Output(other,self,"DIA_None_101_Mario_YouNeedMe_15_01");	//I co z tego?
 	AI_Output(self,other,"DIA_None_101_Mario_YouNeedMe_07_02");	//Wpisz mnie na listê!
-	Log_CreateTopic(TOPIC_CREW,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_CREW,LOG_RUNNING);
-	b_logentry(TOPIC_CREW,"W portowej knajpie pozna³em Maria, by³ego marynarza. Chce dostaæ siê na statek.");
+	Log_CreateTopic(Topic_Crew,LOG_MISSION);
+	Log_SetTopicStatus(Topic_Crew,LOG_Running);
+	B_LogEntry(Topic_Crew,"W portowej knajpie pozna³em Maria, by³ego marynarza. Chce dostaæ siê na statek.");
 };
 
 
-instance DIA_NONE_101_MARIO_WHYNEEDYOU(C_INFO)
+instance DIA_None_101_Mario_WhyNeedYou(C_Info)
 {
-	npc = none_101_mario;
+	npc = None_101_Mario;
 	nr = 5;
-	condition = dia_none_101_mario_whyneedyou_condition;
-	information = dia_none_101_mario_whyneedyou_info;
+	condition = DIA_None_101_Mario_WhyNeedYou_Condition;
+	information = DIA_None_101_Mario_WhyNeedYou_Info;
 	permanent = FALSE;
 	description = "Dlaczego mia³bym ciê ze sob¹ zabraæ?";
 };
 
 
-func int dia_none_101_mario_whyneedyou_condition()
+func int DIA_None_101_Mario_WhyNeedYou_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_none_101_mario_youneedme) && (MARIO_ISONBOARD == FALSE))
+	if(Npc_KnowsInfo(other,DIA_None_101_Mario_YouNeedMe) && (Mario_IsOnBoard == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_none_101_mario_whyneedyou_info()
+func void DIA_None_101_Mario_WhyNeedYou_Info()
 {
 	AI_Output(other,self,"DIA_None_101_Mario_WhyNeedYou_15_00");	//Dlaczego mia³bym ciê ze sob¹ zabraæ?
 	AI_Output(self,other,"DIA_None_101_Mario_WhyNeedYou_07_01");	//Po prostu... Potrzebujesz mnie.
@@ -108,26 +108,26 @@ func void dia_none_101_mario_whyneedyou_info()
 };
 
 
-instance DIA_NONE_101_MARIO_WHYHERE(C_INFO)
+instance DIA_None_101_Mario_WhyHere(C_Info)
 {
-	npc = none_101_mario;
+	npc = None_101_Mario;
 	nr = 7;
-	condition = dia_none_101_mario_whyhere_condition;
-	information = dia_none_101_mario_whyhere_info;
+	condition = DIA_None_101_Mario_WhyHere_Condition;
+	information = DIA_None_101_Mario_WhyHere_Info;
 	permanent = FALSE;
 	description = "Co tu w³aœciwie robisz?";
 };
 
 
-func int dia_none_101_mario_whyhere_condition()
+func int DIA_None_101_Mario_WhyHere_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_none_101_mario_whyneedyou) && (MARIO_ISONBOARD == FALSE))
+	if(Npc_KnowsInfo(other,DIA_None_101_Mario_WhyNeedYou) && (Mario_IsOnBoard == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_none_101_mario_whyhere_info()
+func void DIA_None_101_Mario_WhyHere_Info()
 {
 	AI_Output(other,self,"DIA_None_101_Mario_WhyHere_15_00");	//Co tu w³aœciwie robisz?
 	AI_Output(self,other,"DIA_None_101_Mario_WhyHere_07_01");	//Flota zosta³a rozgromiona, kufry puste.
@@ -135,54 +135,54 @@ func void dia_none_101_mario_whyhere_info()
 };
 
 
-instance DIA_NONE_101_MARIO_ABILITIES(C_INFO)
+instance DIA_None_101_Mario_Abilities(C_Info)
 {
-	npc = none_101_mario;
+	npc = None_101_Mario;
 	nr = 8;
-	condition = dia_none_101_mario_abilities_condition;
-	information = dia_none_101_mario_abilities_info;
+	condition = DIA_None_101_Mario_Abilities_Condition;
+	information = DIA_None_101_Mario_Abilities_Info;
 	permanent = FALSE;
 	description = "Co w³aœciwie potrafisz?";
 };
 
 
-func int dia_none_101_mario_abilities_condition()
+func int DIA_None_101_Mario_Abilities_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_none_101_mario_whyneedyou) && (MARIO_ISONBOARD == FALSE))
+	if(Npc_KnowsInfo(other,DIA_None_101_Mario_WhyNeedYou) && (Mario_IsOnBoard == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_none_101_mario_abilities_info()
+func void DIA_None_101_Mario_Abilities_Info()
 {
 	AI_Output(other,self,"DIA_None_101_Mario_Abilities_15_00");	//Co w³aœciwie potrafisz?
 	AI_Output(self,other,"DIA_None_101_Mario_Abilities_07_01");	//Jestem mistrzem aborda¿u i walki w zwarciu. Jeœli trzeba, poradzê sobie tak¿e z obs³ug¹ dzia³a pok³adowego.
 	AI_Output(self,other,"DIA_None_101_Mario_Abilities_07_02");	//Za³o¿ê siê, ¿e w czasie naszej podró¿y móg³bym ciê nauczyæ tego i owego.
-	b_logentry(TOPIC_CREW,"Mario wydaje siê byæ prawdziwym weteranem marynarki wojennej. Mo¿e nauczy mnie paru rzeczy.");
+	B_LogEntry(Topic_Crew,"Mario wydaje siê byæ prawdziwym weteranem marynarki wojennej. Mo¿e nauczy mnie paru rzeczy.");
 };
 
 
-instance DIA_NONE_101_MARIO_YOURPRICE(C_INFO)
+instance DIA_None_101_Mario_YourPrice(C_Info)
 {
-	npc = none_101_mario;
+	npc = None_101_Mario;
 	nr = 9;
-	condition = dia_none_101_mario_yourprice_condition;
-	information = dia_none_101_mario_yourprice_info;
+	condition = DIA_None_101_Mario_YourPrice_Condition;
+	information = DIA_None_101_Mario_YourPrice_Info;
 	permanent = FALSE;
 	description = "O co wiêc mnie prosisz?";
 };
 
 
-func int dia_none_101_mario_yourprice_condition()
+func int DIA_None_101_Mario_YourPrice_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_none_101_mario_youneedme) && (MARIO_ISONBOARD == FALSE))
+	if(Npc_KnowsInfo(other,DIA_None_101_Mario_YouNeedMe) && (Mario_IsOnBoard == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_none_101_mario_yourprice_info()
+func void DIA_None_101_Mario_YourPrice_Info()
 {
 	AI_Output(other,self,"DIA_None_101_Mario_YourPrice_15_00");	//O co wiêc mnie prosisz?
 	AI_Output(self,other,"DIA_None_101_Mario_YourPrice_07_01");	//A o có¿ mogê prosiæ? Chcê siê st¹d po prostu wydostaæ.
@@ -190,26 +190,26 @@ func void dia_none_101_mario_yourprice_info()
 };
 
 
-instance DIA_NONE_101_MARIO_COULDBEDANGEROUS(C_INFO)
+instance DIA_None_101_Mario_CouldBeDangerous(C_Info)
 {
-	npc = none_101_mario;
+	npc = None_101_Mario;
 	nr = 10;
-	condition = dia_none_101_mario_couldbedangerous_condition;
-	information = dia_none_101_mario_couldbedangerous_info;
+	condition = DIA_None_101_Mario_CouldBeDangerous_Condition;
+	information = DIA_None_101_Mario_CouldBeDangerous_Info;
 	permanent = FALSE;
 	description = "Podró¿ mo¿e byæ niebezpieczna.";
 };
 
 
-func int dia_none_101_mario_couldbedangerous_condition()
+func int DIA_None_101_Mario_CouldBeDangerous_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_none_101_mario_yourprice) && (MARIO_ISONBOARD == FALSE))
+	if(Npc_KnowsInfo(other,DIA_None_101_Mario_YourPrice) && (Mario_IsOnBoard == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_none_101_mario_couldbedangerous_info()
+func void DIA_None_101_Mario_CouldBeDangerous_Info()
 {
 	AI_Output(other,self,"DIA_None_101_Mario_CouldBeDangerous_15_00");	//Podró¿ mo¿e byæ niebezpieczna.
 	AI_Output(self,other,"DIA_None_101_Mario_CouldBeDangerous_07_01");	//Przywyk³em do niebezpieczeñstw. Na morzu ka¿dy dzieñ to walka o przetrwanie.
@@ -218,26 +218,26 @@ func void dia_none_101_mario_couldbedangerous_info()
 };
 
 
-instance DIA_NONE_101_MARIO_DONTNEEDYOU(C_INFO)
+instance DIA_None_101_Mario_DontNeedYou(C_Info)
 {
-	npc = none_101_mario;
+	npc = None_101_Mario;
 	nr = 13;
-	condition = dia_none_101_mario_dontneedyou_condition;
-	information = dia_none_101_mario_dontneedyou_info;
+	condition = DIA_None_101_Mario_DontNeedYou_Condition;
+	information = DIA_None_101_Mario_DontNeedYou_Info;
 	permanent = FALSE;
 	description = "Do niczego mi siê nie przydasz.";
 };
 
 
-func int dia_none_101_mario_dontneedyou_condition()
+func int DIA_None_101_Mario_DontNeedYou_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_none_101_mario_youneedme) && (MARIO_ISONBOARD == FALSE))
+	if(Npc_KnowsInfo(other,DIA_None_101_Mario_YouNeedMe) && (Mario_IsOnBoard == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_none_101_mario_dontneedyou_info()
+func void DIA_None_101_Mario_DontNeedYou_Info()
 {
 	AI_Output(other,self,"DIA_None_101_Mario_DontNeedYou_15_00");	//Do niczego mi siê nie przydasz.
 	AI_Output(self,other,"DIA_None_101_Mario_DontNeedYou_07_01");	//Nie znajdziesz tu lepszego marynarza ode mnie.
@@ -246,34 +246,34 @@ func void dia_none_101_mario_dontneedyou_info()
 };
 
 
-instance DIA_NONE_101_MARIO_NEEDGOODMEN(C_INFO)
+instance DIA_None_101_Mario_NeedGoodMen(C_Info)
 {
-	npc = none_101_mario;
+	npc = None_101_Mario;
 	nr = 2;
-	condition = dia_none_101_mario_needgoodmen_condition;
-	information = dia_none_101_mario_needgoodmen_info;
+	condition = DIA_None_101_Mario_NeedGoodMen_Condition;
+	information = DIA_None_101_Mario_NeedGoodMen_Info;
 	permanent = FALSE;
 	description = "Przyda³byœ mi siê.";
 };
 
 
-func int dia_none_101_mario_needgoodmen_condition()
+func int DIA_None_101_Mario_NeedGoodMen_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_none_101_mario_youneedme) && (MARIO_ISONBOARD == FALSE))
+	if(Npc_KnowsInfo(other,DIA_None_101_Mario_YouNeedMe) && (Mario_IsOnBoard == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_none_101_mario_needgoodmen_info()
+func void DIA_None_101_Mario_NeedGoodMen_Info()
 {
 	AI_Output(other,self,"DIA_None_101_Mario_NeedGoodMen_15_00");	//Przyda³byœ mi siê.
 	AI_Output(self,other,"DIA_None_101_Mario_NeedGoodMen_07_01");	//Œwietnie, do zobaczenia na statku.
-	b_giveplayerxp(XP_CREWMEMBER_SUCCESS);
-	MARIO_ISONBOARD = LOG_SUCCESS;
-	CREWMEMBER_COUNT = CREWMEMBER_COUNT + 1;
+	B_GivePlayerXP(XP_Crewmember_Success);
+	Mario_IsOnBoard = LOG_SUCCESS;
+	Crewmember_Count = Crewmember_Count + 1;
 	AI_StopProcessInfos(self);
-	if(MIS_READYFORCHAPTER6 == TRUE)
+	if(MIS_ReadyforChapter6 == TRUE)
 	{
 		Npc_ExchangeRoutine(self,"SHIP");
 	}
@@ -284,65 +284,65 @@ func void dia_none_101_mario_needgoodmen_info()
 };
 
 
-instance DIA_MARIO_LEAVEMYSHIP(C_INFO)
+instance DIA_Mario_LeaveMyShip(C_Info)
 {
-	npc = none_101_mario;
+	npc = None_101_Mario;
 	nr = 11;
-	condition = dia_mario_leavemyship_condition;
-	information = dia_mario_leavemyship_info;
+	condition = DIA_Mario_LeaveMyShip_Condition;
+	information = DIA_Mario_LeaveMyShip_Info;
 	permanent = TRUE;
 	description = "Chyba jednak mi siê nie przydasz!";
 };
 
 
-func int dia_mario_leavemyship_condition()
+func int DIA_Mario_LeaveMyShip_Condition()
 {
-	if((MARIO_ISONBOARD == LOG_SUCCESS) && (MIS_READYFORCHAPTER6 == FALSE))
+	if((Mario_IsOnBoard == LOG_SUCCESS) && (MIS_ReadyforChapter6 == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mario_leavemyship_info()
+func void DIA_Mario_LeaveMyShip_Info()
 {
 	AI_Output(other,self,"DIA_Mario_LeaveMyShip_15_00");	//Jednak nie mogê skorzystaæ z twojej pomocy!
 	AI_Output(self,other,"DIA_Mario_LeaveMyShip_07_01");	//Jak sobie ¿yczysz. Wiesz, gdzie mnie znaleŸæ.
-	MARIO_ISONBOARD = LOG_OBSOLETE;
-	CREWMEMBER_COUNT = CREWMEMBER_COUNT - 1;
+	Mario_IsOnBoard = LOG_OBSOLETE;
+	Crewmember_Count = Crewmember_Count - 1;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"ShipOff");
 };
 
 
-instance DIA_MARIO_STILLNEEDYOU(C_INFO)
+instance DIA_Mario_StillNeedYou(C_Info)
 {
-	npc = none_101_mario;
+	npc = None_101_Mario;
 	nr = 11;
-	condition = dia_mario_stillneedyou_condition;
-	information = dia_mario_stillneedyou_info;
+	condition = DIA_Mario_StillNeedYou_Condition;
+	information = DIA_Mario_StillNeedYou_Info;
 	permanent = TRUE;
 	description = "Chyba jednak bêdê ciê potrzebowa³!";
 };
 
 
-func int dia_mario_stillneedyou_condition()
+func int DIA_Mario_StillNeedYou_Condition()
 {
-	if(((MARIO_ISONBOARD == LOG_OBSOLETE) || (MARIO_ISONBOARD == LOG_FAILED)) && (CREWMEMBER_COUNT < MAX_CREW))
+	if(((Mario_IsOnBoard == LOG_OBSOLETE) || (Mario_IsOnBoard == LOG_FAILED)) && (Crewmember_Count < Max_Crew))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mario_stillneedyou_info()
+func void DIA_Mario_StillNeedYou_Info()
 {
 	AI_Output(other,self,"DIA_Mario_StillNeedYou_15_00");	//No dobrze, mo¿e mi siê przydasz.
-	if(MARIO_ISONBOARD == LOG_OBSOLETE)
+	if(Mario_IsOnBoard == LOG_OBSOLETE)
 	{
 		AI_Output(self,other,"DIA_Mario_StillNeedYou_07_01");	//Œwietnie! Do zobaczenia na statku!
-		MARIO_ISONBOARD = LOG_SUCCESS;
-		CREWMEMBER_COUNT = CREWMEMBER_COUNT + 1;
+		Mario_IsOnBoard = LOG_SUCCESS;
+		Crewmember_Count = Crewmember_Count + 1;
 		AI_StopProcessInfos(self);
-		if(MIS_READYFORCHAPTER6 == TRUE)
+		if(MIS_ReadyforChapter6 == TRUE)
 		{
 			Npc_ExchangeRoutine(self,"SHIP");
 		}
@@ -355,37 +355,37 @@ func void dia_mario_stillneedyou_info()
 	{
 		AI_Output(self,other,"DIA_Mario_StillNeedYou_07_02");	//Nie mo¿esz mnie tak traktowaæ!
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_NONE,1);
+		B_Attack(self,other,AR_NONE,1);
 	};
 };
 
 
-instance DIA_MARIO_PICKPOCKET(C_INFO)
+instance DIA_MARIO_PICKPOCKET(C_Info)
 {
-	npc = none_101_mario;
+	npc = None_101_Mario;
 	nr = 900;
-	condition = dia_mario_pickpocket_condition;
-	information = dia_mario_pickpocket_info;
+	condition = DIA_MARIO_PICKPOCKET_Condition;
+	information = DIA_MARIO_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_80;
+	description = Pickpocket_80;
 };
 
 
-func int dia_mario_pickpocket_condition()
+func int DIA_MARIO_PICKPOCKET_Condition()
 {
-	return c_beklauen(71,220);
+	return C_Beklauen(71,220);
 };
 
-func void dia_mario_pickpocket_info()
+func void DIA_MARIO_PICKPOCKET_Info()
 {
 	Info_ClearChoices(dia_mario_pickpocket);
-	Info_AddChoice(dia_mario_pickpocket,DIALOG_BACK,dia_mario_pickpocket_back);
-	Info_AddChoice(dia_mario_pickpocket,DIALOG_PICKPOCKET,dia_mario_pickpocket_doit);
+	Info_AddChoice(dia_mario_pickpocket,Dialog_Back,dia_mario_pickpocket_back);
+	Info_AddChoice(dia_mario_pickpocket,DIALOG_PICKPOCKET,DIA_MARIO_PICKPOCKET_DoIt);
 };
 
-func void dia_mario_pickpocket_doit()
+func void DIA_MARIO_PICKPOCKET_DoIt()
 {
-	b_beklauen();
+	B_Beklauen();
 	Info_ClearChoices(dia_mario_pickpocket);
 };
 

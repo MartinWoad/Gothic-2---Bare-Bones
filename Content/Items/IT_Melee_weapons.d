@@ -1,2351 +1,2351 @@
 
-instance ITMW_1H_VLK_DAGGER(C_ITEM)
+instance ItMw_1h_Vlk_Dagger(C_Item)
 {
 	name = "Sztylet";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_VLKDOLCH;
-	damagetotal = DAMAGE_VLKDOLCH;
+	value = Value_VLKDolch;
+	damageTotal = Damage_VLKDolch;
 	damagetype = DAM_EDGE;
-	range = RANGE_VLKDOLCH;
+	range = Range_VLKDolch;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_VLKDOLCH;
+	cond_value[2] = Condition_VLKDolch;
 	visual = "Itmw_005_1h_dagger_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_MACE_L_01(C_ITEM)
+instance ItMw_1H_Mace_L_01(C_Item)
 {
 	name = "Pogrzebacz";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_WOOD;
-	value = VALUE_SCHUERHAKEN;
-	damagetotal = DAMAGE_SCHUERHAKEN;
+	value = Value_Schuerhaken;
+	damageTotal = Damage_Schuerhaken;
 	damagetype = DAM_EDGE;
-	range = RANGE_SCHUERHAKEN;
+	range = Range_Schuerhaken;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SCHUERHAKEN;
+	cond_value[2] = Condition_Schuerhaken;
 	visual = "Itmw_005_1h_poker_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_BAU_AXE(C_ITEM)
+instance ItMw_1h_Bau_Axe(C_Item)
 {
 	name = "Sierp";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_METAL;
-	value = VALUE_BAUAXE;
-	damagetotal = DAMAGE_BAUAXE;
+	value = Value_BauAxe;
+	damageTotal = Damage_BauAxe;
 	damagetype = DAM_EDGE;
-	range = RANGE_BAUAXE;
+	range = Range_BauAxe;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_BAUAXE;
+	cond_value[2] = Condition_BauAxe;
 	visual = "Itmw_007_1h_sickle_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_VLK_MACE(C_ITEM)
+instance ItMw_1h_Vlk_Mace(C_Item)
 {
 	name = "Laska";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_WOOD;
-	value = VALUE_VLKMACE;
-	damagetotal = DAMAGE_VLKMACE;
+	value = Value_VLKMace;
+	damageTotal = Damage_VLKMace;
 	damagetype = DAM_BLUNT;
-	range = RANGE_VLKMACE;
+	range = Range_VLKMace;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_VLKMACE;
+	cond_value[2] = Condition_VLKMace;
 	visual = "Itmw_008_1h_pole_01.3ds";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_MACE_L_03(C_ITEM)
+instance ItMw_1H_Mace_L_03(C_Item)
 {
 	name = "Pa³ka";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_WOOD;
-	value = VALUE_BELEGNAGEL;
-	damagetotal = DAMAGE_BELEGNAGEL;
+	value = Value_Belegnagel;
+	damageTotal = Damage_Belegnagel;
 	damagetype = DAM_BLUNT;
-	range = RANGE_BELEGNAGEL;
+	range = Range_Belegnagel;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_BELEGNAGEL;
+	cond_value[2] = Condition_Belegnagel;
 	visual = "ItMw_008_1h_mace_light_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_BAU_MACE(C_ITEM)
+instance ItMw_1h_Bau_Mace(C_Item)
 {
 	name = "Laga";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_WOOD;
-	value = VALUE_BAUMACE;
-	damagetotal = DAMAGE_BAUMACE;
+	value = Value_BauMace;
+	damageTotal = Damage_BauMace;
 	damagetype = DAM_BLUNT;
-	range = RANGE_BAUMACE;
+	range = Range_BauMace;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_BAUMACE;
+	cond_value[2] = Condition_BauMace;
 	visual = "ItMw_010_1h_Club_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_VLK_AXE(C_ITEM)
+instance ItMw_1h_Vlk_Axe(C_Item)
 {
 	name = "Topór";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_METAL;
-	value = VALUE_VLKAXE;
-	damagetotal = DAMAGE_VLKAXE;
+	value = Value_VLKAxe;
+	damageTotal = Damage_VLKAxe;
 	damagetype = DAM_EDGE;
-	range = RANGE_VLKAXE;
+	range = Range_VLKAxe;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_VLKAXE;
+	cond_value[2] = Condition_VLKAxe;
 	visual = "Itmw_010_1h_vlk_hatchet_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_MACE_L_04(C_ITEM)
+instance ItMw_1H_Mace_L_04(C_Item)
 {
 	name = "M³ot Kowalski";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_METAL;
-	value = VALUE_SCHMIEDEHAMMER;
-	damagetotal = DAMAGE_SCHMIEDEHAMMER;
+	value = Value_Schmiedehammer;
+	damageTotal = Damage_Schmiedehammer;
 	damagetype = DAM_BLUNT;
-	range = RANGE_SCHMIEDEHAMMER;
+	range = Range_Schmiedehammer;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SCHMIEDEHAMMER;
+	cond_value[2] = Condition_Schmiedehammer;
 	visual = "ItMw_010_1h_sledgehammer_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_SHORTSWORD1(C_ITEM)
+instance ItMw_ShortSword1(C_Item)
 {
 	name = "Krótki Miecz Stra¿y";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_SHORTSWORD1;
-	damagetotal = DAMAGE_SHORTSWORD1;
+	value = Value_ShortSword1;
+	damageTotal = Damage_ShortSword1;
 	damagetype = DAM_EDGE;
-	range = RANGE_SHORTSWORD1;
+	range = Range_ShortSword1;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SHORTSWORD1;
+	cond_value[2] = Condition_ShortSword1;
 	visual = "ItMw_010_1h_Sword_short_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_NAGELKNUEPPEL(C_ITEM)
+instance ItMw_Nagelknueppel(C_Item)
 {
 	name = "Maczuga z Kolcami";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_WOOD;
-	value = VALUE_NAGELKNUEPPEL;
-	damagetotal = DAMAGE_NAGELKNUEPPEL;
+	value = Value_Nagelknueppel;
+	damageTotal = Damage_Nagelknueppel;
 	damagetype = DAM_BLUNT;
-	range = RANGE_NAGELKNUEPPEL;
+	range = Range_Nagelknueppel;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_NAGELKNUEPPEL;
+	cond_value[2] = Condition_Nagelknueppel;
 	visual = "ItMw_012_1h_Nailmace_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_SWORD_L_03(C_ITEM)
+instance ItMw_1H_Sword_L_03(C_Item)
 {
 	name = "Nó¿ na Wilki";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_WOLFSMESSER;
-	damagetotal = DAMAGE_WOLFSMESSER;
+	value = Value_Wolfsmesser;
+	damageTotal = Damage_Wolfsmesser;
 	damagetype = DAM_EDGE;
-	range = RANGE_WOLFSMESSER;
+	range = Range_Wolfsmesser;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_WOLFSMESSER;
+	cond_value[2] = Condition_Wolfsmesser;
 	visual = "ItMw_012_1h_Knife_02.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_SHORTSWORD2(C_ITEM)
+instance ItMw_ShortSword2(C_Item)
 {
 	name = "Kiepski Krótki Miecz";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_SHORTSWORD2;
-	damagetotal = DAMAGE_SHORTSWORD2;
+	value = Value_ShortSword2;
+	damageTotal = Damage_ShortSword2;
 	damagetype = DAM_EDGE;
-	range = RANGE_SHORTSWORD2;
+	range = Range_ShortSword2;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SHORTSWORD2;
+	cond_value[2] = Condition_ShortSword2;
 	visual = "ItMw_012_1h_Sword_short_02.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_SENSE(C_ITEM)
+instance ItMw_Sense(C_Item)
 {
 	name = "Ma³a Kosa";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_SENSE;
-	damagetotal = DAMAGE_SENSE;
+	value = Value_Sense;
+	damageTotal = Damage_Sense;
 	damagetype = DAM_EDGE;
-	range = RANGE_SENSE;
+	range = Range_Sense;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SENSE;
+	cond_value[2] = Condition_Sense;
 	visual = "ItMw_012_1h_Scythe_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_VLK_SWORD(C_ITEM)
+instance ItMw_1h_Vlk_Sword(C_Item)
 {
 	name = "Pa³asz";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_VLKSCHWERT;
-	damagetotal = DAMAGE_VLKSCHWERT;
+	value = Value_VLKSchwert;
+	damageTotal = Damage_VLKSchwert;
 	damagetype = DAM_EDGE;
-	range = RANGE_VLKSCHWERT;
+	range = Range_VLKSchwert;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_VLKSCHWERT;
+	cond_value[2] = Condition_VLKSchwert;
 	visual = "ItMw_018_1h_SwordCane_01.3ds";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_NOV_MACE(C_ITEM)
+instance ItMw_1h_Nov_Mace(C_Item)
 {
 	name = "Kostur";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_WOOD;
-	value = VALUE_NOVMACE;
-	damagetotal = DAMAGE_NOVMACE;
+	value = Value_NovMace;
+	damageTotal = Damage_NovMace;
 	damagetype = DAM_BLUNT;
-	range = RANGE_NOVMACE;
+	range = Range_NovMace;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_NOVMACE;
+	cond_value[2] = Condition_NovMace;
 	visual = "ItMw_020_2h_Nov_Staff_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_BAU_AXE(C_ITEM)
+instance ItMw_2h_Bau_Axe(C_Item)
 {
 	name = "Topór Drwala";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_WOOD;
-	value = VALUE_BAU2HAXT;
-	damagetotal = DAMAGE_BAU2HAXT;
+	value = Value_Bau2hAxt;
+	damageTotal = Damage_Bau2hAxt;
 	damagetype = DAM_EDGE;
-	range = RANGE_BAU2HAXT;
+	range = Range_Bau2hAxt;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_BAU2HAXT;
+	cond_value[2] = Condition_Bau2hAxt;
 	visual = "ItMw_020_2h_Axe_Lumberjack_01.3ds";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_AXE_L_01(C_ITEM)
+instance ItMw_2H_Axe_L_01(C_Item)
 {
 	name = "Kilof";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE | ITEM_NSPLIT;
 	material = MAT_METAL;
-	value = VALUE_SPITZHACKE;
-	damagetotal = DAMAGE_SPITZHACKE;
+	value = Value_Spitzhacke;
+	damageTotal = Damage_Spitzhacke;
 	damagetype = DAM_EDGE;
-	range = RANGE_SPITZHACKE;
+	range = Range_Spitzhacke;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SPITZHACKE;
+	cond_value[2] = Condition_Spitzhacke;
 	visual = "ItMw_020_2h_Pickaxe_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_MISC_SWORD(C_ITEM)
+instance ItMw_1h_MISC_Sword(C_Item)
 {
 	name = "Zardzewia³y Krótki Miecz";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_MISCSWORD;
-	damagetotal = DAMAGE_MISCSWORD;
+	value = Value_MiscSword;
+	damageTotal = Damage_MiscSword;
 	damagetype = DAM_EDGE;
-	range = RANGE_MISCSWORD;
+	range = Range_MiscSword;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_MISCSWORD;
+	cond_value[2] = Condition_MiscSword;
 	visual = "ItMw_020_1h_sword_old_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_MISC_AXE(C_ITEM)
+instance ItMw_1h_Misc_Axe(C_Item)
 {
 	name = "Zardzewia³y Topór";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_METAL;
-	value = VALUE_MISCAXE;
-	damagetotal = DAMAGE_MISCAXE;
+	value = Value_MiscAxe;
+	damageTotal = Damage_MiscAxe;
 	damagetype = DAM_EDGE;
-	range = RANGE_MISCAXE;
+	range = Range_MiscAxe;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_MISCAXE;
+	cond_value[2] = Condition_MiscAxe;
 	visual = "ItMw_025_2h_Misc_Axe_old_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_SWORD_M_01(C_ITEM)
+instance ItMw_2H_Sword_M_01(C_Item)
 {
 	name = "Zardzewia³y Miecz Dwurêczny";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_MISC2HSWORD;
-	damagetotal = DAMAGE_MISC2HSWORD;
+	value = Value_Misc2hSword;
+	damageTotal = Damage_Misc2hSword;
 	damagetype = DAM_EDGE;
-	range = RANGE_MISC2HSWORD;
+	range = Range_Misc2hSword;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_MISC2HSWORD;
+	cond_value[2] = Condition_Misc2hSword;
 	visual = "ItMw_025_2h_Sword_old_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_MIL_SWORD(C_ITEM)
+instance ItMw_1h_Mil_Sword(C_Item)
 {
 	name = "Kiepski Szeroki Miecz";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_MILSCHWERT;
-	damagetotal = DAMAGE_MILSCHWERT;
+	value = Value_MilSchwert;
+	damageTotal = Damage_MilSchwert;
 	damagetype = DAM_EDGE;
-	range = RANGE_MILSCHWERT;
+	range = Range_MilSchwert;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_MILSCHWERT;
+	cond_value[2] = Condition_MilSchwert;
 	visual = "Itmw_025_1h_Mil_Sword_broad_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_SLD_AXE(C_ITEM)
+instance ItMw_1h_Sld_Axe(C_Item)
 {
 	name = "Kiepski Tasak";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_METAL;
-	value = VALUE_SLD1HAXT;
-	damagetotal = DAMAGE_SLD1HAXT;
+	value = Value_Sld1hAxt;
+	damageTotal = Damage_Sld1hAxt;
 	damagetype = DAM_EDGE;
-	range = RANGE_SLD1HAXT;
+	range = Range_Sld1hAxt;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SLD1HAXT;
+	cond_value[2] = Condition_Sld1hAxt;
 	visual = "ItMw_025_1h_sld_axe_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_SLD_SWORD(C_ITEM)
+instance ItMw_1h_Sld_Sword(C_Item)
 {
 	name = "Kiepski Miecz";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_METAL;
-	value = VALUE_SLD1HSCHWERT;
-	damagetotal = DAMAGE_SLD1HSCHWERT;
+	value = Value_Sld1hSchwert;
+	damageTotal = Damage_Sld1hSchwert;
 	damagetype = DAM_EDGE;
-	range = RANGE_SLD1HSCHWERT;
+	range = Range_Sld1hSchwert;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SLD1HSCHWERT;
+	cond_value[2] = Condition_Sld1hSchwert;
 	visual = "ItMw_025_1h_sld_sword_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_SLD_AXE(C_ITEM)
+instance ItMw_2h_Sld_Axe(C_Item)
 {
 	name = "Kiepski Topór Bojowy";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_METAL;
-	value = VALUE_SLD2HAXE;
-	damagetotal = DAMAGE_SLD2HAXE;
+	value = Value_Sld2hAxe;
+	damageTotal = Damage_Sld2hAxe;
 	damagetype = DAM_EDGE;
-	range = RANGE_SLD2HAXE;
+	range = Range_Sld2hAxe;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SLD2HAXE;
+	cond_value[2] = Condition_Sld2hAxe;
 	visual = "ItMw_035_2h_sld_axe_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_SLD_SWORD(C_ITEM)
+instance ItMw_2h_Sld_Sword(C_Item)
 {
 	name = "Kiepski Miecz Dwurêczny";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_SLD2HSCHWERT;
-	damagetotal = DAMAGE_SLD2HSCHWERT;
+	value = Value_Sld2hSchwert;
+	damageTotal = Damage_Sld2hSchwert;
 	damagetype = DAM_EDGE;
-	range = RANGE_SLD2HSCHWERT;
+	range = Range_Sld2hSchwert;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SLD2HSCHWERT;
+	cond_value[2] = Condition_Sld2hSchwert;
 	visual = "ItMw_035_2h_sld_sword_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_PAL_SWORD(C_ITEM)
+instance ItMw_1h_Pal_Sword(C_Item)
 {
 	name = "Miecz Paladyna";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_PALSCHWERT;
-	damagetotal = DAMAGE_PALSCHWERT;
+	value = Value_PalSchwert;
+	damageTotal = Damage_PalSchwert;
 	damagetype = DAM_EDGE;
-	range = RANGE_PALSCHWERT;
+	range = Range_PalSchwert;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_PALSCHWERT;
+	cond_value[2] = Condition_PalSchwert;
 	visual = "ItMw_030_1h_PAL_Sword_02.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_PAL_SWORD(C_ITEM)
+instance ItMw_2h_Pal_Sword(C_Item)
 {
 	name = "Dwurêczny Miecz Paladyna";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_PALZWEIHAENDER;
-	damagetotal = DAMAGE_PALZWEIHAENDER;
+	value = Value_PalZweihaender;
+	damageTotal = Damage_PalZweihaender;
 	damagetype = DAM_EDGE;
-	range = RANGE_PALZWEIHAENDER;
+	range = Range_PalZweihaender;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_PALZWEIHAENDER;
+	cond_value[2] = Condition_PalZweihaender;
 	visual = "ItMw_040_2h_PAL_Sword_03.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_ORCAXE_01(C_ITEM)
+instance ItMw_2H_OrcAxe_01(C_Item)
 {
 	name = "Lekki Orkowy Topór";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_METAL;
-	value = VALUE_ORKAXT_01;
-	damagetotal = DAMAGE_ORKAXT_01;
+	value = Value_Orkaxt_01;
+	damageTotal = Damage_Orkaxt_01;
 	damagetype = DAM_EDGE;
-	range = RANGE_ORKAXT_01;
+	range = Range_Orkaxt_01;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_ORKAXT_01;
+	cond_value[2] = Condition_Orkaxt_01;
 	visual = "ItMw_2H_OrcAxe_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_ORCAXE_02(C_ITEM)
+instance ItMw_2H_OrcAxe_02(C_Item)
 {
 	name = "Œredni Orkowy Topór";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_METAL;
-	value = VALUE_ORKAXT_02;
-	damagetotal = DAMAGE_ORKAXT_02;
+	value = Value_Orkaxt_02;
+	damageTotal = Damage_Orkaxt_02;
 	damagetype = DAM_EDGE;
-	range = RANGE_ORKAXT_02;
+	range = Range_Orkaxt_02;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_ORKAXT_02;
+	cond_value[2] = Condition_Orkaxt_02;
 	visual = "ItMw_2H_OrcAxe_02.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_ORCAXE_03(C_ITEM)
+instance ItMw_2H_OrcAxe_03(C_Item)
 {
 	name = "Ciê¿ki Orkowy Topór";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_METAL;
-	value = VALUE_ORKAXT_03;
-	damagetotal = DAMAGE_ORKAXT_03;
+	value = Value_Orkaxt_03;
+	damageTotal = Damage_Orkaxt_03;
 	damagetype = DAM_EDGE;
-	range = RANGE_ORKAXT_03;
+	range = Range_Orkaxt_03;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_ORKAXT_03;
+	cond_value[2] = Condition_Orkaxt_03;
 	visual = "ItMw_2H_OrcAxe_03.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_ORCAXE_04(C_ITEM)
+instance ItMw_2H_OrcAxe_04(C_Item)
 {
 	name = "Ogromny Orkowy Topór";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_METAL;
-	value = VALUE_ORKAXT_04;
-	damagetotal = DAMAGE_ORKAXT_04;
+	value = Value_Orkaxt_04;
+	damageTotal = Damage_Orkaxt_04;
 	damagetype = DAM_EDGE;
-	range = RANGE_ORKAXT_04;
+	range = Range_Orkaxt_04;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_ORKAXT_04;
+	cond_value[2] = Condition_Orkaxt_04;
 	visual = "ItMw_2H_OrcAxe_04.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_ORCSWORD_01(C_ITEM)
+instance ItMw_2H_OrcSword_01(C_Item)
 {
 	name = "Jaszczurzy Miecz";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_ORKSCHWERT;
-	damagetotal = DAMAGE_ORKSCHWERT;
+	value = Value_Orkschwert;
+	damageTotal = Damage_Orkschwert;
 	damagetype = DAM_EDGE;
-	range = RANGE_ORKSCHWERT;
+	range = Range_Orkschwert;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_ORKSCHWERT;
+	cond_value[2] = Condition_Orkschwert;
 	visual = "ItMw_2H_OrcSword_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_ORCSWORD_02(C_ITEM)
+instance ItMw_2H_OrcSword_02(C_Item)
 {
 	name = "Orkowy Miecz Wojenny";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_ORKSCHWERT_01;
-	damagetotal = DAMAGE_ORKSCHWERT_01;
+	value = Value_Orkschwert_01;
+	damageTotal = Damage_Orkschwert_01;
 	damagetype = DAM_EDGE;
-	range = RANGE_ORKSCHWERT_01;
+	range = Range_Orkschwert_01;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_ORKSCHWERT_01;
+	cond_value[2] = Condition_Orkschwert_01;
 	visual = "ItMw_2H_OrcSword_02.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_SHORTSWORD3(C_ITEM)
+instance ItMw_ShortSword3(C_Item)
 {
 	name = "Krótki Miecz";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_SHORTSWORD3;
-	damagetotal = DAMAGE_SHORTSWORD3;
+	value = Value_ShortSword3;
+	damageTotal = Damage_ShortSword3;
 	damagetype = DAM_EDGE;
-	range = RANGE_SHORTSWORD3;
+	range = Range_ShortSword3;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SHORTSWORD3;
+	cond_value[2] = Condition_ShortSword3;
 	visual = "ItMw_016_1h_Sword_short_03.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_NAGELKEULE(C_ITEM)
+instance ItMw_Nagelkeule(C_Item)
 {
 	name = "Pa³ka z Kolcami";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_WOOD;
-	value = VALUE_NAGELKEULE;
-	damagetotal = DAMAGE_NAGELKEULE;
+	value = Value_Nagelkeule;
+	damageTotal = Damage_Nagelkeule;
 	damagetype = DAM_BLUNT;
-	range = RANGE_NAGELKEULE;
+	range = Range_Nagelkeule;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_NAGELKEULE;
+	cond_value[2] = Condition_Nagelkeule;
 	visual = "ItMw_018_1h_Mace_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_SHORTSWORD4(C_ITEM)
+instance ItMw_ShortSword4(C_Item)
 {
 	name = "Wilczy Kie³";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_SHORTSWORD4;
-	damagetotal = DAMAGE_SHORTSWORD4;
+	value = Value_ShortSword4;
+	damageTotal = Damage_ShortSword4;
 	damagetype = DAM_EDGE;
-	range = RANGE_SHORTSWORD4;
+	range = Range_ShortSword4;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SHORTSWORD4;
+	cond_value[2] = Condition_ShortSword4;
 	visual = "ItMw_020_1h_Sword_short_04.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_KRIEGSKEULE(C_ITEM)
+instance ItMw_Kriegskeule(C_Item)
 {
 	name = "Buzdygan";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_WOOD;
-	value = VALUE_KRIEGSKEULE;
-	damagetotal = DAMAGE_KRIEGSKEULE;
+	value = Value_Kriegskeule;
+	damageTotal = Damage_Kriegskeule;
 	damagetype = DAM_BLUNT;
-	range = RANGE_KRIEGSKEULE;
+	range = Range_Kriegskeule;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_KRIEGSKEULE;
+	cond_value[2] = Condition_Kriegskeule;
 	visual = "ItMw_022_1h_mace_war_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_RICHTSTAB(C_ITEM)
+instance ItMw_Richtstab(C_Item)
 {
 	name = "Kosa Bojowa";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_WOOD;
-	value = VALUE_RICHTSTAB;
-	damagetotal = DAMAGE_RICHTSTAB;
+	value = Value_Richtstab;
+	damageTotal = Damage_Richtstab;
 	damagetype = DAM_EDGE;
-	range = RANGE_RICHTSTAB;
+	range = Range_Richtstab;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_RICHTSTAB;
+	cond_value[2] = Condition_Richtstab;
 	visual = "ItMw_025_2h_Staff_02.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_SHORTSWORD5(C_ITEM)
+instance ItMw_ShortSword5(C_Item)
 {
 	name = "Dobry Krótki Miecz";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_SHORTSWORD5;
-	damagetotal = DAMAGE_SHORTSWORD5;
+	value = Value_ShortSword5;
+	damageTotal = Damage_ShortSword5;
 	damagetype = DAM_EDGE;
-	range = RANGE_SHORTSWORD5;
+	range = Range_ShortSword5;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SHORTSWORD5;
+	cond_value[2] = Condition_ShortSword5;
 	visual = "ItMw_025_1h_Sword_short_05.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_KRIEGSHAMMER1(C_ITEM)
+instance ItMw_Kriegshammer1(C_Item)
 {
 	name = "M³ot Wojenny";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_METAL;
-	value = VALUE_KRIEGSHAMMER1;
-	damagetotal = DAMAGE_KRIEGSHAMMER1;
+	value = Value_Kriegshammer1;
+	damageTotal = Damage_Kriegshammer1;
 	damagetype = DAM_BLUNT;
-	range = RANGE_KRIEGSHAMMER1;
+	range = Range_Kriegshammer1;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_KRIEGSHAMMER1;
+	cond_value[2] = Condition_Kriegshammer1;
 	visual = "ItMw_028_1h_warhammer_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_HELLEBARDE(C_ITEM)
+instance ItMw_Hellebarde(C_Item)
 {
 	name = "Halabarda";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_METAL;
-	value = VALUE_HELLEBARDE;
-	damagetotal = DAMAGE_HELLEBARDE;
+	value = Value_Hellebarde;
+	damageTotal = Damage_Hellebarde;
 	damagetype = DAM_EDGE;
-	range = RANGE_HELLEBARDE;
+	range = Range_Hellebarde;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_HELLEBARDE;
+	cond_value[2] = Condition_Hellebarde;
 	visual = "itmw_028_2h_halberd_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_NAGELKEULE2(C_ITEM)
+instance ItMw_Nagelkeule2(C_Item)
 {
 	name = "Ciê¿ka Pa³ka z Kolcami";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_WOOD;
-	value = VALUE_NAGELKEULE2;
-	damagetotal = DAMAGE_NAGELKEULE2;
+	value = Value_Nagelkeule2;
+	damageTotal = Damage_Nagelkeule2;
 	damagetype = DAM_BLUNT;
-	range = RANGE_NAGELKEULE2;
+	range = Range_Nagelkeule2;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_NAGELKEULE2;
+	cond_value[2] = Condition_Nagelkeule2;
 	visual = "ItMw_018_1h_Mace_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_SCHIFFSAXT(C_ITEM)
+instance ItMw_Schiffsaxt(C_Item)
 {
 	name = "Topór Marynarski";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_METAL;
-	value = VALUE_SCHIFFSAXT;
-	damagetotal = DAMAGE_SCHIFFSAXT;
+	value = Value_Schiffsaxt;
+	damageTotal = Damage_Schiffsaxt;
 	damagetype = DAM_EDGE;
-	range = RANGE_SCHIFFSAXT;
+	range = Range_Schiffsaxt;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SCHIFFSAXT;
+	cond_value[2] = Condition_Schiffsaxt;
 	visual = "ItMw_030_1h_axe_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_PIRATENSAEBEL(C_ITEM)
+instance ItMw_Piratensaebel(C_Item)
 {
 	name = "Piracki Kordelas";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_PIRATENSAEBEL;
-	damagetotal = DAMAGE_PIRATENSAEBEL;
+	value = Value_Piratensaebel;
+	damageTotal = Damage_Piratensaebel;
 	damagetype = DAM_EDGE;
-	range = RANGE_PIRATENSAEBEL;
+	range = Range_Piratensaebel;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_PIRATENSAEBEL;
+	cond_value[2] = Condition_Piratensaebel;
 	visual = "ItMw_030_1h_sword_03.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_SCHWERT(C_ITEM)
+instance ItMw_Schwert(C_Item)
 {
 	name = "Kiepski D³ugi Miecz";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_SCHWERT;
-	damagetotal = DAMAGE_SCHWERT;
+	value = Value_Schwert;
+	damageTotal = Damage_Schwert;
 	damagetype = DAM_EDGE;
-	range = RANGE_SCHWERT;
+	range = Range_Schwert;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SCHWERT;
+	cond_value[2] = Condition_Schwert;
 	visual = "ItMw_030_1h_sword_long_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_COMMON_01(C_ITEM)
+instance ItMw_1H_Common_01(C_Item)
 {
-	name = name_itmw_1h_common_01;
+	name = NAME_ItMw_1H_Common_01;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_COMMON1;
-	damagetotal = DAMAGE_COMMON1;
+	value = Value_Common1;
+	damageTotal = Damage_Common1;
 	damagetype = DAM_EDGE;
-	range = RANGE_COMMON1;
+	range = Range_Common1;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_COMMON1;
+	cond_value[2] = Condition_Common1;
 	visual = "ItMw_030_1h_Common_Sword_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_STABKEULE(C_ITEM)
+instance ItMw_Stabkeule(C_Item)
 {
 	name = "Bu³awa Drzewcowa";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_WOOD;
-	value = VALUE_STABKEULE;
-	damagetotal = DAMAGE_STABKEULE;
+	value = Value_Stabkeule;
+	damageTotal = Damage_Stabkeule;
 	damagetype = DAM_BLUNT;
-	range = RANGE_STABKEULE;
+	range = Range_Stabkeule;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_STABKEULE;
+	cond_value[2] = Condition_Stabkeule;
 	visual = "ItMw_032_2h_staff_03.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_ZWEIHAENDER1(C_ITEM)
+instance ItMw_Zweihaender1(C_Item)
 {
 	name = "Lekki Miecz Dwurêczny";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_ZWEIHAENDER1;
-	damagetotal = DAMAGE_ZWEIHAENDER1;
+	value = Value_Zweihaender1;
+	damageTotal = Damage_Zweihaender1;
 	damagetype = DAM_EDGE;
-	range = RANGE_ZWEIHAENDER1;
+	range = Range_Zweihaender1;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_ZWEIHAENDER1;
+	cond_value[2] = Condition_Zweihaender1;
 	visual = "ItMw_032_2h_sword_light_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_STEINBRECHER(C_ITEM)
+instance ItMw_Steinbrecher(C_Item)
 {
 	name = "Piernacz";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_WOOD;
-	value = VALUE_STEINBRECHER;
-	damagetotal = DAMAGE_STEINBRECHER;
+	value = Value_Steinbrecher;
+	damageTotal = Damage_Steinbrecher;
 	damagetype = DAM_BLUNT;
-	range = RANGE_STEINBRECHER;
+	range = Range_Steinbrecher;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_STEINBRECHER;
+	cond_value[2] = Condition_Steinbrecher;
 	visual = "ItMw_035_1h_mace_war_02.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_SPICKER(C_ITEM)
+instance ItMw_Spicker(C_Item)
 {
 	name = "Rêbiczerep";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_WOOD;
-	value = VALUE_SPICKER;
-	damagetotal = DAMAGE_SPICKER;
+	value = Value_Spicker;
+	damageTotal = Damage_Spicker;
 	damagetype = DAM_BLUNT;
-	range = RANGE_SPICKER;
+	range = Range_Spicker;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SPICKER;
+	cond_value[2] = Condition_Spicker;
 	visual = "ItMw_035_1h_mace_03.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_STREITAXT1(C_ITEM)
+instance ItMw_Streitaxt1(C_Item)
 {
 	name = "Lekki Topór Bojowy";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_METAL;
-	value = VALUE_STREITAXT1;
-	damagetotal = DAMAGE_STREITAXT1;
+	value = Value_Streitaxt1;
+	damageTotal = Damage_Streitaxt1;
 	damagetype = DAM_EDGE;
-	range = RANGE_STREITAXT1;
+	range = Range_Streitaxt1;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_STREITAXT1;
+	cond_value[2] = Condition_Streitaxt1;
 	visual = "ItMw_035_2h_Axe_light_03.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_SCHWERT1(C_ITEM)
+instance ItMw_Schwert1(C_Item)
 {
 	name = "Dobry Miecz";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_SCHWERT1;
-	damagetotal = DAMAGE_SCHWERT1;
+	value = Value_Schwert1;
+	damageTotal = Damage_Schwert1;
 	damagetype = DAM_EDGE;
-	range = RANGE_SCHWERT1;
+	range = Range_Schwert1;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SCHWERT1;
+	cond_value[2] = Condition_Schwert1;
 	visual = "ItMw_035_1h_Sword_04.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_SCHWERT2(C_ITEM)
+instance ItMw_Schwert2(C_Item)
 {
 	name = "D³ugi Miecz";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_SCHWERT2;
-	damagetotal = DAMAGE_SCHWERT2;
+	value = Value_Schwert2;
+	damageTotal = Damage_Schwert2;
 	damagetype = DAM_EDGE;
-	range = RANGE_SCHWERT2;
+	range = Range_Schwert2;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SCHWERT2;
+	cond_value[2] = Condition_Schwert2;
 	visual = "ItMw_037_1h_sword_long_02.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_DOPPELAXT(C_ITEM)
+instance ItMw_Doppelaxt(C_Item)
 {
 	name = "Topór Obosieczny";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_METAL;
-	value = VALUE_DOPPELAXT;
-	damagetotal = DAMAGE_DOPPELAXT;
+	value = Value_Doppelaxt;
+	damageTotal = Damage_Doppelaxt;
 	damagetype = DAM_EDGE;
-	range = RANGE_DOPPELAXT;
+	range = Range_Doppelaxt;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_DOPPELAXT;
+	cond_value[2] = Condition_Doppelaxt;
 	visual = "ItMw_040_1h_Axe_02.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_BARTAXT(C_ITEM)
+instance ItMw_Bartaxt(C_Item)
 {
 	name = "Wielki Topór";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_METAL;
-	value = VALUE_BARTAXT;
-	damagetotal = DAMAGE_BARTAXT;
+	value = Value_Bartaxt;
+	damageTotal = Damage_Bartaxt;
 	damagetype = DAM_EDGE;
-	range = RANGE_BARTAXT;
+	range = Range_Bartaxt;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_BARTAXT;
+	cond_value[2] = Condition_Bartaxt;
 	visual = "ItMw_040_1h_axe_03.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_MORGENSTERN(C_ITEM)
+instance ItMw_Morgenstern(C_Item)
 {
 	name = "Morgenstern";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_WOOD;
-	value = VALUE_MORGENSTERN;
-	damagetotal = DAMAGE_MORGENSTERN;
+	value = Value_Morgenstern;
+	damageTotal = Damage_Morgenstern;
 	damagetype = DAM_BLUNT;
-	range = RANGE_MORGENSTERN;
+	range = Range_Morgenstern;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_MORGENSTERN;
+	cond_value[2] = Condition_Morgenstern;
 	visual = "ItMW_045_1h_mace_04.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_SCHWERT3(C_ITEM)
+instance ItMw_Schwert3(C_Item)
 {
 	name = "Kiepski Miecz Pó³torarêczny";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_SCHWERT3;
-	damagetotal = DAMAGE_SCHWERT3;
+	value = Value_Schwert3;
+	damageTotal = Damage_Schwert3;
 	damagetype = DAM_EDGE;
-	range = RANGE_SCHWERT3;
+	range = Range_Schwert3;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SCHWERT3;
+	cond_value[2] = Condition_Schwert3;
 	visual = "ItMw_045_1h_Sword_Bastard_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_SCHWERT4(C_ITEM)
+instance ItMw_Schwert4(C_Item)
 {
 	name = "Dobry D³ugi Miecz";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_SCHWERT4;
-	damagetotal = DAMAGE_SCHWERT4;
+	value = Value_Schwert4;
+	damageTotal = Damage_Schwert4;
 	damagetype = DAM_EDGE;
-	range = RANGE_SCHWERT4;
+	range = Range_Schwert4;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SCHWERT4;
+	cond_value[2] = Condition_Schwert4;
 	visual = "ItMw_045_1h_Sword_long_04.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_SPECIAL_01(C_ITEM)
+instance ItMw_1H_Special_01(C_Item)
 {
-	name = name_itmw_1h_special_01;
+	name = NAME_ItMw_1H_Special_01;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_SPECIAL_1H_1;
-	damagetotal = DAMAGE_SPECIAL_1H_1;
+	value = Value_Special_1H_1;
+	damageTotal = Damage_Special_1H_1;
 	damagetype = DAM_EDGE;
-	range = RANGE_SPECIAL_1H_1;
+	range = Range_Special_1H_1;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SPECIAL_1H_1;
+	cond_value[2] = Condition_Special_1H_1;
 	visual = "ItMw_045_1h_Sword_smith_02.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_SPECIAL_01(C_ITEM)
+instance ItMw_2H_Special_01(C_Item)
 {
-	name = name_itmw_2h_special_01;
+	name = NAME_ItMw_2H_Special_01;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_SPECIAL_2H_1;
-	damagetotal = DAMAGE_SPECIAL_2H_1;
+	value = Value_Special_2H_1;
+	damageTotal = Damage_Special_2H_1;
 	damagetype = DAM_EDGE;
-	range = RANGE_SPECIAL_2H_1;
+	range = Range_Special_2H_1;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SPECIAL_2H_1;
+	cond_value[2] = Condition_Special_2H_1;
 	visual = "ItMw_050_2h_Sword_smith_03.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_RAPIER(C_ITEM)
+instance ItMw_Rapier(C_Item)
 {
 	name = "Pa³asz Oficerski";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_RAPIER;
-	damagetotal = DAMAGE_RAPIER;
+	value = Value_Rapier;
+	damageTotal = Damage_Rapier;
 	damagetype = DAM_EDGE;
-	range = RANGE_RAPIER;
+	range = Range_Rapier;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_RAPIER;
+	cond_value[2] = Condition_Rapier;
 	visual = "ItMw_050_1h_Sword_Rapier_01.3ds";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_RUBINKLINGE(C_ITEM)
+instance ItMw_Rubinklinge(C_Item)
 {
 	name = "Rubinowe Ostrze";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_RUBINKLINGE;
-	damagetotal = DAMAGE_RUBINKLINGE;
+	value = Value_Rubinklinge;
+	damageTotal = Damage_Rubinklinge;
 	damagetype = DAM_EDGE;
-	range = RANGE_RUBINKLINGE;
+	range = Range_Rubinklinge;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_RUBINKLINGE;
+	cond_value[2] = Condition_Rubinklinge;
 	visual = "ItMw_050_1h_sword_05.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_STREITKOLBEN(C_ITEM)
+instance ItMw_Streitkolben(C_Item)
 {
 	name = "Bu³awa";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_METAL;
-	value = VALUE_STREITKOLBEN;
-	damagetotal = DAMAGE_STREITKOLBEN;
+	value = Value_Streitkolben;
+	damageTotal = Damage_Streitkolben;
 	damagetype = DAM_BLUNT;
-	range = RANGE_STREITKOLBEN;
+	range = Range_Streitkolben;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_STREITKOLBEN;
+	cond_value[2] = Condition_Streitkolben;
 	visual = "ItMw_050_1h_mace_war_03.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_ZWEIHAENDER2(C_ITEM)
+instance ItMw_Zweihaender2(C_Item)
 {
 	name = "Miecz Dwurêczny";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_ZWEIHAENDER2;
-	damagetotal = DAMAGE_ZWEIHAENDER2;
+	value = Value_Zweihaender2;
+	damageTotal = Damage_Zweihaender2;
 	damagetype = DAM_EDGE;
-	range = RANGE_ZWEIHAENDER2;
+	range = Range_Zweihaender2;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_ZWEIHAENDER2;
+	cond_value[2] = Condition_Zweihaender2;
 	visual = "ItMw_055_2h_sword_light_05.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_RUNENSCHWERT(C_ITEM)
+instance ItMw_Runenschwert(C_Item)
 {
 	name = "Miecz Runiczny";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_RUNENSCHWERT;
-	damagetotal = DAMAGE_RUNENSCHWERT;
+	value = Value_Runenschwert;
+	damageTotal = Damage_Runenschwert;
 	damagetype = DAM_EDGE;
-	range = RANGE_RUNENSCHWERT;
+	range = Range_Runenschwert;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_RUNENSCHWERT;
+	cond_value[2] = Condition_Runenschwert;
 	visual = "ItMw_055_1h_sword_long_05.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_RABENSCHNABEL(C_ITEM)
+instance ItMw_Rabenschnabel(C_Item)
 {
 	name = "Kruczy Dziób";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_METAL;
-	value = VALUE_RABENSCHNABEL;
-	damagetotal = DAMAGE_RABENSCHNABEL;
+	value = Value_Rabenschnabel;
+	damageTotal = Damage_Rabenschnabel;
 	damagetype = DAM_BLUNT;
-	range = RANGE_RABENSCHNABEL;
+	range = Range_Rabenschnabel;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_RABENSCHNABEL;
+	cond_value[2] = Condition_Rabenschnabel;
 	visual = "ItMw_058_1h_warhammer_02.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_SCHWERT5(C_ITEM)
+instance ItMw_Schwert5(C_Item)
 {
 	name = "Dobry Miecz Pó³torarêczny";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_SCHWERT5;
-	damagetotal = DAMAGE_SCHWERT5;
+	value = Value_Schwert5;
+	damageTotal = Damage_Schwert5;
 	damagetype = DAM_EDGE;
-	range = RANGE_SCHWERT5;
+	range = Range_Schwert5;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SCHWERT5;
+	cond_value[2] = Condition_Schwert5;
 	visual = "ItMw_058_1h_Sword_Bastard_02.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_INQUISITOR(C_ITEM)
+instance ItMw_Inquisitor(C_Item)
 {
 	name = "Inkwizytor";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_METAL;
-	value = VALUE_INQUISITOR;
-	damagetotal = DAMAGE_INQUISITOR;
+	value = Value_Inquisitor;
+	damageTotal = Damage_Inquisitor;
 	damagetype = DAM_EDGE;
-	range = RANGE_INQUISITOR;
+	range = Range_Inquisitor;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_INQUISITOR;
+	cond_value[2] = Condition_Inquisitor;
 	visual = "ItMw_060_1h_mace_war_04.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_STREITAXT2(C_ITEM)
+instance ItMw_Streitaxt2(C_Item)
 {
 	name = "Topór Bojowy";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_METAL;
-	value = VALUE_STREITAXT2;
-	damagetotal = DAMAGE_STREITAXT2;
+	value = Value_Streitaxt2;
+	damageTotal = Damage_Streitaxt2;
 	damagetype = DAM_EDGE;
-	range = RANGE_STREITAXT2;
+	range = Range_Streitaxt2;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_STREITAXT2;
+	cond_value[2] = Condition_Streitaxt2;
 	visual = "ItMw_060_2h_axe_heavy_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_ZWEIHAENDER3(C_ITEM)
+instance ItMw_Zweihaender3(C_Item)
 {
 	name = "Runa Mocy";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_ZWEIHAENDER3;
-	damagetotal = DAMAGE_ZWEIHAENDER3;
+	value = Value_Zweihaender3;
+	damageTotal = Damage_Zweihaender3;
 	damagetype = DAM_EDGE;
-	range = RANGE_ZWEIHAENDER3;
+	range = Range_Zweihaender3;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_ZWEIHAENDER3;
+	cond_value[2] = Condition_Zweihaender3;
 	visual = "ItMw_060_2h_sword_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_SPECIAL_02(C_ITEM)
+instance ItMw_1H_Special_02(C_Item)
 {
-	name = name_itmw_1h_special_02;
+	name = NAME_ItMw_1H_Special_02;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_SPECIAL_1H_2;
-	damagetotal = DAMAGE_SPECIAL_1H_2;
+	value = Value_Special_1H_2;
+	damageTotal = Damage_Special_1H_2;
 	damagetype = DAM_EDGE;
-	range = RANGE_SPECIAL_1H_2;
+	range = Range_Special_1H_2;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SPECIAL_1H_2;
+	cond_value[2] = Condition_Special_1H_2;
 	visual = "ItMw_060_1h_Sword_smith_03.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_SPECIAL_02(C_ITEM)
+instance ItMw_2H_Special_02(C_Item)
 {
-	name = name_itmw_2h_special_02;
+	name = NAME_ItMw_2H_Special_02;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_SPECIAL_2H_2;
-	damagetotal = DAMAGE_SPECIAL_2H_2;
+	value = Value_Special_2H_2;
+	damageTotal = Damage_Special_2H_2;
 	damagetype = DAM_EDGE;
-	range = RANGE_SPECIAL_2H_2;
+	range = Range_Special_2H_2;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SPECIAL_2H_2;
+	cond_value[2] = Condition_Special_2H_2;
 	visual = "ItMw_070_2h_Sword_smith_02.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_ELBASTARDO(C_ITEM)
+instance ItMw_ElBastardo(C_Item)
 {
 	name = "El Bastardo";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_METAL;
-	value = VALUE_ELBASTARDO;
-	damagetotal = DAMAGE_ELBASTARDO;
+	value = Value_ElBastardo;
+	damageTotal = Damage_ElBastardo;
 	damagetype = DAM_EDGE;
-	range = RANGE_ELBASTARDO;
+	range = Range_ElBastardo;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_ELBASTARDO;
+	cond_value[2] = Condition_ElBastardo;
 	visual = "ItMw_065_1h_sword_bastard_03.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_KRIEGSHAMMER2(C_ITEM)
+instance ItMw_Kriegshammer2(C_Item)
 {
 	name = "Ciê¿ki M³ot Wojenny";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_METAL;
-	value = VALUE_KRIEGSHAMMER2;
-	damagetotal = DAMAGE_KRIEGSHAMMER2;
+	value = Value_Kriegshammer2;
+	damageTotal = Damage_Kriegshammer2;
 	damagetype = DAM_BLUNT;
-	range = RANGE_KRIEGSHAMMER2;
+	range = Range_Kriegshammer2;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_KRIEGSHAMMER2;
+	cond_value[2] = Condition_Kriegshammer2;
 	visual = "ItMw_065_1h_warhammer_03.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_MEISTERDEGEN(C_ITEM)
+instance ItMw_Meisterdegen(C_Item)
 {
 	name = "Miecz Mistrzowski";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_MEISTERDEGEN;
-	damagetotal = DAMAGE_MEISTERDEGEN;
+	value = Value_Meisterdegen;
+	damageTotal = Damage_Meisterdegen;
 	damagetype = DAM_EDGE;
-	range = RANGE_MEISTERDEGEN;
+	range = Range_Meisterdegen;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_MEISTERDEGEN;
+	cond_value[2] = Condition_Meisterdegen;
 	visual = "ItMw_065_1h_SwordCane_02.3ds";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_FOLTERAXT(C_ITEM)
+instance ItMw_Folteraxt(C_Item)
 {
 	name = "Topór Katowski";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_AXE;
 	material = MAT_METAL;
-	value = VALUE_FOLTERAXT;
-	damagetotal = DAMAGE_FOLTERAXT;
+	value = Value_Folteraxt;
+	damageTotal = Damage_Folteraxt;
 	damagetype = DAM_EDGE;
-	range = RANGE_FOLTERAXT;
+	range = Range_Folteraxt;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_FOLTERAXT;
+	cond_value[2] = Condition_Folteraxt;
 	visual = "ItMw_065_2h_greataxe_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_ORKSCHLAECHTER(C_ITEM)
+instance ItMw_Orkschlaechter(C_Item)
 {
 	name = "Orkowa Zguba";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_ORKSCHLAECHTER;
-	damagetotal = DAMAGE_ORKSCHLAECHTER;
+	value = Value_Orkschlaechter;
+	damageTotal = Damage_Orkschlaechter;
 	damagetype = DAM_EDGE;
-	range = RANGE_ORKSCHLAECHTER;
+	range = Range_Orkschlaechter;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_ORKSCHLAECHTER;
+	cond_value[2] = Condition_Orkschlaechter;
 	visual = "ItMw_065_1h_sword_bastard_04.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_ZWEIHAENDER4(C_ITEM)
+instance ItMw_Zweihaender4(C_Item)
 {
 	name = "Ciê¿ki Miecz Dwurêczny";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_ZWEIHAENDER4;
-	damagetotal = DAMAGE_ZWEIHAENDER4;
+	value = Value_Zweihaender4;
+	damageTotal = Damage_Zweihaender4;
 	damagetype = DAM_EDGE;
-	range = RANGE_ZWEIHAENDER4;
+	range = Range_Zweihaender4;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_ZWEIHAENDER4;
+	cond_value[2] = Condition_Zweihaender4;
 	visual = "ItMw_068_2h_sword_02.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_SCHLACHTAXT(C_ITEM)
+instance ItMw_Schlachtaxt(C_Item)
 {
 	name = "Topór Wojenny";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_METAL;
-	value = VALUE_SCHLACHTAXT;
-	damagetotal = DAMAGE_SCHLACHTAXT;
+	value = Value_Schlachtaxt;
+	damageTotal = Damage_Schlachtaxt;
 	damagetype = DAM_EDGE;
-	range = RANGE_SCHLACHTAXT;
+	range = Range_Schlachtaxt;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SCHLACHTAXT;
+	cond_value[2] = Condition_Schlachtaxt;
 	visual = "ItMw_070_2h_axe_heavy_03.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_KRUMMSCHWERT(C_ITEM)
+instance ItMw_Krummschwert(C_Item)
 {
 	name = "Bu³at";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_SCIMITAR;
-	damagetotal = DAMAGE_SCIMITAR;
+	value = Value_Scimitar;
+	damageTotal = Damage_Scimitar;
 	damagetype = DAM_EDGE;
-	range = RANGE_SCIMITAR;
+	range = Range_Scimitar;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SCIMITAR;
+	cond_value[2] = Condition_Scimitar;
 	visual = "ItMw_070_2h_sword_09.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_BARBARENSTREITAXT(C_ITEM)
+instance ItMw_Barbarenstreitaxt(C_Item)
 {
 	name = "Barbarzyñski Topór Bojowy";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_METAL;
-	value = VALUE_BARBARENSTREITAXT;
-	damagetotal = DAMAGE_BARBARENSTREITAXT;
+	value = Value_Barbarenstreitaxt;
+	damageTotal = Damage_Barbarenstreitaxt;
 	damagetype = DAM_EDGE;
-	range = RANGE_BARBARENSTREITAXT;
+	range = Range_Barbarenstreitaxt;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_BARBARENSTREITAXT;
+	cond_value[2] = Condition_Barbarenstreitaxt;
 	visual = "ItMw_075_2h_axe_heavy_04.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_STURMBRINGER(C_ITEM)
+instance ItMw_Sturmbringer(C_Item)
 {
 	name = "Ostrze Burzy";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_STURMBRINGER;
-	damagetotal = DAMAGE_STURMBRINGER;
+	value = Value_Sturmbringer;
+	damageTotal = Damage_Sturmbringer;
 	damagetype = DAM_EDGE;
-	range = RANGE_STURMBRINGER;
+	range = Range_Sturmbringer;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_STURMBRINGER;
+	cond_value[2] = Condition_Sturmbringer;
 	visual = "ItMw_075_2h_sword_heavy_03.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_SPECIAL_03(C_ITEM)
+instance ItMw_1H_Special_03(C_Item)
 {
-	name = name_itmw_1h_special_03;
+	name = NAME_ItMw_1H_Special_03;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_SPECIAL_1H_3;
-	damagetotal = DAMAGE_SPECIAL_1H_3;
+	value = Value_Special_1H_3;
+	damageTotal = Damage_Special_1H_3;
 	damagetype = DAM_EDGE;
-	range = RANGE_SPECIAL_1H_3;
+	range = Range_Special_1H_3;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SPECIAL_1H_3;
+	cond_value[2] = Condition_Special_1H_3;
 	visual = "ItMw_075_1h_sword_smith_04.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_SPECIAL_03(C_ITEM)
+instance ItMw_2H_Special_03(C_Item)
 {
-	name = name_itmw_2h_special_03;
+	name = NAME_ItMw_2H_Special_03;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_SPECIAL_2H_3;
-	damagetotal = DAMAGE_SPECIAL_2H_3;
+	value = Value_Special_2H_3;
+	damageTotal = Damage_Special_2H_3;
 	damagetype = DAM_EDGE;
-	range = RANGE_SPECIAL_2H_3;
+	range = Range_Special_2H_3;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SPECIAL_2H_3;
+	cond_value[2] = Condition_Special_2H_3;
 	visual = "ItMw_090_2h_sword_smith_04.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_BERSERKERAXT(C_ITEM)
+instance ItMw_Berserkeraxt(C_Item)
 {
 	name = "Topór Berserkera";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_AXE;
 	material = MAT_METAL;
-	value = VALUE_BERSERKERAXT;
-	damagetotal = DAMAGE_BERSERKERAXT;
+	value = Value_Berserkeraxt;
+	damageTotal = Damage_Berserkeraxt;
 	damagetype = DAM_EDGE;
-	range = RANGE_BERSERKERAXT;
+	range = Range_Berserkeraxt;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_BERSERKERAXT;
+	cond_value[2] = Condition_Berserkeraxt;
 	visual = "ItMw_080_2h_axe_heavy_02.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_DRACHENSCHNEIDE(C_ITEM)
+instance ItMw_Drachenschneide(C_Item)
 {
 	name = "Smocza Zguba";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_DRACHENSCHNEIDE;
-	damagetotal = DAMAGE_DRACHENSCHNEIDE;
+	value = Value_Drachenschneide;
+	damageTotal = Damage_Drachenschneide;
 	damagetype = DAM_EDGE;
-	range = RANGE_DRACHENSCHNEIDE;
+	range = Range_Drachenschneide;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_DRACHENSCHNEIDE;
+	cond_value[2] = Condition_Drachenschneide;
 	visual = "itMw_080_2h_sword_heavy_04.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_SPECIAL_04(C_ITEM)
+instance ItMw_1H_Special_04(C_Item)
 {
-	name = name_itmw_1h_special_04;
+	name = NAME_ItMw_1H_Special_04;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD;
 	material = MAT_METAL;
-	value = VALUE_SPECIAL_1H_4;
-	damagetotal = DAMAGE_SPECIAL_1H_4;
+	value = Value_Special_1H_4;
+	damageTotal = Damage_Special_1H_4;
 	damagetype = DAM_EDGE;
-	range = RANGE_SPECIAL_1H_4;
+	range = Range_Special_1H_4;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SPECIAL_1H_4;
+	cond_value[2] = Condition_Special_1H_4;
 	visual = "ItMw_090_1h_sword_smith_05.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_SPECIAL_04(C_ITEM)
+instance ItMw_2H_Special_04(C_Item)
 {
-	name = name_itmw_2h_special_04;
+	name = NAME_ItMw_2H_Special_04;
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_SPECIAL_2H_4;
-	damagetotal = DAMAGE_SPECIAL_2H_4;
+	value = Value_Special_2H_4;
+	damageTotal = Damage_Special_2H_4;
 	damagetype = DAM_EDGE;
-	range = RANGE_SPECIAL_2H_4;
+	range = Range_Special_2H_4;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SPECIAL_2H_4;
+	cond_value[2] = Condition_Special_2H_4;
 	visual = "ItMw_110_2h_sword_smith_05.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_BLESSED_01(C_ITEM)
+instance ItMw_1H_Blessed_01(C_Item)
 {
 	name = "Kiepskie Ostrze Magiczne";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
-	value = VALUE_BLESSED_1H_1;
-	damagetotal = DAMAGE_BLESSED_1H_1;
+	value = Value_Blessed_1H_1;
+	damageTotal = Damage_Blessed_1H_1;
 	damagetype = DAM_EDGE;
-	range = RANGE_BLESSED_1H_1;
+	range = Range_Blessed_1H_1;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_BLESSED_1H_1;
+	cond_value[2] = Condition_Blessed_1H_1;
 	visual = "itmw_030_1h_PAL_sword_bastard_RAW_01.3ds";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_BLESSED_02(C_ITEM)
+instance ItMw_1H_Blessed_02(C_Item)
 {
 	name = "B³ogos³awione Ostrze Magiczne";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
-	value = VALUE_BLESSED_1H_2;
-	damagetotal = DAMAGE_BLESSED_1H_2;
+	value = Value_Blessed_1H_2;
+	damageTotal = Damage_Blessed_1H_2;
 	damagetype = DAM_EDGE;
-	range = RANGE_BLESSED_1H_2;
+	range = Range_Blessed_1H_2;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_BLESSED_1H_2;
+	cond_value[2] = Condition_Blessed_1H_2;
 	visual = "ItMw_030_1h_PAL_sword_bastard_RAW_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_1H_BLESSED_03(C_ITEM)
+instance ItMw_1H_Blessed_03(C_Item)
 {
 	name = "Gniew Innosa";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
-	value = VALUE_BLESSED_1H_3;
-	damagetotal = DAMAGE_BLESSED_1H_3;
+	value = Value_Blessed_1H_3;
+	damageTotal = Damage_Blessed_1H_3;
 	damagetype = DAM_EDGE;
-	range = RANGE_BLESSED_1H_3;
+	range = Range_Blessed_1H_3;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_BLESSED_1H_3;
+	cond_value[2] = Condition_Blessed_1H_3;
 	visual = "ItMw_030_1h_PAL_sword_bastard_RAW_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_BLESSED_01(C_ITEM)
+instance ItMw_2H_Blessed_01(C_Item)
 {
 	name = "Kiepskie Ostrze Magiczne";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_BLESSED_2H_1;
-	damagetotal = DAMAGE_BLESSED_2H_1;
+	value = Value_Blessed_2H_1;
+	damageTotal = Damage_Blessed_2H_1;
 	damagetype = DAM_EDGE;
-	range = RANGE_BLESSED_2H_1;
+	range = Range_Blessed_2H_1;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_BLESSED_2H_1;
+	cond_value[2] = Condition_Blessed_2H_1;
 	visual = "ItMw_040_2h_PAL_sword_heavy_RAW_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_BLESSED_02(C_ITEM)
+instance ItMw_2H_Blessed_02(C_Item)
 {
 	name = "Miecz Zakonu";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_BLESSED_2H_2;
-	damagetotal = DAMAGE_BLESSED_2H_2;
+	value = Value_Blessed_2H_2;
+	damageTotal = Damage_Blessed_2H_2;
 	damagetype = DAM_EDGE;
-	range = RANGE_BLESSED_2H_2;
+	range = Range_Blessed_2H_2;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_BLESSED_2H_2;
+	cond_value[2] = Condition_Blessed_2H_2;
 	visual = "ItMw_040_2h_PAL_sword_heavy_RAW_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMW_2H_BLESSED_03(C_ITEM)
+instance ItMw_2H_Blessed_03(C_Item)
 {
 	name = "Œwiêty Mœciciel";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
-	value = VALUE_BLESSED_2H_3;
-	damagetotal = DAMAGE_BLESSED_2H_3;
+	value = Value_Blessed_2H_3;
+	damageTotal = Damage_Blessed_2H_3;
 	damagetype = DAM_EDGE;
-	range = RANGE_BLESSED_2H_3;
+	range = Range_Blessed_2H_3;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_BLESSED_2H_3;
+	cond_value[2] = Condition_Blessed_2H_3;
 	visual = "ItMw_040_2h_PAL_sword_heavy_RAW_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_TWOHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 

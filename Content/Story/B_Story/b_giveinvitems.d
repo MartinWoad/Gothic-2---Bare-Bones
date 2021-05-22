@@ -1,48 +1,48 @@
 
-func int b_giveinvitems(var C_NPC giver,var C_NPC taker,var int iteminstance,var int amount)
+func int B_GiveInvItems(var C_Npc giver,var C_Npc taker,var int itemInstance,var int amount)
 {
-	var string concattext;
+	var string concatText;
 	if(Npc_IsPlayer(giver))
 	{
-		if(amount > Npc_HasItems(giver,iteminstance))
+		if(amount > Npc_HasItems(giver,itemInstance))
 		{
 			return FALSE;
 		};
 	};
-	Npc_RemoveInvItems(giver,iteminstance,amount);
-	CreateInvItems(taker,iteminstance,amount);
+	Npc_RemoveInvItems(giver,itemInstance,amount);
+	CreateInvItems(taker,itemInstance,amount);
 	if(Npc_IsPlayer(giver))
 	{
-		if(iteminstance == itmi_gold)
+		if(itemInstance == ItMi_Gold)
 		{
-			concattext = ConcatStrings(IntToString(amount),PRINT_GOLDGEGEBEN);
-			AI_PrintScreen(concattext,-1,YPOS_GOLDGIVEN,FONT_SCREENSMALL,2);
+			concatText = ConcatStrings(IntToString(amount),PRINT_GoldGegeben);
+			AI_PrintScreen(concatText,-1,YPOS_GoldGiven,FONT_ScreenSmall,2);
 		}
 		else if(amount == 1)
 		{
-			AI_PrintScreen(PRINT_ITEMGEGEBEN,-1,YPOS_ITEMGIVEN,FONT_SCREENSMALL,2);
+			AI_PrintScreen(PRINT_ItemGegeben,-1,YPOS_ItemGiven,FONT_ScreenSmall,2);
 		}
 		else
 		{
-			concattext = ConcatStrings(IntToString(amount),PRINT_ITEMSGEGEBEN);
-			AI_PrintScreen(concattext,-1,YPOS_ITEMGIVEN,FONT_SCREENSMALL,2);
+			concatText = ConcatStrings(IntToString(amount),PRINT_ItemsGegeben);
+			AI_PrintScreen(concatText,-1,YPOS_ItemGiven,FONT_ScreenSmall,2);
 		};
 	}
 	else if(Npc_IsPlayer(taker))
 	{
-		if(iteminstance == itmi_gold)
+		if(itemInstance == ItMi_Gold)
 		{
-			concattext = ConcatStrings(IntToString(amount),PRINT_GOLDERHALTEN);
-			AI_PrintScreen(concattext,-1,YPOS_GOLDTAKEN,FONT_SCREENSMALL,2);
+			concatText = ConcatStrings(IntToString(amount),PRINT_GoldErhalten);
+			AI_PrintScreen(concatText,-1,YPOS_GoldTaken,FONT_ScreenSmall,2);
 		}
 		else if(amount == 1)
 		{
-			AI_PrintScreen(PRINT_ITEMERHALTEN,-1,YPOS_ITEMTAKEN,FONT_SCREENSMALL,2);
+			AI_PrintScreen(PRINT_ItemErhalten,-1,YPOS_ItemTaken,FONT_ScreenSmall,2);
 		}
 		else
 		{
-			concattext = ConcatStrings(IntToString(amount),PRINT_ITEMSERHALTEN);
-			AI_PrintScreen(concattext,-1,YPOS_ITEMTAKEN,FONT_SCREENSMALL,2);
+			concatText = ConcatStrings(IntToString(amount),PRINT_ItemsErhalten);
+			AI_PrintScreen(concatText,-1,YPOS_ItemTaken,FONT_ScreenSmall,2);
 		};
 	};
 	return TRUE;

@@ -1,100 +1,100 @@
 
-instance DIA_LIESEL_EXIT(C_INFO)
+instance DIA_Liesel_EXIT(C_Info)
 {
-	npc = follow_sheep;
+	npc = Follow_Sheep;
 	nr = 999;
-	condition = dia_liesel_exit_condition;
-	information = dia_liesel_exit_info;
+	condition = DIA_Liesel_EXIT_Condition;
+	information = DIA_Liesel_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_liesel_exit_condition()
+func int DIA_Liesel_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_liesel_exit_info()
+func void DIA_Liesel_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_LIESEL_HALLO(C_INFO)
+instance DIA_Liesel_Hallo(C_Info)
 {
-	npc = follow_sheep;
+	npc = Follow_Sheep;
 	nr = 1;
-	condition = dia_liesel_hallo_condition;
-	information = dia_liesel_hallo_info;
+	condition = DIA_Liesel_Hallo_Condition;
+	information = DIA_Liesel_Hallo_Info;
 	permanent = FALSE;
 	description = "Witam!";
 };
 
 
-func int dia_liesel_hallo_condition()
+func int DIA_Liesel_Hallo_Condition()
 {
 	return TRUE;
 };
 
-func void dia_liesel_hallo_info()
+func void DIA_Liesel_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Liesel_Hallo_15_00");	//CzeúÊ... khm... owco.
-	b_lieselmaeh();
+	B_LieselMaeh();
 };
 
 
-instance DIA_LIESEL_KOMMMIT(C_INFO)
+instance DIA_Liesel_KommMit(C_Info)
 {
-	npc = follow_sheep;
+	npc = Follow_Sheep;
 	nr = 1;
-	condition = dia_liesel_kommmit_condition;
-	information = dia_liesel_kommmit_info;
+	condition = DIA_Liesel_KommMit_Condition;
+	information = DIA_Liesel_KommMit_Info;
 	permanent = TRUE;
 	description = "Chodü ze mnπ.";
 };
 
 
-func int dia_liesel_kommmit_condition()
+func int DIA_Liesel_KommMit_Condition()
 {
-	if((self.aivar[AIV_PARTYMEMBER] == FALSE) && Npc_KnowsInfo(other,dia_liesel_hallo) && (self.aivar[AIV_TAPOSITION] == FALSE))
+	if((self.aivar[AIV_PARTYMEMBER] == FALSE) && Npc_KnowsInfo(other,DIA_Liesel_Hallo) && (self.aivar[AIV_TAPOSITION] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_liesel_kommmit_info()
+func void DIA_Liesel_KommMit_Info()
 {
 	AI_Output(other,self,"DIA_Liesel_KommMit_15_00");	//Chodü ze mnπ.
-	b_lieselmaeh();
+	B_LieselMaeh();
 	self.aivar[AIV_PARTYMEMBER] = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_LIESEL_WARTEHIER(C_INFO)
+instance DIA_Liesel_WarteHier(C_Info)
 {
-	npc = follow_sheep;
+	npc = Follow_Sheep;
 	nr = 1;
-	condition = dia_liesel_wartehier_condition;
-	information = dia_liesel_wartehier_info;
+	condition = DIA_Liesel_WarteHier_Condition;
+	information = DIA_Liesel_WarteHier_Info;
 	permanent = TRUE;
 	description = "Zaczekaj tutaj!";
 };
 
 
-func int dia_liesel_wartehier_condition()
+func int DIA_Liesel_WarteHier_Condition()
 {
-	if((self.aivar[AIV_PARTYMEMBER] == TRUE) && Npc_KnowsInfo(other,dia_liesel_hallo) && (self.aivar[AIV_TAPOSITION] == FALSE))
+	if((self.aivar[AIV_PARTYMEMBER] == TRUE) && Npc_KnowsInfo(other,DIA_Liesel_Hallo) && (self.aivar[AIV_TAPOSITION] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_liesel_wartehier_info()
+func void DIA_Liesel_WarteHier_Info()
 {
 	AI_Output(other,self,"DIA_Liesel_WarteHier_15_00");	//Zaczekaj tutaj!
-	b_lieselmaeh();
+	B_LieselMaeh();
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
 	AI_StopProcessInfos(self);
 };

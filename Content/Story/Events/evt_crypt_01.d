@@ -1,86 +1,86 @@
 
-var int evt_crypt_01_onetime;
+var int EVT_CRYPT_01_OneTime;
 
 func void evt_crypt_01()
 {
-	if(evt_crypt_01_onetime == FALSE)
+	if(EVT_CRYPT_01_OneTime == FALSE)
 	{
-		Wld_InsertNpc(lesser_skeleton,"EVT_CRYPT_ROOM_01_SPAWN_01");
-		Wld_InsertNpc(lesser_skeleton,"EVT_CRYPT_ROOM_01_SPAWN_02");
-		Wld_InsertNpc(skeleton,"EVT_CRYPT_ROOM_01_SPAWN_03");
-		Wld_InsertNpc(skeleton,"EVT_CRYPT_ROOM_01_SPAWN_04");
-		Wld_InsertNpc(lesser_skeleton,"EVT_CRYPT_ROOM_01_SPAWN_05");
-		Wld_InsertNpc(lesser_skeleton,"EVT_CRYPT_ROOM_01_SPAWN_06");
-		Wld_InsertNpc(skeletonmage,"EVT_CRYPT_ROOM_01_SPAWN_07");
-		evt_crypt_01_onetime = TRUE;
+		Wld_InsertNpc(Lesser_Skeleton,"EVT_CRYPT_ROOM_01_SPAWN_01");
+		Wld_InsertNpc(Lesser_Skeleton,"EVT_CRYPT_ROOM_01_SPAWN_02");
+		Wld_InsertNpc(Skeleton,"EVT_CRYPT_ROOM_01_SPAWN_03");
+		Wld_InsertNpc(Skeleton,"EVT_CRYPT_ROOM_01_SPAWN_04");
+		Wld_InsertNpc(Lesser_Skeleton,"EVT_CRYPT_ROOM_01_SPAWN_05");
+		Wld_InsertNpc(Lesser_Skeleton,"EVT_CRYPT_ROOM_01_SPAWN_06");
+		Wld_InsertNpc(SkeletonMage,"EVT_CRYPT_ROOM_01_SPAWN_07");
+		EVT_CRYPT_01_OneTime = TRUE;
 	};
 };
 
 
-var int evt_crypt_02_onetime;
+var int EVT_CRYPT_02_OneTime;
 
 func void evt_crypt_02()
 {
-	if(evt_crypt_02_onetime == FALSE)
+	if(EVT_CRYPT_02_OneTime == FALSE)
 	{
-		Wld_InsertNpc(lesser_skeleton,"EVT_CRYPT_ROOM_02_SPAWN_01");
-		Wld_InsertNpc(lesser_skeleton,"EVT_CRYPT_ROOM_02_SPAWN_02");
-		Wld_InsertNpc(skeleton,"EVT_CRYPT_ROOM_02_SPAWN_03");
-		Wld_InsertNpc(skeleton,"EVT_CRYPT_ROOM_02_SPAWN_04");
-		Wld_InsertNpc(lesser_skeleton,"EVT_CRYPT_ROOM_02_SPAWN_05");
-		Wld_InsertNpc(lesser_skeleton,"EVT_CRYPT_ROOM_02_SPAWN_06");
-		Wld_InsertNpc(skeletonmage,"EVT_CRYPT_ROOM_02_SPAWN_07");
-		evt_crypt_02_onetime = TRUE;
+		Wld_InsertNpc(Lesser_Skeleton,"EVT_CRYPT_ROOM_02_SPAWN_01");
+		Wld_InsertNpc(Lesser_Skeleton,"EVT_CRYPT_ROOM_02_SPAWN_02");
+		Wld_InsertNpc(Skeleton,"EVT_CRYPT_ROOM_02_SPAWN_03");
+		Wld_InsertNpc(Skeleton,"EVT_CRYPT_ROOM_02_SPAWN_04");
+		Wld_InsertNpc(Lesser_Skeleton,"EVT_CRYPT_ROOM_02_SPAWN_05");
+		Wld_InsertNpc(Lesser_Skeleton,"EVT_CRYPT_ROOM_02_SPAWN_06");
+		Wld_InsertNpc(SkeletonMage,"EVT_CRYPT_ROOM_02_SPAWN_07");
+		EVT_CRYPT_02_OneTime = TRUE;
 	};
 };
 
 
-var int evt_crypt_03_onetime;
+var int EVT_CRYPT_03_OneTime;
 
 func void evt_crypt_03()
 {
-	if(evt_crypt_03_onetime == FALSE)
+	if(EVT_CRYPT_03_OneTime == FALSE)
 	{
-		Wld_InsertNpc(lesser_skeleton,"EVT_CRYPT_ROOM_03_SPAWN_01");
-		Wld_InsertNpc(lesser_skeleton,"EVT_CRYPT_ROOM_03_SPAWN_02");
-		Wld_InsertNpc(skeleton,"EVT_CRYPT_ROOM_03_SPAWN_03");
-		Wld_InsertNpc(skeleton,"EVT_CRYPT_ROOM_03_SPAWN_04");
-		Wld_InsertNpc(lesser_skeleton,"EVT_CRYPT_ROOM_03_SPAWN_05");
-		Wld_InsertNpc(lesser_skeleton,"EVT_CRYPT_ROOM_03_SPAWN_06");
-		Wld_InsertNpc(skeletonmage,"EVT_CRYPT_ROOM_03_SPAWN_07");
-		evt_crypt_03_onetime = TRUE;
+		Wld_InsertNpc(Lesser_Skeleton,"EVT_CRYPT_ROOM_03_SPAWN_01");
+		Wld_InsertNpc(Lesser_Skeleton,"EVT_CRYPT_ROOM_03_SPAWN_02");
+		Wld_InsertNpc(Skeleton,"EVT_CRYPT_ROOM_03_SPAWN_03");
+		Wld_InsertNpc(Skeleton,"EVT_CRYPT_ROOM_03_SPAWN_04");
+		Wld_InsertNpc(Lesser_Skeleton,"EVT_CRYPT_ROOM_03_SPAWN_05");
+		Wld_InsertNpc(Lesser_Skeleton,"EVT_CRYPT_ROOM_03_SPAWN_06");
+		Wld_InsertNpc(SkeletonMage,"EVT_CRYPT_ROOM_03_SPAWN_07");
+		EVT_CRYPT_03_OneTime = TRUE;
 	};
 };
 
 
-var int evt_crypt_final_onetime;
+var int EVT_CRYPT_FINAL_OneTime;
 
 func void evt_crypt_final()
 {
-	if(evt_crypt_final_onetime == FALSE)
+	if(EVT_CRYPT_FINAL_OneTime == FALSE)
 	{
-		Wld_InsertNpc(skeleton,"EVT_CRYPT_ROOM_FINAL_SPAWN_01");
-		Wld_InsertNpc(skeleton,"EVT_CRYPT_ROOM_FINAL_SPAWN_02");
-		Wld_InsertNpc(skeletonmage,"EVT_CRYPT_ROOM_FINAL_SPAWN_03");
-		Wld_InsertNpc(skeletonmage,"EVT_CRYPT_ROOM_FINAL_SPAWN_04");
-		Wld_InsertNpc(skeletonmage,"EVT_CRYPT_ROOM_FINAL_SPAWN_05");
-		Wld_InsertNpc(crypt_skeleton_lord,"EVT_CRYPT_ROOM_FINAL_SPAWN_06");
-		evt_crypt_final_onetime = TRUE;
+		Wld_InsertNpc(Skeleton,"EVT_CRYPT_ROOM_FINAL_SPAWN_01");
+		Wld_InsertNpc(Skeleton,"EVT_CRYPT_ROOM_FINAL_SPAWN_02");
+		Wld_InsertNpc(SkeletonMage,"EVT_CRYPT_ROOM_FINAL_SPAWN_03");
+		Wld_InsertNpc(SkeletonMage,"EVT_CRYPT_ROOM_FINAL_SPAWN_04");
+		Wld_InsertNpc(SkeletonMage,"EVT_CRYPT_ROOM_FINAL_SPAWN_05");
+		Wld_InsertNpc(Crypt_Skeleton_Lord,"EVT_CRYPT_ROOM_FINAL_SPAWN_06");
+		EVT_CRYPT_FINAL_OneTime = TRUE;
 	};
 };
 
 func void evt_crypt_room_01_triggerentrance()
 {
-	crypt_skeleton_room_01.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+	Crypt_Skeleton_Room_01.aivar[AIV_EnemyOverride] = FALSE;
 };
 
 func void evt_crypt_room_02_triggerentrance()
 {
-	crypt_skeleton_room_02.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+	Crypt_Skeleton_Room_02.aivar[AIV_EnemyOverride] = FALSE;
 };
 
 func void evt_crypt_room_03_triggerentrance()
 {
-	crypt_skeleton_room_03.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+	Crypt_Skeleton_Room_03.aivar[AIV_EnemyOverride] = FALSE;
 };
 

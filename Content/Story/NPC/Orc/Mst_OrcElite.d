@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_ORCELITE(C_NPC)
+prototype Mst_Default_OrcElite(C_Npc)
 {
 	name[0] = "Elitarny Ork";
 	guild = GIL_ORC;
@@ -18,150 +18,150 @@ prototype MST_DEFAULT_ORCELITE(C_NPC)
 	protection[PROT_FIRE] = 100;
 	protection[PROT_FLY] = 120;
 	protection[PROT_MAGIC] = 100;
-	hitchance[NPC_TALENT_1H] = 100;
-	hitchance[NPC_TALENT_2H] = 100;
-	hitchance[NPC_TALENT_BOW] = 100;
-	hitchance[NPC_TALENT_CROSSBOW] = 100;
+	HitChance[NPC_TALENT_1H] = 100;
+	HitChance[NPC_TALENT_2H] = 100;
+	HitChance[NPC_TALENT_BOW] = 100;
+	HitChance[NPC_TALENT_CROSSBOW] = 100;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_ORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_orcelite()
+func void B_SetVisuals_OrcElite()
 {
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",DEFAULT,DEFAULT,-1);
 };
 
 
-instance ORCELITE_ROAM(MST_DEFAULT_ORCELITE)
+instance OrcElite_Roam(Mst_Default_OrcElite)
 {
-	b_setvisuals_orcelite();
-	EquipItem(self,itmw_2h_orcsword_02);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
+	B_SetVisuals_OrcElite();
+	EquipItem(self,ItMw_2H_OrcSword_02);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance ORCELITE_REST(MST_DEFAULT_ORCELITE)
+instance OrcElite_Rest(Mst_Default_OrcElite)
 {
-	b_setvisuals_orcelite();
-	EquipItem(self,itmw_2h_orcsword_02);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	B_SetVisuals_OrcElite();
+	EquipItem(self,ItMw_2H_OrcSword_02);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-instance ORKELITE_ANTIPALADINORKOBERST(MST_DEFAULT_ORCELITE)
+instance OrkElite_AntiPaladinOrkOberst(Mst_Default_OrcElite)
 {
 	name[0] = "Ork Pu³kownik";
 	attribute[ATR_STRENGTH] = 180;
 	attribute[ATR_DEXTERITY] = 180;
 	attribute[ATR_HITPOINTS_MAX] = 500;
 	attribute[ATR_HITPOINTS] = 500;
-	b_setvisuals_orcelite();
-	EquipItem(self,itmw_schlachtaxt);
-	CreateInvItems(self,itri_orcelitering,1);
-	CreateInvItems(self,itwr_map_orcelite_mis,1);
-	CreateInvItems(self,itru_palfullheal,1);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	B_SetVisuals_OrcElite();
+	EquipItem(self,ItMw_Schlachtaxt);
+	CreateInvItems(self,ItRi_OrcEliteRing,1);
+	CreateInvItems(self,ItWr_Map_Orcelite_MIS,1);
+	CreateInvItems(self,ItRu_PalFullHeal,1);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-instance ORCELITE_ANTIPALADIN(MST_DEFAULT_ORCELITE)
+instance OrcElite_AntiPaladin(Mst_Default_OrcElite)
 {
-	name[0] = NAME_ANTIPALDIN;
-	b_setvisuals_orcelite();
-	EquipItem(self,itmw_2h_orcaxe_04);
-	CreateInvItems(self,itri_orcelitering,1);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	name[0] = NAME_Antipaldin;
+	B_SetVisuals_OrcElite();
+	EquipItem(self,ItMw_2H_OrcAxe_04);
+	CreateInvItems(self,ItRi_OrcEliteRing,1);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-instance ORCELITE_ANTIPALADIN1(MST_DEFAULT_ORCELITE)
+instance OrcElite_AntiPaladin1(Mst_Default_OrcElite)
 {
-	name[0] = NAME_ANTIPALDIN;
+	name[0] = NAME_Antipaldin;
 	guild = GIL_ORC;
 	id = 111;
 	voice = 18;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_orcelite();
-	EquipItem(self,itmw_2h_orcaxe_04);
-	CreateInvItems(self,itri_orcelitering,1);
-	start_aistate = zs_mm_rtn_dragonrest;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	npcType = npctype_main;
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_OrcElite();
+	EquipItem(self,ItMw_2H_OrcAxe_04);
+	CreateInvItems(self,ItRi_OrcEliteRing,1);
+	start_aistate = ZS_MM_Rtn_DragonRest;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-instance ORCELITE_ANTIPALADIN2(MST_DEFAULT_ORCELITE)
+instance OrcElite_AntiPaladin2(Mst_Default_OrcElite)
 {
-	name[0] = NAME_ANTIPALDIN;
+	name[0] = NAME_Antipaldin;
 	id = 112;
 	guild = GIL_ORC;
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_orcelite();
-	EquipItem(self,itmw_2h_orcaxe_04);
-	CreateInvItems(self,itri_orcelitering,1);
-	start_aistate = zs_mm_rtn_dragonrest;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_OrcElite();
+	EquipItem(self,ItMw_2H_OrcAxe_04);
+	CreateInvItems(self,ItRi_OrcEliteRing,1);
+	start_aistate = ZS_MM_Rtn_DragonRest;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-instance ORCELITE_ANTIPALADIN3(MST_DEFAULT_ORCELITE)
+instance OrcElite_AntiPaladin3(Mst_Default_OrcElite)
 {
-	name[0] = NAME_ANTIPALDIN;
+	name[0] = NAME_Antipaldin;
 	id = 113;
 	guild = GIL_ORC;
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_orcelite();
-	EquipItem(self,itmw_2h_orcaxe_04);
-	CreateInvItems(self,itri_orcelitering,1);
-	start_aistate = zs_mm_rtn_dragonrest;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_OrcElite();
+	EquipItem(self,ItMw_2H_OrcAxe_04);
+	CreateInvItems(self,ItRi_OrcEliteRing,1);
+	start_aistate = ZS_MM_Rtn_DragonRest;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-instance ORKELITE_ANTIPALADINORKOBERST_DI(MST_DEFAULT_ORCELITE)
+instance OrkElite_AntiPaladinOrkOberst_DI(Mst_Default_OrcElite)
 {
 	name[0] = "Ork Pu³kownik";
 	attribute[ATR_STRENGTH] = 180;
 	attribute[ATR_DEXTERITY] = 180;
 	attribute[ATR_HITPOINTS_MAX] = 500;
 	attribute[ATR_HITPOINTS] = 500;
-	b_setvisuals_orcelite();
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	EquipItem(self,itmw_2h_orcaxe_04);
-	CreateInvItems(self,itke_orkknastdi_mis,1);
-	CreateInvItems(self,itri_orcelitering,1);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ORCSITSTART] = ONLYROUTINE;
+	B_SetVisuals_OrcElite();
+	aivar[AIV_EnemyOverride] = TRUE;
+	EquipItem(self,ItMw_2H_OrcAxe_04);
+	CreateInvItems(self,ItKe_OrkKnastDI_MIS,1);
+	CreateInvItems(self,ItRi_OrcEliteRing,1);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_OrcSitStart] = OnlyRoutine;
 };
 
-instance ORCELITE_DIOBERST1_REST(MST_DEFAULT_ORCELITE)
+instance OrcElite_DIOberst1_Rest(Mst_Default_OrcElite)
 {
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_orcelite();
-	EquipItem(self,itmw_2h_orcaxe_04);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_OrcElite();
+	EquipItem(self,ItMw_2H_OrcAxe_04);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-instance ORCELITE_DIOBERST2_REST(MST_DEFAULT_ORCELITE)
+instance OrcElite_DIOberst2_Rest(Mst_Default_OrcElite)
 {
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_orcelite();
-	EquipItem(self,itmw_2h_orcaxe_04);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_OrcElite();
+	EquipItem(self,ItMw_2H_OrcAxe_04);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-instance ORCELITE_DIOBERST3_REST(MST_DEFAULT_ORCELITE)
+instance OrcElite_DIOberst3_Rest(Mst_Default_OrcElite)
 {
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setvisuals_orcelite();
-	EquipItem(self,itmw_2h_orcaxe_04);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetVisuals_OrcElite();
+	EquipItem(self,ItMw_2H_OrcAxe_04);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 

@@ -1,36 +1,36 @@
 
-instance BAU_941_KATI(NPC_DEFAULT)
+instance BAU_941_Kati(Npc_Default)
 {
 	name[0] = "Kati";
 	guild = GIL_OUT;
 	id = 941;
 	voice = 16;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,1);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_bau_axe);
-	b_createambientinv(self);
-	b_setnpcvisual(self,FEMALE,"Hum_Head_Babe8",FACEBABE_N_LILO,BODYTEXBABE_N,4832);
+	EquipItem(self,ItMw_1h_Bau_Axe);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,FEMALE,"Hum_Head_Babe8",FaceBabe_N_Lilo,BodyTexBabe_N,ITAR_BauBabe_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Babe.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,15);
-	daily_routine = rtn_prestart_941;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,15);
+	daily_routine = Rtn_PreStart_941;
 };
 
 
-func void rtn_prestart_941()
+func void Rtn_PreStart_941()
 {
-	ta_stand_armscrossed(8,0,22,0,"NW_FARM2_PATH_01");
-	ta_stand_armscrossed(22,0,8,0,"NW_FARM2_PATH_01");
+	TA_Stand_ArmsCrossed(8,0,22,0,"NW_FARM2_PATH_01");
+	TA_Stand_ArmsCrossed(22,0,8,0,"NW_FARM2_PATH_01");
 };
 
-func void rtn_start_941()
+func void Rtn_Start_941()
 {
-	ta_cook_stove(5,0,10,0,"NW_FARM2_HOUSE_IN_04");
-	ta_sit_bench(10,0,12,0,"NW_FARM2_BENCH_02");
-	ta_cook_stove(12,0,20,55,"NW_FARM2_HOUSE_IN_04");
-	ta_roast_scavenger(20,55,23,59,"NW_FARM2_BBQ");
-	ta_sleep(23,59,5,0,"NW_FARM2_HOUSE_IN_02");
+	TA_Cook_Stove(5,0,10,0,"NW_FARM2_HOUSE_IN_04");
+	TA_Sit_Bench(10,0,12,0,"NW_FARM2_BENCH_02");
+	TA_Cook_Stove(12,0,20,55,"NW_FARM2_HOUSE_IN_04");
+	TA_Roast_Scavenger(20,55,23,59,"NW_FARM2_BBQ");
+	TA_Sleep(23,59,5,0,"NW_FARM2_HOUSE_IN_02");
 };
 

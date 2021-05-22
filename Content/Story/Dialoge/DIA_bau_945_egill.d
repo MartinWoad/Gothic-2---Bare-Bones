@@ -1,98 +1,98 @@
 
-instance DIA_EGILL_EXIT(C_INFO)
+instance DIA_Egill_EXIT(C_Info)
 {
-	npc = bau_945_egill;
+	npc = BAU_945_Egill;
 	nr = 999;
-	condition = dia_egill_exit_condition;
-	information = dia_egill_exit_info;
+	condition = DIA_Egill_EXIT_Condition;
+	information = DIA_Egill_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_egill_exit_condition()
+func int DIA_Egill_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_egill_exit_info()
+func void DIA_Egill_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_EGILL_HALLO(C_INFO)
+instance DIA_Egill_HALLO(C_Info)
 {
-	npc = bau_945_egill;
+	npc = BAU_945_Egill;
 	nr = 3;
-	condition = dia_egill_hallo_condition;
-	information = dia_egill_hallo_info;
+	condition = DIA_Egill_HALLO_Condition;
+	information = DIA_Egill_HALLO_Info;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_egill_hallo_condition()
+func int DIA_Egill_HALLO_Condition()
 {
 	return TRUE;
 };
 
-func void dia_egill_hallo_info()
+func void DIA_Egill_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Egill_HALLO_15_00");	//Co tam?
 	AI_Output(self,other,"DIA_Egill_HALLO_08_01");	//Jeœli odwiedzaj¹ nas jacyœ przybysze, to przewa¿nie nie w pokojowych zamiarach.
 	AI_Output(self,other,"DIA_Egill_HALLO_08_02");	//Mam nadziejê, ¿e siê nie mylê co do ciebie.
 	AI_Output(self,other,"DIA_Egill_HALLO_08_03");	//Jestem Egill.
-	if(Hlp_IsValidNpc(ehnim) && !c_npcisdown(ehnim))
+	if(Hlp_IsValidNpc(Ehnim) && !C_NpcIsDown(Ehnim))
 	{
 		AI_Output(self,other,"DIA_Egill_HALLO_08_04");	//A ten dziwak, którego tam widzisz, to mój brat Ehnim.
 	};
 };
 
 
-instance DIA_EGILL_FELDARBEIT(C_INFO)
+instance DIA_Egill_FELDARBEIT(C_Info)
 {
-	npc = bau_945_egill;
+	npc = BAU_945_Egill;
 	nr = 4;
-	condition = dia_egill_feldarbeit_condition;
-	information = dia_egill_feldarbeit_info;
+	condition = DIA_Egill_FELDARBEIT_Condition;
+	information = DIA_Egill_FELDARBEIT_Info;
 	description = "Jak id¹ prace w polu?";
 };
 
 
-func int dia_egill_feldarbeit_condition()
+func int DIA_Egill_FELDARBEIT_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_egill_hallo))
+	if(Npc_KnowsInfo(other,DIA_Egill_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_egill_feldarbeit_info()
+func void DIA_Egill_FELDARBEIT_Info()
 {
 	AI_Output(other,self,"DIA_Egill_FELDARBEIT_15_00");	//Jak id¹ prace w polu?
 	AI_Output(self,other,"DIA_Egill_FELDARBEIT_08_01");	//Wspaniale. Gdyby tylko polne bestie nie niszczy³y naszych plonów...
 };
 
 
-instance DIA_EGILL_FELDRAEUBER(C_INFO)
+instance DIA_Egill_FELDRAEUBER(C_Info)
 {
-	npc = bau_945_egill;
+	npc = BAU_945_Egill;
 	nr = 5;
-	condition = dia_egill_feldraeuber_condition;
-	information = dia_egill_feldraeuber_info;
+	condition = DIA_Egill_FELDRAEUBER_Condition;
+	information = DIA_Egill_FELDRAEUBER_Info;
 	description = "Czemu nic z nimi nie zrobicie?";
 };
 
 
-func int dia_egill_feldraeuber_condition()
+func int DIA_Egill_FELDRAEUBER_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_egill_feldarbeit))
+	if(Npc_KnowsInfo(other,DIA_Egill_FELDARBEIT))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_egill_feldraeuber_info()
+func void DIA_Egill_FELDRAEUBER_Info()
 {
 	AI_Output(other,self,"DIA_Egill_FELDRAEUBER_15_00");	//Czemu nic z nimi nie zrobicie?
 	AI_Output(self,other,"DIA_Egill_FELDRAEUBER_08_01");	//¯artujesz chyba. Od kiedy tutaj mieszkam, zabi³em ju¿ ich tyle, ¿e ca³kiem straci³em rachubê.
@@ -100,25 +100,25 @@ func void dia_egill_feldraeuber_info()
 };
 
 
-instance DIA_EGILL_STREIT2(C_INFO)
+instance DIA_Egill_STREIT2(C_Info)
 {
-	npc = bau_945_egill;
+	npc = BAU_945_Egill;
 	nr = 6;
-	condition = dia_egill_streit2_condition;
-	information = dia_egill_streit2_info;
+	condition = DIA_Egill_STREIT2_Condition;
+	information = DIA_Egill_STREIT2_Info;
 	description = "Twój brat opowiedzia³ podobn¹ historiê.";
 };
 
 
-func int dia_egill_streit2_condition()
+func int DIA_Egill_STREIT2_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_egill_feldraeuber) && Npc_KnowsInfo(other,dia_ehnim_feldraeuber) && (Hlp_IsValidNpc(ehnim) && !c_npcisdown(ehnim)))
+	if(Npc_KnowsInfo(other,DIA_Egill_FELDRAEUBER) && Npc_KnowsInfo(other,DIA_Ehnim_FELDRAEUBER) && (Hlp_IsValidNpc(Ehnim) && !C_NpcIsDown(Ehnim)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_egill_streit2_info()
+func void DIA_Egill_STREIT2_Info()
 {
 	AI_Output(other,self,"DIA_Egill_STREIT2_15_00");	//Twój brat opowiedzia³ podobn¹ historiê.
 	AI_Output(self,other,"DIA_Egill_STREIT2_08_01");	//Taaak? A co dok³adnie powiedzia³?
@@ -129,25 +129,25 @@ func void dia_egill_streit2_info()
 };
 
 
-instance DIA_EGILL_STREIT4(C_INFO)
+instance DIA_Egill_STREIT4(C_Info)
 {
-	npc = bau_945_egill;
+	npc = BAU_945_Egill;
 	nr = 7;
-	condition = dia_egill_streit4_condition;
-	information = dia_egill_streit4_info;
+	condition = DIA_Egill_STREIT4_Condition;
+	information = DIA_Egill_STREIT4_Info;
 	description = "Ehnim jest odrobinê poirytowany z powodu ca³ej tej sprawy.";
 };
 
 
-func int dia_egill_streit4_condition()
+func int DIA_Egill_STREIT4_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_ehnim_streit3) && (Hlp_IsValidNpc(ehnim) && !c_npcisdown(ehnim)))
+	if(Npc_KnowsInfo(other,DIA_Ehnim_STREIT3) && (Hlp_IsValidNpc(Ehnim) && !C_NpcIsDown(Ehnim)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_egill_streit4_info()
+func void DIA_Egill_STREIT4_Info()
 {
 	AI_Output(other,self,"DIA_Egill_STREIT4_15_00");	//Ehnim jest odrobinê poirytowany z powodu ca³ej tej sprawy.
 	AI_Output(self,other,"DIA_Egill_STREIT4_08_01");	//Niech siê za bardzo nie nadyma, bo spuszczê mu lanie. Mo¿esz mu to ode mnie przekazaæ.
@@ -155,62 +155,62 @@ func void dia_egill_streit4_info()
 };
 
 
-instance DIA_EGILL_PERMKAP1(C_INFO)
+instance DIA_Egill_PERMKAP1(C_Info)
 {
-	npc = bau_945_egill;
-	condition = dia_egill_permkap1_condition;
-	information = dia_egill_permkap1_info;
+	npc = BAU_945_Egill;
+	condition = DIA_Egill_PERMKAP1_Condition;
+	information = DIA_Egill_PERMKAP1_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_egill_permkap1_condition()
+func int DIA_Egill_PERMKAP1_Condition()
 {
-	if((DIA_EHNIM_STREIT5_NOPERM == TRUE) && Npc_IsInState(self,zs_talk))
+	if((DIA_Ehnim_STREIT5_noPerm == TRUE) && Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_egill_permkap1_info()
+func void DIA_Egill_PERMKAP1_Info()
 {
 	AI_Output(self,other,"DIA_Egill_PERMKAP1_08_00");	//Czy nie narobi³eœ ju¿ dosyæ szkód? Lepiej idŸ sobie.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_EGILL_PICKPOCKET(C_INFO)
+instance DIA_Egill_PICKPOCKET(C_Info)
 {
-	npc = bau_945_egill;
+	npc = BAU_945_Egill;
 	nr = 900;
-	condition = dia_egill_pickpocket_condition;
-	information = dia_egill_pickpocket_info;
+	condition = DIA_Egill_PICKPOCKET_Condition;
+	information = DIA_Egill_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_egill_pickpocket_condition()
+func int DIA_Egill_PICKPOCKET_Condition()
 {
-	return c_beklauen(45,24);
+	return C_Beklauen(45,24);
 };
 
-func void dia_egill_pickpocket_info()
+func void DIA_Egill_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_egill_pickpocket);
-	Info_AddChoice(dia_egill_pickpocket,DIALOG_BACK,dia_egill_pickpocket_back);
-	Info_AddChoice(dia_egill_pickpocket,DIALOG_PICKPOCKET,dia_egill_pickpocket_doit);
+	Info_ClearChoices(DIA_Egill_PICKPOCKET);
+	Info_AddChoice(DIA_Egill_PICKPOCKET,Dialog_Back,DIA_Egill_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Egill_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Egill_PICKPOCKET_DoIt);
 };
 
-func void dia_egill_pickpocket_doit()
+func void DIA_Egill_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_egill_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Egill_PICKPOCKET);
 };
 
-func void dia_egill_pickpocket_back()
+func void DIA_Egill_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_egill_pickpocket);
+	Info_ClearChoices(DIA_Egill_PICKPOCKET);
 };
 

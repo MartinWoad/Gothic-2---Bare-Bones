@@ -1,46 +1,46 @@
 
-instance DIA_CORD_EXIT(C_INFO)
+instance DIA_Cord_EXIT(C_Info)
 {
-	npc = sld_805_cord;
+	npc = Sld_805_Cord;
 	nr = 999;
-	condition = dia_cord_exit_condition;
-	information = dia_cord_exit_info;
+	condition = DIA_Cord_EXIT_Condition;
+	information = DIA_Cord_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_cord_exit_condition()
+func int DIA_Cord_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_cord_exit_info()
+func void DIA_Cord_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_CORD_HALLO(C_INFO)
+instance DIA_Cord_Hallo(C_Info)
 {
-	npc = sld_805_cord;
+	npc = Sld_805_Cord;
 	nr = 1;
-	condition = dia_cord_hallo_condition;
-	information = dia_cord_hallo_info;
+	condition = DIA_Cord_Hallo_Condition;
+	information = DIA_Cord_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_cord_hallo_condition()
+func int DIA_Cord_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_cord_hallo_info()
+func void DIA_Cord_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Cord_Hallo_14_00");	//Jeœli masz problem z wilkami albo polnymi bestiami, porozmawiaj z którymœ z m³odszych najemników.
 	if(hero.guild == GIL_NONE)
@@ -54,40 +54,40 @@ func void dia_cord_hallo_info()
 };
 
 
-var int cord_schonmalgefragt;
+var int Cord_SchonmalGefragt;
 
-instance DIA_CORD_WANNAJOIN(C_INFO)
+instance DIA_Cord_WannaJoin(C_Info)
 {
-	npc = sld_805_cord;
+	npc = Sld_805_Cord;
 	nr = 5;
-	condition = dia_cord_wannajoin_condition;
-	information = dia_cord_wannajoin_info;
+	condition = DIA_Cord_WannaJoin_Condition;
+	information = DIA_Cord_WannaJoin_Info;
 	permanent = TRUE;
 	description = "Chcê zostaæ najemnikiem!";
 };
 
 
-func int dia_cord_wannajoin_condition()
+func int DIA_Cord_WannaJoin_Condition()
 {
-	if((CORD_APPROVED == FALSE) && (hero.guild == GIL_NONE))
+	if((Cord_Approved == FALSE) && (hero.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void b_cord_bebetter()
+func void B_Cord_BeBetter()
 {
 	AI_Output(self,other,"DIA_Cord_WannaJoin_14_14");	//Dopóki nie nauczysz siê prawid³owo trzymaæ broñ, nie masz tu czego szukaæ!
 };
 
-func void dia_cord_wannajoin_info()
+func void DIA_Cord_WannaJoin_Info()
 {
 	AI_Output(other,self,"DIA_Cord_WannaJoin_15_00");	//Chcê zostaæ najemnikiem!
-	if(CORD_SCHONMALGEFRAGT == FALSE)
+	if(Cord_SchonmalGefragt == FALSE)
 	{
 		AI_Output(self,other,"DIA_Cord_WannaJoin_14_01");	//Wygl¹dasz mi raczej na kogoœ, kto urodzi³ siê do pracy w polu, ch³opcze.
 		AI_Output(self,other,"DIA_Cord_WannaJoin_14_02");	//Potrafisz trzymaæ broñ?
-		CORD_SCHONMALGEFRAGT = TRUE;
+		Cord_SchonmalGefragt = TRUE;
 	}
 	else
 	{
@@ -111,37 +111,37 @@ func void dia_cord_wannajoin_info()
 	{
 		AI_Output(other,self,"DIA_Cord_WannaJoin_15_09");	//Z pewnoœci¹ szybko siê nauczê!
 	};
-	if((other.hitchance[NPC_TALENT_1H] >= 15) || (other.hitchance[NPC_TALENT_2H] >= 15))
+	if((other.HitChance[NPC_TALENT_1H] >= 15) || (other.HitChance[NPC_TALENT_2H] >= 15))
 	{
 		AI_Output(self,other,"DIA_Cord_WannaJoin_14_10");	//No có¿, przynajmniej nie jesteœ zupe³nie zielony. Dobrze, przyjmujê ciê.
-		CORD_APPROVED = TRUE;
-		b_giveplayerxp(XP_CORD_APPROVED);
-		b_logentry(TOPIC_SLDRESPEKT,"G³os Corda znajduje mam zagwarantowany.");
+		Cord_Approved = TRUE;
+		B_GivePlayerXP(XP_Cord_Approved);
+		B_LogEntry(TOPIC_SLDRespekt,"G³os Corda znajduje mam zagwarantowany.");
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Cord_WannaJoin_14_12");	//Innymi s³owy, jesteœ cholernym amatorem!
 		AI_Output(self,other,"DIA_Cord_WannaJoin_14_13");	//Ka¿dy najemnik musi wiedzieæ, ¿e mo¿e polegaæ na swoich kompanach. Od tego zale¿y nasze ¿ycie.
-		b_cord_bebetter();
-		Log_CreateTopic(TOPIC_CORDPROVE,LOG_MISSION);
-		Log_SetTopicStatus(TOPIC_CORDPROVE,LOG_RUNNING);
-		b_logentry(TOPIC_CORDPROVE,"Cord udzieli mi swojego poparcia, jeœli stanê siê lepszym wojownikiem.");
+		B_Cord_BeBetter();
+		Log_CreateTopic(TOPIC_CordProve,LOG_MISSION);
+		Log_SetTopicStatus(TOPIC_CordProve,LOG_Running);
+		B_LogEntry(TOPIC_CordProve,"Cord udzieli mi swojego poparcia, jeœli stanê siê lepszym wojownikiem.");
 	};
 };
 
 
-instance DIA_CORD_EXPLAINSKILLS(C_INFO)
+instance DIA_Cord_ExplainSkills(C_Info)
 {
-	npc = sld_805_cord;
+	npc = Sld_805_Cord;
 	nr = 1;
-	condition = dia_cord_explainskills_condition;
-	information = dia_cord_explainskills_info;
+	condition = DIA_Cord_ExplainSkills_Condition;
+	information = DIA_Cord_ExplainSkills_Info;
 	permanent = FALSE;
 	description = "Od czego powinienem zacz¹æ, od walki broni¹ jedno- czy dwurêczn¹?";
 };
 
 
-func int dia_cord_explainskills_condition()
+func int DIA_Cord_ExplainSkills_Condition()
 {
 	if(CORD_TEACH == TRUE)
 	{
@@ -149,7 +149,7 @@ func int dia_cord_explainskills_condition()
 	};
 };
 
-func void dia_cord_explainskills_info()
+func void DIA_Cord_ExplainSkills_Info()
 {
 	AI_Output(other,self,"DIA_Cord_ExplainSkills_15_00");	//Od czego powinienem zacz¹æ, od walki broni¹ jedno- czy dwurêczn¹?
 	AI_Output(self,other,"DIA_Cord_ExplainSkills_14_01");	//Te dwa rodzaje broni s¹ doœæ podobne.
@@ -157,18 +157,18 @@ func void dia_cord_explainskills_info()
 };
 
 
-instance DIA_CORD_EXPLAINWEAPONS(C_INFO)
+instance DIA_Cord_ExplainWeapons(C_Info)
 {
-	npc = sld_805_cord;
+	npc = Sld_805_Cord;
 	nr = 2;
-	condition = dia_cord_explainweapons_condition;
-	information = dia_cord_explainweapons_info;
+	condition = DIA_Cord_ExplainWeapons_Condition;
+	information = DIA_Cord_ExplainWeapons_Info;
 	permanent = FALSE;
 	description = "Jakie s¹ zalety broni jedno- i dwurêcznych?";
 };
 
 
-func int dia_cord_explainweapons_condition()
+func int DIA_Cord_ExplainWeapons_Condition()
 {
 	if(CORD_TEACH == TRUE)
 	{
@@ -176,7 +176,7 @@ func int dia_cord_explainweapons_condition()
 	};
 };
 
-func void dia_cord_explainweapons_info()
+func void DIA_Cord_ExplainWeapons_Info()
 {
 	AI_Output(other,self,"DIA_Cord_ExplainWeapons_15_00");	//Jakie s¹ zalety broni jedno- i dwurêcznych?
 	AI_Output(self,other,"DIA_Cord_ExplainWeapons_14_01");	//Dobre pytanie. Widzê, ¿e przemyœla³eœ kwestiê swojego treningu.
@@ -186,50 +186,50 @@ func void dia_cord_explainweapons_info()
 };
 
 
-var int cord_merke_1h;
-var int cord_merke_2h;
+var int Cord_Merke_1h;
+var int Cord_Merke_2h;
 var int cord_teach;
 
-instance DIA_CORD_TEACH(C_INFO)
+instance DIA_Cord_Teach(C_Info)
 {
-	npc = sld_805_cord;
+	npc = Sld_805_Cord;
 	nr = 3;
-	condition = dia_cord_teach_condition;
-	information = dia_cord_teach_info;
+	condition = DIA_Cord_Teach_Condition;
+	information = DIA_Cord_Teach_Info;
 	permanent = TRUE;
 	description = "Naucz mnie walczyæ!";
 };
 
 
-func int dia_cord_teach_condition()
+func int DIA_Cord_Teach_Condition()
 {
 	return TRUE;
 };
 
-func void b_cord_zeitverschwendung()
+func void B_Cord_Zeitverschwendung()
 {
 	AI_Output(self,other,"DIA_Cord_Teach_14_03");	//Nie marnujê czasu na amatorów.
 };
 
-func void dia_cord_teach_info()
+func void DIA_Cord_Teach_Info()
 {
-	var C_ITEM heroarmor;
-	heroarmor = Npc_GetEquippedArmor(other);
+	var C_Item heroArmor;
+	heroArmor = Npc_GetEquippedArmor(other);
 	AI_Output(other,self,"DIA_Cord_Teach_15_00");	//Naucz mnie walczyæ!
-	if((hero.guild == GIL_DJG) || (hero.guild == GIL_PAL) || (Hlp_IsItem(heroarmor,itar_sld_h) == TRUE) || (Hlp_IsItem(heroarmor,itar_djg_crawler) == TRUE) || ((hero.guild == GIL_KDF) && (MIS_RITUALINNOSEYEREPAIR == LOG_SUCCESS)))
+	if((hero.guild == GIL_DJG) || (hero.guild == GIL_PAL) || (Hlp_IsItem(heroArmor,ItAr_Sld_H) == TRUE) || (Hlp_IsItem(heroArmor,ITAR_DJG_Crawler) == TRUE) || ((hero.guild == GIL_KDF) && (MIS_RitualInnosEyeRepair == LOG_SUCCESS)))
 	{
 		if(CORD_TEACH == FALSE)
 		{
-			Log_CreateTopic(TOPIC_SOLDIERTEACHER,LOG_NOTE);
-			b_logentry(TOPIC_SOLDIERTEACHER,"Cord mo¿e mnie szkoliæ w zakresie walki orê¿em jedno- i dwurêcznym.");
+			Log_CreateTopic(Topic_SoldierTeacher,LOG_NOTE);
+			B_LogEntry(Topic_SoldierTeacher,"Cord mo¿e mnie szkoliæ w zakresie walki orê¿em jedno- i dwurêcznym.");
 			CORD_TEACH = TRUE;
 		}
 		else
 		{
-			if(CORD_SCHONMALGEFRAGT == FALSE)
+			if(Cord_SchonmalGefragt == FALSE)
 			{
 				AI_Output(self,other,"DIA_Cord_WannaJoin_14_02");	//Potrafisz trzymaæ broñ?
-				CORD_SCHONMALGEFRAGT = TRUE;
+				Cord_SchonmalGefragt = TRUE;
 			}
 			else
 			{
@@ -256,8 +256,8 @@ func void dia_cord_teach_info()
 			if((Npc_GetTalentSkill(other,NPC_TALENT_1H) > 0) || (Npc_GetTalentSkill(other,NPC_TALENT_2H) > 0))
 			{
 				CORD_TEACH = TRUE;
-				Log_CreateTopic(TOPIC_SOLDIERTEACHER,LOG_NOTE);
-				b_logentry(TOPIC_SOLDIERTEACHER,"Cord mo¿e mnie szkoliæ w zakresie walki orê¿em jedno- i dwurêcznym.");
+				Log_CreateTopic(Topic_SoldierTeacher,LOG_NOTE);
+				B_LogEntry(Topic_SoldierTeacher,"Cord mo¿e mnie szkoliæ w zakresie walki orê¿em jedno- i dwurêcznym.");
 			}
 			else
 			{
@@ -273,7 +273,7 @@ func void dia_cord_teach_info()
 			else if(Npc_GetTalentSkill(other,NPC_TALENT_1H) > 0)
 			{
 				AI_Output(self,other,"DIA_Cord_Teach_14_02");	//Mogê ciê nauczyæ walki mieczem jednorêcznym. Do dwurêcznego brakuje ci jeszcze umiejêtnoœci.
-				b_cord_zeitverschwendung();
+				B_Cord_Zeitverschwendung();
 			}
 			else if(Npc_GetTalentSkill(other,NPC_TALENT_2H) > 0)
 			{
@@ -282,25 +282,25 @@ func void dia_cord_teach_info()
 			}
 			else
 			{
-				b_cord_zeitverschwendung();
-				b_cord_bebetter();
+				B_Cord_Zeitverschwendung();
+				B_Cord_BeBetter();
 			};
-			if(CORD_APPROVED == TRUE)
+			if(Cord_Approved == TRUE)
 			{
-				Info_ClearChoices(dia_cord_teach);
-				Info_AddChoice(dia_cord_teach,DIALOG_BACK,dia_cord_teach_back);
+				Info_ClearChoices(DIA_Cord_Teach);
+				Info_AddChoice(DIA_Cord_Teach,Dialog_Back,DIA_Cord_Teach_Back);
 				if(Npc_GetTalentSkill(other,NPC_TALENT_2H) > 0)
 				{
-					Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN2H1,b_getlearncosttalent(other,NPC_TALENT_2H)),dia_cord_teach_2h_1);
-					Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN2H5,b_getlearncosttalent(other,NPC_TALENT_2H) * 5),dia_cord_teach_2h_5);
+					Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Cord_Teach_2H_1);
+					Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Cord_Teach_2H_5);
 				};
 				if(Npc_GetTalentSkill(other,NPC_TALENT_1H) > 0)
 				{
-					Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN1H1,b_getlearncosttalent(other,NPC_TALENT_1H)),dia_cord_teach_1h_1);
-					Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN1H5,b_getlearncosttalent(other,NPC_TALENT_1H) * 5),dia_cord_teach_1h_5);
+					Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Cord_Teach_1H_1);
+					Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cord_Teach_1H_5);
 				};
-				CORD_MERKE_1H = other.hitchance[NPC_TALENT_1H];
-				CORD_MERKE_2H = other.hitchance[NPC_TALENT_2H];
+				Cord_Merke_1h = other.HitChance[NPC_TALENT_1H];
+				Cord_Merke_2h = other.HitChance[NPC_TALENT_2H];
 			};
 		};
 	}
@@ -311,143 +311,143 @@ func void dia_cord_teach_info()
 	};
 };
 
-func void dia_cord_teach_back()
+func void DIA_Cord_Teach_Back()
 {
-	if((CORD_MERKE_1H < other.hitchance[NPC_TALENT_1H]) || (CORD_MERKE_2H < other.hitchance[NPC_TALENT_2H]))
+	if((Cord_Merke_1h < other.HitChance[NPC_TALENT_1H]) || (Cord_Merke_2h < other.HitChance[NPC_TALENT_2H]))
 	{
 		AI_Output(self,other,"DIA_Cord_Teach_BACK_14_00");	//Ju¿ jesteœ lepszy - tak trzymaæ!
 	};
-	Info_ClearChoices(dia_cord_teach);
+	Info_ClearChoices(DIA_Cord_Teach);
 };
 
-func void dia_cord_teach_2h_1()
+func void DIA_Cord_Teach_2H_1()
 {
-	if(KAPITEL >= 3)
+	if(Kapitel >= 3)
 	{
-		b_teachfighttalentpercent(self,other,NPC_TALENT_2H,1,50);
+		B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,1,50);
 	}
 	else
 	{
-		b_teachfighttalentpercent(self,other,NPC_TALENT_2H,1,40);
+		B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,1,40);
 	};
-	Info_ClearChoices(dia_cord_teach);
-	Info_AddChoice(dia_cord_teach,DIALOG_BACK,dia_cord_teach_back);
+	Info_ClearChoices(DIA_Cord_Teach);
+	Info_AddChoice(DIA_Cord_Teach,Dialog_Back,DIA_Cord_Teach_Back);
 	if(Npc_GetTalentSkill(other,NPC_TALENT_2H) > 0)
 	{
-		Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN2H1,b_getlearncosttalent(other,NPC_TALENT_2H)),dia_cord_teach_2h_1);
-		Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN2H5,b_getlearncosttalent(other,NPC_TALENT_2H) * 5),dia_cord_teach_2h_5);
+		Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Cord_Teach_2H_1);
+		Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Cord_Teach_2H_5);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_1H) > 0)
 	{
-		Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN1H1,b_getlearncosttalent(other,NPC_TALENT_1H)),dia_cord_teach_1h_1);
-		Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN1H5,b_getlearncosttalent(other,NPC_TALENT_1H) * 5),dia_cord_teach_1h_5);
+		Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Cord_Teach_1H_1);
+		Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cord_Teach_1H_5);
 	};
 };
 
-func void dia_cord_teach_2h_5()
+func void DIA_Cord_Teach_2H_5()
 {
-	if(KAPITEL >= 3)
+	if(Kapitel >= 3)
 	{
-		b_teachfighttalentpercent(self,other,NPC_TALENT_2H,5,50);
+		B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,5,50);
 	}
 	else
 	{
-		b_teachfighttalentpercent(self,other,NPC_TALENT_2H,5,40);
+		B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,5,40);
 	};
-	Info_ClearChoices(dia_cord_teach);
-	Info_AddChoice(dia_cord_teach,DIALOG_BACK,dia_cord_teach_back);
+	Info_ClearChoices(DIA_Cord_Teach);
+	Info_AddChoice(DIA_Cord_Teach,Dialog_Back,DIA_Cord_Teach_Back);
 	if(Npc_GetTalentSkill(other,NPC_TALENT_2H) > 0)
 	{
-		Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN2H1,b_getlearncosttalent(other,NPC_TALENT_2H)),dia_cord_teach_2h_1);
-		Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN2H5,b_getlearncosttalent(other,NPC_TALENT_2H) * 5),dia_cord_teach_2h_5);
+		Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Cord_Teach_2H_1);
+		Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Cord_Teach_2H_5);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_1H) > 0)
 	{
-		Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN1H1,b_getlearncosttalent(other,NPC_TALENT_1H)),dia_cord_teach_1h_1);
-		Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN1H5,b_getlearncosttalent(other,NPC_TALENT_1H) * 5),dia_cord_teach_1h_5);
+		Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Cord_Teach_1H_1);
+		Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cord_Teach_1H_5);
 	};
 };
 
-func void dia_cord_teach_1h_1()
+func void DIA_Cord_Teach_1H_1()
 {
-	if(KAPITEL >= 3)
+	if(Kapitel >= 3)
 	{
-		b_teachfighttalentpercent(self,other,NPC_TALENT_1H,1,50);
+		B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,1,50);
 	}
 	else
 	{
-		b_teachfighttalentpercent(self,other,NPC_TALENT_1H,1,40);
+		B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,1,40);
 	};
-	Info_ClearChoices(dia_cord_teach);
-	Info_AddChoice(dia_cord_teach,DIALOG_BACK,dia_cord_teach_back);
+	Info_ClearChoices(DIA_Cord_Teach);
+	Info_AddChoice(DIA_Cord_Teach,Dialog_Back,DIA_Cord_Teach_Back);
 	if(Npc_GetTalentSkill(other,NPC_TALENT_2H) > 0)
 	{
-		Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN2H1,b_getlearncosttalent(other,NPC_TALENT_2H)),dia_cord_teach_2h_1);
-		Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN2H5,b_getlearncosttalent(other,NPC_TALENT_2H) * 5),dia_cord_teach_2h_5);
+		Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Cord_Teach_2H_1);
+		Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Cord_Teach_2H_5);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_1H) > 0)
 	{
-		Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN1H1,b_getlearncosttalent(other,NPC_TALENT_1H)),dia_cord_teach_1h_1);
-		Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN1H5,b_getlearncosttalent(other,NPC_TALENT_1H) * 5),dia_cord_teach_1h_5);
+		Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Cord_Teach_1H_1);
+		Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cord_Teach_1H_5);
 	};
 };
 
-func void dia_cord_teach_1h_5()
+func void DIA_Cord_Teach_1H_5()
 {
-	if(KAPITEL >= 3)
+	if(Kapitel >= 3)
 	{
-		b_teachfighttalentpercent(self,other,NPC_TALENT_1H,5,50);
+		B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,5,50);
 	}
 	else
 	{
-		b_teachfighttalentpercent(self,other,NPC_TALENT_1H,5,40);
+		B_TeachFightTalentPercent(self,other,NPC_TALENT_1H,5,40);
 	};
-	Info_ClearChoices(dia_cord_teach);
-	Info_AddChoice(dia_cord_teach,DIALOG_BACK,dia_cord_teach_back);
+	Info_ClearChoices(DIA_Cord_Teach);
+	Info_AddChoice(DIA_Cord_Teach,Dialog_Back,DIA_Cord_Teach_Back);
 	if(Npc_GetTalentSkill(other,NPC_TALENT_2H) > 0)
 	{
-		Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN2H1,b_getlearncosttalent(other,NPC_TALENT_2H)),dia_cord_teach_2h_1);
-		Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN2H5,b_getlearncosttalent(other,NPC_TALENT_2H) * 5),dia_cord_teach_2h_5);
+		Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Cord_Teach_2H_1);
+		Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Cord_Teach_2H_5);
 	};
 	if(Npc_GetTalentSkill(other,NPC_TALENT_1H) > 0)
 	{
-		Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN1H1,b_getlearncosttalent(other,NPC_TALENT_1H)),dia_cord_teach_1h_1);
-		Info_AddChoice(dia_cord_teach,b_buildlearnstring(PRINT_LEARN1H5,b_getlearncosttalent(other,NPC_TALENT_1H) * 5),dia_cord_teach_1h_5);
+		Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Cord_Teach_1H_1);
+		Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cord_Teach_1H_5);
 	};
 };
 
 
-instance DIA_CORD_PICKPOCKET(C_INFO)
+instance DIA_Cord_PICKPOCKET(C_Info)
 {
-	npc = sld_805_cord;
+	npc = Sld_805_Cord;
 	nr = 900;
-	condition = dia_cord_pickpocket_condition;
-	information = dia_cord_pickpocket_info;
+	condition = DIA_Cord_PICKPOCKET_Condition;
+	information = DIA_Cord_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_80;
+	description = Pickpocket_80;
 };
 
 
-func int dia_cord_pickpocket_condition()
+func int DIA_Cord_PICKPOCKET_Condition()
 {
-	return c_beklauen(65,75);
+	return C_Beklauen(65,75);
 };
 
-func void dia_cord_pickpocket_info()
+func void DIA_Cord_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_cord_pickpocket);
-	Info_AddChoice(dia_cord_pickpocket,DIALOG_BACK,dia_cord_pickpocket_back);
-	Info_AddChoice(dia_cord_pickpocket,DIALOG_PICKPOCKET,dia_cord_pickpocket_doit);
+	Info_ClearChoices(DIA_Cord_PICKPOCKET);
+	Info_AddChoice(DIA_Cord_PICKPOCKET,Dialog_Back,DIA_Cord_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Cord_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Cord_PICKPOCKET_DoIt);
 };
 
-func void dia_cord_pickpocket_doit()
+func void DIA_Cord_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_cord_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Cord_PICKPOCKET);
 };
 
-func void dia_cord_pickpocket_back()
+func void DIA_Cord_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_cord_pickpocket);
+	Info_ClearChoices(DIA_Cord_PICKPOCKET);
 };
 

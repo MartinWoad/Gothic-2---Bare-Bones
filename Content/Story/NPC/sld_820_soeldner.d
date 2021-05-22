@@ -1,30 +1,30 @@
 
-instance SLD_820_SOELDNER(NPC_DEFAULT)
+instance SLD_820_Soeldner(Npc_Default)
 {
-	name[0] = NAME_SOELDNER;
+	name[0] = NAME_Soeldner;
 	guild = GIL_SLD;
 	id = 820;
 	voice = 7;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,4);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_sld_sword);
-	EquipItem(self,itrw_sld_bow);
-	CreateInvItems(self,itrw_arrow,9);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_P_NORMAL01,BODYTEX_P,4835);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	EquipItem(self,ItRw_Sld_Bow);
+	CreateInvItems(self,ItRw_Arrow,9);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_P_Normal01,BodyTex_P,itar_sld_M);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,50);
-	daily_routine = rtn_start_820;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,50);
+	daily_routine = Rtn_Start_820;
 };
 
 
-func void rtn_start_820()
+func void Rtn_Start_820()
 {
-	ta_stand_guarding(8,0,22,0,"NW_BIGFARM_HOUSE_OUT_03");
-	ta_stand_guarding(22,0,8,0,"NW_BIGFARM_HOUSE_OUT_03");
+	TA_Stand_Guarding(8,0,22,0,"NW_BIGFARM_HOUSE_OUT_03");
+	TA_Stand_Guarding(22,0,8,0,"NW_BIGFARM_HOUSE_OUT_03");
 };
 

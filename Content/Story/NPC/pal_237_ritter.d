@@ -1,28 +1,28 @@
 
-instance PAL_237_RITTER(NPC_DEFAULT)
+instance Pal_237_Ritter(Npc_Default)
 {
-	name[0] = NAME_RITTER;
+	name[0] = NAME_Ritter;
 	guild = GIL_PAL;
 	id = 237;
 	voice = 12;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,5);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,5);
 	fight_tactic = FAI_HUMAN_MASTER;
-	EquipItem(self,itmw_1h_pal_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fighter",FACE_P_TOUGH_TORREZ,BODYTEX_P,4828);
+	EquipItem(self,ItMw_1h_Pal_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_P_Tough_Torrez,BodyTex_P,ItAr_PAL_M);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,80);
-	daily_routine = rtn_start_237;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,80);
+	daily_routine = Rtn_Start_237;
 };
 
 
-func void rtn_start_237()
+func void Rtn_Start_237()
 {
-	ta_practice_sword(8,0,23,0,"NW_CITY_PALCAMP_12");
-	ta_smalltalk(23,0,8,0,"NW_CITY_PALCAMP_10");
+	TA_Practice_Sword(8,0,23,0,"NW_CITY_PALCAMP_12");
+	TA_Smalltalk(23,0,8,0,"NW_CITY_PALCAMP_10");
 };
 

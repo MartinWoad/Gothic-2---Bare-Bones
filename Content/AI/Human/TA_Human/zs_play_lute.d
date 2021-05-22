@@ -1,21 +1,21 @@
 
-func void zs_play_lute()
+func void ZS_Play_Lute()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
 		AI_GotoWP(self,self.wp);
 	};
-	if(Npc_HasItems(self,itmi_lute) == 0)
+	if(Npc_HasItems(self,ItMi_Lute) == 0)
 	{
-		CreateInvItem(self,itmi_lute);
+		CreateInvItem(self,ItMi_Lute);
 	};
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func int zs_play_lute_loop()
+func int ZS_Play_Lute_Loop()
 {
 	if(Npc_IsOnFP(self,"STAND"))
 	{
@@ -42,14 +42,14 @@ func int zs_play_lute_loop()
 	};
 	if(self.aivar[AIV_TAPOSITION] == NOTINPOS)
 	{
-		AI_UseItemToState(self,itmi_lute,1);
+		AI_UseItemToState(self,ItMi_Lute,1);
 		self.aivar[AIV_TAPOSITION] = ISINPOS;
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_play_lute_end()
+func void ZS_Play_Lute_End()
 {
-	AI_UseItemToState(self,itmi_lute,-1);
+	AI_UseItemToState(self,ItMi_Lute,-1);
 };
 

@@ -1,129 +1,129 @@
 
-instance DIA_ABUYIN_EXIT(C_INFO)
+instance DIA_Abuyin_EXIT(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 999;
-	condition = dia_abuyin_exit_condition;
-	information = dia_abuyin_exit_info;
+	condition = DIA_Abuyin_EXIT_Condition;
+	information = DIA_Abuyin_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_abuyin_exit_condition()
+func int DIA_Abuyin_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_abuyin_exit_info()
+func void DIA_Abuyin_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ABUYIN_PICKPOCKET(C_INFO)
+instance DIA_Abuyin_PICKPOCKET(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 900;
-	condition = dia_abuyin_pickpocket_condition;
-	information = dia_abuyin_pickpocket_info;
+	condition = DIA_Abuyin_PICKPOCKET_Condition;
+	information = DIA_Abuyin_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_80;
+	description = Pickpocket_80;
 };
 
 
-func int dia_abuyin_pickpocket_condition()
+func int DIA_Abuyin_PICKPOCKET_Condition()
 {
-	return c_beklauen(75,200);
+	return C_Beklauen(75,200);
 };
 
-func void dia_abuyin_pickpocket_info()
+func void DIA_Abuyin_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_abuyin_pickpocket);
-	Info_AddChoice(dia_abuyin_pickpocket,DIALOG_BACK,dia_abuyin_pickpocket_back);
-	Info_AddChoice(dia_abuyin_pickpocket,DIALOG_PICKPOCKET,dia_abuyin_pickpocket_doit);
+	Info_ClearChoices(DIA_Abuyin_PICKPOCKET);
+	Info_AddChoice(DIA_Abuyin_PICKPOCKET,Dialog_Back,DIA_Abuyin_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Abuyin_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Abuyin_PICKPOCKET_DoIt);
 };
 
-func void dia_abuyin_pickpocket_doit()
+func void DIA_Abuyin_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_abuyin_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Abuyin_PICKPOCKET);
 };
 
-func void dia_abuyin_pickpocket_back()
+func void DIA_Abuyin_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_abuyin_pickpocket);
+	Info_ClearChoices(DIA_Abuyin_PICKPOCKET);
 };
 
 
-instance DIA_ABUYIN_HALLO(C_INFO)
+instance DIA_Abuyin_Hallo(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_hallo_condition;
-	information = dia_abuyin_hallo_info;
+	condition = DIA_Abuyin_Hallo_Condition;
+	information = DIA_Abuyin_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_abuyin_hallo_condition()
+func int DIA_Abuyin_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_hallo_info()
+func void DIA_Abuyin_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Abuyin_Hallo_13_00");	//Witaj, przyjacielu, spocznij na mych skromnych dywanach i zapal spokojnie fajkê.
 };
 
 
-instance DIA_ABUYIN_DU(C_INFO)
+instance DIA_Abuyin_du(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_du_condition;
-	information = dia_abuyin_du_info;
+	condition = DIA_Abuyin_du_Condition;
+	information = DIA_Abuyin_du_Info;
 	permanent = FALSE;
 	description = "Kim jesteœ?";
 };
 
 
-func int dia_abuyin_du_condition()
+func int DIA_Abuyin_du_Condition()
 {
 	return TRUE;
 };
 
-func void dia_abuyin_du_info()
+func void DIA_Abuyin_du_Info()
 {
 	AI_Output(other,self,"DIA_Abuyin_du_15_00");	//Kim jesteœ?
 	AI_Output(self,other,"DIA_Abuyin_du_13_01");	//Nazywam siê Abuyin ibn Djadir ibn Omar Kalid ben Hadji al Sharidi. Jestem mêdrcem i wró¿bit¹, astrologiem i znawc¹ tytoniu.
 };
 
 
-instance DIA_ABUYIN_KRAUT(C_INFO)
+instance DIA_Abuyin_Kraut(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_kraut_condition;
-	information = dia_abuyin_kraut_info;
+	condition = DIA_Abuyin_Kraut_Condition;
+	information = DIA_Abuyin_Kraut_Info;
 	permanent = FALSE;
 	description = "Jaki tytoñ proponujesz?";
 };
 
 
-func int dia_abuyin_kraut_condition()
+func int DIA_Abuyin_Kraut_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_abuyin_du))
+	if(Npc_KnowsInfo(other,DIA_Abuyin_du))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_kraut_info()
+func void DIA_Abuyin_Kraut_Info()
 {
 	AI_Output(other,self,"DIA_Abuyin_Kraut_15_00");	//Jaki tytoñ proponujesz?
 	AI_Output(self,other,"DIA_Abuyin_Kraut_13_01");	//Moje fajki nabite s¹ ostrym, orzeŸwiaj¹cym tytoniem jab³kowym.
@@ -131,26 +131,26 @@ func void dia_abuyin_kraut_info()
 };
 
 
-instance DIA_ABUYIN_ANDEREN(C_INFO)
+instance DIA_Abuyin_anderen(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_anderen_condition;
-	information = dia_abuyin_anderen_info;
+	condition = DIA_Abuyin_anderen_Condition;
+	information = DIA_Abuyin_anderen_Info;
 	permanent = FALSE;
 	description = "Czy masz jeszcze jakiœ inny tytoñ?";
 };
 
 
-func int dia_abuyin_anderen_condition()
+func int DIA_Abuyin_anderen_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_abuyin_kraut))
+	if(Npc_KnowsInfo(other,DIA_Abuyin_Kraut))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_anderen_info()
+func void DIA_Abuyin_anderen_Info()
 {
 	AI_Output(other,self,"DIA_Abuyin_anderen_15_00");	//Czy masz jeszcze jakiœ inny tytoñ?
 	AI_Output(self,other,"DIA_Abuyin_anderen_13_01");	//U¿ywam tylko najlepszego tytoniu. Ta mieszanka o aromacie jab³oni pochodzi z mojej ojczyzny, z Wysp Po³udniowych.
@@ -161,178 +161,178 @@ func void dia_abuyin_anderen_info()
 };
 
 
-instance DIA_ABUYIN_WOHER(C_INFO)
+instance DIA_Abuyin_Woher(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_woher_condition;
-	information = dia_abuyin_woher_info;
+	condition = DIA_Abuyin_Woher_Condition;
+	information = DIA_Abuyin_Woher_Info;
 	permanent = FALSE;
 	description = "Gdzie mogê kupiæ tytoñ jab³kowy?";
 };
 
 
-func int dia_abuyin_woher_condition()
+func int DIA_Abuyin_Woher_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_abuyin_anderen))
+	if(Npc_KnowsInfo(other,DIA_Abuyin_anderen))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_woher_info()
+func void DIA_Abuyin_Woher_Info()
 {
 	AI_Output(other,self,"DIA_Abuyin_Woher_15_00");	//Gdzie mogê kupiæ tytoñ jab³kowy?
 	AI_Output(self,other,"DIA_Abuyin_Woher_13_01");	//Dam ci dwie porcje. Od twojej m¹droœci zale¿y, jak je wykorzystasz.
 	AI_Output(self,other,"DIA_Abuyin_Woher_13_02");	//Jeœli pragniesz wiêcej, udaj siê do Zurisa, Mistrza Mikstur. On robi ten tytoñ i go sprzedaje.
-	b_giveinvitems(self,other,5140,2);
+	B_GiveInvItems(self,other,ItMi_ApfelTabak,2);
 };
 
-func void b_tabakprobieren()
+func void B_TabakProbieren()
 {
 	AI_Output(self,other,"DIA_Abuyin_Mischung_Nichts_13_00");	//Daj mi spróbowaæ twego tytoniu.
-	CreateInvItems(self,itmi_joint,1);
-	b_useitem(self,5106);
+	CreateInvItems(self,ItMi_Joint,1);
+	B_UseItem(self,ItMi_Joint);
 	AI_Output(self,other,"DIA_Abuyin_Mischung_Nichts_13_01");	//Nie, ta mieszanka mi nie odpowiada. Ale mo¿e ktoœ doceni ten... eee... przysmak.
 };
 
 
-instance DIA_ABUYIN_MISCHUNG(C_INFO)
+instance DIA_Abuyin_Mischung(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 10;
-	condition = dia_abuyin_mischung_condition;
-	information = dia_abuyin_mischung_info;
+	condition = DIA_Abuyin_Mischung_Condition;
+	information = DIA_Abuyin_Mischung_Info;
 	permanent = TRUE;
 	description = "Mam now¹ mieszankê tytoniu...";
 };
 
 
-func int dia_abuyin_mischung_condition()
+func int DIA_Abuyin_Mischung_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_abuyin_anderen) && (ABUYIN_HONIGTABAK == FALSE) && ((Npc_HasItems(other,itmi_sumpftabak) >= 1) || (Npc_HasItems(other,itmi_pilztabak) >= 1) || (Npc_HasItems(other,itmi_doppeltabak) >= 1) || (Npc_HasItems(other,itmi_honigtabak) >= 1)))
+	if(Npc_KnowsInfo(other,DIA_Abuyin_anderen) && (Abuyin_Honigtabak == FALSE) && ((Npc_HasItems(other,ItMi_SumpfTabak) >= 1) || (Npc_HasItems(other,ItMi_PilzTabak) >= 1) || (Npc_HasItems(other,ItMi_DoppelTabak) >= 1) || (Npc_HasItems(other,ItMi_Honigtabak) >= 1)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_mischung_info()
+func void DIA_Abuyin_Mischung_Info()
 {
 	AI_Output(other,self,"DIA_Abuyin_Mischung_15_00");	//Mam now¹ mieszankê tytoniu...
-	Info_ClearChoices(dia_abuyin_mischung);
-	Info_AddChoice(dia_abuyin_mischung,DIALOG_BACK,dia_abuyin_mischung_back);
-	if(Npc_HasItems(other,itmi_sumpftabak) >= 1)
+	Info_ClearChoices(DIA_Abuyin_Mischung);
+	Info_AddChoice(DIA_Abuyin_Mischung,Dialog_Back,DIA_Abuyin_Mischung_BACK);
+	if(Npc_HasItems(other,ItMi_SumpfTabak) >= 1)
 	{
-		Info_AddChoice(dia_abuyin_mischung,itmi_sumpftabak.name,dia_abuyin_mischung_sumpf);
+		Info_AddChoice(DIA_Abuyin_Mischung,ItMi_SumpfTabak.name,DIA_Abuyin_Mischung_Sumpf);
 	};
-	if(Npc_HasItems(other,itmi_pilztabak) >= 1)
+	if(Npc_HasItems(other,ItMi_PilzTabak) >= 1)
 	{
-		Info_AddChoice(dia_abuyin_mischung,itmi_pilztabak.name,dia_abuyin_mischung_pilz);
+		Info_AddChoice(DIA_Abuyin_Mischung,ItMi_PilzTabak.name,DIA_Abuyin_Mischung_Pilz);
 	};
-	if(Npc_HasItems(other,itmi_doppeltabak) >= 1)
+	if(Npc_HasItems(other,ItMi_DoppelTabak) >= 1)
 	{
-		Info_AddChoice(dia_abuyin_mischung,itmi_doppeltabak.name,dia_abuyin_mischung_doppel);
+		Info_AddChoice(DIA_Abuyin_Mischung,ItMi_DoppelTabak.name,DIA_Abuyin_Mischung_Doppel);
 	};
-	if(Npc_HasItems(other,itmi_honigtabak) >= 1)
+	if(Npc_HasItems(other,ItMi_Honigtabak) >= 1)
 	{
-		Info_AddChoice(dia_abuyin_mischung,itmi_honigtabak.name,dia_abuyin_mischung_super);
+		Info_AddChoice(DIA_Abuyin_Mischung,ItMi_Honigtabak.name,DIA_Abuyin_Mischung_Super);
 	};
 };
 
-func void dia_abuyin_mischung_back()
+func void DIA_Abuyin_Mischung_BACK()
 {
-	Info_ClearChoices(dia_abuyin_mischung);
+	Info_ClearChoices(DIA_Abuyin_Mischung);
 };
 
-func void dia_abuyin_mischung_sumpf()
+func void DIA_Abuyin_Mischung_Sumpf()
 {
-	b_giveinvitems(other,self,5144,1);
-	b_tabakprobieren();
-	Info_ClearChoices(dia_abuyin_mischung);
+	B_GiveInvItems(other,self,ItMi_SumpfTabak,1);
+	B_TabakProbieren();
+	Info_ClearChoices(DIA_Abuyin_Mischung);
 };
 
-func void dia_abuyin_mischung_pilz()
+func void DIA_Abuyin_Mischung_Pilz()
 {
-	b_giveinvitems(other,self,5141,1);
-	b_tabakprobieren();
-	Info_ClearChoices(dia_abuyin_mischung);
+	B_GiveInvItems(other,self,ItMi_PilzTabak,1);
+	B_TabakProbieren();
+	Info_ClearChoices(DIA_Abuyin_Mischung);
 };
 
-func void dia_abuyin_mischung_doppel()
+func void DIA_Abuyin_Mischung_Doppel()
 {
-	b_giveinvitems(other,self,5142,1);
-	b_tabakprobieren();
-	Info_ClearChoices(dia_abuyin_mischung);
+	B_GiveInvItems(other,self,ItMi_DoppelTabak,1);
+	B_TabakProbieren();
+	Info_ClearChoices(DIA_Abuyin_Mischung);
 };
 
-func void dia_abuyin_mischung_super()
+func void DIA_Abuyin_Mischung_Super()
 {
-	b_giveinvitems(other,self,5143,1);
+	B_GiveInvItems(other,self,ItMi_Honigtabak,1);
 	AI_Output(self,other,"DIA_Abuyin_Mischung_Super_13_00");	//Daj mi spróbowaæ.
-	CreateInvItems(self,itmi_joint,1);
-	b_useitem(self,5106);
+	CreateInvItems(self,ItMi_Joint,1);
+	B_UseItem(self,ItMi_Joint);
 	AI_Output(self,other,"DIA_Abuyin_Mischung_Super_13_01");	//Có¿ za cudowny smak! Nigdy nie pali³em nic równie dobrego!
 	AI_Output(self,other,"DIA_Abuyin_Mischung_Super_13_02");	//Jak przygotowa³eœ tê mieszankê?
 	AI_Output(other,self,"DIA_Abuyin_Mischung_Super_15_03");	//Zmiesza³em tytoñ z miodem.
 	AI_Output(self,other,"DIA_Abuyin_Mischung_Super_13_04");	//Dobrze siê sprawi³eœ, Ojcze Sztuki Fajkowej. By³bym zachwycony, mog¹c nabiæ me niegodne fajki tym arcydzie³em.
 	AI_Output(other,self,"DIA_Abuyin_Mischung_Super_15_05");	//A zatem nabij sobie.
 	AI_Output(self,other,"DIA_Abuyin_Mischung_Super_13_06");	//Dziêki ci, Synu Szczodroœci. ¯aden inny tytoñ nie mo¿e siê z tym równaæ. Kupiê od ciebie ka¿de Ÿdziebe³ko, jakie mi dostarczysz.
-	ABUYIN_HONIGTABAK = TRUE;
-	b_giveplayerxp(XP_AMBIENT * 2);
-	Info_ClearChoices(dia_abuyin_mischung);
+	Abuyin_Honigtabak = TRUE;
+	B_GivePlayerXP(XP_Ambient * 2);
+	Info_ClearChoices(DIA_Abuyin_Mischung);
 };
 
 
-instance DIA_ABUYIN_TRADE(C_INFO)
+instance DIA_Abuyin_Trade(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_trade_condition;
-	information = dia_abuyin_trade_info;
+	condition = DIA_Abuyin_Trade_Condition;
+	information = DIA_Abuyin_Trade_Info;
 	permanent = TRUE;
 	description = "Mam dla ciebie trochê miodowego tytoniu.";
 };
 
 
-func int dia_abuyin_trade_condition()
+func int DIA_Abuyin_Trade_Condition()
 {
-	if((ABUYIN_HONIGTABAK == TRUE) && (Npc_HasItems(other,itmi_honigtabak) >= 1))
+	if((Abuyin_Honigtabak == TRUE) && (Npc_HasItems(other,ItMi_Honigtabak) >= 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_trade_info()
+func void DIA_Abuyin_Trade_Info()
 {
-	ABUYIN_SCORE = 0;
-	ABUYIN_SCORE = Npc_HasItems(other,itmi_honigtabak) * VALUE_ITMI_HONIGTABAK;
+	Abuyin_Score = 0;
+	Abuyin_Score = Npc_HasItems(other,ItMi_Honigtabak) * VALUE_ItMi_HonigTabak;
 	AI_Output(other,self,"DIA_Abuyin_Trade_15_00");	//Mam dla ciebie trochê miodowego tytoniu.
-	b_giveinvitems(other,self,5143,Npc_HasItems(other,itmi_honigtabak));
-	b_giveinvitems(self,other,5113,ABUYIN_SCORE);
+	B_GiveInvItems(other,self,ItMi_Honigtabak,Npc_HasItems(other,ItMi_Honigtabak));
+	B_GiveInvItems(self,other,ItMi_Gold,Abuyin_Score);
 	AI_Output(self,other,"DIA_Abuyin_Trade_13_01");	//Interesy z tob¹ to czysta przyjemnoœæ.
 };
 
 
-instance DIA_ABUYIN_HERB(C_INFO)
+instance DIA_Abuyin_Herb(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_herb_condition;
-	information = dia_abuyin_herb_info;
+	condition = DIA_Abuyin_Herb_Condition;
+	information = DIA_Abuyin_Herb_Info;
 	permanent = FALSE;
 	description = "Mo¿e zainteresuje ciê ta paczuszka zió³?";
 };
 
 
-func int dia_abuyin_herb_condition()
+func int DIA_Abuyin_Herb_Condition()
 {
-	if(Npc_HasItems(other,itmi_herbpaket) >= 1)
+	if(Npc_HasItems(other,ItMi_HerbPaket) >= 1)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_herb_info()
+func void DIA_Abuyin_Herb_Info()
 {
 	AI_Output(other,self,"DIA_Abuyin_Herb_15_00");	//Mo¿e zainteresuje ciê ta paczuszka zió³?
 	AI_Output(self,other,"DIA_Abuyin_Herb_13_01");	//Czy to bagienne ziele? Och, zabierz to st¹d, Synu Nieopatrznoœci.
@@ -342,26 +342,26 @@ func void dia_abuyin_herb_info()
 };
 
 
-instance DIA_ABUYIN_WEISSAGUNG(C_INFO)
+instance DIA_Abuyin_Weissagung(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_weissagung_condition;
-	information = dia_abuyin_weissagung_info;
+	condition = DIA_Abuyin_Weissagung_Condition;
+	information = DIA_Abuyin_Weissagung_Info;
 	permanent = FALSE;
 	description = "Czy mo¿esz dla mnie powró¿yæ?";
 };
 
 
-func int dia_abuyin_weissagung_condition()
+func int DIA_Abuyin_Weissagung_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_abuyin_du) && (KAPITEL == 1))
+	if(Npc_KnowsInfo(other,DIA_Abuyin_du) && (Kapitel == 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_weissagung_info()
+func void DIA_Abuyin_Weissagung_Info()
 {
 	AI_Output(other,self,"DIA_Abuyin_Weissagung_15_00");	//Czy mo¿esz mi powró¿yæ?
 	AI_Output(self,other,"DIA_Abuyin_Weissagung_13_01");	//Moje talenty s¹ na twoje us³ugi za skromn¹ op³at¹, o Ojcze Szczodroœci.
@@ -371,35 +371,35 @@ func void dia_abuyin_weissagung_info()
 };
 
 
-instance DIA_ABUYIN_ZUKUNFT(C_INFO)
+instance DIA_Abuyin_Zukunft(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_zukunft_condition;
-	information = dia_abuyin_zukunft_info;
+	condition = DIA_Abuyin_Zukunft_Condition;
+	information = DIA_Abuyin_Zukunft_Info;
 	permanent = TRUE;
 	description = "Przepowiedz mi przysz³oœæ (zap³aæ 25 sztuk z³ota).";
 };
 
 
-var int dia_abuyin_zukunft_permanent;
+var int DIA_Abuyin_Zukunft_permanent;
 
-func int dia_abuyin_zukunft_condition()
+func int DIA_Abuyin_Zukunft_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_abuyin_weissagung) && (DIA_ABUYIN_ZUKUNFT_PERMANENT == FALSE) && (KAPITEL == 1))
+	if(Npc_KnowsInfo(other,DIA_Abuyin_Weissagung) && (DIA_Abuyin_Zukunft_permanent == FALSE) && (Kapitel == 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_zukunft_info()
+func void DIA_Abuyin_Zukunft_Info()
 {
 	AI_Output(other,self,"DIA_Abuyin_Zukunft_15_00");	//Opowiedz mi o przysz³oœci.
-	if(b_giveinvitems(other,self,5113,25))
+	if(B_GiveInvItems(other,self,ItMi_Gold,25))
 	{
 		AI_Output(self,other,"DIA_Abuyin_Zukunft_13_01");	//Dobrze, Poszukiwaczu Wiedzy. Teraz wejdê w trans. Czy jesteœ gotowy?
-		Info_ClearChoices(dia_abuyin_zukunft);
-		Info_AddChoice(dia_abuyin_zukunft,"Jestem gotów!",dia_abuyin_zukunft_trance);
+		Info_ClearChoices(DIA_Abuyin_Zukunft);
+		Info_AddChoice(DIA_Abuyin_Zukunft,"Jestem gotów!",DIA_Abuyin_Zukunft_Trance);
 	}
 	else
 	{
@@ -407,7 +407,7 @@ func void dia_abuyin_zukunft_info()
 	};
 };
 
-func void dia_abuyin_zukunft_trance()
+func void DIA_Abuyin_Zukunft_Trance()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
@@ -416,46 +416,46 @@ func void dia_abuyin_zukunft_trance()
 	AI_Output(self,other,"DIA_Abuyin_Zukunft_Trance_13_02");	//... Ogieñ! Atak ... potê¿na istota ... p³omienie ... wielu ... zginie ...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_Zukunft_Trance_13_03");	//... Przykro mi. Wizja siê skoñczy³a. Nie widzê nic wiêcej.
-	DIA_ABUYIN_ZUKUNFT_PERMANENT = TRUE;
-	ABUYIN_ZUKUNFT = 1;
-	Info_ClearChoices(dia_abuyin_zukunft);
-	b_giveplayerxp(XP_AMBIENT * 4);
+	DIA_Abuyin_Zukunft_permanent = TRUE;
+	Abuyin_Zukunft = 1;
+	Info_ClearChoices(DIA_Abuyin_Zukunft);
+	B_GivePlayerXP(XP_Ambient * 4);
 };
 
 
-instance DIA_ABUYIN_NOCHMAL(C_INFO)
+instance DIA_Abuyin_Nochmal(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_nochmal_condition;
-	information = dia_abuyin_nochmal_info;
+	condition = DIA_Abuyin_Nochmal_Condition;
+	information = DIA_Abuyin_Nochmal_Info;
 	permanent = TRUE;
 	description = "Czy mo¿esz przygotowaæ dla mnie jeszcze jedn¹ wró¿bê?";
 };
 
 
-func int dia_abuyin_nochmal_condition()
+func int DIA_Abuyin_Nochmal_Condition()
 {
-	if(KAPITEL == ABUYIN_ZUKUNFT)
+	if(Kapitel == Abuyin_Zukunft)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_nochmal_info()
+func void DIA_Abuyin_Nochmal_Info()
 {
 	AI_Output(other,self,"DIA_Abuyin_Nochmal_15_00");	//Czy mo¿esz przygotowaæ dla mnie jeszcze jedn¹ wró¿bê?
 	AI_Output(self,other,"DIA_Abuyin_Nochmal_13_01");	//Och, Synu Tajemniczej Przysz³oœci, nie w mojej mocy jest uchylenie zas³ony, która spowija tajemnice czasu.
 	AI_Output(self,other,"DIA_Abuyin_Nochmal_13_02");	//Dopiero kiedy czas zeœle mi kolejny omen, znów bêdê móg³ spojrzeæ w przysz³oœæ dla ciebie.
-	if(ABUYIN_ERZAEHLT == FALSE)
+	if(Abuyin_Erzaehlt == FALSE)
 	{
 		AI_Output(other,self,"DIA_Abuyin_Nochmal_15_03");	//To znaczy kiedy?
 		AI_Output(self,other,"DIA_Abuyin_Nochmal_13_04");	//Kiedy przysz³oœæ stanie siê teraŸniejszoœci¹ i minie kolejny etep twojej wêdrówki.
-		ABUYIN_ERZAEHLT = TRUE;
+		Abuyin_Erzaehlt = TRUE;
 	};
 };
 
-func void b_abuyin_weissagung()
+func void B_Abuyin_Weissagung()
 {
 	AI_Output(other,self,"B_Abuyin_Weissagung_15_00");	//Czy mo¿esz mi powró¿yæ?
 	AI_Output(self,other,"B_Abuyin_Weissagung_13_01");	//Tak, czas min¹³, wiêc przygotujê dla ciebie wró¿bê w zamian za kilka monet.
@@ -463,61 +463,61 @@ func void b_abuyin_weissagung()
 };
 
 
-instance DIA_ABUYIN_WEISSAGUNG2(C_INFO)
+instance DIA_Abuyin_Weissagung2(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_weissagung2_condition;
-	information = dia_abuyin_weissagung2_info;
+	condition = DIA_Abuyin_Weissagung2_Condition;
+	information = DIA_Abuyin_Weissagung2_Info;
 	permanent = FALSE;
 	description = "Czy mo¿esz dla mnie powró¿yæ?";
 };
 
 
-func int dia_abuyin_weissagung2_condition()
+func int DIA_Abuyin_Weissagung2_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_abuyin_du) && (KAPITEL == 2))
+	if(Npc_KnowsInfo(other,DIA_Abuyin_du) && (Kapitel == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_weissagung2_info()
+func void DIA_Abuyin_Weissagung2_Info()
 {
-	b_abuyin_weissagung();
+	B_Abuyin_Weissagung();
 	AI_Output(self,other,"DIA_Abuyin_Weissagung2_13_00");	//Dla ciebie zaryzykujê spojrzenie przez czas za marne 100 monet.
 };
 
 
-instance DIA_ABUYIN_ZUKUNFT2(C_INFO)
+instance DIA_Abuyin_Zukunft2(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_zukunft2_condition;
-	information = dia_abuyin_zukunft2_info;
+	condition = DIA_Abuyin_Zukunft2_Condition;
+	information = DIA_Abuyin_Zukunft2_Info;
 	permanent = TRUE;
 	description = "Przepowiedz mi przysz³oœæ (zap³aæ 100 sztuk z³ota).";
 };
 
 
-var int dia_abuyin_zukunft2_permanent;
+var int DIA_Abuyin_Zukunft2_permanent;
 
-func int dia_abuyin_zukunft2_condition()
+func int DIA_Abuyin_Zukunft2_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_abuyin_weissagung2) && (DIA_ABUYIN_ZUKUNFT2_PERMANENT == FALSE) && (KAPITEL == 2))
+	if(Npc_KnowsInfo(other,DIA_Abuyin_Weissagung2) && (DIA_Abuyin_Zukunft2_permanent == FALSE) && (Kapitel == 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_zukunft2_info()
+func void DIA_Abuyin_Zukunft2_Info()
 {
 	AI_Output(other,self,"DIA_Abuyin_Zukunft2_15_00");	//Opowiedz mi o przysz³oœci.
-	if(b_giveinvitems(other,self,5113,100))
+	if(B_GiveInvItems(other,self,ItMi_Gold,100))
 	{
 		AI_Output(self,other,"DIA_Abuyin_Zukunft2_13_01");	//Dobrze, Synu Odwagi. Teraz wejdê w trans. Czy jesteœ gotowy?
-		Info_ClearChoices(dia_abuyin_zukunft2);
-		Info_AddChoice(dia_abuyin_zukunft2,"Jestem gotów!",dia_abuyin_zukunft2_trance);
+		Info_ClearChoices(DIA_Abuyin_Zukunft2);
+		Info_AddChoice(DIA_Abuyin_Zukunft2,"Jestem gotów!",DIA_Abuyin_Zukunft2_Trance);
 	}
 	else
 	{
@@ -525,7 +525,7 @@ func void dia_abuyin_zukunft2_info()
 	};
 };
 
-func void dia_abuyin_zukunft2_trance()
+func void DIA_Abuyin_Zukunft2_Trance()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
@@ -534,68 +534,68 @@ func void dia_abuyin_zukunft2_trance()
 	AI_Output(self,other,"DIA_Abuyin_Zukunft2_Trance_13_02");	//... ale trójka siê zjednoczy ... dopiero wtedy otrzymasz co twoje ...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_Zukunft2_Trance_13_03");	//To wszystko. Nie widzê nic wiêcej.
-	DIA_ABUYIN_ZUKUNFT2_PERMANENT = TRUE;
-	ABUYIN_ZUKUNFT = 2;
-	Info_ClearChoices(dia_abuyin_zukunft2);
-	b_giveplayerxp(XP_AMBIENT * 4);
+	DIA_Abuyin_Zukunft2_permanent = TRUE;
+	Abuyin_Zukunft = 2;
+	Info_ClearChoices(DIA_Abuyin_Zukunft2);
+	B_GivePlayerXP(XP_Ambient * 4);
 };
 
 
-instance DIA_ABUYIN_WEISSAGUNG3(C_INFO)
+instance DIA_Abuyin_Weissagung3(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_weissagung3_condition;
-	information = dia_abuyin_weissagung3_info;
+	condition = DIA_Abuyin_Weissagung3_Condition;
+	information = DIA_Abuyin_Weissagung3_Info;
 	permanent = FALSE;
 	description = "Czy mo¿esz dla mnie powró¿yæ?";
 };
 
 
-func int dia_abuyin_weissagung3_condition()
+func int DIA_Abuyin_Weissagung3_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_abuyin_du) && (KAPITEL == 3))
+	if(Npc_KnowsInfo(other,DIA_Abuyin_du) && (Kapitel == 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_weissagung3_info()
+func void DIA_Abuyin_Weissagung3_Info()
 {
-	b_abuyin_weissagung();
+	B_Abuyin_Weissagung();
 	AI_Output(self,other,"DIA_Abuyin_Weissagung3_13_00");	//Dla ciebie zaryzykujê spojrzenie przez czas za marne 250 monet.
 };
 
 
-instance DIA_ABUYIN_ZUKUNFT3(C_INFO)
+instance DIA_Abuyin_Zukunft3(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_zukunft3_condition;
-	information = dia_abuyin_zukunft3_info;
+	condition = DIA_Abuyin_Zukunft3_Condition;
+	information = DIA_Abuyin_Zukunft3_Info;
 	permanent = TRUE;
 	description = "Przepowiedz mi przysz³oœæ (zap³aæ 250 sztuk z³ota).";
 };
 
 
-var int dia_abuyin_zukunft3_permanent;
+var int DIA_Abuyin_Zukunft3_permanent;
 
-func int dia_abuyin_zukunft3_condition()
+func int DIA_Abuyin_Zukunft3_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_abuyin_weissagung3) && (DIA_ABUYIN_ZUKUNFT3_PERMANENT == FALSE) && (KAPITEL == 3))
+	if(Npc_KnowsInfo(other,DIA_Abuyin_Weissagung3) && (DIA_Abuyin_Zukunft3_permanent == FALSE) && (Kapitel == 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_zukunft3_info()
+func void DIA_Abuyin_Zukunft3_Info()
 {
 	AI_Output(other,self,"DIA_Abuyin_Zukunft3_15_00");	//Opowiedz mi o przysz³oœci.
-	if(b_giveinvitems(other,self,5113,250))
+	if(B_GiveInvItems(other,self,ItMi_Gold,250))
 	{
 		AI_Output(self,other,"DIA_Abuyin_Zukunft3_13_01");	//Dobrze, Synu Wiedzy. Teraz wejdê w trans. Czy jesteœ gotowy?
-		Info_ClearChoices(dia_abuyin_zukunft3);
-		Info_AddChoice(dia_abuyin_zukunft3,"Jestem gotów!",dia_abuyin_zukunft3_trance);
+		Info_ClearChoices(DIA_Abuyin_Zukunft3);
+		Info_AddChoice(DIA_Abuyin_Zukunft3,"Jestem gotów!",DIA_Abuyin_Zukunft3_Trance);
 	}
 	else
 	{
@@ -603,7 +603,7 @@ func void dia_abuyin_zukunft3_info()
 	};
 };
 
-func void dia_abuyin_zukunft3_trance()
+func void DIA_Abuyin_Zukunft3_Trance()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
@@ -612,68 +612,68 @@ func void dia_abuyin_zukunft3_trance()
 	AI_Output(self,other,"DIA_Abuyin_Zukunft3_Trance_13_02");	//... Ludzie w obcych zbrojach ... bagno ... jaszczury ... oczekuj¹ ciê ...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_Zukunft3_Trance_13_03");	//To wszystko. Nie widzê nic wiêcej.
-	DIA_ABUYIN_ZUKUNFT3_PERMANENT = TRUE;
-	ABUYIN_ZUKUNFT = 3;
-	Info_ClearChoices(dia_abuyin_zukunft3);
-	b_giveplayerxp(XP_AMBIENT * 4);
+	DIA_Abuyin_Zukunft3_permanent = TRUE;
+	Abuyin_Zukunft = 3;
+	Info_ClearChoices(DIA_Abuyin_Zukunft3);
+	B_GivePlayerXP(XP_Ambient * 4);
 };
 
 
-instance DIA_ABUYIN_WEISSAGUNG4(C_INFO)
+instance DIA_Abuyin_Weissagung4(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_weissagung4_condition;
-	information = dia_abuyin_weissagung4_info;
+	condition = DIA_Abuyin_Weissagung4_Condition;
+	information = DIA_Abuyin_Weissagung4_Info;
 	permanent = FALSE;
 	description = "Czy mo¿esz dla mnie powró¿yæ?";
 };
 
 
-func int dia_abuyin_weissagung4_condition()
+func int DIA_Abuyin_Weissagung4_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_abuyin_du) && (KAPITEL == 4))
+	if(Npc_KnowsInfo(other,DIA_Abuyin_du) && (Kapitel == 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_weissagung4_info()
+func void DIA_Abuyin_Weissagung4_Info()
 {
-	b_abuyin_weissagung();
+	B_Abuyin_Weissagung();
 	AI_Output(self,other,"DIA_Abuyin_Weissagung4_13_00");	//Dla ciebie zaryzykujê spojrzenie przez czas za marne 500 monet.
 };
 
 
-instance DIA_ABUYIN_ZUKUNFT4(C_INFO)
+instance DIA_Abuyin_Zukunft4(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_zukunft4_condition;
-	information = dia_abuyin_zukunft4_info;
+	condition = DIA_Abuyin_Zukunft4_Condition;
+	information = DIA_Abuyin_Zukunft4_Info;
 	permanent = TRUE;
 	description = "Przepowiedz mi przysz³oœæ (zap³aæ 500 sztuk z³ota).";
 };
 
 
-var int dia_abuyin_zukunft4_permanent;
+var int DIA_Abuyin_Zukunft4_permanent;
 
-func int dia_abuyin_zukunft4_condition()
+func int DIA_Abuyin_Zukunft4_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_abuyin_weissagung4) && (DIA_ABUYIN_ZUKUNFT4_PERMANENT == FALSE) && (KAPITEL == 4))
+	if(Npc_KnowsInfo(other,DIA_Abuyin_Weissagung4) && (DIA_Abuyin_Zukunft4_permanent == FALSE) && (Kapitel == 4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_zukunft4_info()
+func void DIA_Abuyin_Zukunft4_Info()
 {
 	AI_Output(other,self,"DIA_Abuyin_Zukunft4_15_00");	//Opowiedz mi o przysz³oœci.
-	if(b_giveinvitems(other,self,5113,500))
+	if(B_GiveInvItems(other,self,ItMi_Gold,500))
 	{
 		AI_Output(self,other,"DIA_Abuyin_Zukunft4_13_01");	//Dobrze, Synu Wiedzy. Teraz wejdê w trans. Czy jesteœ gotowy?
-		Info_ClearChoices(dia_abuyin_zukunft4);
-		Info_AddChoice(dia_abuyin_zukunft4,"Jestem gotów!",dia_abuyin_zukunft4_trance);
+		Info_ClearChoices(DIA_Abuyin_Zukunft4);
+		Info_AddChoice(DIA_Abuyin_Zukunft4,"Jestem gotów!",DIA_Abuyin_Zukunft4_Trance);
 	}
 	else
 	{
@@ -681,7 +681,7 @@ func void dia_abuyin_zukunft4_info()
 	};
 };
 
-func void dia_abuyin_zukunft4_trance()
+func void DIA_Abuyin_Zukunft4_Trance()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
@@ -690,68 +690,68 @@ func void dia_abuyin_zukunft4_trance()
 	AI_Output(self,other,"DIA_Abuyin_Zukunft4_Trance_13_02");	//... œwi¹tynia ... stoi samotnie w królestwie Adanosa ... ukryta we mgle ...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_Zukunft4_Trance_13_03");	//To wszystko. Nie widzê nic wiêcej.
-	DIA_ABUYIN_ZUKUNFT4_PERMANENT = TRUE;
-	ABUYIN_ZUKUNFT = 4;
-	Info_ClearChoices(dia_abuyin_zukunft4);
-	b_giveplayerxp(XP_AMBIENT * 4);
+	DIA_Abuyin_Zukunft4_permanent = TRUE;
+	Abuyin_Zukunft = 4;
+	Info_ClearChoices(DIA_Abuyin_Zukunft4);
+	B_GivePlayerXP(XP_Ambient * 4);
 };
 
 
-instance DIA_ABUYIN_WEISSAGUNG5(C_INFO)
+instance DIA_Abuyin_Weissagung5(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_weissagung5_condition;
-	information = dia_abuyin_weissagung5_info;
+	condition = DIA_Abuyin_Weissagung5_Condition;
+	information = DIA_Abuyin_Weissagung5_Info;
 	permanent = FALSE;
 	description = "Czy mo¿esz dla mnie powró¿yæ?";
 };
 
 
-func int dia_abuyin_weissagung5_condition()
+func int DIA_Abuyin_Weissagung5_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_abuyin_du) && (KAPITEL == 5))
+	if(Npc_KnowsInfo(other,DIA_Abuyin_du) && (Kapitel == 5))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_weissagung5_info()
+func void DIA_Abuyin_Weissagung5_Info()
 {
-	b_abuyin_weissagung();
+	B_Abuyin_Weissagung();
 	AI_Output(self,other,"DIA_Abuyin_Weissagung5_13_00");	//Dla ciebie zaryzykujê spojrzenie przez czas za marne 1000 monet.
 };
 
 
-instance DIA_ABUYIN_ZUKUNFT5(C_INFO)
+instance DIA_Abuyin_Zukunft5(C_Info)
 {
-	npc = vlk_456_abuyin;
+	npc = VLK_456_Abuyin;
 	nr = 2;
-	condition = dia_abuyin_zukunft5_condition;
-	information = dia_abuyin_zukunft5_info;
+	condition = DIA_Abuyin_Zukunft5_Condition;
+	information = DIA_Abuyin_Zukunft5_Info;
 	permanent = TRUE;
 	description = "Przepowiedz mi przysz³oœæ (zap³aæ 1000 sztuk z³ota).";
 };
 
 
-var int dia_abuyin_zukunft5_permanent;
+var int DIA_Abuyin_Zukunft5_permanent;
 
-func int dia_abuyin_zukunft5_condition()
+func int DIA_Abuyin_Zukunft5_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_abuyin_weissagung5) && (DIA_ABUYIN_ZUKUNFT5_PERMANENT == FALSE) && (KAPITEL == 5))
+	if(Npc_KnowsInfo(other,DIA_Abuyin_Weissagung5) && (DIA_Abuyin_Zukunft5_permanent == FALSE) && (Kapitel == 5))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_abuyin_zukunft5_info()
+func void DIA_Abuyin_Zukunft5_Info()
 {
 	AI_Output(other,self,"DIA_Abuyin_Zukunft5_15_00");	//Opowiedz mi o przysz³oœci.
-	if(b_giveinvitems(other,self,5113,1000))
+	if(B_GiveInvItems(other,self,ItMi_Gold,1000))
 	{
 		AI_Output(self,other,"DIA_Abuyin_Zukunft5_13_01");	//Dobrze, Synu Wiedzy. Teraz wejdê w trans. Czy jesteœ gotowy?
-		Info_ClearChoices(dia_abuyin_zukunft5);
-		Info_AddChoice(dia_abuyin_zukunft5,"Jestem gotów!",dia_abuyin_zukunft5_trance);
+		Info_ClearChoices(DIA_Abuyin_Zukunft5);
+		Info_AddChoice(DIA_Abuyin_Zukunft5,"Jestem gotów!",DIA_Abuyin_Zukunft5_Trance);
 	}
 	else
 	{
@@ -759,7 +759,7 @@ func void dia_abuyin_zukunft5_info()
 	};
 };
 
-func void dia_abuyin_zukunft5_trance()
+func void DIA_Abuyin_Zukunft5_Trance()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
@@ -768,9 +768,9 @@ func void dia_abuyin_zukunft5_trance()
 	AI_Output(self,other,"DIA_Abuyin_Zukunft5_Trance_13_02");	//... ty powrócisz, ale nie zaznasz spokoju ...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_Zukunft5_Trance_13_03");	//To wszystko. Nie widzê nic wiêcej.
-	DIA_ABUYIN_ZUKUNFT5_PERMANENT = TRUE;
-	ABUYIN_ZUKUNFT = 5;
-	Info_ClearChoices(dia_abuyin_zukunft5);
-	b_giveplayerxp(XP_AMBIENT * 4);
+	DIA_Abuyin_Zukunft5_permanent = TRUE;
+	Abuyin_Zukunft = 5;
+	Info_ClearChoices(DIA_Abuyin_Zukunft5);
+	B_GivePlayerXP(XP_Ambient * 4);
 };
 

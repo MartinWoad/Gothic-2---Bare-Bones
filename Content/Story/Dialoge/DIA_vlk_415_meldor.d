@@ -1,46 +1,46 @@
 
-instance DIA_MELDOR_EXIT(C_INFO)
+instance DIA_Meldor_EXIT(C_Info)
 {
-	npc = vlk_415_meldor;
+	npc = VLK_415_Meldor;
 	nr = 999;
-	condition = dia_meldor_exit_condition;
-	information = dia_meldor_exit_info;
+	condition = DIA_Meldor_EXIT_Condition;
+	information = DIA_Meldor_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_meldor_exit_condition()
+func int DIA_Meldor_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_meldor_exit_info()
+func void DIA_Meldor_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MELDOR_HALLO(C_INFO)
+instance DIA_Meldor_Hallo(C_Info)
 {
-	npc = vlk_415_meldor;
+	npc = VLK_415_Meldor;
 	nr = 1;
-	condition = dia_meldor_hallo_condition;
-	information = dia_meldor_hallo_info;
+	condition = DIA_Meldor_Hallo_Condition;
+	information = DIA_Meldor_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_meldor_hallo_condition()
+func int DIA_Meldor_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (self.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (self.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_meldor_hallo_info()
+func void DIA_Meldor_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Meldor_Hallo_07_00");	//Czego chcesz?
 	AI_Output(other,self,"DIA_Meldor_Hallo_15_01");	//Chcia³em siê tutaj rozejrzeæ...
@@ -48,52 +48,52 @@ func void dia_meldor_hallo_info()
 };
 
 
-instance DIA_MELDOR_INTERESSANTES(C_INFO)
+instance DIA_Meldor_Interessantes(C_Info)
 {
-	npc = vlk_415_meldor;
+	npc = VLK_415_Meldor;
 	nr = 2;
-	condition = dia_meldor_interessantes_condition;
-	information = dia_meldor_interessantes_info;
+	condition = DIA_Meldor_Interessantes_Condition;
+	information = DIA_Meldor_Interessantes_Info;
 	permanent = FALSE;
 	description = "Czy s¹ tutaj jakieœ interesuj¹ce rzeczy?";
 };
 
 
-func int dia_meldor_interessantes_condition()
+func int DIA_Meldor_Interessantes_Condition()
 {
 	return TRUE;
 };
 
-func void dia_meldor_interessantes_info()
+func void DIA_Meldor_Interessantes_Info()
 {
 	AI_Output(other,self,"DIA_Meldor_Interessantes_15_00");	//Czy s¹ tutaj jakieœ interesuj¹ce rzeczy?
 	AI_Output(self,other,"DIA_Meldor_Interessantes_07_01");	//Jest burdel i knajpa. W³aœciciel nazywa siê Kardif. Jeœli potrzebne ci s¹ jakieœ informacje, powinieneœ udaæ siê do niego.
 	AI_Output(self,other,"DIA_Meldor_Interessantes_07_02");	//Tak przy okazji, potrzebujesz gotówki?
-	Log_CreateTopic(TOPIC_CITYTRADER,LOG_NOTE);
-	b_logentry(TOPIC_CITYTRADER,"Kardif, w³aœciciel knajpy, sprzedaje informacje.");
+	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
+	B_LogEntry(TOPIC_CityTrader,"Kardif, w³aœciciel knajpy, sprzedaje informacje.");
 };
 
 
-instance DIA_MELDOR_LEHMAR(C_INFO)
+instance DIA_Meldor_Lehmar(C_Info)
 {
-	npc = vlk_415_meldor;
+	npc = VLK_415_Meldor;
 	nr = 3;
-	condition = dia_meldor_lehmar_condition;
-	information = dia_meldor_lehmar_info;
+	condition = DIA_Meldor_Lehmar_Condition;
+	information = DIA_Meldor_Lehmar_Info;
 	permanent = FALSE;
 	description = "A co, rozdajesz pieni¹dze?";
 };
 
 
-func int dia_meldor_lehmar_condition()
+func int DIA_Meldor_Lehmar_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_meldor_interessantes))
+	if(Npc_KnowsInfo(other,DIA_Meldor_Interessantes))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_meldor_lehmar_info()
+func void DIA_Meldor_Lehmar_Info()
 {
 	AI_Output(other,self,"DIA_Meldor_Lehmar_15_00");	//A co, rozdajesz pieni¹dze?
 	AI_Output(self,other,"DIA_Meldor_Lehmar_07_01");	//Nie. Ale po drugiej stronie ulicy mieszka Lehmar. Po¿ycza pieni¹dze na procent.
@@ -102,49 +102,49 @@ func void dia_meldor_lehmar_info()
 };
 
 
-instance DIA_MELDOR_ARBEITEST(C_INFO)
+instance DIA_Meldor_Arbeitest(C_Info)
 {
-	npc = vlk_415_meldor;
+	npc = VLK_415_Meldor;
 	nr = 4;
-	condition = dia_meldor_arbeitest_condition;
-	information = dia_meldor_arbeitest_info;
+	condition = DIA_Meldor_Arbeitest_Condition;
+	information = DIA_Meldor_Arbeitest_Info;
 	permanent = FALSE;
 	description = "Pracujesz dla Lehmara?";
 };
 
 
-func int dia_meldor_arbeitest_condition()
+func int DIA_Meldor_Arbeitest_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_meldor_lehmar))
+	if(Npc_KnowsInfo(other,DIA_Meldor_Lehmar))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_meldor_arbeitest_info()
+func void DIA_Meldor_Arbeitest_Info()
 {
 	AI_Output(other,self,"DIA_Meldor_Arbeitest_15_00");	//Pracujesz dla Lehmara?
 	AI_Output(self,other,"DIA_Meldor_Arbeitest_07_01");	//Hmm... Zgad³eœ, geniuszu.
 };
 
 
-instance DIA_MELDOR_INSOV(C_INFO)
+instance DIA_Meldor_InsOV(C_Info)
 {
-	npc = vlk_415_meldor;
+	npc = VLK_415_Meldor;
 	nr = 5;
-	condition = dia_meldor_insov_condition;
-	information = dia_meldor_insov_info;
+	condition = DIA_Meldor_InsOV_Condition;
+	information = DIA_Meldor_InsOV_Info;
 	permanent = FALSE;
 	description = "W³aœciwie to idê do górnego miasta.";
 };
 
 
-func int dia_meldor_insov_condition()
+func int DIA_Meldor_InsOV_Condition()
 {
 	return TRUE;
 };
 
-func void dia_meldor_insov_info()
+func void DIA_Meldor_InsOV_Info()
 {
 	AI_Output(other,self,"DIA_Meldor_InsOV_15_00");	//W³aœciwie to idê do górnego miasta.
 	AI_Output(self,other,"DIA_Meldor_InsOV_07_01");	//Tak, oczywiœcie. A ja w³aœnie mia³em wsi¹œæ na statek, który zawiezie mnie prosto na audiencjê u Króla.
@@ -152,26 +152,26 @@ func void dia_meldor_insov_info()
 };
 
 
-instance DIA_MELDOR_CITIZEN(C_INFO)
+instance DIA_Meldor_Citizen(C_Info)
 {
-	npc = vlk_415_meldor;
+	npc = VLK_415_Meldor;
 	nr = 6;
-	condition = dia_meldor_citizen_condition;
-	information = dia_meldor_citizen_info;
+	condition = DIA_Meldor_Citizen_Condition;
+	information = DIA_Meldor_Citizen_Info;
 	permanent = FALSE;
 	description = "Czy jesteœ obywatelem tego miasta?";
 };
 
 
-func int dia_meldor_citizen_condition()
+func int DIA_Meldor_Citizen_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_meldor_insov))
+	if(Npc_KnowsInfo(other,DIA_Meldor_InsOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_meldor_citizen_info()
+func void DIA_Meldor_Citizen_Info()
 {
 	AI_Output(other,self,"DIA_Meldor_Citizen_15_00");	//Czy jesteœ obywatelem tego miasta?
 	AI_Output(self,other,"DIA_Meldor_Citizen_07_01");	//Jeœli chodzi ci o to, czy tu mieszkam, to odpowiedŸ brzmi - tak. Co nie znaczy, ¿e mogê wchodziæ do górnego miasta.
@@ -180,31 +180,31 @@ func void dia_meldor_citizen_info()
 };
 
 
-instance DIA_MELDOR_SMOKE(C_INFO)
+instance DIA_Meldor_Smoke(C_Info)
 {
-	npc = vlk_415_meldor;
+	npc = VLK_415_Meldor;
 	nr = 5;
-	condition = dia_meldor_smoke_condition;
-	information = dia_meldor_smoke_info;
+	condition = DIA_Meldor_Smoke_Condition;
+	information = DIA_Meldor_Smoke_Info;
 	permanent = FALSE;
 	description = "Wiesz mo¿e, gdzie mogê kupiæ trochê ziela?";
 };
 
 
-func int dia_meldor_smoke_condition()
+func int DIA_Meldor_Smoke_Condition()
 {
-	if(MIS_ANDRE_REDLIGHT == LOG_RUNNING)
+	if(MIS_Andre_REDLIGHT == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_meldor_smoke_info()
+func void DIA_Meldor_Smoke_Info()
 {
-	var C_ITEM heroarmor;
-	heroarmor = Npc_GetEquippedArmor(other);
+	var C_Item heroArmor;
+	heroArmor = Npc_GetEquippedArmor(other);
 	AI_Output(other,self,"DIA_Meldor_Smoke_15_00");	//Wiesz mo¿e, gdzie mogê kupiæ trochê ziela?
-	if((Hlp_IsItem(heroarmor,itar_mil_l) == TRUE) || (Hlp_IsItem(heroarmor,itar_mil_m) == TRUE) || (Hlp_IsItem(heroarmor,itar_pal_m) == TRUE) || (Hlp_IsItem(heroarmor,itar_pal_h) == TRUE))
+	if((Hlp_IsItem(heroArmor,ITAR_Mil_L) == TRUE) || (Hlp_IsItem(heroArmor,ItAr_MIL_M) == TRUE) || (Hlp_IsItem(heroArmor,ItAr_PAL_M) == TRUE) || (Hlp_IsItem(heroArmor,ItAr_PAl_H) == TRUE))
 	{
 		AI_Output(self,other,"DIA_Meldor_Smoke_07_01");	//Nie, nie mam pojêcia.
 	}
@@ -215,43 +215,43 @@ func void dia_meldor_smoke_info()
 };
 
 
-var int meldor_dgnews;
+var int Meldor_DGNews;
 
-instance DIA_MELDOR_PERM(C_INFO)
+instance DIA_Meldor_PERM(C_Info)
 {
-	npc = vlk_415_meldor;
+	npc = VLK_415_Meldor;
 	nr = 7;
-	condition = dia_meldor_perm_condition;
-	information = dia_meldor_perm_info;
+	condition = DIA_Meldor_PERM_Condition;
+	information = DIA_Meldor_PERM_Info;
 	permanent = TRUE;
 	description = "Czy ostatnio wydarzy³o siê tu coœ niezwyk³ego?";
 };
 
 
-func int dia_meldor_perm_condition()
+func int DIA_Meldor_PERM_Condition()
 {
 	return TRUE;
 };
 
-func void dia_meldor_perm_info()
+func void DIA_Meldor_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Meldor_PERM_15_00");	//Czy ostatnio wydarzy³o siê tutaj coœ ciekawego?
-	if(KAPITEL <= 1)
+	if(Kapitel <= 1)
 	{
 		AI_Output(self,other,"DIA_Meldor_PERM_07_01");	//Nie tak dawno temu stra¿ miejska wywróci³a ca³¹ dzielnicê portow¹ do góry nogami.
 		AI_Output(self,other,"DIA_Meldor_PERM_07_02");	//Szukali skradzionych kosztownoœci. Ostatnio zdarzy³o siê tu sporo kradzie¿y. Szczególnie w lepszych dzielnicach.
 		AI_Output(self,other,"DIA_Meldor_PERM_07_03");	//NajwyraŸniej próbuj¹ zwaliæ winê na biedotê z portu.
 	}
-	else if((ANDRE_DIEBESGILDE_AUFGERAEUMT == TRUE) && (MELDOR_DGNEWS == FALSE))
+	else if((Andre_Diebesgilde_aufgeraeumt == TRUE) && (Meldor_DGNews == FALSE))
 	{
 		AI_Output(self,other,"DIA_Meldor_PERM_07_04");	//Podobno znaleŸli w kana³ach z³odziejsk¹ kryjówkê. Wszyscy przestêpcy zostali zabici.
-		MELDOR_DGNEWS = TRUE;
+		Meldor_DGNews = TRUE;
 	}
-	else if(KAPITEL == 3)
+	else if(Kapitel == 3)
 	{
 		AI_Output(self,other,"DIA_Meldor_PERM_07_05");	//Podobno w Górniczej Dolinie s¹ smoki. Ciekaw jestem, kiedy nasi paladyni zostan¹ wys³ani do walki.
 	}
-	else if(KAPITEL == 5)
+	else if(Kapitel == 5)
 	{
 		AI_Output(self,other,"DIA_Meldor_PERM_07_06");	//Podobno wszystkie smoki s¹ martwe.
 	}
@@ -262,65 +262,65 @@ func void dia_meldor_perm_info()
 };
 
 
-instance DIA_MELDOR_VONLEHMAR(C_INFO)
+instance DIA_Meldor_VonLehmar(C_Info)
 {
-	npc = vlk_415_meldor;
+	npc = VLK_415_Meldor;
 	nr = 1;
-	condition = dia_meldor_vonlehmar_condition;
-	information = dia_meldor_vonlehmar_info;
+	condition = DIA_Meldor_VonLehmar_Condition;
+	information = DIA_Meldor_VonLehmar_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_meldor_vonlehmar_condition()
+func int DIA_Meldor_VonLehmar_Condition()
 {
-	if((LEHMAR_GELDGELIEHEN_DAY <= (Wld_GetDay() - 2)) && (LEHMAR_GELDGELIEHEN != 0))
+	if((Lehmar_GeldGeliehen_Day <= (Wld_GetDay() - 2)) && (Lehmar_GeldGeliehen != 0))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_meldor_vonlehmar_info()
+func void DIA_Meldor_VonLehmar_Info()
 {
 	AI_Output(self,other,"DIA_Meldor_VonLehmar_07_00");	//Hej, zaczekaj...
 	AI_Output(self,other,"DIA_Meldor_VonLehmar_07_01");	//Mam dla ciebie wiadomoœæ od Lehmara.
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_NONE,1);
+	B_Attack(self,other,AR_NONE,1);
 };
 
 
-instance DIA_MELDOR_PICKPOCKET(C_INFO)
+instance DIA_Meldor_PICKPOCKET(C_Info)
 {
-	npc = vlk_415_meldor;
+	npc = VLK_415_Meldor;
 	nr = 900;
-	condition = dia_meldor_pickpocket_condition;
-	information = dia_meldor_pickpocket_info;
+	condition = DIA_Meldor_PICKPOCKET_Condition;
+	information = DIA_Meldor_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_meldor_pickpocket_condition()
+func int DIA_Meldor_PICKPOCKET_Condition()
 {
-	return c_beklauen(34,55);
+	return C_Beklauen(34,55);
 };
 
-func void dia_meldor_pickpocket_info()
+func void DIA_Meldor_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_meldor_pickpocket);
-	Info_AddChoice(dia_meldor_pickpocket,DIALOG_BACK,dia_meldor_pickpocket_back);
-	Info_AddChoice(dia_meldor_pickpocket,DIALOG_PICKPOCKET,dia_meldor_pickpocket_doit);
+	Info_ClearChoices(DIA_Meldor_PICKPOCKET);
+	Info_AddChoice(DIA_Meldor_PICKPOCKET,Dialog_Back,DIA_Meldor_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Meldor_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Meldor_PICKPOCKET_DoIt);
 };
 
-func void dia_meldor_pickpocket_doit()
+func void DIA_Meldor_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_meldor_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Meldor_PICKPOCKET);
 };
 
-func void dia_meldor_pickpocket_back()
+func void DIA_Meldor_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_meldor_pickpocket);
+	Info_ClearChoices(DIA_Meldor_PICKPOCKET);
 };
 

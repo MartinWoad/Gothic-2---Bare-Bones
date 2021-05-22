@@ -1,12 +1,12 @@
 
-func void b_stopshortzapped()
+func void B_StopShortZapped()
 {
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
 	Npc_ClearAIQueue(self);
 	AI_Standup(self);
 	if(self.guild < GIL_SEPERATOR_HUM)
 	{
-		b_assessdamage();
+		B_AssessDamage();
 		AI_ContinueRoutine(self);
 	}
 	else
@@ -16,9 +16,9 @@ func void b_stopshortzapped()
 	};
 };
 
-func void zs_shortzapped()
+func void ZS_ShortZapped()
 {
-	Npc_PercEnable(self,PERC_ASSESSSTOPMAGIC,b_stopshortzapped);
+	Npc_PercEnable(self,PERC_ASSESSSTOPMAGIC,B_StopShortZapped);
 	if(!Npc_HasBodyFlag(self,BS_FLAG_INTERRUPTABLE))
 	{
 		AI_Standup(self);
@@ -33,17 +33,17 @@ func void zs_shortzapped()
 	};
 };
 
-func int zs_shortzapped_loop()
+func int ZS_ShortZapped_Loop()
 {
 	if(Npc_GetStateTime(self) > SPL_TIME_SHORTZAPPED)
 	{
-		b_stopshortzapped();
+		B_StopShortZapped();
 		return LOOP_END;
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_shortzapped_end()
+func void ZS_ShortZapped_End()
 {
 };
 

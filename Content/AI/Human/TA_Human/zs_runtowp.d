@@ -1,8 +1,8 @@
 
-func void zs_runtowp()
+func void ZS_RunToWP()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_RUN);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
@@ -12,7 +12,7 @@ func void zs_runtowp()
 	AI_PlayAni(self,"T_STAND_2_HGUARD");
 };
 
-func int zs_runtowp_loop()
+func int ZS_RunToWP_Loop()
 {
 	var int random;
 	if(Npc_GetStateTime(self) > 5)
@@ -27,7 +27,7 @@ func int zs_runtowp_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_runtowp_end()
+func void ZS_RunToWP_End()
 {
 };
 

@@ -1,81 +1,81 @@
 
-var int rosi_itemsgiven_chapter_1;
-var int rosi_itemsgiven_chapter_2;
-var int rosi_itemsgiven_chapter_3;
-var int rosi_itemsgiven_chapter_4;
-var int rosi_itemsgiven_chapter_5;
+var int Rosi_ItemsGiven_Chapter_1;
+var int Rosi_ItemsGiven_Chapter_2;
+var int Rosi_ItemsGiven_Chapter_3;
+var int Rosi_ItemsGiven_Chapter_4;
+var int Rosi_ItemsGiven_Chapter_5;
 var int rosi_itemsgiven_chapter_6;
 
-func void b_givetradeinv_rosi(var C_NPC slf)
+func void B_GiveTradeInv_Rosi(var C_Npc slf)
 {
-	if((KAPITEL >= 1) && (ROSI_ITEMSGIVEN_CHAPTER_1 == FALSE))
+	if((Kapitel >= 1) && (Rosi_ItemsGiven_Chapter_1 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itfo_water,5);
-		CreateInvItems(slf,itfo_bread,3);
-		CreateInvItems(slf,itrw_bow_l_01,1);
-		CreateInvItems(slf,itrw_arrow,50);
-		CreateInvItems(slf,itrw_bolt,30);
-		ROSI_ITEMSGIVEN_CHAPTER_1 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItFo_Water,5);
+		CreateInvItems(slf,ItFo_Bread,3);
+		CreateInvItems(slf,ItRw_Bow_L_01,1);
+		CreateInvItems(slf,ItRw_Arrow,50);
+		CreateInvItems(slf,ItRw_Bolt,30);
+		Rosi_ItemsGiven_Chapter_1 = TRUE;
 	};
-	if((KAPITEL >= 2) && (ROSI_ITEMSGIVEN_CHAPTER_2 == FALSE))
+	if((Kapitel >= 2) && (Rosi_ItemsGiven_Chapter_2 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itfo_cheese,5);
-		CreateInvItems(slf,itfomutton,2);
-		CreateInvItems(slf,itfo_stew,5);
-		CreateInvItems(slf,itfo_fishsoup,5);
-		CreateInvItems(slf,itrw_bow_l_01,1);
-		CreateInvItems(slf,itrw_arrow,70);
-		CreateInvItems(slf,itrw_bolt,80);
-		ROSI_ITEMSGIVEN_CHAPTER_2 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItFo_Cheese,5);
+		CreateInvItems(slf,ItFoMutton,2);
+		CreateInvItems(slf,ItFo_Stew,5);
+		CreateInvItems(slf,ItFo_FishSoup,5);
+		CreateInvItems(slf,ItRw_Bow_L_01,1);
+		CreateInvItems(slf,ItRw_Arrow,70);
+		CreateInvItems(slf,ItRw_Bolt,80);
+		Rosi_ItemsGiven_Chapter_2 = TRUE;
 	};
-	if((KAPITEL >= 3) && (ROSI_ITEMSGIVEN_CHAPTER_3 == FALSE))
+	if((Kapitel >= 3) && (Rosi_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itfo_cheese,2);
-		CreateInvItems(slf,itfo_stew,5);
-		CreateInvItems(slf,itfo_sausage,5);
-		CreateInvItems(slf,itfo_booze,5);
-		CreateInvItems(slf,itrw_bow_l_04,1);
-		CreateInvItems(slf,itrw_arrow,90);
-		CreateInvItems(slf,itrw_bolt,40);
-		ROSI_ITEMSGIVEN_CHAPTER_3 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItFo_Cheese,2);
+		CreateInvItems(slf,ItFo_Stew,5);
+		CreateInvItems(slf,ItFo_Sausage,5);
+		CreateInvItems(slf,ItFo_Booze,5);
+		CreateInvItems(slf,ItRw_Bow_L_04,1);
+		CreateInvItems(slf,ItRw_Arrow,90);
+		CreateInvItems(slf,ItRw_Bolt,40);
+		Rosi_ItemsGiven_Chapter_3 = TRUE;
 	};
-	if((KAPITEL >= 4) && (ROSI_ITEMSGIVEN_CHAPTER_4 == FALSE))
+	if((Kapitel >= 4) && (Rosi_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,150);
-		CreateInvItems(slf,itfo_wine,5);
-		CreateInvItems(slf,itfomutton,5);
-		CreateInvItems(slf,itfo_stew,5);
-		CreateInvItems(slf,itfo_bacon,5);
-		CreateInvItems(slf,itrw_arrow,100);
-		CreateInvItems(slf,itrw_bolt,130);
-		ROSI_ITEMSGIVEN_CHAPTER_4 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,150);
+		CreateInvItems(slf,ItFo_Wine,5);
+		CreateInvItems(slf,ItFoMutton,5);
+		CreateInvItems(slf,ItFo_Stew,5);
+		CreateInvItems(slf,ItFo_Bacon,5);
+		CreateInvItems(slf,ItRw_Arrow,100);
+		CreateInvItems(slf,ItRw_Bolt,130);
+		Rosi_ItemsGiven_Chapter_4 = TRUE;
 	};
-	if((KAPITEL >= 5) && (ROSI_ITEMSGIVEN_CHAPTER_5 == FALSE))
+	if((Kapitel >= 5) && (Rosi_ItemsGiven_Chapter_5 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,200);
-		CreateInvItems(slf,itfo_wine,3);
-		CreateInvItems(slf,itfo_milk,2);
-		CreateInvItems(slf,itfomutton,5);
-		CreateInvItems(slf,itfo_bacon,5);
-		CreateInvItems(slf,itrw_bow_h_01,1);
-		CreateInvItems(slf,itrw_crossbow_m_02,1);
-		CreateInvItems(slf,itrw_arrow,150);
-		CreateInvItems(slf,itrw_bolt,130);
-		ROSI_ITEMSGIVEN_CHAPTER_5 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,200);
+		CreateInvItems(slf,ItFo_Wine,3);
+		CreateInvItems(slf,ItFo_Milk,2);
+		CreateInvItems(slf,ItFoMutton,5);
+		CreateInvItems(slf,ItFo_Bacon,5);
+		CreateInvItems(slf,ItRw_Bow_H_01,1);
+		CreateInvItems(slf,ItRw_Crossbow_M_02,1);
+		CreateInvItems(slf,ItRw_Arrow,150);
+		CreateInvItems(slf,ItRw_Bolt,130);
+		Rosi_ItemsGiven_Chapter_5 = TRUE;
 	};
-	if((KAPITEL >= 6) && (ROSI_ITEMSGIVEN_CHAPTER_6 == FALSE))
+	if((Kapitel >= 6) && (ROSI_ITEMSGIVEN_CHAPTER_6 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,300);
-		CreateInvItems(slf,itfo_wine,2);
-		CreateInvItems(slf,itfomutton,5);
-		CreateInvItems(slf,itfo_stew,5);
-		CreateInvItems(slf,itfo_sausage,10);
-		CreateInvItems(slf,itfo_bacon,5);
-		CreateInvItems(slf,itrw_arrow,150);
-		CreateInvItems(slf,itrw_bolt,130);
+		CreateInvItems(slf,ItMi_Gold,300);
+		CreateInvItems(slf,ItFo_Wine,2);
+		CreateInvItems(slf,ItFoMutton,5);
+		CreateInvItems(slf,ItFo_Stew,5);
+		CreateInvItems(slf,ItFo_Sausage,10);
+		CreateInvItems(slf,ItFo_Bacon,5);
+		CreateInvItems(slf,ItRw_Arrow,150);
+		CreateInvItems(slf,ItRw_Bolt,130);
 		ROSI_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };

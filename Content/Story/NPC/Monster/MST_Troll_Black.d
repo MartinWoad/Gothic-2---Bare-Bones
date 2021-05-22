@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_TROLL_BLACK(C_NPC)
+prototype Mst_Default_Troll_Black(C_Npc)
 {
 	name[0] = "Czarny Troll";
 	guild = GIL_TROLL;
@@ -21,26 +21,26 @@ prototype MST_DEFAULT_TROLL_BLACK(C_NPC)
 	fight_tactic = FAI_TROLL;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_troll_black()
+func void B_SetVisuals_Troll_Black()
 {
 	Mdl_SetVisual(self,"Troll.mds");
 	Mdl_SetVisualBody(self,"Troll_Black_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance TROLL_BLACK(MST_DEFAULT_TROLL_BLACK)
+instance Troll_Black(Mst_Default_Troll_Black)
 {
-	aivar[AIV_MAXDISTTOWP] = 1000;
-	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_TROLL;
-	b_setvisuals_troll_black();
+	aivar[AIV_MaxDistToWp] = 1000;
+	aivar[AIV_OriginalFightTactic] = FAI_TROLL;
+	B_SetVisuals_Troll_Black();
 	Npc_SetToFistMode(self);
 };
 

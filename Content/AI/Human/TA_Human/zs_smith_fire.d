@@ -1,8 +1,8 @@
 
-func void zs_smith_fire()
+func void ZS_Smith_Fire()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == FALSE)
 	{
@@ -10,16 +10,16 @@ func void zs_smith_fire()
 	};
 };
 
-func int zs_smith_fire_loop()
+func int ZS_Smith_Fire_Loop()
 {
-	if(!c_bodystatecontains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSFIRE"))
+	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSFIRE"))
 	{
 		AI_UseMob(self,"BSFIRE",1);
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_smith_fire_end()
+func void ZS_Smith_Fire_End()
 {
 	AI_UseMob(self,"BSFIRE",-1);
 };

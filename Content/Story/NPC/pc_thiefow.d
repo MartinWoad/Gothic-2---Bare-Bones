@@ -1,34 +1,34 @@
 
-instance PC_THIEFOW(NPC_DEFAULT)
+instance PC_ThiefOW(Npc_Default)
 {
 	name[0] = "Diego";
 	guild = GIL_NONE;
 	id = 1;
 	voice = 11;
 	flags = NPC_FLAG_IMMORTAL;
-	npctype = NPCTYPE_FRIEND;
-	b_setattributestochapter(self,6);
+	npcType = NPCTYPE_FRIEND;
+	B_SetAttributesToChapter(self,6);
 	fight_tactic = FAI_HUMAN_MASTER;
-	EquipItem(self,itmw_1h_sld_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Thief",FACE_L_DIEGO,BODYTEX_L,4850);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Thief",Face_L_Diego,BodyTex_L,ITAR_Diego);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Arrogance.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,80);
-	daily_routine = rtn_start_1;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,80);
+	daily_routine = Rtn_Start_1;
 };
 
 
-func void rtn_start_1()
+func void Rtn_Start_1()
 {
-	ta_sit_bench(8,0,23,0,"LOCATION_02_05");
-	ta_sit_bench(23,0,8,0,"LOCATION_02_05");
+	TA_Sit_Bench(8,0,23,0,"LOCATION_02_05");
+	TA_Sit_Bench(23,0,8,0,"LOCATION_02_05");
 };
 
-func void rtn_tot_1()
+func void Rtn_Tot_1()
 {
-	ta_sit_bench(8,0,23,0,"TOT");
-	ta_sit_bench(23,0,8,0,"TOT");
+	TA_Sit_Bench(8,0,23,0,"TOT");
+	TA_Sit_Bench(23,0,8,0,"TOT");
 };
 

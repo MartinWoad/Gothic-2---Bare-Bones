@@ -1,76 +1,76 @@
 
-instance BAU_936_ROSI(NPC_DEFAULT)
+instance BAU_936_Rosi(Npc_Default)
 {
 	name[0] = "Rosi";
 	guild = GIL_BAU;
 	id = 936;
 	voice = 17;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,1);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_bau_mace);
-	b_createambientinv(self);
-	b_setnpcvisual(self,FEMALE,"Hum_Head_Babe8",FACEBABE_N_HURE,BODYTEXBABE_N,4833);
+	EquipItem(self,ItMw_1h_Bau_Mace);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,FEMALE,"Hum_Head_Babe8",FaceBabe_N_Hure,BodyTexBabe_N,ITAR_BauBabe_M);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Babe.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,15);
-	daily_routine = rtn_start_936;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,15);
+	daily_routine = Rtn_Start_936;
 };
 
 
-func void rtn_start_936()
+func void Rtn_Start_936()
 {
-	ta_cook_stove(8,0,22,0,"NW_FARM4_ROSI");
-	ta_cook_stove(22,0,8,0,"NW_FARM4_ROSI");
+	TA_Cook_Stove(8,0,22,0,"NW_FARM4_ROSI");
+	TA_Cook_Stove(22,0,8,0,"NW_FARM4_ROSI");
 };
 
-func void rtn_fleedmt_936()
+func void Rtn_FleeDMT_936()
 {
-	ta_stand_armscrossed(8,0,22,0,"NW_FLEEDMT_KAP3");
-	ta_stand_armscrossed(22,0,8,0,"NW_FLEEDMT_KAP3");
+	TA_Stand_ArmsCrossed(8,0,22,0,"NW_FLEEDMT_KAP3");
+	TA_Stand_ArmsCrossed(22,0,8,0,"NW_FLEEDMT_KAP3");
 };
 
-func void rtn_fleefromsekob_936()
+func void Rtn_FleeFromSekob_936()
 {
-	ta_stand_armscrossed(8,0,22,0,"NW_TAVERNE_TROLLAREA_14");
-	ta_stand_armscrossed(22,0,8,0,"NW_TAVERNE_TROLLAREA_14");
+	TA_Stand_ArmsCrossed(8,0,22,0,"NW_TAVERNE_TROLLAREA_14");
+	TA_Stand_ArmsCrossed(22,0,8,0,"NW_TAVERNE_TROLLAREA_14");
 };
 
-func void rtn_followcity_936()
+func void Rtn_FollowCity_936()
 {
-	ta_follow_player(8,0,22,0,"CITY2");
-	ta_follow_player(22,0,8,0,"CITY2");
+	TA_Follow_Player(8,0,22,0,"CITY2");
+	TA_Follow_Player(22,0,8,0,"CITY2");
 };
 
-func void rtn_followbigfarm_936()
+func void Rtn_FollowBigfarm_936()
 {
-	ta_follow_player(8,0,22,0,"NW_BIGFARM_KITCHEN_02");
-	ta_follow_player(22,0,8,0,"NW_BIGFARM_KITCHEN_02");
+	TA_Follow_Player(8,0,22,0,"NW_BIGFARM_KITCHEN_02");
+	TA_Follow_Player(22,0,8,0,"NW_BIGFARM_KITCHEN_02");
 };
 
-func void rtn_followkloster_936()
+func void Rtn_FollowKloster_936()
 {
-	ta_follow_player(8,0,22,0,"KLOSTER");
-	ta_follow_player(22,0,8,0,"KLOSTER");
+	TA_Follow_Player(8,0,22,0,"KLOSTER");
+	TA_Follow_Player(22,0,8,0,"KLOSTER");
 };
 
-func void rtn_city_936()
+func void Rtn_City_936()
 {
-	ta_sit_bench(8,0,22,0,"NW_CITY_MERCHANT_PATH_25");
-	ta_sit_bench(22,0,8,0,"NW_CITY_MERCHANT_PATH_25");
+	TA_Sit_Bench(8,0,22,0,"NW_CITY_MERCHANT_PATH_25");
+	TA_Sit_Bench(22,0,8,0,"NW_CITY_MERCHANT_PATH_25");
 };
 
-func void rtn_bigfarm_936()
+func void Rtn_Bigfarm_936()
 {
-	ta_sit_chair(8,0,22,0,"NW_BIGFARM_KITCHEN_02");
-	ta_sit_chair(22,0,8,0,"NW_BIGFARM_KITCHEN_02");
+	TA_Sit_Chair(8,0,22,0,"NW_BIGFARM_KITCHEN_02");
+	TA_Sit_Chair(22,0,8,0,"NW_BIGFARM_KITCHEN_02");
 };
 
-func void rtn_kloster_936()
+func void Rtn_Kloster_936()
 {
-	ta_stand_armscrossed(8,0,22,0,"NW_MONASTERY_SHEEP_01");
-	ta_stand_armscrossed(22,0,8,0,"NW_MONASTERY_SHEEP_01");
+	TA_Stand_ArmsCrossed(8,0,22,0,"NW_MONASTERY_SHEEP_01");
+	TA_Stand_ArmsCrossed(22,0,8,0,"NW_MONASTERY_SHEEP_01");
 };
 

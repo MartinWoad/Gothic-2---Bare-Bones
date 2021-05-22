@@ -1,28 +1,28 @@
 
-instance SLD_824_SOELDNER(NPC_DEFAULT)
+instance SLD_824_Soeldner(Npc_Default)
 {
-	name[0] = NAME_SOELDNER;
+	name[0] = NAME_Soeldner;
 	guild = GIL_SLD;
 	id = 824;
 	voice = 6;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,4);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_sld_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_B_TOUGHBALD,BODYTEX_B,4834);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_B_ToughBald,BodyTex_B,ItAr_Sld_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,50);
-	daily_routine = rtn_start_824;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,50);
+	daily_routine = Rtn_Start_824;
 };
 
 
-func void rtn_start_824()
+func void Rtn_Start_824()
 {
-	ta_stand_armscrossed(8,0,22,0,"NW_BIGFARM_HOUSE_OUT_02");
-	ta_stand_armscrossed(22,0,8,0,"NW_BIGFARM_HOUSE_OUT_02");
+	TA_Stand_ArmsCrossed(8,0,22,0,"NW_BIGFARM_HOUSE_OUT_02");
+	TA_Stand_ArmsCrossed(22,0,8,0,"NW_BIGFARM_HOUSE_OUT_02");
 };
 

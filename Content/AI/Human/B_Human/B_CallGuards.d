@@ -1,5 +1,5 @@
 
-func int c_wanttocallguards(var C_NPC slf)
+func int C_WantToCallGuards(var C_Npc slf)
 {
 	if(self.aivar[AIV_PARTYMEMBER] == FALSE)
 	{
@@ -11,68 +11,68 @@ func int c_wanttocallguards(var C_NPC slf)
 	return FALSE;
 };
 
-func void b_callguards()
+func void B_CallGuards()
 {
-	if(!c_wanttocallguards(self))
+	if(!C_WantToCallGuards(self))
 	{
 		return;
 	};
-	if((self.aivar[AIV_ATTACKREASON] == AR_GUARDCALLEDTOKILL) || (self.aivar[AIV_ATTACKREASON] == AR_GUARDSTOPSFIGHT) || (self.aivar[AIV_ATTACKREASON] == AR_GUARDCALLEDTOTHIEF) || (self.aivar[AIV_ATTACKREASON] == AR_GUARDCALLEDTOROOM))
+	if((self.aivar[AIV_ATTACKREASON] == AR_GuardCalledToKill) || (self.aivar[AIV_ATTACKREASON] == AR_GuardStopsFight) || (self.aivar[AIV_ATTACKREASON] == AR_GuardCalledToThief) || (self.aivar[AIV_ATTACKREASON] == AR_GuardCalledToRoom))
 	{
-		b_say_overlay(self,other,"$ALARM");
+		B_Say_Overlay(self,other,"$ALARM");
 		return;
 	};
-	if((self.aivar[AIV_ATTACKREASON] == AR_GUILDENEMY) || (self.aivar[AIV_ATTACKREASON] == AR_HUMANMURDEREDHUMAN))
+	if((self.aivar[AIV_ATTACKREASON] == AR_GuildEnemy) || (self.aivar[AIV_ATTACKREASON] == AR_HumanMurderedHuman))
 	{
 		if((self.guild == GIL_MIL) || (self.guild == GIL_PAL) || (self.guild == GIL_SLD))
 		{
-			b_say_overlay(self,other,"$ALARM");
+			B_Say_Overlay(self,other,"$ALARM");
 			Npc_SendPassivePerc(self,PERC_ASSESSFIGHTSOUND,self,other);
 			return;
 		};
-		if(!c_npcistoughguy(self))
+		if(!C_NpcIsToughGuy(self))
 		{
-			b_say_overlay(self,other,"$GUARDS");
+			B_Say_Overlay(self,other,"$GUARDS");
 			Npc_SendPassivePerc(self,PERC_ASSESSFIGHTSOUND,self,other);
 			return;
 		};
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_GUARDSTOPSINTRUDER)
+	if(self.aivar[AIV_ATTACKREASON] == AR_GuardStopsIntruder)
 	{
-		b_say_overlay(self,other,"$ALARM");
+		B_Say_Overlay(self,other,"$ALARM");
 		Npc_SendPassivePerc(self,PERC_ASSESSFIGHTSOUND,self,other);
 		return;
 	};
-	if((self.aivar[AIV_ATTACKREASON] == AR_THEFT) || (self.aivar[AIV_ATTACKREASON] == AR_USEMOB))
+	if((self.aivar[AIV_ATTACKREASON] == AR_Theft) || (self.aivar[AIV_ATTACKREASON] == AR_UseMob))
 	{
-		if(!c_npcistoughguy(self))
+		if(!C_NpcIsToughGuy(self))
 		{
-			b_say_overlay(self,other,"$GUARDS");
+			B_Say_Overlay(self,other,"$GUARDS");
 			Npc_SendPassivePerc(self,PERC_ASSESSFIGHTSOUND,self,other);
 		};
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_REACTTOWEAPON)
+	if(self.aivar[AIV_ATTACKREASON] == AR_ReactToWeapon)
 	{
-		if(!c_npcistoughguy(self))
+		if(!C_NpcIsToughGuy(self))
 		{
-			b_say_overlay(self,other,"$GUARDS");
+			B_Say_Overlay(self,other,"$GUARDS");
 			Npc_SendPassivePerc(self,PERC_ASSESSFIGHTSOUND,self,other);
 		};
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_CLEARROOM)
+	if(self.aivar[AIV_ATTACKREASON] == AR_ClearRoom)
 	{
 		if((self.guild == GIL_MIL) || (self.guild == GIL_PAL) || (self.guild == GIL_SLD))
 		{
-			b_say_overlay(self,other,"$ALARM");
+			B_Say_Overlay(self,other,"$ALARM");
 			Npc_SendPassivePerc(self,PERC_ASSESSFIGHTSOUND,self,other);
 			return;
 		};
-		if(!c_npcistoughguy(self))
+		if(!C_NpcIsToughGuy(self))
 		{
-			b_say_overlay(self,other,"$GUARDS");
+			B_Say_Overlay(self,other,"$GUARDS");
 			Npc_SendPassivePerc(self,PERC_ASSESSFIGHTSOUND,self,other);
 			return;
 		};

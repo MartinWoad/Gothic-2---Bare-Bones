@@ -1,33 +1,33 @@
 
-const int SPL_COST_PALLIGHT = 5;
-const int SPL_COST_LIGHT = 5;
-const int SPL_DURATION_PALLIGHT = 5;
-const int SPL_DURATION_LIGHT = 5;
+const int SPL_Cost_PalLight = 5;
+const int SPL_Cost_LIGHT = 5;
+const int SPL_Duration_PalLIGHT = 5;
+const int SPL_Duration_LIGHT = 5;
 
-instance SPELL_LIGHT(C_SPELL_PROTO)
+instance Spell_Light(C_Spell_Proto)
 {
 	time_per_mana = 500;
-	spelltype = SPELL_NEUTRAL;
-	targetcollectalgo = TARGET_COLLECT_NONE;
-	targetcollectrange = 0;
-	targetcollectazi = 0;
-	targetcollectelev = 0;
+	spellType = SPELL_NEUTRAL;
+	targetCollectAlgo = TARGET_COLLECT_NONE;
+	targetCollectRange = 0;
+	targetCollectAzi = 0;
+	targetCollectElev = 0;
 };
 
-instance SPELL_PALLIGHT(C_SPELL_PROTO)
+instance Spell_PalLight(C_Spell_Proto)
 {
 	time_per_mana = 500;
-	spelltype = SPELL_NEUTRAL;
-	targetcollectalgo = TARGET_COLLECT_NONE;
-	targetcollectrange = 0;
-	targetcollectazi = 0;
-	targetcollectelev = 0;
+	spellType = SPELL_NEUTRAL;
+	targetCollectAlgo = TARGET_COLLECT_NONE;
+	targetCollectRange = 0;
+	targetCollectAzi = 0;
+	targetCollectElev = 0;
 };
 
 
-func int spell_logic_pallight(var int manainvested)
+func int Spell_Logic_PalLight(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_PALLIGHT)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_PalLight)
 	{
 		return SPL_SENDCAST;
 	}
@@ -37,14 +37,14 @@ func int spell_logic_pallight(var int manainvested)
 	};
 };
 
-func void spell_cast_pallight()
+func void Spell_Cast_PalLight()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_PALLIGHT;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_PalLight;
 };
 
-func int spell_logic_light(var int manainvested)
+func int Spell_Logic_Light(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_LIGHT)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_LIGHT)
 	{
 		return SPL_SENDCAST;
 	}
@@ -54,8 +54,8 @@ func int spell_logic_light(var int manainvested)
 	};
 };
 
-func void spell_cast_light()
+func void Spell_Cast_Light()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_LIGHT;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_LIGHT;
 };
 

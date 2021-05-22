@@ -1,19 +1,19 @@
 
-func void b_assigndementortalk_ritual()
+func void B_AssignDementorTalk_Ritual()
 {
 	var int randy;
 	Wld_PlayEffect("DEMENTOR_FX",hero,hero,0,0,0,FALSE);
 	Wld_PlayEffect("spellFX_Fear",self,self,0,0,0,FALSE);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
-	if(MIS_SCKNOWSINNOSEYEISBROKEN == FALSE)
+	if(MIS_SCKnowsInnosEyeIsBroken == FALSE)
 	{
 		AI_Output(self,other,"DIA_RitualDementor_19_00");	//SpóŸni³eœ siê.
 		AI_Output(self,other,"DIA_RitualDementor_19_01");	//Zniszczyliœmy Oko Innosa. Ju¿ nigdy nie odzyska swojej dawnej mocy.
 		AI_Output(self,other,"DIA_RitualDementor_19_02");	//Za chwilê przekonasz siê, ¿e wszelkie próby pokonania naszego Pana i Mistrza s¹ z góry skazane na niepowodzenie.
-		MIS_SCKNOWSINNOSEYEISBROKEN = TRUE;
-		b_logentry(TOPIC_INNOSEYE,"Te wredne draby zaczynaj¹ mnie denerwowaæ. Zniszczyli Oko Innosa. Nie mam zielonego pojêcia, jak je naprawiæ.");
-		b_logentry(TOPIC_TRAITORPEDRO,"Znalaz³em Oko Innosa, ale nie natkn¹³em siê jak do tej pory na ¿aden œlad Pedra. Ci czarni magowie najwyraŸniej siê z nim jakoœ porozumieli.");
-		b_giveplayerxp(XP_SCKNOWSINNOSEYEISBROKEN);
+		MIS_SCKnowsInnosEyeIsBroken = TRUE;
+		B_LogEntry(TOPIC_INNOSEYE,"Te wredne draby zaczynaj¹ mnie denerwowaæ. Zniszczyli Oko Innosa. Nie mam zielonego pojêcia, jak je naprawiæ.");
+		B_LogEntry(TOPIC_TraitorPedro,"Znalaz³em Oko Innosa, ale nie natkn¹³em siê jak do tej pory na ¿aden œlad Pedra. Ci czarni magowie najwyraŸniej siê z nim jakoœ porozumieli.");
+		B_GivePlayerXP(XP_SCKnowsInnosEyeIsBroken);
 	}
 	else
 	{
@@ -38,13 +38,13 @@ func void b_assigndementortalk_ritual()
 	Npc_SetRefuseTalk(self,30);
 };
 
-func void b_assigndementortalk_ritual_exit()
+func void B_AssignDementorTalk_Ritual_Exit()
 {
 	Wld_StopEffect("DEMENTOR_FX");
-	b_scisobsessed(self);
+	B_SCIsObsessed(self);
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_SUDDENENEMYINFERNO,1);
+	B_Attack(self,other,AR_SuddenEnemyInferno,1);
 	Snd_Play("MFX_FEAR_CAST");
-	self.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE;
 };
 

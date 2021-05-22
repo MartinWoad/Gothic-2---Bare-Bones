@@ -1,10 +1,10 @@
 
-func void g_picklock(var int bsuccess,var int bbrokenopen)
+func void G_PickLock(var int bSuccess,var int bBrokenOpen)
 {
 	var int rnd;
-	if(bsuccess)
+	if(bSuccess)
 	{
-		if(bbrokenopen)
+		if(bBrokenOpen)
 		{
 			Snd_Play3d(self,"PICKLOCK_UNLOCK");
 			Print(PRINT_PICKLOCK_UNLOCK);
@@ -15,7 +15,7 @@ func void g_picklock(var int bsuccess,var int bbrokenopen)
 			Print(PRINT_PICKLOCK_SUCCESS);
 		};
 	}
-	else if(bbrokenopen)
+	else if(bBrokenOpen)
 	{
 		Snd_Play3d(self,"PICKLOCK_BROKEN");
 		Print(PRINT_PICKLOCK_BROKEN);

@@ -1,8 +1,8 @@
 
-func void zs_wash_fp()
+func void ZS_Wash_FP()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
@@ -11,7 +11,7 @@ func void zs_wash_fp()
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func int zs_wash_fp_loop()
+func int ZS_Wash_FP_Loop()
 {
 	if(Npc_IsOnFP(self,"WASH"))
 	{
@@ -46,7 +46,7 @@ func int zs_wash_fp_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_wash_fp_end()
+func void ZS_Wash_FP_End()
 {
 	AI_PlayAni(self,"T_WASH_2_STAND");
 };

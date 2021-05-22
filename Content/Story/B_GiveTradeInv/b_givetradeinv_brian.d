@@ -1,47 +1,47 @@
 
-var int brian_itemsgiven_chapter_1;
-var int brian_itemsgiven_chapter_2;
-var int brian_itemsgiven_chapter_3;
-var int brian_itemsgiven_chapter_4;
-var int brian_itemsgiven_chapter_5;
+var int Brian_ItemsGiven_Chapter_1;
+var int Brian_ItemsGiven_Chapter_2;
+var int Brian_ItemsGiven_Chapter_3;
+var int Brian_ItemsGiven_Chapter_4;
+var int Brian_ItemsGiven_Chapter_5;
 var int brian_itemsgiven_chapter_6;
 
-func void b_givetradeinv_brian(var C_NPC slf)
+func void B_GiveTradeInv_Brian(var C_Npc slf)
 {
-	if((KAPITEL >= 1) && (BRIAN_ITEMSGIVEN_CHAPTER_1 == FALSE))
+	if((Kapitel >= 1) && (Brian_ItemsGiven_Chapter_1 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,20);
-		CreateInvItems(slf,itmiswordraw,2);
-		BRIAN_ITEMSGIVEN_CHAPTER_1 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,20);
+		CreateInvItems(slf,ItMiSwordraw,2);
+		Brian_ItemsGiven_Chapter_1 = TRUE;
 	};
-	if((KAPITEL >= 2) && (BRIAN_ITEMSGIVEN_CHAPTER_2 == FALSE))
+	if((Kapitel >= 2) && (Brian_ItemsGiven_Chapter_2 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,20);
-		CreateInvItems(slf,itmiswordraw,1);
-		BRIAN_ITEMSGIVEN_CHAPTER_2 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,20);
+		CreateInvItems(slf,ItMiSwordraw,1);
+		Brian_ItemsGiven_Chapter_2 = TRUE;
 	};
-	if((KAPITEL >= 3) && (BRIAN_ITEMSGIVEN_CHAPTER_3 == FALSE))
+	if((Kapitel >= 3) && (Brian_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,20);
-		CreateInvItems(slf,itmiswordraw,1);
-		BRIAN_ITEMSGIVEN_CHAPTER_3 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,20);
+		CreateInvItems(slf,ItMiSwordraw,1);
+		Brian_ItemsGiven_Chapter_3 = TRUE;
 	};
-	if((KAPITEL >= 4) && (BRIAN_ITEMSGIVEN_CHAPTER_4 == FALSE))
+	if((Kapitel >= 4) && (Brian_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,20);
-		CreateInvItems(slf,itmiswordraw,1);
-		BRIAN_ITEMSGIVEN_CHAPTER_4 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,20);
+		CreateInvItems(slf,ItMiSwordraw,1);
+		Brian_ItemsGiven_Chapter_4 = TRUE;
 	};
-	if((KAPITEL >= 5) && (BRIAN_ITEMSGIVEN_CHAPTER_5 == FALSE))
+	if((Kapitel >= 5) && (Brian_ItemsGiven_Chapter_5 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,40);
-		CreateInvItems(slf,itmiswordraw,1);
-		BRIAN_ITEMSGIVEN_CHAPTER_5 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,40);
+		CreateInvItems(slf,ItMiSwordraw,1);
+		Brian_ItemsGiven_Chapter_5 = TRUE;
 	};
-	if((KAPITEL >= 6) && (BRIAN_ITEMSGIVEN_CHAPTER_6 == FALSE))
+	if((Kapitel >= 6) && (BRIAN_ITEMSGIVEN_CHAPTER_6 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,40);
-		CreateInvItems(slf,itmiswordraw,1);
+		CreateInvItems(slf,ItMi_Gold,40);
+		CreateInvItems(slf,ItMiSwordraw,1);
 		BRIAN_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };

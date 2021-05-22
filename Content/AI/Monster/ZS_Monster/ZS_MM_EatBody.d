@@ -1,11 +1,11 @@
 
-func void zs_mm_eatbody()
+func void ZS_MM_EatBody()
 {
 	Npc_SetPercTime(self,1);
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
-	Npc_PercEnable(self,PERC_ASSESSDAMAGE,b_mm_assessdamage);
-	Npc_PercEnable(self,PERC_ASSESSOTHERSDAMAGE,b_mm_assessothersdamage);
-	Npc_PercEnable(self,PERC_ASSESSMURDER,b_mm_assessothersdamage);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
+	Npc_PercEnable(self,PERC_ASSESSDAMAGE,B_MM_AssessDamage);
+	Npc_PercEnable(self,PERC_ASSESSOTHERSDAMAGE,B_MM_AssessOthersDamage);
+	Npc_PercEnable(self,PERC_ASSESSMURDER,B_MM_AssessOthersDamage);
 	AI_GotoNpc(self,other);
 	AI_TurnToNPC(self,other);
 	AI_PlayAni(self,"T_STAND_2_EAT");
@@ -14,11 +14,11 @@ func void zs_mm_eatbody()
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func int zs_mm_eatbody_loop()
+func int ZS_MM_EatBody_loop()
 {
 	if(self.aivar[AIV_TAPOSITION] == NOTINPOS)
 	{
-		Npc_PercEnable(self,PERC_ASSESSENEMY,b_mm_assessenemy);
+		Npc_PercEnable(self,PERC_ASSESSENEMY,B_MM_AssessEnemy);
 		self.aivar[AIV_TAPOSITION] = ISINPOS;
 	};
 	if(!Hlp_IsValidNpc(other))
@@ -29,7 +29,7 @@ func int zs_mm_eatbody_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_mm_eatbody_end()
+func void ZS_MM_EatBody_end()
 {
 	AI_PlayAni(self,"T_EAT_2_STAND");
 };

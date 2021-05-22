@@ -1,8 +1,8 @@
 
-func void zs_smith_cool()
+func void ZS_Smith_Cool()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == FALSE)
 	{
@@ -10,16 +10,16 @@ func void zs_smith_cool()
 	};
 };
 
-func int zs_smith_cool_loop()
+func int ZS_Smith_Cool_Loop()
 {
-	if(!c_bodystatecontains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSCOOL"))
+	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSCOOL"))
 	{
 		AI_UseMob(self,"BSCOOL",1);
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_smith_cool_end()
+func void ZS_Smith_Cool_End()
 {
 	AI_UseMob(self,"BSCOOL",-1);
 };

@@ -1,84 +1,84 @@
 
-func void zs_reacttoweapon()
+func void ZS_ReactToWeapon()
 {
-	perception_set_minimal();
-	Npc_PercEnable(self,PERC_ASSESSFIGHTSOUND,b_assessfightsound);
-	if(b_assessenemy())
+	Perception_Set_Minimal();
+	Npc_PercEnable(self,PERC_ASSESSFIGHTSOUND,B_AssessFightSound);
+	if(B_AssessEnemy())
 	{
 		return;
 	};
 	AI_Standup(self);
-	b_lookatnpc(self,other);
-	b_selectweapon(self,other);
-	b_turntonpc(self,other);
-	if((self.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_WON) && (self.aivar[AIV_LASTPLAYERAR] != AR_NONE) && Npc_IsPlayer(other))
+	B_LookAtNpc(self,other);
+	B_SelectWeapon(self,other);
+	B_TurnToNpc(self,other);
+	if((self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_WON) && (self.aivar[AIV_LastPlayerAR] != AR_NONE) && Npc_IsPlayer(other))
 	{
-		b_say(self,other,"$LOOKINGFORTROUBLEAGAIN");
+		B_Say(self,other,"$LOOKINGFORTROUBLEAGAIN");
 	}
-	else if(PLAYER_DRAWWEAPONCOMMENT == FALSE)
+	else if(Player_DrawWeaponComment == FALSE)
 	{
 		if(Npc_IsInFightMode(other,FMODE_MAGIC))
 		{
-			b_say(self,other,"$STOPMAGIC");
+			B_Say(self,other,"$STOPMAGIC");
 		}
 		else
 		{
-			b_say(self,other,"$WEAPONDOWN");
+			B_Say(self,other,"$WEAPONDOWN");
 		};
-		PLAYER_DRAWWEAPONCOMMENT = TRUE;
+		Player_DrawWeaponComment = TRUE;
 	};
 	Npc_SendPassivePerc(self,PERC_ASSESSWARN,self,other);
 	self.aivar[AIV_TAPOSITION] = FALSE;
-	self.aivar[AIV_STATETIME] = 0;
+	self.aivar[AIV_StateTime] = 0;
 };
 
-func int zs_reacttoweapon_loop()
+func int ZS_ReactToWeapon_Loop()
 {
 	if(Npc_GetDistToNpc(self,other) > PERC_DIST_INTERMEDIAT)
 	{
 		Npc_ClearAIQueue(self);
 		AI_RemoveWeapon(self);
-		b_stoplookat(self);
+		B_StopLookAt(self);
 		return LOOP_END;
 	};
 	if(Npc_IsInFightMode(other,FMODE_NONE))
 	{
 		Npc_ClearAIQueue(self);
-		b_say(self,other,"$WISEMOVE");
+		B_Say(self,other,"$WISEMOVE");
 		AI_RemoveWeapon(self);
-		b_stoplookat(self);
+		B_StopLookAt(self);
 		return LOOP_END;
 	};
-	if(Npc_GetStateTime(self) > self.aivar[AIV_STATETIME])
+	if(Npc_GetStateTime(self) > self.aivar[AIV_StateTime])
 	{
 		if(!Npc_CanSeeNpc(self,other))
 		{
-			b_turntonpc(self,other);
+			B_TurnToNpc(self,other);
 		};
-		self.aivar[AIV_STATETIME] = self.aivar[AIV_STATETIME] + 1;
+		self.aivar[AIV_StateTime] = self.aivar[AIV_StateTime] + 1;
 	};
 	if((self.aivar[AIV_TAPOSITION] == FALSE) && (Npc_GetStateTime(self) > 5))
 	{
 		if(Npc_IsInFightMode(other,FMODE_MAGIC))
 		{
-			b_say(self,other,"$ISAIDSTOPMAGIC");
+			B_Say(self,other,"$ISAIDSTOPMAGIC");
 		}
 		else
 		{
-			b_say(self,other,"$ISAIDWEAPONDOWN");
+			B_Say(self,other,"$ISAIDWEAPONDOWN");
 		};
 		self.aivar[AIV_TAPOSITION] = TRUE;
 	};
 	if(Npc_GetStateTime(self) > 10)
 	{
-		b_attack(self,other,AR_REACTTOWEAPON,0);
+		B_Attack(self,other,AR_ReactToWeapon,0);
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_reacttoweapon_end()
+func void ZS_ReactToWeapon_End()
 {
-	b_stoplookat(self);
-	AI_StartState(self,zs_observeplayer,1,"");
+	B_StopLookAt(self);
+	AI_StartState(self,ZS_ObservePlayer,1,"");
 };
 

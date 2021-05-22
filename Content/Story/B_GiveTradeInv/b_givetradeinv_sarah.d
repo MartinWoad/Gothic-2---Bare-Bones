@@ -1,62 +1,62 @@
 
-var int sarah_itemsgiven_chapter_1;
-var int sarah_itemsgiven_chapter_2;
-var int sarah_itemsgiven_chapter_3;
-var int sarah_itemsgiven_chapter_4;
-var int sarah_itemsgiven_chapter_5;
+var int Sarah_ItemsGiven_Chapter_1;
+var int Sarah_ItemsGiven_Chapter_2;
+var int Sarah_ItemsGiven_Chapter_3;
+var int Sarah_ItemsGiven_Chapter_4;
+var int Sarah_ItemsGiven_Chapter_5;
 var int sarah_itemsgiven_chapter_6;
 
-func void b_givetradeinv_sarah(var C_NPC slf)
+func void B_GiveTradeInv_Sarah(var C_Npc slf)
 {
-	if((KAPITEL >= 1) && (SARAH_ITEMSGIVEN_CHAPTER_1 == FALSE))
+	if((Kapitel >= 1) && (Sarah_ItemsGiven_Chapter_1 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,20);
-		CreateInvItems(slf,itmw_shortsword3,1);
-		CreateInvItems(slf,itmw_shortsword4,1);
-		CreateInvItems(slf,itmw_shortsword5,1);
-		CreateInvItems(slf,itmw_kriegshammer1,1);
-		CreateInvItems(slf,itmw_1h_vlk_sword,1);
-		CreateInvItems(slf,itmw_1h_nov_mace,1);
-		SARAH_ITEMSGIVEN_CHAPTER_1 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,20);
+		CreateInvItems(slf,ItMw_ShortSword3,1);
+		CreateInvItems(slf,ItMw_ShortSword4,1);
+		CreateInvItems(slf,ItMw_ShortSword5,1);
+		CreateInvItems(slf,ItMw_Kriegshammer1,1);
+		CreateInvItems(slf,ItMw_1h_Vlk_Sword,1);
+		CreateInvItems(slf,ItMw_1h_Nov_Mace,1);
+		Sarah_ItemsGiven_Chapter_1 = TRUE;
 	};
-	if((KAPITEL >= 2) && (SARAH_ITEMSGIVEN_CHAPTER_2 == FALSE))
+	if((Kapitel >= 2) && (Sarah_ItemsGiven_Chapter_2 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,20);
-		CreateInvItems(slf,itlstorch,1);
-		CreateInvItems(slf,itmw_stabkeule,1);
-		CreateInvItems(slf,itmw_steinbrecher,1);
-		CreateInvItems(slf,itmw_schwert2,1);
-		CreateInvItems(slf,itmw_bartaxt,1);
-		CreateInvItems(slf,itrw_arrow,50);
-		SARAH_ITEMSGIVEN_CHAPTER_2 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,20);
+		CreateInvItems(slf,ItLsTorch,1);
+		CreateInvItems(slf,ItMw_Stabkeule,1);
+		CreateInvItems(slf,ItMw_Steinbrecher,1);
+		CreateInvItems(slf,ItMw_Schwert2,1);
+		CreateInvItems(slf,ItMw_Bartaxt,1);
+		CreateInvItems(slf,ItRw_Arrow,50);
+		Sarah_ItemsGiven_Chapter_2 = TRUE;
 	};
-	if((KAPITEL >= 3) && (SARAH_ITEMSGIVEN_CHAPTER_3 == FALSE))
+	if((Kapitel >= 3) && (Sarah_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,25);
-		CreateInvItems(slf,itmw_zweihaender2,1);
-		CreateInvItems(slf,itmw_schwert5,1);
-		CreateInvItems(slf,itmw_inquisitor,1);
-		CreateInvItems(slf,itrw_arrow,50);
-		SARAH_ITEMSGIVEN_CHAPTER_3 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,25);
+		CreateInvItems(slf,ItMw_Zweihaender2,1);
+		CreateInvItems(slf,ItMw_Schwert5,1);
+		CreateInvItems(slf,ItMw_Inquisitor,1);
+		CreateInvItems(slf,ItRw_Arrow,50);
+		Sarah_ItemsGiven_Chapter_3 = TRUE;
 	};
-	if((KAPITEL >= 4) && (SARAH_ITEMSGIVEN_CHAPTER_4 == FALSE))
+	if((Kapitel >= 4) && (Sarah_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itmw_kriegshammer2,1);
-		CreateInvItems(slf,itmw_zweihaender4,1);
-		CreateInvItems(slf,itmw_krummschwert,1);
-		CreateInvItems(slf,itrw_arrow,50);
-		SARAH_ITEMSGIVEN_CHAPTER_4 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItMw_Kriegshammer2,1);
+		CreateInvItems(slf,ItMw_Zweihaender4,1);
+		CreateInvItems(slf,ItMw_Krummschwert,1);
+		CreateInvItems(slf,ItRw_Arrow,50);
+		Sarah_ItemsGiven_Chapter_4 = TRUE;
 	};
-	if((KAPITEL >= 5) && (SARAH_ITEMSGIVEN_CHAPTER_5 == FALSE))
+	if((Kapitel >= 5) && (Sarah_ItemsGiven_Chapter_5 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,200);
-		CreateInvItems(slf,itrw_arrow,50);
-		SARAH_ITEMSGIVEN_CHAPTER_5 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,200);
+		CreateInvItems(slf,ItRw_Arrow,50);
+		Sarah_ItemsGiven_Chapter_5 = TRUE;
 	};
-	if((KAPITEL >= 6) && (SARAH_ITEMSGIVEN_CHAPTER_6 == FALSE))
+	if((Kapitel >= 6) && (SARAH_ITEMSGIVEN_CHAPTER_6 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,200);
+		CreateInvItems(slf,ItMi_Gold,200);
 		SARAH_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };

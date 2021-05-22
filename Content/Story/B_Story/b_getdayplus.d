@@ -1,5 +1,5 @@
 
-func int b_getdayplus()
+func int B_GetDayPlus()
 {
 	if(Wld_IsTime(22,0,23,59))
 	{

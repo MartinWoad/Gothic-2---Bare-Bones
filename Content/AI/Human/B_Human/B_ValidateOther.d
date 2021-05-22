@@ -1,9 +1,9 @@
 
-func void b_validateother()
+func void B_ValidateOther()
 {
 	if(!Hlp_IsValidNpc(other))
 	{
-		OTHER = Hlp_GetNpc(self.aivar[AIV_LASTTARGET]);
+		other = Hlp_GetNpc(self.aivar[AIV_LASTTARGET]);
 		Npc_SetTarget(self,other);
 		self.aivar[AIV_LOADGAME] = TRUE;
 	}

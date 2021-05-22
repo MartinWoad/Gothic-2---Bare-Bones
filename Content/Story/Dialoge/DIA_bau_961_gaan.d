@@ -1,49 +1,49 @@
 
-instance DIA_GAAN_EXIT(C_INFO)
+instance DIA_Gaan_EXIT(C_Info)
 {
-	npc = bau_961_gaan;
+	npc = BAU_961_Gaan;
 	nr = 999;
-	condition = dia_gaan_exit_condition;
-	information = dia_gaan_exit_info;
+	condition = DIA_Gaan_EXIT_Condition;
+	information = DIA_Gaan_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-var int dia_gaan_exit_onetime;
+var int DIA_Gaan_EXIT_oneTime;
 
-func int dia_gaan_exit_condition()
+func int DIA_Gaan_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_gaan_exit_info()
+func void DIA_Gaan_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
-	if(DIA_GAAN_EXIT_ONETIME == FALSE)
+	if(DIA_Gaan_EXIT_oneTime == FALSE)
 	{
 		Npc_ExchangeRoutine(self,"Start");
-		DIA_GAAN_EXIT_ONETIME = TRUE;
+		DIA_Gaan_EXIT_oneTime = TRUE;
 	};
 };
 
 
-instance DIA_GAAN_HALLO(C_INFO)
+instance DIA_Gaan_HALLO(C_Info)
 {
-	npc = bau_961_gaan;
+	npc = BAU_961_Gaan;
 	nr = 3;
-	condition = dia_gaan_hallo_condition;
-	information = dia_gaan_hallo_info;
+	condition = DIA_Gaan_HALLO_Condition;
+	information = DIA_Gaan_HALLO_Info;
 	description = "Masz tu sporo przestrzeni.";
 };
 
 
-func int dia_gaan_hallo_condition()
+func int DIA_Gaan_HALLO_Condition()
 {
 	return TRUE;
 };
 
-func void dia_gaan_hallo_info()
+func void DIA_Gaan_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Gaan_HALLO_15_00");	//Masz tu sporo przestrzeni.
 	AI_Output(self,other,"DIA_Gaan_HALLO_03_01");	//To prawda, ³adnie tu. Ale gdybyœ zobaczy³, co jest po drugiej stronie prze³êczy, pewnie przesta³byœ tak myœleæ.
@@ -51,25 +51,25 @@ func void dia_gaan_hallo_info()
 };
 
 
-instance DIA_GAAN_WASMACHSTDU(C_INFO)
+instance DIA_Gaan_WASMACHSTDU(C_Info)
 {
-	npc = bau_961_gaan;
+	npc = BAU_961_Gaan;
 	nr = 4;
-	condition = dia_gaan_wasmachstdu_condition;
-	information = dia_gaan_wasmachstdu_info;
+	condition = DIA_Gaan_WASMACHSTDU_Condition;
+	information = DIA_Gaan_WASMACHSTDU_Info;
 	description = "Kim jesteœ?";
 };
 
 
-func int dia_gaan_wasmachstdu_condition()
+func int DIA_Gaan_WASMACHSTDU_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gaan_hallo))
+	if(Npc_KnowsInfo(other,DIA_Gaan_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gaan_wasmachstdu_info()
+func void DIA_Gaan_WASMACHSTDU_Info()
 {
 	AI_Output(other,self,"DIA_Gaan_WASMACHSTDU_15_00");	//Kim jesteœ?
 	AI_Output(self,other,"DIA_Gaan_WASMACHSTDU_03_01");	//Mam na imiê Gaan. Jestem myœliwym, pracujê dla Bengara, miejscowego farmera.
@@ -77,25 +77,25 @@ func void dia_gaan_wasmachstdu_info()
 };
 
 
-instance DIA_GAAN_WALD(C_INFO)
+instance DIA_Gaan_WALD(C_Info)
 {
-	npc = bau_961_gaan;
+	npc = BAU_961_Gaan;
 	nr = 5;
-	condition = dia_gaan_wald_condition;
-	information = dia_gaan_wald_info;
+	condition = DIA_Gaan_WALD_Condition;
+	information = DIA_Gaan_WALD_Info;
 	description = "Co powinienem wiedzieæ o Górniczej Dolinie?";
 };
 
 
-func int dia_gaan_wald_condition()
+func int DIA_Gaan_WALD_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gaan_wasmachstdu))
+	if(Npc_KnowsInfo(other,DIA_Gaan_WASMACHSTDU))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gaan_wald_info()
+func void DIA_Gaan_WALD_Info()
 {
 	AI_Output(other,self,"DIA_Gaan_WALD_15_00");	//Co powinienem wiedzieæ o Górniczej Dolinie?
 	AI_Output(self,other,"DIA_Gaan_WALD_03_01");	//Sam nie wiem. Widzia³em j¹ jedynie z daleka, ale wygl¹da³a doœæ niebezpiecznie.
@@ -106,25 +106,25 @@ func void dia_gaan_wald_info()
 };
 
 
-instance DIA_GAAN_SAGITTA(C_INFO)
+instance DIA_Gaan_SAGITTA(C_Info)
 {
-	npc = bau_961_gaan;
+	npc = BAU_961_Gaan;
 	nr = 7;
-	condition = dia_gaan_sagitta_condition;
-	information = dia_gaan_sagitta_info;
+	condition = DIA_Gaan_SAGITTA_Condition;
+	information = DIA_Gaan_SAGITTA_Info;
 	description = "Zielarki?";
 };
 
 
-func int dia_gaan_sagitta_condition()
+func int DIA_Gaan_SAGITTA_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gaan_wald))
+	if(Npc_KnowsInfo(other,DIA_Gaan_WALD))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gaan_sagitta_info()
+func void DIA_Gaan_SAGITTA_Info()
 {
 	AI_Output(other,self,"DIA_Gaan_SAGITTA_15_00");	//Zielarki?
 	AI_Output(self,other,"DIA_Gaan_SAGITTA_03_01");	//Nazywa siê Sagitta. Zajmuje siê uzdrawianiem farmerów i ludzi spoza miasta portowego.
@@ -135,25 +135,25 @@ func void dia_gaan_sagitta_info()
 };
 
 
-instance DIA_GAAN_MONSTER(C_INFO)
+instance DIA_Gaan_MONSTER(C_Info)
 {
-	npc = bau_961_gaan;
+	npc = BAU_961_Gaan;
 	nr = 8;
-	condition = dia_gaan_monster_condition;
-	information = dia_gaan_monster_info;
+	condition = DIA_Gaan_MONSTER_Condition;
+	information = DIA_Gaan_MONSTER_Info;
 	description = "Jak wygl¹da to niebezpieczne zwierzê?";
 };
 
 
-func int dia_gaan_monster_condition()
+func int DIA_Gaan_MONSTER_Condition()
 {
-	if((MIS_GAAN_SNAPPER == LOG_RUNNING) && (Npc_IsDead(gaans_snapper) == FALSE))
+	if((MIS_Gaan_Snapper == LOG_Running) && (Npc_IsDead(Gaans_Snapper) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gaan_monster_info()
+func void DIA_Gaan_MONSTER_Info()
 {
 	AI_Output(other,self,"DIA_Gaan_MONSTER_15_00");	//Jak wygl¹da to niebezpieczne zwierzê?
 	AI_Output(self,other,"DIA_Gaan_MONSTER_03_01");	//Nie wiem dok³adnie, nigdy go nie widzia³em. S³ysza³em tylko pochrz¹kiwanie i g³oœne sapanie. Ale widzia³em, do czego jest zdolne.
@@ -161,52 +161,52 @@ func void dia_gaan_monster_info()
 };
 
 
-instance DIA_GAAN_WASZAHLSTDU(C_INFO)
+instance DIA_Gaan_WASZAHLSTDU(C_Info)
 {
-	npc = bau_961_gaan;
+	npc = BAU_961_Gaan;
 	nr = 9;
-	condition = dia_gaan_waszahlstdu_condition;
-	information = dia_gaan_waszahlstdu_info;
+	condition = DIA_Gaan_WASZAHLSTDU_Condition;
+	information = DIA_Gaan_WASZAHLSTDU_Info;
 	description = "Ile mi zap³acisz, jeœli zabijê dla ciebie tê bestiê?";
 };
 
 
-func int dia_gaan_waszahlstdu_condition()
+func int DIA_Gaan_WASZAHLSTDU_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gaan_monster) && (Npc_IsDead(gaans_snapper) == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Gaan_MONSTER) && (Npc_IsDead(Gaans_Snapper) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gaan_waszahlstdu_info()
+func void DIA_Gaan_WASZAHLSTDU_Info()
 {
 	AI_Output(other,self,"DIA_Gaan_WASZAHLSTDU_15_00");	//Ile mi zap³acisz, jeœli zabijê dla ciebie tê bestiê?
 	AI_Output(self,other,"DIA_Gaan_WASZAHLSTDU_03_01");	//Jeœli j¹ zabijesz, jestem gotów oddaæ ci wszystkie swoje oszczêdnoœci.
-	b_say_gold(self,other,30);
-	MIS_GAAN_DEAL = LOG_RUNNING;
+	B_Say_Gold(self,other,30);
+	MIS_Gaan_Deal = LOG_Running;
 };
 
 
-instance DIA_GAAN_WOHERMONSTER(C_INFO)
+instance DIA_Gaan_WOHERMONSTER(C_Info)
 {
-	npc = bau_961_gaan;
+	npc = BAU_961_Gaan;
 	nr = 10;
-	condition = dia_gaan_wohermonster_condition;
-	information = dia_gaan_wohermonster_info;
+	condition = DIA_Gaan_WOHERMONSTER_Condition;
+	information = DIA_Gaan_WOHERMONSTER_Info;
 	description = "Sk¹d przychodzi to stworzenie?";
 };
 
 
-func int dia_gaan_wohermonster_condition()
+func int DIA_Gaan_WOHERMONSTER_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gaan_monster) && (Npc_IsDead(gaans_snapper) == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Gaan_MONSTER) && (Npc_IsDead(Gaans_Snapper) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gaan_wohermonster_info()
+func void DIA_Gaan_WOHERMONSTER_Info()
 {
 	AI_Output(other,self,"DIA_Gaan_WOHERMONSTER_15_00");	//Sk¹d przychodzi to stworzenie?
 	AI_Output(self,other,"DIA_Gaan_WOHERMONSTER_03_01");	//Na pewno nie z lasu. Mo¿e z Górniczej Doliny. Nie jestem do koñca pewien.
@@ -214,97 +214,97 @@ func void dia_gaan_wohermonster_info()
 };
 
 
-instance DIA_GAAN_MONSTERTOT(C_INFO)
+instance DIA_Gaan_MONSTERTOT(C_Info)
 {
-	npc = bau_961_gaan;
+	npc = BAU_961_Gaan;
 	nr = 11;
-	condition = dia_gaan_monstertot_condition;
-	information = dia_gaan_monstertot_info;
+	condition = DIA_Gaan_MONSTERTOT_Condition;
+	information = DIA_Gaan_MONSTERTOT_Info;
 	important = TRUE;
 };
 
 
-func int dia_gaan_monstertot_condition()
+func int DIA_Gaan_MONSTERTOT_Condition()
 {
-	if(Npc_IsDead(gaans_snapper) == TRUE)
+	if(Npc_IsDead(Gaans_Snapper) == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gaan_monstertot_info()
+func void DIA_Gaan_MONSTERTOT_Info()
 {
 	AI_Output(self,other,"DIA_Gaan_MONSTERTOT_03_00");	//Ta obrzydliwa bestia nie ¿yje.
 	AI_Output(self,other,"DIA_Gaan_MONSTERTOT_03_01");	//A wiêc znowu bêdê móg³ normalnie polowaæ.
-	if(MIS_GAAN_DEAL == LOG_RUNNING)
+	if(MIS_Gaan_Deal == LOG_Running)
 	{
 		AI_Output(self,other,"DIA_Gaan_MONSTERTOT_03_02");	//Proszê, oto obiecane pieni¹dze.
-		CreateInvItems(self,itmi_gold,30);
-		b_giveinvitems(self,other,5113,30);
+		CreateInvItems(self,ItMi_Gold,30);
+		B_GiveInvItems(self,other,ItMi_Gold,30);
 	};
-	MIS_GAAN_SNAPPER = LOG_SUCCESS;
-	b_giveplayerxp(XP_GAAN_WALDSNAPPER);
+	MIS_Gaan_Snapper = LOG_SUCCESS;
+	B_GivePlayerXP(XP_Gaan_WaldSnapper);
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_GAAN_ASKTEACHER(C_INFO)
+instance DIA_Gaan_AskTeacher(C_Info)
 {
-	npc = bau_961_gaan;
+	npc = BAU_961_Gaan;
 	nr = 10;
-	condition = dia_gaan_askteacher_condition;
-	information = dia_gaan_askteacher_info;
+	condition = DIA_Gaan_AskTeacher_Condition;
+	information = DIA_Gaan_AskTeacher_Info;
 	description = "Mo¿esz mnie nauczyæ czegoœ o polowaniu?";
 };
 
 
-func int dia_gaan_askteacher_condition()
+func int DIA_Gaan_AskTeacher_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gaan_wasmachstdu))
+	if(Npc_KnowsInfo(other,DIA_Gaan_WASMACHSTDU))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gaan_askteacher_info()
+func void DIA_Gaan_AskTeacher_Info()
 {
 	AI_Output(other,self,"DIA_Gaan_AskTeacher_15_00");	//Mo¿esz mnie nauczyæ czegoœ o polowaniu?
 	AI_Output(self,other,"DIA_Gaan_AskTeacher_03_01");	//Nie ma problemu. Za 100 monet mogê ci pokazaæ, jak siê patroszy upolowane zwierzêta.
 	AI_Output(self,other,"DIA_Gaan_AskTeacher_03_02");	//Za futra i inne trofea mo¿na dostaæ naprawdê sporo pieniêdzy.
-	Log_CreateTopic(TOPIC_TEACHER,LOG_NOTE);
-	b_logentry(TOPIC_TEACHER,"Gaan mo¿e mnie nauczyæ, jak sporz¹dzaæ trofea.");
+	Log_CreateTopic(TOPIC_Teacher,LOG_NOTE);
+	B_LogEntry(TOPIC_Teacher,"Gaan mo¿e mnie nauczyæ, jak sporz¹dzaæ trofea.");
 };
 
 
-instance DIA_GAAN_PAYTEACHER(C_INFO)
+instance DIA_Gaan_PayTeacher(C_Info)
 {
-	npc = bau_961_gaan;
+	npc = BAU_961_Gaan;
 	nr = 11;
-	condition = dia_gaan_payteacher_condition;
-	information = dia_gaan_payteacher_info;
+	condition = DIA_Gaan_PayTeacher_Condition;
+	information = DIA_Gaan_PayTeacher_Info;
 	permanent = TRUE;
 	description = "Proszê - oto 100 sztuk z³ota. Opowiedz mi o oprawianiu zwierz¹t.";
 };
 
 
-var int dia_gaan_payteacher_noperm;
+var int DIA_Gaan_PayTeacher_noPerm;
 
-func int dia_gaan_payteacher_condition()
+func int DIA_Gaan_PayTeacher_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gaan_askteacher) && (DIA_GAAN_PAYTEACHER_NOPERM == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Gaan_AskTeacher) && (DIA_Gaan_PayTeacher_noPerm == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gaan_payteacher_info()
+func void DIA_Gaan_PayTeacher_Info()
 {
 	AI_Output(other,self,"DIA_Gaan_PayTeacher_15_00");	//Zap³acê ci 100 sztuk z³ota, jeœli powiesz mi, jak siê oprawia zwierzêta.
-	if(b_giveinvitems(other,self,5113,100))
+	if(B_GiveInvItems(other,self,ItMi_Gold,100))
 	{
 		AI_Output(self,other,"DIA_Gaan_PayTeacher_03_01");	//No, to mi siê podoba.
-		GAAN_TEACHPLAYER = TRUE;
-		DIA_GAAN_PAYTEACHER_NOPERM = TRUE;
+		Gaan_TeachPlayer = TRUE;
+		DIA_Gaan_PayTeacher_noPerm = TRUE;
 	}
 	else
 	{
@@ -313,55 +313,55 @@ func void dia_gaan_payteacher_info()
 };
 
 
-instance DIA_GAAN_TEACHHUNTING(C_INFO)
+instance DIA_Gaan_TEACHHUNTING(C_Info)
 {
-	npc = bau_961_gaan;
+	npc = BAU_961_Gaan;
 	nr = 12;
-	condition = dia_gaan_teachhunting_condition;
-	information = dia_gaan_teachhunting_info;
+	condition = DIA_Gaan_TEACHHUNTING_Condition;
+	information = DIA_Gaan_TEACHHUNTING_Info;
 	permanent = TRUE;
 	description = "Czego mo¿esz mnie nauczyæ?";
 };
 
 
-func int dia_gaan_teachhunting_condition()
+func int DIA_Gaan_TEACHHUNTING_Condition()
 {
-	if(GAAN_TEACHPLAYER == TRUE)
+	if(Gaan_TeachPlayer == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gaan_teachhunting_info()
+func void DIA_Gaan_TEACHHUNTING_Info()
 {
 	AI_Output(other,self,"DIA_Gaan_TEACHHUNTING_15_00");	//Czego mo¿esz mnie nauczyæ?
-	if((PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CLAWS] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FUR] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSTING] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWING] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_TEETH] == FALSE) || ((PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRGSNAPPERHORN] == FALSE) && (MIS_GAAN_SNAPPER == LOG_SUCCESS)))
+	if((PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Claws] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] == FALSE) || (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] == FALSE) || ((PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DrgSnapperHorn] == FALSE) && (MIS_Gaan_Snapper == LOG_SUCCESS)))
 	{
 		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_03_01");	//To zale¿y od tego, czego ty chcia³byœ siê nauczyæ.
-		Info_AddChoice(dia_gaan_teachhunting,DIALOG_BACK,dia_gaan_teachhunting_back);
-		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_TEETH] == FALSE)
+		Info_AddChoice(DIA_Gaan_TEACHHUNTING,Dialog_Back,DIA_Gaan_TEACHHUNTING_BACK);
+		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] == FALSE)
 		{
-			Info_AddChoice(dia_gaan_teachhunting,b_buildlearnstring("Usuñ k³y",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),dia_gaan_teachhunting_teeth);
+			Info_AddChoice(DIA_Gaan_TEACHHUNTING,B_BuildLearnString("Usuñ k³y",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),DIA_Gaan_TEACHHUNTING_Teeth);
 		};
-		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CLAWS] == FALSE)
+		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Claws] == FALSE)
 		{
-			Info_AddChoice(dia_gaan_teachhunting,b_buildlearnstring("Usuñ pazury",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),dia_gaan_teachhunting_claws);
+			Info_AddChoice(DIA_Gaan_TEACHHUNTING,B_BuildLearnString("Usuñ pazury",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),DIA_Gaan_TEACHHUNTING_Claws);
 		};
-		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FUR] == FALSE)
+		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == FALSE)
 		{
-			Info_AddChoice(dia_gaan_teachhunting,b_buildlearnstring("Obedrzyj ze skóry",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),dia_gaan_teachhunting_fur);
+			Info_AddChoice(DIA_Gaan_TEACHHUNTING,B_BuildLearnString("Obedrzyj ze skóry",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),DIA_Gaan_TEACHHUNTING_Fur);
 		};
-		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSTING] == FALSE)
+		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] == FALSE)
 		{
-			Info_AddChoice(dia_gaan_teachhunting,b_buildlearnstring("¯¹d³o krwiopijcy",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),dia_gaan_teachhunting_bfsting);
+			Info_AddChoice(DIA_Gaan_TEACHHUNTING,B_BuildLearnString("¯¹d³o krwiopijcy",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),DIA_Gaan_TEACHHUNTING_BFSting);
 		};
-		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWING] == FALSE)
+		if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] == FALSE)
 		{
-			Info_AddChoice(dia_gaan_teachhunting,b_buildlearnstring("Skrzyd³a krwiopijcy",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),dia_gaan_teachhunting_bfwing);
+			Info_AddChoice(DIA_Gaan_TEACHHUNTING,B_BuildLearnString("Skrzyd³a krwiopijcy",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),DIA_Gaan_TEACHHUNTING_BFWing);
 		};
-		if((PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRGSNAPPERHORN] == FALSE) && (MIS_GAAN_SNAPPER == LOG_SUCCESS))
+		if((PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DrgSnapperHorn] == FALSE) && (MIS_Gaan_Snapper == LOG_SUCCESS))
 		{
-			Info_AddChoice(dia_gaan_teachhunting,b_buildlearnstring("Róg smoczego zêbacza",b_getlearncosttalent(other,NPC_TALENT_TAKEANIMALTROPHY)),dia_gaan_teachhunting_drgsnapperhorn);
+			Info_AddChoice(DIA_Gaan_TEACHHUNTING,B_BuildLearnString("Róg smoczego zêbacza",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY)),DIA_Gaan_TEACHHUNTING_DrgSnapperHorn);
 		};
 	}
 	else
@@ -370,119 +370,119 @@ func void dia_gaan_teachhunting_info()
 	};
 };
 
-func void dia_gaan_teachhunting_back()
+func void DIA_Gaan_TEACHHUNTING_BACK()
 {
-	Info_ClearChoices(dia_gaan_teachhunting);
+	Info_ClearChoices(DIA_Gaan_TEACHHUNTING);
 };
 
-func void dia_gaan_teachhunting_claws()
+func void DIA_Gaan_TEACHHUNTING_Claws()
 {
-	if(b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_CLAWS))
+	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Claws))
 	{
 		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_Claws_03_00");	//Zwierzêta nie lubi¹ byæ pozbawiane pazurów. Musisz wykonaæ bardzo precyzyjne ciêcie.
 		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_Claws_03_01");	//Skrzy¿uj lekko rêce, a potem silnie pchnij.
 		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_Claws_03_02");	//Handlarze bardzo lubi¹, jeœli ktoœ p³aci im pazurami.
 	};
-	Info_ClearChoices(dia_gaan_teachhunting);
-	Info_AddChoice(dia_gaan_teachhunting,DIALOG_BACK,dia_gaan_teachhunting_back);
+	Info_ClearChoices(DIA_Gaan_TEACHHUNTING);
+	Info_AddChoice(DIA_Gaan_TEACHHUNTING,Dialog_Back,DIA_Gaan_TEACHHUNTING_BACK);
 };
 
-func void dia_gaan_teachhunting_teeth()
+func void DIA_Gaan_TEACHHUNTING_Teeth()
 {
-	if(b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_TEETH))
+	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Teeth))
 	{
 		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_Teeth_03_00");	//Naj³atwiej jest pozbawiæ zwierzê zêbów. Natnij no¿em dzi¹s³o dooko³a zêba.
 		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_Teeth_03_01");	//Potem musisz ju¿ tylko uderzyæ w z¹b - i po wszystkim.
 	};
-	Info_ClearChoices(dia_gaan_teachhunting);
-	Info_AddChoice(dia_gaan_teachhunting,DIALOG_BACK,dia_gaan_teachhunting_back);
+	Info_ClearChoices(DIA_Gaan_TEACHHUNTING);
+	Info_AddChoice(DIA_Gaan_TEACHHUNTING,Dialog_Back,DIA_Gaan_TEACHHUNTING_BACK);
 };
 
-func void dia_gaan_teachhunting_fur()
+func void DIA_Gaan_TEACHHUNTING_Fur()
 {
-	if(b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_FUR))
+	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Fur))
 	{
 		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_Fur_03_00");	//Obdzieranie ze skóry najlepiej jest zacz¹æ od wykonania g³êbokiego naciêcia dooko³a tylnych koñczyn.
 		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_Fur_03_01");	//Jeœli zrobisz to w³aœciwie, zdarcie skóry to ju¿ drobnostka.
 	};
-	Info_ClearChoices(dia_gaan_teachhunting);
-	Info_AddChoice(dia_gaan_teachhunting,DIALOG_BACK,dia_gaan_teachhunting_back);
+	Info_ClearChoices(DIA_Gaan_TEACHHUNTING);
+	Info_AddChoice(DIA_Gaan_TEACHHUNTING,Dialog_Back,DIA_Gaan_TEACHHUNTING_BACK);
 };
 
-func void dia_gaan_teachhunting_bfsting()
+func void DIA_Gaan_TEACHHUNTING_BFSting()
 {
-	if(b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_BFSTING))
+	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_BFSting))
 	{
 		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_BFSting_03_00");	//Na tylnej stronie odw³oku tej muchy znajduje siê miêkki punkt.
 		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_BFSting_03_01");	//Jeœli na niego naciœniesz, wysunie siê ¿¹d³o, które bêdziesz móg³ odci¹æ no¿em.
 	};
-	Info_ClearChoices(dia_gaan_teachhunting);
-	Info_AddChoice(dia_gaan_teachhunting,DIALOG_BACK,dia_gaan_teachhunting_back);
+	Info_ClearChoices(DIA_Gaan_TEACHHUNTING);
+	Info_AddChoice(DIA_Gaan_TEACHHUNTING,Dialog_Back,DIA_Gaan_TEACHHUNTING_BACK);
 };
 
-func void dia_gaan_teachhunting_bfwing()
+func void DIA_Gaan_TEACHHUNTING_BFWing()
 {
-	if(b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_BFWING))
+	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_BFWing))
 	{
 		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_BFWing_03_00");	//Najlepszym sposobem na usuniêcie skrzyde³ krwiopijcy jest odciêcie ich ostrym no¿em tu¿ przy samym ciele.
 		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_BFWing_03_01");	//Musisz uwa¿aæ, skrzyd³a s¹ bardzo delikatne. Jeœli naruszysz ich delikatn¹ pow³okê, stan¹ siê bezwartoœciowe.
 	};
-	Info_ClearChoices(dia_gaan_teachhunting);
-	Info_AddChoice(dia_gaan_teachhunting,DIALOG_BACK,dia_gaan_teachhunting_back);
+	Info_ClearChoices(DIA_Gaan_TEACHHUNTING);
+	Info_AddChoice(DIA_Gaan_TEACHHUNTING,Dialog_Back,DIA_Gaan_TEACHHUNTING_BACK);
 };
 
-func void dia_gaan_teachhunting_drgsnapperhorn()
+func void DIA_Gaan_TEACHHUNTING_DrgSnapperHorn()
 {
-	if(b_teachplayertalenttakeanimaltrophy(self,other,TROPHY_DRGSNAPPERHORN))
+	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_DrgSnapperHorn))
 	{
 		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_DrgSnapperHorn_03_00");	//Na przyk³adzie tego nieco przeroœniêtego zêbacza poka¿ê ci, jak usuwa siê rogi.
 		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_DrgSnapperHorn_03_01");	//Najpierw musisz wbiæ nó¿ jak najg³êbiej w sam œrodek czo³a, a nastêpnie ostro¿nie podwa¿yæ róg.
 		AI_Output(self,other,"DIA_Gaan_TEACHHUNTING_DrgSnapperHorn_03_02");	//Jeœli nie mo¿esz oddzieliæ go od czaszki, bêdziesz sobie musia³ pomóc drugim no¿em.
-		CreateInvItems(gaans_snapper,itat_drgsnapperhorn,1);
+		CreateInvItems(Gaans_Snapper,ItAt_DrgSnapperHorn,1);
 	};
-	Info_ClearChoices(dia_gaan_teachhunting);
-	Info_AddChoice(dia_gaan_teachhunting,DIALOG_BACK,dia_gaan_teachhunting_back);
+	Info_ClearChoices(DIA_Gaan_TEACHHUNTING);
+	Info_AddChoice(DIA_Gaan_TEACHHUNTING,Dialog_Back,DIA_Gaan_TEACHHUNTING_BACK);
 };
 
 
-instance DIA_GAAN_JAGD(C_INFO)
+instance DIA_Gaan_JAGD(C_Info)
 {
-	npc = bau_961_gaan;
+	npc = BAU_961_Gaan;
 	nr = 80;
-	condition = dia_gaan_jagd_condition;
-	information = dia_gaan_jagd_info;
+	condition = DIA_Gaan_JAGD_Condition;
+	information = DIA_Gaan_JAGD_Info;
 	permanent = TRUE;
 	description = "Jak idzie polowanie?";
 };
 
 
-func int dia_gaan_jagd_condition()
+func int DIA_Gaan_JAGD_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gaan_wasmachstdu))
+	if(Npc_KnowsInfo(other,DIA_Gaan_WASMACHSTDU))
 	{
 		return TRUE;
 	};
 };
 
-func void b_wasmachtjagd()
+func void B_WasMachtJagd()
 {
 	AI_Output(other,self,"DIA_Gaan_JAGD_15_00");	//Jak idzie polowanie?
 };
 
-func void dia_gaan_jagd_info()
+func void DIA_Gaan_JAGD_Info()
 {
-	b_wasmachtjagd();
-	if(Npc_IsDead(gaans_snapper) == FALSE)
+	B_WasMachtJagd();
+	if(Npc_IsDead(Gaans_Snapper) == FALSE)
 	{
 		AI_Output(self,other,"DIA_Gaan_JAGD_03_01");	//Ostatnie zwierzê, które upolowa³em, to by³ olbrzymi szczur. Niezbyt cenna zdobycz.
 		AI_Output(self,other,"DIA_Gaan_JAGD_03_02");	//Parê dni temu w okolicy pojawi³a siê jakaœ bestia.
 		AI_Output(self,other,"DIA_Gaan_JAGD_03_03");	//Zabija wszystko, co siê rusza. A ja tracê przez ni¹ zarobek.
-		Log_CreateTopic(TOPIC_GAANSCHNAUBI,LOG_MISSION);
-		Log_SetTopicStatus(TOPIC_GAANSCHNAUBI,LOG_RUNNING);
-		b_logentry(TOPIC_GAANSCHNAUBI,"Jakaœ dziwna bestia sprawia problemy myœliwemu Gaanowi. Dopóki potwór tu grasuje, Gaan nie bêdzie móg³ normalnie polowaæ.");
-		MIS_GAAN_SNAPPER = LOG_RUNNING;
+		Log_CreateTopic(TOPIC_GaanSchnaubi,LOG_MISSION);
+		Log_SetTopicStatus(TOPIC_GaanSchnaubi,LOG_Running);
+		B_LogEntry(TOPIC_GaanSchnaubi,"Jakaœ dziwna bestia sprawia problemy myœliwemu Gaanowi. Dopóki potwór tu grasuje, Gaan nie bêdzie móg³ normalnie polowaæ.");
+		MIS_Gaan_Snapper = LOG_Running;
 	}
-	else if(KAPITEL >= 3)
+	else if(Kapitel >= 3)
 	{
 		AI_Output(self,other,"DIA_Gaan_JAGD_03_04");	//Jest coraz gorzej. Od tego czasu od strony prze³êczy nadci¹gnê³y ca³e tuziny tych istot.
 		AI_Output(self,other,"DIA_Gaan_JAGD_03_05");	//Trudno coœ upolowaæ w tych warunkach.
@@ -494,37 +494,37 @@ func void dia_gaan_jagd_info()
 };
 
 
-instance DIA_GAAN_PICKPOCKET(C_INFO)
+instance DIA_Gaan_PICKPOCKET(C_Info)
 {
-	npc = bau_961_gaan;
+	npc = BAU_961_Gaan;
 	nr = 900;
-	condition = dia_gaan_pickpocket_condition;
-	information = dia_gaan_pickpocket_info;
+	condition = DIA_Gaan_PICKPOCKET_Condition;
+	information = DIA_Gaan_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_gaan_pickpocket_condition()
+func int DIA_Gaan_PICKPOCKET_Condition()
 {
-	return c_beklauen(23,35);
+	return C_Beklauen(23,35);
 };
 
-func void dia_gaan_pickpocket_info()
+func void DIA_Gaan_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_gaan_pickpocket);
-	Info_AddChoice(dia_gaan_pickpocket,DIALOG_BACK,dia_gaan_pickpocket_back);
-	Info_AddChoice(dia_gaan_pickpocket,DIALOG_PICKPOCKET,dia_gaan_pickpocket_doit);
+	Info_ClearChoices(DIA_Gaan_PICKPOCKET);
+	Info_AddChoice(DIA_Gaan_PICKPOCKET,Dialog_Back,DIA_Gaan_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Gaan_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Gaan_PICKPOCKET_DoIt);
 };
 
-func void dia_gaan_pickpocket_doit()
+func void DIA_Gaan_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_gaan_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Gaan_PICKPOCKET);
 };
 
-func void dia_gaan_pickpocket_back()
+func void DIA_Gaan_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_gaan_pickpocket);
+	Info_ClearChoices(DIA_Gaan_PICKPOCKET);
 };
 

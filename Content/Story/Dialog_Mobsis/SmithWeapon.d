@@ -1,346 +1,346 @@
 
-instance PC_SMITHWEAPON_END(C_INFO)
+instance PC_SmithWeapon_End(C_Info)
 {
-	npc = pc_hero;
+	npc = PC_Hero;
 	nr = 999;
-	condition = pc_smithweapon_end_condition;
-	information = pc_smithweapon_end_info;
+	condition = PC_SmithWeapon_End_Condition;
+	information = PC_SmithWeapon_End_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int pc_smithweapon_end_condition()
+func int PC_SmithWeapon_End_Condition()
 {
-	if(PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHWEAPON)
+	if(PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon)
 	{
 		return TRUE;
 	};
 };
 
-func void pc_smithweapon_end_info()
+func void PC_SmithWeapon_End_Info()
 {
-	CreateInvItems(self,itmiswordraw,1);
+	CreateInvItems(self,ItMiSwordraw,1);
 	b_endproductiondialog();
 };
 
 
-instance PC_ITMW_1H_COMMON(C_INFO)
+instance PC_ItMw_1H_Common(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_itmw_1h_common_condition;
-	information = pc_itmw_1h_common_info;
+	npc = PC_Hero;
+	condition = PC_ItMw_1H_Common_Condition;
+	information = PC_ItMw_1H_Common_Info;
 	permanent = TRUE;
 };
 
 
-func int pc_itmw_1h_common_condition()
+func int PC_ItMw_1H_Common_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHWEAPON) && (PLAYER_TALENT_SMITH[WEAPON_COMMON] == TRUE))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_Common] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_itmw_1h_common_info()
+func void PC_ItMw_1H_Common_Info()
 {
-	CreateInvItems(hero,itmw_1h_common_01,1);
-	Print(PRINT_SMITHSUCCESS);
+	CreateInvItems(hero,ItMw_1H_Common_01,1);
+	Print(PRINT_SmithSuccess);
 	b_endproductiondialog();
 };
 
 
-instance PC_ITMW_1H_SPECIAL_01(C_INFO)
+instance PC_ItMw_1H_Special_01(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_itmw_1h_special_01_condition;
-	information = pc_itmw_1h_special_01_info;
+	npc = PC_Hero;
+	condition = PC_ItMw_1H_Special_01_Condition;
+	information = PC_ItMw_1H_Special_01_Info;
 	permanent = TRUE;
 };
 
 
-func int pc_itmw_1h_special_01_condition()
+func int PC_ItMw_1H_Special_01_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHWEAPON) && (PLAYER_TALENT_SMITH[WEAPON_1H_SPECIAL_01] == TRUE))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Special_01] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_itmw_1h_special_01_info()
+func void PC_ItMw_1H_Special_01_Info()
 {
-	if(Npc_HasItems(hero,itmi_nugget) >= 1)
+	if(Npc_HasItems(hero,ItMi_Nugget) >= 1)
 	{
-		Npc_RemoveInvItems(hero,itmi_nugget,1);
-		CreateInvItems(hero,itmw_1h_special_01,1);
-		Print(PRINT_SMITHSUCCESS);
+		Npc_RemoveInvItems(hero,ItMi_Nugget,1);
+		CreateInvItems(hero,ItMw_1H_Special_01,1);
+		Print(PRINT_SmithSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmiswordraw,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMiSwordraw,1);
 	};
 	b_endproductiondialog();
 };
 
 
-instance PC_ITMW_2H_SPECIAL_01(C_INFO)
+instance PC_ItMw_2H_Special_01(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_itmw_2h_special_01_condition;
-	information = pc_itmw_2h_special_01_info;
+	npc = PC_Hero;
+	condition = PC_ItMw_2H_Special_01_Condition;
+	information = PC_ItMw_2H_Special_01_Info;
 	permanent = TRUE;
 };
 
 
-func int pc_itmw_2h_special_01_condition()
+func int PC_ItMw_2H_Special_01_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHWEAPON) && (PLAYER_TALENT_SMITH[WEAPON_2H_SPECIAL_01] == TRUE))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_2H_Special_01] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_itmw_2h_special_01_info()
+func void PC_ItMw_2H_Special_01_Info()
 {
-	if(Npc_HasItems(hero,itmi_nugget) >= 2)
+	if(Npc_HasItems(hero,ItMi_Nugget) >= 2)
 	{
-		Npc_RemoveInvItems(hero,itmi_nugget,2);
-		CreateInvItems(hero,itmw_2h_special_01,1);
-		Print(PRINT_SMITHSUCCESS);
+		Npc_RemoveInvItems(hero,ItMi_Nugget,2);
+		CreateInvItems(hero,ItMw_2H_Special_01,1);
+		Print(PRINT_SmithSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmiswordraw,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMiSwordraw,1);
 	};
 	b_endproductiondialog();
 };
 
 
-instance PC_ITMW_1H_SPECIAL_02(C_INFO)
+instance PC_ItMw_1H_Special_02(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_itmw_1h_special_02_condition;
-	information = pc_itmw_1h_special_02_info;
+	npc = PC_Hero;
+	condition = PC_ItMw_1H_Special_02_Condition;
+	information = PC_ItMw_1H_Special_02_Info;
 	permanent = TRUE;
 };
 
 
-func int pc_itmw_1h_special_02_condition()
+func int PC_ItMw_1H_Special_02_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHWEAPON) && (PLAYER_TALENT_SMITH[WEAPON_1H_SPECIAL_02] == TRUE))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Special_02] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_itmw_1h_special_02_info()
+func void PC_ItMw_1H_Special_02_Info()
 {
-	if(Npc_HasItems(hero,itmi_nugget) >= 2)
+	if(Npc_HasItems(hero,ItMi_Nugget) >= 2)
 	{
-		Npc_RemoveInvItems(hero,itmi_nugget,2);
-		CreateInvItems(hero,itmw_1h_special_02,1);
-		Print(PRINT_SMITHSUCCESS);
+		Npc_RemoveInvItems(hero,ItMi_Nugget,2);
+		CreateInvItems(hero,ItMw_1H_Special_02,1);
+		Print(PRINT_SmithSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmiswordraw,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMiSwordraw,1);
 	};
 	b_endproductiondialog();
 };
 
 
-instance PC_ITMW_2H_SPECIAL_02(C_INFO)
+instance PC_ItMw_2H_Special_02(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_itmw_2h_special_02_condition;
-	information = pc_itmw_2h_special_02_info;
+	npc = PC_Hero;
+	condition = PC_ItMw_2H_Special_02_Condition;
+	information = PC_ItMw_2H_Special_02_Info;
 	permanent = TRUE;
 };
 
 
-func int pc_itmw_2h_special_02_condition()
+func int PC_ItMw_2H_Special_02_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHWEAPON) && (PLAYER_TALENT_SMITH[WEAPON_2H_SPECIAL_02] == TRUE))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_2H_Special_02] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_itmw_2h_special_02_info()
+func void PC_ItMw_2H_Special_02_Info()
 {
-	if(Npc_HasItems(hero,itmi_nugget) >= 3)
+	if(Npc_HasItems(hero,ItMi_Nugget) >= 3)
 	{
-		Npc_RemoveInvItems(hero,itmi_nugget,3);
-		CreateInvItems(hero,itmw_2h_special_02,1);
-		Print(PRINT_SMITHSUCCESS);
+		Npc_RemoveInvItems(hero,ItMi_Nugget,3);
+		CreateInvItems(hero,ItMw_2H_Special_02,1);
+		Print(PRINT_SmithSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmiswordraw,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMiSwordraw,1);
 	};
 	b_endproductiondialog();
 };
 
 
-instance PC_ITMW_1H_SPECIAL_03(C_INFO)
+instance PC_ItMw_1H_Special_03(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_itmw_1h_special_03_condition;
-	information = pc_itmw_1h_special_03_info;
+	npc = PC_Hero;
+	condition = PC_ItMw_1H_Special_03_Condition;
+	information = PC_ItMw_1H_Special_03_Info;
 	permanent = TRUE;
 };
 
 
-func int pc_itmw_1h_special_03_condition()
+func int PC_ItMw_1H_Special_03_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHWEAPON) && (PLAYER_TALENT_SMITH[WEAPON_1H_SPECIAL_03] == TRUE))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Special_03] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_itmw_1h_special_03_info()
+func void PC_ItMw_1H_Special_03_Info()
 {
-	if(Npc_HasItems(hero,itmi_nugget) >= 3)
+	if(Npc_HasItems(hero,ItMi_Nugget) >= 3)
 	{
-		Npc_RemoveInvItems(hero,itmi_nugget,3);
-		CreateInvItems(hero,itmw_1h_special_03,1);
-		Print(PRINT_SMITHSUCCESS);
+		Npc_RemoveInvItems(hero,ItMi_Nugget,3);
+		CreateInvItems(hero,ItMw_1H_Special_03,1);
+		Print(PRINT_SmithSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmiswordraw,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMiSwordraw,1);
 	};
 	b_endproductiondialog();
 };
 
 
-instance PC_ITMW_2H_SPECIAL_03(C_INFO)
+instance PC_ItMw_2H_Special_03(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_itmw_2h_special_03_condition;
-	information = pc_itmw_2h_special_03_info;
+	npc = PC_Hero;
+	condition = PC_ItMw_2H_Special_03_Condition;
+	information = PC_ItMw_2H_Special_03_Info;
 	permanent = TRUE;
 };
 
 
-func int pc_itmw_2h_special_03_condition()
+func int PC_ItMw_2H_Special_03_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHWEAPON) && (PLAYER_TALENT_SMITH[WEAPON_2H_SPECIAL_03] == TRUE))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_2H_Special_03] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_itmw_2h_special_03_info()
+func void PC_ItMw_2H_Special_03_Info()
 {
-	if(Npc_HasItems(hero,itmi_nugget) >= 4)
+	if(Npc_HasItems(hero,ItMi_Nugget) >= 4)
 	{
-		Npc_RemoveInvItems(hero,itmi_nugget,4);
-		CreateInvItems(hero,itmw_2h_special_03,1);
-		Print(PRINT_SMITHSUCCESS);
+		Npc_RemoveInvItems(hero,ItMi_Nugget,4);
+		CreateInvItems(hero,ItMw_2H_Special_03,1);
+		Print(PRINT_SmithSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmiswordraw,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMiSwordraw,1);
 	};
 	b_endproductiondialog();
 };
 
 
-instance PC_ITMW_1H_SPECIAL_04(C_INFO)
+instance PC_ItMw_1H_Special_04(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_itmw_1h_special_04_condition;
-	information = pc_itmw_1h_special_04_info;
+	npc = PC_Hero;
+	condition = PC_ItMw_1H_Special_04_Condition;
+	information = PC_ItMw_1H_Special_04_Info;
 	permanent = TRUE;
 };
 
 
-func int pc_itmw_1h_special_04_condition()
+func int PC_ItMw_1H_Special_04_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHWEAPON) && (PLAYER_TALENT_SMITH[WEAPON_1H_SPECIAL_04] == TRUE))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Special_04] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_itmw_1h_special_04_info()
+func void PC_ItMw_1H_Special_04_Info()
 {
-	if((Npc_HasItems(hero,itmi_nugget) >= 4) && (Npc_HasItems(hero,itat_dragonblood) >= 5))
+	if((Npc_HasItems(hero,ItMi_Nugget) >= 4) && (Npc_HasItems(hero,ItAt_DragonBlood) >= 5))
 	{
-		Npc_RemoveInvItems(hero,itmi_nugget,4);
-		Npc_RemoveInvItems(hero,itat_dragonblood,5);
-		CreateInvItems(hero,itmw_1h_special_04,1);
-		Print(PRINT_SMITHSUCCESS);
+		Npc_RemoveInvItems(hero,ItMi_Nugget,4);
+		Npc_RemoveInvItems(hero,ItAt_DragonBlood,5);
+		CreateInvItems(hero,ItMw_1H_Special_04,1);
+		Print(PRINT_SmithSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmiswordraw,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMiSwordraw,1);
 	};
 	b_endproductiondialog();
 };
 
 
-instance PC_ITMW_2H_SPECIAL_04(C_INFO)
+instance PC_ItMw_2H_Special_04(C_Info)
 {
-	npc = pc_hero;
-	condition = pc_itmw_2h_special_04_condition;
-	information = pc_itmw_2h_special_04_info;
+	npc = PC_Hero;
+	condition = PC_ItMw_2H_Special_04_Condition;
+	information = PC_ItMw_2H_Special_04_Info;
 	permanent = TRUE;
 };
 
 
-func int pc_itmw_2h_special_04_condition()
+func int PC_ItMw_2H_Special_04_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHWEAPON) && (PLAYER_TALENT_SMITH[WEAPON_2H_SPECIAL_04] == TRUE))
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_2H_Special_04] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void pc_itmw_2h_special_04_info()
+func void PC_ItMw_2H_Special_04_Info()
 {
-	if((Npc_HasItems(hero,itmi_nugget) >= 5) && (Npc_HasItems(hero,itat_dragonblood) >= 5))
+	if((Npc_HasItems(hero,ItMi_Nugget) >= 5) && (Npc_HasItems(hero,ItAt_DragonBlood) >= 5))
 	{
-		Npc_RemoveInvItems(hero,itmi_nugget,5);
-		Npc_RemoveInvItems(hero,itat_dragonblood,5);
-		CreateInvItems(hero,itmw_2h_special_04,1);
-		Print(PRINT_SMITHSUCCESS);
+		Npc_RemoveInvItems(hero,ItMi_Nugget,5);
+		Npc_RemoveInvItems(hero,ItAt_DragonBlood,5);
+		CreateInvItems(hero,ItMw_2H_Special_04,1);
+		Print(PRINT_SmithSuccess);
 	}
 	else
 	{
-		Print(PRINT_PRODITEMSMISSING);
-		CreateInvItems(self,itmiswordraw,1);
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMiSwordraw,1);
 	};
 	b_endproductiondialog();
 };
 
 func void smithweapon_s1()
 {
-	var C_NPC her;
-	her = Hlp_GetNpc(pc_hero);
+	var C_Npc her;
+	her = Hlp_GetNpc(PC_Hero);
 	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(her))
 	{
 		self.aivar[AIV_INVINCIBLE] = TRUE;
-		PLAYER_MOBSI_PRODUCTION = MOBSI_SMITHWEAPON;
+		PLAYER_MOBSI_PRODUCTION = MOBSI_SmithWeapon;
 		AI_ProcessInfos(her);
 	};
-	pc_itmw_1h_common.description = NAME_ITMW_1H_COMMON_01;
-	pc_itmw_1h_special_01.description = ConcatStrings(NAME_ITMW_1H_SPECIAL_01,PRINT_SMITH_1H_SPECIAL_01);
-	pc_itmw_2h_special_01.description = ConcatStrings(NAME_ITMW_2H_SPECIAL_01,PRINT_SMITH_2H_SPECIAL_01);
-	pc_itmw_1h_special_02.description = ConcatStrings(NAME_ITMW_1H_SPECIAL_02,PRINT_SMITH_1H_SPECIAL_02);
-	pc_itmw_2h_special_02.description = ConcatStrings(NAME_ITMW_2H_SPECIAL_02,PRINT_SMITH_2H_SPECIAL_02);
-	pc_itmw_1h_special_03.description = ConcatStrings(NAME_ITMW_1H_SPECIAL_03,PRINT_SMITH_1H_SPECIAL_03);
-	pc_itmw_2h_special_03.description = ConcatStrings(NAME_ITMW_2H_SPECIAL_03,PRINT_SMITH_2H_SPECIAL_03);
-	pc_itmw_1h_special_04.description = ConcatStrings(NAME_ITMW_1H_SPECIAL_04,PRINT_SMITH_1H_SPECIAL_04);
-	pc_itmw_2h_special_04.description = ConcatStrings(NAME_ITMW_2H_SPECIAL_04,PRINT_SMITH_2H_SPECIAL_04);
+	PC_ItMw_1H_Common.description = NAME_ItMw_1H_Common_01;
+	PC_ItMw_1H_Special_01.description = ConcatStrings(NAME_ItMw_1H_Special_01,PRINT_Smith_1H_Special_01);
+	PC_ItMw_2H_Special_01.description = ConcatStrings(NAME_ItMw_2H_Special_01,PRINT_Smith_2H_Special_01);
+	PC_ItMw_1H_Special_02.description = ConcatStrings(NAME_ItMw_1H_Special_02,PRINT_Smith_1H_Special_02);
+	PC_ItMw_2H_Special_02.description = ConcatStrings(NAME_ItMw_2H_Special_02,PRINT_Smith_2H_Special_02);
+	PC_ItMw_1H_Special_03.description = ConcatStrings(NAME_ItMw_1H_Special_03,PRINT_Smith_1H_Special_03);
+	PC_ItMw_2H_Special_03.description = ConcatStrings(NAME_ItMw_2H_Special_03,PRINT_Smith_2H_Special_03);
+	PC_ItMw_1H_Special_04.description = ConcatStrings(NAME_ItMw_1H_Special_04,PRINT_Smith_1H_Special_04);
+	PC_ItMw_2H_Special_04.description = ConcatStrings(NAME_ItMw_2H_Special_04,PRINT_Smith_2H_Special_04);
 };
 

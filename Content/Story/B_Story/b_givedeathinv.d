@@ -1,442 +1,442 @@
 
-func void b_givedeathinv(var C_NPC slf)
+func void B_GiveDeathInv(var C_Npc slf)
 {
-	if(slf.aivar[AIV_DEATHINVGIVEN] == TRUE)
+	if(slf.aivar[AIV_DeathInvGiven] == TRUE)
 	{
 		return;
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_TEETH] == TRUE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] == TRUE)
 	{
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_WOLF)
 		{
-			CreateInvItems(slf,itat_teeth,2);
+			CreateInvItems(slf,ItAt_Teeth,2);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_WARG)
 		{
-			CreateInvItems(slf,itat_teeth,2);
+			CreateInvItems(slf,ItAt_Teeth,2);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_SNAPPER)
 		{
-			CreateInvItems(slf,itat_teeth,2);
+			CreateInvItems(slf,ItAt_Teeth,2);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_DRAGONSNAPPER)
 		{
-			CreateInvItems(slf,itat_teeth,2);
+			CreateInvItems(slf,ItAt_Teeth,2);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_SHADOWBEAST)
 		{
-			CreateInvItems(slf,itat_teeth,2);
+			CreateInvItems(slf,ItAt_Teeth,2);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_SWAMPSHARK)
 		{
-			CreateInvItems(slf,itat_sharkteeth,1);
+			CreateInvItems(slf,ItAt_SharkTeeth,1);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_TROLL)
 		{
-			CreateInvItems(slf,itat_trolltooth,2);
+			CreateInvItems(slf,ItAt_TrollTooth,2);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_TROLL_BLACK)
 		{
-			CreateInvItems(slf,itat_trolltooth,4);
+			CreateInvItems(slf,ItAt_TrollTooth,4);
 		};
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CLAWS] == TRUE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Claws] == TRUE)
 	{
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_WARAN)
 		{
-			CreateInvItems(slf,itat_claw,2);
+			CreateInvItems(slf,ItAt_Claw,2);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_FIREWARAN)
 		{
-			CreateInvItems(slf,itat_claw,4);
+			CreateInvItems(slf,ItAt_Claw,4);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_SNAPPER)
 		{
-			CreateInvItems(slf,itat_claw,2);
+			CreateInvItems(slf,ItAt_Claw,2);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_DRAGONSNAPPER)
 		{
-			CreateInvItems(slf,itat_claw,4);
+			CreateInvItems(slf,ItAt_Claw,4);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_SHADOWBEAST)
 		{
-			CreateInvItems(slf,itat_claw,4);
+			CreateInvItems(slf,ItAt_Claw,4);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_LURKER)
 		{
-			CreateInvItems(slf,itat_lurkerclaw,1);
+			CreateInvItems(slf,ItAt_LurkerClaw,1);
 		};
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FUR] == TRUE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == TRUE)
 	{
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_SHEEP)
 		{
-			CreateInvItems(slf,itat_sheepfur,1);
+			CreateInvItems(slf,ItAt_SheepFur,1);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_WOLF)
 		{
-			CreateInvItems(slf,itat_wolffur,1);
+			CreateInvItems(slf,ItAt_WolfFur,1);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_WARG)
 		{
-			CreateInvItems(slf,itat_wargfur,1);
+			CreateInvItems(slf,ItAt_WargFur,1);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_SHADOWBEAST)
 		{
-			CreateInvItems(slf,itat_shadowfur,1);
+			CreateInvItems(slf,ItAt_ShadowFur,1);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_TROLL)
 		{
-			CreateInvItems(slf,itat_trollfur,1);
+			CreateInvItems(slf,ItAt_TrollFur,1);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_TROLL_BLACK)
 		{
-			CreateInvItems(slf,itat_trollblackfur,1);
+			CreateInvItems(slf,ItAt_TrollBlackFur,1);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_LURKER)
 		{
-			CreateInvItems(slf,itat_lurkerskin,1);
+			CreateInvItems(slf,itat_LurkerSkin,1);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_SWAMPSHARK)
 		{
-			CreateInvItems(slf,itat_sharkskin,1);
+			CreateInvItems(slf,ItAt_SharkSkin,1);
 		};
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_HEART] == TRUE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Heart] == TRUE)
 	{
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_STONEGOLEM)
 		{
-			CreateInvItems(slf,itat_stonegolemheart,1);
+			CreateInvItems(slf,ItAt_StoneGolemHeart,1);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_FIREGOLEM)
 		{
-			CreateInvItems(slf,itat_firegolemheart,1);
+			CreateInvItems(slf,ItAt_FireGolemHeart,1);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_ICEGOLEM)
 		{
-			CreateInvItems(slf,itat_icegolemheart,1);
+			CreateInvItems(slf,ItAt_IceGolemHeart,1);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_DEMON)
 		{
-			CreateInvItems(slf,itat_demonheart,1);
+			CreateInvItems(slf,ItAt_DemonHeart,1);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_DEMON_LORD)
 		{
-			CreateInvItems(slf,itat_demonheart,1);
+			CreateInvItems(slf,ItAt_DemonHeart,1);
 		};
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_SHADOWHORN] == TRUE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_ShadowHorn] == TRUE)
 	{
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_SHADOWBEAST)
 		{
-			CreateInvItems(slf,itat_shadowhorn,1);
+			CreateInvItems(slf,ItAt_ShadowHorn,1);
 		};
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FIRETONGUE] == TRUE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FireTongue] == TRUE)
 	{
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_FIREWARAN)
 		{
-			CreateInvItems(slf,itat_waranfiretongue,1);
+			CreateInvItems(slf,ItAt_WaranFiretongue,1);
 		};
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWING] == TRUE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] == TRUE)
 	{
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_BLOODFLY)
 		{
-			CreateInvItems(slf,itat_wing,2);
+			CreateInvItems(slf,ItAt_Wing,2);
 		};
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSTING] == TRUE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] == TRUE)
 	{
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_BLOODFLY)
 		{
-			CreateInvItems(slf,itat_sting,1);
+			CreateInvItems(slf,ItAt_Sting,1);
 		};
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_MANDIBLES] == TRUE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Mandibles] == TRUE)
 	{
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_GIANT_BUG)
 		{
-			CreateInvItems(slf,itat_bugmandibles,1);
+			CreateInvItems(slf,ItAt_BugMandibles,1);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_MINECRAWLER)
 		{
-			CreateInvItems(slf,itat_crawlermandibles,1);
+			CreateInvItems(slf,ItAt_CrawlerMandibles,1);
 		};
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_MINECRAWLERWARRIOR)
 		{
-			CreateInvItems(slf,itat_crawlermandibles,1);
+			CreateInvItems(slf,ItAt_CrawlerMandibles,1);
 		};
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CRAWLERPLATE] == TRUE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CrawlerPlate] == TRUE)
 	{
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_MINECRAWLERWARRIOR)
 		{
-			CreateInvItems(slf,itat_crawlerplate,2);
+			CreateInvItems(slf,ItAt_CrawlerPlate,2);
 		};
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRGSNAPPERHORN] == TRUE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DrgSnapperHorn] == TRUE)
 	{
 		if(slf.aivar[AIV_MM_REAL_ID] == ID_DRAGONSNAPPER)
 		{
-			CreateInvItems(slf,itat_drgsnapperhorn,2);
+			CreateInvItems(slf,ItAt_DrgSnapperHorn,2);
 		};
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRAGONSCALE] == TRUE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DragonScale] == TRUE)
 	{
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(firedragonisland))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(FireDragonIsland))
 		{
-			CreateInvItems(slf,itat_dragonscale,12);
+			CreateInvItems(slf,ItAt_DragonScale,12);
 		};
 	};
-	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DRAGONBLOOD] == TRUE)
+	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DragonBlood] == TRUE)
 	{
-		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(firedragonisland))
+		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(FireDragonIsland))
 		{
-			CreateInvItems(slf,itat_dragonblood,2);
+			CreateInvItems(slf,ItAt_DragonBlood,2);
 		};
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_LURKER)
 	{
-		CreateInvItems(slf,itfomuttonraw,1);
+		CreateInvItems(slf,ItFoMuttonRaw,1);
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_FIREWARAN)
 	{
-		CreateInvItems(slf,itfomuttonraw,1);
+		CreateInvItems(slf,ItFoMuttonRaw,1);
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_WARAN)
 	{
-		CreateInvItems(slf,itfomuttonraw,1);
+		CreateInvItems(slf,ItFoMuttonRaw,1);
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_MEATBUG)
 	{
-		CreateInvItems(slf,itat_meatbugflesh,1);
+		CreateInvItems(slf,ItAt_Meatbugflesh,1);
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_SHEEP)
 	{
-		CreateInvItems(slf,itfomuttonraw,1);
+		CreateInvItems(slf,ItFoMuttonRaw,1);
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_SCAVENGER)
 	{
-		CreateInvItems(slf,itfomuttonraw,1);
+		CreateInvItems(slf,ItFoMuttonRaw,1);
 	};
-	if(slf.aivar[AIV_MM_REAL_ID] == ID_GIANT_RAT)
+	if(slf.aivar[AIV_MM_REAL_ID] == ID_Giant_Rat)
 	{
-		CreateInvItems(slf,itfomuttonraw,1);
+		CreateInvItems(slf,ItFoMuttonRaw,1);
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_MOLERAT)
 	{
-		CreateInvItems(slf,itfomuttonraw,1);
+		CreateInvItems(slf,ItFoMuttonRaw,1);
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_WOLF)
 	{
-		CreateInvItems(slf,itfomuttonraw,1);
+		CreateInvItems(slf,ItFoMuttonRaw,1);
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_WARG)
 	{
-		CreateInvItems(slf,itfomuttonraw,1);
+		CreateInvItems(slf,ItFoMuttonRaw,1);
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_SHADOWBEAST)
 	{
-		CreateInvItems(slf,itfomuttonraw,2);
+		CreateInvItems(slf,ItFoMuttonRaw,2);
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_DRAGON_UNDEAD)
 	{
-		CreateInvItems(slf,itat_undeaddragonsoulstone,1);
+		CreateInvItems(slf,ItAt_UndeadDragonSoulStone,1);
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_DRAGON_FIRE)
 	{
-		CreateInvItems(slf,itat_firedragonheart,1);
+		CreateInvItems(slf,ItAt_FiredragonHeart,1);
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_DRAGON_ICE)
 	{
-		CreateInvItems(slf,itat_icedragonheart,1);
+		CreateInvItems(slf,ItAt_IcedragonHeart,1);
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_DRAGON_ROCK)
 	{
-		CreateInvItems(slf,itat_rockdragonheart,1);
+		CreateInvItems(slf,ItAt_RockdragonHeart,1);
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_DRAGON_SWAMP)
 	{
-		CreateInvItems(slf,itat_swampdragonheart,1);
+		CreateInvItems(slf,ItAt_SwampdragonHeart,1);
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_SKELETON)
 	{
-		CreateInvItems(slf,itat_goblinbone,1);
+		CreateInvItems(slf,ItAt_GoblinBone,1);
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_SKELETON)
 	{
-		CreateInvItems(slf,itat_skeletonbone,1);
+		CreateInvItems(slf,ItAt_SkeletonBone,1);
 	};
-	GOBLINGREEN_RANDOMIZER = Hlp_Random(100);
-	if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_GREEN) && (GOBLINGREEN_RANDOMIZER == 0))
+	GoblinGreen_Randomizer = Hlp_Random(100);
+	if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_GREEN) && (GoblinGreen_Randomizer == 0))
 	{
-		CreateInvItems(slf,itmi_silverring,1);
+		CreateInvItems(slf,ItMi_SilverRing,1);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_GREEN) && (GOBLINGREEN_RANDOMIZER <= 5))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_GREEN) && (GoblinGreen_Randomizer <= 5))
 	{
-		CreateInvItems(slf,itpl_mushroom_01,1);
+		CreateInvItems(slf,ItPl_Mushroom_01,1);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_GREEN) && (GOBLINGREEN_RANDOMIZER <= 15))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_GREEN) && (GoblinGreen_Randomizer <= 15))
 	{
-		CreateInvItems(slf,itmi_gold,5);
+		CreateInvItems(slf,ItMi_Gold,5);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_GREEN) && (GOBLINGREEN_RANDOMIZER <= 30))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_GREEN) && (GoblinGreen_Randomizer <= 30))
 	{
-		CreateInvItems(slf,itfo_fish,1);
+		CreateInvItems(slf,ItFo_Fish,1);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_GREEN) && (GOBLINGREEN_RANDOMIZER <= 50))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_GREEN) && (GoblinGreen_Randomizer <= 50))
 	{
-		CreateInvItems(slf,itmi_gold,2);
+		CreateInvItems(slf,ItMi_Gold,2);
 	};
-	GOBLINBLACK_RANDOMIZER = Hlp_Random(100);
-	if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_BLACK) && (GOBLINBLACK_RANDOMIZER == 0))
+	GoblinBlack_Randomizer = Hlp_Random(100);
+	if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_BLACK) && (GoblinBlack_Randomizer == 0))
 	{
-		CreateInvItems(slf,itmi_goldring,1);
+		CreateInvItems(slf,ItMi_GoldRing,1);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_BLACK) && (GOBLINBLACK_RANDOMIZER <= 5))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_BLACK) && (GoblinBlack_Randomizer <= 5))
 	{
-		CreateInvItems(slf,itmi_gold,2);
+		CreateInvItems(slf,ItMi_Gold,2);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_BLACK) && (GOBLINBLACK_RANDOMIZER <= 15))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_BLACK) && (GoblinBlack_Randomizer <= 15))
 	{
-		CreateInvItems(slf,itmi_gold,10);
+		CreateInvItems(slf,ItMi_Gold,10);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_BLACK) && (GOBLINBLACK_RANDOMIZER <= 30))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_BLACK) && (GoblinBlack_Randomizer <= 30))
 	{
-		CreateInvItems(slf,itpl_mushroom_02,1);
+		CreateInvItems(slf,ItPl_Mushroom_02,1);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_BLACK) && (GOBLINBLACK_RANDOMIZER <= 50))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_GOBBO_BLACK) && (GoblinBlack_Randomizer <= 50))
 	{
-		CreateInvItems(slf,itmi_gold,5);
+		CreateInvItems(slf,ItMi_Gold,5);
 	};
-	ORC_RANDOMIZER = Hlp_Random(10);
-	if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCWARRIOR) && (ORC_RANDOMIZER == 0))
+	Orc_Randomizer = Hlp_Random(10);
+	if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCWARRIOR) && (Orc_Randomizer == 0))
 	{
-		CreateInvItems(slf,itpo_health_02,1);
-		CreateInvItems(slf,itmi_gold,2);
+		CreateInvItems(slf,ItPo_Health_02,1);
+		CreateInvItems(slf,ItMi_Gold,2);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCWARRIOR) && (ORC_RANDOMIZER == 1))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCWARRIOR) && (Orc_Randomizer == 1))
 	{
-		CreateInvItems(slf,itpo_health_01,1);
-		CreateInvItems(slf,itfomuttonraw,1);
+		CreateInvItems(slf,ItPo_Health_01,1);
+		CreateInvItems(slf,ItFoMuttonRaw,1);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCWARRIOR) && (ORC_RANDOMIZER == 2))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCWARRIOR) && (Orc_Randomizer == 2))
 	{
-		CreateInvItems(slf,itpo_health_01,2);
-		CreateInvItems(slf,itmi_gold,18);
+		CreateInvItems(slf,ItPo_Health_01,2);
+		CreateInvItems(slf,ItMi_Gold,18);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCWARRIOR) && (ORC_RANDOMIZER == 3))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCWARRIOR) && (Orc_Randomizer == 3))
 	{
-		CreateInvItems(slf,itfo_booze,1);
-		CreateInvItems(slf,itmi_silverring,1);
+		CreateInvItems(slf,ItFo_Booze,1);
+		CreateInvItems(slf,ItMi_SilverRing,1);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCWARRIOR) && (ORC_RANDOMIZER == 4))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCWARRIOR) && (Orc_Randomizer == 4))
 	{
-		CreateInvItems(slf,itpl_health_herb_01,1);
-		CreateInvItems(slf,itmi_gold,4);
+		CreateInvItems(slf,ItPl_Health_Herb_01,1);
+		CreateInvItems(slf,ItMi_Gold,4);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCWARRIOR) && (ORC_RANDOMIZER <= 7))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCWARRIOR) && (Orc_Randomizer <= 7))
 	{
-		CreateInvItems(slf,itmi_gold,9);
+		CreateInvItems(slf,ItMi_Gold,9);
 	};
-	if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCSHAMAN) && (ORC_RANDOMIZER == 0))
+	if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCSHAMAN) && (Orc_Randomizer == 0))
 	{
-		CreateInvItems(slf,itpo_mana_03,1);
-		CreateInvItems(slf,itmi_gold,5);
+		CreateInvItems(slf,ItPo_Mana_03,1);
+		CreateInvItems(slf,ItMi_Gold,5);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCSHAMAN) && (ORC_RANDOMIZER == 1))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCSHAMAN) && (Orc_Randomizer == 1))
 	{
-		CreateInvItems(slf,itpo_mana_02,2);
+		CreateInvItems(slf,ItPo_Mana_02,2);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCSHAMAN) && (ORC_RANDOMIZER == 2))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCSHAMAN) && (Orc_Randomizer == 2))
 	{
-		CreateInvItems(slf,itpo_mana_02,1);
-		CreateInvItems(slf,itmi_coal,1);
+		CreateInvItems(slf,ItPo_Mana_02,1);
+		CreateInvItems(slf,ItMi_Coal,1);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCSHAMAN) && (ORC_RANDOMIZER == 3))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCSHAMAN) && (Orc_Randomizer == 3))
 	{
-		CreateInvItems(slf,itpo_mana_01,2);
-		CreateInvItems(slf,itmi_gold,12);
+		CreateInvItems(slf,ItPo_Mana_01,2);
+		CreateInvItems(slf,ItMi_Gold,12);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCSHAMAN) && (ORC_RANDOMIZER == 4))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCSHAMAN) && (Orc_Randomizer == 4))
 	{
-		CreateInvItems(slf,itpo_mana_01,1);
-		CreateInvItems(slf,itmi_sulfur,1);
+		CreateInvItems(slf,ItPo_Mana_01,1);
+		CreateInvItems(slf,ItMi_Sulfur,1);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCSHAMAN) && (ORC_RANDOMIZER <= 8))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCSHAMAN) && (Orc_Randomizer <= 8))
 	{
-		CreateInvItems(slf,itpl_mana_herb_02,2);
-		CreateInvItems(slf,itmi_gold,8);
+		CreateInvItems(slf,ItPl_Mana_Herb_02,2);
+		CreateInvItems(slf,ItMi_Gold,8);
 	};
-	if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCELITE) && (ORC_RANDOMIZER == 0))
+	if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCELITE) && (Orc_Randomizer == 0))
 	{
-		CreateInvItems(slf,itat_wolffur,1);
-		CreateInvItems(slf,itpo_health_03,1);
-		CreateInvItems(slf,itfomutton,2);
+		CreateInvItems(slf,ItAt_WolfFur,1);
+		CreateInvItems(slf,ItPo_Health_03,1);
+		CreateInvItems(slf,ItFoMutton,2);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCELITE) && (ORC_RANDOMIZER == 1))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCELITE) && (Orc_Randomizer == 1))
 	{
-		CreateInvItems(slf,itmi_goldring,1);
-		CreateInvItems(slf,itpo_health_01,1);
-		CreateInvItems(slf,itmi_gold,26);
+		CreateInvItems(slf,ItMi_GoldRing,1);
+		CreateInvItems(slf,ItPo_Health_01,1);
+		CreateInvItems(slf,ItMi_Gold,26);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCELITE) && (ORC_RANDOMIZER == 2))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCELITE) && (Orc_Randomizer == 2))
 	{
-		CreateInvItems(slf,itsc_lightheal,1);
-		CreateInvItems(slf,itlstorch,2);
-		CreateInvItems(slf,itat_teeth,1);
+		CreateInvItems(slf,ItSc_LightHeal,1);
+		CreateInvItems(slf,ItLsTorch,2);
+		CreateInvItems(slf,ItAt_Teeth,1);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCELITE) && (ORC_RANDOMIZER <= 5))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCELITE) && (Orc_Randomizer <= 5))
 	{
-		CreateInvItems(slf,itmi_gold,19);
-		CreateInvItems(slf,itpo_health_02,1);
+		CreateInvItems(slf,ItMi_Gold,19);
+		CreateInvItems(slf,ItPo_Health_02,1);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCELITE) && (ORC_RANDOMIZER == 6))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCELITE) && (Orc_Randomizer == 6))
 	{
-		CreateInvItems(slf,itat_wargfur,1);
+		CreateInvItems(slf,ItAt_WargFur,1);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCELITE) && (ORC_RANDOMIZER <= 9))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_ORCELITE) && (Orc_Randomizer <= 9))
 	{
-		CreateInvItems(slf,itmi_gold,22);
-		CreateInvItems(slf,itpo_health_01,1);
+		CreateInvItems(slf,ItMi_Gold,22);
+		CreateInvItems(slf,ItPo_Health_01,1);
 	};
-	if((slf.aivar[AIV_MM_REAL_ID] == ID_DEMON) && (ORC_RANDOMIZER == 0))
+	if((slf.aivar[AIV_MM_REAL_ID] == ID_DEMON) && (Orc_Randomizer == 0))
 	{
-		CreateInvItems(slf,itpo_mana_03,2);
-		CreateInvItems(slf,itmi_goldring,1);
+		CreateInvItems(slf,ItPo_Mana_03,2);
+		CreateInvItems(slf,ItMi_GoldRing,1);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_DEMON) && (ORC_RANDOMIZER <= 2))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_DEMON) && (Orc_Randomizer <= 2))
 	{
-		CreateInvItems(slf,itpo_mana_03,1);
-		CreateInvItems(slf,itpo_health_02,1);
+		CreateInvItems(slf,ItPo_Mana_03,1);
+		CreateInvItems(slf,ItPo_Health_02,1);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_DEMON) && (ORC_RANDOMIZER <= 6))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_DEMON) && (Orc_Randomizer <= 6))
 	{
-		CreateInvItems(slf,itpo_mana_02,2);
-		CreateInvItems(slf,itmi_pitch,1);
+		CreateInvItems(slf,ItPo_Mana_02,2);
+		CreateInvItems(slf,ItMi_Pitch,1);
 	}
 	else if(slf.aivar[AIV_MM_REAL_ID] == ID_DEMON)
 	{
-		CreateInvItems(slf,itpo_mana_02,1);
-		CreateInvItems(slf,itpo_health_02,1);
+		CreateInvItems(slf,ItPo_Mana_02,1);
+		CreateInvItems(slf,ItPo_Health_02,1);
 	};
-	if((slf.aivar[AIV_MM_REAL_ID] == ID_DEMON_LORD) && (ORC_RANDOMIZER <= 1))
+	if((slf.aivar[AIV_MM_REAL_ID] == ID_DEMON_LORD) && (Orc_Randomizer <= 1))
 	{
-		CreateInvItems(slf,itpo_mana_03,2);
-		CreateInvItems(slf,itpo_health_03,2);
-		CreateInvItems(slf,itsc_sumdemon,1);
+		CreateInvItems(slf,ItPo_Mana_03,2);
+		CreateInvItems(slf,ItPo_Health_03,2);
+		CreateInvItems(slf,ItSc_SumDemon,1);
 	}
-	else if((slf.aivar[AIV_MM_REAL_ID] == ID_DEMON_LORD) && (ORC_RANDOMIZER <= 5))
+	else if((slf.aivar[AIV_MM_REAL_ID] == ID_DEMON_LORD) && (Orc_Randomizer <= 5))
 	{
-		CreateInvItems(slf,itpo_mana_03,2);
-		CreateInvItems(slf,itpo_health_03,2);
+		CreateInvItems(slf,ItPo_Mana_03,2);
+		CreateInvItems(slf,ItPo_Health_03,2);
 	}
 	else if(slf.aivar[AIV_MM_REAL_ID] == ID_DEMON_LORD)
 	{
-		CreateInvItems(slf,itpo_mana_03,1);
-		CreateInvItems(slf,itpo_health_03,1);
+		CreateInvItems(slf,ItPo_Mana_03,1);
+		CreateInvItems(slf,ItPo_Health_03,1);
 	};
-	slf.aivar[AIV_DEATHINVGIVEN] = TRUE;
+	slf.aivar[AIV_DeathInvGiven] = TRUE;
 };
 

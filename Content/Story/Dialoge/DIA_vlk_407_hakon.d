@@ -1,100 +1,100 @@
 
-instance DIA_HAKON_EXIT(C_INFO)
+instance DIA_Hakon_EXIT(C_Info)
 {
-	npc = vlk_407_hakon;
+	npc = VLK_407_Hakon;
 	nr = 999;
-	condition = dia_hakon_exit_condition;
-	information = dia_hakon_exit_info;
+	condition = DIA_Hakon_EXIT_Condition;
+	information = DIA_Hakon_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hakon_exit_condition()
+func int DIA_Hakon_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_hakon_exit_info()
+func void DIA_Hakon_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HAKON_SPERRE(C_INFO)
+instance DIA_Hakon_Sperre(C_Info)
 {
-	npc = vlk_407_hakon;
+	npc = VLK_407_Hakon;
 	nr = 2;
-	condition = dia_hakon_sperre_condition;
-	information = dia_hakon_sperre_info;
+	condition = DIA_Hakon_Sperre_Condition;
+	information = DIA_Hakon_Sperre_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_hakon_sperre_condition()
+func int DIA_Hakon_Sperre_Condition()
 {
-	if((CANTHAR_SPERRE == TRUE) && Npc_IsInState(self,zs_talk))
+	if((Canthar_Sperre == TRUE) && Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hakon_sperre_info()
+func void DIA_Hakon_Sperre_Info()
 {
 	AI_Output(self,other,"DIA_Hakon_Sperre_12_00");	//Uciekaj st¹d, skazañcu! Canthar powiedzia³ mi, jaki z ciebie drañ!
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HAKON_HALLO(C_INFO)
+instance DIA_Hakon_Hallo(C_Info)
 {
-	npc = vlk_407_hakon;
+	npc = VLK_407_Hakon;
 	nr = 3;
-	condition = dia_hakon_hallo_condition;
-	information = dia_hakon_hallo_info;
+	condition = DIA_Hakon_Hallo_Condition;
+	information = DIA_Hakon_Hallo_Info;
 	important = TRUE;
 	permanent = FALSE;
 };
 
 
-func int dia_hakon_hallo_condition()
+func int DIA_Hakon_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (CANTHAR_SPERRE == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (Canthar_Sperre == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hakon_hallo_info()
+func void DIA_Hakon_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Hakon_Add_12_00");	//Jestem Hakon, handlarz broni¹.
 	AI_Output(self,other,"DIA_Hakon_Add_12_01");	//W dzisiejszych czasach ka¿dy powinien nosiæ broñ. Szczególnie poza miastem.
-	Log_CreateTopic(TOPIC_CITYTRADER,LOG_NOTE);
-	b_logentry(TOPIC_CITYTRADER,"Hakon sprzedaje broñ na targowisku.");
+	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
+	B_LogEntry(TOPIC_CityTrader,"Hakon sprzedaje broñ na targowisku.");
 };
 
 
-instance DIA_HAKON_TRADE(C_INFO)
+instance DIA_Hakon_Trade(C_Info)
 {
-	npc = vlk_407_hakon;
+	npc = VLK_407_Hakon;
 	nr = 99;
-	condition = dia_hakon_trade_condition;
-	information = dia_hakon_trade_info;
+	condition = DIA_Hakon_Trade_Condition;
+	information = DIA_Hakon_Trade_Info;
 	permanent = TRUE;
 	trade = TRUE;
 	description = "Poka¿ mi swoje towary.";
 };
 
 
-func int dia_hakon_trade_condition()
+func int DIA_Hakon_Trade_Condition()
 {
 	return TRUE;
 };
 
-func void dia_hakon_trade_info()
+func void DIA_Hakon_Trade_Info()
 {
-	b_givetradeinv(self);
+	B_GiveTradeInv(self);
 	AI_Output(other,self,"DIA_Hakon_Trade_15_00");	//Poka¿ mi swoje towary.
 	if((hero.guild == GIL_PAL) || (hero.guild == GIL_KDF))
 	{
@@ -103,23 +103,23 @@ func void dia_hakon_trade_info()
 };
 
 
-instance DIA_HAKON_OUTOFTOWN(C_INFO)
+instance DIA_Hakon_OutOfTown(C_Info)
 {
-	npc = vlk_407_hakon;
+	npc = VLK_407_Hakon;
 	nr = 2;
-	condition = dia_hakon_outoftown_condition;
-	information = dia_hakon_outoftown_info;
+	condition = DIA_Hakon_OutOfTown_Condition;
+	information = DIA_Hakon_OutOfTown_Info;
 	permanent = FALSE;
 	description = "Opowiedz mi o terenach wokó³ miasta.";
 };
 
 
-func int dia_hakon_outoftown_condition()
+func int DIA_Hakon_OutOfTown_Condition()
 {
 	return TRUE;
 };
 
-func void dia_hakon_outoftown_info()
+func void DIA_Hakon_OutOfTown_Info()
 {
 	AI_Output(other,self,"DIA_Hakon_Add_15_02");	//Opowiedz mi o terenach wokó³ miasta.
 	AI_Output(self,other,"DIA_Hakon_Add_12_03");	//Zrobi³o siê tam cholernie niebezpiecznie.
@@ -129,23 +129,23 @@ func void dia_hakon_outoftown_info()
 };
 
 
-instance DIA_HAKON_PALADINE(C_INFO)
+instance DIA_Hakon_Paladine(C_Info)
 {
-	npc = vlk_407_hakon;
+	npc = VLK_407_Hakon;
 	nr = 3;
-	condition = dia_hakon_paladine_condition;
-	information = dia_hakon_paladine_info;
+	condition = DIA_Hakon_Paladine_Condition;
+	information = DIA_Hakon_Paladine_Info;
 	permanent = FALSE;
 	description = "Co wiesz na temat paladynów?";
 };
 
 
-func int dia_hakon_paladine_condition()
+func int DIA_Hakon_Paladine_Condition()
 {
 	return TRUE;
 };
 
-func void dia_hakon_paladine_info()
+func void DIA_Hakon_Paladine_Info()
 {
 	AI_Output(other,self,"DIA_Hakon_Add_15_07");	//Co wiesz na temat paladynów?
 	AI_Output(self,other,"DIA_Hakon_Add_12_08");	//Ci goœcie doprowadzaj¹ mnie do ruiny!
@@ -155,29 +155,29 @@ func void dia_hakon_paladine_info()
 };
 
 
-instance DIA_HAKON_WOWAFFEN(C_INFO)
+instance DIA_Hakon_WoWaffen(C_Info)
 {
-	npc = vlk_407_hakon;
+	npc = VLK_407_Hakon;
 	nr = 4;
-	condition = dia_hakon_wowaffen_condition;
-	information = dia_hakon_wowaffen_info;
+	condition = DIA_Hakon_WoWaffen_Condition;
+	information = DIA_Hakon_WoWaffen_Info;
 	permanent = FALSE;
 	description = "Sk¹d bierzesz broñ?";
 };
 
 
-func int dia_hakon_wowaffen_condition()
+func int DIA_Hakon_WoWaffen_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_hakon_paladine))
+	if(Npc_KnowsInfo(other,DIA_Hakon_Paladine))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hakon_wowaffen_info()
+func void DIA_Hakon_WoWaffen_Info()
 {
 	AI_Output(other,self,"DIA_Hakon_Add_15_12");	//Sk¹d bierzesz broñ?
-	if(Npc_KnowsInfo(other,dia_hakon_haradbandits))
+	if(Npc_KnowsInfo(other,DIA_Hakon_HaradBandits))
 	{
 		AI_Output(self,other,"DIA_Hakon_Add_12_13");	//Znik¹d! Do tej pory moim dostawc¹ by³ Harad.
 	}
@@ -191,26 +191,26 @@ func void dia_hakon_wowaffen_info()
 };
 
 
-instance DIA_HAKON_HARADBANDITS(C_INFO)
+instance DIA_Hakon_HaradBandits(C_Info)
 {
-	npc = vlk_407_hakon;
+	npc = VLK_407_Hakon;
 	nr = 5;
-	condition = dia_hakon_haradbandits_condition;
-	information = dia_hakon_haradbandits_info;
+	condition = DIA_Hakon_HaradBandits_Condition;
+	information = DIA_Hakon_HaradBandits_Info;
 	permanent = FALSE;
 	description = "Harad powiedzia³ mi o ataku bandytów…";
 };
 
 
-func int dia_hakon_haradbandits_condition()
+func int DIA_Hakon_HaradBandits_Condition()
 {
-	if(HARAD_HAKONMISSION == TRUE)
+	if(Harad_HakonMission == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hakon_haradbandits_info()
+func void DIA_Hakon_HaradBandits_Info()
 {
 	AI_Output(other,self,"DIA_Hakon_Add_15_18");	//Harad powiedzia³ mi o ataku bandytów...
 	AI_Output(self,other,"DIA_Hakon_Add_12_19");	//Doprawdy?
@@ -219,63 +219,63 @@ func void dia_hakon_haradbandits_info()
 };
 
 
-instance DIA_HAKON_BANDITEN(C_INFO)
+instance DIA_Hakon_Banditen(C_Info)
 {
-	npc = vlk_407_hakon;
+	npc = VLK_407_Hakon;
 	nr = 6;
-	condition = dia_hakon_banditen_condition;
-	information = dia_hakon_banditen_info;
+	condition = DIA_Hakon_Banditen_Condition;
+	information = DIA_Hakon_Banditen_Info;
 	permanent = FALSE;
 	description = "Co wiesz na temat bandytów?";
 };
 
 
-func int dia_hakon_banditen_condition()
+func int DIA_Hakon_Banditen_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_hakon_haradbandits) || Npc_KnowsInfo(hero,dia_hakon_outoftown))
+	if(Npc_KnowsInfo(hero,DIA_Hakon_HaradBandits) || Npc_KnowsInfo(hero,DIA_Hakon_OutOfTown))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hakon_banditen_info()
+func void DIA_Hakon_Banditen_Info()
 {
 	AI_Output(other,self,"DIA_Hakon_Banditen_15_00");	//Co wiesz na temat bandytów?
 	AI_Output(self,other,"DIA_Hakon_Banditen_12_01");	//Co wiem na temat bandytów? Obrabowali mnie w drodze do miasta!
 	AI_Output(self,other,"DIA_Hakon_Banditen_12_02");	//I nie tylko mnie. Kr¹¿¹ po okolicy ju¿ od jakiegoœ czasu.
 	AI_Output(self,other,"DIA_Hakon_Banditen_12_03");	//Stra¿ próbowa³a ich znaleŸæ, ale nic z tego.
-	MIS_HAKONBANDITS = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_HAKONBANDITEN,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_HAKONBANDITEN,LOG_RUNNING);
-	b_logentry(TOPIC_HAKONBANDITEN,"Handlarz broni¹, Hakon, zosta³ obrabowany poza murami miasta przez bandytów.");
+	MIS_HakonBandits = LOG_Running;
+	Log_CreateTopic(TOPIC_HakonBanditen,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_HakonBanditen,LOG_Running);
+	B_LogEntry(TOPIC_HakonBanditen,"Handlarz broni¹, Hakon, zosta³ obrabowany poza murami miasta przez bandytów.");
 };
 
 
-instance DIA_HAKON_WIEVIEL(C_INFO)
+instance DIA_Hakon_Wieviel(C_Info)
 {
-	npc = vlk_407_hakon;
+	npc = VLK_407_Hakon;
 	nr = 6;
-	condition = dia_hakon_wieviel_condition;
-	information = dia_hakon_wieviel_info;
+	condition = DIA_Hakon_Wieviel_Condition;
+	information = DIA_Hakon_Wieviel_Info;
 	permanent = FALSE;
 	description = "Zajmê siê tym…";
 };
 
 
-func int dia_hakon_wieviel_condition()
+func int DIA_Hakon_Wieviel_Condition()
 {
-	if(MIS_HAKONBANDITS == LOG_RUNNING)
+	if(MIS_HakonBandits == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hakon_wieviel_info()
+func void DIA_Hakon_Wieviel_Info()
 {
 	AI_Output(other,self,"DIA_Hakon_Banditen_Ehre_15_00");	//Zajmê siê tym...
 	AI_Output(self,other,"DIA_Hakon_Banditen_Kohle_12_01");	//Co, TY siê nimi zajmiesz? Zupe³nie sam? Chyba musisz byæ niez³ym wojownikiem, co?
 	AI_Output(other,self,"DIA_Hakon_Banditen_Kohle_15_00");	//Ile mi za to zap³acisz?
-	if(Npc_KnowsInfo(other,dia_hakon_haradbandits))
+	if(Npc_KnowsInfo(other,DIA_Hakon_HaradBandits))
 	{
 		AI_Output(self,other,"DIA_Hakon_Add_12_25");	//Chcesz siê wkupiæ w ³aski Harada, co?
 		AI_Output(self,other,"DIA_Hakon_Add_12_26");	//Nie s¹dzê, abym musia³ ci za to p³aciæ...
@@ -284,61 +284,61 @@ func void dia_hakon_wieviel_info()
 	{
 		AI_Output(self,other,"DIA_Hakon_Banditen_Ehre_12_01");	//To niebezpieczne zadanie.
 		AI_Output(self,other,"DIA_Hakon_Banditen_Kohle_12_02");	//No dobrze. Jeœli pokonasz bandytów, dostaniesz ode mnie 100 sztuk z³ota.
-		MIS_HAKONBANDITSPAY = TRUE;
+		MIS_HakonBanditsPay = TRUE;
 	};
-	Info_ClearChoices(dia_hakon_banditen);
+	Info_ClearChoices(DIA_Hakon_Banditen);
 };
 
 
-instance DIA_HAKON_MILIZ(C_INFO)
+instance DIA_Hakon_Miliz(C_Info)
 {
-	npc = vlk_407_hakon;
+	npc = VLK_407_Hakon;
 	nr = 4;
-	condition = dia_hakon_miliz_condition;
-	information = dia_hakon_miliz_info;
+	condition = DIA_Hakon_Miliz_Condition;
+	information = DIA_Hakon_Miliz_Info;
 	permanent = FALSE;
 	description = "Czy wiesz, kto ze stra¿y bra³ udzia³ w poszukiwaniach?";
 };
 
 
-func int dia_hakon_miliz_condition()
+func int DIA_Hakon_Miliz_Condition()
 {
-	if(MIS_HAKONBANDITS == LOG_RUNNING)
+	if(MIS_HakonBandits == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hakon_miliz_info()
+func void DIA_Hakon_Miliz_Info()
 {
 	AI_Output(other,self,"DIA_Hakon_Miliz_15_00");	//Czy wiesz, kto ze stra¿y bra³ udzia³ w poszukiwaniach?
 	AI_Output(self,other,"DIA_Hakon_Miliz_12_01");	//Nazywa siê Pablo. On i jeszcze parê osób próbowali odnaleŸæ kryjówkê bandytów. Na pró¿no.
 	AI_Output(other,self,"DIA_Hakon_Miliz_15_02");	//Czy wiesz, gdzie przebywa Pablo?
 	AI_Output(self,other,"DIA_Hakon_Miliz_12_03");	//Patroluje miasto. Znajdziesz go albo na placu œwi¹tynnym, albo w dolnej czêœci miasta.
-	b_logentry(TOPIC_HAKONBANDITEN,"Pablo, cz³onek stra¿y miejskiej, bra³ udzia³ w bezowocnych poszukiwaniach bandytów.");
+	B_LogEntry(TOPIC_HakonBanditen,"Pablo, cz³onek stra¿y miejskiej, bra³ udzia³ w bezowocnych poszukiwaniach bandytów.");
 };
 
 
-instance DIA_HAKON_WO(C_INFO)
+instance DIA_Hakon_Wo(C_Info)
 {
-	npc = vlk_407_hakon;
+	npc = VLK_407_Hakon;
 	nr = 5;
-	condition = dia_hakon_wo_condition;
-	information = dia_hakon_wo_info;
+	condition = DIA_Hakon_Wo_Condition;
+	information = DIA_Hakon_Wo_Info;
 	permanent = FALSE;
 	description = "Gdzie ciê napadli?";
 };
 
 
-func int dia_hakon_wo_condition()
+func int DIA_Hakon_Wo_Condition()
 {
-	if(MIS_HAKONBANDITS == LOG_RUNNING)
+	if(MIS_HakonBandits == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hakon_wo_info()
+func void DIA_Hakon_Wo_Info()
 {
 	AI_Output(other,self,"DIA_Hakon_Wo_15_00");	//Gdzie ciê napadli?
 	AI_Output(self,other,"DIA_Hakon_Wo_12_01");	//W pobli¿u farmy Akila. IdŸ do bramy miasta i udaj siê drog¹ w prawo.
@@ -346,128 +346,128 @@ func void dia_hakon_wo_info()
 };
 
 
-instance DIA_HAKON_SUCCESS(C_INFO)
+instance DIA_Hakon_Success(C_Info)
 {
-	npc = vlk_407_hakon;
+	npc = VLK_407_Hakon;
 	nr = 2;
-	condition = dia_hakon_success_condition;
-	information = dia_hakon_success_info;
+	condition = DIA_Hakon_Success_Condition;
+	information = DIA_Hakon_Success_Info;
 	permanent = FALSE;
 	description = "Zaj¹³em siê bandytami.";
 };
 
 
-func int dia_hakon_success_condition()
+func int DIA_Hakon_Success_Condition()
 {
-	if((MIS_HAKONBANDITS == LOG_RUNNING) && Npc_IsDead(bandit_1) && Npc_IsDead(bandit_2) && Npc_IsDead(bandit_3))
+	if((MIS_HakonBandits == LOG_Running) && Npc_IsDead(Bandit_1) && Npc_IsDead(Bandit_2) && Npc_IsDead(Bandit_3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hakon_success_info()
+func void DIA_Hakon_Success_Info()
 {
 	AI_Output(other,self,"DIA_Hakon_Success_15_00");	//Zaj¹³em siê bandytami.
 	AI_Output(self,other,"DIA_Hakon_Add_12_27");	//Doprawdy? Ka¿dy mo¿e tak powiedzieæ. Masz na to jakiœ dowód?
 	AI_Output(other,self,"DIA_Hakon_Add_15_28");	//Czy mam tam wróciæ i obci¹æ im g³owy?
 	AI_Output(self,other,"DIA_Hakon_Add_12_29");	//Nie - to chyba nie bêdzie konieczne. Wierzê ci.
 	AI_Output(self,other,"DIA_Hakon_Success_12_01");	//Odda³eœ miastu i kupcom ogromn¹ przys³ugê.
-	if(Npc_KnowsInfo(other,dia_hakon_haradbandits))
+	if(Npc_KnowsInfo(other,DIA_Hakon_HaradBandits))
 	{
 		AI_Output(self,other,"DIA_Hakon_Add_12_30");	//S¹dzê, ¿e Harada ucieszy ta wiadomoœæ.
 	};
-	if(MIS_HAKONBANDITSPAY == TRUE)
+	if(MIS_HakonBanditsPay == TRUE)
 	{
 		AI_Output(self,other,"DIA_Hakon_Success_12_02");	//Oto obiecane pieni¹dze.
-		b_giveinvitems(self,other,5113,100);
+		B_GiveInvItems(self,other,ItMi_Gold,100);
 	};
-	MIS_HAKONBANDITS = LOG_SUCCESS;
-	b_giveplayerxp(XP_HAKON_BANDITS);
+	MIS_HakonBandits = LOG_SUCCESS;
+	B_GivePlayerXP(XP_Hakon_Bandits);
 };
 
 
-instance DIA_HAKON_MINENANTEIL(C_INFO)
+instance DIA_Hakon_Minenanteil(C_Info)
 {
-	npc = vlk_407_hakon;
+	npc = VLK_407_Hakon;
 	nr = 3;
-	condition = dia_hakon_minenanteil_condition;
-	information = dia_hakon_minenanteil_info;
+	condition = DIA_Hakon_Minenanteil_Condition;
+	information = DIA_Hakon_Minenanteil_Info;
 	permanent = FALSE;
 	description = "Sprzedajesz udzia³y w kopalni? Sk¹d je wzi¹³eœ?";
 };
 
 
-func int dia_hakon_minenanteil_condition()
+func int DIA_Hakon_Minenanteil_Condition()
 {
-	if((hero.guild == GIL_KDF) && (MIS_SERPENTES_MINENANTEIL_KDF == LOG_RUNNING))
+	if((hero.guild == GIL_KDF) && (MIS_Serpentes_MinenAnteil_KDF == LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hakon_minenanteil_info()
+func void DIA_Hakon_Minenanteil_Info()
 {
 	AI_Output(other,self,"DIA_Hakon_Minenanteil_15_00");	//Sprzedajesz udzia³y w kopalni? Sk¹d je wzi¹³eœ?
 	AI_Output(self,other,"DIA_Hakon_Minenanteil_12_01");	//Przykro mi, nie mogê ci powiedzieæ. Mog³oby siê to dla mnie Ÿle skoñczyæ.
-	b_giveplayerxp(XP_AMBIENT);
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_HAKON_PICKPOCKET(C_INFO)
+instance DIA_Hakon_PICKPOCKET(C_Info)
 {
-	npc = vlk_407_hakon;
+	npc = VLK_407_Hakon;
 	nr = 900;
-	condition = dia_hakon_pickpocket_condition;
-	information = dia_hakon_pickpocket_info;
+	condition = DIA_Hakon_PICKPOCKET_Condition;
+	information = DIA_Hakon_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_hakon_pickpocket_condition()
+func int DIA_Hakon_PICKPOCKET_Condition()
 {
-	return c_beklauen(45,65);
+	return C_Beklauen(45,65);
 };
 
-func void dia_hakon_pickpocket_info()
+func void DIA_Hakon_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_hakon_pickpocket);
-	Info_AddChoice(dia_hakon_pickpocket,DIALOG_BACK,dia_hakon_pickpocket_back);
-	Info_AddChoice(dia_hakon_pickpocket,DIALOG_PICKPOCKET,dia_hakon_pickpocket_doit);
+	Info_ClearChoices(DIA_Hakon_PICKPOCKET);
+	Info_AddChoice(DIA_Hakon_PICKPOCKET,Dialog_Back,DIA_Hakon_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Hakon_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Hakon_PICKPOCKET_DoIt);
 };
 
-func void dia_hakon_pickpocket_doit()
+func void DIA_Hakon_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_hakon_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Hakon_PICKPOCKET);
 };
 
-func void dia_hakon_pickpocket_back()
+func void DIA_Hakon_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_hakon_pickpocket);
+	Info_ClearChoices(DIA_Hakon_PICKPOCKET);
 };
 
 
-instance DIA_HAKON_KAPITEL2(C_INFO)
+instance DIA_Hakon_Kapitel2(C_Info)
 {
-	npc = vlk_407_hakon;
+	npc = VLK_407_Hakon;
 	nr = 5;
-	condition = dia_hakon_kapitel2_condition;
-	information = dia_hakon_kapitel2_info;
+	condition = DIA_Hakon_Kapitel2_Condition;
+	information = DIA_Hakon_Kapitel2_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_hakon_kapitel2_condition()
+func int DIA_Hakon_Kapitel2_Condition()
 {
-	if((KAPITEL >= 2) && (CANTHAR_SPERRE == FALSE) && (self.aivar[AIV_TALKEDTOPLAYER] == TRUE))
+	if((Kapitel >= 2) && (Canthar_Sperre == FALSE) && (self.aivar[AIV_TalkedToPlayer] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hakon_kapitel2_info()
+func void DIA_Hakon_Kapitel2_Info()
 {
 	AI_Output(self,other,"DIA_Hakon_Add_12_22");	//To znowu ty!
 	AI_Output(self,other,"DIA_Hakon_Add_12_23");	//Harad wreszcie skoñczy³ produkowaæ broñ dla paladynów.

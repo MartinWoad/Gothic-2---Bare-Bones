@@ -1,49 +1,49 @@
 
-instance SLD_801_TORLOF(NPC_DEFAULT)
+instance SLD_801_Torlof(Npc_Default)
 {
 	name[0] = "Torlof";
 	guild = GIL_SLD;
 	id = 801;
 	voice = 1;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,5);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,5);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_2h_sld_sword);
-	EquipItem(self,itrw_sld_bow);
-	CreateInvItems(self,itrw_arrow,32);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_TORLOF,BODYTEX_N,4836);
+	EquipItem(self,ItMw_2h_Sld_Sword);
+	EquipItem(self,ItRw_Sld_Bow);
+	CreateInvItems(self,ItRw_Arrow,32);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Pony",Face_N_Torlof,BodyTex_N,ItAr_Sld_H);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,40);
-	daily_routine = rtn_prestart_801;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,40);
+	daily_routine = Rtn_PreStart_801;
 };
 
 
-func void rtn_prestart_801()
+func void Rtn_PreStart_801()
 {
-	ta_stand_guarding(8,0,22,0,"NW_BIGFARM_TORLOF");
-	ta_stand_guarding(22,0,8,0,"NW_BIGFARM_TORLOF");
+	TA_Stand_Guarding(8,0,22,0,"NW_BIGFARM_TORLOF");
+	TA_Stand_Guarding(22,0,8,0,"NW_BIGFARM_TORLOF");
 };
 
-func void rtn_start_801()
+func void Rtn_Start_801()
 {
-	ta_stand_guarding(8,0,19,0,"NW_BIGFARM_TORLOF");
-	ta_sit_chair(19,0,23,0,"NW_BIGFARM_HOUSE_UP2_07");
-	ta_sleep(23,0,8,0,"NW_BIGFARM_HOUSE_UP2_02");
+	TA_Stand_Guarding(8,0,19,0,"NW_BIGFARM_TORLOF");
+	TA_Sit_Chair(19,0,23,0,"NW_BIGFARM_HOUSE_UP2_07");
+	TA_Sleep(23,0,8,0,"NW_BIGFARM_HOUSE_UP2_02");
 };
 
-func void rtn_waitforshipcaptain_801()
+func void Rtn_WaitForShipCaptain_801()
 {
-	ta_sit_bench(8,0,20,0,"NW_WAITFOR_SHIP_CAPTAIN");
-	ta_sit_bench(20,0,8,0,"NW_WAITFOR_SHIP_CAPTAIN");
+	TA_Sit_Bench(8,0,20,0,"NW_WAITFOR_SHIP_CAPTAIN");
+	TA_Sit_Bench(20,0,8,0,"NW_WAITFOR_SHIP_CAPTAIN");
 };
 
-func void rtn_allonboard_801()
+func void Rtn_AllOnBoard_801()
 {
-	ta_stand_wp(8,0,23,0,"SHIP_CREW_CAPTAIN");
-	ta_sleep(23,0,8,0,"SHIP_IN_06");
+	TA_Stand_WP(8,0,23,0,"SHIP_CREW_CAPTAIN");
+	TA_Sleep(23,0,8,0,"SHIP_IN_06");
 };
 

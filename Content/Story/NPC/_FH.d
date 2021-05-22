@@ -1,8 +1,8 @@
 
-instance FH(NPC_DEFAULT)
+instance FH(Npc_Default)
 {
 	name[0] = "Face Helper";
-	npctype = NPCTYPE_FRIEND;
+	npcType = NPCTYPE_FRIEND;
 	guild = GIL_NONE;
 	level = 999;
 	voice = 5;
@@ -17,13 +17,13 @@ instance FH(NPC_DEFAULT)
 	Mdl_SetVisual(self,"HUMANS.MDS");
 	Mdl_SetVisualBody(self,"hum_body_Naked0",1,0,"Hum_Head_Bald",0,0,NO_ARMOR);
 	fight_tactic = FAI_HUMAN_STRONG;
-	daily_routine = rtn_start_1311;
+	daily_routine = Rtn_start_1311;
 };
 
 
-func void rtn_start_1311()
+func void Rtn_start_1311()
 {
-	ta_smalltalk(8,0,23,0,"XXX");
-	ta_smalltalk(23,0,8,0,"XXX");
+	TA_Smalltalk(8,0,23,0,"XXX");
+	TA_Smalltalk(23,0,8,0,"XXX");
 };
 

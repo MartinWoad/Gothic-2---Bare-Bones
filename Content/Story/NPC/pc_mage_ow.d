@@ -1,39 +1,39 @@
 
-instance PC_MAGE_OW(NPC_DEFAULT)
+instance PC_Mage_OW(Npc_Default)
 {
 	name[0] = "Milten";
 	guild = GIL_KDF;
 	id = 2;
 	voice = 3;
 	flags = NPC_FLAG_IMMORTAL;
-	npctype = NPCTYPE_FRIEND;
-	b_setattributestochapter(self,6);
+	npcType = NPCTYPE_FRIEND;
+	B_SetAttributesToChapter(self,6);
 	fight_tactic = FAI_HUMAN_STRONG;
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_MILTEN,BODYTEX_N,4843);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Milten,BodyTex_N,ItAr_KDF_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Mage.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_2;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_2;
 };
 
 
-func void rtn_start_2()
+func void Rtn_Start_2()
 {
-	ta_potion_alchemy(8,0,23,0,"OC_MAGE_LAB_ALCHEMY");
-	ta_read_bookstand(23,0,8,0,"OC_MAGE_LIBRARY_BOOK_01");
+	TA_Potion_Alchemy(8,0,23,0,"OC_MAGE_LAB_ALCHEMY");
+	TA_Read_Bookstand(23,0,8,0,"OC_MAGE_LIBRARY_BOOK_01");
 };
 
-func void rtn_gornfree_2()
+func void Rtn_GornFree_2()
 {
-	ta_smalltalk(8,0,23,0,"OC_MAGE_LIBRARY_IN");
-	ta_smalltalk(23,0,8,0,"OC_MAGE_LIBRARY_IN");
+	TA_Smalltalk(8,0,23,0,"OC_MAGE_LIBRARY_IN");
+	TA_Smalltalk(23,0,8,0,"OC_MAGE_LIBRARY_IN");
 };
 
-func void rtn_tot_2()
+func void Rtn_Tot_2()
 {
-	ta_sleep(8,0,23,0,"TOT");
-	ta_sleep(23,0,8,0,"TOT");
+	TA_Sleep(8,0,23,0,"TOT");
+	TA_Sleep(23,0,8,0,"TOT");
 };
 

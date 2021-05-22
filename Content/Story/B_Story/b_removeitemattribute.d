@@ -1,7 +1,7 @@
 
-func void b_removeitemattribute(var C_NPC oth,var int attrib,var int points)
+func void b_removeitemattribute(var C_Npc oth,var int attrib,var int points)
 {
-	var string concattext;
+	var string concatText;
 	if(attrib == ATR_STRENGTH)
 	{
 		if(points <= ATTRIBUTEFROMEQUIPMENT[4])

@@ -1,46 +1,46 @@
 
-instance DIA_MARCOS_EXIT(C_INFO)
+instance DIA_Marcos_EXIT(C_Info)
 {
-	npc = pal_217_marcos;
+	npc = PAL_217_Marcos;
 	nr = 999;
-	condition = dia_marcos_exit_condition;
-	information = dia_marcos_exit_info;
+	condition = DIA_Marcos_EXIT_Condition;
+	information = DIA_Marcos_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_marcos_exit_condition()
+func int DIA_Marcos_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_marcos_exit_info()
+func void DIA_Marcos_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MARCOS_HALLO(C_INFO)
+instance DIA_Marcos_Hallo(C_Info)
 {
-	npc = pal_217_marcos;
+	npc = PAL_217_Marcos;
 	nr = 2;
-	condition = dia_marcos_hallo_condition;
-	information = dia_marcos_hallo_info;
+	condition = DIA_Marcos_Hallo_Condition;
+	information = DIA_Marcos_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_marcos_hallo_condition()
+func int DIA_Marcos_Hallo_Condition()
 {
-	if(KAPITEL == 2)
+	if(Kapitel == 2)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_marcos_hallo_info()
+func void DIA_Marcos_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Marcos_Hallo_04_00");	//STÓJ - w imiê Innosa! Jestem Marcos, królewski paladyn. Mów czego chcesz, i lepiej mów prawdê!
 	if(other.guild == GIL_KDF)
@@ -63,26 +63,26 @@ func void dia_marcos_hallo_info()
 };
 
 
-instance DIA_MARCOS_HAGEN(C_INFO)
+instance DIA_Marcos_Hagen(C_Info)
 {
-	npc = pal_217_marcos;
+	npc = PAL_217_Marcos;
 	nr = 2;
-	condition = dia_marcos_hagen_condition;
-	information = dia_marcos_hagen_info;
+	condition = DIA_Marcos_Hagen_Condition;
+	information = DIA_Marcos_Hagen_Info;
 	permanent = FALSE;
 	description = "Muszê dostarczyæ Lordowi Hagenowi dowód na istnienie smoków.";
 };
 
 
-func int dia_marcos_hagen_condition()
+func int DIA_Marcos_Hagen_Condition()
 {
-	if((KAPITEL == 2) && (garond.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if((Kapitel == 2) && (Garond.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_marcos_hagen_info()
+func void DIA_Marcos_Hagen_Info()
 {
 	AI_Output(other,self,"DIA_Marcos_Hagen_15_00");	//Muszê dostarczyæ Lordowi Hagenowi dowód na istnienie smoków.
 	AI_Output(self,other,"DIA_Marcos_Hagen_04_01");	//Nie traæ zatem czasu i nie nadstawiaj niepotrzebnie karku.
@@ -92,26 +92,26 @@ func void dia_marcos_hagen_info()
 };
 
 
-instance DIA_MARCOS_GAROND(C_INFO)
+instance DIA_Marcos_Garond(C_Info)
 {
-	npc = pal_217_marcos;
+	npc = PAL_217_Marcos;
 	nr = 2;
-	condition = dia_marcos_garond_condition;
-	information = dia_marcos_garond_info;
+	condition = DIA_Marcos_Garond_Condition;
+	information = DIA_Marcos_Garond_Info;
 	permanent = FALSE;
 	description = "Przysy³a mnie Garond...";
 };
 
 
-func int dia_marcos_garond_condition()
+func int DIA_Marcos_Garond_Condition()
 {
-	if((KAPITEL == 2) && (MIS_OLDWORLD == LOG_RUNNING))
+	if((Kapitel == 2) && (MIS_OLDWORLD == LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_marcos_garond_info()
+func void DIA_Marcos_Garond_Info()
 {
 	AI_Output(other,self,"DIA_Marcos_Garond_15_00");	//Przysy³a mnie Garond - kaza³ mi siê dowiedzieæ, ile rudy zdo³aliœcie wydobyæ.
 	AI_Output(self,other,"DIA_Marcos_Garond_04_01");	//Powiedz Garondowi, ¿e musieliœmy przerwaæ wydobycie z powodu nasilaj¹cych siê ataków orków.
@@ -120,54 +120,54 @@ func void dia_marcos_garond_info()
 	AI_Output(self,other,"DIA_Marcos_Garond_04_04");	//Powiedz mu, ¿e bêdê broni³ tej rudy, dopóki starczy mi si³. Nie wiem jednak, jak d³ugo jeszcze zdo³am unikaæ orków.
 	AI_Output(self,other,"DIA_Marcos_Garond_04_05");	//Powiedz mu, ¿e potrzebujê wsparcia.
 	AI_Output(other,self,"DIA_Marcos_Garond_15_06");	//Dam mu znaæ.
-	b_logentry(TOPIC_SCOUTMINE,"Paladyn Marcos strze¿e w niewielkiej dolinie CZTERECH skrzyñ rudy.");
-	Log_CreateTopic(TOPIC_MARCOSJUNGS,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_MARCOSJUNGS,LOG_RUNNING);
-	b_logentry(TOPIC_MARCOSJUNGS,"Marcos chce, aby Garond wys³a³ mu posi³ki.");
-	MIS_MARCOS_JUNGS = LOG_RUNNING;
-	MARCOS_ORE = TRUE;
+	B_LogEntry(TOPIC_ScoutMine,"Paladyn Marcos strze¿e w niewielkiej dolinie CZTERECH skrzyñ rudy.");
+	Log_CreateTopic(Topic_MarcosJungs,LOG_MISSION);
+	Log_SetTopicStatus(Topic_MarcosJungs,LOG_Running);
+	B_LogEntry(Topic_MarcosJungs,"Marcos chce, aby Garond wys³a³ mu posi³ki.");
+	MIS_Marcos_Jungs = LOG_Running;
+	Marcos_Ore = TRUE;
 	self.flags = 0;
 };
 
 
-instance DIA_MARCOS_PERM(C_INFO)
+instance DIA_Marcos_Perm(C_Info)
 {
-	npc = pal_217_marcos;
+	npc = PAL_217_Marcos;
 	nr = 9;
-	condition = dia_marcos_perm_condition;
-	information = dia_marcos_perm_info;
+	condition = DIA_Marcos_Perm_Condition;
+	information = DIA_Marcos_Perm_Info;
 	permanent = TRUE;
 	description = "Jak wygl¹da sytuacja?";
 };
 
 
-func int dia_marcos_perm_condition()
+func int DIA_Marcos_Perm_Condition()
 {
-	if((KAPITEL >= 2) && (Npc_KnowsInfo(other,dia_marcos_hagen) || Npc_KnowsInfo(other,dia_marcos_garond)))
+	if((Kapitel >= 2) && (Npc_KnowsInfo(other,DIA_Marcos_Hagen) || Npc_KnowsInfo(other,DIA_Marcos_Garond)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_marcos_perm_info()
+func void DIA_Marcos_Perm_Info()
 {
 	AI_Output(other,self,"DIA_Marcos_Perm_15_00");	//Jak sytuacja?
 	if(self.attribute[ATR_HITPOINTS] < (self.attribute[ATR_HITPOINTS_MAX] / 2))
 	{
 		AI_Output(self,other,"DIA_Marcos_Perm_04_01");	//Potrzebujê solidnego ³yka mikstury leczniczej!
-		b_useitem(self,5251);
+		B_UseItem(self,ItPo_Health_03);
 	}
-	else if(MIS_MARCOS_JUNGS == LOG_RUNNING)
+	else if(MIS_Marcos_Jungs == LOG_Running)
 	{
 		AI_Output(self,other,"DIA_Marcos_Perm_04_02");	//Wytrzymam - ale liczê na to, ¿e Garond nied³ugo przyœle mi wsparcie.
 	}
-	else if(MIS_MARCOS_JUNGS == LOG_SUCCESS)
+	else if(MIS_Marcos_Jungs == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Marcos_Perm_04_03");	//Dziêkujê ci za pomoc. Niechaj Innos da nam si³ê.
-		if(MARCOS_EINMALIG == FALSE)
+		if(Marcos_einmalig == FALSE)
 		{
-			b_giveplayerxp(XP_MARCOS_JUNGS);
-			MARCOS_EINMALIG = TRUE;
+			B_GivePlayerXP(XP_Marcos_Jungs);
+			Marcos_einmalig = TRUE;
 		};
 	}
 	else
@@ -178,37 +178,37 @@ func void dia_marcos_perm_info()
 };
 
 
-instance DIA_MARCOS_PICKPOCKET(C_INFO)
+instance DIA_Marcos_PICKPOCKET(C_Info)
 {
-	npc = pal_217_marcos;
+	npc = PAL_217_Marcos;
 	nr = 900;
-	condition = dia_marcos_pickpocket_condition;
-	information = dia_marcos_pickpocket_info;
+	condition = DIA_Marcos_PICKPOCKET_Condition;
+	information = DIA_Marcos_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_80;
+	description = Pickpocket_80;
 };
 
 
-func int dia_marcos_pickpocket_condition()
+func int DIA_Marcos_PICKPOCKET_Condition()
 {
-	return c_beklauen(65,380);
+	return C_Beklauen(65,380);
 };
 
-func void dia_marcos_pickpocket_info()
+func void DIA_Marcos_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_marcos_pickpocket);
-	Info_AddChoice(dia_marcos_pickpocket,DIALOG_BACK,dia_marcos_pickpocket_back);
-	Info_AddChoice(dia_marcos_pickpocket,DIALOG_PICKPOCKET,dia_marcos_pickpocket_doit);
+	Info_ClearChoices(DIA_Marcos_PICKPOCKET);
+	Info_AddChoice(DIA_Marcos_PICKPOCKET,Dialog_Back,DIA_Marcos_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Marcos_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Marcos_PICKPOCKET_DoIt);
 };
 
-func void dia_marcos_pickpocket_doit()
+func void DIA_Marcos_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_marcos_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Marcos_PICKPOCKET);
 };
 
-func void dia_marcos_pickpocket_back()
+func void DIA_Marcos_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_marcos_pickpocket);
+	Info_ClearChoices(DIA_Marcos_PICKPOCKET);
 };
 

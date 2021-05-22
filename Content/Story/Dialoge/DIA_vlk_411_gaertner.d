@@ -1,78 +1,78 @@
 
-instance DIA_GAERTNER_EXIT(C_INFO)
+instance DIA_Gaertner_EXIT(C_Info)
 {
-	npc = vlk_411_gaertner;
+	npc = VLK_411_Gaertner;
 	nr = 999;
-	condition = dia_gaertner_exit_condition;
-	information = dia_gaertner_exit_info;
+	condition = DIA_Gaertner_EXIT_Condition;
+	information = DIA_Gaertner_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_gaertner_exit_condition()
+func int DIA_Gaertner_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_gaertner_exit_info()
+func void DIA_Gaertner_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_GAERTNER_PICKPOCKET(C_INFO)
+instance DIA_Gaertner_PICKPOCKET(C_Info)
 {
-	npc = vlk_411_gaertner;
+	npc = VLK_411_Gaertner;
 	nr = 900;
-	condition = dia_gaertner_pickpocket_condition;
-	information = dia_gaertner_pickpocket_info;
+	condition = DIA_Gaertner_PICKPOCKET_Condition;
+	information = DIA_Gaertner_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_gaertner_pickpocket_condition()
+func int DIA_Gaertner_PICKPOCKET_Condition()
 {
-	return c_beklauen(40,50);
+	return C_Beklauen(40,50);
 };
 
-func void dia_gaertner_pickpocket_info()
+func void DIA_Gaertner_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_gaertner_pickpocket);
-	Info_AddChoice(dia_gaertner_pickpocket,DIALOG_BACK,dia_gaertner_pickpocket_back);
-	Info_AddChoice(dia_gaertner_pickpocket,DIALOG_PICKPOCKET,dia_gaertner_pickpocket_doit);
+	Info_ClearChoices(DIA_Gaertner_PICKPOCKET);
+	Info_AddChoice(DIA_Gaertner_PICKPOCKET,Dialog_Back,DIA_Gaertner_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Gaertner_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Gaertner_PICKPOCKET_DoIt);
 };
 
-func void dia_gaertner_pickpocket_doit()
+func void DIA_Gaertner_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_gaertner_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Gaertner_PICKPOCKET);
 };
 
-func void dia_gaertner_pickpocket_back()
+func void DIA_Gaertner_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_gaertner_pickpocket);
+	Info_ClearChoices(DIA_Gaertner_PICKPOCKET);
 };
 
 
-instance DIA_GAERTNER_JOB(C_INFO)
+instance DIA_Gaertner_Job(C_Info)
 {
-	npc = vlk_411_gaertner;
+	npc = VLK_411_Gaertner;
 	nr = 5;
-	condition = dia_gaertner_job_condition;
-	information = dia_gaertner_job_info;
+	condition = DIA_Gaertner_Job_Condition;
+	information = DIA_Gaertner_Job_Info;
 	permanent = FALSE;
 	description = "Co tu porabiasz?";
 };
 
 
-func int dia_gaertner_job_condition()
+func int DIA_Gaertner_Job_Condition()
 {
 	return TRUE;
 };
 
-func void dia_gaertner_job_info()
+func void DIA_Gaertner_Job_Info()
 {
 	AI_Output(other,self,"DIA_Gaertner_Job_15_00");	//Co tutaj robisz?
 	AI_Output(self,other,"DIA_Gaertner_Job_09_01");	//A jak s¹dzisz, hê? Jestem ogrodnikiem, zajmujê siê ogrodem.
@@ -84,117 +84,117 @@ func void dia_gaertner_job_info()
 };
 
 
-instance DIA_GAERTNER_PLANTS(C_INFO)
+instance DIA_Gaertner_Plants(C_Info)
 {
-	npc = vlk_411_gaertner;
+	npc = VLK_411_Gaertner;
 	nr = 5;
-	condition = dia_gaertner_plants_condition;
-	information = dia_gaertner_plants_info;
+	condition = DIA_Gaertner_Plants_Condition;
+	information = DIA_Gaertner_Plants_Info;
 	permanent = FALSE;
 	description = "Czy hodujesz równie¿ jakieœ zio³a?";
 };
 
 
-func int dia_gaertner_plants_condition()
+func int DIA_Gaertner_Plants_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gaertner_job))
+	if(Npc_KnowsInfo(other,DIA_Gaertner_Job))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gaertner_plants_info()
+func void DIA_Gaertner_Plants_Info()
 {
 	AI_Output(other,self,"DIA_Gaertner_Plants_15_00");	//Czy hodujesz równie¿ jakieœ zio³a?
 	AI_Output(self,other,"DIA_Gaertner_Plants_09_01");	//Nawet kilka. Mam tutaj ogniste ziele i ogniste pokrzywy. Próbowa³em te¿ hodowaæ bagienne ziele, ale nie za bardzo chce rosn¹æ w tych warunkach.
 	AI_Output(self,other,"DIA_Gaertner_Plants_09_02");	//Mam trochê œwie¿o œciêtych roœlin, wiêc gdybyœ chcia³ coœ kupiæ...
-	Log_CreateTopic(TOPIC_CITYTRADER,LOG_NOTE);
-	b_logentry(TOPIC_CITYTRADER,"Ogrodnik gubernatora mo¿e mi sprzedaæ roœliny.");
+	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
+	B_LogEntry(TOPIC_CityTrader,"Ogrodnik gubernatora mo¿e mi sprzedaæ roœliny.");
 };
 
 
-instance DIA_GAERTNER_TRADE(C_INFO)
+instance DIA_Gaertner_Trade(C_Info)
 {
-	npc = vlk_411_gaertner;
+	npc = VLK_411_Gaertner;
 	nr = 5;
-	condition = dia_gaertner_trade_condition;
-	information = dia_gaertner_trade_info;
+	condition = DIA_Gaertner_Trade_Condition;
+	information = DIA_Gaertner_Trade_Info;
 	permanent = TRUE;
 	description = "Poka¿ mi swoje towary.";
 	trade = TRUE;
 };
 
 
-func int dia_gaertner_trade_condition()
+func int DIA_Gaertner_Trade_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gaertner_plants))
+	if(Npc_KnowsInfo(other,DIA_Gaertner_Plants))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gaertner_trade_info()
+func void DIA_Gaertner_Trade_Info()
 {
-	b_givetradeinv(self);
+	B_GiveTradeInv(self);
 	AI_Output(other,self,"DIA_Gaertner_Trade_15_00");	//Poka¿ mi swoje towary.
 };
 
 
-instance DIA_GAERTNER_KRAUTABAK(C_INFO)
+instance DIA_Gaertner_Krautabak(C_Info)
 {
-	npc = vlk_411_gaertner;
+	npc = VLK_411_Gaertner;
 	nr = 5;
-	condition = dia_gaertner_krautabak_condition;
-	information = dia_gaertner_krautabak_info;
+	condition = DIA_Gaertner_Krautabak_Condition;
+	information = DIA_Gaertner_Krautabak_Info;
 	permanent = FALSE;
 	description = "Mam tu trochê ziela.";
 };
 
 
-func int dia_gaertner_krautabak_condition()
+func int DIA_Gaertner_Krautabak_Condition()
 {
-	if((Npc_HasItems(other,itmi_sumpftabak) >= 1) && Wld_IsTime(6,45,21,45))
+	if((Npc_HasItems(other,ItMi_SumpfTabak) >= 1) && Wld_IsTime(6,45,21,45))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gaertner_krautabak_info()
+func void DIA_Gaertner_Krautabak_Info()
 {
 	AI_Output(other,self,"DIA_Gaertner_Krautabak_15_00");	//Mam tu trochê ziela. Chcesz sobie zapaliæ?
 	AI_Output(self,other,"DIA_Gaertner_Krautabak_09_01");	//Sam nie wiem... A zreszt¹, dawaj je tutaj. Skrêcê sobie jednego.
-	b_giveinvitems(other,self,5144,1);
-	Npc_RemoveInvItems(self,itmi_sumpftabak,1);
-	CreateInvItems(self,itmi_joint,1);
-	b_useitem(self,5106);
+	B_GiveInvItems(other,self,ItMi_SumpfTabak,1);
+	Npc_RemoveInvItems(self,ItMi_SumpfTabak,1);
+	CreateInvItems(self,ItMi_Joint,1);
+	B_UseItem(self,ItMi_Joint);
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	AI_Output(self,other,"DIA_Gaertner_Krautabak_09_02");	//Kh... kh.... Kh....
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Gaertner_Krautabak_09_03");	//Mocny towar. Chyba ju¿ mi wystarczy.
-	b_giveplayerxp(XP_AMBIENT);
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_GAERTNER_SIGN(C_INFO)
+instance DIA_Gaertner_Sign(C_Info)
 {
-	npc = vlk_411_gaertner;
+	npc = VLK_411_Gaertner;
 	nr = 6;
-	condition = dia_gaertner_sign_condition;
-	information = dia_gaertner_sign_info;
+	condition = DIA_Gaertner_Sign_Condition;
+	information = DIA_Gaertner_Sign_Info;
 	permanent = FALSE;
 	description = "(Poka¿ z³odziejski gest)";
 };
 
 
-func int dia_gaertner_sign_condition()
+func int DIA_Gaertner_Sign_Condition()
 {
-	if(KNOWS_SECRETSIGN == TRUE)
+	if(Knows_SecretSign == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gaertner_sign_info()
+func void DIA_Gaertner_Sign_Info()
 {
 	AI_PlayAni(other,"T_YES");
 	AI_Output(self,other,"DIA_Gaertner_Sign_09_00");	//A wiêc jesteœ jednym z nas. Mam dla ciebie po¿yteczn¹ wskazówkê.

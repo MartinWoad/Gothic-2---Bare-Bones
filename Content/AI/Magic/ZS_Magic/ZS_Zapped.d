@@ -1,12 +1,12 @@
 
-func void b_stopzapped()
+func void B_StopZapped()
 {
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
 	Npc_ClearAIQueue(self);
 	AI_Standup(self);
 	if(self.guild < GIL_SEPERATOR_HUM)
 	{
-		b_assessdamage();
+		B_AssessDamage();
 		AI_ContinueRoutine(self);
 	}
 	else
@@ -16,9 +16,9 @@ func void b_stopzapped()
 	};
 };
 
-func void zs_zapped()
+func void ZS_Zapped()
 {
-	Npc_PercEnable(self,PERC_ASSESSSTOPMAGIC,b_stopzapped);
+	Npc_PercEnable(self,PERC_ASSESSSTOPMAGIC,B_StopZapped);
 	if(!Npc_HasBodyFlag(self,BS_FLAG_INTERRUPTABLE))
 	{
 		AI_Standup(self);
@@ -33,12 +33,12 @@ func void zs_zapped()
 	};
 };
 
-func int zs_zapped_loop()
+func int ZS_Zapped_Loop()
 {
 	if(Npc_GetStateTime(self) >= 1)
 	{
 		Npc_SetStateTime(self,0);
-		b_magichurtnpc(other,SPL_ZAPPED_DAMAGE_PER_SEC);
+		B_MagicHurtNpc(other,SPL_ZAPPED_DAMAGE_PER_SEC);
 		if(self.attribute[ATR_HITPOINTS] <= 0)
 		{
 			Npc_ClearAIQueue(self);
@@ -49,7 +49,7 @@ func int zs_zapped_loop()
 	};
 };
 
-func void zs_zapped_end()
+func void ZS_Zapped_End()
 {
 };
 

@@ -1,29 +1,29 @@
 
-instance MIL_315_KASERNENWACHE(NPC_DEFAULT)
+instance Mil_315_Kasernenwache(Npc_Default)
 {
-	name[0] = NAME_MILIZ;
+	name[0] = NAME_Miliz;
 	guild = GIL_MIL;
 	id = 315;
 	voice = 7;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,3);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_mil_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fighter",FACE_N_TOUGH_SKIP,BODYTEX_N,4826);
+	EquipItem(self,ItMw_1h_Mil_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_Tough_Skip,BodyTex_N,ITAR_Mil_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,55);
-	daily_routine = rtn_start_315;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,55);
+	daily_routine = Rtn_Start_315;
 };
 
 
-func void rtn_start_315()
+func void Rtn_Start_315()
 {
-	ta_smith_sharp(7,5,20,59,"NW_CITY_KASERN_ARMORY_SHARP");
-	ta_sit_campfire(20,59,0,3,"NW_CITY_BARRACK02_SMALLTALK_01");
-	ta_sleep(0,3,7,5,"NW_CITY_BARRACK01_BED_RUGA");
+	TA_Smith_Sharp(7,5,20,59,"NW_CITY_KASERN_ARMORY_SHARP");
+	TA_Sit_Campfire(20,59,0,3,"NW_CITY_BARRACK02_SMALLTALK_01");
+	TA_Sleep(0,3,7,5,"NW_CITY_BARRACK01_BED_RUGA");
 };
 

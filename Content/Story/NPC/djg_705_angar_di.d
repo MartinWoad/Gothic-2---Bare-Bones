@@ -1,55 +1,55 @@
 
-instance DJG_705_ANGAR_DI(NPC_DEFAULT)
+instance DJG_705_Angar_DI(Npc_Default)
 {
 	name[0] = "Angar";
 	guild = GIL_DJG;
 	id = 70500;
 	voice = 4;
 	flags = 0;
-	npctype = NPCTYPE_FRIEND;
+	npcType = NPCTYPE_FRIEND;
 	aivar[AIV_PARTYMEMBER] = TRUE;
-	b_setattributestochapter(self,6);
+	B_SetAttributesToChapter(self,6);
 	fight_tactic = FAI_HUMAN_MASTER;
-	EquipItem(self,itmw_zweihaender2);
-	CreateInvItems(self,itpo_health_02,6);
-	CreateInvItems(self,itmi_oldcoin,1);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_B_CORANGAR,BODYTEX_B,4851);
+	EquipItem(self,ItMw_Zweihaender2);
+	CreateInvItems(self,ItPo_Health_02,6);
+	CreateInvItems(self,ItMi_OldCoin,1);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_B_CorAngar,BodyTex_B,ITAR_CorAngar);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,80);
-	daily_routine = rtn_start_70500;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,80);
+	daily_routine = Rtn_Start_70500;
 };
 
 
-func void rtn_start_70500()
+func void Rtn_Start_70500()
 {
-	ta_stand_armscrossed(8,0,23,0,"SHIP_CREW_03");
-	ta_stand_armscrossed(23,0,8,0,"SHIP_CREW_03");
+	TA_Stand_ArmsCrossed(8,0,23,0,"SHIP_CREW_03");
+	TA_Stand_ArmsCrossed(23,0,8,0,"SHIP_CREW_03");
 };
 
-func void rtn_followdi_70500()
+func void Rtn_FollowDI_70500()
 {
-	ta_follow_player(8,0,23,0,"SHIP_CREW_03");
-	ta_follow_player(23,0,8,0,"SHIP_CREW_03");
+	TA_Follow_Player(8,0,23,0,"SHIP_CREW_03");
+	TA_Follow_Player(23,0,8,0,"SHIP_CREW_03");
 };
 
-func void rtn_firedragonisland_70500()
+func void Rtn_FireDragonIsland_70500()
 {
-	ta_stand_armscrossed(8,0,23,0,"DI_DRACONIANAREA_FIREDRAGON");
-	ta_stand_armscrossed(23,0,8,0,"DI_DRACONIANAREA_FIREDRAGON");
+	TA_Stand_ArmsCrossed(8,0,23,0,"DI_DRACONIANAREA_FIREDRAGON");
+	TA_Stand_ArmsCrossed(23,0,8,0,"DI_DRACONIANAREA_FIREDRAGON");
 };
 
-func void rtn_orkoberst_di_70500()
+func void Rtn_ORKOBERST_DI_70500()
 {
-	ta_stand_armscrossed(8,0,23,0,"DI_ORKOBERST");
-	ta_stand_armscrossed(23,0,8,0,"DI_ORKOBERST");
+	TA_Stand_ArmsCrossed(8,0,23,0,"DI_ORKOBERST");
+	TA_Stand_ArmsCrossed(23,0,8,0,"DI_ORKOBERST");
 };
 
-func void rtn_troll_di_70500()
+func void Rtn_Troll_DI_70500()
 {
-	ta_stand_armscrossed(8,0,23,0,"DI_ORKAREA_TROLL");
-	ta_stand_armscrossed(23,0,8,0,"DI_ORKAREA_TROLL");
+	TA_Stand_ArmsCrossed(8,0,23,0,"DI_ORKAREA_TROLL");
+	TA_Stand_ArmsCrossed(23,0,8,0,"DI_ORKAREA_TROLL");
 };
 

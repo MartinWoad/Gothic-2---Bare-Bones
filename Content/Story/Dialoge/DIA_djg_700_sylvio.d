@@ -1,45 +1,45 @@
 
-instance DIA_SYLVIODJG_EXIT(C_INFO)
+instance DIA_SylvioDJG_EXIT(C_Info)
 {
-	npc = djg_700_sylvio;
+	npc = DJG_700_Sylvio;
 	nr = 999;
-	condition = dia_sylviodjg_exit_condition;
-	information = dia_sylviodjg_exit_info;
+	condition = DIA_SylvioDJG_EXIT_Condition;
+	information = DIA_SylvioDJG_EXIT_Info;
 	important = 0;
 	permanent = 1;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_sylviodjg_exit_condition()
+func int DIA_SylvioDJG_EXIT_Condition()
 {
 	return 1;
 };
 
-func void dia_sylviodjg_exit_info()
+func void DIA_SylvioDJG_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SYLVIODJG_HELLOAGAIN(C_INFO)
+instance DIA_SylvioDJG_HelloAgain(C_Info)
 {
-	npc = djg_700_sylvio;
-	condition = dia_sylviodjg_helloagain_condition;
-	information = dia_sylviodjg_helloagain_info;
+	npc = DJG_700_Sylvio;
+	condition = DIA_SylvioDJG_HelloAgain_Condition;
+	information = DIA_SylvioDJG_HelloAgain_Info;
 	important = TRUE;
 };
 
 
-func int dia_sylviodjg_helloagain_condition()
+func int DIA_SylvioDJG_HelloAgain_Condition()
 {
-	if((Npc_IsDead(icedragon) == FALSE) && (icedragon.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if((Npc_IsDead(IceDragon) == FALSE) && (IceDragon.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sylviodjg_helloagain_info()
+func void DIA_SylvioDJG_HelloAgain_Info()
 {
 	if((other.guild == GIL_SLD) || (other.guild == GIL_DJG))
 	{
@@ -59,123 +59,123 @@ func void dia_sylviodjg_helloagain_info()
 };
 
 
-instance DIA_SYLVIO_VERSAGER(C_INFO)
+instance DIA_Sylvio_VERSAGER(C_Info)
 {
-	npc = djg_700_sylvio;
+	npc = DJG_700_Sylvio;
 	nr = 6;
-	condition = dia_sylvio_versager_condition;
-	information = dia_sylvio_versager_info;
+	condition = DIA_Sylvio_VERSAGER_Condition;
+	information = DIA_Sylvio_VERSAGER_Info;
 	description = "A jeœli tego nie zrobiê?";
 };
 
 
-func int dia_sylvio_versager_condition()
+func int DIA_Sylvio_VERSAGER_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_sylviodjg_helloagain) && (icedragon.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if(Npc_KnowsInfo(other,DIA_SylvioDJG_HelloAgain) && (IceDragon.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sylvio_versager_info()
+func void DIA_Sylvio_VERSAGER_Info()
 {
 	AI_Output(other,self,"DIA_Sylvio_VERSAGER_15_00");	//A jeœli tego nie zrobiê?
 	AI_Output(self,other,"DIA_Sylvio_VERSAGER_09_01");	//Nie zgrywaj mi tu wa¿nego, spadaj, albo skoñczysz jak ta œwinia, le¿¹c na œniegu z bebechami na wierzchu.
 };
 
 
-instance DIA_SYLVIO_DEINELEUTE(C_INFO)
+instance DIA_Sylvio_DEINELEUTE(C_Info)
 {
-	npc = djg_700_sylvio;
+	npc = DJG_700_Sylvio;
 	nr = 7;
-	condition = dia_sylvio_deineleute_condition;
-	information = dia_sylvio_deineleute_info;
+	condition = DIA_Sylvio_DEINELEUTE_Condition;
+	information = DIA_Sylvio_DEINELEUTE_Info;
 	description = "To byli twoi ludzie?";
 };
 
 
-func int dia_sylvio_deineleute_condition()
+func int DIA_Sylvio_DEINELEUTE_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_sylvio_versager) && (icedragon.aivar[AIV_TALKEDTOPLAYER] == FALSE) && (MIS_DJG_SYLVIO_KILLICEGOLEM == 0))
+	if(Npc_KnowsInfo(other,DIA_Sylvio_VERSAGER) && (IceDragon.aivar[AIV_TalkedToPlayer] == FALSE) && (MIS_DJG_Sylvio_KillIceGolem == 0))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sylvio_deineleute_info()
+func void DIA_Sylvio_DEINELEUTE_Info()
 {
 	AI_Output(other,self,"DIA_Sylvio_DEINELEUTE_15_00");	//To byli twoi ludzie?
 	AI_Output(self,other,"DIA_Sylvio_DEINELEUTE_09_01");	//Ju¿ nie. ¯adna strata. Ci idioci byli nic niewarci.
 };
 
 
-instance DIA_SYLVIO_WASISTPASSIERT(C_INFO)
+instance DIA_Sylvio_WASISTPASSIERT(C_Info)
 {
-	npc = djg_700_sylvio;
+	npc = DJG_700_Sylvio;
 	nr = 8;
-	condition = dia_sylvio_wasistpassiert_condition;
-	information = dia_sylvio_wasistpassiert_info;
+	condition = DIA_Sylvio_WASISTPASSIERT_Condition;
+	information = DIA_Sylvio_WASISTPASSIERT_Info;
 	description = "Co im siê sta³o?";
 };
 
 
-func int dia_sylvio_wasistpassiert_condition()
+func int DIA_Sylvio_WASISTPASSIERT_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_sylvio_versager) && (icedragon.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Sylvio_VERSAGER) && (IceDragon.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sylvio_wasistpassiert_info()
+func void DIA_Sylvio_WASISTPASSIERT_Info()
 {
 	AI_Output(other,self,"DIA_Sylvio_WASISTPASSIERT_15_00");	//Co im siê sta³o?
 	AI_Output(self,other,"DIA_Sylvio_WASISTPASSIERT_09_01");	//Nie potrafili poradziæ sobie z lodowymi gigantami, a teraz w¹chaj¹ kwiatki od strony pod³o¿a.
 	AI_Output(self,other,"DIA_Sylvio_WASISTPASSIERT_09_02");	//Skoro taki z ciebie twardziel, to mo¿e ty spróbujesz.
-	Info_AddChoice(dia_sylvio_wasistpassiert,"W porz¹dku, czemu nie?",dia_sylvio_wasistpassiert_ok);
-	Info_AddChoice(dia_sylvio_wasistpassiert,"Dobra, a co TY bêdziesz z tego mia³?",dia_sylvio_wasistpassiert_washastdudavon);
-	Info_AddChoice(dia_sylvio_wasistpassiert,"A co JA bêdê z tego mia³?",dia_sylvio_wasistpassiert_warum);
-	Info_AddChoice(dia_sylvio_wasistpassiert,"Dlaczego sam siê ich nie pozbêdziesz?",dia_sylvio_wasistpassiert_selbst);
-	Log_CreateTopic(TOPIC_SYLVIOKILLICEGOLEM,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_SYLVIOKILLICEGOLEM,LOG_RUNNING);
-	b_logentry(TOPIC_SYLVIOKILLICEGOLEM,"Sylvio boi siê dwóch lodowych golemów strzeg¹cych wejœcia do skutego lodem obszaru Górniczej Doliny.");
-	MIS_DJG_SYLVIO_KILLICEGOLEM = LOG_RUNNING;
+	Info_AddChoice(DIA_Sylvio_WASISTPASSIERT,"W porz¹dku, czemu nie?",DIA_Sylvio_WASISTPASSIERT_ok);
+	Info_AddChoice(DIA_Sylvio_WASISTPASSIERT,"Dobra, a co TY bêdziesz z tego mia³?",DIA_Sylvio_WASISTPASSIERT_washastdudavon);
+	Info_AddChoice(DIA_Sylvio_WASISTPASSIERT,"A co JA bêdê z tego mia³?",DIA_Sylvio_WASISTPASSIERT_warum);
+	Info_AddChoice(DIA_Sylvio_WASISTPASSIERT,"Dlaczego sam siê ich nie pozbêdziesz?",DIA_Sylvio_WASISTPASSIERT_selbst);
+	Log_CreateTopic(TOPIC_SylvioKillIceGolem,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_SylvioKillIceGolem,LOG_Running);
+	B_LogEntry(TOPIC_SylvioKillIceGolem,"Sylvio boi siê dwóch lodowych golemów strzeg¹cych wejœcia do skutego lodem obszaru Górniczej Doliny.");
+	MIS_DJG_Sylvio_KillIceGolem = LOG_Running;
 };
 
-func void dia_sylvio_wasistpassiert_selbst()
+func void DIA_Sylvio_WASISTPASSIERT_selbst()
 {
 	AI_Output(other,self,"DIA_Sylvio_WASISTPASSIERT_selbst_15_00");	//Dlaczego sam siê ich nie pozbêdziesz?
 	AI_Output(self,other,"DIA_Sylvio_WASISTPASSIERT_selbst_09_01");	//Spokojnie, spokojnie. Nie strosz siê tak.
 	AI_Output(self,other,"DIA_Sylvio_WASISTPASSIERT_selbst_09_02");	//Jeœli chcesz znaæ moje zdanie, to robisz ze strachu pod siebie.
-	Info_AddChoice(dia_sylvio_wasistpassiert,"Nie mam zamiaru uczestniczyæ w twoich gierkach.",dia_sylvio_wasistpassiert_keininteresse);
+	Info_AddChoice(DIA_Sylvio_WASISTPASSIERT,"Nie mam zamiaru uczestniczyæ w twoich gierkach.",DIA_Sylvio_WASISTPASSIERT_keinInteresse);
 };
 
 
-var int djg_sylvio_promisedmoney;
+var int DJG_Sylvio_PromisedMoney;
 
-func void dia_sylvio_wasistpassiert_warum()
+func void DIA_Sylvio_WASISTPASSIERT_warum()
 {
 	AI_Output(other,self,"DIA_Sylvio_WASISTPASSIERT_warum_15_00");	//Co ja bêdê z tego mia³?
 	AI_Output(self,other,"DIA_Sylvio_WASISTPASSIERT_warum_09_01");	//Ja wiem... Powiedzmy 1000 sztuk z³ota. Co ty na to?
-	DJG_SYLVIO_PROMISEDMONEY = TRUE;
+	DJG_Sylvio_PromisedMoney = TRUE;
 };
 
-func void dia_sylvio_wasistpassiert_washastdudavon()
+func void DIA_Sylvio_WASISTPASSIERT_washastdudavon()
 {
 	AI_Output(other,self,"DIA_Sylvio_WASISTPASSIERT_washastdudavon_15_00");	//Dobra, a co TY bêdziesz z tego mia³?
 	AI_Output(self,other,"DIA_Sylvio_WASISTPASSIERT_washastdudavon_09_01");	//Ten znowu to samo. Mam zamiar pow³óczyæ siê po lodowej krainie.
 	AI_Output(self,other,"DIA_Sylvio_WASISTPASSIERT_washastdudavon_09_02");	//Jest parê spraw, z którymi mam problem.
-	Info_AddChoice(dia_sylvio_wasistpassiert,"Co takiego kryje w sobie lodowa kraina?",dia_sylvio_wasistpassiert_eisregion);
+	Info_AddChoice(DIA_Sylvio_WASISTPASSIERT,"Co takiego kryje w sobie lodowa kraina?",DIA_Sylvio_WASISTPASSIERT_Eisregion);
 };
 
-func void dia_sylvio_wasistpassiert_keininteresse()
+func void DIA_Sylvio_WASISTPASSIERT_keinInteresse()
 {
 	AI_Output(other,self,"DIA_Sylvio_WASISTPASSIERT_keinInteresse_NEIN_15_00");	//Nie mam zamiaru uczestniczyæ w twoich gierkach.
 	AI_Output(self,other,"DIA_Sylvio_WASISTPASSIERT_keinInteresse_NEIN_09_01");	//Taak. Wiêc wynoœ siê st¹d, tchórzu.
 	AI_StopProcessInfos(self);
 };
 
-func void dia_sylvio_wasistpassiert_eisregion()
+func void DIA_Sylvio_WASISTPASSIERT_Eisregion()
 {
 	AI_Output(other,self,"DIA_Sylvio_WASISTPASSIERT_keinInteresse_15_00");	//Co takiego kryje w sobie lodowa kraina?
 	AI_Output(self,other,"DIA_Sylvio_WASISTPASSIERT_keinInteresse_09_01");	//Ty chyba nie masz doœæ tych swoich pytañ, co? Dobra, powiem ci.
@@ -184,7 +184,7 @@ func void dia_sylvio_wasistpassiert_eisregion()
 	AI_Output(self,other,"DIA_Sylvio_WASISTPASSIERT_keinInteresse_09_04");	//Ja zaœ chcê tego skarbu. Wiêc jak? Zgadzasz siê, czy nie?
 };
 
-func void dia_sylvio_wasistpassiert_ok()
+func void DIA_Sylvio_WASISTPASSIERT_ok()
 {
 	AI_Output(other,self,"DIA_Sylvio_WASISTPASSIERT_ok_15_00");	//W porz¹dku, czemu nie?
 	AI_Output(self,other,"DIA_Sylvio_WASISTPASSIERT_ok_09_01");	//Poœpiesz siê wiêc. Nie mam dla ciebie ca³ego dnia.
@@ -192,127 +192,127 @@ func void dia_sylvio_wasistpassiert_ok()
 };
 
 
-instance DIA_SYLVIO_ICEGOLEMSKILLED(C_INFO)
+instance DIA_Sylvio_ICEGOLEMSKILLED(C_Info)
 {
-	npc = djg_700_sylvio;
+	npc = DJG_700_Sylvio;
 	nr = 9;
-	condition = dia_sylvio_icegolemskilled_condition;
-	information = dia_sylvio_icegolemskilled_info;
+	condition = DIA_Sylvio_ICEGOLEMSKILLED_Condition;
+	information = DIA_Sylvio_ICEGOLEMSKILLED_Info;
 	description = "Przejœcie jest bezpieczne!";
 };
 
 
-func int dia_sylvio_icegolemskilled_condition()
+func int DIA_Sylvio_ICEGOLEMSKILLED_Condition()
 {
-	if(Npc_IsDead(icegolem_sylvio1) && Npc_IsDead(icegolem_sylvio2) && (MIS_DJG_SYLVIO_KILLICEGOLEM == LOG_RUNNING) && (icedragon.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if(Npc_IsDead(IceGolem_Sylvio1) && Npc_IsDead(IceGolem_Sylvio2) && (MIS_DJG_Sylvio_KillIceGolem == LOG_Running) && (IceDragon.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sylvio_icegolemskilled_info()
+func void DIA_Sylvio_ICEGOLEMSKILLED_Info()
 {
 	AI_Output(other,self,"DIA_Sylvio_ICEGOLEMSKILLED_15_00");	//Przejœcie jest bezpieczne! Pozby³em siê lodowych gigantów.
 	AI_Output(self,other,"DIA_Sylvio_ICEGOLEMSKILLED_09_01");	//Œwietna robota. Niech no i ja siê przyjrzê.
-	if(DJG_SYLVIO_PROMISEDMONEY == TRUE)
+	if(DJG_Sylvio_PromisedMoney == TRUE)
 	{
 		AI_Output(other,self,"DIA_Sylvio_ICEGOLEMSKILLED_15_02");	//Chwileczkê. A co z moimi pieniêdzmi?
 		AI_Output(self,other,"DIA_Sylvio_ICEGOLEMSKILLED_09_03");	//Wszystko w swoim czasie.
 	};
 	AI_StopProcessInfos(self);
-	MIS_DJG_SYLVIO_KILLICEGOLEM = LOG_SUCCESS;
-	b_giveplayerxp(XP_SYLVIODJGICEGOLEMDEAD);
+	MIS_DJG_Sylvio_KillIceGolem = LOG_SUCCESS;
+	B_GivePlayerXP(XP_SylvioDJGIceGolemDead);
 	Npc_ExchangeRoutine(self,"IceWait1");
-	b_startotherroutine(djg_bullco,"IceWait1");
+	B_StartOtherRoutine(DJG_Bullco,"IceWait1");
 };
 
 
-instance DIA_SYLVIO_WASJETZT(C_INFO)
+instance DIA_Sylvio_WASJETZT(C_Info)
 {
-	npc = djg_700_sylvio;
+	npc = DJG_700_Sylvio;
 	nr = 10;
-	condition = dia_sylvio_wasjetzt_condition;
-	information = dia_sylvio_wasjetzt_info;
+	condition = DIA_Sylvio_WASJETZT_Condition;
+	information = DIA_Sylvio_WASJETZT_Info;
 	description = "Co dalej?";
 };
 
 
-func int dia_sylvio_wasjetzt_condition()
+func int DIA_Sylvio_WASJETZT_Condition()
 {
-	if((MIS_DJG_SYLVIO_KILLICEGOLEM == LOG_SUCCESS) && (icedragon.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if((MIS_DJG_Sylvio_KillIceGolem == LOG_SUCCESS) && (IceDragon.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sylvio_wasjetzt_info()
+func void DIA_Sylvio_WASJETZT_Info()
 {
 	AI_Output(other,self,"DIA_Sylvio_WASJETZT_15_00");	//Co dalej?
 	AI_Output(self,other,"DIA_Sylvio_WASJETZT_09_01");	//Có¿. Obawiam siê, ¿e nie jest dobrze.
 	AI_Output(self,other,"DIA_Sylvio_WASJETZT_09_02");	//Najlepiej bêdzie, jeœli pójdziesz przodem, a ja za tob¹.
-	Info_AddChoice(dia_sylvio_wasjetzt,"Niech ci bêdzie.",dia_sylvio_wasjetzt_ok);
-	Info_AddChoice(dia_sylvio_wasjetzt,"Czy¿byœ siê ba³?",dia_sylvio_wasjetzt_trennen);
-	Info_AddChoice(dia_sylvio_wasjetzt,"Nie bêdê odwala³ za ciebie brudnej roboty.",dia_sylvio_wasjetzt_nein);
-	if(DJG_SYLVIO_PROMISEDMONEY == TRUE)
+	Info_AddChoice(DIA_Sylvio_WASJETZT,"Niech ci bêdzie.",DIA_Sylvio_WASJETZT_ok);
+	Info_AddChoice(DIA_Sylvio_WASJETZT,"Czy¿byœ siê ba³?",DIA_Sylvio_WASJETZT_trennen);
+	Info_AddChoice(DIA_Sylvio_WASJETZT,"Nie bêdê odwala³ za ciebie brudnej roboty.",DIA_Sylvio_WASJETZT_nein);
+	if(DJG_Sylvio_PromisedMoney == TRUE)
 	{
-		Info_AddChoice(dia_sylvio_wasjetzt,"Najpierw mi zap³aæ.",dia_sylvio_wasjetzt_geld);
+		Info_AddChoice(DIA_Sylvio_WASJETZT,"Najpierw mi zap³aæ.",DIA_Sylvio_WASJETZT_Geld);
 	};
 };
 
-func void dia_sylvio_wasjetzt_trennen()
+func void DIA_Sylvio_WASJETZT_trennen()
 {
 	AI_Output(other,self,"DIA_Sylvio_WASJETZT_trennen_15_00");	//Czy¿byœ siê ba³?
 	AI_Output(self,other,"DIA_Sylvio_WASJETZT_trennen_09_01");	//Nonsens. Przestañ bredziæ, tylko prowadŸ.
 };
 
-func void dia_sylvio_wasjetzt_ok()
+func void DIA_Sylvio_WASJETZT_ok()
 {
 	AI_Output(other,self,"DIA_Sylvio_WASJETZT_ok_15_00");	//Niech ci bêdzie.
 	AI_Output(self,other,"DIA_Sylvio_WASJETZT_ok_09_01");	//No dalej. Do dzie³a.
 	AI_StopProcessInfos(self);
 };
 
-func void dia_sylvio_wasjetzt_nein()
+func void DIA_Sylvio_WASJETZT_nein()
 {
 	AI_Output(other,self,"DIA_Sylvio_WASJETZT_nein_15_00");	//Nie bêdê odwala³ za ciebie brudnej roboty.
 	AI_Output(self,other,"DIA_Sylvio_WASJETZT_nein_09_01");	//Tchórz!
 	AI_StopProcessInfos(self);
 };
 
-func void dia_sylvio_wasjetzt_geld()
+func void DIA_Sylvio_WASJETZT_Geld()
 {
 	AI_Output(other,self,"DIA_Sylvio_WASJETZT_Geld_15_00");	//Najpierw mi zap³aæ.
 	AI_Output(self,other,"DIA_Sylvio_WASJETZT_Geld_09_01");	//Kiedy pozbêdziemy siê smoka, dostaniesz tyle z³ota, ile zdo³asz unieœæ.
-	Info_AddChoice(dia_sylvio_wasjetzt,"Chcê moich pieniêdzy, natychmiast.",dia_sylvio_wasjetzt_jetztgeld);
+	Info_AddChoice(DIA_Sylvio_WASJETZT,"Chcê moich pieniêdzy, natychmiast.",DIA_Sylvio_WASJETZT_jetztGeld);
 };
 
-func void dia_sylvio_wasjetzt_jetztgeld()
+func void DIA_Sylvio_WASJETZT_jetztGeld()
 {
 	AI_Output(other,self,"DIA_Sylvio_WASJETZT_jetztGeld_15_00");	//Chcê moich pieniêdzy, natychmiast.
 	AI_Output(self,other,"DIA_Sylvio_WASJETZT_jetztGeld_09_01");	//Albo idziesz przodem, albo bêdziesz mia³ ze mn¹ do czynienia.
 };
 
 
-instance DIA_SYLVIO_KOMMSTDU(C_INFO)
+instance DIA_Sylvio_KOMMSTDU(C_Info)
 {
-	npc = djg_700_sylvio;
+	npc = DJG_700_Sylvio;
 	nr = 11;
-	condition = dia_sylvio_kommstdu_condition;
-	information = dia_sylvio_kommstdu_info;
+	condition = DIA_Sylvio_KOMMSTDU_Condition;
+	information = DIA_Sylvio_KOMMSTDU_Info;
 	permanent = TRUE;
 	description = "Myœla³em, ¿e wybierasz siê do lodowej krainy.";
 };
 
 
-func int dia_sylvio_kommstdu_condition()
+func int DIA_Sylvio_KOMMSTDU_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_sylvio_wasjetzt) && (icedragon.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Sylvio_WASJETZT) && (IceDragon.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sylvio_kommstdu_info()
+func void DIA_Sylvio_KOMMSTDU_Info()
 {
 	AI_Output(other,self,"DIA_Sylvio_KOMMSTDU_15_00");	//Myœla³em, ¿e wybierasz siê do lodowej krainy.
 	AI_Output(self,other,"DIA_Sylvio_KOMMSTDU_09_01");	//No dalej, idŸ przodem. Bêdê zaraz za tob¹.
@@ -320,26 +320,26 @@ func void dia_sylvio_kommstdu_info()
 };
 
 
-instance DIA_SYLVIO_DUHIER(C_INFO)
+instance DIA_Sylvio_DUHIER(C_Info)
 {
-	npc = djg_700_sylvio;
+	npc = DJG_700_Sylvio;
 	nr = 11;
-	condition = dia_sylvio_duhier_condition;
-	information = dia_sylvio_duhier_info;
+	condition = DIA_Sylvio_DUHIER_Condition;
+	information = DIA_Sylvio_DUHIER_Info;
 	permanent = TRUE;
 	description = "Przyda³aby mi siê pomoc.";
 };
 
 
-func int dia_sylvio_duhier_condition()
+func int DIA_Sylvio_DUHIER_Condition()
 {
-	if((Npc_IsDead(icedragon) == FALSE) && (icedragon.aivar[AIV_TALKEDTOPLAYER] == TRUE))
+	if((Npc_IsDead(IceDragon) == FALSE) && (IceDragon.aivar[AIV_TalkedToPlayer] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sylvio_duhier_info()
+func void DIA_Sylvio_DUHIER_Info()
 {
 	AI_Output(other,self,"DIA_Sylvio_DUHIER_15_00");	//Przyda³aby mi siê pomoc.
 	AI_Output(self,other,"DIA_Sylvio_DUHIER_09_01");	//Nonsens. Œwietnie sobie radzisz.
@@ -347,108 +347,108 @@ func void dia_sylvio_duhier_info()
 };
 
 
-instance DIA_SYLVIODJG_WHATNEXT(C_INFO)
+instance DIA_SylvioDJG_WHATNEXT(C_Info)
 {
-	npc = djg_700_sylvio;
+	npc = DJG_700_Sylvio;
 	nr = 12;
-	condition = dia_sylviodjg_whatnext_condition;
-	information = dia_sylviodjg_whatnext_info;
+	condition = DIA_SylvioDJG_WHATNEXT_Condition;
+	information = DIA_SylvioDJG_WHATNEXT_Info;
 	important = TRUE;
 };
 
 
-func int dia_sylviodjg_whatnext_condition()
+func int DIA_SylvioDJG_WHATNEXT_Condition()
 {
-	if(Npc_IsDead(icedragon))
+	if(Npc_IsDead(IceDragon))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sylviodjg_whatnext_info()
+func void DIA_SylvioDJG_WHATNEXT_Info()
 {
 	AI_Output(self,other,"DIA_SylvioDJG_WHATNEXT_09_00");	//Lodowy smok nie ¿yje. Teraz dawaj wszystko, co masz przy sobie!
 	AI_Output(other,self,"DIA_SylvioDJG_WHATNEXT_15_01");	//Po moim trupie!
 	AI_Output(self,other,"DIA_SylvioDJG_WHATNEXT_09_02");	//To mnie bêd¹ s³awiæ za zabicie smoka.
 	AI_Output(self,other,"DIA_SylvioDJG_WHATNEXT_09_03");	//Twoja rola w tym przedstawieniu w³aœnie dobieg³a koñca!
-	TOPIC_END_SYLVIOKILLICEGOLEM = TRUE;
-	b_giveplayerxp(XP_AMBIENT);
-	Info_ClearChoices(dia_sylviodjg_whatnext);
-	Info_AddChoice(dia_sylviodjg_whatnext,DIALOG_ENDE,dia_sylviodjg_whatnext_attack);
+	TOPIC_END_SylvioKillIceGolem = TRUE;
+	B_GivePlayerXP(XP_Ambient);
+	Info_ClearChoices(DIA_SylvioDJG_WHATNEXT);
+	Info_AddChoice(DIA_SylvioDJG_WHATNEXT,Dialog_Ende,DIA_SylvioDJG_WHATNEXT_ATTACK);
 };
 
-func void dia_sylviodjg_whatnext_attack()
+func void DIA_SylvioDJG_WHATNEXT_ATTACK()
 {
 	AI_StopProcessInfos(self);
 	Npc_SetRefuseTalk(self,60);
 	Npc_ExchangeRoutine(self,"Start");
-	b_startotherroutine(djg_bullco,"Start");
-	b_logentry(TOPIC_DRAGONHUNTER,"Sylvio, ta œwinia, próbowa³ sobie przyw³aszczyæ moje zas³ugi w pokonaniu lodowych smoków. Wysz³a z tego niez³a k³ótnia.");
-	b_attack(self,other,AR_NONE,1);
-	b_attack(djg_bullco,other,AR_NONE,1);
+	B_StartOtherRoutine(DJG_Bullco,"Start");
+	B_LogEntry(TOPIC_Dragonhunter,"Sylvio, ta œwinia, próbowa³ sobie przyw³aszczyæ moje zas³ugi w pokonaniu lodowych smoków. Wysz³a z tego niez³a k³ótnia.");
+	B_Attack(self,other,AR_NONE,1);
+	B_Attack(DJG_Bullco,other,AR_NONE,1);
 };
 
 
-instance DIA_SYLVIODJG_BUTNOW(C_INFO)
+instance DIA_SylvioDJG_BUTNOW(C_Info)
 {
-	npc = djg_700_sylvio;
+	npc = DJG_700_Sylvio;
 	nr = 13;
-	condition = dia_sylviodjg_butnow_condition;
-	information = dia_sylviodjg_butnow_info;
+	condition = DIA_SylvioDJG_BUTNOW_Condition;
+	information = DIA_SylvioDJG_BUTNOW_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_sylviodjg_butnow_condition()
+func int DIA_SylvioDJG_BUTNOW_Condition()
 {
-	if(Npc_IsDead(icedragon) && (Npc_RefuseTalk(self) == FALSE) && Npc_KnowsInfo(other,dia_sylviodjg_whatnext))
+	if(Npc_IsDead(IceDragon) && (Npc_RefuseTalk(self) == FALSE) && Npc_KnowsInfo(other,DIA_SylvioDJG_WHATNEXT))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sylviodjg_butnow_info()
+func void DIA_SylvioDJG_BUTNOW_Info()
 {
 	AI_Output(self,other,"DIA_SylvioDJG_BUTNOW_09_00");	//Czas na zap³atê.
 	AI_StopProcessInfos(self);
 	Npc_SetRefuseTalk(self,60);
-	b_attack(self,other,AR_NONE,1);
-	b_attack(djg_bullco,other,AR_NONE,1);
+	B_Attack(self,other,AR_NONE,1);
+	B_Attack(DJG_Bullco,other,AR_NONE,1);
 };
 
 
-instance DIA_SYLVIO_PICKPOCKET(C_INFO)
+instance DIA_Sylvio_PICKPOCKET(C_Info)
 {
-	npc = djg_700_sylvio;
+	npc = DJG_700_Sylvio;
 	nr = 900;
-	condition = dia_sylvio_pickpocket_condition;
-	information = dia_sylvio_pickpocket_info;
+	condition = DIA_Sylvio_PICKPOCKET_Condition;
+	information = DIA_Sylvio_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_100;
+	description = Pickpocket_100;
 };
 
 
-func int dia_sylvio_pickpocket_condition()
+func int DIA_Sylvio_PICKPOCKET_Condition()
 {
-	return c_beklauen(78,560);
+	return C_Beklauen(78,560);
 };
 
-func void dia_sylvio_pickpocket_info()
+func void DIA_Sylvio_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_sylvio_pickpocket);
-	Info_AddChoice(dia_sylvio_pickpocket,DIALOG_BACK,dia_sylvio_pickpocket_back);
-	Info_AddChoice(dia_sylvio_pickpocket,DIALOG_PICKPOCKET,dia_sylvio_pickpocket_doit);
+	Info_ClearChoices(DIA_Sylvio_PICKPOCKET);
+	Info_AddChoice(DIA_Sylvio_PICKPOCKET,Dialog_Back,DIA_Sylvio_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Sylvio_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Sylvio_PICKPOCKET_DoIt);
 };
 
-func void dia_sylvio_pickpocket_doit()
+func void DIA_Sylvio_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_sylvio_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Sylvio_PICKPOCKET);
 };
 
-func void dia_sylvio_pickpocket_back()
+func void DIA_Sylvio_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_sylvio_pickpocket);
+	Info_ClearChoices(DIA_Sylvio_PICKPOCKET);
 };
 

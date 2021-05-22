@@ -1,27 +1,27 @@
 
-instance VLK_416_MATTEO(NPC_DEFAULT)
+instance VLK_416_Matteo(Npc_Default)
 {
 	name[0] = "Matteo";
 	guild = GIL_VLK;
 	id = 416;
 	voice = 9;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_vlk_sword);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_GOMEZ,BODYTEX_N,4821);
+	EquipItem(self,ItMw_1h_Vlk_Sword);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Gomez,BodyTex_N,ITAR_Vlk_M);
 	Mdl_SetModelFatness(self,1.8);
 	Mdl_ApplyOverlayMds(self,"Humans_Arrogance.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,35);
-	daily_routine = rtn_start_416;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,35);
+	daily_routine = Rtn_Start_416;
 };
 
 
-func void rtn_start_416()
+func void Rtn_Start_416()
 {
-	ta_stand_armscrossed(8,0,22,0,"NW_CITY_MATTEO");
-	ta_sleep(22,0,8,0,"NW_CITY_BED_MATTEO");
+	TA_Stand_ArmsCrossed(8,0,22,0,"NW_CITY_MATTEO");
+	TA_Sleep(22,0,8,0,"NW_CITY_BED_MATTEO");
 };
 

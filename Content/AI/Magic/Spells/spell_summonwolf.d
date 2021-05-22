@@ -1,16 +1,16 @@
 
-const int SPL_COST_SUMMONWOLF = 20;
+const int SPL_Cost_SummonWolf = 20;
 
-instance SPELL_SUMMONWOLF(C_SPELL_PROTO)
+instance Spell_SummonWolf(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	targetcollectalgo = TARGET_COLLECT_NONE;
+	targetCollectAlgo = TARGET_COLLECT_NONE;
 };
 
 
-func int spell_logic_summonwolf(var int manainvested)
+func int Spell_Logic_SummonWolf(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_SUMMONWOLF)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_SummonWolf)
 	{
 		return SPL_SENDCAST;
 	}
@@ -20,16 +20,16 @@ func int spell_logic_summonwolf(var int manainvested)
 	};
 };
 
-func void spell_cast_summonwolf()
+func void Spell_Cast_SummonWolf()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_SUMMONWOLF;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_SummonWolf;
 	if(Npc_IsPlayer(self))
 	{
-		Wld_SpawnNpcRange(self,summoned_wolf,1,500);
+		Wld_SpawnNpcRange(self,Summoned_Wolf,1,500);
 	}
 	else
 	{
-		Wld_SpawnNpcRange(self,wolf,1,500);
+		Wld_SpawnNpcRange(self,Wolf,1,500);
 	};
 };
 

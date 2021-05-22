@@ -1,20 +1,20 @@
 
-func void zs_spit_fire()
+func void ZS_Spit_Fire()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
 		AI_GotoWP(self,self.wp);
 	};
-	if(Npc_HasItems(self,itlstorchfirespit) == 0)
+	if(Npc_HasItems(self,ItLsTorchFirespit) == 0)
 	{
-		CreateInvItem(self,itlstorchfirespit);
+		CreateInvItem(self,ItLsTorchFirespit);
 	};
 };
 
-func int zs_spit_fire_loop()
+func int ZS_Spit_Fire_loop()
 {
 	if(Wld_IsFPAvailable(self,"STAND"))
 	{
@@ -27,15 +27,15 @@ func int zs_spit_fire_loop()
 	};
 	if(Npc_GetStateTime(self) > 10)
 	{
-		AI_UseItemToState(self,itlstorchfirespit,5);
-		AI_UseItemToState(self,itlstorchfirespit,0);
+		AI_UseItemToState(self,ItLsTorchFirespit,5);
+		AI_UseItemToState(self,ItLsTorchFirespit,0);
 		Npc_SetStateTime(self,0);
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_spit_fire_end()
+func void ZS_Spit_Fire_end()
 {
-	AI_UseItemToState(self,itlstorchfirespit,-1);
+	AI_UseItemToState(self,ItLsTorchFirespit,-1);
 };
 

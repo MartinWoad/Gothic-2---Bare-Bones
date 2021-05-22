@@ -1,5 +1,5 @@
 
-func void b_readyspell(var C_NPC slf,var int spell,var int mana)
+func void B_ReadySpell(var C_Npc slf,var int spell,var int mana)
 {
 	if(slf.attribute[ATR_MANA_MAX] < mana)
 	{

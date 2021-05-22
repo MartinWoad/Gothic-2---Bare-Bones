@@ -1,60 +1,60 @@
 
-instance DIA_DRAGON_FIRE_EXIT(C_INFO)
+instance DIA_Dragon_Fire_Exit(C_Info)
 {
 	nr = 999;
-	condition = dia_dragon_fire_exit_condition;
-	information = dia_dragon_fire_exit_info;
+	condition = DIA_Dragon_Fire_Exit_Condition;
+	information = DIA_Dragon_Fire_Exit_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_dragon_fire_exit_condition()
+func int DIA_Dragon_Fire_Exit_Condition()
 {
-	if(DRAGONTALK_EXIT_FREE == TRUE)
+	if(DragonTalk_Exit_Free == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dragon_fire_exit_info()
+func void DIA_Dragon_Fire_Exit_Info()
 {
-	Npc_RemoveInvItems(other,itmi_innoseye_mis,1);
-	CreateInvItems(other,itmi_innoseye_discharged_mis,1);
+	Npc_RemoveInvItems(other,ItMi_InnosEye_MIS,1);
+	CreateInvItems(other,ItMi_InnosEye_Discharged_Mis,1);
 	AI_Output(self,other,"DIA_Dragon_Fire_Exit_20_00");	//Oko straci³o swoj¹ moc. Naciesz siê ostatnimi chwilami ¿ycia.
 	AI_StopProcessInfos(self);
-	DRAGONTALK_EXIT_FREE = FALSE;
+	DragonTalk_Exit_Free = FALSE;
 	self.flags = 0;
-	if(DJG_BIFF_STAY == TRUE)
+	if(DJG_Biff_Stay == TRUE)
 	{
-		b_startotherroutine(biff,"Follow");
-		DJG_BIFF_STAY = FALSE;
+		B_StartOtherRoutine(Biff,"Follow");
+		DJG_Biff_Stay = FALSE;
 	};
 };
 
 
-instance DIA_DRAGON_FIRE_HELLO(C_INFO)
+instance DIA_Dragon_Fire_Hello(C_Info)
 {
 	nr = 1;
-	condition = dia_dragon_fire_hello_condition;
-	information = dia_dragon_fire_hello_info;
+	condition = DIA_Dragon_Fire_Hello_Condition;
+	information = DIA_Dragon_Fire_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_dragon_fire_hello_condition()
+func int DIA_Dragon_Fire_Hello_Condition()
 {
-	if(Npc_HasItems(other,itmi_innoseye_mis) >= 1)
+	if(Npc_HasItems(other,ItMi_InnosEye_MIS) >= 1)
 	{
 		return 1;
 	};
 };
 
-func void dia_dragon_fire_hello_info()
+func void DIA_Dragon_Fire_Hello_Info()
 {
 	AI_Output(self,other,"DIA_Dragon_Fire_Hello_20_00");	//Trudno uwierzyæ, ¿e nadal znajduj¹ siê ludzie gotowi poœwiêciæ w³asne ¿ycie, byle tylko zobaczyæ prawdziwego smoka.
-	if(MIS_KILLEDDRAGONS == 0)
+	if(MIS_KilledDragons == 0)
 	{
 		AI_Output(other,self,"DIA_Dragon_Fire_Hello_15_01");	//Jak na wielkiego, oœliz³ego jaszczura, jesteœ strasznie wygadany.
 	};
@@ -66,24 +66,24 @@ func void dia_dragon_fire_hello_info()
 };
 
 
-instance DIA_DRAGON_FIRE_WERBISTDU(C_INFO)
+instance DIA_Dragon_Fire_WerBistDu(C_Info)
 {
 	nr = 5;
-	condition = dia_dragon_fire_werbistdu_condition;
-	information = dia_dragon_fire_werbistdu_info;
+	condition = DIA_Dragon_Fire_WerBistDu_Condition;
+	information = DIA_Dragon_Fire_WerBistDu_Info;
 	description = "Kim jesteœ?";
 };
 
 
-func int dia_dragon_fire_werbistdu_condition()
+func int DIA_Dragon_Fire_WerBistDu_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_dragon_fire_hello))
+	if(Npc_KnowsInfo(other,DIA_Dragon_Fire_Hello))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dragon_fire_werbistdu_info()
+func void DIA_Dragon_Fire_WerBistDu_Info()
 {
 	AI_Output(other,self,"DIA_Dragon_Fire_WerBistDu_15_00");	//Kim jesteœ?
 	AI_Output(self,other,"DIA_Dragon_Fire_WerBistDu_20_01");	//Nazywam siê Feomathar. To wszystko, czego siê o mnie dowiesz.
@@ -91,36 +91,36 @@ func void dia_dragon_fire_werbistdu_info()
 };
 
 
-instance DIA_DRAGON_FIRE_HORT(C_INFO)
+instance DIA_Dragon_Fire_HORT(C_Info)
 {
 	nr = 5;
-	condition = dia_dragon_fire_hort_condition;
-	information = dia_dragon_fire_hort_info;
+	condition = DIA_Dragon_Fire_HORT_Condition;
+	information = DIA_Dragon_Fire_HORT_Info;
 	description = "Gdzie jest twój skarb?";
 };
 
 
-func int dia_dragon_fire_hort_condition()
+func int DIA_Dragon_Fire_HORT_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_dragon_fire_hello))
+	if(Npc_KnowsInfo(other,DIA_Dragon_Fire_Hello))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_dragon_fire_hort_info()
+func void DIA_Dragon_Fire_HORT_Info()
 {
 	AI_Output(other,self,"DIA_Dragon_Fire_HORT_15_00");	//Ka¿dy smok ma miejsce, w którym przechowuje swoje skarby. Gdzie jest twój skarb?
 	AI_Output(self,other,"DIA_Dragon_Fire_HORT_20_01");	//W miejscu, do którego nigdy nie dotrzesz. Postaram siê o to, gdy moc Oka os³abnie.
 	AI_Output(self,other,"DIA_Dragon_Fire_HORT_20_02");	//Ukry³em swoje skarby wysoko na rozgrzanych ska³ach, gdzie nie dotrze ¿adna pozbawiona skrzyde³ istota!
 };
 
-func void b_assigndragontalk_fire(var C_NPC slf)
+func void B_AssignDragonTalk_Fire(var C_Npc slf)
 {
-	dia_dragon_fire_exit.npc = Hlp_GetInstanceID(slf);
-	dia_dragon_fire_hello.npc = Hlp_GetInstanceID(slf);
-	dia_dragon_fire_werbistdu.npc = Hlp_GetInstanceID(slf);
-	dia_dragon_fire_hort.npc = Hlp_GetInstanceID(slf);
-	b_assigndragontalk_main(slf);
+	DIA_Dragon_Fire_Exit.npc = Hlp_GetInstanceID(slf);
+	DIA_Dragon_Fire_Hello.npc = Hlp_GetInstanceID(slf);
+	DIA_Dragon_Fire_WerBistDu.npc = Hlp_GetInstanceID(slf);
+	DIA_Dragon_Fire_HORT.npc = Hlp_GetInstanceID(slf);
+	B_AssignDragonTalk_Main(slf);
 };
 

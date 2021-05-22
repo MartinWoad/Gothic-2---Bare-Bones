@@ -1,45 +1,45 @@
 
-instance DIA_GUNNAR_EXIT(C_INFO)
+instance DIA_Gunnar_EXIT(C_Info)
 {
-	npc = bau_902_gunnar;
+	npc = BAU_902_Gunnar;
 	nr = 999;
-	condition = dia_gunnar_exit_condition;
-	information = dia_gunnar_exit_info;
+	condition = DIA_Gunnar_EXIT_Condition;
+	information = DIA_Gunnar_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_gunnar_exit_condition()
+func int DIA_Gunnar_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_gunnar_exit_info()
+func void DIA_Gunnar_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-var int gunnar_hallogesagt;
+var int Gunnar_HalloGesagt;
 
-instance DIA_GUNNAR_HALLO(C_INFO)
+instance DIA_Gunnar_Hallo(C_Info)
 {
-	npc = bau_902_gunnar;
+	npc = BAU_902_Gunnar;
 	nr = 1;
-	condition = dia_gunnar_hallo_condition;
-	information = dia_gunnar_hallo_info;
+	condition = DIA_Gunnar_Hallo_Condition;
+	information = DIA_Gunnar_Hallo_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_gunnar_hallo_condition()
+func int DIA_Gunnar_Hallo_Condition()
 {
 	return TRUE;
 };
 
-func void dia_gunnar_hallo_info()
+func void DIA_Gunnar_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Gunnar_Hallo_15_00");	//Co tam?
 	if(other.guild == GIL_NONE)
@@ -60,30 +60,30 @@ func void dia_gunnar_hallo_info()
 	{
 		AI_Output(self,other,"DIA_Gunnar_Hallo_10_06");	//Ludzie z miasta nie s¹ tu mile widziani.
 	};
-	GUNNAR_HALLOGESAGT = TRUE;
+	Gunnar_HalloGesagt = TRUE;
 };
 
 
-instance DIA_GUNNAR_EVERYWHERE(C_INFO)
+instance DIA_Gunnar_Everywhere(C_Info)
 {
-	npc = bau_902_gunnar;
+	npc = BAU_902_Gunnar;
 	nr = 2;
-	condition = dia_gunnar_everywhere_condition;
-	information = dia_gunnar_everywhere_info;
+	condition = DIA_Gunnar_Everywhere_Condition;
+	information = DIA_Gunnar_Everywhere_Info;
 	permanent = TRUE;
 	description = "Najemnicy przybywaj¹ ze wszystkich stron?";
 };
 
 
-func int dia_gunnar_everywhere_condition()
+func int DIA_Gunnar_Everywhere_Condition()
 {
-	if(GUNNAR_HALLOGESAGT == TRUE)
+	if(Gunnar_HalloGesagt == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gunnar_everywhere_info()
+func void DIA_Gunnar_Everywhere_Info()
 {
 	AI_Output(other,self,"DIA_Gunnar_Everywhere_15_00");	//Najemnicy przybywaj¹ ze wszystkich stron?
 	AI_Output(self,other,"DIA_Gunnar_Everywhere_10_01");	//Wiêkszoœæ z nich pochodzi z kolonii karnej.
@@ -92,26 +92,26 @@ func void dia_gunnar_everywhere_info()
 };
 
 
-instance DIA_GUNNAR_SOUTH(C_INFO)
+instance DIA_Gunnar_South(C_Info)
 {
-	npc = bau_902_gunnar;
+	npc = BAU_902_Gunnar;
 	nr = 3;
-	condition = dia_gunnar_south_condition;
-	information = dia_gunnar_south_info;
+	condition = DIA_Gunnar_South_Condition;
+	information = DIA_Gunnar_South_Info;
 	permanent = TRUE;
 	description = "Co wiesz na temat najemników z po³udnia?";
 };
 
 
-func int dia_gunnar_south_condition()
+func int DIA_Gunnar_South_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gunnar_everywhere))
+	if(Npc_KnowsInfo(other,DIA_Gunnar_Everywhere))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gunnar_south_info()
+func void DIA_Gunnar_South_Info()
 {
 	AI_Output(other,self,"DIA_Gunnar_South_15_00");	//Co wiesz na temat najemników z po³udnia?
 	AI_Output(self,other,"DIA_Gunnar_South_10_01");	//Niewiele. Z tego co wiem, polowali tam na orków.
@@ -119,52 +119,52 @@ func void dia_gunnar_south_info()
 };
 
 
-instance DIA_GUNNAR_COLONY(C_INFO)
+instance DIA_Gunnar_Colony(C_Info)
 {
-	npc = bau_902_gunnar;
+	npc = BAU_902_Gunnar;
 	nr = 4;
-	condition = dia_gunnar_colony_condition;
-	information = dia_gunnar_colony_info;
+	condition = DIA_Gunnar_Colony_Condition;
+	information = DIA_Gunnar_Colony_Info;
 	permanent = TRUE;
 	description = "Kto pochodzi z Kolonii?";
 };
 
 
-func int dia_gunnar_colony_condition()
+func int DIA_Gunnar_Colony_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gunnar_everywhere))
+	if(Npc_KnowsInfo(other,DIA_Gunnar_Everywhere))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gunnar_colony_info()
+func void DIA_Gunnar_Colony_Info()
 {
 	AI_Output(other,self,"DIA_Gunnar_Colony_15_00");	//Kto pochodzi z Kolonii?
 	AI_Output(self,other,"DIA_Gunnar_Colony_10_01");	//Lee i jego ludzie. Torlof, Cord, Jarvis, Wilk i jeszcze paru innych.
 };
 
 
-instance DIA_GUNNAR_BANDITS(C_INFO)
+instance DIA_Gunnar_Bandits(C_Info)
 {
-	npc = bau_902_gunnar;
+	npc = BAU_902_Gunnar;
 	nr = 5;
-	condition = dia_gunnar_bandits_condition;
-	information = dia_gunnar_bandits_info;
+	condition = DIA_Gunnar_Bandits_Condition;
+	information = DIA_Gunnar_Bandits_Info;
 	permanent = TRUE;
 	description = "O jakich bandytów ci chodzi?";
 };
 
 
-func int dia_gunnar_bandits_condition()
+func int DIA_Gunnar_Bandits_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gunnar_everywhere))
+	if(Npc_KnowsInfo(other,DIA_Gunnar_Everywhere))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gunnar_bandits_info()
+func void DIA_Gunnar_Bandits_Info()
 {
 	AI_Output(other,self,"DIA_Gunnar_Bandits_15_00");	//O jakich bandytów ci chodzi?
 	AI_Output(self,other,"DIA_Gunnar_Bandits_10_01");	//Tak tylko gadam. Tak naprawdê nie jestem do koñca pewien.
@@ -174,37 +174,37 @@ func void dia_gunnar_bandits_info()
 };
 
 
-instance DIA_GUNNAR_PICKPOCKET(C_INFO)
+instance DIA_Gunnar_PICKPOCKET(C_Info)
 {
-	npc = bau_902_gunnar;
+	npc = BAU_902_Gunnar;
 	nr = 900;
-	condition = dia_gunnar_pickpocket_condition;
-	information = dia_gunnar_pickpocket_info;
+	condition = DIA_Gunnar_PICKPOCKET_Condition;
+	information = DIA_Gunnar_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_gunnar_pickpocket_condition()
+func int DIA_Gunnar_PICKPOCKET_Condition()
 {
-	return c_beklauen(45,70);
+	return C_Beklauen(45,70);
 };
 
-func void dia_gunnar_pickpocket_info()
+func void DIA_Gunnar_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_gunnar_pickpocket);
-	Info_AddChoice(dia_gunnar_pickpocket,DIALOG_BACK,dia_gunnar_pickpocket_back);
-	Info_AddChoice(dia_gunnar_pickpocket,DIALOG_PICKPOCKET,dia_gunnar_pickpocket_doit);
+	Info_ClearChoices(DIA_Gunnar_PICKPOCKET);
+	Info_AddChoice(DIA_Gunnar_PICKPOCKET,Dialog_Back,DIA_Gunnar_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Gunnar_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Gunnar_PICKPOCKET_DoIt);
 };
 
-func void dia_gunnar_pickpocket_doit()
+func void DIA_Gunnar_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_gunnar_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Gunnar_PICKPOCKET);
 };
 
-func void dia_gunnar_pickpocket_back()
+func void DIA_Gunnar_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_gunnar_pickpocket);
+	Info_ClearChoices(DIA_Gunnar_PICKPOCKET);
 };
 

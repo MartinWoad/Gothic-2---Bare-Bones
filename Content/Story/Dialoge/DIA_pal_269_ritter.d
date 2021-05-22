@@ -1,55 +1,55 @@
 
-instance DIA_PAL_269_EXIT(C_INFO)
+instance DIA_PAL_269_EXIT(C_Info)
 {
-	npc = pal_269_ritter;
+	npc = PAL_269_Ritter;
 	nr = 999;
-	condition = dia_pal_269_exit_condition;
-	information = dia_pal_269_exit_info;
+	condition = DIA_PAL_269_EXIT_Condition;
+	information = DIA_PAL_269_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_pal_269_exit_condition()
+func int DIA_PAL_269_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pal_269_exit_info()
+func void DIA_PAL_269_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_RITTER_HERO(C_INFO)
+instance DIA_Ritter_HERO(C_Info)
 {
-	npc = pal_269_ritter;
-	condition = dia_pal_269_hero_condition;
-	information = dia_pal_269_hero_info;
+	npc = PAL_269_Ritter;
+	condition = DIA_PAL_269_HERO_Condition;
+	information = DIA_PAL_269_HERO_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_pal_269_hero_condition()
+func int DIA_PAL_269_HERO_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_ritter_hero_noperm;
+var int DIA_Ritter_HERO_NoPerm;
 
-func void dia_pal_269_hero_info()
+func void DIA_PAL_269_HERO_Info()
 {
 	AI_Output(self,other,"DIA_Ritter_HERO_04_00");	//Twoje pojawienie siê tutaj jest dla nas wszystkich znakiem. Twoja obecnoœæ tchnê³a w nas now¹ odwagê.
-	if(DIA_RITTER_HERO_NOPERM == FALSE)
+	if(DIA_Ritter_HERO_NoPerm == FALSE)
 	{
 		AI_Output(self,other,"DIA_Ritter_HERO_04_01");	//Wiemy, ¿e nasi kompani w mieœcie nie zapomnieli o nas. Oko Innosa czuwa nad nami.
 		AI_Output(self,other,"DIA_Ritter_HERO_04_02");	//Jeœli orkowie i smoki zaatakuj¹, odwa¿nie stawimy im czo³a, cokolwiek nas czeka - zwyciêstwo czy œmieræ.
-		DIA_RITTER_HERO_NOPERM = TRUE;
+		DIA_Ritter_HERO_NoPerm = TRUE;
 	};
 };
 

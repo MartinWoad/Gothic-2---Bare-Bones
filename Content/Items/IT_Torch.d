@@ -1,21 +1,21 @@
 
-const int VALUE_FACKEL = 2;
+const int Value_Fackel = 2;
 
-instance ITLSTORCH(C_ITEM)
+instance ItLsTorch(C_Item)
 {
 	name = "Pochodnia";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_TORCH | ITEM_MULTI;
-	value = VALUE_FACKEL;
+	value = Value_Fackel;
 	visual = "ItLs_Torch_01.3ds";
 	material = MAT_WOOD;
 	description = name;
 	text[3] = "Zwyk³a pochodnia.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITLSTORCHBURNING(C_ITEM)
+instance ItLsTorchburning(C_Item)
 {
 	name = "P³on¹ca pochodnia";
 	mainflag = ITEM_KAT_NONE;
@@ -27,7 +27,7 @@ instance ITLSTORCHBURNING(C_ITEM)
 	text[3] = "Zwyk³a pochodnia.";
 };
 
-instance ITLSTORCHBURNED(C_ITEM)
+instance ItLsTorchburned(C_Item)
 {
 	name = "Pochodnia";
 	mainflag = ITEM_KAT_NONE;
@@ -39,7 +39,7 @@ instance ITLSTORCHBURNED(C_ITEM)
 	description = name;
 };
 
-instance ITLSTORCHFIRESPIT(C_ITEM)
+instance ItLsTorchFirespit(C_Item)
 {
 	name = "Pochodnia";
 	mainflag = ITEM_KAT_NONE;
@@ -47,9 +47,9 @@ instance ITLSTORCHFIRESPIT(C_ITEM)
 	value = 1;
 	visual = "ITLSTORCHBURNING.ZEN";
 	material = MAT_WOOD;
-	scemename = "FIRESPIT";
+	scemeName = "FIRESPIT";
 	description = name;
-	text[4] = NAME_VALUE;
+	text[4] = NAME_Value;
 	count[4] = value;
 };
 

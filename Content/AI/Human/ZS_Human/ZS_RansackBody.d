@@ -1,42 +1,42 @@
 
-func void zs_ransackbody()
+func void ZS_RansackBody()
 {
-	perception_set_normal();
+	Perception_Set_Normal();
 	AI_Standup(self);
 	AI_GotoNpc(self,other);
 };
 
-func int zs_ransackbody_loop()
+func int ZS_RansackBody_Loop()
 {
 	return LOOP_END;
 };
 
-func void zs_ransackbody_end()
+func void ZS_RansackBody_End()
 {
 	var int x;
-	b_turntonpc(self,other);
+	B_TurnToNpc(self,other);
 	AI_PlayAni(self,"T_PLUNDER");
-	if((Npc_HasItems(other,holy_hammer_mis) > 0) && (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(garwig)))
+	if((Npc_HasItems(other,Holy_Hammer_MIS) > 0) && (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Garwig)))
 	{
-		CreateInvItems(self,holy_hammer_mis,1);
-		Npc_RemoveInvItems(other,holy_hammer_mis,1);
+		CreateInvItems(self,Holy_Hammer_MIS,1);
+		Npc_RemoveInvItems(other,Holy_Hammer_MIS,1);
 	};
-	if((Npc_HasItems(other,itmw_2h_rod) > 0) && (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(rod)))
+	if((Npc_HasItems(other,ItMw_2h_Rod) > 0) && (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Rod)))
 	{
-		CreateInvItems(self,itmw_2h_rod,1);
-		Npc_RemoveInvItems(other,itmw_2h_rod,1);
+		CreateInvItems(self,ItMw_2h_Rod,1);
+		Npc_RemoveInvItems(other,ItMw_2h_Rod,1);
 		AI_EquipBestMeleeWeapon(self);
 	};
-	if(Npc_HasItems(other,itmi_gold) > 0)
+	if(Npc_HasItems(other,ItMi_Gold) > 0)
 	{
-		x = Npc_HasItems(other,itmi_gold);
-		CreateInvItems(self,itmi_gold,x);
-		Npc_RemoveInvItems(other,itmi_gold,x);
-		b_say(self,other,"$ITOOKYOURGOLD");
+		x = Npc_HasItems(other,ItMi_Gold);
+		CreateInvItems(self,ItMi_Gold,x);
+		Npc_RemoveInvItems(other,ItMi_Gold,x);
+		B_Say(self,other,"$ITOOKYOURGOLD");
 	}
 	else
 	{
-		b_say(self,other,"$SHITNOGOLD");
+		B_Say(self,other,"$SHITNOGOLD");
 	};
 	Npc_PerceiveAll(self);
 	if(Wld_DetectItem(self,ITEM_KAT_NF) || Wld_DetectItem(self,ITEM_KAT_FF))
@@ -44,11 +44,11 @@ func void zs_ransackbody_end()
 		if(Npc_GetDistToItem(self,item) < 500)
 		{
 			AI_TakeItem(self,item);
-			b_say(self,self,"$ITAKEYOURWEAPON");
+			B_Say(self,self,"$ITAKEYOURWEAPON");
 			AI_EquipBestMeleeWeapon(self);
 			AI_EquipBestRangedWeapon(self);
 		};
 	};
-	AI_StartState(self,zs_healself,0,"");
+	AI_StartState(self,ZS_HealSelf,0,"");
 };
 

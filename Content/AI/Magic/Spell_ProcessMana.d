@@ -1,261 +1,261 @@
 
-func int spell_processmana(var int manainvested)
+func int Spell_ProcessMana(var int manaInvested)
 {
-	if(Npc_GetActiveSpell(self) == SPL_PALLIGHT)
+	if(Npc_GetActiveSpell(self) == SPL_PalLight)
 	{
-		return spell_logic_pallight(manainvested);
+		return Spell_Logic_PalLight(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_PALLIGHTHEAL)
+	if(Npc_GetActiveSpell(self) == SPL_PalLightHeal)
 	{
-		return spell_logic_pallightheal(manainvested);
+		return Spell_Logic_PalLightHeal(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_PALHOLYBOLT)
+	if(Npc_GetActiveSpell(self) == SPL_PalHolyBolt)
 	{
-		return spell_logic_palholybolt(manainvested);
+		return Spell_Logic_PalHolyBolt(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_PALMEDIUMHEAL)
+	if(Npc_GetActiveSpell(self) == SPL_PalMediumHeal)
 	{
-		return spell_logic_palmediumheal(manainvested);
+		return Spell_Logic_PalMediumHeal(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_PALREPELEVIL)
+	if(Npc_GetActiveSpell(self) == SPL_PalRepelEvil)
 	{
-		return spell_logic_palrepelevil(manainvested);
+		return Spell_Logic_PalRepelEvil(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_PALFULLHEAL)
+	if(Npc_GetActiveSpell(self) == SPL_PalFullHeal)
 	{
-		return spell_logic_palfullheal(manainvested);
+		return Spell_Logic_PalFullHeal(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_PALDESTROYEVIL)
+	if(Npc_GetActiveSpell(self) == SPL_PalDestroyEvil)
 	{
-		return spell_logic_paldestroyevil(manainvested);
+		return Spell_Logic_PalDestroyEvil(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_PALTELEPORTSECRET)
+	if(Npc_GetActiveSpell(self) == SPL_PalTeleportSecret)
 	{
-		return spell_logic_palteleportsecret(manainvested);
+		return Spell_Logic_PalTeleportSecret(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TELEPORTSEAPORT)
+	if(Npc_GetActiveSpell(self) == SPL_TeleportSeaport)
 	{
-		return spell_logic_teleportseaport(manainvested);
+		return Spell_Logic_TeleportSeaport(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TELEPORTMONASTERY)
+	if(Npc_GetActiveSpell(self) == SPL_TeleportMonastery)
 	{
-		return spell_logic_teleportmonastery(manainvested);
+		return Spell_Logic_TeleportMonastery(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TELEPORTFARM)
+	if(Npc_GetActiveSpell(self) == SPL_TeleportFarm)
 	{
-		return spell_logic_teleportfarm(manainvested);
+		return Spell_Logic_TeleportFarm(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TELEPORTXARDAS)
+	if(Npc_GetActiveSpell(self) == SPL_TeleportXardas)
 	{
-		return spell_logic_teleportxardas(manainvested);
+		return Spell_Logic_TeleportXardas(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TELEPORTPASSNW)
+	if(Npc_GetActiveSpell(self) == SPL_TeleportPassNW)
 	{
-		return spell_logic_teleportpassnw(manainvested);
+		return Spell_Logic_TeleportPassNW(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TELEPORTPASSOW)
+	if(Npc_GetActiveSpell(self) == SPL_TeleportPassOW)
 	{
-		return spell_logic_teleportpassow(manainvested);
+		return Spell_Logic_TeleportPassOW(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TELEPORTOC)
+	if(Npc_GetActiveSpell(self) == SPL_TeleportOC)
 	{
-		return spell_logic_teleportoc(manainvested);
+		return Spell_Logic_TeleportOC(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TELEPORTOWDEMONTOWER)
+	if(Npc_GetActiveSpell(self) == SPL_TeleportOWDemonTower)
 	{
-		return spell_logic_teleportowdemontower(manainvested);
+		return Spell_Logic_TeleportOWDemonTower(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TELEPORTTAVERNE)
+	if(Npc_GetActiveSpell(self) == SPL_TeleportTaverne)
 	{
-		return spell_logic_teleporttaverne(manainvested);
+		return Spell_Logic_TeleportTaverne(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_LIGHT)
+	if(Npc_GetActiveSpell(self) == SPL_Light)
 	{
-		return spell_logic_light(manainvested);
+		return Spell_Logic_Light(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_FIREBOLT)
+	if(Npc_GetActiveSpell(self) == SPL_Firebolt)
 	{
-		return spell_logic_firebolt(manainvested);
+		return Spell_Logic_Firebolt(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_ICEBOLT)
+	if(Npc_GetActiveSpell(self) == SPL_Icebolt)
 	{
-		return spell_logic_icebolt(manainvested);
+		return Spell_Logic_IceBolt(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_ZAP)
+	if(Npc_GetActiveSpell(self) == SPL_Zap)
 	{
-		return spell_logic_zap(manainvested);
+		return Spell_Logic_Zap(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_LIGHTHEAL)
+	if(Npc_GetActiveSpell(self) == SPL_LightHeal)
 	{
-		return spell_logic_lightheal(manainvested);
+		return Spell_Logic_LightHeal(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_SUMMONGOBLINSKELETON)
+	if(Npc_GetActiveSpell(self) == SPL_SummonGoblinSkeleton)
 	{
-		return spell_logic_summongoblinskeleton(manainvested);
+		return Spell_Logic_SummonGoblinSkeleton(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_INSTANTFIREBALL)
+	if(Npc_GetActiveSpell(self) == SPL_InstantFireball)
 	{
-		return spell_logic_instantfireball(manainvested);
+		return Spell_Logic_InstantFireball(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_SUMMONWOLF)
+	if(Npc_GetActiveSpell(self) == SPL_SummonWolf)
 	{
-		return spell_logic_summonwolf(manainvested);
+		return Spell_Logic_SummonWolf(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_WINDFIST)
+	if(Npc_GetActiveSpell(self) == SPL_WindFist)
 	{
-		return spell_logic_windfist(manainvested);
+		return Spell_Logic_WindFist(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_SLEEP)
+	if(Npc_GetActiveSpell(self) == SPL_Sleep)
 	{
-		return spell_logic_sleep(manainvested);
+		return Spell_Logic_Sleep(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_MEDIUMHEAL)
+	if(Npc_GetActiveSpell(self) == SPL_MediumHeal)
 	{
-		return spell_logic_mediumheal(manainvested);
+		return Spell_Logic_MediumHeal(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_LIGHTNINGFLASH)
+	if(Npc_GetActiveSpell(self) == SPL_LightningFlash)
 	{
-		return spell_logic_lightningflash(manainvested);
+		return Spell_Logic_LightningFlash(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_CHARGEFIREBALL)
+	if(Npc_GetActiveSpell(self) == SPL_ChargeFireball)
 	{
-		return spell_logic_chargefireball(manainvested);
+		return Spell_Logic_ChargeFireball(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_CHARGEZAP)
+	if(Npc_GetActiveSpell(self) == SPL_ChargeZap)
 	{
-		return spell_logic_chargezap(manainvested);
+		return Spell_Logic_ChargeZap(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_SUMMONSKELETON)
+	if(Npc_GetActiveSpell(self) == SPL_SummonSkeleton)
 	{
-		return spell_logic_summonskeleton(manainvested);
+		return Spell_Logic_SummonSkeleton(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_FEAR)
+	if(Npc_GetActiveSpell(self) == SPL_Fear)
 	{
-		return spell_logic_fear(manainvested);
+		return Spell_Logic_Fear(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_ICECUBE)
+	if(Npc_GetActiveSpell(self) == SPL_IceCube)
 	{
-		return spell_logic_icecube(manainvested);
+		return Spell_Logic_IceCube(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_CHARGEZAP)
+	if(Npc_GetActiveSpell(self) == SPL_ChargeZap)
 	{
-		return spell_logic_chargezap(manainvested);
+		return Spell_Logic_ChargeZap(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_SUMMONGOLEM)
+	if(Npc_GetActiveSpell(self) == SPL_SummonGolem)
 	{
-		return spell_logic_summongolem(manainvested);
+		return Spell_Logic_SummonGolem(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_DESTROYUNDEAD)
+	if(Npc_GetActiveSpell(self) == SPL_DestroyUndead)
 	{
-		return spell_logic_destroyundead(manainvested);
+		return Spell_Logic_DestroyUndead(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_PYROKINESIS)
+	if(Npc_GetActiveSpell(self) == SPL_Pyrokinesis)
 	{
-		return spell_logic_pyrokinesis(manainvested);
+		return Spell_Logic_Pyrokinesis(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_FIRESTORM)
+	if(Npc_GetActiveSpell(self) == SPL_Firestorm)
 	{
-		return spell_logic_firestorm(manainvested);
+		return Spell_Logic_Firestorm(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_ICEWAVE)
+	if(Npc_GetActiveSpell(self) == SPL_IceWave)
 	{
-		return spell_logic_icewave(manainvested);
+		return Spell_Logic_IceWave(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_SUMMONDEMON)
+	if(Npc_GetActiveSpell(self) == SPL_SummonDemon)
 	{
-		return spell_logic_summondemon(manainvested);
+		return Spell_Logic_SummonDemon(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_FULLHEAL)
+	if(Npc_GetActiveSpell(self) == SPL_FullHeal)
 	{
-		return spell_logic_fullheal(manainvested);
+		return Spell_Logic_FullHeal(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_FIRERAIN)
+	if(Npc_GetActiveSpell(self) == SPL_Firerain)
 	{
-		return spell_logic_firerain(manainvested);
+		return Spell_Logic_Firerain(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_BREATHOFDEATH)
+	if(Npc_GetActiveSpell(self) == SPL_BreathOfDeath)
 	{
-		return spell_logic_breathofdeath(manainvested);
+		return Spell_Logic_BreathOfDeath(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_MASSDEATH)
+	if(Npc_GetActiveSpell(self) == SPL_MassDeath)
 	{
-		return spell_logic_massdeath(manainvested);
+		return Spell_Logic_Massdeath(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_ARMYOFDARKNESS)
+	if(Npc_GetActiveSpell(self) == SPL_ArmyOfDarkness)
 	{
-		return spell_logic_armyofdarkness(manainvested);
+		return Spell_Logic_ArmyOfDarkness(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_SHRINK)
+	if(Npc_GetActiveSpell(self) == SPL_Shrink)
 	{
-		return spell_logic_shrink(manainvested);
+		return Spell_Logic_Shrink(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TRFSHEEP)
+	if(Npc_GetActiveSpell(self) == SPL_TrfSheep)
 	{
-		return spell_logic_trfsheep(manainvested);
+		return Spell_Logic_TrfSheep(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TRFSCAVENGER)
+	if(Npc_GetActiveSpell(self) == SPL_TrfScavenger)
 	{
-		return spell_logic_trfscavenger(manainvested);
+		return Spell_Logic_TrfScavenger(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TRFGIANTRAT)
+	if(Npc_GetActiveSpell(self) == SPL_TrfGiantRat)
 	{
-		return spell_logic_trfgiantrat(manainvested);
+		return Spell_Logic_TrfGiantRat(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TRFGIANTBUG)
+	if(Npc_GetActiveSpell(self) == SPL_TrfGiantBug)
 	{
-		return spell_logic_trfgiantbug(manainvested);
+		return Spell_Logic_TrfGiantBug(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TRFWOLF)
+	if(Npc_GetActiveSpell(self) == SPL_TrfWolf)
 	{
-		return spell_logic_trfwolf(manainvested);
+		return Spell_Logic_TrfWolf(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TRFWARAN)
+	if(Npc_GetActiveSpell(self) == SPL_TrfWaran)
 	{
-		return spell_logic_trfwaran(manainvested);
+		return Spell_Logic_TrfWaran(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TRFSNAPPER)
+	if(Npc_GetActiveSpell(self) == SPL_TrfSnapper)
 	{
-		return spell_logic_trfsnapper(manainvested);
+		return Spell_Logic_TrfSnapper(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TRFWARG)
+	if(Npc_GetActiveSpell(self) == SPL_TrfWarg)
 	{
-		return spell_logic_trfwarg(manainvested);
+		return Spell_Logic_TrfWarg(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TRFFIREWARAN)
+	if(Npc_GetActiveSpell(self) == SPL_TrfFireWaran)
 	{
-		return spell_logic_trffirewaran(manainvested);
+		return Spell_Logic_TrfFireWaran(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TRFLURKER)
+	if(Npc_GetActiveSpell(self) == SPL_TrfLurker)
 	{
-		return spell_logic_trflurker(manainvested);
+		return Spell_Logic_TrfLurker(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TRFSHADOWBEAST)
+	if(Npc_GetActiveSpell(self) == SPL_TrfShadowbeast)
 	{
-		return spell_logic_trfshadowbeast(manainvested);
+		return Spell_Logic_TrfShadowbeast(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_TRFDRAGONSNAPPER)
+	if(Npc_GetActiveSpell(self) == SPL_TrfDragonSnapper)
 	{
-		return spell_logic_trfdragonsnapper(manainvested);
+		return Spell_Logic_TrfDragonSnapper(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_CHARM)
+	if(Npc_GetActiveSpell(self) == SPL_Charm)
 	{
-		return spell_logic_charm(manainvested);
+		return Spell_Logic_Charm(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_MASTEROFDISASTER)
+	if(Npc_GetActiveSpell(self) == SPL_MasterOfDisaster)
 	{
-		return spell_logic_masterofdisaster(manainvested);
+		return Spell_Logic_MasterOfDisaster(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_CONCUSSIONBOLT)
+	if(Npc_GetActiveSpell(self) == SPL_ConcussionBolt)
 	{
-		return spell_logic_concussionbolt(manainvested);
+		return Spell_Logic_Concussionbolt(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_DEATHBOLT)
+	if(Npc_GetActiveSpell(self) == SPL_Deathbolt)
 	{
-		return spell_logic_deathbolt(manainvested);
+		return Spell_Logic_Deathbolt(manaInvested);
 	};
-	if(Npc_GetActiveSpell(self) == SPL_DEATHBALL)
+	if(Npc_GetActiveSpell(self) == SPL_Deathball)
 	{
-		return spell_logic_deathball(manainvested);
+		return Spell_Logic_Deathball(manaInvested);
 	};
 	return FALSE;
 };

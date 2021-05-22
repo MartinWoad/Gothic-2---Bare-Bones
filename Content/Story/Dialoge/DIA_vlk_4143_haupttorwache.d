@@ -1,43 +1,43 @@
 
-instance DIA_HAUPTTORWACHE_EXIT(C_INFO)
+instance DIA_Haupttorwache_EXIT(C_Info)
 {
-	npc = vlk_4143_haupttorwache;
+	npc = VLK_4143_HaupttorWache;
 	nr = 999;
-	condition = dia_haupttorwache_exit_condition;
-	information = dia_haupttorwache_exit_info;
+	condition = DIA_Haupttorwache_EXIT_Condition;
+	information = DIA_Haupttorwache_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_haupttorwache_exit_condition()
+func int DIA_Haupttorwache_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_haupttorwache_exit_info()
+func void DIA_Haupttorwache_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HAUPTTORWACHE_AUFGABE(C_INFO)
+instance DIA_Haupttorwache_AUFGABE(C_Info)
 {
-	npc = vlk_4143_haupttorwache;
+	npc = VLK_4143_HaupttorWache;
 	nr = 4;
-	condition = dia_haupttorwache_aufgabe_condition;
-	information = dia_haupttorwache_aufgabe_info;
+	condition = DIA_Haupttorwache_AUFGABE_Condition;
+	information = DIA_Haupttorwache_AUFGABE_Info;
 	permanent = TRUE;
 	description = "Jakie jest twoje zadanie?";
 };
 
 
-func int dia_haupttorwache_aufgabe_condition()
+func int DIA_Haupttorwache_AUFGABE_Condition()
 {
 	return TRUE;
 };
 
-func void dia_haupttorwache_aufgabe_info()
+func void DIA_Haupttorwache_AUFGABE_Info()
 {
 	AI_Output(other,self,"DIA_Haupttorwache_AUFGABE_15_00");	//Jakie jest twoje zadanie?
 	AI_Output(self,other,"DIA_Haupttorwache_AUFGABE_13_01");	//Moje zadanie jest proste. Mam siê upewniæ, ¿e orkowie trzymaj¹ siê ponad 10 metrów od bramy.
@@ -45,36 +45,36 @@ func void dia_haupttorwache_aufgabe_info()
 };
 
 
-instance DIA_HAUPTTORWACHE_TOROEFFNEN(C_INFO)
+instance DIA_Haupttorwache_TOROEFFNEN(C_Info)
 {
-	npc = vlk_4143_haupttorwache;
+	npc = VLK_4143_HaupttorWache;
 	nr = 5;
-	condition = dia_haupttorwache_toroeffnen_condition;
-	information = dia_haupttorwache_toroeffnen_info;
+	condition = DIA_Haupttorwache_TOROEFFNEN_Condition;
+	information = DIA_Haupttorwache_TOROEFFNEN_Info;
 	permanent = TRUE;
 	description = "Co trzeba zrobiæ, aby otworzyæ g³ówn¹ bramê?";
 };
 
 
-func int dia_haupttorwache_toroeffnen_condition()
+func int DIA_Haupttorwache_TOROEFFNEN_Condition()
 {
-	if(KAPITEL >= 5)
+	if(Kapitel >= 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_haupttorwache_toroeffnen_info()
+func void DIA_Haupttorwache_TOROEFFNEN_Info()
 {
 	AI_Output(other,self,"DIA_Haupttorwache_TOROEFFNEN_15_00");	//Co trzeba zrobiæ, aby otworzyæ g³ówn¹ bramê?
 	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_13_01");	//Na niebiosa, czemu ktokolwiek mia³by chcieæ j¹ otworzyæ?
 	self.flags = 0;
-	Info_ClearChoices(dia_haupttorwache_toroeffnen);
-	Info_AddChoice(dia_haupttorwache_toroeffnen,"Martwiê siê o bezpieczeñstwo zamku.",dia_haupttorwache_toroeffnen_sicherheit);
-	Info_AddChoice(dia_haupttorwache_toroeffnen,"Niewa¿ne. Tak tylko pytam.",dia_haupttorwache_toroeffnen_frage);
+	Info_ClearChoices(DIA_Haupttorwache_TOROEFFNEN);
+	Info_AddChoice(DIA_Haupttorwache_TOROEFFNEN,"Martwiê siê o bezpieczeñstwo zamku.",DIA_Haupttorwache_TOROEFFNEN_sicherheit);
+	Info_AddChoice(DIA_Haupttorwache_TOROEFFNEN,"Niewa¿ne. Tak tylko pytam.",DIA_Haupttorwache_TOROEFFNEN_frage);
 };
 
-func void dia_haupttorwache_toroeffnen_sicherheit()
+func void DIA_Haupttorwache_TOROEFFNEN_sicherheit()
 {
 	AI_Output(other,self,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_15_00");	//Martwiê siê o bezpieczeñstwo zamku.
 	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_01");	//Wierz mi, ja równie¿. Przez ca³y czas.
@@ -85,7 +85,7 @@ func void dia_haupttorwache_toroeffnen_sicherheit()
 	AI_StopProcessInfos(self);
 };
 
-func void dia_haupttorwache_toroeffnen_frage()
+func void DIA_Haupttorwache_TOROEFFNEN_frage()
 {
 	AI_Output(other,self,"DIA_Haupttorwache_TOROEFFNEN_frage_15_00");	//Niewa¿ne. Tak tylko pytam.
 	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_frage_13_01");	//Nawet tak nie mów, bo jeszcze wykraczesz. I tak jest ju¿ wystarczaj¹co ciê¿ko. A teraz odejdŸ, jestem zajêty.
@@ -93,50 +93,50 @@ func void dia_haupttorwache_toroeffnen_frage()
 };
 
 
-instance DIA_HAUPTTORWACHE_PICKPOCKET(C_INFO)
+instance DIA_Haupttorwache_PICKPOCKET(C_Info)
 {
-	npc = vlk_4143_haupttorwache;
+	npc = VLK_4143_HaupttorWache;
 	nr = 900;
-	condition = dia_haupttorwache_pickpocket_condition;
-	information = dia_haupttorwache_pickpocket_info;
+	condition = DIA_Haupttorwache_PICKPOCKET_Condition;
+	information = DIA_Haupttorwache_PICKPOCKET_Info;
 	permanent = TRUE;
 	description = "(Kradzie¿ tego klucza bêdzie dziecinnie ³atwa)";
 };
 
 
-func int dia_haupttorwache_pickpocket_condition()
+func int DIA_Haupttorwache_PICKPOCKET_Condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == FALSE) && (Npc_HasItems(self,itke_oc_maingate_mis) >= 1) && (KAPITEL >= 5) && (other.attribute[ATR_DEXTERITY] >= (20 - THEFTDIFF)))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_HasItems(self,itke_oc_maingate_mis) >= 1) && (Kapitel >= 5) && (other.attribute[ATR_DEXTERITY] >= (20 - Theftdiff)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_haupttorwache_pickpocket_info()
+func void DIA_Haupttorwache_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_haupttorwache_pickpocket);
-	Info_AddChoice(dia_haupttorwache_pickpocket,DIALOG_BACK,dia_haupttorwache_pickpocket_back);
-	Info_AddChoice(dia_haupttorwache_pickpocket,DIALOG_PICKPOCKET,dia_haupttorwache_pickpocket_doit);
+	Info_ClearChoices(DIA_Haupttorwache_PICKPOCKET);
+	Info_AddChoice(DIA_Haupttorwache_PICKPOCKET,Dialog_Back,DIA_Haupttorwache_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Haupttorwache_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Haupttorwache_PICKPOCKET_DoIt);
 };
 
-func void dia_haupttorwache_pickpocket_doit()
+func void DIA_Haupttorwache_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 20)
 	{
-		b_giveinvitems(self,other,5887,1);
-		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
-		b_giveplayerxp(XP_AMBIENT);
-		Info_ClearChoices(dia_haupttorwache_pickpocket);
+		B_GiveInvItems(self,other,itke_oc_maingate_mis,1);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+		B_GivePlayerXP(XP_Ambient);
+		Info_ClearChoices(DIA_Haupttorwache_PICKPOCKET);
 	}
 	else
 	{
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_THEFT,1);
+		B_Attack(self,other,AR_Theft,1);
 	};
 };
 
-func void dia_haupttorwache_pickpocket_back()
+func void DIA_Haupttorwache_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_haupttorwache_pickpocket);
+	Info_ClearChoices(DIA_Haupttorwache_PICKPOCKET);
 };
 

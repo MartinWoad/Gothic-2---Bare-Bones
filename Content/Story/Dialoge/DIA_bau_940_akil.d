@@ -1,27 +1,27 @@
 
-instance DIA_AKIL_EXIT(C_INFO)
+instance DIA_Akil_EXIT(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 999;
-	condition = dia_akil_exit_condition;
-	information = dia_akil_exit_info;
+	condition = DIA_Akil_EXIT_Condition;
+	information = DIA_Akil_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_akil_exit_condition()
+func int DIA_Akil_EXIT_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_exit_info()
+func void DIA_Akil_EXIT_Info()
 {
 	AI_Output(other,self,"DIA_Akil_EXIT_15_00");	//Muszê ju¿ iœæ.
-	if(AKIL_SAUER == TRUE)
+	if(Akil_Sauer == TRUE)
 	{
 		AI_Output(self,other,"DIA_Akil_EXIT_13_01");	//Nie zmuszaj mnie, ¿ebym ciê zatrzyma³.
 	}
@@ -33,85 +33,85 @@ func void dia_akil_exit_info()
 };
 
 
-instance DIA_AKIL_HALLO(C_INFO)
+instance DIA_Akil_Hallo(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 4;
-	condition = dia_akil_hallo_condition;
-	information = dia_akil_hallo_info;
+	condition = DIA_Akil_Hallo_Condition;
+	information = DIA_Akil_Hallo_Info;
 	permanent = FALSE;
 	description = "Masz jakieœ k³opoty?";
 };
 
 
-func int dia_akil_hallo_condition()
+func int DIA_Akil_Hallo_Condition()
 {
-	if(!Npc_IsDead(alvares) && !Npc_IsDead(engardo))
+	if(!Npc_IsDead(Alvares) && !Npc_IsDead(Engardo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_hallo_info()
+func void DIA_Akil_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Akil_Hallo_15_00");	//Masz jakieœ k³opoty?
 	AI_Output(self,other,"DIA_Akil_Hallo_13_01");	//... Ech... nie, nie ... wszystko w porz¹dku. Chyba... bêdzie lepiej, jak ju¿ sobie pójdziesz.
 	AI_Output(other,self,"DIA_Akil_Hallo_15_02");	//Na pewno?
 	AI_Output(self,other,"DIA_Akil_Hallo_13_03");	//Ech... Tak, tak ... wszystko w porz¹dku. Ty ... ech ... ja ... ja ... nie mogê teraz z tob¹ rozmawiaæ.
-	Log_CreateTopic(TOPIC_AKILSSLDSTILLTHERE,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_AKILSSLDSTILLTHERE,LOG_RUNNING);
-	b_logentry(TOPIC_AKILSSLDSTILLTHERE,"Farmie Akila zagra¿aj¹ najemnicy.");
-	AKILS_SLDSTILLTHERE = TRUE;
+	Log_CreateTopic(TOPIC_AkilsSLDStillthere,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_AkilsSLDStillthere,LOG_Running);
+	B_LogEntry(TOPIC_AkilsSLDStillthere,"Farmie Akila zagra¿aj¹ najemnicy.");
+	Akils_SLDStillthere = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_AKIL_NICHTJETZT(C_INFO)
+instance DIA_Akil_Nichtjetzt(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 7;
-	condition = dia_akil_nichtjetzt_condition;
-	information = dia_akil_nichtjetzt_info;
+	condition = DIA_Akil_Nichtjetzt_Condition;
+	information = DIA_Akil_Nichtjetzt_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_akil_nichtjetzt_condition()
+func int DIA_Akil_Nichtjetzt_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && !Npc_IsDead(alvares) && !Npc_IsDead(engardo) && Npc_KnowsInfo(other,dia_akil_hallo))
+	if(Npc_IsInState(self,ZS_Talk) && !Npc_IsDead(Alvares) && !Npc_IsDead(Engardo) && Npc_KnowsInfo(other,DIA_Akil_Hallo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_nichtjetzt_info()
+func void DIA_Akil_Nichtjetzt_Info()
 {
 	AI_Output(self,other,"DIA_Akil_Nichtjetzt_13_00");	//Ech... Nie teraz, teraz nie mogê z tob¹ rozmawiaæ.
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_AKIL_NACHKAMPF(C_INFO)
+instance DIA_Akil_NachKampf(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 5;
-	condition = dia_akil_nachkampf_condition;
-	information = dia_akil_nachkampf_info;
+	condition = DIA_Akil_NachKampf_Condition;
+	information = DIA_Akil_NachKampf_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_akil_nachkampf_condition()
+func int DIA_Akil_NachKampf_Condition()
 {
-	if(Npc_IsDead(alvares) && Npc_IsDead(engardo))
+	if(Npc_IsDead(Alvares) && Npc_IsDead(Engardo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_nachkampf_info()
+func void DIA_Akil_NachKampf_Info()
 {
 	AI_Output(self,other,"DIA_Akil_NachKampf_13_00");	//Dziêki Innosowi. Myœla³em, ¿e mój czas dobieg³ koñca.
 	AI_Output(self,other,"DIA_Akil_NachKampf_13_01");	//Nazywam siê Akil. Uprawiam ten skromny skrawek ziemi.
@@ -126,66 +126,66 @@ func void dia_akil_nachkampf_info()
 	};
 	AI_Output(self,other,"DIA_Akil_NachKampf_13_05");	//Ba³em siê najgorszego...
 	AI_Output(self,other,"DIA_Akil_NachKampf_13_06");	//... có¿, dziêki Innosowi, ¿e do tego nie dosz³o. Powiedz mi, co mogê dla ciebie zrobiæ?
-	Info_ClearChoices(dia_akil_nachkampf);
-	Info_AddChoice(dia_akil_nachkampf,"Nic. Pod warunkiem, ¿e wszystko jest w porz¹dku.",dia_akil_nachkampf_ehre);
-	Info_AddChoice(dia_akil_nachkampf,"Mo¿e parê sztuk z³ota?",dia_akil_nachkampf_gold);
+	Info_ClearChoices(DIA_Akil_NachKampf);
+	Info_AddChoice(DIA_Akil_NachKampf,"Nic. Pod warunkiem, ¿e wszystko jest w porz¹dku.",DIA_Akil_NachKampf_Ehre);
+	Info_AddChoice(DIA_Akil_NachKampf,"Mo¿e parê sztuk z³ota?",DIA_Akil_NachKampf_Gold);
 	Npc_ExchangeRoutine(self,"Start");
 	self.flags = 0;
-	if(Hlp_IsValidNpc(kati) && !Npc_IsDead(kati))
+	if(Hlp_IsValidNpc(Kati) && !Npc_IsDead(Kati))
 	{
-		Npc_ExchangeRoutine(kati,"Start");
-		AI_ContinueRoutine(kati);
-		kati.flags = 0;
+		Npc_ExchangeRoutine(Kati,"Start");
+		AI_ContinueRoutine(Kati);
+		Kati.flags = 0;
 	};
-	if(Hlp_IsValidNpc(randolph) && !Npc_IsDead(randolph))
+	if(Hlp_IsValidNpc(Randolph) && !Npc_IsDead(Randolph))
 	{
-		Npc_ExchangeRoutine(randolph,"Start");
-		AI_ContinueRoutine(randolph);
-		randolph.flags = 0;
+		Npc_ExchangeRoutine(Randolph,"Start");
+		AI_ContinueRoutine(Randolph);
+		Randolph.flags = 0;
 	};
-	TOPIC_END_AKILSSLDSTILLTHERE = TRUE;
-	b_giveplayerxp(XP_AMBIENT);
+	TOPIC_END_AkilsSLDStillthere = TRUE;
+	B_GivePlayerXP(XP_Ambient);
 };
 
-func void dia_akil_nachkampf_ehre()
+func void DIA_Akil_NachKampf_Ehre()
 {
 	AI_Output(other,self,"DIA_Akil_NachKampf_Ehre_15_00");	//Nic. Pod warunkiem, ¿e wszystko jest w porz¹dku.
 	AI_Output(self,other,"DIA_Akil_NachKampf_Ehre_13_01");	//Jesteœ wyj¹tkowym cz³owiekiem. Niech ciê Innos ma w swej opiece.
-	b_giveplayerxp(XP_AKIL_SLDWEGVOMHOFEHRE);
-	Info_ClearChoices(dia_akil_nachkampf);
+	B_GivePlayerXP(XP_Akil_SLDWegVomHofEhre);
+	Info_ClearChoices(DIA_Akil_NachKampf);
 };
 
-func void dia_akil_nachkampf_gold()
+func void DIA_Akil_NachKampf_Gold()
 {
 	AI_Output(other,self,"DIA_Akil_NachKampf_Gold_15_00");	//Mo¿e parê sztuk z³ota?
 	AI_Output(self,other,"DIA_Akil_NachKampf_Gold_13_01");	//Obawiam siê, ¿e ciê rozczarujê - jesteœmy biedakami. Wystarcza nam na proste ¿ycie.
 	AI_Output(self,other,"DIA_Akil_NachKampf_Gold_13_02");	//Mogê ci tylko zaproponowaæ posi³ek. IdŸ do Kati, ona siê tob¹ zajmie.
-	b_giveplayerxp(XP_AKIL_SLDWEGVOMHOF);
-	Info_ClearChoices(dia_akil_nachkampf);
-	KATI_MAHLZEIT = TRUE;
+	B_GivePlayerXP(XP_Akil_SLDWegVomHof);
+	Info_ClearChoices(DIA_Akil_NachKampf);
+	Kati_Mahlzeit = TRUE;
 };
 
 
-instance DIA_AKIL_SOELDNER(C_INFO)
+instance DIA_Akil_Soeldner(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 7;
-	condition = dia_akil_soeldner_condition;
-	information = dia_akil_soeldner_info;
+	condition = DIA_Akil_Soeldner_Condition;
+	information = DIA_Akil_Soeldner_Info;
 	permanent = FALSE;
 	description = "Czego chcieli od ciebie ci najemnicy?";
 };
 
 
-func int dia_akil_soeldner_condition()
+func int DIA_Akil_Soeldner_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_akil_nachkampf))
+	if(Npc_KnowsInfo(other,DIA_Akil_NachKampf))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_soeldner_info()
+func void DIA_Akil_Soeldner_Info()
 {
 	AI_Output(other,self,"DIA_Akil_Soeldner_15_00");	//Czego chcieli od ciebie ci najemnicy?
 	if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
@@ -200,140 +200,140 @@ func void dia_akil_soeldner_info()
 };
 
 
-instance DIA_AKIL_LIEFERUNG(C_INFO)
+instance DIA_Akil_Lieferung(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 20;
-	condition = dia_akil_lieferung_condition;
-	information = dia_akil_lieferung_info;
+	condition = DIA_Akil_Lieferung_Condition;
+	information = DIA_Akil_Lieferung_Info;
 	permanent = FALSE;
 	description = "Baltram mnie przys³a³...";
 };
 
 
-func int dia_akil_lieferung_condition()
+func int DIA_Akil_Lieferung_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_akil_nachkampf) && (MIS_BALTRAM_SCOUTAKIL == LOG_RUNNING))
+	if(Npc_KnowsInfo(other,DIA_Akil_NachKampf) && (MIS_Baltram_ScoutAkil == LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_lieferung_info()
+func void DIA_Akil_Lieferung_Info()
 {
 	AI_Output(other,self,"DIA_Akil_Lieferung_15_00");	//Baltram mnie przys³a³. Mam dla niego zabraæ dostawê.
 	AI_Output(self,other,"DIA_Akil_Lieferung_13_01");	//A wiêc jesteœ jego nowym pos³añcem. W porz¹dku, mam ju¿ gotow¹ paczkê.
-	CreateInvItems(self,itmi_baltrampaket,1);
-	b_giveinvitems(self,other,5703,1);
-	LIEFERUNG_GEHOLT = TRUE;
-	b_logentry(TOPIC_BALTRAM,"Mam przesy³kê. Mogê j¹ teraz zabraæ do Baltrama…");
-	b_logentry(TOPIC_NAGUR,"Mam przesy³kê. Mogê j¹ teraz zabraæ do Nagura…");
+	CreateInvItems(self,ItMi_BaltramPaket,1);
+	B_GiveInvItems(self,other,ItMi_BaltramPaket,1);
+	Lieferung_Geholt = TRUE;
+	B_LogEntry(TOPIC_Baltram,"Mam przesy³kê. Mogê j¹ teraz zabraæ do Baltrama…");
+	B_LogEntry(TOPIC_Nagur,"Mam przesy³kê. Mogê j¹ teraz zabraæ do Nagura…");
 };
 
 
-instance DIA_AKIL_GEGEND(C_INFO)
+instance DIA_Akil_Gegend(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 90;
-	condition = dia_akil_gegend_condition;
-	information = dia_akil_gegend_info;
+	condition = DIA_Akil_Gegend_Condition;
+	information = DIA_Akil_Gegend_Info;
 	permanent = FALSE;
 	description = "Znasz mo¿e trochê okolicê?";
 };
 
 
-func int dia_akil_gegend_condition()
+func int DIA_Akil_Gegend_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_akil_soeldner) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Akil_Soeldner) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
 
-var int knows_taverne;
+var int Knows_Taverne;
 
-func void dia_akil_gegend_info()
+func void DIA_Akil_Gegend_Info()
 {
 	AI_Output(other,self,"DIA_Akil_Gegend_15_00");	//Znasz mo¿e trochê okolicê?
 	AI_Output(self,other,"DIA_Akil_Gegend_13_01");	//Jasne, co chcesz wiedzieæ?
 };
 
 
-instance DIA_AKIL_HOF(C_INFO)
+instance DIA_Akil_Hof(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 20;
-	condition = dia_akil_hof_condition;
-	information = dia_akil_hof_info;
+	condition = DIA_Akil_Hof_Condition;
+	information = DIA_Akil_Hof_Info;
 	permanent = FALSE;
 	description = "Gdzie znajdê gospodarstwo Onara?";
 };
 
 
-func int dia_akil_hof_condition()
+func int DIA_Akil_Hof_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_akil_gegend))
+	if(Npc_KnowsInfo(other,DIA_Akil_Gegend))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_hof_info()
+func void DIA_Akil_Hof_Info()
 {
 	AI_Output(other,self,"DIA_Akil_Gegend_Onar_15_00");	//Gdzie znajdê gospodarstwo Onara?
 	AI_Output(self,other,"DIA_Akil_Gegend_Onar_13_01");	//Cofnij siê do kamiennych schodów i idŸ drog¹ na wschód.
 	AI_Output(self,other,"DIA_Akil_Gegend_Onar_13_02");	//Tak dojdziesz do tawerny. Stamt¹d idŸ dalej na wschód, dopóki nie dojdziesz do wielkich pól. Tam siê krêc¹ najemnicy.
-	KNOWS_TAVERNE = TRUE;
+	Knows_Taverne = TRUE;
 };
 
 
-instance DIA_AKIL_TAVERNE(C_INFO)
+instance DIA_Akil_Taverne(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 20;
-	condition = dia_akil_taverne_condition;
-	information = dia_akil_taverne_info;
+	condition = DIA_Akil_Taverne_Condition;
+	information = DIA_Akil_Taverne_Info;
 	permanent = FALSE;
 	description = "Co to za gospoda, ta na wschodzie?";
 };
 
 
-func int dia_akil_taverne_condition()
+func int DIA_Akil_Taverne_Condition()
 {
-	if(KNOWS_TAVERNE == TRUE)
+	if(Knows_Taverne == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_taverne_info()
+func void DIA_Akil_Taverne_Info()
 {
 	AI_Output(other,self,"DIA_Akil_Gegend_Taverne_15_00");	//Co to za gospoda, ta na wschodzie?
 	AI_Output(self,other,"DIA_Akil_Gegend_Taverne_13_01");	//Zapytaj Randolfa. On wie na ten temat wiêcej. By³ tam kilka razy.
 };
 
 
-instance DIA_AKIL_WALD(C_INFO)
+instance DIA_Akil_Wald(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 20;
-	condition = dia_akil_wald_condition;
-	information = dia_akil_wald_info;
+	condition = DIA_Akil_Wald_Condition;
+	information = DIA_Akil_Wald_Info;
 	permanent = FALSE;
 	description = "Co jest w lasach za twoim gospodarstwem?";
 };
 
 
-func int dia_akil_wald_condition()
+func int DIA_Akil_Wald_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_akil_gegend))
+	if(Npc_KnowsInfo(other,DIA_Akil_Gegend))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_wald_info()
+func void DIA_Akil_Wald_Info()
 {
 	AI_Output(other,self,"DIA_Akil_Gegend_Wald_15_00");	//Co jest w lasach za twoim gospodarstwem?
 	AI_Output(self,other,"DIA_Akil_Gegend_Wald_13_01");	//Tam jest pe³no potworów, a wilki nie s¹ z nich najgroŸniejsze.
@@ -341,31 +341,31 @@ func void dia_akil_wald_info()
 };
 
 
-instance DIA_AKIL_PERM(C_INFO)
+instance DIA_Akil_Perm(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 32;
-	condition = dia_akil_perm_condition;
-	information = dia_akil_perm_info;
+	condition = DIA_Akil_Perm_Condition;
+	information = DIA_Akil_Perm_Info;
 	permanent = TRUE;
 	description = "Czy coœ jeszcze siê dzia³o?";
 };
 
 
-func int dia_akil_perm_condition()
+func int DIA_Akil_Perm_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_akil_soeldner) && (KAPITEL >= 3))
+	if(Npc_KnowsInfo(other,DIA_Akil_Soeldner) && (Kapitel >= 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_perm_info()
+func void DIA_Akil_Perm_Info()
 {
 	AI_Output(other,self,"DIA_Akil_Perm_15_00");	//Czy coœ jeszcze siê dzia³o?
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
-		if(MIS_AKIL_SCHAFDIEBE == LOG_SUCCESS)
+		if(MIS_Akil_SchafDiebe == LOG_SUCCESS)
 		{
 			AI_Output(self,other,"DIA_Akil_Perm_13_01");	//Nie. Mam nadziejê, ¿e owce pozostan¹ tam, gdzie teraz s¹.
 		}
@@ -394,105 +394,105 @@ func void dia_akil_perm_info()
 };
 
 
-instance DIA_AKIL_KAP3_EXIT(C_INFO)
+instance DIA_Akil_KAP3_EXIT(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 999;
-	condition = dia_akil_kap3_exit_condition;
-	information = dia_akil_kap3_exit_info;
+	condition = DIA_Akil_KAP3_EXIT_Condition;
+	information = DIA_Akil_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_akil_kap3_exit_condition()
+func int DIA_Akil_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_kap3_exit_info()
+func void DIA_Akil_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_AKIL_SCHAFDIEB(C_INFO)
+instance DIA_Akil_SCHAFDIEB(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 2;
-	condition = dia_akil_schafdieb_condition;
-	information = dia_akil_schafdieb_info;
+	condition = DIA_Akil_SCHAFDIEB_Condition;
+	information = DIA_Akil_SCHAFDIEB_Info;
 	description = "O, to temat na ca³¹ powieœæ.";
 };
 
 
-func int dia_akil_schafdieb_condition()
+func int DIA_Akil_SCHAFDIEB_Condition()
 {
-	if(KAPITEL >= 3)
+	if(Kapitel >= 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_schafdieb_info()
+func void DIA_Akil_SCHAFDIEB_Info()
 {
 	AI_Output(other,self,"DIA_Akil_SCHAFDIEB_15_00");	//Czy wydarzy³o siê jeszcze coœ nowego?
 	AI_Output(self,other,"DIA_Akil_SCHAFDIEB_13_01");	//Ostatnio ktoœ kradnie mi owce. Nie mogê spaæ spokojnie.
-	Info_ClearChoices(dia_akil_schafdieb);
-	Info_AddChoice(dia_akil_schafdieb,"To nie mój problem.",dia_akil_schafdieb_nein);
-	Info_AddChoice(dia_akil_schafdieb,"Ile owiec ci zginê³o?",dia_akil_schafdieb_wieviel);
-	Info_AddChoice(dia_akil_schafdieb,"Kto móg³ to zrobiæ?",dia_akil_schafdieb_wer);
-	MIS_AKIL_SCHAFDIEBE = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_AKILSCHAFDIEBE,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_AKILSCHAFDIEBE,LOG_RUNNING);
-	b_logentry(TOPIC_AKILSCHAFDIEBE,"Akilowi gin¹ kolejne owce. Podejrzewa, ¿e to sprawka bandytów ukrywaj¹cych siê w pobliskiej leœnej jaskini.");
+	Info_ClearChoices(DIA_Akil_SCHAFDIEB);
+	Info_AddChoice(DIA_Akil_SCHAFDIEB,"To nie mój problem.",DIA_Akil_SCHAFDIEB_nein);
+	Info_AddChoice(DIA_Akil_SCHAFDIEB,"Ile owiec ci zginê³o?",DIA_Akil_SCHAFDIEB_wieviel);
+	Info_AddChoice(DIA_Akil_SCHAFDIEB,"Kto móg³ to zrobiæ?",DIA_Akil_SCHAFDIEB_wer);
+	MIS_Akil_SchafDiebe = LOG_Running;
+	Log_CreateTopic(TOPIC_AkilSchafDiebe,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_AkilSchafDiebe,LOG_Running);
+	B_LogEntry(TOPIC_AkilSchafDiebe,"Akilowi gin¹ kolejne owce. Podejrzewa, ¿e to sprawka bandytów ukrywaj¹cych siê w pobliskiej leœnej jaskini.");
 };
 
-func void dia_akil_schafdieb_wer()
+func void DIA_Akil_SCHAFDIEB_wer()
 {
 	AI_Output(other,self,"DIA_Akil_SCHAFDIEB_wer_15_00");	//Kto móg³ to zrobiæ?
 	AI_Output(self,other,"DIA_Akil_SCHAFDIEB_wer_13_01");	//Mam pewne podejrzenia.
 	AI_Output(self,other,"DIA_Akil_SCHAFDIEB_wer_13_02");	//W jaskiniach w lesie ukrywaj¹ siê jacyœ paskudni osobnicy.
 	AI_Output(self,other,"DIA_Akil_SCHAFDIEB_wer_13_03");	//Jakoœ trudno mi uwierzyæ, ¿e ¿ywi¹ siê jagódkami. Jestem prawie pewien, ¿e to przez nich znikaj¹ moje owce.
-	Info_ClearChoices(dia_akil_schafdieb);
+	Info_ClearChoices(DIA_Akil_SCHAFDIEB);
 };
 
-func void dia_akil_schafdieb_wieviel()
+func void DIA_Akil_SCHAFDIEB_wieviel()
 {
 	AI_Output(other,self,"DIA_Akil_SCHAFDIEB_wieviel_15_00");	//Ile owiec ci zginê³o?
 	AI_Output(self,other,"DIA_Akil_SCHAFDIEB_wieviel_13_01");	//Do tej pory straci³em co najmniej trzy.
 };
 
-func void dia_akil_schafdieb_nein()
+func void DIA_Akil_SCHAFDIEB_nein()
 {
 	AI_Output(other,self,"DIA_Akil_SCHAFDIEB_nein_15_00");	//To nie mój problem.
 	AI_Output(self,other,"DIA_Akil_SCHAFDIEB_nein_13_01");	//Rozumiem. Masz inne sprawy na g³owie.
-	Info_ClearChoices(dia_akil_schafdieb);
+	Info_ClearChoices(DIA_Akil_SCHAFDIEB);
 };
 
 
-instance DIA_AKIL_SCHAFDIEBEPLATT(C_INFO)
+instance DIA_Akil_SCHAFDIEBEPLATT(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 2;
-	condition = dia_akil_schafdiebeplatt_condition;
-	information = dia_akil_schafdiebeplatt_info;
+	condition = DIA_Akil_SCHAFDIEBEPLATT_Condition;
+	information = DIA_Akil_SCHAFDIEBEPLATT_Info;
 	description = "Znalaz³em z³odziei owiec.";
 };
 
 
-func int dia_akil_schafdiebeplatt_condition()
+func int DIA_Akil_SCHAFDIEBEPLATT_Condition()
 {
-	if((KAPITEL >= 3) && (MIS_AKIL_SCHAFDIEBE == LOG_RUNNING) && Npc_IsDead(bdt_1025_bandit_h) && Npc_IsDead(bdt_1026_bandit_h) && Npc_IsDead(bdt_1027_bandit_h))
+	if((Kapitel >= 3) && (MIS_Akil_SchafDiebe == LOG_Running) && Npc_IsDead(BDT_1025_Bandit_H) && Npc_IsDead(BDT_1026_Bandit_H) && Npc_IsDead(BDT_1027_Bandit_H))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_schafdiebeplatt_info()
+func void DIA_Akil_SCHAFDIEBEPLATT_Info()
 {
 	AI_Output(other,self,"DIA_Akil_SCHAFDIEBEPLATT_15_00");	//Znalaz³em z³odziei owiec.
 	AI_Output(other,self,"DIA_Akil_SCHAFDIEBEPLATT_15_01");	//Mia³eœ racjê. To ci ludzie z lasu. Ju¿ nigdy ciê nie okradn¹.
@@ -509,149 +509,149 @@ func void dia_akil_schafdiebeplatt_info()
 		AI_Output(self,other,"DIA_Akil_SCHAFDIEBEPLATT_13_04");	//Dziêki. Dziwny z ciebie najemnik. Nie taki jak ci, których zna³em do tej pory.
 	};
 	AI_Output(self,other,"DIA_Akil_SCHAFDIEBEPLATT_13_05");	//WeŸ to jako ma³y wyraz mojej wdziêcznoœci za tw¹ bezinteresown¹ pomoc.
-	CreateInvItems(self,itmi_gold,150);
-	b_giveinvitems(self,other,5113,150);
-	MIS_AKIL_SCHAFDIEBE = LOG_SUCCESS;
-	b_giveplayerxp(XP_AKIL_SCHAFDIEBE);
+	CreateInvItems(self,ItMi_Gold,150);
+	B_GiveInvItems(self,other,ItMi_Gold,150);
+	MIS_Akil_SchafDiebe = LOG_SUCCESS;
+	B_GivePlayerXP(XP_Akil_SchafDiebe);
 };
 
 
-instance DIA_AKIL_AKILSSCHAF(C_INFO)
+instance DIA_Akil_AkilsSchaf(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 2;
-	condition = dia_akil_akilsschaf_condition;
-	information = dia_akil_akilsschaf_info;
+	condition = DIA_Akil_AkilsSchaf_Condition;
+	information = DIA_Akil_AkilsSchaf_Info;
 	description = "(Oddaj owce Akila)";
 };
 
 
-func int dia_akil_akilsschaf_condition()
+func int DIA_Akil_AkilsSchaf_Condition()
 {
-	if((KAPITEL >= 3) && (Npc_GetDistToNpc(self,follow_sheep_akil) < 1000) && (MIS_AKIL_SCHAFDIEBE != 0))
+	if((Kapitel >= 3) && (Npc_GetDistToNpc(self,Follow_Sheep_AKIL) < 1000) && (MIS_Akil_SchafDiebe != 0))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_akilsschaf_info()
+func void DIA_Akil_AkilsSchaf_Info()
 {
 	AI_Output(self,other,"DIA_Akil_AkilsSchaf_13_01");	//Bardzo dobrze. Tu masz kilka monet. Mam nadziejê, ¿e to wystarczy.
-	CreateInvItems(self,itmi_gold,150);
-	b_giveinvitems(self,other,5113,150);
-	follow_sheep_akil.aivar[AIV_PARTYMEMBER] = FALSE;
-	follow_sheep_akil.wp = "NW_FARM2_OUT_02";
-	follow_sheep_akil.start_aistate = zs_mm_allscheduler;
-	b_giveplayerxp(XP_AKILSSCHAF);
+	CreateInvItems(self,ItMi_Gold,150);
+	B_GiveInvItems(self,other,ItMi_Gold,150);
+	Follow_Sheep_AKIL.aivar[AIV_PARTYMEMBER] = FALSE;
+	Follow_Sheep_AKIL.wp = "NW_FARM2_OUT_02";
+	Follow_Sheep_AKIL.start_aistate = ZS_MM_AllScheduler;
+	B_GivePlayerXP(XP_AkilsSchaf);
 };
 
 
-instance DIA_AKIL_KAP4_EXIT(C_INFO)
+instance DIA_Akil_KAP4_EXIT(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 999;
-	condition = dia_akil_kap4_exit_condition;
-	information = dia_akil_kap4_exit_info;
+	condition = DIA_Akil_KAP4_EXIT_Condition;
+	information = DIA_Akil_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_akil_kap4_exit_condition()
+func int DIA_Akil_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_kap4_exit_info()
+func void DIA_Akil_KAP4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_AKIL_KAP5_EXIT(C_INFO)
+instance DIA_Akil_KAP5_EXIT(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 999;
-	condition = dia_akil_kap5_exit_condition;
-	information = dia_akil_kap5_exit_info;
+	condition = DIA_Akil_KAP5_EXIT_Condition;
+	information = DIA_Akil_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_akil_kap5_exit_condition()
+func int DIA_Akil_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_kap5_exit_info()
+func void DIA_Akil_KAP5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_AKIL_KAP6_EXIT(C_INFO)
+instance DIA_Akil_KAP6_EXIT(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 999;
-	condition = dia_akil_kap6_exit_condition;
-	information = dia_akil_kap6_exit_info;
+	condition = DIA_Akil_KAP6_EXIT_Condition;
+	information = DIA_Akil_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_akil_kap6_exit_condition()
+func int DIA_Akil_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_akil_kap6_exit_info()
+func void DIA_Akil_KAP6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_AKIL_PICKPOCKET(C_INFO)
+instance DIA_Akil_PICKPOCKET(C_Info)
 {
-	npc = bau_940_akil;
+	npc = BAU_940_Akil;
 	nr = 900;
-	condition = dia_akil_pickpocket_condition;
-	information = dia_akil_pickpocket_info;
+	condition = DIA_Akil_PICKPOCKET_Condition;
+	information = DIA_Akil_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_akil_pickpocket_condition()
+func int DIA_Akil_PICKPOCKET_Condition()
 {
-	return c_beklauen(37,30);
+	return C_Beklauen(37,30);
 };
 
-func void dia_akil_pickpocket_info()
+func void DIA_Akil_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_akil_pickpocket);
-	Info_AddChoice(dia_akil_pickpocket,DIALOG_BACK,dia_akil_pickpocket_back);
-	Info_AddChoice(dia_akil_pickpocket,DIALOG_PICKPOCKET,dia_akil_pickpocket_doit);
+	Info_ClearChoices(DIA_Akil_PICKPOCKET);
+	Info_AddChoice(DIA_Akil_PICKPOCKET,Dialog_Back,DIA_Akil_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Akil_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Akil_PICKPOCKET_DoIt);
 };
 
-func void dia_akil_pickpocket_doit()
+func void DIA_Akil_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_akil_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Akil_PICKPOCKET);
 };
 
-func void dia_akil_pickpocket_back()
+func void DIA_Akil_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_akil_pickpocket);
+	Info_ClearChoices(DIA_Akil_PICKPOCKET);
 };
 

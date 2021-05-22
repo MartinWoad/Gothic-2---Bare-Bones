@@ -1,35 +1,35 @@
 
-instance MIL_337_MIKA(NPC_DEFAULT)
+instance Mil_337_Mika(Npc_Default)
 {
 	name[0] = "Mika";
 	guild = GIL_OUT;
 	id = 337;
 	voice = 12;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,2);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,2);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_mil_sword);
-	CreateInvItems(self,itpo_health_01,4);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fatbald",FACE_L_TOUGHBART_QUENTIN,BODYTEX_L,4826);
+	EquipItem(self,ItMw_1h_Mil_Sword);
+	CreateInvItems(self,ItPo_Health_01,4);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fatbald",Face_L_ToughBart_Quentin,BodyTex_L,ITAR_Mil_L);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_337;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_337;
 };
 
 
-func void rtn_start_337()
+func void Rtn_Start_337()
 {
-	ta_stand_guarding(8,0,22,0,"NW_CITY_TO_FOREST_01");
-	ta_stand_guarding(22,0,8,0,"NW_CITY_TO_FOREST_01");
+	TA_Stand_Guarding(8,0,22,0,"NW_CITY_TO_FOREST_01");
+	TA_Stand_Guarding(22,0,8,0,"NW_CITY_TO_FOREST_01");
 };
 
-func void rtn_akil_337()
+func void Rtn_Akil_337()
 {
-	ta_runtowp(6,0,18,0,"NW_FARM2_PATH_03");
-	ta_runtowp(18,0,6,0,"NW_FARM2_PATH_03");
+	TA_RunToWP(6,0,18,0,"NW_FARM2_PATH_03");
+	TA_RunToWP(18,0,6,0,"NW_FARM2_PATH_03");
 };
 

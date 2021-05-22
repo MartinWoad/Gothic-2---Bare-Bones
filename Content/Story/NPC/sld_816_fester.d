@@ -1,52 +1,52 @@
 
-instance SLD_816_FESTER(NPC_DEFAULT)
+instance Sld_816_Fester(Npc_Default)
 {
 	name[0] = "Fester";
 	guild = GIL_SLD;
 	id = 816;
 	voice = 8;
 	flags = 0;
-	npctype = NPCTYPE_FRIEND;
-	b_setattributestochapter(self,1);
+	npcType = NPCTYPE_FRIEND;
+	B_SetAttributesToChapter(self,1);
 	level = 8;
 	fight_tactic = FAI_HUMAN_NORMAL;
-	EquipItem(self,itmw_1h_sld_axe);
-	EquipItem(self,itrw_sld_bow);
-	CreateInvItems(self,itrw_arrow,12);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_N_NORMALBART05,BODYTEX_N,4834);
+	EquipItem(self,ItMw_1h_Sld_Axe);
+	EquipItem(self,ItRw_Sld_Bow);
+	CreateInvItems(self,ItRw_Arrow,12);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_N_NormalBart05,BodyTex_N,ItAr_Sld_L);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	b_addfightskill(self,NPC_TALENT_BOW,30,FALSE);
-	daily_routine = rtn_start_816;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	B_AddFightSkill(self,NPC_TALENT_BOW,30,FALSE);
+	daily_routine = Rtn_Start_816;
 };
 
 
-func void rtn_start_816()
+func void Rtn_Start_816()
 {
-	ta_practice_sword(5,0,6,0,"NW_BIGFARM_ALLEE_04");
-	ta_practice_sword(6,0,7,0,"NW_BIGFARM_ALLEE_02");
-	ta_practice_sword(7,0,8,0,"NW_BIGFARM_ALLEE_04");
-	ta_practice_sword(8,0,9,0,"NW_BIGFARM_ALLEE_02");
-	ta_practice_sword(9,0,10,0,"NW_BIGFARM_ALLEE_04");
-	ta_practice_sword(10,0,11,0,"NW_BIGFARM_ALLEE_02");
-	ta_practice_sword(11,0,12,0,"NW_BIGFARM_ALLEE_04");
-	ta_practice_sword(12,0,13,0,"NW_BIGFARM_ALLEE_02");
-	ta_practice_sword(13,0,14,0,"NW_BIGFARM_ALLEE_04");
-	ta_practice_sword(14,0,15,0,"NW_BIGFARM_ALLEE_02");
-	ta_practice_sword(15,0,16,0,"NW_BIGFARM_ALLEE_04");
-	ta_practice_sword(16,0,17,0,"NW_BIGFARM_ALLEE_02");
-	ta_practice_sword(17,0,18,0,"NW_BIGFARM_ALLEE_04");
-	ta_practice_sword(18,0,19,0,"NW_BIGFARM_ALLEE_02");
-	ta_practice_sword(19,0,20,0,"NW_BIGFARM_ALLEE_04");
-	ta_sit_campfire(20,0,6,0,"NW_BIGFARM_VORPOSTEN1_01");
+	TA_Practice_Sword(5,0,6,0,"NW_BIGFARM_ALLEE_04");
+	TA_Practice_Sword(6,0,7,0,"NW_BIGFARM_ALLEE_02");
+	TA_Practice_Sword(7,0,8,0,"NW_BIGFARM_ALLEE_04");
+	TA_Practice_Sword(8,0,9,0,"NW_BIGFARM_ALLEE_02");
+	TA_Practice_Sword(9,0,10,0,"NW_BIGFARM_ALLEE_04");
+	TA_Practice_Sword(10,0,11,0,"NW_BIGFARM_ALLEE_02");
+	TA_Practice_Sword(11,0,12,0,"NW_BIGFARM_ALLEE_04");
+	TA_Practice_Sword(12,0,13,0,"NW_BIGFARM_ALLEE_02");
+	TA_Practice_Sword(13,0,14,0,"NW_BIGFARM_ALLEE_04");
+	TA_Practice_Sword(14,0,15,0,"NW_BIGFARM_ALLEE_02");
+	TA_Practice_Sword(15,0,16,0,"NW_BIGFARM_ALLEE_04");
+	TA_Practice_Sword(16,0,17,0,"NW_BIGFARM_ALLEE_02");
+	TA_Practice_Sword(17,0,18,0,"NW_BIGFARM_ALLEE_04");
+	TA_Practice_Sword(18,0,19,0,"NW_BIGFARM_ALLEE_02");
+	TA_Practice_Sword(19,0,20,0,"NW_BIGFARM_ALLEE_04");
+	TA_Sit_Campfire(20,0,6,0,"NW_BIGFARM_VORPOSTEN1_01");
 };
 
-func void rtn_guide_816()
+func void Rtn_Guide_816()
 {
-	ta_guide_player(8,0,20,0,"NW_BIGFARM_FELDREUBER4");
-	ta_guide_player(20,0,8,0,"NW_BIGFARM_FELDREUBER4");
+	TA_Guide_Player(8,0,20,0,"NW_BIGFARM_FELDREUBER4");
+	TA_Guide_Player(20,0,8,0,"NW_BIGFARM_FELDREUBER4");
 };
 

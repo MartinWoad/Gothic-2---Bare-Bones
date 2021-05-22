@@ -1,30 +1,30 @@
 
-instance PAL_217_MARCOS(NPC_DEFAULT)
+instance PAL_217_Marcos(Npc_Default)
 {
 	name[0] = "Marcos";
 	guild = GIL_OUT;
 	id = 217;
 	voice = 4;
 	flags = NPC_FLAG_IMMORTAL;
-	npctype = NPCTYPE_OCMAIN;
-	b_setattributestochapter(self,4);
+	npcType = NPCTYPE_OCMAIN;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_pal_sword);
-	EquipItem(self,itrw_mil_crossbow);
-	CreateInvItems(self,itrw_bolt,11);
-	CreateInvItems(self,itpo_health_03,5);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_P_TOUGH_RODRIGUEZ,BODYTEX_P,4829);
+	EquipItem(self,ItMw_1h_Pal_Sword);
+	EquipItem(self,ItRw_Mil_Crossbow);
+	CreateInvItems(self,ItRw_Bolt,11);
+	CreateInvItems(self,ItPo_Health_03,5);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_P_Tough_Rodriguez,BodyTex_P,ItAr_PAl_H);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,75);
-	daily_routine = rtn_start_217;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,75);
+	daily_routine = Rtn_Start_217;
 };
 
 
-func void rtn_start_217()
+func void Rtn_Start_217()
 {
-	ta_stand_guarding(8,0,23,0,"OW_SAWHUT_MOLERAT_SPAWN01");
-	ta_stand_guarding(23,0,8,0,"OW_SAWHUT_MOLERAT_SPAWN01");
+	TA_Stand_Guarding(8,0,23,0,"OW_SAWHUT_MOLERAT_SPAWN01");
+	TA_Stand_Guarding(23,0,8,0,"OW_SAWHUT_MOLERAT_SPAWN01");
 };
 

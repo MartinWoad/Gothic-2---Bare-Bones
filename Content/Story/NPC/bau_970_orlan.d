@@ -1,34 +1,34 @@
 
-instance BAU_970_ORLAN(NPC_DEFAULT)
+instance BAU_970_Orlan(Npc_Default)
 {
 	name[0] = "Orlan";
 	guild = GIL_OUT;
 	id = 970;
 	voice = 5;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_vlk_dagger);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fatbald",FACE_B_NORMAL_SHARKY,BODYTEX_B,4831);
+	EquipItem(self,ItMw_1h_Vlk_Dagger);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fatbald",Face_B_Normal_Sharky,BodyTex_B,ITAR_Bau_M);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Arrogance.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,50);
-	daily_routine = rtn_start_970;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,50);
+	daily_routine = Rtn_Start_970;
 };
 
 
-func void rtn_start_970()
+func void Rtn_Start_970()
 {
-	ta_stand_wp(8,0,22,0,"NW_TAVERNE_IN_04");
-	ta_stand_wp(22,0,8,0,"NW_TAVERNE_IN_04");
+	TA_Stand_WP(8,0,22,0,"NW_TAVERNE_IN_04");
+	TA_Stand_WP(22,0,8,0,"NW_TAVERNE_IN_04");
 };
 
-func void rtn_wettkampf_970()
+func void Rtn_Wettkampf_970()
 {
-	ta_stand_wp(8,0,22,0,"NW_TAVERNE");
-	ta_stand_wp(22,0,8,0,"NW_TAVERNE");
+	TA_Stand_WP(8,0,22,0,"NW_TAVERNE");
+	TA_Stand_WP(22,0,8,0,"NW_TAVERNE");
 };
 

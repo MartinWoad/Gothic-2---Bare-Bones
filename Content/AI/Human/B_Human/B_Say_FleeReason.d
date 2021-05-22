@@ -1,5 +1,5 @@
 
-func void b_say_fleereason()
+func void B_Say_FleeReason()
 {
 };
 

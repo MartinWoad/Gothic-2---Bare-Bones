@@ -1,68 +1,68 @@
 
-const int VALUE_RI_PROTFIRE = 100;
-const int RI_PROTFIRE = 2;
-const int VALUE_RI_PROTEDGE = 100;
-const int RI_PROTEDGE = 1;
-const int VALUE_RI_PROTMAGE = 100;
-const int RI_PROTMAGE = 2;
-const int VALUE_RI_PROTPOINT = 100;
-const int RI_PROTPOINT = 1;
-const int VALUE_RI_PROTFIRE02 = 200;
-const int RI_PROTFIRE02 = 4;
-const int VALUE_RI_PROTEDGE02 = 200;
-const int RI_PROTEDGE02 = 2;
-const int VALUE_RI_PROTMAGE02 = 200;
-const int RI_PROTMAGE02 = 4;
-const int VALUE_RI_PROTPOINT02 = 200;
-const int RI_PROTPOINT02 = 2;
-const int VALUE_RI_PROTTOTAL = 250;
-const int RI_TPROTFIRE = 2;
-const int RI_TPROTEDGE = 1;
-const int RI_TPROTMAGE = 2;
-const int RI_TPROTPOINT = 1;
-const int VALUE_RI_PROTTOTAL02 = 500;
-const int RI_TPROTFIRE02 = 4;
-const int RI_TPROTEDGE02 = 2;
-const int RI_TPROTMAGE02 = 4;
-const int RI_TPROTPOINT02 = 2;
-const int VALUE_RI_DEX = 100;
-const int RI_DEX = 1;
-const int VALUE_RI_DEX02 = 200;
-const int RI_DEX02 = 2;
-const int VALUE_RI_MANA = 100;
-const int RI_MANA = 2;
-const int VALUE_RI_MANA02 = 200;
-const int RI_MANA02 = 4;
-const int VALUE_RI_STRG = 100;
-const int RI_STRG = 1;
-const int VALUE_RI_STRG02 = 200;
-const int RI_STRG02 = 2;
-const int VALUE_RI_HP = 100;
-const int RI_HP = 5;
-const int VALUE_RI_HP02 = 200;
-const int RI_HP02 = 10;
-const int VALUE_RI_HPMANA = 250;
-const int RI_HPMANA_HP = 5;
-const int RI_HPMANA_MANA = 2;
-const int VALUE_RI_DEXSTRG = 250;
-const int RI_DEXSTRG_DEX = 1;
-const int RI_DEXSTRG_STRG = 1;
+const int Value_Ri_ProtFire = 100;
+const int Ri_ProtFire = 2;
+const int Value_Ri_ProtEdge = 100;
+const int Ri_ProtEdge = 1;
+const int Value_Ri_ProtMage = 100;
+const int Ri_ProtMage = 2;
+const int Value_Ri_ProtPoint = 100;
+const int Ri_ProtPoint = 1;
+const int Value_Ri_ProtFire02 = 200;
+const int Ri_ProtFire02 = 4;
+const int Value_Ri_ProtEdge02 = 200;
+const int Ri_ProtEdge02 = 2;
+const int Value_Ri_ProtMage02 = 200;
+const int Ri_ProtMage02 = 4;
+const int Value_Ri_ProtPoint02 = 200;
+const int Ri_ProtPoint02 = 2;
+const int Value_Ri_ProtTotal = 250;
+const int Ri_TProtFire = 2;
+const int Ri_TProtEdge = 1;
+const int Ri_TProtMage = 2;
+const int Ri_TProtPoint = 1;
+const int Value_Ri_ProtTotal02 = 500;
+const int Ri_TProtFire02 = 4;
+const int Ri_TProtEdge02 = 2;
+const int Ri_TProtMage02 = 4;
+const int Ri_TProtPoint02 = 2;
+const int Value_Ri_Dex = 100;
+const int Ri_Dex = 1;
+const int Value_Ri_Dex02 = 200;
+const int Ri_Dex02 = 2;
+const int Value_Ri_Mana = 100;
+const int Ri_Mana = 2;
+const int Value_Ri_Mana02 = 200;
+const int Ri_Mana02 = 4;
+const int Value_Ri_Strg = 100;
+const int Ri_Strg = 1;
+const int Value_Ri_Strg02 = 200;
+const int Ri_Strg02 = 2;
+const int Value_Ri_Hp = 100;
+const int Ri_Hp = 5;
+const int Value_Ri_Hp02 = 200;
+const int Ri_Hp02 = 10;
+const int Value_Ri_HpMana = 250;
+const int Ri_HpMana_Hp = 5;
+const int Ri_HpMana_Mana = 2;
+const int Value_Ri_DexStrg = 250;
+const int Ri_DexStrg_Dex = 1;
+const int Ri_DexStrg_Strg = 1;
 
-instance ITRI_PROT_FIRE_01(C_ITEM)
+instance ItRi_Prot_Fire_01(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_PROTFIRE;
+	value = Value_Ri_ProtFire;
 	visual = "ItRi_Prot_Fire_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_prot_fire_01;
-	on_unequip = unequip_itri_prot_fire_01;
+	on_equip = Equip_ItRi_Prot_Fire_01;
+	on_unequip = UnEquip_ItRi_Prot_Fire_01;
 	description = "Pierœcieñ Ognia";
-	text[2] = NAME_PROT_FIRE;
-	count[2] = RI_PROTFIRE;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Prot_Fire;
+	count[2] = Ri_ProtFire;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -70,32 +70,32 @@ instance ITRI_PROT_FIRE_01(C_ITEM)
 };
 
 
-func void equip_itri_prot_fire_01()
+func void Equip_ItRi_Prot_Fire_01()
 {
-	self.protection[PROT_FIRE] += RI_PROTFIRE;
+	self.protection[PROT_FIRE] += Ri_ProtFire;
 };
 
-func void unequip_itri_prot_fire_01()
+func void UnEquip_ItRi_Prot_Fire_01()
 {
-	self.protection[PROT_FIRE] -= RI_PROTFIRE;
+	self.protection[PROT_FIRE] -= Ri_ProtFire;
 };
 
 
-instance ITRI_PROT_FIRE_02(C_ITEM)
+instance ItRi_Prot_Fire_02(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_PROTFIRE02;
+	value = Value_Ri_ProtFire02;
 	visual = "ItRi_Prot_Fire_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_prot_fire_02;
-	on_unequip = unequip_itri_prot_fire_02;
+	on_equip = Equip_ItRi_Prot_Fire_02;
+	on_unequip = UnEquip_ItRi_Prot_Fire_02;
 	description = "Pierœcieñ Wiecznego Ognia";
-	text[2] = NAME_PROT_FIRE;
-	count[2] = RI_PROTFIRE02;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Prot_Fire;
+	count[2] = Ri_ProtFire02;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -103,32 +103,32 @@ instance ITRI_PROT_FIRE_02(C_ITEM)
 };
 
 
-func void equip_itri_prot_fire_02()
+func void Equip_ItRi_Prot_Fire_02()
 {
-	self.protection[PROT_FIRE] += RI_PROTFIRE02;
+	self.protection[PROT_FIRE] += Ri_ProtFire02;
 };
 
-func void unequip_itri_prot_fire_02()
+func void UnEquip_ItRi_Prot_Fire_02()
 {
-	self.protection[PROT_FIRE] -= RI_PROTFIRE02;
+	self.protection[PROT_FIRE] -= Ri_ProtFire02;
 };
 
 
-instance ITRI_PROT_POINT_01(C_ITEM)
+instance ItRi_Prot_Point_01(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_PROTPOINT;
+	value = Value_Ri_ProtPoint;
 	visual = "ItRi_Prot_Point_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_prot_point_01;
-	on_unequip = unequip_itri_prot_point_01;
+	on_equip = Equip_ItRi_Prot_Point_01;
+	on_unequip = UnEquip_ItRi_Prot_Point_01;
 	description = "Pierœcieñ Drewnianej Skóry";
-	text[2] = NAME_PROT_POINT;
-	count[2] = RI_PROTPOINT;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Prot_Point;
+	count[2] = Ri_ProtPoint;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -136,32 +136,32 @@ instance ITRI_PROT_POINT_01(C_ITEM)
 };
 
 
-func void equip_itri_prot_point_01()
+func void Equip_ItRi_Prot_Point_01()
 {
-	self.protection[PROT_POINT] += RI_PROTPOINT;
+	self.protection[PROT_POINT] += Ri_ProtPoint;
 };
 
-func void unequip_itri_prot_point_01()
+func void UnEquip_ItRi_Prot_Point_01()
 {
-	self.protection[PROT_POINT] -= RI_PROTPOINT;
+	self.protection[PROT_POINT] -= Ri_ProtPoint;
 };
 
 
-instance ITRI_PROT_POINT_02(C_ITEM)
+instance ItRi_Prot_Point_02(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_PROTPOINT02;
+	value = Value_Ri_ProtPoint02;
 	visual = "ItRi_Prot_Point_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_prot_point_02;
-	on_unequip = unequip_itri_prot_point_02;
+	on_equip = Equip_ItRi_Prot_Point_02;
+	on_unequip = UnEquip_ItRi_Prot_Point_02;
 	description = "Pierœcieñ Kamiennej Skóry";
-	text[2] = NAME_PROT_POINT;
-	count[2] = RI_PROTPOINT02;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Prot_Point;
+	count[2] = Ri_ProtPoint02;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -169,32 +169,32 @@ instance ITRI_PROT_POINT_02(C_ITEM)
 };
 
 
-func void equip_itri_prot_point_02()
+func void Equip_ItRi_Prot_Point_02()
 {
-	self.protection[PROT_POINT] += RI_PROTPOINT02;
+	self.protection[PROT_POINT] += Ri_ProtPoint02;
 };
 
-func void unequip_itri_prot_point_02()
+func void UnEquip_ItRi_Prot_Point_02()
 {
-	self.protection[PROT_POINT] -= RI_PROTPOINT02;
+	self.protection[PROT_POINT] -= Ri_ProtPoint02;
 };
 
 
-instance ITRI_PROT_EDGE_01(C_ITEM)
+instance ItRi_Prot_Edge_01(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_PROTEDGE;
+	value = Value_Ri_ProtEdge;
 	visual = "ItRi_Prot_Edge_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_prot_edge_01;
-	on_unequip = unequip_itri_prot_edge_01;
+	on_equip = Equip_ItRi_Prot_Edge_01;
+	on_unequip = UnEquip_ItRi_Prot_Edge_01;
 	description = "Pierœcieñ ¯elaznej Skóry";
-	text[2] = NAME_PROT_EDGE;
-	count[2] = RI_PROTEDGE;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Prot_Edge;
+	count[2] = Ri_ProtEdge;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -202,34 +202,34 @@ instance ITRI_PROT_EDGE_01(C_ITEM)
 };
 
 
-func void equip_itri_prot_edge_01()
+func void Equip_ItRi_Prot_Edge_01()
 {
-	self.protection[PROT_EDGE] += RI_PROTEDGE;
-	self.protection[PROT_BLUNT] += RI_PROTEDGE;
+	self.protection[PROT_EDGE] += Ri_ProtEdge;
+	self.protection[PROT_BLUNT] += Ri_ProtEdge;
 };
 
-func void unequip_itri_prot_edge_01()
+func void UnEquip_ItRi_Prot_Edge_01()
 {
-	self.protection[PROT_EDGE] -= RI_PROTEDGE;
-	self.protection[PROT_BLUNT] -= RI_PROTEDGE;
+	self.protection[PROT_EDGE] -= Ri_ProtEdge;
+	self.protection[PROT_BLUNT] -= Ri_ProtEdge;
 };
 
 
-instance ITRI_PROT_EDGE_02(C_ITEM)
+instance ItRi_Prot_Edge_02(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_PROTEDGE02;
+	value = Value_Ri_ProtEdge02;
 	visual = "ItRi_Prot_Edge_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_prot_edge_02;
-	on_unequip = unequip_itri_prot_edge_02;
+	on_equip = Equip_ItRi_Prot_Edge_02;
+	on_unequip = UnEquip_ItRi_Prot_Edge_02;
 	description = "Pierœcieñ Magicznej Skóry";
-	text[2] = NAME_PROT_EDGE;
-	count[2] = RI_PROTEDGE02;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Prot_Edge;
+	count[2] = Ri_ProtEdge02;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -237,34 +237,34 @@ instance ITRI_PROT_EDGE_02(C_ITEM)
 };
 
 
-func void equip_itri_prot_edge_02()
+func void Equip_ItRi_Prot_Edge_02()
 {
-	self.protection[PROT_EDGE] += RI_PROTEDGE02;
-	self.protection[PROT_BLUNT] += RI_PROTEDGE02;
+	self.protection[PROT_EDGE] += Ri_ProtEdge02;
+	self.protection[PROT_BLUNT] += Ri_ProtEdge02;
 };
 
-func void unequip_itri_prot_edge_02()
+func void UnEquip_ItRi_Prot_Edge_02()
 {
-	self.protection[PROT_EDGE] -= RI_PROTEDGE02;
-	self.protection[PROT_BLUNT] -= RI_PROTEDGE02;
+	self.protection[PROT_EDGE] -= Ri_ProtEdge02;
+	self.protection[PROT_BLUNT] -= Ri_ProtEdge02;
 };
 
 
-instance ITRI_PROT_MAGE_01(C_ITEM)
+instance ItRi_Prot_Mage_01(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_PROTMAGE;
+	value = Value_Ri_ProtMage;
 	visual = "ItRi_Prot_Mage_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_prot_mage_01;
-	on_unequip = unequip_itri_prot_mage_01;
+	on_equip = Equip_ItRi_Prot_Mage_01;
+	on_unequip = UnEquip_ItRi_Prot_Mage_01;
 	description = "Pierœcieñ Zas³ony przed Magi¹";
-	text[2] = NAME_PROT_MAGIC;
-	count[2] = RI_PROTMAGE;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Prot_Magic;
+	count[2] = Ri_ProtMage;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -272,32 +272,32 @@ instance ITRI_PROT_MAGE_01(C_ITEM)
 };
 
 
-func void equip_itri_prot_mage_01()
+func void Equip_ItRi_Prot_Mage_01()
 {
-	self.protection[PROT_MAGIC] += RI_PROTMAGE;
+	self.protection[PROT_MAGIC] += Ri_ProtMage;
 };
 
-func void unequip_itri_prot_mage_01()
+func void UnEquip_ItRi_Prot_Mage_01()
 {
-	self.protection[PROT_MAGIC] -= RI_PROTMAGE;
+	self.protection[PROT_MAGIC] -= Ri_ProtMage;
 };
 
 
-instance ITRI_PROT_MAGE_02(C_ITEM)
+instance ItRi_Prot_Mage_02(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_PROTMAGE02;
+	value = Value_Ri_ProtMage02;
 	visual = "ItRi_Prot_Mage_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_prot_mage_02;
-	on_unequip = unequip_itri_prot_mage_02;
+	on_equip = Equip_ItRi_Prot_Mage_02;
+	on_unequip = UnEquip_ItRi_Prot_Mage_02;
 	description = "Pierœcieñ Ochrony przed Magi¹";
-	text[2] = NAME_PROT_MAGIC;
-	count[2] = RI_PROTMAGE02;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Prot_Magic;
+	count[2] = Ri_ProtMage02;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -305,38 +305,38 @@ instance ITRI_PROT_MAGE_02(C_ITEM)
 };
 
 
-func void equip_itri_prot_mage_02()
+func void Equip_ItRi_Prot_Mage_02()
 {
-	self.protection[PROT_MAGIC] += RI_PROTMAGE02;
+	self.protection[PROT_MAGIC] += Ri_ProtMage02;
 };
 
-func void unequip_itri_prot_mage_02()
+func void UnEquip_ItRi_Prot_Mage_02()
 {
-	self.protection[PROT_MAGIC] -= RI_PROTMAGE02;
+	self.protection[PROT_MAGIC] -= Ri_ProtMage02;
 };
 
 
-instance ITRI_PROT_TOTAL_01(C_ITEM)
+instance ItRi_Prot_Total_01(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_PROTTOTAL;
+	value = Value_Ri_ProtTotal;
 	visual = "ItRi_Prot_Total_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_prot_total_01;
-	on_unequip = unequip_itri_prot_total_01;
+	on_equip = Equip_ItRi_Prot_Total_01;
+	on_unequip = UnEquip_ItRi_Prot_Total_01;
 	description = "Pierœcieñ Wiecznych Zwyciêstw";
-	text[1] = NAME_PROT_MAGIC;
-	count[1] = RI_TPROTMAGE;
-	text[2] = NAME_PROT_FIRE;
-	count[2] = RI_TPROTFIRE;
-	text[3] = NAME_PROT_POINT;
-	count[3] = RI_TPROTPOINT;
-	text[4] = NAME_PROT_EDGE;
-	count[4] = RI_TPROTEDGE;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Prot_Magic;
+	count[1] = Ri_TProtMage;
+	text[2] = NAME_Prot_Fire;
+	count[2] = Ri_TProtFire;
+	text[3] = NAME_Prot_Point;
+	count[3] = Ri_TProtPoint;
+	text[4] = NAME_Prot_Edge;
+	count[4] = Ri_TProtEdge;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -344,46 +344,46 @@ instance ITRI_PROT_TOTAL_01(C_ITEM)
 };
 
 
-func void equip_itri_prot_total_01()
+func void Equip_ItRi_Prot_Total_01()
 {
-	self.protection[PROT_EDGE] += RI_TPROTEDGE;
-	self.protection[PROT_BLUNT] += RI_TPROTEDGE;
-	self.protection[PROT_POINT] += RI_TPROTPOINT;
-	self.protection[PROT_FIRE] += RI_TPROTFIRE;
-	self.protection[PROT_MAGIC] += RI_TPROTMAGE;
+	self.protection[PROT_EDGE] += Ri_TProtEdge;
+	self.protection[PROT_BLUNT] += Ri_TProtEdge;
+	self.protection[PROT_POINT] += Ri_TProtPoint;
+	self.protection[PROT_FIRE] += Ri_TProtFire;
+	self.protection[PROT_MAGIC] += Ri_TProtMage;
 };
 
-func void unequip_itri_prot_total_01()
+func void UnEquip_ItRi_Prot_Total_01()
 {
-	self.protection[PROT_EDGE] -= RI_TPROTEDGE;
-	self.protection[PROT_BLUNT] -= RI_TPROTEDGE;
-	self.protection[PROT_POINT] -= RI_TPROTPOINT;
-	self.protection[PROT_FIRE] -= RI_TPROTFIRE;
-	self.protection[PROT_MAGIC] -= RI_TPROTMAGE;
+	self.protection[PROT_EDGE] -= Ri_TProtEdge;
+	self.protection[PROT_BLUNT] -= Ri_TProtEdge;
+	self.protection[PROT_POINT] -= Ri_TProtPoint;
+	self.protection[PROT_FIRE] -= Ri_TProtFire;
+	self.protection[PROT_MAGIC] -= Ri_TProtMage;
 };
 
 
-instance ITRI_PROT_TOTAL_02(C_ITEM)
+instance ItRi_Prot_Total_02(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_PROTTOTAL02;
+	value = Value_Ri_ProtTotal02;
 	visual = "ItRi_Prot_Total_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_prot_total_02;
-	on_unequip = unequip_itri_prot_total_02;
+	on_equip = Equip_ItRi_Prot_Total_02;
+	on_unequip = UnEquip_ItRi_Prot_Total_02;
 	description = "Pierœcieñ Nietykalnoœci";
-	text[1] = NAME_PROT_MAGIC;
-	count[1] = RI_TPROTMAGE02;
-	text[2] = NAME_PROT_FIRE;
-	count[2] = RI_TPROTFIRE02;
-	text[3] = NAME_PROT_POINT;
-	count[3] = RI_TPROTPOINT02;
-	text[4] = NAME_PROT_EDGE;
-	count[4] = RI_TPROTEDGE02;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Prot_Magic;
+	count[1] = Ri_TProtMage02;
+	text[2] = NAME_Prot_Fire;
+	count[2] = Ri_TProtFire02;
+	text[3] = NAME_Prot_Point;
+	count[3] = Ri_TProtPoint02;
+	text[4] = NAME_Prot_Edge;
+	count[4] = Ri_TProtEdge02;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -391,40 +391,40 @@ instance ITRI_PROT_TOTAL_02(C_ITEM)
 };
 
 
-func void equip_itri_prot_total_02()
+func void Equip_ItRi_Prot_Total_02()
 {
-	self.protection[PROT_EDGE] += RI_TPROTEDGE02;
-	self.protection[PROT_BLUNT] += RI_TPROTEDGE02;
-	self.protection[PROT_POINT] += RI_TPROTPOINT02;
-	self.protection[PROT_FIRE] += RI_TPROTFIRE02;
-	self.protection[PROT_MAGIC] += RI_TPROTMAGE02;
+	self.protection[PROT_EDGE] += Ri_TProtEdge02;
+	self.protection[PROT_BLUNT] += Ri_TProtEdge02;
+	self.protection[PROT_POINT] += Ri_TProtPoint02;
+	self.protection[PROT_FIRE] += Ri_TProtFire02;
+	self.protection[PROT_MAGIC] += Ri_TProtMage02;
 };
 
-func void unequip_itri_prot_total_02()
+func void UnEquip_ItRi_Prot_Total_02()
 {
-	self.protection[PROT_EDGE] -= RI_TPROTEDGE02;
-	self.protection[PROT_BLUNT] -= RI_TPROTEDGE02;
-	self.protection[PROT_POINT] -= RI_TPROTPOINT02;
-	self.protection[PROT_FIRE] -= RI_TPROTFIRE02;
-	self.protection[PROT_MAGIC] -= RI_TPROTMAGE02;
+	self.protection[PROT_EDGE] -= Ri_TProtEdge02;
+	self.protection[PROT_BLUNT] -= Ri_TProtEdge02;
+	self.protection[PROT_POINT] -= Ri_TProtPoint02;
+	self.protection[PROT_FIRE] -= Ri_TProtFire02;
+	self.protection[PROT_MAGIC] -= Ri_TProtMage02;
 };
 
 
-instance ITRI_DEX_01(C_ITEM)
+instance ItRi_Dex_01(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_DEX;
+	value = Value_Ri_Dex;
 	visual = "ItRi_Dex_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_dex_01;
-	on_unequip = unequip_itri_dex_01;
+	on_equip = Equip_ItRi_Dex_01;
+	on_unequip = UnEquip_ItRi_Dex_01;
 	description = "Pierœcieñ Zdolnoœci";
-	text[2] = NAME_BONUS_DEX;
-	count[2] = RI_DEX;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Bonus_Dex;
+	count[2] = Ri_Dex;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -432,32 +432,32 @@ instance ITRI_DEX_01(C_ITEM)
 };
 
 
-func void equip_itri_dex_01()
+func void Equip_ItRi_Dex_01()
 {
-	b_raiseattribute(self,ATR_DEXTERITY,RI_DEX,FALSE,TRUE);
+	B_RaiseAttribute(self,ATR_DEXTERITY,Ri_Dex,FALSE,TRUE);
 };
 
-func void unequip_itri_dex_01()
+func void UnEquip_ItRi_Dex_01()
 {
-	b_removeitemattribute(self,ATR_DEXTERITY,RI_DEX);
+	b_removeitemattribute(self,ATR_DEXTERITY,Ri_Dex);
 };
 
 
-instance ITRI_DEX_02(C_ITEM)
+instance ItRi_Dex_02(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_DEX02;
+	value = Value_Ri_Dex02;
 	visual = "ItRi_Dex_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_dex_02;
-	on_unequip = unequip_itri_dex_02;
+	on_equip = Equip_ItRi_Dex_02;
+	on_unequip = UnEquip_ItRi_Dex_02;
 	description = "Pierœcieñ Zrêcznoœci";
-	text[2] = NAME_BONUS_DEX;
-	count[2] = RI_DEX02;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Bonus_Dex;
+	count[2] = Ri_Dex02;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -465,32 +465,32 @@ instance ITRI_DEX_02(C_ITEM)
 };
 
 
-func void equip_itri_dex_02()
+func void Equip_ItRi_Dex_02()
 {
-	b_raiseattribute(self,ATR_DEXTERITY,RI_DEX02,FALSE,TRUE);
+	B_RaiseAttribute(self,ATR_DEXTERITY,Ri_Dex02,FALSE,TRUE);
 };
 
-func void unequip_itri_dex_02()
+func void UnEquip_ItRi_Dex_02()
 {
-	b_removeitemattribute(self,ATR_DEXTERITY,RI_DEX02);
+	b_removeitemattribute(self,ATR_DEXTERITY,Ri_Dex02);
 };
 
 
-instance ITRI_HP_01(C_ITEM)
+instance ItRi_HP_01(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_HP;
+	value = Value_Ri_Hp;
 	visual = "ItRi_Hp_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_hp_01;
-	on_unequip = unequip_itri_hp_01;
+	on_equip = Equip_ItRi_Hp_01;
+	on_unequip = UnEquip_ItRi_Hp_01;
 	description = "Pierœcieñ ¯ycia";
-	text[2] = NAME_BONUS_HP;
-	count[2] = RI_HP;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Bonus_HP;
+	count[2] = Ri_Hp;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -498,18 +498,18 @@ instance ITRI_HP_01(C_ITEM)
 };
 
 
-func void equip_itri_hp_01()
+func void Equip_ItRi_Hp_01()
 {
-	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] + RI_HP;
-	//self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + RI_HP;
+	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] + Ri_Hp;
+	self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + Ri_Hp;
 };
 
-func void unequip_itri_hp_01()
+func void UnEquip_ItRi_Hp_01()
 {
-	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - RI_HP;
-	if(self.attribute[ATR_HITPOINTS] > (RI_HP + 1))
+	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - Ri_Hp;
+	if(self.attribute[ATR_HITPOINTS] > (Ri_Hp + 1))
 	{
-		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - RI_HP;
+		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - Ri_Hp;
 	}
 	else
 	{
@@ -518,21 +518,21 @@ func void unequip_itri_hp_01()
 };
 
 
-instance ITRI_HP_02(C_ITEM)
+instance ItRi_Hp_02(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_HP02;
+	value = Value_Ri_Hp02;
 	visual = "ItRi_Hp_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_hp_02;
-	on_unequip = unequip_itri_hp_02;
+	on_equip = Equip_ItRi_Hp_02;
+	on_unequip = UnEquip_ItRi_Hp_02;
 	description = "Pierœcieñ ¯ywotnoœci";
-	text[2] = NAME_BONUS_HP;
-	count[2] = RI_HP02;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Bonus_HP;
+	count[2] = Ri_Hp02;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -540,18 +540,18 @@ instance ITRI_HP_02(C_ITEM)
 };
 
 
-func void equip_itri_hp_02()
+func void Equip_ItRi_Hp_02()
 {
-	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] + RI_HP02;
-	//self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + RI_HP02;
+	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] + Ri_Hp02;
+	self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + Ri_Hp02;
 };
 
-func void unequip_itri_hp_02()
+func void UnEquip_ItRi_Hp_02()
 {
-	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - RI_HP02;
-	if(self.attribute[ATR_HITPOINTS] > (RI_HP02 + 1))
+	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - Ri_Hp02;
+	if(self.attribute[ATR_HITPOINTS] > (Ri_Hp02 + 1))
 	{
-		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - RI_HP02;
+		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - Ri_Hp02;
 	}
 	else
 	{
@@ -560,21 +560,21 @@ func void unequip_itri_hp_02()
 };
 
 
-instance ITRI_STR_01(C_ITEM)
+instance ItRi_Str_01(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_STRG;
+	value = Value_Ri_Strg;
 	visual = "ItRi_Str_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_str_01;
-	on_unequip = unequip_itri_str_01;
+	on_equip = Equip_ItRi_Str_01;
+	on_unequip = UnEquip_ItRi_Str_01;
 	description = "Pierœcieñ Mocy";
-	text[2] = NAME_BONUS_STR;
-	count[2] = RI_STRG;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Bonus_Str;
+	count[2] = Ri_Strg;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -582,32 +582,32 @@ instance ITRI_STR_01(C_ITEM)
 };
 
 
-func void equip_itri_str_01()
+func void Equip_ItRi_Str_01()
 {
-	b_raiseattribute(self,ATR_STRENGTH,RI_STRG,FALSE,TRUE);
+	B_RaiseAttribute(self,ATR_STRENGTH,Ri_Strg,FALSE,TRUE);
 };
 
-func void unequip_itri_str_01()
+func void UnEquip_ItRi_Str_01()
 {
-	b_removeitemattribute(self,ATR_STRENGTH,RI_STRG);
+	b_removeitemattribute(self,ATR_STRENGTH,Ri_Strg);
 };
 
 
-instance ITRI_STR_02(C_ITEM)
+instance ItRi_Str_02(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_STRG02;
+	value = Value_Ri_Strg02;
 	visual = "ItRi_Str_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_str_02;
-	on_unequip = unequip_itri_str_02;
+	on_equip = Equip_ItRi_Str_02;
+	on_unequip = UnEquip_ItRi_Str_02;
 	description = "Pierœcieñ Si³y";
-	text[2] = NAME_BONUS_STR;
-	count[2] = RI_STRG02;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Bonus_Str;
+	count[2] = Ri_Strg02;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -615,32 +615,32 @@ instance ITRI_STR_02(C_ITEM)
 };
 
 
-func void equip_itri_str_02()
+func void Equip_ItRi_Str_02()
 {
-	b_raiseattribute(self,ATR_STRENGTH,RI_STRG02,FALSE,TRUE);
+	B_RaiseAttribute(self,ATR_STRENGTH,Ri_Strg02,FALSE,TRUE);
 };
 
-func void unequip_itri_str_02()
+func void UnEquip_ItRi_Str_02()
 {
-	b_removeitemattribute(self,ATR_STRENGTH,RI_STRG02);
+	b_removeitemattribute(self,ATR_STRENGTH,Ri_Strg02);
 };
 
 
-instance ITRI_MANA_01(C_ITEM)
+instance ItRi_Mana_01(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_MANA;
+	value = Value_Ri_Mana;
 	visual = "ItRi_Mana_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_mana_01;
-	on_unequip = unequip_itri_mana_01;
+	on_equip = Equip_ItRi_Mana_01;
+	on_unequip = UnEquip_ItRi_Mana_01;
 	description = "Pierœcieñ Magii";
-	text[2] = NAME_BONUS_MANA;
-	count[2] = RI_MANA;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Bonus_Mana;
+	count[2] = Ri_Mana;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -648,17 +648,17 @@ instance ITRI_MANA_01(C_ITEM)
 };
 
 
-func void equip_itri_mana_01()
+func void Equip_ItRi_Mana_01()
 {
-	b_raiseattribute(self,ATR_MANA_MAX,RI_MANA,FALSE,TRUE);
+	B_RaiseAttribute(self,ATR_MANA_MAX,Ri_Mana,FALSE,TRUE);
 };
 
-func void unequip_itri_mana_01()
+func void UnEquip_ItRi_Mana_01()
 {
-	b_removeitemattribute(self,ATR_MANA_MAX,RI_MANA);
-	if(self.attribute[ATR_MANA] >= RI_MANA)
+	b_removeitemattribute(self,ATR_MANA_MAX,Ri_Mana);
+	if(self.attribute[ATR_MANA] >= Ri_Mana)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - RI_MANA;
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - Ri_Mana;
 	}
 	else
 	{
@@ -667,21 +667,21 @@ func void unequip_itri_mana_01()
 };
 
 
-instance ITRI_MANA_02(C_ITEM)
+instance ItRi_Mana_02(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_MANA02;
+	value = Value_Ri_Mana02;
 	visual = "ItRi_Mana_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_mana_02;
-	on_unequip = unequip_itri_mana_02;
+	on_equip = Equip_ItRi_Mana_02;
+	on_unequip = UnEquip_ItRi_Mana_02;
 	description = "Pierœcieñ Gwiezdnej Mocy";
-	text[2] = NAME_BONUS_MANA;
-	count[2] = RI_MANA02;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Bonus_Mana;
+	count[2] = Ri_Mana02;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -689,18 +689,18 @@ instance ITRI_MANA_02(C_ITEM)
 };
 
 
-func void equip_itri_mana_02()
+func void Equip_ItRi_Mana_02()
 {
-	b_raiseattribute(self,ATR_MANA_MAX,RI_MANA02,FALSE,TRUE);
-	//self.attribute[ATR_MANA] = self.attribute[ATR_MANA] + RI_MANA02;
+	B_RaiseAttribute(self,ATR_MANA_MAX,Ri_Mana02,FALSE,TRUE);
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] + Ri_Mana02;
 };
 
-func void unequip_itri_mana_02()
+func void UnEquip_ItRi_Mana_02()
 {
-	b_removeitemattribute(self,ATR_MANA_MAX,RI_MANA02);
-	if(self.attribute[ATR_MANA] >= RI_MANA02)
+	b_removeitemattribute(self,ATR_MANA_MAX,Ri_Mana02);
+	if(self.attribute[ATR_MANA] >= Ri_Mana02)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - RI_MANA02;
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - Ri_Mana02;
 	}
 	else
 	{
@@ -709,23 +709,23 @@ func void unequip_itri_mana_02()
 };
 
 
-instance ITRI_HP_MANA_01(C_ITEM)
+instance ItRi_Hp_Mana_01(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_HPMANA;
+	value = Value_Ri_HpMana;
 	visual = "ItRi_Hp_Mana_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_hp_mana_01;
-	on_unequip = unequip_itri_hp_mana_01;
+	on_equip = Equip_ItRi_Hp_Mana_01;
+	on_unequip = UnEquip_ItRi_Hp_Mana_01;
 	description = "Pierœcieñ Oœwiecenia";
-	text[2] = NAME_BONUS_MANA;
-	count[2] = RI_HPMANA_HP;
-	text[3] = NAME_BONUS_HP;
-	count[3] = RI_HPMANA_MANA;
-	text[5] = NAME_VALUE;
+	text[2] = NAME_Bonus_Mana;
+	count[2] = Ri_HpMana_Hp;
+	text[3] = NAME_Bonus_HP;
+	count[3] = Ri_HpMana_Mana;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -733,29 +733,29 @@ instance ITRI_HP_MANA_01(C_ITEM)
 };
 
 
-func void equip_itri_hp_mana_01()
+func void Equip_ItRi_Hp_Mana_01()
 {
-	//self.attribute[ATR_MANA] = self.attribute[ATR_MANA] + RI_HPMANA_MANA;
-	b_raiseattribute(self,ATR_MANA_MAX,RI_HPMANA_MANA,FALSE,TRUE);
-	//self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + RI_HPMANA_HP;
-	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] + RI_HPMANA_HP;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] + Ri_HpMana_Mana;
+	B_RaiseAttribute(self,ATR_MANA_MAX,Ri_HpMana_Mana,FALSE,TRUE);
+	self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + Ri_HpMana_Hp;
+	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] + Ri_HpMana_Hp;
 };
 
-func void unequip_itri_hp_mana_01()
+func void UnEquip_ItRi_Hp_Mana_01()
 {
-	b_removeitemattribute(self,ATR_MANA_MAX,RI_HPMANA_MANA);
-	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - RI_HPMANA_HP;
-	if(self.attribute[ATR_HITPOINTS] > (RI_HPMANA_HP + 1))
+	b_removeitemattribute(self,ATR_MANA_MAX,Ri_HpMana_Mana);
+	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - Ri_HpMana_Hp;
+	if(self.attribute[ATR_HITPOINTS] > (Ri_HpMana_Hp + 1))
 	{
-		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - RI_HPMANA_HP;
+		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - Ri_HpMana_Hp;
 	}
 	else
 	{
 		self.attribute[ATR_HITPOINTS] = 2;
 	};
-	if(self.attribute[ATR_MANA] >= RI_HPMANA_HP)
+	if(self.attribute[ATR_MANA] >= Ri_HpMana_Hp)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - RI_HPMANA_HP;
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - Ri_HpMana_Hp;
 	}
 	else
 	{
@@ -764,23 +764,23 @@ func void unequip_itri_hp_mana_01()
 };
 
 
-instance ITRI_DEX_STRG_01(C_ITEM)
+instance ItRi_Dex_Strg_01(C_Item)
 {
-	name = NAME_RING;
+	name = NAME_Ring;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
-	value = VALUE_RI_DEXSTRG;
+	value = Value_Ri_DexStrg;
 	visual = "ItRi_Dex_Strg_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itri_dex_strg_01;
-	on_unequip = unequip_itri_dex_strg_01;
+	on_equip = Equip_ItRi_Dex_Strg_01;
+	on_unequip = UnEquip_ItRi_Dex_Strg_01;
 	description = "Pierœcieñ Kondycji";
-	text[2] = NAME_BONUS_STR;
+	text[2] = NAME_Bonus_Str;
 	count[2] = 4;
-	text[3] = NAME_BONUS_DEX;
+	text[3] = NAME_Bonus_Dex;
 	count[3] = 4;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -788,15 +788,15 @@ instance ITRI_DEX_STRG_01(C_ITEM)
 };
 
 
-func void equip_itri_dex_strg_01()
+func void Equip_ItRi_Dex_Strg_01()
 {
-	b_raiseattribute(self,ATR_STRENGTH,RI_DEXSTRG_STRG,FALSE,TRUE);
-	b_raiseattribute(self,ATR_DEXTERITY,RI_DEXSTRG_DEX,FALSE,TRUE);
+	B_RaiseAttribute(self,ATR_STRENGTH,Ri_DexStrg_Strg,FALSE,TRUE);
+	B_RaiseAttribute(self,ATR_DEXTERITY,Ri_DexStrg_Dex,FALSE,TRUE);
 };
 
-func void unequip_itri_dex_strg_01()
+func void UnEquip_ItRi_Dex_Strg_01()
 {
-	b_removeitemattribute(self,ATR_STRENGTH,RI_DEXSTRG_STRG);
-	b_removeitemattribute(self,ATR_DEXTERITY,RI_DEXSTRG_DEX);
+	b_removeitemattribute(self,ATR_STRENGTH,Ri_DexStrg_Strg);
+	b_removeitemattribute(self,ATR_DEXTERITY,Ri_DexStrg_Dex);
 };
 

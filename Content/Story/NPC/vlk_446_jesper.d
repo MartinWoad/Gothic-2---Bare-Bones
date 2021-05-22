@@ -1,40 +1,40 @@
 
-instance VLK_446_JESPER(NPC_DEFAULT)
+instance VLK_446_Jesper(Npc_Default)
 {
 	name[0] = "Jesper";
 	guild = GIL_BDT;
 	id = 446;
 	voice = 9;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_DROPDEADANDKILL] = TRUE;
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	aivar[AIV_DropDeadAndKill] = TRUE;
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_NORMAL;
-	EquipItem(self,itmw_1h_sld_sword);
-	b_createambientinv(self);
-	CreateInvItems(self,itke_fingers,1);
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_NORMAL07,BODYTEX_N,4820);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	B_CreateAmbientInv(self);
+	CreateInvItems(self,ItKe_Fingers,1);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Pony",Face_N_Normal07,BodyTex_N,ITAR_Vlk_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,40);
-	daily_routine = rtn_prestart_446;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,40);
+	daily_routine = Rtn_PreStart_446;
 };
 
 
-func void rtn_prestart_446()
+func void Rtn_PreStart_446()
 {
-	ta_stand_armscrossed(7,0,23,0,"NW_CITY_KANAL_22");
-	ta_stand_armscrossed(23,0,7,0,"NW_CITY_KANAL_22");
+	TA_Stand_ArmsCrossed(7,0,23,0,"NW_CITY_KANAL_22");
+	TA_Stand_ArmsCrossed(23,0,7,0,"NW_CITY_KANAL_22");
 };
 
-func void rtn_start_446()
+func void Rtn_Start_446()
 {
-	ta_cook_stove(7,0,14,0,"NW_CITY_KANAL_ROOM_05_03_COOK");
-	ta_sit_throne(14,0,18,0,"NW_CITY_KANAL_ROOM_05_02");
-	ta_cook_stove(18,0,21,0,"NW_CITY_KANAL_ROOM_05_03_COOK");
-	ta_sit_throne(21,0,23,0,"NW_CITY_KANAL_ROOM_05_02");
-	ta_sleep(23,0,7,0,"NW_CITY_KANAL_ROOM_05_BED_02");
+	TA_Cook_Stove(7,0,14,0,"NW_CITY_KANAL_ROOM_05_03_COOK");
+	TA_Sit_Throne(14,0,18,0,"NW_CITY_KANAL_ROOM_05_02");
+	TA_Cook_Stove(18,0,21,0,"NW_CITY_KANAL_ROOM_05_03_COOK");
+	TA_Sit_Throne(21,0,23,0,"NW_CITY_KANAL_ROOM_05_02");
+	TA_Sleep(23,0,7,0,"NW_CITY_KANAL_ROOM_05_BED_02");
 };
 

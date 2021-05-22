@@ -1,32 +1,32 @@
 
-instance VLK_477_BUERGERIN(NPC_DEFAULT)
+instance VLK_477_Buergerin(Npc_Default)
 {
-	name[0] = NAME_BUERGERIN;
+	name[0] = NAME_Buergerin;
 	guild = GIL_VLK;
 	id = 477;
 	voice = 17;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	b_setattributestochapter(self,1);
+	npcType = NPCTYPE_AMBIENT;
+	aivar[AIV_ToughGuy] = TRUE;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	b_createambientinv(self);
-	EquipItem(self,itmw_1h_vlk_dagger);
-	b_setnpcvisual(self,FEMALE,"Hum_Head_Babe1",FACEBABE_N_ANNE,BODYTEX_N,4823);
+	B_CreateAmbientInv(self);
+	EquipItem(self,ItMw_1h_Vlk_Dagger);
+	B_SetNpcVisual(self,FEMALE,"Hum_Head_Babe1",FaceBabe_N_Anne,BodyTex_N,ITAR_VlkBabe_L);
 	Mdl_ApplyOverlayMds(self,"Humans_Babe.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,35);
-	daily_routine = rtn_start_477;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,35);
+	daily_routine = Rtn_Start_477;
 };
 
 
-func void rtn_start_477()
+func void Rtn_Start_477()
 {
-	ta_stand_eating(5,5,11,55,"NW_CITY_PATH_HABOUR_03");
-	ta_stand_eating(11,55,14,5,"NW_CITY_WAY_TO_SHIP_01");
-	ta_stand_eating(14,5,15,55,"NW_CITY_PATH_HABOUR_03");
-	ta_stand_eating(15,55,19,5,"NW_CITY_WAY_TO_SHIP_01");
-	ta_cook_stove(19,5,21,5,"NW_CITY_BED_BRAHIM");
-	ta_sleep(21,5,5,5,"NW_CITY_BED_BRAHIM");
+	TA_Stand_Eating(5,5,11,55,"NW_CITY_PATH_HABOUR_03");
+	TA_Stand_Eating(11,55,14,5,"NW_CITY_WAY_TO_SHIP_01");
+	TA_Stand_Eating(14,5,15,55,"NW_CITY_PATH_HABOUR_03");
+	TA_Stand_Eating(15,55,19,5,"NW_CITY_WAY_TO_SHIP_01");
+	TA_Cook_Stove(19,5,21,5,"NW_CITY_BED_BRAHIM");
+	TA_Sleep(21,5,5,5,"NW_CITY_BED_BRAHIM");
 };
 

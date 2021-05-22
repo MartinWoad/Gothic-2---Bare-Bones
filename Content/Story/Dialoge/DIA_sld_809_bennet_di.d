@@ -1,49 +1,49 @@
 
-instance DIA_BENNET_DI_EXIT(C_INFO)
+instance DIA_Bennet_DI_EXIT(C_Info)
 {
-	npc = sld_809_bennet_di;
+	npc = SLD_809_Bennet_DI;
 	nr = 999;
-	condition = dia_bennet_di_exit_condition;
-	information = dia_bennet_di_exit_info;
+	condition = DIA_Bennet_DI_EXIT_Condition;
+	information = DIA_Bennet_DI_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_bennet_di_exit_condition()
+func int DIA_Bennet_DI_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bennet_di_exit_info()
+func void DIA_Bennet_DI_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BENNET_DI_HELLO(C_INFO)
+instance DIA_Bennet_DI_Hello(C_Info)
 {
-	npc = sld_809_bennet_di;
+	npc = SLD_809_Bennet_DI;
 	nr = 10;
-	condition = dia_bennet_di_hello_condition;
-	information = dia_bennet_di_hello_info;
+	condition = DIA_Bennet_DI_Hello_Condition;
+	information = DIA_Bennet_DI_Hello_Info;
 	permanent = TRUE;
 	description = "Jak ci siê powodzi?";
 };
 
 
-func int dia_bennet_di_hello_condition()
+func int DIA_Bennet_DI_Hello_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bennet_di_hello_info()
+func void DIA_Bennet_DI_Hello_Info()
 {
 	AI_Output(other,self,"DIA_Bennet_DI_Hello_15_00");	//Jak ci siê powodzi?
-	if(ORKSTURMDI == FALSE)
+	if(ORkSturmDI == FALSE)
 	{
 		AI_Output(self,other,"DIA_Bennet_DI_Hello_06_01");	//KuŸnia na statku jest trochê przerdzewia³a. To przez s³on¹ wodê. Ciê¿ko tu bêdzie zrobiæ coœ porz¹dnego. Ale poza tym...
 	}
@@ -54,246 +54,246 @@ func void dia_bennet_di_hello_info()
 };
 
 
-instance DIA_BENNET_DI_TRADE(C_INFO)
+instance DIA_Bennet_DI_TRADE(C_Info)
 {
-	npc = sld_809_bennet_di;
+	npc = SLD_809_Bennet_DI;
 	nr = 7;
-	condition = dia_bennet_di_trade_condition;
-	information = dia_bennet_di_trade_info;
+	condition = DIA_Bennet_DI_TRADE_Condition;
+	information = DIA_Bennet_DI_TRADE_Info;
 	permanent = TRUE;
 	trade = TRUE;
 	description = "Jak¹ broñ mo¿esz mi sprzedaæ?";
 };
 
 
-func int dia_bennet_di_trade_condition()
+func int DIA_Bennet_DI_TRADE_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bennet_di_trade_info()
+func void DIA_Bennet_DI_TRADE_Info()
 {
 	AI_Output(other,self,"DIA_Bennet_DI_TRADE_15_00");	//Jak¹ broñ mo¿esz mi sprzedaæ?
-	b_givetradeinv(self);
+	B_GiveTradeInv(self);
 	AI_Output(self,other,"DIA_Bennet_DI_TRADE_06_01");	//Tylko najlepsz¹. Przecie¿ wiesz.
 };
 
 
-instance DIA_BENNET_DI_SMITH(C_INFO)
+instance DIA_Bennet_DI_Smith(C_Info)
 {
-	npc = sld_809_bennet_di;
+	npc = SLD_809_Bennet_DI;
 	nr = 7;
-	condition = dia_bennet_di_smith_condition;
-	information = dia_bennet_di_smith_info;
+	condition = DIA_Bennet_DI_Smith_Condition;
+	information = DIA_Bennet_DI_Smith_Info;
 	permanent = TRUE;
 	description = "Nauczysz mnie swojego rzemios³a?";
 };
 
 
-func int dia_bennet_di_smith_condition()
+func int DIA_Bennet_DI_Smith_Condition()
 {
-	if((BENNET_TEACHSMITH == TRUE) && (Npc_IsDead(undeaddragon) == FALSE))
+	if((Bennet_TeachSmith == TRUE) && (Npc_IsDead(UndeadDragon) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bennet_di_smith_info()
+func void DIA_Bennet_DI_Smith_Info()
 {
 	AI_Output(other,self,"DIA_Bennet_DI_Smith_15_00");	//Nauczysz mnie swojego rzemios³a?
 	AI_Output(self,other,"DIA_Bennet_DI_Smith_06_01");	//Zale¿y, co chcesz zrobiæ.
-	Info_ClearChoices(dia_bennet_di_smith);
-	Info_AddChoice(dia_bennet_di_smith,DIALOG_BACK,dia_bennet_di_smith_back);
-	if(PLAYER_TALENT_SMITH[WEAPON_COMMON] == FALSE)
+	Info_ClearChoices(DIA_Bennet_DI_Smith);
+	Info_AddChoice(DIA_Bennet_DI_Smith,Dialog_Back,DIA_Bennet_DI_Smith_BACK);
+	if(PLAYER_TALENT_SMITH[WEAPON_Common] == FALSE)
 	{
-		Info_AddChoice(dia_bennet_di_smith,b_buildlearnstring("Nauka kowalstwa",b_getlearncosttalent(other,NPC_TALENT_SMITH)),dia_bennet_di_smith_common);
+		Info_AddChoice(DIA_Bennet_DI_Smith,B_BuildLearnString("Nauka kowalstwa",B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),DIA_Bennet_DI_Smith_Common);
 	};
-	if(PLAYER_TALENT_SMITH[WEAPON_COMMON] == TRUE)
+	if(PLAYER_TALENT_SMITH[WEAPON_Common] == TRUE)
 	{
-		if(PLAYER_TALENT_SMITH[WEAPON_1H_SPECIAL_01] == FALSE)
+		if(PLAYER_TALENT_SMITH[WEAPON_1H_Special_01] == FALSE)
 		{
-			Info_AddChoice(dia_bennet_di_smith,b_buildlearnstring(NAME_ITMW_1H_SPECIAL_01,b_getlearncosttalent(other,NPC_TALENT_SMITH)),dia_bennet_di_smith_1hspecial1);
+			Info_AddChoice(DIA_Bennet_DI_Smith,B_BuildLearnString(NAME_ItMw_1H_Special_01,B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),DIA_Bennet_DI_Smith_1hSpecial1);
 		};
-		if(PLAYER_TALENT_SMITH[WEAPON_2H_SPECIAL_01] == FALSE)
+		if(PLAYER_TALENT_SMITH[WEAPON_2H_Special_01] == FALSE)
 		{
-			Info_AddChoice(dia_bennet_di_smith,b_buildlearnstring(NAME_ITMW_2H_SPECIAL_01,b_getlearncosttalent(other,NPC_TALENT_SMITH)),dia_bennet_di_smith_2hspecial1);
+			Info_AddChoice(DIA_Bennet_DI_Smith,B_BuildLearnString(NAME_ItMw_2H_Special_01,B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),DIA_Bennet_DI_Smith_2hSpecial1);
 		};
-		if((PLAYER_TALENT_SMITH[WEAPON_1H_SPECIAL_02] == FALSE) && (PLAYER_TALENT_SMITH[WEAPON_1H_SPECIAL_01] == TRUE))
+		if((PLAYER_TALENT_SMITH[WEAPON_1H_Special_02] == FALSE) && (PLAYER_TALENT_SMITH[WEAPON_1H_Special_01] == TRUE))
 		{
-			Info_AddChoice(dia_bennet_di_smith,b_buildlearnstring(NAME_ITMW_1H_SPECIAL_02,b_getlearncosttalent(other,NPC_TALENT_SMITH)),dia_bennet_di_smith_1hspecial2);
+			Info_AddChoice(DIA_Bennet_DI_Smith,B_BuildLearnString(NAME_ItMw_1H_Special_02,B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),DIA_Bennet_DI_Smith_1hSpecial2);
 		};
-		if((PLAYER_TALENT_SMITH[WEAPON_2H_SPECIAL_02] == FALSE) && (PLAYER_TALENT_SMITH[WEAPON_2H_SPECIAL_01] == TRUE))
+		if((PLAYER_TALENT_SMITH[WEAPON_2H_Special_02] == FALSE) && (PLAYER_TALENT_SMITH[WEAPON_2H_Special_01] == TRUE))
 		{
-			Info_AddChoice(dia_bennet_di_smith,b_buildlearnstring(NAME_ITMW_2H_SPECIAL_02,b_getlearncosttalent(other,NPC_TALENT_SMITH)),dia_bennet_di_smith_2hspecial2);
+			Info_AddChoice(DIA_Bennet_DI_Smith,B_BuildLearnString(NAME_ItMw_2H_Special_02,B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),DIA_Bennet_DI_Smith_2hSpecial2);
 		};
-		if((PLAYER_TALENT_SMITH[WEAPON_1H_SPECIAL_03] == FALSE) && (PLAYER_TALENT_SMITH[WEAPON_1H_SPECIAL_02] == TRUE))
+		if((PLAYER_TALENT_SMITH[WEAPON_1H_Special_03] == FALSE) && (PLAYER_TALENT_SMITH[WEAPON_1H_Special_02] == TRUE))
 		{
-			Info_AddChoice(dia_bennet_di_smith,b_buildlearnstring(NAME_ITMW_1H_SPECIAL_03,b_getlearncosttalent(other,NPC_TALENT_SMITH)),dia_bennet_di_smith_1hspecial3);
+			Info_AddChoice(DIA_Bennet_DI_Smith,B_BuildLearnString(NAME_ItMw_1H_Special_03,B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),DIA_Bennet_DI_Smith_1hSpecial3);
 		};
-		if((PLAYER_TALENT_SMITH[WEAPON_2H_SPECIAL_03] == FALSE) && (PLAYER_TALENT_SMITH[WEAPON_2H_SPECIAL_02] == TRUE))
+		if((PLAYER_TALENT_SMITH[WEAPON_2H_Special_03] == FALSE) && (PLAYER_TALENT_SMITH[WEAPON_2H_Special_02] == TRUE))
 		{
-			Info_AddChoice(dia_bennet_di_smith,b_buildlearnstring(NAME_ITMW_2H_SPECIAL_03,b_getlearncosttalent(other,NPC_TALENT_SMITH)),dia_bennet_di_smith_2hspecial3);
+			Info_AddChoice(DIA_Bennet_DI_Smith,B_BuildLearnString(NAME_ItMw_2H_Special_03,B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),DIA_Bennet_DI_Smith_2hSpecial3);
 		};
-		if((PLAYER_TALENT_SMITH[WEAPON_1H_SPECIAL_04] == FALSE) && (PLAYER_TALENT_SMITH[WEAPON_1H_SPECIAL_03] == TRUE))
+		if((PLAYER_TALENT_SMITH[WEAPON_1H_Special_04] == FALSE) && (PLAYER_TALENT_SMITH[WEAPON_1H_Special_03] == TRUE))
 		{
-			Info_AddChoice(dia_bennet_di_smith,b_buildlearnstring(NAME_ITMW_1H_SPECIAL_04,b_getlearncosttalent(other,NPC_TALENT_SMITH)),dia_bennet_di_smith_1hspecial4);
+			Info_AddChoice(DIA_Bennet_DI_Smith,B_BuildLearnString(NAME_ItMw_1H_Special_04,B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),DIA_Bennet_DI_Smith_1hSpecial4);
 		};
-		if((PLAYER_TALENT_SMITH[WEAPON_2H_SPECIAL_04] == FALSE) && (PLAYER_TALENT_SMITH[WEAPON_2H_SPECIAL_03] == TRUE))
+		if((PLAYER_TALENT_SMITH[WEAPON_2H_Special_04] == FALSE) && (PLAYER_TALENT_SMITH[WEAPON_2H_Special_03] == TRUE))
 		{
-			Info_AddChoice(dia_bennet_di_smith,b_buildlearnstring(NAME_ITMW_2H_SPECIAL_04,b_getlearncosttalent(other,NPC_TALENT_SMITH)),dia_bennet_di_smith_2hspecial4);
+			Info_AddChoice(DIA_Bennet_DI_Smith,B_BuildLearnString(NAME_ItMw_2H_Special_04,B_GetLearnCostTalent(other,NPC_TALENT_SMITH)),DIA_Bennet_DI_Smith_2hSpecial4);
 		};
 	};
 };
 
-func void dia_bennet_di_smith_back()
+func void DIA_Bennet_DI_Smith_BACK()
 {
-	Info_ClearChoices(dia_pc_thief_di_training_talente);
+	Info_ClearChoices(DIA_PC_Thief_DI_Training_Talente);
 };
 
-func void dia_bennet_di_smith_common()
+func void DIA_Bennet_DI_Smith_Common()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_COMMON);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_Common);
 };
 
-func void dia_bennet_di_smith_1hspecial1()
+func void DIA_Bennet_DI_Smith_1hSpecial1()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_1H_SPECIAL_01);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_1H_Special_01);
 };
 
-func void dia_bennet_di_smith_2hspecial1()
+func void DIA_Bennet_DI_Smith_2hSpecial1()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_2H_SPECIAL_01);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_2H_Special_01);
 };
 
-func void dia_bennet_di_smith_1hspecial2()
+func void DIA_Bennet_DI_Smith_1hSpecial2()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_1H_SPECIAL_02);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_1H_Special_02);
 };
 
-func void dia_bennet_di_smith_2hspecial2()
+func void DIA_Bennet_DI_Smith_2hSpecial2()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_2H_SPECIAL_02);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_2H_Special_02);
 };
 
-func void dia_bennet_di_smith_1hspecial3()
+func void DIA_Bennet_DI_Smith_1hSpecial3()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_1H_SPECIAL_03);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_1H_Special_03);
 };
 
-func void dia_bennet_di_smith_2hspecial3()
+func void DIA_Bennet_DI_Smith_2hSpecial3()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_2H_SPECIAL_03);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_2H_Special_03);
 };
 
-func void dia_bennet_di_smith_1hspecial4()
+func void DIA_Bennet_DI_Smith_1hSpecial4()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_1H_SPECIAL_04);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_1H_Special_04);
 };
 
-func void dia_bennet_di_smith_2hspecial4()
+func void DIA_Bennet_DI_Smith_2hSpecial4()
 {
-	b_teachplayertalentsmith(self,other,WEAPON_2H_SPECIAL_04);
+	B_TeachPlayerTalentSmith(self,other,WEAPON_2H_Special_04);
 };
 
 
-instance DIA_BENNET_TEACHSTR(C_INFO)
+instance DIA_Bennet_TeachSTR(C_Info)
 {
-	npc = sld_809_bennet_di;
+	npc = SLD_809_Bennet_DI;
 	nr = 150;
-	condition = dia_bennet_teachstr_condition;
-	information = dia_bennet_teachstr_info;
+	condition = DIA_Bennet_TeachSTR_Condition;
+	information = DIA_Bennet_TeachSTR_Info;
 	permanent = TRUE;
 	description = "Chcê byæ silniejszy.";
 };
 
 
-func int dia_bennet_teachstr_condition()
+func int DIA_Bennet_TeachSTR_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bennet_teachstr_info()
+func void DIA_Bennet_TeachSTR_Info()
 {
 	AI_Output(other,self,"DIA_Bennet_TeachSTR_15_00");	//Chcê byæ silniejszy.
 	AI_Output(self,other,"DIA_Bennet_TeachSTR_06_01");	//Silna rêka przydaje siê w takich czasach.
-	Info_ClearChoices(dia_bennet_teachstr);
-	Info_AddChoice(dia_bennet_teachstr,DIALOG_BACK,dia_bennet_teachstr_back);
-	Info_AddChoice(dia_bennet_teachstr,b_buildlearnstring(PRINT_LEARNSTR1,b_getlearncostattribute(other,ATR_STRENGTH)),dia_bennet_teachstr_str_1);
-	Info_AddChoice(dia_bennet_teachstr,b_buildlearnstring(PRINT_LEARNSTR5,b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_bennet_teachstr_str_5);
+	Info_ClearChoices(DIA_Bennet_TeachSTR);
+	Info_AddChoice(DIA_Bennet_TeachSTR,Dialog_Back,DIA_Bennet_TeachSTR_Back);
+	Info_AddChoice(DIA_Bennet_TeachSTR,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Bennet_TeachSTR_STR_1);
+	Info_AddChoice(DIA_Bennet_TeachSTR,B_BuildLearnString(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Bennet_TeachSTR_STR_5);
 };
 
-func void dia_bennet_teachstr_back()
+func void DIA_Bennet_TeachSTR_Back()
 {
-	Info_ClearChoices(dia_bennet_teachstr);
+	Info_ClearChoices(DIA_Bennet_TeachSTR);
 };
 
-func void dia_bennet_teachstr_str_1()
+func void DIA_Bennet_TeachSTR_STR_1()
 {
-	b_teachattributepoints(self,other,ATR_STRENGTH,1,80);
-	Info_AddChoice(dia_bennet_teachstr,b_buildlearnstring(PRINT_LEARNSTR1,b_getlearncostattribute(other,ATR_STRENGTH)),dia_bennet_teachstr_str_1);
+	B_TeachAttributePoints(self,other,ATR_STRENGTH,1,80);
+	Info_AddChoice(DIA_Bennet_TeachSTR,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Bennet_TeachSTR_STR_1);
 };
 
-func void dia_bennet_teachstr_str_5()
+func void DIA_Bennet_TeachSTR_STR_5()
 {
-	b_teachattributepoints(self,other,ATR_STRENGTH,5,80);
-	Info_AddChoice(dia_bennet_teachstr,b_buildlearnstring(PRINT_LEARNSTR5,b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_bennet_teachstr_str_5);
+	B_TeachAttributePoints(self,other,ATR_STRENGTH,5,80);
+	Info_AddChoice(DIA_Bennet_TeachSTR,B_BuildLearnString(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Bennet_TeachSTR_STR_5);
 };
 
 
-instance DIA_BENNET_DI_DRAGONEGG(C_INFO)
+instance DIA_Bennet_DI_DragonEgg(C_Info)
 {
-	npc = sld_809_bennet_di;
+	npc = SLD_809_Bennet_DI;
 	nr = 99;
-	condition = dia_bennet_di_dragonegg_condition;
-	information = dia_bennet_di_dragonegg_info;
+	condition = DIA_Bennet_DI_DragonEgg_Condition;
+	information = DIA_Bennet_DI_DragonEgg_Info;
 	description = "Mam smocze jajo.";
 };
 
 
-func int dia_bennet_di_dragonegg_condition()
+func int DIA_Bennet_DI_DragonEgg_Condition()
 {
-	if(Npc_HasItems(other,itat_dragonegg_mis))
+	if(Npc_HasItems(other,ItAt_DragonEgg_MIS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bennet_di_dragonegg_info()
+func void DIA_Bennet_DI_DragonEgg_Info()
 {
 	AI_Output(other,self,"DIA_Bennet_DI_DragonEgg_15_00");	//Mam smocze jajo.
 	AI_Output(self,other,"DIA_Bennet_DI_DragonEgg_06_01");	//No i co?
 	AI_Output(other,self,"DIA_Bennet_DI_DragonEgg_15_02");	//Nooo... Myœla³em...
 	AI_Output(self,other,"DIA_Bennet_DI_DragonEgg_06_03");	//Wiem, co sobie myœla³eœ. Zapomnij o tym i zatrzymaj je. Nie chcê go.
-	b_giveplayerxp(XP_AMBIENT);
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_BENNET_DI_UNDEADDRAGONDEAD(C_INFO)
+instance DIA_Bennet_DI_UndeadDragonDead(C_Info)
 {
-	npc = sld_809_bennet_di;
+	npc = SLD_809_Bennet_DI;
 	nr = 7;
-	condition = dia_bennet_di_undeaddragondead_condition;
-	information = dia_bennet_di_undeaddragondead_info;
+	condition = DIA_Bennet_DI_UndeadDragonDead_Condition;
+	information = DIA_Bennet_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
 	description = "Zrobiliœmy wszystko, co by³o trzeba.";
 };
 
 
-func int dia_bennet_di_undeaddragondead_condition()
+func int DIA_Bennet_DI_UndeadDragonDead_Condition()
 {
-	if(Npc_IsDead(undeaddragon))
+	if(Npc_IsDead(UndeadDragon))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bennet_di_undeaddragondead_info()
+func void DIA_Bennet_DI_UndeadDragonDead_Info()
 {
 	AI_Output(other,self,"DIA_Bennet_DI_UndeadDragonDead_15_00");	//Zrobiliœmy wszystko, co by³o trzeba.
 	AI_Output(self,other,"DIA_Bennet_DI_UndeadDragonDead_06_01");	//Cieszê siê. Mia³em ju¿ doœæ tej starej kuŸni. Chcê znowu stan¹æ na pewnym gruncie.
@@ -301,37 +301,37 @@ func void dia_bennet_di_undeaddragondead_info()
 };
 
 
-instance DIA_BENNET_DI_PICKPOCKET(C_INFO)
+instance DIA_Bennet_DI_PICKPOCKET(C_Info)
 {
-	npc = sld_809_bennet_di;
+	npc = SLD_809_Bennet_DI;
 	nr = 900;
-	condition = dia_bennet_di_pickpocket_condition;
-	information = dia_bennet_di_pickpocket_info;
+	condition = DIA_Bennet_DI_PICKPOCKET_Condition;
+	information = DIA_Bennet_DI_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_bennet_di_pickpocket_condition()
+func int DIA_Bennet_DI_PICKPOCKET_Condition()
 {
-	return c_beklauen(35,65);
+	return C_Beklauen(35,65);
 };
 
-func void dia_bennet_di_pickpocket_info()
+func void DIA_Bennet_DI_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_bennet_di_pickpocket);
-	Info_AddChoice(dia_bennet_di_pickpocket,DIALOG_BACK,dia_bennet_di_pickpocket_back);
-	Info_AddChoice(dia_bennet_di_pickpocket,DIALOG_PICKPOCKET,dia_bennet_di_pickpocket_doit);
+	Info_ClearChoices(DIA_Bennet_DI_PICKPOCKET);
+	Info_AddChoice(DIA_Bennet_DI_PICKPOCKET,Dialog_Back,DIA_Bennet_DI_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Bennet_DI_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Bennet_DI_PICKPOCKET_DoIt);
 };
 
-func void dia_bennet_di_pickpocket_doit()
+func void DIA_Bennet_DI_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_bennet_di_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Bennet_DI_PICKPOCKET);
 };
 
-func void dia_bennet_di_pickpocket_back()
+func void DIA_Bennet_DI_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_bennet_di_pickpocket);
+	Info_ClearChoices(DIA_Bennet_DI_PICKPOCKET);
 };
 

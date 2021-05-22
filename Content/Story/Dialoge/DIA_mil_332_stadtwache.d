@@ -1,43 +1,43 @@
 
-instance DIA_MIL_332_STADTWACHE_EXIT(C_INFO)
+instance DIA_Mil_332_Stadtwache_EXIT(C_Info)
 {
-	npc = mil_332_stadtwache;
+	npc = Mil_332_Stadtwache;
 	nr = 999;
-	condition = dia_mil_332_stadtwache_exit_condition;
-	information = dia_mil_332_stadtwache_exit_info;
+	condition = DIA_Mil_332_Stadtwache_EXIT_Condition;
+	information = DIA_Mil_332_Stadtwache_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_mil_332_stadtwache_exit_condition()
+func int DIA_Mil_332_Stadtwache_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_mil_332_stadtwache_exit_info()
+func void DIA_Mil_332_Stadtwache_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MIL_332_STADTWACHE_PERM(C_INFO)
+instance DIA_Mil_332_Stadtwache_PERM(C_Info)
 {
-	npc = mil_332_stadtwache;
+	npc = Mil_332_Stadtwache;
 	nr = 1;
-	condition = dia_mil_332_stadtwache_perm_condition;
-	information = dia_mil_332_stadtwache_perm_info;
+	condition = DIA_Mil_332_Stadtwache_PERM_Condition;
+	information = DIA_Mil_332_Stadtwache_PERM_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_mil_332_stadtwache_perm_condition()
+func int DIA_Mil_332_Stadtwache_PERM_Condition()
 {
 	return TRUE;
 };
 
-func void dia_mil_332_stadtwache_perm_info()
+func void DIA_Mil_332_Stadtwache_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Mil_332_Stadtwache_PERM_15_00");	//Jak leci?
 	AI_Output(self,other,"DIA_Mil_332_Stadtwache_PERM_04_01");	//Odsun¹æ siê! Jestem na s³u¿bie!

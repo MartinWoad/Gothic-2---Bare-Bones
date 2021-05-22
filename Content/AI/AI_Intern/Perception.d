@@ -1,5 +1,5 @@
 
-func void initperceptions()
+func void InitPerceptions()
 {
 	Perc_SetRange(PERC_ASSESSDAMAGE,9999);
 	Perc_SetRange(PERC_ASSESSOTHERSDAMAGE,PERC_DIST_INTERMEDIAT);
@@ -28,11 +28,11 @@ func void initperceptions()
 	Perc_SetRange(PERC_OBSERVESUSPECT,100);
 };
 
-func void perception_set_normal()
+func void Perception_Set_Normal()
 {
 	self.senses = SENSE_HEAR | SENSE_SEE;
 	self.senses_range = PERC_DIST_ACTIVE_MAX;
-	if(Npc_KnowsInfo(self,1) || c_npcisgateguard(self))
+	if(Npc_KnowsInfo(self,1) || C_NpcIsGateGuard(self))
 	{
 		Npc_SetPercTime(self,0.3);
 	}
@@ -40,36 +40,36 @@ func void perception_set_normal()
 	{
 		Npc_SetPercTime(self,1);
 	};
-	Npc_PercEnable(self,PERC_ASSESSPLAYER,b_assessplayer);
-	Npc_PercEnable(self,PERC_ASSESSENEMY,b_assessenemy);
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
-	Npc_PercEnable(self,PERC_ASSESSDAMAGE,b_assessdamage);
-	Npc_PercEnable(self,PERC_ASSESSMURDER,b_assessmurder);
-	Npc_PercEnable(self,PERC_ASSESSTHEFT,b_assesstheft);
-	Npc_PercEnable(self,PERC_ASSESSUSEMOB,b_assessusemob);
-	Npc_PercEnable(self,PERC_ASSESSENTERROOM,b_assessportalcollision);
-	Npc_PercEnable(self,PERC_ASSESSTHREAT,b_assessthreat);
-	Npc_PercEnable(self,PERC_DRAWWEAPON,b_assessdrawweapon);
-	Npc_PercEnable(self,PERC_ASSESSFIGHTSOUND,b_assessfightsound);
-	Npc_PercEnable(self,PERC_ASSESSQUIETSOUND,b_assessquietsound);
-	Npc_PercEnable(self,PERC_ASSESSWARN,b_assesswarn);
-	Npc_PercEnable(self,PERC_ASSESSTALK,b_assesstalk);
-	Npc_PercEnable(self,PERC_MOVEMOB,b_movemob);
+	Npc_PercEnable(self,PERC_ASSESSPLAYER,B_AssessPlayer);
+	Npc_PercEnable(self,PERC_ASSESSENEMY,B_AssessEnemy);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
+	Npc_PercEnable(self,PERC_ASSESSDAMAGE,B_AssessDamage);
+	Npc_PercEnable(self,PERC_ASSESSMURDER,B_AssessMurder);
+	Npc_PercEnable(self,PERC_ASSESSTHEFT,B_AssessTheft);
+	Npc_PercEnable(self,PERC_ASSESSUSEMOB,B_AssessUseMob);
+	Npc_PercEnable(self,PERC_ASSESSENTERROOM,B_AssessPortalCollision);
+	Npc_PercEnable(self,PERC_ASSESSTHREAT,B_AssessThreat);
+	Npc_PercEnable(self,PERC_DRAWWEAPON,B_AssessDrawWeapon);
+	Npc_PercEnable(self,PERC_ASSESSFIGHTSOUND,B_AssessFightSound);
+	Npc_PercEnable(self,PERC_ASSESSQUIETSOUND,B_AssessQuietSound);
+	Npc_PercEnable(self,PERC_ASSESSWARN,B_AssessWarn);
+	Npc_PercEnable(self,PERC_ASSESSTALK,B_AssessTalk);
+	Npc_PercEnable(self,PERC_MOVEMOB,B_MoveMob);
 };
 
-func void perception_set_minimal()
+func void Perception_Set_Minimal()
 {
 	self.senses = SENSE_HEAR | SENSE_SEE;
 	self.senses_range = PERC_DIST_ACTIVE_MAX;
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
-	Npc_PercEnable(self,PERC_ASSESSDAMAGE,b_assessdamage);
-	Npc_PercEnable(self,PERC_ASSESSMURDER,b_assessmurder);
-	Npc_PercEnable(self,PERC_ASSESSTHEFT,b_assesstheft);
-	Npc_PercEnable(self,PERC_ASSESSUSEMOB,b_assessusemob);
-	Npc_PercEnable(self,PERC_ASSESSENTERROOM,b_assessportalcollision);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
+	Npc_PercEnable(self,PERC_ASSESSDAMAGE,B_AssessDamage);
+	Npc_PercEnable(self,PERC_ASSESSMURDER,B_AssessMurder);
+	Npc_PercEnable(self,PERC_ASSESSTHEFT,B_AssessTheft);
+	Npc_PercEnable(self,PERC_ASSESSUSEMOB,B_AssessUseMob);
+	Npc_PercEnable(self,PERC_ASSESSENTERROOM,B_AssessPortalCollision);
 };
 
-func void b_clearperceptions(var C_NPC slf)
+func void B_ClearPerceptions(var C_Npc slf)
 {
 	Npc_PercDisable(slf,PERC_ASSESSPLAYER);
 	Npc_PercDisable(slf,PERC_ASSESSENEMY);
@@ -92,15 +92,15 @@ func void b_clearperceptions(var C_NPC slf)
 	Npc_PercDisable(slf,PERC_ASSESSSURPRISE);
 };
 
-func void perception_set_monster_rtn()
+func void Perception_Set_Monster_Rtn()
 {
 	Npc_SetPercTime(self,1);
-	Npc_PercEnable(self,PERC_ASSESSENEMY,b_mm_assessenemy);
-	Npc_PercEnable(self,PERC_ASSESSBODY,b_mm_assessbody);
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
-	Npc_PercEnable(self,PERC_ASSESSDAMAGE,b_mm_assessdamage);
-	Npc_PercEnable(self,PERC_ASSESSOTHERSDAMAGE,b_mm_assessothersdamage);
-	Npc_PercEnable(self,PERC_ASSESSMURDER,b_mm_assessothersdamage);
-	Npc_PercEnable(self,PERC_ASSESSWARN,b_mm_assesswarn);
+	Npc_PercEnable(self,PERC_ASSESSENEMY,B_MM_AssessEnemy);
+	Npc_PercEnable(self,PERC_ASSESSBODY,B_MM_AssessBody);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
+	Npc_PercEnable(self,PERC_ASSESSDAMAGE,B_MM_AssessDamage);
+	Npc_PercEnable(self,PERC_ASSESSOTHERSDAMAGE,B_MM_AssessOthersDamage);
+	Npc_PercEnable(self,PERC_ASSESSMURDER,B_MM_AssessOthersDamage);
+	Npc_PercEnable(self,PERC_ASSESSWARN,B_MM_AssessWarn);
 };
 

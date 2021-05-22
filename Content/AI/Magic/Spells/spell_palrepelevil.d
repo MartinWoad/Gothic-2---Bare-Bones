@@ -1,17 +1,17 @@
 
-const int SPL_COST_PALREPELEVIL = 30;
-const int SPL_DAMAGE_PALREPELEVIL = 300;
+const int SPL_Cost_PalRepelEvil = 30;
+const int SPL_Damage_PalRepelEvil = 300;
 
-instance SPELL_PALREPELEVIL(C_SPELL_PROTO)
+instance Spell_PalRepelEvil(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	damage_per_level = SPL_DAMAGE_PALREPELEVIL;
+	damage_per_level = SPL_Damage_PalRepelEvil;
 };
 
 
-func int spell_logic_palrepelevil(var int manainvested)
+func int Spell_Logic_PalRepelEvil(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_PALREPELEVIL)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_PalRepelEvil)
 	{
 		return SPL_SENDCAST;
 	}
@@ -21,8 +21,8 @@ func int spell_logic_palrepelevil(var int manainvested)
 	};
 };
 
-func void spell_cast_palrepelevil()
+func void Spell_Cast_PalRepelEvil()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_PALREPELEVIL;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_PalRepelEvil;
 };
 

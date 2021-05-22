@@ -1,46 +1,46 @@
 
-instance DIA_ALBRECHT_EXIT(C_INFO)
+instance DIA_Albrecht_EXIT(C_Info)
 {
-	npc = pal_202_albrecht;
+	npc = PAL_202_Albrecht;
 	nr = 999;
-	condition = dia_albrecht_exit_condition;
-	information = dia_albrecht_exit_info;
+	condition = DIA_Albrecht_EXIT_Condition;
+	information = DIA_Albrecht_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_albrecht_exit_condition()
+func int DIA_Albrecht_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_albrecht_exit_info()
+func void DIA_Albrecht_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ALBRECHT_HAGEN(C_INFO)
+instance DIA_Albrecht_Hagen(C_Info)
 {
-	npc = pal_202_albrecht;
+	npc = PAL_202_Albrecht;
 	nr = 1;
-	condition = dia_albrecht_hagen_condition;
-	information = dia_albrecht_hagen_info;
+	condition = DIA_Albrecht_Hagen_Condition;
+	information = DIA_Albrecht_Hagen_Info;
 	permanent = FALSE;
 	description = "Muszê porozmawiaæ z Lordem Hagenem!";
 };
 
 
-func int dia_albrecht_hagen_condition()
+func int DIA_Albrecht_Hagen_Condition()
 {
-	if(lordhagen.aivar[AIV_TALKEDTOPLAYER] == FALSE)
+	if(LordHagen.aivar[AIV_TalkedToPlayer] == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_albrecht_hagen_info()
+func void DIA_Albrecht_Hagen_Info()
 {
 	AI_Output(other,self,"DIA_Albrecht_Hagen_15_00");	//Muszê porozmawiaæ z Lordem Hagenem!
 	AI_Output(self,other,"DIA_Albrecht_Hagen_03_01");	//Jest w wielkiej sali, na wprost st¹d.
@@ -48,23 +48,23 @@ func void dia_albrecht_hagen_info()
 };
 
 
-instance DIA_ALBRECHT_HALLO(C_INFO)
+instance DIA_Albrecht_Hallo(C_Info)
 {
-	npc = pal_202_albrecht;
+	npc = PAL_202_Albrecht;
 	nr = 2;
-	condition = dia_albrecht_hallo_condition;
-	information = dia_albrecht_hallo_info;
+	condition = DIA_Albrecht_Hallo_Condition;
+	information = DIA_Albrecht_Hallo_Info;
 	permanent = FALSE;
 	description = "Czym siê zajmuje paladyn?";
 };
 
 
-func int dia_albrecht_hallo_condition()
+func int DIA_Albrecht_Hallo_Condition()
 {
 	return TRUE;
 };
 
-func void dia_albrecht_hallo_info()
+func void DIA_Albrecht_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Albrecht_Hallo_15_00");	//Czym siê zajmuje paladyn?
 	AI_Output(self,other,"DIA_Albrecht_Hallo_03_01");	//Paladyn jest wojownikiem Innosa. ¯yje, by mu s³u¿yæ i walczy, by oddaæ mu czeœæ.
@@ -72,34 +72,34 @@ func void dia_albrecht_hallo_info()
 };
 
 
-instance DIA_ALBRECHT_CANTEACH(C_INFO)
+instance DIA_Albrecht_CanTeach(C_Info)
 {
-	npc = pal_202_albrecht;
+	npc = PAL_202_Albrecht;
 	nr = 99;
-	condition = dia_albrecht_canteach_condition;
-	information = dia_albrecht_canteach_info;
+	condition = DIA_Albrecht_CanTeach_Condition;
+	information = DIA_Albrecht_CanTeach_Info;
 	permanent = TRUE;
 	description = "Mo¿esz mnie czegoœ nauczyæ?";
 };
 
 
-func int dia_albrecht_canteach_condition()
+func int DIA_Albrecht_CanTeach_Condition()
 {
-	if(ALBRECHT_TEACHMANA == FALSE)
+	if(Albrecht_TeachMANA == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_albrecht_canteach_info()
+func void DIA_Albrecht_CanTeach_Info()
 {
 	AI_Output(other,self,"DIA_Albrecht_CanTeach_15_00");	//Czy mo¿esz mnie czegoœ nauczyæ?
 	if(other.guild == GIL_PAL)
 	{
 		AI_Output(self,other,"DIA_Albrecht_CanTeach_03_01");	//Jeœli udowodnisz, ¿e jesteœ tego godny, obdarzê ciê magicznymi runami paladynów.
 		AI_Output(self,other,"DIA_Albrecht_CanTeach_03_02");	//Poza tym, mogê nauczyæ ciê, jak zwiêkszyæ swoj¹ magiczn¹ moc.
-		ALBRECHT_TEACHMANA = TRUE;
-		b_logentry(TOPIC_CITYTEACHER,"Paladyn Albrecht mo¿e mi pomóc w zwiêkszeniu moich mocy magicznych.");
+		Albrecht_TeachMANA = TRUE;
+		B_LogEntry(TOPIC_CityTeacher,"Paladyn Albrecht mo¿e mi pomóc w zwiêkszeniu moich mocy magicznych.");
 	}
 	else
 	{
@@ -108,249 +108,249 @@ func void dia_albrecht_canteach_info()
 };
 
 
-instance DIA_ALBRECHT_TEACHPALRUNES(C_INFO)
+instance DIA_Albrecht_TEACHPalRunes(C_Info)
 {
-	npc = pal_202_albrecht;
+	npc = PAL_202_Albrecht;
 	nr = 100;
-	condition = dia_albrecht_teachpalrunes_condition;
-	information = dia_albrecht_teachpalrunes_info;
+	condition = DIA_Albrecht_TEACHPalRunes_Condition;
+	information = DIA_Albrecht_TEACHPalRunes_Info;
 	permanent = TRUE;
 	description = "Czy jestem godny otrzymania runy?";
 };
 
 
-func int dia_albrecht_teachpalrunes_condition()
+func int DIA_Albrecht_TEACHPalRunes_Condition()
 {
-	if(ALBRECHT_TEACHMANA == TRUE)
+	if(Albrecht_TeachMANA == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_albrecht_teachpalrunes_info()
+func void DIA_Albrecht_TEACHPalRunes_Info()
 {
 	AI_Output(other,self,"DIA_Albrecht_TEACHPalRunes_15_00");	//Czy jestem godny otrzymania runy?
-	if(PLAYER_TALENT_RUNES[SPL_PALLIGHT] == FALSE)
+	if(PLAYER_TALENT_RUNES[SPL_PalLight] == FALSE)
 	{
 		AI_Output(self,other,"DIA_Albrecht_TEACHPalRunes_03_01");	//Jako symbol twej rangi naznaczê ciê Run¹ Œwiat³a. To symbol prawdy i sprawiedliwoœci.
 		AI_Output(self,other,"DIA_Albrecht_TEACHPalRunes_03_02");	//Rozœwietla drogê wszystkim tym, którzy krocz¹ œcie¿k¹ Innosa.
 		AI_Output(self,other,"DIA_Albrecht_TEACHPalRunes_03_03");	//Musisz zas³u¿yæ na pozosta³e runy. Wróæ do mnie, kiedy uznasz, ¿e jesteœ ich godny.
-		PLAYER_TALENT_RUNES[SPL_PALLIGHT] = TRUE;
-		CreateInvItems(self,itru_pallight,1);
-		b_giveinvitems(self,other,5444,1);
+		PLAYER_TALENT_RUNES[SPL_PalLight] = TRUE;
+		CreateInvItems(self,ItRu_PalLight,1);
+		B_GiveInvItems(self,other,ItRu_PalLight,1);
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Albrecht_TEACHPalRunes_03_04");	//Jak¹ drogê wybra³eœ?
 		AI_Output(self,other,"DIA_Albrecht_TEACHPalRunes_03_05");	//Drogê uzdrawiania czy drogê walki?
-		Info_ClearChoices(dia_albrecht_teachpalrunes);
-		Info_AddChoice(dia_albrecht_teachpalrunes,DIALOG_BACK,dia_albrecht_teachpalrunes_back);
-		Info_AddChoice(dia_albrecht_teachpalrunes,"Wybieram drogê leczenia.",dia_albrecht_teachpalrunes_heal);
-		Info_AddChoice(dia_albrecht_teachpalrunes,"Wybieram drogê walki.",dia_albrecht_teachpalrunes_combat);
+		Info_ClearChoices(DIA_Albrecht_TEACHPalRunes);
+		Info_AddChoice(DIA_Albrecht_TEACHPalRunes,Dialog_Back,DIA_Albrecht_TEACHPalRunes_BACK);
+		Info_AddChoice(DIA_Albrecht_TEACHPalRunes,"Wybieram drogê leczenia.",DIA_Albrecht_TEACHPalRunes_Heal);
+		Info_AddChoice(DIA_Albrecht_TEACHPalRunes,"Wybieram drogê walki.",DIA_Albrecht_TEACHPalRunes_Combat);
 	};
 };
 
-func void dia_albrecht_teachpalrunes_back()
+func void DIA_Albrecht_TEACHPalRunes_BACK()
 {
-	Info_ClearChoices(dia_albrecht_teachpalrunes);
+	Info_ClearChoices(DIA_Albrecht_TEACHPalRunes);
 };
 
-func void b_albrecht_youarenotworthy()
+func void B_Albrecht_YouAreNotWorthy()
 {
 	AI_Output(self,other,"B_Albrecht_YouAreNotWorthy_03_00");	//Nie jesteœ jeszcze godzien, by otrzymaæ kolejny czar z tej œcie¿ki.
 };
 
-func void dia_albrecht_teachpalrunes_heal()
+func void DIA_Albrecht_TEACHPalRunes_Heal()
 {
 	AI_Output(other,self,"DIA_Albrecht_TEACHPalRunes_Heal_15_00");	//Wybieram drogê leczenia.
-	if((PLAYER_TALENT_RUNES[SPL_PALLIGHTHEAL] == FALSE) && (MIS_READYFORCHAPTER4 == TRUE))
+	if((PLAYER_TALENT_RUNES[SPL_PalLightHeal] == FALSE) && (MIS_ReadyforChapter4 == TRUE))
 	{
-		Info_ClearChoices(dia_albrecht_teachpalrunes);
-		Info_AddChoice(dia_albrecht_teachpalrunes,DIALOG_BACK,dia_albrecht_teachpalrunes_back);
-		Info_AddChoice(dia_albrecht_teachpalrunes,b_buildlearnstring("Leczenie lekkich ran",COSTFORPALSPELLS),dia_albrecht_teachpalrunes_pallightheal);
+		Info_ClearChoices(DIA_Albrecht_TEACHPalRunes);
+		Info_AddChoice(DIA_Albrecht_TEACHPalRunes,Dialog_Back,DIA_Albrecht_TEACHPalRunes_BACK);
+		Info_AddChoice(DIA_Albrecht_TEACHPalRunes,B_BuildLearnString("Leczenie lekkich ran",CostForPAlSpells),DIA_Albrecht_TEACHPalRunes_PalLightHeal);
 	}
-	else if((PLAYER_TALENT_RUNES[SPL_PALMEDIUMHEAL] == FALSE) && (KAPITEL >= 5))
+	else if((PLAYER_TALENT_RUNES[SPL_PalMediumHeal] == FALSE) && (Kapitel >= 5))
 	{
-		Info_ClearChoices(dia_albrecht_teachpalrunes);
-		Info_AddChoice(dia_albrecht_teachpalrunes,DIALOG_BACK,dia_albrecht_teachpalrunes_back);
-		Info_AddChoice(dia_albrecht_teachpalrunes,b_buildlearnstring("Leczenie œrednich ran",COSTFORPALSPELLS),dia_albrecht_teachpalrunes_palmediumheal);
+		Info_ClearChoices(DIA_Albrecht_TEACHPalRunes);
+		Info_AddChoice(DIA_Albrecht_TEACHPalRunes,Dialog_Back,DIA_Albrecht_TEACHPalRunes_BACK);
+		Info_AddChoice(DIA_Albrecht_TEACHPalRunes,B_BuildLearnString("Leczenie œrednich ran",CostForPAlSpells),DIA_Albrecht_TEACHPalRunes_PalMediumHeal);
 	}
 	else
 	{
-		b_albrecht_youarenotworthy();
+		B_Albrecht_YouAreNotWorthy();
 	};
 };
 
-func void dia_albrecht_teachpalrunes_combat()
+func void DIA_Albrecht_TEACHPalRunes_Combat()
 {
 	AI_Output(other,self,"DIA_Albrecht_TEACHPalRunes_Combat_15_00");	//Wybieram drogê walki.
-	if((PLAYER_TALENT_RUNES[SPL_PALHOLYBOLT] == FALSE) && (MIS_READYFORCHAPTER4 == TRUE))
+	if((PLAYER_TALENT_RUNES[SPL_PalHolyBolt] == FALSE) && (MIS_ReadyforChapter4 == TRUE))
 	{
-		Info_ClearChoices(dia_albrecht_teachpalrunes);
-		Info_AddChoice(dia_albrecht_teachpalrunes,DIALOG_BACK,dia_albrecht_teachpalrunes_back);
-		Info_AddChoice(dia_albrecht_teachpalrunes,b_buildlearnstring("Œwiêta strza³a",COSTFORPALSPELLS),dia_albrecht_teachpalrunes_palholybolt);
+		Info_ClearChoices(DIA_Albrecht_TEACHPalRunes);
+		Info_AddChoice(DIA_Albrecht_TEACHPalRunes,Dialog_Back,DIA_Albrecht_TEACHPalRunes_BACK);
+		Info_AddChoice(DIA_Albrecht_TEACHPalRunes,B_BuildLearnString("Œwiêta strza³a",CostForPAlSpells),DIA_Albrecht_TEACHPalRunes_PalHolyBolt);
 	}
-	else if((PLAYER_TALENT_RUNES[SPL_PALREPELEVIL] == FALSE) && (KAPITEL >= 5))
+	else if((PLAYER_TALENT_RUNES[SPL_PalRepelEvil] == FALSE) && (Kapitel >= 5))
 	{
-		Info_ClearChoices(dia_albrecht_teachpalrunes);
-		Info_AddChoice(dia_albrecht_teachpalrunes,DIALOG_BACK,dia_albrecht_teachpalrunes_back);
-		Info_AddChoice(dia_albrecht_teachpalrunes,b_buildlearnstring("Wypêdzenie z³a",COSTFORPALSPELLS),dia_albrecht_teachpalrunes_palrepelevil);
+		Info_ClearChoices(DIA_Albrecht_TEACHPalRunes);
+		Info_AddChoice(DIA_Albrecht_TEACHPalRunes,Dialog_Back,DIA_Albrecht_TEACHPalRunes_BACK);
+		Info_AddChoice(DIA_Albrecht_TEACHPalRunes,B_BuildLearnString("Wypêdzenie z³a",CostForPAlSpells),DIA_Albrecht_TEACHPalRunes_PalRepelEvil);
 	}
 	else
 	{
-		b_albrecht_youarenotworthy();
+		B_Albrecht_YouAreNotWorthy();
 	};
 };
 
-func int dia_albrecht_teachpalrunes_pallightheal()
+func int DIA_Albrecht_TEACHPalRunes_PalLightHeal()
 {
-	if(other.lp < COSTFORPALSPELLS)
+	if(other.lp < CostForPAlSpells)
 	{
-		PrintScreen(PRINT_NOTENOUGHLEARNPOINTS,-1,-1,FONT_SCREENSMALL,2);
-		b_say(self,other,"$NOLEARNNOPOINTS");
+		PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
+		B_Say(self,other,"$NOLEARNNOPOINTS");
 		return FALSE;
 	};
-	PLAYER_TALENT_RUNES[SPL_PALLIGHTHEAL] = TRUE;
-	CreateInvItems(self,itru_pallightheal,1);
-	b_giveinvitems(self,other,5445,1);
-	other.lp = other.lp - COSTFORPALSPELLS;
-	Info_ClearChoices(dia_albrecht_teachpalrunes);
+	PLAYER_TALENT_RUNES[SPL_PalLightHeal] = TRUE;
+	CreateInvItems(self,ItRu_PalLightHeal,1);
+	B_GiveInvItems(self,other,ItRu_PalLightHeal,1);
+	other.lp = other.lp - CostForPAlSpells;
+	Info_ClearChoices(DIA_Albrecht_TEACHPalRunes);
 	return TRUE;
 };
 
-func int dia_albrecht_teachpalrunes_palmediumheal()
+func int DIA_Albrecht_TEACHPalRunes_PalMediumHeal()
 {
-	if(other.lp < COSTFORPALSPELLS)
+	if(other.lp < CostForPAlSpells)
 	{
-		PrintScreen(PRINT_NOTENOUGHLEARNPOINTS,-1,-1,FONT_SCREENSMALL,2);
-		b_say(self,other,"$NOLEARNNOPOINTS");
+		PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
+		B_Say(self,other,"$NOLEARNNOPOINTS");
 		return FALSE;
 	};
-	PLAYER_TALENT_RUNES[SPL_PALMEDIUMHEAL] = TRUE;
-	CreateInvItems(self,itru_palmediumheal,1);
-	b_giveinvitems(self,other,5446,1);
-	other.lp = other.lp - COSTFORPALSPELLS;
+	PLAYER_TALENT_RUNES[SPL_PalMediumHeal] = TRUE;
+	CreateInvItems(self,ItRu_PalMediumHeal,1);
+	B_GiveInvItems(self,other,ItRu_PalMediumHeal,1);
+	other.lp = other.lp - CostForPAlSpells;
 	return TRUE;
 };
 
-func int dia_albrecht_teachpalrunes_palholybolt()
+func int DIA_Albrecht_TEACHPalRunes_PalHolyBolt()
 {
-	if(other.lp < COSTFORPALSPELLS)
+	if(other.lp < CostForPAlSpells)
 	{
-		PrintScreen(PRINT_NOTENOUGHLEARNPOINTS,-1,-1,FONT_SCREENSMALL,2);
-		b_say(self,other,"$NOLEARNNOPOINTS");
+		PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
+		B_Say(self,other,"$NOLEARNNOPOINTS");
 		return FALSE;
 	};
-	PLAYER_TALENT_RUNES[SPL_PALHOLYBOLT] = TRUE;
-	CreateInvItems(self,itru_palholybolt,1);
-	b_giveinvitems(self,other,5448,1);
-	other.lp = other.lp - COSTFORPALSPELLS;
+	PLAYER_TALENT_RUNES[SPL_PalHolyBolt] = TRUE;
+	CreateInvItems(self,ItRu_PalHolyBolt,1);
+	B_GiveInvItems(self,other,ItRu_PalHolyBolt,1);
+	other.lp = other.lp - CostForPAlSpells;
 	return TRUE;
 };
 
-func int dia_albrecht_teachpalrunes_palrepelevil()
+func int DIA_Albrecht_TEACHPalRunes_PalRepelEvil()
 {
-	if(other.lp < COSTFORPALSPELLS)
+	if(other.lp < CostForPAlSpells)
 	{
-		PrintScreen(PRINT_NOTENOUGHLEARNPOINTS,-1,-1,FONT_SCREENSMALL,2);
-		b_say(self,other,"$NOLEARNNOPOINTS");
+		PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
+		B_Say(self,other,"$NOLEARNNOPOINTS");
 		return FALSE;
 	};
-	PLAYER_TALENT_RUNES[SPL_PALREPELEVIL] = TRUE;
-	CreateInvItems(self,itru_palrepelevil,1);
-	b_giveinvitems(self,other,5449,1);
-	other.lp = other.lp - COSTFORPALSPELLS;
+	PLAYER_TALENT_RUNES[SPL_PalRepelEvil] = TRUE;
+	CreateInvItems(self,ItRu_PalRepelEvil,1);
+	B_GiveInvItems(self,other,ItRu_PalRepelEvil,1);
+	other.lp = other.lp - CostForPAlSpells;
 	return TRUE;
 };
 
 
-instance DIA_ALBRECHT_TEACH(C_INFO)
+instance DIA_Albrecht_Teach(C_Info)
 {
-	npc = pal_202_albrecht;
+	npc = PAL_202_Albrecht;
 	nr = 101;
-	condition = dia_albrecht_teach_condition;
-	information = dia_albrecht_teach_info;
+	condition = DIA_Albrecht_Teach_Condition;
+	information = DIA_Albrecht_Teach_Info;
 	permanent = TRUE;
 	description = "Chcê zwiêkszyæ moje moce magiczne.";
 };
 
 
-func int dia_albrecht_teach_condition()
+func int DIA_Albrecht_Teach_Condition()
 {
-	if(ALBRECHT_TEACHMANA == TRUE)
+	if(Albrecht_TeachMANA == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_albrecht_teach_info()
+func void DIA_Albrecht_Teach_Info()
 {
 	AI_Output(other,self,"DIA_Albrecht_Teach_15_00");	//Chcê zwiêkszyæ moje moce magiczne.
-	Info_ClearChoices(dia_albrecht_teach);
-	Info_AddChoice(dia_albrecht_teach,DIALOG_BACK,dia_albrecht_teach_back);
-	Info_AddChoice(dia_albrecht_teach,b_buildlearnstring(PRINT_LEARNMANA1,b_getlearncostattribute(other,ATR_MANA_MAX)),dia_albrecht_teach_1);
-	Info_AddChoice(dia_albrecht_teach,b_buildlearnstring(PRINT_LEARNMANA5,b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_albrecht_teach_5);
+	Info_ClearChoices(DIA_Albrecht_Teach);
+	Info_AddChoice(DIA_Albrecht_Teach,Dialog_Back,DIA_Albrecht_Teach_BACK);
+	Info_AddChoice(DIA_Albrecht_Teach,B_BuildLearnString(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),DIA_Albrecht_Teach_1);
+	Info_AddChoice(DIA_Albrecht_Teach,B_BuildLearnString(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),DIA_Albrecht_Teach_5);
 };
 
-func void dia_albrecht_teach_back()
+func void DIA_Albrecht_Teach_BACK()
 {
 	if(other.attribute[ATR_MANA_MAX] >= 100)
 	{
 		AI_Output(self,other,"DIA_Albrecht_Teach_03_00");	//Jeœli chcesz to zrobiæ, musisz poszukaæ innego nauczyciela.
 	};
-	Info_ClearChoices(dia_albrecht_teach);
+	Info_ClearChoices(DIA_Albrecht_Teach);
 };
 
-func void dia_albrecht_teach_1()
+func void DIA_Albrecht_Teach_1()
 {
-	b_teachattributepoints(self,other,ATR_MANA_MAX,1,100);
-	Info_ClearChoices(dia_albrecht_teach);
-	Info_AddChoice(dia_albrecht_teach,DIALOG_BACK,dia_albrecht_teach_back);
-	Info_AddChoice(dia_albrecht_teach,b_buildlearnstring(PRINT_LEARNMANA1,b_getlearncostattribute(other,ATR_MANA_MAX)),dia_albrecht_teach_1);
-	Info_AddChoice(dia_albrecht_teach,b_buildlearnstring(PRINT_LEARNMANA5,b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_albrecht_teach_5);
+	B_TeachAttributePoints(self,other,ATR_MANA_MAX,1,100);
+	Info_ClearChoices(DIA_Albrecht_Teach);
+	Info_AddChoice(DIA_Albrecht_Teach,Dialog_Back,DIA_Albrecht_Teach_BACK);
+	Info_AddChoice(DIA_Albrecht_Teach,B_BuildLearnString(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),DIA_Albrecht_Teach_1);
+	Info_AddChoice(DIA_Albrecht_Teach,B_BuildLearnString(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),DIA_Albrecht_Teach_5);
 };
 
-func void dia_albrecht_teach_5()
+func void DIA_Albrecht_Teach_5()
 {
-	b_teachattributepoints(self,other,ATR_MANA_MAX,5,100);
-	Info_ClearChoices(dia_albrecht_teach);
-	Info_AddChoice(dia_albrecht_teach,DIALOG_BACK,dia_albrecht_teach_back);
-	Info_AddChoice(dia_albrecht_teach,b_buildlearnstring(PRINT_LEARNMANA1,b_getlearncostattribute(other,ATR_MANA_MAX)),dia_albrecht_teach_1);
-	Info_AddChoice(dia_albrecht_teach,b_buildlearnstring(PRINT_LEARNMANA5,b_getlearncostattribute(other,ATR_MANA_MAX) * 5),dia_albrecht_teach_5);
+	B_TeachAttributePoints(self,other,ATR_MANA_MAX,5,100);
+	Info_ClearChoices(DIA_Albrecht_Teach);
+	Info_AddChoice(DIA_Albrecht_Teach,Dialog_Back,DIA_Albrecht_Teach_BACK);
+	Info_AddChoice(DIA_Albrecht_Teach,B_BuildLearnString(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),DIA_Albrecht_Teach_1);
+	Info_AddChoice(DIA_Albrecht_Teach,B_BuildLearnString(PRINT_LearnMANA5,B_GetLearnCostAttribute(other,ATR_MANA_MAX) * 5),DIA_Albrecht_Teach_5);
 };
 
 
-instance DIA_ALBRECHT_PICKPOCKET(C_INFO)
+instance DIA_Albrecht_PICKPOCKET(C_Info)
 {
-	npc = pal_202_albrecht;
+	npc = PAL_202_Albrecht;
 	nr = 900;
-	condition = dia_albrecht_pickpocket_condition;
-	information = dia_albrecht_pickpocket_info;
+	condition = DIA_Albrecht_PICKPOCKET_Condition;
+	information = DIA_Albrecht_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_albrecht_pickpocket_condition()
+func int DIA_Albrecht_PICKPOCKET_Condition()
 {
-	return c_beklauen(41,160);
+	return C_Beklauen(41,160);
 };
 
-func void dia_albrecht_pickpocket_info()
+func void DIA_Albrecht_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_albrecht_pickpocket);
-	Info_AddChoice(dia_albrecht_pickpocket,DIALOG_BACK,dia_albrecht_pickpocket_back);
-	Info_AddChoice(dia_albrecht_pickpocket,DIALOG_PICKPOCKET,dia_albrecht_pickpocket_doit);
+	Info_ClearChoices(DIA_Albrecht_PICKPOCKET);
+	Info_AddChoice(DIA_Albrecht_PICKPOCKET,Dialog_Back,DIA_Albrecht_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Albrecht_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Albrecht_PICKPOCKET_DoIt);
 };
 
-func void dia_albrecht_pickpocket_doit()
+func void DIA_Albrecht_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_albrecht_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Albrecht_PICKPOCKET);
 };
 
-func void dia_albrecht_pickpocket_back()
+func void DIA_Albrecht_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_albrecht_pickpocket);
+	Info_ClearChoices(DIA_Albrecht_PICKPOCKET);
 };
 

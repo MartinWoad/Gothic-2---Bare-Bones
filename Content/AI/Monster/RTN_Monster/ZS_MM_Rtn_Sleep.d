@@ -1,22 +1,22 @@
 
-func void b_mm_assessquietsound_sleep()
+func void B_MM_AssessQuietSound_Sleep()
 {
 	if(Wld_GetGuildAttitude(self.guild,other.guild) == ATT_HOSTILE)
 	{
-		b_mm_assessenemy();
+		B_MM_AssessEnemy();
 	};
 };
 
-func void zs_mm_rtn_sleep()
+func void ZS_MM_Rtn_Sleep()
 {
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
-	Npc_PercEnable(self,PERC_ASSESSDAMAGE,b_mm_assessdamage);
-	Npc_PercEnable(self,PERC_ASSESSOTHERSDAMAGE,b_mm_assessothersdamage);
-	Npc_PercEnable(self,PERC_ASSESSMURDER,b_mm_assessothersdamage);
-	Npc_PercEnable(self,PERC_ASSESSWARN,b_mm_assesswarn);
-	Npc_PercEnable(self,PERC_ASSESSQUIETSOUND,b_mm_assessquietsound_sleep);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
+	Npc_PercEnable(self,PERC_ASSESSDAMAGE,B_MM_AssessDamage);
+	Npc_PercEnable(self,PERC_ASSESSOTHERSDAMAGE,B_MM_AssessOthersDamage);
+	Npc_PercEnable(self,PERC_ASSESSMURDER,B_MM_AssessOthersDamage);
+	Npc_PercEnable(self,PERC_ASSESSWARN,B_MM_AssessWarn);
+	Npc_PercEnable(self,PERC_ASSESSQUIETSOUND,B_MM_AssessQuietSound_Sleep);
 	AI_SetWalkMode(self,NPC_WALK);
-	b_mm_desynchronize();
+	B_MM_DeSynchronize();
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == FALSE)
 	{
 		AI_GotoWP(self,self.wp);
@@ -29,17 +29,17 @@ func void zs_mm_rtn_sleep()
 	AI_PlayAniBS(self,"T_STAND_2_SLEEP",BS_LIE);
 };
 
-func int zs_mm_rtn_sleep_loop()
+func int ZS_MM_Rtn_Sleep_loop()
 {
-	if(!Wld_IsTime(self.aivar[AIV_MM_SLEEPSTART],0,self.aivar[AIV_MM_SLEEPEND],0) && (self.aivar[AIV_MM_SLEEPSTART] != ONLYROUTINE))
+	if(!Wld_IsTime(self.aivar[AIV_MM_SleepStart],0,self.aivar[AIV_MM_SleepEnd],0) && (self.aivar[AIV_MM_SleepStart] != OnlyRoutine))
 	{
-		AI_StartState(self,zs_mm_allscheduler,1,"");
+		AI_StartState(self,ZS_MM_AllScheduler,1,"");
 		return LOOP_END;
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_mm_rtn_sleep_end()
+func void ZS_MM_Rtn_Sleep_end()
 {
 	AI_PlayAniBS(self,"T_SLEEP_2_STAND",BS_STAND);
 };

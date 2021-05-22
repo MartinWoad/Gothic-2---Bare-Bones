@@ -1,32 +1,32 @@
 
-const int SPL_COST_TRFSHEEP = 5;
-const int SPL_COST_TRFSCAVENGER = 5;
-const int SPL_COST_TRFGIANTRAT = 5;
-const int SPL_COST_TRFGIANTBUG = 5;
-const int SPL_COST_TRFWOLF = 10;
-const int SPL_COST_TRFWARAN = 15;
-const int SPL_COST_TRFSNAPPER = 20;
-const int SPL_COST_TRFWARG = 25;
-const int SPL_COST_TRFFIREWARAN = 25;
-const int SPL_COST_TRFLURKER = 15;
-const int SPL_COST_TRFSHADOWBEAST = 30;
-const int SPL_COST_TRFDRAGONSNAPPER = 30;
+const int SPL_Cost_TrfSheep = 5;
+const int SPL_Cost_TrfScavenger = 5;
+const int SPL_Cost_TrfGiantRat = 5;
+const int SPL_Cost_TrfGiantBug = 5;
+const int SPL_Cost_TrfWolf = 10;
+const int SPL_Cost_TrfWaran = 15;
+const int SPL_Cost_TrfSnapper = 20;
+const int SPL_Cost_TrfWarg = 25;
+const int SPL_Cost_TrfFireWaran = 25;
+const int SPL_Cost_TrfLurker = 15;
+const int SPL_Cost_TrfShadowbeast = 30;
+const int SPL_Cost_TrfDragonSnapper = 30;
 
-instance SPELL_TRANSFORM(C_SPELL_PROTO)
+instance Spell_Transform(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	spelltype = SPELL_NEUTRAL;
-	targetcollectalgo = TARGET_COLLECT_NONE;
-	canturnduringinvest = 0;
+	spellType = SPELL_NEUTRAL;
+	targetCollectAlgo = TARGET_COLLECT_NONE;
+	canTurnDuringInvest = 0;
 };
 
 
-func int spell_logic_trfsheep(var int manainvested)
+func int Spell_Logic_TrfSheep(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_TRFSHEEP)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_TrfSheep)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_TRFSHEEP;
-		Npc_SetActiveSpellInfo(self,sheep);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_TrfSheep;
+		Npc_SetActiveSpellInfo(self,Sheep);
 		return SPL_SENDCAST;
 	}
 	else
@@ -35,12 +35,12 @@ func int spell_logic_trfsheep(var int manainvested)
 	};
 };
 
-func int spell_logic_trfscavenger(var int manainvested)
+func int Spell_Logic_TrfScavenger(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_TRFSCAVENGER)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_TrfScavenger)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_TRFSCAVENGER;
-		Npc_SetActiveSpellInfo(self,scavenger);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_TrfScavenger;
+		Npc_SetActiveSpellInfo(self,Scavenger);
 		return SPL_SENDCAST;
 	}
 	else
@@ -49,12 +49,12 @@ func int spell_logic_trfscavenger(var int manainvested)
 	};
 };
 
-func int spell_logic_trfgiantrat(var int manainvested)
+func int Spell_Logic_TrfGiantRat(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_TRFGIANTRAT)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_TrfGiantRat)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_TRFGIANTRAT;
-		Npc_SetActiveSpellInfo(self,giant_rat);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_TrfGiantRat;
+		Npc_SetActiveSpellInfo(self,Giant_Rat);
 		return SPL_SENDCAST;
 	}
 	else
@@ -63,12 +63,12 @@ func int spell_logic_trfgiantrat(var int manainvested)
 	};
 };
 
-func int spell_logic_trfgiantbug(var int manainvested)
+func int Spell_Logic_TrfGiantBug(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_TRFGIANTBUG)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_TrfGiantBug)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_TRFGIANTBUG;
-		Npc_SetActiveSpellInfo(self,giant_bug);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_TrfGiantBug;
+		Npc_SetActiveSpellInfo(self,Giant_Bug);
 		return SPL_SENDCAST;
 	}
 	else
@@ -77,12 +77,12 @@ func int spell_logic_trfgiantbug(var int manainvested)
 	};
 };
 
-func int spell_logic_trfwolf(var int manainvested)
+func int Spell_Logic_TrfWolf(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_TRFWOLF)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_TrfWolf)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_TRFWOLF;
-		Npc_SetActiveSpellInfo(self,wolf);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_TrfWolf;
+		Npc_SetActiveSpellInfo(self,Wolf);
 		return SPL_SENDCAST;
 	}
 	else
@@ -91,12 +91,12 @@ func int spell_logic_trfwolf(var int manainvested)
 	};
 };
 
-func int spell_logic_trfwaran(var int manainvested)
+func int Spell_Logic_TrfWaran(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_TRFWARAN)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_TrfWaran)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_TRFWARAN;
-		Npc_SetActiveSpellInfo(self,waran);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_TrfWaran;
+		Npc_SetActiveSpellInfo(self,Waran);
 		return SPL_SENDCAST;
 	}
 	else
@@ -105,12 +105,12 @@ func int spell_logic_trfwaran(var int manainvested)
 	};
 };
 
-func int spell_logic_trfsnapper(var int manainvested)
+func int Spell_Logic_TrfSnapper(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_TRFSNAPPER)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_TrfSnapper)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_TRFSNAPPER;
-		Npc_SetActiveSpellInfo(self,snapper);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_TrfSnapper;
+		Npc_SetActiveSpellInfo(self,Snapper);
 		return SPL_SENDCAST;
 	}
 	else
@@ -119,12 +119,12 @@ func int spell_logic_trfsnapper(var int manainvested)
 	};
 };
 
-func int spell_logic_trfwarg(var int manainvested)
+func int Spell_Logic_TrfWarg(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_TRFWARG)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_TrfWarg)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_TRFWARG;
-		Npc_SetActiveSpellInfo(self,warg);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_TrfWarg;
+		Npc_SetActiveSpellInfo(self,Warg);
 		return SPL_SENDCAST;
 	}
 	else
@@ -133,12 +133,12 @@ func int spell_logic_trfwarg(var int manainvested)
 	};
 };
 
-func int spell_logic_trffirewaran(var int manainvested)
+func int Spell_Logic_TrfFireWaran(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_TRFFIREWARAN)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_TrfFireWaran)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_TRFFIREWARAN;
-		Npc_SetActiveSpellInfo(self,firewaran);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_TrfFireWaran;
+		Npc_SetActiveSpellInfo(self,FireWaran);
 		return SPL_SENDCAST;
 	}
 	else
@@ -147,12 +147,12 @@ func int spell_logic_trffirewaran(var int manainvested)
 	};
 };
 
-func int spell_logic_trflurker(var int manainvested)
+func int Spell_Logic_TrfLurker(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_TRFLURKER)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_TrfLurker)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_TRFLURKER;
-		Npc_SetActiveSpellInfo(self,lurker);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_TrfLurker;
+		Npc_SetActiveSpellInfo(self,Lurker);
 		return SPL_SENDCAST;
 	}
 	else
@@ -161,12 +161,12 @@ func int spell_logic_trflurker(var int manainvested)
 	};
 };
 
-func int spell_logic_trfshadowbeast(var int manainvested)
+func int Spell_Logic_TrfShadowbeast(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_TRFSHADOWBEAST)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_TrfShadowbeast)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_TRFSHADOWBEAST;
-		Npc_SetActiveSpellInfo(self,shadowbeast);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_TrfShadowbeast;
+		Npc_SetActiveSpellInfo(self,Shadowbeast);
 		return SPL_SENDCAST;
 	}
 	else
@@ -175,12 +175,12 @@ func int spell_logic_trfshadowbeast(var int manainvested)
 	};
 };
 
-func int spell_logic_trfdragonsnapper(var int manainvested)
+func int Spell_Logic_TrfDragonSnapper(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_TRFDRAGONSNAPPER)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_TrfDragonSnapper)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_TRFDRAGONSNAPPER;
-		Npc_SetActiveSpellInfo(self,dragonsnapper);
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_TrfDragonSnapper;
+		Npc_SetActiveSpellInfo(self,DragonSnapper);
 		return SPL_SENDCAST;
 	}
 	else

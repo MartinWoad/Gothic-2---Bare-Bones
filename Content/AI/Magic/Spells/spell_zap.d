@@ -1,18 +1,18 @@
 
-const int SPL_COST_ZAP = 6;
-const int SPL_DAMAGE_ZAP = 30;
+const int SPL_Cost_Zap = 6;
+const int SPL_Damage_Zap = 30;
 
-instance SPELL_ZAP(C_SPELL_PROTO)
+instance Spell_Zap(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	damage_per_level = SPL_DAMAGE_ZAP;
+	damage_per_level = SPL_Damage_Zap;
 	damagetype = DAM_MAGIC;
 };
 
 
-func int spell_logic_zap(var int manainvested)
+func int Spell_Logic_Zap(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_ZAP)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_Zap)
 	{
 		return SPL_SENDCAST;
 	}
@@ -22,8 +22,8 @@ func int spell_logic_zap(var int manainvested)
 	};
 };
 
-func void spell_cast_zap(var int spelllevel)
+func void Spell_Cast_Zap(var int spellLevel)
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_ZAP;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Zap;
 };
 

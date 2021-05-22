@@ -1,27 +1,27 @@
 
-const int SPL_COST_CHARGEZAP = 60;
-const int SPL_DAMAGE_CHARGEZAP = 60;
+const int SPL_COST_ChargeZap = 60;
+const int SPL_Damage_ChargeZap = 60;
 
-instance SPELL_CHARGEZAP(C_SPELL_PROTO)
+instance Spell_ChargeZap(C_Spell_Proto)
 {
 	time_per_mana = 100;
-	damage_per_level = SPL_DAMAGE_CHARGEZAP;
+	damage_per_level = SPL_Damage_ChargeZap;
 	damagetype = DAM_MAGIC;
-	canturnduringinvest = TRUE;
+	canTurnDuringInvest = TRUE;
 };
 
 
-func int spell_logic_chargezap(var int manainvested)
+func int Spell_Logic_ChargeZap(var int manaInvested)
 {
-	if(manainvested == 0)
+	if(manaInvested == 0)
 	{
-		return SPL_FORCEINVEST + ((SPL_COST_CHARGEZAP * 3) / 10);
+		return SPL_FORCEINVEST + ((SPL_COST_ChargeZap * 3) / 10);
 	};
-	if((manainvested == ((SPL_COST_CHARGEZAP * 5) / 10)) || (manainvested == ((SPL_COST_CHARGEZAP * 7) / 10)) || (manainvested == ((SPL_COST_CHARGEZAP * 9) / 10)))
+	if((manaInvested == ((SPL_COST_ChargeZap * 5) / 10)) || (manaInvested == ((SPL_COST_ChargeZap * 7) / 10)) || (manaInvested == ((SPL_COST_ChargeZap * 9) / 10)))
 	{
 		return SPL_NEXTLEVEL;
 	};
-	if(manainvested >= SPL_COST_CHARGEZAP)
+	if(manaInvested >= SPL_COST_ChargeZap)
 	{
 		return SPL_DONTINVEST;
 	};

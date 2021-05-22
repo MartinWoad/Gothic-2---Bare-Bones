@@ -1,28 +1,28 @@
 
-instance BAU_903_BODO(NPC_DEFAULT)
+instance Bau_903_Bodo(Npc_Default)
 {
 	name[0] = "Bodo";
 	guild = GIL_BAU;
 	id = 903;
 	voice = 12;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,1);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_bau_mace);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_N_NORMAL16,BODYTEX_N,4831);
+	EquipItem(self,ItMw_1h_Bau_Mace);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_N_Normal16,BodyTex_N,ITAR_Bau_M);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,20);
-	daily_routine = rtn_start_903;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,20);
+	daily_routine = Rtn_Start_903;
 };
 
 
-func void rtn_start_903()
+func void Rtn_Start_903()
 {
-	ta_smalltalk(7,45,21,45,"NW_BIGFARM_HOUSE_OUT_04");
-	ta_sit_bench(21,45,7,45,"NW_BIGFARM_PATH_03");
+	TA_Smalltalk(7,45,21,45,"NW_BIGFARM_HOUSE_OUT_04");
+	TA_Sit_Bench(21,45,7,45,"NW_BIGFARM_PATH_03");
 };
 

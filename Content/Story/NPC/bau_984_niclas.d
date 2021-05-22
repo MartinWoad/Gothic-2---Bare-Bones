@@ -1,30 +1,30 @@
 
-instance BAU_984_NICLAS(NPC_DEFAULT)
+instance BAU_984_Niclas(Npc_Default)
 {
 	name[0] = "Niclas";
 	guild = GIL_OUT;
 	id = 984;
 	voice = 3;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,4);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_sld_sword);
-	EquipItem(self,itrw_sld_bow);
-	CreateInvItems(self,itrw_arrow,42);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Thief",FACE_N_NORMALBART12,BODYTEX_N,4845);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	EquipItem(self,ItRw_Sld_Bow);
+	CreateInvItems(self,ItRw_Arrow,42);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Thief",Face_N_NormalBart12,BodyTex_N,ITAR_Leather_L);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,70);
-	daily_routine = rtn_start_984;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,70);
+	daily_routine = Rtn_Start_984;
 };
 
 
-func void rtn_start_984()
+func void Rtn_Start_984()
 {
-	ta_sit_bench(8,0,23,0,"NW_CITY_JAEGER_SIT");
-	ta_sit_bench(23,0,8,0,"NW_CITY_JAEGER_SIT");
+	TA_Sit_Bench(8,0,23,0,"NW_CITY_JAEGER_SIT");
+	TA_Sit_Bench(23,0,8,0,"NW_CITY_JAEGER_SIT");
 };
 

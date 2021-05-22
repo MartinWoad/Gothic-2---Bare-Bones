@@ -1,46 +1,46 @@
 
-instance DIA_RUMBOLD_EXIT(C_INFO)
+instance DIA_Rumbold_EXIT(C_Info)
 {
-	npc = mil_335_rumbold;
+	npc = Mil_335_Rumbold;
 	nr = 999;
-	condition = dia_rumbold_exit_condition;
-	information = dia_rumbold_exit_info;
+	condition = DIA_Rumbold_EXIT_Condition;
+	information = DIA_Rumbold_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_rumbold_exit_condition()
+func int DIA_Rumbold_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_rumbold_exit_info()
+func void DIA_Rumbold_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_RUMBOLD_PREPERM(C_INFO)
+instance DIA_Rumbold_PrePerm(C_Info)
 {
-	npc = mil_335_rumbold;
+	npc = Mil_335_Rumbold;
 	nr = 1;
-	condition = dia_rumbold_preperm_condition;
-	information = dia_rumbold_preperm_info;
+	condition = DIA_Rumbold_PrePerm_Condition;
+	information = DIA_Rumbold_PrePerm_Info;
 	permanent = TRUE;
 	description = "Co tu porabiasz?";
 };
 
 
-func int dia_rumbold_preperm_condition()
+func int DIA_Rumbold_PrePerm_Condition()
 {
-	if(!Npc_KnowsInfo(other,dia_bengar_milizklatschen))
+	if(!Npc_KnowsInfo(other,DIA_Bengar_MILIZKLATSCHEN))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_rumbold_preperm_info()
+func void DIA_Rumbold_PrePerm_Info()
 {
 	AI_Output(other,self,"DIA_Rumbold_PrePerm_15_00");	//Co tu robicie?
 	AI_Output(self,other,"DIA_Rumbold_PrePerm_10_01");	//Wynoœ siê! Rozumiesz?
@@ -48,26 +48,26 @@ func void dia_rumbold_preperm_info()
 };
 
 
-instance DIA_RUMBOLD_HALLO(C_INFO)
+instance DIA_Rumbold_Hallo(C_Info)
 {
-	npc = mil_335_rumbold;
+	npc = Mil_335_Rumbold;
 	nr = 1;
-	condition = dia_rumbold_hallo_condition;
-	information = dia_rumbold_hallo_info;
+	condition = DIA_Rumbold_Hallo_Condition;
+	information = DIA_Rumbold_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_rumbold_hallo_condition()
+func int DIA_Rumbold_Hallo_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_bengar_milizklatschen))
+	if(Npc_KnowsInfo(other,DIA_Bengar_MILIZKLATSCHEN))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_rumbold_hallo_info()
+func void DIA_Rumbold_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Rumbold_Hallo_10_00");	//Spójrz na tego. Co za pokraka. Hej, co ciê tu sprowadza?
 	if(other.guild == GIL_NONE)
@@ -78,205 +78,205 @@ func void dia_rumbold_hallo_info()
 	{
 		AI_Output(self,other,"DIA_Rumbold_Hallo_10_02");	//Nale¿ysz do tych zawszonych najemników!
 	};
-	Info_ClearChoices(dia_rumbold_hallo);
-	Info_AddChoice(dia_rumbold_hallo,"Jestem nikim.",dia_rumbold_hallo_schwanzeinziehen);
-	Info_AddChoice(dia_rumbold_hallo,"Znikajcie st¹d, ale ju¿.",dia_rumbold_hallo_verschwindet);
-	Info_AddChoice(dia_rumbold_hallo,"Jestem twoim najgorszym koszmarem.",dia_rumbold_hallo_attack);
+	Info_ClearChoices(DIA_Rumbold_Hallo);
+	Info_AddChoice(DIA_Rumbold_Hallo,"Jestem nikim.",DIA_Rumbold_HALLO_schwanzeinziehen);
+	Info_AddChoice(DIA_Rumbold_Hallo,"Znikajcie st¹d, ale ju¿.",DIA_Rumbold_HALLO_verschwindet);
+	Info_AddChoice(DIA_Rumbold_Hallo,"Jestem twoim najgorszym koszmarem.",DIA_Rumbold_HALLO_Attack);
 };
 
-func void dia_rumbold_hallo_attack()
+func void DIA_Rumbold_HALLO_Attack()
 {
 	AI_Output(other,self,"DIA_Rumbold_HALLO_Attack_15_00");	//Jestem twoim najgorszym koszmarem.
 	AI_Output(self,other,"DIA_Rumbold_HALLO_Attack_10_01");	//Raczej trupem!
-	Info_ClearChoices(dia_rumbold_hallo);
-	Info_AddChoice(dia_rumbold_hallo,DIALOG_ENDE,dia_rumbold_hallo_endattack);
+	Info_ClearChoices(DIA_Rumbold_Hallo);
+	Info_AddChoice(DIA_Rumbold_Hallo,Dialog_Ende,DIA_Rumbold_HALLO_ENDAttack);
 };
 
-func void dia_rumbold_hallo_verschwindet()
+func void DIA_Rumbold_HALLO_verschwindet()
 {
 	AI_Output(other,self,"DIA_Rumbold_HALLO_verschwindet_15_00");	//Znikajcie st¹d, ale ju¿.
 	AI_Output(self,other,"DIA_Rumbold_HALLO_verschwindet_10_01");	//No, no. Chcesz, byœmy zniknêli.
 	AI_Output(self,other,"DIA_Rumbold_HALLO_verschwindet_10_02");	//A co jeœli nic z tego, hê?
-	Info_ClearChoices(dia_rumbold_hallo);
-	Info_AddChoice(dia_rumbold_hallo,"Ile mam zap³aciæ, ¿ebyœcie siê st¹d wynieœli?",dia_rumbold_hallo_geld);
-	Info_AddChoice(dia_rumbold_hallo,"Jeœli tak, to ju¿ ostatni raz utrudniacie farmerom ¿ycie.",dia_rumbold_hallo_aufsmaul);
+	Info_ClearChoices(DIA_Rumbold_Hallo);
+	Info_AddChoice(DIA_Rumbold_Hallo,"Ile mam zap³aciæ, ¿ebyœcie siê st¹d wynieœli?",DIA_Rumbold_HALLO_geld);
+	Info_AddChoice(DIA_Rumbold_Hallo,"Jeœli tak, to ju¿ ostatni raz utrudniacie farmerom ¿ycie.",DIA_Rumbold_HALLO_AufsMaul);
 };
 
-func void dia_rumbold_hallo_aufsmaul()
+func void DIA_Rumbold_HALLO_AufsMaul()
 {
 	AI_Output(other,self,"DIA_Rumbold_HALLO_AufsMaul_15_00");	//Jeœli tak, to ju¿ ostatni raz utrudniacie farmerom ¿ycie.
 	AI_Output(self,other,"DIA_Rumbold_HALLO_AufsMaul_10_01");	//Porywasz siê z motyk¹ na s³oñce, pacanie!
-	Info_ClearChoices(dia_rumbold_hallo);
-	Info_AddChoice(dia_rumbold_hallo,DIALOG_ENDE,dia_rumbold_hallo_endattack);
+	Info_ClearChoices(DIA_Rumbold_Hallo);
+	Info_AddChoice(DIA_Rumbold_Hallo,Dialog_Ende,DIA_Rumbold_HALLO_ENDAttack);
 };
 
-func void dia_rumbold_hallo_geld()
+func void DIA_Rumbold_HALLO_geld()
 {
 	AI_Output(other,self,"DIA_Rumbold_HALLO_geld_15_00");	//Ile mam zap³aciæ, ¿ebyœcie siê st¹d wynieœli?
 	AI_Output(self,other,"DIA_Rumbold_HALLO_geld_10_01");	//Chcesz sp³aciæ Bengara? A, to zupe³nie inna sprawa.
 	AI_Output(self,other,"DIA_Rumbold_HALLO_geld_10_02");	//Niech no pomyœlê. Bengar nigdy nie oszczêdza³, jest winien jeszcze 65 sztuk z³ota.
 	AI_Output(self,other,"DIA_Rumbold_HALLO_geld_10_03");	//Dawaj kasê, albo spadaj.
 	AI_Output(self,other,"DIA_Rumbold_HALLO_geld_10_04");	//Jesteœ skarbnikiem Bengara, czy co?
-	Info_ClearChoices(dia_rumbold_hallo);
-	Info_AddChoice(dia_rumbold_hallo,"Oszala³eœ? To o wiele za du¿o.",dia_rumbold_hallo_geld_toomuch);
-	if(Npc_HasItems(other,itmi_gold) >= 65)
+	Info_ClearChoices(DIA_Rumbold_Hallo);
+	Info_AddChoice(DIA_Rumbold_Hallo,"Oszala³eœ? To o wiele za du¿o.",DIA_Rumbold_HALLO_Geld_TooMuch);
+	if(Npc_HasItems(other,ItMi_Gold) >= 65)
 	{
-		Info_AddChoice(dia_rumbold_hallo,"Oto twoja forsa, a teraz spadaj.",dia_rumbold_hallo_geld_ok);
+		Info_AddChoice(DIA_Rumbold_Hallo,"Oto twoja forsa, a teraz spadaj.",DIA_Rumbold_HALLO_geld_ok);
 	};
 };
 
-func void dia_rumbold_hallo_geld_ok()
+func void DIA_Rumbold_HALLO_geld_ok()
 {
 	AI_Output(other,self,"DIA_Rumbold_HALLO_geld_ok_15_00");	//Oto wasze pieni¹dze, a teraz wynoœcie siê.
-	b_giveinvitems(other,self,5113,65);
+	B_GiveInvItems(other,self,ItMi_Gold,65);
 	AI_Output(self,other,"DIA_Rumbold_HALLO_geld_ok_10_01");	//Nie interesuje mnie, kto p³aci za Bengara. ¯yczê mi³ego dnia. Dureñ!
 	AI_StopProcessInfos(self);
-	RUMBOLD_BEZAHLT = TRUE;
+	Rumbold_Bezahlt = TRUE;
 	Npc_ExchangeRoutine(self,"Start");
-	if(Hlp_IsValidNpc(rick) && !Npc_IsDead(rick))
+	if(Hlp_IsValidNpc(Rick) && !Npc_IsDead(Rick))
 	{
-		Npc_ExchangeRoutine(rick,"Start");
-		AI_ContinueRoutine(rick);
+		Npc_ExchangeRoutine(Rick,"Start");
+		AI_ContinueRoutine(Rick);
 	};
-	if(Hlp_IsValidNpc(bengar) && !Npc_IsDead(bengar))
+	if(Hlp_IsValidNpc(Bengar) && !Npc_IsDead(Bengar))
 	{
-		Npc_ExchangeRoutine(bengar,"Start");
-		AI_ContinueRoutine(bengar);
+		Npc_ExchangeRoutine(Bengar,"Start");
+		AI_ContinueRoutine(Bengar);
 	};
 };
 
-func void dia_rumbold_hallo_geld_toomuch()
+func void DIA_Rumbold_HALLO_Geld_TooMuch()
 {
 	AI_Output(other,self,"DIA_Rumbold_HALLO_geld_TooMuch_15_00");	//Oszala³eœ? To o wiele za du¿o.
 	AI_Output(self,other,"DIA_Rumbold_HALLO_geld_TooMuch_10_01");	//W takim razie... spadaj!
 	AI_StopProcessInfos(self);
 };
 
-func void dia_rumbold_hallo_schwanzeinziehen()
+func void DIA_Rumbold_HALLO_schwanzeinziehen()
 {
 	AI_Output(other,self,"DIA_Rumbold_HALLO_schwanzeinziehen_15_00");	//Jestem nikim.
 	AI_Output(self,other,"DIA_Rumbold_HALLO_schwanzeinziehen_10_01");	//W takim razie... zejdŸ mi z oczu!
 	AI_StopProcessInfos(self);
 };
 
-func void dia_rumbold_hallo_endattack()
+func void DIA_Rumbold_HALLO_ENDAttack()
 {
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_KILL,1);
-	if(Hlp_IsValidNpc(rick) && !c_npcisdown(rick))
+	B_Attack(self,other,AR_KILL,1);
+	if(Hlp_IsValidNpc(Rick) && !C_NpcIsDown(Rick))
 	{
-		b_attack(rick,other,AR_KILL,1);
+		B_Attack(Rick,other,AR_KILL,1);
 	};
 };
 
 
-instance DIA_RUMBOLD_FIGHTNOW(C_INFO)
+instance DIA_Rumbold_FightNow(C_Info)
 {
-	npc = mil_335_rumbold;
+	npc = Mil_335_Rumbold;
 	nr = 1;
-	condition = dia_rumbold_fightnow_condition;
-	information = dia_rumbold_fightnow_info;
+	condition = DIA_Rumbold_FightNow_Condition;
+	information = DIA_Rumbold_FightNow_Info;
 	permanent = TRUE;
 	description = "Zostawcie farmera w spokoju!";
 };
 
 
-func int dia_rumbold_fightnow_condition()
+func int DIA_Rumbold_FightNow_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_rumbold_hallo) && (RUMBOLD_BEZAHLT == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Rumbold_Hallo) && (Rumbold_Bezahlt == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_rumbold_fightnow_info()
+func void DIA_Rumbold_FightNow_Info()
 {
 	AI_Output(other,self,"DIA_Rumbold_FightNow_15_00");	//Zostawcie farmera w spokoju!
 	AI_Output(self,other,"DIA_Rumbold_FightNow_10_01");	//Koleœ, masz jakieœ problemy ze s³uchem?
-	Info_ClearChoices(dia_rumbold_fightnow);
-	Info_AddChoice(dia_rumbold_fightnow,DIALOG_ENDE,dia_rumbold_fightnow_endattack);
+	Info_ClearChoices(DIA_Rumbold_FightNow);
+	Info_AddChoice(DIA_Rumbold_FightNow,Dialog_Ende,DIA_Rumbold_FightNow_ENDAttack);
 };
 
-func void dia_rumbold_fightnow_endattack()
+func void DIA_Rumbold_FightNow_ENDAttack()
 {
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_KILL,1);
-	if(Hlp_IsValidNpc(rick) && !c_npcisdown(rick))
+	B_Attack(self,other,AR_KILL,1);
+	if(Hlp_IsValidNpc(Rick) && !C_NpcIsDown(Rick))
 	{
-		b_attack(rick,other,AR_KILL,1);
+		B_Attack(Rick,other,AR_KILL,1);
 	};
 };
 
 
-instance DIA_RUMBOLD_STILLTHERE(C_INFO)
+instance DIA_Rumbold_StillThere(C_Info)
 {
-	npc = mil_335_rumbold;
+	npc = Mil_335_Rumbold;
 	nr = 1;
-	condition = dia_rumbold_stillthere_condition;
-	information = dia_rumbold_stillthere_info;
+	condition = DIA_Rumbold_StillThere_Condition;
+	information = DIA_Rumbold_StillThere_Info;
 	permanent = TRUE;
 	description = "Hej, ci¹gle tutaj?";
 };
 
 
-func int dia_rumbold_stillthere_condition()
+func int DIA_Rumbold_StillThere_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_rumbold_hallo) && (RUMBOLD_BEZAHLT == TRUE))
+	if(Npc_KnowsInfo(other,DIA_Rumbold_Hallo) && (Rumbold_Bezahlt == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_rumbold_stillthere_info()
+func void DIA_Rumbold_StillThere_Info()
 {
 	AI_Output(other,self,"DIA_Rumbold_StillThere_15_00");	//Hej, ci¹gle tutaj?
 	AI_Output(self,other,"DIA_Rumbold_StillThere_10_01");	//Mam ciê ju¿ doœæ!
-	Info_ClearChoices(dia_rumbold_stillthere);
-	Info_AddChoice(dia_rumbold_stillthere,DIALOG_ENDE,dia_rumbold_stillthere_endattack);
+	Info_ClearChoices(DIA_Rumbold_StillThere);
+	Info_AddChoice(DIA_Rumbold_StillThere,Dialog_Ende,DIA_Rumbold_StillThere_ENDAttack);
 };
 
-func void dia_rumbold_stillthere_endattack()
+func void DIA_Rumbold_StillThere_ENDAttack()
 {
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_KILL,1);
-	if(Hlp_IsValidNpc(rick) && !c_npcisdown(rick))
+	B_Attack(self,other,AR_KILL,1);
+	if(Hlp_IsValidNpc(Rick) && !C_NpcIsDown(Rick))
 	{
-		b_attack(rick,other,AR_KILL,1);
+		B_Attack(Rick,other,AR_KILL,1);
 	};
 };
 
 
-instance DIA_RUMBOLD_PICKPOCKET(C_INFO)
+instance DIA_Rumbold_PICKPOCKET(C_Info)
 {
-	npc = mil_335_rumbold;
+	npc = Mil_335_Rumbold;
 	nr = 900;
-	condition = dia_rumbold_pickpocket_condition;
-	information = dia_rumbold_pickpocket_info;
+	condition = DIA_Rumbold_PICKPOCKET_Condition;
+	information = DIA_Rumbold_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_rumbold_pickpocket_condition()
+func int DIA_Rumbold_PICKPOCKET_Condition()
 {
-	return c_beklauen(24,45);
+	return C_Beklauen(24,45);
 };
 
-func void dia_rumbold_pickpocket_info()
+func void DIA_Rumbold_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_rumbold_pickpocket);
-	Info_AddChoice(dia_rumbold_pickpocket,DIALOG_BACK,dia_rumbold_pickpocket_back);
-	Info_AddChoice(dia_rumbold_pickpocket,DIALOG_PICKPOCKET,dia_rumbold_pickpocket_doit);
+	Info_ClearChoices(DIA_Rumbold_PICKPOCKET);
+	Info_AddChoice(DIA_Rumbold_PICKPOCKET,Dialog_Back,DIA_Rumbold_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Rumbold_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Rumbold_PICKPOCKET_DoIt);
 };
 
-func void dia_rumbold_pickpocket_doit()
+func void DIA_Rumbold_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_rumbold_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Rumbold_PICKPOCKET);
 };
 
-func void dia_rumbold_pickpocket_back()
+func void DIA_Rumbold_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_rumbold_pickpocket);
+	Info_ClearChoices(DIA_Rumbold_PICKPOCKET);
 };
 

@@ -1,16 +1,16 @@
 
-const int SPL_COST_SUMMONDEMON = 50;
+const int SPL_Cost_SummonDemon = 50;
 
-instance SPELL_SUMMONDEMON(C_SPELL_PROTO)
+instance Spell_SummonDemon(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	targetcollectalgo = TARGET_COLLECT_NONE;
+	targetCollectAlgo = TARGET_COLLECT_NONE;
 };
 
 
-func int spell_logic_summondemon(var int manainvested)
+func int Spell_Logic_SummonDemon(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_SUMMONDEMON)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_SummonDemon)
 	{
 		return SPL_SENDCAST;
 	}
@@ -20,16 +20,16 @@ func int spell_logic_summondemon(var int manainvested)
 	};
 };
 
-func void spell_cast_summondemon()
+func void Spell_Cast_SummonDemon()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_SUMMONDEMON;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_SummonDemon;
 	if(Npc_IsPlayer(self))
 	{
-		Wld_SpawnNpcRange(self,summoned_demon,1,1000);
+		Wld_SpawnNpcRange(self,Summoned_Demon,1,1000);
 	}
 	else
 	{
-		Wld_SpawnNpcRange(self,demon,1,1000);
+		Wld_SpawnNpcRange(self,Demon,1,1000);
 	};
 };
 

@@ -1,20 +1,20 @@
 
-func void b_restartfreeze()
+func void B_RestartFreeze()
 {
-	if((Npc_GetActiveSpell(other) == SPL_ICECUBE) || (Npc_GetActiveSpell(other) == SPL_ICEWAVE))
+	if((Npc_GetActiveSpell(other) == SPL_IceCube) || (Npc_GetActiveSpell(other) == SPL_IceWave))
 	{
 		Npc_SetStateTime(self,0);
 	};
 };
 
-func void b_stopmagicfreeze()
+func void B_StopMagicFreeze()
 {
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
 	Npc_ClearAIQueue(self);
 	AI_Standup(self);
 	if(self.guild < GIL_SEPERATOR_HUM)
 	{
-		b_assessdamage();
+		B_AssessDamage();
 	}
 	else
 	{
@@ -22,46 +22,46 @@ func void b_stopmagicfreeze()
 	};
 };
 
-func void zs_magicfreeze()
+func void ZS_MagicFreeze()
 {
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_restartfreeze);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_RestartFreeze);
 	Npc_StopAni(self,"S_FIRE_VICTIM");
-	if(!c_bodystatecontains(self,BS_UNCONSCIOUS))
+	if(!C_BodyStateContains(self,BS_UNCONSCIOUS))
 	{
 		AI_PlayAniBS(self,"T_STAND_2_FREEZE_VICTIM",BS_UNCONSCIOUS);
 	};
-	self.aivar[AIV_FREEZESTATETIME] = 0;
+	self.aivar[AIV_FreezeStateTime] = 0;
 };
 
-func int zs_magicfreeze_loop()
+func int ZS_MagicFreeze_Loop()
 {
 	if(Npc_GetStateTime(self) > SPL_TIME_FREEZE)
 	{
-		b_stopmagicfreeze();
+		B_StopMagicFreeze();
 		return LOOP_END;
 	};
-	if(Npc_GetStateTime(self) != self.aivar[AIV_FREEZESTATETIME])
+	if(Npc_GetStateTime(self) != self.aivar[AIV_FreezeStateTime])
 	{
-		self.aivar[AIV_FREEZESTATETIME] = Npc_GetStateTime(self);
+		self.aivar[AIV_FreezeStateTime] = Npc_GetStateTime(self);
 		if((self.attribute[ATR_HITPOINTS] - (SPL_FREEZE_DAMAGE * 2)) > 0)
 		{
 			if((self.guild == GIL_FIREGOLEM) || (self.aivar[AIV_MM_REAL_ID] == ID_FIREWARAN) || (self.aivar[AIV_MM_REAL_ID] == ID_DRAGON_FIRE))
 			{
-				b_magichurtnpc(other,SPL_FREEZE_DAMAGE * 2);
+				B_MagicHurtNpc(other,SPL_FREEZE_DAMAGE * 2);
 				return LOOP_CONTINUE;
 			};
 			if((self.guild == GIL_ICEGOLEM) || (self.aivar[AIV_MM_REAL_ID] == ID_DRAGON_ICE))
 			{
-				b_magichurtnpc(other,SPL_FREEZE_DAMAGE / 2);
+				B_MagicHurtNpc(other,SPL_FREEZE_DAMAGE / 2);
 				return LOOP_CONTINUE;
 			};
-			b_magichurtnpc(other,SPL_FREEZE_DAMAGE);
+			B_MagicHurtNpc(other,SPL_FREEZE_DAMAGE);
 		};
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_magicfreeze_end()
+func void ZS_MagicFreeze_End()
 {
 };
 

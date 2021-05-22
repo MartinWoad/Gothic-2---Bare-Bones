@@ -1,55 +1,55 @@
 
-instance PAL_299_SERGIO(NPC_DEFAULT)
+instance PAL_299_Sergio(Npc_Default)
 {
 	name[0] = "Sergio";
 	guild = GIL_PAL;
 	id = 299;
 	voice = 4;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,4);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_2h_pal_sword);
-	b_createambientinv(self);
-	CreateInvItems(self,itke_innos_mis,1);
-	CreateInvItems(self,itpo_health_02,4);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fighter",FACE_N_NORMAL_ERPRESSER,BODYTEX_N,4828);
+	EquipItem(self,ItMw_2h_Pal_Sword);
+	B_CreateAmbientInv(self);
+	CreateInvItems(self,ItKe_Innos_MIS,1);
+	CreateInvItems(self,ItPo_Health_02,4);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_Normal_Erpresser,BodyTex_N,ItAr_PAL_M);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,65);
-	daily_routine = rtn_start_299;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,65);
+	daily_routine = Rtn_Start_299;
 };
 
 
-func void rtn_start_299()
+func void Rtn_Start_299()
 {
-	ta_pray_innos(8,0,23,0,"NW_MONASTERY_CHAPELL_02");
-	ta_pray_innos(23,0,8,0,"NW_MONASTERY_CHAPELL_02");
+	TA_Pray_Innos(8,0,23,0,"NW_MONASTERY_CHAPELL_02");
+	TA_Pray_Innos(23,0,8,0,"NW_MONASTERY_CHAPELL_02");
 };
 
-func void rtn_waitforplayer_299()
+func void Rtn_WaitForPlayer_299()
 {
-	ta_stand_guarding(8,0,23,0,"NW_MONASTERY_PLACE_09");
-	ta_stand_guarding(23,0,8,0,"NW_MONASTERY_PLACE_09");
+	TA_Stand_Guarding(8,0,23,0,"NW_MONASTERY_PLACE_09");
+	TA_Stand_Guarding(23,0,8,0,"NW_MONASTERY_PLACE_09");
 };
 
-func void rtn_train_299()
+func void Rtn_Train_299()
 {
-	ta_pray_innos(7,0,23,0,"NW_MONASTERY_CHAPELL_02");
-	ta_pray_innos(23,0,5,0,"NW_MONASTERY_CHAPELL_02");
-	ta_practice_sword(5,0,7,0,"NW_MONASTERY_TRAIN_01");
+	TA_Pray_Innos(7,0,23,0,"NW_MONASTERY_CHAPELL_02");
+	TA_Pray_Innos(23,0,5,0,"NW_MONASTERY_CHAPELL_02");
+	TA_Practice_Sword(5,0,7,0,"NW_MONASTERY_TRAIN_01");
 };
 
-func void rtn_wait_299()
+func void Rtn_Wait_299()
 {
-	ta_stand_guarding(8,0,23,0,"NW_MONASTERY_CHAPELL_03");
-	ta_stand_guarding(23,0,8,0,"NW_MONASTERY_CHAPELL_03");
+	TA_Stand_Guarding(8,0,23,0,"NW_MONASTERY_CHAPELL_03");
+	TA_Stand_Guarding(23,0,8,0,"NW_MONASTERY_CHAPELL_03");
 };
 
-func void rtn_guide_299()
+func void Rtn_Guide_299()
 {
-	ta_guide_player(8,0,23,0,"NW_TO_PASS_01");
-	ta_guide_player(23,0,8,0,"NW_TO_PASS_01");
+	TA_Guide_Player(8,0,23,0,"NW_TO_PASS_01");
+	TA_Guide_Player(23,0,8,0,"NW_TO_PASS_01");
 };
 

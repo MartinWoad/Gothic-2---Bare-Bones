@@ -1,13 +1,13 @@
 
-func int c_istakenitemmypossession(var C_NPC slf,var C_NPC oth,var C_ITEM itm)
+func int C_IsTakenItemMyPossession(var C_Npc slf,var C_Npc oth,var C_Item itm)
 {
 	var int portalguild;
 	portalguild = Wld_GetPlayerPortalGuild();
 	if(Npc_OwnedByNpc(itm,slf))
 	{
-		if(Hlp_IsItem(itm,holy_hammer_mis))
+		if(Hlp_IsItem(itm,Holy_Hammer_MIS))
 		{
-			HAMMER_TAKEN = TRUE;
+			Hammer_Taken = TRUE;
 		};
 		return TRUE;
 	};
@@ -15,11 +15,11 @@ func int c_istakenitemmypossession(var C_NPC slf,var C_NPC oth,var C_ITEM itm)
 	{
 		return FALSE;
 	};
-	if(c_npcisbotheredbyplayerroomguild(self) || (Wld_GetPlayerPortalGuild() == GIL_PUBLIC))
+	if(C_NpcIsBotheredByPlayerRoomGuild(self) || (Wld_GetPlayerPortalGuild() == GIL_PUBLIC))
 	{
 		return TRUE;
 	};
-	if(Wld_GetGuildAttitude(slf.guild,itm.ownerguild) == ATT_FRIENDLY)
+	if(Wld_GetGuildAttitude(slf.guild,itm.ownerGuild) == ATT_FRIENDLY)
 	{
 		return TRUE;
 	};

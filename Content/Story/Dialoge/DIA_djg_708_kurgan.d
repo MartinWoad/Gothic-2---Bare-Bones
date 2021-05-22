@@ -1,66 +1,66 @@
 
-instance DIA_KURGAN_EXIT(C_INFO)
+instance DIA_Kurgan_EXIT(C_Info)
 {
-	npc = djg_708_kurgan;
+	npc = DJG_708_Kurgan;
 	nr = 999;
-	condition = dia_kurgan_exit_condition;
-	information = dia_kurgan_exit_info;
+	condition = DIA_Kurgan_EXIT_Condition;
+	information = DIA_Kurgan_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_kurgan_exit_condition()
+func int DIA_Kurgan_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_kurgan_exit_info()
+func void DIA_Kurgan_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
-	Npc_SetRefuseTalk(biff,400);
+	Npc_SetRefuseTalk(Biff,400);
 };
 
 
-instance DIA_KURGAN_HELLO(C_INFO)
+instance DIA_Kurgan_HELLO(C_Info)
 {
-	npc = djg_708_kurgan;
-	condition = dia_kurgan_hello_condition;
-	information = dia_kurgan_hello_info;
+	npc = DJG_708_Kurgan;
+	condition = DIA_Kurgan_HELLO_Condition;
+	information = DIA_Kurgan_HELLO_Info;
 	important = TRUE;
 };
 
 
-func int dia_kurgan_hello_condition()
+func int DIA_Kurgan_HELLO_Condition()
 {
 	return TRUE;
 };
 
-func void dia_kurgan_hello_info()
+func void DIA_Kurgan_HELLO_Info()
 {
 	AI_Output(self,other,"DIA_Kurgan_HELLO_01_00");	//Hej! Tacy jak ty powinni uwa¿aæ, gdzie ³a¿¹.
 	AI_Output(other,self,"DIA_Kurgan_HELLO_15_01");	//Co chcesz przez to powiedzieæ?
 	AI_Output(self,other,"DIA_Kurgan_HELLO_01_02");	//A to, ¿e tutejszy klimat niespecjalnie sprzyja zdrowiu. Tu siê a¿ roi od orków i przeró¿nych potworów.
 	AI_Output(self,other,"DIA_Kurgan_HELLO_01_03");	//Nie wspominaj¹c ju¿ o smokach. Potraktuj to jako przyjacielsk¹ radê i lepiej st¹d zniknij.
-	b_logentry(TOPIC_DRAGONHUNTER,"Na skraju Górniczej Doliny spotka³em grupê ³owców smoków. S¹ dobrze uzbrojeni, ale nie s¹dzê, aby zrobi³o to jakieœ wra¿enie na smokach.");
+	B_LogEntry(TOPIC_Dragonhunter,"Na skraju Górniczej Doliny spotka³em grupê ³owców smoków. S¹ dobrze uzbrojeni, ale nie s¹dzê, aby zrobi³o to jakieœ wra¿enie na smokach.");
 };
 
 
-instance DIA_KURGAN_ELSE(C_INFO)
+instance DIA_Kurgan_ELSE(C_Info)
 {
-	npc = djg_708_kurgan;
-	condition = dia_kurgan_else_condition;
-	information = dia_kurgan_else_info;
+	npc = DJG_708_Kurgan;
+	condition = DIA_Kurgan_ELSE_Condition;
+	information = DIA_Kurgan_ELSE_Info;
 	description = "Czy mo¿esz mi powiedzieæ coœ, czego jeszcze bym nie wiedzia³?";
 };
 
 
-func int dia_kurgan_else_condition()
+func int DIA_Kurgan_ELSE_Condition()
 {
 	return TRUE;
 };
 
-func void dia_kurgan_else_info()
+func void DIA_Kurgan_ELSE_Info()
 {
 	AI_Output(other,self,"DIA_Kurgan_ELSE_15_00");	//Czy mo¿esz mi powiedzieæ coœ, czego jeszcze bym nie wiedzia³?
 	AI_Output(self,other,"DIA_Kurgan_ELSE_01_01");	//Mogê ci daæ dobr¹ radê, i to w dodatku za darmo.
@@ -69,21 +69,21 @@ func void dia_kurgan_else_info()
 };
 
 
-instance DIA_KURGAN_LEADER(C_INFO)
+instance DIA_Kurgan_Leader(C_Info)
 {
-	npc = djg_708_kurgan;
-	condition = dia_kurgan_leader_condition;
-	information = dia_kurgan_leader_info;
+	npc = DJG_708_Kurgan;
+	condition = DIA_Kurgan_Leader_Condition;
+	information = DIA_Kurgan_Leader_Info;
 	description = "Czy to ty jesteœ tutaj szefem?";
 };
 
 
-func int dia_kurgan_leader_condition()
+func int DIA_Kurgan_Leader_Condition()
 {
 	return TRUE;
 };
 
-func void dia_kurgan_leader_info()
+func void DIA_Kurgan_Leader_Info()
 {
 	AI_Output(other,self,"DIA_Kurgan_Leader_15_00");	//Czy to ty jesteœ tutaj szefem?
 	AI_Output(self,other,"DIA_Kurgan_Leader_01_01");	//A czy wygl¹dam na szefa? Na pewno nie. Nie potrzebujemy ¿adnych zarozumia³ych wypierdków, którzy mówiliby nam, co mamy robiæ.
@@ -93,27 +93,27 @@ func void dia_kurgan_leader_info()
 };
 
 
-instance DIA_KURGAN_KILLDRAGON(C_INFO)
+instance DIA_Kurgan_KillDragon(C_Info)
 {
-	npc = djg_708_kurgan;
-	condition = dia_kurgan_killdragon_condition;
-	information = dia_kurgan_killdragon_info;
+	npc = DJG_708_Kurgan;
+	condition = DIA_Kurgan_KillDragon_Condition;
+	information = DIA_Kurgan_KillDragon_Info;
 	description = "A wiêc chcesz zabijaæ smoki?";
 };
 
 
-func int dia_kurgan_killdragon_condition()
+func int DIA_Kurgan_KillDragon_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_kurgan_leader))
+	if(Npc_KnowsInfo(other,DIA_Kurgan_Leader))
 	{
 		return TRUE;
 	};
 };
 
 
-var int kurgan_killdragon_day;
+var int Kurgan_KillDragon_Day;
 
-func void dia_kurgan_killdragon_info()
+func void DIA_Kurgan_KillDragon_Info()
 {
 	AI_Output(other,self,"DIA_Kurgan_KillDragon_15_00");	//A wiêc chcesz zabijaæ smoki?
 	AI_Output(self,other,"DIA_Kurgan_KillDragon_01_01");	//M¹drala. S¹dzisz, ¿e to takie ³atwe?
@@ -122,27 +122,27 @@ func void dia_kurgan_killdragon_info()
 	AI_Output(other,self,"DIA_Kurgan_KillDragon_15_04");	//Rozumiem. A jak dok³adnie przebiega takie polowanie?
 	AI_Output(self,other,"DIA_Kurgan_KillDragon_01_05");	//Najpierw musimy znaleŸæ smoki.
 	AI_Output(self,other,"DIA_Kurgan_KillDragon_01_06");	//Dopiero gdy wiemy, gdzie siê znajduj¹, mo¿emy zastanowiæ siê nad najlepszymi metodami ataku.
-	KURGAN_KILLDRAGON_DAY = Wld_GetDay();
-	Info_AddChoice(dia_kurgan_killdragon,"Z wielk¹ chêci¹ bym popatrzy³, ale muszê ruszaæ w dalsz¹ drogê.",dia_kurgan_killdragon_weg);
-	Info_AddChoice(dia_kurgan_killdragon,"Jak zamierzasz przejœæ obok orków?",dia_kurgan_killdragon_orks);
-	Info_AddChoice(dia_kurgan_killdragon,"Ty pewnie nie potrafisz znaleŸæ nawet œlepej owcy.",dia_kurgan_killdragon_spott);
+	Kurgan_KillDragon_Day = Wld_GetDay();
+	Info_AddChoice(DIA_Kurgan_KillDragon,"Z wielk¹ chêci¹ bym popatrzy³, ale muszê ruszaæ w dalsz¹ drogê.",DIA_Kurgan_KillDragon_weg);
+	Info_AddChoice(DIA_Kurgan_KillDragon,"Jak zamierzasz przejœæ obok orków?",DIA_Kurgan_KillDragon_orks);
+	Info_AddChoice(DIA_Kurgan_KillDragon,"Ty pewnie nie potrafisz znaleŸæ nawet œlepej owcy.",DIA_Kurgan_KillDragon_spott);
 };
 
-func void dia_kurgan_killdragon_spott()
+func void DIA_Kurgan_KillDragon_spott()
 {
 	AI_Output(other,self,"DIA_Kurgan_KillDragon_spott_15_00");	//Ty pewnie nie potrafisz znaleŸæ nawet œlepej owcy.
 	AI_Output(self,other,"DIA_Kurgan_KillDragon_spott_01_01");	//Co? Czy chcesz, ¿ebym ci przy³o¿y³ w tê twoj¹ kretyñsk¹ buŸkê?
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_NONE,1);
+	B_Attack(self,other,AR_NONE,1);
 };
 
-func void dia_kurgan_killdragon_orks()
+func void DIA_Kurgan_KillDragon_orks()
 {
 	AI_Output(other,self,"DIA_Kurgan_KillDragon_orks_15_00");	//Jak zamierzasz przejœæ obok orków?
 	AI_Output(self,other,"DIA_Kurgan_KillDragon_orks_01_01");	//Takimi szczegó³ami bêdziemy siê zajmowaæ póŸniej.
 };
 
-func void dia_kurgan_killdragon_weg()
+func void DIA_Kurgan_KillDragon_weg()
 {
 	AI_Output(other,self,"DIA_Kurgan_KillDragon_weg_15_00");	//Z wielk¹ chêci¹ bym popatrzy³, ale muszê ruszaæ w dalsz¹ drogê.
 	AI_Output(self,other,"DIA_Kurgan_KillDragon_weg_01_01");	//Lepiej zawróæ, jeœli nie chcesz straciæ rêki lub nogi.
@@ -150,51 +150,51 @@ func void dia_kurgan_killdragon_weg()
 };
 
 
-instance DIA_KURGAN_SEENDRAGON(C_INFO)
+instance DIA_Kurgan_SEENDRAGON(C_Info)
 {
-	npc = djg_708_kurgan;
-	condition = dia_kurgan_seendragon_condition;
-	information = dia_kurgan_seendragon_info;
+	npc = DJG_708_Kurgan;
+	condition = DIA_Kurgan_SEENDRAGON_Condition;
+	information = DIA_Kurgan_SEENDRAGON_Info;
 	permanent = TRUE;
 	description = "Widzia³eœ ju¿ kiedyœ smoka?";
 };
 
 
-func int dia_kurgan_seendragon_condition()
+func int DIA_Kurgan_SEENDRAGON_Condition()
 {
-	if(KURGAN_KILLDRAGON_DAY <= (Wld_GetDay() - 2))
+	if(Kurgan_KillDragon_Day <= (Wld_GetDay() - 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kurgan_seendragon_info()
+func void DIA_Kurgan_SEENDRAGON_Info()
 {
 	AI_Output(other,self,"DIA_Kurgan_SEENDRAGON_15_00");	//Widzia³eœ ju¿ kiedyœ smoka?
 	AI_Output(self,other,"DIA_Kurgan_SEENDRAGON_01_01");	//Nie, ale te bestie nie mog¹ siê wiecznie ukrywaæ.
 };
 
 
-instance DIA_KURGAN_ALLDRAGONSDEAD(C_INFO)
+instance DIA_Kurgan_AllDragonsDead(C_Info)
 {
-	npc = djg_708_kurgan;
+	npc = DJG_708_Kurgan;
 	nr = 5;
-	condition = dia_kurgan_alldragonsdead_condition;
-	information = dia_kurgan_alldragonsdead_info;
+	condition = DIA_Kurgan_AllDragonsDead_Condition;
+	information = DIA_Kurgan_AllDragonsDead_Info;
 	permanent = FALSE;
 	description = "Wszystkie smoki nie ¿yj¹.";
 };
 
 
-func int dia_kurgan_alldragonsdead_condition()
+func int DIA_Kurgan_AllDragonsDead_Condition()
 {
-	if(MIS_ALLDRAGONSDEAD == TRUE)
+	if(MIS_AllDragonsDead == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kurgan_alldragonsdead_info()
+func void DIA_Kurgan_AllDragonsDead_Info()
 {
 	AI_Output(other,self,"DIA_Kurgan_AllDragonsDead_15_00");	//Smoki nie ¿yj¹.
 	AI_Output(self,other,"DIA_Kurgan_AllDragonsDead_01_01");	//Ha, kto je niby zabi³? Paladyni?
@@ -203,37 +203,37 @@ func void dia_kurgan_alldragonsdead_info()
 };
 
 
-instance DIA_KURGAN_PICKPOCKET(C_INFO)
+instance DIA_Kurgan_PICKPOCKET(C_Info)
 {
-	npc = djg_708_kurgan;
+	npc = DJG_708_Kurgan;
 	nr = 900;
-	condition = dia_kurgan_pickpocket_condition;
-	information = dia_kurgan_pickpocket_info;
+	condition = DIA_Kurgan_PICKPOCKET_Condition;
+	information = DIA_Kurgan_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_kurgan_pickpocket_condition()
+func int DIA_Kurgan_PICKPOCKET_Condition()
 {
-	return c_beklauen(34,120);
+	return C_Beklauen(34,120);
 };
 
-func void dia_kurgan_pickpocket_info()
+func void DIA_Kurgan_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_kurgan_pickpocket);
-	Info_AddChoice(dia_kurgan_pickpocket,DIALOG_BACK,dia_kurgan_pickpocket_back);
-	Info_AddChoice(dia_kurgan_pickpocket,DIALOG_PICKPOCKET,dia_kurgan_pickpocket_doit);
+	Info_ClearChoices(DIA_Kurgan_PICKPOCKET);
+	Info_AddChoice(DIA_Kurgan_PICKPOCKET,Dialog_Back,DIA_Kurgan_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Kurgan_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Kurgan_PICKPOCKET_DoIt);
 };
 
-func void dia_kurgan_pickpocket_doit()
+func void DIA_Kurgan_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_kurgan_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Kurgan_PICKPOCKET);
 };
 
-func void dia_kurgan_pickpocket_back()
+func void DIA_Kurgan_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_kurgan_pickpocket);
+	Info_ClearChoices(DIA_Kurgan_PICKPOCKET);
 };
 

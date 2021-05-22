@@ -1,18 +1,18 @@
 
-const int SPL_COST_DEATHBALL = 5;
-const int SPL_DAMAGE_DEATHBALL = 100;
+const int SPL_COST_Deathball = 5;
+const int SPL_DAMAGE_Deathball = 100;
 
-instance SPELL_DEATHBALL(C_SPELL_PROTO)
+instance Spell_Deathball(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	damage_per_level = SPL_DAMAGE_DEATHBALL;
+	damage_per_level = SPL_DAMAGE_Deathball;
 	damagetype = DAM_FIRE;
 };
 
 
-func int spell_logic_deathball(var int manainvested)
+func int Spell_Logic_Deathball(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_DEATHBALL)
+	if(self.attribute[ATR_MANA] >= SPL_COST_Deathball)
 	{
 		return SPL_SENDCAST;
 	}
@@ -22,8 +22,8 @@ func int spell_logic_deathball(var int manainvested)
 	};
 };
 
-func void spell_cast_deathball()
+func void Spell_Cast_Deathball()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_DEATHBALL;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_Deathball;
 };
 

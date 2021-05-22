@@ -1,78 +1,78 @@
 
-func int b_getgreatestpetzcrime(var C_NPC slf)
+func int B_GetGreatestPetzCrime(var C_Npc slf)
 {
-	if(c_npcbelongstooldcamp(slf))
+	if(C_NpcBelongsToOldCamp(slf))
 	{
-		if(PETZCOUNTER_OLDCAMP_MURDER > 0)
+		if(PETZCOUNTER_OldCamp_Murder > 0)
 		{
 			return CRIME_MURDER;
 		};
-		if(PETZCOUNTER_OLDCAMP_THEFT > 0)
+		if(PETZCOUNTER_OldCamp_Theft > 0)
 		{
 			return CRIME_THEFT;
 		};
-		if(PETZCOUNTER_OLDCAMP_ATTACK > 0)
+		if(PETZCOUNTER_OldCamp_Attack > 0)
 		{
 			return CRIME_ATTACK;
 		};
-		if(PETZCOUNTER_OLDCAMP_SHEEPKILLER > 0)
+		if(PETZCOUNTER_OldCamp_Sheepkiller > 0)
 		{
 			return CRIME_SHEEPKILLER;
 		};
 	};
-	if(c_npcbelongstocity(slf))
+	if(C_NpcBelongsToCity(slf))
 	{
-		if(PETZCOUNTER_CITY_MURDER > 0)
+		if(PETZCOUNTER_City_Murder > 0)
 		{
 			return CRIME_MURDER;
 		};
-		if(PETZCOUNTER_CITY_THEFT > 0)
+		if(PETZCOUNTER_City_Theft > 0)
 		{
 			return CRIME_THEFT;
 		};
-		if(PETZCOUNTER_CITY_ATTACK > 0)
+		if(PETZCOUNTER_City_Attack > 0)
 		{
 			return CRIME_ATTACK;
 		};
-		if(PETZCOUNTER_CITY_SHEEPKILLER > 0)
+		if(PETZCOUNTER_City_Sheepkiller > 0)
 		{
 			return CRIME_SHEEPKILLER;
 		};
 	};
-	if(c_npcbelongstomonastery(slf))
+	if(C_NpcBelongsToMonastery(slf))
 	{
-		if(PETZCOUNTER_MONASTERY_MURDER > 0)
+		if(PETZCOUNTER_Monastery_Murder > 0)
 		{
 			return CRIME_MURDER;
 		};
-		if(PETZCOUNTER_MONASTERY_THEFT > 0)
+		if(PETZCOUNTER_Monastery_Theft > 0)
 		{
 			return CRIME_THEFT;
 		};
-		if(PETZCOUNTER_MONASTERY_ATTACK > 0)
+		if(PETZCOUNTER_Monastery_Attack > 0)
 		{
 			return CRIME_ATTACK;
 		};
-		if(PETZCOUNTER_MONASTERY_SHEEPKILLER > 0)
+		if(PETZCOUNTER_Monastery_Sheepkiller > 0)
 		{
 			return CRIME_SHEEPKILLER;
 		};
 	};
-	if(c_npcbelongstofarm(slf))
+	if(C_NpcBelongsToFarm(slf))
 	{
-		if(PETZCOUNTER_FARM_MURDER > 0)
+		if(PETZCOUNTER_Farm_Murder > 0)
 		{
 			return CRIME_MURDER;
 		};
-		if(PETZCOUNTER_FARM_THEFT > 0)
+		if(PETZCOUNTER_Farm_Theft > 0)
 		{
 			return CRIME_THEFT;
 		};
-		if(PETZCOUNTER_FARM_ATTACK > 0)
+		if(PETZCOUNTER_Farm_Attack > 0)
 		{
 			return CRIME_ATTACK;
 		};
-		if(PETZCOUNTER_FARM_SHEEPKILLER > 0)
+		if(PETZCOUNTER_Farm_Sheepkiller > 0)
 		{
 			return CRIME_SHEEPKILLER;
 		};

@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_WOLF(C_NPC)
+prototype Mst_Default_Wolf(C_Npc)
 {
 	name[0] = "Wilk";
 	guild = GIL_WOLF;
@@ -21,29 +21,29 @@ prototype MST_DEFAULT_WOLF(C_NPC)
 	fight_tactic = FAI_WOLF;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_LONG;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	aivar[AIV_MM_PACKHUNTER] = TRUE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_LONG;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar[AIV_MM_Packhunter] = TRUE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_wolf()
+func void B_SetVisuals_Wolf()
 {
 	Mdl_SetVisual(self,"Wolf.mds");
 	Mdl_SetVisualBody(self,"Wol_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance WOLF(MST_DEFAULT_WOLF)
+instance Wolf(Mst_Default_Wolf)
 {
-	b_setvisuals_wolf();
+	B_SetVisuals_Wolf();
 	Npc_SetToFistMode(self);
 };
 
-instance SUMMONED_WOLF(MST_DEFAULT_WOLF)
+instance Summoned_Wolf(Mst_Default_Wolf)
 {
 	name[0] = "Przyzwany Wilk";
 	guild = gil_summoned_wolf;
@@ -62,13 +62,13 @@ instance SUMMONED_WOLF(MST_DEFAULT_WOLF)
 	protection[PROT_FLY] = 15;
 	protection[PROT_MAGIC] = 0;
 	aivar[AIV_PARTYMEMBER] = TRUE;
-	b_setattitude(self,ATT_FRIENDLY);
-	start_aistate = zs_mm_rtn_summoned;
-	b_setvisuals_wolf();
+	B_SetAttitude(self,ATT_FRIENDLY);
+	start_aistate = ZS_MM_Rtn_Summoned;
+	B_SetVisuals_Wolf();
 	Npc_SetToFistMode(self);
 };
 
-instance YWOLF(MST_DEFAULT_WOLF)
+instance YWolf(Mst_Default_Wolf)
 {
 	level = 3;
 	name[0] = "M這dy Wilk";
@@ -85,11 +85,11 @@ instance YWOLF(MST_DEFAULT_WOLF)
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 0;
 	fight_tactic = FAI_MONSTER_COWARD;
-	b_setvisuals_wolf();
+	B_SetVisuals_Wolf();
 	Npc_SetToFistMode(self);
 };
 
-instance PEPES_YWOLF1(MST_DEFAULT_WOLF)
+instance PEPES_YWolf1(Mst_Default_Wolf)
 {
 	name[0] = "M這dy Wilk";
 	level = 3;
@@ -105,11 +105,11 @@ instance PEPES_YWOLF1(MST_DEFAULT_WOLF)
 	protection[PROT_FIRE] = 0;
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 0;
-	b_setvisuals_wolf();
+	B_SetVisuals_Wolf();
 	Npc_SetToFistMode(self);
 };
 
-instance PEPES_YWOLF2(MST_DEFAULT_WOLF)
+instance PEPES_YWolf2(Mst_Default_Wolf)
 {
 	level = 3;
 	name[0] = "M這dy wilk";
@@ -125,11 +125,11 @@ instance PEPES_YWOLF2(MST_DEFAULT_WOLF)
 	protection[PROT_FIRE] = 5;
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 0;
-	b_setvisuals_wolf();
+	B_SetVisuals_Wolf();
 	Npc_SetToFistMode(self);
 };
 
-instance PEPES_YWOLF3(MST_DEFAULT_WOLF)
+instance PEPES_YWolf3(Mst_Default_Wolf)
 {
 	level = 3;
 	name[0] = "M這dy Wilk";
@@ -145,11 +145,11 @@ instance PEPES_YWOLF3(MST_DEFAULT_WOLF)
 	protection[PROT_FIRE] = 5;
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 0;
-	b_setvisuals_wolf();
+	B_SetVisuals_Wolf();
 	Npc_SetToFistMode(self);
 };
 
-instance PEPES_YWOLF4(MST_DEFAULT_WOLF)
+instance PEPES_YWolf4(Mst_Default_Wolf)
 {
 	level = 3;
 	name[0] = "M這dy Wilk";
@@ -165,7 +165,7 @@ instance PEPES_YWOLF4(MST_DEFAULT_WOLF)
 	protection[PROT_FIRE] = 5;
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 0;
-	b_setvisuals_wolf();
+	B_SetVisuals_Wolf();
 	Npc_SetToFistMode(self);
 };
 

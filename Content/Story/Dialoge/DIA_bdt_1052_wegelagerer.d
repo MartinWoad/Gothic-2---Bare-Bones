@@ -1,48 +1,48 @@
 
-instance DIA_1052_WEGELAGERER_EXIT(C_INFO)
+instance DIA_1052_Wegelagerer_EXIT(C_Info)
 {
-	npc = bdt_1052_wegelagerer;
+	npc = BDT_1052_Wegelagerer;
 	nr = 999;
-	condition = dia_1052_wegelagerer_exit_condition;
-	information = dia_1052_wegelagerer_exit_info;
+	condition = DIA_1052_Wegelagerer_EXIT_Condition;
+	information = DIA_1052_Wegelagerer_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_1052_wegelagerer_exit_condition()
+func int DIA_1052_Wegelagerer_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_1052_wegelagerer_exit_info()
+func void DIA_1052_Wegelagerer_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_1052_WEGELAGERER_HELLO(C_INFO)
+instance DIA_1052_Wegelagerer_Hello(C_Info)
 {
-	npc = bdt_1052_wegelagerer;
+	npc = BDT_1052_Wegelagerer;
 	nr = 1;
-	condition = dia_1052_wegelagerer_hello_condition;
-	information = dia_1052_wegelagerer_hello_info;
+	condition = DIA_1052_Wegelagerer_Hello_Condition;
+	information = DIA_1052_Wegelagerer_Hello_Info;
 	permanent = FALSE;
 	description = "Kim jesteœ?";
 };
 
 
-func int dia_1052_wegelagerer_hello_condition()
+func int DIA_1052_Wegelagerer_Hello_Condition()
 {
-	var C_NPC pal;
-	pal = Hlp_GetNpc(bdt_1051_wegelagerer);
-	if(c_npcisdown(pal) == FALSE)
+	var C_Npc Pal;
+	Pal = Hlp_GetNpc(BDT_1051_Wegelagerer);
+	if(C_NpcIsDown(Pal) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_1052_wegelagerer_hello_info()
+func void DIA_1052_Wegelagerer_Hello_Info()
 {
 	AI_Output(other,self,"DIA_1052_Wegelagerer_Hello_15_00");	//Kim jesteœ?
 	AI_Output(self,other,"DIA_1052_Wegelagerer_Hello_06_01");	//Co to ma byæ? Przes³uchanie?
@@ -51,31 +51,31 @@ func void dia_1052_wegelagerer_hello_info()
 };
 
 
-instance DIA_WEGELAGERER_ANGRIFF2(C_INFO)
+instance DIA_Wegelagerer_ANGRIFF2(C_Info)
 {
-	npc = bdt_1052_wegelagerer;
+	npc = BDT_1052_Wegelagerer;
 	nr = 2;
-	condition = dia_wegelagerer_angriff2_condition;
-	information = dia_wegelagerer_angriff2_info;
+	condition = DIA_Wegelagerer_ANGRIFF2_Condition;
+	information = DIA_Wegelagerer_ANGRIFF2_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_wegelagerer_angriff2_condition()
+func int DIA_Wegelagerer_ANGRIFF2_Condition()
 {
-	if((Npc_RefuseTalk(self) == FALSE) && c_npcisdown(bdt_1051_wegelagerer))
+	if((Npc_RefuseTalk(self) == FALSE) && C_NpcIsDown(BDT_1051_Wegelagerer))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_wegelagerer_angriff2_info()
+func void DIA_Wegelagerer_ANGRIFF2_Info()
 {
 	AI_Output(self,other,"DIA_Wegelagerer_ANGRIFF2_06_00");	//No i dobrze, kole¿ko. Doigra³eœ siê.
 	AI_StopProcessInfos(self);
 	Npc_SetRefuseTalk(self,40);
-	self.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-	bdt_1051_wegelagerer.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+	self.aivar[AIV_EnemyOverride] = FALSE;
+	BDT_1051_Wegelagerer.aivar[AIV_EnemyOverride] = FALSE;
 };
 

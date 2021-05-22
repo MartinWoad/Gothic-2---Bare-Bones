@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_MINECRAWLERWARRIOR(C_NPC)
+prototype Mst_Default_MinecrawlerWarrior(C_Npc)
 {
 	name[0] = "Pe³zacz Wojownik";
 	guild = GIL_MINECRAWLER;
@@ -21,24 +21,24 @@ prototype MST_DEFAULT_MINECRAWLERWARRIOR(C_NPC)
 	fight_tactic = FAI_MINECRAWLER;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_WUSELSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_WuselStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_minecrawlerwarrior()
+func void B_SetVisuals_MinecrawlerWarrior()
 {
 	Mdl_SetVisual(self,"Crawler.mds");
 	Mdl_SetVisualBody(self,"Cr2_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance MINECRAWLERWARRIOR(MST_DEFAULT_MINECRAWLERWARRIOR)
+instance MinecrawlerWarrior(Mst_Default_MinecrawlerWarrior)
 {
-	b_setvisuals_minecrawlerwarrior();
+	B_SetVisuals_MinecrawlerWarrior();
 	Npc_SetToFistMode(self);
 };
 

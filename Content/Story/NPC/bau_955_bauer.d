@@ -1,37 +1,37 @@
 
-instance BAU_955_BAUER(NPC_DEFAULT)
+instance BAU_955_Bauer(Npc_Default)
 {
-	name[0] = NAME_BAUER;
+	name[0] = NAME_Bauer;
 	guild = GIL_OUT;
 	id = 955;
 	voice = 1;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,1);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_bau_axe);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_NORMAL06,BODYTEX_N,4831);
+	EquipItem(self,ItMw_1h_Bau_Axe);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Normal06,BodyTex_N,ITAR_Bau_M);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,20);
-	daily_routine = rtn_start_955;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,20);
+	daily_routine = Rtn_Start_955;
 };
 
 
-func void rtn_start_955()
+func void Rtn_Start_955()
 {
-	ta_pick_fp(8,10,12,10,"NW_FARM1_FIELD_07");
-	ta_pick_fp(12,10,15,10,"NW_FARM1_FIELD_02");
-	ta_pick_fp(15,10,18,10,"NW_FARM1_FIELD_07");
-	ta_pick_fp(18,10,22,10,"NW_FARM1_FIELD_02");
-	ta_sit_campfire(22,10,8,10,"NW_FARM1_MILL_05");
+	TA_Pick_FP(8,10,12,10,"NW_FARM1_FIELD_07");
+	TA_Pick_FP(12,10,15,10,"NW_FARM1_FIELD_02");
+	TA_Pick_FP(15,10,18,10,"NW_FARM1_FIELD_07");
+	TA_Pick_FP(18,10,22,10,"NW_FARM1_FIELD_02");
+	TA_Sit_Campfire(22,10,8,10,"NW_FARM1_MILL_05");
 };
 
-func void rtn_bugsthere_955()
+func void Rtn_BugsThere_955()
 {
-	ta_sit_campfire(8,10,22,10,"NW_FARM1_MILL_05");
-	ta_sit_campfire(22,10,8,10,"NW_FARM1_MILL_05");
+	TA_Sit_Campfire(8,10,22,10,"NW_FARM1_MILL_05");
+	TA_Sit_Campfire(22,10,8,10,"NW_FARM1_MILL_05");
 };
 

@@ -1,73 +1,73 @@
 
-const int VALUE_MEATBUGFLESH = 1;
-const int VALUE_SHEEPFUR = 10;
-const int VALUE_WOLFFUR = 10;
-const int VALUE_BUGMANDIBLES = 15;
-const int VALUE_CLAW = 15;
-const int VALUE_LURKERCLAW = 15;
-const int VALUE_TEETH = 15;
-const int VALUE_CRAWLERMANDIBLES = 15;
-const int VALUE_WING = 20;
-const int VALUE_STING = 25;
+const int Value_Meatbugflesh = 1;
+const int Value_SheepFur = 10;
+const int Value_WolfFur = 10;
+const int Value_BugMandibles = 15;
+const int Value_Claw = 15;
+const int Value_LurkerClaw = 15;
+const int Value_Teeth = 15;
+const int Value_CrawlerMandibles = 15;
+const int Value_Wing = 20;
+const int Value_Sting = 25;
 const int VALUE_LURKERSKIN = 25;
-const int VALUE_WARGFUR = 25;
-const int VALUE_DRGSNAPPERHORN = 100;
-const int VALUE_CRAWLERPLATE = 25;
-const int VALUE_SHADOWFUR = 50;
-const int VALUE_SHARKSKIN = 200;
-const int VALUE_TROLLFUR = 100;
-const int VALUE_WARANFIRETONGUE = 50;
-const int VALUE_SHADOWHORN = 100;
-const int VALUE_SHARKTEETH = 50;
-const int VALUE_TROLLTOOTH = 50;
-const int VALUE_TROLLBLACKFUR = 500;
-const int VALUE_GOBLINBONE = 10;
-const int VALUE_SKELETONBONE = 10;
-const int VALUE_DEMONHEART = 50;
-const int VALUE_STONEGOLEMHEART = 50;
-const int VALUE_FIREGOLEMHEART = 50;
-const int VALUE_ICEGOLEMHEART = 50;
-const int VALUE_UNDEADDRAGONSOULSTONE = 400;
-const int VALUE_ICEDRAGONHEART = 400;
-const int VALUE_FIREDRAGONHEART = 400;
-const int VALUE_SWAMPDRAGONHEART = 400;
-const int VALUE_ROCKDRAGONHEART = 400;
-const int VALUE_DRAGONBLOOD = 50;
-const int VALUE_DRAGONSCALE = 50;
+const int Value_WargFur = 25;
+const int Value_DrgSnapperHorn = 100;
+const int Value_CrawlerPlate = 25;
+const int Value_ShadowFur = 50;
+const int Value_SharkSkin = 200;
+const int Value_TrollFur = 100;
+const int Value_WaranFiretongue = 50;
+const int Value_ShadowHorn = 100;
+const int Value_SharkTeeth = 50;
+const int Value_TrollTooth = 50;
+const int Value_TrollBlackFur = 500;
+const int Value_GoblinBone = 10;
+const int Value_SkeletonBone = 10;
+const int Value_DemonHeart = 50;
+const int Value_StoneGolemHeart = 50;
+const int Value_FireGolemHeart = 50;
+const int Value_IceGolemHeart = 50;
+const int Value_UndeadDragonSoulStone = 400;
+const int Value_IcedragonHeart = 400;
+const int Value_FiredragonHeart = 400;
+const int Value_SwampdragonHeart = 400;
+const int Value_RockdragonHeart = 400;
+const int Value_DragonBlood = 50;
+const int Value_DragonScale = 50;
 
-instance ITAT_MEATBUGFLESH(C_ITEM)
+instance ItAt_Meatbugflesh(C_Item)
 {
 	name = "Owadzie Miêso";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_MEATBUGFLESH;
+	value = Value_Meatbugflesh;
 	visual = "ItAt_Meatbugflesh.3DS";
 	material = MAT_LEATHER;
-	scemename = "FOODHUGE";
-	on_state[0] = use_meatbugflesh;
+	scemeName = "FOODHUGE";
+	on_state[0] = Use_Meatbugflesh;
 	description = name;
 	text[0] = "";
-	text[1] = NAME_BONUS_HP;
+	text[1] = NAME_Bonus_HP;
 	count[1] = 10;
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void use_meatbugflesh()
+func void Use_Meatbugflesh()
 {
 	Npc_ChangeAttribute(self,ATR_HITPOINTS,10);
 };
 
 
-instance ITAT_SHEEPFUR(C_ITEM)
+instance ItAt_SheepFur(C_Item)
 {
 	name = "Owcza Skóra";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SHEEPFUR;
+	value = Value_SheepFur;
 	visual = "ItAt_SheepFur.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -75,16 +75,16 @@ instance ITAT_SHEEPFUR(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_WOLFFUR(C_ITEM)
+instance ItAt_WolfFur(C_Item)
 {
 	name = "Skóra Wilka";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_WOLFFUR;
+	value = Value_WolfFur;
 	visual = "ItAt_WolfFur.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -92,16 +92,16 @@ instance ITAT_WOLFFUR(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_BUGMANDIBLES(C_ITEM)
+instance ItAt_BugMandibles(C_Item)
 {
 	name = "¯uwaczki Polnej Bestii";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_BUGMANDIBLES;
+	value = Value_BugMandibles;
 	visual = "ItAt_BugMandibles.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -109,16 +109,16 @@ instance ITAT_BUGMANDIBLES(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_CLAW(C_ITEM)
+instance ItAt_Claw(C_Item)
 {
 	name = "Pazury";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_CLAW;
+	value = Value_Claw;
 	visual = "ItAt_Claw.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -126,16 +126,16 @@ instance ITAT_CLAW(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_LURKERCLAW(C_ITEM)
+instance ItAt_LurkerClaw(C_Item)
 {
 	name = "Pazur Topielca";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_LURKERCLAW;
+	value = Value_LurkerClaw;
 	visual = "ItAt_LurkerClaw.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -143,16 +143,16 @@ instance ITAT_LURKERCLAW(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_TEETH(C_ITEM)
+instance ItAt_Teeth(C_Item)
 {
 	name = "K³y";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_TEETH;
+	value = Value_Teeth;
 	visual = "ItAt_Teeth.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -160,50 +160,50 @@ instance ITAT_TEETH(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_CRAWLERMANDIBLES(C_ITEM)
+instance ItAt_CrawlerMandibles(C_Item)
 {
 	name = "¯uwaczki Pe³zacza";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_CRAWLERMANDIBLES;
+	value = Value_CrawlerMandibles;
 	visual = "ItAt_CrawlerMandibles.3DS";
 	material = MAT_LEATHER;
-	scemename = "FOOD";
-	on_state[0] = use_mandibles;
+	scemeName = "FOOD";
+	on_state[0] = Use_Mandibles;
 	description = name;
 	text[0] = "Mo¿na je otworzyæ w celu";
 	text[1] = "wypicia zawartej w nich wydzieliny,";
 	text[2] = "która pozwala zregenerowaæ manê.";
 	text[3] = "Efekt z czasem przemija.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void use_mandibles()
+func void Use_Mandibles()
 {
-	if(MANDIBLES_BONUS <= 9)
+	if(Mandibles_Bonus <= 9)
 	{
 		Npc_ChangeAttribute(self,ATR_MANA,self.attribute[ATR_MANA_MAX]);
-		MANDIBLES_BONUS = MANDIBLES_BONUS + 1;
+		Mandibles_Bonus = Mandibles_Bonus + 1;
 	}
 	else
 	{
-		PrintScreen(PRINT_MANDIBLES,-1,YPOS_LEVELUP,FONT_SCREENSMALL,2);
+		PrintScreen(PRINT_Mandibles,-1,YPOS_LevelUp,FONT_ScreenSmall,2);
 	};
 };
 
 
-instance ITAT_WING(C_ITEM)
+instance ItAt_Wing(C_Item)
 {
 	name = "Skrzyd³a";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_WING;
+	value = Value_Wing;
 	visual = "ItAt_Wing.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -211,18 +211,18 @@ instance ITAT_WING(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_STING(C_ITEM)
+instance ItAt_Sting(C_Item)
 {
 	name = "¯¹d³o";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_STING;
-	scemename = "FOOD";
-	on_state[0] = use_sting;
+	value = Value_Sting;
+	scemeName = "FOOD";
+	on_state[0] = Use_Sting;
 	visual = "ItAt_Sting.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -230,29 +230,29 @@ instance ITAT_STING(C_ITEM)
 	text[1] = "Zawiera";
 	text[2] = "truj¹c¹ wydzielinê.";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void use_sting()
+func void Use_Sting()
 {
-	if(KNOWS_BLOODFLY == TRUE)
+	if(Knows_Bloodfly == TRUE)
 	{
-		if(BLOODFLY_BONUS <= 10)
+		if(Bloodfly_Bonus <= 10)
 		{
 			Npc_ChangeAttribute(self,ATR_HITPOINTS,self.attribute[ATR_HITPOINTS_MAX]);
-			Print(PRINT_FULLYHEALED);
-			BLOODFLY_BONUS = BLOODFLY_BONUS + 1;
+			Print(PRINT_FullyHealed);
+			Bloodfly_Bonus = Bloodfly_Bonus + 1;
 		}
 		else
 		{
-			Print(PRINT_MANDIBLES);
+			Print(PRINT_Mandibles);
 		};
 	}
 	else
 	{
-		Print(PRINT_BLOODFLY);
+		Print(PRINT_Bloodfly);
 		if(self.attribute[ATR_HITPOINTS] > 1)
 		{
 			self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - 1;
@@ -261,7 +261,7 @@ func void use_sting()
 };
 
 
-instance ITAT_LURKERSKIN(C_ITEM)
+instance itat_LurkerSkin(C_Item)
 {
 	name = "Skóra Topielca";
 	mainflag = ITEM_KAT_NONE;
@@ -274,16 +274,16 @@ instance ITAT_LURKERSKIN(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_WARGFUR(C_ITEM)
+instance ItAt_WargFur(C_Item)
 {
 	name = "Skóra Warga";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_WARGFUR;
+	value = Value_WargFur;
 	visual = "ItAt_WargFur.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -291,16 +291,16 @@ instance ITAT_WARGFUR(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_DRGSNAPPERHORN(C_ITEM)
+instance ItAt_DrgSnapperHorn(C_Item)
 {
 	name = "Róg Smoczego Zêbacza";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_DRGSNAPPERHORN;
+	value = Value_DrgSnapperHorn;
 	visual = "ItAt_DrgSnapperHorn.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -308,16 +308,16 @@ instance ITAT_DRGSNAPPERHORN(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_CRAWLERPLATE(C_ITEM)
+instance ItAt_CrawlerPlate(C_Item)
 {
 	name = "P³yty Pancerza Pe³zacza";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_CRAWLERPLATE;
+	value = Value_CrawlerPlate;
 	visual = "ItAt_CrawlerPlate.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -325,16 +325,16 @@ instance ITAT_CRAWLERPLATE(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_SHADOWFUR(C_ITEM)
+instance ItAt_ShadowFur(C_Item)
 {
 	name = "Skóra Cieniostwora";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SHADOWFUR;
+	value = Value_ShadowFur;
 	visual = "ItAt_ShadowFur.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -342,16 +342,16 @@ instance ITAT_SHADOWFUR(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_SHARKSKIN(C_ITEM)
+instance ItAt_SharkSkin(C_Item)
 {
 	name = "Skóra B³otnego Wê¿a";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SHARKSKIN;
+	value = Value_SharkSkin;
 	visual = "ItAt_SharkSkin.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -359,16 +359,16 @@ instance ITAT_SHARKSKIN(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_TROLLFUR(C_ITEM)
+instance ItAt_TrollFur(C_Item)
 {
 	name = "Skóra Trolla";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_TROLLFUR;
+	value = Value_TrollFur;
 	visual = "ItAt_TrollFur.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -376,16 +376,16 @@ instance ITAT_TROLLFUR(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_TROLLBLACKFUR(C_ITEM)
+instance ItAt_TrollBlackFur(C_Item)
 {
 	name = "Skóra Czarnego Trolla";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_TROLLBLACKFUR;
+	value = Value_TrollBlackFur;
 	visual = "ItAt_TrollFur.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -393,16 +393,16 @@ instance ITAT_TROLLBLACKFUR(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_WARANFIRETONGUE(C_ITEM)
+instance ItAt_WaranFiretongue(C_Item)
 {
 	name = "Jêzyk Ognistego Jaszczura";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_WARANFIRETONGUE;
+	value = Value_WaranFiretongue;
 	visual = "ItAt_WaranFiretongue.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -410,16 +410,16 @@ instance ITAT_WARANFIRETONGUE(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_SHADOWHORN(C_ITEM)
+instance ItAt_ShadowHorn(C_Item)
 {
 	name = "Róg Cieniostwora";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SHADOWHORN;
+	value = Value_ShadowHorn;
 	visual = "ItAt_ShadowHorn.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -427,16 +427,16 @@ instance ITAT_SHADOWHORN(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_SHARKTEETH(C_ITEM)
+instance ItAt_SharkTeeth(C_Item)
 {
 	name = "K³y B³otnego Wê¿a";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SHARKTEETH;
+	value = Value_SharkTeeth;
 	visual = "ItAt_SharkTeeth.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -444,16 +444,16 @@ instance ITAT_SHARKTEETH(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_TROLLTOOTH(C_ITEM)
+instance ItAt_TrollTooth(C_Item)
 {
 	name = "Kie³ Trolla";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_TROLLTOOTH;
+	value = Value_TrollTooth;
 	visual = "ItAt_TrollTooth.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -461,17 +461,17 @@ instance ITAT_TROLLTOOTH(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 };
 
-instance ITAT_STONEGOLEMHEART(C_ITEM)
+instance ItAt_StoneGolemHeart(C_Item)
 {
 	name = "Serce Kamiennego Golema";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
-	value = VALUE_STONEGOLEMHEART;
+	value = Value_StoneGolemHeart;
 	visual = "ItAt_StoneGolemHeart.3DS";
 	material = MAT_STONE;
 	description = name;
@@ -479,16 +479,16 @@ instance ITAT_STONEGOLEMHEART(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_FIREGOLEMHEART(C_ITEM)
+instance ItAt_FireGolemHeart(C_Item)
 {
 	name = "Serce Ognistego Golema";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
-	value = VALUE_FIREGOLEMHEART;
+	value = Value_FireGolemHeart;
 	visual = "ItAt_FireGolemHeart.3DS";
 	material = MAT_STONE;
 	description = name;
@@ -496,16 +496,16 @@ instance ITAT_FIREGOLEMHEART(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_ICEGOLEMHEART(C_ITEM)
+instance ItAt_IceGolemHeart(C_Item)
 {
 	name = "Serce Lodowego Golema";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
-	value = VALUE_ICEGOLEMHEART;
+	value = Value_IceGolemHeart;
 	visual = "ItAt_IceGolemHeart.3DS";
 	material = MAT_STONE;
 	description = name;
@@ -513,16 +513,16 @@ instance ITAT_ICEGOLEMHEART(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_GOBLINBONE(C_ITEM)
+instance ItAt_GoblinBone(C_Item)
 {
 	name = "Koœæ Goblina";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_GOBLINBONE;
+	value = Value_GoblinBone;
 	visual = "ItAt_GoblinBone.3DS";
 	material = MAT_WOOD;
 	description = name;
@@ -530,16 +530,16 @@ instance ITAT_GOBLINBONE(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_SKELETONBONE(C_ITEM)
+instance ItAt_SkeletonBone(C_Item)
 {
 	name = "Koœæ Szkieletu";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_SKELETONBONE;
+	value = Value_SkeletonBone;
 	visual = "ItAt_SkeletonBone.3DS";
 	material = MAT_WOOD;
 	description = name;
@@ -547,16 +547,16 @@ instance ITAT_SKELETONBONE(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_DEMONHEART(C_ITEM)
+instance ItAt_DemonHeart(C_Item)
 {
 	name = "Serce Demona";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_DEMONHEART;
+	value = Value_DemonHeart;
 	visual = "ItAt_DemonHeart.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -564,16 +564,16 @@ instance ITAT_DEMONHEART(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_UNDEADDRAGONSOULSTONE(C_ITEM)
+instance ItAt_UndeadDragonSoulStone(C_Item)
 {
 	name = "Kamieñ Duszy Nieumar³ego Smoka";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
-	value = VALUE_UNDEADDRAGONSOULSTONE;
+	value = Value_UndeadDragonSoulStone;
 	visual = "ItAt_UndeadDragonSoulStone.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -581,17 +581,17 @@ instance ITAT_UNDEADDRAGONSOULSTONE(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
 };
 
-instance ITAT_ICEDRAGONHEART(C_ITEM)
+instance ItAt_IcedragonHeart(C_Item)
 {
 	name = "Serce Lodowego Smoka";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
-	value = VALUE_ICEDRAGONHEART;
+	value = Value_IcedragonHeart;
 	visual = "ItAt_IcedragonHeart.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -599,16 +599,16 @@ instance ITAT_ICEDRAGONHEART(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_ROCKDRAGONHEART(C_ITEM)
+instance ItAt_RockdragonHeart(C_Item)
 {
 	name = "Serce Kamiennego Smoka";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
-	value = VALUE_ROCKDRAGONHEART;
+	value = Value_RockdragonHeart;
 	visual = "ItAt_RockdragonHeart.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -616,16 +616,16 @@ instance ITAT_ROCKDRAGONHEART(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_SWAMPDRAGONHEART(C_ITEM)
+instance ItAt_SwampdragonHeart(C_Item)
 {
 	name = "Serce B³otnego Smoka";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
-	value = VALUE_SWAMPDRAGONHEART;
+	value = Value_SwampdragonHeart;
 	visual = "ItAt_SwampdragonHeart.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -633,16 +633,16 @@ instance ITAT_SWAMPDRAGONHEART(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_FIREDRAGONHEART(C_ITEM)
+instance ItAt_FiredragonHeart(C_Item)
 {
 	name = "Serce Ognistego Smoka";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
-	value = VALUE_FIREDRAGONHEART;
+	value = Value_FiredragonHeart;
 	visual = "ItAt_FiredragonHeart.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -650,16 +650,16 @@ instance ITAT_FIREDRAGONHEART(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_DRAGONBLOOD(C_ITEM)
+instance ItAt_DragonBlood(C_Item)
 {
 	name = "Smocza Krew";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
-	value = VALUE_DRAGONBLOOD;
+	value = Value_DragonBlood;
 	visual = "ItAt_DragonBlood.3DS";
 	material = MAT_LEATHER;
 	description = name;
@@ -667,17 +667,17 @@ instance ITAT_DRAGONBLOOD(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
 };
 
-instance ITAT_DRAGONSCALE(C_ITEM)
+instance ItAt_DragonScale(C_Item)
 {
 	name = "Smocze £uski";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_DRAGONSCALE;
+	value = Value_DragonScale;
 	visual = "ItAt_DragonScale.3DS";
 	material = MAT_STONE;
 	description = name;
@@ -685,7 +685,7 @@ instance ITAT_DRAGONSCALE(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 

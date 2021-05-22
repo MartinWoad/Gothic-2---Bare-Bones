@@ -1,5 +1,5 @@
 
-func void b_assessguideplayer()
+func void B_AssessGuidePlayer()
 {
 	if(Npc_GetDistToNpc(self,hero) > 800)
 	{
@@ -7,50 +7,50 @@ func void b_assessguideplayer()
 		{
 			Npc_ClearAIQueue(self);
 			AI_Standup(self);
-			b_turntonpc(self,hero);
+			B_TurnToNpc(self,hero);
 		};
-		if((Npc_GetDistToNpc(self,hero) > 1200) && (self.aivar[AIV_ENEMYOVERRIDE] == TRUE) && (Npc_GetAttitude(self,hero) == ATT_HOSTILE))
+		if((Npc_GetDistToNpc(self,hero) > 1200) && (self.aivar[AIV_EnemyOverride] == TRUE) && (Npc_GetAttitude(self,hero) == ATT_HOSTILE))
 		{
-			self.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+			self.aivar[AIV_EnemyOverride] = FALSE;
 		};
 	}
 	else
 	{
-		b_assessplayer();
+		B_AssessPlayer();
 	};
 };
 
-func void b_assessguidefightsound()
+func void B_AssessGuideFightSound()
 {
 	if(Npc_IsPlayer(other) || Npc_IsPlayer(victim))
 	{
-		b_assessfightsound();
+		B_AssessFightSound();
 	};
 };
 
-func void zs_guide_player()
+func void ZS_Guide_Player()
 {
-	perception_set_minimal();
-	b_resetall(self);
+	Perception_Set_Minimal();
+	B_ResetAll(self);
 	self.senses = SENSE_SEE | SENSE_HEAR | SENSE_SMELL;
 	self.senses_range = 2000;
 	Npc_SetPercTime(self,1);
-	Npc_PercEnable(self,PERC_ASSESSPLAYER,b_assessguideplayer);
-	Npc_PercEnable(self,PERC_ASSESSENEMY,b_assessenemy);
-	Npc_PercEnable(self,PERC_ASSESSTALK,b_assesstalk);
-	Npc_PercEnable(self,PERC_MOVEMOB,b_movemob);
-	Npc_PercEnable(self,PERC_ASSESSFIGHTSOUND,b_assessguidefightsound);
+	Npc_PercEnable(self,PERC_ASSESSPLAYER,B_AssessGuidePlayer);
+	Npc_PercEnable(self,PERC_ASSESSENEMY,B_AssessEnemy);
+	Npc_PercEnable(self,PERC_ASSESSTALK,B_AssessTalk);
+	Npc_PercEnable(self,PERC_MOVEMOB,B_MoveMob);
+	Npc_PercEnable(self,PERC_ASSESSFIGHTSOUND,B_AssessGuideFightSound);
 };
 
-func int zs_guide_player_loop()
+func int ZS_Guide_Player_Loop()
 {
 	if((Npc_GetDistToNpc(self,hero) > 800) && (Npc_GetDistToWP(self,self.wp) < Npc_GetDistToWP(hero,self.wp)))
 	{
-		b_assessguideplayer();
+		B_AssessGuidePlayer();
 	}
 	else if(Npc_GetDistToWP(self,self.wp) > 300)
 	{
-		if(!c_bodystatecontains(self,BS_SWIM))
+		if(!C_BodyStateContains(self,BS_SWIM))
 		{
 			AI_SetWalkMode(self,NPC_RUN);
 		};
@@ -58,12 +58,12 @@ func int zs_guide_player_loop()
 	}
 	else
 	{
-		b_turntonpc(self,hero);
+		B_TurnToNpc(self,hero);
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_guide_player_end()
+func void ZS_Guide_Player_End()
 {
 };
 

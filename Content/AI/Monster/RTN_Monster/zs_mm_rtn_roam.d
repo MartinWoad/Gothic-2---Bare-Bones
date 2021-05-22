@@ -1,9 +1,9 @@
 
-func void zs_mm_rtn_roam()
+func void ZS_MM_Rtn_Roam()
 {
-	perception_set_monster_rtn();
+	Perception_Set_Monster_Rtn();
 	AI_SetWalkMode(self,NPC_WALK);
-	b_mm_desynchronize();
+	B_MM_DeSynchronize();
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == FALSE)
 	{
 		AI_GotoWP(self,self.wp);
@@ -11,22 +11,22 @@ func void zs_mm_rtn_roam()
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func int zs_mm_rtn_roam_loop()
+func int ZS_MM_Rtn_Roam_loop()
 {
-	var int wandertime;
-	var int randommove;
-	if(!Wld_IsTime(self.aivar[AIV_MM_ROAMSTART],0,self.aivar[AIV_MM_ROAMEND],0) && (self.aivar[AIV_MM_ROAMSTART] != ONLYROUTINE))
+	var int wanderTime;
+	var int randomMove;
+	if(!Wld_IsTime(self.aivar[AIV_MM_RoamStart],0,self.aivar[AIV_MM_RoamEnd],0) && (self.aivar[AIV_MM_RoamStart] != OnlyRoutine))
 	{
-		AI_StartState(self,zs_mm_allscheduler,1,"");
+		AI_StartState(self,ZS_MM_AllScheduler,1,"");
 		return LOOP_END;
 	};
 	if(self.aivar[AIV_TAPOSITION] == NOTINPOS)
 	{
-		wandertime = Hlp_Random(5);
+		wanderTime = Hlp_Random(5);
 		Npc_SetStateTime(self,0);
 		self.aivar[AIV_TAPOSITION] = ISINPOS;
 	};
-	if(Npc_GetStateTime(self) > wandertime)
+	if(Npc_GetStateTime(self) > wanderTime)
 	{
 		if(Wld_IsNextFPAvailable(self,"FP_ROAM"))
 		{
@@ -36,16 +36,16 @@ func int zs_mm_rtn_roam_loop()
 	}
 	else if(Hlp_Random(1000) <= 5)
 	{
-		randommove = Hlp_Random(3);
-		if(randommove == 0)
+		randomMove = Hlp_Random(3);
+		if(randomMove == 0)
 		{
 			AI_PlayAni(self,"R_ROAM1");
 		};
-		if(randommove == 1)
+		if(randomMove == 1)
 		{
 			AI_PlayAni(self,"R_ROAM2");
 		};
-		if(randommove == 2)
+		if(randomMove == 2)
 		{
 			AI_PlayAni(self,"R_ROAM3");
 		};
@@ -53,7 +53,7 @@ func int zs_mm_rtn_roam_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_mm_rtn_roam_end()
+func void ZS_MM_Rtn_Roam_end()
 {
 };
 

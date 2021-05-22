@@ -1,22 +1,22 @@
 
-func void zs_announce_herold()
+func void ZS_Announce_Herold()
 {
-	perception_set_normal();
+	Perception_Set_Normal();
 	Npc_PercDisable(self,PERC_ASSESSQUIETSOUND);
-	b_resetall(self);
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	AI_GotoWP(self,self.wp);
 	AI_AlignToWP(self);
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func int zs_announce_herold_loop()
+func int ZS_Announce_Herold_loop()
 {
 	if((Npc_GetStateTime(self) >= 70) && (hero.aivar[AIV_INVINCIBLE] == FALSE))
 	{
 		AI_PlayAni(self,"T_HGUARD_2_STAND");
 		self.aivar[AIV_TAPOSITION] = NOTINPOS;
-		b_announce_herold();
+		B_Announce_Herold();
 		Npc_SetStateTime(self,0);
 	};
 	if(self.aivar[AIV_TAPOSITION] == NOTINPOS)
@@ -27,7 +27,7 @@ func int zs_announce_herold_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_announce_herold_end()
+func void ZS_Announce_Herold_end()
 {
 };
 

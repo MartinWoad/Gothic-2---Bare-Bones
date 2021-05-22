@@ -1,12 +1,12 @@
 
-instance PAL_2006_LEICHE(NPC_DEFAULT)
+instance PAL_2006_Leiche(Npc_Default)
 {
-	name[0] = NAME_RITTER;
+	name[0] = NAME_Ritter;
 	guild = GIL_PAL;
 	id = 2006;
 	voice = 10;
 	flags = 0;
-	npctype = NPCTYPE_OCAMBIENT;
+	npcType = NPCTYPE_OCAMBIENT;
 	attribute[ATR_STRENGTH] = 10;
 	attribute[ATR_DEXTERITY] = 10;
 	attribute[ATR_MANA_MAX] = 0;
@@ -14,19 +14,19 @@ instance PAL_2006_LEICHE(NPC_DEFAULT)
 	attribute[ATR_HITPOINTS_MAX] = 1;
 	attribute[ATR_HITPOINTS] = 1;
 	fight_tactic = FAI_HUMAN_STRONG;
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fighter",FACE_B_TOUGH_PACHO,BODYTEX_B,4828);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_B_Tough_Pacho,BodyTex_B,ItAr_PAL_M);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,65);
-	daily_routine = rtn_start_2006;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,65);
+	daily_routine = Rtn_Start_2006;
 };
 
 
-func void rtn_start_2006()
+func void Rtn_Start_2006()
 {
-	ta_stand_guarding(8,0,23,0,"OW_RITTER_LEICHE_01");
-	ta_stand_guarding(23,0,8,0,"OW_RITTER_LEICHE_01");
+	TA_Stand_Guarding(8,0,23,0,"OW_RITTER_LEICHE_01");
+	TA_Stand_Guarding(23,0,8,0,"OW_RITTER_LEICHE_01");
 };
 

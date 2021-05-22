@@ -1,24 +1,24 @@
 
-instance DIA_HEROLD_INFO(C_INFO)
+instance DIA_Herold_Info(C_Info)
 {
-	npc = vlk_406_herold;
+	npc = VLK_406_Herold;
 	nr = 10;
-	condition = dia_herold_info_condition;
-	information = dia_herold_info_info;
+	condition = DIA_Herold_Info_Condition;
+	information = DIA_Herold_Info_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_herold_info_condition()
+func int DIA_Herold_Info_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_herold_info_info()
+func void DIA_Herold_Info_Info()
 {
 	AI_Output(self,other,"DIA_Herold_Info_04_00");	//Nie przeszkadzaj mi. Jestem na s³u¿bie.
 	AI_StopProcessInfos(self);

@@ -1,28 +1,28 @@
 
-instance VLK_407_HAKON(NPC_DEFAULT)
+instance VLK_407_Hakon(Npc_Default)
 {
 	name[0] = "Hakon";
 	guild = GIL_VLK;
 	id = 407;
 	voice = 12;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,4);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_shortsword2);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_N_NORMALBART20,BODYTEX_N,4821);
+	EquipItem(self,ItMw_ShortSword2);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_N_NormalBart20,BodyTex_N,ITAR_Vlk_M);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,50);
-	daily_routine = rtn_start_407;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,50);
+	daily_routine = Rtn_Start_407;
 };
 
 
-func void rtn_start_407()
+func void Rtn_Start_407()
 {
-	ta_stand_armscrossed(5,10,19,50,"NW_CITY_HAKON");
-	ta_smoke_waterpipe(19,50,0,10,"NW_CITY_RAUCH_02");
-	ta_sleep(0,10,5,10,"NW_CITY_HOTEL_BED_04");
+	TA_Stand_ArmsCrossed(5,10,19,50,"NW_CITY_HAKON");
+	TA_Smoke_Waterpipe(19,50,0,10,"NW_CITY_RAUCH_02");
+	TA_Sleep(0,10,5,10,"NW_CITY_HOTEL_BED_04");
 };
 

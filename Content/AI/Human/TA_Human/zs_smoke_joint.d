@@ -1,21 +1,21 @@
 
-func void zs_smoke_joint()
+func void ZS_Smoke_Joint()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
 		AI_GotoWP(self,self.wp);
 	};
-	if(Npc_HasItems(self,itmi_joint) == 0)
+	if(Npc_HasItems(self,ItMi_Joint) == 0)
 	{
-		CreateInvItem(self,itmi_joint);
+		CreateInvItem(self,ItMi_Joint);
 	};
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func int zs_smoke_joint_loop()
+func int ZS_Smoke_Joint_loop()
 {
 	if(Npc_IsOnFP(self,"STAND"))
 	{
@@ -42,7 +42,7 @@ func int zs_smoke_joint_loop()
 	};
 	if(self.aivar[AIV_TAPOSITION] == NOTINPOS)
 	{
-		AI_UseItemToState(self,itmi_joint,0);
+		AI_UseItemToState(self,ItMi_Joint,0);
 		self.aivar[AIV_TAPOSITION] = ISINPOS;
 	};
 	if((Npc_GetStateTime(self) > 5) && (self.aivar[AIV_TAPOSITION] == ISINPOS))
@@ -53,8 +53,8 @@ func int zs_smoke_joint_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_smoke_joint_end()
+func void ZS_Smoke_Joint_end()
 {
-	AI_UseItemToState(self,itmi_joint,-1);
+	AI_UseItemToState(self,ItMi_Joint,-1);
 };
 

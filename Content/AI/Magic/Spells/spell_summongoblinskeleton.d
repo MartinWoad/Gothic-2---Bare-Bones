@@ -1,16 +1,16 @@
 
-const int SPL_COST_SUMMONGOBLINSKELETON = 10;
+const int SPL_Cost_SummonGoblinSkeleton = 10;
 
-instance SPELL_SUMMONGOBLINSKELETON(C_SPELL_PROTO)
+instance Spell_SummonGoblinSkeleton(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	targetcollectalgo = TARGET_COLLECT_NONE;
+	targetCollectAlgo = TARGET_COLLECT_NONE;
 };
 
 
-func int spell_logic_summongoblinskeleton(var int manainvested)
+func int Spell_Logic_SummonGoblinSkeleton(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_SUMMONGOBLINSKELETON)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_SummonGoblinSkeleton)
 	{
 		return SPL_SENDCAST;
 	}
@@ -20,16 +20,16 @@ func int spell_logic_summongoblinskeleton(var int manainvested)
 	};
 };
 
-func void spell_cast_summongoblinskeleton()
+func void Spell_Cast_SummonGoblinSkeleton()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_SUMMONGOBLINSKELETON;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_SummonGoblinSkeleton;
 	if(Npc_IsPlayer(self))
 	{
-		Wld_SpawnNpcRange(self,summoned_gobbo_skeleton,1,500);
+		Wld_SpawnNpcRange(self,Summoned_Gobbo_Skeleton,1,500);
 	}
 	else
 	{
-		Wld_SpawnNpcRange(self,gobbo_skeleton,1,500);
+		Wld_SpawnNpcRange(self,Gobbo_Skeleton,1,500);
 	};
 };
 

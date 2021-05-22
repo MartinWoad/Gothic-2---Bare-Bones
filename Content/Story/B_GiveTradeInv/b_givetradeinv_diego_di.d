@@ -1,9 +1,9 @@
 
-func void b_givetradeinv_diego_di(var C_NPC slf)
+func void B_GiveTradeInv_Diego_DI(var C_Npc slf)
 {
-	CreateInvItems(slf,itrw_arrow,160);
-	CreateInvItems(slf,itrw_bolt,120);
-	CreateInvItems(slf,itke_lockpick,20);
-	CreateInvItems(slf,itrw_bow_l_01,1);
+	CreateInvItems(slf,ItRw_Arrow,160);
+	CreateInvItems(slf,ItRw_Bolt,120);
+	CreateInvItems(slf,ItKE_lockpick,20);
+	CreateInvItems(slf,ItRw_Bow_L_01,1);
 };
 

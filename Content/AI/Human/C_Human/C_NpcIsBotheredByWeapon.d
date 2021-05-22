@@ -1,15 +1,15 @@
 
-func int c_npcisbotheredbyweapon(var C_NPC slf,var C_NPC oth)
+func int C_NpcIsBotheredByWeapon(var C_Npc slf,var C_Npc oth)
 {
 	if(slf.aivar[AIV_PARTYMEMBER] == TRUE)
 	{
 		return FALSE;
 	};
-	if((slf.npctype == NPCTYPE_FRIEND) && Npc_IsPlayer(other))
+	if((slf.npcType == NPCTYPE_FRIEND) && Npc_IsPlayer(other))
 	{
 		return FALSE;
 	};
-	if(c_npcistoughguy(slf) && Npc_IsInFightMode(oth,FMODE_MELEE))
+	if(C_NpcIsToughGuy(slf) && Npc_IsInFightMode(oth,FMODE_MELEE))
 	{
 		return FALSE;
 	};
@@ -17,7 +17,7 @@ func int c_npcisbotheredbyweapon(var C_NPC slf,var C_NPC oth)
 	{
 		return FALSE;
 	};
-	if(c_npcisgateguard(slf))
+	if(C_NpcIsGateGuard(slf))
 	{
 		return FALSE;
 	};

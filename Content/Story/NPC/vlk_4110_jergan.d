@@ -1,35 +1,35 @@
 
-instance VLK_4110_JERGAN(NPC_DEFAULT)
+instance VLK_4110_Jergan(Npc_Default)
 {
 	name[0] = "Jergan";
 	guild = GIL_NONE;
 	id = 4110;
 	voice = 13;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	b_setattributestochapter(self,5);
+	npcType = npctype_main;
+	aivar[AIV_ToughGuy] = TRUE;
+	B_SetAttributesToChapter(self,5);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_2h_sld_axe);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_WHISTLER,BODYTEX_N,4846);
+	EquipItem(self,ItMw_2h_Sld_Axe);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Whistler,BodyTex_N,ItAr_BDT_M);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Tired.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,75);
-	daily_routine = rtn_start_4110;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,75);
+	daily_routine = Rtn_Start_4110;
 };
 
 
-func void rtn_start_4110()
+func void Rtn_Start_4110()
 {
-	ta_sit_campfire(8,0,23,0,"OW_STAND_JERGAN");
-	ta_sit_campfire(23,0,8,0,"OW_STAND_JERGAN");
+	TA_Sit_Campfire(8,0,23,0,"OW_STAND_JERGAN");
+	TA_Sit_Campfire(23,0,8,0,"OW_STAND_JERGAN");
 };
 
-func void rtn_fajeth_4110()
+func void Rtn_Fajeth_4110()
 {
-	ta_sit_campfire(8,0,23,0,"OW_NEWMINE_04");
-	ta_sit_campfire(23,0,8,0,"OW_NEWMINE_04");
+	TA_Sit_Campfire(8,0,23,0,"OW_NEWMINE_04");
+	TA_Sit_Campfire(23,0,8,0,"OW_NEWMINE_04");
 };
 

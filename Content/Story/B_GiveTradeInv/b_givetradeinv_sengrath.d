@@ -1,55 +1,55 @@
 
-var int sengrath_itemsgiven_chapter_1;
-var int sengrath_itemsgiven_chapter_2;
-var int sengrath_itemsgiven_chapter_3;
-var int sengrath_itemsgiven_chapter_4;
-var int sengrath_itemsgiven_chapter_5;
+var int Sengrath_ItemsGiven_Chapter_1;
+var int Sengrath_ItemsGiven_Chapter_2;
+var int Sengrath_ItemsGiven_Chapter_3;
+var int Sengrath_ItemsGiven_Chapter_4;
+var int Sengrath_ItemsGiven_Chapter_5;
 var int sengrath_itemsgiven_chapter_6;
 
-func void b_givetradeinv_sengrath(var C_NPC slf)
+func void B_GiveTradeInv_Sengrath(var C_Npc slf)
 {
-	if((KAPITEL >= 1) && (SENGRATH_ITEMSGIVEN_CHAPTER_1 == FALSE))
+	if((Kapitel >= 1) && (Sengrath_ItemsGiven_Chapter_1 == FALSE))
 	{
-		SENGRATH_ITEMSGIVEN_CHAPTER_1 = TRUE;
+		Sengrath_ItemsGiven_Chapter_1 = TRUE;
 	};
-	if((KAPITEL >= 2) && (SENGRATH_ITEMSGIVEN_CHAPTER_2 == FALSE))
+	if((Kapitel >= 2) && (Sengrath_ItemsGiven_Chapter_2 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,200);
-		CreateInvItems(slf,itpo_mana_01,10);
-		CreateInvItems(slf,itpo_mana_02,5);
-		CreateInvItems(slf,itsc_zap,3);
-		CreateInvItems(slf,itsc_sumwolf,1);
-		CreateInvItems(slf,itsc_sleep,2);
-		CreateInvItems(slf,itsc_icecube,2);
-		CreateInvItems(slf,itsc_windfist,3);
-		CreateInvItems(slf,itsc_mediumheal,5);
-		SENGRATH_ITEMSGIVEN_CHAPTER_2 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,200);
+		CreateInvItems(slf,ItPo_Mana_01,10);
+		CreateInvItems(slf,ItPo_Mana_02,5);
+		CreateInvItems(slf,ItSc_Zap,3);
+		CreateInvItems(slf,ItSc_SumWolf,1);
+		CreateInvItems(slf,ItSc_Sleep,2);
+		CreateInvItems(slf,ItSc_IceCube,2);
+		CreateInvItems(slf,ItSc_Windfist,3);
+		CreateInvItems(slf,ItSc_MediumHeal,5);
+		Sengrath_ItemsGiven_Chapter_2 = TRUE;
 	};
-	if((KAPITEL >= 3) && (SENGRATH_ITEMSGIVEN_CHAPTER_3 == FALSE))
+	if((Kapitel >= 3) && (Sengrath_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itpo_mana_01,10);
-		CreateInvItems(slf,itpo_mana_02,5);
-		SENGRATH_ITEMSGIVEN_CHAPTER_3 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItPo_Mana_01,10);
+		CreateInvItems(slf,ItPo_Mana_02,5);
+		Sengrath_ItemsGiven_Chapter_3 = TRUE;
 	};
-	if((KAPITEL >= 4) && (SENGRATH_ITEMSGIVEN_CHAPTER_4 == FALSE))
+	if((Kapitel >= 4) && (Sengrath_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,150);
-		CreateInvItems(slf,itpo_mana_01,10);
-		CreateInvItems(slf,itpo_mana_02,5);
-		CreateInvItems(slf,itsc_lightningflash,2);
-		SENGRATH_ITEMSGIVEN_CHAPTER_4 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,150);
+		CreateInvItems(slf,ItPo_Mana_01,10);
+		CreateInvItems(slf,ItPo_Mana_02,5);
+		CreateInvItems(slf,ItSc_LightningFlash,2);
+		Sengrath_ItemsGiven_Chapter_4 = TRUE;
 	};
-	if((KAPITEL >= 5) && (SENGRATH_ITEMSGIVEN_CHAPTER_5 == FALSE))
+	if((Kapitel >= 5) && (Sengrath_ItemsGiven_Chapter_5 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,200);
-		CreateInvItems(slf,itpo_mana_01,10);
-		CreateInvItems(slf,itpo_mana_02,5);
-		SENGRATH_ITEMSGIVEN_CHAPTER_5 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,200);
+		CreateInvItems(slf,ItPo_Mana_01,10);
+		CreateInvItems(slf,ItPo_Mana_02,5);
+		Sengrath_ItemsGiven_Chapter_5 = TRUE;
 	};
-	if((KAPITEL >= 6) && (SENGRATH_ITEMSGIVEN_CHAPTER_6 == FALSE))
+	if((Kapitel >= 6) && (SENGRATH_ITEMSGIVEN_CHAPTER_6 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,300);
+		CreateInvItems(slf,ItMi_Gold,300);
 		SENGRATH_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };

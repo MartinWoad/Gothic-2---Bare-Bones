@@ -1,59 +1,59 @@
 
-var int hakon_itemsgiven_chapter_1;
-var int hakon_itemsgiven_chapter_2;
-var int hakon_itemsgiven_chapter_3;
-var int hakon_itemsgiven_chapter_4;
-var int hakon_itemsgiven_chapter_5;
+var int Hakon_ItemsGiven_Chapter_1;
+var int Hakon_ItemsGiven_Chapter_2;
+var int Hakon_ItemsGiven_Chapter_3;
+var int Hakon_ItemsGiven_Chapter_4;
+var int Hakon_ItemsGiven_Chapter_5;
 var int hakon_itemsgiven_chapter_6;
 
-func void b_givetradeinv_hakon(var C_NPC slf)
+func void B_GiveTradeInv_Hakon(var C_Npc slf)
 {
-	if((KAPITEL >= 1) && (HAKON_ITEMSGIVEN_CHAPTER_1 == FALSE))
+	if((Kapitel >= 1) && (Hakon_ItemsGiven_Chapter_1 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itmw_shortsword3,1);
-		CreateInvItems(slf,itmw_shortsword4,1);
-		CreateInvItems(slf,itmw_richtstab,1);
-		CreateInvItems(slf,itmw_schiffsaxt,1);
-		CreateInvItems(slf,itmw_shortsword5,1);
-		CreateInvItems(slf,itmiswordraw,5);
-		HAKON_ITEMSGIVEN_CHAPTER_1 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItMw_ShortSword3,1);
+		CreateInvItems(slf,ItMw_ShortSword4,1);
+		CreateInvItems(slf,ItMw_Richtstab,1);
+		CreateInvItems(slf,ItMw_Schiffsaxt,1);
+		CreateInvItems(slf,ItMw_ShortSword5,1);
+		CreateInvItems(slf,ItMiSwordraw,5);
+		Hakon_ItemsGiven_Chapter_1 = TRUE;
 	};
-	if((KAPITEL >= 2) && (HAKON_ITEMSGIVEN_CHAPTER_2 == FALSE))
+	if((Kapitel >= 2) && (Hakon_ItemsGiven_Chapter_2 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itmw_zweihaender1,1);
-		CreateInvItems(slf,itmw_steinbrecher,1);
-		CreateInvItems(slf,itmw_doppelaxt,1);
-		CreateInvItems(slf,itmiswordraw,5);
-		HAKON_ITEMSGIVEN_CHAPTER_2 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItMw_Zweihaender1,1);
+		CreateInvItems(slf,ItMw_Steinbrecher,1);
+		CreateInvItems(slf,ItMw_Doppelaxt,1);
+		CreateInvItems(slf,ItMiSwordraw,5);
+		Hakon_ItemsGiven_Chapter_2 = TRUE;
 	};
-	if((KAPITEL >= 3) && (HAKON_ITEMSGIVEN_CHAPTER_3 == FALSE))
+	if((Kapitel >= 3) && (Hakon_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itmw_streitkolben,1);
-		CreateInvItems(slf,itmw_streitaxt2,1);
-		CreateInvItems(slf,itmw_schwert5,1);
-		CreateInvItems(slf,itmiswordraw,5);
-		HAKON_ITEMSGIVEN_CHAPTER_3 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItMw_Streitkolben,1);
+		CreateInvItems(slf,ItMw_Streitaxt2,1);
+		CreateInvItems(slf,ItMw_Schwert5,1);
+		CreateInvItems(slf,ItMiSwordraw,5);
+		Hakon_ItemsGiven_Chapter_3 = TRUE;
 	};
-	if((KAPITEL >= 4) && (HAKON_ITEMSGIVEN_CHAPTER_4 == FALSE))
+	if((Kapitel >= 4) && (Hakon_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,150);
-		CreateInvItems(slf,itmw_kriegshammer2,1);
-		CreateInvItems(slf,itmw_schlachtaxt,1);
-		CreateInvItems(slf,itmiswordraw,5);
-		HAKON_ITEMSGIVEN_CHAPTER_4 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,150);
+		CreateInvItems(slf,ItMw_Kriegshammer2,1);
+		CreateInvItems(slf,ItMw_Schlachtaxt,1);
+		CreateInvItems(slf,ItMiSwordraw,5);
+		Hakon_ItemsGiven_Chapter_4 = TRUE;
 	};
-	if((KAPITEL >= 5) && (HAKON_ITEMSGIVEN_CHAPTER_5 == FALSE))
+	if((Kapitel >= 5) && (Hakon_ItemsGiven_Chapter_5 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,200);
-		CreateInvItems(slf,itmiswordraw,5);
-		HAKON_ITEMSGIVEN_CHAPTER_5 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,200);
+		CreateInvItems(slf,ItMiSwordraw,5);
+		Hakon_ItemsGiven_Chapter_5 = TRUE;
 	};
-	if((KAPITEL >= 6) && (HAKON_ITEMSGIVEN_CHAPTER_6 == FALSE))
+	if((Kapitel >= 6) && (HAKON_ITEMSGIVEN_CHAPTER_6 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,300);
+		CreateInvItems(slf,ItMi_Gold,300);
 		HAKON_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };

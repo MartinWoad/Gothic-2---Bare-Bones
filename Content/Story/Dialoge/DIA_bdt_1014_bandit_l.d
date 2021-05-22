@@ -1,48 +1,48 @@
 
-instance DIA_BDT_1014_BANDIT_EXIT(C_INFO)
+instance DIA_BDT_1014_BANDIT_EXIT(C_Info)
 {
-	npc = bdt_1014_bandit_l;
+	npc = Bdt_1014_Bandit_L;
 	nr = 999;
-	condition = dia_bdt_1014_bandit_exit_condition;
-	information = dia_bdt_1014_bandit_exit_info;
+	condition = DIA_BDT_1014_BANDIT_EXIT_Condition;
+	information = DIA_BDT_1014_BANDIT_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_bdt_1014_bandit_exit_condition()
+func int DIA_BDT_1014_BANDIT_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bdt_1014_bandit_exit_info()
+func void DIA_BDT_1014_BANDIT_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BDT_1014_BANDIT_KILLER(C_INFO)
+instance DIA_BDT_1014_BANDIT_KILLER(C_Info)
 {
-	npc = bdt_1014_bandit_l;
+	npc = Bdt_1014_Bandit_L;
 	nr = 1;
-	condition = dia_bdt_1014_bandit_killer_condition;
-	information = dia_bdt_1014_bandit_killer_info;
+	condition = DIA_BDT_1014_BANDIT_KILLER_Condition;
+	information = DIA_BDT_1014_BANDIT_KILLER_Info;
 	important = TRUE;
 };
 
 
-func int dia_bdt_1014_bandit_killer_condition()
+func int DIA_BDT_1014_BANDIT_KILLER_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_1013_bandit_ambush) || Npc_IsDead(ambusher_1013) || (BDT13_FRIEND == TRUE) || Npc_IsInState(self,zs_talk))
+	if(Npc_KnowsInfo(other,dia_1013_bandit_ambush) || Npc_IsDead(Ambusher_1013) || (Bdt13_Friend == TRUE) || Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bdt_1014_bandit_killer_info()
+func void DIA_BDT_1014_BANDIT_KILLER_Info()
 {
 	AI_Output(self,other,"DIA_BDT_1014_BANDIT_KILLER_06_00");	//To on! Dajmy mu nauczkê!
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_SUDDENENEMYINFERNO,1);
+	B_Attack(self,other,AR_SuddenEnemyInferno,1);
 };
 

@@ -1,60 +1,60 @@
 
-instance DIA_THEKLA_EXIT(C_INFO)
+instance DIA_Thekla_EXIT(C_Info)
 {
-	npc = bau_913_thekla;
+	npc = BAU_913_Thekla;
 	nr = 999;
-	condition = dia_thekla_exit_condition;
-	information = dia_thekla_exit_info;
+	condition = DIA_Thekla_EXIT_Condition;
+	information = DIA_Thekla_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_thekla_exit_condition()
+func int DIA_Thekla_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_thekla_exit_info()
+func void DIA_Thekla_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_THEKLA_HALLO(C_INFO)
+instance DIA_Thekla_HALLO(C_Info)
 {
-	npc = bau_913_thekla;
+	npc = BAU_913_Thekla;
 	nr = 1;
-	condition = dia_thekla_hallo_condition;
-	information = dia_thekla_hallo_info;
+	condition = DIA_Thekla_HALLO_Condition;
+	information = DIA_Thekla_HALLO_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_thekla_hallo_condition()
+func int DIA_Thekla_HALLO_Condition()
 {
 	return TRUE;
 };
 
-func void dia_thekla_hallo_info()
+func void DIA_Thekla_HALLO_Info()
 {
 	AI_Output(self,other,"DIA_Thekla_HALLO_17_00");	//Co robisz w mojej kuchni?
 };
 
 
-instance DIA_THEKLA_LECKER(C_INFO)
+instance DIA_Thekla_Lecker(C_Info)
 {
-	npc = bau_913_thekla;
+	npc = BAU_913_Thekla;
 	nr = 2;
-	condition = dia_thekla_lecker_condition;
-	information = dia_thekla_lecker_info;
+	condition = DIA_Thekla_Lecker_Condition;
+	information = DIA_Thekla_Lecker_Info;
 	permanent = FALSE;
 	description = "Coœ tutaj wspaniale pachnie!";
 };
 
 
-func int dia_thekla_lecker_condition()
+func int DIA_Thekla_Lecker_Condition()
 {
 	if(other.guild == GIL_NONE)
 	{
@@ -62,7 +62,7 @@ func int dia_thekla_lecker_condition()
 	};
 };
 
-func void dia_thekla_lecker_info()
+func void DIA_Thekla_Lecker_Info()
 {
 	AI_Output(other,self,"DIA_Thekla_Lecker_15_00");	//Coœ tutaj wspaniale pachnie!
 	AI_Output(self,other,"DIA_Thekla_Lecker_17_01");	//Och tak! Ju¿ ja znam takich jak ty! Myszkujecie po ca³ym domu.
@@ -70,28 +70,28 @@ func void dia_thekla_lecker_info()
 };
 
 
-var int thekla_gavestew;
+var int Thekla_GaveStew;
 
-instance DIA_THEKLA_HUNGER(C_INFO)
+instance DIA_Thekla_Hunger(C_Info)
 {
-	npc = bau_913_thekla;
+	npc = BAU_913_Thekla;
 	nr = 3;
-	condition = dia_thekla_hunger_condition;
-	information = dia_thekla_hunger_info;
+	condition = DIA_Thekla_Hunger_Condition;
+	information = DIA_Thekla_Hunger_Info;
 	permanent = FALSE;
 	description = "Jestem g³odny!";
 };
 
 
-func int dia_thekla_hunger_condition()
+func int DIA_Thekla_Hunger_Condition()
 {
-	if(THEKLA_GAVESTEW == FALSE)
+	if(Thekla_GaveStew == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_thekla_hunger_info()
+func void DIA_Thekla_Hunger_Info()
 {
 	AI_Output(other,self,"DIA_Thekla_Hunger_15_00");	//Jestem g³odny!
 	if(other.guild == GIL_NONE)
@@ -102,8 +102,8 @@ func void dia_thekla_hunger_info()
 	else if((other.guild == GIL_SLD) || (other.guild == GIL_DJG))
 	{
 		AI_Output(self,other,"DIA_Thekla_Hunger_17_03");	//Hej, twoje ¿arcie.
-		b_giveinvitems(self,other,4908,1);
-		THEKLA_GAVESTEW = TRUE;
+		B_GiveInvItems(self,other,ItFo_XPStew,1);
+		Thekla_GaveStew = TRUE;
 	}
 	else if(other.guild == GIL_MIL)
 	{
@@ -112,24 +112,24 @@ func void dia_thekla_hunger_info()
 	else
 	{
 		AI_Output(self,other,"DIA_Thekla_Hunger_17_05");	//Jak mog³abym odmówiæ proœbie przedstawiciela Innosa?
-		b_giveinvitems(self,other,4908,1);
-		THEKLA_GAVESTEW = TRUE;
+		B_GiveInvItems(self,other,ItFo_XPStew,1);
+		Thekla_GaveStew = TRUE;
 	};
 };
 
 
-instance DIA_THEKLA_ARBEIT(C_INFO)
+instance DIA_Thekla_Arbeit(C_Info)
 {
-	npc = bau_913_thekla;
+	npc = BAU_913_Thekla;
 	nr = 4;
-	condition = dia_thekla_arbeit_condition;
-	information = dia_thekla_arbeit_info;
+	condition = DIA_Thekla_Arbeit_Condition;
+	information = DIA_Thekla_Arbeit_Info;
 	permanent = FALSE;
 	description = "Szukam pracy.";
 };
 
 
-func int dia_thekla_arbeit_condition()
+func int DIA_Thekla_Arbeit_Condition()
 {
 	if(other.guild == GIL_NONE)
 	{
@@ -137,7 +137,7 @@ func int dia_thekla_arbeit_condition()
 	};
 };
 
-func void dia_thekla_arbeit_info()
+func void DIA_Thekla_Arbeit_Info()
 {
 	AI_Output(other,self,"DIA_Thekla_Arbeit_15_00");	//Szukam pracy...
 	AI_Output(self,other,"DIA_Thekla_Arbeit_17_01");	//Chcesz pracowaæ na farmie?
@@ -145,26 +145,26 @@ func void dia_thekla_arbeit_info()
 };
 
 
-instance DIA_THEKLA_WANNAJOIN(C_INFO)
+instance DIA_Thekla_WannaJoin(C_Info)
 {
-	npc = bau_913_thekla;
+	npc = BAU_913_Thekla;
 	nr = 5;
-	condition = dia_thekla_wannajoin_condition;
-	information = dia_thekla_wannajoin_info;
+	condition = DIA_Thekla_WannaJoin_Condition;
+	information = DIA_Thekla_WannaJoin_Info;
 	permanent = FALSE;
 	description = "W³aœciwie to chcia³em siê przy³¹czyæ do najemników...";
 };
 
 
-func int dia_thekla_wannajoin_condition()
+func int DIA_Thekla_WannaJoin_Condition()
 {
-	if((other.guild == GIL_NONE) && Npc_KnowsInfo(other,dia_thekla_arbeit))
+	if((other.guild == GIL_NONE) && Npc_KnowsInfo(other,DIA_Thekla_Arbeit))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_thekla_wannajoin_info()
+func void DIA_Thekla_WannaJoin_Info()
 {
 	AI_Output(other,self,"DIA_Thekla_WannaJoin_15_00");	//W³aœciwie to chcia³em siê przy³¹czyæ do najemników...
 	AI_Output(self,other,"DIA_Thekla_WannaJoin_17_01");	//Jesteœ wiêc jednym z tych przestêpców z kolonii karnej?
@@ -172,18 +172,18 @@ func void dia_thekla_wannajoin_info()
 };
 
 
-instance DIA_THEKLA_SCHLAFEN(C_INFO)
+instance DIA_Thekla_Schlafen(C_Info)
 {
-	npc = bau_913_thekla;
+	npc = BAU_913_Thekla;
 	nr = 6;
-	condition = dia_thekla_schlafen_condition;
-	information = dia_thekla_schlafen_info;
+	condition = DIA_Thekla_Schlafen_Condition;
+	information = DIA_Thekla_Schlafen_Info;
 	permanent = FALSE;
 	description = "Szukam miejsca na nocleg.";
 };
 
 
-func int dia_thekla_schlafen_condition()
+func int DIA_Thekla_Schlafen_Condition()
 {
 	if(other.guild == GIL_NONE)
 	{
@@ -191,33 +191,33 @@ func int dia_thekla_schlafen_condition()
 	};
 };
 
-func void dia_thekla_schlafen_info()
+func void DIA_Thekla_Schlafen_Info()
 {
 	AI_Output(other,self,"DIA_Thekla_Schlafen_15_00");	//Szukam miejsca na nocleg.
 	AI_Output(self,other,"DIA_Thekla_Schlafen_17_01");	//Wybij sobie z g³owy spanie w mojej kuchni. Poszukaj sobie miejsca w stodole.
 };
 
 
-instance DIA_THEKLA_PROBLEM(C_INFO)
+instance DIA_Thekla_Problem(C_Info)
 {
-	npc = bau_913_thekla;
+	npc = BAU_913_Thekla;
 	nr = 7;
-	condition = dia_thekla_problem_condition;
-	information = dia_thekla_problem_info;
+	condition = DIA_Thekla_Problem_Condition;
+	information = DIA_Thekla_Problem_Info;
 	permanent = FALSE;
 	description = "Dlaczego tak nie lubisz najemników?";
 };
 
 
-func int dia_thekla_problem_condition()
+func int DIA_Thekla_Problem_Condition()
 {
-	if((KAPITEL <= 3) && Npc_KnowsInfo(other,dia_thekla_wannajoin))
+	if((Kapitel <= 3) && Npc_KnowsInfo(other,DIA_Thekla_WannaJoin))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_thekla_problem_info()
+func void DIA_Thekla_Problem_Info()
 {
 	AI_Output(other,self,"DIA_Thekla_Problem_15_00");	//Dlaczego tak nie lubisz najemników?
 	AI_Output(self,other,"DIA_Thekla_Problem_17_01");	//Ci durnie strasznie graj¹ mi na nerwach! Szczególnie Sylvio i jego t³usty kumpel, Bullko.
@@ -231,26 +231,26 @@ func void dia_thekla_problem_info()
 };
 
 
-instance DIA_THEKLA_MANIEREN(C_INFO)
+instance DIA_Thekla_Manieren(C_Info)
 {
-	npc = bau_913_thekla;
+	npc = BAU_913_Thekla;
 	nr = 7;
-	condition = dia_thekla_manieren_condition;
-	information = dia_thekla_manieren_info;
+	condition = DIA_Thekla_Manieren_Condition;
+	information = DIA_Thekla_Manieren_Info;
 	permanent = FALSE;
 	description = "Mo¿e ja nauczy³bym tych dwóch dobrych manier?";
 };
 
 
-func int dia_thekla_manieren_condition()
+func int DIA_Thekla_Manieren_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_thekla_problem) && (sylvio.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_NONE) && (bullco.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_NONE) && (KAPITEL <= 3))
+	if(Npc_KnowsInfo(other,DIA_Thekla_Problem) && (Sylvio.aivar[AIV_LastFightAgainstPlayer] == FIGHT_NONE) && (Bullco.aivar[AIV_LastFightAgainstPlayer] == FIGHT_NONE) && (Kapitel <= 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_thekla_manieren_info()
+func void DIA_Thekla_Manieren_Info()
 {
 	AI_Output(other,self,"DIA_Thekla_Manieren_15_00");	//Mo¿e ja nauczy³bym tych dwóch dobrych manier?
 	AI_Output(self,other,"DIA_Thekla_Manieren_17_01");	//Lepiej uwa¿aj, kochaniutki. Z tego co wiem, Sylvio nosi magiczn¹ zbrojê, trudno go pokonaæ.
@@ -259,28 +259,28 @@ func void dia_thekla_manieren_info()
 };
 
 
-instance DIA_THEKLA_AFTERFIGHT(C_INFO)
+instance DIA_Thekla_AfterFight(C_Info)
 {
-	npc = bau_913_thekla;
+	npc = BAU_913_Thekla;
 	nr = 7;
-	condition = dia_thekla_afterfight_condition;
-	information = dia_thekla_afterfight_info;
+	condition = DIA_Thekla_AfterFight_Condition;
+	information = DIA_Thekla_AfterFight_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_thekla_afterfight_condition()
+func int DIA_Thekla_AfterFight_Condition()
 {
-	if((sylvio.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_WON) || (bullco.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_WON) || ((bullco.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_LOST) && (KAPITEL <= 3)))
+	if((Sylvio.aivar[AIV_LastFightAgainstPlayer] == FIGHT_WON) || (Bullco.aivar[AIV_LastFightAgainstPlayer] == FIGHT_WON) || ((Bullco.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) && (Kapitel <= 3)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_thekla_afterfight_info()
+func void DIA_Thekla_AfterFight_Info()
 {
-	if(bullco.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_LOST)
+	if(Bullco.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
 	{
 		AI_Output(self,other,"DIA_Thekla_AfterFight_17_00");	//Pokaza³eœ Bullkowi, gdzie jego miejsce, kochaniutki.
 		AI_Output(self,other,"DIA_Thekla_AfterFight_17_01");	//Pokonanie tej opas³ej œwini musia³o byæ strasznie mêcz¹ce.
@@ -293,67 +293,67 @@ func void dia_thekla_afterfight_info()
 		AI_Output(self,other,"DIA_Thekla_AfterFight_17_05");	//No ju¿, nie rób takiej miny. Nie ty pierwszy oberwa³eœ od tego œmiecia.
 	};
 	AI_Output(self,other,"DIA_Thekla_AfterFight_17_06");	//Masz, zjedz coœ - to powinno dodaæ ci si³.
-	b_giveinvitems(self,other,4908,1);
-	THEKLA_GAVESTEW = TRUE;
+	B_GiveInvItems(self,other,ItFo_XPStew,1);
+	Thekla_GaveStew = TRUE;
 };
 
 
-instance DIA_THEKLA_SAGITTAPAKET(C_INFO)
+instance DIA_Thekla_SagittaPaket(C_Info)
 {
-	npc = bau_913_thekla;
+	npc = BAU_913_Thekla;
 	nr = 4;
-	condition = dia_thekla_sagittapaket_condition;
-	information = dia_thekla_sagittapaket_info;
+	condition = DIA_Thekla_SagittaPaket_Condition;
+	information = DIA_Thekla_SagittaPaket_Info;
 	permanent = TRUE;
 	description = "Mam tu przesy³kê od Sagitty.";
 };
 
 
-func int dia_thekla_sagittapaket_condition()
+func int DIA_Thekla_SagittaPaket_Condition()
 {
-	if(Npc_HasItems(other,itmi_theklaspaket) && (MIS_THEKLA_PAKET == LOG_RUNNING))
+	if(Npc_HasItems(other,ItMi_TheklasPaket) && (MIS_Thekla_Paket == LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_thekla_sagittapaket_info()
+func void DIA_Thekla_SagittaPaket_Info()
 {
-	b_giveinvitems(other,self,5644,1);
+	B_GiveInvItems(other,self,ItMi_TheklasPaket,1);
 	AI_Output(other,self,"DIA_Thekla_SagittaPaket_15_00");	//Mam tu przesy³kê od Sagitty.
 	AI_Output(self,other,"DIA_Thekla_SagittaPaket_17_01");	//Wielkie dziêki. Jednak na coœ siê przyda³eœ.
-	MIS_THEKLA_PAKET = LOG_SUCCESS;
-	b_giveplayerxp(XP_THEKLASPAKET);
+	MIS_Thekla_Paket = LOG_SUCCESS;
+	B_GivePlayerXP(XP_TheklasPaket);
 };
 
 
-var int thekla_mehreintopfkap1;
-var int thekla_mehreintopfkap3;
-var int thekla_mehreintopfkap5;
+var int Thekla_MehrEintopfKap1;
+var int Thekla_MehrEintopfKap3;
+var int Thekla_MehrEintopfKap5;
 
-instance DIA_THEKLA_PERM(C_INFO)
+instance DIA_Thekla_PERM(C_Info)
 {
-	npc = bau_913_thekla;
+	npc = BAU_913_Thekla;
 	nr = 900;
-	condition = dia_thekla_perm_condition;
-	information = dia_thekla_perm_info;
+	condition = DIA_Thekla_PERM_Condition;
+	information = DIA_Thekla_PERM_Info;
 	permanent = TRUE;
 	description = "Dostanê jeszcze trochê gulaszu?";
 };
 
 
-func int dia_thekla_perm_condition()
+func int DIA_Thekla_PERM_Condition()
 {
-	if(THEKLA_GAVESTEW == TRUE)
+	if(Thekla_GaveStew == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_thekla_perm_info()
+func void DIA_Thekla_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Thekla_PERM_15_00");	//Dostanê jeszcze trochê gulaszu?
-	if(MIS_THEKLA_PAKET == FALSE)
+	if(MIS_Thekla_Paket == FALSE)
 	{
 		AI_Output(self,other,"DIA_Thekla_PERM_17_01");	//Ju¿ nie ma.
 		AI_Output(other,self,"DIA_Thekla_PERM_15_02");	//Nawet ma³ej miseczki?
@@ -364,21 +364,21 @@ func void dia_thekla_perm_info()
 		AI_Output(other,self,"DIA_Thekla_PERM_15_07");	//Co takiego?
 		AI_Output(self,other,"DIA_Thekla_PERM_17_08");	//Udaj siê do Sagitty, wiedŸmy mieszkaj¹cej za farm¹ Sekoba, i przynieœ mi od niej paczkê zió³.
 		AI_Output(self,other,"DIA_Thekla_PERM_17_09");	//Jeœli przyniesiesz zio³a, ugotujê gulasz.
-		MIS_THEKLA_PAKET = LOG_RUNNING;
-		CreateInvItems(sagitta,itmi_theklaspaket,1);
-		Log_CreateTopic(TOPIC_THEKLAEINTOPF,LOG_MISSION);
-		Log_SetTopicStatus(TOPIC_THEKLAEINTOPF,LOG_RUNNING);
-		b_logentry(TOPIC_THEKLAEINTOPF,"Jeœli przyniosê Thekli zio³a od uzdrawiaczki Sagitty, mogê liczyæ na kolejny posi³ek. Sagitta mieszka za farm¹ Sekoba.");
+		MIS_Thekla_Paket = LOG_Running;
+		CreateInvItems(Sagitta,ItMi_TheklasPaket,1);
+		Log_CreateTopic(TOPIC_TheklaEintopf,LOG_MISSION);
+		Log_SetTopicStatus(TOPIC_TheklaEintopf,LOG_Running);
+		B_LogEntry(TOPIC_TheklaEintopf,"Jeœli przyniosê Thekli zio³a od uzdrawiaczki Sagitty, mogê liczyæ na kolejny posi³ek. Sagitta mieszka za farm¹ Sekoba.");
 	}
-	else if(MIS_THEKLA_PAKET == LOG_SUCCESS)
+	else if(MIS_Thekla_Paket == LOG_SUCCESS)
 	{
-		if(KAPITEL <= 2)
+		if(Kapitel <= 2)
 		{
-			if(THEKLA_MEHREINTOPFKAP1 == FALSE)
+			if(Thekla_MehrEintopfKap1 == FALSE)
 			{
 				AI_Output(self,other,"DIA_Thekla_PERM_17_10");	//W porz¹dku. Znaj moje dobre serce. Proszê, nie chcê, ¿ebyœ siê biedaczku zag³odzi³.
-				b_giveinvitems(self,other,4908,1);
-				THEKLA_MEHREINTOPFKAP1 = TRUE;
+				B_GiveInvItems(self,other,ItFo_XPStew,1);
+				Thekla_MehrEintopfKap1 = TRUE;
 			}
 			else
 			{
@@ -386,15 +386,15 @@ func void dia_thekla_perm_info()
 				AI_Output(self,other,"DIA_Thekla_PERM_17_12");	//Wtedy dostaniesz wiêcej gulaszu, zrozumiano?
 			};
 		};
-		if((KAPITEL == 3) || (KAPITEL == 4))
+		if((Kapitel == 3) || (Kapitel == 4))
 		{
-			if((THEKLA_MEHREINTOPFKAP3 == FALSE) && (MIS_RESCUEBENNET == LOG_SUCCESS))
+			if((Thekla_MehrEintopfKap3 == FALSE) && (MIS_RescueBennet == LOG_SUCCESS))
 			{
 				AI_Output(self,other,"DIA_Thekla_PERM_17_13");	//S³ysza³am, ¿e pomog³eœ Bennetowi. Dobra robota, ch³opcze.
-				b_giveinvitems(self,other,4908,1);
-				THEKLA_MEHREINTOPFKAP3 = TRUE;
+				B_GiveInvItems(self,other,ItFo_XPStew,1);
+				Thekla_MehrEintopfKap3 = TRUE;
 			}
-			else if(MIS_RESCUEBENNET != LOG_SUCCESS)
+			else if(MIS_RescueBennet != LOG_SUCCESS)
 			{
 				AI_Output(self,other,"DIA_Thekla_PERM_17_14");	//Te psubraty ze stra¿y uwiêzi³y Benneta!
 				AI_Output(self,other,"DIA_Thekla_PERM_17_15");	//Zrób coœ dla mnie i wyci¹gnij tego nieszczêœnika. W miêdzyczasie ugotujê trochê smakowitego gulaszu.
@@ -404,15 +404,15 @@ func void dia_thekla_perm_info()
 				AI_Output(self,other,"DIA_Thekla_PERM_17_16");	//Nic ju¿ nie zosta³o. PrzyjdŸ póŸniej.
 			};
 		};
-		if(KAPITEL >= 5)
+		if(Kapitel >= 5)
 		{
-			if(THEKLA_MEHREINTOPFKAP5 == FALSE)
+			if(Thekla_MehrEintopfKap5 == FALSE)
 			{
 				AI_Output(self,other,"DIA_Thekla_PERM_17_17");	//Nigdy nie przestajesz byæ g³odny? Czym ty siê w³aœciwie zajmujesz?
 				AI_Output(other,self,"DIA_Thekla_PERM_15_18");	//W³aœnie posieka³em kilka smoków.
 				AI_Output(self,other,"DIA_Thekla_PERM_17_19");	//Och! W takim razie zas³u¿y³eœ chyba na porz¹dn¹ michê gulaszu.
-				b_giveinvitems(self,other,4908,1);
-				THEKLA_MEHREINTOPFKAP5 = TRUE;
+				B_GiveInvItems(self,other,ItFo_XPStew,1);
+				Thekla_MehrEintopfKap5 = TRUE;
 			}
 			else
 			{
@@ -427,37 +427,37 @@ func void dia_thekla_perm_info()
 };
 
 
-instance DIA_THEKLA_PICKPOCKET(C_INFO)
+instance DIA_Thekla_PICKPOCKET(C_Info)
 {
-	npc = bau_913_thekla;
+	npc = BAU_913_Thekla;
 	nr = 900;
-	condition = dia_thekla_pickpocket_condition;
-	information = dia_thekla_pickpocket_info;
+	condition = DIA_Thekla_PICKPOCKET_Condition;
+	information = DIA_Thekla_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60_FEMALE;
+	description = Pickpocket_60_Female;
 };
 
 
-func int dia_thekla_pickpocket_condition()
+func int DIA_Thekla_PICKPOCKET_Condition()
 {
-	return c_beklauen(53,60);
+	return C_Beklauen(53,60);
 };
 
-func void dia_thekla_pickpocket_info()
+func void DIA_Thekla_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_thekla_pickpocket);
-	Info_AddChoice(dia_thekla_pickpocket,DIALOG_BACK,dia_thekla_pickpocket_back);
-	Info_AddChoice(dia_thekla_pickpocket,DIALOG_PICKPOCKET,dia_thekla_pickpocket_doit);
+	Info_ClearChoices(DIA_Thekla_PICKPOCKET);
+	Info_AddChoice(DIA_Thekla_PICKPOCKET,Dialog_Back,DIA_Thekla_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Thekla_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Thekla_PICKPOCKET_DoIt);
 };
 
-func void dia_thekla_pickpocket_doit()
+func void DIA_Thekla_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_thekla_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Thekla_PICKPOCKET);
 };
 
-func void dia_thekla_pickpocket_back()
+func void DIA_Thekla_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_thekla_pickpocket);
+	Info_ClearChoices(DIA_Thekla_PICKPOCKET);
 };
 

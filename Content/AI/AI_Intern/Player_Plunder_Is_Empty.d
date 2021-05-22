@@ -6,17 +6,17 @@ func void player_plunder_is_empty()
 	if(rnd <= 40)
 	{
 		Print(PRINT_NOTHINGTOGET);
-		b_say_overlay(self,self,"$NOTHINGTOGET");
+		B_Say_Overlay(self,self,"$NOTHINGTOGET");
 	}
 	else if(rnd <= 80)
 	{
 		Print(PRINT_NOTHINGTOGET02);
-		b_say_overlay(self,self,"$NOTHINGTOGET02");
+		B_Say_Overlay(self,self,"$NOTHINGTOGET02");
 	}
 	else if(rnd <= 99)
 	{
 		Print(PRINT_NOTHINGTOGET03);
-		b_say_overlay(self,self,"$NOTHINGTOGET03");
+		B_Say_Overlay(self,self,"$NOTHINGTOGET03");
 	};
 };
 

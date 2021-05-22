@@ -1,81 +1,81 @@
 
-instance DIA_REGIS_EXIT(C_INFO)
+instance DIA_Regis_EXIT(C_Info)
 {
-	npc = vlk_425_regis;
+	npc = VLK_425_Regis;
 	nr = 999;
-	condition = dia_regis_exit_condition;
-	information = dia_regis_exit_info;
+	condition = DIA_Regis_EXIT_Condition;
+	information = DIA_Regis_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_regis_exit_condition()
+func int DIA_Regis_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_regis_exit_info()
+func void DIA_Regis_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_REGIS_PICKPOCKET(C_INFO)
+instance DIA_Regis_PICKPOCKET(C_Info)
 {
-	npc = vlk_425_regis;
+	npc = VLK_425_Regis;
 	nr = 900;
-	condition = dia_regis_pickpocket_condition;
-	information = dia_regis_pickpocket_info;
+	condition = DIA_Regis_PICKPOCKET_Condition;
+	information = DIA_Regis_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_regis_pickpocket_condition()
+func int DIA_Regis_PICKPOCKET_Condition()
 {
-	return c_beklauen(40,35);
+	return C_Beklauen(40,35);
 };
 
-func void dia_regis_pickpocket_info()
+func void DIA_Regis_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_regis_pickpocket);
-	Info_AddChoice(dia_regis_pickpocket,DIALOG_BACK,dia_regis_pickpocket_back);
-	Info_AddChoice(dia_regis_pickpocket,DIALOG_PICKPOCKET,dia_regis_pickpocket_doit);
+	Info_ClearChoices(DIA_Regis_PICKPOCKET);
+	Info_AddChoice(DIA_Regis_PICKPOCKET,Dialog_Back,DIA_Regis_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Regis_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Regis_PICKPOCKET_DoIt);
 };
 
-func void dia_regis_pickpocket_doit()
+func void DIA_Regis_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_regis_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Regis_PICKPOCKET);
 };
 
-func void dia_regis_pickpocket_back()
+func void DIA_Regis_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_regis_pickpocket);
+	Info_ClearChoices(DIA_Regis_PICKPOCKET);
 };
 
 
-instance DIA_REGIS_HALLO(C_INFO)
+instance DIA_Regis_Hallo(C_Info)
 {
-	npc = vlk_425_regis;
+	npc = VLK_425_Regis;
 	nr = 1;
-	condition = dia_regis_hallo_condition;
-	information = dia_regis_hallo_info;
+	condition = DIA_Regis_Hallo_Condition;
+	information = DIA_Regis_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_regis_hallo_condition()
+func int DIA_Regis_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_regis_hallo_info()
+func void DIA_Regis_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Regis_Hallo_13_00");	//Hej, nowy w mieœcie, co?
 	AI_Output(other,self,"DIA_Regis_Hallo_15_01");	//Tak, ale co ci do tego?
@@ -84,26 +84,26 @@ func void dia_regis_hallo_info()
 };
 
 
-instance DIA_REGIS_MILIZ(C_INFO)
+instance DIA_Regis_MILIZ(C_Info)
 {
-	npc = vlk_425_regis;
+	npc = VLK_425_Regis;
 	nr = 5;
-	condition = dia_regis_miliz_condition;
-	information = dia_regis_miliz_info;
+	condition = DIA_Regis_MILIZ_Condition;
+	information = DIA_Regis_MILIZ_Info;
 	permanent = FALSE;
 	description = "Co mo¿esz mi powiedzieæ na temat stra¿y?";
 };
 
 
-func int dia_regis_miliz_condition()
+func int DIA_Regis_MILIZ_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_regis_hallo))
+	if(Npc_KnowsInfo(other,DIA_Regis_Hallo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_regis_miliz_info()
+func void DIA_Regis_MILIZ_Info()
 {
 	AI_Output(other,self,"DIA_Regis_MILIZ_15_00");	//Co mo¿esz mi powiedzieæ na temat stra¿y?
 	AI_Output(self,other,"DIA_Regis_Add_13_01");	//Jeden z paladynów przej¹³ niedawno dowodzenie. Niejaki Lord Andre.
@@ -112,26 +112,26 @@ func void dia_regis_miliz_info()
 };
 
 
-instance DIA_REGIS_ANDRE(C_INFO)
+instance DIA_Regis_ANDRE(C_Info)
 {
-	npc = vlk_425_regis;
+	npc = VLK_425_Regis;
 	nr = 5;
-	condition = dia_regis_andre_condition;
-	information = dia_regis_andre_info;
+	condition = DIA_Regis_ANDRE_Condition;
+	information = DIA_Regis_ANDRE_Info;
 	permanent = FALSE;
 	description = "Co jeszcze mo¿esz mi powiedzieæ o Lordzie Andre?";
 };
 
 
-func int dia_regis_andre_condition()
+func int DIA_Regis_ANDRE_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_regis_miliz))
+	if(Npc_KnowsInfo(other,DIA_Regis_MILIZ))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_regis_andre_info()
+func void DIA_Regis_ANDRE_Info()
 {
 	AI_Output(other,self,"DIA_Regis_ANDRE_15_00");	//Co jeszcze mo¿esz mi powiedzieæ o Lordzie Andre?
 	AI_Output(self,other,"DIA_Regis_Add_13_05");	//Wiem, ¿e obj¹³ tak¿e funkcjê sêdziego.
@@ -144,26 +144,26 @@ func void dia_regis_andre_info()
 };
 
 
-instance DIA_REGIS_VALENTINO(C_INFO)
+instance DIA_Regis_Valentino(C_Info)
 {
-	npc = vlk_425_regis;
+	npc = VLK_425_Regis;
 	nr = 5;
-	condition = dia_regis_valentino_condition;
-	information = dia_regis_valentino_info;
+	condition = DIA_Regis_Valentino_Condition;
+	information = DIA_Regis_Valentino_Info;
 	permanent = FALSE;
 	description = "Z kim siê pobi³eœ?";
 };
 
 
-func int dia_regis_valentino_condition()
+func int DIA_Regis_Valentino_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_regis_andre))
+	if(Npc_KnowsInfo(other,DIA_Regis_ANDRE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_regis_valentino_info()
+func void DIA_Regis_Valentino_Info()
 {
 	AI_Output(other,self,"DIA_Regis_Add_15_12");	//Z kim siê pobi³eœ?
 	AI_Output(self,other,"DIA_Regis_Add_13_13");	//Koleœ nazywa siê Valentino. Czêsto przesiaduje w knajpie, w pobli¿u œwi¹tyni.
@@ -171,82 +171,82 @@ func void dia_regis_valentino_info()
 };
 
 
-instance DIA_REGIS_VALDEFEAT(C_INFO)
+instance DIA_Regis_ValDefeat(C_Info)
 {
-	npc = vlk_425_regis;
+	npc = VLK_425_Regis;
 	nr = 5;
-	condition = dia_regis_valdefeat_condition;
-	information = dia_regis_valdefeat_info;
+	condition = DIA_Regis_ValDefeat_Condition;
+	information = DIA_Regis_ValDefeat_Info;
 	permanent = FALSE;
 	description = "Pozna³em Valentina.";
 };
 
 
-func int dia_regis_valdefeat_condition()
+func int DIA_Regis_ValDefeat_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_regis_valentino) && (valentino.aivar[AIV_DEFEATEDBYPLAYER] == TRUE))
+	if(Npc_KnowsInfo(other,DIA_Regis_Valentino) && (Valentino.aivar[AIV_DefeatedByPlayer] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_regis_valdefeat_info()
+func void DIA_Regis_ValDefeat_Info()
 {
 	AI_Output(other,self,"DIA_Regis_Add_15_15");	//Pozna³em Valentina.
 	AI_Output(self,other,"DIA_Regis_Add_13_16");	//I?
 	AI_Output(other,self,"DIA_Regis_Add_15_17");	//Sprawi³em mu têgie lanie...
 	AI_Output(self,other,"DIA_Regis_Add_13_18");	//Zas³ugiwa³ na to...
-	if(!Npc_IsDead(valentino))
+	if(!Npc_IsDead(Valentino))
 	{
 		AI_Output(self,other,"DIA_Regis_Add_13_19");	//Podczas naszej ma³ej sprzeczki znalaz³em przy nim ten pierœcieñ.
-		b_giveinvitems(self,other,5647,1);
-		REGIS_RING = TRUE;
+		B_GiveInvItems(self,other,ItRi_ValentinosRing,1);
+		Regis_Ring = TRUE;
 		AI_Output(self,other,"DIA_Regis_Add_13_20");	//Mo¿esz go przekazaæ nastêpnej osobie, która da mu w mordê...
 	};
 };
 
 
-var int regis_bogendieb;
+var int Regis_Bogendieb;
 
-instance DIA_REGIS_PERM(C_INFO)
+instance DIA_Regis_PERM(C_Info)
 {
-	npc = vlk_425_regis;
+	npc = VLK_425_Regis;
 	nr = 200;
-	condition = dia_regis_perm_condition;
-	information = dia_regis_perm_info;
+	condition = DIA_Regis_PERM_Condition;
+	information = DIA_Regis_PERM_Info;
 	permanent = TRUE;
 	description = "Czy ostatnio wydarzy³o siê coœ ciekawego?";
 };
 
 
-func int dia_regis_perm_condition()
+func int DIA_Regis_PERM_Condition()
 {
 	return TRUE;
 };
 
-func void dia_regis_perm_info()
+func void DIA_Regis_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Regis_PERM_15_00");	//Czy ostatnio wydarzy³o siê coœ ciekawego?
-	if((REGIS_BOGENDIEB == FALSE) && (MIS_BOSPER_BOGEN != LOG_SUCCESS))
+	if((Regis_Bogendieb == FALSE) && (MIS_Bosper_Bogen != LOG_SUCCESS))
 	{
 		AI_Output(self,other,"DIA_Regis_PERM_13_01");	//Mo¿na by tak powiedzieæ.
 		AI_Output(self,other,"DIA_Regis_PERM_13_02");	//Okradziono Bospera, miejscowego ³uczarza. Co za tupet.
 		AI_Output(self,other,"DIA_Regis_PERM_13_03");	//Koleœ po prostu wszed³ do sklepu, w œrodku dnia, i zabra³ stamt¹d ³uk.
 		AI_Output(self,other,"DIA_Regis_PERM_13_04");	//Bosper wyskoczy³ za nim jak poparzony, krzycz¹c: 'Stój, zatrzymaj siê, draniu!' Z³odziej jednak by³ szybszy.
-		MIS_BOSPER_BOGEN = LOG_RUNNING;
-		REGIS_BOGENDIEB = TRUE;
+		MIS_Bosper_Bogen = LOG_Running;
+		Regis_Bogendieb = TRUE;
 	}
-	else if((MIS_BOSPER_BOGEN == LOG_SUCCESS) && (REGIS_BOGENDIEB != 2))
+	else if((MIS_Bosper_Bogen == LOG_SUCCESS) && (Regis_Bogendieb != 2))
 	{
 		AI_Output(self,other,"DIA_Regis_PERM_13_05");	//Jakiœ czas potem, jak uczciwy znalazca, odniós³ ³uk Bosperowi.
 		AI_Output(self,other,"DIA_Regis_PERM_13_06");	//To dziwne, mog³oby siê wydawaæ, ¿e ka¿dy chce dla siebie jak najwiêcej, a ten koleœ po prostu wraca i oddaje ³uk.
-		REGIS_BOGENDIEB = 2;
+		Regis_Bogendieb = 2;
 	}
-	else if(KAPITEL != 3)
+	else if(Kapitel != 3)
 	{
 		AI_Output(self,other,"DIA_Regis_PERM_13_07");	//Có¿, wszystko po staremu. Jeœli zaatakuj¹ nas orkowie, na pewno to zauwa¿ymy...
 	}
-	else if(MIS_RESCUEBENNET == LOG_SUCCESS)
+	else if(MIS_RescueBennet == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Regis_PERM_13_08");	//Okaza³o siê, ¿e najemnik by³ niewinny. Z tego co wiem, wypuszczono go na wolnoœæ.
 		AI_Output(self,other,"DIA_Regis_PERM_13_09");	//Lord Hagen musi byæ zielony ze z³oœci.
@@ -260,26 +260,26 @@ func void dia_regis_perm_info()
 };
 
 
-instance DIA_REGIS_CREW(C_INFO)
+instance DIA_Regis_Crew(C_Info)
 {
-	npc = vlk_425_regis;
+	npc = VLK_425_Regis;
 	nr = 51;
-	condition = dia_regis_crew_condition;
-	information = dia_regis_crew_info;
+	condition = DIA_Regis_Crew_Condition;
+	information = DIA_Regis_Crew_Info;
 	permanent = FALSE;
 	description = "Szukam za³ogi, która wyruszy³aby ze mn¹ na morze.";
 };
 
 
-func int dia_regis_crew_condition()
+func int DIA_Regis_Crew_Condition()
 {
-	if(MIS_SCKNOWSWAYTOIRDORATH == TRUE)
+	if(MIS_SCKnowsWayToIrdorath == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_regis_crew_info()
+func void DIA_Regis_Crew_Info()
 {
 	AI_Output(other,self,"DIA_Regis_Crew_15_00");	//Szukam za³ogi, która wyruszy³aby ze mn¹ na morze.
 	AI_Output(self,other,"DIA_Regis_Crew_13_01");	//W tej kwestii nie mogê ci pomóc. Powinieneœ poszukaæ kogoœ w okolicach portu, mo¿e w okolicznych knajpach.

@@ -1,243 +1,243 @@
 
-instance DIA_SYLVIO_EXIT(C_INFO)
+instance DIA_Sylvio_EXIT(C_Info)
 {
-	npc = sld_806_sylvio;
+	npc = SLD_806_Sylvio;
 	nr = 999;
-	condition = dia_sylvio_exit_condition;
-	information = dia_sylvio_exit_info;
+	condition = DIA_Sylvio_EXIT_Condition;
+	information = DIA_Sylvio_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_sylvio_exit_condition()
+func int DIA_Sylvio_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_sylvio_exit_info()
+func void DIA_Sylvio_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SYLVIO_HALLO(C_INFO)
+instance DIA_Sylvio_Hallo(C_Info)
 {
-	npc = sld_806_sylvio;
+	npc = SLD_806_Sylvio;
 	nr = 1;
-	condition = dia_sylvio_hallo_condition;
-	information = dia_sylvio_hallo_info;
+	condition = DIA_Sylvio_Hallo_Condition;
+	information = DIA_Sylvio_Hallo_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_sylvio_hallo_condition()
+func int DIA_Sylvio_Hallo_Condition()
 {
 	return TRUE;
 };
 
-func void dia_sylvio_hallo_info()
+func void DIA_Sylvio_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Sylvio_Hallo_15_00");	//Jak leci?
 	AI_Output(self,other,"DIA_Sylvio_Hallo_09_01");	//Czy pozwoli³em ci siê do mnie odezwaæ?
-	SYLVIO_ANGEQUATSCHT = SYLVIO_ANGEQUATSCHT + 1;
+	Sylvio_angequatscht = Sylvio_angequatscht + 1;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SYLVIO_THEKLA(C_INFO)
+instance DIA_Sylvio_Thekla(C_Info)
 {
-	npc = sld_806_sylvio;
+	npc = SLD_806_Sylvio;
 	nr = 2;
-	condition = dia_sylvio_thekla_condition;
-	information = dia_sylvio_thekla_info;
+	condition = DIA_Sylvio_Thekla_Condition;
+	information = DIA_Sylvio_Thekla_Info;
 	permanent = FALSE;
 	description = "Thekla ma z tob¹ pewien problem.";
 };
 
 
-func int dia_sylvio_thekla_condition()
+func int DIA_Sylvio_Thekla_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_thekla_problem))
+	if(Npc_KnowsInfo(other,DIA_Thekla_Problem))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sylvio_thekla_info()
+func void DIA_Sylvio_Thekla_Info()
 {
 	AI_Output(other,self,"DIA_Sylvio_Thekla_15_00");	//Thekla ma z tob¹ pewien problem.
 	AI_Output(self,other,"DIA_Sylvio_Thekla_09_01");	//I? Na czym polega problem szlachetnej paniusi? Czemu sama tu nie przylezie?
 	AI_Output(other,self,"DIA_Sylvio_Thekla_15_02");	//Dobrze wiesz, czemu...
 	AI_Output(self,other,"DIA_Sylvio_Thekla_09_03");	//Mo¿e chcesz o tym pomówiæ z moim przyjacielem, Bullkiem?
-	SYLVIO_ANGEQUATSCHT = SYLVIO_ANGEQUATSCHT + 1;
+	Sylvio_angequatscht = Sylvio_angequatscht + 1;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SYLVIO_GOSSIP(C_INFO)
+instance DIA_Sylvio_Gossip(C_Info)
 {
-	npc = sld_806_sylvio;
+	npc = SLD_806_Sylvio;
 	nr = 3;
-	condition = dia_sylvio_gossip_condition;
-	information = dia_sylvio_gossip_info;
+	condition = DIA_Sylvio_Gossip_Condition;
+	information = DIA_Sylvio_Gossip_Info;
 	permanent = FALSE;
 	description = "Wiele osób o tobie mówi...";
 };
 
 
-func int dia_sylvio_gossip_condition()
+func int DIA_Sylvio_Gossip_Condition()
 {
 	return TRUE;
 };
 
-func void dia_sylvio_gossip_info()
+func void DIA_Sylvio_Gossip_Info()
 {
 	AI_Output(other,self,"DIA_Sylvio_Gossip_15_00");	//Wiele osób o tobie mówi...
 	AI_Output(self,other,"DIA_Sylvio_Gossip_09_01");	//Wiele osób gada za du¿o.
-	SYLVIO_ANGEQUATSCHT = SYLVIO_ANGEQUATSCHT + 1;
+	Sylvio_angequatscht = Sylvio_angequatscht + 1;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SYLVIO_ABOUTLEE(C_INFO)
+instance DIA_Sylvio_AboutLee(C_Info)
 {
-	npc = sld_806_sylvio;
+	npc = SLD_806_Sylvio;
 	nr = 4;
-	condition = dia_sylvio_aboutlee_condition;
-	information = dia_sylvio_aboutlee_info;
+	condition = DIA_Sylvio_AboutLee_Condition;
+	information = DIA_Sylvio_AboutLee_Info;
 	permanent = FALSE;
 	description = "Co myœlisz o Lee?";
 };
 
 
-func int dia_sylvio_aboutlee_condition()
+func int DIA_Sylvio_AboutLee_Condition()
 {
 	return TRUE;
 };
 
-func void dia_sylvio_aboutlee_info()
+func void DIA_Sylvio_AboutLee_Info()
 {
 	AI_Output(other,self,"DIA_Sylvio_AboutLee_15_00");	//Co myœlisz o Lee?
 	AI_Output(self,other,"DIA_Sylvio_AboutLee_09_01");	//Och, to œwietny wojownik. Nie œmia³bym siê z nim mierzyæ.
 	AI_Output(self,other,"DIA_Sylvio_AboutLee_09_02");	//Chyba, ma siê rozumieæ, ¿e nie by³oby wyjœcia.
-	SYLVIO_ANGEQUATSCHT = SYLVIO_ANGEQUATSCHT + 1;
+	Sylvio_angequatscht = Sylvio_angequatscht + 1;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SYLVIO_MENDEFEATED(C_INFO)
+instance DIA_Sylvio_MenDefeated(C_Info)
 {
-	npc = sld_806_sylvio;
+	npc = SLD_806_Sylvio;
 	nr = 5;
-	condition = dia_sylvio_mendefeated_condition;
-	information = dia_sylvio_mendefeated_info;
+	condition = DIA_Sylvio_MenDefeated_Condition;
+	information = DIA_Sylvio_MenDefeated_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_sylvio_mendefeated_condition()
+func int DIA_Sylvio_MenDefeated_Condition()
 {
 	var int victories;
 	victories = 0;
-	if(rod.aivar[AIV_DEFEATEDBYPLAYER] == TRUE)
+	if(Rod.aivar[AIV_DefeatedByPlayer] == TRUE)
 	{
 		victories = victories + 1;
 	};
-	if(sentenza.aivar[AIV_DEFEATEDBYPLAYER] == TRUE)
+	if(Sentenza.aivar[AIV_DefeatedByPlayer] == TRUE)
 	{
 		victories = victories + 1;
 	};
-	if(fester.aivar[AIV_DEFEATEDBYPLAYER] == TRUE)
+	if(Fester.aivar[AIV_DefeatedByPlayer] == TRUE)
 	{
 		victories = victories + 1;
 	};
-	if(raoul.aivar[AIV_DEFEATEDBYPLAYER] == TRUE)
+	if(Raoul.aivar[AIV_DefeatedByPlayer] == TRUE)
 	{
 		victories = victories + 1;
 	};
-	if(bullco.aivar[AIV_DEFEATEDBYPLAYER] == TRUE)
+	if(Bullco.aivar[AIV_DefeatedByPlayer] == TRUE)
 	{
 		victories = victories + 1;
 	};
-	if((MIS_JARVIS_SLDKO != FALSE) && (victories >= 2))
+	if((MIS_Jarvis_SldKO != FALSE) && (victories >= 2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sylvio_mendefeated_info()
+func void DIA_Sylvio_MenDefeated_Info()
 {
 	AI_Output(self,other,"DIA_Sylvio_MenDefeated_09_00");	//Dosz³y mnie s³uchy, ¿e masz coœ do moich ch³opaków!
 	AI_Output(self,other,"DIA_Sylvio_MenDefeated_09_01");	//A z tego, co wiem, jesteœ jednym z pupilków Lee.
 	AI_Output(self,other,"DIA_Sylvio_MenDefeated_09_02");	//Ostrzegam ciê! Wkrótce wiele siê tu zmieni, a wtedy... Wtedy sobie pogadamy!
-	SYLVIO_MENDEFEATED = TRUE;
+	Sylvio_MenDefeated = TRUE;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SYLVIO_ASSHOLE(C_INFO)
+instance DIA_Sylvio_Asshole(C_Info)
 {
-	npc = sld_806_sylvio;
+	npc = SLD_806_Sylvio;
 	nr = 2;
-	condition = dia_sylvio_asshole_condition;
-	information = dia_sylvio_asshole_info;
+	condition = DIA_Sylvio_Asshole_Condition;
+	information = DIA_Sylvio_Asshole_Info;
 	permanent = FALSE;
 	description = "Hej, palancie...";
 };
 
 
-func int dia_sylvio_asshole_condition()
+func int DIA_Sylvio_Asshole_Condition()
 {
-	if(SYLVIO_ANGEQUATSCHT >= 1)
+	if(Sylvio_angequatscht >= 1)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_sylvio_asshole_info()
+func void DIA_Sylvio_Asshole_Info()
 {
 	AI_Output(other,self,"DIA_Sylvio_Asshole_15_00");	//Hej, palancie...
 	AI_Output(self,other,"DIA_Sylvio_Asshole_09_01");	//Nie chcesz mnie chyba sprowokowaæ?
 	AI_Output(self,other,"DIA_Sylvio_Asshole_09_02");	//OdejdŸ, nêdzna glisto, poszukaj sobie kamienia i schowaj siê pod nim.
-	SYLVIO_ANGEQUATSCHT = SYLVIO_ANGEQUATSCHT + 1;
+	Sylvio_angequatscht = Sylvio_angequatscht + 1;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SYLVIOSLD_PICKPOCKET(C_INFO)
+instance DIA_SylvioSLD_PICKPOCKET(C_Info)
 {
-	npc = sld_806_sylvio;
+	npc = SLD_806_Sylvio;
 	nr = 900;
-	condition = dia_sylviosld_pickpocket_condition;
-	information = dia_sylviosld_pickpocket_info;
+	condition = DIA_SylvioSLD_PICKPOCKET_Condition;
+	information = DIA_SylvioSLD_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_80;
+	description = Pickpocket_80;
 };
 
 
-func int dia_sylviosld_pickpocket_condition()
+func int DIA_SylvioSLD_PICKPOCKET_Condition()
 {
-	return c_beklauen(80,210);
+	return C_Beklauen(80,210);
 };
 
-func void dia_sylviosld_pickpocket_info()
+func void DIA_SylvioSLD_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_sylviosld_pickpocket);
-	Info_AddChoice(dia_sylviosld_pickpocket,DIALOG_BACK,dia_sylviosld_pickpocket_back);
-	Info_AddChoice(dia_sylviosld_pickpocket,DIALOG_PICKPOCKET,dia_sylviosld_pickpocket_doit);
+	Info_ClearChoices(DIA_SylvioSLD_PICKPOCKET);
+	Info_AddChoice(DIA_SylvioSLD_PICKPOCKET,Dialog_Back,DIA_SylvioSLD_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_SylvioSLD_PICKPOCKET,DIALOG_PICKPOCKET,DIA_SylvioSLD_PICKPOCKET_DoIt);
 };
 
-func void dia_sylviosld_pickpocket_doit()
+func void DIA_SylvioSLD_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_sylviosld_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_SylvioSLD_PICKPOCKET);
 };
 
-func void dia_sylviosld_pickpocket_back()
+func void DIA_SylvioSLD_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_sylviosld_pickpocket);
+	Info_ClearChoices(DIA_SylvioSLD_PICKPOCKET);
 };
 

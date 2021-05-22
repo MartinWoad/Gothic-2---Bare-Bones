@@ -1,36 +1,36 @@
 
-instance PAL_280_TENGRON(NPC_DEFAULT)
+instance PAL_280_Tengron(Npc_Default)
 {
 	name[0] = "Tengron";
 	guild = GIL_OUT;
 	id = 280;
 	voice = 7;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,4);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_2h_pal_sword);
-	EquipItem(self,itrw_mil_crossbow);
-	CreateInvItems(self,itrw_bolt,11);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_L_TOUGHBALD01,BODYTEX_L,4828);
+	EquipItem(self,ItMw_2h_Pal_Sword);
+	EquipItem(self,ItRw_Mil_Crossbow);
+	CreateInvItems(self,ItRw_Bolt,11);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_L_ToughBald01,BodyTex_L,ItAr_PAL_M);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,65);
-	daily_routine = rtn_start_280;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,65);
+	daily_routine = Rtn_Start_280;
 };
 
 
-func void rtn_start_280()
+func void Rtn_Start_280()
 {
-	ta_stand_guarding(8,0,23,0,"OW_NEWMINE_02");
-	ta_stand_guarding(23,0,8,0,"OW_NEWMINE_02");
+	TA_Stand_Guarding(8,0,23,0,"OW_NEWMINE_02");
+	TA_Stand_Guarding(23,0,8,0,"OW_NEWMINE_02");
 };
 
-func void rtn_runaftervirtualrefugee_280()
+func void Rtn_RunAfterVirtualRefugee_280()
 {
-	ta_runtowp(8,0,23,0,"OW_PATH_06_05");
-	ta_runtowp(23,0,8,0,"OW_PATH_06_05");
+	TA_RunToWP(8,0,23,0,"OW_PATH_06_05");
+	TA_RunToWP(23,0,8,0,"OW_PATH_06_05");
 };
 

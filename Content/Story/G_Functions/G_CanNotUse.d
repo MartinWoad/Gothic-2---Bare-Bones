@@ -1,54 +1,54 @@
 
-func void g_cannotuse(var int bisplayer,var int nattribute,var int nvalue)
+func void G_CanNotUse(var int bIsPlayer,var int nAttribute,var int nValue)
 {
-	var string strmessage;
-	var string strattributemissing;
-	var int nattributevalue;
-	var int ndifference;
-	var string strdifference;
-	if(nattribute == ATR_HITPOINTS)
+	var string strMessage;
+	var string strAttributeMissing;
+	var int nAttributeValue;
+	var int nDifference;
+	var string strDifference;
+	if(nAttribute == ATR_HITPOINTS)
 	{
-		strattributemissing = PRINT_HITPOINTS_MISSING;
-		nattributevalue = self.attribute[ATR_HITPOINTS];
+		strAttributeMissing = PRINT_HITPOINTS_MISSING;
+		nAttributeValue = self.attribute[ATR_HITPOINTS];
 	}
-	else if(nattribute == ATR_HITPOINTS_MAX)
+	else if(nAttribute == ATR_HITPOINTS_MAX)
 	{
-		strattributemissing = PRINT_HITPOINTS_MAX_MISSING;
-		nattributevalue = self.attribute[ATR_HITPOINTS_MAX];
+		strAttributeMissing = PRINT_HITPOINTS_MAX_MISSING;
+		nAttributeValue = self.attribute[ATR_HITPOINTS_MAX];
 	}
-	else if(nattribute == ATR_MANA)
+	else if(nAttribute == ATR_MANA)
 	{
-		strattributemissing = PRINT_MANA_MISSING;
-		nattributevalue = self.attribute[ATR_MANA];
+		strAttributeMissing = PRINT_MANA_MISSING;
+		nAttributeValue = self.attribute[ATR_MANA];
 	}
-	else if(nattribute == ATR_MANA_MAX)
+	else if(nAttribute == ATR_MANA_MAX)
 	{
-		strattributemissing = PRINT_MANA_MAX_MISSING;
-		nattributevalue = self.attribute[ATR_MANA_MAX];
+		strAttributeMissing = PRINT_MANA_MAX_MISSING;
+		nAttributeValue = self.attribute[ATR_MANA_MAX];
 	}
-	else if(nattribute == ATR_STRENGTH)
+	else if(nAttribute == ATR_STRENGTH)
 	{
-		strattributemissing = PRINT_STRENGTH_MISSING;
-		nattributevalue = self.attribute[ATR_STRENGTH];
+		strAttributeMissing = PRINT_STRENGTH_MISSING;
+		nAttributeValue = self.attribute[ATR_STRENGTH];
 	}
-	else if(nattribute == ATR_DEXTERITY)
+	else if(nAttribute == ATR_DEXTERITY)
 	{
-		strattributemissing = PRINT_DEXTERITY_MISSING;
-		nattributevalue = self.attribute[ATR_DEXTERITY];
+		strAttributeMissing = PRINT_DEXTERITY_MISSING;
+		nAttributeValue = self.attribute[ATR_DEXTERITY];
 	}
 	else
 	{
-		strattributemissing = "";
-		nattributevalue = 0;
+		strAttributeMissing = "";
+		nAttributeValue = 0;
 	};
-	ndifference = nvalue - nattributevalue;
-	strdifference = IntToString(ndifference);
-	strmessage = strdifference;
-	strmessage = ConcatStrings(strmessage," ");
-	strmessage = ConcatStrings(strmessage,strattributemissing);
-	if(bisplayer)
+	nDifference = nValue - nAttributeValue;
+	strDifference = IntToString(nDifference);
+	strMessage = strDifference;
+	strMessage = ConcatStrings(strMessage," ");
+	strMessage = ConcatStrings(strMessage,strAttributeMissing);
+	if(bIsPlayer)
 	{
-		Print(strmessage);
+		Print(strMessage);
 	};
 };
 

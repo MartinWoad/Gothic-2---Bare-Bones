@@ -1,41 +1,41 @@
 
-instance VLK_4130_TALBIN(NPC_DEFAULT)
+instance VLK_4130_Talbin(Npc_Default)
 {
 	name[0] = "Talbin";
 	guild = GIL_OUT;
 	id = 4130;
 	voice = 7;
 	flags = 0;
-	npctype = NPCTYPE_FRIEND;
-	b_setattributestochapter(self,3);
+	npcType = NPCTYPE_FRIEND;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_bau_mace);
-	EquipItem(self,itrw_sld_bow);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_N_BULLIT,BODYTEX_N,4845);
+	EquipItem(self,ItMw_1h_Bau_Mace);
+	EquipItem(self,ItRw_Sld_Bow);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_N_Bullit,BodyTex_N,ITAR_Leather_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_4130;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_4130;
 };
 
 
-func void rtn_start_4130()
+func void Rtn_Start_4130()
 {
-	ta_sit_campfire(8,0,23,0,"SPAWN_TALL_PATH_BANDITOS2_03");
-	ta_sit_campfire(23,0,8,0,"SPAWN_TALL_PATH_BANDITOS2_03");
+	TA_Sit_Campfire(8,0,23,0,"SPAWN_TALL_PATH_BANDITOS2_03");
+	TA_Sit_Campfire(23,0,8,0,"SPAWN_TALL_PATH_BANDITOS2_03");
 };
 
-func void rtn_fleepass_4130()
+func void Rtn_FleePass_4130()
 {
-	ta_runtowp(8,0,23,0,"START");
-	ta_runtowp(23,0,8,0,"START");
+	TA_RunToWP(8,0,23,0,"START");
+	TA_RunToWP(23,0,8,0,"START");
 };
 
-func void rtn_intopass_4130()
+func void Rtn_IntoPass_4130()
 {
-	ta_stand_eating(8,0,23,0,"TOT");
-	ta_stand_eating(23,0,8,0,"TOT");
+	TA_Stand_Eating(8,0,23,0,"TOT");
+	TA_Stand_Eating(23,0,8,0,"TOT");
 };
 

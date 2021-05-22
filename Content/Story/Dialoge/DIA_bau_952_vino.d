@@ -1,49 +1,49 @@
 
-instance DIA_VINO_EXIT(C_INFO)
+instance DIA_Vino_EXIT(C_Info)
 {
-	npc = bau_952_vino;
+	npc = BAU_952_Vino;
 	nr = 999;
-	condition = dia_vino_exit_condition;
-	information = dia_vino_exit_info;
+	condition = DIA_Vino_EXIT_Condition;
+	information = DIA_Vino_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_vino_exit_condition()
+func int DIA_Vino_EXIT_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vino_exit_info()
+func void DIA_Vino_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_VINO_HALLO(C_INFO)
+instance DIA_Vino_HALLO(C_Info)
 {
-	npc = bau_952_vino;
+	npc = BAU_952_Vino;
 	nr = 1;
-	condition = dia_vino_hallo_condition;
-	information = dia_vino_hallo_info;
+	condition = DIA_Vino_HALLO_Condition;
+	information = DIA_Vino_HALLO_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_vino_hallo_condition()
+func int DIA_Vino_HALLO_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (KAPITEL < 3))
+	if(Npc_IsInState(self,ZS_Talk) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vino_hallo_info()
+func void DIA_Vino_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Vino_HALLO_15_00");	//Jak idzie praca?
 	AI_Output(self,other,"DIA_Vino_HALLO_05_01");	//Jak zwykle, roboty coraz wiêcej, pieniêdzy coraz mniej. Jak Ÿle pójdzie, to jutro napadn¹ nas orkowie i spal¹ nasz¹ farmê.
@@ -54,26 +54,26 @@ func void dia_vino_hallo_info()
 };
 
 
-instance DIA_VINO_SEEKWORK(C_INFO)
+instance DIA_Vino_SeekWork(C_Info)
 {
-	npc = bau_952_vino;
+	npc = BAU_952_Vino;
 	nr = 1;
-	condition = dia_vino_seekwork_condition;
-	information = dia_vino_seekwork_info;
+	condition = DIA_Vino_SeekWork_Condition;
+	information = DIA_Vino_SeekWork_Info;
 	permanent = FALSE;
 	description = "Mogê ci jakoœ pomóc? Szukam pracy.";
 };
 
 
-func int dia_vino_seekwork_condition()
+func int DIA_Vino_SeekWork_Condition()
 {
-	if((Npc_KnowsInfo(other,dia_lobart_worknow) || Npc_KnowsInfo(other,dia_lobart_kleidung)) && !Npc_IsDead(lobart) && (KAPITEL < 3))
+	if((Npc_KnowsInfo(other,DIA_Lobart_WorkNOW) || Npc_KnowsInfo(other,DIA_Lobart_KLEIDUNG)) && !Npc_IsDead(Lobart) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vino_seekwork_info()
+func void DIA_Vino_SeekWork_Info()
 {
 	AI_Output(other,self,"DIA_Vino_SeekWork_15_00");	//Mogê ci jakoœ pomóc? Szukam pracy.
 	if(hero.guild == GIL_NONE)
@@ -81,18 +81,18 @@ func void dia_vino_seekwork_info()
 		AI_Output(self,other,"DIA_Vino_SeekWork_05_01");	//Znasz siê na pracy w polu?
 		AI_Output(other,self,"DIA_Vino_SeekWork_15_02");	//A na czym tu siê znaæ?
 		AI_Output(self,other,"DIA_Vino_SeekWork_05_03");	//Ach! W takim razie ju¿ ci chyba podziêkujê.
-		if(!Npc_IsDead(lobart))
+		if(!Npc_IsDead(Lobart))
 		{
 			AI_Output(self,other,"DIA_Vino_SeekWork_05_04");	//Jeœli chcesz siê zatrudniæ u Lobarta jako zwyk³y robotnik, to ostrzegam. Ludziom takim jak ty p³aci naprawdê marnie.
-			if(((Mob_HasItems("CHEST_LOBART",itar_bau_l) == TRUE) || (Npc_HasItems(lobart,itar_bau_l) > 0)) && (LOBART_KLEIDUNG_VERKAUFT == FALSE) && (Npc_KnowsInfo(other,dia_lobart_kleidung) || Npc_KnowsInfo(other,dia_lobart_worknow)))
+			if(((Mob_HasItems("CHEST_LOBART",ITAR_Bau_L) == TRUE) || (Npc_HasItems(Lobart,ITAR_Bau_L) > 0)) && (Lobart_Kleidung_Verkauft == FALSE) && (Npc_KnowsInfo(other,DIA_Lobart_KLEIDUNG) || Npc_KnowsInfo(other,DIA_Lobart_WorkNOW)))
 			{
 				AI_Output(other,self,"DIA_Vino_SeekWork_15_05");	//Obieca³, ¿e sprzeda mi tanio czyste ubranie, jeœli pomogê na farmie.
 				AI_Output(self,other,"DIA_Vino_SeekWork_05_06");	//Hmmm. Nie mam dla ciebie pracy, ale mo¿esz przynieœæ mnie i ch³opakom coœ do picia.
 				AI_Output(self,other,"DIA_Vino_SeekWork_05_07");	//Przynieœ no flaszkê wina, a powiem Lobartowi, ¿eœ siê œwietnie spisa³ (szyderczy œmiech).
-				MIS_VINO_WEIN = LOG_RUNNING;
-				Log_CreateTopic(TOPIC_VINO,LOG_MISSION);
-				Log_SetTopicStatus(TOPIC_VINO,LOG_RUNNING);
-				b_logentry(TOPIC_VINO,"Jeœli Vino dostanie ode mnie butelkê wina, powie Lobartowi, ¿e mu pomog³em.");
+				MIS_Vino_Wein = LOG_Running;
+				Log_CreateTopic(TOPIC_Vino,LOG_MISSION);
+				Log_SetTopicStatus(TOPIC_Vino,LOG_Running);
+				B_LogEntry(TOPIC_Vino,"Jeœli Vino dostanie ode mnie butelkê wina, powie Lobartowi, ¿e mu pomog³em.");
 			}
 			else
 			{
@@ -107,31 +107,31 @@ func void dia_vino_seekwork_info()
 };
 
 
-instance DIA_VINO_BRINGWINE(C_INFO)
+instance DIA_Vino_BringWine(C_Info)
 {
-	npc = bau_952_vino;
+	npc = BAU_952_Vino;
 	nr = 1;
-	condition = dia_vino_bringwine_condition;
-	information = dia_vino_bringwine_info;
+	condition = DIA_Vino_BringWine_Condition;
+	information = DIA_Vino_BringWine_Info;
 	permanent = FALSE;
 	description = "Oto twoje wino.";
 };
 
 
-func int dia_vino_bringwine_condition()
+func int DIA_Vino_BringWine_Condition()
 {
-	if((MIS_VINO_WEIN == LOG_RUNNING) && (Npc_HasItems(other,itfo_wine) > 0) && (KAPITEL < 3))
+	if((MIS_Vino_Wein == LOG_Running) && (Npc_HasItems(other,ItFo_Wine) > 0) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vino_bringwine_info()
+func void DIA_Vino_BringWine_Info()
 {
 	AI_Output(other,self,"DIA_Vino_BringWine_15_00");	//Oto twoje wino.
-	b_giveinvitems(other,self,4924,1);
+	B_GiveInvItems(other,self,ItFo_Wine,1);
 	AI_Output(self,other,"DIA_Vino_BringWine_05_01");	//Wolê nie pytaæ, jak je zdoby³eœ. (œmieje siê) A kogó¿ to  obchodzi?
-	if(!Npc_IsDead(lobart))
+	if(!Npc_IsDead(Lobart))
 	{
 		AI_Output(self,other,"DIA_Vino_BringWine_05_02");	//Tak czy inaczej, dziêki.
 		if(hero.guild == GIL_NONE)
@@ -139,23 +139,23 @@ func void dia_vino_bringwine_info()
 			AI_Output(self,other,"DIA_Vino_BringWine_05_03");	//Postaram siê, by Lobart us³ysza³ o tobie same dobre rzeczy.
 		};
 	};
-	MIS_VINO_WEIN = LOG_SUCCESS;
-	b_giveplayerxp(XP_VINOWEIN);
+	MIS_Vino_Wein = LOG_SUCCESS;
+	B_GivePlayerXP(XP_VinoWein);
 };
 
 
-instance DIA_VINO_TOTHECITY(C_INFO)
+instance DIA_Vino_ToTheCity(C_Info)
 {
-	npc = bau_952_vino;
+	npc = BAU_952_Vino;
 	nr = 3;
-	condition = dia_vino_tothecity_condition;
-	information = dia_vino_tothecity_info;
+	condition = DIA_Vino_ToTheCity_Condition;
+	information = DIA_Vino_ToTheCity_Info;
 	permanent = FALSE;
 	description = "Ruszam w stronê miasta.";
 };
 
 
-func int dia_vino_tothecity_condition()
+func int DIA_Vino_ToTheCity_Condition()
 {
 	if(hero.guild == GIL_NONE)
 	{
@@ -163,7 +163,7 @@ func int dia_vino_tothecity_condition()
 	};
 };
 
-func void dia_vino_tothecity_info()
+func void DIA_Vino_ToTheCity_Info()
 {
 	AI_Output(other,self,"DIA_Vino_ToTheCity_15_00");	//Ruszam w stronê miasta.
 	AI_Output(self,other,"DIA_Vino_ToTheCity_05_01");	//I?
@@ -172,44 +172,44 @@ func void dia_vino_tothecity_info()
 };
 
 
-var int vino_gossip_orks;
-var int vino_gossip_bugs;
+var int Vino_Gossip_Orks;
+var int Vino_Gossip_Bugs;
 
-instance DIA_VINO_PERM(C_INFO)
+instance DIA_Vino_PERM(C_Info)
 {
-	npc = bau_952_vino;
+	npc = BAU_952_Vino;
 	nr = 10;
-	condition = dia_vino_perm_condition;
-	information = dia_vino_perm_info;
+	condition = DIA_Vino_PERM_Condition;
+	information = DIA_Vino_PERM_Info;
 	permanent = TRUE;
 	description = "Jakieœ ciekawe nowiny?";
 };
 
 
-func int dia_vino_perm_condition()
+func int DIA_Vino_PERM_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_vino_hallo) && (KAPITEL < 3))
+	if(Npc_KnowsInfo(other,DIA_Vino_HALLO) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vino_perm_info()
+func void DIA_Vino_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Vino_PERM_15_00");	//Jakieœ ciekawe nowiny?
-	if(VINO_GOSSIP_ORKS == FALSE)
+	if(Vino_Gossip_Orks == FALSE)
 	{
 		AI_Output(self,other,"DIA_Vino_PERM_05_01");	//Przysi¹g³bym, ¿em dwa dni temu widzia³ orka, na skraju lasu.
 		AI_Output(self,other,"DIA_Vino_PERM_05_02");	//Od tego czasu podczas snu staram siê mieæ choæ jedno oko otwarte.
-		VINO_GOSSIP_ORKS = TRUE;
-		KNOWS_ORK = TRUE;
+		Vino_Gossip_Orks = TRUE;
+		Knows_Ork = TRUE;
 	}
-	else if((VINO_GOSSIP_BUGS == FALSE) && (MIS_ANDREHELPLOBART == LOG_RUNNING))
+	else if((Vino_Gossip_Bugs == FALSE) && (MIS_AndreHelpLobart == LOG_Running))
 	{
 		AI_Output(self,other,"DIA_Vino_PERM_05_03");	//Ta wielka plaga ¿uków doprowadza nas do szaleñstwa. S¹ wszêdzie. ¯r¹ wszystko, co napotkaj¹ na swej drodze.
 		AI_Output(self,other,"DIA_Vino_PERM_05_04");	//Jakoœ w zesz³ym tygodniu le¿a³em sobie na ³¹ce i ju¿ prawie zasypia³em, kiedy poczu³em, ¿e jedna z tych bestii zaczyna siê dobieraæ do mojego buta!
 		AI_Output(self,other,"DIA_Vino_PERM_05_05");	//Trza by³o widzieæ, jakem ucieka³. Od tamtego czasu nie mogê spokojnie spaæ.
-		VINO_GOSSIP_BUGS = TRUE;
+		Vino_Gossip_Bugs = TRUE;
 	}
 	else
 	{
@@ -218,62 +218,62 @@ func void dia_vino_perm_info()
 };
 
 
-instance DIA_VINO_KAP3_EXIT(C_INFO)
+instance DIA_Vino_KAP3_EXIT(C_Info)
 {
-	npc = bau_952_vino;
+	npc = BAU_952_Vino;
 	nr = 999;
-	condition = dia_vino_kap3_exit_condition;
-	information = dia_vino_kap3_exit_info;
+	condition = DIA_Vino_KAP3_EXIT_Condition;
+	information = DIA_Vino_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_vino_kap3_exit_condition()
+func int DIA_Vino_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vino_kap3_exit_info()
+func void DIA_Vino_KAP3_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_VINO_DMTAMSTART(C_INFO)
+instance DIA_Vino_DMTAMSTART(C_Info)
 {
-	npc = bau_952_vino;
+	npc = BAU_952_Vino;
 	nr = 31;
-	condition = dia_vino_dmtamstart_condition;
-	information = dia_vino_dmtamstart_info;
+	condition = DIA_Vino_DMTAMSTART_Condition;
+	information = DIA_Vino_DMTAMSTART_Info;
 	permanent = TRUE;
 	description = "Jak ci siê wiedzie?";
 };
 
 
-func int dia_vino_dmtamstart_condition()
+func int DIA_Vino_DMTAMSTART_Condition()
 {
-	if((KAPITEL == 3) && (hero.guild != GIL_KDF))
+	if((Kapitel == 3) && (hero.guild != GIL_KDF))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_vino_dmtamstart_onetime;
+var int DIA_Vino_DMTAMSTART_OneTime;
 
-func void dia_vino_dmtamstart_info()
+func void DIA_Vino_DMTAMSTART_Info()
 {
 	AI_Output(other,self,"DIA_Vino_DMTAMSTART_15_00");	//Jak ci siê wiedzie?
-	if((FOUNDVINOSKELLEREI == TRUE) && (DIA_VINO_DMTAMSTART_ONETIME == FALSE) && (hero.guild != GIL_MIL))
+	if((FoundVinosKellerei == TRUE) && (DIA_Vino_DMTAMSTART_OneTime == FALSE) && (hero.guild != GIL_MIL))
 	{
 		AI_Output(self,other,"DIA_Vino_DMTAMSTART_05_01");	//Ogólnie do dupy. Stra¿ znalaz³a moj¹ ukryt¹ gorzelniê.
 		AI_Output(self,other,"DIA_Vino_DMTAMSTART_05_02");	//Mam nadziejê, ¿e nie zorientuj¹ siê, kto jest jej w³aœcicielem.
-		b_giveplayerxp(XP_AMBIENTKAP3);
-		DIA_VINO_DMTAMSTART_ONETIME = TRUE;
+		B_GivePlayerXP(XP_AmbientKap3);
+		DIA_Vino_DMTAMSTART_OneTime = TRUE;
 	}
 	else
 	{
@@ -282,163 +282,163 @@ func void dia_vino_dmtamstart_info()
 };
 
 
-instance DIA_VINO_OBESESSED(C_INFO)
+instance DIA_Vino_Obesessed(C_Info)
 {
-	npc = bau_952_vino;
+	npc = BAU_952_Vino;
 	nr = 32;
-	condition = dia_vino_obesessed_condition;
-	information = dia_vino_obesessed_info;
+	condition = DIA_Vino_Obesessed_Condition;
+	information = DIA_Vino_Obesessed_Info;
 	permanent = TRUE;
 	description = "Coœ nie tak?";
 };
 
 
-func int dia_vino_obesessed_condition()
+func int DIA_Vino_Obesessed_Condition()
 {
-	if((NPCOBSESSEDBYDMT_VINO == FALSE) && (KAPITEL >= 3) && (hero.guild == GIL_KDF))
+	if((NpcObsessedByDMT_Vino == FALSE) && (Kapitel >= 3) && (hero.guild == GIL_KDF))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vino_obesessed_info()
+func void DIA_Vino_Obesessed_Info()
 {
-	if(Npc_IsDead(dmt_vino1) && Npc_IsDead(dmt_vino2) && Npc_IsDead(dmt_vino3) && Npc_IsDead(dmt_vino4))
+	if(Npc_IsDead(DMT_Vino1) && Npc_IsDead(DMT_Vino2) && Npc_IsDead(DMT_Vino3) && Npc_IsDead(DMT_Vino4))
 	{
-		b_npcobsessedbydmt(self);
+		B_NpcObsessedByDMT(self);
 	}
 	else
 	{
 		AI_Output(other,self,"DIA_Vino_Obesessed_15_00");	//Co ci siê sta³o?
 		AI_Output(self,other,"DIA_Vino_Obesessed_05_01");	//(hucz¹c) Do cholery, wynoœ siê. Inaczej mnie zabij¹.
 		AI_StopProcessInfos(self);
-		dmt_vino1.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-		dmt_vino2.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-		dmt_vino3.aivar[AIV_ENEMYOVERRIDE] = FALSE;
-		dmt_vino4.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+		DMT_Vino1.aivar[AIV_EnemyOverride] = FALSE;
+		DMT_Vino2.aivar[AIV_EnemyOverride] = FALSE;
+		DMT_Vino3.aivar[AIV_EnemyOverride] = FALSE;
+		DMT_Vino4.aivar[AIV_EnemyOverride] = FALSE;
 	};
 };
 
 
-instance DIA_VINO_HEILUNG(C_INFO)
+instance DIA_Vino_Heilung(C_Info)
 {
-	npc = bau_952_vino;
+	npc = BAU_952_Vino;
 	nr = 55;
-	condition = dia_vino_heilung_condition;
-	information = dia_vino_heilung_info;
+	condition = DIA_Vino_Heilung_Condition;
+	information = DIA_Vino_Heilung_Info;
 	permanent = TRUE;
 	description = "Nie jesteœ sob¹.";
 };
 
 
-func int dia_vino_heilung_condition()
+func int DIA_Vino_Heilung_Condition()
 {
-	if((NPCOBSESSEDBYDMT_VINO == TRUE) && (NPCOBSESSEDBYDMT == FALSE) && (hero.guild == GIL_KDF) && ((Npc_GetDistToWP(self,"NW_MONASTERY_PLACE_07") < 4000) == FALSE))
+	if((NpcObsessedByDMT_Vino == TRUE) && (NpcObsessedByDMT == FALSE) && (hero.guild == GIL_KDF) && ((Npc_GetDistToWP(self,"NW_MONASTERY_PLACE_07") < 4000) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_vino_heilung_onetime;
+var int DIA_Vino_Heilung_oneTime;
 
-func void dia_vino_heilung_info()
+func void DIA_Vino_Heilung_Info()
 {
 	AI_Output(other,self,"DIA_Vino_Heilung_15_00");	//Nie jesteœ sob¹.
 	AI_Output(self,other,"DIA_Vino_Heilung_05_01");	//Moja g³owa... D³u¿ej tego nie wytrzymam.
-	if(DIA_VINO_HEILUNG_ONETIME == FALSE)
+	if(DIA_Vino_Heilung_oneTime == FALSE)
 	{
 		AI_Output(other,self,"DIA_Vino_Heilung_15_02");	//Powinieneœ udaæ siê do klasztoru. Pyrokar, najwy¿szy Mag Ognia, móg³by ci pomóc.
 		AI_Output(self,other,"DIA_Vino_Heilung_05_03");	//Tak uwa¿asz? W porz¹dku, spróbujê.
-		b_npcclearobsessionbydmt(self);
-		b_startotherroutine(vino,"Kloster");
-		b_logentry(TOPIC_DEMENTOREN,"Vino jest opêtany. Wys³a³em go do klasztoru, aby tam poprosi³ o uzdrowienie. Mam nadziejê, ¿e wszystko bêdzie dobrze.");
-		b_giveplayerxp(XP_VINOFREEFROMDMT);
-		DIA_VINO_HEILUNG_ONETIME = TRUE;
+		B_NpcClearObsessionByDMT(self);
+		B_StartOtherRoutine(Vino,"Kloster");
+		B_LogEntry(TOPIC_DEMENTOREN,"Vino jest opêtany. Wys³a³em go do klasztoru, aby tam poprosi³ o uzdrowienie. Mam nadziejê, ¿e wszystko bêdzie dobrze.");
+		B_GivePlayerXP(XP_VinoFreeFromDMT);
+		DIA_Vino_Heilung_oneTime = TRUE;
 	};
 };
 
 
-instance DIA_VINO_KAP4_EXIT(C_INFO)
+instance DIA_Vino_KAP4_EXIT(C_Info)
 {
-	npc = bau_952_vino;
+	npc = BAU_952_Vino;
 	nr = 999;
-	condition = dia_vino_kap4_exit_condition;
-	information = dia_vino_kap4_exit_info;
+	condition = DIA_Vino_KAP4_EXIT_Condition;
+	information = DIA_Vino_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_vino_kap4_exit_condition()
+func int DIA_Vino_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vino_kap4_exit_info()
+func void DIA_Vino_KAP4_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_VINO_PERM4OBSESSED(C_INFO)
+instance DIA_Vino_PERM4OBSESSED(C_Info)
 {
-	npc = bau_952_vino;
+	npc = BAU_952_Vino;
 	nr = 41;
-	condition = dia_vino_perm4obsessed_condition;
-	information = dia_vino_perm4obsessed_info;
+	condition = DIA_Vino_PERM4OBSESSED_Condition;
+	information = DIA_Vino_PERM4OBSESSED_Info;
 	permanent = TRUE;
 	description = "Jak siê masz?";
 };
 
 
-func int dia_vino_perm4obsessed_condition()
+func int DIA_Vino_PERM4OBSESSED_Condition()
 {
-	if((hero.guild == GIL_KDF) && (NPCOBSESSEDBYDMT_VINO == TRUE) && (Npc_GetDistToWP(self,"NW_MONASTERY_PLACE_07") < 4000))
+	if((hero.guild == GIL_KDF) && (NpcObsessedByDMT_Vino == TRUE) && (Npc_GetDistToWP(self,"NW_MONASTERY_PLACE_07") < 4000))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_vino_perm4obsessed_xp_onetime;
+var int DIA_Vino_PERM4OBSESSED_XP_oneTime;
 
-func void dia_vino_perm4obsessed_info()
+func void DIA_Vino_PERM4OBSESSED_Info()
 {
 	AI_Output(other,self,"DIA_Vino_PERM4OBSESSED_15_00");	//Jak siê czujesz?
 	AI_Output(self,other,"DIA_Vino_PERM4OBSESSED_05_01");	//Wszystko w porz¹dku. Ch³opaki mi pomog¹. Wci¹¿ jednak cholernie krêci mi siê w g³owie.
-	if(DIA_VINO_PERM4OBSESSED_XP_ONETIME == FALSE)
+	if(DIA_Vino_PERM4OBSESSED_XP_oneTime == FALSE)
 	{
 		AI_Output(self,other,"DIA_Vino_PERM4OBSESSED_05_02");	//Muszê przyznaæ, ¿e to najlepsze wino, jakie pi³em.
-		b_giveplayerxp(XP_AMBIENT);
-		DIA_VINO_PERM4OBSESSED_XP_ONETIME = TRUE;
+		B_GivePlayerXP(XP_Ambient);
+		DIA_Vino_PERM4OBSESSED_XP_oneTime = TRUE;
 	};
 };
 
 
-instance DIA_VINO_PERM45UND6(C_INFO)
+instance DIA_Vino_PERM45UND6(C_Info)
 {
-	npc = bau_952_vino;
+	npc = BAU_952_Vino;
 	nr = 42;
-	condition = dia_vino_perm45und6_condition;
-	information = dia_vino_perm45und6_info;
+	condition = DIA_Vino_PERM45UND6_Condition;
+	information = DIA_Vino_PERM45UND6_Info;
 	permanent = TRUE;
 	description = "Jakieœ wieœci?";
 };
 
 
-func int dia_vino_perm45und6_condition()
+func int DIA_Vino_PERM45UND6_Condition()
 {
-	if((KAPITEL >= 4) && (hero.guild != GIL_KDF) && (NPCOBSESSEDBYDMT_VINO == FALSE))
+	if((Kapitel >= 4) && (hero.guild != GIL_KDF) && (NpcObsessedByDMT_Vino == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vino_perm45und6_info()
+func void DIA_Vino_PERM45UND6_Info()
 {
 	AI_Output(other,self,"DIA_Vino_PERM45UND6_15_00");	//Jakieœ wieœci?
 	if(hero.guild == GIL_PAL)
@@ -450,94 +450,94 @@ func void dia_vino_perm45und6_info()
 	{
 		AI_Output(self,other,"DIA_Vino_PERM45UND6_05_03");	//Obawiam siê, ¿e wkrótce przyjdzie nam porzuciæ farmê, i przy³¹czyæ siê do najemników Onara.
 	};
-	if((FOUNDVINOSKELLEREI == TRUE) && (hero.guild != GIL_MIL))
+	if((FoundVinosKellerei == TRUE) && (hero.guild != GIL_MIL))
 	{
 		AI_Output(self,other,"DIA_Vino_PERM45UND6_05_04");	//Niestety, stra¿e znalaz³y moj¹ ma³¹ gorzelniê. Mam nadziejê, ¿e mnie nie dopadn¹.
 	};
 };
 
 
-instance DIA_VINO_KAP5_EXIT(C_INFO)
+instance DIA_Vino_KAP5_EXIT(C_Info)
 {
-	npc = bau_952_vino;
+	npc = BAU_952_Vino;
 	nr = 999;
-	condition = dia_vino_kap5_exit_condition;
-	information = dia_vino_kap5_exit_info;
+	condition = DIA_Vino_KAP5_EXIT_Condition;
+	information = DIA_Vino_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_vino_kap5_exit_condition()
+func int DIA_Vino_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vino_kap5_exit_info()
+func void DIA_Vino_KAP5_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_VINO_KAP6_EXIT(C_INFO)
+instance DIA_Vino_KAP6_EXIT(C_Info)
 {
-	npc = bau_952_vino;
+	npc = BAU_952_Vino;
 	nr = 999;
-	condition = dia_vino_kap6_exit_condition;
-	information = dia_vino_kap6_exit_info;
+	condition = DIA_Vino_KAP6_EXIT_Condition;
+	information = DIA_Vino_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_vino_kap6_exit_condition()
+func int DIA_Vino_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_vino_kap6_exit_info()
+func void DIA_Vino_KAP6_EXIT_Info()
 {
-	b_npcclearobsessionbydmt(self);
+	B_NpcClearObsessionByDMT(self);
 };
 
 
-instance DIA_VINO_PICKPOCKET(C_INFO)
+instance DIA_Vino_PICKPOCKET(C_Info)
 {
-	npc = bau_952_vino;
+	npc = BAU_952_Vino;
 	nr = 900;
-	condition = dia_vino_pickpocket_condition;
-	information = dia_vino_pickpocket_info;
+	condition = DIA_Vino_PICKPOCKET_Condition;
+	information = DIA_Vino_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_vino_pickpocket_condition()
+func int DIA_Vino_PICKPOCKET_Condition()
 {
-	return c_beklauen(34,60);
+	return C_Beklauen(34,60);
 };
 
-func void dia_vino_pickpocket_info()
+func void DIA_Vino_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_vino_pickpocket);
-	Info_AddChoice(dia_vino_pickpocket,DIALOG_BACK,dia_vino_pickpocket_back);
-	Info_AddChoice(dia_vino_pickpocket,DIALOG_PICKPOCKET,dia_vino_pickpocket_doit);
+	Info_ClearChoices(DIA_Vino_PICKPOCKET);
+	Info_AddChoice(DIA_Vino_PICKPOCKET,Dialog_Back,DIA_Vino_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Vino_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Vino_PICKPOCKET_DoIt);
 };
 
-func void dia_vino_pickpocket_doit()
+func void DIA_Vino_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_vino_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Vino_PICKPOCKET);
 };
 
-func void dia_vino_pickpocket_back()
+func void DIA_Vino_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_vino_pickpocket);
+	Info_ClearChoices(DIA_Vino_PICKPOCKET);
 };
 

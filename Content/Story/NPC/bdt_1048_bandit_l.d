@@ -1,29 +1,29 @@
 
-instance BDT_1048_BANDIT_L(NPC_DEFAULT)
+instance BDT_1048_Bandit_L(Npc_Default)
 {
-	name[0] = NAME_BANDIT;
+	name[0] = NAME_Bandit;
 	guild = GIL_BDT;
 	id = 1048;
 	voice = 1;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	aivar[AIV_ENEMYOVERRIDE] = TRUE;
-	b_setattributestochapter(self,1);
+	npcType = NPCTYPE_AMBIENT;
+	aivar[AIV_EnemyOverride] = TRUE;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_bau_mace);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_B_TOUGH_PACHO,BODYTEX_B,4845);
+	EquipItem(self,ItMw_1h_Bau_Mace);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_B_Tough_Pacho,BodyTex_B,ITAR_Leather_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_1048;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_1048;
 };
 
 
-func void rtn_start_1048()
+func void Rtn_Start_1048()
 {
-	ta_sit_campfire(0,0,12,0,"NW_CASTLEMINE_TOWER_CAMPFIRE_02");
-	ta_sit_campfire(12,0,0,0,"NW_CASTLEMINE_TOWER_CAMPFIRE_02");
+	TA_Sit_Campfire(0,0,12,0,"NW_CASTLEMINE_TOWER_CAMPFIRE_02");
+	TA_Sit_Campfire(12,0,0,0,"NW_CASTLEMINE_TOWER_CAMPFIRE_02");
 };
 

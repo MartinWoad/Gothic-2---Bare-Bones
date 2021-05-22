@@ -1,21 +1,21 @@
 
-func int b_getcurrentabsolutionlevel(var C_NPC slf)
+func int B_GetCurrentAbsolutionLevel(var C_Npc slf)
 {
-	if(c_npcbelongstooldcamp(slf))
+	if(C_NpcBelongsToOldCamp(slf))
 	{
-		return ABSOLUTIONLEVEL_OLDCAMP;
+		return ABSOLUTIONLEVEL_OldCamp;
 	};
-	if(c_npcbelongstocity(slf))
+	if(C_NpcBelongsToCity(slf))
 	{
-		return ABSOLUTIONLEVEL_CITY;
+		return ABSOLUTIONLEVEL_City;
 	};
-	if(c_npcbelongstomonastery(slf))
+	if(C_NpcBelongsToMonastery(slf))
 	{
-		return ABSOLUTIONLEVEL_MONASTERY;
+		return ABSOLUTIONLEVEL_Monastery;
 	};
-	if(c_npcbelongstofarm(slf))
+	if(C_NpcBelongsToFarm(slf))
 	{
-		return ABSOLUTIONLEVEL_FARM;
+		return ABSOLUTIONLEVEL_Farm;
 	};
 	return 0;
 };

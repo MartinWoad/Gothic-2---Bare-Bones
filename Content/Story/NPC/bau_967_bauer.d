@@ -1,34 +1,34 @@
 
-instance BAU_967_BAUER(NPC_DEFAULT)
+instance BAU_967_Bauer(Npc_Default)
 {
-	name[0] = NAME_BAUER;
+	name[0] = NAME_Bauer;
 	guild = GIL_OUT;
 	id = 967;
 	voice = 6;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,1);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_bau_axe);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_L_JACKAL,BODYTEX_L,4830);
+	EquipItem(self,ItMw_1h_Bau_Axe);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_L_Jackal,BodyTex_L,ITAR_Bau_L);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,10);
-	daily_routine = rtn_start_967;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,10);
+	daily_routine = Rtn_Start_967;
 };
 
 
-func void rtn_start_967()
+func void Rtn_Start_967()
 {
-	ta_pick_fp(8,0,22,0,"NW_FARM3_FIELD_02");
-	ta_sit_campfire(22,0,8,0,"NW_FARM3_STABLE_REST_01");
+	TA_Pick_FP(8,0,22,0,"NW_FARM3_FIELD_02");
+	TA_Sit_Campfire(22,0,8,0,"NW_FARM3_STABLE_REST_01");
 };
 
-func void rtn_fleefrompass_967()
+func void Rtn_FleeFromPass_967()
 {
-	ta_sit_campfire(8,0,22,0,"NW_BIGMILL_MALAKSVERSTECK_06");
-	ta_sit_campfire(22,0,8,0,"NW_BIGMILL_MALAKSVERSTECK_06");
+	TA_Sit_Campfire(8,0,22,0,"NW_BIGMILL_MALAKSVERSTECK_06");
+	TA_Sit_Campfire(22,0,8,0,"NW_BIGMILL_MALAKSVERSTECK_06");
 };
 

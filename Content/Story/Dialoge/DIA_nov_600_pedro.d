@@ -1,42 +1,42 @@
 
-instance DIA_PEDRO_EXIT(C_INFO)
+instance DIA_Pedro_EXIT(C_Info)
 {
-	npc = nov_600_pedro;
+	npc = NOV_600_Pedro;
 	nr = 999;
-	condition = dia_pedro_exit_condition;
-	information = dia_pedro_exit_info;
+	condition = DIA_Pedro_EXIT_Condition;
+	information = DIA_Pedro_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_pedro_exit_condition()
+func int DIA_Pedro_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pedro_exit_info()
+func void DIA_Pedro_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PEDRO_WELCOME(C_INFO)
+instance DIA_Pedro_WELCOME(C_Info)
 {
-	npc = nov_600_pedro;
+	npc = NOV_600_Pedro;
 	nr = 1;
-	condition = dia_pedro_welcome_condition;
-	information = dia_pedro_welcome_info;
+	condition = DIA_Pedro_WELCOME_Condition;
+	information = DIA_Pedro_WELCOME_Info;
 	important = TRUE;
 };
 
 
-func int dia_pedro_welcome_condition()
+func int DIA_Pedro_WELCOME_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pedro_welcome_info()
+func void DIA_Pedro_WELCOME_Info()
 {
 	AI_Output(self,other,"DIA_Pedro_WELCOME_09_00");	//Witaj w klasztorze Innosa, nieznajomy.
 	AI_Output(self,other,"DIA_Pedro_WELCOME_09_01");	//Jestem Brat Pedro, pokorny s³uga Innosa i odŸwierny œwiêtego klasztoru.
@@ -44,82 +44,82 @@ func void dia_pedro_welcome_info()
 };
 
 
-instance DIA_PEDRO_WURST(C_INFO)
+instance DIA_Pedro_Wurst(C_Info)
 {
-	npc = nov_600_pedro;
+	npc = NOV_600_Pedro;
 	nr = 2;
-	condition = dia_pedro_wurst_condition;
-	information = dia_pedro_wurst_info;
+	condition = DIA_Pedro_Wurst_Condition;
+	information = DIA_Pedro_Wurst_Info;
 	permanent = FALSE;
 	description = "Masz tu kawa³ek kie³basy, Bracie.";
 };
 
 
-func int dia_pedro_wurst_condition()
+func int DIA_Pedro_Wurst_Condition()
 {
-	if((KAPITEL < 3) && (MIS_GORAXESSEN == LOG_RUNNING) && (Npc_HasItems(self,itfo_schafswurst) == 0) && (Npc_HasItems(other,itfo_schafswurst) >= 1))
+	if((Kapitel < 3) && (MIS_GoraxEssen == LOG_Running) && (Npc_HasItems(self,ItFo_Schafswurst) == 0) && (Npc_HasItems(other,ItFo_Schafswurst) >= 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pedro_wurst_info()
+func void DIA_Pedro_Wurst_Info()
 {
-	var string novizetext;
-	var string novizeleft;
+	var string NovizeText;
+	var string NovizeLeft;
 	AI_Output(other,self,"DIA_Pedro_Wurst_15_00");	//Masz tu kawa³ek kie³basy, Bracie.
 	AI_Output(self,other,"DIA_Pedro_Wurst_09_01");	//To mi³o, ¿e o mnie pomyœla³eœ. Zwykle nikt o mnie nie pamiêta.
 	AI_Output(self,other,"DIA_Pedro_Wurst_09_02");	//Móg³byœ mi daæ jeszcze kawa³ek...
 	AI_Output(other,self,"DIA_Pedro_Wurst_15_03");	//Nie ma mowy. Wtedy za ma³o mi zostanie.
 	AI_Output(self,other,"DIA_Pedro_Wurst_09_04");	//No wiesz? Jeden kawa³ek! Przecie¿ nikt nie zauwa¿y. Mogê ci daæ coœ w zamian! Wiem, gdzie roœnie sporo ognistych pokrzyw!
 	AI_Output(self,other,"DIA_Pedro_Wurst_09_05");	//Jeœli zaniesiesz je Neorasowi, na pewno da ci klucz do biblioteki. Co ty na to?
-	b_giveinvitems(other,self,5687,1);
-	WURST_GEGEBEN = WURST_GEGEBEN + 1;
-	CreateInvItems(self,itfo_sausage,1);
-	b_useitem(self,4914);
-	novizeleft = IntToString(13 - WURST_GEGEBEN);
-	novizetext = ConcatStrings(novizeleft,PRINT_NOVIZENLEFT);
-	AI_PrintScreen(novizetext,-1,YPOS_GOLDGIVEN,FONT_SCREENSMALL,3);
-	Info_ClearChoices(dia_pedro_wurst);
-	Info_AddChoice(dia_pedro_wurst,"Niech bêdzie. Masz jeszcze jedno pêto.",dia_pedro_wurst_ja);
-	Info_AddChoice(dia_pedro_wurst,"Nie ma mowy.",dia_pedro_wurst_nein);
+	B_GiveInvItems(other,self,ItFo_Schafswurst,1);
+	Wurst_Gegeben = Wurst_Gegeben + 1;
+	CreateInvItems(self,ItFo_Sausage,1);
+	B_UseItem(self,ItFo_Sausage);
+	NovizeLeft = IntToString(13 - Wurst_Gegeben);
+	NovizeText = ConcatStrings(NovizeLeft,PRINT_NovizenLeft);
+	AI_PrintScreen(NovizeText,-1,YPOS_GoldGiven,FONT_ScreenSmall,3);
+	Info_ClearChoices(DIA_Pedro_Wurst);
+	Info_AddChoice(DIA_Pedro_Wurst,"Niech bêdzie. Masz jeszcze jedno pêto.",DIA_Pedro_Wurst_JA);
+	Info_AddChoice(DIA_Pedro_Wurst,"Nie ma mowy.",DIA_Pedro_Wurst_NEIN);
 };
 
-func void dia_pedro_wurst_ja()
+func void DIA_Pedro_Wurst_JA()
 {
 	AI_Output(other,self,"DIA_Pedro_Wurst_JA_15_00");	//Niech bêdzie. Masz jeszcze jedno pêto.
 	AI_Output(self,other,"DIA_Pedro_Wurst_JA_09_01");	//Œwietnie. Po drugiej stronie mostu, na lewo i na prawo, roœnie du¿o ognistych pokrzyw.
-	b_giveinvitems(other,self,5687,1);
-	Info_ClearChoices(dia_pedro_wurst);
+	B_GiveInvItems(other,self,ItFo_Schafswurst,1);
+	Info_ClearChoices(DIA_Pedro_Wurst);
 };
 
-func void dia_pedro_wurst_nein()
+func void DIA_Pedro_Wurst_NEIN()
 {
 	AI_Output(other,self,"DIA_Pedro_Wurst_NEIN_15_00");	//Nie ma mowy.
 	AI_Output(self,other,"DIA_Pedro_Wurst_NEIN_09_01");	//Chcesz siê podlizaæ Goraxowi, co? Wszyscy nowicjusze tak robi¹...
-	Info_ClearChoices(dia_pedro_wurst);
+	Info_ClearChoices(DIA_Pedro_Wurst);
 };
 
 
-instance DIA_PEDRO_EINLASS(C_INFO)
+instance DIA_Pedro_EINLASS(C_Info)
 {
-	npc = nov_600_pedro;
-	condition = dia_pedro_einlass_condition;
-	information = dia_pedro_einlass_info;
+	npc = NOV_600_Pedro;
+	condition = DIA_Pedro_EINLASS_Condition;
+	information = DIA_Pedro_EINLASS_Info;
 	permanent = FALSE;
 	description = "Chcê siê dostaæ do klasztoru.";
 };
 
 
-func int dia_pedro_einlass_condition()
+func int DIA_Pedro_EINLASS_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_pedro_welcome))
+	if(Npc_KnowsInfo(hero,DIA_Pedro_WELCOME))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pedro_einlass_info()
+func void DIA_Pedro_EINLASS_Info()
 {
 	AI_Output(other,self,"DIA_Pedro_EINLASS_15_00");	//Chcê siê dostaæ do klasztoru.
 	AI_Output(self,other,"DIA_Pedro_EINLASS_09_01");	//Tylko s³udzy Innosa mog¹ wejœæ do œrodka.
@@ -127,26 +127,26 @@ func void dia_pedro_einlass_info()
 };
 
 
-instance DIA_PEDRO_TEMPEL(C_INFO)
+instance DIA_Pedro_TEMPEL(C_Info)
 {
-	npc = nov_600_pedro;
+	npc = NOV_600_Pedro;
 	nr = 2;
-	condition = dia_pedro_tempel_condition;
-	information = dia_pedro_tempel_info;
+	condition = DIA_Pedro_TEMPEL_Condition;
+	information = DIA_Pedro_TEMPEL_Info;
 	permanent = FALSE;
 	description = "Co mam zrobiæ, ¿eby przyjêto mnie do klasztoru?";
 };
 
 
-func int dia_pedro_tempel_condition()
+func int DIA_Pedro_TEMPEL_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_pedro_einlass) && (hero.guild != GIL_NOV))
+	if(Npc_KnowsInfo(other,DIA_Pedro_EINLASS) && (hero.guild != GIL_NOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pedro_tempel_info()
+func void DIA_Pedro_TEMPEL_Info()
 {
 	AI_Output(other,self,"DIA_Pedro_TEMPEL_15_00");	//Co mam zrobiæ, ¿eby przyjêto mnie do klasztoru?
 	if(other.guild != GIL_NONE)
@@ -157,37 +157,37 @@ func void dia_pedro_tempel_info()
 	{
 		AI_Output(self,other,"DIA_Pedro_TEMPEL_09_02");	//Jeœli chcesz do³¹czyæ do Bractwa Innosa, musisz poznaæ regu³y klasztoru i wiernie ich przestrzegaæ.
 		AI_Output(self,other,"DIA_Pedro_TEMPEL_09_03");	//Oprócz tego, ka¿dy nowy kandydat musi z³o¿yæ Innosowi ofiarê - owcê i...
-		b_say_gold(self,other,SUMME_KLOSTER);
+		B_Say_Gold(self,other,Summe_Kloster);
 		AI_Output(other,self,"DIA_Pedro_TEMPEL_15_04");	//To du¿o pieniêdzy.
 		AI_Output(self,other,"DIA_Pedro_TEMPEL_09_05");	//To znak, ¿e rozpoczynasz nowe ¿ycie jako s³uga Innosa. Jeœli zostaniesz przyjêty, wszystkie twoje grzechy zostan¹ ci wybaczone.
 		AI_Output(self,other,"DIA_Pedro_TEMPEL_09_06");	//Ale pamiêtaj: s³ug¹ Innosa zostaje siê na ca³e ¿ycie!
-		Log_CreateTopic(TOPIC_KLOSTER,LOG_MISSION);
-		Log_SetTopicStatus(TOPIC_KLOSTER,LOG_RUNNING);
-		b_logentry(TOPIC_KLOSTER,"Aby zostaæ nowicjuszem w klasztorze Innosa, bêdê potrzebowa³ owcy i ogromnej sumy pieniêdzy.");
+		Log_CreateTopic(Topic_Kloster,LOG_MISSION);
+		Log_SetTopicStatus(Topic_Kloster,LOG_Running);
+		B_LogEntry(Topic_Kloster,"Aby zostaæ nowicjuszem w klasztorze Innosa, bêdê potrzebowa³ owcy i ogromnej sumy pieniêdzy.");
 	};
 };
 
 
-instance DIA_PEDRO_RULES(C_INFO)
+instance DIA_Pedro_Rules(C_Info)
 {
-	npc = nov_600_pedro;
+	npc = NOV_600_Pedro;
 	nr = 2;
-	condition = dia_pedro_rules_condition;
-	information = dia_pedro_rules_info;
+	condition = DIA_Pedro_Rules_Condition;
+	information = DIA_Pedro_Rules_Info;
 	permanent = FALSE;
 	description = "Jakich regu³ przestrzegaj¹ s³udzy Innosa?";
 };
 
 
-func int dia_pedro_rules_condition()
+func int DIA_Pedro_Rules_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_pedro_tempel))
+	if(Npc_KnowsInfo(other,DIA_Pedro_TEMPEL))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pedro_rules_info()
+func void DIA_Pedro_Rules_Info()
 {
 	AI_Output(other,self,"DIA_Pedro_Rules_15_00");	//Jakich regu³ przestrzegaj¹ s³udzy Innosa?
 	AI_Output(self,other,"DIA_Pedro_Rules_09_01");	//Innos jest bogiem prawdy i sprawiedliwoœci, dlatego pod ¿adnym pozorem nie wolno nam oszukiwaæ i ³amaæ prawa.
@@ -203,42 +203,42 @@ func void dia_pedro_rules_info()
 };
 
 
-instance DIA_PEDRO_AUFNAHME(C_INFO)
+instance DIA_Pedro_AUFNAHME(C_Info)
 {
-	npc = nov_600_pedro;
-	condition = dia_pedro_aufnahme_condition;
-	information = dia_pedro_aufnahme_info;
+	npc = NOV_600_Pedro;
+	condition = DIA_Pedro_AUFNAHME_Condition;
+	information = DIA_Pedro_AUFNAHME_Info;
 	permanent = TRUE;
 	description = "Chcê zostaæ nowicjuszem.";
 };
 
 
-var int dia_pedro_aufnahme_noperm;
+var int DIA_Pedro_AUFNAHME_NOPERM;
 
-func int dia_pedro_aufnahme_condition()
+func int DIA_Pedro_AUFNAHME_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_pedro_rules) && (DIA_PEDRO_AUFNAHME_NOPERM == FALSE))
+	if(Npc_KnowsInfo(hero,DIA_Pedro_Rules) && (DIA_Pedro_AUFNAHME_NOPERM == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pedro_aufnahme_info()
+func void DIA_Pedro_AUFNAHME_Info()
 {
 	AI_Output(other,self,"DIA_Pedro_AUFNAHME_15_00");	//Chcê zostaæ nowicjuszem.
 	Npc_PerceiveAll(self);
 	if(hero.guild != GIL_NONE)
 	{
 		AI_Output(self,other,"DIA_Pedro_AUFNAHME_09_01");	//Wybra³eœ ju¿ œcie¿kê, po której kroczysz. Droga magii jest dla ciebie zamkniêta.
-		DIA_PEDRO_AUFNAHME_NOPERM = TRUE;
+		DIA_Pedro_AUFNAHME_NOPERM = TRUE;
 	}
-	else if((hero.guild == GIL_NONE) && (Npc_HasItems(hero,itmi_gold) >= SUMME_KLOSTER) && Wld_DetectNpc(self,follow_sheep,NOFUNC,-1) && (Npc_GetDistToNpc(self,other) < 1000))
+	else if((hero.guild == GIL_NONE) && (Npc_HasItems(hero,ItMi_Gold) >= Summe_Kloster) && Wld_DetectNpc(self,Follow_Sheep,NOFUNC,-1) && (Npc_GetDistToNpc(self,other) < 1000))
 	{
 		AI_Output(self,hero,"DIA_Pedro_AUFNAHME_09_03");	//Widzê, ¿e gotów jesteœ z³o¿yæ odpowiedni¹ ofiarê. Jeœli nie zmieni³eœ zdania, mo¿esz teraz zostaæ nowicjuszem w klasztorze.
 		AI_Output(self,hero,"DIA_Pedro_AUFNAHME_09_04");	//Pamiêtaj jednak, ¿e od tej decyzji nie ma odwo³ania. Musisz mieæ pewnoœæ, ¿e wybierasz w³aœciw¹ œcie¿kê!
-		Info_ClearChoices(dia_pedro_aufnahme);
-		Info_AddChoice(dia_pedro_aufnahme,"Muszê to sobie jeszcze przemyœleæ.",dia_pedro_aufnahme_no);
-		Info_AddChoice(dia_pedro_aufnahme,"Tak, chcê poœwiêciæ swoje ¿ycie s³u¿bie Innosowi.",dia_pedro_aufnahme_yes);
+		Info_ClearChoices(DIA_Pedro_AUFNAHME);
+		Info_AddChoice(DIA_Pedro_AUFNAHME,"Muszê to sobie jeszcze przemyœleæ.",DIA_Pedro_AUFNAHME_NO);
+		Info_AddChoice(DIA_Pedro_AUFNAHME,"Tak, chcê poœwiêciæ swoje ¿ycie s³u¿bie Innosowi.",DIA_Pedro_AUFNAHME_YES);
 	}
 	else
 	{
@@ -246,7 +246,7 @@ func void dia_pedro_aufnahme_info()
 	};
 };
 
-func void dia_pedro_aufnahme_yes()
+func void DIA_Pedro_AUFNAHME_YES()
 {
 	AI_Output(other,self,"DIA_Pedro_AUFNAHME_YES_15_00");	//Tak, chcê poœwiêciæ swoje ¿ycie s³u¿bie Innosowi.
 	AI_Output(self,other,"DIA_Pedro_AUFNAHME_YES_09_01");	//Zatem witaj wœród nas, Bracie. Oto klucz do bramy klasztoru.
@@ -255,44 +255,44 @@ func void dia_pedro_aufnahme_yes()
 	AI_Output(self,other,"DIA_Pedro_AUFNAHME_YES_09_04");	//W œrodku zg³oœ siê do Parlana. Od dziœ on bêdzie siê tob¹ opiekowa³.
 	AI_Output(other,self,"DIA_Pedro_AUFNAHME_YES_15_05");	//Czy moje wystêpki zostan¹ mi zapomniane?
 	AI_Output(self,other,"DIA_Pedro_AUFNAHME_YES_09_06");	//Jeszcze nie. Porozmawiaj z Mistrzem Parlanem. On udzieli ci b³ogos³awieñstwa i oczyœci z grzechów.
-	CreateInvItems(self,itke_innos_mis,1);
-	b_giveinvitems(self,hero,5682,1);
-	CreateInvItems(other,itar_nov_l,1);
-	AI_EquipArmor(other,itar_nov_l);
+	CreateInvItems(self,ItKe_Innos_MIS,1);
+	B_GiveInvItems(self,hero,ItKe_Innos_MIS,1);
+	CreateInvItems(other,ItAr_NOV_L,1);
+	AI_EquipArmor(other,ItAr_NOV_L);
 	other.guild = GIL_NOV;
 	Npc_SetTrueGuild(other,GIL_NOV);
-	DIA_PEDRO_AUFNAHME_NOPERM = TRUE;
-	NOV_AUFNAHME = TRUE;
-	b_giveplayerxp(XP_AUFNAHMENOVIZE);
+	DIA_Pedro_AUFNAHME_NOPERM = TRUE;
+	NOV_Aufnahme = TRUE;
+	B_GivePlayerXP(XP_AufnahmeNovize);
 	Wld_AssignRoomToGuild("Kloster02",GIL_KDF);
 	AI_StopProcessInfos(self);
 };
 
-func void dia_pedro_aufnahme_no()
+func void DIA_Pedro_AUFNAHME_NO()
 {
 	AI_Output(other,self,"DIA_Pedro_AUFNAHME_NO_15_00");	//Muszê to sobie jeszcze przemyœleæ.
 	AI_Output(self,other,"DIA_Pedro_AUFNAHME_NO_09_01");	//Wróæ, gdy uznasz, ¿e jesteœ gotowy.
-	Info_ClearChoices(dia_pedro_aufnahme);
+	Info_ClearChoices(DIA_Pedro_AUFNAHME);
 };
 
 
-instance DIA_PEDRO_MONASTERY(C_INFO)
+instance DIA_Pedro_Monastery(C_Info)
 {
-	npc = nov_600_pedro;
+	npc = NOV_600_Pedro;
 	nr = 90;
-	condition = dia_pedro_monastery_condition;
-	information = dia_pedro_monastery_info;
+	condition = DIA_Pedro_Monastery_Condition;
+	information = DIA_Pedro_Monastery_Info;
 	permanent = TRUE;
 	description = "Opowiedz mi o ¿yciu w klasztorze.";
 };
 
 
-func int dia_pedro_monastery_condition()
+func int DIA_Pedro_Monastery_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pedro_monastery_info()
+func void DIA_Pedro_Monastery_Info()
 {
 	AI_Output(other,self,"DIA_Pedro_Monastery_15_00");	//Opowiedz mi o ¿yciu w klasztorze.
 	AI_Output(self,other,"DIA_Pedro_Monastery_09_01");	//Celem naszego ¿ycia jest s³u¿ba wielkiemu Innosowi. My, nowicjusze, wykonujemy podstawowe prace, a w wolnych chwilach studiujemy stare pisma.
@@ -300,37 +300,37 @@ func void dia_pedro_monastery_info()
 };
 
 
-instance DIA_PEDRO_PICKPOCKET(C_INFO)
+instance DIA_Pedro_PICKPOCKET(C_Info)
 {
-	npc = nov_600_pedro;
+	npc = NOV_600_Pedro;
 	nr = 900;
-	condition = dia_pedro_pickpocket_condition;
-	information = dia_pedro_pickpocket_info;
+	condition = DIA_Pedro_PICKPOCKET_Condition;
+	information = DIA_Pedro_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_pedro_pickpocket_condition()
+func int DIA_Pedro_PICKPOCKET_Condition()
 {
-	return c_beklauen(45,60);
+	return C_Beklauen(45,60);
 };
 
-func void dia_pedro_pickpocket_info()
+func void DIA_Pedro_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_pedro_pickpocket);
-	Info_AddChoice(dia_pedro_pickpocket,DIALOG_BACK,dia_pedro_pickpocket_back);
-	Info_AddChoice(dia_pedro_pickpocket,DIALOG_PICKPOCKET,dia_pedro_pickpocket_doit);
+	Info_ClearChoices(DIA_Pedro_PICKPOCKET);
+	Info_AddChoice(DIA_Pedro_PICKPOCKET,Dialog_Back,DIA_Pedro_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Pedro_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Pedro_PICKPOCKET_DoIt);
 };
 
-func void dia_pedro_pickpocket_doit()
+func void DIA_Pedro_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_pedro_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Pedro_PICKPOCKET);
 };
 
-func void dia_pedro_pickpocket_back()
+func void DIA_Pedro_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_pedro_pickpocket);
+	Info_ClearChoices(DIA_Pedro_PICKPOCKET);
 };
 

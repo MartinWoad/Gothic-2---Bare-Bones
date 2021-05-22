@@ -1,19 +1,19 @@
 
-const int SPL_COST_FIRERAIN = 60;
-const int SPL_DAMAGE_FIRERAIN = 300;
+const int SPL_Cost_Firerain = 60;
+const int SPL_Damage_FireRain = 300;
 
-instance SPELL_FIRERAIN(C_SPELL_PROTO)
+instance Spell_FireRain(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	damage_per_level = SPL_DAMAGE_FIRERAIN;
+	damage_per_level = SPL_Damage_FireRain;
 	damagetype = DAM_FIRE;
-	targetcollectalgo = TARGET_COLLECT_NONE;
+	targetCollectAlgo = TARGET_COLLECT_NONE;
 };
 
 
-func int spell_logic_firerain(var int manainvested)
+func int Spell_Logic_Firerain(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_FIRERAIN)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_Firerain)
 	{
 		return SPL_SENDCAST;
 	}
@@ -23,8 +23,8 @@ func int spell_logic_firerain(var int manainvested)
 	};
 };
 
-func void spell_cast_firerain()
+func void Spell_Cast_Firerain()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_FIRERAIN;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Firerain;
 };
 

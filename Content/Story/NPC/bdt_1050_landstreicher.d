@@ -1,21 +1,21 @@
 
-instance BDT_1050_LANDSTREICHER(NPC_DEFAULT)
+instance BDT_1050_Landstreicher(Npc_Default)
 {
 	name[0] = "W³óczêga";
 	guild = GIL_NONE;
 	id = 1050;
 	voice = 9;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_2h_sld_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_NORMAL02,BODYTEX_N,4847);
+	EquipItem(self,ItMw_2h_Sld_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Pony",Face_N_Normal02,BodyTex_N,ItAr_BDT_H);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,50);
-	start_aistate = zs_stand_armscrossed;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,50);
+	start_aistate = ZS_Stand_ArmsCrossed;
 };
 

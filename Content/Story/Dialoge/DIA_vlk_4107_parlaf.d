@@ -1,46 +1,46 @@
 
-instance DIA_PARLAF_EXIT(C_INFO)
+instance DIA_Parlaf_EXIT(C_Info)
 {
-	npc = vlk_4107_parlaf;
+	npc = VLK_4107_Parlaf;
 	nr = 999;
-	condition = dia_parlaf_exit_condition;
-	information = dia_parlaf_exit_info;
+	condition = DIA_Parlaf_EXIT_Condition;
+	information = DIA_Parlaf_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_parlaf_exit_condition()
+func int DIA_Parlaf_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_parlaf_exit_info()
+func void DIA_Parlaf_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PARLAF_HALLO(C_INFO)
+instance DIA_Parlaf_HALLO(C_Info)
 {
-	npc = vlk_4107_parlaf;
+	npc = VLK_4107_Parlaf;
 	nr = 1;
-	condition = dia_parlaf_hallo_condition;
-	information = dia_parlaf_hallo_info;
+	condition = DIA_Parlaf_HALLO_Condition;
+	information = DIA_Parlaf_HALLO_Info;
 	description = "Hej! Co u ciebie?";
 };
 
 
-func int dia_parlaf_hallo_condition()
+func int DIA_Parlaf_HALLO_Condition()
 {
 	return TRUE;
 };
 
-func void dia_parlaf_hallo_info()
+func void DIA_Parlaf_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Parlaf_HALLO_15_00");	//Hej! Co u ciebie?
 	AI_Output(self,other,"DIA_Parlaf_HALLO_03_01");	//A jak ci siê wydaje? Ca³e dnie spêdzam przy toczydle, ostrz¹c broñ.
-	if(Npc_IsDead(engor) == FALSE)
+	if(Npc_IsDead(Engor) == FALSE)
 	{
 		AI_Output(self,other,"DIA_Parlaf_HALLO_03_02");	//Wczoraj Engor znów zmniejszy³ nam racje ¿ywnoœciowe. Jak tak dalej pójdzie - pozdychamy z g³odu.
 		AI_Output(self,other,"DIA_Parlaf_HALLO_03_03");	//Chyba ¿e wczeœniej powybijaj¹ nas orkowie. Tak czy siak - niemi³a perspektywa.
@@ -48,117 +48,117 @@ func void dia_parlaf_hallo_info()
 };
 
 
-instance DIA_PARLAF_ENGOR(C_INFO)
+instance DIA_Parlaf_ENGOR(C_Info)
 {
-	npc = vlk_4107_parlaf;
+	npc = VLK_4107_Parlaf;
 	nr = 2;
-	condition = dia_parlaf_engor_condition;
-	information = dia_parlaf_engor_info;
+	condition = DIA_Parlaf_ENGOR_Condition;
+	information = DIA_Parlaf_ENGOR_Info;
 	description = "Kim jest Engor?";
 };
 
 
-func int dia_parlaf_engor_condition()
+func int DIA_Parlaf_ENGOR_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_parlaf_hallo) && (Npc_IsDead(engor) == FALSE))
+	if(Npc_KnowsInfo(hero,DIA_Parlaf_HALLO) && (Npc_IsDead(Engor) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlaf_engor_info()
+func void DIA_Parlaf_ENGOR_Info()
 {
 	AI_Output(other,self,"DIA_Parlaf_ENGOR_15_00");	//Kim jest Engor?
 	AI_Output(self,other,"DIA_Parlaf_ENGOR_03_01");	//Engor zarz¹dza zapasami i przydziela racje ¿ywnoœciowe. Co tydzieñ mniejsze.
 	AI_Output(self,other,"DIA_Parlaf_ENGOR_03_02");	//Jasne, mo¿na siê z nim potargowaæ, ale do tego trzeba mieæ gotówkê.
 	AI_Output(other,self,"DIA_Parlaf_ENGOR_15_03");	//A ciebie na to nie staæ?
 	AI_Output(self,other,"DIA_Parlaf_ENGOR_03_04");	//Z tego, co tu zarabiam, starcza najwy¿ej na kilka rzep.
-	Log_CreateTopic(TOPIC_TRADER_OC,LOG_NOTE);
-	Log_AddEntry(TOPIC_TRADER_OC,"Engor zarz¹dza zapasami na zamku. Od czasu do czasu zdarza mu siê robiæ ma³e interesy na boku.");
+	Log_CreateTopic(TOPIC_Trader_OC,LOG_NOTE);
+	Log_AddEntry(TOPIC_Trader_OC,"Engor zarz¹dza zapasami na zamku. Od czasu do czasu zdarza mu siê robiæ ma³e interesy na boku.");
 };
 
 
-instance DIA_PARLAF_WO(C_INFO)
+instance DIA_Parlaf_Wo(C_Info)
 {
-	npc = vlk_4107_parlaf;
+	npc = VLK_4107_Parlaf;
 	nr = 3;
-	condition = dia_parlaf_wo_condition;
-	information = dia_parlaf_wo_info;
+	condition = DIA_Parlaf_Wo_Condition;
+	information = DIA_Parlaf_Wo_Info;
 	permanent = FALSE;
 	description = "Gdzie znajdê tego Engora?";
 };
 
 
-func int dia_parlaf_wo_condition()
+func int DIA_Parlaf_Wo_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_parlaf_engor) && (Npc_IsDead(engor) == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Parlaf_ENGOR) && (Npc_IsDead(Engor) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlaf_wo_info()
+func void DIA_Parlaf_Wo_Info()
 {
 	AI_Output(other,self,"DIA_Parlaf_Wo_15_00");	//Gdzie znajdê tego Engora?
 	AI_Output(self,other,"DIA_Parlaf_Wo_03_01");	//Jest w komnatach rycerzy. Dostaniesz siê tam przez najbli¿sze otwarte przejœcie obok kuŸni.
 };
 
 
-instance DIA_PARLAF_HUNGRIG(C_INFO)
+instance DIA_Parlaf_HUNGRIG(C_Info)
 {
-	npc = vlk_4107_parlaf;
+	npc = VLK_4107_Parlaf;
 	nr = 2;
-	condition = dia_parlaf_hungrig_condition;
-	information = dia_parlaf_hungrig_info;
+	condition = DIA_Parlaf_HUNGRIG_Condition;
+	information = DIA_Parlaf_HUNGRIG_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_parlaf_hungrig_condition()
+func int DIA_Parlaf_HUNGRIG_Condition()
 {
-	if((MIS_ENGOR_BRINGMEAT != LOG_SUCCESS) && Npc_KnowsInfo(hero,dia_parlaf_hallo) && (Npc_IsDead(engor) == FALSE))
+	if((MIS_Engor_BringMeat != LOG_SUCCESS) && Npc_KnowsInfo(hero,DIA_Parlaf_HALLO) && (Npc_IsDead(Engor) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_parlaf_hungrig_info()
+func void DIA_Parlaf_HUNGRIG_Info()
 {
 	AI_Output(other,self,"DIA_Parlaf_HUNGRIG_15_00");	//Co s³ychaæ?
 	AI_Output(self,other,"DIA_Parlaf_HUNGRIG_03_01");	//Ten cholerny Engor chce nas chyba zag³odziæ.
 };
 
 
-instance DIA_PARLAF_SATT(C_INFO)
+instance DIA_Parlaf_SATT(C_Info)
 {
-	npc = vlk_4107_parlaf;
+	npc = VLK_4107_Parlaf;
 	nr = 3;
-	condition = dia_parlaf_satt_condition;
-	information = dia_parlaf_satt_info;
+	condition = DIA_Parlaf_SATT_Condition;
+	information = DIA_Parlaf_SATT_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_parlaf_satt_condition()
+func int DIA_Parlaf_SATT_Condition()
 {
-	if(((MIS_ENGOR_BRINGMEAT == LOG_SUCCESS) || Npc_IsDead(engor)) && Npc_KnowsInfo(hero,dia_parlaf_hallo))
+	if(((MIS_Engor_BringMeat == LOG_SUCCESS) || Npc_IsDead(Engor)) && Npc_KnowsInfo(hero,DIA_Parlaf_HALLO))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_parlaf_satt_onetime;
+var int DIA_Parlaf_SATT_OneTime;
 
-func void dia_parlaf_satt_info()
+func void DIA_Parlaf_SATT_Info()
 {
 	AI_Output(other,self,"DIA_Parlaf_SATT_15_00");	//Co s³ychaæ?
-	if((DIA_PARLAF_SATT_ONETIME == FALSE) && (Npc_IsDead(engor) == FALSE))
+	if((DIA_Parlaf_SATT_OneTime == FALSE) && (Npc_IsDead(Engor) == FALSE))
 	{
 		AI_Output(self,other,"DIA_Parlaf_SATT_03_01");	//Engor rozdzieli³ nowy zapas miêsa. Najwy¿szy czas.
-		DIA_PARLAF_SATT_ONETIME = TRUE;
+		DIA_Parlaf_SATT_OneTime = TRUE;
 	}
 	else
 	{
@@ -167,37 +167,37 @@ func void dia_parlaf_satt_info()
 };
 
 
-instance DIA_PARLAF_PICKPOCKET(C_INFO)
+instance DIA_Parlaf_PICKPOCKET(C_Info)
 {
-	npc = vlk_4107_parlaf;
+	npc = VLK_4107_Parlaf;
 	nr = 900;
-	condition = dia_parlaf_pickpocket_condition;
-	information = dia_parlaf_pickpocket_info;
+	condition = DIA_Parlaf_PICKPOCKET_Condition;
+	information = DIA_Parlaf_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_parlaf_pickpocket_condition()
+func int DIA_Parlaf_PICKPOCKET_Condition()
 {
-	return c_beklauen(34,12);
+	return C_Beklauen(34,12);
 };
 
-func void dia_parlaf_pickpocket_info()
+func void DIA_Parlaf_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_parlaf_pickpocket);
-	Info_AddChoice(dia_parlaf_pickpocket,DIALOG_BACK,dia_parlaf_pickpocket_back);
-	Info_AddChoice(dia_parlaf_pickpocket,DIALOG_PICKPOCKET,dia_parlaf_pickpocket_doit);
+	Info_ClearChoices(DIA_Parlaf_PICKPOCKET);
+	Info_AddChoice(DIA_Parlaf_PICKPOCKET,Dialog_Back,DIA_Parlaf_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Parlaf_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Parlaf_PICKPOCKET_DoIt);
 };
 
-func void dia_parlaf_pickpocket_doit()
+func void DIA_Parlaf_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_parlaf_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Parlaf_PICKPOCKET);
 };
 
-func void dia_parlaf_pickpocket_back()
+func void DIA_Parlaf_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_parlaf_pickpocket);
+	Info_ClearChoices(DIA_Parlaf_PICKPOCKET);
 };
 

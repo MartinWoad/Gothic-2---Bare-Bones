@@ -1,61 +1,61 @@
 
-var int lothar_imov;
+var int Lothar_ImOV;
 
-instance DIA_LOTHAR_EXIT(C_INFO)
+instance DIA_Lothar_EXIT(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 999;
-	condition = dia_lothar_exit_condition;
-	information = dia_lothar_exit_info;
+	condition = DIA_Lothar_EXIT_Condition;
+	information = DIA_Lothar_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_lothar_exit_condition()
+func int DIA_Lothar_EXIT_Condition()
 {
-	if(LOTHAR_IMOV == TRUE)
+	if(Lothar_ImOV == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_exit_info()
+func void DIA_Lothar_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_LOTHAR_FIRSTEXIT(C_INFO)
+instance DIA_Lothar_FirstEXIT(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 999;
-	condition = dia_lothar_firstexit_condition;
-	information = dia_lothar_firstexit_info;
+	condition = DIA_Lothar_FirstEXIT_Condition;
+	information = DIA_Lothar_FirstEXIT_Info;
 	permanent = TRUE;
 	description = "Muszê iœæ! (KONIEC)";
 };
 
 
-func int dia_lothar_firstexit_condition()
+func int DIA_Lothar_FirstEXIT_Condition()
 {
-	if(LOTHAR_IMOV == FALSE)
+	if(Lothar_ImOV == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_firstexit_info()
+func void DIA_Lothar_FirstEXIT_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_FirstEXIT_15_00");	//Muszê iœæ!
-	if(LOTHAR_REGELN == FALSE)
+	if(Lothar_Regeln == FALSE)
 	{
 		AI_Output(self,other,"DIA_Lothar_FirstEXIT_01_01");	//Zaczekaj! Nie znasz nowych przepisów obowi¹zuj¹cych w mieœcie!
 		AI_Output(other,self,"DIA_Lothar_FirstEXIT_15_02");	//Na razie.
 	}
 	else
 	{
-		if((PLAYER_TALKEDABOUTDRAGONS == TRUE) && ((hero.guild != GIL_PAL) && (hero.guild != GIL_KDF)))
+		if((Player_TalkedAboutDragons == TRUE) && ((hero.guild != GIL_PAL) && (hero.guild != GIL_KDF)))
 		{
 			AI_Output(self,other,"DIA_Lothar_FirstEXIT_01_03");	//Jeœli jeszcze raz us³yszê, ¿e opowiadasz mieszkañcom tego miasta jakieœ brednie o smokach, wpadniesz w tarapaty, rozumiemy siê?
 		}
@@ -67,41 +67,41 @@ func void dia_lothar_firstexit_info()
 				AI_Output(self,other,"DIA_Lothar_FirstEXIT_01_05");	//Porz¹dku w mieœcie strzeg¹ teraz królewscy paladyni!
 			};
 		};
-		LOTHAR_IMOV = TRUE;
+		Lothar_ImOV = TRUE;
 		Npc_ExchangeRoutine(self,"START");
 	};
-	if(CANTHAR_INSTADT == FALSE)
+	if(Canthar_InStadt == FALSE)
 	{
-		Npc_ExchangeRoutine(canthar,"START");
-		CANTHAR_INSTADT = TRUE;
+		Npc_ExchangeRoutine(Canthar,"START");
+		Canthar_InStadt = TRUE;
 	};
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_LOTHAR_HALLO(C_INFO)
+instance DIA_Lothar_Hallo(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 1;
-	condition = dia_lothar_hallo_condition;
-	information = dia_lothar_hallo_info;
+	condition = DIA_Lothar_Hallo_Condition;
+	information = DIA_Lothar_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_lothar_hallo_condition()
+func int DIA_Lothar_Hallo_Condition()
 {
-	if(self.aivar[AIV_TALKEDTOPLAYER] == FALSE)
+	if(self.aivar[AIV_TalkedToPlayer] == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_hallo_info()
+func void DIA_Lothar_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Lothar_Hallo_01_00");	//Stój, nieznajomy!
-	if((MIL_310_SCHONMALREINGELASSEN == FALSE) && (MIL_333_SCHONMALREINGELASSEN == FALSE) && ((hero.guild != GIL_PAL) && (hero.guild != GIL_KDF)))
+	if((Mil_310_schonmalreingelassen == FALSE) && (Mil_333_schonmalreingelassen == FALSE) && ((hero.guild != GIL_PAL) && (hero.guild != GIL_KDF)))
 	{
 		AI_Output(self,other,"DIA_Lothar_Hallo_01_01");	//Nie widzia³em, ¿ebyœ przechodzi³ przez tê bramê.
 		AI_Output(other,self,"DIA_Lothar_Hallo_15_02");	//I co w zwi¹zku z tym?
@@ -112,33 +112,33 @@ func void dia_lothar_hallo_info()
 	};
 	AI_Output(self,other,"DIA_Lothar_Hallo_01_07");	//Jestem Lothar, królewski paladyn i skromny s³uga naszego Pana, Innosa.
 	AI_Output(self,other,"DIA_Lothar_Hallo_01_08");	//Nasz dowódca, Lord Hagen, powierzy³ mi zadanie informowania wszystkich przybyszy o nowych prawach obowi¹zuj¹cych w mieœcie.
-	if(Npc_KnowsInfo(other,dia_lester_send_xardas))
+	if(Npc_KnowsInfo(other,DIA_Lester_SEND_XARDAS))
 	{
-		b_startotherroutine(lester,"XARDAS");
+		B_StartOtherRoutine(Lester,"XARDAS");
 	};
 };
 
 
-instance DIA_LOTHAR_MESSAGE(C_INFO)
+instance DIA_Lothar_MESSAGE(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 1;
-	condition = dia_lothar_message_condition;
-	information = dia_lothar_message_info;
+	condition = DIA_Lothar_MESSAGE_Condition;
+	information = DIA_Lothar_MESSAGE_Info;
 	permanent = FALSE;
 	description = "Mam wa¿n¹ wiadomoœæ dla przywódcy paladynów!";
 };
 
 
-func int dia_lothar_message_condition()
+func int DIA_Lothar_MESSAGE_Condition()
 {
-	if((MIL_305_SCHONMALREINGELASSEN == FALSE) && (hero.guild == GIL_NONE))
+	if((Mil_305_schonmalreingelassen == FALSE) && (hero.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_message_info()
+func void DIA_Lothar_MESSAGE_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_MESSAGE_15_00");	//Mam wa¿n¹ wiadomoœæ dla przywódcy paladynów!
 	AI_Output(self,other,"DIA_Lothar_MESSAGE_01_01");	//Wielmo¿ny Lord Hagen nikogo nie przyjmuje.
@@ -146,26 +146,26 @@ func void dia_lothar_message_info()
 };
 
 
-instance DIA_LOTHAR_EYEINNOS(C_INFO)
+instance DIA_Lothar_EyeInnos(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 2;
-	condition = dia_lothar_eyeinnos_condition;
-	information = dia_lothar_eyeinnos_info;
+	condition = DIA_Lothar_EyeInnos_Condition;
+	information = DIA_Lothar_EyeInnos_Info;
 	permanent = FALSE;
 	description = "Przybywam, aby zdobyæ Oko Innosa!";
 };
 
 
-func int dia_lothar_eyeinnos_condition()
+func int DIA_Lothar_EyeInnos_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_lothar_message) && (lordhagen.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Lothar_MESSAGE) && (LordHagen.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_eyeinnos_info()
+func void DIA_Lothar_EyeInnos_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_EyeInnos_15_00");	//Przybywam, aby zdobyæ Oko Innosa!
 	if((hero.guild == GIL_PAL) || (hero.guild == GIL_KDF))
@@ -180,7 +180,7 @@ func void dia_lothar_eyeinnos_info()
 		AI_Output(self,other,"DIA_Lothar_EyeInnos_01_05");	//Z pewnoœci¹ nie chodzi³o mu o to, abyœ po³o¿y³ swoje brudne ³apska na naszej œwiêtej relikwii.
 		AI_Output(other,self,"DIA_Lothar_EyeInnos_15_06");	//Ale...
 		AI_Output(self,other,"DIA_Lothar_EyeInnos_01_07");	//Nie chcê wiêcej o tym s³yszeæ!
-		if(PLAYER_TALKEDABOUTDRAGONS == TRUE)
+		if(Player_TalkedAboutDragons == TRUE)
 		{
 			AI_Output(self,other,"DIA_Lothar_EyeInnos_01_08");	//Najpierw te opowieœci o smokach, a teraz jeszcze coœ takiego - to oburzaj¹ce!
 		};
@@ -188,26 +188,26 @@ func void dia_lothar_eyeinnos_info()
 };
 
 
-instance DIA_LOTHAR_DRAGONS(C_INFO)
+instance DIA_Lothar_Dragons(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 1;
-	condition = dia_lothar_dragons_condition;
-	information = dia_lothar_dragons_info;
+	condition = DIA_Lothar_Dragons_Condition;
+	information = DIA_Lothar_Dragons_Info;
 	permanent = FALSE;
 	description = "Pos³uchaj - miastu zagra¿aj¹ smoki!";
 };
 
 
-func int dia_lothar_dragons_condition()
+func int DIA_Lothar_Dragons_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_lothar_message) && (lordhagen.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Lothar_MESSAGE) && (LordHagen.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_dragons_info()
+func void DIA_Lothar_Dragons_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_Dragons_15_00");	//Pos³uchaj - miastu zagra¿aj¹ smoki!
 	if((hero.guild != GIL_PAL) && (hero.guild != GIL_KDF))
@@ -223,30 +223,30 @@ func void dia_lothar_dragons_info()
 		AI_Output(self,other,"DIA_Lothar_Dragons_01_06");	//Ju¿ o tym s³ysza³em. Jednak trudno mi w to uwierzyæ.
 		AI_Output(self,other,"DIA_Lothar_Dragons_01_07");	//By³oby lepiej, gdybyœ zachowa³ tê wiedzê dla siebie. Musimy zapobiegaæ wybuchowi paniki.
 	};
-	PLAYER_TALKEDABOUTDRAGONS = TRUE;
+	Player_TalkedAboutDragons = TRUE;
 };
 
 
-instance DIA_LOTHAR_WHODRAGONS(C_INFO)
+instance DIA_Lothar_WhoDragons(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 1;
-	condition = dia_lothar_whodragons_condition;
-	information = dia_lothar_whodragons_info;
+	condition = DIA_Lothar_WhoDragons_Condition;
+	information = DIA_Lothar_WhoDragons_Info;
 	permanent = FALSE;
 	description = "Czy ktoœ ju¿ ostrzega³ was o zagro¿eniu ze strony smoków?";
 };
 
 
-func int dia_lothar_whodragons_condition()
+func int DIA_Lothar_WhoDragons_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_lothar_dragons) && (lordhagen.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Lothar_Dragons) && (LordHagen.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_whodragons_info()
+func void DIA_Lothar_WhoDragons_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_WhoDragons_15_00");	//Czy ktoœ ju¿ ostrzega³ was o zagro¿eniu ze strony smoków?
 	AI_Output(self,other,"DIA_Lothar_WhoDragons_01_01");	//Tak. Nazywa³ siê Diego. Przynajmniej tak mi siê wydaje.
@@ -257,23 +257,23 @@ func void dia_lothar_whodragons_info()
 };
 
 
-instance DIA_LOTHAR_REGELN(C_INFO)
+instance DIA_Lothar_Regeln(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 3;
-	condition = dia_lothar_regeln_condition;
-	information = dia_lothar_regeln_info;
+	condition = DIA_Lothar_Regeln_Condition;
+	information = DIA_Lothar_Regeln_Info;
 	permanent = FALSE;
 	description = "Opowiedz mi o przepisach obowi¹zuj¹cych w mieœcie!";
 };
 
 
-func int dia_lothar_regeln_condition()
+func int DIA_Lothar_Regeln_Condition()
 {
 	return TRUE;
 };
 
-func void dia_lothar_regeln_info()
+func void DIA_Lothar_Regeln_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_Regeln_15_00");	//No dobrze - opowiedz mi o przepisach panuj¹cych w mieœcie!
 	AI_Output(self,other,"DIA_Lothar_Regeln_01_01");	//Po pierwsze: dostojny paladyn Lord Hagen rezyduje w górnym mieœcie, wraz ze swoimi wojskami.
@@ -281,30 +281,30 @@ func void dia_lothar_regeln_info()
 	AI_Output(self,other,"DIA_Lothar_Add_01_04");	//Po drugie: ratusz w górnym mieœcie zosta³ przejêty przez paladynów, którzy za³o¿yli tam swoj¹ g³ówn¹ siedzibê. Tylko paladyni i cz³onkowie stra¿y mog¹ wchodziæ do œrodka.
 	AI_Output(self,other,"DIA_Lothar_Add_01_05");	//Po trzecie: ktokolwiek zostanie oskar¿ony o pope³nienie przestêpstwa, musi siê oczyœciæ z zarzutów przed dowódc¹ stra¿y.
 	AI_Output(self,other,"DIA_Lothar_Regeln_01_05");	//Jakieœ pytania?
-	LOTHAR_REGELN = TRUE;
+	Lothar_Regeln = TRUE;
 };
 
 
-instance DIA_LOTHAR_HOWCITIZEN(C_INFO)
+instance DIA_Lothar_HowCitizen(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 4;
-	condition = dia_lothar_howcitizen_condition;
-	information = dia_lothar_howcitizen_info;
+	condition = DIA_Lothar_HowCitizen_Condition;
+	information = DIA_Lothar_HowCitizen_Info;
 	permanent = FALSE;
 	description = "Jak mogê zostaæ obywatelem miasta?";
 };
 
 
-func int dia_lothar_howcitizen_condition()
+func int DIA_Lothar_HowCitizen_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_lothar_regeln) && (PLAYER_ISAPPRENTICE == APP_NONE) && (other.guild == GIL_NONE))
+	if(Npc_KnowsInfo(other,DIA_Lothar_Regeln) && (Player_IsApprentice == APP_NONE) && (other.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_howcitizen_info()
+func void DIA_Lothar_HowCitizen_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_Add_15_06");	//Jak mogê zostaæ obywatelem miasta?
 	AI_Output(self,other,"DIA_Lothar_Add_01_07");	//Obywatelem miasta mo¿e byæ jedynie osoba posiadaj¹ca sta³e zatrudnienie!
@@ -314,26 +314,26 @@ func void dia_lothar_howcitizen_info()
 };
 
 
-instance DIA_LOTHAR_WOARBEIT(C_INFO)
+instance DIA_Lothar_WoArbeit(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 5;
-	condition = dia_lothar_woarbeit_condition;
-	information = dia_lothar_woarbeit_info;
+	condition = DIA_Lothar_WoArbeit_Condition;
+	information = DIA_Lothar_WoArbeit_Info;
 	permanent = FALSE;
 	description = "Gdzie mogê znaleŸæ pracê?";
 };
 
 
-func int dia_lothar_woarbeit_condition()
+func int DIA_Lothar_WoArbeit_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_lothar_howcitizen) && (PLAYER_ISAPPRENTICE == APP_NONE) && (other.guild == GIL_NONE))
+	if(Npc_KnowsInfo(other,DIA_Lothar_HowCitizen) && (Player_IsApprentice == APP_NONE) && (other.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_woarbeit_info()
+func void DIA_Lothar_WoArbeit_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_Add_15_14");	//Gdzie mogê znaleŸæ pracê?
 	AI_Output(self,other,"DIA_Lothar_Add_01_15");	//Musisz zostaæ czeladnikiem u jednego z mistrzów rezyduj¹cych w dolnej czêœci miasta.
@@ -344,26 +344,26 @@ func void dia_lothar_woarbeit_info()
 };
 
 
-instance DIA_LOTHAR_TOOV(C_INFO)
+instance DIA_Lothar_ToOV(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 6;
-	condition = dia_lothar_toov_condition;
-	information = dia_lothar_toov_info;
+	condition = DIA_Lothar_ToOV_Condition;
+	information = DIA_Lothar_ToOV_Info;
 	permanent = FALSE;
 	description = "Jak dojœæ do górnego miasta?";
 };
 
 
-func int dia_lothar_toov_condition()
+func int DIA_Lothar_ToOV_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_lothar_regeln) && (MIL_305_SCHONMALREINGELASSEN == FALSE) && (PLAYER_ISAPPRENTICE == APP_NONE) && (other.guild == GIL_NONE))
+	if(Npc_KnowsInfo(other,DIA_Lothar_Regeln) && (Mil_305_schonmalreingelassen == FALSE) && (Player_IsApprentice == APP_NONE) && (other.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_toov_info()
+func void DIA_Lothar_ToOV_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_ToOV_15_00");	//Jak dojœæ do górnego miasta?
 	AI_Output(self,other,"DIA_Lothar_ToOV_01_01");	//Czy ty mnie w ogóle s³uchasz?!
@@ -372,29 +372,29 @@ func void dia_lothar_toov_info()
 };
 
 
-instance DIA_LOTHAR_TOMILIZ(C_INFO)
+instance DIA_Lothar_ToMiliz(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 7;
-	condition = dia_lothar_tomiliz_condition;
-	information = dia_lothar_tomiliz_info;
+	condition = DIA_Lothar_ToMiliz_Condition;
+	information = DIA_Lothar_ToMiliz_Info;
 	permanent = FALSE;
 	description = "Jak mogê zostaæ cz³onkiem stra¿y?";
 };
 
 
-func int dia_lothar_tomiliz_condition()
+func int DIA_Lothar_ToMiliz_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_lothar_regeln) && (other.guild == GIL_NONE))
+	if(Npc_KnowsInfo(other,DIA_Lothar_Regeln) && (other.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_tomiliz_info()
+func void DIA_Lothar_ToMiliz_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_Add_15_26");	//Jak mogê zostaæ cz³onkiem stra¿y?
-	if(PLAYER_ISAPPRENTICE == APP_NONE)
+	if(Player_IsApprentice == APP_NONE)
 	{
 		AI_Output(self,other,"DIA_Lothar_Add_01_27");	//Wedle rozkazu Lorda Hagena jedynie obywatele miasta mog¹ zaci¹gaæ siê do stra¿y.
 		AI_Output(other,self,"DIA_Lothar_Add_15_28");	//Rozumiem.
@@ -403,33 +403,33 @@ func void dia_lothar_tomiliz_info()
 };
 
 
-instance DIA_LOTHAR_TOPALADINS(C_INFO)
+instance DIA_Lothar_ToPaladins(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 7;
-	condition = dia_lothar_topaladins_condition;
-	information = dia_lothar_topaladins_info;
+	condition = DIA_Lothar_ToPaladins_Condition;
+	information = DIA_Lothar_ToPaladins_Info;
 	permanent = FALSE;
 	description = "Co muszê zrobiæ, ¿eby zdobyæ tak¹ zbrojê jak twoja?";
 };
 
 
-func int dia_lothar_topaladins_condition()
+func int DIA_Lothar_ToPaladins_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_lothar_tomiliz) && (other.guild != GIL_PAL) && (other.guild != GIL_KDF))
+	if(Npc_KnowsInfo(other,DIA_Lothar_ToMiliz) && (other.guild != GIL_PAL) && (other.guild != GIL_KDF))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_topaladins_info()
+func void DIA_Lothar_ToPaladins_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_Add_15_30");	//Co muszê zrobiæ, ¿eby zdobyæ tak¹ zbrojê jak twoja?
 	if(other.guild != GIL_MIL)
 	{
 		AI_Output(self,other,"DIA_Lothar_Add_01_31");	//Co takiego?! Nawet nie jesteœ cz³onkiem stra¿y!
 	};
-	if(PLAYER_ISAPPRENTICE == APP_NONE)
+	if(Player_IsApprentice == APP_NONE)
 	{
 		AI_Output(self,other,"DIA_Lothar_Add_01_32");	//Nie jesteœ nawet OBYWATELEM!
 	};
@@ -439,44 +439,44 @@ func void dia_lothar_topaladins_info()
 };
 
 
-instance DIA_LOTHAR_WOANDRE(C_INFO)
+instance DIA_Lothar_WoAndre(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 8;
-	condition = dia_lothar_woandre_condition;
-	information = dia_lothar_woandre_info;
+	condition = DIA_Lothar_WoAndre_Condition;
+	information = DIA_Lothar_WoAndre_Info;
 	permanent = FALSE;
 	description = "Gdzie mogê znaleŸæ przywódcê stra¿y miejskiej?";
 };
 
 
-func int dia_lothar_woandre_condition()
+func int DIA_Lothar_WoAndre_Condition()
 {
-	if((Npc_KnowsInfo(other,dia_lothar_regeln) || Npc_KnowsInfo(other,dia_lothar_message)) && (andre.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if((Npc_KnowsInfo(other,DIA_Lothar_Regeln) || Npc_KnowsInfo(other,DIA_Lothar_MESSAGE)) && (Andre.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_woandre_info()
+func void DIA_Lothar_WoAndre_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_WoAndre_15_00");	//Gdzie mogê znaleŸæ przywódcê stra¿y miejskiej?
 	AI_Output(self,other,"DIA_Lothar_WoAndre_01_01");	//Lord Andre przebywa w koszarach po drugiej stronie miasta.
 };
 
 
-instance DIA_LOTHAR_SCHLAFEN(C_INFO)
+instance DIA_Lothar_Schlafen(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 9;
-	condition = dia_lothar_schlafen_condition;
-	information = dia_lothar_schlafen_info;
+	condition = DIA_Lothar_Schlafen_Condition;
+	information = DIA_Lothar_Schlafen_Info;
 	permanent = FALSE;
 	description = "Gdzie mogê spêdziæ noc?";
 };
 
 
-func int dia_lothar_schlafen_condition()
+func int DIA_Lothar_Schlafen_Condition()
 {
 	if(other.guild == GIL_NONE)
 	{
@@ -484,7 +484,7 @@ func int dia_lothar_schlafen_condition()
 	};
 };
 
-func void dia_lothar_schlafen_info()
+func void DIA_Lothar_Schlafen_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_Add_15_22");	//Gdzie mogê spêdziæ noc?
 	AI_Output(self,other,"DIA_Lothar_Add_01_23");	//Jeœli szukasz miejsca do spania, udaj siê do gospody naprzeciwko koszar.
@@ -493,32 +493,32 @@ func void dia_lothar_schlafen_info()
 };
 
 
-instance DIA_LOTHAR_PERMB4OV(C_INFO)
+instance DIA_Lothar_PermB4OV(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 3;
-	condition = dia_lothar_permb4ov_condition;
-	information = dia_lothar_permb4ov_info;
+	condition = DIA_Lothar_PermB4OV_Condition;
+	information = DIA_Lothar_PermB4OV_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_lothar_permb4ov_condition()
+func int DIA_Lothar_PermB4OV_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (MIL_305_SCHONMALREINGELASSEN == FALSE) && (LOTHAR_REGELN == TRUE))
+	if(Npc_IsInState(self,ZS_Talk) && (Mil_305_schonmalreingelassen == FALSE) && (Lothar_Regeln == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_permb4ov_info()
+func void DIA_Lothar_PermB4OV_Info()
 {
 	AI_Output(self,other,"DIA_Lothar_PermB4OV_01_00");	//O ca³ej reszcie dowiesz siê od Lorda Andre!
 	AI_StopProcessInfos(self);
 };
 
-func void b_lothar_blubb()
+func void B_Lothar_Blubb()
 {
 	AI_Output(other,self,"DIA_Lothar_Add_15_00");	//Ale ja naprawdê muszê siê zobaczyæ z Lordem Hagenem!
 	AI_Output(self,other,"DIA_Lothar_Add_01_45");	//Jak widzê, przyj¹³ ciê w szeregi stra¿ników.
@@ -547,26 +547,26 @@ func void b_lothar_blubb()
 };
 
 
-instance DIA_LOTHAR_HELLOAGAIN(C_INFO)
+instance DIA_Lothar_HelloAgain(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 1;
-	condition = dia_lothar_helloagain_condition;
-	information = dia_lothar_helloagain_info;
+	condition = DIA_Lothar_HelloAgain_Condition;
+	information = DIA_Lothar_HelloAgain_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_lothar_helloagain_condition()
+func int DIA_Lothar_HelloAgain_Condition()
 {
-	if(MIL_305_SCHONMALREINGELASSEN == TRUE)
+	if(Mil_305_schonmalreingelassen == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_helloagain_info()
+func void DIA_Lothar_HelloAgain_Info()
 {
 	AI_Output(self,other,"DIA_Lothar_HelloAgain_01_00");	//Aaa! To znowu ty!
 	AI_Output(self,other,"DIA_Lothar_HelloAgain_01_01");	//A wiêc uda³o ci siê w koñcu przedostaæ do górnego miasta!
@@ -601,26 +601,26 @@ func void dia_lothar_helloagain_info()
 };
 
 
-instance DIA_LOTHAR_HAGEN(C_INFO)
+instance DIA_Lothar_Hagen(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 2;
-	condition = dia_lothar_hagen_condition;
-	information = dia_lothar_hagen_info;
+	condition = DIA_Lothar_Hagen_Condition;
+	information = DIA_Lothar_Hagen_Info;
 	permanent = TRUE;
 	description = "Gdzie mogê znaleŸæ Lorda Hagena?";
 };
 
 
-func int dia_lothar_hagen_condition()
+func int DIA_Lothar_Hagen_Condition()
 {
-	if((MIL_305_SCHONMALREINGELASSEN == TRUE) && (lordhagen.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if((Mil_305_schonmalreingelassen == TRUE) && (LordHagen.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_hagen_info()
+func void DIA_Lothar_Hagen_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_Hagen_15_00");	//Gdzie mogê znaleŸæ Lorda Hagena?
 	AI_Output(self,other,"DIA_Lothar_Hagen_01_01");	//Przebywa w ratuszu miejskim, na samym koñcu górnego miasta.
@@ -628,26 +628,26 @@ func void dia_lothar_hagen_info()
 };
 
 
-instance DIA_LOTHAR_OWRUNNING(C_INFO)
+instance DIA_Lothar_OWRunning(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 2;
-	condition = dia_lothar_owrunning_condition;
-	information = dia_lothar_owrunning_info;
+	condition = DIA_Lothar_OWRunning_Condition;
+	information = DIA_Lothar_OWRunning_Info;
 	permanent = FALSE;
 	description = "Poszed³em do Lorda Hagena…";
 };
 
 
-func int dia_lothar_owrunning_condition()
+func int DIA_Lothar_OWRunning_Condition()
 {
-	if((MIS_OLDWORLD == LOG_RUNNING) && (Npc_HasItems(hero,itwr_paladinletter_mis) == 0))
+	if((MIS_OLDWORLD == LOG_Running) && (Npc_HasItems(hero,ItWr_PaladinLetter_MIS) == 0))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_owrunning_info()
+func void DIA_Lothar_OWRunning_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_Add_15_53");	//Poszed³em do Lorda Hagena...
 	AI_Output(self,other,"DIA_Lothar_Add_01_54");	//I co? Chyba nie zadrêcza³eœ go tymi swoimi opowieœciami o smokach, prawda?
@@ -659,26 +659,26 @@ func void dia_lothar_owrunning_info()
 };
 
 
-instance DIA_LOTHAR_OWRUNNINGBRIEF(C_INFO)
+instance DIA_Lothar_OWRunningBrief(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 2;
-	condition = dia_lothar_owrunningbrief_condition;
-	information = dia_lothar_owrunningbrief_info;
+	condition = DIA_Lothar_OWRunningBrief_Condition;
+	information = DIA_Lothar_OWRunningBrief_Info;
 	permanent = FALSE;
 	description = "Mam dowód! Oto list od kapitana Garonda!";
 };
 
 
-func int dia_lothar_owrunningbrief_condition()
+func int DIA_Lothar_OWRunningBrief_Condition()
 {
-	if((MIS_OLDWORLD == LOG_RUNNING) && (Npc_HasItems(hero,itwr_paladinletter_mis) > 0))
+	if((MIS_OLDWORLD == LOG_Running) && (Npc_HasItems(hero,ItWr_PaladinLetter_MIS) > 0))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_owrunningbrief_info()
+func void DIA_Lothar_OWRunningBrief_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_Add_15_59");	//Mam dowód! Oto list od kapitana Garonda!
 	AI_Output(self,other,"DIA_Lothar_Add_01_60");	//A wiêc smoki naprawdê istniej¹?
@@ -687,26 +687,26 @@ func void dia_lothar_owrunningbrief_info()
 };
 
 
-instance DIA_LOTHAR_PERM(C_INFO)
+instance DIA_Lothar_PERM(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 3;
-	condition = dia_lothar_perm_condition;
-	information = dia_lothar_perm_info;
+	condition = DIA_Lothar_PERM_Condition;
+	information = DIA_Lothar_PERM_Info;
 	permanent = TRUE;
 	description = "Czy ostatnio wydarzy³o siê tu coœ niezwyk³ego?";
 };
 
 
-func int dia_lothar_perm_condition()
+func int DIA_Lothar_PERM_Condition()
 {
-	if((MIL_305_SCHONMALREINGELASSEN == TRUE) && (lordhagen.aivar[AIV_TALKEDTOPLAYER] == FALSE))
+	if((Mil_305_schonmalreingelassen == TRUE) && (LordHagen.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_lothar_perm_info()
+func void DIA_Lothar_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Lothar_PERM_15_00");	//Czy zdarzy³o siê tu ostatnio coœ ciekawego?
 	if((other.guild == GIL_NONE) || (other.guild == GIL_SLD))
@@ -724,37 +724,37 @@ func void dia_lothar_perm_info()
 };
 
 
-instance DIA_LOTHAR_PICKPOCKET(C_INFO)
+instance DIA_Lothar_PICKPOCKET(C_Info)
 {
-	npc = pal_203_lothar;
+	npc = PAL_203_Lothar;
 	nr = 900;
-	condition = dia_lothar_pickpocket_condition;
-	information = dia_lothar_pickpocket_info;
+	condition = DIA_Lothar_PICKPOCKET_Condition;
+	information = DIA_Lothar_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_lothar_pickpocket_condition()
+func int DIA_Lothar_PICKPOCKET_Condition()
 {
-	return c_beklauen(56,95);
+	return C_Beklauen(56,95);
 };
 
-func void dia_lothar_pickpocket_info()
+func void DIA_Lothar_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_lothar_pickpocket);
-	Info_AddChoice(dia_lothar_pickpocket,DIALOG_BACK,dia_lothar_pickpocket_back);
-	Info_AddChoice(dia_lothar_pickpocket,DIALOG_PICKPOCKET,dia_lothar_pickpocket_doit);
+	Info_ClearChoices(DIA_Lothar_PICKPOCKET);
+	Info_AddChoice(DIA_Lothar_PICKPOCKET,Dialog_Back,DIA_Lothar_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Lothar_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Lothar_PICKPOCKET_DoIt);
 };
 
-func void dia_lothar_pickpocket_doit()
+func void DIA_Lothar_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_lothar_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Lothar_PICKPOCKET);
 };
 
-func void dia_lothar_pickpocket_back()
+func void DIA_Lothar_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_lothar_pickpocket);
+	Info_ClearChoices(DIA_Lothar_PICKPOCKET);
 };
 

@@ -1,8 +1,8 @@
 
-func void zs_pray_sleeper_fp()
+func void ZS_Pray_Sleeper_FP()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
@@ -10,11 +10,11 @@ func void zs_pray_sleeper_fp()
 	};
 };
 
-func int zs_pray_sleeper_fp_loop()
+func int ZS_Pray_Sleeper_FP_Loop()
 {
 	if(Npc_IsOnFP(self,"PRAY"))
 	{
-		if(!c_bodystatecontains(self,BS_SIT))
+		if(!C_BodyStateContains(self,BS_SIT))
 		{
 			AI_PlayAniBS(self,"T_STAND_2_PRAY",BS_SIT);
 		}
@@ -32,7 +32,7 @@ func int zs_pray_sleeper_fp_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_pray_sleeper_fp_end()
+func void ZS_Pray_Sleeper_FP_End()
 {
 	AI_PlayAni(self,"T_PRAY_2_STAND");
 };

@@ -1,43 +1,43 @@
 
-instance DIA_VALENTINO_EXIT(C_INFO)
+instance DIA_Valentino_EXIT(C_Info)
 {
-	npc = vlk_421_valentino;
+	npc = VLK_421_Valentino;
 	nr = 999;
-	condition = dia_valentino_exit_condition;
-	information = dia_valentino_exit_info;
+	condition = DIA_Valentino_EXIT_Condition;
+	information = DIA_Valentino_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_valentino_exit_condition()
+func int DIA_Valentino_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_valentino_exit_info()
+func void DIA_Valentino_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_VALENTINO_HALLO(C_INFO)
+instance DIA_Valentino_HALLO(C_Info)
 {
-	npc = vlk_421_valentino;
+	npc = VLK_421_Valentino;
 	nr = 1;
-	condition = dia_valentino_hallo_condition;
-	information = dia_valentino_hallo_info;
+	condition = DIA_Valentino_HALLO_Condition;
+	information = DIA_Valentino_HALLO_Info;
 	permanent = FALSE;
 	description = "No proszê, co my tu mamy?";
 };
 
 
-func int dia_valentino_hallo_condition()
+func int DIA_Valentino_HALLO_Condition()
 {
 	return TRUE;
 };
 
-func void dia_valentino_hallo_info()
+func void DIA_Valentino_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Valentino_HALLO_15_00");	//No proszê, co my tu mamy?
 	if((hero.guild == GIL_KDF) || (hero.guild == GIL_PAL))
@@ -57,26 +57,26 @@ func void dia_valentino_hallo_info()
 };
 
 
-instance DIA_VALENTINO_WHOAGAIN(C_INFO)
+instance DIA_Valentino_WhoAgain(C_Info)
 {
-	npc = vlk_421_valentino;
+	npc = VLK_421_Valentino;
 	nr = 2;
-	condition = dia_valentino_whoagain_condition;
-	information = dia_valentino_whoagain_info;
+	condition = DIA_Valentino_WhoAgain_Condition;
+	information = DIA_Valentino_WhoAgain_Info;
 	permanent = FALSE;
 	description = "Pyta³em, kim jesteœ!";
 };
 
 
-func int dia_valentino_whoagain_condition()
+func int DIA_Valentino_WhoAgain_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_valentino_hallo) && (other.guild != GIL_KDF) && (other.guild != GIL_PAL))
+	if(Npc_KnowsInfo(other,DIA_Valentino_HALLO) && (other.guild != GIL_KDF) && (other.guild != GIL_PAL))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_valentino_whoagain_info()
+func void DIA_Valentino_WhoAgain_Info()
 {
 	AI_Output(other,self,"DIA_Valentino_Add_15_01");	//Pyta³em, kim jesteœ!
 	AI_Output(self,other,"DIA_Valentino_HALLO_wasmachstdu_03_01");	//Jestem Valentino Przystojniak. Lekkoduch i bawidamek.
@@ -85,26 +85,26 @@ func void dia_valentino_whoagain_info()
 };
 
 
-instance DIA_VALENTINO_MANIEREN(C_INFO)
+instance DIA_Valentino_Manieren(C_Info)
 {
-	npc = vlk_421_valentino;
+	npc = VLK_421_Valentino;
 	nr = 3;
-	condition = dia_valentino_manieren_condition;
-	information = dia_valentino_manieren_info;
+	condition = DIA_Valentino_Manieren_Condition;
+	information = DIA_Valentino_Manieren_Info;
 	permanent = FALSE;
 	description = "Wygl¹da na to, ¿e to ciebie nale¿a³oby nauczyæ dobrych manier!";
 };
 
 
-func int dia_valentino_manieren_condition()
+func int DIA_Valentino_Manieren_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_valentino_hallo) && (other.guild != GIL_PAL) && (other.guild != GIL_KDF))
+	if(Npc_KnowsInfo(other,DIA_Valentino_HALLO) && (other.guild != GIL_PAL) && (other.guild != GIL_KDF))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_valentino_manieren_info()
+func void DIA_Valentino_Manieren_Info()
 {
 	AI_Output(other,self,"DIA_Valentino_Add_15_02");	//Wygl¹da na to, ¿e to ciebie nale¿a³oby nauczyæ dobrych manier!
 	AI_Output(self,other,"DIA_Valentino_HALLO_klappe_03_01");	//Nic mnie to nie obchodzi! Mo¿esz mi nawet daæ w pysk, jutro wstanê œwie¿y jak skowronek.
@@ -112,46 +112,46 @@ func void dia_valentino_manieren_info()
 };
 
 
-var int valentino_lo_perm;
-var int valentino_hi_perm;
+var int Valentino_Lo_Perm;
+var int Valentino_Hi_Perm;
 
-instance DIA_VALENTINO_WASNUETZLICHES(C_INFO)
+instance DIA_Valentino_WASNUETZLICHES(C_Info)
 {
-	npc = vlk_421_valentino;
+	npc = VLK_421_Valentino;
 	nr = 4;
-	condition = dia_valentino_wasnuetzliches_condition;
-	information = dia_valentino_wasnuetzliches_info;
+	condition = DIA_Valentino_WASNUETZLICHES_Condition;
+	information = DIA_Valentino_WASNUETZLICHES_Info;
 	permanent = TRUE;
 	description = "Masz jeszcze coœ ciekawego do powiedzenia?";
 };
 
 
-func int dia_valentino_wasnuetzliches_condition()
+func int DIA_Valentino_WASNUETZLICHES_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_valentino_hallo))
+	if(Npc_KnowsInfo(other,DIA_Valentino_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_valentino_wasnuetzliches_info()
+func void DIA_Valentino_WASNUETZLICHES_Info()
 {
 	AI_Output(other,self,"DIA_Valentino_Add_15_03");	//Masz mo¿e jeszcze coœ ciekawego do powiedzenia?
-	if(self.aivar[AIV_DEFEATEDBYPLAYER] == TRUE)
+	if(self.aivar[AIV_DefeatedByPlayer] == TRUE)
 	{
-		b_say(self,other,"$NOTNOW");
+		B_Say(self,other,"$NOTNOW");
 	}
-	else if((VALENTINO_LO_PERM == FALSE) && (other.guild != GIL_PAL) && (other.guild != GIL_KDF))
+	else if((Valentino_Lo_Perm == FALSE) && (other.guild != GIL_PAL) && (other.guild != GIL_KDF))
 	{
 		AI_Output(self,other,"DIA_Valentino_WASNUETZLICHES_03_01");	//Dbaj o popularnoœæ, nigdy nic nikomu nie obiecuj, bierz, co daj¹ i uwa¿aj, by nie popaœæ w konflikt ze stra¿¹.
 		AI_Output(self,other,"DIA_Valentino_WASNUETZLICHES_03_02");	//No... i z zazdrosnymi mê¿ami. Ci s¹ najgorsi, mówiê ci.
-		VALENTINO_LO_PERM = TRUE;
+		Valentino_Lo_Perm = TRUE;
 	}
-	else if((VALENTINO_HI_PERM == FALSE) && ((other.guild == GIL_PAL) || (other.guild == GIL_KDF)))
+	else if((Valentino_Hi_Perm == FALSE) && ((other.guild == GIL_PAL) || (other.guild == GIL_KDF)))
 	{
 		AI_Output(self,other,"DIA_Valentino_WASNUETZLICHES_03_03");	//W przypadku kogoœ takiego jak ty, mo¿liwoœci s¹ nieograniczone. Musisz umieæ rozpoznaæ sytuacjê i wiedzieæ, kiedy zacz¹æ dzia³aæ.
 		AI_Output(self,other,"DIA_Valentino_WASNUETZLICHES_03_04");	//Nie marnuj wiêc mojego czasu, bierz siê do roboty!
-		VALENTINO_HI_PERM = TRUE;
+		Valentino_Hi_Perm = TRUE;
 	}
 	else
 	{
@@ -160,50 +160,50 @@ func void dia_valentino_wasnuetzliches_info()
 };
 
 
-instance DIA_VALENTINO_PICKPOCKET(C_INFO)
+instance DIA_Valentino_PICKPOCKET(C_Info)
 {
-	npc = vlk_421_valentino;
+	npc = VLK_421_Valentino;
 	nr = 900;
-	condition = dia_valentino_pickpocket_condition;
-	information = dia_valentino_pickpocket_info;
+	condition = DIA_Valentino_PICKPOCKET_Condition;
+	information = DIA_Valentino_PICKPOCKET_Info;
 	permanent = TRUE;
 	description = "(Kradzie¿ tego klucza bêdzie doœæ ³atwa)";
 };
 
 
-func int dia_valentino_pickpocket_condition()
+func int DIA_Valentino_PICKPOCKET_Condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == FALSE) && (Npc_HasItems(self,itke_valentino) >= 1) && (other.attribute[ATR_DEXTERITY] >= (30 - THEFTDIFF)))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_HasItems(self,ItKe_Valentino) >= 1) && (other.attribute[ATR_DEXTERITY] >= (30 - Theftdiff)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_valentino_pickpocket_info()
+func void DIA_Valentino_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_valentino_pickpocket);
-	Info_AddChoice(dia_valentino_pickpocket,DIALOG_BACK,dia_valentino_pickpocket_back);
-	Info_AddChoice(dia_valentino_pickpocket,DIALOG_PICKPOCKET,dia_valentino_pickpocket_doit);
+	Info_ClearChoices(DIA_Valentino_PICKPOCKET);
+	Info_AddChoice(DIA_Valentino_PICKPOCKET,Dialog_Back,DIA_Valentino_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Valentino_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Valentino_PICKPOCKET_DoIt);
 };
 
-func void dia_valentino_pickpocket_doit()
+func void DIA_Valentino_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 30)
 	{
-		b_giveinvitems(self,other,5714,1);
-		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
-		b_giveplayerxp(XP_AMBIENT);
-		Info_ClearChoices(dia_valentino_pickpocket);
+		B_GiveInvItems(self,other,ItKe_Valentino,1);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+		B_GivePlayerXP(XP_Ambient);
+		Info_ClearChoices(DIA_Valentino_PICKPOCKET);
 	}
 	else
 	{
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_THEFT,1);
+		B_Attack(self,other,AR_Theft,1);
 	};
 };
 
-func void dia_valentino_pickpocket_back()
+func void DIA_Valentino_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_valentino_pickpocket);
+	Info_ClearChoices(DIA_Valentino_PICKPOCKET);
 };
 

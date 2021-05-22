@@ -1,21 +1,21 @@
 
-func int b_gettotalpetzcounter(var C_NPC slf)
+func int B_GetTotalPetzCounter(var C_Npc slf)
 {
-	if(c_npcbelongstooldcamp(slf))
+	if(C_NpcBelongsToOldCamp(slf))
 	{
-		return PETZCOUNTER_OLDCAMP_MURDER + PETZCOUNTER_OLDCAMP_THEFT + PETZCOUNTER_OLDCAMP_ATTACK + PETZCOUNTER_OLDCAMP_SHEEPKILLER;
+		return PETZCOUNTER_OldCamp_Murder + PETZCOUNTER_OldCamp_Theft + PETZCOUNTER_OldCamp_Attack + PETZCOUNTER_OldCamp_Sheepkiller;
 	};
-	if(c_npcbelongstocity(slf))
+	if(C_NpcBelongsToCity(slf))
 	{
-		return PETZCOUNTER_CITY_MURDER + PETZCOUNTER_CITY_THEFT + PETZCOUNTER_CITY_ATTACK + PETZCOUNTER_CITY_SHEEPKILLER;
+		return PETZCOUNTER_City_Murder + PETZCOUNTER_City_Theft + PETZCOUNTER_City_Attack + PETZCOUNTER_City_Sheepkiller;
 	};
-	if(c_npcbelongstomonastery(slf))
+	if(C_NpcBelongsToMonastery(slf))
 	{
-		return PETZCOUNTER_MONASTERY_MURDER + PETZCOUNTER_MONASTERY_THEFT + PETZCOUNTER_MONASTERY_ATTACK + PETZCOUNTER_MONASTERY_SHEEPKILLER;
+		return PETZCOUNTER_Monastery_Murder + PETZCOUNTER_Monastery_Theft + PETZCOUNTER_Monastery_Attack + PETZCOUNTER_Monastery_Sheepkiller;
 	};
-	if(c_npcbelongstofarm(slf))
+	if(C_NpcBelongsToFarm(slf))
 	{
-		return PETZCOUNTER_FARM_MURDER + PETZCOUNTER_FARM_THEFT + PETZCOUNTER_FARM_ATTACK + PETZCOUNTER_FARM_SHEEPKILLER;
+		return PETZCOUNTER_Farm_Murder + PETZCOUNTER_Farm_Theft + PETZCOUNTER_Farm_Attack + PETZCOUNTER_Farm_Sheepkiller;
 	};
 	return 0;
 };

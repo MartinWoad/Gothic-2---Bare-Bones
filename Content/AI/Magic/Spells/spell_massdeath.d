@@ -1,18 +1,18 @@
 
-const int SPL_COST_MASSDEATH = 150;
-const int SPL_DAMAGE_MASSDEATH = 400;
+const int SPL_Cost_MassDeath = 150;
+const int SPL_Damage_MassDeath = 400;
 
-instance SPELL_MASSDEATH(C_SPELL_PROTO)
+instance Spell_MassDeath(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	damage_per_level = SPL_DAMAGE_MASSDEATH;
-	targetcollectalgo = TARGET_COLLECT_NONE;
+	damage_per_level = SPL_Damage_MassDeath;
+	targetCollectAlgo = TARGET_COLLECT_NONE;
 };
 
 
-func int spell_logic_massdeath(var int manainvested)
+func int Spell_Logic_Massdeath(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_MASSDEATH)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_MassDeath)
 	{
 		return SPL_SENDCAST;
 	}
@@ -22,8 +22,8 @@ func int spell_logic_massdeath(var int manainvested)
 	};
 };
 
-func void spell_cast_massdeath()
+func void Spell_Cast_Massdeath()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_MASSDEATH;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_MassDeath;
 };
 

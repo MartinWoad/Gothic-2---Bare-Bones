@@ -1,28 +1,28 @@
 
-instance BDT_1035_FLUECHTLING(NPC_DEFAULT)
+instance BDT_1035_Fluechtling(Npc_Default)
 {
-	name[0] = NAME_FLUECHTLING;
+	name[0] = NAME_Fluechtling;
 	guild = GIL_OUT;
 	id = 1035;
 	voice = 7;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_sld_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_B_NORMAL_ORIK,BODYTEX_B,4845);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_B_Normal_Orik,BodyTex_B,ITAR_Leather_L);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,60);
-	daily_routine = rtn_start_1035;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,60);
+	daily_routine = Rtn_Start_1035;
 };
 
 
-func void rtn_start_1035()
+func void Rtn_Start_1035()
 {
-	ta_smalltalk(8,0,23,0,"NW_BIGFARM_HOUSE_OUT_05");
-	ta_smalltalk(23,0,8,0,"NW_BIGFARM_HOUSE_OUT_05");
+	TA_Smalltalk(8,0,23,0,"NW_BIGFARM_HOUSE_OUT_05");
+	TA_Smalltalk(23,0,8,0,"NW_BIGFARM_HOUSE_OUT_05");
 };
 

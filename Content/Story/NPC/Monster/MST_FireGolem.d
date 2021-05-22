@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_FIREGOLEM(C_NPC)
+prototype Mst_Default_FireGolem(C_Npc)
 {
 	name[0] = "Ognisty Golem";
 	guild = GIL_FIREGOLEM;
@@ -21,14 +21,14 @@ prototype MST_DEFAULT_FIREGOLEM(C_NPC)
 	fight_tactic = FAI_STONEGOLEM;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_firegolem()
+func void B_SetVisuals_FireGolem()
 {
 	Mdl_SetVisual(self,"Golem.mds");
 	Mdl_ApplyOverlayMds(self,"Golem_Firegolem.mds");
@@ -36,9 +36,9 @@ func void b_setvisuals_firegolem()
 };
 
 
-instance FIREGOLEM(MST_DEFAULT_FIREGOLEM)
+instance FireGolem(Mst_Default_FireGolem)
 {
-	b_setvisuals_firegolem();
+	B_SetVisuals_FireGolem();
 	Npc_SetToFistMode(self);
 };
 

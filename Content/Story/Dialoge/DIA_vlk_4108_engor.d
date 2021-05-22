@@ -1,110 +1,110 @@
 
-instance DIA_ENGOR_EXIT(C_INFO)
+instance DIA_Engor_EXIT(C_Info)
 {
-	npc = vlk_4108_engor;
+	npc = VLK_4108_Engor;
 	nr = 999;
-	condition = dia_engor_exit_condition;
-	information = dia_engor_exit_info;
+	condition = DIA_Engor_EXIT_Condition;
+	information = DIA_Engor_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_engor_exit_condition()
+func int DIA_Engor_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_engor_exit_info()
+func void DIA_Engor_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ENGOR_HALLO(C_INFO)
+instance DIA_Engor_HALLO(C_Info)
 {
-	npc = vlk_4108_engor;
+	npc = VLK_4108_Engor;
 	nr = 2;
-	condition = dia_engor_hallo_condition;
-	information = dia_engor_hallo_info;
+	condition = DIA_Engor_HALLO_Condition;
+	information = DIA_Engor_HALLO_Info;
 	important = TRUE;
 };
 
 
-func int dia_engor_hallo_condition()
+func int DIA_Engor_HALLO_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engor_hallo_info()
+func void DIA_Engor_HALLO_Info()
 {
 	AI_Output(self,other,"DIA_Engor_HALLO_13_00");	//Ach, wiêc to ty jesteœ tym cz³owiekiem, który przekroczy³ prze³êcz.
 	AI_Output(other,self,"DIA_Engor_HALLO_15_01");	//Tak.
 	AI_Output(self,other,"DIA_Engor_HALLO_13_02");	//Wspaniale - jestem Engor. Zajmujê siê t¹ ekspedycj¹.
 	AI_Output(self,other,"DIA_Engor_HALLO_13_03");	//Tylko sobie nie myœl, ¿e mo¿esz dostaæ cokolwiek za darmo!
 	AI_Output(self,other,"DIA_Engor_HALLO_13_04");	//Z drugiej strony, jeœli masz w kieszeniach trochê z³ota, zawsze jestem gotów ubiæ jakiœ interes.
-	Log_CreateTopic(TOPIC_TRADER_OC,LOG_NOTE);
-	b_logentry(TOPIC_TRADER_OC,"Engor zarz¹dza zapasami na zamku. Od czasu do czasu zdarza mu siê robiæ ma³e interesy na boku.");
+	Log_CreateTopic(TOPIC_Trader_OC,LOG_NOTE);
+	B_LogEntry(TOPIC_Trader_OC,"Engor zarz¹dza zapasami na zamku. Od czasu do czasu zdarza mu siê robiæ ma³e interesy na boku.");
 };
 
 
-instance DIA_ENGOR_HANDELN(C_INFO)
+instance DIA_Engor_HANDELN(C_Info)
 {
-	npc = vlk_4108_engor;
+	npc = VLK_4108_Engor;
 	nr = 10;
-	condition = dia_engor_handeln_condition;
-	information = dia_engor_handeln_info;
+	condition = DIA_Engor_HANDELN_Condition;
+	information = DIA_Engor_HANDELN_Info;
 	permanent = TRUE;
 	trade = TRUE;
 	description = "Poka¿ mi swoje towary.";
 };
 
 
-func int dia_engor_handeln_condition()
+func int DIA_Engor_HANDELN_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_engor_hallo))
+	if(Npc_KnowsInfo(hero,DIA_Engor_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engor_handeln_info()
+func void DIA_Engor_HANDELN_Info()
 {
-	var int mcbolzenamount;
-	var int mcarrowamount;
-	b_givetradeinv(self);
-	Npc_RemoveInvItems(self,itrw_bolt,Npc_HasItems(self,itrw_bolt));
-	mcbolzenamount = KAPITEL * 50;
-	CreateInvItems(self,itrw_bolt,mcbolzenamount);
-	Npc_RemoveInvItems(self,itrw_arrow,Npc_HasItems(self,itrw_arrow));
-	mcarrowamount = KAPITEL * 50;
-	CreateInvItems(self,itrw_arrow,mcarrowamount);
+	var int McBolzenAmount;
+	var int McArrowAmount;
+	B_GiveTradeInv(self);
+	Npc_RemoveInvItems(self,ItRw_Bolt,Npc_HasItems(self,ItRw_Bolt));
+	McBolzenAmount = Kapitel * 50;
+	CreateInvItems(self,ItRw_Bolt,McBolzenAmount);
+	Npc_RemoveInvItems(self,ItRw_Arrow,Npc_HasItems(self,ItRw_Arrow));
+	McArrowAmount = Kapitel * 50;
+	CreateInvItems(self,ItRw_Arrow,McArrowAmount);
 	AI_Output(other,self,"DIA_Engor_HANDELN_15_00");	//Poka¿ mi swoje towary.
 };
 
 
-instance DIA_ENGOR_ABOUTPARLAF(C_INFO)
+instance DIA_Engor_ABOUTPARLAF(C_Info)
 {
-	npc = vlk_4108_engor;
+	npc = VLK_4108_Engor;
 	nr = 2;
-	condition = dia_engor_aboutparlaf_condition;
-	information = dia_engor_aboutparlaf_info;
+	condition = DIA_Engor_ABOUTPARLAF_Condition;
+	information = DIA_Engor_ABOUTPARLAF_Info;
 	description = "Podobno to ty jesteœ odpowiedzialny za rozdzielanie racji.";
 };
 
 
-func int dia_engor_aboutparlaf_condition()
+func int DIA_Engor_ABOUTPARLAF_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_parlaf_engor))
+	if(Npc_KnowsInfo(hero,DIA_Parlaf_ENGOR))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engor_aboutparlaf_info()
+func void DIA_Engor_ABOUTPARLAF_Info()
 {
 	AI_Output(other,self,"DIA_Engor_ABOUTPARLAF_15_00");	//Podobno to ty jesteœ odpowiedzialny za rozdzielanie racji.
 	AI_Output(self,other,"DIA_Engor_ABOUTPARLAF_13_01");	//Zgadza siê. A co? Mo¿e mam ciê jeszcze nakarmiæ?
@@ -112,18 +112,18 @@ func void dia_engor_aboutparlaf_info()
 };
 
 
-instance DIA_ENGOR_RUESTUNG(C_INFO)
+instance DIA_Engor_Ruestung(C_Info)
 {
-	npc = vlk_4108_engor;
+	npc = VLK_4108_Engor;
 	nr = 2;
-	condition = dia_engor_ruestung_condition;
-	information = dia_engor_ruestung_info;
+	condition = DIA_Engor_Ruestung_Condition;
+	information = DIA_Engor_Ruestung_Info;
 	permanent = FALSE;
 	description = "Masz dla mnie coœ ciekawego?";
 };
 
 
-func int dia_engor_ruestung_condition()
+func int DIA_Engor_Ruestung_Condition()
 {
 	if(other.guild == GIL_MIL)
 	{
@@ -131,7 +131,7 @@ func int dia_engor_ruestung_condition()
 	};
 };
 
-func void dia_engor_ruestung_info()
+func void DIA_Engor_Ruestung_Info()
 {
 	AI_Output(other,self,"DIA_Engor_Ruestung_15_00");	//Masz dla mnie coœ ciekawego?
 	AI_Output(self,other,"DIA_Engor_Ruestung_13_01");	//Mogê ci za³atwiæ ciê¿k¹ zbrojê.
@@ -139,35 +139,35 @@ func void dia_engor_ruestung_info()
 };
 
 
-instance DIA_ENGOR_RSKAUFEN(C_INFO)
+instance DIA_Engor_RSkaufen(C_Info)
 {
-	npc = vlk_4108_engor;
+	npc = VLK_4108_Engor;
 	nr = 2;
-	condition = dia_engor_rskaufen_condition;
-	information = dia_engor_rskaufen_info;
+	condition = DIA_Engor_RSkaufen_Condition;
+	information = DIA_Engor_RSkaufen_Info;
 	permanent = TRUE;
 	description = "Kup ciê¿ki pancerz stra¿y. 2500 sztuk z³ota.";
 };
 
 
-var int dia_engor_rskaufen_perm;
+var int DIA_Engor_RSkaufen_perm;
 
-func int dia_engor_rskaufen_condition()
+func int DIA_Engor_RSkaufen_Condition()
 {
-	if((other.guild == GIL_MIL) && Npc_KnowsInfo(other,dia_engor_ruestung) && (DIA_ENGOR_RSKAUFEN_PERM == FALSE))
+	if((other.guild == GIL_MIL) && Npc_KnowsInfo(other,DIA_Engor_Ruestung) && (DIA_Engor_RSkaufen_perm == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engor_rskaufen_info()
+func void DIA_Engor_RSkaufen_Info()
 {
-	if(b_giveinvitems(other,self,5113,2500))
+	if(B_GiveInvItems(other,self,ItMi_Gold,2500))
 	{
 		AI_Output(other,self,"DIA_Engor_RSkaufen_15_00");	//Daj mi zbrojê.
 		AI_Output(self,other,"DIA_Engor_RSkaufen_13_01");	//Proszê. Zapewnia doskona³¹ ochronê.
-		b_giveinvitems(self,other,4827,1);
-		DIA_ENGOR_RSKAUFEN_PERM = TRUE;
+		B_GiveInvItems(self,other,ItAr_MIL_M,1);
+		DIA_Engor_RSkaufen_perm = TRUE;
 	}
 	else
 	{
@@ -176,166 +176,166 @@ func void dia_engor_rskaufen_info()
 };
 
 
-instance DIA_ENGOR_HELP(C_INFO)
+instance DIA_Engor_HELP(C_Info)
 {
-	npc = vlk_4108_engor;
+	npc = VLK_4108_Engor;
 	nr = 3;
-	condition = dia_engor_help_condition;
-	information = dia_engor_help_info;
+	condition = DIA_Engor_HELP_Condition;
+	information = DIA_Engor_HELP_Info;
 	description = "Byæ mo¿e bêdê móg³ pomóc.";
 };
 
 
-func int dia_engor_help_condition()
+func int DIA_Engor_HELP_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_engor_aboutparlaf))
+	if(Npc_KnowsInfo(hero,DIA_Engor_ABOUTPARLAF))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engor_help_info()
+func void DIA_Engor_HELP_Info()
 {
 	AI_Output(other,self,"DIA_Engor_HELP_15_00");	//Byæ mo¿e bêdê móg³ pomóc.
 	AI_Output(self,other,"DIA_Engor_HELP_13_01");	//Hmmm... Pewnie, czemu nie? Przyda mi siê pomoc.
 	AI_Output(other,self,"DIA_Engor_HELP_15_02");	//Co jest do zrobienia?
 	AI_Output(self,other,"DIA_Engor_HELP_13_03");	//Nasze zapasy ¿ywnoœci s¹ niewielkie. Szczególnie potrzeba nam miêsa.
 	AI_Output(self,other,"DIA_Engor_HELP_13_04");	//Zatem jeœli móg³byœ dostarczyæ nam trochê miêsa, surowego lub gotowanego, szynki lub kie³basy, bylibyœmy ci bardzo wdziêczni. Co ty na to, pomo¿esz nam?
-	Info_ClearChoices(dia_engor_help);
-	Info_AddChoice(dia_engor_help,"Nie mam na to czasu.",dia_engor_help_no);
-	Info_AddChoice(dia_engor_help,"Nie martw siê, przyniosê ci miêso.",dia_engor_help_yes);
+	Info_ClearChoices(DIA_Engor_HELP);
+	Info_AddChoice(DIA_Engor_HELP,"Nie mam na to czasu.",DIA_Engor_HELP_NO);
+	Info_AddChoice(DIA_Engor_HELP,"Nie martw siê, przyniosê ci miêso.",DIA_Engor_HELP_YES);
 };
 
-func void dia_engor_help_no()
+func void DIA_Engor_HELP_NO()
 {
 	AI_Output(other,self,"DIA_Engor_HELP_NO_15_00");	//Nie mam na to czasu.
 	AI_Output(self,other,"DIA_Engor_HELP_NO_13_01");	//Wiêc czemu marnujesz mój?
-	MIS_ENGOR_BRINGMEAT = LOG_OBSOLETE;
+	MIS_Engor_BringMeat = LOG_OBSOLETE;
 	AI_StopProcessInfos(self);
 };
 
-func void dia_engor_help_yes()
+func void DIA_Engor_HELP_YES()
 {
 	AI_Output(other,self,"DIA_Engor_HELP_YES_15_00");	//Nie martw siê, przyniosê ci miêso.
 	AI_Output(self,other,"DIA_Engor_HELP_YES_13_01");	//Dwa tuziny sztuk miêsa pozwoli³yby mi nape³niæ kilka g³odnych brzuchów. Wróæ, kiedy ju¿ zdobêdziesz miêso. A teraz muszê wracaæ do pracy.
-	Log_CreateTopic(TOPIC_BRINGMEAT,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_BRINGMEAT,LOG_RUNNING);
-	b_logentry(TOPIC_BRINGMEAT,"Engor potrzebuje dwóch tuzinów kawa³ków miêsa, aby wy¿ywiæ swoich ludzi.");
-	b_logentry(TOPIC_BRINGMEAT,"Niewa¿ne, czy bêdzie to kie³basa, szynka, czy sma¿one albo surowe miêso. Chodzi tylko o to, ¿eby jego ch³opcy mogli coœ wrzuciæ na z¹b.");
-	MIS_ENGOR_BRINGMEAT = LOG_RUNNING;
+	Log_CreateTopic(TOPIC_BringMeat,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_BringMeat,LOG_Running);
+	B_LogEntry(TOPIC_BringMeat,"Engor potrzebuje dwóch tuzinów kawa³ków miêsa, aby wy¿ywiæ swoich ludzi.");
+	B_LogEntry(TOPIC_BringMeat,"Niewa¿ne, czy bêdzie to kie³basa, szynka, czy sma¿one albo surowe miêso. Chodzi tylko o to, ¿eby jego ch³opcy mogli coœ wrzuciæ na z¹b.");
+	MIS_Engor_BringMeat = LOG_Running;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ENGOR_BRINGMEAT(C_INFO)
+instance DIA_Engor_BRINGMEAT(C_Info)
 {
-	npc = vlk_4108_engor;
+	npc = VLK_4108_Engor;
 	nr = 4;
-	condition = dia_engor_bringmeat_condition;
-	information = dia_engor_bringmeat_info;
+	condition = DIA_Engor_BRINGMEAT_Condition;
+	information = DIA_Engor_BRINGMEAT_Info;
 	permanent = TRUE;
 	description = "Proszê, przynios³em ci coœ (oddaj miêso).";
 };
 
 
-func int dia_engor_bringmeat_condition()
+func int DIA_Engor_BRINGMEAT_Condition()
 {
-	if((MIS_ENGOR_BRINGMEAT == LOG_RUNNING) && (MEAT_COUNTER < MEAT_AMOUNT) && ((Npc_HasItems(hero,itfo_bacon) >= 1) || (Npc_HasItems(hero,itfomuttonraw) >= 1) || (Npc_HasItems(hero,itfomutton) >= 1) || (Npc_HasItems(hero,itfo_sausage) >= 1)))
+	if((MIS_Engor_BringMeat == LOG_Running) && (Meat_Counter < Meat_Amount) && ((Npc_HasItems(hero,ItFo_Bacon) >= 1) || (Npc_HasItems(hero,ItFoMuttonRaw) >= 1) || (Npc_HasItems(hero,ItFoMutton) >= 1) || (Npc_HasItems(hero,ItFo_Sausage) >= 1)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engor_bringmeat_info()
+func void DIA_Engor_BRINGMEAT_Info()
 {
 	AI_Output(other,self,"DIA_Engor_BRINGMEAT_15_00");	//Proszê, przynios³em ci coœ.
-	if(Npc_HasItems(hero,itfomuttonraw) >= 1)
+	if(Npc_HasItems(hero,ItFoMuttonRaw) >= 1)
 	{
-		if((Npc_HasItems(hero,itfomuttonraw) >= MEAT_AMOUNT) && (MEAT_COUNTER < MEAT_AMOUNT))
+		if((Npc_HasItems(hero,ItFoMuttonRaw) >= Meat_Amount) && (Meat_Counter < Meat_Amount))
 		{
-			b_giveinvitems(hero,self,4902,MEAT_AMOUNT - MEAT_COUNTER);
-			MEAT_COUNTER = MEAT_COUNTER + (MEAT_AMOUNT - MEAT_COUNTER);
+			B_GiveInvItems(hero,self,ItFoMuttonRaw,Meat_Amount - Meat_Counter);
+			Meat_Counter = Meat_Counter + (Meat_Amount - Meat_Counter);
 		}
-		else if((Npc_HasItems(hero,itfomuttonraw) < MEAT_AMOUNT) && (MEAT_COUNTER < MEAT_AMOUNT))
+		else if((Npc_HasItems(hero,ItFoMuttonRaw) < Meat_Amount) && (Meat_Counter < Meat_Amount))
 		{
-			MEAT_COUNTER = MEAT_COUNTER + Npc_HasItems(hero,itfomuttonraw);
-			b_giveinvitems(hero,self,4902,Npc_HasItems(hero,itfomuttonraw));
+			Meat_Counter = Meat_Counter + Npc_HasItems(hero,ItFoMuttonRaw);
+			B_GiveInvItems(hero,self,ItFoMuttonRaw,Npc_HasItems(hero,ItFoMuttonRaw));
 		};
 	};
-	if(Npc_HasItems(hero,itfomutton) >= 1)
+	if(Npc_HasItems(hero,ItFoMutton) >= 1)
 	{
-		if((Npc_HasItems(hero,itfomutton) >= MEAT_AMOUNT) && (MEAT_COUNTER < MEAT_AMOUNT))
+		if((Npc_HasItems(hero,ItFoMutton) >= Meat_Amount) && (Meat_Counter < Meat_Amount))
 		{
-			b_giveinvitems(hero,self,4904,MEAT_AMOUNT - MEAT_COUNTER);
-			MEAT_COUNTER = MEAT_COUNTER + (MEAT_AMOUNT - MEAT_COUNTER);
+			B_GiveInvItems(hero,self,ItFoMutton,Meat_Amount - Meat_Counter);
+			Meat_Counter = Meat_Counter + (Meat_Amount - Meat_Counter);
 		}
-		else if((Npc_HasItems(hero,itfomutton) < MEAT_AMOUNT) && (MEAT_COUNTER < MEAT_AMOUNT))
+		else if((Npc_HasItems(hero,ItFoMutton) < Meat_Amount) && (Meat_Counter < Meat_Amount))
 		{
-			MEAT_COUNTER = MEAT_COUNTER + Npc_HasItems(hero,itfomutton);
-			b_giveinvitems(hero,self,4904,Npc_HasItems(hero,itfomutton));
+			Meat_Counter = Meat_Counter + Npc_HasItems(hero,ItFoMutton);
+			B_GiveInvItems(hero,self,ItFoMutton,Npc_HasItems(hero,ItFoMutton));
 		};
 	};
-	if(Npc_HasItems(hero,itfo_bacon) >= 1)
+	if(Npc_HasItems(hero,ItFo_Bacon) >= 1)
 	{
-		if((Npc_HasItems(hero,itfo_bacon) >= MEAT_AMOUNT) && (MEAT_COUNTER < MEAT_AMOUNT))
+		if((Npc_HasItems(hero,ItFo_Bacon) >= Meat_Amount) && (Meat_Counter < Meat_Amount))
 		{
-			b_giveinvitems(hero,self,4896,MEAT_AMOUNT - MEAT_COUNTER);
-			MEAT_COUNTER = MEAT_COUNTER + (MEAT_AMOUNT - MEAT_COUNTER);
+			B_GiveInvItems(hero,self,ItFo_Bacon,Meat_Amount - Meat_Counter);
+			Meat_Counter = Meat_Counter + (Meat_Amount - Meat_Counter);
 		}
-		else if((Npc_HasItems(hero,itfo_bacon) < MEAT_AMOUNT) && (MEAT_COUNTER < MEAT_AMOUNT))
+		else if((Npc_HasItems(hero,ItFo_Bacon) < Meat_Amount) && (Meat_Counter < Meat_Amount))
 		{
-			MEAT_COUNTER = MEAT_COUNTER + Npc_HasItems(hero,itfo_bacon);
-			b_giveinvitems(hero,self,4896,Npc_HasItems(hero,itfo_bacon));
+			Meat_Counter = Meat_Counter + Npc_HasItems(hero,ItFo_Bacon);
+			B_GiveInvItems(hero,self,ItFo_Bacon,Npc_HasItems(hero,ItFo_Bacon));
 		};
 	};
-	if(Npc_HasItems(hero,itfo_sausage) >= 1)
+	if(Npc_HasItems(hero,ItFo_Sausage) >= 1)
 	{
-		if((Npc_HasItems(hero,itfo_sausage) >= MEAT_AMOUNT) && (MEAT_COUNTER < MEAT_AMOUNT))
+		if((Npc_HasItems(hero,ItFo_Sausage) >= Meat_Amount) && (Meat_Counter < Meat_Amount))
 		{
-			b_giveinvitems(hero,self,4914,MEAT_AMOUNT - MEAT_COUNTER);
-			MEAT_COUNTER = MEAT_COUNTER + (MEAT_AMOUNT - MEAT_COUNTER);
+			B_GiveInvItems(hero,self,ItFo_Sausage,Meat_Amount - Meat_Counter);
+			Meat_Counter = Meat_Counter + (Meat_Amount - Meat_Counter);
 		}
-		else if((Npc_HasItems(hero,itfo_sausage) < MEAT_AMOUNT) && (MEAT_COUNTER < MEAT_AMOUNT))
+		else if((Npc_HasItems(hero,ItFo_Sausage) < Meat_Amount) && (Meat_Counter < Meat_Amount))
 		{
-			MEAT_COUNTER = MEAT_COUNTER + Npc_HasItems(hero,itfo_sausage);
-			b_giveinvitems(hero,self,4914,Npc_HasItems(hero,itfo_sausage));
+			Meat_Counter = Meat_Counter + Npc_HasItems(hero,ItFo_Sausage);
+			B_GiveInvItems(hero,self,ItFo_Sausage,Npc_HasItems(hero,ItFo_Sausage));
 		};
 	};
-	if(MEAT_AMOUNT > MEAT_COUNTER)
+	if(Meat_Amount > Meat_Counter)
 	{
 		AI_Output(self,other,"DIA_Engor_BRINGMEAT_13_01");	//NieŸle jak na pocz¹tek, ale potrzeba mi wiêcej.
 	};
-	if(MEAT_COUNTER == MEAT_AMOUNT)
+	if(Meat_Counter == Meat_Amount)
 	{
 		AI_Output(self,other,"DIA_Engor_BRINGMEAT_13_02");	//Przynios³eœ wystarczaj¹co du¿o miêsa. To powinno wystarczyæ na jakiœ czas.
 		AI_Output(self,other,"DIA_Engor_BRINGMEAT_13_03");	//Ale nie myœl sobie, ¿e cokolwiek dostaniesz za darmo!
-		MIS_ENGOR_BRINGMEAT = LOG_SUCCESS;
-		b_giveplayerxp(XP_BRINGMEAT);
-		Log_AddEntry(TOPIC_BRINGMEAT,"Engor dosta³ miêso. Ma je rozdzieliæ pomiêdzy swoich ludzi.");
+		MIS_Engor_BringMeat = LOG_SUCCESS;
+		B_GivePlayerXP(XP_BringMeat);
+		Log_AddEntry(TOPIC_BringMeat,"Engor dosta³ miêso. Ma je rozdzieliæ pomiêdzy swoich ludzi.");
 	};
 };
 
 
-instance DIA_ENGOR_BUSINESS(C_INFO)
+instance DIA_Engor_Business(C_Info)
 {
-	npc = vlk_4108_engor;
+	npc = VLK_4108_Engor;
 	nr = 1;
-	condition = dia_engor_business_condition;
-	information = dia_engor_business_info;
+	condition = DIA_Engor_Business_Condition;
+	information = DIA_Engor_Business_Info;
 	permanent = FALSE;
 	description = "Jak idzie interes?";
 };
 
 
-func int dia_engor_business_condition()
+func int DIA_Engor_Business_Condition()
 {
-	if((KAPITEL >= 4) && (MIS_ENGOR_BRINGMEAT == LOG_SUCCESS))
+	if((Kapitel >= 4) && (MIS_Engor_BringMeat == LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engor_business_info()
+func void DIA_Engor_Business_Info()
 {
 	AI_Output(other,self,"DIA_Engor_Business_15_00");	//Jak interesy?
 	if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL) || (hero.guild == GIL_KDF))
@@ -350,50 +350,50 @@ func void dia_engor_business_info()
 };
 
 
-instance DIA_ENGOR_PICKPOCKET(C_INFO)
+instance DIA_Engor_PICKPOCKET(C_Info)
 {
-	npc = vlk_4108_engor;
+	npc = VLK_4108_Engor;
 	nr = 900;
-	condition = dia_engor_pickpocket_condition;
-	information = dia_engor_pickpocket_info;
+	condition = DIA_Engor_PICKPOCKET_Condition;
+	information = DIA_Engor_PICKPOCKET_Info;
 	permanent = TRUE;
 	description = "(Kradzie¿ tej mapy bêdzie ryzykowna)";
 };
 
 
-func int dia_engor_pickpocket_condition()
+func int DIA_Engor_PICKPOCKET_Condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == FALSE) && (Npc_HasItems(self,itwr_map_oldworld) >= 1) && (other.attribute[ATR_DEXTERITY] >= (40 - THEFTDIFF)))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_HasItems(self,ItWr_Map_OldWorld) >= 1) && (other.attribute[ATR_DEXTERITY] >= (40 - Theftdiff)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_engor_pickpocket_info()
+func void DIA_Engor_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_engor_pickpocket);
-	Info_AddChoice(dia_engor_pickpocket,DIALOG_BACK,dia_engor_pickpocket_back);
-	Info_AddChoice(dia_engor_pickpocket,DIALOG_PICKPOCKET,dia_engor_pickpocket_doit);
+	Info_ClearChoices(DIA_Engor_PICKPOCKET);
+	Info_AddChoice(DIA_Engor_PICKPOCKET,Dialog_Back,DIA_Engor_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Engor_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Engor_PICKPOCKET_DoIt);
 };
 
-func void dia_engor_pickpocket_doit()
+func void DIA_Engor_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 40)
 	{
-		b_giveinvitems(self,other,5627,1);
-		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
-		b_giveplayerxp(XP_AMBIENT);
-		Info_ClearChoices(dia_engor_pickpocket);
+		B_GiveInvItems(self,other,ItWr_Map_OldWorld,1);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+		B_GivePlayerXP(XP_Ambient);
+		Info_ClearChoices(DIA_Engor_PICKPOCKET);
 	}
 	else
 	{
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_THEFT,1);
+		B_Attack(self,other,AR_Theft,1);
 	};
 };
 
-func void dia_engor_pickpocket_back()
+func void DIA_Engor_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_engor_pickpocket);
+	Info_ClearChoices(DIA_Engor_PICKPOCKET);
 };
 

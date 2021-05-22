@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_WARAN(C_NPC)
+prototype Mst_Default_Waran(C_Npc)
 {
 	name[0] = "Jaszczur";
 	guild = GIL_WARAN;
@@ -21,24 +21,24 @@ prototype MST_DEFAULT_WARAN(C_NPC)
 	fight_tactic = FAI_WARAN;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_waran()
+func void B_SetVisuals_Waran()
 {
 	Mdl_SetVisual(self,"Waran.mds");
 	Mdl_SetVisualBody(self,"War_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance WARAN(MST_DEFAULT_WARAN)
+instance Waran(Mst_Default_Waran)
 {
-	b_setvisuals_waran();
+	B_SetVisuals_Waran();
 	Npc_SetToFistMode(self);
 };
 

@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_SCAVENGER_DEMON(C_NPC)
+prototype Mst_Default_Scavenger_Demon(C_Npc)
 {
 	name[0] = "Œcierwojad";
 	guild = GIL_SCAVENGER;
@@ -21,27 +21,27 @@ prototype MST_DEFAULT_SCAVENGER_DEMON(C_NPC)
 	fight_tactic = FAI_SCAVENGER;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_SLEEPSTART] = 22;
-	aivar[AIV_MM_SLEEPEND] = 6;
-	aivar[AIV_MM_EATGROUNDSTART] = 6;
-	aivar[AIV_MM_EATGROUNDEND] = 22;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_SleepStart] = 22;
+	aivar[AIV_MM_SleepEnd] = 6;
+	aivar[AIV_MM_EatGroundStart] = 6;
+	aivar[AIV_MM_EatGroundEnd] = 22;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_scavenger_demon()
+func void B_SetVisuals_Scavenger_Demon()
 {
 	Mdl_SetVisual(self,"Scavenger.mds");
 	Mdl_SetVisualBody(self,"Scavenger_Demon_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance SCAVENGER_DEMON(MST_DEFAULT_SCAVENGER_DEMON)
+instance Scavenger_Demon(Mst_Default_Scavenger_Demon)
 {
-	b_setvisuals_scavenger_demon();
+	B_SetVisuals_Scavenger_Demon();
 	Npc_SetToFistMode(self);
 };
 

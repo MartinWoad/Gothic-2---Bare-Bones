@@ -1,68 +1,68 @@
 
-instance DIA_HARAD_EXIT(C_INFO)
+instance DIA_Harad_EXIT(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 999;
-	condition = dia_harad_exit_condition;
-	information = dia_harad_exit_info;
+	condition = DIA_Harad_EXIT_Condition;
+	information = DIA_Harad_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_harad_exit_condition()
+func int DIA_Harad_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_harad_exit_info()
+func void DIA_Harad_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HARAD_HALLO(C_INFO)
+instance DIA_Harad_Hallo(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 2;
-	condition = dia_harad_hallo_condition;
-	information = dia_harad_hallo_info;
+	condition = DIA_Harad_Hallo_Condition;
+	information = DIA_Harad_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_harad_hallo_condition()
+func int DIA_Harad_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (self.aivar[AIV_TALKEDTOPLAYER] == TRUE))
+	if(Npc_IsInState(self,ZS_Talk) && (self.aivar[AIV_TalkedToPlayer] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_harad_hallo_info()
+func void DIA_Harad_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Harad_Hallo_12_00");	//Czego chcesz?
 };
 
 
-instance DIA_HARAD_ARBEIT(C_INFO)
+instance DIA_Harad_Arbeit(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 1;
-	condition = dia_harad_arbeit_condition;
-	information = dia_harad_arbeit_info;
+	condition = DIA_Harad_Arbeit_Condition;
+	information = DIA_Harad_Arbeit_Info;
 	permanent = FALSE;
 	description = "Szukam pracy.";
 };
 
 
-func int dia_harad_arbeit_condition()
+func int DIA_Harad_Arbeit_Condition()
 {
 	return TRUE;
 };
 
-func void dia_harad_arbeit_info()
+func void DIA_Harad_Arbeit_Info()
 {
 	AI_Output(other,self,"DIA_Harad_Arbeit_15_00");	//Szukam pracy!
 	AI_Output(self,other,"DIA_Harad_Arbeit_12_01");	//Hmmm... przyda³by mi siê nowy czeladnik.
@@ -75,32 +75,32 @@ func void dia_harad_arbeit_info()
 	{
 		AI_Output(self,other,"DIA_Harad_Arbeit_12_07");	//Nie przyjmê na czeladnika kogoœ, kto przyniesie mi hañbê, uciekaj¹c z miasta razem z kobietami i nierobami, zamiast walczyæ ramiê w ramiê z prawdziwymi mê¿czyznami.
 	};
-	Log_CreateTopic(TOPIC_LEHRLING,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_LEHRLING,LOG_RUNNING);
-	b_logentry(TOPIC_LEHRLING,"Jeœli zdo³am przekonaæ Harada, ¿e jestem godny zaufania, przyjmie mnie na swojego czeladnika.");
+	Log_CreateTopic(TOPIC_Lehrling,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Lehrling,LOG_Running);
+	B_LogEntry(TOPIC_Lehrling,"Jeœli zdo³am przekonaæ Harada, ¿e jestem godny zaufania, przyjmie mnie na swojego czeladnika.");
 };
 
 
-instance DIA_HARAD_TAUGENICHTS(C_INFO)
+instance DIA_Harad_Taugenichts(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 1;
-	condition = dia_harad_taugenichts_condition;
-	information = dia_harad_taugenichts_info;
+	condition = DIA_Harad_Taugenichts_Condition;
+	information = DIA_Harad_Taugenichts_Info;
 	permanent = FALSE;
 	description = "Nie jestem ¿adnym nierobem!";
 };
 
 
-func int dia_harad_taugenichts_condition()
+func int DIA_Harad_Taugenichts_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_harad_arbeit))
+	if(Npc_KnowsInfo(other,DIA_Harad_Arbeit))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_harad_taugenichts_info()
+func void DIA_Harad_Taugenichts_Info()
 {
 	AI_Output(other,self,"DIA_Harad_Taugenichts_15_00");	//Nie jestem ¿adnym nierobem!
 	AI_Output(self,other,"DIA_Harad_Taugenichts_12_01");	//To wielkie s³owa! Potrafisz je poprzeæ wielkimi czynami?
@@ -109,42 +109,42 @@ func void dia_harad_taugenichts_info()
 	AI_Output(self,other,"DIA_Harad_Taugenichts_12_04");	//W pobli¿u miasta widziano orków. Przy odrobinie szczêœcia nie bêdziesz musia³ d³ugo szukaæ.
 	AI_Output(self,other,"DIA_Harad_Taugenichts_12_05");	//Je¿eli uda ci siê pokonaæ jednego z nich, przyjmê ciê na czeladnika.
 	AI_Output(self,other,"DIA_Harad_Taugenichts_12_06");	//Zak³adaj¹c oczywiœcie, ¿e zgodz¹ siê na to pozostali mistrzowie.
-	MIS_HARAD_ORC = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_HARADORK,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_HARADORK,LOG_RUNNING);
-	b_logentry(TOPIC_HARADORK,"Poza murami miasta zauwa¿ono orka. Kowal Harad chce, abym go zabi³. Kiedy wykonam zadanie, mam przynieœæ jego broñ.");
+	MIS_Harad_Orc = LOG_Running;
+	Log_CreateTopic(TOPIC_HaradOrk,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_HaradOrk,LOG_Running);
+	B_LogEntry(TOPIC_HaradOrk,"Poza murami miasta zauwa¿ono orka. Kowal Harad chce, abym go zabi³. Kiedy wykonam zadanie, mam przynieœæ jego broñ.");
 };
 
 
-instance DIA_HARAD_ORCRUNNING(C_INFO)
+instance DIA_Harad_OrcRunning(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 1;
-	condition = dia_harad_orcrunning_condition;
-	information = dia_harad_orcrunning_info;
+	condition = DIA_Harad_OrcRunning_Condition;
+	information = DIA_Harad_OrcRunning_Info;
 	permanent = FALSE;
 	description = "Porozmawiajmy jeszcze raz o tej sprawie z orkiem…";
 };
 
 
-func int dia_harad_orcrunning_condition()
+func int DIA_Harad_OrcRunning_Condition()
 {
-	if((MIS_HARAD_ORC == LOG_RUNNING) && (HARAD_HAKONMISSION == FALSE))
+	if((MIS_Harad_Orc == LOG_Running) && (Harad_HakonMission == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_harad_orcrunning_info()
+func void DIA_Harad_OrcRunning_Info()
 {
 	AI_Output(other,self,"DIA_Harad_OrcRunning_15_00");	//Porozmawiajmy jeszcze raz o tej sprawie z orkiem...
 	AI_Output(self,other,"DIA_Harad_OrcRunning_12_01");	//Co?
-	Info_ClearChoices(dia_harad_orcrunning);
-	Info_AddChoice(dia_harad_orcrunning,"Twój ork jest ju¿ martwy!",dia_harad_orcrunning_done);
-	Info_AddChoice(dia_harad_orcrunning,"Ork to diabelnie twardy przeciwnik...",dia_harad_orcrunning_toohard);
+	Info_ClearChoices(DIA_Harad_OrcRunning);
+	Info_AddChoice(DIA_Harad_OrcRunning,"Twój ork jest ju¿ martwy!",DIA_Harad_OrcRunning_Done);
+	Info_AddChoice(DIA_Harad_OrcRunning,"Ork to diabelnie twardy przeciwnik...",DIA_Harad_OrcRunning_TooHard);
 };
 
-func void dia_harad_orcrunning_toohard()
+func void DIA_Harad_OrcRunning_TooHard()
 {
 	AI_Output(other,self,"DIA_Harad_OrcRunning_TooHard_15_00");	//Ork to diabelnie twardy przeciwnik...
 	AI_Output(self,other,"DIA_Harad_OrcRunning_TooHard_12_01");	//Hmmm... kiedy na ciebie patrzê, to myœlê, ¿e mo¿esz mieæ racjê. Na twoich koœciach nie ma za wiele miêsa. Ale potrafiê to zmieniæ.
@@ -154,85 +154,85 @@ func void dia_harad_orcrunning_toohard()
 	AI_Output(self,other,"DIA_Harad_OrcRunning_TooHard_12_05");	//Te bydlaki w³ócz¹ siê podobno gdzieœ za wschodni¹ bram¹.
 	AI_Output(self,other,"DIA_Harad_OrcRunning_TooHard_12_06");	//Te tchórzliwe ³otry raczej nie grzesz¹ rozumem.
 	AI_Output(self,other,"DIA_Harad_OrcRunning_TooHard_12_07");	//Dorwij ich! Wszystkich. Wtedy bêdê wiedzia³, ¿e przydasz nam siê w mieœcie.
-	HARAD_HAKONMISSION = TRUE;
-	Log_CreateTopic(TOPIC_LEHRLING,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_LEHRLING,LOG_RUNNING);
-	if(MIS_HAKONBANDITS != LOG_RUNNING)
+	Harad_HakonMission = TRUE;
+	Log_CreateTopic(TOPIC_Lehrling,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Lehrling,LOG_Running);
+	if(MIS_HakonBandits != LOG_Running)
 	{
-		b_logentry(TOPIC_LEHRLING,"Harad powiedzia³ mi, ¿e bandyci napadli poza murami miasta na kupca Hakona. Mo¿e od niego dowiem siê, gdzie mogê ich znaleŸæ.");
+		B_LogEntry(TOPIC_Lehrling,"Harad powiedzia³ mi, ¿e bandyci napadli poza murami miasta na kupca Hakona. Mo¿e od niego dowiem siê, gdzie mogê ich znaleŸæ.");
 	}
 	else
 	{
-		b_logentry(TOPIC_LEHRLING,"Harad powiedzia³ mi, ¿e bandyci napadli poza murami miasta na kupca Hakona. Jeœli zrobiê z nimi porz¹dek, udowodniê swoj¹ wartoœæ.");
+		B_LogEntry(TOPIC_Lehrling,"Harad powiedzia³ mi, ¿e bandyci napadli poza murami miasta na kupca Hakona. Jeœli zrobiê z nimi porz¹dek, udowodniê swoj¹ wartoœæ.");
 	};
-	Info_ClearChoices(dia_harad_orcrunning);
+	Info_ClearChoices(DIA_Harad_OrcRunning);
 };
 
-func void dia_harad_orcrunning_done()
+func void DIA_Harad_OrcRunning_Done()
 {
 	AI_Output(other,self,"DIA_Harad_OrcRunning_Done_15_00");	//Twój ork jest ju¿ martwy!
 	AI_Output(self,other,"DIA_Harad_OrcRunning_Done_12_01");	//Dobrze! Wiêc nie gadaj wiêcej i pozwól, ¿eby twoje czyny mówi³y za siebie.
-	Info_ClearChoices(dia_harad_orcrunning);
+	Info_ClearChoices(DIA_Harad_OrcRunning);
 };
 
 
-instance DIA_HARAD_ORCSUCCESS(C_INFO)
+instance DIA_Harad_OrcSuccess(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 1;
-	condition = dia_harad_orcsuccess_condition;
-	information = dia_harad_orcsuccess_info;
+	condition = DIA_Harad_OrcSuccess_Condition;
+	information = DIA_Harad_OrcSuccess_Info;
 	permanent = FALSE;
 	description = "Mam orkow¹ broñ, o któr¹ prosi³eœ.";
 };
 
 
-func int dia_harad_orcsuccess_condition()
+func int DIA_Harad_OrcSuccess_Condition()
 {
-	if(MIS_HARAD_ORC == LOG_RUNNING)
+	if(MIS_Harad_Orc == LOG_Running)
 	{
-		if((Npc_HasItems(other,itmw_2h_orcaxe_01) > 0) || (Npc_HasItems(other,itmw_2h_orcaxe_02) > 0) || (Npc_HasItems(other,itmw_2h_orcaxe_03) > 0) || (Npc_HasItems(other,itmw_2h_orcaxe_04) > 0) || (Npc_HasItems(other,itmw_2h_orcsword_01) > 0))
+		if((Npc_HasItems(other,ItMw_2H_OrcAxe_01) > 0) || (Npc_HasItems(other,ItMw_2H_OrcAxe_02) > 0) || (Npc_HasItems(other,ItMw_2H_OrcAxe_03) > 0) || (Npc_HasItems(other,ItMw_2H_OrcAxe_04) > 0) || (Npc_HasItems(other,ItMw_2H_OrcSword_01) > 0))
 		{
 			return TRUE;
 		};
 	};
 };
 
-func void dia_harad_orcsuccess_info()
+func void DIA_Harad_OrcSuccess_Info()
 {
 	AI_Output(other,self,"DIA_Harad_OrcSuccess_15_00");	//Mam orkow¹ broñ, o któr¹ prosi³eœ.
 	AI_Output(self,other,"DIA_Harad_OrcSuccess_12_01");	//Poka¿...
-	if(Npc_HasItems(other,itmw_2h_orcaxe_01) > 0)
+	if(Npc_HasItems(other,ItMw_2H_OrcAxe_01) > 0)
 	{
-		b_giveinvitems(other,self,4969,1);
+		B_GiveInvItems(other,self,ItMw_2H_OrcAxe_01,1);
 	}
-	else if(Npc_HasItems(other,itmw_2h_orcaxe_02) > 0)
+	else if(Npc_HasItems(other,ItMw_2H_OrcAxe_02) > 0)
 	{
-		b_giveinvitems(other,self,4970,1);
+		B_GiveInvItems(other,self,ItMw_2H_OrcAxe_02,1);
 	}
-	else if(Npc_HasItems(other,itmw_2h_orcaxe_03) > 0)
+	else if(Npc_HasItems(other,ItMw_2H_OrcAxe_03) > 0)
 	{
-		b_giveinvitems(other,self,4971,1);
+		B_GiveInvItems(other,self,ItMw_2H_OrcAxe_03,1);
 	}
-	else if(Npc_HasItems(other,itmw_2h_orcaxe_04) > 0)
+	else if(Npc_HasItems(other,ItMw_2H_OrcAxe_04) > 0)
 	{
-		b_giveinvitems(other,self,4972,1);
+		B_GiveInvItems(other,self,ItMw_2H_OrcAxe_04,1);
 	}
 	else
 	{
-		b_giveinvitems(other,self,4973,1);
+		B_GiveInvItems(other,self,ItMw_2H_OrcSword_01,1);
 	};
-	if(HARAD_HAKONMISSION == TRUE)
+	if(Harad_HakonMission == TRUE)
 	{
 		AI_Output(self,other,"DIA_Harad_OrcSuccess_12_02");	//JEDNAK TO ZROBI£EŒ? Znakomicie!
 	};
 	AI_Output(self,other,"DIA_Harad_OrcSuccess_12_03");	//Dawno ju¿ nie mia³em w rêkach takiej broni - podczas wojny z orkami by³em ¿o³nierzem.
 	AI_Output(self,other,"DIA_Harad_OrcSuccess_12_04");	//To by³y ciê¿kie czasy, mówiê ci.
-	if(PLAYER_ISAPPRENTICE == APP_HARAD)
+	if(Player_IsApprentice == APP_Harad)
 	{
 		AI_Output(self,other,"DIA_Harad_OrcSuccess_12_05");	//Wiedzia³em, co robiê, kiedy przyjmowa³em ciê na czeladnika. Dobra robota!
 	}
-	else if(PLAYER_ISAPPRENTICE == APP_NONE)
+	else if(Player_IsApprentice == APP_NONE)
 	{
 		AI_Output(self,other,"DIA_Harad_OrcSuccess_12_06");	//Myœla³em, ¿e nie zdo³asz tego dokonaæ. Jestem pod wra¿eniem.
 	}
@@ -241,44 +241,44 @@ func void dia_harad_orcsuccess_info()
 		AI_Output(self,other,"DIA_Harad_OrcSuccess_12_07");	//Szkoda, ¿e wybra³eœ inn¹ drogê.
 		AI_Output(self,other,"DIA_Harad_OrcSuccess_12_08");	//Przyda³byœ mi siê.
 	};
-	MIS_HARAD_ORC = LOG_SUCCESS;
-	b_giveplayerxp(XP_HARAD_ORC);
-	b_logentry(TOPIC_LEHRLING,"Harad przyjmie mnie na swojego czeladnika, jeœli zdobêdê poparcie pozosta³ych mistrzów.");
+	MIS_Harad_Orc = LOG_SUCCESS;
+	B_GivePlayerXP(XP_Harad_Orc);
+	B_LogEntry(TOPIC_Lehrling,"Harad przyjmie mnie na swojego czeladnika, jeœli zdobêdê poparcie pozosta³ych mistrzów.");
 };
 
 
-var int harad_startguild;
+var int Harad_StartGuild;
 
-instance DIA_HARAD_LEHRLING(C_INFO)
+instance DIA_Harad_LEHRLING(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 1;
-	condition = dia_harad_lehrling_condition;
-	information = dia_harad_lehrling_info;
+	condition = DIA_Harad_LEHRLING_Condition;
+	information = DIA_Harad_LEHRLING_Info;
 	permanent = TRUE;
 	description = "Kiedy mogê zacz¹æ pracê jako twój czeladnik?";
 };
 
 
-func int dia_harad_lehrling_condition()
+func int DIA_Harad_LEHRLING_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_harad_arbeit) && (PLAYER_ISAPPRENTICE == APP_NONE))
+	if(Npc_KnowsInfo(other,DIA_Harad_Arbeit) && (Player_IsApprentice == APP_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_harad_lehrling_info()
+func void DIA_Harad_LEHRLING_Info()
 {
 	var int stimmen;
 	stimmen = 0;
 	AI_Output(other,self,"DIA_Harad_LEHRLING_15_00");	//Kiedy mogê zacz¹æ pracê jako twój czeladnik?
-	if((MIS_HARAD_ORC == LOG_SUCCESS) || ((MIS_HAKONBANDITS == LOG_SUCCESS) && (HARAD_HAKONMISSION == TRUE)))
+	if((MIS_Harad_Orc == LOG_SUCCESS) || ((MIS_HakonBandits == LOG_SUCCESS) && (Harad_HakonMission == TRUE)))
 	{
-		if(MIS_HARAD_ORC == LOG_SUCCESS)
+		if(MIS_Harad_Orc == LOG_SUCCESS)
 		{
 			AI_Output(self,other,"DIA_Harad_LEHRLING_12_01");	//Przyda³by siê nam ktoœ, kto potrafi st³uc orka.
-			if(MIS_HAKONBANDITS == LOG_SUCCESS)
+			if(MIS_HakonBandits == LOG_SUCCESS)
 			{
 				AI_Output(self,other,"DIA_Harad_LEHRLING_12_02");	//Poza tym Hakon powiedzia³ mi, jak za³atwi³eœ sprawê z bandytami. Dobra robota!
 			};
@@ -290,9 +290,9 @@ func void dia_harad_lehrling_info()
 		AI_Output(self,other,"DIA_Harad_LEHRLING_12_04");	//Jeœli chodzi o mnie, mo¿esz zacz¹æ od zaraz.
 		stimmen = stimmen + 1;
 		AI_Output(self,other,"DIA_Harad_LEHRLING_12_05");	//Ale jeœli chodzi o pozosta³ych mistrzów...
-		if(thorben.aivar[AIV_TALKEDTOPLAYER] == TRUE)
+		if(Thorben.aivar[AIV_TalkedToPlayer] == TRUE)
 		{
-			if(MIS_THORBEN_GETBLESSINGS == LOG_SUCCESS)
+			if(MIS_Thorben_GetBlessings == LOG_SUCCESS)
 			{
 				AI_Output(self,other,"DIA_Harad_LEHRLING_12_06");	//Thorben da³ ci swoje b³ogos³awieñstwo.
 				stimmen = stimmen + 1;
@@ -306,10 +306,10 @@ func void dia_harad_lehrling_info()
 		{
 			AI_Output(self,other,"DIA_Harad_LEHRLING_12_08");	//Thorben powiedzia³, ¿e z nim nie rozmawia³eœ.
 		};
-		if(bosper.aivar[AIV_TALKEDTOPLAYER] == TRUE)
+		if(Bosper.aivar[AIV_TalkedToPlayer] == TRUE)
 		{
 			AI_Output(self,other,"DIA_Harad_LEHRLING_12_09");	//Bosper chcia³ mnie od tego odwieœæ. Sam chce, ¿ebyœ zosta³ jego czeladnikiem.
-			if((MIS_BOSPER_BOGEN == LOG_SUCCESS) || (MIS_BOSPER_WOLFFURS == LOG_SUCCESS))
+			if((MIS_Bosper_Bogen == LOG_SUCCESS) || (MIS_Bosper_WolfFurs == LOG_SUCCESS))
 			{
 				AI_Output(self,other,"DIA_Harad_LEHRLING_12_10");	//Odby³em z nim krótk¹, ale powa¿n¹ rozmowê na ten temat.
 				AI_Output(self,other,"DIA_Harad_LEHRLING_12_11");	//W koñcu siê zgodzi³.
@@ -325,9 +325,9 @@ func void dia_harad_lehrling_info()
 		{
 			AI_Output(self,other,"DIA_Harad_LEHRLING_12_14");	//A Bosper jeszcze ciê nie zna.
 		};
-		if(constantino.aivar[AIV_TALKEDTOPLAYER] == TRUE)
+		if(Constantino.aivar[AIV_TalkedToPlayer] == TRUE)
 		{
-			if(b_getgreatestpetzcrime(self) == CRIME_NONE)
+			if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
 			{
 				AI_Output(self,other,"DIA_Harad_LEHRLING_12_15");	//Constantino, jak zwykle, o nic nie dba. Powiedzia³, ¿e jeœli chodzi o niego, mo¿esz siê uczyæ, czego tylko chcesz.
 				stimmen = stimmen + 1;
@@ -342,14 +342,14 @@ func void dia_harad_lehrling_info()
 		{
 			AI_Output(self,other,"DIA_Harad_LEHRLING_12_18");	//Constantino nigdy o tobie nie s³ysza³.
 		};
-		if(matteo.aivar[AIV_TALKEDTOPLAYER] == TRUE)
+		if(Matteo.aivar[AIV_TalkedToPlayer] == TRUE)
 		{
-			if(MIS_MATTEO_GOLD == LOG_SUCCESS)
+			if(MIS_Matteo_Gold == LOG_SUCCESS)
 			{
 				AI_Output(self,other,"DIA_Harad_LEHRLING_12_19");	//A Matteo powiedzia³, ¿e odda³eœ mu jego z³oto. Widzi mi siê, ¿e jesteœ honorowym m³odzieñcem.
 				stimmen = stimmen + 1;
 			}
-			else if(MIS_MATTEO_GOLD == LOG_RUNNING)
+			else if(MIS_Matteo_Gold == LOG_Running)
 			{
 				AI_Output(self,other,"DIA_Harad_LEHRLING_12_20");	//Matteo mówi, ¿e ci¹gle jesteœ mu coœ winien. Nie wiem, co jest miêdzy wami, ale powinieneœ to wyjaœniæ.
 			}
@@ -373,9 +373,9 @@ func void dia_harad_lehrling_info()
 				AI_Output(self,other,"DIA_Harad_LEHRLING_12_24");	//To oznacza, ¿e zaskarbi³eœ sobie przychylnoœæ czterech mistrzów. Wystarczy, ¿ebyœ zosta³ przyjêty na czeladnika.
 			};
 			AI_Output(self,other,"DIA_Harad_LEHRLING_12_25");	//Jesteœ gotów, by zacz¹æ u mnie terminowaæ?
-			Info_ClearChoices(dia_harad_lehrling);
-			Info_AddChoice(dia_harad_lehrling,"Dobrze. Pomyœlê o tym.",dia_harad_lehrling_later);
-			Info_AddChoice(dia_harad_lehrling,"Wchodzê w to!",dia_harad_lehrling_ok);
+			Info_ClearChoices(DIA_Harad_LEHRLING);
+			Info_AddChoice(DIA_Harad_LEHRLING,"Dobrze. Pomyœlê o tym.",DIA_Harad_LEHRLING_Later);
+			Info_AddChoice(DIA_Harad_LEHRLING,"Wchodzê w to!",DIA_Harad_LEHRLING_OK);
 		}
 		else
 		{
@@ -389,11 +389,11 @@ func void dia_harad_lehrling_info()
 	};
 };
 
-func void dia_harad_lehrling_ok()
+func void DIA_Harad_LEHRLING_OK()
 {
 	AI_Output(other,self,"DIA_Harad_LEHRLING_OK_15_00");	//Wchodzê w to!
 	AI_Output(self,other,"DIA_Harad_LEHRLING_OK_12_01");	//Dobrze! Nauczê ciê, jak wykuæ porz¹dny miecz.
-	if(PLAYER_TALENT_SMITH[WEAPON_COMMON] == TRUE)
+	if(PLAYER_TALENT_SMITH[WEAPON_Common] == TRUE)
 	{
 		AI_Output(other,self,"DIA_Harad_LEHRLING_OK_15_02");	//Ju¿ to potrafiê!
 		AI_Output(self,other,"DIA_Harad_LEHRLING_OK_12_03");	//Có¿, tym lepiej!
@@ -402,70 +402,70 @@ func void dia_harad_lehrling_ok()
 	{
 		AI_Output(self,other,"DIA_Harad_LEHRLING_OK_12_04");	//Poza tym czas, ¿ebyœ nabra³ si³. Marniejesz mi w oczach!
 	};
-	PLAYER_ISAPPRENTICE = APP_HARAD;
-	HARAD_STARTGUILD = other.guild;
-	HARAD_LEHRLING_DAY = Wld_GetDay();
+	Player_IsApprentice = APP_Harad;
+	Harad_StartGuild = other.guild;
+	Harad_Lehrling_Day = Wld_GetDay();
 	Wld_AssignRoomToGuild("schmied",GIL_NONE);
-	MIS_APPRENTICE = LOG_SUCCESS;
-	b_logentry(TOPIC_BONUS,"Harad przyj¹³ mnie na swojego czeladnika. Droga do górnego miasta stoi przede mn¹ otworem.");
-	b_logentry(TOPIC_BONUS,"Harad dobrze mi zap³aci za wykut¹ przeze mnie broñ.");
-	Log_CreateTopic(TOPIC_CITYTEACHER,LOG_NOTE);
-	b_giveplayerxp(XP_LEHRLING);
-	b_logentry(TOPIC_CITYTEACHER,"Harad mo¿e mnie nauczyæ rzemios³a kowalskiego. Mo¿e równie¿ zwiêkszyæ moj¹ si³ê.");
-	Info_ClearChoices(dia_harad_lehrling);
+	MIS_Apprentice = LOG_SUCCESS;
+	B_LogEntry(Topic_Bonus,"Harad przyj¹³ mnie na swojego czeladnika. Droga do górnego miasta stoi przede mn¹ otworem.");
+	B_LogEntry(Topic_Bonus,"Harad dobrze mi zap³aci za wykut¹ przeze mnie broñ.");
+	Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
+	B_GivePlayerXP(XP_Lehrling);
+	B_LogEntry(TOPIC_CityTeacher,"Harad mo¿e mnie nauczyæ rzemios³a kowalskiego. Mo¿e równie¿ zwiêkszyæ moj¹ si³ê.");
+	Info_ClearChoices(DIA_Harad_LEHRLING);
 };
 
-func void dia_harad_lehrling_later()
+func void DIA_Harad_LEHRLING_Later()
 {
 	AI_Output(other,self,"DIA_Harad_LEHRLING_Later_15_00");	//Dobrze - zastanowiê siê nad tym.
-	if(!Npc_IsDead(brian))
+	if(!Npc_IsDead(Brian))
 	{
 		AI_Output(self,other,"DIA_Harad_LEHRLING_Later_12_01");	//Nie œpiesz siê. Brian bêdzie tu jeszcze przez jakiœ czas.
 	};
-	Info_ClearChoices(dia_harad_lehrling);
+	Info_ClearChoices(DIA_Harad_LEHRLING);
 };
 
 
-instance DIA_HARAD_ZUSTIMMUNG(C_INFO)
+instance DIA_Harad_Zustimmung(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 2;
-	condition = dia_harad_zustimmung_condition;
-	information = dia_harad_zustimmung_info;
+	condition = DIA_Harad_Zustimmung_Condition;
+	information = DIA_Harad_Zustimmung_Info;
 	permanent = TRUE;
 	description = "Mogê zostaæ czeladnikiem u innego mistrza?";
 };
 
 
-func int dia_harad_zustimmung_condition()
+func int DIA_Harad_Zustimmung_Condition()
 {
-	if((PLAYER_ISAPPRENTICE == APP_NONE) && Npc_KnowsInfo(other,dia_harad_arbeit))
+	if((Player_IsApprentice == APP_NONE) && Npc_KnowsInfo(other,DIA_Harad_Arbeit))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_harad_zustimmung_permanent;
+var int DIA_Harad_Zustimmung_Permanent;
 
-func void dia_harad_zustimmung_info()
+func void DIA_Harad_Zustimmung_Info()
 {
 	AI_Output(other,self,"DIA_Harad_Zustimmung_15_00");	//Mogê zostaæ czeladnikiem u innego mistrza?
-	if((MIS_HARAD_ORC == LOG_SUCCESS) || ((MIS_HAKONBANDITS == LOG_SUCCESS) && (HARAD_HAKONMISSION == TRUE)))
+	if((MIS_Harad_Orc == LOG_SUCCESS) || ((MIS_HakonBandits == LOG_SUCCESS) && (Harad_HakonMission == TRUE)))
 	{
 		AI_Output(self,other,"DIA_Harad_Zustimmung_12_01");	//Jesteœ dobrym cz³owiekiem.
-		if(MIS_HAKONBANDITS == LOG_SUCCESS)
+		if(MIS_HakonBandits == LOG_SUCCESS)
 		{
 			AI_Output(self,other,"DIA_Harad_Zustimmung_12_02");	//Hakon powiedzia³ mi, jak poradzi³eœ sobie z bandytami.
 		};
 		AI_Output(self,other,"DIA_Harad_Zustimmung_12_03");	//Masz moj¹ zgodê.
-		if(DIA_HARAD_ZUSTIMMUNG_PERMANENT == FALSE)
+		if(DIA_Harad_Zustimmung_Permanent == FALSE)
 		{
-			b_giveplayerxp(XP_ZUSTIMMUNG);
-			DIA_HARAD_ZUSTIMMUNG_PERMANENT = TRUE;
+			B_GivePlayerXP(XP_Zustimmung);
+			DIA_Harad_Zustimmung_Permanent = TRUE;
 		};
-		b_logentry(TOPIC_LEHRLING,"Jeœli zechcê zostaæ czeladnikiem, Harad udzieli mi swojego poparcia.");
-		if(!Npc_IsDead(brian))
+		B_LogEntry(TOPIC_Lehrling,"Jeœli zechcê zostaæ czeladnikiem, Harad udzieli mi swojego poparcia.");
+		if(!Npc_IsDead(Brian))
 		{
 			AI_Output(self,other,"DIA_Harad_Zustimmung_12_04");	//Brian jeszcze przez jakiœ czas tu bêdzie. A potem jego miejsce zajmie jakiœ silny ch³opak.
 		};
@@ -477,84 +477,84 @@ func void dia_harad_zustimmung_info()
 };
 
 
-var int harad_milkommentar;
-var int harad_palkommentar;
-var int harad_innoskommentar;
+var int Harad_MILKommentar;
+var int Harad_PALKommentar;
+var int Harad_INNOSKommentar;
 
-instance DIA_HARAD_ALSLEHRLING(C_INFO)
+instance DIA_Harad_AlsLehrling(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 1;
-	condition = dia_harad_alslehrling_condition;
-	information = dia_harad_alslehrling_info;
+	condition = DIA_Harad_AlsLehrling_Condition;
+	information = DIA_Harad_AlsLehrling_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_harad_alslehrling_condition()
+func int DIA_Harad_AlsLehrling_Condition()
 {
-	if((PLAYER_ISAPPRENTICE == APP_HARAD) && Npc_IsInState(self,zs_talk))
+	if((Player_IsApprentice == APP_Harad) && Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_harad_alslehrling_info()
+func void DIA_Harad_AlsLehrling_Info()
 {
-	if((other.guild == GIL_MIL) && (HARAD_STARTGUILD != GIL_MIL) && (HARAD_MILKOMMENTAR == FALSE))
+	if((other.guild == GIL_MIL) && (Harad_StartGuild != GIL_MIL) && (Harad_MILKommentar == FALSE))
 	{
 		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_00");	//Jesteœ teraz w stra¿y? Jestem z ciebie dumny!
 		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_01");	//Tak d³ugo jak s³u¿ysz w wojsku, nie bêdê od ciebie wymaga³ wykonywania obowi¹zków czeladniczych.
 		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_02");	//Jeœli jednak bêdziesz czegoœ potrzebowaæ, zawsze mo¿esz do mnie przyjœæ.
-		HARAD_MILKOMMENTAR = TRUE;
+		Harad_MILKommentar = TRUE;
 	}
-	else if((other.guild == GIL_PAL) && (HARAD_STARTGUILD != GIL_PAL) && (HARAD_PALKOMMENTAR == FALSE))
+	else if((other.guild == GIL_PAL) && (Harad_StartGuild != GIL_PAL) && (Harad_PALKommentar == FALSE))
 	{
 		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_03");	//Uda³o ci siê wst¹piæ w szeregi paladynów!
 		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_04");	//Cieszê siê, ¿e przyj¹³em ciê na czeladnika. Nawet pomimo tego, ¿e nie spêdzi³eœ za kowad³em zbyt du¿o czasu.
-		HARAD_PALKOMMENTAR = TRUE;
+		Harad_PALKommentar = TRUE;
 	}
-	else if(((other.guild == GIL_NOV) || (other.guild == GIL_KDF)) && (HARAD_STARTGUILD != GIL_NOV) && (HARAD_STARTGUILD != GIL_KDF) && (HARAD_INNOSKOMMENTAR == FALSE))
+	else if(((other.guild == GIL_NOV) || (other.guild == GIL_KDF)) && (Harad_StartGuild != GIL_NOV) && (Harad_StartGuild != GIL_KDF) && (Harad_INNOSKommentar == FALSE))
 	{
 		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_05");	//Wst¹pi³eœ do klasztoru. Wola³bym, ¿ebyœ zosta³ w mieœcie. Potrzebujemy ka¿dego dobrego cz³owieka.
 		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_06");	//Widocznie jednak przeznaczone ci by³o pod¹¿aæ za g³osem Innosa.
 		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_07");	//Jeœli bêdziesz czegoœ ode mnie potrzebowaæ, to wiesz, gdzie mnie znaleŸæ.
-		HARAD_INNOSKOMMENTAR = TRUE;
+		Harad_INNOSKommentar = TRUE;
 	}
-	else if((HARAD_LEHRLING_DAY <= (Wld_GetDay() - 4)) && (HARAD_MILKOMMENTAR == FALSE) && (HARAD_PALKOMMENTAR == FALSE) && (HARAD_INNOSKOMMENTAR == FALSE))
+	else if((Harad_Lehrling_Day <= (Wld_GetDay() - 4)) && (Harad_MILKommentar == FALSE) && (Harad_PALKommentar == FALSE) && (Harad_INNOSKommentar == FALSE))
 	{
 		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_08");	//Dawno ciê tutaj nie by³o. Gdzie siê pêtasz, hê?
-		HARAD_LEHRLING_DAY = Wld_GetDay();
+		Harad_Lehrling_Day = Wld_GetDay();
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_09");	//To znowu ty...
-		HARAD_LEHRLING_DAY = Wld_GetDay();
+		Harad_Lehrling_Day = Wld_GetDay();
 	};
 };
 
 
-instance DIA_HARAD_WAFFEN(C_INFO)
+instance DIA_Harad_Waffen(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 3;
-	condition = dia_harad_waffen_condition;
-	information = dia_harad_waffen_info;
+	condition = DIA_Harad_Waffen_Condition;
+	information = DIA_Harad_Waffen_Info;
 	permanent = FALSE;
 	description = "Sprzedajesz te¿ broñ?";
 };
 
 
-func int dia_harad_waffen_condition()
+func int DIA_Harad_Waffen_Condition()
 {
-	if(KAPITEL == 1)
+	if(Kapitel == 1)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_harad_waffen_info()
+func void DIA_Harad_Waffen_Info()
 {
 	AI_Output(other,self,"DIA_Harad_Waffen_15_00");	//Sprzedajesz te¿ broñ?
 	AI_Output(self,other,"DIA_Harad_Waffen_12_01");	//Zapomnij o tym. Wszystko, co robiê, trafia do paladynów albo do stra¿y.
@@ -562,26 +562,26 @@ func void dia_harad_waffen_info()
 };
 
 
-instance DIA_HARAD_AUFGABEN(C_INFO)
+instance DIA_Harad_Aufgaben(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 1;
-	condition = dia_harad_aufgaben_condition;
-	information = dia_harad_aufgaben_info;
+	condition = DIA_Harad_Aufgaben_Condition;
+	information = DIA_Harad_Aufgaben_Info;
 	permanent = FALSE;
 	description = "Co mam robiæ jako czeladnik?";
 };
 
 
-func int dia_harad_aufgaben_condition()
+func int DIA_Harad_Aufgaben_Condition()
 {
-	if(PLAYER_ISAPPRENTICE == APP_HARAD)
+	if(Player_IsApprentice == APP_Harad)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_harad_aufgaben_info()
+func void DIA_Harad_Aufgaben_Info()
 {
 	AI_Output(other,self,"DIA_Harad_Aufgaben_15_00");	//Jakie s¹ moje obowi¹zki jako czeladnika?
 	AI_Output(self,other,"DIA_Harad_Aufgaben_12_01");	//Mo¿esz zgadywaæ trzy razy.
@@ -593,33 +593,33 @@ func void dia_harad_aufgaben_info()
 };
 
 
-instance DIA_HARAD_SELLBLADES(C_INFO)
+instance DIA_Harad_SellBlades(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 200;
-	condition = dia_harad_sellblades_condition;
-	information = dia_harad_sellblades_info;
+	condition = DIA_Harad_SellBlades_Condition;
+	information = DIA_Harad_SellBlades_Info;
 	permanent = TRUE;
 	description = "Chcê sprzedaæ broñ, któr¹ wyku³em.";
 };
 
 
-func int dia_harad_sellblades_condition()
+func int DIA_Harad_SellBlades_Condition()
 {
-	if(PLAYER_ISAPPRENTICE == APP_HARAD)
+	if(Player_IsApprentice == APP_Harad)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_harad_sellblades_info()
+func void DIA_Harad_SellBlades_Info()
 {
 	var int anzahl;
-	var C_ITEM equipweap;
+	var C_Item EquipWeap;
 	AI_Output(other,self,"DIA_Harad_SellBlades_15_00");	//Chcê sprzedaæ broñ, któr¹ wyku³em.
-	anzahl = Npc_HasItems(other,itmw_1h_common_01);
-	equipweap = Npc_GetEquippedMeleeWeapon(other);
-	if(Hlp_IsItem(equipweap,itmw_1h_common_01) == TRUE)
+	anzahl = Npc_HasItems(other,ItMw_1H_Common_01);
+	EquipWeap = Npc_GetEquippedMeleeWeapon(other);
+	if(Hlp_IsItem(EquipWeap,ItMw_1H_Common_01) == TRUE)
 	{
 		anzahl = anzahl - 1;
 		if(anzahl == 0)
@@ -630,9 +630,9 @@ func void dia_harad_sellblades_info()
 	};
 	if(anzahl >= 1)
 	{
-		b_giveinvitems(other,self,4987,anzahl);
+		B_GiveInvItems(other,self,ItMw_1H_Common_01,anzahl);
 		AI_Output(self,other,"DIA_Harad_SellBlades_12_03");	//Dobrze. Oto twoja zap³ata.
-		b_giveinvitems(self,other,5113,VALUE_COMMON1 * anzahl);
+		B_GiveInvItems(self,other,ItMi_Gold,Value_Common1 * anzahl);
 	}
 	else
 	{
@@ -641,20 +641,20 @@ func void dia_harad_sellblades_info()
 };
 
 
-instance DIA_HARAD_TEACHCOMMON(C_INFO)
+instance DIA_HARAD_TEACHCOMMON(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 50;
 	condition = dia_harad_teachcommon_condition;
 	information = dia_harad_teachcommon_info;
 	permanent = TRUE;
-	description = b_buildlearnstring("Naucz mnie, jak wykuæ porz¹dny miecz!",b_getlearncosttalent(other,NPC_TALENT_SMITH));
+	description = B_BuildLearnString("Naucz mnie, jak wykuæ porz¹dny miecz!",B_GetLearnCostTalent(other,NPC_TALENT_SMITH));
 };
 
 
 func int dia_harad_teachcommon_condition()
 {
-	if((PLAYER_TALENT_SMITH[WEAPON_COMMON] == FALSE) && (PLAYER_ISAPPRENTICE == APP_HARAD))
+	if((PLAYER_TALENT_SMITH[WEAPON_Common] == FALSE) && (Player_IsApprentice == APP_Harad))
 	{
 		return TRUE;
 	};
@@ -663,7 +663,7 @@ func int dia_harad_teachcommon_condition()
 func void dia_harad_teachcommon_info()
 {
 	AI_Output(other,self,"DIA_Harad_TeachCommon_15_00");	//Naucz mnie, jak wykuæ porz¹dny miecz!
-	if(b_teachplayertalentsmith(self,other,WEAPON_COMMON))
+	if(B_TeachPlayerTalentSmith(self,other,WEAPON_Common))
 	{
 		AI_Output(self,other,"DIA_Harad_TeachCommon_12_01");	//To doœæ proste, ch³opcze. WeŸ kawa³ek surowej stali i trzymaj j¹ w ogniu, a¿ rozgrzeje siê do bia³oœci.
 		AI_Output(self,other,"DIA_Harad_TeachCommon_12_02");	//Wtedy nadaj broni kszta³t na kowadle.
@@ -672,40 +672,40 @@ func void dia_harad_teachcommon_info()
 };
 
 
-var int harad_merke_str;
+var int Harad_Merke_STR;
 
-instance DIA_HARAD_TEACHSTR(C_INFO)
+instance DIA_Harad_TeachSTR(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 100;
-	condition = dia_harad_teachstr_condition;
-	information = dia_harad_teachstr_info;
+	condition = DIA_Harad_TeachSTR_Condition;
+	information = DIA_Harad_TeachSTR_Info;
 	permanent = 1;
 	description = "Chcê byæ silniejszy!";
 };
 
 
-func int dia_harad_teachstr_condition()
+func int DIA_Harad_TeachSTR_Condition()
 {
-	if(PLAYER_ISAPPRENTICE == APP_HARAD)
+	if(Player_IsApprentice == APP_Harad)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_harad_teachstr_info()
+func void DIA_Harad_TeachSTR_Info()
 {
 	AI_Output(other,self,"DIA_Harad_TeachSTR_15_00");	//Chcê byæ silniejszy!
-	HARAD_MERKE_STR = other.attribute[ATR_STRENGTH];
-	Info_ClearChoices(dia_harad_teachstr);
-	Info_AddChoice(dia_harad_teachstr,DIALOG_BACK,dia_harad_teachstr_back);
-	Info_AddChoice(dia_harad_teachstr,b_buildlearnstring(PRINT_LEARNSTR1,b_getlearncostattribute(other,ATR_STRENGTH)),dia_harad_teachstr_1);
-	Info_AddChoice(dia_harad_teachstr,b_buildlearnstring(PRINT_LEARNSTR5,b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_harad_teachstr_5);
+	Harad_Merke_STR = other.attribute[ATR_STRENGTH];
+	Info_ClearChoices(DIA_Harad_TeachSTR);
+	Info_AddChoice(DIA_Harad_TeachSTR,Dialog_Back,DIA_Harad_TeachSTR_BACK);
+	Info_AddChoice(DIA_Harad_TeachSTR,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Harad_TeachSTR_1);
+	Info_AddChoice(DIA_Harad_TeachSTR,B_BuildLearnString(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Harad_TeachSTR_5);
 };
 
-func void dia_harad_teachstr_back()
+func void DIA_Harad_TeachSTR_BACK()
 {
-	if(HARAD_MERKE_STR < other.attribute[ATR_STRENGTH])
+	if(Harad_Merke_STR < other.attribute[ATR_STRENGTH])
 	{
 		AI_Output(self,other,"DIA_Harad_TeachSTR_BACK_12_01");	//Ju¿ nabra³eœ muskulatury.
 	};
@@ -713,48 +713,48 @@ func void dia_harad_teachstr_back()
 	{
 		AI_Output(self,other,"DIA_Harad_TeachSTR_BACK_12_02");	//PrzyjdŸ, gdy bêdziesz chcia³ siê nauczyæ czegoœ wiêcej.
 	};
-	Info_ClearChoices(dia_harad_teachstr);
+	Info_ClearChoices(DIA_Harad_TeachSTR);
 };
 
-func void dia_harad_teachstr_1()
+func void DIA_Harad_TeachSTR_1()
 {
-	b_teachattributepoints(self,other,ATR_STRENGTH,1,25);
-	Info_ClearChoices(dia_harad_teachstr);
-	Info_AddChoice(dia_harad_teachstr,DIALOG_BACK,dia_harad_teachstr_back);
-	Info_AddChoice(dia_harad_teachstr,b_buildlearnstring(PRINT_LEARNSTR1,b_getlearncostattribute(other,ATR_STRENGTH)),dia_harad_teachstr_1);
-	Info_AddChoice(dia_harad_teachstr,b_buildlearnstring(PRINT_LEARNSTR5,b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_harad_teachstr_5);
+	B_TeachAttributePoints(self,other,ATR_STRENGTH,1,25);
+	Info_ClearChoices(DIA_Harad_TeachSTR);
+	Info_AddChoice(DIA_Harad_TeachSTR,Dialog_Back,DIA_Harad_TeachSTR_BACK);
+	Info_AddChoice(DIA_Harad_TeachSTR,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Harad_TeachSTR_1);
+	Info_AddChoice(DIA_Harad_TeachSTR,B_BuildLearnString(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Harad_TeachSTR_5);
 };
 
-func void dia_harad_teachstr_5()
+func void DIA_Harad_TeachSTR_5()
 {
-	b_teachattributepoints(self,other,ATR_STRENGTH,5,25);
-	Info_ClearChoices(dia_harad_teachstr);
-	Info_AddChoice(dia_harad_teachstr,DIALOG_BACK,dia_harad_teachstr_back);
-	Info_AddChoice(dia_harad_teachstr,b_buildlearnstring(PRINT_LEARNSTR1,b_getlearncostattribute(other,ATR_STRENGTH)),dia_harad_teachstr_1);
-	Info_AddChoice(dia_harad_teachstr,b_buildlearnstring(PRINT_LEARNSTR5,b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_harad_teachstr_5);
+	B_TeachAttributePoints(self,other,ATR_STRENGTH,5,25);
+	Info_ClearChoices(DIA_Harad_TeachSTR);
+	Info_AddChoice(DIA_Harad_TeachSTR,Dialog_Back,DIA_Harad_TeachSTR_BACK);
+	Info_AddChoice(DIA_Harad_TeachSTR,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Harad_TeachSTR_1);
+	Info_AddChoice(DIA_Harad_TeachSTR,B_BuildLearnString(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Harad_TeachSTR_5);
 };
 
 
-instance DIA_HARAD_IMMERNOCH(C_INFO)
+instance DIA_Harad_ImmerNoch(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 3;
-	condition = dia_harad_immernoch_condition;
-	information = dia_harad_immernoch_info;
+	condition = DIA_Harad_ImmerNoch_Condition;
+	information = DIA_Harad_ImmerNoch_Info;
 	permanent = FALSE;
 	description = "Pracujesz jeszcze dla paladynów?";
 };
 
 
-func int dia_harad_immernoch_condition()
+func int DIA_Harad_ImmerNoch_Condition()
 {
-	if(KAPITEL >= 2)
+	if(Kapitel >= 2)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_harad_immernoch_info()
+func void DIA_Harad_ImmerNoch_Info()
 {
 	AI_Output(other,self,"DIA_Harad_Add_15_01");	//Pracujesz jeszcze dla paladynów?
 	AI_Output(self,other,"DIA_Harad_Add_12_02");	//Wykona³em zlecenie dla Lorda Hagena.
@@ -764,26 +764,26 @@ func void dia_harad_immernoch_info()
 };
 
 
-instance DIA_HARAD_ABOUTERZKLINGEN(C_INFO)
+instance DIA_Harad_AboutErzklingen(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 3;
-	condition = dia_harad_abouterzklingen_condition;
-	information = dia_harad_abouterzklingen_info;
+	condition = DIA_Harad_AboutErzklingen_Condition;
+	information = DIA_Harad_AboutErzklingen_Info;
 	permanent = FALSE;
 	description = "Powiedz mi coœ wiêcej o mieczach z magicznej rudy!";
 };
 
 
-func int dia_harad_abouterzklingen_condition()
+func int DIA_Harad_AboutErzklingen_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_harad_immernoch))
+	if(Npc_KnowsInfo(other,DIA_Harad_ImmerNoch))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_harad_abouterzklingen_info()
+func void DIA_Harad_AboutErzklingen_Info()
 {
 	AI_Output(other,self,"DIA_Harad_Add_15_06");	//Powiedz mi coœ wiêcej o mieczach z magicznej rudy!
 	AI_Output(self,other,"DIA_Harad_Waffen_12_02");	//Tworzenie magicznego ostrza to bardzo z³o¿ony i kosztowny proces. £atwo jednak w³adaæ takim mieczem, a poza tym jest on praktycznie niezniszczalny.
@@ -792,29 +792,29 @@ func void dia_harad_abouterzklingen_info()
 };
 
 
-instance DIA_HARAD_ERZKLINGEN(C_INFO)
+instance DIA_Harad_Erzklingen(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 3;
-	condition = dia_harad_erzklingen_condition;
-	information = dia_harad_erzklingen_info;
+	condition = DIA_Harad_Erzklingen_Condition;
+	information = DIA_Harad_Erzklingen_Info;
 	permanent = TRUE;
 	description = "Chcê kupiæ miecz z magicznej rudy.";
 };
 
 
-func int dia_harad_erzklingen_condition()
+func int DIA_Harad_Erzklingen_Condition()
 {
-	if((OREBLADEBOUGHT == FALSE) && Npc_KnowsInfo(other,dia_harad_abouterzklingen))
+	if((OreBladeBought == FALSE) && Npc_KnowsInfo(other,DIA_Harad_AboutErzklingen))
 	{
 		return TRUE;
 	};
 };
 
 
-var int orebladebought;
+var int OreBladeBought;
 
-func void dia_harad_erzklingen_info()
+func void DIA_Harad_Erzklingen_Info()
 {
 	AI_Output(other,self,"DIA_Harad_Erzklingen_15_00");	//Chcê kupiæ miecz z magicznej rudy.
 	if(hero.guild != GIL_PAL)
@@ -826,120 +826,120 @@ func void dia_harad_erzklingen_info()
 		AI_Output(self,other,"DIA_Harad_Erzklingen_12_02");	//Powinniœcie siê cieszyæ, ¿e mo¿ecie dzier¿yæ tak doskona³e miecze.
 		AI_Output(self,other,"DIA_Harad_Erzklingen_12_03");	//Na mocy dekretu Lorda Hagena mogê ci sprzedaæ tylko jedn¹ magiczn¹ broñ.
 		AI_Output(self,other,"DIA_Harad_Erzklingen_12_04");	//Co mogê ci zaproponowaæ?
-		Info_ClearChoices(dia_harad_erzklingen);
-		Info_AddChoice(dia_harad_erzklingen,DIALOG_BACK,dia_harad_erzklingen_back);
-		Info_AddChoice(dia_harad_erzklingen,"Miecz dwurêczny (2000 sztuk z³ota)",dia_harad_erzklingen_2h);
-		Info_AddChoice(dia_harad_erzklingen,"Miecz jednorêczny (2000 sztuk z³ota)",dia_harad_erzklingen_1h);
+		Info_ClearChoices(DIA_Harad_Erzklingen);
+		Info_AddChoice(DIA_Harad_Erzklingen,Dialog_Back,DIA_Harad_Erzklingen_Back);
+		Info_AddChoice(DIA_Harad_Erzklingen,"Miecz dwurêczny (2000 sztuk z³ota)",DIA_Harad_Erzklingen_2h);
+		Info_AddChoice(DIA_Harad_Erzklingen,"Miecz jednorêczny (2000 sztuk z³ota)",DIA_Harad_Erzklingen_1h);
 	};
 };
 
-func void dia_harad_erzklingen_back()
+func void DIA_Harad_Erzklingen_Back()
 {
-	Info_ClearChoices(dia_harad_erzklingen);
+	Info_ClearChoices(DIA_Harad_Erzklingen);
 };
 
-func void b_harad_notenoughgold()
+func void B_Harad_NotEnoughGold()
 {
 	AI_Output(self,other,"B_Harad_NotEnoughGold_12_00");	//Masz za ma³o z³ota.
 };
 
-func void b_harad_havefunwithyoursword()
+func void B_Harad_HaveFunWithYourSword()
 {
 	AI_Output(self,other,"B_Harad_HaveGunWithYourSword_12_00");	//Dbaj o swoj¹ now¹ broñ. Jest warta maj¹tek.
-	OREBLADEBOUGHT = TRUE;
-	Info_ClearChoices(dia_harad_erzklingen);
+	OreBladeBought = TRUE;
+	Info_ClearChoices(DIA_Harad_Erzklingen);
 };
 
-func void dia_harad_erzklingen_2h()
+func void DIA_Harad_Erzklingen_2h()
 {
 	AI_Output(other,self,"DIA_Harad_Erzklingen_2h_15_00");	//Wezmê miecz dwurêczny!
-	if(Npc_HasItems(other,itmi_gold) >= VALUE_BLESSED_2H_1)
+	if(Npc_HasItems(other,ItMi_Gold) >= Value_Blessed_2H_1)
 	{
-		b_giveinvitems(other,self,5113,VALUE_BLESSED_2H_1);
-		CreateInvItems(self,itmw_2h_blessed_01,1);
-		b_giveinvitems(self,other,5033,1);
-		b_harad_havefunwithyoursword();
+		B_GiveInvItems(other,self,ItMi_Gold,Value_Blessed_2H_1);
+		CreateInvItems(self,ItMw_2H_Blessed_01,1);
+		B_GiveInvItems(self,other,ItMw_2H_Blessed_01,1);
+		B_Harad_HaveFunWithYourSword();
 	}
 	else
 	{
-		b_harad_notenoughgold();
-		Info_ClearChoices(dia_harad_erzklingen);
-		Info_AddChoice(dia_harad_erzklingen,DIALOG_BACK,dia_harad_erzklingen_back);
-		Info_AddChoice(dia_harad_erzklingen,"Miecz dwurêczny (2000 sztuk z³ota)",dia_harad_erzklingen_2h);
-		Info_AddChoice(dia_harad_erzklingen,"Miecz jednorêczny (2000 sztuk z³ota)",dia_harad_erzklingen_1h);
+		B_Harad_NotEnoughGold();
+		Info_ClearChoices(DIA_Harad_Erzklingen);
+		Info_AddChoice(DIA_Harad_Erzklingen,Dialog_Back,DIA_Harad_Erzklingen_Back);
+		Info_AddChoice(DIA_Harad_Erzklingen,"Miecz dwurêczny (2000 sztuk z³ota)",DIA_Harad_Erzklingen_2h);
+		Info_AddChoice(DIA_Harad_Erzklingen,"Miecz jednorêczny (2000 sztuk z³ota)",DIA_Harad_Erzklingen_1h);
 	};
 };
 
-func void dia_harad_erzklingen_1h()
+func void DIA_Harad_Erzklingen_1h()
 {
 	AI_Output(other,self,"DIA_Harad_Erzklingen_1h_15_00");	//Wezmê miecz jednorêczny!
-	if(Npc_HasItems(other,itmi_gold) >= VALUE_BLESSED_1H_1)
+	if(Npc_HasItems(other,ItMi_Gold) >= Value_Blessed_1H_1)
 	{
-		b_giveinvitems(other,self,5113,VALUE_BLESSED_1H_1);
-		CreateInvItems(self,itmw_1h_blessed_01,1);
-		b_giveinvitems(self,other,5030,1);
-		b_harad_havefunwithyoursword();
+		B_GiveInvItems(other,self,ItMi_Gold,Value_Blessed_1H_1);
+		CreateInvItems(self,ItMw_1H_Blessed_01,1);
+		B_GiveInvItems(self,other,ItMw_1H_Blessed_01,1);
+		B_Harad_HaveFunWithYourSword();
 	}
 	else
 	{
-		b_harad_notenoughgold();
-		Info_ClearChoices(dia_harad_erzklingen);
-		Info_AddChoice(dia_harad_erzklingen,DIALOG_BACK,dia_harad_erzklingen_back);
-		Info_AddChoice(dia_harad_erzklingen,"Miecz dwurêczny (2000 sztuk z³ota)",dia_harad_erzklingen_2h);
-		Info_AddChoice(dia_harad_erzklingen,"Miecz jednorêczny (2000 sztuk z³ota)",dia_harad_erzklingen_1h);
+		B_Harad_NotEnoughGold();
+		Info_ClearChoices(DIA_Harad_Erzklingen);
+		Info_AddChoice(DIA_Harad_Erzklingen,Dialog_Back,DIA_Harad_Erzklingen_Back);
+		Info_AddChoice(DIA_Harad_Erzklingen,"Miecz dwurêczny (2000 sztuk z³ota)",DIA_Harad_Erzklingen_2h);
+		Info_AddChoice(DIA_Harad_Erzklingen,"Miecz jednorêczny (2000 sztuk z³ota)",DIA_Harad_Erzklingen_1h);
 	};
 };
 
 
-instance DIA_HARAD_REPAIRNECKLACE(C_INFO)
+instance DIA_Harad_RepairNecklace(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 8;
-	condition = dia_harad_repairnecklace_condition;
-	information = dia_harad_repairnecklace_info;
+	condition = DIA_Harad_RepairNecklace_Condition;
+	information = DIA_Harad_RepairNecklace_Info;
 	permanent = FALSE;
 	description = "Potrafisz naprawiæ bi¿uteriê?";
 };
 
 
-func int dia_harad_repairnecklace_condition()
+func int DIA_Harad_RepairNecklace_Condition()
 {
-	if((MIS_BENNET_INNOSEYEREPAIREDSETTING != LOG_SUCCESS) && (Npc_HasItems(other,itmi_innoseye_broken_mis) || (MIS_SCKNOWSINNOSEYEISBROKEN == TRUE)))
+	if((MIS_Bennet_InnosEyeRepairedSetting != LOG_SUCCESS) && (Npc_HasItems(other,ItMi_InnosEye_Broken_Mis) || (MIS_SCKnowsInnosEyeIsBroken == TRUE)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_harad_repairnecklace_info()
+func void DIA_Harad_RepairNecklace_Info()
 {
 	AI_Output(other,self,"DIA_Harad_RepairNecklace_15_00");	//Potrafisz naprawiaæ bi¿uteriê?
 	AI_Output(self,other,"DIA_Harad_RepairNecklace_12_01");	//Nie jestem z³otnikiem. W mieœcie raczej nie znajdziesz nikogo, kto mo¿e ci pomóc.
 	AI_Output(self,other,"DIA_Harad_RepairNecklace_12_02");	//Ludzie nie maj¹ pieniêdzy, a ostatnimi czasy nikt siê nie wzbogaci³.
 	AI_Output(self,other,"DIA_Harad_RepairNecklace_12_03");	//Wiêkszoœæ z nich cieszy siê, ¿e maj¹ co jeœæ.
-	MIS_SCKNOWSINNOSEYEISBROKEN = TRUE;
+	MIS_SCKnowsInnosEyeIsBroken = TRUE;
 };
 
 
-instance DIA_HARAD_GOLDSMITH(C_INFO)
+instance DIA_Harad_Goldsmith(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 8;
-	condition = dia_harad_goldsmith_condition;
-	information = dia_harad_goldsmith_info;
+	condition = DIA_Harad_Goldsmith_Condition;
+	information = DIA_Harad_Goldsmith_Info;
 	permanent = FALSE;
 	description = "Gdzie znajdê z³otnika?";
 };
 
 
-func int dia_harad_goldsmith_condition()
+func int DIA_Harad_Goldsmith_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_harad_repairnecklace))
+	if(Npc_KnowsInfo(other,DIA_Harad_RepairNecklace))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_harad_goldsmith_info()
+func void DIA_Harad_Goldsmith_Info()
 {
 	AI_Output(other,self,"DIA_Harad_Goldsmith_15_00");	//Gdzie znajdê z³otnika?
 	AI_Output(self,other,"DIA_Harad_Goldsmith_12_01");	//Podobno wœród najemników na farmie Onara jest dobry kowal.
@@ -947,37 +947,37 @@ func void dia_harad_goldsmith_info()
 };
 
 
-instance DIA_HARAD_PICKPOCKET(C_INFO)
+instance DIA_Harad_PICKPOCKET(C_Info)
 {
-	npc = vlk_412_harad;
+	npc = VLK_412_Harad;
 	nr = 900;
-	condition = dia_harad_pickpocket_condition;
-	information = dia_harad_pickpocket_info;
+	condition = DIA_Harad_PICKPOCKET_Condition;
+	information = DIA_Harad_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_20;
+	description = Pickpocket_20;
 };
 
 
-func int dia_harad_pickpocket_condition()
+func int DIA_Harad_PICKPOCKET_Condition()
 {
-	return c_beklauen(14,35);
+	return C_Beklauen(14,35);
 };
 
-func void dia_harad_pickpocket_info()
+func void DIA_Harad_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_harad_pickpocket);
-	Info_AddChoice(dia_harad_pickpocket,DIALOG_BACK,dia_harad_pickpocket_back);
-	Info_AddChoice(dia_harad_pickpocket,DIALOG_PICKPOCKET,dia_harad_pickpocket_doit);
+	Info_ClearChoices(DIA_Harad_PICKPOCKET);
+	Info_AddChoice(DIA_Harad_PICKPOCKET,Dialog_Back,DIA_Harad_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Harad_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Harad_PICKPOCKET_DoIt);
 };
 
-func void dia_harad_pickpocket_doit()
+func void DIA_Harad_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_harad_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Harad_PICKPOCKET);
 };
 
-func void dia_harad_pickpocket_back()
+func void DIA_Harad_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_harad_pickpocket);
+	Info_ClearChoices(DIA_Harad_PICKPOCKET);
 };
 

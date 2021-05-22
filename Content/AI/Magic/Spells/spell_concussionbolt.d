@@ -1,17 +1,17 @@
 
-const int SPL_COST_CONCUSSIONBOLT = 5;
-const int SPL_DAMAGE_CONCUSSIONBOLT = 150;
+const int SPL_COST_Concussionbolt = 5;
+const int SPL_DAMAGE_Concussionbolt = 150;
 
-instance SPELL_CONCUSSIONBOLT(C_SPELL_PROTO)
+instance Spell_Concussionbolt(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	damage_per_level = SPL_DAMAGE_CONCUSSIONBOLT;
+	damage_per_level = SPL_DAMAGE_Concussionbolt;
 };
 
 
-func int spell_logic_concussionbolt(var int manainvested)
+func int Spell_Logic_Concussionbolt(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_CONCUSSIONBOLT)
+	if(self.attribute[ATR_MANA] >= SPL_COST_Concussionbolt)
 	{
 		return SPL_SENDCAST;
 	}
@@ -21,8 +21,8 @@ func int spell_logic_concussionbolt(var int manainvested)
 	};
 };
 
-func void spell_cast_concussionbolt()
+func void Spell_Cast_Concussionbolt()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_CONCUSSIONBOLT;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_Concussionbolt;
 };
 

@@ -1,49 +1,49 @@
 
-instance DIA_ANGAR_DI_EXIT(C_INFO)
+instance DIA_Angar_DI_EXIT(C_Info)
 {
-	npc = djg_705_angar_di;
+	npc = DJG_705_Angar_DI;
 	nr = 999;
-	condition = dia_angar_di_exit_condition;
-	information = dia_angar_di_exit_info;
+	condition = DIA_Angar_DI_EXIT_Condition;
+	information = DIA_Angar_DI_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_angar_di_exit_condition()
+func int DIA_Angar_DI_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_angar_di_exit_info()
+func void DIA_Angar_DI_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ANGAR_DI_HALLO(C_INFO)
+instance DIA_Angar_DI_HALLO(C_Info)
 {
-	npc = djg_705_angar_di;
+	npc = DJG_705_Angar_DI;
 	nr = 10;
-	condition = dia_angar_di_hallo_condition;
-	information = dia_angar_di_hallo_info;
+	condition = DIA_Angar_DI_HALLO_Condition;
+	information = DIA_Angar_DI_HALLO_Info;
 	permanent = TRUE;
 	description = "Jak siê masz?";
 };
 
 
-func int dia_angar_di_hallo_condition()
+func int DIA_Angar_DI_HALLO_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_angar_di_hallo_info()
+func void DIA_Angar_DI_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Angar_DI_HALLO_15_00");	//Jak siê czujesz?
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		AI_Output(self,other,"DIA_Angar_DI_HALLO_04_01");	//Odk¹d wyl¹dowaliœmy na tej wyspie, moje bóle g³owy sta³y siê nie do zniesienia.
 		AI_Output(self,other,"DIA_Angar_DI_HALLO_04_02");	//Cholera. To siê musi wreszcie skoñczyæ.
@@ -55,45 +55,45 @@ func void dia_angar_di_hallo_info()
 };
 
 
-instance DIA_ANGAR_DI_ORKS(C_INFO)
+instance DIA_Angar_DI_ORKS(C_Info)
 {
-	npc = djg_705_angar_di;
+	npc = DJG_705_Angar_DI;
 	nr = 5;
-	condition = dia_angar_di_orks_condition;
-	information = dia_angar_di_orks_info;
+	condition = DIA_Angar_DI_ORKS_Condition;
+	information = DIA_Angar_DI_ORKS_Info;
 	important = TRUE;
 };
 
 
-func int dia_angar_di_orks_condition()
+func int DIA_Angar_DI_ORKS_Condition()
 {
-	if((ORKSTURMDI == TRUE) && (Npc_IsDead(undeaddragon) == FALSE))
+	if((ORkSturmDI == TRUE) && (Npc_IsDead(UndeadDragon) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_angar_di_orks_info()
+func void DIA_Angar_DI_ORKS_Info()
 {
 	AI_Output(self,other,"DIA_Angar_DI_ORKS_04_00");	//Pospiesz siê, do diaska! Nastêpnego ataku orków mo¿emy nie prze¿yæ.
 	AI_Output(other,self,"DIA_Angar_DI_ORKS_15_01");	//Robiê, co mogê.
 	AI_Output(self,other,"DIA_Angar_DI_ORKS_04_02");	//To trochê za ma³o!
-	Info_ClearChoices(dia_angar_di_orks);
-	Info_AddChoice(dia_angar_di_orks,"Spokojnie.",dia_angar_di_orks_no);
-	Info_AddChoice(dia_angar_di_orks,"Pomó¿ mi...",dia_angar_di_orks_follow);
+	Info_ClearChoices(DIA_Angar_DI_ORKS);
+	Info_AddChoice(DIA_Angar_DI_ORKS,"Spokojnie.",DIA_Angar_DI_ORKS_no);
+	Info_AddChoice(DIA_Angar_DI_ORKS,"Pomó¿ mi...",DIA_Angar_DI_ORKS_follow);
 };
 
-func void dia_angar_di_orks_follow()
+func void DIA_Angar_DI_ORKS_follow()
 {
 	AI_Output(other,self,"DIA_Angar_DI_ORKS_follow_15_00");	//Zamiast narzekaæ, móg³byœ mi pomóc.
 	AI_Output(self,other,"DIA_Angar_DI_ORKS_follow_04_01");	//Tak zrobiê. No dalej, ruszaj przodem!
 	AI_StopProcessInfos(self);
-	b_giveplayerxp(XP_AMBIENT);
+	B_GivePlayerXP(XP_Ambient);
 	Npc_ExchangeRoutine(self,"FollowDI");
-	ANGAR_DI_PARTY = LOG_RUNNING;
+	Angar_DI_Party = LOG_Running;
 };
 
-func void dia_angar_di_orks_no()
+func void DIA_Angar_DI_ORKS_no()
 {
 	AI_Output(other,self,"DIA_Angar_DI_ORKS_no_15_00");	//Uspokój siê trochê.
 	AI_Output(self,other,"DIA_Angar_DI_ORKS_no_04_01");	//£atwo ci powiedzieæ, ale ja tu odchodzê od zmys³ów.
@@ -101,26 +101,26 @@ func void dia_angar_di_orks_no()
 };
 
 
-instance DIA_ANGAR_DI_FOLLOW(C_INFO)
+instance DIA_Angar_DI_FOLLOW(C_Info)
 {
-	npc = djg_705_angar_di;
+	npc = DJG_705_Angar_DI;
 	nr = 5;
-	condition = dia_angar_di_follow_condition;
-	information = dia_angar_di_follow_info;
+	condition = DIA_Angar_DI_FOLLOW_Condition;
+	information = DIA_Angar_DI_FOLLOW_Info;
 	permanent = TRUE;
 	description = "Chcê, ¿ebyœ tu zosta³.";
 };
 
 
-func int dia_angar_di_follow_condition()
+func int DIA_Angar_DI_FOLLOW_Condition()
 {
-	if(ANGAR_DI_PARTY == LOG_RUNNING)
+	if(Angar_DI_Party == LOG_Running)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_angar_di_follow_info()
+func void DIA_Angar_DI_FOLLOW_Info()
 {
 	AI_Output(other,self,"DIA_Angar_DI_FOLLOW_15_00");	//Chcê, ¿ebyœ tu zosta³.
 	if(Npc_GetDistToWP(self,"SKELETTE") < 4000)
@@ -129,8 +129,8 @@ func void dia_angar_di_follow_info()
 		AI_Output(self,other,"DIA_Angar_DI_FOLLOW_04_02");	//Powodzenia.
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(self,"Start");
-		ANGAR_DI_PARTY = LOG_SUCCESS;
-		b_giveplayerxp(XP_AMBIENT);
+		Angar_DI_Party = LOG_SUCCESS;
+		B_GivePlayerXP(XP_Ambient);
 	}
 	else
 	{
@@ -140,15 +140,15 @@ func void dia_angar_di_follow_info()
 		{
 			Npc_ExchangeRoutine(self,"Start");
 		}
-		else if(Npc_IsDead(firedragonisland))
+		else if(Npc_IsDead(FireDragonIsland))
 		{
 			Npc_ExchangeRoutine(self,"FireDragonIsland");
 		}
-		else if(Npc_IsDead(orkelite_antipaladinorkoberst_di))
+		else if(Npc_IsDead(OrkElite_AntiPaladinOrkOberst_DI))
 		{
 			Npc_ExchangeRoutine(self,"ORKOBERST_DI");
 		}
-		else if(Npc_IsDead(troll_di))
+		else if(Npc_IsDead(Troll_DI))
 		{
 			Npc_ExchangeRoutine(self,"Troll_DI");
 		}
@@ -157,89 +157,89 @@ func void dia_angar_di_follow_info()
 			Npc_ExchangeRoutine(self,"Start");
 		};
 	};
-	ANGAR_DI_PARTY = LOG_OBSOLETE;
+	Angar_DI_Party = LOG_OBSOLETE;
 };
 
 
-instance DIA_ANGAR_DI_FOLLOWAGAIN(C_INFO)
+instance DIA_Angar_DI_FOLLOWAGAIN(C_Info)
 {
-	npc = djg_705_angar_di;
+	npc = DJG_705_Angar_DI;
 	nr = 5;
-	condition = dia_angar_di_followagain_condition;
-	information = dia_angar_di_followagain_info;
+	condition = DIA_Angar_DI_FOLLOWAGAIN_Condition;
+	information = DIA_Angar_DI_FOLLOWAGAIN_Info;
 	permanent = TRUE;
 	description = "ChodŸmy!";
 };
 
 
-func int dia_angar_di_followagain_condition()
+func int DIA_Angar_DI_FOLLOWAGAIN_Condition()
 {
-	if(ANGAR_DI_PARTY == LOG_OBSOLETE)
+	if(Angar_DI_Party == LOG_OBSOLETE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_angar_di_followagain_info()
+func void DIA_Angar_DI_FOLLOWAGAIN_Info()
 {
 	AI_Output(other,self,"DIA_Angar_DI_FOLLOWAGAIN_15_00");	//ChodŸmy!
 	AI_Output(self,other,"DIA_Angar_DI_FOLLOWAGAIN_04_01");	//Ty przodem.
-	ANGAR_DI_PARTY = LOG_RUNNING;
+	Angar_DI_Party = LOG_Running;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"FollowDI");
 };
 
 
-instance DIA_ANGAR_DI_FOLLOWSTOP(C_INFO)
+instance DIA_Angar_DI_FOLLOWSTOP(C_Info)
 {
-	npc = djg_705_angar_di;
+	npc = DJG_705_Angar_DI;
 	nr = 5;
-	condition = dia_angar_di_followstop_condition;
-	information = dia_angar_di_followstop_info;
+	condition = DIA_Angar_DI_FOLLOWSTOP_Condition;
+	information = DIA_Angar_DI_FOLLOWSTOP_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_angar_di_followstop_condition()
+func int DIA_Angar_DI_FOLLOWSTOP_Condition()
 {
-	if((ANGAR_DI_PARTY == LOG_RUNNING) && (((Npc_GetDistToWP(self,"DI_DRACONIANAREA_FIREDRAGON") < 3000) && (Npc_IsDead(firedragonisland) == FALSE)) || (Npc_GetDistToWP(self,"SKELETTE") < 3000)))
+	if((Angar_DI_Party == LOG_Running) && (((Npc_GetDistToWP(self,"DI_DRACONIANAREA_FIREDRAGON") < 3000) && (Npc_IsDead(FireDragonIsland) == FALSE)) || (Npc_GetDistToWP(self,"SKELETTE") < 3000)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_angar_di_followstop_info()
+func void DIA_Angar_DI_FOLLOWSTOP_Info()
 {
 	AI_Output(self,other,"DIA_Angar_DI_FOLLOWSTOP_04_00");	//Aaargh! Moja g³owa! Zaraz oszalejê!
 };
 
 
-instance DIA_ANGAR_DI_UNDEADDRGDEAD(C_INFO)
+instance DIA_Angar_DI_UNDEADDRGDEAD(C_Info)
 {
-	npc = djg_705_angar_di;
+	npc = DJG_705_Angar_DI;
 	nr = 2;
-	condition = dia_angar_di_undeaddrgdead_condition;
-	information = dia_angar_di_undeaddrgdead_info;
+	condition = DIA_Angar_DI_UNDEADDRGDEAD_Condition;
+	information = DIA_Angar_DI_UNDEADDRGDEAD_Info;
 	description = "(z uœmiechem) Uda³o ci siê prze¿yæ.";
 };
 
 
-func int dia_angar_di_undeaddrgdead_condition()
+func int DIA_Angar_DI_UNDEADDRGDEAD_Condition()
 {
-	if(Npc_IsDead(undeaddragon))
+	if(Npc_IsDead(UndeadDragon))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_angar_di_undeaddrgdead_info()
+func void DIA_Angar_DI_UNDEADDRGDEAD_Info()
 {
 	AI_Output(other,self,"DIA_Angar_DI_UNDEADDRGDEAD_15_00");	//Uda³o ci siê prze¿yæ.
 	AI_Output(self,other,"DIA_Angar_DI_UNDEADDRGDEAD_04_01");	//Mo¿emy siê st¹d wreszcie wynieœæ?
 	AI_Output(other,self,"DIA_Angar_DI_UNDEADDRGDEAD_15_02");	//Czemu nie... Wróg zosta³ pokonany.
 	AI_Output(self,other,"DIA_Angar_DI_UNDEADDRGDEAD_04_03");	//No to nie traæmy czasu. IdŸ do kapitana i ka¿ mu podnosiæ kotwicê.
-	if(SC_KNOWSMADPSI == TRUE)
+	if(SC_KnowsMadPsi == TRUE)
 	{
 		AI_Output(other,self,"DIA_Angar_DI_UNDEADDRGDEAD_15_04");	//Mam tylko nadziejê, ¿e nie natkniemy siê ju¿ na twoich dawnych kompanów.
 		AI_Output(self,other,"DIA_Angar_DI_UNDEADDRGDEAD_04_05");	//Wszystko jest mo¿liwe. Przeœladowcy byli niezwykle skuteczni. Ma³o brakowa³o, a ja te¿ uleg³bym ich mocy. Kto wie?
@@ -251,61 +251,61 @@ func void dia_angar_di_undeaddrgdead_info()
 };
 
 
-instance DIA_ANGAR_DI_PICKPOCKET(C_INFO)
+instance DIA_Angar_DI_PICKPOCKET(C_Info)
 {
-	npc = djg_705_angar_di;
+	npc = DJG_705_Angar_DI;
 	nr = 900;
-	condition = dia_angar_di_pickpocket_condition;
-	information = dia_angar_di_pickpocket_info;
+	condition = DIA_Angar_DI_PICKPOCKET_Condition;
+	information = DIA_Angar_DI_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_angar_di_pickpocket_condition()
+func int DIA_Angar_DI_PICKPOCKET_Condition()
 {
-	return c_beklauen(47,45);
+	return C_Beklauen(47,45);
 };
 
-func void dia_angar_di_pickpocket_info()
+func void DIA_Angar_DI_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_angar_di_pickpocket);
-	Info_AddChoice(dia_angar_di_pickpocket,DIALOG_BACK,dia_angar_di_pickpocket_back);
-	Info_AddChoice(dia_angar_di_pickpocket,DIALOG_PICKPOCKET,dia_angar_di_pickpocket_doit);
+	Info_ClearChoices(DIA_Angar_DI_PICKPOCKET);
+	Info_AddChoice(DIA_Angar_DI_PICKPOCKET,Dialog_Back,DIA_Angar_DI_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Angar_DI_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Angar_DI_PICKPOCKET_DoIt);
 };
 
-func void dia_angar_di_pickpocket_doit()
+func void DIA_Angar_DI_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_angar_di_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Angar_DI_PICKPOCKET);
 };
 
-func void dia_angar_di_pickpocket_back()
+func void DIA_Angar_DI_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_angar_di_pickpocket);
+	Info_ClearChoices(DIA_Angar_DI_PICKPOCKET);
 };
 
 
-instance DIA_ANGAR_DI_FOUNDAMULETT(C_INFO)
+instance DIA_Angar_DI_FOUNDAMULETT(C_Info)
 {
-	npc = djg_705_angar_di;
+	npc = DJG_705_Angar_DI;
 	nr = 7;
-	condition = dia_angar_di_foundamulett_condition;
-	information = dia_angar_di_foundamulett_info;
+	condition = DIA_Angar_DI_FOUNDAMULETT_Condition;
+	information = DIA_Angar_DI_FOUNDAMULETT_Info;
 	description = "Znalaz³em twój amulet.";
 };
 
 
-func int dia_angar_di_foundamulett_condition()
+func int DIA_Angar_DI_FOUNDAMULETT_Condition()
 {
-	if(Npc_HasItems(other,itam_mana_angar_mis) && Npc_KnowsInfo(other,dia_angar_wiekommstduhierher) && (DJG_ANGARGOTAMULETT == FALSE))
+	if(Npc_HasItems(other,ItAm_Mana_Angar_MIS) && Npc_KnowsInfo(other,DIA_Angar_WIEKOMMSTDUHIERHER) && (DJG_AngarGotAmulett == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_angar_di_foundamulett_info()
+func void DIA_Angar_DI_FOUNDAMULETT_Info()
 {
-	b_angarsamulettabgeben();
+	B_AngarsAmulettAbgeben();
 };
 

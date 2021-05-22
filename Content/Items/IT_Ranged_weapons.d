@@ -1,467 +1,467 @@
 
-instance ITRW_ARROW(C_ITEM)
+instance ItRw_Arrow(C_Item)
 {
 	name = "Strza³a";
 	mainflag = ITEM_KAT_MUN;
 	flags = ITEM_BOW | ITEM_MULTI;
-	value = VALUE_PFEIL;
+	value = Value_Pfeil;
 	visual = "ItRw_Arrow.3ds";
 	material = MAT_WOOD;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_BOLT(C_ITEM)
+instance ItRw_Bolt(C_Item)
 {
 	name = "Be³t";
 	mainflag = ITEM_KAT_MUN;
 	flags = ITEM_CROSSBOW | ITEM_MULTI;
-	value = VALUE_BOLZEN;
+	value = Value_Bolzen;
 	visual = "ItRw_Bolt.3ds";
 	material = MAT_WOOD;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_MIL_CROSSBOW(C_ITEM)
+instance ItRw_Mil_Crossbow(C_Item)
 {
 	name = "Prosta Kusza";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW;
 	material = MAT_WOOD;
-	value = VALUE_MILARMBRUST;
-	damagetotal = DAMAGE_MILARMBRUST;
+	value = Value_MilArmbrust;
+	damageTotal = Damage_MilArmbrust;
 	damagetype = DAM_POINT;
-	munition = itrw_bolt;
+	munition = ItRw_Bolt;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_MILARMBRUST;
+	cond_value[2] = Condition_MilArmbrust;
 	visual = "ItRw_Mil_Crossbow.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_SLD_BOW(C_ITEM)
+instance ItRw_Sld_Bow(C_Item)
 {
 	name = "Kiepski £uk";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW;
 	material = MAT_WOOD;
-	value = VALUE_SLDBOGEN;
-	damagetotal = DAMAGE_SLDBOGEN;
+	value = Value_SldBogen;
+	damageTotal = Damage_SldBogen;
 	damagetype = DAM_POINT;
-	munition = itrw_arrow;
+	munition = ItRw_Arrow;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_SLDBOGEN;
+	cond_value[2] = Condition_SldBogen;
 	visual = "ItRw_Bow_L_01.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_BOW_L_01(C_ITEM)
+instance ItRw_Bow_L_01(C_Item)
 {
 	name = "Krótki £uk";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW;
 	material = MAT_WOOD;
-	value = VALUE_KURZBOGEN;
-	damagetotal = DAMAGE_KURZBOGEN;
+	value = Value_Kurzbogen;
+	damageTotal = Damage_Kurzbogen;
 	damagetype = DAM_POINT;
-	munition = itrw_arrow;
+	munition = ItRw_Arrow;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_KURZBOGEN;
+	cond_value[2] = Condition_Kurzbogen;
 	visual = "ItRw_Bow_L_01.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_BOW_L_02(C_ITEM)
+instance ItRw_Bow_L_02(C_Item)
 {
 	name = "£uk Wierzbowy";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW;
 	material = MAT_WOOD;
-	value = VALUE_WEIDENBOGEN;
-	damagetotal = DAMAGE_WEIDENBOGEN;
+	value = Value_Weidenbogen;
+	damageTotal = Damage_Weidenbogen;
 	damagetype = DAM_POINT;
-	munition = itrw_arrow;
+	munition = ItRw_Arrow;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_WEIDENBOGEN;
+	cond_value[2] = Condition_Weidenbogen;
 	visual = "ItRw_Bow_L_02.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_BOW_L_03(C_ITEM)
+instance ItRw_Bow_L_03(C_Item)
 {
 	name = "£uk Myœliwski";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW;
 	material = MAT_WOOD;
-	value = VALUE_JAGDBOGEN;
-	damagetotal = DAMAGE_JAGDBOGEN;
+	value = Value_Jagdbogen;
+	damageTotal = Damage_Jagdbogen;
 	damagetype = DAM_POINT;
-	munition = itrw_arrow;
+	munition = ItRw_Arrow;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_JAGDBOGEN;
+	cond_value[2] = Condition_Jagdbogen;
 	visual = "ItRw_Bow_L_03.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_BOW_L_04(C_ITEM)
+instance ItRw_Bow_L_04(C_Item)
 {
 	name = "£uk z Wi¹zu";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW;
 	material = MAT_WOOD;
-	value = VALUE_ULMENBOGEN;
-	damagetotal = DAMAGE_ULMENBOGEN;
+	value = Value_Ulmenbogen;
+	damageTotal = Damage_Ulmenbogen;
 	damagetype = DAM_POINT;
-	munition = itrw_arrow;
+	munition = ItRw_Arrow;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_ULMENBOGEN;
+	cond_value[2] = Condition_Ulmenbogen;
 	visual = "ItRw_Bow_L_04.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_BOW_M_01(C_ITEM)
+instance ItRw_Bow_M_01(C_Item)
 {
 	name = "£uk Kompozytowy";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW;
 	material = MAT_WOOD;
-	value = VALUE_KOMPOSITBOGEN;
-	damagetotal = DAMAGE_KOMPOSITBOGEN;
+	value = Value_Kompositbogen;
+	damageTotal = Damage_Kompositbogen;
 	damagetype = DAM_POINT;
-	munition = itrw_arrow;
+	munition = ItRw_Arrow;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_KOMPOSITBOGEN;
+	cond_value[2] = Condition_Kompositbogen;
 	visual = "ItRw_Bow_M_01.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_BOW_M_02(C_ITEM)
+instance ItRw_Bow_M_02(C_Item)
 {
 	name = "£uk Jesionowy";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW;
 	material = MAT_WOOD;
-	value = VALUE_ESCHENBOGEN;
-	damagetotal = DAMAGE_ESCHENBOGEN;
+	value = Value_Eschenbogen;
+	damageTotal = Damage_Eschenbogen;
 	damagetype = DAM_POINT;
-	munition = itrw_arrow;
+	munition = ItRw_Arrow;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_ESCHENBOGEN;
+	cond_value[2] = Condition_Eschenbogen;
 	visual = "ItRw_Bow_M_02.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_BOW_M_03(C_ITEM)
+instance ItRw_Bow_M_03(C_Item)
 {
 	name = "D³ugi £uk";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW;
 	material = MAT_WOOD;
-	value = VALUE_LANGBOGEN;
-	damagetotal = DAMAGE_LANGBOGEN;
+	value = Value_Langbogen;
+	damageTotal = Damage_Langbogen;
 	damagetype = DAM_POINT;
-	munition = itrw_arrow;
+	munition = ItRw_Arrow;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_LANGBOGEN;
+	cond_value[2] = Condition_Langbogen;
 	visual = "ItRw_Bow_M_03.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_BOW_M_04(C_ITEM)
+instance ItRw_Bow_M_04(C_Item)
 {
 	name = "£uk Bukowy";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW;
 	material = MAT_WOOD;
-	value = VALUE_BUCHENBOGEN;
-	damagetotal = DAMAGE_BUCHENBOGEN;
+	value = Value_Buchenbogen;
+	damageTotal = Damage_Buchenbogen;
 	damagetype = DAM_POINT;
-	munition = itrw_arrow;
+	munition = ItRw_Arrow;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_BUCHENBOGEN;
+	cond_value[2] = Condition_Buchenbogen;
 	visual = "ItRw_Bow_M_04.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_BOW_H_01(C_ITEM)
+instance ItRw_Bow_H_01(C_Item)
 {
 	name = "Koœciany £uk";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW;
 	material = MAT_WOOD;
-	value = VALUE_KNOCHENBOGEN;
-	damagetotal = DAMAGE_KNOCHENBOGEN;
+	value = Value_Knochenbogen;
+	damageTotal = Damage_Knochenbogen;
 	damagetype = DAM_POINT;
-	munition = itrw_arrow;
+	munition = ItRw_Arrow;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_KNOCHENBOGEN;
+	cond_value[2] = Condition_Knochenbogen;
 	visual = "ItRw_Bow_H_01.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_BOW_H_02(C_ITEM)
+instance ItRw_Bow_H_02(C_Item)
 {
 	name = "£uk Dêbowy";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW;
 	material = MAT_WOOD;
-	value = VALUE_EICHENBOGEN;
-	damagetotal = DAMAGE_EICHENBOGEN;
+	value = Value_Eichenbogen;
+	damageTotal = Damage_Eichenbogen;
 	damagetype = DAM_POINT;
-	munition = itrw_arrow;
+	munition = ItRw_Arrow;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_EICHENBOGEN;
+	cond_value[2] = Condition_Eichenbogen;
 	visual = "ItRw_Bow_H_02.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_BOW_H_03(C_ITEM)
+instance ItRw_Bow_H_03(C_Item)
 {
 	name = "£uk Wojenny";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW;
 	material = MAT_WOOD;
-	value = VALUE_KRIEGSBOGEN;
-	damagetotal = DAMAGE_KRIEGSBOGEN;
+	value = Value_Kriegsbogen;
+	damageTotal = Damage_Kriegsbogen;
 	damagetype = DAM_POINT;
-	munition = itrw_arrow;
+	munition = ItRw_Arrow;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_KRIEGSBOGEN;
+	cond_value[2] = Condition_Kriegsbogen;
 	visual = "ItRw_Bow_H_03.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_BOW_H_04(C_ITEM)
+instance ItRw_Bow_H_04(C_Item)
 {
 	name = "Smoczy £uk";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_BOW;
 	material = MAT_WOOD;
-	value = VALUE_DRACHENBOGEN;
-	damagetotal = DAMAGE_DRACHENBOGEN;
+	value = Value_Drachenbogen;
+	damageTotal = Damage_Drachenbogen;
 	damagetype = DAM_POINT;
-	munition = itrw_arrow;
+	munition = ItRw_Arrow;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_DRACHENBOGEN;
+	cond_value[2] = Condition_Drachenbogen;
 	visual = "ItRw_Bow_H_04.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_CROSSBOW_L_01(C_ITEM)
+instance ItRw_Crossbow_L_01(C_Item)
 {
 	name = "Kusza Myœliwska";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW;
 	material = MAT_WOOD;
-	value = VALUE_JAGDARMBRUST;
-	damagetotal = DAMAGE_JAGDARMBRUST;
+	value = Value_Jagdarmbrust;
+	damageTotal = Damage_Jagdarmbrust;
 	damagetype = DAM_POINT;
-	munition = itrw_bolt;
+	munition = ItRw_Bolt;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_JAGDARMBRUST;
+	cond_value[2] = Condition_Jagdarmbrust;
 	visual = "ItRw_Crossbow_L_01.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_CROSSBOW_L_02(C_ITEM)
+instance ItRw_Crossbow_L_02(C_Item)
 {
 	name = "Lekka Kusza";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW;
 	material = MAT_WOOD;
-	value = VALUE_LEICHTEARMBRUST;
-	damagetotal = DAMAGE_LEICHTEARMBRUST;
+	value = Value_LeichteArmbrust;
+	damageTotal = Damage_LeichteArmbrust;
 	damagetype = DAM_POINT;
-	munition = itrw_bolt;
+	munition = ItRw_Bolt;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_LEICHTEARMBRUST;
+	cond_value[2] = Condition_LeichteArmbrust;
 	visual = "ItRw_Crossbow_L_02.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_CROSSBOW_M_01(C_ITEM)
+instance ItRw_Crossbow_M_01(C_Item)
 {
 	name = "Kusza";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW;
 	material = MAT_WOOD;
-	value = VALUE_ARMBRUST;
-	damagetotal = DAMAGE_ARMBRUST;
+	value = Value_Armbrust;
+	damageTotal = Damage_Armbrust;
 	damagetype = DAM_POINT;
-	munition = itrw_bolt;
+	munition = ItRw_Bolt;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_ARMBRUST;
+	cond_value[2] = Condition_Armbrust;
 	visual = "ItRw_Crossbow_M_01.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_CROSSBOW_M_02(C_ITEM)
+instance ItRw_Crossbow_M_02(C_Item)
 {
 	name = "Kusza Bojowa";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW;
 	material = MAT_WOOD;
-	value = VALUE_KRIEGSARMBRUST;
-	damagetotal = DAMAGE_KRIEGSARMBRUST;
+	value = Value_Kriegsarmbrust;
+	damageTotal = Damage_Kriegsarmbrust;
 	damagetype = DAM_POINT;
-	munition = itrw_bolt;
+	munition = ItRw_Bolt;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_KRIEGSARMBRUST;
+	cond_value[2] = Condition_Kriegsarmbrust;
 	visual = "ItRw_Crossbow_M_02.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_CROSSBOW_H_01(C_ITEM)
+instance ItRw_Crossbow_H_01(C_Item)
 {
 	name = "Ciê¿ka Kusza";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW;
 	material = MAT_WOOD;
-	value = VALUE_SCHWEREARMBRUST;
-	damagetotal = DAMAGE_SCHWEREARMBRUST;
+	value = Value_SchwereArmbrust;
+	damageTotal = Damage_SchwereArmbrust;
 	damagetype = DAM_POINT;
-	munition = itrw_bolt;
+	munition = ItRw_Bolt;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_SCHWEREARMBRUST;
+	cond_value[2] = Condition_SchwereArmbrust;
 	visual = "ItRw_Crossbow_H_01.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_CROSSBOW_H_02(C_ITEM)
+instance ItRw_Crossbow_H_02(C_Item)
 {
 	name = "Kusza £owcy Smoków";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW;
 	material = MAT_WOOD;
-	value = VALUE_DRACHENJAEGERARMBRUST;
-	damagetotal = DAMAGE_DRACHENJAEGERARMBRUST;
+	value = Value_Drachenjaegerarmbrust;
+	damageTotal = Damage_Drachenjaegerarmbrust;
 	damagetype = DAM_POINT;
-	munition = itrw_bolt;
+	munition = ItRw_Bolt;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_DRACHENJAEGERARMBRUST;
+	cond_value[2] = Condition_Drachenjaegerarmbrust;
 	visual = "ItRw_Crossbow_H_02.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 

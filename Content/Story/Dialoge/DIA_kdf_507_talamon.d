@@ -1,238 +1,238 @@
 
-instance DIA_TALAMON_KAP1_EXIT(C_INFO)
+instance DIA_Talamon_KAP1_EXIT(C_Info)
 {
-	npc = kdf_507_talamon;
+	npc = KDF_507_Talamon;
 	nr = 999;
-	condition = dia_talamon_kap1_exit_condition;
-	information = dia_talamon_kap1_exit_info;
+	condition = DIA_Talamon_KAP1_EXIT_Condition;
+	information = DIA_Talamon_KAP1_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_talamon_kap1_exit_condition()
+func int DIA_Talamon_KAP1_EXIT_Condition()
 {
-	if(KAPITEL == 1)
+	if(Kapitel == 1)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_talamon_kap1_exit_info()
+func void DIA_Talamon_KAP1_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-const string KDF_507_CHECKPOINT = "NW_MONASTERY_SEALROOM_01";
+const string KDF_507_Checkpoint = "NW_MONASTERY_SEALROOM_01";
 
-instance DIA_KDF_507_TALAMON_FIRSTWARN(C_INFO)
+instance DIA_KDF_507_Talamon_FirstWarn(C_Info)
 {
-	npc = kdf_507_talamon;
+	npc = KDF_507_Talamon;
 	nr = 1;
-	condition = dia_kdf_507_talamon_firstwarn_condition;
-	information = dia_kdf_507_talamon_firstwarn_info;
+	condition = DIA_KDF_507_Talamon_FirstWarn_Condition;
+	information = DIA_KDF_507_Talamon_FirstWarn_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_kdf_507_talamon_firstwarn_condition()
+func int DIA_KDF_507_Talamon_FirstWarn_Condition()
 {
-	if((PYROKAR_LETYOUPASSTALAMON == FALSE) && (self.aivar[AIV_GUARDPASSAGE_STATUS] == GP_NONE) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE))
+	if((Pyrokar_LetYouPassTalamon == FALSE) && (self.aivar[AIV_Guardpassage_Status] == GP_NONE) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kdf_507_talamon_firstwarn_info()
+func void DIA_KDF_507_Talamon_FirstWarn_Info()
 {
 	AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_04_00");	//Nie wolno ci iœæ dalej. Zawróæ!
 	AI_StopProcessInfos(self);
-	other.aivar[AIV_LASTDISTTOWP] = Npc_GetDistToWP(other,KDF_507_CHECKPOINT);
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_FIRSTWARNGIVEN;
+	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,KDF_507_Checkpoint);
+	self.aivar[AIV_Guardpassage_Status] = GP_FirstWarnGiven;
 };
 
 
-instance DIA_KDF_507_TALAMON_SECONDWARN(C_INFO)
+instance DIA_KDF_507_Talamon_SecondWarn(C_Info)
 {
-	npc = kdf_507_talamon;
+	npc = KDF_507_Talamon;
 	nr = 2;
-	condition = dia_kdf_507_talamon_secondwarn_condition;
-	information = dia_kdf_507_talamon_secondwarn_info;
+	condition = DIA_KDF_507_Talamon_SecondWarn_Condition;
+	information = DIA_KDF_507_Talamon_SecondWarn_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_kdf_507_talamon_secondwarn_condition()
+func int DIA_KDF_507_Talamon_SecondWarn_Condition()
 {
-	if((PYROKAR_LETYOUPASSTALAMON == FALSE) && (self.aivar[AIV_GUARDPASSAGE_STATUS] == GP_FIRSTWARNGIVEN) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,KDF_507_CHECKPOINT) < (other.aivar[AIV_LASTDISTTOWP] - 50)))
+	if((Pyrokar_LetYouPassTalamon == FALSE) && (self.aivar[AIV_Guardpassage_Status] == GP_FirstWarnGiven) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,KDF_507_Checkpoint) < (other.aivar[AIV_LastDistToWP] - 50)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kdf_507_talamon_secondwarn_info()
+func void DIA_KDF_507_Talamon_SecondWarn_Info()
 {
 	AI_Output(self,other,"DIA_KDF_507_Talamon_SecondWarn_04_00");	//Innos ukarze ciê kl¹tw¹, jeœli nie zawrócisz!
-	other.aivar[AIV_LASTDISTTOWP] = Npc_GetDistToWP(other,KDF_507_CHECKPOINT);
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_SECONDWARNGIVEN;
+	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,KDF_507_Checkpoint);
+	self.aivar[AIV_Guardpassage_Status] = GP_SecondWarnGiven;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_KDF_507_TALAMON_ATTACK(C_INFO)
+instance DIA_KDF_507_Talamon_Attack(C_Info)
 {
-	npc = kdf_507_talamon;
+	npc = KDF_507_Talamon;
 	nr = 3;
-	condition = dia_kdf_507_talamon_attack_condition;
-	information = dia_kdf_507_talamon_attack_info;
+	condition = DIA_KDF_507_Talamon_Attack_Condition;
+	information = DIA_KDF_507_Talamon_Attack_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_kdf_507_talamon_attack_condition()
+func int DIA_KDF_507_Talamon_Attack_Condition()
 {
-	if((PYROKAR_LETYOUPASSTALAMON == FALSE) && (self.aivar[AIV_GUARDPASSAGE_STATUS] == GP_SECONDWARNGIVEN) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,KDF_507_CHECKPOINT) < (other.aivar[AIV_LASTDISTTOWP] - 50)))
+	if((Pyrokar_LetYouPassTalamon == FALSE) && (self.aivar[AIV_Guardpassage_Status] == GP_SecondWarnGiven) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,KDF_507_Checkpoint) < (other.aivar[AIV_LastDistToWP] - 50)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kdf_507_talamon_attack_info()
+func void DIA_KDF_507_Talamon_Attack_Info()
 {
-	other.aivar[AIV_LASTDISTTOWP] = 0;
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_NONE;
+	other.aivar[AIV_LastDistToWP] = 0;
+	self.aivar[AIV_Guardpassage_Status] = GP_NONE;
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_GUARDSTOPSINTRUDER,1);
+	B_Attack(self,other,AR_GuardStopsIntruder,1);
 };
 
 
-instance DIA_TALAMON_KAP2_EXIT(C_INFO)
+instance DIA_Talamon_KAP2_EXIT(C_Info)
 {
-	npc = kdf_507_talamon;
+	npc = KDF_507_Talamon;
 	nr = 999;
-	condition = dia_talamon_kap2_exit_condition;
-	information = dia_talamon_kap2_exit_info;
+	condition = DIA_Talamon_KAP2_EXIT_Condition;
+	information = DIA_Talamon_KAP2_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_talamon_kap2_exit_condition()
+func int DIA_Talamon_KAP2_EXIT_Condition()
 {
-	if(KAPITEL == 2)
+	if(Kapitel == 2)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_talamon_kap2_exit_info()
+func void DIA_Talamon_KAP2_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_TALAMON_KAP3_EXIT(C_INFO)
+instance DIA_Talamon_KAP3_EXIT(C_Info)
 {
-	npc = kdf_507_talamon;
+	npc = KDF_507_Talamon;
 	nr = 999;
-	condition = dia_talamon_kap3_exit_condition;
-	information = dia_talamon_kap3_exit_info;
+	condition = DIA_Talamon_KAP3_EXIT_Condition;
+	information = DIA_Talamon_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_talamon_kap3_exit_condition()
+func int DIA_Talamon_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_talamon_kap3_exit_info()
+func void DIA_Talamon_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_TALAMON_KAP4_EXIT(C_INFO)
+instance DIA_Talamon_KAP4_EXIT(C_Info)
 {
-	npc = kdf_507_talamon;
+	npc = KDF_507_Talamon;
 	nr = 999;
-	condition = dia_talamon_kap4_exit_condition;
-	information = dia_talamon_kap4_exit_info;
+	condition = DIA_Talamon_KAP4_EXIT_Condition;
+	information = DIA_Talamon_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_talamon_kap4_exit_condition()
+func int DIA_Talamon_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_talamon_kap4_exit_info()
+func void DIA_Talamon_KAP4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_TALAMON_KAP5_STOP(C_INFO)
+instance DIA_Talamon_KAP5_Stop(C_Info)
 {
-	npc = kdf_507_talamon;
+	npc = KDF_507_Talamon;
 	nr = 50;
-	condition = dia_talamon_kap5_stop_condition;
-	information = dia_talamon_kap5_stop_info;
+	condition = DIA_Talamon_KAP5_Stop_Condition;
+	information = DIA_Talamon_KAP5_Stop_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_talamon_kap5_stop_condition()
+func int DIA_Talamon_KAP5_Stop_Condition()
 {
-	if(PYROKAR_LETYOUPASSTALAMON == TRUE)
+	if(Pyrokar_LetYouPassTalamon == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_talamon_kap5_stop_info()
+func void DIA_Talamon_KAP5_Stop_Info()
 {
 	AI_Output(self,other,"DIA_Talamon_KAP5_Stop_04_00");	//Nie wolno ci iœæ dalej. Zawróæ!
 	AI_Output(other,self,"DIA_Talamon_KAP5_Stop_15_01");	//Pyrokar mówi, ¿e mogê przestudiowaæ ksiêgê Xardasa.
 	AI_Output(self,other,"DIA_Talamon_KAP5_Stop_04_02");	//Tak mówi. W takim razie, mo¿esz wejœæ. Ksiêga, której szukasz, znajduje siê na ³awie alchemika.
-	b_logentry(TOPIC_BUCHHALLENVONIRDORATH,"Talamon trzyma³ ksiêgê Xardasa na stole alchemicznym w piwnicy.");
+	B_LogEntry(TOPIC_BuchHallenVonIrdorath,"Talamon trzyma³ ksiêgê Xardasa na stole alchemicznym w piwnicy.");
 };
 
 
-instance DIA_TALAMON_FOUNDSECRETDOOR(C_INFO)
+instance DIA_Talamon_FoundSecretDoor(C_Info)
 {
-	npc = kdf_507_talamon;
+	npc = KDF_507_Talamon;
 	nr = 51;
-	condition = dia_talamon_foundsecretdoor_condition;
-	information = dia_talamon_foundsecretdoor_info;
+	condition = DIA_Talamon_FoundSecretDoor_Condition;
+	information = DIA_Talamon_FoundSecretDoor_Info;
 	permanent = FALSE;
 	description = "Znalaz³em tajemne przejœcie.";
 };
 
 
-func int dia_talamon_foundsecretdoor_condition()
+func int DIA_Talamon_FoundSecretDoor_Condition()
 {
-	if(SECRETLIBRARYISOPEN == TRUE)
+	if(SecretLibraryIsOpen == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_talamon_foundsecretdoor_info()
+func void DIA_Talamon_FoundSecretDoor_Info()
 {
 	AI_Output(other,self,"DIA_Talamon_FoundSecretDoor_15_00");	//Znalaz³em tajemne przejœcie.
 	AI_Output(self,other,"DIA_Talamon_FoundSecretDoor_04_01");	//Jak? Gdzie?
@@ -241,40 +241,40 @@ func void dia_talamon_foundsecretdoor_info()
 	AI_Output(other,self,"DIA_Talamon_FoundSecretDoor_15_04");	//Wygl¹da to na star¹, podziemn¹ kryptê.
 	AI_Output(self,other,"DIA_Talamon_FoundSecretDoor_04_05");	//To bardzo wa¿na informacja. Niezw³ocznie powiadomiê Pyrokara.
 	AI_Output(self,other,"DIA_Talamon_FoundSecretDoor_04_06");	//W tym czasie musisz sprawdziæ, co kryj¹ piwnice.
-	MIS_SCOUTLIBRARY = LOG_RUNNING;
+	MIS_ScoutLibrary = LOG_Running;
 };
 
 
-instance DIA_TALAMON_SCOUTSECRETLIBRARY(C_INFO)
+instance DIA_Talamon_ScoutSecretLibrary(C_Info)
 {
-	npc = kdf_507_talamon;
+	npc = KDF_507_Talamon;
 	nr = 51;
-	condition = dia_talamon_scoutsecretlibrary_condition;
-	information = dia_talamon_scoutsecretlibrary_info;
+	condition = DIA_Talamon_ScoutSecretLibrary_Condition;
+	information = DIA_Talamon_ScoutSecretLibrary_Info;
 	permanent = TRUE;
 	description = "By³em w krypcie.";
 };
 
 
-func int dia_talamon_scoutsecretlibrary_condition()
+func int DIA_Talamon_ScoutSecretLibrary_Condition()
 {
-	if((MIS_SCOUTLIBRARY == LOG_RUNNING) && (HEROWASINLIBRARY == TRUE))
+	if((MIS_ScoutLibrary == LOG_Running) && (HeroWasInLibrary == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_talamon_scoutsecretlibrary_info()
+func void DIA_Talamon_ScoutSecretLibrary_Info()
 {
 	AI_Output(other,self,"DIA_Talamon_ScoutSecretLibrary_15_00");	//By³em w krypcie.
 	AI_Output(self,other,"DIA_Talamon_ScoutSecretLibrary_04_01");	//I co uda³o ci siê odnaleŸæ?
-	if(Npc_IsDead(secretlibraryskeleton))
+	if(Npc_IsDead(SecretLibrarySkeleton))
 	{
 		AI_Output(other,self,"DIA_Talamon_ScoutSecretLibrary_15_02");	//By³ tam szkielet wojownika, pilnowa³ jakichœ drzwi. Zabi³em go.
 		AI_Output(self,other,"DIA_Talamon_ScoutSecretLibrary_04_03");	//Dobra robota.
 		AI_Output(self,other,"DIA_Talamon_ScoutSecretLibrary_04_04");	//Kiedy ju¿ zwyciê¿ymy z³o, zajmiemy siê krypt¹.
-		MIS_SCOUTLIBRARY = LOG_SUCCESS;
-		b_giveplayerxp(XP_SCOUTSECRETLIBRARY);
+		MIS_ScoutLibrary = LOG_SUCCESS;
+		B_GivePlayerXP(XP_ScoutSecretLibrary);
 	}
 	else
 	{
@@ -284,62 +284,62 @@ func void dia_talamon_scoutsecretlibrary_info()
 };
 
 
-instance DIA_TALAMON_KAP5_EXIT(C_INFO)
+instance DIA_Talamon_KAP5_EXIT(C_Info)
 {
-	npc = kdf_507_talamon;
+	npc = KDF_507_Talamon;
 	nr = 999;
-	condition = dia_talamon_kap5_exit_condition;
-	information = dia_talamon_kap5_exit_info;
+	condition = DIA_Talamon_KAP5_EXIT_Condition;
+	information = DIA_Talamon_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_talamon_kap5_exit_condition()
+func int DIA_Talamon_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_talamon_kap5_exit_info()
+func void DIA_Talamon_KAP5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_TALAMON_PICKPOCKET(C_INFO)
+instance DIA_Talamon_PICKPOCKET(C_Info)
 {
-	npc = kdf_507_talamon;
+	npc = KDF_507_Talamon;
 	nr = 900;
-	condition = dia_talamon_pickpocket_condition;
-	information = dia_talamon_pickpocket_info;
+	condition = DIA_Talamon_PICKPOCKET_Condition;
+	information = DIA_Talamon_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_100;
+	description = Pickpocket_100;
 };
 
 
-func int dia_talamon_pickpocket_condition()
+func int DIA_Talamon_PICKPOCKET_Condition()
 {
-	return c_beklauen(87,140);
+	return C_Beklauen(87,140);
 };
 
-func void dia_talamon_pickpocket_info()
+func void DIA_Talamon_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_talamon_pickpocket);
-	Info_AddChoice(dia_talamon_pickpocket,DIALOG_BACK,dia_talamon_pickpocket_back);
-	Info_AddChoice(dia_talamon_pickpocket,DIALOG_PICKPOCKET,dia_talamon_pickpocket_doit);
+	Info_ClearChoices(DIA_Talamon_PICKPOCKET);
+	Info_AddChoice(DIA_Talamon_PICKPOCKET,Dialog_Back,DIA_Talamon_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Talamon_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Talamon_PICKPOCKET_DoIt);
 };
 
-func void dia_talamon_pickpocket_doit()
+func void DIA_Talamon_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_talamon_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Talamon_PICKPOCKET);
 };
 
-func void dia_talamon_pickpocket_back()
+func void DIA_Talamon_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_talamon_pickpocket);
+	Info_ClearChoices(DIA_Talamon_PICKPOCKET);
 };
 

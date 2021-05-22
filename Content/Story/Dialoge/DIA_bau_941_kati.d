@@ -1,93 +1,93 @@
 
-instance DIA_KATI_EXIT(C_INFO)
+instance DIA_Kati_EXIT(C_Info)
 {
-	npc = bau_941_kati;
+	npc = BAU_941_Kati;
 	nr = 999;
-	condition = dia_kati_exit_condition;
-	information = dia_kati_exit_info;
+	condition = DIA_Kati_EXIT_Condition;
+	information = DIA_Kati_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_kati_exit_condition()
+func int DIA_Kati_EXIT_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kati_exit_info()
+func void DIA_Kati_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_KATI_SLDNOCHDA(C_INFO)
+instance DIA_Kati_SLDNOCHDA(C_Info)
 {
-	npc = bau_941_kati;
+	npc = BAU_941_Kati;
 	nr = 4;
-	condition = dia_kati_sldnochda_condition;
-	information = dia_kati_sldnochda_info;
+	condition = DIA_Kati_SLDNOCHDA_Condition;
+	information = DIA_Kati_SLDNOCHDA_Info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_kati_sldnochda_condition()
+func int DIA_Kati_SLDNOCHDA_Condition()
 {
-	if(!Npc_IsDead(alvares) && !Npc_IsDead(engardo) && Npc_IsInState(self,zs_talk))
+	if(!Npc_IsDead(Alvares) && !Npc_IsDead(Engardo) && Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kati_sldnochda_info()
+func void DIA_Kati_SLDNOCHDA_Info()
 {
-	var int hilfe;
-	if(hilfe == FALSE)
+	var int Hilfe;
+	if(Hilfe == FALSE)
 	{
 		AI_Output(self,other,"DIA_Kati_SLDNOCHDA_16_00");	//Te rzezimieszki gro¿¹ mojemu mê¿owi! Jesteœmy obywatelami miasta, lojalnymi wobec naszego Króla! A oni chc¹ nas obrabowaæ!
-		hilfe = TRUE;
+		Hilfe = TRUE;
 	};
 	AI_Output(self,other,"DIA_Kati_SLDNOCHDA_16_01");	//Nie stój tak, zrób coœ! Pomo¿esz nam?
-	AKILS_SLDSTILLTHERE = TRUE;
-	Log_CreateTopic(TOPIC_AKILSSLDSTILLTHERE,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_AKILSSLDSTILLTHERE,LOG_RUNNING);
-	b_logentry(TOPIC_AKILSSLDSTILLTHERE,"Farmie Akila zagra¿aj¹ najemnicy.");
+	Akils_SLDStillthere = TRUE;
+	Log_CreateTopic(TOPIC_AkilsSLDStillthere,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_AkilsSLDStillthere,LOG_Running);
+	B_LogEntry(TOPIC_AkilsSLDStillthere,"Farmie Akila zagra¿aj¹ najemnicy.");
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_KATI_HALLO(C_INFO)
+instance DIA_Kati_HALLO(C_Info)
 {
-	npc = bau_941_kati;
+	npc = BAU_941_Kati;
 	nr = 5;
-	condition = dia_kati_hallo_condition;
-	information = dia_kati_hallo_info;
+	condition = DIA_Kati_HALLO_Condition;
+	information = DIA_Kati_HALLO_Info;
 	permanent = FALSE;
 	description = "Wszystko w porz¹dku?";
 };
 
 
-func int dia_kati_hallo_condition()
+func int DIA_Kati_HALLO_Condition()
 {
-	if(Npc_IsDead(alvares) && Npc_IsDead(engardo))
+	if(Npc_IsDead(Alvares) && Npc_IsDead(Engardo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kati_hallo_info()
+func void DIA_Kati_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Kati_HALLO_15_00");	//Czy wszystko w porz¹dku?
-	if(Npc_IsDead(akil))
+	if(Npc_IsDead(Akil))
 	{
 		AI_Output(self,other,"DIA_Kati_HALLO_16_01");	//Mój ukochany m¹¿ nie ¿yje! Innosie! Za jakie grzechy tak mnie pokara³eœ?
 		Npc_ExchangeRoutine(self,"Start");
-		b_startotherroutine(randolph,"Start");
-		b_giveplayerxp(XP_AKIL_TOT);
+		B_StartOtherRoutine(Randolph,"Start");
+		B_GivePlayerXP(XP_Akil_Tot);
 	}
 	else
 	{
@@ -96,85 +96,85 @@ func void dia_kati_hallo_info()
 };
 
 
-instance DIA_KATI_ESSEN(C_INFO)
+instance DIA_Kati_ESSEN(C_Info)
 {
-	npc = bau_941_kati;
+	npc = BAU_941_Kati;
 	nr = 12;
-	condition = dia_kati_essen_condition;
-	information = dia_kati_essen_info;
+	condition = DIA_Kati_ESSEN_Condition;
+	information = DIA_Kati_ESSEN_Info;
 	permanent = FALSE;
 	description = "Akil mówi, ¿e masz dla mnie jedzenie.";
 };
 
 
-func int dia_kati_essen_condition()
+func int DIA_Kati_ESSEN_Condition()
 {
-	if((KATI_MAHLZEIT == TRUE) && (Npc_IsDead(akil) == FALSE))
+	if((Kati_Mahlzeit == TRUE) && (Npc_IsDead(Akil) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kati_essen_info()
+func void DIA_Kati_ESSEN_Info()
 {
 	AI_Output(other,self,"DIA_Kati_ESSEN_15_00");	//Akil mówi, ¿e masz dla mnie jedzenie.
 	AI_Output(self,other,"DIA_Kati_ESSEN_16_01");	//Od czasu kiedy upad³a Bariera, zrobi³o siê tutaj bardzo niebezpiecznie. To dla nas ciê¿kie czasy.
 	AI_Output(self,other,"DIA_Kati_ESSEN_16_02");	//Proszê, masz tu kawa³ek chleba, odrobinê miêsa i parê ³yków wody. Obawiam siê, ¿e nie mogê sobie pozwoliæ na poczêstowanie ciê czymœ innym.
-	b_giveinvitems(self,other,4898,1);
-	b_giveinvitems(self,other,4918,1);
-	b_giveinvitems(self,other,4904,1);
+	B_GiveInvItems(self,other,ItFo_Bread,1);
+	B_GiveInvItems(self,other,ItFo_Water,1);
+	B_GiveInvItems(self,other,ItFoMutton,1);
 };
 
 
-instance DIA_KATI_BALTRAM(C_INFO)
+instance DIA_Kati_Baltram(C_Info)
 {
-	npc = bau_941_kati;
+	npc = BAU_941_Kati;
 	nr = 4;
-	condition = dia_kati_baltram_condition;
-	information = dia_kati_baltram_info;
+	condition = DIA_Kati_Baltram_Condition;
+	information = DIA_Kati_Baltram_Info;
 	permanent = FALSE;
 	description = "Baltram mnie przys³a³...";
 };
 
 
-func int dia_kati_baltram_condition()
+func int DIA_Kati_Baltram_Condition()
 {
-	if(Npc_IsDead(akil) && (MIS_BALTRAM_SCOUTAKIL == LOG_RUNNING) && (LIEFERUNG_GEHOLT == FALSE))
+	if(Npc_IsDead(Akil) && (MIS_Baltram_ScoutAkil == LOG_Running) && (Lieferung_Geholt == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kati_baltram_info()
+func void DIA_Kati_Baltram_Info()
 {
 	AI_Output(other,self,"DIA_Kati_Baltram_15_00");	//Przysy³a mnie Baltram. Mam odebraæ dla niego dostawê.
 	AI_Output(self,other,"DIA_Kati_Baltram_16_01");	//Ale¿ oczywiœcie. Proszê, wszystko zapakowa³am.
-	CreateInvItems(self,itmi_baltrampaket,1);
-	b_giveinvitems(self,other,5703,1);
-	LIEFERUNG_GEHOLT = TRUE;
+	CreateInvItems(self,ItMi_BaltramPaket,1);
+	B_GiveInvItems(self,other,ItMi_BaltramPaket,1);
+	Lieferung_Geholt = TRUE;
 };
 
 
-instance DIA_KATI_BAUERNAUFSTAND(C_INFO)
+instance DIA_Kati_BAUERNAUFSTAND(C_Info)
 {
-	npc = bau_941_kati;
+	npc = BAU_941_Kati;
 	nr = 6;
-	condition = dia_kati_bauernaufstand_condition;
-	information = dia_kati_bauernaufstand_info;
+	condition = DIA_Kati_BAUERNAUFSTAND_Condition;
+	information = DIA_Kati_BAUERNAUFSTAND_Info;
 	permanent = FALSE;
 	description = "Czemu nie bronicie siê przed tyrani¹ Onara?";
 };
 
 
-func int dia_kati_bauernaufstand_condition()
+func int DIA_Kati_BAUERNAUFSTAND_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_kati_hallo))
+	if(Npc_KnowsInfo(other,DIA_Kati_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kati_bauernaufstand_info()
+func void DIA_Kati_BAUERNAUFSTAND_Info()
 {
 	AI_Output(other,self,"DIA_Kati_BAUERNAUFSTAND_15_00");	//Czemu nie bronicie siê przed tyrani¹ Onara?
 	AI_Output(self,other,"DIA_Kati_BAUERNAUFSTAND_16_01");	//Dla farmerów mieszkaj¹cych w pobli¿u miasta lepiej jest polegaæ na stra¿nikach ni¿ na najemnikach Onara.
@@ -182,52 +182,52 @@ func void dia_kati_bauernaufstand_info()
 };
 
 
-instance DIA_KATI_ANDEREHOEFE(C_INFO)
+instance DIA_Kati_ANDEREHOEFE(C_Info)
 {
-	npc = bau_941_kati;
+	npc = BAU_941_Kati;
 	nr = 7;
-	condition = dia_kati_anderehoefe_condition;
-	information = dia_kati_anderehoefe_info;
+	condition = DIA_Kati_ANDEREHOEFE_Condition;
+	information = DIA_Kati_ANDEREHOEFE_Info;
 	permanent = FALSE;
 	description = "Gdzie maj¹ swoje farmy Bengar i Sekob?";
 };
 
 
-func int dia_kati_anderehoefe_condition()
+func int DIA_Kati_ANDEREHOEFE_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_kati_bauernaufstand))
+	if(Npc_KnowsInfo(other,DIA_Kati_BAUERNAUFSTAND))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kati_anderehoefe_info()
+func void DIA_Kati_ANDEREHOEFE_Info()
 {
 	AI_Output(other,self,"DIA_Kati_ANDEREHOEFE_15_00");	//Gdzie maj¹ swoje farmy Bengar i Sekob?
 	AI_Output(self,other,"DIA_Kati_ANDEREHOEFE_16_01");	//Mieszkaj¹ niedaleko posiad³oœci Onara. Udaj siê st¹d na wschód, a znajdziesz ich bez trudu.
 };
 
 
-instance DIA_KATI_HIERWEG(C_INFO)
+instance DIA_Kati_HIERWEG(C_Info)
 {
-	npc = bau_941_kati;
+	npc = BAU_941_Kati;
 	nr = 9;
-	condition = dia_kati_hierweg_condition;
-	information = dia_kati_hierweg_info;
+	condition = DIA_Kati_HIERWEG_Condition;
+	information = DIA_Kati_HIERWEG_Info;
 	permanent = FALSE;
 	description = "Czy kiedykolwiek myœla³aœ o tym, ¿eby siê st¹d wyprowadziæ?";
 };
 
 
-func int dia_kati_hierweg_condition()
+func int DIA_Kati_HIERWEG_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_kati_bauernaufstand))
+	if(Npc_KnowsInfo(other,DIA_Kati_BAUERNAUFSTAND))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kati_hierweg_info()
+func void DIA_Kati_HIERWEG_Info()
 {
 	AI_Output(other,self,"DIA_Kati_HIERWEG_15_00");	//Czy kiedykolwiek myœla³aœ o tym, ¿eby siê st¹d wyprowadziæ?
 	AI_Output(self,other,"DIA_Kati_HIERWEG_16_01");	//Nie jest ³atwo uciec z tej czêœci kraju. Wokó³ naszych ziem roztacza siê pasmo wysokich gór.
@@ -236,52 +236,52 @@ func void dia_kati_hierweg_info()
 };
 
 
-instance DIA_KATI_PASS(C_INFO)
+instance DIA_Kati_PASS(C_Info)
 {
-	npc = bau_941_kati;
+	npc = BAU_941_Kati;
 	nr = 10;
-	condition = dia_kati_pass_condition;
-	information = dia_kati_pass_info;
+	condition = DIA_Kati_PASS_Condition;
+	information = DIA_Kati_PASS_Info;
 	permanent = FALSE;
 	description = "Co wiesz na temat prze³êczy?";
 };
 
 
-func int dia_kati_pass_condition()
+func int DIA_Kati_PASS_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_kati_hierweg))
+	if(Npc_KnowsInfo(other,DIA_Kati_HIERWEG))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kati_pass_info()
+func void DIA_Kati_PASS_Info()
 {
 	AI_Output(other,self,"DIA_Kati_PASS_15_00");	//Co wiesz o prze³êczy?
 	AI_Output(self,other,"DIA_Kati_PASS_16_01");	//Nigdy na niej nie by³am, ale wiem, ¿e znajduje siê gdzieœ w okolicy farmy Bengara.
 };
 
 
-instance DIA_KATI_PERMKAP1(C_INFO)
+instance DIA_Kati_PERMKAP1(C_Info)
 {
-	npc = bau_941_kati;
+	npc = BAU_941_Kati;
 	nr = 11;
-	condition = dia_kati_permkap1_condition;
-	information = dia_kati_permkap1_info;
+	condition = DIA_Kati_PERMKAP1_Condition;
+	information = DIA_Kati_PERMKAP1_Info;
 	permanent = TRUE;
 	description = "Uwa¿aj na swojego mê¿a.";
 };
 
 
-func int dia_kati_permkap1_condition()
+func int DIA_Kati_PERMKAP1_Condition()
 {
-	if(!c_npcisdown(akil) && Npc_KnowsInfo(other,dia_kati_hallo) && Npc_KnowsInfo(other,dia_kati_bauernaufstand) && Npc_KnowsInfo(other,dia_kati_anderehoefe) && Npc_KnowsInfo(other,dia_kati_hierweg) && Npc_KnowsInfo(other,dia_kati_pass) && (KAPITEL < 3))
+	if(!C_NpcIsDown(Akil) && Npc_KnowsInfo(other,DIA_Kati_HALLO) && Npc_KnowsInfo(other,DIA_Kati_BAUERNAUFSTAND) && Npc_KnowsInfo(other,DIA_Kati_ANDEREHOEFE) && Npc_KnowsInfo(other,DIA_Kati_HIERWEG) && Npc_KnowsInfo(other,DIA_Kati_PASS) && (Kapitel < 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kati_permkap1_info()
+func void DIA_Kati_PERMKAP1_Info()
 {
 	AI_Output(other,self,"DIA_Kati_PERMKAP1_15_00");	//Uwa¿aj na swojego mê¿a.
 	AI_Output(self,other,"DIA_Kati_PERMKAP1_16_01");	//Zrobiê, co w mojej mocy.
@@ -289,51 +289,51 @@ func void dia_kati_permkap1_info()
 };
 
 
-instance DIA_KATI_KAP3_EXIT(C_INFO)
+instance DIA_Kati_KAP3_EXIT(C_Info)
 {
-	npc = bau_941_kati;
+	npc = BAU_941_Kati;
 	nr = 999;
-	condition = dia_kati_kap3_exit_condition;
-	information = dia_kati_kap3_exit_info;
+	condition = DIA_Kati_KAP3_EXIT_Condition;
+	information = DIA_Kati_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_kati_kap3_exit_condition()
+func int DIA_Kati_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kati_kap3_exit_info()
+func void DIA_Kati_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_KATI_PERM(C_INFO)
+instance DIA_Kati_PERM(C_Info)
 {
-	npc = bau_941_kati;
+	npc = BAU_941_Kati;
 	nr = 3;
-	condition = dia_kati_perm_condition;
-	information = dia_kati_perm_info;
+	condition = DIA_Kati_PERM_Condition;
+	information = DIA_Kati_PERM_Info;
 	permanent = TRUE;
 	description = "Wszystko w porz¹dku?";
 };
 
 
-func int dia_kati_perm_condition()
+func int DIA_Kati_PERM_Condition()
 {
-	if((KAPITEL >= 3) && Npc_KnowsInfo(other,dia_kati_hallo))
+	if((Kapitel >= 3) && Npc_KnowsInfo(other,DIA_Kati_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kati_perm_info()
+func void DIA_Kati_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Kati_PERM_15_00");	//Wszystko w porz¹dku?
 	AI_Output(self,other,"DIA_Kati_PERM_16_01");	//Jakoœ dajemy sobie radê. Zastanawiam siê, jak d³ugo jeszcze bêdziemy siê musieli opieraæ tym czarnym diab³om.
@@ -341,112 +341,112 @@ func void dia_kati_perm_info()
 };
 
 
-instance DIA_KATI_KAP4_EXIT(C_INFO)
+instance DIA_Kati_KAP4_EXIT(C_Info)
 {
-	npc = bau_941_kati;
+	npc = BAU_941_Kati;
 	nr = 999;
-	condition = dia_kati_kap4_exit_condition;
-	information = dia_kati_kap4_exit_info;
+	condition = DIA_Kati_KAP4_EXIT_Condition;
+	information = DIA_Kati_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_kati_kap4_exit_condition()
+func int DIA_Kati_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kati_kap4_exit_info()
+func void DIA_Kati_KAP4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_KATI_KAP5_EXIT(C_INFO)
+instance DIA_Kati_KAP5_EXIT(C_Info)
 {
-	npc = bau_941_kati;
+	npc = BAU_941_Kati;
 	nr = 999;
-	condition = dia_kati_kap5_exit_condition;
-	information = dia_kati_kap5_exit_info;
+	condition = DIA_Kati_KAP5_EXIT_Condition;
+	information = DIA_Kati_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_kati_kap5_exit_condition()
+func int DIA_Kati_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kati_kap5_exit_info()
+func void DIA_Kati_KAP5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_KATI_KAP6_EXIT(C_INFO)
+instance DIA_Kati_KAP6_EXIT(C_Info)
 {
-	npc = bau_941_kati;
+	npc = BAU_941_Kati;
 	nr = 999;
-	condition = dia_kati_kap6_exit_condition;
-	information = dia_kati_kap6_exit_info;
+	condition = DIA_Kati_KAP6_EXIT_Condition;
+	information = DIA_Kati_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_kati_kap6_exit_condition()
+func int DIA_Kati_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kati_kap6_exit_info()
+func void DIA_Kati_KAP6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_KATI_PICKPOCKET(C_INFO)
+instance DIA_Kati_PICKPOCKET(C_Info)
 {
-	npc = bau_941_kati;
+	npc = BAU_941_Kati;
 	nr = 900;
-	condition = dia_kati_pickpocket_condition;
-	information = dia_kati_pickpocket_info;
+	condition = DIA_Kati_PICKPOCKET_Condition;
+	information = DIA_Kati_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_20_FEMALE;
+	description = Pickpocket_20_Female;
 };
 
 
-func int dia_kati_pickpocket_condition()
+func int DIA_Kati_PICKPOCKET_Condition()
 {
-	return c_beklauen(13,15);
+	return C_Beklauen(13,15);
 };
 
-func void dia_kati_pickpocket_info()
+func void DIA_Kati_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_kati_pickpocket);
-	Info_AddChoice(dia_kati_pickpocket,DIALOG_BACK,dia_kati_pickpocket_back);
-	Info_AddChoice(dia_kati_pickpocket,DIALOG_PICKPOCKET,dia_kati_pickpocket_doit);
+	Info_ClearChoices(DIA_Kati_PICKPOCKET);
+	Info_AddChoice(DIA_Kati_PICKPOCKET,Dialog_Back,DIA_Kati_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Kati_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Kati_PICKPOCKET_DoIt);
 };
 
-func void dia_kati_pickpocket_doit()
+func void DIA_Kati_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_kati_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Kati_PICKPOCKET);
 };
 
-func void dia_kati_pickpocket_back()
+func void DIA_Kati_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_kati_pickpocket);
+	Info_ClearChoices(DIA_Kati_PICKPOCKET);
 };
 

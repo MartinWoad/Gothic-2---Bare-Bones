@@ -1,1049 +1,1049 @@
 
-const string NAME_PALADINSPELL = "Paladin Zauber";
+const string Name_PaladinSpell = "Paladin Zauber";
 
-const int VALUE_RU_PALLIGHT = 50;
-const int VALUE_RU_PALLIGHTHEAL = 50;
-const int VALUE_RU_PALHOLYBOLT = 50;
-const int VALUE_RU_PALMEDIUMHEAL = 100;
-const int VALUE_RU_PALREPELEVIL = 100;
-const int VALUE_RU_PALFULLHEAL = 150;
-const int VALUE_RU_PALDESTROYEVIL = 150;
-const int VALUE_RU_LIGHT = 50;
-const int VALUE_RU_FIREBOLT = 50;
-const int VALUE_RU_ZAP = 50;
-const int VALUE_RU_LIGHTHEAL = 50;
-const int VALUE_RU_SUMGOBSKEL = 50;
-const int VALUE_RU_INSTANTFIREBALL = 100;
-const int VALUE_RU_ICEBOLT = 100;
-const int VALUE_RU_SUMWOLF = 100;
-const int VALUE_RU_WINDFIST = 100;
-const int VALUE_RU_SLEEP = 100;
-const int VALUE_RU_MEDIUMHEAL = 150;
-const int VALUE_RU_SUMSKEL = 150;
-const int VALUE_RU_FEAR = 150;
-const int VALUE_RU_ICECUBE = 150;
-const int VALUE_RU_THUNDERBALL = 150;
-const int VALUE_RU_FIRESTORM = 150;
-const int VALUE_RU_SUMGOL = 200;
-const int VALUE_RU_HARMUNDEAD = 200;
-const int VALUE_RU_LIGHTNINGFLASH = 200;
-const int VALUE_RU_CHARGEFIREBALL = 200;
-const int VALUE_RU_ICEWAVE = 250;
-const int VALUE_RU_SUMDEMON = 250;
-const int VALUE_RU_FULLHEAL = 250;
-const int VALUE_RU_PYROKINESIS = 250;
-const int VALUE_RU_FIRERAIN = 300;
-const int VALUE_RU_BREATHOFDEATH = 300;
-const int VALUE_RU_MASSDEATH = 300;
-const int VALUE_RU_MASTEROFDISASTER = 300;
-const int VALUE_RU_ARMYOFDARKNESS = 300;
-const int VALUE_RU_SHRINK = 300;
-const int VALUE_RU_PALTELEPORTSECRET = 50;
-const int VALUE_RU_TELEPORTSEAPORT = 50;
-const int VALUE_RU_TELEPORTMONASTERY = 50;
-const int VALUE_RU_TELEPORTFARM = 50;
-const int VALUE_RU_TELEPORTXARDAS = 50;
-const int VALUE_RU_TELEPORTPASSNW = 50;
-const int VALUE_RU_TELEPORTPASSOW = 50;
-const int VALUE_RU_TELEPORTOC = 50;
-const int VALUE_RU_TELEPORTOWDEMONTOWER = 50;
-const int VALUE_RU_TELEPORTTAVERNE = 50;
-const int VALUE_RU_TELEPORT_3 = 50;
+const int Value_Ru_PalLight = 50;
+const int Value_Ru_PalLightHeal = 50;
+const int Value_Ru_PalHolyBolt = 50;
+const int Value_Ru_PalMediumHeal = 100;
+const int Value_Ru_PalRepelEvil = 100;
+const int Value_Ru_PalFullHeal = 150;
+const int Value_Ru_PalDestroyEvil = 150;
+const int Value_Ru_Light = 50;
+const int Value_Ru_Firebolt = 50;
+const int Value_Ru_Zap = 50;
+const int Value_Ru_LightHeal = 50;
+const int Value_Ru_SumGobSkel = 50;
+const int Value_Ru_InstantFireball = 100;
+const int Value_Ru_Icebolt = 100;
+const int Value_Ru_SumWolf = 100;
+const int Value_Ru_Windfist = 100;
+const int Value_Ru_Sleep = 100;
+const int Value_Ru_MediumHeal = 150;
+const int Value_Ru_SumSkel = 150;
+const int Value_Ru_Fear = 150;
+const int Value_Ru_IceCube = 150;
+const int Value_Ru_ThunderBall = 150;
+const int Value_Ru_Firestorm = 150;
+const int Value_Ru_SumGol = 200;
+const int Value_Ru_HarmUndead = 200;
+const int Value_Ru_LightningFlash = 200;
+const int Value_Ru_ChargeFireball = 200;
+const int Value_Ru_IceWave = 250;
+const int Value_Ru_SumDemon = 250;
+const int Value_Ru_FullHeal = 250;
+const int Value_Ru_Pyrokinesis = 250;
+const int Value_Ru_Firerain = 300;
+const int Value_Ru_BreathOfDeath = 300;
+const int Value_Ru_MassDeath = 300;
+const int Value_Ru_MasterOfDisaster = 300;
+const int Value_Ru_ArmyOfDarkness = 300;
+const int Value_Ru_Shrink = 300;
+const int Value_Ru_PalTeleportSecret = 50;
+const int Value_Ru_TeleportSeaport = 50;
+const int Value_Ru_TeleportMonastery = 50;
+const int Value_Ru_TeleportFarm = 50;
+const int Value_Ru_TeleportXardas = 50;
+const int Value_Ru_TeleportPassNW = 50;
+const int Value_Ru_TeleportPassOW = 50;
+const int Value_Ru_TeleportOC = 50;
+const int Value_Ru_TeleportOWDemonTower = 50;
+const int Value_Ru_TeleportTaverne = 50;
+const int Value_Ru_Teleport_3 = 50;
 
-instance ITRU_PALLIGHT(C_ITEM)
+instance ItRu_PalLight(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_PALLIGHT;
+	value = Value_Ru_PalLight;
 	visual = "ItRu_PalLight.3ds";
 	material = MAT_STONE;
-	spell = SPL_PALLIGHT;
-	description = NAME_SPL_PALLIGHT;
-	text[0] = NAME_PALADINSPELL;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_PALLIGHT;
-	text[2] = NAME_DURATION;
-	count[2] = SPL_DURATION_PALLIGHT;
-	text[5] = NAME_VALUE;
+	spell = SPL_PalLight;
+	description = NAME_SPL_PalLight;
+	text[0] = Name_PaladinSpell;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_PalLight;
+	text[2] = NAME_Duration;
+	count[2] = SPL_Duration_PalLIGHT;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_PALLIGHTHEAL(C_ITEM)
+instance ItRu_PalLightHeal(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_PALLIGHTHEAL;
+	value = Value_Ru_PalLightHeal;
 	visual = "ItRu_PalLightHeal.3ds";
 	material = MAT_STONE;
-	spell = SPL_PALLIGHTHEAL;
-	description = NAME_SPL_PALLIGHTHEAL;
-	text[0] = NAME_PALADINSPELL;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_PALLIGHTHEAL;
-	text[2] = NAME_HEALINGPERCAST;
-	count[2] = SPL_HEAL_PALLIGHTHEAL;
-	text[5] = NAME_VALUE;
+	spell = SPL_PalLightHeal;
+	description = NAME_SPL_PalLightHeal;
+	text[0] = Name_PaladinSpell;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_PalLightHeal;
+	text[2] = NAME_HealingPerCast;
+	count[2] = SPL_Heal_PalLightHeal;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_PALMEDIUMHEAL(C_ITEM)
+instance ItRu_PalMediumHeal(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_PALMEDIUMHEAL;
+	value = Value_Ru_PalMediumHeal;
 	visual = "ItRu_PalMediumHeal.3ds";
 	material = MAT_STONE;
-	spell = SPL_PALMEDIUMHEAL;
-	description = NAME_SPL_PALMEDIUMHEAL;
-	text[0] = NAME_PALADINSPELL;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_PALMEDIUMHEAL;
-	text[2] = NAME_HEALINGPERCAST;
-	count[2] = SPL_HEAL_PALMEDIUMHEAL;
-	text[5] = NAME_VALUE;
+	spell = SPL_PalMediumHeal;
+	description = NAME_SPL_PalMediumHeal;
+	text[0] = Name_PaladinSpell;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_PalMediumHeal;
+	text[2] = NAME_HealingPerCast;
+	count[2] = SPL_Heal_PalMediumHeal;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_PALFULLHEAL(C_ITEM)
+instance ItRu_PalFullHeal(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_PALFULLHEAL;
+	value = Value_Ru_PalFullHeal;
 	visual = "ItRu_PalFullHeal.3ds";
 	material = MAT_STONE;
-	spell = SPL_PALFULLHEAL;
-	description = NAME_SPL_PALFULLHEAL;
-	text[0] = NAME_PALADINSPELL;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_PALFULLHEAL;
-	text[2] = NAME_HEALINGPERCAST;
-	count[2] = SPL_HEAL_PALFULLHEAL;
-	text[5] = NAME_VALUE;
+	spell = SPL_PalFullHeal;
+	description = NAME_SPL_PalFullHeal;
+	text[0] = Name_PaladinSpell;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_PalFullHeal;
+	text[2] = NAME_HealingPerCast;
+	count[2] = SPL_Heal_PalFullHeal;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_PALHOLYBOLT(C_ITEM)
+instance ItRu_PalHolyBolt(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_PALHOLYBOLT;
+	value = Value_Ru_PalHolyBolt;
 	visual = "ItRu_PalHolyBolt.3DS";
 	material = MAT_STONE;
-	spell = SPL_PALHOLYBOLT;
-	description = NAME_SPL_PALHOLYBOLT;
-	text[0] = NAME_PALADINSPELL;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_PALHOLYBOLT;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_PALHOLYBOLT;
-	text[5] = NAME_VALUE;
+	spell = SPL_PalHolyBolt;
+	description = NAME_SPL_PalHolyBolt;
+	text[0] = Name_PaladinSpell;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_PalHolyBolt;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_PalHolyBolt;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_PALREPELEVIL(C_ITEM)
+instance ItRu_PalRepelEvil(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_PALREPELEVIL;
+	value = Value_Ru_PalRepelEvil;
 	visual = "ItRu_PalRepelEvil.3DS";
 	material = MAT_STONE;
-	spell = SPL_PALREPELEVIL;
-	description = NAME_SPL_PALREPELEVIL;
-	text[0] = NAME_PALADINSPELL;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_PALREPELEVIL;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_PALREPELEVIL;
-	text[5] = NAME_VALUE;
+	spell = SPL_PalRepelEvil;
+	description = NAME_SPL_PalRepelEvil;
+	text[0] = Name_PaladinSpell;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_PalRepelEvil;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_PalRepelEvil;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_PALDESTROYEVIL(C_ITEM)
+instance ItRu_PalDestroyEvil(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_PALDESTROYEVIL;
+	value = Value_Ru_PalDestroyEvil;
 	visual = "ItRu_PalDestroyEvil.3DS";
 	material = MAT_STONE;
-	spell = SPL_PALDESTROYEVIL;
-	description = NAME_SPL_PALDESTROYEVIL;
-	text[0] = NAME_PALADINSPELL;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_PALDESTROYEVIL;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_PALDESTROYEVIL;
-	text[5] = NAME_VALUE;
+	spell = SPL_PalDestroyEvil;
+	description = NAME_SPL_PalDestroyEvil;
+	text[0] = Name_PaladinSpell;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_PalDestroyEvil;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_PalDestroyEvil;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_PALTELEPORTSECRET(C_ITEM)
+instance ItRu_PalTeleportSecret(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_PALTELEPORTSECRET;
+	value = Value_Ru_PalTeleportSecret;
 	visual = "ItRu_PalTeleportSecret.3DS";
 	material = MAT_STONE;
-	spell = SPL_PALTELEPORTSECRET;
-	description = NAME_SPL_PALTELEPORTSECRET;
-	text[0] = NAME_PALADINSPELL;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_TELEPORT;
-	text[5] = NAME_VALUE;
+	spell = SPL_PalTeleportSecret;
+	description = NAME_SPL_PalTeleportSecret;
+	text[0] = Name_PaladinSpell;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Teleport;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_TELEPORTSEAPORT(C_ITEM)
+instance ItRu_TeleportSeaport(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_TELEPORTSEAPORT;
+	value = Value_Ru_TeleportSeaport;
 	visual = "ItRu_TeleportSeaport.3ds";
 	material = MAT_STONE;
-	spell = SPL_TELEPORTSEAPORT;
-	description = NAME_SPL_TELEPORTSEAPORT;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_TELEPORT;
-	text[5] = NAME_VALUE;
+	spell = SPL_TeleportSeaport;
+	description = NAME_SPL_TeleportSeaport;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Teleport;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_TELEPORTMONASTERY(C_ITEM)
+instance ItRu_TeleportMonastery(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_TELEPORTMONASTERY;
+	value = Value_Ru_TeleportMonastery;
 	visual = "ItRu_TeleportMonastery.3ds";
 	material = MAT_STONE;
-	spell = SPL_TELEPORTMONASTERY;
-	description = NAME_SPL_TELEPORTMONASTERY;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_TELEPORT;
-	text[5] = NAME_VALUE;
+	spell = SPL_TeleportMonastery;
+	description = NAME_SPL_TeleportMonastery;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Teleport;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_TELEPORTFARM(C_ITEM)
+instance ItRu_TeleportFarm(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_TELEPORTFARM;
+	value = Value_Ru_TeleportFarm;
 	visual = "ItRu_TeleportFarm.3ds";
 	material = MAT_STONE;
-	spell = SPL_TELEPORTFARM;
-	description = NAME_SPL_TELEPORTFARM;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_TELEPORT;
-	text[5] = NAME_VALUE;
+	spell = SPL_TeleportFarm;
+	description = NAME_SPL_TeleportFarm;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Teleport;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_TELEPORTXARDAS(C_ITEM)
+instance ItRu_TeleportXardas(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_TELEPORTXARDAS;
+	value = Value_Ru_TeleportXardas;
 	visual = "ItRu_TeleportXardas.3ds";
 	material = MAT_STONE;
-	spell = SPL_TELEPORTXARDAS;
-	description = NAME_SPL_TELEPORTXARDAS;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_TELEPORT;
-	text[5] = NAME_VALUE;
+	spell = SPL_TeleportXardas;
+	description = NAME_SPL_TeleportXardas;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Teleport;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_TELEPORTPASSNW(C_ITEM)
+instance ItRu_TeleportPassNW(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_TELEPORTPASSNW;
+	value = Value_Ru_TeleportPassNW;
 	visual = "ItRu_TeleportPassNW.3ds";
 	material = MAT_STONE;
-	spell = SPL_TELEPORTPASSNW;
-	description = NAME_SPL_TELEPORTPASSNW;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_TELEPORT;
-	text[5] = NAME_VALUE;
+	spell = SPL_TeleportPassNW;
+	description = NAME_SPL_TeleportPassNW;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Teleport;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_TELEPORTPASSOW(C_ITEM)
+instance ItRu_TeleportPassOW(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_TELEPORTPASSOW;
+	value = Value_Ru_TeleportPassOW;
 	visual = "ItRu_TeleportPassOW.3ds";
 	material = MAT_STONE;
-	spell = SPL_TELEPORTPASSOW;
-	description = NAME_SPL_TELEPORTPASSOW;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_TELEPORT;
-	text[5] = NAME_VALUE;
+	spell = SPL_TeleportPassOW;
+	description = NAME_SPL_TeleportPassOW;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Teleport;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_TELEPORTOC(C_ITEM)
+instance ItRu_TeleportOC(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_TELEPORTOC;
+	value = Value_Ru_TeleportOC;
 	visual = "ItRu_TeleportOC.3ds";
 	material = MAT_STONE;
-	spell = SPL_TELEPORTOC;
-	description = NAME_SPL_TELEPORTOC;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_TELEPORT;
-	text[5] = NAME_VALUE;
+	spell = SPL_TeleportOC;
+	description = NAME_SPL_TeleportOC;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Teleport;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_TELEPORTOWDEMONTOWER(C_ITEM)
+instance ItRu_TeleportOWDemonTower(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_TELEPORTOWDEMONTOWER;
+	value = Value_Ru_TeleportOWDemonTower;
 	visual = "ItRu_Teleport_2.3ds";
 	material = MAT_STONE;
-	spell = SPL_TELEPORTOWDEMONTOWER;
-	description = NAME_SPL_TELEPORTOWDEMONTOWER;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_TELEPORT;
-	text[5] = NAME_VALUE;
+	spell = SPL_TeleportOWDemonTower;
+	description = NAME_SPL_TeleportOWDemonTower;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Teleport;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_TELEPORTTAVERNE(C_ITEM)
+instance ItRu_TeleportTaverne(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_TELEPORTTAVERNE;
+	value = Value_Ru_TeleportTaverne;
 	visual = "ItRu_Teleport_2.3ds";
 	material = MAT_STONE;
-	spell = SPL_TELEPORTTAVERNE;
-	description = NAME_SPL_TELEPORTTAVERNE;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_TELEPORT;
-	text[5] = NAME_VALUE;
+	spell = SPL_TeleportTaverne;
+	description = NAME_SPL_TeleportTaverne;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Teleport;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_TELEPORT_3(C_ITEM)
+instance ItRu_Teleport_3(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_TELEPORT_3;
+	value = Value_Ru_Teleport_3;
 	visual = "ItRu_Teleport_3.3ds";
 	material = MAT_STONE;
-	spell = SPL_TELEPORT_3;
-	description = NAME_SPL_TELEPORT_3;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_TELEPORT;
-	text[5] = NAME_VALUE;
+	spell = SPL_Teleport_3;
+	description = NAME_SPL_Teleport_3;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Teleport;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_LIGHT(C_ITEM)
+instance ItRu_Light(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_LIGHT;
+	value = Value_Ru_Light;
 	visual = "ItRu_Light.3ds";
 	material = MAT_STONE;
-	spell = SPL_LIGHT;
+	spell = SPL_Light;
 	mag_circle = 1;
 	description = NAME_SPL_LIGHT;
-	text[0] = NAME_MAG_CIRCLE;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_LIGHT;
-	text[2] = NAME_DURATION;
-	count[2] = SPL_DURATION_LIGHT;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_LIGHT;
+	text[2] = NAME_Duration;
+	count[2] = SPL_Duration_LIGHT;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_FIREBOLT(C_ITEM)
+instance ItRu_FireBolt(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_FIREBOLT;
+	value = Value_Ru_Firebolt;
 	visual = "ItRu_FireBolt.3DS";
 	material = MAT_STONE;
-	spell = SPL_FIREBOLT;
+	spell = SPL_Firebolt;
 	mag_circle = 1;
-	description = NAME_SPL_FIREBOLT;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_Firebolt;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_FIREBOLT;
-	text[2] = NAME_DAM_FIRE;
-	count[2] = SPL_DAMAGE_FIREBOLT;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Firebolt;
+	text[2] = NAME_Dam_Fire;
+	count[2] = SPL_Damage_Firebolt;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_ZAP(C_ITEM)
+instance ItRu_Zap(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_ZAP;
+	value = Value_Ru_Zap;
 	visual = "ItRu_Zap.3DS";
 	material = MAT_STONE;
 	mag_circle = 1;
-	spell = SPL_ZAP;
-	description = NAME_SPL_ZAP;
-	text[0] = NAME_MAG_CIRCLE;
+	spell = SPL_Zap;
+	description = NAME_SPL_Zap;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_ZAP;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_ZAP;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Zap;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_Zap;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_LIGHTHEAL(C_ITEM)
+instance ItRu_LightHeal(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_LIGHTHEAL;
+	value = Value_Ru_LightHeal;
 	visual = "ItRu_LightHeal.3ds";
 	material = MAT_STONE;
-	spell = SPL_LIGHTHEAL;
+	spell = SPL_LightHeal;
 	mag_circle = 1;
-	description = NAME_SPL_LIGHTHEAL;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_LightHeal;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_LIGHTHEAL;
-	text[2] = NAME_HEALINGPERCAST;
-	count[2] = SPL_HEAL_LIGHTHEAL;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_LightHeal;
+	text[2] = NAME_HealingPerCast;
+	count[2] = SPL_Heal_LightHeal;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_SUMGOBSKEL(C_ITEM)
+instance ItRu_SumGobSkel(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_SUMGOBSKEL;
+	value = Value_Ru_SumGobSkel;
 	visual = "ItRu_SumGobSkel.3DS";
 	material = MAT_STONE;
-	spell = SPL_SUMMONGOBLINSKELETON;
+	spell = SPL_SummonGoblinSkeleton;
 	mag_circle = 1;
-	description = NAME_SPL_SUMMONGOBLINSKELETON;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_SummonGoblinSkeleton;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_SUMMONSKELETON;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_SummonSkeleton;
 	text[2] = "Niespokojne koœci";
 	text[3] = "martwych goblinów.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_INSTANTFIREBALL(C_ITEM)
+instance ItRu_InstantFireball(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_INSTANTFIREBALL;
+	value = Value_Ru_InstantFireball;
 	visual = "ItRu_InstantFireball.3DS";
 	material = MAT_STONE;
 	mag_circle = 2;
-	spell = SPL_INSTANTFIREBALL;
-	description = NAME_SPL_INSTANTFIREBALL;
-	text[0] = NAME_MAG_CIRCLE;
+	spell = SPL_InstantFireball;
+	description = NAME_SPL_InstantFireball;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_INSTANTFIREBALL;
-	text[2] = NAME_DAM_FIRE;
-	count[2] = SPL_DAMAGE_INSTANTFIREBALL;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_COST_InstantFireball;
+	text[2] = NAME_Dam_Fire;
+	count[2] = SPL_DAMAGE_InstantFireball;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_ICEBOLT(C_ITEM)
+instance ItRu_Icebolt(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_ICEBOLT;
+	value = Value_Ru_Icebolt;
 	visual = "ItRu_Icebolt.3ds";
 	material = MAT_STONE;
-	spell = SPL_ICEBOLT;
+	spell = SPL_Icebolt;
 	mag_circle = 2;
-	description = NAME_SPL_ICEBOLT;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_Icebolt;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_ICEBOLT;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_ICEBOLT;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_COST_Icebolt;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_DAMAGE_Icebolt;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_SUMWOLF(C_ITEM)
+instance ItRu_SumWolf(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_SUMWOLF;
+	value = Value_Ru_SumWolf;
 	visual = "ItRu_SumWolf.3DS";
 	material = MAT_STONE;
-	spell = SPL_SUMMONWOLF;
+	spell = SPL_SummonWolf;
 	mag_circle = 2;
-	description = NAME_SPL_SUMMONWOLF;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_SummonWolf;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_SUMMONSKELETON;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_SummonSkeleton;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_WINDFIST(C_ITEM)
+instance ItRu_Windfist(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_WINDFIST;
+	value = Value_Ru_Windfist;
 	visual = "ItRu_Windfist.3ds";
 	material = MAT_STONE;
-	spell = SPL_WINDFIST;
+	spell = SPL_WindFist;
 	mag_circle = 2;
 	description = NAME_SPL_WINDFIST;
-	text[0] = NAME_MAG_CIRCLE;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTENMAX;
-	count[1] = SPL_COST_WINDFIST;
-	text[2] = NAME_DAMAGE_MAX;
-	count[2] = SPL_DAMAGE_WINDFIST * 3;
-	text[4] = NAME_MANAPERSEC;
+	text[1] = NAME_ManakostenMax;
+	count[1] = SPL_Cost_WindFist;
+	text[2] = NAME_Damage_Max;
+	count[2] = SPL_Damage_Windfist * 3;
+	text[4] = NAME_ManaPerSec;
 	count[4] = 1000 / 200;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_SLEEP(C_ITEM)
+instance ItRu_Sleep(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_SLEEP;
+	value = Value_Ru_Sleep;
 	visual = "ItRu_Sleep.3ds";
 	material = MAT_STONE;
-	spell = SPL_SLEEP;
+	spell = SPL_Sleep;
 	mag_circle = 2;
-	description = NAME_SPL_SLEEP;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_Sleep;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_SLEEP;
-	text[2] = NAME_DURATION;
-	count[2] = SPL_TIME_SLEEP;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Sleep;
+	text[2] = NAME_Duration;
+	count[2] = SPL_TIME_Sleep;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_MEDIUMHEAL(C_ITEM)
+instance ItRu_MediumHeal(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_MEDIUMHEAL;
+	value = Value_Ru_MediumHeal;
 	visual = "ItRu_MediumHeal.3ds";
 	material = MAT_STONE;
-	spell = SPL_MEDIUMHEAL;
+	spell = SPL_MediumHeal;
 	mag_circle = 3;
-	description = NAME_SPL_MEDIUMHEAL;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_MediumHeal;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_MEDIUMHEAL;
-	text[2] = NAME_HEALINGPERCAST;
-	count[2] = SPL_HEAL_MEDIUMHEAL;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_MediumHeal;
+	text[2] = NAME_HealingPerCast;
+	count[2] = SPL_Heal_MediumHeal;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_LIGHTNINGFLASH(C_ITEM)
+instance ItRu_LightningFlash(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_LIGHTNINGFLASH;
+	value = Value_Ru_LightningFlash;
 	visual = "ItRu_LightningFlash.3DS";
 	material = MAT_STONE;
 	mag_circle = 4;
-	spell = SPL_LIGHTNINGFLASH;
-	description = NAME_SPL_LIGHTNINGFLASH;
-	text[0] = NAME_MAG_CIRCLE;
+	spell = SPL_LightningFlash;
+	description = NAME_SPL_LightningFlash;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_LIGHTNINGFLASH;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_LIGHTNINGFLASH;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_LightningFlash;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_LightningFlash;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_CHARGEFIREBALL(C_ITEM)
+instance ItRu_ChargeFireball(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_CHARGEFIREBALL;
+	value = Value_Ru_ChargeFireball;
 	visual = "ItRu_ChargeFireball.3DS";
 	material = MAT_STONE;
 	mag_circle = 4;
-	spell = SPL_CHARGEFIREBALL;
-	description = NAME_SPL_CHARGEFIREBALL;
-	text[0] = NAME_MAG_CIRCLE;
+	spell = SPL_ChargeFireball;
+	description = NAME_SPL_ChargeFireball;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTENMAX;
-	count[1] = SPL_COST_CHARGEFIREBALL;
-	text[2] = NAME_DAMAGE_MAX;
-	count[2] = SPL_DAMAGE_CHARGEFIREBALL * 3;
-	text[4] = NAME_MANAPERSEC;
+	text[1] = NAME_ManakostenMax;
+	count[1] = SPL_COST_ChargeFireball;
+	text[2] = NAME_Damage_Max;
+	count[2] = SPL_Damage_ChargeFireball * 3;
+	text[4] = NAME_ManaPerSec;
 	count[4] = 1000 / 120;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_SUMSKEL(C_ITEM)
+instance ItRu_SumSkel(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_SUMSKEL;
+	value = Value_Ru_SumSkel;
 	visual = "ItRu_SumSkel.3DS";
 	material = MAT_STONE;
-	spell = SPL_SUMMONSKELETON;
+	spell = SPL_SummonSkeleton;
 	mag_circle = 2;
-	description = NAME_SPL_SUMMONSKELETON;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_SummonSkeleton;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_SUMMONSKELETON;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_SummonSkeleton;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_FEAR(C_ITEM)
+instance ItRu_Fear(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_FEAR;
+	value = Value_Ru_Fear;
 	visual = "ItRu_Fear.3DS";
 	material = MAT_STONE;
 	mag_circle = 3;
-	spell = SPL_FEAR;
-	description = NAME_SPL_FEAR;
-	text[0] = NAME_MAG_CIRCLE;
+	spell = SPL_Fear;
+	description = NAME_SPL_Fear;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_FEAR;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Fear;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_ICECUBE(C_ITEM)
+instance ItRu_IceCube(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_ICECUBE;
+	value = Value_Ru_IceCube;
 	visual = "ItRu_IceCube.3ds";
 	material = MAT_STONE;
-	spell = SPL_ICECUBE;
+	spell = SPL_IceCube;
 	mag_circle = 3;
-	description = NAME_SPL_ICECUBE;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_IceCube;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_ICECUBE;
-	text[2] = NAME_DAMAGE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_IceCube;
+	text[2] = NAME_Damage;
 	count[2] = SPL_FREEZE_DAMAGE;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_THUNDERBALL(C_ITEM)
+instance ItRu_ThunderBall(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_THUNDERBALL;
+	value = Value_Ru_ThunderBall;
 	visual = "ItRu_ThunderBall.3ds";
 	material = MAT_STONE;
-	spell = SPL_CHARGEZAP;
+	spell = SPL_ChargeZap;
 	mag_circle = 3;
-	description = NAME_SPL_CHARGEZAP;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_ChargeZap;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTENMAX;
-	count[1] = SPL_COST_CHARGEZAP;
-	text[2] = NAME_DAMAGE_MAX;
-	count[2] = SPL_DAMAGE_CHARGEZAP * 3;
-	text[4] = NAME_MANAPERSEC;
+	text[1] = NAME_ManakostenMax;
+	count[1] = SPL_COST_ChargeZap;
+	text[2] = NAME_Damage_Max;
+	count[2] = SPL_Damage_ChargeZap * 3;
+	text[4] = NAME_ManaPerSec;
 	count[4] = 1000 / 100;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_SUMGOL(C_ITEM)
+instance ItRu_SumGol(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_SUMGOL;
+	value = Value_Ru_SumGol;
 	visual = "ItRu_SumGol.3DS";
 	material = MAT_STONE;
-	spell = SPL_SUMMONGOLEM;
+	spell = SPL_SummonGolem;
 	mag_circle = 4;
-	description = NAME_SPL_SUMMONGOLEM;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_SummonGolem;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_SUMMONSKELETON;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_SummonSkeleton;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_HARMUNDEAD(C_ITEM)
+instance ItRu_HarmUndead(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_HARMUNDEAD;
+	value = Value_Ru_HarmUndead;
 	visual = "ItRu_HarmUndead.3DS";
 	material = MAT_STONE;
-	spell = SPL_DESTROYUNDEAD;
+	spell = SPL_DestroyUndead;
 	mag_circle = 4;
-	description = NAME_SPL_DESTROYUNDEAD;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_DestroyUndead;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_DESTROYUNDEAD;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_DESTROYUNDEAD;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_DESTROYUNDEAD;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_DESTROYUNDEAD;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_PYROKINESIS(C_ITEM)
+instance ItRu_Pyrokinesis(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_PYROKINESIS;
+	value = Value_Ru_Pyrokinesis;
 	visual = "ItRu_Pyrokinesis.3ds";
 	material = MAT_STONE;
-	spell = SPL_PYROKINESIS;
+	spell = SPL_Pyrokinesis;
 	mag_circle = 5;
-	description = NAME_SPL_PYROKINESIS;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_Pyrokinesis;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTENMAX;
-	count[1] = SPL_COST_FIRESTORM;
-	text[2] = NAME_DAMAGE_MAX;
-	count[2] = SPL_DAMAGE_FIRESTORM * 3;
-	text[4] = NAME_MANAPERSEC;
+	text[1] = NAME_ManakostenMax;
+	count[1] = SPL_COST_Firestorm;
+	text[2] = NAME_Damage_Max;
+	count[2] = SPL_Damage_Firestorm * 3;
+	text[4] = NAME_ManaPerSec;
 	count[4] = 1000 / 120;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_FIRESTORM(C_ITEM)
+instance ItRu_Firestorm(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_FIRESTORM;
+	value = Value_Ru_Firestorm;
 	visual = "ItRu_Firestorm.3ds";
 	material = MAT_STONE;
-	spell = SPL_FIRESTORM;
+	spell = SPL_Firestorm;
 	mag_circle = 3;
-	description = NAME_SPL_FIRESTORM;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_Firestorm;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_INSTANTFIRESTORM;
-	text[2] = NAME_DAM_FIRE;
-	count[2] = SPL_DAMAGE_INSTANTFIRESTORM;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_InstantFireStorm;
+	text[2] = NAME_Dam_Fire;
+	count[2] = SPL_Damage_InstantFireStorm;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_ICEWAVE(C_ITEM)
+instance ItRu_IceWave(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_ICEWAVE;
+	value = Value_Ru_IceWave;
 	visual = "ItRu_IceWave.3ds";
 	material = MAT_STONE;
-	spell = SPL_ICEWAVE;
+	spell = SPL_IceWave;
 	mag_circle = 5;
-	description = NAME_SPL_ICEWAVE;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_IceWave;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_ICEWAVE;
-	text[2] = NAME_DAMAGE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_IceWave;
+	text[2] = NAME_Damage;
 	count[2] = SPL_FREEZE_DAMAGE;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_SUMDEMON(C_ITEM)
+instance ItRu_SumDemon(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_SUMDEMON;
+	value = Value_Ru_SumDemon;
 	visual = "ItRu_SumDemon.3DS";
 	material = MAT_STONE;
-	spell = SPL_SUMMONDEMON;
+	spell = SPL_SummonDemon;
 	mag_circle = 5;
-	description = NAME_SPL_SUMMONDEMON;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_SummonDemon;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_SUMMONDEMON;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_SummonDemon;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_FULLHEAL(C_ITEM)
+instance ItRu_FullHeal(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_FULLHEAL;
+	value = Value_Ru_FullHeal;
 	visual = "ItRu_FullHeal.3ds";
 	material = MAT_STONE;
-	spell = SPL_FULLHEAL;
+	spell = SPL_FullHeal;
 	mag_circle = 5;
-	description = NAME_SPL_FULLHEAL;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_FullHeal;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_FULLHEAL;
-	text[2] = NAME_HEALINGPERCAST;
-	count[2] = SPL_HEAL_FULLHEAL;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_FullHeal;
+	text[2] = NAME_HealingPerCast;
+	count[2] = SPL_Heal_FullHeal;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_FIRERAIN(C_ITEM)
+instance ItRu_Firerain(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_FIRERAIN;
+	value = Value_Ru_Firerain;
 	visual = "ItRu_Firerain.3ds";
 	material = MAT_STONE;
-	spell = SPL_FIRERAIN;
+	spell = SPL_Firerain;
 	mag_circle = 6;
-	description = NAME_SPL_FIRERAIN;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_Firerain;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_FIRERAIN;
-	text[2] = NAME_DAM_FIRE;
-	count[2] = SPL_DAMAGE_FIRERAIN;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Firerain;
+	text[2] = NAME_Dam_Fire;
+	count[2] = SPL_Damage_FireRain;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_BREATHOFDEATH(C_ITEM)
+instance ItRu_BreathOfDeath(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_BREATHOFDEATH;
+	value = Value_Ru_BreathOfDeath;
 	visual = "ItRu_BreathOfDeath.3ds";
 	material = MAT_STONE;
-	spell = SPL_BREATHOFDEATH;
+	spell = SPL_BreathOfDeath;
 	mag_circle = 6;
-	description = NAME_SPL_BREATHOFDEATH;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_BreathOfDeath;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_BREATHOFDEATH;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_BREATHOFDEATH;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_BreathOfDeath;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_BreathOfDeath;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_MASSDEATH(C_ITEM)
+instance ItRu_MassDeath(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MISSION;
-	value = VALUE_RU_MASSDEATH;
+	value = Value_Ru_MassDeath;
 	visual = "ItRu_MassDeath.3ds";
 	material = MAT_STONE;
-	spell = SPL_MASSDEATH;
+	spell = SPL_MassDeath;
 	mag_circle = 6;
-	description = NAME_SPL_MASSDEATH;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_MassDeath;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_MASSDEATH;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_MASSDEATH;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_MassDeath;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_Damage_MassDeath;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_MASTEROFDISASTER(C_ITEM)
+instance ItRu_MasterOfDisaster(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_MASTEROFDISASTER;
+	value = Value_Ru_MasterOfDisaster;
 	visual = "ItRu_MasterOfDesaster.3DS";
 	material = MAT_STONE;
-	spell = SPL_MASTEROFDISASTER;
+	spell = SPL_MasterOfDisaster;
 	mag_circle = 6;
-	description = NAME_SPL_MASTEROFDISASTER;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_MasterOfDisaster;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_MASTEROFDISASTER;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_MASTEROFDISASTER;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_COST_MasterOfDisaster;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_DAMAGE_MasterOfDisaster;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_ARMYOFDARKNESS(C_ITEM)
+instance ItRu_ArmyOfDarkness(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_ARMYOFDARKNESS;
+	value = Value_Ru_ArmyOfDarkness;
 	visual = "ItRu_ArmyOfDarkness.3DS";
 	material = MAT_STONE;
-	spell = SPL_ARMYOFDARKNESS;
+	spell = SPL_ArmyOfDarkness;
 	mag_circle = 6;
-	description = NAME_SPL_ARMYOFDARKNESS;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_ArmyOfDarkness;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_ARMYOFDARKNESS;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_ArmyOfDarkness;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_SHRINK(C_ITEM)
+instance ItRu_Shrink(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
-	value = VALUE_RU_SHRINK;
+	value = Value_Ru_Shrink;
 	visual = "ItRu_Shrink.3DS";
 	material = MAT_STONE;
-	spell = SPL_SHRINK;
+	spell = SPL_Shrink;
 	mag_circle = 6;
-	description = NAME_SPL_SHRINK;
-	text[0] = NAME_MAG_CIRCLE;
+	description = NAME_SPL_Shrink;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_SHRINK;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_Cost_Shrink;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_DEATHBOLT(C_ITEM)
+instance ItRu_Deathbolt(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
 	value = 0;
 	visual = "ItRu_PalRepelEvil.3DS";
 	material = MAT_STONE;
-	spell = SPL_DEATHBOLT;
+	spell = SPL_Deathbolt;
 	mag_circle = 6;
 	description = "Pocisk Œmierci";
-	text[0] = NAME_MAG_CIRCLE;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_DEATHBOLT;
-	text[2] = NAME_DAM_FIRE;
-	count[2] = SPL_DAMAGE_DEATHBOLT;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_COST_Deathbolt;
+	text[2] = NAME_Dam_Fire;
+	count[2] = SPL_DAMAGE_Deathbolt;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_DEATHBALL(C_ITEM)
+instance ItRu_Deathball(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
 	value = 0;
 	visual = "ItRu_PalRepelEvil.3DS";
 	material = MAT_STONE;
-	spell = SPL_DEATHBALL;
+	spell = SPL_Deathball;
 	mag_circle = 6;
 	description = "Œmiertelna Kula";
-	text[0] = NAME_MAG_CIRCLE;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_DEATHBALL;
-	text[2] = NAME_DAM_FIRE;
-	count[2] = SPL_DAMAGE_DEATHBALL;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_COST_Deathball;
+	text[2] = NAME_Dam_Fire;
+	count[2] = SPL_DAMAGE_Deathball;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRU_CONCUSSIONBOLT(C_ITEM)
+instance ItRu_Concussionbolt(C_Item)
 {
-	name = NAME_RUNE;
+	name = NAME_Rune;
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
 	value = 0;
 	visual = "ItRu_PalRepelEvil.3DS";
 	material = MAT_STONE;
-	spell = SPL_CONCUSSIONBOLT;
+	spell = SPL_ConcussionBolt;
 	mag_circle = 6;
 	description = "Pocisk Nieprzytomnoœci";
-	text[0] = NAME_MAG_CIRCLE;
+	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
-	text[1] = NAME_MANAKOSTEN;
-	count[1] = SPL_COST_CONCUSSIONBOLT;
-	text[2] = NAME_DAM_MAGIC;
-	count[2] = SPL_DAMAGE_CONCUSSIONBOLT;
-	text[5] = NAME_VALUE;
+	text[1] = NAME_Manakosten;
+	count[1] = SPL_COST_Concussionbolt;
+	text[2] = NAME_Dam_Magic;
+	count[2] = SPL_DAMAGE_Concussionbolt;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 

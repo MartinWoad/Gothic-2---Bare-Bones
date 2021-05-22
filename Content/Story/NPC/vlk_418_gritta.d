@@ -1,12 +1,12 @@
 
-instance VLK_418_GRITTA(NPC_DEFAULT)
+instance VLK_418_Gritta(Npc_Default)
 {
 	name[0] = "Gritta";
 	guild = GIL_VLK;
 	id = 418;
 	voice = 16;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
+	npcType = npctype_main;
 	attribute[ATR_STRENGTH] = 10;
 	attribute[ATR_DEXTERITY] = 10;
 	attribute[ATR_MANA_MAX] = 0;
@@ -14,23 +14,23 @@ instance VLK_418_GRITTA(NPC_DEFAULT)
 	attribute[ATR_HITPOINTS_MAX] = 5;
 	attribute[ATR_HITPOINTS] = 5;
 	fight_tactic = FAI_HUMAN_MASTER;
-	b_setnpcvisual(self,FEMALE,"Hum_Head_Babe8",FACEBABE_N_YOUNGBLONDE,BODYTEX_N,4824);
+	B_SetNpcVisual(self,FEMALE,"Hum_Head_Babe8",FaceBabe_N_YoungBlonde,BodyTex_N,ITAR_VlkBabe_M);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Tired.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	CreateInvItems(self,itmi_gold,100);
-	daily_routine = rtn_start_418;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	CreateInvItems(self,ItMi_Gold,100);
+	daily_routine = Rtn_Start_418;
 };
 
 
-func void rtn_start_418()
+func void Rtn_Start_418()
 {
-	ta_stand_sweeping(8,0,12,0,"NW_CITY_MERCHANT_HUT_01_IN");
-	ta_cook_stove(12,0,14,0,"NW_CITY_BED_BOSPER_B");
-	ta_stand_sweeping(14,0,18,0,"NW_CITY_MERCHANT_HUT_01_IN");
-	ta_cook_stove(18,0,20,0,"NW_CITY_BED_BOSPER_B");
-	ta_read_bookstand(20,0,23,0,"NW_CITY_MERCHANT_HUT_01_IN");
-	ta_sleep(23,0,8,0,"NW_CITY_BED_BOSPER_B");
+	TA_Stand_Sweeping(8,0,12,0,"NW_CITY_MERCHANT_HUT_01_IN");
+	TA_Cook_Stove(12,0,14,0,"NW_CITY_BED_BOSPER_B");
+	TA_Stand_Sweeping(14,0,18,0,"NW_CITY_MERCHANT_HUT_01_IN");
+	TA_Cook_Stove(18,0,20,0,"NW_CITY_BED_BOSPER_B");
+	TA_Read_Bookstand(20,0,23,0,"NW_CITY_MERCHANT_HUT_01_IN");
+	TA_Sleep(23,0,8,0,"NW_CITY_BED_BOSPER_B");
 };
 

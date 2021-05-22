@@ -1,5 +1,5 @@
 
-func int c_npcisbotheredbyplayerroomguild(var C_NPC slf)
+func int C_NpcIsBotheredByPlayerRoomGuild(var C_Npc slf)
 {
 	var int portalguild;
 	portalguild = Wld_GetPlayerPortalGuild();

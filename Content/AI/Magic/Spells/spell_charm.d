@@ -1,27 +1,27 @@
 
-const int SPL_COST_CHARM = 10;
-const int SPL_DAMAGE_CHARM = 0;
+const int SPL_Cost_Charm = 10;
+const int SPL_Damage_Charm = 0;
 
-instance SPELL_CHARM(C_SPELL_PROTO)
+instance Spell_Charm(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	spelltype = SPELL_NEUTRAL;
-	damage_per_level = SPL_DAMAGE_CHARM;
+	spellType = SPELL_NEUTRAL;
+	damage_per_level = SPL_Damage_Charm;
 	damagetype = DAM_MAGIC;
 };
 
 
-func int spell_logic_charm(var int manainvested)
+func int Spell_Logic_Charm(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_CHARM)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_Charm)
 	{
-		if((other.aivar[AIV_NPCSAWPLAYERCOMMIT] != CRIME_NONE) && (MIS_IGNAZ_CHARM == LOG_RUNNING))
+		if((other.aivar[AIV_NpcSawPlayerCommit] != CRIME_NONE) && (MIS_Ignaz_Charm == LOG_Running))
 		{
-			CHARM_TEST = TRUE;
+			Charm_Test = TRUE;
 		};
-		b_deletepetzcrime(other);
-		other.aivar[AIV_NPCSAWPLAYERCOMMIT] = CRIME_NONE;
-		other.aivar[AIV_LASTFIGHTAGAINSTPLAYER] = FIGHT_NONE;
+		B_DeletePetzCrime(other);
+		other.aivar[AIV_NpcSawPlayerCommit] = CRIME_NONE;
+		other.aivar[AIV_LastFightAgainstPlayer] = FIGHT_NONE;
 		if(Wld_GetGuildAttitude(other.guild,self.guild) != ATT_HOSTILE)
 		{
 			if(Npc_GetAttitude(other,self) == ATT_HOSTILE)
@@ -37,8 +37,8 @@ func int spell_logic_charm(var int manainvested)
 	};
 };
 
-func void spell_cast_charm()
+func void Spell_Cast_Charm()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_CHARM;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Charm;
 };
 

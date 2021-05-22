@@ -1,8 +1,8 @@
 
-func void zs_practice_magic()
+func void ZS_Practice_Magic()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
@@ -10,7 +10,7 @@ func void zs_practice_magic()
 	};
 };
 
-func int zs_practice_magic_loop()
+func int ZS_Practice_Magic_Loop()
 {
 	var int zufall;
 	if(Npc_IsOnFP(self,"STAND"))
@@ -64,7 +64,7 @@ func int zs_practice_magic_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_practice_magic_end()
+func void ZS_Practice_Magic_End()
 {
 };
 

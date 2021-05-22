@@ -1,94 +1,94 @@
 
-instance DIA_PECK_EXIT(C_INFO)
+instance DIA_Peck_EXIT(C_Info)
 {
-	npc = mil_324_peck;
+	npc = MIL_324_Peck;
 	nr = 999;
-	condition = dia_peck_exit_condition;
-	information = dia_peck_exit_info;
+	condition = DIA_Peck_EXIT_Condition;
+	information = DIA_Peck_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_peck_exit_condition()
+func int DIA_Peck_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_peck_exit_info()
+func void DIA_Peck_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PECK_PICKPOCKET(C_INFO)
+instance DIA_Peck_PICKPOCKET(C_Info)
 {
-	npc = mil_324_peck;
+	npc = MIL_324_Peck;
 	nr = 900;
-	condition = dia_peck_pickpocket_condition;
-	information = dia_peck_pickpocket_info;
+	condition = DIA_Peck_PICKPOCKET_Condition;
+	information = DIA_Peck_PICKPOCKET_Info;
 	permanent = TRUE;
 	description = "(Kradzie¿ tego klucza bêdzie doœæ ryzykownym zadaniem)";
 };
 
 
-func int dia_peck_pickpocket_condition()
+func int DIA_Peck_PICKPOCKET_Condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] == FALSE) && (Npc_HasItems(self,itke_city_tower_05) >= 1) && (other.attribute[ATR_DEXTERITY] >= (60 - THEFTDIFF)))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_HasItems(self,ItKe_City_Tower_05) >= 1) && (other.attribute[ATR_DEXTERITY] >= (60 - Theftdiff)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_peck_pickpocket_info()
+func void DIA_Peck_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_peck_pickpocket);
-	Info_AddChoice(dia_peck_pickpocket,DIALOG_BACK,dia_peck_pickpocket_back);
-	Info_AddChoice(dia_peck_pickpocket,DIALOG_PICKPOCKET,dia_peck_pickpocket_doit);
+	Info_ClearChoices(DIA_Peck_PICKPOCKET);
+	Info_AddChoice(DIA_Peck_PICKPOCKET,Dialog_Back,DIA_Peck_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Peck_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Peck_PICKPOCKET_DoIt);
 };
 
-func void dia_peck_pickpocket_doit()
+func void DIA_Peck_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 60)
 	{
-		b_giveinvitems(self,other,4940,1);
-		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
-		b_giveplayerxp(XP_AMBIENT);
-		Info_ClearChoices(dia_peck_pickpocket);
+		B_GiveInvItems(self,other,ItKe_City_Tower_05,1);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+		B_GivePlayerXP(XP_Ambient);
+		Info_ClearChoices(DIA_Peck_PICKPOCKET);
 	}
 	else
 	{
 		AI_StopProcessInfos(self);
-		b_attack(self,other,AR_THEFT,1);
+		B_Attack(self,other,AR_Theft,1);
 	};
 };
 
-func void dia_peck_pickpocket_back()
+func void DIA_Peck_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_peck_pickpocket);
+	Info_ClearChoices(DIA_Peck_PICKPOCKET);
 };
 
 
-instance DIA_PECK_HEY(C_INFO)
+instance DIA_Peck_HEY(C_Info)
 {
-	npc = mil_324_peck;
+	npc = MIL_324_Peck;
 	nr = 2;
-	condition = dia_peck_hey_condition;
-	information = dia_peck_hey_info;
+	condition = DIA_Peck_HEY_Condition;
+	information = DIA_Peck_HEY_Info;
 	permanent = TRUE;
 	description = "Hej, co s³ychaæ?";
 };
 
 
-func int dia_peck_hey_condition()
+func int DIA_Peck_HEY_Condition()
 {
-	if((MIS_ANDRE_PECK != LOG_RUNNING) && (Npc_GetDistToWP(self,"NW_CITY_HABOUR_PUFF_PECK") <= 500))
+	if((MIS_Andre_Peck != LOG_Running) && (Npc_GetDistToWP(self,"NW_CITY_HABOUR_PUFF_PECK") <= 500))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_peck_hey_info()
+func void DIA_Peck_HEY_Info()
 {
 	AI_Output(other,self,"DIA_Peck_HEY_15_00");	//Hej, co s³ychaæ?
 	AI_Output(self,other,"DIA_Peck_HEY_12_01");	//Cz³owieku, jestem zajêty. Zostaw mnie w spokoju.
@@ -96,26 +96,26 @@ func void dia_peck_hey_info()
 };
 
 
-instance DIA_PECK_FOUND_PECK(C_INFO)
+instance DIA_Peck_FOUND_PECK(C_Info)
 {
-	npc = mil_324_peck;
+	npc = MIL_324_Peck;
 	nr = 2;
-	condition = dia_peck_found_peck_condition;
-	information = dia_peck_found_peck_info;
+	condition = DIA_Peck_FOUND_PECK_Condition;
+	information = DIA_Peck_FOUND_PECK_Info;
 	permanent = FALSE;
 	description = "Hej, czas ju¿ ruszaæ w drogê.";
 };
 
 
-func int dia_peck_found_peck_condition()
+func int DIA_Peck_FOUND_PECK_Condition()
 {
-	if((MIS_ANDRE_PECK == LOG_RUNNING) && (Npc_GetDistToWP(self,"NW_CITY_HABOUR_PUFF_PECK") <= 500))
+	if((MIS_Andre_Peck == LOG_Running) && (Npc_GetDistToWP(self,"NW_CITY_HABOUR_PUFF_PECK") <= 500))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_peck_found_peck_info()
+func void DIA_Peck_FOUND_PECK_Info()
 {
 	AI_Output(other,self,"DIA_Peck_FOUND_PECK_15_00");	//Hej, czas ju¿ ruszaæ w drogê.
 	AI_Output(self,other,"DIA_Peck_FOUND_PECK_12_01");	//Czego chcesz? Nie widzisz, ¿e jestem zajêty?
@@ -125,95 +125,95 @@ func void dia_peck_found_peck_info()
 	AI_Output(self,other,"DIA_Peck_FOUND_PECK_12_05");	//Hmmm... cholera. W porz¹dku, ju¿ idê - ale kiedy zameldujesz siê u Andre, nie wspominaj, ¿e mnie tu widzia³eœ.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"STORAGE");
-	Npc_ExchangeRoutine(vanja,"ALONE");
+	Npc_ExchangeRoutine(Vanja,"ALONE");
 };
 
 
-instance DIA_PECK_WEAPON(C_INFO)
+instance DIA_Peck_WEAPON(C_Info)
 {
-	npc = mil_324_peck;
+	npc = MIL_324_Peck;
 	nr = 2;
-	condition = dia_peck_weapon_condition;
-	information = dia_peck_weapon_info;
+	condition = DIA_Peck_WEAPON_Condition;
+	information = DIA_Peck_WEAPON_Info;
 	permanent = TRUE;
 	description = "Potrzebujê broni.";
 };
 
 
-var int dia_peck_weapon_perm;
+var int DIA_Peck_WEAPON_perm;
 
-func int dia_peck_weapon_condition()
+func int DIA_Peck_WEAPON_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_andre_found_peck) && (Npc_GetDistToWP(self,"NW_CITY_ARMORY_PECK") <= 1000) && (KAPITEL < 3) && (DIA_PECK_WEAPON_PERM == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Andre_FOUND_PECK) && (Npc_GetDistToWP(self,"NW_CITY_ARMORY_PECK") <= 1000) && (Kapitel < 3) && (DIA_Peck_WEAPON_perm == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_peck_weapon_info()
+func void DIA_Peck_WEAPON_Info()
 {
 	AI_Output(other,self,"DIA_Peck_WEAPON_15_00");	//Potrzebujê broni.
-	if(MIS_ANDRE_PECK == LOG_RUNNING)
+	if(MIS_Andre_Peck == LOG_Running)
 	{
 		AI_Output(self,other,"DIA_Peck_WEAPON_12_01");	//Najpierw zamelduj siê u Andre.
 	}
 	else
 	{
-		if(MIS_ANDRE_PECK == LOG_OBSOLETE)
+		if(MIS_Andre_Peck == LOG_OBSOLETE)
 		{
 			AI_Output(self,other,"DIA_Peck_WEAPON_12_02");	//Kogó¿ my tu mamy. To nasz nowy towarzysz. I szuka sobie miecza.
 			AI_Output(self,other,"DIA_Peck_WEAPON_12_03");	//Nie powiedzia³eœ Andre, ¿e by³em w Czerwonej Latarni. Jesteœ w porz¹dku. Proszê, weŸ swój miecz.
 			AI_Output(self,other,"DIA_Peck_Add_12_00");	//To najlepszy, jaki mam.
-			b_giveinvitems(self,hero,4993,1);
+			B_GiveInvItems(self,hero,ItMw_Schwert1,1);
 		}
-		else if(MIS_ANDRE_PECK == LOG_SUCCESS)
+		else if(MIS_Andre_Peck == LOG_SUCCESS)
 		{
 			AI_Output(self,other,"DIA_Peck_WEAPON_12_04");	//Pamiêtam ciê dok³adnie. Kto doniós³ Andre, ¿e by³em w Czerwonej Latarni, co?
 			AI_Output(self,other,"DIA_Peck_WEAPON_12_05");	//A teraz chcesz jeszcze ode mnie miecz... dobra, dostaniesz go. Proszê, a teraz zejdŸ mi z oczu.
-			b_giveinvitems(self,hero,4959,1);
+			B_GiveInvItems(self,hero,ItMw_1h_MISC_Sword,1);
 		};
-		DIA_PECK_WEAPON_PERM = TRUE;
+		DIA_Peck_WEAPON_perm = TRUE;
 		AI_Output(self,other,"DIA_Peck_WEAPON_12_06");	//Jeœli ta broñ ci nie odpowiada, idŸ do kupców na placu targowym.
 	};
 	AI_StopProcessInfos(self);
 };
 
-func void b_peck_leckmich()
+func void B_Peck_LeckMich()
 {
 	AI_Output(self,other,"DIA_Peck_Add_12_07");	//Poca³uj mnie w ty³ek!
 };
 
 
-instance DIA_PECK_WEAPON2(C_INFO)
+instance DIA_Peck_WEAPON2(C_Info)
 {
-	npc = mil_324_peck;
+	npc = MIL_324_Peck;
 	nr = 2;
-	condition = dia_peck_weapon2_condition;
-	information = dia_peck_weapon2_info;
+	condition = DIA_Peck_WEAPON2_Condition;
+	information = DIA_Peck_WEAPON2_Info;
 	permanent = TRUE;
 	description = "Masz dla mnie jak¹œ lepsz¹ broñ?";
 };
 
 
-var int dia_peck_weapon2_perm;
+var int DIA_Peck_WEAPON2_perm;
 
-func int dia_peck_weapon2_condition()
+func int DIA_Peck_WEAPON2_Condition()
 {
-	if((other.guild == GIL_MIL) && (Npc_GetDistToWP(self,"NW_CITY_ARMORY_PECK") <= 1000) && (ENTEROW_KAPITEL2 == TRUE) && (DIA_PECK_WEAPON_PERM == TRUE) && (DIA_PECK_WEAPON2_PERM == FALSE))
+	if((other.guild == GIL_MIL) && (Npc_GetDistToWP(self,"NW_CITY_ARMORY_PECK") <= 1000) && (EnterOW_Kapitel2 == TRUE) && (DIA_Peck_WEAPON_perm == TRUE) && (DIA_Peck_WEAPON2_perm == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_peck_weapon2_info()
+func void DIA_Peck_WEAPON2_Info()
 {
 	AI_Output(self,other,"DIA_Peck_Add_15_01");	//Masz dla mnie jak¹œ lepsz¹ broñ?
-	if(MIS_ANDRE_PECK == LOG_SUCCESS)
+	if(MIS_Andre_Peck == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Peck_Add_12_06");	//Nie zapomnia³em o tym, ¿e donios³eœ na mnie Lordowi Andre.
-		b_peck_leckmich();
+		B_Peck_LeckMich();
 	}
-	else if(KAPITEL < 3)
+	else if(Kapitel < 3)
 	{
 		AI_Output(self,other,"DIA_Peck_Add_12_02");	//W tej chwili nie...
 	}
@@ -222,45 +222,45 @@ func void dia_peck_weapon2_info()
 		AI_Output(self,other,"DIA_Peck_Add_12_03");	//Dobrze, ¿e pytasz. Tak siê sk³ada, ¿e mamy tu kilka niez³ych ostrzy po najemnikach Onara.
 		AI_Output(self,other,"DIA_Peck_Add_12_04");	//Im ju¿ siê nie przydadz¹.
 		AI_Output(self,other,"DIA_Peck_Add_12_05");	//Proszê, bierz.
-		b_giveinvitems(self,other,5003,1);
-		DIA_PECK_WEAPON2_PERM = TRUE;
+		B_GiveInvItems(self,other,ItMw_Rubinklinge,1);
+		DIA_Peck_WEAPON2_perm = TRUE;
 	};
 };
 
 
-instance DIA_PECK_PERM(C_INFO)
+instance DIA_Peck_PERM(C_Info)
 {
-	npc = mil_324_peck;
+	npc = MIL_324_Peck;
 	nr = 998;
-	condition = dia_peck_perm_condition;
-	information = dia_peck_perm_info;
+	condition = DIA_Peck_PERM_Condition;
+	information = DIA_Peck_PERM_Info;
 	permanent = TRUE;
 	description = "Wszystko w porz¹dku?";
 };
 
 
-func int dia_peck_perm_condition()
+func int DIA_Peck_PERM_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_peck_weapon) || ((other.guild != GIL_MIL) && (Npc_GetDistToWP(self,"NW_CITY_ARMORY_PECK") <= 1000)))
+	if(Npc_KnowsInfo(other,DIA_Peck_WEAPON) || ((other.guild != GIL_MIL) && (Npc_GetDistToWP(self,"NW_CITY_ARMORY_PECK") <= 1000)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_peck_perm_info()
+func void DIA_Peck_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Peck_PERM_15_00");	//Wszystko gra?
-	if(MIS_ANDRE_PECK == LOG_SUCCESS)
+	if(MIS_Andre_Peck == LOG_SUCCESS)
 	{
-		b_peck_leckmich();
+		B_Peck_LeckMich();
 	}
-	else if(KAPITEL != 3)
+	else if(Kapitel != 3)
 	{
 		AI_Output(self,other,"DIA_Peck_PERM_12_01");	//Taa, a u ciebie?
 	}
-	else if(KAPITEL == 3)
+	else if(Kapitel == 3)
 	{
-		if(MIS_RESCUEBENNET != LOG_SUCCESS)
+		if(MIS_RescueBennet != LOG_SUCCESS)
 		{
 			if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
 			{

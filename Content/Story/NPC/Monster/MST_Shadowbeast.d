@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_SHADOWBEAST(C_NPC)
+prototype Mst_Default_Shadowbeast(C_Npc)
 {
 	name[0] = "Cieniostwór";
 	guild = GIL_SHADOWBEAST;
@@ -21,27 +21,27 @@ prototype MST_DEFAULT_SHADOWBEAST(C_NPC)
 	fight_tactic = FAI_SHADOWBEAST;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_SLEEPSTART] = 6;
-	aivar[AIV_MM_SLEEPEND] = 20;
-	aivar[AIV_MM_ROAMSTART] = 20;
-	aivar[AIV_MM_ROAMEND] = 6;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_SleepStart] = 6;
+	aivar[AIV_MM_SleepEnd] = 20;
+	aivar[AIV_MM_RoamStart] = 20;
+	aivar[AIV_MM_RoamEnd] = 6;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_shadowbeast()
+func void B_SetVisuals_Shadowbeast()
 {
 	Mdl_SetVisual(self,"Shadow.mds");
 	Mdl_SetVisualBody(self,"Sha_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance SHADOWBEAST(MST_DEFAULT_SHADOWBEAST)
+instance Shadowbeast(Mst_Default_Shadowbeast)
 {
-	b_setvisuals_shadowbeast();
+	B_SetVisuals_Shadowbeast();
 	Npc_SetToFistMode(self);
 };
 

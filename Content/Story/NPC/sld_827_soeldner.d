@@ -1,29 +1,29 @@
 
-instance SLD_827_SOELDNER(NPC_DEFAULT)
+instance SLD_827_Soeldner(Npc_Default)
 {
-	name[0] = NAME_SOELDNER;
+	name[0] = NAME_Soeldner;
 	guild = GIL_SLD;
 	id = 827;
 	voice = 7;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,4);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_2h_sld_axe);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_B_TOUGH_SILAS,BODYTEX_B,4834);
+	EquipItem(self,ItMw_2h_Sld_Axe);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_B_Tough_Silas,BodyTex_B,ItAr_Sld_L);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,50);
-	daily_routine = rtn_start_827;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,50);
+	daily_routine = Rtn_Start_827;
 };
 
 
-func void rtn_start_827()
+func void Rtn_Start_827()
 {
-	ta_smalltalk(7,2,20,58,"NW_BIGFARM_ALLEE_HUT");
-	ta_sit_bench(20,58,1,0,"NW_BIGFARM_HUT_BENCH");
-	ta_sleep(1,0,7,2,"NW_BIGFARM_HUTINSIDE_BED");
+	TA_Smalltalk(7,2,20,58,"NW_BIGFARM_ALLEE_HUT");
+	TA_Sit_Bench(20,58,1,0,"NW_BIGFARM_HUT_BENCH");
+	TA_Sleep(1,0,7,2,"NW_BIGFARM_HUTINSIDE_BED");
 };
 

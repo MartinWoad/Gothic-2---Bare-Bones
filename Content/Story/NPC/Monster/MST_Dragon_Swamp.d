@@ -1,11 +1,11 @@
 
-prototype MST_DEFAULT_DRAGON_SWAMP(C_NPC)
+prototype Mst_Default_Dragon_Swamp(C_Npc)
 {
 	name[0] = "Smok B³otny";
 	guild = GIL_DRAGON;
 	aivar[AIV_MM_REAL_ID] = ID_DRAGON_SWAMP;
 	level = 350;
-	bodystateinterruptableoverride = TRUE;
+	bodyStateInterruptableOverride = TRUE;
 	attribute[ATR_STRENGTH] = 120;
 	attribute[ATR_DEXTERITY] = 100;
 	attribute[ATR_HITPOINTS_MAX] = 1000;
@@ -21,28 +21,28 @@ prototype MST_DEFAULT_DRAGON_SWAMP(C_NPC)
 	damagetype = DAM_FLY;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_DRAGON_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	aivar[AIV_MAXDISTTOWP] = 1000;
-	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_DRAGON;
-	start_aistate = zs_mm_rtn_dragonrest;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar[AIV_MaxDistToWp] = 1000;
+	aivar[AIV_OriginalFightTactic] = FAI_DRAGON;
+	start_aistate = ZS_MM_Rtn_DragonRest;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-func void b_setvisuals_dragon_swamp()
+func void B_SetVisuals_Dragon_Swamp()
 {
 	Mdl_SetVisual(self,"Dragon.mds");
 	Mdl_SetVisualBody(self,"Dragon_Swamp_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance DRAGON_SWAMP(MST_DEFAULT_DRAGON_SWAMP)
+instance Dragon_Swamp(Mst_Default_Dragon_Swamp)
 {
 	name[0] = "Pandrodor";
 	flags = NPC_FLAG_IMMORTAL;
 	fight_tactic = FAI_DRAGON;
-	b_setvisuals_dragon_swamp();
+	B_SetVisuals_Dragon_Swamp();
 	Npc_SetToFistMode(self);
-	bodystateinterruptableoverride = TRUE;
+	bodyStateInterruptableOverride = TRUE;
 };
 

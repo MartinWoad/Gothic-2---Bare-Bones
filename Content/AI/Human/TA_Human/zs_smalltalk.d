@@ -1,10 +1,10 @@
 
-const int SMALLTALKFREQ = 4;
+const int SmallTalkFreq = 4;
 
-func void zs_smalltalk()
+func void ZS_Smalltalk()
 {
-	perception_set_normal();
-	b_resetall(self);
+	Perception_Set_Normal();
+	B_ResetAll(self);
 	AI_SetWalkMode(self,NPC_WALK);
 	if(Npc_GetDistToWP(self,self.wp) > TA_DIST_SELFWP_MAX)
 	{
@@ -12,20 +12,20 @@ func void zs_smalltalk()
 	};
 };
 
-func int zs_smalltalk_loop()
+func int ZS_Smalltalk_Loop()
 {
 	if(Npc_IsOnFP(self,"SMALLTALK"))
 	{
-		if(Npc_GetStateTime(self) >= (SMALLTALKFREQ * 2))
+		if(Npc_GetStateTime(self) >= (SmallTalkFreq * 2))
 		{
 			Npc_PerceiveAll(self);
-			if(Wld_DetectNpc(self,-1,zs_smalltalk,-1))
+			if(Wld_DetectNpc(self,-1,ZS_Smalltalk,-1))
 			{
 				if(Npc_GetDistToNpc(self,other) < PERC_DIST_DIALOG)
 				{
-					Npc_SetStateTime(other,SMALLTALKFREQ);
-					b_turntonpc(self,other);
-					b_say_smalltalk();
+					Npc_SetStateTime(other,SmallTalkFreq);
+					B_TurnToNpc(self,other);
+					B_Say_Smalltalk();
 				};
 			};
 			Npc_SetStateTime(self,0);
@@ -40,7 +40,7 @@ func int zs_smalltalk_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_smalltalk_end()
+func void ZS_Smalltalk_End()
 {
 };
 

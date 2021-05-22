@@ -1,36 +1,36 @@
 
-instance DIA_GORNDJG_EXIT(C_INFO)
+instance DIA_GornDJG_EXIT(C_Info)
 {
-	npc = pc_fighter_djg;
+	npc = PC_Fighter_DJG;
 	nr = 999;
-	condition = dia_gorndjg_exit_condition;
-	information = dia_gorndjg_exit_info;
+	condition = DIA_GornDJG_EXIT_Condition;
+	information = DIA_GornDJG_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_gorndjg_exit_condition()
+func int DIA_GornDJG_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_gorndjg_exit_info()
+func void DIA_GornDJG_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_GORNDJG_STARTCAMP(C_INFO)
+instance DIA_GornDJG_STARTCAMP(C_Info)
 {
-	npc = pc_fighter_djg;
-	condition = dia_gorndjg_startcamp_condition;
-	information = dia_gorndjg_startcamp_info;
+	npc = PC_Fighter_DJG;
+	condition = DIA_GornDJG_STARTCAMP_Condition;
+	information = DIA_GornDJG_STARTCAMP_Info;
 	description = "Widzê, ¿e przy³¹czy³eœ siê do ³owców smoków.";
 };
 
 
-func int dia_gorndjg_startcamp_condition()
+func int DIA_GornDJG_STARTCAMP_Condition()
 {
 	if(Npc_GetDistToWP(self,"OW_DJG_STARTCAMP_01") < 1000)
 	{
@@ -38,24 +38,24 @@ func int dia_gorndjg_startcamp_condition()
 	};
 };
 
-func void dia_gorndjg_startcamp_info()
+func void DIA_GornDJG_STARTCAMP_Info()
 {
 	AI_Output(other,self,"DIA_GornDJG_STARTCAMP_15_00");	//Widzê, ¿e przy³¹czy³eœ siê do ³owców smoków.
 	AI_Output(self,other,"DIA_GornDJG_STARTCAMP_12_01");	//Poszed³em z Sylviem do Górniczej Doliny, bo nikt nie zna okolicy lepiej ode mnie. Zreszt¹ chcia³em sam rozejrzeæ siê w sytuacji.
 	AI_Output(self,other,"DIA_GornDJG_STARTCAMP_12_02");	//Wiesz, co ci powiem? Coœ tu siê szykuje. Pierwszy raz widzê tylu orków naraz w jednym miejscu.
 	AI_Output(self,other,"DIA_GornDJG_STARTCAMP_12_03");	//Nie zdziwi³bym siê, gdyby Garond i jego paladyni zostali do tej pory wybici do nogi.
-	Info_AddChoice(dia_gorndjg_startcamp,"Do zobaczenia!",dia_gorndjg_startcamp_by);
-	Info_AddChoice(dia_gorndjg_startcamp,"Co zamierzasz teraz robiæ?",dia_gorndjg_startcamp_wohin);
+	Info_AddChoice(DIA_GornDJG_STARTCAMP,"Do zobaczenia!",DIA_GornDJG_STARTCAMP_By);
+	Info_AddChoice(DIA_GornDJG_STARTCAMP,"Co zamierzasz teraz robiæ?",DIA_GornDJG_STARTCAMP_Wohin);
 };
 
-func void dia_gorndjg_startcamp_wohin()
+func void DIA_GornDJG_STARTCAMP_Wohin()
 {
 	AI_Output(other,self,"DIA_GornDJG_STARTCAMP_Wohin_15_00");	//Co zamierzasz teraz robiæ?
 	AI_Output(self,other,"DIA_GornDJG_STARTCAMP_Wohin_12_01");	//Najpierw pójdê z ch³opakami do Górniczej Doliny. Potem pewnie siê st¹d ulotniê.
 	AI_Output(self,other,"DIA_GornDJG_STARTCAMP_Wohin_12_02");	//Muszê siê dowiedzieæ, co planuj¹ orkowie.
 };
 
-func void dia_gorndjg_startcamp_by()
+func void DIA_GornDJG_STARTCAMP_By()
 {
 	AI_Output(other,self,"DIA_GornDJG_STARTCAMP_By_15_00");	//Do zobaczenia!
 	AI_Output(self,other,"DIA_GornDJG_STARTCAMP_By_12_01");	//Uwa¿aj na siebie.
@@ -63,16 +63,16 @@ func void dia_gorndjg_startcamp_by()
 };
 
 
-instance DIA_GORNDJG_HALLO(C_INFO)
+instance DIA_GornDJG_HALLO(C_Info)
 {
-	npc = pc_fighter_djg;
-	condition = dia_gorndjg_hallo_condition;
-	information = dia_gorndjg_hallo_info;
+	npc = PC_Fighter_DJG;
+	condition = DIA_GornDJG_HALLO_Condition;
+	information = DIA_GornDJG_HALLO_Info;
 	description = "A wiêc tutaj siê schowa³eœ!";
 };
 
 
-func int dia_gorndjg_hallo_condition()
+func int DIA_GornDJG_HALLO_Condition()
 {
 	if(Npc_GetDistToWP(self,"OW_DJG_ROCKCAMP_01") < 1500)
 	{
@@ -80,75 +80,75 @@ func int dia_gorndjg_hallo_condition()
 	};
 };
 
-func void dia_gorndjg_hallo_info()
+func void DIA_GornDJG_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_GornDJG_HALLO_15_00");	//A wiêc tutaj siê schowa³eœ!
 	AI_Output(self,other,"DIA_GornDJG_HALLO_12_01");	//Ty te¿ nie dasz siê tak ³atwo zabiæ, co?
 };
 
 
-instance DIA_GORNDJG_WHATSUP(C_INFO)
+instance DIA_GornDJG_WHATSUP(C_Info)
 {
-	npc = pc_fighter_djg;
-	condition = dia_gorndjg_whatsup_condition;
-	information = dia_gorndjg_whatsup_info;
+	npc = PC_Fighter_DJG;
+	condition = DIA_GornDJG_WHATSUP_Condition;
+	information = DIA_GornDJG_WHATSUP_Info;
 	description = "Znalaz³eœ coœ ciekawego?";
 };
 
 
-func int dia_gorndjg_whatsup_condition()
+func int DIA_GornDJG_WHATSUP_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gorndjg_hallo))
+	if(Npc_KnowsInfo(other,DIA_GornDJG_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gorndjg_whatsup_info()
+func void DIA_GornDJG_WHATSUP_Info()
 {
 	AI_Output(other,self,"DIA_GornDJG_WHATSUP_15_00");	//Znalaz³eœ coœ ciekawego?
 	AI_Output(self,other,"DIA_GornDJG_WHATSUP_12_01");	//Ci¹gle szukam. Myœlê, ¿e coœ dzieje siê w starych ruinach, w górach. W nocy widaæ tam dziwne œwiat³a i s³ychaæ jakieœ wrzaski.
-	Info_ClearChoices(dia_gorndjg_whatsup);
-	Info_AddChoice(dia_gorndjg_whatsup,"Mo¿e Lester?",dia_gorndjg_whatsup_lester);
-	Info_AddChoice(dia_gorndjg_whatsup,"Myœlisz, ¿e to sprawka smoka?",dia_gorndjg_whatsup_a_dragon);
-	b_logentry(TOPIC_DRAGONHUNTER,"Gorn przebywa u podnó¿a p³askowy¿u przy fortecy orków. Dziêki temu mo¿e obserwowaæ jednoczeœnie równinê i orkowe barykady.");
+	Info_ClearChoices(DIA_GornDJG_WHATSUP);
+	Info_AddChoice(DIA_GornDJG_WHATSUP,"Mo¿e Lester?",DIA_GornDJG_WHATSUP_Lester);
+	Info_AddChoice(DIA_GornDJG_WHATSUP,"Myœlisz, ¿e to sprawka smoka?",DIA_GornDJG_WHATSUP_A_Dragon);
+	B_LogEntry(TOPIC_Dragonhunter,"Gorn przebywa u podnó¿a p³askowy¿u przy fortecy orków. Dziêki temu mo¿e obserwowaæ jednoczeœnie równinê i orkowe barykady.");
 };
 
-func void dia_gorndjg_whatsup_lester()
+func void DIA_GornDJG_WHATSUP_Lester()
 {
 	AI_Output(other,self,"DIA_GornDJG_WHATSUP_Lester_15_00");	//Mo¿e Lester wróci³ na swoje œmieci?
 	AI_Output(self,other,"DIA_GornDJG_WHATSUP_Lester_12_01");	//Raczej nie. O ile wiem, Lester ju¿ tam nie mieszka.
 };
 
-func void dia_gorndjg_whatsup_a_dragon()
+func void DIA_GornDJG_WHATSUP_A_Dragon()
 {
 	AI_Output(other,self,"DIA_GornDJG_WHATSUP_A_Dragon_15_00");	//Myœlisz, ¿e to sprawka smoka?
 	AI_Output(self,other,"DIA_GornDJG_WHATSUP_A_Dragon_12_01");	//Bardzo mo¿liwe. Tamten p³askowy¿ jest lepiej strze¿ony ni¿ królewski skarbiec, a koniec koñców - to jedyna droga do fortecy.
 	AI_Output(self,other,"DIA_GornDJG_WHATSUP_A_Dragon_12_02");	//Jakby ma³o by³o samych smoków - krêci siê tam mnóstwo innego plugastwa.
-	GORNDJG_WHATMONSTERS = TRUE;
-	b_logentry(TOPIC_DRAGONHUNTER,"Gorn twierdzi, ¿e w starej skalnej fortecy przebywa smok.");
-	Info_ClearChoices(dia_gorndjg_whatsup);
+	GornDJG_WhatMonsters = TRUE;
+	B_LogEntry(TOPIC_Dragonhunter,"Gorn twierdzi, ¿e w starej skalnej fortecy przebywa smok.");
+	Info_ClearChoices(DIA_GornDJG_WHATSUP);
 };
 
 
-instance DIA_GORNDJG_WHATMONSTERS(C_INFO)
+instance DIA_GornDJG_WHATMONSTERS(C_Info)
 {
-	npc = pc_fighter_djg;
-	condition = dia_gorndjg_whatmonsters_condition;
-	information = dia_gorndjg_whatmonsters_info;
+	npc = PC_Fighter_DJG;
+	condition = DIA_GornDJG_WHATMONSTERS_Condition;
+	information = DIA_GornDJG_WHATMONSTERS_Info;
 	description = "O czym mówisz?";
 };
 
 
-func int dia_gorndjg_whatmonsters_condition()
+func int DIA_GornDJG_WHATMONSTERS_Condition()
 {
-	if(GORNDJG_WHATMONSTERS == TRUE)
+	if(GornDJG_WhatMonsters == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gorndjg_whatmonsters_info()
+func void DIA_GornDJG_WHATMONSTERS_Info()
 {
 	AI_Output(other,self,"DIA_GornDJG_WHATMONSTERS_15_00");	//O czym mówisz?
 	AI_Output(self,other,"DIA_GornDJG_WHATMONSTERS_12_01");	//Nie przyjrza³em im siê jeszcze dok³adniej, ale czymkolwiek s¹ - chodz¹ wyprostowane i maj¹ ³uskowat¹ skórê. Skacz¹ po ska³ach jak stado zêbaczy w poœcigu za ofiar¹.
@@ -156,24 +156,24 @@ func void dia_gorndjg_whatmonsters_info()
 };
 
 
-instance DIA_GORNDJG_WAHTABOUTORCS(C_INFO)
+instance DIA_GornDJG_WAHTABOUTORCS(C_Info)
 {
-	npc = pc_fighter_djg;
-	condition = dia_gorndjg_wahtaboutorcs_condition;
-	information = dia_gorndjg_wahtaboutorcs_info;
+	npc = PC_Fighter_DJG;
+	condition = DIA_GornDJG_WAHTABOUTORCS_Condition;
+	information = DIA_GornDJG_WAHTABOUTORCS_Info;
 	description = "A co z orkami?";
 };
 
 
-func int dia_gorndjg_wahtaboutorcs_condition()
+func int DIA_GornDJG_WAHTABOUTORCS_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gorndjg_hallo))
+	if(Npc_KnowsInfo(other,DIA_GornDJG_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gorndjg_wahtaboutorcs_info()
+func void DIA_GornDJG_WAHTABOUTORCS_Info()
 {
 	AI_Output(other,self,"DIA_GornDJG_WAHTABOUTORCS_15_00");	//A co z orkami?
 	AI_Output(self,other,"DIA_GornDJG_WAHTABOUTORCS_12_01");	//Obserwujê je od d³u¿szego czasu. Za t¹ ich palisad¹ musi siê kryæ coœ wa¿nego. Myœlê, ¿e trzymaj¹ tam swoje g³ówne si³y.
@@ -183,24 +183,24 @@ func void dia_gorndjg_wahtaboutorcs_info()
 };
 
 
-instance DIA_GORNDJG_HELPKILLDRACONIANS(C_INFO)
+instance DIA_GornDJG_HELPKILLDRACONIANS(C_Info)
 {
-	npc = pc_fighter_djg;
-	condition = dia_gorndjg_helpkilldraconians_condition;
-	information = dia_gorndjg_helpkilldraconians_info;
+	npc = PC_Fighter_DJG;
+	condition = DIA_GornDJG_HELPKILLDRACONIANS_Condition;
+	information = DIA_GornDJG_HELPKILLDRACONIANS_Info;
 	description = "Pomo¿esz mi dostaæ siê do fortecy?";
 };
 
 
-func int dia_gorndjg_helpkilldraconians_condition()
+func int DIA_GornDJG_HELPKILLDRACONIANS_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gorndjg_whatmonsters) && Npc_KnowsInfo(other,dia_gorndjg_wahtaboutorcs) && (Npc_IsDead(rockdragon) == FALSE))
+	if(Npc_KnowsInfo(other,DIA_GornDJG_WHATMONSTERS) && Npc_KnowsInfo(other,DIA_GornDJG_WAHTABOUTORCS) && (Npc_IsDead(RockDragon) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gorndjg_helpkilldraconians_info()
+func void DIA_GornDJG_HELPKILLDRACONIANS_Info()
 {
 	AI_Output(other,self,"DIA_GornDJG_HELPKILLDRACONIANS_15_00");	//Pomo¿esz mi dostaæ siê do fortecy?
 	AI_Output(self,other,"DIA_GornDJG_HELPKILLDRACONIANS_12_01");	//Sam nie wiem. Bojê siê spuœciæ orków z oka, choæby na chwilê.
@@ -209,28 +209,28 @@ func void dia_gorndjg_helpkilldraconians_info()
 	AI_Output(self,other,"DIA_GornDJG_HELPKILLDRACONIANS_12_04");	//A co mi tam! W koñcu, po co tu jestem? W porz¹dku, pomogê ci przebiæ siê do fortecy.
 	AI_Output(self,other,"DIA_GornDJG_HELPKILLDRACONIANS_12_05");	//Trochê ruchu mi nie zaszkodzi. Zreszt¹ i tak chcia³em siê lepiej przyjrzeæ tym dziwnym bestiom.
 	AI_Output(self,other,"DIA_GornDJG_HELPKILLDRACONIANS_12_06");	//Daj mi znaæ, kiedy bêdziesz gotowy.
-	b_logentry(TOPIC_DRAGONHUNTER,"Gorn chce mi pomóc przedostaæ siê do skalnej fortecy na p³askowy¿u.");
+	B_LogEntry(TOPIC_Dragonhunter,"Gorn chce mi pomóc przedostaæ siê do skalnej fortecy na p³askowy¿u.");
 };
 
 
-instance DIA_GORNDJG_LOSGEHTS(C_INFO)
+instance DIA_GornDJG_LOSGEHTS(C_Info)
 {
-	npc = pc_fighter_djg;
-	condition = dia_gorndjg_losgehts_condition;
-	information = dia_gorndjg_losgehts_info;
+	npc = PC_Fighter_DJG;
+	condition = DIA_GornDJG_LOSGEHTS_Condition;
+	information = DIA_GornDJG_LOSGEHTS_Info;
 	description = "Mo¿emy ruszaæ!";
 };
 
 
-func int dia_gorndjg_losgehts_condition()
+func int DIA_GornDJG_LOSGEHTS_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gorndjg_helpkilldraconians))
+	if(Npc_KnowsInfo(other,DIA_GornDJG_HELPKILLDRACONIANS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gorndjg_losgehts_info()
+func void DIA_GornDJG_LOSGEHTS_Info()
 {
 	AI_Output(other,self,"DIA_GornDJG_LOSGEHTS_15_00");	//Mo¿emy ruszaæ!
 	AI_Output(self,other,"DIA_GornDJG_LOSGEHTS_12_01");	//Jak za dawnych czasów, co? Ale coœ sobie wyjaœnijmy: to MOJA bitwa. Tym razem to JA idê z przodu!
@@ -240,16 +240,16 @@ func void dia_gorndjg_losgehts_info()
 };
 
 
-instance DIA_GORNDJG_BISHIERHIN(C_INFO)
+instance DIA_GornDJG_BISHIERHIN(C_Info)
 {
-	npc = pc_fighter_djg;
-	condition = dia_gorndjg_bishierhin_condition;
-	information = dia_gorndjg_bishierhin_info;
+	npc = PC_Fighter_DJG;
+	condition = DIA_GornDJG_BISHIERHIN_Condition;
+	information = DIA_GornDJG_BISHIERHIN_Info;
 	important = TRUE;
 };
 
 
-func int dia_gorndjg_bishierhin_condition()
+func int DIA_GornDJG_BISHIERHIN_Condition()
 {
 	if(Npc_GetDistToWP(self,"LOCATION_19_01") < 1000)
 	{
@@ -257,37 +257,37 @@ func int dia_gorndjg_bishierhin_condition()
 	};
 };
 
-func void dia_gorndjg_bishierhin_info()
+func void DIA_GornDJG_BISHIERHIN_Info()
 {
 	AI_Output(self,other,"DIA_GornDJG_BISHIERHIN_12_00");	//Ha! £atwizna! Có¿, przyjacielu, reszt¹ musisz zaj¹æ siê sam. Spuœæ im ciêgi! Ja wrócê na swój posterunek i bêdê dalej obserwowa³ orków.
 	AI_Output(other,self,"DIA_GornDJG_BISHIERHIN_15_01");	//Nie ma sprawy! Do zobaczenia!
 	AI_Output(self,other,"DIA_GornDJG_BISHIERHIN_12_02");	//No, mam nadziejê!
-	b_logentry(TOPIC_DRAGONHUNTER,"Gorn powróci³ na swój posterunek. Zamierza nadal obserwowaæ poczynania orków.");
-	b_giveplayerxp(XP_GORNDJGPLATEAUCLEAR);
+	B_LogEntry(TOPIC_Dragonhunter,"Gorn powróci³ na swój posterunek. Zamierza nadal obserwowaæ poczynania orków.");
+	B_GivePlayerXP(XP_GornDJGPlateauClear);
 	AI_StopProcessInfos(self);
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
 	Npc_ExchangeRoutine(self,"Start");
 };
 
 
-instance DIA_GORNDJG_DRAGONDEAD(C_INFO)
+instance DIA_GornDJG_DRAGONDEAD(C_Info)
 {
-	npc = pc_fighter_djg;
-	condition = dia_gorndjg_dragondead_condition;
-	information = dia_gorndjg_dragondead_info;
+	npc = PC_Fighter_DJG;
+	condition = DIA_GornDJG_DRAGONDEAD_Condition;
+	information = DIA_GornDJG_DRAGONDEAD_Info;
 	description = "Kamienny smok nie ¿yje!";
 };
 
 
-func int dia_gorndjg_dragondead_condition()
+func int DIA_GornDJG_DRAGONDEAD_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_gorndjg_whatsup) && (Npc_GetDistToWP(self,"OW_DJG_ROCKCAMP_01") < 1000) && (Npc_IsDead(rockdragon) == TRUE))
+	if(Npc_KnowsInfo(other,DIA_GornDJG_WHATSUP) && (Npc_GetDistToWP(self,"OW_DJG_ROCKCAMP_01") < 1000) && (Npc_IsDead(RockDragon) == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gorndjg_dragondead_info()
+func void DIA_GornDJG_DRAGONDEAD_Info()
 {
 	AI_Output(other,self,"DIA_GornDJG_DRAGONDEAD_15_00");	//Kamienny smok nie ¿yje!
 	AI_Output(self,other,"DIA_GornDJG_DRAGONDEAD_12_01");	//Od jakiegoœ czasu nie s³yszê ¿adnych wrzasków. By³eœ w fortecy?
@@ -300,37 +300,37 @@ func void dia_gorndjg_dragondead_info()
 };
 
 
-instance DIA_FIGHTER_DJG_PICKPOCKET(C_INFO)
+instance DIA_Fighter_DJG_PICKPOCKET(C_Info)
 {
-	npc = pc_fighter_djg;
+	npc = PC_Fighter_DJG;
 	nr = 900;
-	condition = dia_fighter_djg_pickpocket_condition;
-	information = dia_fighter_djg_pickpocket_info;
+	condition = DIA_Fighter_DJG_PICKPOCKET_Condition;
+	information = DIA_Fighter_DJG_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_20;
+	description = Pickpocket_20;
 };
 
 
-func int dia_fighter_djg_pickpocket_condition()
+func int DIA_Fighter_DJG_PICKPOCKET_Condition()
 {
-	return c_beklauen(10,35);
+	return C_Beklauen(10,35);
 };
 
-func void dia_fighter_djg_pickpocket_info()
+func void DIA_Fighter_DJG_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_fighter_djg_pickpocket);
-	Info_AddChoice(dia_fighter_djg_pickpocket,DIALOG_BACK,dia_fighter_djg_pickpocket_back);
-	Info_AddChoice(dia_fighter_djg_pickpocket,DIALOG_PICKPOCKET,dia_fighter_djg_pickpocket_doit);
+	Info_ClearChoices(DIA_Fighter_DJG_PICKPOCKET);
+	Info_AddChoice(DIA_Fighter_DJG_PICKPOCKET,Dialog_Back,DIA_Fighter_DJG_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Fighter_DJG_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Fighter_DJG_PICKPOCKET_DoIt);
 };
 
-func void dia_fighter_djg_pickpocket_doit()
+func void DIA_Fighter_DJG_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_fighter_djg_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Fighter_DJG_PICKPOCKET);
 };
 
-func void dia_fighter_djg_pickpocket_back()
+func void DIA_Fighter_DJG_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_fighter_djg_pickpocket);
+	Info_ClearChoices(DIA_Fighter_DJG_PICKPOCKET);
 };
 

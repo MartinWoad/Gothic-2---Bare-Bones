@@ -1,46 +1,46 @@
 
-instance DIA_DIEGONW_EXIT(C_INFO)
+instance DIA_DiegoNW_EXIT(C_Info)
 {
-	npc = pc_thief_nw;
+	npc = PC_Thief_NW;
 	nr = 999;
-	condition = dia_diegonw_exit_condition;
-	information = dia_diegonw_exit_info;
+	condition = DIA_DiegoNW_EXIT_Condition;
+	information = DIA_DiegoNW_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_diegonw_exit_condition()
+func int DIA_DiegoNW_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_diegonw_exit_info()
+func void DIA_DiegoNW_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_DIEGONW_PERM(C_INFO)
+instance DIA_DiegoNW_Perm(C_Info)
 {
-	npc = pc_thief_nw;
+	npc = PC_Thief_NW;
 	nr = 998;
-	condition = dia_diegonw_perm_condition;
-	information = dia_diegonw_perm_info;
+	condition = DIA_DiegoNW_Perm_Condition;
+	information = DIA_DiegoNW_Perm_Info;
 	permanent = TRUE;
 	description = "Jak idzie interes?";
 };
 
 
-func int dia_diegonw_perm_condition()
+func int DIA_DiegoNW_Perm_Condition()
 {
-	if(DIEGO_ISONBOARD == FALSE)
+	if(Diego_IsOnBoard == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_diegonw_perm_info()
+func void DIA_DiegoNW_Perm_Info()
 {
 	AI_Output(other,self,"DIA_DiegoNW_Perm_15_00");	//Jak ci siê ¿yje na wolnoœci?
 	AI_Output(self,other,"DIA_DiegoNW_Perm_11_01");	//Kiepsko. Nikt mi nie powiedzia³, ¿e pod moj¹ nieobecnoœæ Khorinis zesz³o na psy.
@@ -49,43 +49,43 @@ func void dia_diegonw_perm_info()
 };
 
 
-instance DIA_DIEGONW_NEEDHELP(C_INFO)
+instance DIA_DiegoNW_NeedHelp(C_Info)
 {
-	npc = pc_thief_nw;
+	npc = PC_Thief_NW;
 	nr = 30;
-	condition = dia_diegonw_needhelp_condition;
-	information = dia_diegonw_needhelp_info;
+	condition = DIA_DiegoNW_NeedHelp_Condition;
+	information = DIA_DiegoNW_NeedHelp_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_diegonw_needhelp_condition()
+func int DIA_DiegoNW_NeedHelp_Condition()
 {
-	if(DIEGO_ISONBOARD == FALSE)
+	if(Diego_IsOnBoard == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_diegonw_needhelp_info()
+func void DIA_DiegoNW_NeedHelp_Info()
 {
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_11_00");	//Dobrze, ¿e ciê widzê. Musisz mi pomóc.
-	Info_ClearChoices(dia_diegonw_needhelp);
-	Info_AddChoice(dia_diegonw_needhelp,"Kim jesteœ?",dia_diegonw_needhelp_whoareyou);
-	Info_AddChoice(dia_diegonw_needhelp,"Co to za strój?",dia_diegonw_needhelp_clothes);
-	Info_AddChoice(dia_diegonw_needhelp,"Co tu porabiasz?",dia_diegonw_needhelp_plan);
-	Info_AddChoice(dia_diegonw_needhelp,"W czym rzecz?",dia_diegonw_needhelp_problem);
+	Info_ClearChoices(DIA_DiegoNW_NeedHelp);
+	Info_AddChoice(DIA_DiegoNW_NeedHelp,"Kim jesteœ?",DIA_DiegoNW_NeedHelp_WhoAreYou);
+	Info_AddChoice(DIA_DiegoNW_NeedHelp,"Co to za strój?",DIA_DiegoNW_NeedHelp_Clothes);
+	Info_AddChoice(DIA_DiegoNW_NeedHelp,"Co tu porabiasz?",DIA_DiegoNW_NeedHelp_Plan);
+	Info_AddChoice(DIA_DiegoNW_NeedHelp,"W czym rzecz?",DIA_DiegoNW_NeedHelp_Problem);
 };
 
-func void dia_diegonw_needhelp_plan()
+func void DIA_DiegoNW_NeedHelp_Plan()
 {
 	AI_Output(other,self,"DIA_DiegoNW_NeedHelp_Plan_15_00");	//Co tu robisz?
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Plan_11_01");	//Obserwujê stra¿ników. Bez przerwy wêsz¹.
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Plan_11_02");	//Nie³atwo bêdzie przeœlizgn¹æ siê têdy.
 };
 
-func void dia_diegonw_needhelp_whoareyou()
+func void DIA_DiegoNW_NeedHelp_WhoAreYou()
 {
 	AI_Output(other,self,"DIA_DiegoNW_NeedHelp_WhoAreYou_15_00");	//Kim jesteœ?
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_WhoAreYou_11_01");	//Cholera, to pewnie przez ten strój. Stra¿nicy nie chc¹ mnie wpuœciæ do miasta.
@@ -98,7 +98,7 @@ func void dia_diegonw_needhelp_whoareyou()
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_WhoAreYou_11_08");	//A teraz potrzebujê twojej pomocy.
 };
 
-func void dia_diegonw_needhelp_clothes()
+func void DIA_DiegoNW_NeedHelp_Clothes()
 {
 	AI_Output(other,self,"DIA_DiegoNW_NeedHelp_Clothes_15_00");	//Co to za strój?
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Clothes_11_01");	//Kupi³em go od napotkanego handlarza. Stra¿nicy nie chcieli mnie wpuœciæ do miasta.
@@ -108,7 +108,7 @@ func void dia_diegonw_needhelp_clothes()
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Clothes_11_05");	//I wi¹¿ê z tym miastem wielkie plany.
 };
 
-func void dia_diegonw_needhelp_problem()
+func void DIA_DiegoNW_NeedHelp_Problem()
 {
 	AI_Output(other,self,"DIA_DiegoNW_NeedHelp_Problem_15_00");	//W czym rzecz?
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_11_01");	//Du¿o siê tu pozmienia³o od mojej ostatniej wizyty. Najpierw muszê jakoœ stan¹æ na nogi.
@@ -118,98 +118,98 @@ func void dia_diegonw_needhelp_problem()
 	AI_Output(other,self,"DIA_DiegoNW_NeedHelp_Problem_15_05");	//Mam ci po¿yczyæ trochê z³ota?
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_11_06");	//W ¿adnym wypadku! Mam trochê pieniêdzy... ca³kiem sporo, jeœli mam byæ szczery. Niestety, nie mam ich przy sobie.
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_11_07");	//Ktoœ musi mi je przynieœæ. Rozumiemy siê?
-	Info_ClearChoices(dia_diegonw_needhelp);
-	Info_AddChoice(dia_diegonw_needhelp,"Obawiam siê, ¿e nie mam na to czasu.",dia_diegonw_needhelp_problem_notime);
-	Info_AddChoice(dia_diegonw_needhelp,"A co JA bêdê z tego mia³?",dia_diegonw_needhelp_problem_reward);
-	Info_AddChoice(dia_diegonw_needhelp,"W porz¹dku, pomogê ci.",dia_diegonw_needhelp_problem_willhelpyou);
+	Info_ClearChoices(DIA_DiegoNW_NeedHelp);
+	Info_AddChoice(DIA_DiegoNW_NeedHelp,"Obawiam siê, ¿e nie mam na to czasu.",DIA_DiegoNW_NeedHelp_Problem_NoTime);
+	Info_AddChoice(DIA_DiegoNW_NeedHelp,"A co JA bêdê z tego mia³?",DIA_DiegoNW_NeedHelp_Problem_Reward);
+	Info_AddChoice(DIA_DiegoNW_NeedHelp,"W porz¹dku, pomogê ci.",DIA_DiegoNW_NeedHelp_Problem_WillHelpYou);
 };
 
-func void dia_diegonw_needhelp_problem_notime()
+func void DIA_DiegoNW_NeedHelp_Problem_NoTime()
 {
 	AI_Output(other,self,"DIA_DiegoNW_NeedHelp_Problem_NoTime_15_00");	//Obawiam siê, ¿e nie mam na to czasu.
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_NoTime_11_01");	//Hej, myœla³em, ¿e jesteœmy kumplami! Nie wiem, czy pamiêtasz, ale to JA uratowa³em twój ty³ek, gdy wyl¹dowa³eœ w Kolonii.
 	AI_Output(other,self,"DIA_DiegoNW_NeedHelp_Problem_NoTime_15_02");	//Chyba trochê przesadzasz.
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_NoTime_11_03");	//O, czy¿by? No to zastanów siê, co by siê z tob¹ sta³o, gdybym nie wyjaœni³ ci, kto jest kim, i jak siê zachowywaæ za Barier¹.
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_NoTime_11_04");	//Magnaci zjedliby ciê na œniadanie! Skoñczy³byœ w zawszonej kopalni!
-	MIS_HELPDIEGONW = LOG_FAILED;
-	Info_ClearChoices(dia_diegonw_needhelp);
+	MIS_HelpDiegoNW = LOG_FAILED;
+	Info_ClearChoices(DIA_DiegoNW_NeedHelp);
 };
 
-func void dia_diegonw_needhelp_problem_reward()
+func void DIA_DiegoNW_NeedHelp_Problem_Reward()
 {
 	AI_Output(other,self,"DIA_DiegoNW_NeedHelp_Problem_Reward_15_00");	//A co bêdê z tego mia³?
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_Reward_11_01");	//A czy ja ciê prosi³em o coœ w zamian za moj¹ pomoc? Jesteœmy przyjació³mi. To ci nie wystarczy?
 };
 
-func void dia_diegonw_needhelp_problem_willhelpyou()
+func void DIA_DiegoNW_NeedHelp_Problem_WillHelpYou()
 {
 	AI_Output(other,self,"DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_15_00");	//W porz¹dku, pomogê ci.
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_11_01");	//Schowa³em w Górniczej Dolinie ma³¹ fortunkê.
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_11_02");	//Chcia³em j¹ zabraæ, ale w pobli¿u skrytki krêci siê banda orków.
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_11_03");	//¯eby nie przed³u¿aæ: musisz pójœæ do Górniczej Doliny i odzyskaæ moje z³oto.
-	MIS_HELPDIEGONW = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_HELPDIEGONW,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_HELPDIEGONW,LOG_RUNNING);
-	b_logentry(TOPIC_HELPDIEGONW,"Z³oto Diega znajduje siê w Górniczej Dolinie. Diego potrzebuje go, aby dostaæ siê do górnego miasta, i prosi³ mnie o jego przyniesienie.");
-	Info_ClearChoices(dia_diegonw_needhelp);
-	Info_AddChoice(dia_diegonw_needhelp,"Co zamierzasz zrobiæ z pieniêdzmi?",dia_diegonw_needhelp_problem_willhelpyou_yourplan);
-	Info_AddChoice(dia_diegonw_needhelp,"Sk¹d wzi¹³eœ to ca³e z³oto?",dia_diegonw_needhelp_problem_willhelpyou_howgold);
-	Info_AddChoice(dia_diegonw_needhelp,"Gdzie schowa³eœ z³oto?",dia_diegonw_needhelp_problem_willhelpyou_wheregold);
+	MIS_HelpDiegoNW = LOG_Running;
+	Log_CreateTopic(TOPIC_HelpDiegoNW,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_HelpDiegoNW,LOG_Running);
+	B_LogEntry(TOPIC_HelpDiegoNW,"Z³oto Diega znajduje siê w Górniczej Dolinie. Diego potrzebuje go, aby dostaæ siê do górnego miasta, i prosi³ mnie o jego przyniesienie.");
+	Info_ClearChoices(DIA_DiegoNW_NeedHelp);
+	Info_AddChoice(DIA_DiegoNW_NeedHelp,"Co zamierzasz zrobiæ z pieniêdzmi?",DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_YourPlan);
+	Info_AddChoice(DIA_DiegoNW_NeedHelp,"Sk¹d wzi¹³eœ to ca³e z³oto?",DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_HowGold);
+	Info_AddChoice(DIA_DiegoNW_NeedHelp,"Gdzie schowa³eœ z³oto?",DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_WhereGold);
 };
 
-func void dia_diegonw_needhelp_problem_willhelpyou_yourplan()
+func void DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_YourPlan()
 {
 	AI_Output(other,self,"DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_YourPlan_15_00");	//Co zamierzasz zrobiæ z pieniêdzmi?
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_YourPlan_11_01");	//Muszê siê rozliczyæ z jednym kupcem z górnego miasta. Tym zajmê siê w pierwszej kolejnoœci.
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_YourPlan_11_02");	//A potem rozpocznie siê moja nowa kariera!
 };
 
-func void dia_diegonw_needhelp_problem_willhelpyou_howgold()
+func void DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_HowGold()
 {
 	AI_Output(other,self,"DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_HowGold_15_00");	//Sk¹d wzi¹³eœ to ca³e z³oto?
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_HowGold_11_01");	//Czy¿bym by³ jedynym, który uciu³a³ sobie trochê pieniêdzy w Górniczej Dolinie?
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_HowGold_11_02");	//Od³o¿enie na bok paru sztuk z³ota by³o dziecinnie ³atwe. No wiesz, na wypadek, gdybyœmy siê stamt¹d wydostali.
 };
 
-func void dia_diegonw_needhelp_problem_willhelpyou_wheregold()
+func void DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_WhereGold()
 {
 	AI_Output(other,self,"DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_WhereGold_15_00");	//Gdzie schowa³eœ z³oto?
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_WhereGold_11_01");	//Na placu wymian, nad opuszczon¹ kopalni¹, w skórzanej torbie.
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_WhereGold_11_02");	//Tylko upewnij siê, ¿e to ta w³aœciwa, ¿ebyœ nie musia³ chodziæ dwa razy.
 	AI_Output(other,self,"DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_WhereGold_15_03");	//Jak j¹ rozpoznam?
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_WhereGold_11_04");	//Torba jest pe³na z³ota. Wypchana po brzegi!
-	Info_AddChoice(dia_diegonw_needhelp,"Dobrze, spróbujê znaleŸæ twój skarb.",dia_diegonw_needhelp_problem_willhelpyou_wheregold_end_tryit);
-	b_logentry(TOPIC_HELPDIEGONW,"Z³oto Diega znajduje siê gdzieœ na starym placu wymian, nad opuszczon¹ kopalni¹ - tam, gdzie dostarczano za pomoc¹ kolejki linowej ca³e zaopatrzenie dla Kolonii.");
+	Info_AddChoice(DIA_DiegoNW_NeedHelp,"Dobrze, spróbujê znaleŸæ twój skarb.",DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_WhereGold_End_TryIt);
+	B_LogEntry(TOPIC_HelpDiegoNW,"Z³oto Diega znajduje siê gdzieœ na starym placu wymian, nad opuszczon¹ kopalni¹ - tam, gdzie dostarczano za pomoc¹ kolejki linowej ca³e zaopatrzenie dla Kolonii.");
 };
 
-func void dia_diegonw_needhelp_problem_willhelpyou_wheregold_end_tryit()
+func void DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_WhereGold_End_TryIt()
 {
 	AI_Output(other,self,"DIA_DiegoNW_NeedHelp_Problem_TryIt_15_00");	//Dobrze, spróbujê znaleŸæ twój skarb.
 	AI_Output(self,other,"DIA_DiegoNW_NeedHelp_Problem_TryIt_11_01");	//Tak trzymaæ! To mi wystarczy.
-	Info_ClearChoices(dia_diegonw_needhelp);
+	Info_ClearChoices(DIA_DiegoNW_NeedHelp);
 };
 
 
-instance DIA_DIEGONW_HELPYOU(C_INFO)
+instance DIA_DiegoNW_HelpYou(C_Info)
 {
-	npc = pc_thief_nw;
+	npc = PC_Thief_NW;
 	nr = 30;
-	condition = dia_diegonw_helpyou_condition;
-	information = dia_diegonw_helpyou_info;
+	condition = DIA_DiegoNW_HelpYou_Condition;
+	information = DIA_DiegoNW_HelpYou_Info;
 	permanent = FALSE;
 	description = "W porz¹dku, jednak ci pomogê.";
 };
 
 
-func int dia_diegonw_helpyou_condition()
+func int DIA_DiegoNW_HelpYou_Condition()
 {
-	if((DIEGO_ISONBOARD == FALSE) && (MIS_HELPDIEGONW == LOG_FAILED) && (DIEGO_ISONBOARD != LOG_SUCCESS))
+	if((Diego_IsOnBoard == FALSE) && (MIS_HelpDiegoNW == LOG_FAILED) && (Diego_IsOnBoard != LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_diegonw_helpyou_info()
+func void DIA_DiegoNW_HelpYou_Info()
 {
 	AI_Output(other,self,"DIA_DiegoNW_HelpYou_15_00");	//W porz¹dku, jednak ci pomogê.
 	AI_Output(self,other,"DIA_DiegoNW_HelpYou_11_01");	//Wiedzia³em, ¿e tak bêdzie.
@@ -218,28 +218,28 @@ func void dia_diegonw_helpyou_info()
 	AI_Output(other,self,"DIA_DiegoNW_HelpYou_15_04");	//Dlaczego sam nie pójdziesz po swoje z³oto?
 	AI_Output(self,other,"DIA_DiegoNW_HelpYou_11_05");	//Bo w pobli¿u skrytki krêci siê sporo orków. To wymarzone zadanie dla ciebie.
 	AI_Output(self,other,"DIA_DiegoNW_HelpYou_11_06");	//Ja zostanê tutaj i w miêdzyczasie wszystko przygotujê.
-	MIS_HELPDIEGONW = LOG_RUNNING;
-	Info_ClearChoices(dia_diegonw_helpyou);
-	Info_AddChoice(dia_diegonw_helpyou,"Co zamierzasz zrobiæ z pieniêdzmi?",dia_diegonw_needhelp_problem_willhelpyou_yourplan);
-	Info_AddChoice(dia_diegonw_helpyou,"Sk¹d wzi¹³eœ to ca³e z³oto?",dia_diegonw_needhelp_problem_willhelpyou_howgold);
-	Info_AddChoice(dia_diegonw_helpyou,"Gdzie schowa³eœ z³oto?",dia_diegonw_needhelp_problem_willhelpyou_wheregold);
+	MIS_HelpDiegoNW = LOG_Running;
+	Info_ClearChoices(DIA_DiegoNW_HelpYou);
+	Info_AddChoice(DIA_DiegoNW_HelpYou,"Co zamierzasz zrobiæ z pieniêdzmi?",DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_YourPlan);
+	Info_AddChoice(DIA_DiegoNW_HelpYou,"Sk¹d wzi¹³eœ to ca³e z³oto?",DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_HowGold);
+	Info_AddChoice(DIA_DiegoNW_HelpYou,"Gdzie schowa³eœ z³oto?",DIA_DiegoNW_NeedHelp_Problem_WillHelpYou_WhereGold);
 };
 
 
-instance DIA_DIEGONW_HAVEYOURGOLD(C_INFO)
+instance DIA_DiegoNW_HaveYourGold(C_Info)
 {
-	npc = pc_thief_nw;
+	npc = PC_Thief_NW;
 	nr = 31;
-	condition = dia_diegonw_haveyourgold_condition;
-	information = dia_diegonw_haveyourgold_info;
+	condition = DIA_DiegoNW_HaveYourGold_Condition;
+	information = DIA_DiegoNW_HaveYourGold_Info;
 	permanent = TRUE;
 	description = "Znalaz³em twoje z³oto!";
 };
 
 
-func int dia_diegonw_haveyourgold_condition()
+func int DIA_DiegoNW_HaveYourGold_Condition()
 {
-	if(((OPENEDDIEGOSBAG == TRUE) || (Npc_HasItems(other,itse_diegostreasure_mis) >= 1)) && (MIS_HELPDIEGONW == LOG_RUNNING) && (DIEGO_ISONBOARD != LOG_SUCCESS))
+	if(((OpenedDiegosBag == TRUE) || (Npc_HasItems(other,ItSe_DiegosTreasure_Mis) >= 1)) && (MIS_HelpDiegoNW == LOG_Running) && (Diego_IsOnBoard != LOG_SUCCESS))
 	{
 		return TRUE;
 	};
@@ -251,19 +251,19 @@ func void b_diegonw_diegosrevenge()
 };
 
 
-var int diegosrevenge;
+var int DiegosRevenge;
 
-func void dia_diegonw_haveyourgold_info()
+func void DIA_DiegoNW_HaveYourGold_Info()
 {
 	AI_Output(other,self,"DIA_DiegoNW_HaveYourGold_15_00");	//Znalaz³em twoje z³oto!
 	AI_Output(self,other,"DIA_DiegoNW_HaveYourGold_11_01");	//Œwietnie. Poka¿!
-	if(Npc_HasItems(other,itse_diegostreasure_mis) >= 1)
+	if(Npc_HasItems(other,ItSe_DiegosTreasure_Mis) >= 1)
 	{
-		b_giveinvitems(other,self,5820,1);
+		B_GiveInvItems(other,self,ItSe_DiegosTreasure_Mis,1);
 		b_diegonw_diegosrevenge();
-		DIEGOSREVENGE = TRUE;
+		DiegosRevenge = TRUE;
 	}
-	else if(Npc_HasItems(other,itmi_gold) < DIEGOSTREASURE)
+	else if(Npc_HasItems(other,ItMi_Gold) < DiegosTreasure)
 	{
 		AI_Output(self,other,"DIA_DiegoNW_HaveYourGold_11_02");	//Ale to jeszcze nie wszystko! Nie ufasz mi? Potrzebujê ca³ej sumy!
 		AI_Output(self,other,"DIA_DiegoNW_HaveYourGold_11_03");	//Jeœli mój plan wypali, zostanie dla ciebie wystarczaj¹co du¿o.
@@ -271,63 +271,63 @@ func void dia_diegonw_haveyourgold_info()
 	}
 	else
 	{
-		b_giveinvitems(other,self,5113,DIEGOSTREASURE);
+		B_GiveInvItems(other,self,ItMi_Gold,DiegosTreasure);
 		b_diegonw_diegosrevenge();
-		DIEGOSREVENGE = TRUE;
+		DiegosRevenge = TRUE;
 	};
-	if((Npc_IsDead(gerbrandt) == FALSE) && (DIEGOSREVENGE == TRUE))
+	if((Npc_IsDead(Gerbrandt) == FALSE) && (DiegosRevenge == TRUE))
 	{
 		AI_Output(self,other,"DIA_DiegoNW_HaveYourGold_11_06");	//S³uchaj, muszê siê teraz zaj¹æ stra¿nikami.
 		AI_Output(self,other,"DIA_DiegoNW_HaveYourGold_11_07");	//Chcê, ¿ebyœ zaniós³ ten list Gerbrandtowi. To jeden z bogatych kupców z górnego miasta.
 		AI_Output(self,other,"DIA_DiegoNW_HaveYourGold_11_08");	//Przeka¿ mu moje pozdrowienia. Spotkamy siê przed jego domem.
-		CreateInvItems(self,itwr_diegosletter_mis,1);
-		b_giveinvitems(self,other,5817,1);
-		b_startotherroutine(gerbrandt,"WaitForDiego");
-		MIS_HELPDIEGONW = LOG_SUCCESS;
-		MIS_DIEGOSRESIDENCE = LOG_RUNNING;
-		b_giveplayerxp(XP_HELPDIEGONW);
-		Log_CreateTopic(TOPIC_DIEGOSRESIDENCE,LOG_MISSION);
-		Log_SetTopicStatus(TOPIC_DIEGOSRESIDENCE,LOG_RUNNING);
-		b_logentry(TOPIC_DIEGOSRESIDENCE,"Diego da³ mi list dla kupca Gerbrandta.");
+		CreateInvItems(self,ItWr_DiegosLetter_MIS,1);
+		B_GiveInvItems(self,other,ItWr_DiegosLetter_MIS,1);
+		B_StartOtherRoutine(Gerbrandt,"WaitForDiego");
+		MIS_HelpDiegoNW = LOG_SUCCESS;
+		MIS_DiegosResidence = LOG_Running;
+		B_GivePlayerXP(XP_HelpDiegoNW);
+		Log_CreateTopic(TOPIC_DiegosResidence,LOG_MISSION);
+		Log_SetTopicStatus(TOPIC_DiegosResidence,LOG_Running);
+		B_LogEntry(TOPIC_DiegosResidence,"Diego da³ mi list dla kupca Gerbrandta.");
 		AI_StopProcessInfos(self);
 	};
 };
 
 
-instance DIA_DIEGONW_DELIVEREDLETTER(C_INFO)
+instance DIA_DiegoNW_DeliveredLetter(C_Info)
 {
-	npc = pc_thief_nw;
+	npc = PC_Thief_NW;
 	nr = 30;
-	condition = dia_diegonw_deliveredletter_condition;
-	information = dia_diegonw_deliveredletter_info;
+	condition = DIA_DiegoNW_DeliveredLetter_Condition;
+	information = DIA_DiegoNW_DeliveredLetter_Info;
 	permanent = FALSE;
 	description = "Dostarczy³em twój list.";
 };
 
 
-func int dia_diegonw_deliveredletter_condition()
+func int DIA_DiegoNW_DeliveredLetter_Condition()
 {
-	if((DIEGO_ISONBOARD == FALSE) && (MIS_DIEGOSRESIDENCE == LOG_SUCCESS))
+	if((Diego_IsOnBoard == FALSE) && (MIS_DiegosResidence == LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_diegonw_deliveredletter_info()
+func void DIA_DiegoNW_DeliveredLetter_Info()
 {
 	AI_Output(other,self,"DIA_DiegoNW_DeliveredLetter_15_00");	//Dostarczy³em twój list.
 	AI_Output(self,other,"DIA_DiegoNW_DeliveredLetter_11_01");	//Œwietnie. I jak zareagowa³ Gerbrandt?
 	AI_Output(other,self,"DIA_DiegoNW_DeliveredLetter_15_02");	//Wydawa³ siê bardzo przestraszony i natychmiast znikn¹³.
 	AI_Output(self,other,"DIA_DiegoNW_DeliveredLetter_11_03");	//No, ja myœlê.
 	AI_Output(self,other,"DIA_DiegoNW_DeliveredLetter_11_04");	//Obawiam siê, ¿e muszê najpierw poœwiêciæ trochê czasu na urz¹dzenie mojego nowego domu. Jeœli dobrze pamiêtam, Gerbrandt ma fatalny gust.
-	b_giveplayerxp(XP_DIEGOHASANEWHOME);
+	B_GivePlayerXP(XP_DiegoHasANewHome);
 	Wld_AssignRoomToGuild("reich01",GIL_PUBLIC);
-	Info_ClearChoices(dia_diegonw_deliveredletter);
-	Info_AddChoice(dia_diegonw_deliveredletter,"Jak tego dokona³eœ?",dia_diegonw_deliveredletter_yourtrick);
-	Info_AddChoice(dia_diegonw_deliveredletter,"A wiêc dom jest twój?",dia_diegonw_deliveredletter_yourhouse);
+	Info_ClearChoices(DIA_DiegoNW_DeliveredLetter);
+	Info_AddChoice(DIA_DiegoNW_DeliveredLetter,"Jak tego dokona³eœ?",DIA_DiegoNW_DeliveredLetter_YourTrick);
+	Info_AddChoice(DIA_DiegoNW_DeliveredLetter,"A wiêc dom jest twój?",DIA_DiegoNW_DeliveredLetter_YourHouse);
 };
 
-func void dia_diegonw_deliveredletter_gerbrandt()
+func void DIA_DiegoNW_DeliveredLetter_Gerbrandt()
 {
 	AI_Output(other,self,"DIA_DiegoNW_TalkedToJudge_Gerbrandt_15_00");	//Co siê sta³o z Gerbrandtem?
 	AI_Output(self,other,"DIA_DiegoNW_TalkedToJudge_Gerbrandt_11_01");	//Zbyt d³ugo cieszy³ siê ¿yciem w luksusie.
@@ -336,7 +336,7 @@ func void dia_diegonw_deliveredletter_gerbrandt()
 	AI_Output(self,other,"DIA_DiegoNW_TalkedToJudge_Gerbrandt_11_04");	//Jeœli koniecznie chcesz go znaleŸæ, popytaj w okolicach przystani.
 };
 
-func void dia_diegonw_deliveredletter_yourhouse()
+func void DIA_DiegoNW_DeliveredLetter_YourHouse()
 {
 	AI_Output(other,self,"DIA_DiegoNW_TalkedToJudge_YourHouse_15_00");	//A wiêc dom jest twój?
 	AI_Output(self,other,"DIA_DiegoNW_TalkedToJudge_YourHouse_11_01");	//Tak! Od piwnicy a¿ po strych, z ca³ym wyposa¿eniem.
@@ -346,7 +346,7 @@ func void dia_diegonw_deliveredletter_yourhouse()
 	AI_Output(self,other,"DIA_DiegoNW_TalkedToJudge_YourHouse_11_05");	//¯ebyœ wiedzia³!
 };
 
-func void dia_diegonw_deliveredletter_yourtrick()
+func void DIA_DiegoNW_DeliveredLetter_YourTrick()
 {
 	AI_Output(other,self,"DIA_DiegoNW_TalkedToJudge_YourTrick_15_00");	//Jak tego dokona³eœ?
 	AI_Output(self,other,"DIA_DiegoNW_TalkedToJudge_YourTrick_11_01");	//Myœlisz, ¿e Gerbrandt doszed³ do swojej fortuny w ci¹gu wielu lat uczciwej pracy?
@@ -354,55 +354,55 @@ func void dia_diegonw_deliveredletter_yourtrick()
 	AI_Output(self,other,"DIA_DiegoNW_TalkedToJudge_YourTrick_11_03");	//Si³¹ rzeczy poznawa³em szczegó³y jego brudnych machlojek, a¿ postanowi³ pozbyæ siê mnie na dobre. Za du¿o wiedzia³em.
 	AI_Output(other,self,"DIA_DiegoNW_TalkedToJudge_YourTrick_15_04");	//Nigdy mi o tym nie mówi³eœ.
 	AI_Output(self,other,"DIA_DiegoNW_TalkedToJudge_YourTrick_11_05");	//Nigdy mnie o to nie pyta³eœ.
-	Info_ClearChoices(dia_diegonw_deliveredletter);
-	Info_AddChoice(dia_diegonw_deliveredletter,DIALOG_BACK,dia_diegonw_deliveredletter_yourtrick_back);
-	Info_AddChoice(dia_diegonw_deliveredletter,"A co z moj¹ dzia³k¹?",dia_diegonw_deliveredletter_yourtrick_reward);
-	Info_AddChoice(dia_diegonw_deliveredletter,"Co siê sta³o z Gerbrandtem?",dia_diegonw_deliveredletter_gerbrandt);
+	Info_ClearChoices(DIA_DiegoNW_DeliveredLetter);
+	Info_AddChoice(DIA_DiegoNW_DeliveredLetter,Dialog_Back,DIA_DiegoNW_DeliveredLetter_YourTrick_BACK);
+	Info_AddChoice(DIA_DiegoNW_DeliveredLetter,"A co z moj¹ dzia³k¹?",DIA_DiegoNW_DeliveredLetter_YourTrick_REWARD);
+	Info_AddChoice(DIA_DiegoNW_DeliveredLetter,"Co siê sta³o z Gerbrandtem?",DIA_DiegoNW_DeliveredLetter_Gerbrandt);
 };
 
-func void dia_diegonw_deliveredletter_yourtrick_reward()
+func void DIA_DiegoNW_DeliveredLetter_YourTrick_REWARD()
 {
 	AI_Output(other,self,"DIA_DiegoNW_TalkedToJudge_YourTrick_REWARD_15_00");	//A co z moj¹ dzia³k¹?
 	AI_Output(self,other,"DIA_DiegoNW_TalkedToJudge_YourTrick_REWARD_11_01");	//Widzê, ¿e jednak nie zapomnia³eœ wszystkiego, czego ciê nauczy³em.
 	AI_Output(self,other,"DIA_DiegoNW_TalkedToJudge_YourTrick_REWARD_11_02");	//Ale masz racjê. Bez ciebie nigdy by mi siê nie uda³o. Oto twoja czêœæ.
-	CreateInvItems(self,itmi_gold,500);
-	b_giveinvitems(self,other,5113,500);
+	CreateInvItems(self,ItMi_Gold,500);
+	B_GiveInvItems(self,other,ItMi_Gold,500);
 };
 
-func void dia_diegonw_deliveredletter_yourtrick_back()
+func void DIA_DiegoNW_DeliveredLetter_YourTrick_BACK()
 {
-	Info_ClearChoices(dia_diegonw_deliveredletter);
+	Info_ClearChoices(DIA_DiegoNW_DeliveredLetter);
 };
 
 
-var int diego_teach;
+var int Diego_Teach;
 
-instance DIA_DIEGONW_CANYOUTEACH(C_INFO)
+instance DIA_DiegoNW_CanYouTeach(C_Info)
 {
-	npc = pc_thief_nw;
+	npc = PC_Thief_NW;
 	nr = 995;
-	condition = dia_diegonw_canyouteach_condition;
-	information = dia_diegonw_canyouteach_info;
+	condition = DIA_DiegoNW_CanYouTeach_Condition;
+	information = DIA_DiegoNW_CanYouTeach_Info;
 	permanent = TRUE;
 	description = "Mo¿esz mnie czegoœ nauczyæ?";
 };
 
 
-func int dia_diegonw_canyouteach_condition()
+func int DIA_DiegoNW_CanYouTeach_Condition()
 {
-	if((DIEGO_ISONBOARD == FALSE) && (DIEGO_TEACH == FALSE))
+	if((Diego_IsOnBoard == FALSE) && (Diego_Teach == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_diegonw_canyouteach_info()
+func void DIA_DiegoNW_CanYouTeach_Info()
 {
 	AI_Output(other,self,"DIA_DiegoNW_CanYouTeach_15_00");	//Mo¿esz mnie czegoœ nauczyæ?
-	if(Npc_KnowsInfo(other,dia_diegonw_deliveredletter))
+	if(Npc_KnowsInfo(other,DIA_DiegoNW_DeliveredLetter))
 	{
 		AI_Output(self,other,"DIA_DiegoNW_CanYouTeach_11_01");	//Jasne. Daj znaæ, jak bêdziesz gotowy.
-		DIEGO_TEACH = TRUE;
+		Diego_Teach = TRUE;
 	}
 	else
 	{
@@ -411,141 +411,141 @@ func void dia_diegonw_canyouteach_info()
 };
 
 
-var int diegonw_merke_dex;
+var int DiegoNW_Merke_DEX;
 
-instance DIA_DIEGONW_TEACH(C_INFO)
+instance DIA_DiegoNW_Teach(C_Info)
 {
-	npc = pc_thief_nw;
+	npc = PC_Thief_NW;
 	nr = 995;
-	condition = dia_diegonw_teach_condition;
-	information = dia_diegonw_teach_info;
+	condition = DIA_DiegoNW_Teach_Condition;
+	information = DIA_DiegoNW_Teach_Info;
 	permanent = TRUE;
 	description = "Naucz mnie.";
 };
 
 
-func int dia_diegonw_teach_condition()
+func int DIA_DiegoNW_Teach_Condition()
 {
-	if((DIEGO_ISONBOARD == FALSE) && (DIEGO_TEACH == TRUE))
+	if((Diego_IsOnBoard == FALSE) && (Diego_Teach == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_diegonw_teach_info()
+func void DIA_DiegoNW_Teach_Info()
 {
 	AI_Output(other,self,"DIA_DiegoNW_Teach_15_00");	//Naucz mnie czegoœ.
 	AI_Output(self,other,"DIA_DiegoNW_Teach_11_01");	//Mogê popracowaæ trochê nad twoj¹ zrêcznoœci¹.
-	DIEGONW_MERKE_DEX = other.attribute[ATR_DEXTERITY];
-	Info_ClearChoices(dia_diegonw_teach);
-	Info_AddChoice(dia_diegonw_teach,DIALOG_BACK,dia_diegonw_teach_back);
-	Info_AddChoice(dia_diegonw_teach,b_buildlearnstring(PRINT_LEARNDEX1,b_getlearncostattribute(other,ATR_DEXTERITY)),dia_diegonw_teachdex_1);
-	Info_AddChoice(dia_diegonw_teach,b_buildlearnstring(PRINT_LEARNDEX5,b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_diegonw_teachdex_5);
+	DiegoNW_Merke_DEX = other.attribute[ATR_DEXTERITY];
+	Info_ClearChoices(DIA_DiegoNW_Teach);
+	Info_AddChoice(DIA_DiegoNW_Teach,Dialog_Back,DIA_DiegoNW_Teach_BACK);
+	Info_AddChoice(DIA_DiegoNW_Teach,B_BuildLearnString(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_DiegoNW_TeachDEX_1);
+	Info_AddChoice(DIA_DiegoNW_Teach,B_BuildLearnString(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_DiegoNW_TeachDEX_5);
 };
 
-func void dia_diegonw_teach_back()
+func void DIA_DiegoNW_Teach_BACK()
 {
-	if(DIEGONW_MERKE_DEX < other.attribute[ATR_DEXTERITY])
+	if(DiegoNW_Merke_DEX < other.attribute[ATR_DEXTERITY])
 	{
 		AI_Output(self,other,"DIA_DiegoNW_Teach_BACK_11_00");	//Ju¿ jesteœ bardziej zrêczny. Tak trzymaæ.
 	};
-	Info_ClearChoices(dia_diegonw_teach);
+	Info_ClearChoices(DIA_DiegoNW_Teach);
 };
 
-func void dia_diegonw_teachdex_1()
+func void DIA_DiegoNW_TeachDEX_1()
 {
-	if(KAPITEL >= 5)
+	if(Kapitel >= 5)
 	{
-		b_teachattributepoints(self,other,ATR_DEXTERITY,1,70);
+		B_TeachAttributePoints(self,other,ATR_DEXTERITY,1,70);
 	}
 	else
 	{
-		b_teachattributepoints(self,other,ATR_DEXTERITY,1,50);
+		B_TeachAttributePoints(self,other,ATR_DEXTERITY,1,50);
 	};
-	Info_ClearChoices(dia_diegonw_teach);
-	Info_AddChoice(dia_diegonw_teach,DIALOG_BACK,dia_diegonw_teach_back);
-	Info_AddChoice(dia_diegonw_teach,b_buildlearnstring(PRINT_LEARNDEX1,b_getlearncostattribute(other,ATR_DEXTERITY)),dia_diegonw_teachdex_1);
-	Info_AddChoice(dia_diegonw_teach,b_buildlearnstring(PRINT_LEARNDEX5,b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_diegonw_teachdex_5);
+	Info_ClearChoices(DIA_DiegoNW_Teach);
+	Info_AddChoice(DIA_DiegoNW_Teach,Dialog_Back,DIA_DiegoNW_Teach_BACK);
+	Info_AddChoice(DIA_DiegoNW_Teach,B_BuildLearnString(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_DiegoNW_TeachDEX_1);
+	Info_AddChoice(DIA_DiegoNW_Teach,B_BuildLearnString(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_DiegoNW_TeachDEX_5);
 };
 
-func void dia_diegonw_teachdex_5()
+func void DIA_DiegoNW_TeachDEX_5()
 {
-	if(KAPITEL >= 5)
+	if(Kapitel >= 5)
 	{
-		b_teachattributepoints(self,other,ATR_DEXTERITY,5,70);
+		B_TeachAttributePoints(self,other,ATR_DEXTERITY,5,70);
 	}
 	else
 	{
-		b_teachattributepoints(self,other,ATR_DEXTERITY,5,50);
+		B_TeachAttributePoints(self,other,ATR_DEXTERITY,5,50);
 	};
-	Info_ClearChoices(dia_diegonw_teach);
-	Info_AddChoice(dia_diegonw_teach,DIALOG_BACK,dia_diegonw_teach_back);
-	Info_AddChoice(dia_diegonw_teach,b_buildlearnstring(PRINT_LEARNDEX1,b_getlearncostattribute(other,ATR_DEXTERITY)),dia_diegonw_teachdex_1);
-	Info_AddChoice(dia_diegonw_teach,b_buildlearnstring(PRINT_LEARNDEX5,b_getlearncostattribute(other,ATR_DEXTERITY) * 5),dia_diegonw_teachdex_5);
+	Info_ClearChoices(DIA_DiegoNW_Teach);
+	Info_AddChoice(DIA_DiegoNW_Teach,Dialog_Back,DIA_DiegoNW_Teach_BACK);
+	Info_AddChoice(DIA_DiegoNW_Teach,B_BuildLearnString(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_DiegoNW_TeachDEX_1);
+	Info_AddChoice(DIA_DiegoNW_Teach,B_BuildLearnString(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_DiegoNW_TeachDEX_5);
 };
 
 
-instance DIA_DIEGONW_KNOWWHEREENEMY(C_INFO)
+instance DIA_DiegoNW_KnowWhereEnemy(C_Info)
 {
-	npc = pc_thief_nw;
+	npc = PC_Thief_NW;
 	nr = 55;
-	condition = dia_diegonw_knowwhereenemy_condition;
-	information = dia_diegonw_knowwhereenemy_info;
+	condition = DIA_DiegoNW_KnowWhereEnemy_Condition;
+	information = DIA_DiegoNW_KnowWhereEnemy_Info;
 	permanent = TRUE;
 	description = "Zamierzam opuœciæ Khorinis.";
 };
 
 
-func int dia_diegonw_knowwhereenemy_condition()
+func int DIA_DiegoNW_KnowWhereEnemy_Condition()
 {
-	if((MIS_SCKNOWSWAYTOIRDORATH == TRUE) && (DIEGO_ISONBOARD == FALSE))
+	if((MIS_SCKnowsWayToIrdorath == TRUE) && (Diego_IsOnBoard == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_diegonw_knowwhereenemy_info()
+func void DIA_DiegoNW_KnowWhereEnemy_Info()
 {
 	AI_Output(other,self,"DIA_DiegoNW_KnowWhereEnemy_15_00");	//Zamierzam opuœciæ Khorinis.
 	AI_Output(self,other,"DIA_DiegoNW_KnowWhereEnemy_11_01");	//M¹dra decyzja. Chêtnie zabra³bym siê z tob¹. To miasto za bardzo siê zmieni³o. Ciê¿ko bêdzie tutaj szybko siê wzbogaciæ.
 	AI_Output(self,other,"DIA_DiegoNW_KnowWhereEnemy_11_02");	//Móg³bym ciê podszkoliæ w ³ucznictwie, otwieraniu zamków i zrêcznoœci.
 	AI_Output(self,other,"DIA_DiegoNW_KnowWhereEnemy_11_03");	//No i przyda ci siê chyba dobry z³odziej?
-	Log_CreateTopic(TOPIC_CREW,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_CREW,LOG_RUNNING);
-	b_logentry(TOPIC_CREW,"Oczywiœcie, Diego chce mi towarzyszyæ. Uwa¿a, ¿e im szybciej opuœci Khorinis, tym lepiej. Móg³by mi pokazaæ, jak zwiêkszyæ zrêcznoœæ, i przeszkoliæ mnie w pos³ugiwaniu siê ³ukiem oraz otwieraniu zamków.");
-	if(CREWMEMBER_COUNT >= MAX_CREW)
+	Log_CreateTopic(Topic_Crew,LOG_MISSION);
+	Log_SetTopicStatus(Topic_Crew,LOG_Running);
+	B_LogEntry(Topic_Crew,"Oczywiœcie, Diego chce mi towarzyszyæ. Uwa¿a, ¿e im szybciej opuœci Khorinis, tym lepiej. Móg³by mi pokazaæ, jak zwiêkszyæ zrêcznoœæ, i przeszkoliæ mnie w pos³ugiwaniu siê ³ukiem oraz otwieraniu zamków.");
+	if(Crewmember_Count >= Max_Crew)
 	{
 		AI_Output(other,self,"DIA_DiegoNW_KnowWhereEnemy_15_04");	//Zastanowiê siê nad tym. W tej chwili mam ju¿ prawie ca³¹ za³ogê.
 		AI_Output(self,other,"DIA_DiegoNW_KnowWhereEnemy_11_05");	//Nie musisz siê spieszyæ. Nigdzie siê nie wybieram.
 	}
 	else
 	{
-		Info_ClearChoices(dia_diegonw_knowwhereenemy);
-		Info_AddChoice(dia_diegonw_knowwhereenemy,"Szczegó³y poznasz, gdy nadejdzie odpowiednia pora.",dia_diegonw_knowwhereenemy_no);
-		Info_AddChoice(dia_diegonw_knowwhereenemy,"Nie chcesz iœæ ze mn¹?",dia_diegonw_knowwhereenemy_yes);
+		Info_ClearChoices(DIA_DiegoNW_KnowWhereEnemy);
+		Info_AddChoice(DIA_DiegoNW_KnowWhereEnemy,"Szczegó³y poznasz, gdy nadejdzie odpowiednia pora.",DIA_DiegoNW_KnowWhereEnemy_No);
+		Info_AddChoice(DIA_DiegoNW_KnowWhereEnemy,"Nie chcesz iœæ ze mn¹?",DIA_DiegoNW_KnowWhereEnemy_Yes);
 	};
 };
 
-func void dia_diegonw_knowwhereenemy_yes()
+func void DIA_DiegoNW_KnowWhereEnemy_Yes()
 {
 	AI_Output(other,self,"DIA_DiegoNW_KnowWhereEnemy_Yes_15_00");	//Pop³yñ ze mn¹. Mo¿emy siê spotkaæ na przystani.
 	AI_Output(self,other,"DIA_DiegoNW_KnowWhereEnemy_Yes_11_01");	//Hmmm... Masz racjê. Khorinis to rynsztok. P³ynê z tob¹!
 	self.flags = NPC_FLAG_IMMORTAL;
-	DIEGO_ISONBOARD = LOG_SUCCESS;
-	CREWMEMBER_COUNT = CREWMEMBER_COUNT + 1;
-	b_giveplayerxp(XP_CREWMEMBER_SUCCESS);
+	Diego_IsOnBoard = LOG_SUCCESS;
+	Crewmember_Count = Crewmember_Count + 1;
+	B_GivePlayerXP(XP_Crewmember_Success);
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),"NW_CITY_UPTOWN_PATH_23") == 1)
 	{
 		AI_Output(self,other,"DIA_DiegoNW_KnowWhereEnemy_Yes_11_02");	//Daj mi jedn¹ chwilê. Zaraz bêdê gotowy.
 		AI_SetWalkMode(self,NPC_WALK);
 		AI_GotoWP(self,"NW_CITY_UPTOWN_HUT_01_01");
-		CreateInvItems(self,itar_diego,1);
-		AI_EquipArmor(self,itar_diego);
+		CreateInvItems(self,ITAR_Diego,1);
+		AI_EquipArmor(self,ITAR_Diego);
 		AI_Wait(self,1);
 		AI_GotoWP(self,self.wp);
 	};
 	AI_Output(self,other,"DIA_DiegoNW_KnowWhereEnemy_Yes_11_03");	//Mogê ju¿ ruszaæ. Do zobaczenia na statku!
-	if(MIS_READYFORCHAPTER6 == TRUE)
+	if(MIS_ReadyforChapter6 == TRUE)
 	{
 		Npc_ExchangeRoutine(self,"SHIP");
 	}
@@ -553,87 +553,87 @@ func void dia_diegonw_knowwhereenemy_yes()
 	{
 		Npc_ExchangeRoutine(self,"WAITFORSHIP");
 	};
-	Info_ClearChoices(dia_diegonw_knowwhereenemy);
+	Info_ClearChoices(DIA_DiegoNW_KnowWhereEnemy);
 };
 
-func void dia_diegonw_knowwhereenemy_no()
+func void DIA_DiegoNW_KnowWhereEnemy_No()
 {
 	AI_Output(other,self,"DIA_DiegoNW_KnowWhereEnemy_No_15_00");	//Mo¿e dam ci znaæ, gdy nadejdzie odpowiednia chwila.
 	AI_Output(self,other,"DIA_DiegoNW_KnowWhereEnemy_No_11_01");	//Tak zrób. Kto wie? Mo¿e nawet z tob¹ pop³ynê?
-	DIEGO_ISONBOARD = LOG_OBSOLETE;
-	Info_ClearChoices(dia_diegonw_knowwhereenemy);
+	Diego_IsOnBoard = LOG_OBSOLETE;
+	Info_ClearChoices(DIA_DiegoNW_KnowWhereEnemy);
 };
 
 
-instance DIA_DIEGONW_LEAVEMYSHIP(C_INFO)
+instance DIA_DiegoNW_LeaveMyShip(C_Info)
 {
-	npc = pc_thief_nw;
+	npc = PC_Thief_NW;
 	nr = 55;
-	condition = dia_diegonw_leavemyship_condition;
-	information = dia_diegonw_leavemyship_info;
+	condition = DIA_DiegoNW_LeaveMyShip_Condition;
+	information = DIA_DiegoNW_LeaveMyShip_Info;
 	permanent = TRUE;
 	description = "Mo¿esz ju¿ wracaæ do miasta.";
 };
 
 
-func int dia_diegonw_leavemyship_condition()
+func int DIA_DiegoNW_LeaveMyShip_Condition()
 {
-	if((DIEGO_ISONBOARD == LOG_SUCCESS) && (MIS_READYFORCHAPTER6 == FALSE))
+	if((Diego_IsOnBoard == LOG_SUCCESS) && (MIS_ReadyforChapter6 == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_diegonw_leavemyship_info()
+func void DIA_DiegoNW_LeaveMyShip_Info()
 {
 	AI_Output(other,self,"DIA_DiegoNW_LeaveMyShip_15_00");	//Mo¿esz ju¿ wracaæ do miasta.
 	AI_Output(self,other,"DIA_DiegoNW_LeaveMyShip_11_01");	//Serio? Nie potrzebujesz mnie? Jak chcesz. Jak wrócisz do miasta, zajrzyj do mnie koniecznie.
 	AI_Output(other,self,"DIA_DiegoNW_LeaveMyShip_15_02");	//Myœlisz, ¿e siê jeszcze kiedyœ spotkamy?
 	AI_Output(self,other,"DIA_DiegoNW_LeaveMyShip_11_03");	//Nigdy nie zapomnê wyrazu twojej twarzy podczas naszego pierwszego spotkania, gdy Bullit powali³ ciê na ziemiê.
 	AI_Output(self,other,"DIA_DiegoNW_LeaveMyShip_11_04");	//Takich jak ty nie mo¿na pokonaæ. Jeszcze siê spotkamy. Bywaj!
-	DIEGO_ISONBOARD = LOG_OBSOLETE;
-	CREWMEMBER_COUNT = CREWMEMBER_COUNT - 1;
+	Diego_IsOnBoard = LOG_OBSOLETE;
+	Crewmember_Count = Crewmember_Count - 1;
 	Npc_ExchangeRoutine(self,"Start");
 };
 
 
-instance DIA_DIEGONW_STILLNEEDYOU(C_INFO)
+instance DIA_DiegoNW_StillNeedYou(C_Info)
 {
-	npc = pc_thief_nw;
+	npc = PC_Thief_NW;
 	nr = 55;
-	condition = dia_diegonw_stillneedyou_condition;
-	information = dia_diegonw_stillneedyou_info;
+	condition = DIA_DiegoNW_StillNeedYou_Condition;
+	information = DIA_DiegoNW_StillNeedYou_Info;
 	permanent = TRUE;
 	description = "ChodŸ ze mn¹. Chcê, ¿ebyœ mi towarzyszy³.";
 };
 
 
-func int dia_diegonw_stillneedyou_condition()
+func int DIA_DiegoNW_StillNeedYou_Condition()
 {
-	if(((DIEGO_ISONBOARD == LOG_OBSOLETE) || (DIEGO_ISONBOARD == LOG_FAILED)) && (CREWMEMBER_COUNT < MAX_CREW))
+	if(((Diego_IsOnBoard == LOG_OBSOLETE) || (Diego_IsOnBoard == LOG_FAILED)) && (Crewmember_Count < Max_Crew))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_diegonw_stillneedyou_info()
+func void DIA_DiegoNW_StillNeedYou_Info()
 {
 	AI_Output(other,self,"DIA_DiegoNW_StillNeedYou_15_00");	//ChodŸ ze mn¹. Chcê, ¿ebyœ mi towarzyszy³.
 	AI_Output(self,other,"DIA_DiegoNW_StillNeedYou_11_01");	//Gdzie siê podzia³a twoja pewnoœæ siebie, przyjacielu? Jasne, pójdê z tob¹. Tylko siê wreszcie zdecyduj!
 	self.flags = NPC_FLAG_IMMORTAL;
-	DIEGO_ISONBOARD = LOG_SUCCESS;
-	CREWMEMBER_COUNT = CREWMEMBER_COUNT + 1;
+	Diego_IsOnBoard = LOG_SUCCESS;
+	Crewmember_Count = Crewmember_Count + 1;
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),"NW_CITY_UPTOWN_PATH_23") == 1)
 	{
 		AI_Output(self,other,"DIA_DiegoNW_StillNeedYou_11_02");	//Czekaj, za chwilê bêdê gotowy.
 		AI_GotoWP(self,"NW_CITY_UPTOWN_HUT_01_01");
-		CreateInvItems(self,itar_diego,1);
-		AI_EquipArmor(self,itar_diego);
+		CreateInvItems(self,ITAR_Diego,1);
+		AI_EquipArmor(self,ITAR_Diego);
 		AI_GotoWP(self,self.wp);
 	};
 	AI_Output(self,other,"DIA_DiegoNW_StillNeedYou_11_03");	//Dobra, mo¿emy iœæ.
 	AI_StopProcessInfos(self);
-	if(MIS_READYFORCHAPTER6 == TRUE)
+	if(MIS_ReadyforChapter6 == TRUE)
 	{
 		Npc_ExchangeRoutine(self,"SHIP");
 	}
@@ -644,37 +644,37 @@ func void dia_diegonw_stillneedyou_info()
 };
 
 
-instance DIA_THIEF_NW_PICKPOCKET(C_INFO)
+instance DIA_Thief_NW_PICKPOCKET(C_Info)
 {
-	npc = pc_thief_nw;
+	npc = PC_Thief_NW;
 	nr = 900;
-	condition = dia_thief_nw_pickpocket_condition;
-	information = dia_thief_nw_pickpocket_info;
+	condition = DIA_Thief_NW_PICKPOCKET_Condition;
+	information = DIA_Thief_NW_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_120;
+	description = Pickpocket_120;
 };
 
 
-func int dia_thief_nw_pickpocket_condition()
+func int DIA_Thief_NW_PICKPOCKET_Condition()
 {
-	return c_beklauen(120,600);
+	return C_Beklauen(120,600);
 };
 
-func void dia_thief_nw_pickpocket_info()
+func void DIA_Thief_NW_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_thief_nw_pickpocket);
-	Info_AddChoice(dia_thief_nw_pickpocket,DIALOG_BACK,dia_thief_nw_pickpocket_back);
-	Info_AddChoice(dia_thief_nw_pickpocket,DIALOG_PICKPOCKET,dia_thief_nw_pickpocket_doit);
+	Info_ClearChoices(DIA_Thief_NW_PICKPOCKET);
+	Info_AddChoice(DIA_Thief_NW_PICKPOCKET,Dialog_Back,DIA_Thief_NW_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Thief_NW_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Thief_NW_PICKPOCKET_DoIt);
 };
 
-func void dia_thief_nw_pickpocket_doit()
+func void DIA_Thief_NW_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_thief_nw_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Thief_NW_PICKPOCKET);
 };
 
-func void dia_thief_nw_pickpocket_back()
+func void DIA_Thief_NW_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_thief_nw_pickpocket);
+	Info_ClearChoices(DIA_Thief_NW_PICKPOCKET);
 };
 

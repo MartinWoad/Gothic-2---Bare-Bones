@@ -1,115 +1,115 @@
 
-instance DIA_BABERA_EXIT(C_INFO)
+instance DIA_Babera_EXIT(C_Info)
 {
-	npc = bau_934_babera;
+	npc = BAU_934_Babera;
 	nr = 999;
-	condition = dia_babera_exit_condition;
-	information = dia_babera_exit_info;
+	condition = DIA_Babera_EXIT_Condition;
+	information = DIA_Babera_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_babera_exit_condition()
+func int DIA_Babera_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_babera_exit_info()
+func void DIA_Babera_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BABERA_HALLO(C_INFO)
+instance DIA_Babera_HALLO(C_Info)
 {
-	npc = bau_934_babera;
+	npc = BAU_934_Babera;
 	nr = 1;
-	condition = dia_babera_hallo_condition;
-	information = dia_babera_hallo_info;
+	condition = DIA_Babera_HALLO_Condition;
+	information = DIA_Babera_HALLO_Info;
 	description = "Witaj, œlicznotko.";
 };
 
 
-func int dia_babera_hallo_condition()
+func int DIA_Babera_HALLO_Condition()
 {
 	return TRUE;
 };
 
-func void dia_babera_hallo_info()
+func void DIA_Babera_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Babera_HALLO_15_00");	//Witaj, œlicznotko.
 	AI_Output(self,other,"DIA_Babera_HALLO_16_01");	//Nie zagaduj mnie, ch³opcze. Mów, czego chcesz. Jestem zajêta.
 };
 
 
-instance DIA_BABERA_WIESIEHTSAUS(C_INFO)
+instance DIA_Babera_WIESIEHTSAUS(C_Info)
 {
-	npc = bau_934_babera;
+	npc = BAU_934_Babera;
 	nr = 2;
-	condition = dia_babera_wiesiehtsaus_condition;
-	information = dia_babera_wiesiehtsaus_info;
+	condition = DIA_Babera_WIESIEHTSAUS_Condition;
+	information = DIA_Babera_WIESIEHTSAUS_Info;
 	description = "Jak idzie praca?";
 };
 
 
-func int dia_babera_wiesiehtsaus_condition()
+func int DIA_Babera_WIESIEHTSAUS_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_babera_hallo))
+	if(Npc_KnowsInfo(other,DIA_Babera_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_babera_wiesiehtsaus_info()
+func void DIA_Babera_WIESIEHTSAUS_Info()
 {
 	AI_Output(other,self,"DIA_Babera_WIESIEHTSAUS_15_00");	//Jak idzie praca?
 	AI_Output(self,other,"DIA_Babera_WIESIEHTSAUS_16_01");	//Popatrz na te wielkie pola, które musimy jeszcze obrobiæ, to zrozumiesz, jak idzie.
 	AI_Output(self,other,"DIA_Babera_WIESIEHTSAUS_16_02");	//Chcesz siê naj¹æ do pracy w polu?
-	Info_ClearChoices(dia_babera_wiesiehtsaus);
+	Info_ClearChoices(DIA_Babera_WIESIEHTSAUS);
 	if(hero.guild == GIL_NONE)
 	{
-		Info_AddChoice(dia_babera_wiesiehtsaus,"Nie. Tak naprawdê to chcê zostaæ najemnikiem.",dia_babera_wiesiehtsaus_nein);
-		Info_AddChoice(dia_babera_wiesiehtsaus,"Mo¿e.",dia_babera_wiesiehtsaus_vielleicht);
+		Info_AddChoice(DIA_Babera_WIESIEHTSAUS,"Nie. Tak naprawdê to chcê zostaæ najemnikiem.",DIA_Babera_WIESIEHTSAUS_Nein);
+		Info_AddChoice(DIA_Babera_WIESIEHTSAUS,"Mo¿e.",DIA_Babera_WIESIEHTSAUS_Vielleicht);
 	};
 };
 
-func void dia_babera_wiesiehtsaus_vielleicht()
+func void DIA_Babera_WIESIEHTSAUS_Vielleicht()
 {
 	AI_Output(other,self,"DIA_Babera_WIESIEHTSAUS_Vielleicht_15_00");	//Mo¿e.
 	AI_Output(self,other,"DIA_Babera_WIESIEHTSAUS_Vielleicht_16_01");	//W takim razie powinieneœ poszukaæ naszego farmera, Sekoba. By³ kiedyœ poganiaczem niewolników. Mo¿e on coœ ci znajdzie.
 	AI_Output(self,other,"DIA_Babera_WIESIEHTSAUS_Vielleicht_16_02");	//Rzecz jasna, mo¿esz te¿ spróbowaæ w gospodarstwie Onara, na koñcu tamtej d³ugiej drogi.
 	AI_Output(self,other,"DIA_Babera_WIESIEHTSAUS_Vielleicht_16_03");	//Ale uwa¿aj na najemników. Nie przepadaj¹ za obcymi.
-	Info_ClearChoices(dia_babera_wiesiehtsaus);
+	Info_ClearChoices(DIA_Babera_WIESIEHTSAUS);
 };
 
-func void dia_babera_wiesiehtsaus_nein()
+func void DIA_Babera_WIESIEHTSAUS_Nein()
 {
 	AI_Output(other,self,"DIA_Babera_WIESIEHTSAUS_Nein_15_00");	//Nie. Tak naprawdê to chcê zostaæ najemnikiem.
 	AI_Output(self,other,"DIA_Babera_WIESIEHTSAUS_Nein_16_01");	//A wiêc jesteœ w niew³aœciwym miejscu. Najemników mo¿na zazwyczaj znaleŸæ w gospodarstwie Onara.
-	Info_ClearChoices(dia_babera_wiesiehtsaus);
+	Info_ClearChoices(DIA_Babera_WIESIEHTSAUS);
 };
 
 
-instance DIA_BABERA_BRONKO(C_INFO)
+instance DIA_Babera_BRONKO(C_Info)
 {
-	npc = bau_934_babera;
+	npc = BAU_934_Babera;
 	nr = 3;
-	condition = dia_babera_bronko_condition;
-	information = dia_babera_bronko_info;
+	condition = DIA_Babera_BRONKO_Condition;
+	information = DIA_Babera_BRONKO_Info;
 	description = "(Zapytaj o Bronka)";
 };
 
 
-func int dia_babera_bronko_condition()
+func int DIA_Babera_BRONKO_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_bronko_hallo) && Npc_KnowsInfo(other,dia_babera_wiesiehtsaus))
+	if(Npc_KnowsInfo(other,DIA_Bronko_HALLO) && Npc_KnowsInfo(other,DIA_Babera_WIESIEHTSAUS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_babera_bronko_info()
+func void DIA_Babera_BRONKO_Info()
 {
 	AI_Output(other,self,"DIA_Babera_BRONKO_15_00");	//S³uchaj, ten paskudny koleœ, który tam stoi...
 	AI_Output(self,other,"DIA_Babera_BRONKO_16_01");	//To Bronco. A co?
@@ -124,57 +124,57 @@ func void dia_babera_bronko_info()
 	{
 		AI_Output(self,other,"DIA_Babera_BRONKO_16_06");	//Tylko najemnicy potrafi¹ zmusiæ go do pracy. Boi siê ich.
 	};
-	BABERA_BRONKOKEINBAUER = TRUE;
+	Babera_BronkoKeinBauer = TRUE;
 };
 
 
-instance DIA_BABERA_ROSI(C_INFO)
+instance DIA_Babera_Rosi(C_Info)
 {
-	npc = bau_934_babera;
+	npc = BAU_934_Babera;
 	nr = 3;
-	condition = dia_babera_rosi_condition;
-	information = dia_babera_rosi_info;
+	condition = DIA_Babera_Rosi_Condition;
+	information = DIA_Babera_Rosi_Info;
 	description = "Gdzie jest Rosi?";
 };
 
 
-func int dia_babera_rosi_condition()
+func int DIA_Babera_Rosi_Condition()
 {
-	if((MIS_BRINGROSIBACKTOSEKOB == LOG_RUNNING) && (KAPITEL >= 5) && (ROSIFOUNDKAP5 == FALSE))
+	if((MIS_bringRosiBackToSekob == LOG_Running) && (Kapitel >= 5) && (RosiFoundKap5 == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_babera_rosi_info()
+func void DIA_Babera_Rosi_Info()
 {
 	AI_Output(other,self,"DIA_Babera_Rosi_15_00");	//Gdzie jest Rosi?
 	AI_Output(self,other,"DIA_Babera_Rosi_16_01");	//Nie mog³a ju¿ tu wytrzymaæ i posz³a na pó³noc, do lasu.
-	b_logentry(TOPIC_ROSISFLUCHT,"Rosi uciek³a z farmy Sekoba. Babera twierdzi, ¿e pobieg³a na pó³noc, w stronê lasów.");
-	b_logentry(TOPIC_BRINGROSIBACKTOSEKOB,"Rosi uciek³a z farmy Sekoba. Babera twierdzi, ¿e pobieg³a na pó³noc, w stronê lasów.");
+	B_LogEntry(TOPIC_RosisFlucht,"Rosi uciek³a z farmy Sekoba. Babera twierdzi, ¿e pobieg³a na pó³noc, w stronê lasów.");
+	B_LogEntry(TOPIC_bringRosiBackToSekob,"Rosi uciek³a z farmy Sekoba. Babera twierdzi, ¿e pobieg³a na pó³noc, w stronê lasów.");
 };
 
 
-instance DIA_BABERA_DUSTOERST(C_INFO)
+instance DIA_Babera_DUSTOERST(C_Info)
 {
-	npc = bau_934_babera;
+	npc = BAU_934_Babera;
 	nr = 10;
-	condition = dia_babera_dustoerst_condition;
-	information = dia_babera_dustoerst_info;
+	condition = DIA_Babera_DUSTOERST_Condition;
+	information = DIA_Babera_DUSTOERST_Info;
 	permanent = TRUE;
 	description = "Coœ jeszcze?";
 };
 
 
-func int dia_babera_dustoerst_condition()
+func int DIA_Babera_DUSTOERST_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_babera_bronko))
+	if(Npc_KnowsInfo(other,DIA_Babera_BRONKO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_babera_dustoerst_info()
+func void DIA_Babera_DUSTOERST_Info()
 {
 	AI_Output(other,self,"DIA_Babera_DUSTOERST_15_00");	//A poza tym?
 	AI_Output(self,other,"DIA_Babera_DUSTOERST_16_01");	//Jestem zajêta.
@@ -182,37 +182,37 @@ func void dia_babera_dustoerst_info()
 };
 
 
-instance DIA_BABERA_PICKPOCKET(C_INFO)
+instance DIA_Babera_PICKPOCKET(C_Info)
 {
-	npc = bau_934_babera;
+	npc = BAU_934_Babera;
 	nr = 900;
-	condition = dia_babera_pickpocket_condition;
-	information = dia_babera_pickpocket_info;
+	condition = DIA_Babera_PICKPOCKET_Condition;
+	information = DIA_Babera_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_20_FEMALE;
+	description = Pickpocket_20_Female;
 };
 
 
-func int dia_babera_pickpocket_condition()
+func int DIA_Babera_PICKPOCKET_Condition()
 {
-	return c_beklauen(20,30);
+	return C_Beklauen(20,30);
 };
 
-func void dia_babera_pickpocket_info()
+func void DIA_Babera_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_babera_pickpocket);
-	Info_AddChoice(dia_babera_pickpocket,DIALOG_BACK,dia_babera_pickpocket_back);
-	Info_AddChoice(dia_babera_pickpocket,DIALOG_PICKPOCKET,dia_babera_pickpocket_doit);
+	Info_ClearChoices(DIA_Babera_PICKPOCKET);
+	Info_AddChoice(DIA_Babera_PICKPOCKET,Dialog_Back,DIA_Babera_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Babera_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Babera_PICKPOCKET_DoIt);
 };
 
-func void dia_babera_pickpocket_doit()
+func void DIA_Babera_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_babera_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Babera_PICKPOCKET);
 };
 
-func void dia_babera_pickpocket_back()
+func void DIA_Babera_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_babera_pickpocket);
+	Info_ClearChoices(DIA_Babera_PICKPOCKET);
 };
 

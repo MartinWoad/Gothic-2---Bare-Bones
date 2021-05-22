@@ -1,36 +1,36 @@
 
-instance VLK_4131_ENGROM(NPC_DEFAULT)
+instance VLK_4131_Engrom(Npc_Default)
 {
 	name[0] = "Engrom";
 	guild = GIL_OUT;
 	id = 4131;
 	voice = 12;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,3);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_vlk_axe);
-	EquipItem(self,itrw_mil_crossbow);
-	CreateInvItems(self,itrw_bolt,10);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_NORMALBART20,BODYTEX_N,4845);
+	EquipItem(self,ItMw_1h_Vlk_Axe);
+	EquipItem(self,ItRw_Mil_Crossbow);
+	CreateInvItems(self,ItRw_Bolt,10);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_NormalBart20,BodyTex_N,ITAR_Leather_L);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,45);
-	daily_routine = rtn_start_4131;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,45);
+	daily_routine = Rtn_Start_4131;
 };
 
 
-func void rtn_start_4131()
+func void Rtn_Start_4131()
 {
-	ta_sit_campfire(8,0,23,0,"SPAWN_TALL_PATH_BANDITOS2_03");
-	ta_sit_campfire(23,0,8,0,"SPAWN_TALL_PATH_BANDITOS2_03");
+	TA_Sit_Campfire(8,0,23,0,"SPAWN_TALL_PATH_BANDITOS2_03");
+	TA_Sit_Campfire(23,0,8,0,"SPAWN_TALL_PATH_BANDITOS2_03");
 };
 
-func void rtn_obsessed_4131()
+func void Rtn_Obsessed_4131()
 {
-	ta_stand_armscrossed(8,0,23,0,"OW_SAWHUT_MOLERAT_MOVEMENT");
-	ta_stand_armscrossed(23,0,8,0,"OW_SAWHUT_MOLERAT_MOVEMENT");
+	TA_Stand_ArmsCrossed(8,0,23,0,"OW_SAWHUT_MOLERAT_MOVEMENT");
+	TA_Stand_ArmsCrossed(23,0,8,0,"OW_SAWHUT_MOLERAT_MOVEMENT");
 };
 

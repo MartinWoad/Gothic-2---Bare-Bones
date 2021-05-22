@@ -1,7 +1,7 @@
 
-func int c_wanttoransack(var C_NPC slf)
+func int C_WantToRansack(var C_Npc slf)
 {
-	if((slf.npctype == NPCTYPE_FRIEND) && Npc_IsPlayer(other))
+	if((slf.npcType == NPCTYPE_FRIEND) && Npc_IsPlayer(other))
 	{
 		return FALSE;
 	};

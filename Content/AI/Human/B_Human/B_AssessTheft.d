@@ -1,5 +1,5 @@
 
-func void b_assesstheft()
+func void B_AssessTheft()
 {
 	if((Wld_GetPlayerPortalGuild() >= GIL_NONE) && (Npc_GetHeightToNpc(self,other) > PERC_DIST_INDOOR_HEIGHT))
 	{
@@ -15,13 +15,13 @@ func void b_assesstheft()
 			return;
 		};
 	};
-	if(!c_istakenitemmypossession(self,other,item))
+	if(!C_IsTakenItemMyPossession(self,other,item))
 	{
 		return;
 	};
 	if(!Npc_CanSeeNpc(self,other))
 	{
-		if(Npc_IsInPlayersRoom(self) && (Npc_IsInState(self,zs_observeplayer) || Npc_IsInState(self,zs_clearroom)))
+		if(Npc_IsInPlayersRoom(self) && (Npc_IsInState(self,ZS_ObservePlayer) || Npc_IsInState(self,ZS_ClearRoom)))
 		{
 		}
 		else
@@ -29,14 +29,14 @@ func void b_assesstheft()
 			return;
 		};
 	};
-	if(!c_wanttoattackthief(self,other))
+	if(!C_WantToAttackThief(self,other))
 	{
-		if(c_npcisgateguard(self) && Npc_IsPlayer(other))
+		if(C_NpcIsGateGuard(self) && Npc_IsPlayer(other))
 		{
-			b_memorizeplayercrime(self,other,CRIME_THEFT);
+			B_MemorizePlayerCrime(self,other,CRIME_THEFT);
 		};
 		return;
 	};
-	b_attack(self,other,AR_THEFT,0);
+	B_Attack(self,other,AR_Theft,0);
 };
 

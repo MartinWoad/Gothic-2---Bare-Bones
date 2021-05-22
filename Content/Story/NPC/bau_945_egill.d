@@ -1,30 +1,30 @@
 
-instance BAU_945_EGILL(NPC_DEFAULT)
+instance BAU_945_Egill(Npc_Default)
 {
 	name[0] = "Egill";
 	guild = GIL_OUT;
 	id = 945;
 	voice = 8;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,1);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_bau_axe);
-	b_createambientinv(self);
-	CreateInvItems(self,itpo_health_02,1);
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_P_NORMAL03,BODYTEX_P,4831);
+	EquipItem(self,ItMw_1h_Bau_Axe);
+	B_CreateAmbientInv(self);
+	CreateInvItems(self,ItPo_Health_02,1);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Pony",Face_P_Normal03,BodyTex_P,ITAR_Bau_M);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,40);
-	daily_routine = rtn_start_945;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,40);
+	daily_routine = Rtn_Start_945;
 };
 
 
-func void rtn_start_945()
+func void Rtn_Start_945()
 {
-	ta_pick_fp(5,0,21,0,"NW_FARM2_FIELD_02");
-	ta_stand_drinking(21,0,0,2,"NW_FARM2_OUT_10");
-	ta_sit_bench(0,2,5,0,"NW_FARM2_OUT_06");
+	TA_Pick_FP(5,0,21,0,"NW_FARM2_FIELD_02");
+	TA_Stand_Drinking(21,0,0,2,"NW_FARM2_OUT_10");
+	TA_Sit_Bench(0,2,5,0,"NW_FARM2_OUT_06");
 };
 

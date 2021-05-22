@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_STONEGOLEM(C_NPC)
+prototype Mst_Default_StoneGolem(C_Npc)
 {
 	name[0] = "Kamienny Golem";
 	guild = GIL_STONEGOLEM;
@@ -21,27 +21,27 @@ prototype MST_DEFAULT_STONEGOLEM(C_NPC)
 	fight_tactic = FAI_STONEGOLEM;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_stonegolem()
+func void B_SetVisuals_StoneGolem()
 {
 	Mdl_SetVisual(self,"Golem.mds");
 	Mdl_SetVisualBody(self,"Gol_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance STONEGOLEM(MST_DEFAULT_STONEGOLEM)
+instance StoneGolem(Mst_Default_StoneGolem)
 {
-	b_setvisuals_stonegolem();
+	B_SetVisuals_StoneGolem();
 	Npc_SetToFistMode(self);
 };
 
-instance SUMMONED_GOLEM(MST_DEFAULT_STONEGOLEM)
+instance Summoned_Golem(Mst_Default_StoneGolem)
 {
 	name[0] = "Przyzwany Golem";
 	guild = gil_summoned_golem;
@@ -49,23 +49,23 @@ instance SUMMONED_GOLEM(MST_DEFAULT_STONEGOLEM)
 	level = 0;
 	aivar[AIV_PARTYMEMBER] = TRUE;
 	protection[PROT_EDGE] = 65;
-	b_setattitude(self,ATT_FRIENDLY);
-	start_aistate = zs_mm_rtn_summoned;
-	b_setvisuals_stonegolem();
+	B_SetAttitude(self,ATT_FRIENDLY);
+	start_aistate = ZS_MM_Rtn_Summoned;
+	B_SetVisuals_StoneGolem();
 	Npc_SetToFistMode(self);
 };
 
 
-func void zs_golemdown()
+func void ZS_GolemDown()
 {
 	self.senses = SENSE_SMELL;
 	self.senses_range = 2000;
 	Npc_SetPercTime(self,1);
-	Npc_PercEnable(self,PERC_ASSESSPLAYER,b_golemrise);
+	Npc_PercEnable(self,PERC_ASSESSPLAYER,B_GolemRise);
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func int zs_golemdown_loop()
+func int ZS_GolemDown_LOOP()
 {
 	if(self.aivar[AIV_TAPOSITION] == NOTINPOS)
 	{
@@ -75,42 +75,42 @@ func int zs_golemdown_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_golemdown_end()
+func void ZS_GolemDown_END()
 {
 };
 
-func void b_golemrise()
+func void B_GolemRise()
 {
-	if((Npc_GetDistToNpc(self,hero) <= 700) && (Mob_HasItems("NW_GOLEMCHEST",itse_golemchest_mis) == 0))
+	if((Npc_GetDistToNpc(self,hero) <= 700) && (Mob_HasItems("NW_GOLEMCHEST",ItSe_Golemchest_Mis) == 0))
 	{
 		AI_PlayAni(self,"T_RISE");
-		self.nofocus = FALSE;
+		self.noFocus = FALSE;
 		self.name[0] = "Kamienny Golem";
 		self.flags = 0;
-		AI_StartState(self,zs_mm_attack,0,"");
-		self.bodystateinterruptableoverride = FALSE;
-		self.start_aistate = zs_mm_allscheduler;
-		self.aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+		AI_StartState(self,ZS_MM_Attack,0,"");
+		self.bodyStateInterruptableOverride = FALSE;
+		self.start_aistate = ZS_MM_AllScheduler;
+		self.aivar[AIV_MM_RestStart] = OnlyRoutine;
 	};
 };
 
 
-instance SHATTERED_GOLEM(MST_DEFAULT_STONEGOLEM)
+instance Shattered_Golem(Mst_Default_StoneGolem)
 {
 	name[0] = "";
 	guild = GIL_STONEGOLEM;
 	aivar[AIV_MM_REAL_ID] = ID_STONEGOLEM;
 	level = 18;
-	nofocus = TRUE;
+	noFocus = TRUE;
 	flags = NPC_FLAG_IMMORTAL;
-	bodystateinterruptableoverride = TRUE;
-	b_setvisuals_stonegolem();
+	bodyStateInterruptableOverride = TRUE;
+	B_SetVisuals_StoneGolem();
 	Npc_SetToFistMode(self);
-	start_aistate = zs_golemdown;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	start_aistate = ZS_GolemDown;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-instance MAGICGOLEM(MST_DEFAULT_STONEGOLEM)
+instance MagicGolem(Mst_Default_StoneGolem)
 {
 	name[0] = "Magiczny Golem";
 	level = 10;
@@ -120,7 +120,7 @@ instance MAGICGOLEM(MST_DEFAULT_STONEGOLEM)
 	protection[PROT_FIRE] = IMMUNE;
 	protection[PROT_FLY] = IMMUNE;
 	protection[PROT_MAGIC] = IMMUNE;
-	b_setvisuals_stonegolem();
+	B_SetVisuals_StoneGolem();
 	Npc_SetToFistMode(self);
 };
 

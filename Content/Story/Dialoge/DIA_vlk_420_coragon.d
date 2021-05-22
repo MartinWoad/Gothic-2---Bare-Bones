@@ -1,133 +1,133 @@
 
-instance DIA_CORAGON_EXIT(C_INFO)
+instance DIA_Coragon_EXIT(C_Info)
 {
-	npc = vlk_420_coragon;
+	npc = VLK_420_Coragon;
 	nr = 999;
-	condition = dia_coragon_exit_condition;
-	information = dia_coragon_exit_info;
+	condition = DIA_Coragon_EXIT_Condition;
+	information = DIA_Coragon_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_coragon_exit_condition()
+func int DIA_Coragon_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_coragon_exit_info()
+func void DIA_Coragon_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_CORAGON_PICKPOCKET(C_INFO)
+instance DIA_Coragon_PICKPOCKET(C_Info)
 {
-	npc = vlk_420_coragon;
+	npc = VLK_420_Coragon;
 	nr = 900;
-	condition = dia_coragon_pickpocket_condition;
-	information = dia_coragon_pickpocket_info;
+	condition = DIA_Coragon_PICKPOCKET_Condition;
+	information = DIA_Coragon_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_coragon_pickpocket_condition()
+func int DIA_Coragon_PICKPOCKET_Condition()
 {
-	return c_beklauen(40,45);
+	return C_Beklauen(40,45);
 };
 
-func void dia_coragon_pickpocket_info()
+func void DIA_Coragon_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_coragon_pickpocket);
-	Info_AddChoice(dia_coragon_pickpocket,DIALOG_BACK,dia_coragon_pickpocket_back);
-	Info_AddChoice(dia_coragon_pickpocket,DIALOG_PICKPOCKET,dia_coragon_pickpocket_doit);
+	Info_ClearChoices(DIA_Coragon_PICKPOCKET);
+	Info_AddChoice(DIA_Coragon_PICKPOCKET,Dialog_Back,DIA_Coragon_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Coragon_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Coragon_PICKPOCKET_DoIt);
 };
 
-func void dia_coragon_pickpocket_doit()
+func void DIA_Coragon_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_coragon_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Coragon_PICKPOCKET);
 };
 
-func void dia_coragon_pickpocket_back()
+func void DIA_Coragon_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_coragon_pickpocket);
+	Info_ClearChoices(DIA_Coragon_PICKPOCKET);
 };
 
 
-instance DIA_CORAGON_HALLO(C_INFO)
+instance DIA_Coragon_HALLO(C_Info)
 {
-	npc = vlk_420_coragon;
+	npc = VLK_420_Coragon;
 	nr = 2;
-	condition = dia_coragon_hallo_condition;
-	information = dia_coragon_hallo_info;
+	condition = DIA_Coragon_HALLO_Condition;
+	information = DIA_Coragon_HALLO_Info;
 	permanent = FALSE;
 	description = "Czy mogê kupiæ coœ do picia?";
 };
 
 
-func int dia_coragon_hallo_condition()
+func int DIA_Coragon_HALLO_Condition()
 {
 	return TRUE;
 };
 
-func void dia_coragon_hallo_info()
+func void DIA_Coragon_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Coragon_HALLO_15_00");	//Czy mogê kupiæ coœ do picia?
 	AI_Output(self,other,"DIA_Coragon_Add_05_00");	//Dopóki masz z³oto, mo¿esz tu nawet jadaæ posi³ki.
-	Log_CreateTopic(TOPIC_CITYTRADER,LOG_NOTE);
-	b_logentry(TOPIC_CITYTRADER,"Jedzenie i napoje mogê kupiæ u w³aœciciela gospody, Coragona.");
+	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
+	B_LogEntry(TOPIC_CityTrader,"Jedzenie i napoje mogê kupiæ u w³aœciciela gospody, Coragona.");
 };
 
 
-instance DIA_CORAGON_TRADE(C_INFO)
+instance DIA_Coragon_Trade(C_Info)
 {
-	npc = vlk_420_coragon;
+	npc = VLK_420_Coragon;
 	nr = 2;
-	condition = dia_coragon_trade_condition;
-	information = dia_coragon_trade_info;
+	condition = DIA_Coragon_Trade_Condition;
+	information = DIA_Coragon_Trade_Info;
 	permanent = TRUE;
 	description = "Poka¿ mi swoje towary.";
 	trade = TRUE;
 };
 
 
-func int dia_coragon_trade_condition()
+func int DIA_Coragon_Trade_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_coragon_hallo))
+	if(Npc_KnowsInfo(other,DIA_Coragon_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_coragon_trade_info()
+func void DIA_Coragon_Trade_Info()
 {
-	b_givetradeinv(self);
+	B_GiveTradeInv(self);
 	AI_Output(other,self,"DIA_Coragon_Trade_15_00");	//Poka¿ mi swoje towary.
 };
 
 
-instance DIA_CORAGON_WHATSUP(C_INFO)
+instance DIA_Coragon_WhatsUp(C_Info)
 {
-	npc = vlk_420_coragon;
+	npc = VLK_420_Coragon;
 	nr = 3;
-	condition = dia_coragon_whatsup_condition;
-	information = dia_coragon_whatsup_info;
+	condition = DIA_Coragon_WhatsUp_Condition;
+	information = DIA_Coragon_WhatsUp_Info;
 	permanent = FALSE;
 	description = "Jak id¹ interesy?";
 };
 
 
-func int dia_coragon_whatsup_condition()
+func int DIA_Coragon_WhatsUp_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_coragon_hallo))
+	if(Npc_KnowsInfo(other,DIA_Coragon_HALLO))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_coragon_whatsup_info()
+func void DIA_Coragon_WhatsUp_Info()
 {
 	AI_Output(other,self,"DIA_Coragon_Gelaber_15_00");	//Jak id¹ interesy?
 	AI_Output(self,other,"DIA_Coragon_Add_05_01");	//Ech, nie przypominaj mi. Lord Andre serwuje na placu wisielców darmowe piwo.
@@ -140,43 +140,43 @@ func void dia_coragon_whatsup_info()
 };
 
 
-instance DIA_CORAGON_BESTOHLEN(C_INFO)
+instance DIA_Coragon_Bestohlen(C_Info)
 {
-	npc = vlk_420_coragon;
+	npc = VLK_420_Coragon;
 	nr = 4;
-	condition = dia_coragon_bestohlen_condition;
-	information = dia_coragon_bestohlen_info;
+	condition = DIA_Coragon_Bestohlen_Condition;
+	information = DIA_Coragon_Bestohlen_Info;
 	permanent = FALSE;
 	description = "Obrabowano ciê?";
 };
 
 
-func int dia_coragon_bestohlen_condition()
+func int DIA_Coragon_Bestohlen_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_coragon_whatsup))
+	if(Npc_KnowsInfo(other,DIA_Coragon_WhatsUp))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_coragon_bestohlen_info()
+func void DIA_Coragon_Bestohlen_Info()
 {
 	AI_Output(other,self,"DIA_Coragon_Add_15_08");	//Obrabowano ciê?
 	AI_Output(self,other,"DIA_Coragon_Add_05_09");	//To by³o ju¿ jakiœ czas temu. Tej nocy w knajpie siedzia³o pe³no ludzi, a ja odszed³em tylko na moment, ¿eby roznieœæ zamówione piwo.
 	AI_Output(self,other,"DIA_Coragon_Add_05_10");	//Jednak tym draniom wystarczy³a nawet krótka chwila.
 	AI_Output(self,other,"DIA_Coragon_Add_05_11");	//Zawiadomi³em stra¿, ale oczywiœcie nic nie znaleŸli. Ich interesuje tylko darmowe piwsko.
-	MIS_CORAGON_SILBER = LOG_RUNNING;
+	MIS_Coragon_Silber = LOG_Running;
 };
 
 
-var int coragon_bier;
+var int Coragon_Bier;
 
-func void b_coragon_bier()
+func void B_Coragon_Bier()
 {
-	CORAGON_BIER = CORAGON_BIER + 1;
+	Coragon_Bier = Coragon_Bier + 1;
 	AI_Output(self,other,"DIA_Coragon_Add_05_14");	//Proszê, przyjmij to jako nagrodê.
-	b_giveinvitems(self,other,4910,1);
-	if(CORAGON_BIER < 2)
+	B_GiveInvItems(self,other,ItFo_CoragonsBeer,1);
+	if(Coragon_Bier < 2)
 	{
 		AI_Output(self,other,"DIA_Coragon_Add_05_21");	//To nie jest zwyk³e piwo. Pochodzi z mojej ostatniej beczki.
 	}
@@ -187,56 +187,56 @@ func void b_coragon_bier()
 };
 
 
-instance DIA_CORAGON_BRINGSILBER(C_INFO)
+instance DIA_Coragon_BringSilber(C_Info)
 {
-	npc = vlk_420_coragon;
+	npc = VLK_420_Coragon;
 	nr = 5;
-	condition = dia_coragon_bringsilber_condition;
-	information = dia_coragon_bringsilber_info;
+	condition = DIA_Coragon_BringSilber_Condition;
+	information = DIA_Coragon_BringSilber_Info;
 	permanent = FALSE;
 	description = "Mam twoje srebra.";
 };
 
 
-func int dia_coragon_bringsilber_condition()
+func int DIA_Coragon_BringSilber_Condition()
 {
-	if((MIS_CORAGON_SILBER == LOG_RUNNING) && (Npc_HasItems(other,itmi_coragonssilber) >= 8))
+	if((MIS_Coragon_Silber == LOG_Running) && (Npc_HasItems(other,ItMi_CoragonsSilber) >= 8))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_coragon_bringsilber_info()
+func void DIA_Coragon_BringSilber_Info()
 {
 	AI_Output(other,self,"DIA_Coragon_Add_15_12");	//Mam twoje srebra.
-	b_giveinvitems(other,self,5643,8);
+	B_GiveInvItems(other,self,ItMi_CoragonsSilber,8);
 	AI_Output(self,other,"DIA_Coragon_Add_05_13");	//Doprawdy!
-	b_giveplayerxp(XP_CORAGONSSILBER);
-	b_coragon_bier();
-	MIS_CORAGON_SILBER = LOG_SUCCESS;
+	B_GivePlayerXP(XP_CoragonsSilber);
+	B_Coragon_Bier();
+	MIS_Coragon_Silber = LOG_SUCCESS;
 };
 
 
-instance DIA_CORAGON_SCHULDENBUCH(C_INFO)
+instance DIA_Coragon_Schuldenbuch(C_Info)
 {
-	npc = vlk_420_coragon;
+	npc = VLK_420_Coragon;
 	nr = 6;
-	condition = dia_coragon_schuldenbuch_condition;
-	information = dia_coragon_schuldenbuch_info;
+	condition = DIA_Coragon_Schuldenbuch_Condition;
+	information = DIA_Coragon_Schuldenbuch_Info;
 	permanent = FALSE;
 	description = "Popatrz, co tutaj mam.";
 };
 
 
-func int dia_coragon_schuldenbuch_condition()
+func int DIA_Coragon_Schuldenbuch_Condition()
 {
-	if(Npc_HasItems(other,itwr_schuldenbuch) > 0)
+	if(Npc_HasItems(other,ItWr_Schuldenbuch) > 0)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_coragon_schuldenbuch_info()
+func void DIA_Coragon_Schuldenbuch_Info()
 {
 	AI_Output(other,self,"DIA_Coragon_Add_15_15");	//Popatrz, co tutaj mam.
 	AI_Output(self,other,"DIA_Coragon_Add_05_16");	//Mmm? Ale¿ to ksiêga rachunkowa Lehmara!
@@ -244,56 +244,56 @@ func void dia_coragon_schuldenbuch_info()
 };
 
 
-instance DIA_CORAGON_GIVEBOOK(C_INFO)
+instance DIA_Coragon_GiveBook(C_Info)
 {
-	npc = vlk_420_coragon;
+	npc = VLK_420_Coragon;
 	nr = 7;
-	condition = dia_coragon_givebook_condition;
-	information = dia_coragon_givebook_info;
+	condition = DIA_Coragon_GiveBook_Condition;
+	information = DIA_Coragon_GiveBook_Info;
 	permanent = FALSE;
 	description = "Oto ksiêga.";
 };
 
 
-func int dia_coragon_givebook_condition()
+func int DIA_Coragon_GiveBook_Condition()
 {
-	if(Npc_HasItems(other,itwr_schuldenbuch) > 0)
+	if(Npc_HasItems(other,ItWr_Schuldenbuch) > 0)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_coragon_givebook_info()
+func void DIA_Coragon_GiveBook_Info()
 {
 	AI_Output(other,self,"DIA_Coragon_Add_15_18");	//Oto twoja ksiêga.
-	b_giveinvitems(other,self,5721,1);
-	Npc_RemoveInvItems(self,itwr_schuldenbuch,1);
+	B_GiveInvItems(other,self,ItWr_Schuldenbuch,1);
+	Npc_RemoveInvItems(self,ItWr_Schuldenbuch,1);
 	AI_Output(self,other,"DIA_Coragon_Add_05_19");	//Dziêkujê! Ocali³eœ mój ty³ek. Lehmar potrafi byæ bardzo niemi³y.
-	b_giveplayerxp(XP_SCHULDENBUCH);
-	b_coragon_bier();
+	B_GivePlayerXP(XP_Schuldenbuch);
+	B_Coragon_Bier();
 };
 
 
-instance DIA_CORAGON_TOOV(C_INFO)
+instance DIA_Coragon_ToOV(C_Info)
 {
-	npc = vlk_420_coragon;
+	npc = VLK_420_Coragon;
 	nr = 9;
-	condition = dia_coragon_toov_condition;
-	information = dia_coragon_toov_info;
+	condition = DIA_Coragon_ToOV_Condition;
+	information = DIA_Coragon_ToOV_Info;
 	permanent = FALSE;
 	description = "W jaki sposób mogê siê dostaæ do górnego miasta?";
 };
 
 
-func int dia_coragon_toov_condition()
+func int DIA_Coragon_ToOV_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_coragon_whatsup) && (other.guild == GIL_NONE) && (PLAYER_ISAPPRENTICE == APP_NONE))
+	if(Npc_KnowsInfo(other,DIA_Coragon_WhatsUp) && (other.guild == GIL_NONE) && (Player_IsApprentice == APP_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_coragon_toov_info()
+func void DIA_Coragon_ToOV_Info()
 {
 	AI_Output(other,self,"DIA_Coragon_Add_15_23");	//W jaki sposób mogê siê dostaæ do górnego miasta?
 	AI_Output(self,other,"DIA_Coragon_Add_05_24");	//Musisz zostaæ obywatelem miasta. ZnajdŸ sobie jak¹œ robotê.
@@ -303,26 +303,26 @@ func void dia_coragon_toov_info()
 };
 
 
-instance DIA_CORAGON_VALENTINO(C_INFO)
+instance DIA_Coragon_Valentino(C_Info)
 {
-	npc = vlk_420_coragon;
+	npc = VLK_420_Coragon;
 	nr = 8;
-	condition = dia_coragon_valentino_condition;
-	information = dia_coragon_valentino_info;
+	condition = DIA_Coragon_Valentino_Condition;
+	information = DIA_Coragon_Valentino_Info;
 	permanent = FALSE;
 	description = "O co chodzi z tym Valentinem?";
 };
 
 
-func int dia_coragon_valentino_condition()
+func int DIA_Coragon_Valentino_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_coragon_whatsup))
+	if(Npc_KnowsInfo(other,DIA_Coragon_WhatsUp))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_coragon_valentino_info()
+func void DIA_Coragon_Valentino_Info()
 {
 	AI_Output(other,self,"DIA_Coragon_Add_15_28");	//O co chodzi z tym Valentinem?
 	AI_Output(self,other,"DIA_Coragon_Add_05_29");	//Jest obrzydliwie bogaty i nie musi pracowaæ. Zreszt¹ opowiada o tym ka¿demu, kogo tylko spotka.
@@ -332,32 +332,32 @@ func void dia_coragon_valentino_info()
 };
 
 
-instance DIA_CORAGON_NEWS(C_INFO)
+instance DIA_Coragon_News(C_Info)
 {
-	npc = vlk_420_coragon;
+	npc = VLK_420_Coragon;
 	nr = 1;
-	condition = dia_coragon_news_condition;
-	information = dia_coragon_news_info;
+	condition = DIA_Coragon_News_Condition;
+	information = DIA_Coragon_News_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_coragon_news_condition()
+func int DIA_Coragon_News_Condition()
 {
-	if(valentino.aivar[AIV_DEFEATEDBYPLAYER] == TRUE)
+	if(Valentino.aivar[AIV_DefeatedByPlayer] == TRUE)
 	{
-		if(REGIS_RING == TRUE)
+		if(Regis_Ring == TRUE)
 		{
 			return TRUE;
 		};
 	};
 };
 
-func void dia_coragon_news_info()
+func void DIA_Coragon_News_Info()
 {
 	AI_Output(self,other,"DIA_Coragon_Add_05_33");	//Wczoraj Valentino nie chcia³ zap³aciæ rachunku.
-	if(valentino.aivar[AIV_DEFEATEDBYPLAYER] == TRUE)
+	if(Valentino.aivar[AIV_DefeatedByPlayer] == TRUE)
 	{
 		AI_Output(self,other,"DIA_Coragon_Add_05_34");	//Gada³ coœ o tym, ¿e zosta³ obrabowany i zap³aci póŸniej...
 	}
@@ -371,33 +371,33 @@ func void dia_coragon_news_info()
 };
 
 
-instance DIA_CORAGON_RING(C_INFO)
+instance DIA_Coragon_Ring(C_Info)
 {
-	npc = vlk_420_coragon;
+	npc = VLK_420_Coragon;
 	nr = 10;
-	condition = dia_coragon_ring_condition;
-	information = dia_coragon_ring_info;
+	condition = DIA_Coragon_Ring_Condition;
+	information = DIA_Coragon_Ring_Info;
 	permanent = FALSE;
 	description = "Proszê - przyjmij ten pierœcieñ.";
 };
 
 
-func int dia_coragon_ring_condition()
+func int DIA_Coragon_Ring_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_coragon_news) && (Npc_HasItems(other,itri_valentinosring) > 0))
+	if(Npc_KnowsInfo(other,DIA_Coragon_News) && (Npc_HasItems(other,ItRi_ValentinosRing) > 0))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_coragon_ring_info()
+func void DIA_Coragon_Ring_Info()
 {
 	AI_Output(other,self,"DIA_Coragon_Add_15_39");	//Proszê - przyjmij ten pierœcieñ.
-	b_giveinvitems(other,self,5647,1);
+	B_GiveInvItems(other,self,ItRi_ValentinosRing,1);
 	AI_Output(self,other,"DIA_Coragon_Add_05_40");	//Co? Nie rozumiem...
 	AI_Output(other,self,"DIA_Coragon_Add_15_41");	//Nale¿a³ do Valentina.
 	AI_Output(other,self,"DIA_Coragon_Add_15_42");	//Zawsze mo¿esz ofiarowaæ ten pierœcieñ komuœ, kto zdo³a go schwytaæ...
-	b_giveplayerxp(300);
+	B_GivePlayerXP(300);
 	AI_StopProcessInfos(self);
 };
 

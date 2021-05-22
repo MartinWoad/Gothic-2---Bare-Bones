@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_MEATBUG(C_NPC)
+prototype Mst_Default_Meatbug(C_Npc)
 {
 	name[0] = "Chrz¹szcz";
 	guild = GIL_MEATBUG;
@@ -20,40 +20,40 @@ prototype MST_DEFAULT_MEATBUG(C_NPC)
 	damagetype = DAM_EDGE;
 	senses = SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_WUSELSTART] = ONLYROUTINE;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_WuselStart] = OnlyRoutine;
 };
 
-func void b_setvisuals_meatbug()
+func void B_SetVisuals_Meatbug()
 {
 	Mdl_SetVisual(self,"Meatbug.mds");
 	Mdl_SetVisualBody(self,"Mbg_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance MEATBUG(MST_DEFAULT_MEATBUG)
+instance Meatbug(Mst_Default_Meatbug)
 {
-	b_setvisuals_meatbug();
+	B_SetVisuals_Meatbug();
 };
 
-instance MEATBUG_BRUTUS1(MST_DEFAULT_MEATBUG)
+instance Meatbug_Brutus1(Mst_Default_Meatbug)
 {
-	b_setvisuals_meatbug();
+	B_SetVisuals_Meatbug();
 };
 
-instance MEATBUG_BRUTUS2(MST_DEFAULT_MEATBUG)
+instance Meatbug_Brutus2(Mst_Default_Meatbug)
 {
-	b_setvisuals_meatbug();
+	B_SetVisuals_Meatbug();
 };
 
-instance MEATBUG_BRUTUS3(MST_DEFAULT_MEATBUG)
+instance Meatbug_Brutus3(Mst_Default_Meatbug)
 {
-	b_setvisuals_meatbug();
+	B_SetVisuals_Meatbug();
 };
 
-instance MEATBUG_BRUTUS4(MST_DEFAULT_MEATBUG)
+instance Meatbug_Brutus4(Mst_Default_Meatbug)
 {
-	b_setvisuals_meatbug();
+	B_SetVisuals_Meatbug();
 };
 

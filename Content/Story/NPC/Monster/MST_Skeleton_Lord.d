@@ -1,5 +1,5 @@
 
-prototype MST_SKELETON_LORD(C_NPC)
+prototype Mst_Skeleton_Lord(C_Npc)
 {
 	name[0] = "Wojownik Cienia";
 	guild = GIL_SKELETON;
@@ -19,42 +19,42 @@ prototype MST_SKELETON_LORD(C_NPC)
 	protection[PROT_MAGIC] = 40;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_zweihaender2);
+	EquipItem(self,ItMw_Zweihaender2);
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_skeleton_lord()
+func void B_SetVisuals_Skeleton_Lord()
 {
 	Mdl_SetVisual(self,"HumanS.mds");
 	Mdl_ApplyOverlayMds(self,"humans_1hST1.mds");
 	Mdl_ApplyOverlayMds(self,"humans_2hST2.mds");
 	Mdl_ApplyOverlayMds(self,"humans_BowT1.mds");
 	Mdl_ApplyOverlayMds(self,"humans_CBowT1.mds");
-	b_setnpcvisual(self,MALE,"Ske_Head",0,0,5713);
+	B_SetNpcVisual(self,MALE,"Ske_Head",0,0,itar_pal_skel);
 };
 
 
-instance SKELETON_LORD(MST_SKELETON_LORD)
+instance Skeleton_Lord(Mst_Skeleton_Lord)
 {
-	b_setvisuals_skeleton_lord();
+	B_SetVisuals_Skeleton_Lord();
 };
 
-instance CRYPT_SKELETON_LORD(MST_SKELETON_LORD)
+instance Crypt_Skeleton_Lord(Mst_Skeleton_Lord)
 {
 	name[0] = "Inubis";
-	b_setvisuals_skeleton_lord();
-	CreateInvItems(self,itmi_gold,500);
-	CreateInvItems(self,itpo_mana_03,2);
-	CreateInvItems(self,itpo_health_03,2);
+	B_SetVisuals_Skeleton_Lord();
+	CreateInvItems(self,ItMi_Gold,500);
+	CreateInvItems(self,ItPo_Mana_03,2);
+	CreateInvItems(self,ItPo_Health_03,2);
 };
 
-instance SKELETON_LORD_ARCHOL(MST_SKELETON_LORD)
+instance Skeleton_Lord_Archol(Mst_Skeleton_Lord)
 {
 	name[0] = "Archol";
 	level = 60;
@@ -70,8 +70,8 @@ instance SKELETON_LORD_ARCHOL(MST_SKELETON_LORD)
 	protection[PROT_FIRE] = 20;
 	protection[PROT_FLY] = 20;
 	protection[PROT_MAGIC] = 20;
-	b_setvisuals_skeleton_lord();
-	CreateInvItems(self,itmi_gold,650);
-	CreateInvItems(self,itke_evt_undead_01,1);
+	B_SetVisuals_Skeleton_Lord();
+	CreateInvItems(self,ItMi_Gold,650);
+	CreateInvItems(self,ItKe_EVT_UNDEAD_01,1);
 };
 

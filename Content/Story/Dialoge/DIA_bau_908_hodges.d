@@ -1,49 +1,49 @@
 
-instance DIA_HODGES_KAP1_EXIT(C_INFO)
+instance DIA_Hodges_Kap1_EXIT(C_Info)
 {
-	npc = bau_908_hodges;
+	npc = BAU_908_Hodges;
 	nr = 999;
-	condition = dia_hodges_kap1_exit_condition;
-	information = dia_hodges_kap1_exit_info;
+	condition = DIA_Hodges_Kap1_EXIT_Condition;
+	information = DIA_Hodges_Kap1_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hodges_kap1_exit_condition()
+func int DIA_Hodges_Kap1_EXIT_Condition()
 {
-	if(KAPITEL <= 1)
+	if(Kapitel <= 1)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hodges_kap1_exit_info()
+func void DIA_Hodges_Kap1_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HODGES_HALLO(C_INFO)
+instance DIA_Hodges_HALLO(C_Info)
 {
-	npc = bau_908_hodges;
+	npc = BAU_908_Hodges;
 	nr = 1;
-	condition = dia_hodges_hallo_condition;
-	information = dia_hodges_hallo_info;
+	condition = DIA_Hodges_HALLO_Condition;
+	information = DIA_Hodges_HALLO_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_hodges_hallo_condition()
+func int DIA_Hodges_HALLO_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && ((KAPITEL != 3) || (MIS_RESCUEBENNET == LOG_SUCCESS)))
+	if(Npc_IsInState(self,ZS_Talk) && ((Kapitel != 3) || (MIS_RescueBennet == LOG_SUCCESS)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hodges_hallo_info()
+func void DIA_Hodges_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Hodges_HALLO_15_00");	//Witaj, jestem tu nowy.
 	AI_Output(self,other,"DIA_Hodges_HALLO_03_01");	//Nie chcia³bym, ¿ebyœ to odebra³ w niew³aœciwy sposób, ale nie mam teraz ochoty na pogawêdkê - jestem zupe³nie wykoñczony.
@@ -52,26 +52,26 @@ func void dia_hodges_hallo_info()
 };
 
 
-instance DIA_HODGES_TELLABOUTFARM(C_INFO)
+instance DIA_Hodges_TellAboutFarm(C_Info)
 {
-	npc = bau_908_hodges;
+	npc = BAU_908_Hodges;
 	nr = 2;
-	condition = dia_hodges_tellaboutfarm_condition;
-	information = dia_hodges_tellaboutfarm_info;
+	condition = DIA_Hodges_TellAboutFarm_Condition;
+	information = DIA_Hodges_TellAboutFarm_Info;
 	permanent = FALSE;
 	description = "Co mo¿esz mi powiedzieæ o farmie?";
 };
 
 
-func int dia_hodges_tellaboutfarm_condition()
+func int DIA_Hodges_TellAboutFarm_Condition()
 {
-	if((KAPITEL != 3) || (MIS_RESCUEBENNET == LOG_SUCCESS))
+	if((Kapitel != 3) || (MIS_RescueBennet == LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hodges_tellaboutfarm_info()
+func void DIA_Hodges_TellAboutFarm_Info()
 {
 	AI_Output(other,self,"DIA_Hodges_TellAboutFarm_15_00");	//Co mo¿esz mi powiedzieæ o farmie?
 	AI_Output(self,other,"DIA_Hodges_TellAboutFarm_03_01");	//To jest farma Onara.
@@ -90,26 +90,26 @@ func void dia_hodges_tellaboutfarm_info()
 };
 
 
-instance DIA_HODGES_ABOUTSLD(C_INFO)
+instance DIA_Hodges_AboutSld(C_Info)
 {
-	npc = bau_908_hodges;
+	npc = BAU_908_Hodges;
 	nr = 2;
-	condition = dia_hodges_aboutsld_condition;
-	information = dia_hodges_aboutsld_info;
+	condition = DIA_Hodges_AboutSld_Condition;
+	information = DIA_Hodges_AboutSld_Info;
 	permanent = FALSE;
 	description = "A co chodzi z tymi najemnikami?";
 };
 
 
-func int dia_hodges_aboutsld_condition()
+func int DIA_Hodges_AboutSld_Condition()
 {
-	if((hero.guild != GIL_SLD) && (hero.guild != GIL_DJG) && ((KAPITEL != 3) || (MIS_RESCUEBENNET == LOG_SUCCESS)))
+	if((hero.guild != GIL_SLD) && (hero.guild != GIL_DJG) && ((Kapitel != 3) || (MIS_RescueBennet == LOG_SUCCESS)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hodges_aboutsld_info()
+func void DIA_Hodges_AboutSld_Info()
 {
 	AI_Output(other,self,"DIA_Hodges_AboutSld_15_00");	//A co chodzi z tymi najemnikami?
 	AI_Output(self,other,"DIA_Hodges_AboutSld_03_01");	//Onar wynaj¹³ ich, ¿eby obroniæ siê przed stra¿¹.
@@ -119,131 +119,131 @@ func void dia_hodges_aboutsld_info()
 };
 
 
-instance DIA_HODGES_TRADE(C_INFO)
+instance DIA_Hodges_TRADE(C_Info)
 {
-	npc = bau_908_hodges;
+	npc = BAU_908_Hodges;
 	nr = 2;
-	condition = dia_hodges_trade_condition;
-	information = dia_hodges_trade_info;
+	condition = DIA_Hodges_TRADE_Condition;
+	information = DIA_Hodges_TRADE_Info;
 	permanent = TRUE;
 	description = "Mogê od ciebie kupiæ broñ?";
 	trade = TRUE;
 };
 
 
-func int dia_hodges_trade_condition()
+func int DIA_Hodges_TRADE_Condition()
 {
 	return TRUE;
 };
 
-func void dia_hodges_trade_info()
+func void DIA_Hodges_TRADE_Info()
 {
 	AI_Output(other,self,"DIA_Hodges_TRADE_15_00");	//Mogê kupiæ u ciebie jak¹œ broñ?
 	AI_Output(self,other,"DIA_Hodges_TRADE_03_01");	//Wybór jest doœæ ubogi. Wiêkszoœæ mieczy i toporów trafia do Onara.
-	Npc_RemoveInvItems(self,itmiswordblade,Npc_HasItems(self,itmiswordblade));
+	Npc_RemoveInvItems(self,ItMiSwordblade,Npc_HasItems(self,ItMiSwordblade));
 };
 
 
-instance DIA_HODGES_KAP2_EXIT(C_INFO)
+instance DIA_Hodges_Kap2_EXIT(C_Info)
 {
-	npc = bau_908_hodges;
+	npc = BAU_908_Hodges;
 	nr = 999;
-	condition = dia_hodges_kap2_exit_condition;
-	information = dia_hodges_kap2_exit_info;
+	condition = DIA_Hodges_Kap2_EXIT_Condition;
+	information = DIA_Hodges_Kap2_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hodges_kap2_exit_condition()
+func int DIA_Hodges_Kap2_EXIT_Condition()
 {
-	if(KAPITEL == 2)
+	if(Kapitel == 2)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hodges_kap2_exit_info()
+func void DIA_Hodges_Kap2_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HODGES_KAP3_EXIT(C_INFO)
+instance DIA_Hodges_Kap3_EXIT(C_Info)
 {
-	npc = bau_908_hodges;
+	npc = BAU_908_Hodges;
 	nr = 999;
-	condition = dia_hodges_kap3_exit_condition;
-	information = dia_hodges_kap3_exit_info;
+	condition = DIA_Hodges_Kap3_EXIT_Condition;
+	information = DIA_Hodges_Kap3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hodges_kap3_exit_condition()
+func int DIA_Hodges_Kap3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hodges_kap3_exit_info()
+func void DIA_Hodges_Kap3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HODGES_DONTWORK(C_INFO)
+instance DIA_Hodges_DontWork(C_Info)
 {
-	npc = bau_908_hodges;
+	npc = BAU_908_Hodges;
 	nr = 31;
-	condition = dia_hodges_dontwork_condition;
-	information = dia_hodges_dontwork_info;
+	condition = DIA_Hodges_DontWork_Condition;
+	information = DIA_Hodges_DontWork_Info;
 	permanent = FALSE;
 	description = "Dlaczego nie pracujesz?";
 };
 
 
-func int dia_hodges_dontwork_condition()
+func int DIA_Hodges_DontWork_Condition()
 {
-	if((KAPITEL == 3) && (MIS_RESCUEBENNET != LOG_SUCCESS))
+	if((Kapitel == 3) && (MIS_RescueBennet != LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hodges_dontwork_info()
+func void DIA_Hodges_DontWork_Info()
 {
 	AI_Output(other,self,"DIA_Hodges_DontWork_15_00");	//Dlaczego nie pracujesz?
 	AI_Output(self,other,"DIA_Hodges_DontWork_03_01");	//Jeszcze nie s³ysza³eœ? Paladyni aresztowali Benneta.
-	MIS_RESCUEBENNET = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_RESCUEBENNET,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_RESCUEBENNET,LOG_RUNNING);
-	b_logentry(TOPIC_RESCUEBENNET,"Kowal Bennet zosta³ aresztowany w mieœcie przez paladynów.");
+	MIS_RescueBennet = LOG_Running;
+	Log_CreateTopic(TOPIC_RescueBennet,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_RescueBennet,LOG_Running);
+	B_LogEntry(TOPIC_RescueBennet,"Kowal Bennet zosta³ aresztowany w mieœcie przez paladynów.");
 };
 
 
-instance DIA_HODGES_WHATHAPPENED(C_INFO)
+instance DIA_Hodges_WhatHappened(C_Info)
 {
-	npc = bau_908_hodges;
+	npc = BAU_908_Hodges;
 	nr = 31;
-	condition = dia_hodges_whathappened_condition;
-	information = dia_hodges_whathappened_info;
+	condition = DIA_Hodges_WhatHappened_Condition;
+	information = DIA_Hodges_WhatHappened_Info;
 	permanent = FALSE;
 	description = "Co siê sta³o?";
 };
 
 
-func int dia_hodges_whathappened_condition()
+func int DIA_Hodges_WhatHappened_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_hodges_dontwork) && (MIS_RESCUEBENNET != LOG_SUCCESS))
+	if(Npc_KnowsInfo(other,DIA_Hodges_DontWork) && (MIS_RescueBennet != LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hodges_whathappened_info()
+func void DIA_Hodges_WhatHappened_Info()
 {
 	AI_Output(other,self,"DIA_Hodges_WhatHappened_15_00");	//Co siê sta³o?
 	AI_Output(self,other,"DIA_Hodges_WhatHappened_03_01");	//Byliœmy na zakupach w mieœcie, kiedy nagle us³yszeliœmy krzyk: 'Tu s¹, pojmaæ ich!'
@@ -253,26 +253,26 @@ func void dia_hodges_whathappened_info()
 };
 
 
-instance DIA_HODGES_BENNETSCRIME(C_INFO)
+instance DIA_Hodges_BennetsCrime(C_Info)
 {
-	npc = bau_908_hodges;
+	npc = BAU_908_Hodges;
 	nr = 32;
-	condition = dia_hodges_bennetscrime_condition;
-	information = dia_hodges_bennetscrime_info;
+	condition = DIA_Hodges_BennetsCrime_Condition;
+	information = DIA_Hodges_BennetsCrime_Info;
 	permanent = FALSE;
 	description = "Jaki zarzut postawiono Bennetowi?";
 };
 
 
-func int dia_hodges_bennetscrime_condition()
+func int DIA_Hodges_BennetsCrime_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_hodges_dontwork) && (MIS_RESCUEBENNET != LOG_SUCCESS))
+	if(Npc_KnowsInfo(other,DIA_Hodges_DontWork) && (MIS_RescueBennet != LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hodges_bennetscrime_info()
+func void DIA_Hodges_BennetsCrime_Info()
 {
 	AI_Output(other,self,"DIA_Hodges_BennetsCrime_15_00");	//Jaki zarzut postawiono Bennetowi?
 	AI_Output(self,other,"DIA_Hodges_BennetsCrime_03_01");	//Morderstwo! Podobno zabi³ paladyna. Co za wierutna bzdura! Przez ca³y czas by³ tu¿ obok mnie.
@@ -280,30 +280,30 @@ func void dia_hodges_bennetscrime_info()
 	AI_Output(self,other,"DIA_Hodges_BennetsCrime_03_03");	//Zamknêliby mnie do pud³a jako jego wspólnika. Szczególnie w obecnej sytuacji.
 	AI_Output(other,self,"DIA_Hodges_BennetsCrime_15_04");	//Sytuacji?
 	AI_Output(self,other,"DIA_Hodges_BennetsCrime_03_05");	//No wiesz, Onar. To siê musia³o tak skoñczyæ.
-	b_logentry(TOPIC_RESCUEBENNET,"Podobno Bennet zamordowa³ paladyna. Jego czeladnik Hodges twierdzi, ¿e to nieprawda, jednak boi siê oœwiadczyæ to w mieœcie.");
+	B_LogEntry(TOPIC_RescueBennet,"Podobno Bennet zamordowa³ paladyna. Jego czeladnik Hodges twierdzi, ¿e to nieprawda, jednak boi siê oœwiadczyæ to w mieœcie.");
 };
 
 
-instance DIA_HODGES_BENNETANDSLD(C_INFO)
+instance DIA_Hodges_BennetAndSLD(C_Info)
 {
-	npc = bau_908_hodges;
+	npc = BAU_908_Hodges;
 	nr = 33;
-	condition = dia_hodges_bennetandsld_condition;
-	information = dia_hodges_bennetandsld_info;
+	condition = DIA_Hodges_BennetAndSLD_Condition;
+	information = DIA_Hodges_BennetAndSLD_Info;
 	permanent = FALSE;
 	description = "Jak zareagowali na to wasi najemnicy?";
 };
 
 
-func int dia_hodges_bennetandsld_condition()
+func int DIA_Hodges_BennetAndSLD_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_hodges_dontwork) && (MIS_RESCUEBENNET != LOG_SUCCESS))
+	if(Npc_KnowsInfo(other,DIA_Hodges_DontWork) && (MIS_RescueBennet != LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hodges_bennetandsld_info()
+func void DIA_Hodges_BennetAndSLD_Info()
 {
 	AI_Output(other,self,"DIA_Hodges_BennetAndSLD_15_00");	//Jak zareagowali na to wasi najemnicy?
 	AI_Output(self,other,"DIA_Hodges_BennetAndSLD_03_01");	//Oczywiœcie nie wiem dok³adnie, co zamierzaj¹, ale niektórzy z nich s¹ naprawdê wkurzeni.
@@ -313,87 +313,87 @@ func void dia_hodges_bennetandsld_info()
 };
 
 
-instance DIA_HODGES_KAP4_EXIT(C_INFO)
+instance DIA_Hodges_Kap4_EXIT(C_Info)
 {
-	npc = bau_908_hodges;
+	npc = BAU_908_Hodges;
 	nr = 999;
-	condition = dia_hodges_kap4_exit_condition;
-	information = dia_hodges_kap4_exit_info;
+	condition = DIA_Hodges_Kap4_EXIT_Condition;
+	information = DIA_Hodges_Kap4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hodges_kap4_exit_condition()
+func int DIA_Hodges_Kap4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hodges_kap4_exit_info()
+func void DIA_Hodges_Kap4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HODGES_KAP5_EXIT(C_INFO)
+instance DIA_Hodges_Kap5_EXIT(C_Info)
 {
-	npc = bau_908_hodges;
+	npc = BAU_908_Hodges;
 	nr = 999;
-	condition = dia_hodges_kap5_exit_condition;
-	information = dia_hodges_kap5_exit_info;
+	condition = DIA_Hodges_Kap5_EXIT_Condition;
+	information = DIA_Hodges_Kap5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hodges_kap5_exit_condition()
+func int DIA_Hodges_Kap5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hodges_kap5_exit_info()
+func void DIA_Hodges_Kap5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HODGES_PICKPOCKET(C_INFO)
+instance DIA_Hodges_PICKPOCKET(C_Info)
 {
-	npc = bau_908_hodges;
+	npc = BAU_908_Hodges;
 	nr = 900;
-	condition = dia_hodges_pickpocket_condition;
-	information = dia_hodges_pickpocket_info;
+	condition = DIA_Hodges_PICKPOCKET_Condition;
+	information = DIA_Hodges_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_20;
+	description = Pickpocket_20;
 };
 
 
-func int dia_hodges_pickpocket_condition()
+func int DIA_Hodges_PICKPOCKET_Condition()
 {
-	return c_beklauen(15,10);
+	return C_Beklauen(15,10);
 };
 
-func void dia_hodges_pickpocket_info()
+func void DIA_Hodges_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_hodges_pickpocket);
-	Info_AddChoice(dia_hodges_pickpocket,DIALOG_BACK,dia_hodges_pickpocket_back);
-	Info_AddChoice(dia_hodges_pickpocket,DIALOG_PICKPOCKET,dia_hodges_pickpocket_doit);
+	Info_ClearChoices(DIA_Hodges_PICKPOCKET);
+	Info_AddChoice(DIA_Hodges_PICKPOCKET,Dialog_Back,DIA_Hodges_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Hodges_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Hodges_PICKPOCKET_DoIt);
 };
 
-func void dia_hodges_pickpocket_doit()
+func void DIA_Hodges_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_hodges_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Hodges_PICKPOCKET);
 };
 
-func void dia_hodges_pickpocket_back()
+func void DIA_Hodges_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_hodges_pickpocket);
+	Info_ClearChoices(DIA_Hodges_PICKPOCKET);
 };
 

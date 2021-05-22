@@ -1,55 +1,55 @@
 
-instance BAU_952_VINO(NPC_DEFAULT)
+instance BAU_952_Vino(Npc_Default)
 {
 	name[0] = "Vino";
 	guild = GIL_OUT;
 	id = 952;
 	voice = 1;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,1);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_bau_axe);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fatbald",FACE_N_WEAK_HEREK,BODYTEX_N,4830);
+	EquipItem(self,ItMw_1h_Bau_Axe);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fatbald",Face_N_Weak_Herek,BodyTex_N,ITAR_Bau_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Tired.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,10);
-	daily_routine = rtn_start_952;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,10);
+	daily_routine = Rtn_Start_952;
 };
 
 
-func void rtn_start_952()
+func void Rtn_Start_952()
 {
-	ta_rake_fp(8,0,12,0,"NW_FARM1_FIELD_04");
-	ta_rake_fp(12,0,15,0,"NW_FARM1_FIELD_05");
-	ta_rake_fp(15,0,18,0,"NW_FARM1_FIELD_04");
-	ta_rake_fp(18,0,22,0,"NW_FARM1_FIELD_05");
-	ta_sleep(22,0,8,0,"NW_FARM1_INSTABLE_BED");
+	TA_Rake_FP(8,0,12,0,"NW_FARM1_FIELD_04");
+	TA_Rake_FP(12,0,15,0,"NW_FARM1_FIELD_05");
+	TA_Rake_FP(15,0,18,0,"NW_FARM1_FIELD_04");
+	TA_Rake_FP(18,0,22,0,"NW_FARM1_FIELD_05");
+	TA_Sleep(22,0,8,0,"NW_FARM1_INSTABLE_BED");
 };
 
-func void rtn_bugsthere_952()
+func void Rtn_BugsThere_952()
 {
-	ta_stand_drinking(8,0,22,0,"NW_FARM1_ENTRANCE_03");
-	ta_sleep(22,0,8,0,"NW_FARM1_INSTABLE_BED");
+	TA_Stand_Drinking(8,0,22,0,"NW_FARM1_ENTRANCE_03");
+	TA_Sleep(22,0,8,0,"NW_FARM1_INSTABLE_BED");
 };
 
-func void rtn_obesessionritual_952()
+func void Rtn_ObesessionRitual_952()
 {
-	ta_smoke_joint(7,30,23,0,"NW_LITTLESTONEHENDGE_01");
-	ta_smoke_joint(23,0,7,30,"NW_LITTLESTONEHENDGE_01");
+	TA_Smoke_Joint(7,30,23,0,"NW_LITTLESTONEHENDGE_01");
+	TA_Smoke_Joint(23,0,7,30,"NW_LITTLESTONEHENDGE_01");
 };
 
-func void rtn_kloster_952()
+func void Rtn_Kloster_952()
 {
-	ta_stand_drinking(8,0,22,0,"NW_MONASTERY_PLACE_07");
-	ta_sleep(22,0,8,0,"NW_MONASTERY_NOVICE04_07");
+	TA_Stand_Drinking(8,0,22,0,"NW_MONASTERY_PLACE_07");
+	TA_Sleep(22,0,8,0,"NW_MONASTERY_NOVICE04_07");
 };
 
-func void rtn_flee_952()
+func void Rtn_Flee_952()
 {
-	ta_stand_drinking(8,0,22,0,"NW_TAVERNE_CROSS");
-	ta_sleep(22,0,8,0,"NW_TAVERNE_CROSS");
+	TA_Stand_Drinking(8,0,22,0,"NW_TAVERNE_CROSS");
+	TA_Sleep(22,0,8,0,"NW_TAVERNE_CROSS");
 };
 

@@ -1,29 +1,29 @@
 
-instance MIL_330_MILIZ(NPC_DEFAULT)
+instance Mil_330_Miliz(Npc_Default)
 {
-	name[0] = NAME_MILIZ;
+	name[0] = NAME_Miliz;
 	guild = GIL_MIL;
 	id = 330;
 	voice = 7;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,3);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_mil_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_MORDRAG,BODYTEX_N,4826);
+	EquipItem(self,ItMw_1h_Mil_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Mordrag,BodyTex_N,ITAR_Mil_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,40);
-	daily_routine = rtn_start_330;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,40);
+	daily_routine = Rtn_Start_330;
 };
 
 
-func void rtn_start_330()
+func void Rtn_Start_330()
 {
-	ta_practice_sword(7,0,21,1,"NW_CITY_HABOUR_KASERN_CENTRE_03");
-	ta_smalltalk(21,1,0,0,"NW_CITY_KASERN_BARRACK02_02");
-	ta_sleep(0,0,7,0,"NW_CITY_BARRACK01_BED_06");
+	TA_Practice_Sword(7,0,21,1,"NW_CITY_HABOUR_KASERN_CENTRE_03");
+	TA_Smalltalk(21,1,0,0,"NW_CITY_KASERN_BARRACK02_02");
+	TA_Sleep(0,0,7,0,"NW_CITY_BARRACK01_BED_06");
 };
 

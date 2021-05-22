@@ -1,7 +1,7 @@
 
-func void zs_mm_rtn_wusel()
+func void ZS_MM_Rtn_Wusel()
 {
-	perception_set_monster_rtn();
+	Perception_Set_Monster_Rtn();
 	AI_SetWalkMode(self,NPC_RUN);
 	if(Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == FALSE)
 	{
@@ -10,11 +10,11 @@ func void zs_mm_rtn_wusel()
 	AI_GotoFP(self,"FP_ROAM");
 };
 
-func int zs_mm_rtn_wusel_loop()
+func int ZS_MM_Rtn_Wusel_loop()
 {
-	if(!Wld_IsTime(self.aivar[AIV_MM_WUSELSTART],0,self.aivar[AIV_MM_WUSELEND],0) && (self.aivar[AIV_MM_WUSELSTART] != ONLYROUTINE))
+	if(!Wld_IsTime(self.aivar[AIV_MM_WuselStart],0,self.aivar[AIV_MM_WuselEnd],0) && (self.aivar[AIV_MM_WuselStart] != OnlyRoutine))
 	{
-		AI_StartState(self,zs_mm_allscheduler,1,"");
+		AI_StartState(self,ZS_MM_AllScheduler,1,"");
 		return LOOP_END;
 	};
 	if(Npc_GetStateTime(self) >= 1)
@@ -27,7 +27,7 @@ func int zs_mm_rtn_wusel_loop()
 				AI_GotoNextFP(self,"FP_ROAM");
 			};
 		}
-		else if(!c_bodystatecontains(self,BS_WALK) && !c_bodystatecontains(self,BS_RUN))
+		else if(!C_BodyStateContains(self,BS_WALK) && !C_BodyStateContains(self,BS_RUN))
 		{
 			AI_GotoFP(self,"FP_ROAM");
 		};
@@ -37,7 +37,7 @@ func int zs_mm_rtn_wusel_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_mm_rtn_wusel_end()
+func void ZS_MM_Rtn_Wusel_end()
 {
 };
 

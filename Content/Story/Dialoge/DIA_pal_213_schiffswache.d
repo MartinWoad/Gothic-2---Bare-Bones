@@ -1,48 +1,48 @@
 
-instance DIA_PAL_213_SCHIFFSWACHE_EXIT(C_INFO)
+instance DIA_Pal_213_Schiffswache_EXIT(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 999;
-	condition = dia_pal_213_schiffswache_exit_condition;
-	information = dia_pal_213_schiffswache_exit_info;
+	condition = DIA_Pal_213_Schiffswache_EXIT_Condition;
+	information = DIA_Pal_213_Schiffswache_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_pal_213_schiffswache_exit_condition()
+func int DIA_Pal_213_Schiffswache_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pal_213_schiffswache_exit_info()
+func void DIA_Pal_213_Schiffswache_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-const string PAL_213_CHECKPOINT = "SHIP_DECK_09";
+const string Pal_213_Checkpoint = "SHIP_DECK_09";
 
-instance DIA_PAL_213_SCHIFFSWACHE_FIRSTWARN(C_INFO)
+instance DIA_Pal_213_Schiffswache_FirstWarn(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 1;
-	condition = dia_pal_213_schiffswache_firstwarn_condition;
-	information = dia_pal_213_schiffswache_firstwarn_info;
+	condition = DIA_Pal_213_Schiffswache_FirstWarn_Condition;
+	information = DIA_Pal_213_Schiffswache_FirstWarn_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_pal_213_schiffswache_firstwarn_condition()
+func int DIA_Pal_213_Schiffswache_FirstWarn_Condition()
 {
-	if((MIS_SHIPISFREE == FALSE) && (self.aivar[AIV_GUARDPASSAGE_STATUS] == GP_NONE) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE))
+	if((MIS_ShipIsFree == FALSE) && (self.aivar[AIV_Guardpassage_Status] == GP_NONE) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_213_schiffswache_firstwarn_info()
+func void DIA_Pal_213_Schiffswache_FirstWarn_Info()
 {
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_FirstWarn_01_00");	//Zaczekaj chwilkê! A gdzie to siê wybierasz?
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_FirstWarn_15_01");	//Chcia³em tylko...
@@ -54,31 +54,31 @@ func void dia_pal_213_schiffswache_firstwarn_info()
 	{
 		AI_Output(self,other,"DIA_Pal_213_Schiffswache_FirstWarn_01_03");	//Nie ma tu nic do ogl¹dania. OdejdŸ.
 	};
-	other.aivar[AIV_LASTDISTTOWP] = Npc_GetDistToWP(other,PAL_213_CHECKPOINT);
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_FIRSTWARNGIVEN;
+	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,Pal_213_Checkpoint);
+	self.aivar[AIV_Guardpassage_Status] = GP_FirstWarnGiven;
 };
 
 
-instance DIA_PAL_213_SCHIFFSWACHE_SECONDWARN(C_INFO)
+instance DIA_Pal_213_Schiffswache_SecondWarn(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 2;
-	condition = dia_pal_213_schiffswache_secondwarn_condition;
-	information = dia_pal_213_schiffswache_secondwarn_info;
+	condition = DIA_Pal_213_Schiffswache_SecondWarn_Condition;
+	information = DIA_Pal_213_Schiffswache_SecondWarn_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_pal_213_schiffswache_secondwarn_condition()
+func int DIA_Pal_213_Schiffswache_SecondWarn_Condition()
 {
-	if((MIS_SHIPISFREE == FALSE) && (self.aivar[AIV_GUARDPASSAGE_STATUS] == GP_FIRSTWARNGIVEN) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,PAL_213_CHECKPOINT) < (other.aivar[AIV_LASTDISTTOWP] - 50)))
+	if((MIS_ShipIsFree == FALSE) && (self.aivar[AIV_Guardpassage_Status] == GP_FirstWarnGiven) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,Pal_213_Checkpoint) < (other.aivar[AIV_LastDistToWP] - 50)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_213_schiffswache_secondwarn_info()
+func void DIA_Pal_213_Schiffswache_SecondWarn_Info()
 {
 	if((hero.guild == GIL_PAL) || (hero.guild == GIL_KDF))
 	{
@@ -88,57 +88,57 @@ func void dia_pal_213_schiffswache_secondwarn_info()
 	{
 		AI_Output(self,other,"DIA_Pal_213_Schiffswache_SecondWarn_01_01");	//Nie chcesz chyba, bym MUSIA£ zrobiæ ci krzywdê?
 	};
-	other.aivar[AIV_LASTDISTTOWP] = Npc_GetDistToWP(other,PAL_213_CHECKPOINT);
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_SECONDWARNGIVEN;
+	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,Pal_213_Checkpoint);
+	self.aivar[AIV_Guardpassage_Status] = GP_SecondWarnGiven;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PAL_213_SCHIFFSWACHE_ATTACK(C_INFO)
+instance DIA_Pal_213_Schiffswache_Attack(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 3;
-	condition = dia_pal_213_schiffswache_attack_condition;
-	information = dia_pal_213_schiffswache_attack_info;
+	condition = DIA_Pal_213_Schiffswache_Attack_Condition;
+	information = DIA_Pal_213_Schiffswache_Attack_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_pal_213_schiffswache_attack_condition()
+func int DIA_Pal_213_Schiffswache_Attack_Condition()
 {
-	if((MIS_SHIPISFREE == FALSE) && (self.aivar[AIV_GUARDPASSAGE_STATUS] == GP_SECONDWARNGIVEN) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,PAL_213_CHECKPOINT) < (other.aivar[AIV_LASTDISTTOWP] - 50)))
+	if((MIS_ShipIsFree == FALSE) && (self.aivar[AIV_Guardpassage_Status] == GP_SecondWarnGiven) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,Pal_213_Checkpoint) < (other.aivar[AIV_LastDistToWP] - 50)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_213_schiffswache_attack_info()
+func void DIA_Pal_213_Schiffswache_Attack_Info()
 {
-	other.aivar[AIV_LASTDISTTOWP] = 0;
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_NONE;
+	other.aivar[AIV_LastDistToWP] = 0;
+	self.aivar[AIV_Guardpassage_Status] = GP_NONE;
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_GUARDSTOPSINTRUDER,1);
+	B_Attack(self,other,AR_GuardStopsIntruder,1);
 };
 
 
-instance DIA_PAL_213_SCHIFFSWACHE_GOONBOARD(C_INFO)
+instance DIA_Pal_213_Schiffswache_GoOnBoard(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 5;
-	condition = dia_pal_213_schiffswache_goonboard_condition;
-	information = dia_pal_213_schiffswache_goonboard_info;
+	condition = DIA_Pal_213_Schiffswache_GoOnBoard_Condition;
+	information = DIA_Pal_213_Schiffswache_GoOnBoard_Info;
 	permanent = FALSE;
 	description = "Muszê dostaæ siê na statek.";
 };
 
 
-func int dia_pal_213_schiffswache_goonboard_condition()
+func int DIA_Pal_213_Schiffswache_GoOnBoard_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pal_213_schiffswache_goonboard_info()
+func void DIA_Pal_213_Schiffswache_GoOnBoard_Info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_GoOnBoard_15_00");	//Muszê dostaæ siê na statek.
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_GoOnBoard_01_01");	//Nikt nie ma tam wstêpu! Takie dosta³em rozkazy!
@@ -147,26 +147,26 @@ func void dia_pal_213_schiffswache_goonboard_info()
 };
 
 
-instance DIA_PAL_213_SCHIFFSWACHE_IAMKDF(C_INFO)
+instance DIA_Pal_213_Schiffswache_IAmKDF(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 6;
-	condition = dia_pal_213_schiffswache_iamkdf_condition;
-	information = dia_pal_213_schiffswache_iamkdf_info;
+	condition = DIA_Pal_213_Schiffswache_IAmKDF_Condition;
+	information = DIA_Pal_213_Schiffswache_IAmKDF_Info;
 	permanent = FALSE;
 	description = "Œmiesz przeciwstawiaæ siê woli Maga Ognia?";
 };
 
 
-func int dia_pal_213_schiffswache_iamkdf_condition()
+func int DIA_Pal_213_Schiffswache_IAmKDF_Condition()
 {
-	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_goonboard))
+	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_GoOnBoard))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_213_schiffswache_iamkdf_info()
+func void DIA_Pal_213_Schiffswache_IAmKDF_Info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF_15_00");	//Œmiesz przeciwstawiaæ siê woli Maga Ognia?
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF_01_01");	//Nie. Sk¹d¿e. Niech Innos mi wybaczy.
@@ -175,52 +175,52 @@ func void dia_pal_213_schiffswache_iamkdf_info()
 };
 
 
-instance DIA_PAL_213_SCHIFFSWACHE_IAMKDF2(C_INFO)
+instance DIA_Pal_213_Schiffswache_IAmKDF2(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 6;
-	condition = dia_pal_213_schiffswache_iamkdf2_condition;
-	information = dia_pal_213_schiffswache_iamkdf2_info;
+	condition = DIA_Pal_213_Schiffswache_IAmKDF2_Condition;
+	information = DIA_Pal_213_Schiffswache_IAmKDF2_Info;
 	permanent = FALSE;
 	description = "Co bêdzie, jeœli wejdê na pok³ad?";
 };
 
 
-func int dia_pal_213_schiffswache_iamkdf2_condition()
+func int DIA_Pal_213_Schiffswache_IAmKDF2_Condition()
 {
-	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_iamkdf))
+	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmKDF))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_213_schiffswache_iamkdf2_info()
+func void DIA_Pal_213_Schiffswache_IAmKDF2_Info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF2_15_00");	//Co bêdzie, jeœli wejdê na pok³ad?
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF2_01_01");	//Zabijê... to znaczy, bêdê ciê musia³ powstrzymaæ.
 };
 
 
-instance DIA_PAL_213_SCHIFFSWACHE_IAMKDF3(C_INFO)
+instance DIA_Pal_213_Schiffswache_IAmKDF3(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 6;
-	condition = dia_pal_213_schiffswache_iamkdf3_condition;
-	information = dia_pal_213_schiffswache_iamkdf3_info;
+	condition = DIA_Pal_213_Schiffswache_IAmKDF3_Condition;
+	information = DIA_Pal_213_Schiffswache_IAmKDF3_Info;
 	permanent = FALSE;
 	description = "Zaatakowa³byœ Maga Ognia?";
 };
 
 
-func int dia_pal_213_schiffswache_iamkdf3_condition()
+func int DIA_Pal_213_Schiffswache_IAmKDF3_Condition()
 {
-	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_iamkdf2))
+	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmKDF2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_213_schiffswache_iamkdf3_info()
+func void DIA_Pal_213_Schiffswache_IAmKDF3_Info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF3_15_00");	//Zaatakowa³byœ Maga Ognia?
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF3_01_01");	//Nie œmia³bym podnieœæ rêki na maga.
@@ -229,52 +229,52 @@ func void dia_pal_213_schiffswache_iamkdf3_info()
 };
 
 
-instance DIA_PAL_213_SCHIFFSWACHE_IAMKDF4(C_INFO)
+instance DIA_Pal_213_Schiffswache_IAmKDF4(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 6;
-	condition = dia_pal_213_schiffswache_iamkdf4_condition;
-	information = dia_pal_213_schiffswache_iamkdf4_info;
+	condition = DIA_Pal_213_Schiffswache_IAmKDF4_Condition;
+	information = DIA_Pal_213_Schiffswache_IAmKDF4_Info;
 	permanent = FALSE;
 	description = "W takim razie, wchodzê.";
 };
 
 
-func int dia_pal_213_schiffswache_iamkdf4_condition()
+func int DIA_Pal_213_Schiffswache_IAmKDF4_Condition()
 {
-	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_iamkdf3))
+	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmKDF3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_213_schiffswache_iamkdf4_info()
+func void DIA_Pal_213_Schiffswache_IAmKDF4_Info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF4_15_00");	//W takim razie, wchodzê.
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF4_01_01");	//Nie rób tego, proszê. Rozkazy lorda Hagena by³y jasne.
 };
 
 
-instance DIA_PAL_213_SCHIFFSWACHE_IAMKDF5(C_INFO)
+instance DIA_Pal_213_Schiffswache_IAmKDF5(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 6;
-	condition = dia_pal_213_schiffswache_iamkdf5_condition;
-	information = dia_pal_213_schiffswache_iamkdf5_info;
+	condition = DIA_Pal_213_Schiffswache_IAmKDF5_Condition;
+	information = DIA_Pal_213_Schiffswache_IAmKDF5_Info;
 	permanent = FALSE;
 	description = "Czy rozkazy Lorda Hagena obejmuj¹ tak¿e mnie?";
 };
 
 
-func int dia_pal_213_schiffswache_iamkdf5_condition()
+func int DIA_Pal_213_Schiffswache_IAmKDF5_Condition()
 {
-	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_iamkdf4))
+	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmKDF4))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_213_schiffswache_iamkdf5_info()
+func void DIA_Pal_213_Schiffswache_IAmKDF5_Info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF5_15_00");	//Czy rozkazy Lorda Hagena obejmuj¹ tak¿e mnie?
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF5_01_01");	//Nie wiem.
@@ -283,193 +283,193 @@ func void dia_pal_213_schiffswache_iamkdf5_info()
 };
 
 
-instance DIA_PAL_213_SCHIFFSWACHE_IAMKDF6(C_INFO)
+instance DIA_Pal_213_Schiffswache_IAmKDF6(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 6;
-	condition = dia_pal_213_schiffswache_iamkdf6_condition;
-	information = dia_pal_213_schiffswache_iamkdf6_info;
+	condition = DIA_Pal_213_Schiffswache_IAmKDF6_Condition;
+	information = DIA_Pal_213_Schiffswache_IAmKDF6_Info;
 	permanent = FALSE;
 	description = "Proszê po raz ostatni: pozwól mi wejœæ na pok³ad!";
 };
 
 
-func int dia_pal_213_schiffswache_iamkdf6_condition()
+func int DIA_Pal_213_Schiffswache_IAmKDF6_Condition()
 {
-	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_iamkdf5))
+	if((hero.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmKDF5))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_213_schiffswache_iamkdf6_info()
+func void DIA_Pal_213_Schiffswache_IAmKDF6_Info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF6_15_00");	//Proszê po raz ostatni: pozwól mi wejœæ na pok³ad!
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF6_01_01");	//Zrozumia³em. Mo¿esz wejœæ.
-	MIS_SHIPISFREE = TRUE;
-	b_startotherroutine(girion,"WaitForShip");
+	MIS_ShipIsFree = TRUE;
+	B_StartOtherRoutine(Girion,"WaitForShip");
 };
 
 
-instance DIA_PAL_213_SCHIFFSWACHE_IAMPAL(C_INFO)
+instance DIA_Pal_213_Schiffswache_IAmPAL(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 6;
-	condition = dia_pal_213_schiffswache_iampal_condition;
-	information = dia_pal_213_schiffswache_iampal_info;
+	condition = DIA_Pal_213_Schiffswache_IAmPAL_Condition;
+	information = DIA_Pal_213_Schiffswache_IAmPAL_Info;
 	permanent = FALSE;
 	description = "Czy¿byœ mi nie ufa³, rycerzu?";
 };
 
 
-func int dia_pal_213_schiffswache_iampal_condition()
+func int DIA_Pal_213_Schiffswache_IAmPAL_Condition()
 {
-	if((hero.guild == GIL_PAL) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_goonboard))
+	if((hero.guild == GIL_PAL) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_GoOnBoard))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_213_schiffswache_iampal_info()
+func void DIA_Pal_213_Schiffswache_IAmPAL_Info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmPAL_15_00");	//Czy¿byœ mi nie ufa³, rycerzu?
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmPAL_01_01");	//Nie o to chodzi, po prostu wykonujê swoje rozkazy.
 };
 
 
-instance DIA_PAL_213_SCHIFFSWACHE_IAMPAL2(C_INFO)
+instance DIA_Pal_213_Schiffswache_IAmPAL2(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 6;
-	condition = dia_pal_213_schiffswache_iampal2_condition;
-	information = dia_pal_213_schiffswache_iampal2_info;
+	condition = DIA_Pal_213_Schiffswache_IAmPAL2_Condition;
+	information = DIA_Pal_213_Schiffswache_IAmPAL2_Info;
 	permanent = FALSE;
 	description = "Powinieneœ wiêc wiedzieæ, który z nas ma wy¿szy stopieñ.";
 };
 
 
-func int dia_pal_213_schiffswache_iampal2_condition()
+func int DIA_Pal_213_Schiffswache_IAmPAL2_Condition()
 {
-	if((hero.guild == GIL_PAL) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_iampal))
+	if((hero.guild == GIL_PAL) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmPAL))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_213_schiffswache_iampal2_info()
+func void DIA_Pal_213_Schiffswache_IAmPAL2_Info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmPAL2_15_00");	//Powinieneœ wiêc wiedzieæ, który z nas ma wy¿szy stopieñ.
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmPAL2_01_01");	//Tak jest!
 };
 
 
-instance DIA_PAL_213_SCHIFFSWACHE_IAMPAL3(C_INFO)
+instance DIA_Pal_213_Schiffswache_IAmPAL3(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 6;
-	condition = dia_pal_213_schiffswache_iampal3_condition;
-	information = dia_pal_213_schiffswache_iampal3_info;
+	condition = DIA_Pal_213_Schiffswache_IAmPAL3_Condition;
+	information = DIA_Pal_213_Schiffswache_IAmPAL3_Info;
 	permanent = FALSE;
 	description = "Niniejszym rozkazujê ci wpuœciæ mnie na okrêt.";
 };
 
 
-func int dia_pal_213_schiffswache_iampal3_condition()
+func int DIA_Pal_213_Schiffswache_IAmPAL3_Condition()
 {
-	if((hero.guild == GIL_PAL) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_iampal2))
+	if((hero.guild == GIL_PAL) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmPAL2))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_213_schiffswache_iampal3_info()
+func void DIA_Pal_213_Schiffswache_IAmPAL3_Info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmPAL3_15_00");	//Niniejszym rozkazujê ci wpuœciæ mnie na pok³ad.
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmPAL3_01_01");	//Tak jest, mo¿esz wejœæ, Panie.
-	MIS_SHIPISFREE = TRUE;
-	b_startotherroutine(girion,"WaitForShip");
+	MIS_ShipIsFree = TRUE;
+	B_StartOtherRoutine(Girion,"WaitForShip");
 };
 
 
-instance DIA_PAL_213_SCHIFFSWACHE_IAMDJG(C_INFO)
+instance DIA_Pal_213_Schiffswache_IAmDJG(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 6;
-	condition = dia_pal_213_schiffswache_iamdjg_condition;
-	information = dia_pal_213_schiffswache_iamdjg_info;
+	condition = DIA_Pal_213_Schiffswache_IAmDJG_Condition;
+	information = DIA_Pal_213_Schiffswache_IAmDJG_Info;
 	permanent = FALSE;
 	description = "Nie mo¿na by czegoœ zrobiæ w tej sprawie?";
 };
 
 
-func int dia_pal_213_schiffswache_iamdjg_condition()
+func int DIA_Pal_213_Schiffswache_IAmDJG_Condition()
 {
-	if((hero.guild == GIL_DJG) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_goonboard))
+	if((hero.guild == GIL_DJG) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_GoOnBoard))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_213_schiffswache_iamdjg_info()
+func void DIA_Pal_213_Schiffswache_IAmDJG_Info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmDJG_15_00");	//Nie mo¿na by czegoœ zrobiæ w tej sprawie?
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmDJG_01_01");	//Nie do koñca rozumiem?
 };
 
 
-instance DIA_PAL_213_SCHIFFSWACHE_IAMDJG2(C_INFO)
+instance DIA_Pal_213_Schiffswache_IAmDJG2(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 6;
-	condition = dia_pal_213_schiffswache_iamdjg2_condition;
-	information = dia_pal_213_schiffswache_iamdjg2_info;
+	condition = DIA_Pal_213_Schiffswache_IAmDJG2_Condition;
+	information = DIA_Pal_213_Schiffswache_IAmDJG2_Info;
 	permanent = FALSE;
 	description = "Móg³bym ci daæ trochê z³ota...";
 };
 
 
-func int dia_pal_213_schiffswache_iamdjg2_condition()
+func int DIA_Pal_213_Schiffswache_IAmDJG2_Condition()
 {
-	if((hero.guild == GIL_DJG) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_iamdjg))
+	if((hero.guild == GIL_DJG) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmDJG))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_213_schiffswache_iamdjg2_info()
+func void DIA_Pal_213_Schiffswache_IAmDJG2_Info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmDJG2_15_00");	//Móg³bym ci daæ trochê z³ota, a ty przez moment popatrzy³byœ sobie w inn¹ stronê.
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmDJG2_01_01");	//Nie pozwolê siê przekupiæ. Jeœli natychmiast nie odejdziesz, potraktujê to jako obrazê.
 };
 
 
-instance DIA_PAL_213_SCHIFFSWACHE_IAMDJG3(C_INFO)
+instance DIA_Pal_213_Schiffswache_IAmDJG3(C_Info)
 {
-	npc = pal_213_schiffswache;
+	npc = PAL_213_Schiffswache;
 	nr = 6;
-	condition = dia_pal_213_schiffswache_iamdjg3_condition;
-	information = dia_pal_213_schiffswache_iamdjg3_info;
+	condition = DIA_Pal_213_Schiffswache_IAmDJG3_Condition;
+	information = DIA_Pal_213_Schiffswache_IAmDJG3_Info;
 	permanent = FALSE;
 	description = "Posiadam pisemne zezwolenie.";
 };
 
 
-func int dia_pal_213_schiffswache_iamdjg3_condition()
+func int DIA_Pal_213_Schiffswache_IAmDJG3_Condition()
 {
-	if((hero.guild == GIL_DJG) && Npc_KnowsInfo(other,dia_pal_213_schiffswache_iamdjg) && (Npc_HasItems(other,itwr_forgedshipletter_mis) >= 1))
+	if((hero.guild == GIL_DJG) && Npc_KnowsInfo(other,DIA_Pal_213_Schiffswache_IAmDJG) && (Npc_HasItems(other,ITWr_ForgedShipLetter_MIS) >= 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_pal_213_schiffswache_iamdjg3_info()
+func void DIA_Pal_213_Schiffswache_IAmDJG3_Info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmDJG3_15_00");	//Posiadam pisemne zezwolenie. Wolno mi wejœæ na pok³ad statku.
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmDJG3_01_01");	//Niech no spojrzê.
-	b_giveinvitems(other,self,5884,1);
-	b_usefakescroll();
+	B_GiveInvItems(other,self,ITWr_ForgedShipLetter_MIS,1);
+	B_UseFakeScroll();
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmDJG3_01_02");	//W porz¹dku, mo¿esz przejœæ.
-	MIS_SHIPISFREE = TRUE;
-	b_startotherroutine(girion,"WaitForShip");
+	MIS_ShipIsFree = TRUE;
+	B_StartOtherRoutine(Girion,"WaitForShip");
 };
 

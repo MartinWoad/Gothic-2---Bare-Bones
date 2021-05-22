@@ -1,46 +1,46 @@
 
-instance BAU_973_RUKHAR(NPC_DEFAULT)
+instance BAU_973_Rukhar(Npc_Default)
 {
 	name[0] = "Rukhar";
 	guild = GIL_OUT;
 	id = 973;
 	voice = 12;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,2);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,2);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_bau_axe);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_L_NORMALBART02,BODYTEX_L,4831);
+	EquipItem(self,ItMw_1h_Bau_Axe);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Pony",Face_L_NormalBart02,BodyTex_L,ITAR_Bau_M);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_973;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_973;
 };
 
 
-func void rtn_start_973()
+func void Rtn_Start_973()
 {
-	ta_stand_drinking(8,0,22,0,"NW_TAVERNE_RUKHAR");
-	ta_sit_bench(22,0,8,0,"NW_TAVERNE_OUT_01");
+	TA_Stand_Drinking(8,0,22,0,"NW_TAVERNE_RUKHAR");
+	TA_Sit_Bench(22,0,8,0,"NW_TAVERNE_OUT_01");
 };
 
-func void rtn_wettkampf_973()
+func void Rtn_Wettkampf_973()
 {
-	ta_stand_drinking(8,0,22,0,"NW_TAVERNE_RUKHAR");
-	ta_stand_drinking(22,0,8,0,"NW_TAVERNE_RUKHAR");
+	TA_Stand_Drinking(8,0,22,0,"NW_TAVERNE_RUKHAR");
+	TA_Stand_Drinking(22,0,8,0,"NW_TAVERNE_RUKHAR");
 };
 
-func void rtn_wettkampfrukharwon_973()
+func void Rtn_WettkampfRukharWon_973()
 {
-	ta_stand_armscrossed(8,0,22,0,"NW_TAVERNE_RUKHAR");
-	ta_stand_armscrossed(22,0,8,0,"NW_TAVERNE_RUKHAR");
+	TA_Stand_ArmsCrossed(8,0,22,0,"NW_TAVERNE_RUKHAR");
+	TA_Stand_ArmsCrossed(22,0,8,0,"NW_TAVERNE_RUKHAR");
 };
 
-func void rtn_wettkampfrukharlost_973()
+func void Rtn_WettkampfRukharLost_973()
 {
-	ta_sit_bench(8,0,22,0,"NW_TAVERNE_OUT_01");
-	ta_sit_bench(22,0,8,0,"NW_TAVERNE_OUT_01");
+	TA_Sit_Bench(8,0,22,0,"NW_TAVERNE_OUT_01");
+	TA_Sit_Bench(22,0,8,0,"NW_TAVERNE_OUT_01");
 };
 

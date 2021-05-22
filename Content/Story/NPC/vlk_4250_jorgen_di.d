@@ -1,31 +1,31 @@
 
-instance VLK_4250_JORGEN_DI(NPC_DEFAULT)
+instance VLK_4250_Jorgen_DI(Npc_Default)
 {
 	name[0] = "Jorgen";
 	guild = GIL_NONE;
 	id = 42500;
 	voice = 7;
 	flags = NPC_FLAG_IMMORTAL;
-	npctype = NPCTYPE_MAIN;
+	npcType = npctype_main;
 	aivar[AIV_PARTYMEMBER] = TRUE;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	aivar[AIV_TOUGHGUYNEWSOVERRIDE] = TRUE;
-	b_setattributestochapter(self,5);
+	aivar[AIV_ToughGuy] = TRUE;
+	aivar[AIV_ToughGuyNewsOverride] = TRUE;
+	B_SetAttributesToChapter(self,5);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_bau_axe);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Thief",FACE_N_TOUGH_SKIP,BODYTEX_N,4820);
+	EquipItem(self,ItMw_1h_Bau_Axe);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Thief",Face_N_Tough_Skip,BodyTex_N,ITAR_Vlk_L);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,70);
-	daily_routine = rtn_start_42500;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,70);
+	daily_routine = Rtn_Start_42500;
 };
 
 
-func void rtn_start_42500()
+func void Rtn_Start_42500()
 {
-	ta_stand_wp(8,0,23,0,"SHIP_CREW_CAPTAIN");
-	ta_sleep(23,0,8,0,"SHIP_IN_06");
+	TA_Stand_WP(8,0,23,0,"SHIP_CREW_CAPTAIN");
+	TA_Sleep(23,0,8,0,"SHIP_IN_06");
 };
 

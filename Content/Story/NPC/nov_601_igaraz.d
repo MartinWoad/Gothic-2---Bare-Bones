@@ -1,42 +1,42 @@
 
-instance NOV_601_IGARAZ(NPC_DEFAULT)
+instance NOV_601_Igaraz(Npc_Default)
 {
 	name[0] = "Igaraz";
 	guild = GIL_NOV;
 	id = 601;
 	voice = 13;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,1);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_nov_mace);
-	b_createambientinv(self);
-	CreateInvItems(self,itke_igarazchest_mis,1);
-	b_setnpcvisual(self,MALE,"Hum_Head_Psionic",FACE_N_NORMAL_STONE,BODYTEX_N,4842);
+	EquipItem(self,ItMw_1h_Nov_Mace);
+	B_CreateAmbientInv(self);
+	CreateInvItems(self,ItKe_IgarazChest_Mis,1);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Psionic",Face_N_Normal_Stone,BodyTex_N,ItAr_NOV_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Mage.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_601;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_601;
 };
 
 
-func void rtn_start_601()
+func void Rtn_Start_601()
 {
-	ta_smalltalk(9,0,22,4,"NW_MONASTERY_GRASS_01");
-	ta_sleep(22,4,8,0,"NW_MONASTERY_NOVICE02_05");
-	ta_pray_innos_fp(8,0,9,0,"NW_MONASTERY_CHURCH_03");
+	TA_Smalltalk(9,0,22,4,"NW_MONASTERY_GRASS_01");
+	TA_Sleep(22,4,8,0,"NW_MONASTERY_NOVICE02_05");
+	TA_Pray_Innos_FP(8,0,9,0,"NW_MONASTERY_CHURCH_03");
 };
 
-func void rtn_contest_601()
+func void Rtn_CONTEST_601()
 {
-	ta_stand_armscrossed(8,0,23,4,"NW_TAVERNE_TROLLAREA_05");
-	ta_stand_armscrossed(23,4,8,0,"NW_TAVERNE_TROLLAREA_05");
+	TA_Stand_ArmsCrossed(8,0,23,4,"NW_TAVERNE_TROLLAREA_05");
+	TA_Stand_ArmsCrossed(23,4,8,0,"NW_TAVERNE_TROLLAREA_05");
 };
 
-func void rtn_contestwait_601()
+func void Rtn_CONTESTWAIT_601()
 {
-	ta_stand_armscrossed(8,0,23,4,"NW_TAVERNE_TROLLAREA_66");
-	ta_stand_armscrossed(23,4,8,0,"NW_TAVERNE_TROLLAREA_66");
+	TA_Stand_ArmsCrossed(8,0,23,4,"NW_TAVERNE_TROLLAREA_66");
+	TA_Stand_ArmsCrossed(23,4,8,0,"NW_TAVERNE_TROLLAREA_66");
 };
 

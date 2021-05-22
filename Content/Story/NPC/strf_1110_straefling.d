@@ -1,28 +1,28 @@
 
-instance STRF_1110_STRAEFLING(NPC_DEFAULT)
+instance STRF_1110_Straefling(Npc_Default)
 {
-	name[0] = NAME_STRAEFLING;
+	name[0] = NAME_Straefling;
 	guild = GIL_OUT;
 	id = 1110;
 	voice = 1;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,3);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_2h_axe_l_01);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_WEAK_ORRY,BODYTEX_N,4854);
+	EquipItem(self,ItMw_2H_Axe_L_01);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_Weak_Orry,BodyTex_N,ITAR_Prisoner);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Tired.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,15);
-	daily_routine = rtn_start_1110;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,15);
+	daily_routine = Rtn_Start_1110;
 };
 
 
-func void rtn_start_1110()
+func void Rtn_Start_1110()
 {
-	ta_pick_ore(8,0,23,0,"OW_NEWMINE_06_B");
-	ta_pick_ore(23,0,8,0,"OW_NEWMINE_06_B");
+	TA_Pick_Ore(8,0,23,0,"OW_NEWMINE_06_B");
+	TA_Pick_Ore(23,0,8,0,"OW_NEWMINE_06_B");
 };
 

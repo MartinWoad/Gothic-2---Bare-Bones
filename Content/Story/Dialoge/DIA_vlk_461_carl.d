@@ -1,128 +1,128 @@
 
-instance DIA_CARL_EXIT(C_INFO)
+instance DIA_Carl_EXIT(C_Info)
 {
-	npc = vlk_461_carl;
+	npc = VLK_461_Carl;
 	nr = 999;
-	condition = dia_carl_exit_condition;
-	information = dia_carl_exit_info;
+	condition = DIA_Carl_EXIT_Condition;
+	information = DIA_Carl_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_carl_exit_condition()
+func int DIA_Carl_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_carl_exit_info()
+func void DIA_Carl_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
-func void b_carlsayhallo()
+func void B_CarlSayHallo()
 {
 	AI_Output(self,other,"DIA_Carl_Hallo_05_00");	//Wygl¹da na to, ¿e mamy w mieœcie kilku z³odziei, którzy okradaj¹ bogaczy.
 	AI_Output(self,other,"DIA_Carl_Hallo_05_01");	//Stra¿ miejska przetrz¹snê³a ostatnio dzielnicê portow¹, ale nie uda³o im siê niczego znaleŸæ.
 };
 
 
-instance DIA_CARL_PICKPOCKET(C_INFO)
+instance DIA_Carl_PICKPOCKET(C_Info)
 {
-	npc = vlk_461_carl;
+	npc = VLK_461_Carl;
 	nr = 900;
-	condition = dia_carl_pickpocket_condition;
-	information = dia_carl_pickpocket_info;
+	condition = DIA_Carl_PICKPOCKET_Condition;
+	information = DIA_Carl_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_carl_pickpocket_condition()
+func int DIA_Carl_PICKPOCKET_Condition()
 {
-	return c_beklauen(34,40);
+	return C_Beklauen(34,40);
 };
 
-func void dia_carl_pickpocket_info()
+func void DIA_Carl_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_carl_pickpocket);
-	Info_AddChoice(dia_carl_pickpocket,DIALOG_BACK,dia_carl_pickpocket_back);
-	Info_AddChoice(dia_carl_pickpocket,DIALOG_PICKPOCKET,dia_carl_pickpocket_doit);
+	Info_ClearChoices(DIA_Carl_PICKPOCKET);
+	Info_AddChoice(DIA_Carl_PICKPOCKET,Dialog_Back,DIA_Carl_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Carl_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Carl_PICKPOCKET_DoIt);
 };
 
-func void dia_carl_pickpocket_doit()
+func void DIA_Carl_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_carl_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Carl_PICKPOCKET);
 };
 
-func void dia_carl_pickpocket_back()
+func void DIA_Carl_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_carl_pickpocket);
+	Info_ClearChoices(DIA_Carl_PICKPOCKET);
 };
 
 
-instance DIA_CARL_HALLO(C_INFO)
+instance DIA_Carl_Hallo(C_Info)
 {
-	npc = vlk_461_carl;
+	npc = VLK_461_Carl;
 	nr = 2;
-	condition = dia_carl_hallo_condition;
-	information = dia_carl_hallo_info;
+	condition = DIA_Carl_Hallo_Condition;
+	information = DIA_Carl_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_carl_hallo_condition()
+func int DIA_Carl_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_carl_hallo_info()
+func void DIA_Carl_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Carl_Hallo_05_02");	//Co ciê sprowadza do tej biednej dzielnicy? Czego tu szukasz?
-	Info_ClearChoices(dia_carl_hallo);
-	Info_AddChoice(dia_carl_hallo,"Zab³¹dzi³em.",dia_carl_hallo_verlaufen);
-	Info_AddChoice(dia_carl_hallo,"Tylko siê rozgl¹dam.",dia_carl_hallo_umsehen);
+	Info_ClearChoices(DIA_Carl_Hallo);
+	Info_AddChoice(DIA_Carl_Hallo,"Zab³¹dzi³em.",DIA_Carl_Hallo_verlaufen);
+	Info_AddChoice(DIA_Carl_Hallo,"Tylko siê rozgl¹dam.",DIA_Carl_Hallo_umsehen);
 };
 
-func void dia_carl_hallo_verlaufen()
+func void DIA_Carl_Hallo_verlaufen()
 {
 	AI_Output(other,self,"DIA_Carl_Hallo_verlaufen_15_00");	//Zab³¹dzi³em.
 	AI_Output(self,other,"DIA_Carl_Hallo_verlaufen_05_01");	//Wiêc lepiej uwa¿aj, ¿eby ciê ktoœ nie obrabowa³.
-	b_carlsayhallo();
-	Info_ClearChoices(dia_carl_hallo);
+	B_CarlSayHallo();
+	Info_ClearChoices(DIA_Carl_Hallo);
 };
 
-func void dia_carl_hallo_umsehen()
+func void DIA_Carl_Hallo_umsehen()
 {
 	AI_Output(other,self,"DIA_Carl_Hallo_umsehen_15_00");	//Tylko siê rozgl¹dam.
 	AI_Output(self,other,"DIA_Carl_Hallo_umsehen_05_01");	//Ha. Wiêc lepiej, ¿eby nikt ciê nie z³apa³ na tym ca³ym rozgl¹daniu.
-	b_carlsayhallo();
-	Info_ClearChoices(dia_carl_hallo);
+	B_CarlSayHallo();
+	Info_ClearChoices(DIA_Carl_Hallo);
 };
 
 
-instance DIA_CARL_DIEBE(C_INFO)
+instance DIA_Carl_Diebe(C_Info)
 {
-	npc = vlk_461_carl;
+	npc = VLK_461_Carl;
 	nr = 3;
-	condition = dia_carl_diebe_condition;
-	information = dia_carl_diebe_info;
+	condition = DIA_Carl_Diebe_Condition;
+	information = DIA_Carl_Diebe_Info;
 	permanent = FALSE;
 	description = "Co chcesz wiedzieæ o tych z³odziejach?";
 };
 
 
-func int dia_carl_diebe_condition()
+func int DIA_Carl_Diebe_Condition()
 {
 	return TRUE;
 };
 
-func void dia_carl_diebe_info()
+func void DIA_Carl_Diebe_Info()
 {
 	AI_Output(other,self,"DIA_Carl_Diebe_15_00");	//Co chcesz wiedzieæ o tych z³odziejach?
 	AI_Output(self,other,"DIA_Carl_Diebe_05_01");	//Nic. Ale wszyscy obywatele s¹ wystraszeni i stali siê nieufni - szczególnie wzglêdem obcych.
@@ -131,60 +131,60 @@ func void dia_carl_diebe_info()
 };
 
 
-instance DIA_CARL_LERNEN(C_INFO)
+instance DIA_Carl_Lernen(C_Info)
 {
-	npc = vlk_461_carl;
+	npc = VLK_461_Carl;
 	nr = 3;
-	condition = dia_carl_lernen_condition;
-	information = dia_carl_lernen_info;
+	condition = DIA_Carl_Lernen_Condition;
+	information = DIA_Carl_Lernen_Info;
 	permanent = FALSE;
 	description = "Mo¿esz mnie czegoœ nauczyæ?";
 };
 
 
-func int dia_carl_lernen_condition()
+func int DIA_Carl_Lernen_Condition()
 {
 	return TRUE;
 };
 
-func void dia_carl_lernen_info()
+func void DIA_Carl_Lernen_Info()
 {
 	AI_Output(other,self,"DIA_Carl_Lernen_15_00");	//Mo¿esz mnie czegoœ nauczyæ?
 	AI_Output(self,other,"DIA_Carl_Lernen_05_01");	//Och, robiê okucia i gwoŸdzie. Naprawiam te¿ metalowe czêœci.
 	AI_Output(self,other,"DIA_Carl_Lernen_05_02");	//Nie znam siê jednak na wyrobie broni dostatecznie dobrze, ¿eby ciê uczyæ.
 	AI_Output(self,other,"DIA_Carl_Lernen_05_03");	//Je¿eli chcesz siê tego nauczyæ, to idŸ do Harada. On na pewno wie, jak siê wykuwa broñ!
 	AI_Output(self,other,"DIA_Carl_Lernen_05_04");	//Jeœli jednak chcesz popracowaæ trochê nad swoimi miêœniami, to mogê ci w tym pomóc.
-	Log_CreateTopic(TOPIC_CITYTEACHER,LOG_NOTE);
-	b_logentry(TOPIC_CITYTEACHER,"Carl, kowal z dzielnicy portowej, mo¿e mi pokazaæ, jak staæ siê silniejszym.");
+	Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
+	B_LogEntry(TOPIC_CityTeacher,"Carl, kowal z dzielnicy portowej, mo¿e mi pokazaæ, jak staæ siê silniejszym.");
 };
 
 
-instance DIA_CARL_WIEVIEL(C_INFO)
+instance DIA_Carl_Wieviel(C_Info)
 {
-	npc = vlk_461_carl;
+	npc = VLK_461_Carl;
 	nr = 3;
-	condition = dia_carl_wieviel_condition;
-	information = dia_carl_wieviel_info;
+	condition = DIA_Carl_Wieviel_Condition;
+	information = DIA_Carl_Wieviel_Info;
 	permanent = FALSE;
 	description = "Ile sobie liczysz za trening?";
 };
 
 
-func int dia_carl_wieviel_condition()
+func int DIA_Carl_Wieviel_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_carl_lernen))
+	if(Npc_KnowsInfo(other,DIA_Carl_Lernen))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_carl_wieviel_info()
+func void DIA_Carl_Wieviel_Info()
 {
 	AI_Output(other,self,"DIA_Carl_Wieviel_15_00");	//Ile sobie liczysz za trening?
-	if(Npc_KnowsInfo(other,dia_edda_statue))
+	if(Npc_KnowsInfo(other,DIA_Edda_Statue))
 	{
 		AI_Output(self,other,"DIA_Carl_Wieviel_05_01");	//S³ysza³em, co zrobi³eœ dla Eddy. Wyszkolê ciê za darmo.
-		CARL_TEACHSTR = TRUE;
+		Carl_TeachSTR = TRUE;
 	}
 	else
 	{
@@ -193,37 +193,37 @@ func void dia_carl_wieviel_info()
 };
 
 
-instance DIA_CARL_BEZAHLEN(C_INFO)
+instance DIA_Carl_bezahlen(C_Info)
 {
-	npc = vlk_461_carl;
+	npc = VLK_461_Carl;
 	nr = 3;
-	condition = dia_carl_bezahlen_condition;
-	information = dia_carl_bezahlen_info;
+	condition = DIA_Carl_bezahlen_Condition;
+	information = DIA_Carl_bezahlen_Info;
 	permanent = TRUE;
 	description = "Chcia³bym z tob¹ trenowaæ (zap³aæ 50 sztuk z³ota).";
 };
 
 
-func int dia_carl_bezahlen_condition()
+func int DIA_Carl_bezahlen_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_carl_wieviel) && (CARL_TEACHSTR == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Carl_Wieviel) && (Carl_TeachSTR == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_carl_bezahlen_info()
+func void DIA_Carl_bezahlen_Info()
 {
 	AI_Output(other,self,"DIA_Carl_bezahlen_15_00");	//Chcê z tob¹ æwiczyæ.
-	if(Npc_KnowsInfo(other,dia_edda_statue))
+	if(Npc_KnowsInfo(other,DIA_Edda_Statue))
 	{
 		AI_Output(self,other,"DIA_Carl_bezahlen_05_01");	//S³ysza³em, co zrobi³eœ dla Eddy. Wyszkolê ciê za darmo.
-		CARL_TEACHSTR = TRUE;
+		Carl_TeachSTR = TRUE;
 	}
-	else if(b_giveinvitems(other,self,5113,50))
+	else if(B_GiveInvItems(other,self,ItMi_Gold,50))
 	{
 		AI_Output(self,other,"DIA_Carl_bezahlen_05_02");	//Dobrze, mo¿emy zacz¹æ, gdy tylko bêdziesz gotowy.
-		CARL_TEACHSTR = TRUE;
+		Carl_TeachSTR = TRUE;
 	}
 	else
 	{
@@ -232,54 +232,54 @@ func void dia_carl_bezahlen_info()
 };
 
 
-instance DIA_CARL_TEACH(C_INFO)
+instance DIA_Carl_Teach(C_Info)
 {
-	npc = vlk_461_carl;
+	npc = VLK_461_Carl;
 	nr = 7;
-	condition = dia_carl_teach_condition;
-	information = dia_carl_teach_info;
+	condition = DIA_Carl_Teach_Condition;
+	information = DIA_Carl_Teach_Info;
 	permanent = TRUE;
 	description = "Chcê byæ silniejszy.";
 };
 
 
-func int dia_carl_teach_condition()
+func int DIA_Carl_Teach_Condition()
 {
-	if(CARL_TEACHSTR == TRUE)
+	if(Carl_TeachSTR == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_carl_teach_info()
+func void DIA_Carl_Teach_Info()
 {
 	AI_Output(other,self,"DIA_Carl_Teach_15_00");	//Chcê byæ silniejszy.
-	Info_ClearChoices(dia_carl_teach);
-	Info_AddChoice(dia_carl_teach,DIALOG_BACK,dia_carl_teach_back);
-	Info_AddChoice(dia_carl_teach,b_buildlearnstring(PRINT_LEARNSTR1,b_getlearncostattribute(other,ATR_STRENGTH)),dia_carl_teach_str_1);
-	Info_AddChoice(dia_carl_teach,b_buildlearnstring(PRINT_LEARNSTR5,b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_carl_teach_str_5);
+	Info_ClearChoices(DIA_Carl_Teach);
+	Info_AddChoice(DIA_Carl_Teach,Dialog_Back,DIA_Carl_Teach_Back);
+	Info_AddChoice(DIA_Carl_Teach,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Carl_Teach_STR_1);
+	Info_AddChoice(DIA_Carl_Teach,B_BuildLearnString(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Carl_Teach_STR_5);
 };
 
-func void dia_carl_teach_back()
+func void DIA_Carl_Teach_Back()
 {
-	Info_ClearChoices(dia_carl_teach);
+	Info_ClearChoices(DIA_Carl_Teach);
 };
 
-func void dia_carl_teach_str_1()
+func void DIA_Carl_Teach_STR_1()
 {
-	b_teachattributepoints(self,other,ATR_STRENGTH,1,20);
-	Info_ClearChoices(dia_carl_teach);
-	Info_AddChoice(dia_carl_teach,DIALOG_BACK,dia_carl_teach_back);
-	Info_AddChoice(dia_carl_teach,b_buildlearnstring(PRINT_LEARNSTR1,b_getlearncostattribute(other,ATR_STRENGTH)),dia_carl_teach_str_1);
-	Info_AddChoice(dia_carl_teach,b_buildlearnstring(PRINT_LEARNSTR5,b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_carl_teach_str_5);
+	B_TeachAttributePoints(self,other,ATR_STRENGTH,1,20);
+	Info_ClearChoices(DIA_Carl_Teach);
+	Info_AddChoice(DIA_Carl_Teach,Dialog_Back,DIA_Carl_Teach_Back);
+	Info_AddChoice(DIA_Carl_Teach,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Carl_Teach_STR_1);
+	Info_AddChoice(DIA_Carl_Teach,B_BuildLearnString(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Carl_Teach_STR_5);
 };
 
-func void dia_carl_teach_str_5()
+func void DIA_Carl_Teach_STR_5()
 {
-	b_teachattributepoints(self,other,ATR_STRENGTH,5,20);
-	Info_ClearChoices(dia_carl_teach);
-	Info_AddChoice(dia_carl_teach,DIALOG_BACK,dia_carl_teach_back);
-	Info_AddChoice(dia_carl_teach,b_buildlearnstring(PRINT_LEARNSTR1,b_getlearncostattribute(other,ATR_STRENGTH)),dia_carl_teach_str_1);
-	Info_AddChoice(dia_carl_teach,b_buildlearnstring(PRINT_LEARNSTR5,b_getlearncostattribute(other,ATR_STRENGTH) * 5),dia_carl_teach_str_5);
+	B_TeachAttributePoints(self,other,ATR_STRENGTH,5,20);
+	Info_ClearChoices(DIA_Carl_Teach);
+	Info_AddChoice(DIA_Carl_Teach,Dialog_Back,DIA_Carl_Teach_Back);
+	Info_AddChoice(DIA_Carl_Teach,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Carl_Teach_STR_1);
+	Info_AddChoice(DIA_Carl_Teach,B_BuildLearnString(PRINT_LearnSTR5,B_GetLearnCostAttribute(other,ATR_STRENGTH) * 5),DIA_Carl_Teach_STR_5);
 };
 

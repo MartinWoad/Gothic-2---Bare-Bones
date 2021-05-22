@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_FIREWARAN(C_NPC)
+prototype Mst_Default_FireWaran(C_Npc)
 {
 	name[0] = "Ognisty Jaszczur";
 	guild = GIL_WARAN;
@@ -21,15 +21,15 @@ prototype MST_DEFAULT_FIREWARAN(C_NPC)
 	fight_tactic = FAI_WARAN;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_firewaran()
+func void B_Setvisuals_FireWaran()
 {
 	Mdl_SetVisual(self,"Waran.mds");
 	Mdl_ApplyOverlayMds(self,"Firewaran.mds");
@@ -37,9 +37,9 @@ func void b_setvisuals_firewaran()
 };
 
 
-instance FIREWARAN(MST_DEFAULT_FIREWARAN)
+instance FireWaran(Mst_Default_FireWaran)
 {
-	b_setvisuals_firewaran();
+	B_Setvisuals_FireWaran();
 	Npc_SetToFistMode(self);
 };
 

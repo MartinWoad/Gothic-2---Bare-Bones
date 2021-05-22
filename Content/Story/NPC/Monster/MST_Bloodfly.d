@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_BLOODFLY(C_NPC)
+prototype Mst_Default_Bloodfly(C_Npc)
 {
 	name[0] = "Krwiopijca";
 	guild = GIL_BLOODFLY;
@@ -21,29 +21,29 @@ prototype MST_DEFAULT_BLOODFLY(C_NPC)
 	fight_tactic = FAI_BLOODFLY;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_SHORT;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	aivar[AIV_MM_PACKHUNTER] = FALSE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_WUSELSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_SHORT;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar[AIV_MM_Packhunter] = FALSE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_WuselStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_bloodfly()
+func void B_SetVisuals_Bloodfly()
 {
 	Mdl_SetVisual(self,"Bloodfly.mds");
 	Mdl_SetVisualBody(self,"Blo_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance BLOODFLY(MST_DEFAULT_BLOODFLY)
+instance Bloodfly(Mst_Default_Bloodfly)
 {
-	b_setvisuals_bloodfly();
+	B_SetVisuals_Bloodfly();
 	Npc_SetToFistMode(self);
 };
 
-instance YBLOODFLY(MST_DEFAULT_BLOODFLY)
+instance YBloodfly(Mst_Default_Bloodfly)
 {
 	name[0] = "Ma³y Krwiopijca";
 	level = 3;
@@ -59,7 +59,7 @@ instance YBLOODFLY(MST_DEFAULT_BLOODFLY)
 	protection[PROT_FIRE] = 0;
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 0;
-	b_setvisuals_bloodfly();
+	B_SetVisuals_Bloodfly();
 	Mdl_SetModelScale(self,0.9,0.9,0.9);
 	Npc_SetToFistMode(self);
 };

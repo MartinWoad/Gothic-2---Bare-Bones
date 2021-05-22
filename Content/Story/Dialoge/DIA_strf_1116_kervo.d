@@ -1,42 +1,42 @@
 
-instance DIA_KERVO_EXIT(C_INFO)
+instance DIA_Kervo_EXIT(C_Info)
 {
-	npc = strf_1116_kervo;
+	npc = STRF_1116_Kervo;
 	nr = 999;
-	condition = dia_kervo_exit_condition;
-	information = dia_kervo_exit_info;
+	condition = DIA_Kervo_EXIT_Condition;
+	information = DIA_Kervo_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_kervo_exit_condition()
+func int DIA_Kervo_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_kervo_exit_info()
+func void DIA_Kervo_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_KERVO_WASIST(C_INFO)
+instance DIA_Kervo_WASIST(C_Info)
 {
-	npc = strf_1116_kervo;
+	npc = STRF_1116_Kervo;
 	nr = 4;
-	condition = dia_kervo_wasist_condition;
-	information = dia_kervo_wasist_info;
+	condition = DIA_Kervo_WASIST_Condition;
+	information = DIA_Kervo_WASIST_Info;
 	description = "Coœ nie tak?";
 };
 
 
-func int dia_kervo_wasist_condition()
+func int DIA_Kervo_WASIST_Condition()
 {
 	return TRUE;
 };
 
-func void dia_kervo_wasist_info()
+func void DIA_Kervo_WASIST_Info()
 {
 	AI_Output(other,self,"DIA_Kervo_WASIST_15_00");	//Coœ nie tak?
 	AI_Output(self,other,"DIA_Kervo_WASIST_13_01");	//Naprawdê musisz o to pytaæ? Nie wystarczy rozejrzeæ siê dooko³a?
@@ -46,50 +46,50 @@ func void dia_kervo_wasist_info()
 };
 
 
-instance DIA_KERVO_HILFE(C_INFO)
+instance DIA_Kervo_HILFE(C_Info)
 {
-	npc = strf_1116_kervo;
+	npc = STRF_1116_Kervo;
 	nr = 5;
-	condition = dia_kervo_hilfe_condition;
-	information = dia_kervo_hilfe_info;
+	condition = DIA_Kervo_HILFE_Condition;
+	information = DIA_Kervo_HILFE_Info;
 	description = "Próbowa³eœ drogi przez prze³êcz?";
 };
 
 
-func int dia_kervo_hilfe_condition()
+func int DIA_Kervo_HILFE_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_kervo_wasist))
+	if(Npc_KnowsInfo(other,DIA_Kervo_WASIST))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kervo_hilfe_info()
+func void DIA_Kervo_HILFE_Info()
 {
 	AI_Output(other,self,"DIA_Kervo_HILFE_15_00");	//Próbowa³eœ drogi przez prze³êcz?
 	AI_Output(self,other,"DIA_Kervo_HILFE_13_01");	//Czy wygl¹dam na szaleñca? Dwudziestu ¿o³nierzy nie zdo³a³oby mnie st¹d wyci¹gn¹æ, dopóki grasuj¹ tam te bestie. Nienawidzê ich.
 	AI_Output(self,other,"DIA_Kervo_HILFE_13_02");	//Ju¿ sam ich smród wywo³uje u mnie zimne dreszcze. A ich gulgotanie dos³ownie mrozi krew w ¿y³ach.
 	AI_Output(self,other,"DIA_Kervo_HILFE_13_03");	//Jeœli tak strasznie chcesz, ¿eby obdarli ciê ze skóry, to bardzo proszê, idŸ do nich.
-	Info_ClearChoices(dia_kervo_hilfe);
-	Info_AddChoice(dia_kervo_hilfe,"Dobrze, a zatem ruszam.",dia_kervo_hilfe_tschau);
-	Info_AddChoice(dia_kervo_hilfe,"Ale przecie¿ nie mo¿esz tu zostaæ na zawsze.",dia_kervo_hilfe_ewig);
-	if(KERVO_GOTSTUFF == TRUE)
+	Info_ClearChoices(DIA_Kervo_HILFE);
+	Info_AddChoice(DIA_Kervo_HILFE,"Dobrze, a zatem ruszam.",DIA_Kervo_HILFE_tschau);
+	Info_AddChoice(DIA_Kervo_HILFE,"Ale przecie¿ nie mo¿esz tu zostaæ na zawsze.",DIA_Kervo_HILFE_ewig);
+	if(Kervo_GotStuff == TRUE)
 	{
-		Info_AddChoice(dia_kervo_hilfe,"Co dostanê, jeœli ich zabijê?",dia_kervo_hilfe_problem);
+		Info_AddChoice(DIA_Kervo_HILFE,"Co dostanê, jeœli ich zabijê?",DIA_Kervo_HILFE_Problem);
 	};
-	MIS_KERVO_KILLLURKER = LOG_RUNNING;
+	MIS_Kervo_KillLurker = LOG_Running;
 };
 
-func void dia_kervo_hilfe_ewig()
+func void DIA_Kervo_HILFE_ewig()
 {
 	AI_Output(other,self,"DIA_Kervo_HILFE_ewig_15_00");	//Ale przecie¿ nie mo¿esz tu zostaæ na zawsze.
 	AI_Output(self,other,"DIA_Kervo_HILFE_ewig_13_01");	//Nie mam pojêcia, czego ode mnie chcesz, ale powiem ci tylko jedno: nigdzie siê st¹d nie ruszê.
 };
 
 
-var int kervo_promisenugget;
+var int Kervo_PromiseNugget;
 
-func void dia_kervo_hilfe_problem()
+func void DIA_Kervo_HILFE_Problem()
 {
 	AI_Output(other,self,"DIA_Kervo_HILFE_Problem_15_00");	//Co dostanê, jeœli ich zabijê?
 	AI_Output(self,other,"DIA_Kervo_HILFE_Problem_13_01");	//Hm. W zasadzie wystarczy³oby, gdybyœ pozby³ siê tych topielców sprzed jaskini.
@@ -102,11 +102,11 @@ func void dia_kervo_hilfe_problem()
 		AI_Output(self,other,"DIA_Kervo_HILFE_Problem_13_03");	//Znalaz³em bry³ê rudy.
 	};
 	AI_Output(self,other,"DIA_Kervo_HILFE_Problem_13_04");	//Dostaniesz j¹ jako zap³atê.
-	KERVO_PROMISENUGGET = TRUE;
+	Kervo_PromiseNugget = TRUE;
 	AI_StopProcessInfos(self);
 };
 
-func void dia_kervo_hilfe_tschau()
+func void DIA_Kervo_HILFE_tschau()
 {
 	AI_Output(other,self,"DIA_Kervo_HILFE_tschau_15_00");	//Dobrze, a zatem ruszam.
 	AI_Output(self,other,"DIA_Kervo_HILFE_tschau_13_01");	//Jasne. Nie bêdê ciê zatrzymywa³.
@@ -114,63 +114,63 @@ func void dia_kervo_hilfe_tschau()
 };
 
 
-instance DIA_KERVO_LURKERPLATT(C_INFO)
+instance DIA_Kervo_LurkerPlatt(C_Info)
 {
-	npc = strf_1116_kervo;
-	condition = dia_kervo_lurkerplatt_condition;
-	information = dia_kervo_lurkerplatt_info;
+	npc = STRF_1116_Kervo;
+	condition = DIA_Kervo_LurkerPlatt_Condition;
+	information = DIA_Kervo_LurkerPlatt_Info;
 	description = "Pozby³em siê topielców sprzed wejœcia do jaskini.";
 };
 
 
-func int dia_kervo_lurkerplatt_condition()
+func int DIA_Kervo_LurkerPlatt_Condition()
 {
-	if((MIS_KERVO_KILLLURKER == LOG_RUNNING) && Npc_IsDead(kervo_lurker1) && Npc_IsDead(kervo_lurker2) && Npc_IsDead(kervo_lurker3) && Npc_IsDead(kervo_lurker4) && Npc_IsDead(kervo_lurker5) && Npc_IsDead(kervo_lurker6))
+	if((MIS_Kervo_KillLurker == LOG_Running) && Npc_IsDead(Kervo_Lurker1) && Npc_IsDead(Kervo_Lurker2) && Npc_IsDead(Kervo_Lurker3) && Npc_IsDead(Kervo_Lurker4) && Npc_IsDead(Kervo_Lurker5) && Npc_IsDead(Kervo_Lurker6))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kervo_lurkerplatt_info()
+func void DIA_Kervo_LurkerPlatt_Info()
 {
 	AI_Output(other,self,"DIA_Kervo_LurkerPlatt_15_00");	//Pozby³em siê topielców sprzed wejœcia do jaskini.
 	AI_Output(self,other,"DIA_Kervo_LurkerPlatt_13_01");	//Doskonale. Nareszcie znowu czujê siê wolny.
-	if(KERVO_PROMISENUGGET == TRUE)
+	if(Kervo_PromiseNugget == TRUE)
 	{
 		AI_Output(self,other,"DIA_Kervo_LurkerPlatt_13_02");	//Proszê, zgodnie z obietnic¹.
 		if(hero.guild == GIL_KDF)
 		{
-			b_giveinvitems(self,other,5086,1);
+			B_GiveInvItems(self,other,ItMi_RuneBlank,1);
 		}
 		else
 		{
-			b_giveinvitems(self,other,5112,1);
+			B_GiveInvItems(self,other,ItMi_Nugget,1);
 		};
 	};
-	b_giveplayerxp(XP_KERVOKILLLURKER);
-	MIS_KERVO_KILLLURKER = LOG_SUCCESS;
+	B_GivePlayerXP(XP_KervoKillLurker);
+	MIS_Kervo_KillLurker = LOG_SUCCESS;
 };
 
 
-instance DIA_KERVO_VERGISSES(C_INFO)
+instance DIA_Kervo_VERGISSES(C_Info)
 {
-	npc = strf_1116_kervo;
-	condition = dia_kervo_vergisses_condition;
-	information = dia_kervo_vergisses_info;
+	npc = STRF_1116_Kervo;
+	condition = DIA_Kervo_VERGISSES_Condition;
+	information = DIA_Kervo_VERGISSES_Info;
 	permanent = TRUE;
 	description = "Czy teraz zechcesz przekroczyæ prze³êcz?";
 };
 
 
-func int dia_kervo_vergisses_condition()
+func int DIA_Kervo_VERGISSES_Condition()
 {
-	if(MIS_KERVO_KILLLURKER == LOG_SUCCESS)
+	if(MIS_Kervo_KillLurker == LOG_SUCCESS)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_kervo_vergisses_info()
+func void DIA_Kervo_VERGISSES_Info()
 {
 	AI_Output(other,self,"DIA_Kervo_VERGISSES_15_00");	//Czy teraz zechcesz przekroczyæ prze³êcz?
 	AI_Output(self,other,"DIA_Kervo_VERGISSES_13_01");	//Nic z tego. Jeœli mnie z³api¹, zabior¹ mnie z powrotem do kopalni. Nigdzie siê nie ruszam.
@@ -178,37 +178,37 @@ func void dia_kervo_vergisses_info()
 };
 
 
-instance DIA_KERVO_PICKPOCKET(C_INFO)
+instance DIA_Kervo_PICKPOCKET(C_Info)
 {
-	npc = strf_1116_kervo;
+	npc = STRF_1116_Kervo;
 	nr = 900;
-	condition = dia_kervo_pickpocket_condition;
-	information = dia_kervo_pickpocket_info;
+	condition = DIA_Kervo_PICKPOCKET_Condition;
+	information = DIA_Kervo_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_kervo_pickpocket_condition()
+func int DIA_Kervo_PICKPOCKET_Condition()
 {
-	return c_beklauen(34,10);
+	return C_Beklauen(34,10);
 };
 
-func void dia_kervo_pickpocket_info()
+func void DIA_Kervo_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_kervo_pickpocket);
-	Info_AddChoice(dia_kervo_pickpocket,DIALOG_BACK,dia_kervo_pickpocket_back);
-	Info_AddChoice(dia_kervo_pickpocket,DIALOG_PICKPOCKET,dia_kervo_pickpocket_doit);
+	Info_ClearChoices(DIA_Kervo_PICKPOCKET);
+	Info_AddChoice(DIA_Kervo_PICKPOCKET,Dialog_Back,DIA_Kervo_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Kervo_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Kervo_PICKPOCKET_DoIt);
 };
 
-func void dia_kervo_pickpocket_doit()
+func void DIA_Kervo_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_kervo_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Kervo_PICKPOCKET);
 };
 
-func void dia_kervo_pickpocket_back()
+func void DIA_Kervo_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_kervo_pickpocket);
+	Info_ClearChoices(DIA_Kervo_PICKPOCKET);
 };
 

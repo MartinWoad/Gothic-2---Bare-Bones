@@ -1,29 +1,29 @@
 
-instance PAL_206_RITTER(NPC_DEFAULT)
+instance Pal_206_Ritter(Npc_Default)
 {
-	name[0] = NAME_RITTER;
+	name[0] = NAME_Ritter;
 	guild = GIL_PAL;
 	id = 206;
 	voice = 12;
 	flags = 0;
-	npctype = NPCTYPE_AMBIENT;
-	b_setattributestochapter(self,4);
+	npcType = NPCTYPE_AMBIENT;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_MASTER;
-	EquipItem(self,itmw_2h_pal_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_B_NORMAL_KHARIM,BODYTEX_B,4828);
+	EquipItem(self,ItMw_2h_Pal_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_B_Normal_Kharim,BodyTex_B,ItAr_PAL_M);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,55);
-	daily_routine = rtn_start_206;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,55);
+	daily_routine = Rtn_Start_206;
 };
 
 
-func void rtn_start_206()
+func void Rtn_Start_206()
 {
-	ta_stand_armscrossed(7,14,19,0,"NW_CITY_UPTOWN_PATH_06_B");
-	ta_smalltalk(19,0,23,1,"NW_CITY_UPTOWN_HUT_03_05");
-	ta_sleep(23,1,7,14,"NW_CITY_LEOMAR_BED_01");
+	TA_Stand_ArmsCrossed(7,14,19,0,"NW_CITY_UPTOWN_PATH_06_B");
+	TA_Smalltalk(19,0,23,1,"NW_CITY_UPTOWN_HUT_03_05");
+	TA_Sleep(23,1,7,14,"NW_CITY_LEOMAR_BED_01");
 };
 

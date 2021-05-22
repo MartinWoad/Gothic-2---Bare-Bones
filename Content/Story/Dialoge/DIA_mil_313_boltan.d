@@ -1,68 +1,68 @@
 
-instance DIA_BOLTAN_EXIT(C_INFO)
+instance DIA_Boltan_EXIT(C_Info)
 {
-	npc = mil_313_boltan;
+	npc = Mil_313_Boltan;
 	nr = 999;
-	condition = dia_boltan_exit_condition;
-	information = dia_boltan_exit_info;
+	condition = DIA_Boltan_EXIT_Condition;
+	information = DIA_Boltan_EXIT_Info;
 	permanent = TRUE;
 	description = "W³aœnie wychodzi³em.";
 };
 
 
-func int dia_boltan_exit_condition()
+func int DIA_Boltan_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_boltan_exit_info()
+func void DIA_Boltan_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BOLTAN_HALLO(C_INFO)
+instance DIA_Boltan_HALLO(C_Info)
 {
-	npc = mil_313_boltan;
+	npc = Mil_313_Boltan;
 	nr = 1;
-	condition = dia_boltan_hallo_condition;
-	information = dia_boltan_hallo_info;
+	condition = DIA_Boltan_HALLO_Condition;
+	information = DIA_Boltan_HALLO_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_boltan_hallo_condition()
+func int DIA_Boltan_HALLO_Condition()
 {
 	return TRUE;
 };
 
-func void dia_boltan_hallo_info()
+func void DIA_Boltan_HALLO_Info()
 {
 	AI_Output(self,other,"DIA_Boltan_Add_05_00");	//Czego?
 };
 
 
-instance DIA_BOLTAN_TOCONVICTS(C_INFO)
+instance DIA_Boltan_ToConvicts(C_Info)
 {
-	npc = mil_313_boltan;
+	npc = Mil_313_Boltan;
 	nr = 2;
-	condition = dia_boltan_toconvicts_condition;
-	information = dia_boltan_toconvicts_info;
+	condition = DIA_Boltan_ToConvicts_Condition;
+	information = DIA_Boltan_ToConvicts_Info;
 	permanent = TRUE;
 	description = "Chcê zobaczyæ wiêŸniów.";
 };
 
 
-func int dia_boltan_toconvicts_condition()
+func int DIA_Boltan_ToConvicts_Condition()
 {
 	return TRUE;
 };
 
-func void dia_boltan_toconvicts_info()
+func void DIA_Boltan_ToConvicts_Info()
 {
 	AI_Output(other,self,"DIA_Boltan_Add_15_01");	//Chcê zobaczyæ wiêŸniów.
-	if((KAPITEL == 3) && (MIS_RESCUEBENNET != LOG_SUCCESS))
+	if((Kapitel == 3) && (MIS_RescueBennet != LOG_SUCCESS))
 	{
 		if(other.guild == GIL_SLD)
 		{
@@ -73,7 +73,7 @@ func void dia_boltan_toconvicts_info()
 			AI_Output(self,other,"DIA_Boltan_Add_05_06");	//Zamknêliœmy tê œwiniê, która zamordowa³a paladyna Lothara.
 		};
 	}
-	else if((CANTHAR_AUSGELIEFERT == FALSE) && (SARAH_AUSGELIEFERT == FALSE) && (RENGARU_AUSGELIEFERT == FALSE) && (NAGUR_AUSGELIEFERT == FALSE))
+	else if((Canthar_Ausgeliefert == FALSE) && (Sarah_Ausgeliefert == FALSE) && (Rengaru_Ausgeliefert == FALSE) && (Nagur_Ausgeliefert == FALSE))
 	{
 		AI_Output(self,other,"DIA_Boltan_Add_05_02");	//Wszystkie cele s¹ puste.
 	}
@@ -92,26 +92,26 @@ func void dia_boltan_toconvicts_info()
 };
 
 
-instance DIA_BOLTAN_HALLOBENNET(C_INFO)
+instance DIA_Boltan_HalloBennet(C_Info)
 {
-	npc = mil_313_boltan;
+	npc = Mil_313_Boltan;
 	nr = 1;
-	condition = dia_boltan_hallobennet_condition;
-	information = dia_boltan_hallobennet_info;
+	condition = DIA_Boltan_HalloBennet_Condition;
+	information = DIA_Boltan_HalloBennet_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_boltan_hallobennet_condition()
+func int DIA_Boltan_HalloBennet_Condition()
 {
-	if((KAPITEL == 3) && (MIS_RESCUEBENNET != LOG_SUCCESS) && (other.guild == GIL_SLD))
+	if((Kapitel == 3) && (MIS_RescueBennet != LOG_SUCCESS) && (other.guild == GIL_SLD))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_boltan_hallobennet_info()
+func void DIA_Boltan_HalloBennet_Info()
 {
 	AI_Output(self,other,"DIA_Boltan_Add_05_08");	//Chyba nie zamierzasz wyci¹gn¹æ st¹d swojego kumpla, hê?
 	AI_Output(self,other,"DIA_Boltan_Add_05_09");	//Zapomnij o tym! Jak tylko krzyknê, zaraz zjawi¹ siê tu ch³opcy!
@@ -119,26 +119,26 @@ func void dia_boltan_hallobennet_info()
 };
 
 
-instance DIA_BOLTAN_HALLOCANTHAR(C_INFO)
+instance DIA_Boltan_HalloCanthar(C_Info)
 {
-	npc = mil_313_boltan;
+	npc = Mil_313_Boltan;
 	nr = 1;
-	condition = dia_boltan_hallocanthar_condition;
-	information = dia_boltan_hallocanthar_info;
+	condition = DIA_Boltan_HalloCanthar_Condition;
+	information = DIA_Boltan_HalloCanthar_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_boltan_hallocanthar_condition()
+func int DIA_Boltan_HalloCanthar_Condition()
 {
-	if(((KAPITEL != 3) || ((KAPITEL == 3) && ((MIS_RESCUEBENNET == LOG_SUCCESS) || (other.guild != GIL_SLD)))) && (CANTHAR_WIEDERRAUS == TRUE) && (CANTHAR_AUSGELIEFERT == TRUE))
+	if(((Kapitel != 3) || ((Kapitel == 3) && ((MIS_RescueBennet == LOG_SUCCESS) || (other.guild != GIL_SLD)))) && (Canthar_WiederRaus == TRUE) && (Canthar_Ausgeliefert == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_boltan_hallocanthar_info()
+func void DIA_Boltan_HalloCanthar_Info()
 {
 	AI_Output(self,other,"DIA_Boltan_Add_05_11");	//To ty z³o¿y³eœ skargê na kupca Canthara!
 	AI_Output(self,other,"DIA_Boltan_Add_05_12");	//By³o tu wielu ludzi, ¿eby za niego porêczyæ. Bardzo szanowanych ludzi.

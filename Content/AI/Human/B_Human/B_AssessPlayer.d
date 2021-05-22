@@ -1,8 +1,8 @@
 
-func void b_assessplayer()
+func void B_AssessPlayer()
 {
-	var C_NPC pcl;
-	pcl = Hlp_GetNpc(pc_levelinspektor);
+	var C_Npc pcl;
+	pcl = Hlp_GetNpc(PC_Levelinspektor);
 	if(Hlp_GetInstanceID(other) == Hlp_GetInstanceID(pcl))
 	{
 		return;
@@ -11,92 +11,92 @@ func void b_assessplayer()
 	{
 		return;
 	};
-	if(c_npcisdown(other))
+	if(C_NpcIsDown(other))
 	{
 		return;
 	};
 	if(other.guild > GIL_SEPERATOR_HUM)
 	{
-		if(c_npcisgateguard(self))
+		if(C_NpcIsGateGuard(self))
 		{
 			AI_StandupQuick(self);
-			b_attack(self,other,AR_MONSTERCLOSETOGATE,0);
+			B_Attack(self,other,AR_MonsterCloseToGate,0);
 			return;
 		}
 		else if(Wld_GetGuildAttitude(self.guild,other.guild) == ATT_HOSTILE)
 		{
-			if((self.aivar[AIV_PARTYMEMBER] == FALSE) && (self.npctype != NPCTYPE_FRIEND))
+			if((self.aivar[AIV_PARTYMEMBER] == FALSE) && (self.npcType != NPCTYPE_FRIEND))
 			{
-				b_attack(self,other,AR_GUILDENEMY,0);
+				B_Attack(self,other,AR_GuildEnemy,0);
 				return;
 			};
 		};
 	};
-	if(b_assessenemy())
+	if(B_AssessEnemy())
 	{
 		return;
 	};
-	if((b_getplayercrime(self) == CRIME_MURDER) && c_wanttoattackmurder(self,other) && (Npc_GetDistToNpc(self,other) <= PERC_DIST_INTERMEDIAT))
+	if((B_GetPlayerCrime(self) == CRIME_MURDER) && C_WantToAttackMurder(self,other) && (Npc_GetDistToNpc(self,other) <= PERC_DIST_INTERMEDIAT))
 	{
-		b_attack(self,other,AR_HUMANMURDEREDHUMAN,0);
+		B_Attack(self,other,AR_HumanMurderedHuman,0);
 		return;
 	};
-	if(b_assessenterroom())
+	if(B_AssessEnterRoom())
 	{
 		return;
 	};
-	if(b_assessdrawweapon())
+	if(B_AssessDrawWeapon())
 	{
 		return;
 	}
 	else
 	{
-		PLAYER_DRAWWEAPONCOMMENT = FALSE;
+		Player_DrawWeaponComment = FALSE;
 	};
-	if(c_bodystatecontains(other,BS_SNEAK))
+	if(C_BodyStateContains(other,BS_SNEAK))
 	{
-		if(!Npc_IsInState(self,zs_observeplayer) && c_wanttoreacttosneaker(self,other))
+		if(!Npc_IsInState(self,ZS_ObservePlayer) && C_WantToReactToSneaker(self,other))
 		{
 			Npc_ClearAIQueue(self);
-			b_clearperceptions(self);
-			AI_StartState(self,zs_observeplayer,1,"");
+			B_ClearPerceptions(self);
+			AI_StartState(self,ZS_ObservePlayer,1,"");
 			return;
 		};
 	}
-	else if(!c_bodystatecontains(other,BS_STAND))
+	else if(!C_BodyStateContains(other,BS_STAND))
 	{
-		PLAYER_SNEAKERCOMMENT = FALSE;
+		Player_SneakerComment = FALSE;
 	};
-	if(!c_bodystatecontains(other,BS_LIE))
+	if(!C_BodyStateContains(other,BS_LIE))
 	{
-		PLAYER_GETOUTOFMYBEDCOMMENT = FALSE;
+		Player_GetOutOfMyBedComment = FALSE;
 	};
-	b_assigndementortalk(self);
+	B_AssignDementorTalk(self);
 	if((Npc_GetDistToNpc(self,other) <= PERC_DIST_DIALOG) && Npc_CheckInfo(self,1))
 	{
-		if(c_npcisgateguard(self))
+		if(C_NpcIsGateGuard(self))
 		{
-			self.aivar[AIV_NPCSTARTEDTALK] = TRUE;
-			b_assesstalk();
+			self.aivar[AIV_NpcStartedTalk] = TRUE;
+			B_AssessTalk();
 			return;
 		}
-		else if(!c_bodystatecontains(other,BS_FALL) && !c_bodystatecontains(other,BS_SWIM) && !c_bodystatecontains(other,BS_DIVE) && (b_getplayercrime(self) == CRIME_NONE) && (c_refusetalk(self) == FALSE))
+		else if(!C_BodyStateContains(other,BS_FALL) && !C_BodyStateContains(other,BS_SWIM) && !C_BodyStateContains(other,BS_DIVE) && (B_GetPlayerCrime(self) == CRIME_NONE) && (C_RefuseTalk(self) == FALSE))
 		{
-			self.aivar[AIV_NPCSTARTEDTALK] = TRUE;
-			b_assesstalk();
+			self.aivar[AIV_NpcStartedTalk] = TRUE;
+			B_AssessTalk();
 			return;
 		};
 	};
-	if(c_bodystatecontains(self,BS_WALK) && (Npc_GetDistToNpc(self,other) <= PERC_DIST_DIALOG) && (Npc_RefuseTalk(other) == FALSE) && !c_npcisgateguard(self))
+	if(C_BodyStateContains(self,BS_WALK) && (Npc_GetDistToNpc(self,other) <= PERC_DIST_DIALOG) && (Npc_RefuseTalk(other) == FALSE) && !C_NpcIsGateGuard(self))
 	{
-		b_lookatnpc(self,other);
-		b_say_guildgreetings(self,other);
-		b_stoplookat(self);
+		B_LookAtNpc(self,other);
+		B_Say_GuildGreetings(self,other);
+		B_StopLookAt(self);
 		Npc_SetRefuseTalk(other,20);
 	};
-	if(c_npcisgateguard(self) && (Npc_GetDistToNpc(self,other) > PERC_DIST_DIALOG))
+	if(C_NpcIsGateGuard(self) && (Npc_GetDistToNpc(self,other) > PERC_DIST_DIALOG))
 	{
-		self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_NONE;
+		self.aivar[AIV_Guardpassage_Status] = GP_NONE;
 	};
 };
 

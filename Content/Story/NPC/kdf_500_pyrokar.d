@@ -1,38 +1,38 @@
 
-instance KDF_500_PYROKAR(NPC_DEFAULT)
+instance KDF_500_Pyrokar(Npc_Default)
 {
 	name[0] = "Pyrokar";
 	guild = GIL_KDF;
 	id = 500;
 	voice = 11;
 	flags = NPC_FLAG_IMMORTAL;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,6);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,6);
 	fight_tactic = FAI_HUMAN_STRONG;
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_IMPORTANTOLD,BODYTEX_N,4844);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_ImportantOld,BodyTex_N,ItAr_KDF_H);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Mage.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_500;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_500;
 };
 
 
-func void rtn_start_500()
+func void Rtn_Start_500()
 {
-	ta_sit_throne(8,0,23,0,"NW_MONASTERY_THRONE_01");
-	ta_sit_throne(23,0,8,0,"NW_MONASTERY_THRONE_01");
+	TA_Sit_Throne(8,0,23,0,"NW_MONASTERY_THRONE_01");
+	TA_Sit_Throne(23,0,8,0,"NW_MONASTERY_THRONE_01");
 };
 
-func void rtn_ritualinnoseyerepair_500()
+func void Rtn_RitualInnosEyeRepair_500()
 {
-	ta_stand_guarding(8,0,23,0,"NW_TROLLAREA_RITUAL_02");
-	ta_stand_guarding(23,0,8,0,"NW_TROLLAREA_RITUAL_02");
+	TA_Stand_Guarding(8,0,23,0,"NW_TROLLAREA_RITUAL_02");
+	TA_Stand_Guarding(23,0,8,0,"NW_TROLLAREA_RITUAL_02");
 };
 
-func void rtn_ritualinnoseye_500()
+func void Rtn_RitualInnosEye_500()
 {
-	ta_circle(8,0,23,0,"NW_TROLLAREA_RITUAL_02");
-	ta_circle(23,0,8,0,"NW_TROLLAREA_RITUAL_02");
+	TA_Circle(8,0,23,0,"NW_TROLLAREA_RITUAL_02");
+	TA_Circle(23,0,8,0,"NW_TROLLAREA_RITUAL_02");
 };
 

@@ -1,37 +1,37 @@
 
-instance VLK_494_ATTILA(NPC_DEFAULT)
+instance VLK_494_Attila(Npc_Default)
 {
 	name[0] = "Attila";
 	guild = GIL_VLK;
 	id = 494;
 	voice = 9;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,2);
-	aivar[AIV_DROPDEADANDKILL] = TRUE;
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,2);
+	aivar[AIV_DropDeadAndKill] = TRUE;
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_sld_axe);
-	EquipItem(self,itrw_mil_crossbow);
-	CreateInvItems(self,itrw_bolt,5);
-	CreateInvItem(self,itke_thiefguildkey_mis);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_L_TOUGH_SANTINO,BODYTEX_L,4845);
+	EquipItem(self,ItMw_1h_Sld_Axe);
+	EquipItem(self,ItRw_Mil_Crossbow);
+	CreateInvItems(self,ItRw_Bolt,5);
+	CreateInvItem(self,ItKe_ThiefGuildKey_MIS);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_L_Tough_Santino,BodyTex_L,ITAR_Leather_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_494;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_494;
 };
 
 
-func void rtn_start_494()
+func void Rtn_Start_494()
 {
-	ta_stand_guarding(4,0,22,0,"NW_CITY_HABOUR_POOR_AREA_BACK_ALLEY_02");
-	ta_stand_guarding(22,0,4,0,"NW_CITY_HABOUR_POOR_AREA_BACK_ALLEY_02");
+	TA_Stand_Guarding(4,0,22,0,"NW_CITY_HABOUR_POOR_AREA_BACK_ALLEY_02");
+	TA_Stand_Guarding(22,0,4,0,"NW_CITY_HABOUR_POOR_AREA_BACK_ALLEY_02");
 };
 
-func void rtn_after_494()
+func void Rtn_After_494()
 {
-	ta_stand_guarding(4,0,22,0,"NW_CITY_HABOUR_POOR_AREA_CAULDRON");
-	ta_stand_guarding(22,0,4,0,"NW_CITY_HABOUR_POOR_AREA_CAULDRON");
+	TA_Stand_Guarding(4,0,22,0,"NW_CITY_HABOUR_POOR_AREA_CAULDRON");
+	TA_Stand_Guarding(22,0,4,0,"NW_CITY_HABOUR_POOR_AREA_CAULDRON");
 };
 

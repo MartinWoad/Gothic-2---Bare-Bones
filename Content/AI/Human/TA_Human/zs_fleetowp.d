@@ -1,9 +1,9 @@
 
-func void zs_fleetowp()
+func void ZS_FleeToWp()
 {
-	perception_set_normal();
-	b_resetall(self);
-	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(cornelius))
+	Perception_Set_Normal();
+	B_ResetAll(self);
+	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Cornelius))
 	{
 		Npc_PercDisable(self,PERC_ASSESSENTERROOM);
 	};
@@ -17,7 +17,7 @@ func void zs_fleetowp()
 	AI_PlayAni(self,"T_STAND_2_HGUARD");
 };
 
-func int zs_fleetowp_loop()
+func int ZS_FleeToWp_Loop()
 {
 	var int random;
 	if(Npc_GetStateTime(self) > 5)
@@ -32,7 +32,7 @@ func int zs_fleetowp_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_fleetowp_end()
+func void ZS_FleeToWp_End()
 {
 };
 

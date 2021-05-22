@@ -1,41 +1,41 @@
 
-instance DIA_TOUGHGUY_NEWS(C_INFO)
+instance DIA_ToughGuy_NEWS(C_Info)
 {
 	nr = 1;
-	condition = dia_toughguy_news_condition;
-	information = dia_toughguy_news_info;
+	condition = DIA_ToughGuy_NEWS_Condition;
+	information = DIA_ToughGuy_NEWS_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_toughguy_news_condition()
+func int DIA_ToughGuy_NEWS_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (self.aivar[AIV_LASTFIGHTAGAINSTPLAYER] != FIGHT_NONE) && (self.aivar[AIV_LASTFIGHTCOMMENT] == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (self.aivar[AIV_LastFightAgainstPlayer] != FIGHT_NONE) && (self.aivar[AIV_LastFightComment] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_toughguy_news_info()
+func void DIA_ToughGuy_NEWS_Info()
 {
-	if(self.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_LOST)
+	if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
 	{
-		b_say(self,other,"$TOUGHGUY_ATTACKLOST");
+		B_Say(self,other,"$TOUGHGUY_ATTACKLOST");
 	}
-	else if(self.aivar[AIV_LASTFIGHTAGAINSTPLAYER] == FIGHT_WON)
+	else if(self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_WON)
 	{
-		b_say(self,other,"$TOUGHGUY_ATTACKWON");
+		B_Say(self,other,"$TOUGHGUY_ATTACKWON");
 	}
 	else
 	{
-		b_say(self,other,"$TOUGHGUY_PLAYERATTACK");
+		B_Say(self,other,"$TOUGHGUY_PLAYERATTACK");
 	};
-	self.aivar[AIV_LASTFIGHTCOMMENT] = TRUE;
+	self.aivar[AIV_LastFightComment] = TRUE;
 };
 
-func void b_assigntoughguynews(var C_NPC slf)
+func void B_AssignToughGuyNEWS(var C_Npc slf)
 {
-	dia_toughguy_news.npc = Hlp_GetInstanceID(slf);
+	DIA_ToughGuy_NEWS.npc = Hlp_GetInstanceID(slf);
 };
 

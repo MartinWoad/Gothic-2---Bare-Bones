@@ -1,26 +1,26 @@
 
-instance VLK_414_HANNA(NPC_DEFAULT)
+instance VLK_414_Hanna(Npc_Default)
 {
 	name[0] = "Hanna";
 	guild = GIL_VLK;
 	id = 414;
 	voice = 17;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,1);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	b_createambientinv(self);
-	b_setnpcvisual(self,FEMALE,"Hum_Head_Babe1",FACEBABE_N_WHITECLOTH,BODYTEX_N,4823);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,FEMALE,"Hum_Head_Babe1",FaceBabe_N_WhiteCloth,BodyTex_N,ITAR_VlkBabe_L);
 	Mdl_ApplyOverlayMds(self,"Humans_Babe.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,35);
-	daily_routine = rtn_start_414;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,35);
+	daily_routine = Rtn_Start_414;
 };
 
 
-func void rtn_start_414()
+func void Rtn_Start_414()
 {
-	ta_stand_armscrossed(8,0,22,0,"NW_CITY_HANNA");
-	ta_stand_armscrossed(22,0,8,0,"NW_CITY_HANNA");
+	TA_Stand_ArmsCrossed(8,0,22,0,"NW_CITY_HANNA");
+	TA_Stand_ArmsCrossed(22,0,8,0,"NW_CITY_HANNA");
 };
 

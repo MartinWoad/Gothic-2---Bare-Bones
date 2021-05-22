@@ -1,11 +1,11 @@
 
-prototype MST_DEFAULT_DRAGON_FIRE(C_NPC)
+prototype Mst_Default_Dragon_Fire(C_Npc)
 {
 	name[0] = "Ognisty Smok";
 	guild = GIL_DRAGON;
 	aivar[AIV_MM_REAL_ID] = ID_DRAGON_FIRE;
 	level = 450;
-	bodystateinterruptableoverride = TRUE;
+	bodyStateInterruptableOverride = TRUE;
 	attribute[ATR_STRENGTH] = 140;
 	attribute[ATR_DEXTERITY] = 100;
 	attribute[ATR_HITPOINTS_MAX] = 3000;
@@ -22,34 +22,34 @@ prototype MST_DEFAULT_DRAGON_FIRE(C_NPC)
 	fight_tactic = FAI_DRAGON;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_DRAGON_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	aivar[AIV_MAXDISTTOWP] = 700;
-	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_DRAGON;
-	start_aistate = zs_mm_rtn_dragonrest;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar[AIV_MaxDistToWp] = 700;
+	aivar[AIV_OriginalFightTactic] = FAI_DRAGON;
+	start_aistate = ZS_MM_Rtn_DragonRest;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-func void b_setvisuals_dragon_fire()
+func void B_SetVisuals_Dragon_Fire()
 {
 	Mdl_SetVisual(self,"Dragon.mds");
 	Mdl_SetVisualBody(self,"Dragon_FIRE_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance DRAGON_FIRE(MST_DEFAULT_DRAGON_FIRE)
+instance Dragon_Fire(Mst_Default_Dragon_Fire)
 {
 	name[0] = "Feomathar";
 	flags = NPC_FLAG_IMMORTAL;
-	b_setvisuals_dragon_fire();
+	B_SetVisuals_Dragon_Fire();
 	Npc_SetToFistMode(self);
 };
 
-instance DRAGON_FIRE_ISLAND(MST_DEFAULT_DRAGON_FIRE)
+instance Dragon_Fire_Island(Mst_Default_Dragon_Fire)
 {
 	name[0] = "Feodaron";
 	flags = NPC_FLAG_IMMORTAL;
-	b_setvisuals_dragon_fire();
+	B_SetVisuals_Dragon_Fire();
 	Npc_SetToFistMode(self);
 };
 

@@ -1,297 +1,297 @@
 
-instance SH(NPC_DEFAULT)
+instance SH(Npc_Default)
 {
 	name[0] = "Storyhelper";
 	guild = GIL_NONE;
 	id = 9999;
 	voice = 15;
 	flags = 0;
-	npctype = NPCTYPE_FRIEND;
-	b_setattributestochapter(self,1);
-	b_givenpctalents(self);
+	npcType = NPCTYPE_FRIEND;
+	B_SetAttributesToChapter(self,1);
+	B_GiveNpcTalents(self);
 	fight_tactic = FAI_HUMAN_MASTER;
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_PLAYER,BODYTEX_PLAYER,-1);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Pony",Face_N_Player,BodyTex_Player,-1);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	daily_routine = rtn_start_9999;
+	daily_routine = Rtn_Start_9999;
 };
 
 
-func void rtn_start_9999()
+func void Rtn_Start_9999()
 {
-	ta_stand_armscrossed(8,0,23,0,"XXX");
-	ta_stand_armscrossed(23,0,8,0,"XXX");
+	TA_Stand_ArmsCrossed(8,0,23,0,"XXX");
+	TA_Stand_ArmsCrossed(23,0,8,0,"XXX");
 };
 
 
-instance STORYHELPER_EXIT(C_INFO)
+instance StoryHelper_Exit(C_Info)
 {
 	npc = sh;
 	nr = 999;
-	condition = storyhelper_exit_condition;
-	information = storyhelper_exit_info;
+	condition = StoryHelper_Exit_Condition;
+	information = StoryHelper_Exit_Info;
 	important = 0;
 	permanent = 1;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int storyhelper_exit_condition()
+func int StoryHelper_Exit_Condition()
 {
 	return 1;
 };
 
-func void storyhelper_exit_info()
+func void StoryHelper_Exit_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance STORYHELPER_INFO1(C_INFO)
+instance StoryHelper_INFO1(C_Info)
 {
 	npc = sh;
-	condition = storyhelper_info1_condition;
-	information = storyhelper_info1_info;
+	condition = StoryHelper_INFO1_Condition;
+	information = StoryHelper_INFO1_Info;
 	important = 0;
 	permanent = 1;
 	description = "Kapitel 1";
 };
 
 
-func int storyhelper_info1_condition()
+func int StoryHelper_INFO1_Condition()
 {
 	return TRUE;
 };
 
-func void storyhelper_info1_info()
+func void StoryHelper_INFO1_Info()
 {
-	Info_ClearChoices(storyhelper_info1);
-	Info_AddChoice(storyhelper_info1,DIALOG_BACK,storyhelper_back1);
-	Info_AddChoice(storyhelper_info1,"KAPITELANFANG",storyhelper_kapitel1anfang);
+	Info_ClearChoices(StoryHelper_INFO1);
+	Info_AddChoice(StoryHelper_INFO1,Dialog_Back,StoryHelper_BACK1);
+	Info_AddChoice(StoryHelper_INFO1,"KAPITELANFANG",StoryHelper_KAPITEL1ANFANG);
 };
 
-func void storyhelper_back1()
+func void StoryHelper_BACK1()
 {
-	Info_ClearChoices(storyhelper_info1);
+	Info_ClearChoices(StoryHelper_INFO1);
 };
 
-func void storyhelper_kapitel1anfang()
+func void StoryHelper_KAPITEL1ANFANG()
 {
-	b_kapitelwechsel(1,NEWWORLD_ZEN);
+	B_Kapitelwechsel(1,NEWWORLD_ZEN);
 	AI_StopProcessInfos(self);
 };
 
 
-instance STORYHELPER_INFO2(C_INFO)
+instance StoryHelper_INFO2(C_Info)
 {
 	npc = sh;
-	condition = storyhelper_info2_condition;
-	information = storyhelper_info2_info;
+	condition = StoryHelper_INFO2_Condition;
+	information = StoryHelper_INFO2_Info;
 	important = 0;
 	permanent = 1;
 	description = "Kapitel 2";
 };
 
 
-func int storyhelper_info2_condition()
+func int StoryHelper_INFO2_Condition()
 {
 	return TRUE;
 };
 
-func void storyhelper_info2_info()
+func void StoryHelper_INFO2_Info()
 {
-	Info_ClearChoices(storyhelper_info2);
-	Info_AddChoice(storyhelper_info2,DIALOG_BACK,storyhelper_back2);
-	Info_AddChoice(storyhelper_info2,"KAPITELANFANG",storyhelper_kapitel2anfang);
+	Info_ClearChoices(StoryHelper_INFO2);
+	Info_AddChoice(StoryHelper_INFO2,Dialog_Back,StoryHelper_BACK2);
+	Info_AddChoice(StoryHelper_INFO2,"KAPITELANFANG",StoryHelper_KAPITEL2ANFANG);
 };
 
-func void storyhelper_back2()
+func void StoryHelper_BACK2()
 {
-	Info_ClearChoices(storyhelper_info2);
+	Info_ClearChoices(StoryHelper_INFO2);
 };
 
-func void storyhelper_kapitel2anfang()
+func void StoryHelper_KAPITEL2ANFANG()
 {
-	MIS_OLDWORLD = LOG_RUNNING;
-	b_kapitelwechsel(2,NEWWORLD_ZEN);
+	MIS_OLDWORLD = LOG_Running;
+	B_Kapitelwechsel(2,NEWWORLD_ZEN);
 	AI_StopProcessInfos(self);
 };
 
 
-instance STORYHELPER_INFO3(C_INFO)
+instance StoryHelper_INFO3(C_Info)
 {
 	npc = sh;
-	condition = storyhelper_info3_condition;
-	information = storyhelper_info3_info;
+	condition = StoryHelper_INFO3_Condition;
+	information = StoryHelper_INFO3_Info;
 	important = 0;
 	permanent = 1;
 	description = "Kapitel 3";
 };
 
 
-func int storyhelper_info3_condition()
+func int StoryHelper_INFO3_Condition()
 {
 	return TRUE;
 };
 
-func void storyhelper_info3_info()
+func void StoryHelper_INFO3_Info()
 {
-	Info_ClearChoices(storyhelper_info3);
-	Info_AddChoice(storyhelper_info3,DIALOG_BACK,storyhelper_back3);
-	Info_AddChoice(storyhelper_info3,"KAPITELANFANG",storyhelper_kapitel3anfang);
+	Info_ClearChoices(StoryHelper_INFO3);
+	Info_AddChoice(StoryHelper_INFO3,Dialog_Back,StoryHelper_BACK3);
+	Info_AddChoice(StoryHelper_INFO3,"KAPITELANFANG",StoryHelper_KAPITEL3ANFANG);
 };
 
-func void storyhelper_back3()
+func void StoryHelper_BACK3()
 {
-	Info_ClearChoices(storyhelper_info3);
+	Info_ClearChoices(StoryHelper_INFO3);
 };
 
-func void storyhelper_kapitel3anfang()
+func void StoryHelper_KAPITEL3ANFANG()
 {
-	MIS_OLDWORLD = LOG_RUNNING;
-	CreateInvItems(hero,itwr_paladinletter_mis,1);
-	KNOWSPALADINS_ORE = TRUE;
-	MIS_SCOUTMINE = LOG_SUCCESS;
-	MIS_READYFORCHAPTER3 = TRUE;
-	b_npc_isalivecheck(OLDWORLD_ZEN);
-	b_kapitelwechsel(3,NEWWORLD_ZEN);
-	Info_ClearChoices(storyhelper_info3);
+	MIS_OLDWORLD = LOG_Running;
+	CreateInvItems(hero,ItWr_PaladinLetter_MIS,1);
+	KnowsPaladins_Ore = TRUE;
+	MIS_ScoutMine = LOG_SUCCESS;
+	MIS_ReadyForChapter3 = TRUE;
+	B_NPC_IsAliveCheck(OldWorld_Zen);
+	B_Kapitelwechsel(3,NEWWORLD_ZEN);
+	Info_ClearChoices(StoryHelper_INFO3);
 	AI_StopProcessInfos(self);
 };
 
 
-instance STORYHELPER_INFO4(C_INFO)
+instance StoryHelper_INFO4(C_Info)
 {
 	npc = sh;
-	condition = storyhelper_info4_condition;
-	information = storyhelper_info4_info;
+	condition = StoryHelper_INFO4_Condition;
+	information = StoryHelper_INFO4_Info;
 	important = 0;
 	permanent = 1;
 	description = "Kapitel 4";
 };
 
 
-func int storyhelper_info4_condition()
+func int StoryHelper_INFO4_Condition()
 {
 	return TRUE;
 };
 
-func void storyhelper_info4_info()
+func void StoryHelper_INFO4_Info()
 {
-	Info_ClearChoices(storyhelper_info4);
-	Info_AddChoice(storyhelper_info4,DIALOG_BACK,storyhelper_back4);
-	Info_AddChoice(storyhelper_info4,"KAPITELANFANG",storyhelper_kapitel4anfang);
+	Info_ClearChoices(StoryHelper_INFO4);
+	Info_AddChoice(StoryHelper_INFO4,Dialog_Back,StoryHelper_BACK4);
+	Info_AddChoice(StoryHelper_INFO4,"KAPITELANFANG",StoryHelper_KAPITEL4ANFANG);
 };
 
-func void storyhelper_back4()
+func void StoryHelper_BACK4()
 {
-	Info_ClearChoices(storyhelper_info4);
+	Info_ClearChoices(StoryHelper_INFO4);
 };
 
-func void storyhelper_kapitel4anfang()
+func void StoryHelper_KAPITEL4ANFANG()
 {
-	MIS_OLDWORLD = LOG_RUNNING;
-	CreateInvItems(hero,itwr_paladinletter_mis,1);
-	KNOWSPALADINS_ORE = TRUE;
-	MIS_SCOUTMINE = LOG_SUCCESS;
-	MIS_READYFORCHAPTER3 = TRUE;
-	b_npc_isalivecheck(OLDWORLD_ZEN);
-	b_kapitelwechsel(3,NEWWORLD_ZEN);
-	PLAYER_TALENT_ALCHEMY[CHARGE_INNOSEYE] = TRUE;
-	PrintScreen(PRINT_LEARNALCHEMYINNOSEYE,-1,-1,FONT_SCREEN,2);
-	CreateInvItems(self,itmi_innoseye_mis,1);
-	MIS_READYFORCHAPTER4 = TRUE;
-	b_npc_isalivecheck(NEWWORLD_ZEN);
-	b_kapitelwechsel(4,NEWWORLD_ZEN);
-	Info_ClearChoices(storyhelper_info4);
+	MIS_OLDWORLD = LOG_Running;
+	CreateInvItems(hero,ItWr_PaladinLetter_MIS,1);
+	KnowsPaladins_Ore = TRUE;
+	MIS_ScoutMine = LOG_SUCCESS;
+	MIS_ReadyForChapter3 = TRUE;
+	B_NPC_IsAliveCheck(OldWorld_Zen);
+	B_Kapitelwechsel(3,NEWWORLD_ZEN);
+	PLAYER_TALENT_ALCHEMY[CHARGE_Innoseye] = TRUE;
+	PrintScreen(PRINT_LearnAlchemyInnosEye,-1,-1,FONT_Screen,2);
+	CreateInvItems(self,ItMi_InnosEye_MIS,1);
+	MIS_ReadyforChapter4 = TRUE;
+	B_NPC_IsAliveCheck(NEWWORLD_ZEN);
+	B_Kapitelwechsel(4,NEWWORLD_ZEN);
+	Info_ClearChoices(StoryHelper_INFO4);
 	AI_StopProcessInfos(self);
 };
 
 
-instance STORYHELPER_INFO5(C_INFO)
+instance StoryHelper_INFO5(C_Info)
 {
 	npc = sh;
-	condition = storyhelper_info5_condition;
-	information = storyhelper_info5_info;
+	condition = StoryHelper_INFO5_Condition;
+	information = StoryHelper_INFO5_Info;
 	important = 0;
 	permanent = 1;
 	description = "Kapitel 5";
 };
 
 
-func int storyhelper_info5_condition()
+func int StoryHelper_INFO5_Condition()
 {
 	return TRUE;
 };
 
-func void storyhelper_info5_info()
+func void StoryHelper_INFO5_Info()
 {
-	Info_ClearChoices(storyhelper_info5);
-	Info_AddChoice(storyhelper_info5,DIALOG_BACK,storyhelper_back5);
-	Info_AddChoice(storyhelper_info5,"KAPITELANFANG",storyhelper_kapitel5anfang);
+	Info_ClearChoices(StoryHelper_INFO5);
+	Info_AddChoice(StoryHelper_INFO5,Dialog_Back,StoryHelper_BACK5);
+	Info_AddChoice(StoryHelper_INFO5,"KAPITELANFANG",StoryHelper_KAPITEL5ANFANG);
 };
 
-func void storyhelper_back5()
+func void StoryHelper_BACK5()
 {
-	Info_ClearChoices(storyhelper_info5);
+	Info_ClearChoices(StoryHelper_INFO5);
 };
 
-func void storyhelper_kapitel5anfang()
+func void StoryHelper_KAPITEL5ANFANG()
 {
-	MIS_OLDWORLD = LOG_RUNNING;
-	CreateInvItems(hero,itwr_paladinletter_mis,1);
-	KNOWSPALADINS_ORE = TRUE;
-	MIS_SCOUTMINE = LOG_SUCCESS;
-	MIS_READYFORCHAPTER3 = TRUE;
-	b_npc_isalivecheck(OLDWORLD_ZEN);
-	b_kapitelwechsel(3,NEWWORLD_ZEN);
-	PLAYER_TALENT_ALCHEMY[CHARGE_INNOSEYE] = TRUE;
-	PrintScreen(PRINT_LEARNALCHEMYINNOSEYE,-1,-1,FONT_SCREEN,2);
-	CreateInvItems(hero,itmi_innoseye_mis,1);
-	MIS_READYFORCHAPTER4 = TRUE;
-	b_npc_isalivecheck(NEWWORLD_ZEN);
-	b_kapitelwechsel(4,NEWWORLD_ZEN);
-	CreateInvItems(hero,itat_icedragonheart,1);
-	MIS_ALLDRAGONSDEAD = TRUE;
-	b_kapitelwechsel(5,NEWWORLD_ZEN);
-	Info_ClearChoices(storyhelper_info5);
+	MIS_OLDWORLD = LOG_Running;
+	CreateInvItems(hero,ItWr_PaladinLetter_MIS,1);
+	KnowsPaladins_Ore = TRUE;
+	MIS_ScoutMine = LOG_SUCCESS;
+	MIS_ReadyForChapter3 = TRUE;
+	B_NPC_IsAliveCheck(OldWorld_Zen);
+	B_Kapitelwechsel(3,NEWWORLD_ZEN);
+	PLAYER_TALENT_ALCHEMY[CHARGE_Innoseye] = TRUE;
+	PrintScreen(PRINT_LearnAlchemyInnosEye,-1,-1,FONT_Screen,2);
+	CreateInvItems(hero,ItMi_InnosEye_MIS,1);
+	MIS_ReadyforChapter4 = TRUE;
+	B_NPC_IsAliveCheck(NEWWORLD_ZEN);
+	B_Kapitelwechsel(4,NEWWORLD_ZEN);
+	CreateInvItems(hero,ItAt_IcedragonHeart,1);
+	MIS_AllDragonsDead = TRUE;
+	B_Kapitelwechsel(5,NEWWORLD_ZEN);
+	Info_ClearChoices(StoryHelper_INFO5);
 	AI_StopProcessInfos(self);
 };
 
 
-instance STORYHELPER_INFO6(C_INFO)
+instance StoryHelper_INFO6(C_Info)
 {
 	npc = sh;
-	condition = storyhelper_info6_condition;
-	information = storyhelper_info6_info;
+	condition = StoryHelper_INFO6_Condition;
+	information = StoryHelper_INFO6_Info;
 	important = 0;
 	permanent = 1;
 	description = "Kapitel 6";
 };
 
 
-func int storyhelper_info6_condition()
+func int StoryHelper_INFO6_Condition()
 {
 	return TRUE;
 };
 
-func void storyhelper_info6_info()
+func void StoryHelper_INFO6_Info()
 {
-	Info_ClearChoices(storyhelper_info6);
-	Info_AddChoice(storyhelper_info6,DIALOG_BACK,storyhelper_back6);
-	Info_AddChoice(storyhelper_info6,"KAPITELANFANG",storyhelper_kapitel6anfang);
+	Info_ClearChoices(StoryHelper_INFO6);
+	Info_AddChoice(StoryHelper_INFO6,Dialog_Back,StoryHelper_BACK6);
+	Info_AddChoice(StoryHelper_INFO6,"KAPITELANFANG",StoryHelper_KAPITEL6ANFANG);
 };
 
-func void storyhelper_back6()
+func void StoryHelper_BACK6()
 {
-	Info_ClearChoices(storyhelper_info6);
+	Info_ClearChoices(StoryHelper_INFO6);
 };
 
-func void storyhelper_kapitel6anfang()
+func void StoryHelper_KAPITEL6ANFANG()
 {
-	b_kapitelwechsel(6,NEWWORLD_ZEN);
-	Info_ClearChoices(storyhelper_info6);
+	B_Kapitelwechsel(6,NEWWORLD_ZEN);
+	Info_ClearChoices(StoryHelper_INFO6);
 	AI_StopProcessInfos(self);
 };
 

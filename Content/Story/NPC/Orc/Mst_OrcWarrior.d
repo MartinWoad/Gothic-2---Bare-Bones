@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_ORCWARRIOR(C_NPC)
+prototype Mst_Default_OrcWarrior(C_Npc)
 {
 	name[0] = "Ork Wojownik";
 	guild = GIL_ORC;
@@ -18,96 +18,96 @@ prototype MST_DEFAULT_ORCWARRIOR(C_NPC)
 	protection[PROT_FIRE] = 40;
 	protection[PROT_FLY] = 100;
 	protection[PROT_MAGIC] = 40;
-	hitchance[NPC_TALENT_1H] = 100;
-	hitchance[NPC_TALENT_2H] = 100;
-	hitchance[NPC_TALENT_BOW] = 100;
-	hitchance[NPC_TALENT_CROSSBOW] = 100;
+	HitChance[NPC_TALENT_1H] = 100;
+	HitChance[NPC_TALENT_2H] = 100;
+	HitChance[NPC_TALENT_BOW] = 100;
+	HitChance[NPC_TALENT_CROSSBOW] = 100;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_ORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_orcwarrior()
+func void B_SetVisuals_OrcWarrior()
 {
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWarrior",DEFAULT,DEFAULT,"Orc_HeadWarrior",DEFAULT,DEFAULT,-1);
 };
 
 
-instance ORCWARRIOR_ROAM(MST_DEFAULT_ORCWARRIOR)
+instance OrcWarrior_Roam(Mst_Default_OrcWarrior)
 {
-	b_setvisuals_orcwarrior();
-	EquipItem(self,itmw_2h_orcaxe_03);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
+	B_SetVisuals_OrcWarrior();
+	EquipItem(self,ItMw_2H_OrcAxe_03);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance ORCWARRIOR_REST(MST_DEFAULT_ORCWARRIOR)
+instance OrcWarrior_Rest(Mst_Default_OrcWarrior)
 {
-	b_setvisuals_orcwarrior();
-	EquipItem(self,itmw_2h_orcaxe_02);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	B_SetVisuals_OrcWarrior();
+	EquipItem(self,ItMw_2H_OrcAxe_02);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-instance ORCWARRIOR_HARAD(MST_DEFAULT_ORCWARRIOR)
+instance OrcWarrior_Harad(Mst_Default_OrcWarrior)
 {
 	name[0] = "Ork Zwiadowca";
-	b_setvisuals_orcwarrior();
-	EquipItem(self,itmw_2h_orcaxe_01);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	B_SetVisuals_OrcWarrior();
+	EquipItem(self,ItMw_2H_OrcAxe_01);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-instance ORCWARRIOR_LOBART1(MST_DEFAULT_ORCWARRIOR)
+instance OrcWarrior_Lobart1(Mst_Default_OrcWarrior)
 {
-	b_setvisuals_orcwarrior();
-	EquipItem(self,itmw_2h_orcaxe_03);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	B_SetVisuals_OrcWarrior();
+	EquipItem(self,ItMw_2H_OrcAxe_03);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-instance ORCWARRIOR_LOBART2(MST_DEFAULT_ORCWARRIOR)
+instance OrcWarrior_Lobart2(Mst_Default_OrcWarrior)
 {
-	b_setvisuals_orcwarrior();
-	EquipItem(self,itmw_2h_orcaxe_03);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	B_SetVisuals_OrcWarrior();
+	EquipItem(self,ItMw_2H_OrcAxe_03);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-instance ORCWARRIOR_LOBART3(MST_DEFAULT_ORCWARRIOR)
+instance OrcWarrior_Lobart3(Mst_Default_OrcWarrior)
 {
-	b_setvisuals_orcwarrior();
-	EquipItem(self,itmw_2h_orcaxe_03);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	B_SetVisuals_OrcWarrior();
+	EquipItem(self,ItMw_2H_OrcAxe_03);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-instance ORCWARRIOR_LOBART4(MST_DEFAULT_ORCWARRIOR)
+instance OrcWarrior_Lobart4(Mst_Default_OrcWarrior)
 {
-	b_setvisuals_orcwarrior();
-	EquipItem(self,itmw_2h_orcaxe_03);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	B_SetVisuals_OrcWarrior();
+	EquipItem(self,ItMw_2H_OrcAxe_03);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-instance ORCWARRIOR_LOBART5(MST_DEFAULT_ORCWARRIOR)
+instance OrcWarrior_Lobart5(Mst_Default_OrcWarrior)
 {
-	b_setvisuals_orcwarrior();
-	EquipItem(self,itmw_2h_orcaxe_03);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	B_SetVisuals_OrcWarrior();
+	EquipItem(self,ItMw_2H_OrcAxe_03);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-instance ORCWARRIOR_LOBART6(MST_DEFAULT_ORCWARRIOR)
+instance OrcWarrior_Lobart6(Mst_Default_OrcWarrior)
 {
-	b_setvisuals_orcwarrior();
-	EquipItem(self,itmw_2h_orcaxe_03);
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	B_SetVisuals_OrcWarrior();
+	EquipItem(self,ItMw_2H_OrcAxe_03);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 

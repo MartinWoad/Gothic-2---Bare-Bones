@@ -1,20 +1,20 @@
 
-func void zs_mm_rtn_follow_sheep()
+func void ZS_MM_Rtn_Follow_Sheep()
 {
 	Npc_SetPercTime(self,1);
-	Npc_PercEnable(self,PERC_ASSESSPLAYER,b_mm_assessplayer);
-	Npc_PercEnable(self,PERC_ASSESSTALK,b_assesstalk);
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
+	Npc_PercEnable(self,PERC_ASSESSPLAYER,B_MM_AssessPlayer);
+	Npc_PercEnable(self,PERC_ASSESSTALK,B_AssessTalk);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
 };
 
-func int zs_mm_rtn_follow_sheep_loop()
+func int ZS_MM_Rtn_Follow_Sheep_Loop()
 {
-	var int randommove;
+	var int randomMove;
 	if(self.aivar[AIV_PARTYMEMBER] == TRUE)
 	{
 		if(Npc_GetDistToNpc(self,hero) > 500)
 		{
-			if(!c_bodystatecontains(self,BS_SWIM))
+			if(!C_BodyStateContains(self,BS_SWIM))
 			{
 				AI_SetWalkMode(self,NPC_RUN);
 			};
@@ -28,16 +28,16 @@ func int zs_mm_rtn_follow_sheep_loop()
 	}
 	else
 	{
-		randommove = Hlp_Random(3);
-		if(randommove == 0)
+		randomMove = Hlp_Random(3);
+		if(randomMove == 0)
 		{
 			AI_PlayAni(self,"R_ROAM1");
 		};
-		if(randommove == 1)
+		if(randomMove == 1)
 		{
 			AI_PlayAni(self,"R_ROAM2");
 		};
-		if(randommove == 2)
+		if(randomMove == 2)
 		{
 			AI_PlayAni(self,"R_ROAM3");
 		};
@@ -45,42 +45,42 @@ func int zs_mm_rtn_follow_sheep_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_mm_rtn_follow_sheep_end()
+func void ZS_MM_Rtn_Follow_Sheep_End()
 {
 };
 
-func void zs_mm_rtn_follow_sheep_balthasar()
+func void ZS_MM_Rtn_Follow_Sheep_Balthasar()
 {
 	Npc_SetPercTime(self,1);
-	Npc_PercEnable(self,PERC_ASSESSPLAYER,b_mm_assessplayer);
+	Npc_PercEnable(self,PERC_ASSESSPLAYER,B_MM_AssessPlayer);
 };
 
-func int zs_mm_rtn_follow_sheep_balthasar_loop()
+func int ZS_MM_Rtn_Follow_Sheep_Balthasar_Loop()
 {
-	if(Npc_GetDistToWP(balthasar,"NW_BIGMILL_FARM3_BALTHASAR") > 500)
+	if(Npc_GetDistToWP(Balthasar,"NW_BIGMILL_FARM3_BALTHASAR") > 500)
 	{
-		if(Npc_GetDistToNpc(self,balthasar) > 500)
+		if(Npc_GetDistToNpc(self,Balthasar) > 500)
 		{
-			if(!c_bodystatecontains(self,BS_SWIM))
+			if(!C_BodyStateContains(self,BS_SWIM))
 			{
 				AI_SetWalkMode(self,NPC_RUN);
 			};
-			AI_GotoNpc(self,balthasar);
+			AI_GotoNpc(self,Balthasar);
 		}
 		else
 		{
-			AI_TurnToNPC(self,balthasar);
+			AI_TurnToNPC(self,Balthasar);
 			self.wp = Npc_GetNearestWP(self);
 		};
 	}
 	else
 	{
-		AI_StartState(self,zs_mm_rtn_roam,1,"NW_BIGMILL_FARM3_BALTHASAR");
+		AI_StartState(self,ZS_MM_Rtn_Roam,1,"NW_BIGMILL_FARM3_BALTHASAR");
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_mm_rtn_follow_sheep_balthasar_end()
+func void ZS_MM_Rtn_Follow_Sheep_Balthasar_End()
 {
 };
 

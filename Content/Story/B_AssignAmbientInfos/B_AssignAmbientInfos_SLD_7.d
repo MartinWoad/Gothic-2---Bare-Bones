@@ -1,36 +1,36 @@
 
-instance DIA_SLD_7_EXIT(C_INFO)
+instance DIA_SLD_7_EXIT(C_Info)
 {
 	nr = 999;
-	condition = dia_sld_7_exit_condition;
-	information = dia_sld_7_exit_info;
+	condition = DIA_SLD_7_EXIT_Condition;
+	information = DIA_SLD_7_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_sld_7_exit_condition()
+func int DIA_SLD_7_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_sld_7_exit_info()
+func void DIA_SLD_7_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_SLD_7_JOIN(C_INFO)
+instance DIA_SLD_7_JOIN(C_Info)
 {
 	nr = 4;
-	condition = dia_sld_7_join_condition;
-	information = dia_sld_7_join_info;
+	condition = DIA_SLD_7_JOIN_Condition;
+	information = DIA_SLD_7_JOIN_Info;
 	permanent = TRUE;
 	description = "Chcê siê do was przy³¹czyæ!";
 };
 
 
-func int dia_sld_7_join_condition()
+func int DIA_SLD_7_JOIN_Condition()
 {
 	if(other.guild == GIL_NONE)
 	{
@@ -38,14 +38,14 @@ func int dia_sld_7_join_condition()
 	};
 };
 
-func void dia_sld_7_join_info()
+func void DIA_SLD_7_JOIN_Info()
 {
 	AI_Output(other,self,"DIA_SLD_7_JOIN_15_00");	//Chcê siê do was przy³¹czyæ.
-	if(MIS_TORLOF_BENGARMILIZKLATSCHEN == LOG_SUCCESS)
+	if(MIS_Torlof_BengarMilizKlatschen == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_SLD_7_JOIN_07_01");	//S³ysza³em, ¿e da³eœ siê stra¿y we znaki. Przyda³byœ siê nam.
 	}
-	else if(MIS_TORLOF_HOLPACHTVONSEKOB == LOG_SUCCESS)
+	else if(MIS_Torlof_HolPachtVonSekob == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_SLD_7_JOIN_07_02");	//Œci¹ganie czynszu od farmerów nie jest raczej trudnym zadaniem, ale skoro Onar chce ci za to p³aciæ, to ja nie bêdê siê wtr¹ca³.
 	}
@@ -56,22 +56,22 @@ func void dia_sld_7_join_info()
 };
 
 
-instance DIA_SLD_7_PEOPLE(C_INFO)
+instance DIA_SLD_7_PEOPLE(C_Info)
 {
 	nr = 3;
-	condition = dia_sld_7_people_condition;
-	information = dia_sld_7_people_info;
+	condition = DIA_SLD_7_PEOPLE_Condition;
+	information = DIA_SLD_7_PEOPLE_Info;
 	permanent = TRUE;
 	description = "Kto tu dowodzi?";
 };
 
 
-func int dia_sld_7_people_condition()
+func int DIA_SLD_7_PEOPLE_Condition()
 {
 	return TRUE;
 };
 
-func void dia_sld_7_people_info()
+func void DIA_SLD_7_PEOPLE_Info()
 {
 	AI_Output(other,self,"DIA_SLD_7_PEOPLE_15_00");	//Kto tu dowodzi?
 	AI_Output(self,other,"DIA_SLD_7_PEOPLE_07_01");	//Naszym szefem jest Lee, a Torlof jego praw¹ rêk¹. Wiêkszoœæ ludzi liczy siê z jego zdaniem, poniewa¿ dowodzi³ nimi jeszcze za czasów kolonii.
@@ -81,22 +81,22 @@ func void dia_sld_7_people_info()
 };
 
 
-instance DIA_SLD_7_LOCATION(C_INFO)
+instance DIA_SLD_7_LOCATION(C_Info)
 {
 	nr = 2;
-	condition = dia_sld_7_location_condition;
-	information = dia_sld_7_location_info;
+	condition = DIA_SLD_7_LOCATION_Condition;
+	information = DIA_SLD_7_LOCATION_Info;
 	permanent = TRUE;
 	description = "Powiedz mi coœ o farmie.";
 };
 
 
-func int dia_sld_7_location_condition()
+func int DIA_SLD_7_LOCATION_Condition()
 {
 	return TRUE;
 };
 
-func void dia_sld_7_location_info()
+func void DIA_SLD_7_LOCATION_Info()
 {
 	AI_Output(other,self,"DIA_SLD_7_LOCATION_15_00");	//Powiedz mi coœ o farmie.
 	AI_Output(self,other,"DIA_SLD_7_LOCATION_07_01");	//Na rozkaz Onara pilnujemy jego w³asnoœci.
@@ -107,27 +107,27 @@ func void dia_sld_7_location_info()
 };
 
 
-instance DIA_SLD_7_STANDARD(C_INFO)
+instance DIA_SLD_7_STANDARD(C_Info)
 {
 	nr = 1;
-	condition = dia_sld_7_standard_condition;
-	information = dia_sld_7_standard_info;
+	condition = DIA_SLD_7_STANDARD_Condition;
+	information = DIA_SLD_7_STANDARD_Info;
 	permanent = TRUE;
 	description = "Co nowego?";
 };
 
 
-func int dia_sld_7_standard_condition()
+func int DIA_SLD_7_STANDARD_Condition()
 {
 	return TRUE;
 };
 
-func void dia_sld_7_standard_info()
+func void DIA_SLD_7_STANDARD_Info()
 {
 	AI_Output(other,self,"DIA_SLD_7_STANDARD_15_00");	//Co s³ychaæ?
-	if(KAPITEL <= 2)
+	if(Kapitel <= 2)
 	{
-		if(ENTEROW_KAPITEL2 == FALSE)
+		if(EnterOW_Kapitel2 == FALSE)
 		{
 			if(other.guild == GIL_SLD)
 			{
@@ -148,9 +148,9 @@ func void dia_sld_7_standard_info()
 			AI_Output(self,other,"DIA_SLD_7_STANDARD_07_05");	//Czy wy, paladyni, nie moglibyœcie zaj¹æ siê smokami? Zreszt¹, walka to coœ dla prawdziwych facetów.
 		};
 	};
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
-		if(MIS_RESCUEBENNET == LOG_SUCCESS)
+		if(MIS_RescueBennet == LOG_SUCCESS)
 		{
 			if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
 			{
@@ -171,7 +171,7 @@ func void dia_sld_7_standard_info()
 			AI_Output(self,other,"DIA_SLD_7_STANDARD_07_10");	//Jakie masz plany w stosunku do Benneta? No có¿, w³aœciwie to wolê nie wiedzieæ, sam siê wkrótce przekonasz, do czego to wszystko prowadzi.
 		};
 	};
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		if(hero.guild == GIL_DJG)
 		{
@@ -184,13 +184,13 @@ func void dia_sld_7_standard_info()
 			AI_Output(self,other,"DIA_SLD_7_STANDARD_07_14");	//Ale nic mnie to nie obchodzi, póki nie chcesz œci¹gaæ podatków.
 		};
 	};
-	if(KAPITEL >= 5)
+	if(Kapitel >= 5)
 	{
 		AI_Output(self,other,"DIA_SLD_7_STANDARD_07_15");	//Do diab³a, d³u¿ej tego nie zniosê. Owce, pastwiska, drzewa. Drzewa, owce i pastwiska. Chcê siê st¹d w koñcu wydostaæ.
 	};
 };
 
-func void b_assignambientinfos_sld_7(var C_NPC slf)
+func void B_AssignAmbientInfos_SLD_7(var C_Npc slf)
 {
 	dia_sld_7_exit.npc = Hlp_GetInstanceID(slf);
 	dia_sld_7_join.npc = Hlp_GetInstanceID(slf);

@@ -1,86 +1,86 @@
 
-var int ignaz_itemsgiven_chapter_1;
-var int ignaz_itemsgiven_chapter_2;
-var int ignaz_itemsgiven_chapter_3;
-var int ignaz_itemsgiven_chapter_4;
-var int ignaz_itemsgiven_chapter_5;
+var int Ignaz_ItemsGiven_Chapter_1;
+var int Ignaz_ItemsGiven_Chapter_2;
+var int Ignaz_ItemsGiven_Chapter_3;
+var int Ignaz_ItemsGiven_Chapter_4;
+var int Ignaz_ItemsGiven_Chapter_5;
 var int ignaz_itemsgiven_chapter_6;
 
-func void b_givetradeinv_ignaz(var C_NPC slf)
+func void B_GiveTradeInv_Ignaz(var C_Npc slf)
 {
-	if((KAPITEL >= 1) && (IGNAZ_ITEMSGIVEN_CHAPTER_1 == FALSE))
+	if((Kapitel >= 1) && (Ignaz_ItemsGiven_Chapter_1 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		CreateInvItems(slf,itpo_mana_01,1);
-		CreateInvItems(slf,itpo_health_01,1);
-		CreateInvItems(slf,itpo_speed,1);
-		CreateInvItems(slf,itsc_charm,3);
-		CreateInvItems(slf,itmi_flask,10);
-		CreateInvItems(slf,itsc_trfsheep,1);
-		CreateInvItems(slf,itsc_trfgiantrat,1);
-		IGNAZ_ITEMSGIVEN_CHAPTER_1 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItPo_Mana_01,1);
+		CreateInvItems(slf,ItPo_Health_01,1);
+		CreateInvItems(slf,ItPo_Speed,1);
+		CreateInvItems(slf,ItSc_Charm,3);
+		CreateInvItems(slf,ItMi_Flask,10);
+		CreateInvItems(slf,ItSc_TrfSheep,1);
+		CreateInvItems(slf,ItSc_TrfGiantRat,1);
+		Ignaz_ItemsGiven_Chapter_1 = TRUE;
 	};
-	if((KAPITEL >= 2) && (IGNAZ_ITEMSGIVEN_CHAPTER_2 == FALSE))
+	if((Kapitel >= 2) && (Ignaz_ItemsGiven_Chapter_2 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,200);
-		CreateInvItems(slf,itpo_mana_01,2);
-		CreateInvItems(slf,itpo_health_01,2);
-		CreateInvItems(slf,itpo_speed,2);
-		CreateInvItems(slf,itsc_charm,4);
-		CreateInvItems(slf,itmi_flask,10);
-		CreateInvItems(slf,itsc_trfscavenger,1);
-		CreateInvItems(slf,itsc_trfgiantbug,1);
-		CreateInvItems(slf,itsc_trfwolf,1);
-		CreateInvItems(slf,itsc_trflurker,1);
-		IGNAZ_ITEMSGIVEN_CHAPTER_2 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,200);
+		CreateInvItems(slf,ItPo_Mana_01,2);
+		CreateInvItems(slf,ItPo_Health_01,2);
+		CreateInvItems(slf,ItPo_Speed,2);
+		CreateInvItems(slf,ItSc_Charm,4);
+		CreateInvItems(slf,ItMi_Flask,10);
+		CreateInvItems(slf,ItSc_TrfScavenger,1);
+		CreateInvItems(slf,ItSc_TrfGiantBug,1);
+		CreateInvItems(slf,ItSc_TrfWolf,1);
+		CreateInvItems(slf,ItSc_TrfLurker,1);
+		Ignaz_ItemsGiven_Chapter_2 = TRUE;
 	};
-	if((KAPITEL >= 3) && (IGNAZ_ITEMSGIVEN_CHAPTER_3 == FALSE))
+	if((Kapitel >= 3) && (Ignaz_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,300);
-		CreateInvItems(slf,itpo_mana_01,3);
-		CreateInvItems(slf,itpo_health_01,3);
-		CreateInvItems(slf,itpo_speed,3);
-		CreateInvItems(slf,itsc_charm,5);
-		CreateInvItems(slf,itmi_flask,10);
-		CreateInvItems(slf,itsc_trfwolf,2);
-		CreateInvItems(slf,itsc_trfwaran,1);
-		CreateInvItems(slf,itsc_trfsnapper,1);
-		IGNAZ_ITEMSGIVEN_CHAPTER_3 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,300);
+		CreateInvItems(slf,ItPo_Mana_01,3);
+		CreateInvItems(slf,ItPo_Health_01,3);
+		CreateInvItems(slf,ItPo_Speed,3);
+		CreateInvItems(slf,ItSc_Charm,5);
+		CreateInvItems(slf,ItMi_Flask,10);
+		CreateInvItems(slf,ItSc_TrfWolf,2);
+		CreateInvItems(slf,ItSc_TrfWaran,1);
+		CreateInvItems(slf,ItSc_TrfSnapper,1);
+		Ignaz_ItemsGiven_Chapter_3 = TRUE;
 	};
-	if((KAPITEL >= 4) && (IGNAZ_ITEMSGIVEN_CHAPTER_4 == FALSE))
+	if((Kapitel >= 4) && (Ignaz_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,400);
-		CreateInvItems(slf,itpo_mana_01,4);
-		CreateInvItems(slf,itpo_health_01,4);
-		CreateInvItems(slf,itpo_speed,4);
-		CreateInvItems(slf,itsc_charm,6);
-		CreateInvItems(slf,itmi_flask,10);
-		CreateInvItems(slf,itsc_trfsnapper,2);
-		CreateInvItems(slf,itsc_trfwarg,1);
-		CreateInvItems(slf,itsc_trffirewaran,1);
-		IGNAZ_ITEMSGIVEN_CHAPTER_4 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,400);
+		CreateInvItems(slf,ItPo_Mana_01,4);
+		CreateInvItems(slf,ItPo_Health_01,4);
+		CreateInvItems(slf,ItPo_Speed,4);
+		CreateInvItems(slf,ItSc_Charm,6);
+		CreateInvItems(slf,ItMi_Flask,10);
+		CreateInvItems(slf,ItSc_TrfSnapper,2);
+		CreateInvItems(slf,ItSc_TrfWarg,1);
+		CreateInvItems(slf,ItSc_TrfFireWaran,1);
+		Ignaz_ItemsGiven_Chapter_4 = TRUE;
 	};
-	if((KAPITEL >= 5) && (IGNAZ_ITEMSGIVEN_CHAPTER_5 == FALSE))
+	if((Kapitel >= 5) && (Ignaz_ItemsGiven_Chapter_5 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,500);
-		CreateInvItems(slf,itpo_mana_01,5);
-		CreateInvItems(slf,itpo_health_01,5);
-		CreateInvItems(slf,itpo_speed,5);
-		CreateInvItems(slf,itsc_charm,7);
-		CreateInvItems(slf,itmi_flask,10);
-		CreateInvItems(slf,itsc_trfshadowbeast,1);
-		CreateInvItems(slf,itsc_trfdragonsnapper,1);
-		IGNAZ_ITEMSGIVEN_CHAPTER_5 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,500);
+		CreateInvItems(slf,ItPo_Mana_01,5);
+		CreateInvItems(slf,ItPo_Health_01,5);
+		CreateInvItems(slf,ItPo_Speed,5);
+		CreateInvItems(slf,ItSc_Charm,7);
+		CreateInvItems(slf,ItMi_Flask,10);
+		CreateInvItems(slf,ItSc_TrfShadowbeast,1);
+		CreateInvItems(slf,ItSc_TrfDragonSnapper,1);
+		Ignaz_ItemsGiven_Chapter_5 = TRUE;
 	};
-	if((KAPITEL >= 6) && (IGNAZ_ITEMSGIVEN_CHAPTER_6 == FALSE))
+	if((Kapitel >= 6) && (IGNAZ_ITEMSGIVEN_CHAPTER_6 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,600);
-		CreateInvItems(slf,itpo_mana_01,6);
-		CreateInvItems(slf,itpo_health_01,6);
-		CreateInvItems(slf,itpo_speed,6);
-		CreateInvItems(slf,itsc_charm,8);
-		CreateInvItems(slf,itmi_flask,10);
-		CreateInvItems(slf,itpo_perm_health,1);
+		CreateInvItems(slf,ItMi_Gold,600);
+		CreateInvItems(slf,ItPo_Mana_01,6);
+		CreateInvItems(slf,ItPo_Health_01,6);
+		CreateInvItems(slf,ItPo_Speed,6);
+		CreateInvItems(slf,ItSc_Charm,8);
+		CreateInvItems(slf,ItMi_Flask,10);
+		CreateInvItems(slf,ItPo_Perm_Health,1);
 		IGNAZ_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };

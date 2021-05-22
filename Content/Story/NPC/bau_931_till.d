@@ -1,82 +1,82 @@
 
-instance BAU_931_TILL(NPC_DEFAULT)
+instance BAU_931_Till(Npc_Default)
 {
 	name[0] = "Till";
 	guild = GIL_OUT;
 	id = 931;
 	voice = 3;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,1);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_bau_axe);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_P_WEAK_CUTTER,BODYTEX_P,4831);
+	EquipItem(self,ItMw_1h_Bau_Axe);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_P_Weak_Cutter,BodyTex_P,ITAR_Bau_M);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,25);
-	daily_routine = rtn_prestart_931;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,25);
+	daily_routine = Rtn_PreStart_931;
 };
 
 
-func void rtn_prestart_931()
+func void Rtn_PreStart_931()
 {
-	ta_stand_guarding(8,0,22,0,"NW_FARM4_TILL");
-	ta_stand_guarding(22,0,8,0,"NW_FARM4_TILL");
+	TA_Stand_Guarding(8,0,22,0,"NW_FARM4_TILL");
+	TA_Stand_Guarding(22,0,8,0,"NW_FARM4_TILL");
 };
 
-func void rtn_start_931()
+func void Rtn_Start_931()
 {
-	ta_saw(8,0,22,0,"NW_FARM4_TILL");
-	ta_sit_throne(22,0,8,0,"NW_FARM4_SEKOB");
+	TA_Saw(8,0,22,0,"NW_FARM4_TILL");
+	TA_Sit_Throne(22,0,8,0,"NW_FARM4_SEKOB");
 };
 
-func void rtn_fleedmt_931()
+func void Rtn_FleeDMT_931()
 {
-	ta_stand_guarding(8,0,22,0,"NW_FLEEDMT_KAP3");
-	ta_stand_guarding(22,0,8,0,"NW_FLEEDMT_KAP3");
+	TA_Stand_Guarding(8,0,22,0,"NW_FLEEDMT_KAP3");
+	TA_Stand_Guarding(22,0,8,0,"NW_FLEEDMT_KAP3");
 };
 
-func void rtn_fleefromsekob_931()
+func void Rtn_FleeFromSekob_931()
 {
-	ta_stand_armscrossed(8,0,22,0,"NW_TAVERNE_TROLLAREA_14");
-	ta_stand_armscrossed(22,0,8,0,"NW_TAVERNE_TROLLAREA_14");
+	TA_Stand_ArmsCrossed(8,0,22,0,"NW_TAVERNE_TROLLAREA_14");
+	TA_Stand_ArmsCrossed(22,0,8,0,"NW_TAVERNE_TROLLAREA_14");
 };
 
-func void rtn_followcity_931()
+func void Rtn_FollowCity_931()
 {
-	ta_follow_player(8,0,22,0,"CITY2");
-	ta_follow_player(22,0,8,0,"CITY2");
+	TA_Follow_Player(8,0,22,0,"CITY2");
+	TA_Follow_Player(22,0,8,0,"CITY2");
 };
 
-func void rtn_followbigfarm_931()
+func void Rtn_FollowBigfarm_931()
 {
-	ta_follow_player(8,0,22,0,"NW_BIGFARM_KITCHEN_02");
-	ta_follow_player(22,0,8,0,"NW_BIGFARM_KITCHEN_02");
+	TA_Follow_Player(8,0,22,0,"NW_BIGFARM_KITCHEN_02");
+	TA_Follow_Player(22,0,8,0,"NW_BIGFARM_KITCHEN_02");
 };
 
-func void rtn_followkloster_931()
+func void Rtn_FollowKloster_931()
 {
-	ta_follow_player(8,0,22,0,"KLOSTER");
-	ta_follow_player(22,0,8,0,"KLOSTER");
+	TA_Follow_Player(8,0,22,0,"KLOSTER");
+	TA_Follow_Player(22,0,8,0,"KLOSTER");
 };
 
-func void rtn_city_931()
+func void Rtn_City_931()
 {
-	ta_stand_wp(8,0,22,0,"NW_CITY_MERCHANT_PATH_25");
-	ta_stand_wp(22,0,8,0,"NW_CITY_MERCHANT_PATH_25");
+	TA_Stand_WP(8,0,22,0,"NW_CITY_MERCHANT_PATH_25");
+	TA_Stand_WP(22,0,8,0,"NW_CITY_MERCHANT_PATH_25");
 };
 
-func void rtn_bigfarm_931()
+func void Rtn_Bigfarm_931()
 {
-	ta_sit_chair(8,0,22,0,"NW_BIGFARM_KITCHEN_02");
-	ta_sit_chair(22,0,8,0,"NW_BIGFARM_KITCHEN_02");
+	TA_Sit_Chair(8,0,22,0,"NW_BIGFARM_KITCHEN_02");
+	TA_Sit_Chair(22,0,8,0,"NW_BIGFARM_KITCHEN_02");
 };
 
-func void rtn_kloster_931()
+func void Rtn_Kloster_931()
 {
-	ta_pick_fp(8,0,22,0,"NW_MONASTERY_HERB_02");
-	ta_pick_fp(22,0,8,0,"NW_MONASTERY_HERB_02");
+	TA_Pick_FP(8,0,22,0,"NW_MONASTERY_HERB_02");
+	TA_Pick_FP(22,0,8,0,"NW_MONASTERY_HERB_02");
 };
 

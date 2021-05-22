@@ -1,97 +1,97 @@
 
-instance DIA_MIKA_EXIT(C_INFO)
+instance DIA_Mika_EXIT(C_Info)
 {
-	npc = mil_337_mika;
+	npc = Mil_337_Mika;
 	nr = 999;
-	condition = dia_mika_exit_condition;
-	information = dia_mika_exit_info;
+	condition = DIA_Mika_EXIT_Condition;
+	information = DIA_Mika_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_mika_exit_condition()
+func int DIA_Mika_EXIT_Condition()
 {
-	if(KAPITEL <= 2)
+	if(Kapitel <= 2)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mika_exit_info()
+func void DIA_Mika_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MIKA_REFUSE(C_INFO)
+instance DIA_Mika_Refuse(C_Info)
 {
-	npc = mil_337_mika;
+	npc = Mil_337_Mika;
 	nr = 1;
-	condition = dia_mika_refuse_condition;
-	information = dia_mika_refuse_info;
+	condition = DIA_Mika_Refuse_Condition;
+	information = DIA_Mika_Refuse_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_mika_refuse_condition()
+func int DIA_Mika_Refuse_Condition()
 {
-	if(Npc_IsInState(self,zs_talk) && (lares.aivar[AIV_PARTYMEMBER] == TRUE))
+	if(Npc_IsInState(self,ZS_Talk) && (Lares.aivar[AIV_PARTYMEMBER] == TRUE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mika_refuse_info()
+func void DIA_Mika_Refuse_Info()
 {
-	b_say(self,other,"$NOTNOW");
+	B_Say(self,other,"$NOTNOW");
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MIKA_WOHIN(C_INFO)
+instance DIA_Mika_WOHIN(C_Info)
 {
-	npc = mil_337_mika;
+	npc = Mil_337_Mika;
 	nr = 4;
-	condition = dia_mika_wohin_condition;
-	information = dia_mika_wohin_info;
+	condition = DIA_Mika_WOHIN_Condition;
+	information = DIA_Mika_WOHIN_Info;
 	important = TRUE;
 };
 
 
-func int dia_mika_wohin_condition()
+func int DIA_Mika_WOHIN_Condition()
 {
-	if(lares.aivar[AIV_PARTYMEMBER] == FALSE)
+	if(Lares.aivar[AIV_PARTYMEMBER] == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mika_wohin_info()
+func void DIA_Mika_WOHIN_Info()
 {
 	AI_Output(self,other,"DIA_Mika_WOHIN_12_00");	//Hej, czekaj, nie tak szybko. Samotna wêdrówka mo¿e siê dla ciebie Ÿle skoñczyæ, to niebezpieczne okolice. Sk¹d idziesz?
-	Info_ClearChoices(dia_mika_wohin);
-	Info_AddChoice(dia_mika_wohin,"Nie twój interes.",dia_mika_wohin_weg);
-	Info_AddChoice(dia_mika_wohin,"Z jednej z farm.",dia_mika_wohin_bauern);
-	Info_AddChoice(dia_mika_wohin,"Z miasta!",dia_mika_wohin_stadt);
+	Info_ClearChoices(DIA_Mika_WOHIN);
+	Info_AddChoice(DIA_Mika_WOHIN,"Nie twój interes.",DIA_Mika_WOHIN_weg);
+	Info_AddChoice(DIA_Mika_WOHIN,"Z jednej z farm.",DIA_Mika_WOHIN_Bauern);
+	Info_AddChoice(DIA_Mika_WOHIN,"Z miasta!",DIA_Mika_WOHIN_stadt);
 };
 
-func void dia_mika_wohin_stadt()
+func void DIA_Mika_WOHIN_stadt()
 {
 	AI_Output(other,self,"DIA_Mika_WOHIN_stadt_15_00");	//Z miasta!
 	AI_Output(self,other,"DIA_Mika_WOHIN_stadt_12_01");	//Proszê, proszê. I zapuœci³eœ siê a¿ tutaj, tak daleko od domu?
-	Info_ClearChoices(dia_mika_wohin);
+	Info_ClearChoices(DIA_Mika_WOHIN);
 };
 
-func void dia_mika_wohin_bauern()
+func void DIA_Mika_WOHIN_Bauern()
 {
 	AI_Output(other,self,"DIA_Mika_WOHIN_Bauern_15_00");	//Z jednej z farm.
 	AI_Output(self,other,"DIA_Mika_WOHIN_Bauern_12_01");	//Farmer? Hmmm... Wiêc nie powinieneœ samotnie wêdrowaæ przez tak niebezpieczn¹ okolicê. Kto wie, co mo¿e ci siê przydarzyæ.
-	Info_ClearChoices(dia_mika_wohin);
+	Info_ClearChoices(DIA_Mika_WOHIN);
 };
 
-func void dia_mika_wohin_weg()
+func void DIA_Mika_WOHIN_weg()
 {
 	AI_Output(other,self,"DIA_Mika_WOHIN_weg_15_00");	//To nie twoja sprawa.
 	AI_Output(self,other,"DIA_Mika_WOHIN_weg_12_01");	//Skoro tak twierdzisz. Tylko ¿ebyœ siê nie zdziwi³, jeœli przydarzy ci siê coœ bardzo niemi³ego. ¯yczê udanego spaceru.
@@ -99,26 +99,26 @@ func void dia_mika_wohin_weg()
 };
 
 
-instance DIA_MIKA_WASGEFAEHRLICH(C_INFO)
+instance DIA_Mika_WASGEFAEHRLICH(C_Info)
 {
-	npc = mil_337_mika;
+	npc = Mil_337_Mika;
 	nr = 5;
-	condition = dia_mika_wasgefaehrlich_condition;
-	information = dia_mika_wasgefaehrlich_info;
+	condition = DIA_Mika_WASGEFAEHRLICH_Condition;
+	information = DIA_Mika_WASGEFAEHRLICH_Info;
 	description = "Co to za straszliwe niebezpieczeñstwa?";
 };
 
 
-func int dia_mika_wasgefaehrlich_condition()
+func int DIA_Mika_WASGEFAEHRLICH_Condition()
 {
 	return TRUE;
 };
 
-func void dia_mika_wasgefaehrlich_info()
+func void DIA_Mika_WASGEFAEHRLICH_Info()
 {
 	AI_Output(other,self,"DIA_Mika_WASGEFAEHRLICH_15_00");	//Co to za straszliwe niebezpieczeñstwa?
 	AI_Output(self,other,"DIA_Mika_WASGEFAEHRLICH_12_01");	//Wiele rzeczy.
-	if(other.protection[PROT_EDGE] < itar_leather_l.protection[PROT_EDGE])
+	if(other.protection[PROT_EDGE] < ITAR_Leather_L.protection[PROT_EDGE])
 	{
 		AI_Output(self,other,"DIA_Mika_WASGEFAEHRLICH_12_02");	//Na przyk³ad bandyci. Takiego s³abeusza jak ty zjedz¹ ¿ywcem na œniadanie.
 		AI_Output(self,other,"DIA_Mika_WASGEFAEHRLICH_12_03");	//Jeœli nie wpadniesz w rêce bandytów, zajm¹ siê tob¹ dzikie bestie i najemnicy grasuj¹cy w tych lasach.
@@ -128,43 +128,43 @@ func void dia_mika_wasgefaehrlich_info()
 };
 
 
-instance DIA_MIKA_WASKOSTETHILFE(C_INFO)
+instance DIA_Mika_WASKOSTETHILFE(C_Info)
 {
-	npc = mil_337_mika;
+	npc = Mil_337_Mika;
 	nr = 6;
-	condition = dia_mika_waskostethilfe_condition;
-	information = dia_mika_waskostethilfe_info;
+	condition = DIA_Mika_WASKOSTETHILFE_Condition;
+	information = DIA_Mika_WASKOSTETHILFE_Info;
 	description = "Przypuœæmy, ¿e bêdê potrzebowa³ twojej pomocy.";
 };
 
 
-func int dia_mika_waskostethilfe_condition()
+func int DIA_Mika_WASKOSTETHILFE_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_mika_wasgefaehrlich))
+	if(Npc_KnowsInfo(other,DIA_Mika_WASGEFAEHRLICH))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mika_waskostethilfe_info()
+func void DIA_Mika_WASKOSTETHILFE_Info()
 {
 	AI_Output(other,self,"DIA_Mika_WASKOSTETHILFE_15_00");	//Przypuœæmy, ¿e bêdê potrzebowa³ twojej pomocy. Ile bêdzie mnie ona kosztowa³a?
 	AI_Output(self,other,"DIA_Mika_WASKOSTETHILFE_12_01");	//Jestem skromnym s³ug¹ naszego Króla i nie sprawia mi radoœci wyzyskiwanie bezbronnych obywateli.
 	AI_Output(self,other,"DIA_Mika_WASKOSTETHILFE_12_02");	//Jednak skoro stawiasz sprawê w ten sposób, niewielkie wsparcie finansowe mog³oby dobrze zrobiæ naszym przysz³ym kontaktom handlowym.
 	AI_Output(self,other,"DIA_Mika_WASKOSTETHILFE_12_03");	//Na pocz¹tek 10 z³otych monet. Co o tym myœlisz?
-	Info_ClearChoices(dia_mika_waskostethilfe);
-	Info_AddChoice(dia_mika_waskostethilfe,"Muszê siê zastanowiæ.",dia_mika_waskostethilfe_nochnicht);
-	Info_AddChoice(dia_mika_waskostethilfe,"Czemu nie? Oto twoje 10 sztuk z³ota.",dia_mika_waskostethilfe_ja);
+	Info_ClearChoices(DIA_Mika_WASKOSTETHILFE);
+	Info_AddChoice(DIA_Mika_WASKOSTETHILFE,"Muszê siê zastanowiæ.",DIA_Mika_WASKOSTETHILFE_nochnicht);
+	Info_AddChoice(DIA_Mika_WASKOSTETHILFE,"Czemu nie? Oto twoje 10 sztuk z³ota.",DIA_Mika_WASKOSTETHILFE_ja);
 };
 
-func void dia_mika_waskostethilfe_ja()
+func void DIA_Mika_WASKOSTETHILFE_ja()
 {
 	AI_Output(other,self,"DIA_Mika_WASKOSTETHILFE_ja_15_00");	//Czemu nie? Oto twoje 10 sztuk z³ota.
-	if(b_giveinvitems(other,self,5113,10))
+	if(B_GiveInvItems(other,self,ItMi_Gold,10))
 	{
 		AI_Output(self,other,"DIA_Mika_WASKOSTETHILFE_ja_12_01");	//Wspaniale. Jeœli bêdziesz potrzebowa³ mojej pomocy, wiesz, gdzie mnie znaleŸæ.
 		AI_Output(self,other,"DIA_Mika_WASKOSTETHILFE_ja_12_02");	//Mam tylko jedn¹ proœbê: nie przybiegaj do mnie z ka¿dym nieistotnym drobiazgiem, rozumiesz?
-		MIKA_HELPS = TRUE;
+		Mika_Helps = TRUE;
 	}
 	else
 	{
@@ -173,7 +173,7 @@ func void dia_mika_waskostethilfe_ja()
 	AI_StopProcessInfos(self);
 };
 
-func void dia_mika_waskostethilfe_nochnicht()
+func void DIA_Mika_WASKOSTETHILFE_nochnicht()
 {
 	AI_Output(other,self,"DIA_Mika_WASKOSTETHILFE_nochnicht_15_00");	//Pomyœlê o tym.
 	AI_Output(self,other,"DIA_Mika_WASKOSTETHILFE_nochnicht_12_01");	//Bardzo proszê. Mi³ej œmierci.
@@ -181,32 +181,32 @@ func void dia_mika_waskostethilfe_nochnicht()
 };
 
 
-instance DIA_MIKA_UEBERLEGT(C_INFO)
+instance DIA_Mika_UEBERLEGT(C_Info)
 {
-	npc = mil_337_mika;
+	npc = Mil_337_Mika;
 	nr = 7;
-	condition = dia_mika_ueberlegt_condition;
-	information = dia_mika_ueberlegt_info;
+	condition = DIA_Mika_UEBERLEGT_Condition;
+	information = DIA_Mika_UEBERLEGT_Info;
 	permanent = TRUE;
 	description = "Zmieni³em zdanie. Oto 10 z³otych monet.";
 };
 
 
-func int dia_mika_ueberlegt_condition()
+func int DIA_Mika_UEBERLEGT_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_mika_waskostethilfe) && (MIKA_HELPS == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Mika_WASKOSTETHILFE) && (Mika_Helps == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mika_ueberlegt_info()
+func void DIA_Mika_UEBERLEGT_Info()
 {
 	AI_Output(other,self,"DIA_Mika_UEBERLEGT_15_00");	//Zmieni³em zdanie. Oto 10 z³otych monet.
-	if(b_giveinvitems(other,self,5113,10))
+	if(B_GiveInvItems(other,self,ItMi_Gold,10))
 	{
 		AI_Output(self,other,"DIA_Mika_UEBERLEGT_12_01");	//Doskonale. Lepiej póŸno ni¿ wcale. A teraz?
-		MIKA_HELPS = TRUE;
+		Mika_Helps = TRUE;
 	}
 	else
 	{
@@ -216,57 +216,57 @@ func void dia_mika_ueberlegt_info()
 };
 
 
-instance DIA_MIKA_HILFE(C_INFO)
+instance DIA_Mika_HILFE(C_Info)
 {
-	npc = mil_337_mika;
+	npc = Mil_337_Mika;
 	nr = 8;
-	condition = dia_mika_hilfe_condition;
-	information = dia_mika_hilfe_info;
+	condition = DIA_Mika_HILFE_Condition;
+	information = DIA_Mika_HILFE_Info;
 	permanent = TRUE;
 	description = "Potrzebujê pomocy.";
 };
 
 
-func int dia_mika_hilfe_condition()
+func int DIA_Mika_HILFE_Condition()
 {
-	if((MIKA_HELPS == TRUE) && (self.aivar[AIV_PARTYMEMBER] == FALSE))
+	if((Mika_Helps == TRUE) && (self.aivar[AIV_PARTYMEMBER] == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mika_hilfe_info()
+func void DIA_Mika_HILFE_Info()
 {
 	AI_Output(other,self,"DIA_Mika_HILFE_15_00");	//Potrzebujê pomocy.
 	AI_Output(self,other,"DIA_Mika_HILFE_12_01");	//Skoro tak twierdzisz... Co siê sta³o?
-	Info_ClearChoices(dia_mika_hilfe);
-	Info_AddChoice(dia_mika_hilfe,"Goni¹ mnie bandyci.",dia_mika_hilfe_schongut);
-	Info_AddChoice(dia_mika_hilfe,"Atakuj¹ mnie potwory.",dia_mika_hilfe_monster);
-	if(!Npc_IsDead(alvares) && !Npc_IsDead(engardo) && ((AKILS_SLDSTILLTHERE == TRUE) || Npc_KnowsInfo(other,dia_sarah_bauern)))
+	Info_ClearChoices(DIA_Mika_HILFE);
+	Info_AddChoice(DIA_Mika_HILFE,"Goni¹ mnie bandyci.",DIA_Mika_HILFE_schongut);
+	Info_AddChoice(DIA_Mika_HILFE,"Atakuj¹ mnie potwory.",DIA_Mika_HILFE_monster);
+	if(!Npc_IsDead(Alvares) && !Npc_IsDead(Engardo) && ((Akils_SLDStillthere == TRUE) || Npc_KnowsInfo(other,DIA_Sarah_Bauern)))
 	{
-		Info_AddChoice(dia_mika_hilfe,"Farmer Akil zosta³ zaatakowany przez najemników.",dia_mika_hilfe_akil);
+		Info_AddChoice(DIA_Mika_HILFE,"Farmer Akil zosta³ zaatakowany przez najemników.",DIA_Mika_HILFE_Akil);
 	};
 };
 
-func void dia_mika_hilfe_akil()
+func void DIA_Mika_HILFE_Akil()
 {
 	AI_Output(other,self,"DIA_Mika_HILFE_Akil_15_00");	//Farmer Akil zosta³ zaatakowany przez najemników.
 	AI_Output(self,other,"DIA_Mika_HILFE_Akil_12_01");	//Co? Ta ho³ota panoszy siê na farmie Akila? A zatem nie traæmy wiêcej czasu. Za mn¹.
 	AI_StopProcessInfos(self);
 	self.aivar[AIV_PARTYMEMBER] = TRUE;
-	b_giveplayerxp(XP_AMBIENT);
-	b_logentry(TOPIC_AKILSSLDSTILLTHERE,"Mika chce mi pomóc w rozwi¹zaniu problemu Akila z najemnikami.");
+	B_GivePlayerXP(XP_Ambient);
+	B_LogEntry(TOPIC_AkilsSLDStillthere,"Mika chce mi pomóc w rozwi¹zaniu problemu Akila z najemnikami.");
 	Npc_ExchangeRoutine(self,"Akil");
 };
 
-func void dia_mika_hilfe_monster()
+func void DIA_Mika_HILFE_monster()
 {
 	AI_Output(other,self,"DIA_Mika_HILFE_monster_15_00");	//Atakuj¹ mnie potwory.
 	AI_Output(self,other,"DIA_Mika_HILFE_monster_12_01");	//Ale w tej chwili nie widzê tu ¿adnych potworów. Na pewno wszystko zmyœli³eœ.
 	AI_StopProcessInfos(self);
 };
 
-func void dia_mika_hilfe_schongut()
+func void DIA_Mika_HILFE_schongut()
 {
 	AI_Output(other,self,"DIA_Mika_HILFE_schongut_15_00");	//Goni¹ mnie bandyci.
 	AI_Output(self,other,"DIA_Mika_HILFE_schongut_12_01");	//Doprawdy? A gdzie siê podziali? Gdyby naprawdê ciê gonili, chyba by³oby ich widaæ, nie?
@@ -274,154 +274,154 @@ func void dia_mika_hilfe_schongut()
 };
 
 
-instance DIA_MIKA_ZACK(C_INFO)
+instance DIA_Mika_Zack(C_Info)
 {
-	npc = mil_337_mika;
+	npc = Mil_337_Mika;
 	nr = 8;
-	condition = dia_mika_zack_condition;
-	information = dia_mika_zack_info;
+	condition = DIA_Mika_Zack_Condition;
+	information = DIA_Mika_Zack_Info;
 	important = TRUE;
 };
 
 
-func int dia_mika_zack_condition()
+func int DIA_Mika_Zack_Condition()
 {
-	if((Npc_GetDistToWP(self,"NW_FARM2_PATH_03") < 500) && (!Npc_IsDead(alvares) || !Npc_IsDead(engardo)))
+	if((Npc_GetDistToWP(self,"NW_FARM2_PATH_03") < 500) && (!Npc_IsDead(Alvares) || !Npc_IsDead(Engardo)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mika_zack_info()
+func void DIA_Mika_Zack_Info()
 {
 	AI_Output(self,other,"DIA_Mika_Zack_12_00");	//A teraz zobacz, jak to dzia³a.
-	Info_AddChoice(dia_mika_zack,DIALOG_ENDE,dia_mika_zack_los);
+	Info_AddChoice(DIA_Mika_Zack,Dialog_Ende,DIA_Mika_Zack_los);
 };
 
-func void dia_mika_zack_los()
+func void DIA_Mika_Zack_los()
 {
 	AI_StopProcessInfos(self);
-	if(!Npc_IsDead(alvares))
+	if(!Npc_IsDead(Alvares))
 	{
-		alvares.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+		Alvares.aivar[AIV_EnemyOverride] = FALSE;
 	};
-	if(!Npc_IsDead(engardo))
+	if(!Npc_IsDead(Engardo))
 	{
-		engardo.aivar[AIV_ENEMYOVERRIDE] = FALSE;
+		Engardo.aivar[AIV_EnemyOverride] = FALSE;
 	};
 };
 
 
-instance DIA_MIKA_WIEDERNACHHAUSE(C_INFO)
+instance DIA_Mika_WIEDERNACHHAUSE(C_Info)
 {
-	npc = mil_337_mika;
+	npc = Mil_337_Mika;
 	nr = 9;
-	condition = dia_mika_wiedernachhause_condition;
-	information = dia_mika_wiedernachhause_info;
+	condition = DIA_Mika_WIEDERNACHHAUSE_Condition;
+	information = DIA_Mika_WIEDERNACHHAUSE_Info;
 	important = TRUE;
 };
 
 
-func int dia_mika_wiedernachhause_condition()
+func int DIA_Mika_WIEDERNACHHAUSE_Condition()
 {
-	if((Npc_GetDistToWP(self,"NW_FARM2_PATH_03") < 10000) && Npc_IsDead(alvares) && Npc_IsDead(engardo))
+	if((Npc_GetDistToWP(self,"NW_FARM2_PATH_03") < 10000) && Npc_IsDead(Alvares) && Npc_IsDead(Engardo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mika_wiedernachhause_info()
+func void DIA_Mika_WIEDERNACHHAUSE_Info()
 {
 	AI_Output(self,other,"DIA_Mika_WIEDERNACHHAUSE_12_00");	//Dobrze, wystarczy. Bêdê siê zmywa³.
 	AI_StopProcessInfos(self);
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
 	Npc_ExchangeRoutine(self,"Start");
-	b_giveplayerxp(XP_AMBIENT);
+	B_GivePlayerXP(XP_Ambient);
 };
 
 
-instance DIA_MIKA_KAP3_EXIT(C_INFO)
+instance DIA_Mika_Kap3_EXIT(C_Info)
 {
-	npc = mil_337_mika;
+	npc = Mil_337_Mika;
 	nr = 999;
-	condition = dia_mika_kap3_exit_condition;
-	information = dia_mika_kap3_exit_info;
+	condition = DIA_Mika_Kap3_EXIT_Condition;
+	information = DIA_Mika_Kap3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_mika_kap3_exit_condition()
+func int DIA_Mika_Kap3_EXIT_Condition()
 {
-	if(KAPITEL >= 3)
+	if(Kapitel >= 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mika_kap3_exit_info()
+func void DIA_Mika_Kap3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MIKA_KAP3U4U5_PERM(C_INFO)
+instance DIA_Mika_Kap3u4u5_PERM(C_Info)
 {
-	npc = mil_337_mika;
+	npc = Mil_337_Mika;
 	nr = 39;
-	condition = dia_mika_kap3u4u5_perm_condition;
-	information = dia_mika_kap3u4u5_perm_info;
+	condition = DIA_Mika_Kap3u4u5_PERM_Condition;
+	information = DIA_Mika_Kap3u4u5_PERM_Info;
 	permanent = TRUE;
 	description = "Wszystko w porz¹dku?";
 };
 
 
-func int dia_mika_kap3u4u5_perm_condition()
+func int DIA_Mika_Kap3u4u5_PERM_Condition()
 {
-	if((KAPITEL >= 3) && Npc_KnowsInfo(other,dia_mika_wohin) && Npc_IsDead(alvares) && Npc_IsDead(engardo))
+	if((Kapitel >= 3) && Npc_KnowsInfo(other,DIA_Mika_WOHIN) && Npc_IsDead(Alvares) && Npc_IsDead(Engardo))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mika_kap3u4u5_perm_info()
+func void DIA_Mika_Kap3u4u5_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Mika_Kap3u4u5_PERM_15_00");	//Wszystko w porz¹dku?
 	AI_Output(self,other,"DIA_Mika_Kap3u4u5_PERM_12_01");	//Wci¹¿ jesteœ ¿ywy. Zadziwiaj¹ce.
 };
 
 
-instance DIA_MIKA_PICKPOCKET(C_INFO)
+instance DIA_Mika_PICKPOCKET(C_Info)
 {
-	npc = mil_337_mika;
+	npc = Mil_337_Mika;
 	nr = 900;
-	condition = dia_mika_pickpocket_condition;
-	information = dia_mika_pickpocket_info;
+	condition = DIA_Mika_PICKPOCKET_Condition;
+	information = DIA_Mika_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_80;
+	description = Pickpocket_80;
 };
 
 
-func int dia_mika_pickpocket_condition()
+func int DIA_Mika_PICKPOCKET_Condition()
 {
-	return c_beklauen(65,75);
+	return C_Beklauen(65,75);
 };
 
-func void dia_mika_pickpocket_info()
+func void DIA_Mika_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_mika_pickpocket);
-	Info_AddChoice(dia_mika_pickpocket,DIALOG_BACK,dia_mika_pickpocket_back);
-	Info_AddChoice(dia_mika_pickpocket,DIALOG_PICKPOCKET,dia_mika_pickpocket_doit);
+	Info_ClearChoices(DIA_Mika_PICKPOCKET);
+	Info_AddChoice(DIA_Mika_PICKPOCKET,Dialog_Back,DIA_Mika_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Mika_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Mika_PICKPOCKET_DoIt);
 };
 
-func void dia_mika_pickpocket_doit()
+func void DIA_Mika_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_mika_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Mika_PICKPOCKET);
 };
 
-func void dia_mika_pickpocket_back()
+func void DIA_Mika_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_mika_pickpocket);
+	Info_ClearChoices(DIA_Mika_PICKPOCKET);
 };
 

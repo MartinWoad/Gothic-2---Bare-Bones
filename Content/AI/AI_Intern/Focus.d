@@ -1,5 +1,5 @@
 
-instance FOCUS_NORMAL(C_FOCUS)
+instance Focus_Normal(C_Focus)
 {
 	npc_longrange = 500;
 	npc_range1 = 0;
@@ -22,7 +22,7 @@ instance FOCUS_NORMAL(C_FOCUS)
 	mob_prio = 0;
 };
 
-instance FOCUS_MELEE(C_FOCUS)
+instance Focus_Melee(C_Focus)
 {
 	npc_range1 = 0;
 	npc_range2 = 500;
@@ -39,7 +39,7 @@ instance FOCUS_MELEE(C_FOCUS)
 	mob_prio = -1;
 };
 
-instance FOCUS_RANGED(C_FOCUS)
+instance Focus_Ranged(C_Focus)
 {
 	npc_range1 = 0;
 	npc_range2 = 3500;
@@ -61,7 +61,7 @@ instance FOCUS_RANGED(C_FOCUS)
 	mob_prio = -1;
 };
 
-instance FOCUS_THROW_ITEM(C_FOCUS)
+instance Focus_Throw_Item(C_Focus)
 {
 	npc_range1 = 300;
 	npc_range2 = 1500;
@@ -80,7 +80,7 @@ instance FOCUS_THROW_ITEM(C_FOCUS)
 	mob_elevdo = -45;
 };
 
-instance FOCUS_THROW_MOB(C_FOCUS)
+instance Focus_Throw_Mob(C_Focus)
 {
 	npc_range1 = 50;
 	npc_range2 = 200;
@@ -99,7 +99,7 @@ instance FOCUS_THROW_MOB(C_FOCUS)
 	mob_elevdo = -45;
 };
 
-instance FOCUS_MAGIC(C_FOCUS)
+instance Focus_Magic(C_Focus)
 {
 	npc_range1 = 0;
 	npc_range2 = 3500;

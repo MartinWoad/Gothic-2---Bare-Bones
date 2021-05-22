@@ -1,18 +1,18 @@
 
-const int SPL_COST_INSTANTFIRESTORM = 20;
-const int SPL_DAMAGE_INSTANTFIRESTORM = 60;
+const int SPL_Cost_InstantFireStorm = 20;
+const int SPL_Damage_InstantFireStorm = 60;
 
-instance SPELL_FIRESTORM(C_SPELL_PROTO)
+instance Spell_Firestorm(C_Spell_Proto)
 {
 	time_per_mana = 0;
-	damage_per_level = SPL_DAMAGE_INSTANTFIRESTORM;
+	damage_per_level = SPL_Damage_InstantFireStorm;
 	damagetype = DAM_FIRE;
 };
 
 
-func int spell_logic_firestorm(var int manainvested)
+func int Spell_Logic_Firestorm(var int manaInvested)
 {
-	if(self.attribute[ATR_MANA] >= SPL_COST_INSTANTFIRESTORM)
+	if(self.attribute[ATR_MANA] >= SPL_Cost_InstantFireStorm)
 	{
 		return SPL_SENDCAST;
 	}
@@ -22,8 +22,8 @@ func int spell_logic_firestorm(var int manainvested)
 	};
 };
 
-func void spell_cast_firestorm()
+func void Spell_Cast_Firestorm()
 {
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_INSTANTFIRESTORM;
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_InstantFireStorm;
 };
 

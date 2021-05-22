@@ -1,44 +1,44 @@
 
-instance DIA_BAU_13_EXIT(C_INFO)
+instance DIA_BAU_13_EXIT(C_Info)
 {
 	nr = 999;
-	condition = dia_bau_13_exit_condition;
-	information = dia_bau_13_exit_info;
+	condition = DIA_BAU_13_EXIT_Condition;
+	information = DIA_BAU_13_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_bau_13_exit_condition()
+func int DIA_BAU_13_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bau_13_exit_info()
+func void DIA_BAU_13_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BAU_13_JOIN(C_INFO)
+instance DIA_BAU_13_JOIN(C_Info)
 {
 	nr = 4;
-	condition = dia_bau_13_join_condition;
-	information = dia_bau_13_join_info;
+	condition = DIA_BAU_13_JOIN_Condition;
+	information = DIA_BAU_13_JOIN_Info;
 	permanent = TRUE;
 	description = "Powiedz mi coœ wiêcej o tych najemnikach!";
 };
 
 
-func int dia_bau_13_join_condition()
+func int DIA_BAU_13_JOIN_Condition()
 {
-	if(KAPITEL == 1)
+	if(Kapitel == 1)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bau_13_join_info()
+func void DIA_BAU_13_JOIN_Info()
 {
 	AI_Output(other,self,"DIA_BAU_13_JOIN_15_00");	//Powiedz mi coœ wiêcej o tych najemnikach.
 	AI_Output(self,other,"DIA_BAU_13_JOIN_13_01");	//Jeœli dadz¹ ci siê we znaki, to porozmawiaj z Lee. My, ch³opi, zawsze tak robimy, a on trzyma swoich ludzi krótko.
@@ -46,22 +46,22 @@ func void dia_bau_13_join_info()
 };
 
 
-instance DIA_BAU_13_PEOPLE(C_INFO)
+instance DIA_BAU_13_PEOPLE(C_Info)
 {
 	nr = 3;
-	condition = dia_bau_13_people_condition;
-	information = dia_bau_13_people_info;
+	condition = DIA_BAU_13_PEOPLE_Condition;
+	information = DIA_BAU_13_PEOPLE_Info;
 	permanent = TRUE;
 	description = "Kto tu dowodzi?";
 };
 
 
-func int dia_bau_13_people_condition()
+func int DIA_BAU_13_PEOPLE_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bau_13_people_info()
+func void DIA_BAU_13_PEOPLE_Info()
 {
 	AI_Output(other,self,"DIA_BAU_13_PEOPLE_15_00");	//Kto tu rz¹dzi?
 	AI_Output(self,other,"DIA_BAU_13_PEOPLE_13_01");	//Jeœli chcesz znaæ moje zdanie, najemnicy. Fakt, Onar ich op³aca, ale chyba tylko sam Innos wie, jak d³ugo jeszcze bêd¹ go s³uchaæ.
@@ -69,22 +69,22 @@ func void dia_bau_13_people_info()
 };
 
 
-instance DIA_BAU_13_LOCATION(C_INFO)
+instance DIA_BAU_13_LOCATION(C_Info)
 {
 	nr = 2;
-	condition = dia_bau_13_location_condition;
-	information = dia_bau_13_location_info;
+	condition = DIA_BAU_13_LOCATION_Condition;
+	information = DIA_BAU_13_LOCATION_Info;
 	permanent = TRUE;
 	description = "Co mo¿esz mi powiedzieæ o tym miejscu?";
 };
 
 
-func int dia_bau_13_location_condition()
+func int DIA_BAU_13_LOCATION_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bau_13_location_info()
+func void DIA_BAU_13_LOCATION_Info()
 {
 	AI_Output(other,self,"DIA_BAU_13_LOCATION_15_00");	//Co mo¿esz mi powiedzieæ o tym miejscu?
 	AI_Output(self,other,"DIA_BAU_13_LOCATION_13_01");	//W pobli¿u znajduj¹ siê trzy farmy. Farma Onara na wschodzie, zaœ u pó³nocnego ujœcia doliny gospodarstwo Sekoba.
@@ -92,47 +92,47 @@ func void dia_bau_13_location_info()
 };
 
 
-instance DIA_BAU_13_STANDARD(C_INFO)
+instance DIA_BAU_13_STANDARD(C_Info)
 {
 	nr = 1;
-	condition = dia_bau_13_standard_condition;
-	information = dia_bau_13_standard_info;
+	condition = DIA_BAU_13_STANDARD_Condition;
+	information = DIA_BAU_13_STANDARD_Info;
 	permanent = TRUE;
 	description = "Co nowego?";
 };
 
 
-func int dia_bau_13_standard_condition()
+func int DIA_BAU_13_STANDARD_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bau_13_standard_info()
+func void DIA_BAU_13_STANDARD_Info()
 {
 	AI_Output(other,self,"DIA_BAU_13_STANDARD_15_00");	//Co s³ychaæ?
-	if(KAPITEL == 1)
+	if(Kapitel == 1)
 	{
 		AI_Output(self,other,"DIA_BAU_13_STANDARD_13_01");	//Od kiedy zaczêliœmy siê broniæ, oddzia³y stacjonuj¹ce w mieœcie przesta³y rozkradaæ nasze zbiory i inwentarz! Chyba zbytnio siê nas boj¹!
 	};
-	if(KAPITEL == 2)
+	if(Kapitel == 2)
 	{
 		AI_Output(self,other,"DIA_BAU_13_STANDARD_13_02");	//Paladyni z miasta nie za bardzo przejmuj¹ siê naszym losem. Jeœli orkowie zaatakuj¹, bêdziemy zdani tylko na siebie.
 	};
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		AI_Output(self,other,"DIA_BAU_13_STANDARD_13_03");	//I jeszcze smoki! Plotka g³osi, ¿e bestie pojawi³y siê w Górniczej Dolinie. Ponoæ wkrótce maj¹ przeprawiæ siê przez prze³êcz!
 	};
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		AI_Output(self,other,"DIA_BAU_13_STANDARD_13_04");	//Mówi siê nawet o tym, jakoby bandyci z gór zmierzali w stronê Górniczej Doliny. Jak dla mnie, to trochê za du¿o niebezpieczeñstw.
 	};
-	if(KAPITEL >= 5)
+	if(Kapitel >= 5)
 	{
 		AI_Output(self,other,"DIA_BAU_13_STANDARD_13_05");	//Kiedy podatki spadn¹ do jakichœ sensownych wartoœci, a my bêdziemy przyzwoicie zarabiaæ, wtedy znów zaczniemy handlowaæ z miastem.
 	};
 };
 
-func void b_assignambientinfos_bau_13(var C_NPC slf)
+func void B_AssignAmbientInfos_BAU_13(var C_Npc slf)
 {
 	dia_bau_13_exit.npc = Hlp_GetInstanceID(slf);
 	dia_bau_13_join.npc = Hlp_GetInstanceID(slf);

@@ -1,27 +1,27 @@
 
-const int SPL_COST_CHARGEFIREBALL = 75;
-const int SPL_DAMAGE_CHARGEFIREBALL = 100;
+const int SPL_COST_ChargeFireball = 75;
+const int SPL_Damage_ChargeFireball = 100;
 
-instance SPELL_CHARGEFIREBALL(C_SPELL_PROTO)
+instance Spell_ChargeFireball(C_Spell_Proto)
 {
 	time_per_mana = 120;
-	damage_per_level = SPL_DAMAGE_CHARGEFIREBALL;
+	damage_per_level = SPL_Damage_ChargeFireball;
 	damagetype = DAM_FIRE;
-	canturnduringinvest = TRUE;
+	canTurnDuringInvest = TRUE;
 };
 
 
-func int spell_logic_chargefireball(var int manainvested)
+func int Spell_Logic_ChargeFireball(var int manaInvested)
 {
-	if(manainvested == 0)
+	if(manaInvested == 0)
 	{
-		return SPL_FORCEINVEST + ((SPL_COST_CHARGEFIREBALL * 2) / 10);
+		return SPL_FORCEINVEST + ((SPL_COST_ChargeFireball * 2) / 10);
 	};
-	if((manainvested == ((SPL_COST_CHARGEFIREBALL * 3) / 10)) || (manainvested == ((SPL_COST_CHARGEFIREBALL * 5) / 10)) || (manainvested == ((SPL_COST_CHARGEFIREBALL * 8) / 10)))
+	if((manaInvested == ((SPL_COST_ChargeFireball * 3) / 10)) || (manaInvested == ((SPL_COST_ChargeFireball * 5) / 10)) || (manaInvested == ((SPL_COST_ChargeFireball * 8) / 10)))
 	{
 		return SPL_NEXTLEVEL;
 	};
-	if(manainvested >= SPL_COST_CHARGEFIREBALL)
+	if(manaInvested >= SPL_COST_ChargeFireball)
 	{
 		return SPL_DONTINVEST;
 	};

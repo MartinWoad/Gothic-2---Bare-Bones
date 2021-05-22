@@ -1,37 +1,37 @@
 
-instance SLD_806_SYLVIO(NPC_DEFAULT)
+instance SLD_806_Sylvio(Npc_Default)
 {
 	name[0] = "Sylvio";
 	guild = GIL_SLD;
 	id = 806;
 	voice = 9;
 	flags = NPC_FLAG_IMMORTAL;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,4);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,4);
 	level = 24;
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_sld_sword);
-	EquipItem(self,itrw_sld_bow);
-	CreateInvItems(self,itrw_arrow,24);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Thief",FACE_N_SCAR,BODYTEX_N,4836);
+	EquipItem(self,ItMw_1h_Sld_Sword);
+	EquipItem(self,ItRw_Sld_Bow);
+	CreateInvItems(self,ItRw_Arrow,24);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Thief",Face_N_Scar,BodyTex_N,ItAr_Sld_H);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,50);
-	daily_routine = rtn_start_806;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,50);
+	daily_routine = Rtn_Start_806;
 };
 
 
-func void rtn_start_806()
+func void Rtn_Start_806()
 {
-	ta_sit_chair(8,0,22,0,"NW_BIGFARM_KITCHEN_BULLCO");
-	ta_sit_chair(22,0,8,0,"NW_BIGFARM_KITCHEN_BULLCO");
+	TA_Sit_Chair(8,0,22,0,"NW_BIGFARM_KITCHEN_BULLCO");
+	TA_Sit_Chair(22,0,8,0,"NW_BIGFARM_KITCHEN_BULLCO");
 };
 
-func void rtn_tot_806()
+func void Rtn_Tot_806()
 {
-	ta_sleep(8,0,23,0,"TOT");
-	ta_sleep(23,0,8,0,"TOT");
+	TA_Sleep(8,0,23,0,"TOT");
+	TA_Sleep(23,0,8,0,"TOT");
 };
 

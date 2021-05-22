@@ -1,49 +1,49 @@
 
-instance DIA_GORN_DI_KAP5_EXIT(C_INFO)
+instance DIA_Gorn_DI_KAP5_EXIT(C_Info)
 {
-	npc = pc_fighter_di;
+	npc = PC_Fighter_DI;
 	nr = 999;
-	condition = dia_gorn_di_kap5_exit_condition;
-	information = dia_gorn_di_kap5_exit_info;
+	condition = DIA_Gorn_DI_KAP5_EXIT_Condition;
+	information = DIA_Gorn_DI_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_gorn_di_kap5_exit_condition()
+func int DIA_Gorn_DI_KAP5_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_gorn_di_kap5_exit_info()
+func void DIA_Gorn_DI_KAP5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_GORN_DI_HALLO(C_INFO)
+instance DIA_Gorn_DI_Hallo(C_Info)
 {
-	npc = pc_fighter_di;
+	npc = PC_Fighter_DI;
 	nr = 2;
-	condition = dia_gorn_di_hallo_condition;
-	information = dia_gorn_di_hallo_info;
+	condition = DIA_Gorn_DI_Hallo_Condition;
+	information = DIA_Gorn_DI_Hallo_Info;
 	permanent = TRUE;
 	description = "Wszystko w porz¹dku?";
 };
 
 
-func int dia_gorn_di_hallo_condition()
+func int DIA_Gorn_DI_Hallo_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gorn_di_hallo_info()
+func void DIA_Gorn_DI_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Gorn_DI_Hallo_15_00");	//Wszystko w porz¹dku?
-	if(ORKSTURMDI == FALSE)
+	if(ORkSturmDI == FALSE)
 	{
 		AI_Output(self,other,"DIA_Gorn_DI_Hallo_12_01");	//Jak na razie. Wiesz, ¿e mam ochotê na dobr¹ rozróbê!
 	}
@@ -54,92 +54,92 @@ func void dia_gorn_di_hallo_info()
 };
 
 
-instance DIA_GORN_DI_TEACH(C_INFO)
+instance DIA_Gorn_DI_Teach(C_Info)
 {
-	npc = pc_fighter_di;
+	npc = PC_Fighter_DI;
 	nr = 10;
-	condition = dia_gorn_di_teach_condition;
-	information = dia_gorn_di_teach_info;
+	condition = DIA_Gorn_DI_Teach_Condition;
+	information = DIA_Gorn_DI_Teach_Info;
 	permanent = TRUE;
 	description = "Chcê trochê potrenowaæ.";
 };
 
 
-func int dia_gorn_di_teach_condition()
+func int DIA_Gorn_DI_Teach_Condition()
 {
-	if(Npc_IsDead(undeaddragon) == FALSE)
+	if(Npc_IsDead(UndeadDragon) == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_gorn_di_teach_info()
+func void DIA_Gorn_DI_Teach_Info()
 {
 	AI_Output(other,self,"DIA_Gorn_DI_Teach_15_00");	//Chcê trochê potrenowaæ.
 	AI_Output(self,other,"DIA_Gorn_DI_Teach_12_01");	//Fakt. Przyda ci siê.
-	Info_ClearChoices(dia_gorn_di_teach);
-	Info_AddChoice(dia_gorn_di_teach,DIALOG_BACK,dia_gorn_di_teach_back);
-	Info_AddChoice(dia_gorn_di_teach,b_buildlearnstring(PRINT_LEARN2H5,b_getlearncosttalent(other,NPC_TALENT_2H) * 5),dia_gorn_di_teach_2h_5);
-	Info_AddChoice(dia_gorn_di_teach,b_buildlearnstring(PRINT_LEARN2H1,b_getlearncosttalent(other,NPC_TALENT_2H)),dia_gorn_di_teach_2h_1);
+	Info_ClearChoices(DIA_Gorn_DI_Teach);
+	Info_AddChoice(DIA_Gorn_DI_Teach,Dialog_Back,DIA_Gorn_DI_Teach_Back);
+	Info_AddChoice(DIA_Gorn_DI_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Gorn_DI_Teach_2H_5);
+	Info_AddChoice(DIA_Gorn_DI_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Gorn_DI_Teach_2H_1);
 };
 
-func void dia_gorn_di_teach_2h_1()
+func void DIA_Gorn_DI_Teach_2H_1()
 {
-	if(b_teachfighttalentpercent(self,other,NPC_TALENT_2H,1,50))
+	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,1,50))
 	{
 		AI_Output(self,other,"DIA_Gorn_DI_Teach_2H_1_12_00");	//W Kolonii by³eœ w du¿o lepszej formie.
 	};
-	Info_ClearChoices(dia_gorn_di_teach);
-	Info_AddChoice(dia_gorn_di_teach,DIALOG_BACK,dia_gorn_di_teach_back);
-	Info_AddChoice(dia_gorn_di_teach,b_buildlearnstring(PRINT_LEARN2H5,b_getlearncosttalent(other,NPC_TALENT_2H) * 5),dia_gorn_di_teach_2h_5);
-	Info_AddChoice(dia_gorn_di_teach,b_buildlearnstring(PRINT_LEARN2H1,b_getlearncosttalent(other,NPC_TALENT_2H)),dia_gorn_di_teach_2h_1);
+	Info_ClearChoices(DIA_Gorn_DI_Teach);
+	Info_AddChoice(DIA_Gorn_DI_Teach,Dialog_Back,DIA_Gorn_DI_Teach_Back);
+	Info_AddChoice(DIA_Gorn_DI_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Gorn_DI_Teach_2H_5);
+	Info_AddChoice(DIA_Gorn_DI_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Gorn_DI_Teach_2H_1);
 };
 
-func void dia_gorn_di_teach_2h_5()
+func void DIA_Gorn_DI_Teach_2H_5()
 {
-	if(b_teachfighttalentpercent(self,other,NPC_TALENT_2H,5,50))
+	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,5,50))
 	{
 		AI_Output(self,other,"DIA_Gorn_DI_Teach_2H_5_12_00");	//Spróbuj trzymaæ orê¿ trochê wy¿ej. Tak¹ gard¹ nie sparujesz nawet laski niewidomego.
 	};
-	Info_ClearChoices(dia_gorn_di_teach);
-	Info_AddChoice(dia_gorn_di_teach,DIALOG_BACK,dia_gorn_di_teach_back);
-	Info_AddChoice(dia_gorn_di_teach,b_buildlearnstring(PRINT_LEARN2H5,b_getlearncosttalent(other,NPC_TALENT_2H) * 5),dia_gorn_di_teach_2h_5);
-	Info_AddChoice(dia_gorn_di_teach,b_buildlearnstring(PRINT_LEARN2H1,b_getlearncosttalent(other,NPC_TALENT_2H)),dia_gorn_di_teach_2h_1);
+	Info_ClearChoices(DIA_Gorn_DI_Teach);
+	Info_AddChoice(DIA_Gorn_DI_Teach,Dialog_Back,DIA_Gorn_DI_Teach_Back);
+	Info_AddChoice(DIA_Gorn_DI_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Gorn_DI_Teach_2H_5);
+	Info_AddChoice(DIA_Gorn_DI_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Gorn_DI_Teach_2H_1);
 };
 
-func void dia_gorn_di_teach_back()
+func void DIA_Gorn_DI_Teach_Back()
 {
-	Info_ClearChoices(dia_gorn_di_teach);
+	Info_ClearChoices(DIA_Gorn_DI_Teach);
 };
 
 
-instance DIA_GORN_DI_UNDEADDRAGONDEAD(C_INFO)
+instance DIA_Gorn_DI_UndeadDragonDead(C_Info)
 {
-	npc = pc_fighter_di;
+	npc = PC_Fighter_DI;
 	nr = 2;
-	condition = dia_gorn_di_undeaddragondead_condition;
-	information = dia_gorn_di_undeaddragondead_info;
+	condition = DIA_Gorn_DI_UndeadDragonDead_Condition;
+	information = DIA_Gorn_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
 	description = "Zosta³eœ na statku?";
 };
 
 
-func int dia_gorn_di_undeaddragondead_condition()
+func int DIA_Gorn_DI_UndeadDragonDead_Condition()
 {
-	if(Npc_IsDead(undeaddragon))
+	if(Npc_IsDead(UndeadDragon))
 	{
 		return TRUE;
 	};
 };
 
 
-var int dia_gorn_di_undeaddragondead_onetime;
+var int DIA_Gorn_DI_UndeadDragonDead_OneTime;
 
-func void dia_gorn_di_undeaddragondead_info()
+func void DIA_Gorn_DI_UndeadDragonDead_Info()
 {
 	AI_Output(other,self,"DIA_Gorn_DI_UndeadDragonDead_15_00");	//Zosta³eœ na statku?
 	AI_Output(self,other,"DIA_Gorn_DI_UndeadDragonDead_12_01");	//Jasne. Pomyœl, co by by³o, gdybyœ go nie zasta³ po powrocie!
-	if(DIA_GORN_DI_UNDEADDRAGONDEAD_ONETIME == FALSE)
+	if(DIA_Gorn_DI_UndeadDragonDead_OneTime == FALSE)
 	{
 		if(hero.guild == GIL_DJG)
 		{
@@ -150,12 +150,12 @@ func void dia_gorn_di_undeaddragondead_info()
 			AI_Output(other,self,"DIA_Gorn_DI_UndeadDragonDead_15_06");	//Hmmm. Mo¿e...
 			AI_Output(self,other,"DIA_Gorn_DI_UndeadDragonDead_12_07");	//No, ch³opie, wyluzuj! Ju¿ po wszystkim!
 		};
-		DIA_GORN_DI_UNDEADDRAGONDEAD_ONETIME = TRUE;
+		DIA_Gorn_DI_UndeadDragonDead_OneTime = TRUE;
 	};
-	if(Npc_KnowsInfo(other,dia_biff_di_plunder))
+	if(Npc_KnowsInfo(other,DIA_Biff_DI_plunder))
 	{
 		AI_Output(self,other,"DIA_Gorn_DI_UndeadDragonDead_12_08");	//Ktoœ musi daæ znaæ Biffowi albo zgnije na tej wyspie.
-		if(Npc_IsDead(biff_di) == FALSE)
+		if(Npc_IsDead(Biff_DI) == FALSE)
 		{
 			AI_Output(other,self,"DIA_Gorn_DI_UndeadDragonDead_15_09");	//Spokojnie. Bêdzie na czas.
 		};
@@ -166,37 +166,37 @@ func void dia_gorn_di_undeaddragondead_info()
 };
 
 
-instance DIA_FIGHTER_DI_PICKPOCKET(C_INFO)
+instance DIA_Fighter_DI_PICKPOCKET(C_Info)
 {
-	npc = pc_fighter_di;
+	npc = PC_Fighter_DI;
 	nr = 900;
-	condition = dia_fighter_di_pickpocket_condition;
-	information = dia_fighter_di_pickpocket_info;
+	condition = DIA_Fighter_DI_PICKPOCKET_Condition;
+	information = DIA_Fighter_DI_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_20;
+	description = Pickpocket_20;
 };
 
 
-func int dia_fighter_di_pickpocket_condition()
+func int DIA_Fighter_DI_PICKPOCKET_Condition()
 {
-	return c_beklauen(10,45);
+	return C_Beklauen(10,45);
 };
 
-func void dia_fighter_di_pickpocket_info()
+func void DIA_Fighter_DI_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_fighter_di_pickpocket);
-	Info_AddChoice(dia_fighter_di_pickpocket,DIALOG_BACK,dia_fighter_di_pickpocket_back);
-	Info_AddChoice(dia_fighter_di_pickpocket,DIALOG_PICKPOCKET,dia_fighter_di_pickpocket_doit);
+	Info_ClearChoices(DIA_Fighter_DI_PICKPOCKET);
+	Info_AddChoice(DIA_Fighter_DI_PICKPOCKET,Dialog_Back,DIA_Fighter_DI_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Fighter_DI_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Fighter_DI_PICKPOCKET_DoIt);
 };
 
-func void dia_fighter_di_pickpocket_doit()
+func void DIA_Fighter_DI_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_fighter_di_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Fighter_DI_PICKPOCKET);
 };
 
-func void dia_fighter_di_pickpocket_back()
+func void DIA_Fighter_DI_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_fighter_di_pickpocket);
+	Info_ClearChoices(DIA_Fighter_DI_PICKPOCKET);
 };
 

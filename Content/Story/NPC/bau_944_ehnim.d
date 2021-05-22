@@ -1,31 +1,31 @@
 
-instance BAU_944_EHNIM(NPC_DEFAULT)
+instance BAU_944_Ehnim(Npc_Default)
 {
 	name[0] = "Ehnim";
 	guild = GIL_OUT;
 	id = 944;
 	voice = 12;
 	flags = 0;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,1);
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
-	EquipItem(self,itmw_1h_bau_axe);
-	b_createambientinv(self);
-	CreateInvItems(self,itpo_health_02,1);
-	b_setnpcvisual(self,MALE,"Hum_Head_FatBald",FACE_P_NORMAL03,BODYTEX_P,4830);
+	EquipItem(self,ItMw_1h_Bau_Axe);
+	B_CreateAmbientInv(self);
+	CreateInvItems(self,ItPo_Health_02,1);
+	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_P_Normal03,BodyTex_P,ITAR_Bau_L);
 	Mdl_SetModelFatness(self,2);
 	Mdl_ApplyOverlayMds(self,"Humans_Tired.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,40);
-	daily_routine = rtn_start_944;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,40);
+	daily_routine = Rtn_Start_944;
 };
 
 
-func void rtn_start_944()
+func void Rtn_Start_944()
 {
-	ta_rake_fp(5,0,12,0,"NW_FARM2_FIELD_03");
-	ta_sit_campfire(12,0,14,0,"NW_FARM2_FIELD_03_B");
-	ta_rake_fp(14,0,21,0,"NW_FARM2_FIELD_03");
-	ta_sit_campfire(21,0,5,0,"NW_FARM2_OUT_03");
+	TA_Rake_FP(5,0,12,0,"NW_FARM2_FIELD_03");
+	TA_Sit_Campfire(12,0,14,0,"NW_FARM2_FIELD_03_B");
+	TA_Rake_FP(14,0,21,0,"NW_FARM2_FIELD_03");
+	TA_Sit_Campfire(21,0,5,0,"NW_FARM2_OUT_03");
 };
 

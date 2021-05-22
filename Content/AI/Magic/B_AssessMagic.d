@@ -1,47 +1,47 @@
 
-func void b_assessmagic()
+func void B_AssessMagic()
 {
 	if(Npc_GetActiveSpellCat(other) == SPELL_BAD)
 	{
 		Npc_SendPassivePerc(self,PERC_ASSESSFIGHTSOUND,self,other);
 	};
-	if((Npc_GetActiveSpell(other) == SPL_ICECUBE) || (Npc_GetActiveSpell(other) == SPL_ICEWAVE))
+	if((Npc_GetActiveSpell(other) == SPL_IceCube) || (Npc_GetActiveSpell(other) == SPL_IceWave))
 	{
 		Npc_ClearAIQueue(self);
-		b_clearperceptions(self);
-		AI_StartState(self,zs_magicfreeze,0,"");
+		B_ClearPerceptions(self);
+		AI_StartState(self,ZS_MagicFreeze,0,"");
 		return;
 	};
-	if((Npc_GetActiveSpell(other) == SPL_CHARGEZAP) || (Npc_GetActiveSpell(other) == SPL_ZAP) || (Npc_GetActiveSpell(other) == SPL_LIGHTNINGFLASH))
+	if((Npc_GetActiveSpell(other) == SPL_ChargeZap) || (Npc_GetActiveSpell(other) == SPL_Zap) || (Npc_GetActiveSpell(other) == SPL_LightningFlash))
 	{
 		Npc_ClearAIQueue(self);
-		b_clearperceptions(self);
-		AI_StartState(self,zs_shortzapped,0,"");
+		B_ClearPerceptions(self);
+		AI_StartState(self,ZS_ShortZapped,0,"");
 		return;
 	};
-	if(Npc_GetActiveSpell(other) == SPL_FEAR)
+	if(Npc_GetActiveSpell(other) == SPL_Fear)
 	{
 		Npc_ClearAIQueue(self);
-		b_clearperceptions(self);
+		B_ClearPerceptions(self);
 		Npc_SetTarget(self,other);
-		if((self.guild < GIL_SEPERATOR_HUM) && (self.guild != GIL_KDF) && (self.guild != GIL_PAL) && !c_npcisevil(self))
+		if((self.guild < GIL_SEPERATOR_HUM) && (self.guild != GIL_KDF) && (self.guild != GIL_PAL) && !C_NpcIsEvil(self))
 		{
-			AI_StartState(self,zs_magicflee,0,"");
+			AI_StartState(self,ZS_MagicFlee,0,"");
 			return;
 		}
-		else if((self.guild > GIL_SEPERATOR_HUM) && !c_npcisevil(self))
+		else if((self.guild > GIL_SEPERATOR_HUM) && !C_NpcIsEvil(self))
 		{
-			AI_StartState(self,zs_mm_flee,0,"");
+			AI_StartState(self,ZS_MM_Flee,0,"");
 			return;
 		};
 	};
-	if(Npc_GetActiveSpell(other) == SPL_FIRERAIN)
+	if(Npc_GetActiveSpell(other) == SPL_Firerain)
 	{
 		Npc_ClearAIQueue(self);
-		AI_StartState(self,zs_magicburnshort,0,"");
+		AI_StartState(self,ZS_MagicBurnShort,0,"");
 		return;
 	};
 };
 
 
-const func PLAYER_PERC_ASSESSMAGIC = B_ASSESSMAGIC;
+const func PLAYER_PERC_ASSESSMAGIC = B_AssessMagic;

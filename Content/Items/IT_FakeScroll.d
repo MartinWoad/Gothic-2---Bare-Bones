@@ -1,5 +1,5 @@
 
-instance FAKESCROLL(C_ITEM)
+instance Fakescroll(C_Item)
 {
 	name = "List";
 	mainflag = ITEM_KAT_DOCS;
@@ -10,9 +10,9 @@ instance FAKESCROLL(C_ITEM)
 	value = 0;
 	visual = "Fakescroll.3ds";
 	material = MAT_LEATHER;
-	scemename = "MAPSEALED";
+	scemeName = "MAPSEALED";
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 

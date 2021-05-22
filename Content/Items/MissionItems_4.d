@@ -1,39 +1,39 @@
 
-const int VALUE_DRAGONEGG = 200;
-const int VALUE_ORCELITERING = 130;
+const int Value_Dragonegg = 200;
+const int Value_OrcEliteRing = 130;
 
-instance ITAM_MANA_ANGAR_MIS(C_ITEM)
+instance ItAm_Mana_Angar_MIS(C_Item)
 {
-	name = NAME_AMULETT;
+	name = NAME_Amulett;
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET | ITEM_MISSION;
-	value = VALUE_AM_MANA;
+	value = Value_Am_Mana;
 	visual = "ItAm_Mana_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_itam_mana_angar;
-	on_unequip = unequip_itam_mana_angar;
+	on_equip = Equip_ItAm_Mana_Angar;
+	on_unequip = UnEquip_ItAm_Mana_Angar;
 	description = "Magiczny Amulet Angara";
-	text[2] = NAME_BONUS_MANA;
+	text[2] = NAME_Bonus_Mana;
 	count[2] = 10;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
 };
 
 
-func void equip_itam_mana_angar()
+func void Equip_ItAm_Mana_Angar()
 {
-	b_raiseattribute(self,ATR_MANA_MAX,AM_MANA,FALSE,TRUE);
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] + AM_MANA;
+	B_RaiseAttribute(self,ATR_MANA_MAX,Am_Mana,FALSE,TRUE);
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] + Am_Mana;
 };
 
-func void unequip_itam_mana_angar()
+func void UnEquip_ItAm_Mana_Angar()
 {
-	b_removeitemattribute(self,ATR_MANA_MAX,AM_MANA);
-	if(self.attribute[ATR_MANA] > AM_MANA)
+	b_removeitemattribute(self,ATR_MANA_MAX,Am_Mana);
+	if(self.attribute[ATR_MANA] > Am_Mana)
 	{
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - AM_MANA;
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - Am_Mana;
 	}
 	else
 	{
@@ -42,55 +42,55 @@ func void unequip_itam_mana_angar()
 };
 
 
-instance ITMW_1H_FERROSSWORD_MIS(C_ITEM)
+instance ItMW_1H_FerrosSword_Mis(C_Item)
 {
 	name = "Miecz Ferosa";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_SWD | ITEM_MISSION;
 	material = MAT_METAL;
-	value = VALUE_SPECIAL_1H_2;
-	damagetotal = DAMAGE_SPECIAL_1H_2;
+	value = Value_Special_1H_2;
+	damageTotal = Damage_Special_1H_2;
 	damagetype = DAM_EDGE;
-	range = RANGE_SPECIAL_1H_2;
+	range = Range_Special_1H_2;
 	cond_atr[2] = ATR_STRENGTH;
-	cond_value[2] = CONDITION_SPECIAL_1H_2;
+	cond_value[2] = Condition_Special_1H_2;
 	visual = "ItMw_060_1h_Sword_smith_03.3DS";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_STR_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
-	text[4] = NAME_ONEHANDED;
-	text[5] = NAME_VALUE;
+	text[4] = NAME_OneHanded;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITMI_KEROLOTHSGELDBEUTEL_MIS(C_ITEM)
+instance ItMi_KerolothsGeldbeutel_MIS(C_Item)
 {
 	name = "Skórzana Torba Kerolotha";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 0;
 	visual = "ItMi_Pocket.3ds";
-	scemename = "MAPSEALED";
+	scemeName = "MAPSEALED";
 	material = MAT_METAL;
-	on_state[0] = usekerolothsgeldbeutel;
+	on_state[0] = UseKerolothsGeldbeutel;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void usekerolothsgeldbeutel()
+func void UseKerolothsGeldbeutel()
 {
-	CreateInvItems(self,itmi_gold,300);
-	CreateInvItems(self,itmi_kerolothsgeldbeutelleer_mis,1);
-	Print(PRINT_KEROLOTHSGELDBEUTEL);
+	CreateInvItems(self,ItMi_Gold,300);
+	CreateInvItems(self,ItMi_KerolothsGeldbeutelLeer_MIS,1);
+	Print(PRINT_KerolothsGeldBeutel);
 	Snd_Play("Geldbeutel");
 };
 
 
-instance ITMI_KEROLOTHSGELDBEUTELLEER_MIS(C_ITEM)
+instance ItMi_KerolothsGeldbeutelLeer_MIS(C_Item)
 {
 	name = "Skórzana Torba Kerolotha";
 	mainflag = ITEM_KAT_NONE;
@@ -99,33 +99,33 @@ instance ITMI_KEROLOTHSGELDBEUTELLEER_MIS(C_ITEM)
 	visual = "ItMi_Pocket.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRW_SENGRATHSARMBRUST_MIS(C_ITEM)
+instance ItRw_SengrathsArmbrust_MIS(C_Item)
 {
 	name = "Kusza Sengratha";
 	mainflag = ITEM_KAT_FF;
 	flags = ITEM_CROSSBOW;
 	material = MAT_WOOD;
-	value = VALUE_MILARMBRUST;
-	damagetotal = DAMAGE_MILARMBRUST;
+	value = Value_MilArmbrust;
+	damageTotal = Damage_MilArmbrust;
 	damagetype = DAM_POINT;
-	munition = itrw_bolt;
+	munition = ItRw_Bolt;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = CONDITION_MILARMBRUST;
+	cond_value[2] = Condition_MilArmbrust;
 	visual = "ItRw_Mil_Crossbow.mms";
 	description = name;
-	text[2] = NAME_DAMAGE;
-	count[2] = damagetotal;
-	text[3] = NAME_DEX_NEEDED;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_TALBINSLURKERSKIN(C_ITEM)
+instance ItAt_TalbinsLurkerSkin(C_Item)
 {
 	name = "Skóra Topielca";
 	mainflag = ITEM_KAT_NONE;
@@ -138,16 +138,16 @@ instance ITAT_TALBINSLURKERSKIN(C_ITEM)
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITAT_DRAGONEGG_MIS(C_ITEM)
+instance ItAt_DragonEgg_MIS(C_Item)
 {
 	name = "Smocze Jajo";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION | ITEM_MULTI;
-	value = VALUE_DRAGONEGG;
+	value = Value_Dragonegg;
 	visual = "ItAt_DragonEgg.3ds";
 	material = MAT_LEATHER;
 	description = name;
@@ -155,27 +155,27 @@ instance ITAT_DRAGONEGG_MIS(C_ITEM)
 	text[1] = "dochodzi s³aby dŸwiêk, jakby drapanie.";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITRI_ORCELITERING(C_ITEM)
+instance ItRi_OrcEliteRing(C_Item)
 {
 	name = "Pierœcieñ Orkowych Przywódców";
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_MISSION | ITEM_RING | ITEM_MULTI;
-	value = VALUE_ORCELITERING;
+	value = Value_OrcEliteRing;
 	visual = "ItRi_Str_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	on_equip = equip_orcelitering;
-	on_unequip = unequip_orcelitering;
+	on_equip = Equip_OrcEliteRing;
+	on_unequip = UnEquip_OrcEliteRing;
 	description = name;
 	text[0] = "Pierœcieñ jest szorstki i";
 	text[1] = "dziwnie zimny w dotyku.";
 	text[2] = "";
 	text[3] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
 	inv_rotz = INVCAM_Z_RING_STANDARD;
@@ -183,46 +183,46 @@ instance ITRI_ORCELITERING(C_ITEM)
 };
 
 
-func void equip_orcelitering()
+func void Equip_OrcEliteRing()
 {
 	Npc_ChangeAttribute(self,ATR_HITPOINTS,-20);
-	Print(PRINT_ORCELITERINGEQUIP);
+	Print(PRINT_OrcEliteRingEquip);
 };
 
-func void unequip_orcelitering()
+func void UnEquip_OrcEliteRing()
 {
 };
 
 
-var int neoras_scuseddragoneggdrink;
+var int Neoras_SCUsedDragonEggDrink;
 
-instance ITPO_DRAGONEGGDRINKNEORAS_MIS(C_ITEM)
+instance ItPo_DragonEggDrinkNeoras_MIS(C_Item)
 {
-	name = NAME_TRANK;
+	name = NAME_Trank;
 	mainflag = ITEM_KAT_POTIONS;
 	flags = ITEM_MULTI;
-	value = VALUE_HPELIXIER;
+	value = Value_HpElixier;
 	visual = "ItPo_Perm_STR.3ds";
 	material = MAT_GLAS;
-	on_state[0] = use_dragoneggdrinkneoras;
-	scemename = "POTIONFAST";
+	on_state[0] = Use_DragonEggDrinkNeoras;
+	scemeName = "POTIONFAST";
 	description = "Mikstura Wydzieliny ze Smoczych Jaj";
 	text[3] = "Skutki nieznane.";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void use_dragoneggdrinkneoras()
+func void Use_DragonEggDrinkNeoras()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_ELIXIER);
-	b_raiseattribute(self,ATR_STRENGTH,1,TRUE,FALSE);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Elixier);
+	B_RaiseAttribute(self,ATR_STRENGTH,1,TRUE,FALSE);
 	Snd_Play("DEM_Warn");
-	NEORAS_SCUSEDDRAGONEGGDRINK = TRUE;
+	Neoras_SCUsedDragonEggDrink = TRUE;
 };
 
 
-instance ITWR_MAP_ORCELITE_MIS(C_ITEM)
+instance ItWr_Map_Orcelite_MIS(C_Item)
 {
 	name = "Orkowa Mapa Wojenna";
 	mainflag = ITEM_KAT_DOCS;
@@ -230,36 +230,36 @@ instance ITWR_MAP_ORCELITE_MIS(C_ITEM)
 	value = 350;
 	visual = "ItWr_Map_01.3DS";
 	material = MAT_LEATHER;
-	scemename = "MAP";
-	on_state[0] = use_map_newworld_orcelite_mis;
+	scemeName = "MAP";
+	on_state[0] = Use_Map_NewWorld_Orcelite_MIS;
 	description = name;
 	text[0] = "";
 	text[1] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-var int use_map_newworld_orcelite_mis_onetime;
+var int Use_Map_NewWorld_Orcelite_MIS_OneTime;
 
-func void use_map_newworld_orcelite_mis()
+func void Use_Map_NewWorld_Orcelite_MIS()
 {
-	var int document;
-	document = Doc_CreateMap();
-	Doc_SetPages(document,1);
-	Doc_SetPage(document,0,"Map_NewWorld_Orcelite.tga",TRUE);
-	Doc_SetLevel(document,"NewWorld\NewWorld.zen");
-	Doc_SetLevelCoords(document,-28000,50500,95500,-42500);
-	Doc_Show(document);
-	if((use_map_newworld_orcelite_mis_onetime == FALSE) && (MIS_KILLORKOBERST != 0))
+	var int Document;
+	Document = Doc_CreateMap();
+	Doc_SetPages(Document,1);
+	Doc_SetPage(Document,0,"Map_NewWorld_Orcelite.tga",TRUE);
+	Doc_SetLevel(Document,"NewWorld\NewWorld.zen");
+	Doc_SetLevelCoords(Document,-28000,50500,95500,-42500);
+	Doc_Show(Document);
+	if((Use_Map_NewWorld_Orcelite_MIS_OneTime == FALSE) && (MIS_KillOrkOberst != 0))
 	{
-		b_logentry(TOPIC_ORCELITE,"Przy orkowym pu³kowniku znalaz³em dziwn¹ mapê. Wygl¹da jak plan dzia³añ wojennych tych stworzeñ.");
-		use_map_newworld_orcelite_mis_onetime = TRUE;
+		B_LogEntry(TOPIC_OrcElite,"Przy orkowym pu³kowniku znalaz³em dziwn¹ mapê. Wygl¹da jak plan dzia³añ wojennych tych stworzeñ.");
+		Use_Map_NewWorld_Orcelite_MIS_OneTime = TRUE;
 	};
 };
 
 
-instance ITWR_MAP_CAVES_MIS(C_ITEM)
+instance ItWr_Map_Caves_MIS(C_Item)
 {
 	name = "Jaskinie Khorinis";
 	mainflag = ITEM_KAT_DOCS;
@@ -267,24 +267,24 @@ instance ITWR_MAP_CAVES_MIS(C_ITEM)
 	value = 200;
 	visual = "ItWr_Map_01.3DS";
 	material = MAT_LEATHER;
-	scemename = "MAP";
-	on_state[0] = use_map_newworld_caves_mis;
+	scemeName = "MAP";
+	on_state[0] = Use_Map_NewWorld_Caves_MIS;
 	description = name;
 	text[0] = "";
 	text[1] = "";
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
 
-func void use_map_newworld_caves_mis()
+func void Use_Map_NewWorld_Caves_MIS()
 {
-	var int document;
-	document = Doc_CreateMap();
-	Doc_SetPages(document,1);
-	Doc_SetPage(document,0,"Map_NewWorld_Caves.tga",TRUE);
-	Doc_SetLevel(document,"NewWorld\NewWorld.zen");
-	Doc_SetLevelCoords(document,-28000,50500,95500,-42500);
-	Doc_Show(document);
+	var int Document;
+	Document = Doc_CreateMap();
+	Doc_SetPages(Document,1);
+	Doc_SetPage(Document,0,"Map_NewWorld_Caves.tga",TRUE);
+	Doc_SetLevel(Document,"NewWorld\NewWorld.zen");
+	Doc_SetLevelCoords(Document,-28000,50500,95500,-42500);
+	Doc_Show(Document);
 };
 

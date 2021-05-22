@@ -1,23 +1,23 @@
 
-func void zs_flee()
+func void ZS_Flee()
 {
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
-	b_validateother();
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
+	B_ValidateOther();
 	if(self.aivar[AIV_LOADGAME] == FALSE)
 	{
 		if((self.guild == GIL_BAU) || (self.guild == GIL_VLK))
 		{
-			b_say_overlay(self,other,"$HELP");
+			B_Say_Overlay(self,other,"$HELP");
 			Npc_SendPassivePerc(self,PERC_ASSESSFIGHTSOUND,self,other);
 		};
-		b_say_overlay(self,other,"$RUNAWAY");
+		B_Say_Overlay(self,other,"$RUNAWAY");
 	};
 	AI_RemoveWeapon(self);
 	AI_SetWalkMode(self,NPC_RUN);
 	Mdl_ApplyOverlayMds(self,"HUMANS_FLEE.MDS");
 };
 
-func int zs_flee_loop()
+func int ZS_Flee_Loop()
 {
 	Npc_GetTarget(self);
 	if(Npc_GetDistToNpc(self,other) > FIGHT_DIST_CANCEL)
@@ -25,7 +25,7 @@ func int zs_flee_loop()
 		Npc_ClearAIQueue(self);
 		return LOOP_END;
 	};
-	if(c_npcisdown(other))
+	if(C_NpcIsDown(other))
 	{
 		Npc_ClearAIQueue(self);
 		return LOOP_END;
@@ -34,10 +34,10 @@ func int zs_flee_loop()
 	return LOOP_CONTINUE;
 };
 
-func void zs_flee_end()
+func void ZS_Flee_End()
 {
 	Mdl_RemoveOverlayMds(self,"HUMANS_FLEE.MDS");
 	AI_Standup(self);
-	AI_StartState(self,zs_healself,1,"");
+	AI_StartState(self,ZS_HealSelf,1,"");
 };
 

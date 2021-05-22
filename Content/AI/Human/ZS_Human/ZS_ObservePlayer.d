@@ -1,50 +1,50 @@
 
-func void zs_observeplayer()
+func void ZS_ObservePlayer()
 {
-	perception_set_normal();
-	if(!c_bodystatecontains(self,BS_SIT))
+	Perception_Set_Normal();
+	if(!C_BodyStateContains(self,BS_SIT))
 	{
 		AI_Standup(self);
-		b_lookatnpc(self,other);
-		b_turntonpc(self,other);
+		B_LookAtNpc(self,other);
+		B_TurnToNpc(self,other);
 	}
 	else
 	{
-		b_lookatnpc(self,other);
+		B_LookAtNpc(self,other);
 	};
-	if(Npc_WasInState(self,zs_sleep))
+	if(Npc_WasInState(self,ZS_Sleep))
 	{
-		b_say(self,other,"$YOUDISTURBEDMYSLUMBER");
+		B_Say(self,other,"$YOUDISTURBEDMYSLUMBER");
 	};
-	if((self.aivar[AIV_SEENLEFTROOM] == TRUE) && Npc_IsPlayer(other))
+	if((self.aivar[AIV_SeenLeftRoom] == TRUE) && Npc_IsPlayer(other))
 	{
-		self.aivar[AIV_SEENLEFTROOM] = FALSE;
-		if(PLAYER_LEFTROOMCOMMENT == FALSE)
+		self.aivar[AIV_SeenLeftRoom] = FALSE;
+		if(Player_LeftRoomComment == FALSE)
 		{
-			b_say(self,other,"$WHATDIDYOUDOINTHERE");
-			PLAYER_LEFTROOMCOMMENT = TRUE;
+			B_Say(self,other,"$WHATDIDYOUDOINTHERE");
+			Player_LeftRoomComment = TRUE;
 		};
 	};
-	self.aivar[AIV_STATETIME] = Hlp_Random(2) + 1;
+	self.aivar[AIV_StateTime] = Hlp_Random(2) + 1;
 };
 
-func int zs_observeplayer_loop()
+func int ZS_ObservePlayer_Loop()
 {
-	if(c_bodystatecontains(other,BS_SNEAK) && (PLAYER_SNEAKERCOMMENT == FALSE))
+	if(C_BodyStateContains(other,BS_SNEAK) && (Player_SneakerComment == FALSE))
 	{
-		PLAYER_SNEAKERCOMMENT = TRUE;
+		Player_SneakerComment = TRUE;
 		AI_PointAtNpc(self,other);
-		b_say(self,other,"$WHATSTHISSUPPOSEDTOBE");
+		B_Say(self,other,"$WHATSTHISSUPPOSEDTOBE");
 		AI_StopPointAt(self);
 		Npc_SendPassivePerc(self,PERC_ASSESSWARN,self,other);
 	};
-	if(Npc_GetStateTime(self) > self.aivar[AIV_STATETIME])
+	if(Npc_GetStateTime(self) > self.aivar[AIV_StateTime])
 	{
-		if(!c_bodystatecontains(self,BS_SIT))
+		if(!C_BodyStateContains(self,BS_SIT))
 		{
-			b_turntonpc(self,other);
+			B_TurnToNpc(self,other);
 		};
-		self.aivar[AIV_STATETIME] = Hlp_Random(2) + 1;
+		self.aivar[AIV_StateTime] = Hlp_Random(2) + 1;
 		Npc_SetStateTime(self,0);
 	};
 	if(Npc_GetDistToNpc(self,other) > PERC_DIST_INTERMEDIAT)
@@ -58,8 +58,8 @@ func int zs_observeplayer_loop()
 	};
 };
 
-func void zs_observeplayer_end()
+func void ZS_ObservePlayer_End()
 {
-	b_stoplookat(self);
+	B_StopLookAt(self);
 };
 

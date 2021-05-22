@@ -1,54 +1,54 @@
 
-instance DIA_MALETH_EXIT(C_INFO)
+instance DIA_Maleth_EXIT(C_Info)
 {
-	npc = bau_954_maleth;
+	npc = BAU_954_Maleth;
 	nr = 999;
-	condition = dia_maleth_exit_condition;
-	information = dia_maleth_exit_info;
+	condition = DIA_Maleth_EXIT_Condition;
+	information = DIA_Maleth_EXIT_Info;
 	permanent = TRUE;
 	description = "Muszê iœæ!";
 };
 
 
-func int dia_maleth_exit_condition()
+func int DIA_Maleth_EXIT_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maleth_exit_info()
+func void DIA_Maleth_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
-	if(MALETH_ERSTERWOLF == FALSE)
+	if(Maleth_ersterWolf == FALSE)
 	{
-		Wld_InsertNpc(ywolf,"NW_FARM1_PATH_CITY_SHEEP_06");
-		MALETH_ERSTERWOLF = TRUE;
+		Wld_InsertNpc(YWolf,"NW_FARM1_PATH_CITY_SHEEP_06");
+		Maleth_ersterWolf = TRUE;
 	};
 };
 
 
-instance DIA_MALETH_HALLO(C_INFO)
+instance DIA_Maleth_Hallo(C_Info)
 {
-	npc = bau_954_maleth;
+	npc = BAU_954_Maleth;
 	nr = 1;
-	condition = dia_maleth_hallo_condition;
-	information = dia_maleth_hallo_info;
+	condition = DIA_Maleth_Hallo_Condition;
+	information = DIA_Maleth_Hallo_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_maleth_hallo_condition()
+func int DIA_Maleth_Hallo_Condition()
 {
-	if(KAPITEL < 3)
+	if(Kapitel < 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maleth_hallo_info()
+func void DIA_Maleth_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Maleth_Hallo_08_00");	//Hej, wêdrowcze!
 	if(hero.guild == GIL_NONE)
@@ -73,26 +73,26 @@ func void dia_maleth_hallo_info()
 };
 
 
-instance DIA_MALETH_BANDITS(C_INFO)
+instance DIA_Maleth_BANDITS(C_Info)
 {
-	npc = bau_954_maleth;
+	npc = BAU_954_Maleth;
 	nr = 1;
-	condition = dia_maleth_bandits_condition;
-	information = dia_maleth_bandits_info;
+	condition = DIA_Maleth_BANDITS_Condition;
+	information = DIA_Maleth_BANDITS_Info;
 	permanent = FALSE;
 	description = "W górach zosta³em zaatakowany przez bandytów.";
 };
 
 
-func int dia_maleth_bandits_condition()
+func int DIA_Maleth_BANDITS_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_bdt_1013_bandit_where) && (KAPITEL < 3) && (hero.guild == GIL_NONE))
+	if(Npc_KnowsInfo(other,dia_bdt_1013_bandit_where) && (Kapitel < 3) && (hero.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maleth_bandits_info()
+func void DIA_Maleth_BANDITS_Info()
 {
 	AI_Output(other,self,"DIA_Maleth_BANDITS_15_00");	//W górach zosta³em zaatakowany przez bandytów.
 	AI_Output(self,other,"DIA_Maleth_BANDITS_08_01");	//Te przeklête œmiecie! To pewnie ci sami, którzy ostatniej nocy ukradli nam owcê!
@@ -100,102 +100,102 @@ func void dia_maleth_bandits_info()
 };
 
 
-instance DIA_MALETH_BANDITSDEAD(C_INFO)
+instance DIA_Maleth_BanditsDEAD(C_Info)
 {
-	npc = bau_954_maleth;
+	npc = BAU_954_Maleth;
 	nr = 1;
-	condition = dia_maleth_banditsdead_condition;
-	information = dia_maleth_banditsdead_info;
+	condition = DIA_Maleth_BanditsDEAD_Condition;
+	information = DIA_Maleth_BanditsDEAD_Info;
 	permanent = FALSE;
 	description = "Bandyci nie bêd¹ ju¿ was wiêcej niepokoiæ…";
 };
 
 
-func int dia_maleth_banditsdead_condition()
+func int DIA_Maleth_BanditsDEAD_Condition()
 {
-	var C_NPC b13;
-	var C_NPC b14;
-	var C_NPC b15;
-	b13 = Hlp_GetNpc(bdt_1013_bandit_l);
-	b14 = Hlp_GetNpc(bdt_1014_bandit_l);
-	b15 = Hlp_GetNpc(bdt_1015_bandit_l);
-	if((Npc_IsDead(b13) || Npc_KnowsInfo(other,dia_1013_bandit_frommaleth)) && Npc_IsDead(b14) && Npc_IsDead(b15) && Npc_KnowsInfo(other,dia_maleth_bandits))
+	var C_Npc b13;
+	var C_Npc b14;
+	var C_Npc b15;
+	b13 = Hlp_GetNpc(Bdt_1013_Bandit_L);
+	b14 = Hlp_GetNpc(Bdt_1014_Bandit_L);
+	b15 = Hlp_GetNpc(Bdt_1015_Bandit_L);
+	if((Npc_IsDead(b13) || Npc_KnowsInfo(other,DIA_1013_BANDIT_FromMaleth)) && Npc_IsDead(b14) && Npc_IsDead(b15) && Npc_KnowsInfo(other,DIA_Maleth_BANDITS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maleth_banditsdead_info()
+func void DIA_Maleth_BanditsDEAD_Info()
 {
 	AI_Output(other,self,"DIA_Maleth_BanditsDEAD_15_00");	//Bandyci nie bêd¹ ju¿ was wiêcej niepokoiæ...
 	AI_Output(self,other,"DIA_Maleth_BanditsDEAD_08_01");	//Czemu? Nie ¿yj¹?
 	AI_Output(other,self,"DIA_Maleth_BanditsDEAD_15_02");	//Zadarli z niew³aœciw¹ osob¹...
 	AI_Output(self,other,"DIA_Maleth_BanditsDEAD_08_03");	//Chwa³a Innosowi! Proszê - przyjmij ten skromny dar!
-	b_giveinvitems(self,other,4924,3);
-	MIS_MALETH_BANDITS = LOG_SUCCESS;
-	b_giveplayerxp(XP_MALETHKILLBANDITS);
+	B_GiveInvItems(self,other,ItFo_Wine,3);
+	MIS_Maleth_Bandits = LOG_SUCCESS;
+	B_GivePlayerXP(XP_MalethKillBandits);
 	AI_Output(self,other,"DIA_Maleth_BanditsDEAD_08_04");	//Opowiem o tym pozosta³ym!
 };
 
 
-instance DIA_MALETH_BANDITSALIVE(C_INFO)
+instance DIA_Maleth_BanditsALIVE(C_Info)
 {
-	npc = bau_954_maleth;
+	npc = BAU_954_Maleth;
 	nr = 1;
-	condition = dia_maleth_banditsalive_condition;
-	information = dia_maleth_banditsalive_info;
+	condition = DIA_Maleth_BanditsALIVE_Condition;
+	information = DIA_Maleth_BanditsALIVE_Info;
 	permanent = FALSE;
 	description = "Wiem, gdzie znajduje siê kryjówka bandytów…";
 };
 
 
-func int dia_maleth_banditsalive_condition()
+func int DIA_Maleth_BanditsALIVE_Condition()
 {
-	var C_NPC b13;
-	var C_NPC b14;
-	var C_NPC b15;
-	b13 = Hlp_GetNpc(bdt_1013_bandit_l);
-	b14 = Hlp_GetNpc(bdt_1014_bandit_l);
-	b15 = Hlp_GetNpc(bdt_1015_bandit_l);
-	if((!Npc_IsDead(b13) || !Npc_IsDead(b14) || !Npc_IsDead(b15)) && Npc_KnowsInfo(other,dia_maleth_bandits) && (MIS_MALETH_BANDITS != LOG_SUCCESS))
+	var C_Npc b13;
+	var C_Npc b14;
+	var C_Npc b15;
+	b13 = Hlp_GetNpc(Bdt_1013_Bandit_L);
+	b14 = Hlp_GetNpc(Bdt_1014_Bandit_L);
+	b15 = Hlp_GetNpc(Bdt_1015_Bandit_L);
+	if((!Npc_IsDead(b13) || !Npc_IsDead(b14) || !Npc_IsDead(b15)) && Npc_KnowsInfo(other,DIA_Maleth_BANDITS) && (MIS_Maleth_Bandits != LOG_SUCCESS))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maleth_banditsalive_info()
+func void DIA_Maleth_BanditsALIVE_Info()
 {
 	AI_Output(other,self,"DIA_Maleth_BanditsALIVE_15_00");	//Wiem, gdzie znajduje siê kryjówka bandytów...
 	AI_Output(self,other,"DIA_Maleth_BanditsALIVE_08_01");	//Chcesz ich zaatakowaæ? Ja siê na to nie piszê! To zbyt niebezpieczne!
 	AI_Output(self,other,"DIA_Maleth_BanditsALIVE_08_02");	//Poza tym, muszê pilnowaæ moich owiec!
 	AI_Output(self,other,"DIA_Maleth_BanditsALIVE_08_03");	//Jednak jeœli s¹dzisz, ¿e by³byœ w stanie uwolniæ nas od tej ho³oty, ca³a farma by³aby ci bardzo wdziêczna.
-	MIS_MALETH_BANDITS = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_MALETH,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_MALETH,LOG_RUNNING);
-	b_logentry(TOPIC_MALETH,"Jeœli pokonam bandytów grasuj¹cych przy drodze z wie¿y Xardasa na farmê Lobarta, wszyscy na farmie bêd¹ mi bardzo wdziêczni.");
+	MIS_Maleth_Bandits = LOG_Running;
+	Log_CreateTopic(TOPIC_Maleth,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_Maleth,LOG_Running);
+	B_LogEntry(TOPIC_Maleth,"Jeœli pokonam bandytów grasuj¹cych przy drodze z wie¿y Xardasa na farmê Lobarta, wszyscy na farmie bêd¹ mi bardzo wdziêczni.");
 };
 
 
-instance DIA_MALETH_TOTHECITY(C_INFO)
+instance DIA_Maleth_ToTheCity(C_Info)
 {
-	npc = bau_954_maleth;
+	npc = BAU_954_Maleth;
 	nr = 2;
-	condition = dia_maleth_tothecity_condition;
-	information = dia_maleth_tothecity_info;
+	condition = DIA_Maleth_ToTheCity_Condition;
+	information = DIA_Maleth_ToTheCity_Info;
 	permanent = FALSE;
 	description = "Podró¿ujê do miasta.";
 };
 
 
-func int dia_maleth_tothecity_condition()
+func int DIA_Maleth_ToTheCity_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_maleth_hallo) && (KAPITEL < 3) && (hero.guild == GIL_NONE))
+	if(Npc_KnowsInfo(other,DIA_Maleth_Hallo) && (Kapitel < 3) && (hero.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maleth_tothecity_info()
+func void DIA_Maleth_ToTheCity_Info()
 {
 	AI_Output(other,self,"DIA_Maleth_ToTheCity_15_00");	//Podró¿ujê do miasta.
 	if(Npc_HasEquippedArmor(other) == FALSE)
@@ -209,42 +209,42 @@ func void dia_maleth_tothecity_info()
 	};
 	AI_Output(other,self,"DIA_Maleth_ToTheCity_15_04");	//A co to takiego?
 	AI_Output(self,other,"DIA_Maleth_ToTheCity_08_05");	//Mo¿esz im na przyk³ad powiedzieæ, ¿e przychodzisz z farmy Lobarta i chcesz siê dostaæ do kowala.
-	Log_CreateTopic(TOPIC_CITY,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_CITY,LOG_RUNNING);
-	b_logentry(TOPIC_CITY,"Dostanê siê do miasta, jeœli powiem stra¿nikowi strzeg¹cemu bramy, ¿e przyszed³em z farmy Lobarta i potrzebujê pomocy kowala.");
+	Log_CreateTopic(TOPIC_City,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_City,LOG_Running);
+	B_LogEntry(TOPIC_City,"Dostanê siê do miasta, jeœli powiem stra¿nikowi strzeg¹cemu bramy, ¿e przyszed³em z farmy Lobarta i potrzebujê pomocy kowala.");
 	if(Npc_HasEquippedArmor(other) == FALSE)
 	{
 		AI_Output(self,other,"DIA_Maleth_ToTheCity_08_06");	//Chocia¿ to raczej nie zadzia³a, nie wygl¹dasz na ch³opa.
-		b_logentry(TOPIC_CITY,"Oczywiœcie, powinienem wygl¹daæ jak farmer.");
+		B_LogEntry(TOPIC_City,"Oczywiœcie, powinienem wygl¹daæ jak farmer.");
 	};
 	AI_Output(other,self,"DIA_Maleth_ToTheCity_15_07");	//Rozumiem.
 };
 
 
-instance DIA_MALETH_EQUIPMENT(C_INFO)
+instance DIA_Maleth_Equipment(C_Info)
 {
-	npc = bau_954_maleth;
+	npc = BAU_954_Maleth;
 	nr = 3;
-	condition = dia_maleth_equipment_condition;
-	information = dia_maleth_equipment_info;
+	condition = DIA_Maleth_Equipment_Condition;
+	information = DIA_Maleth_Equipment_Info;
 	permanent = FALSE;
 	description = "Potrzebujê lepszego wyposa¿enia!";
 };
 
 
-func int dia_maleth_equipment_condition()
+func int DIA_Maleth_Equipment_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_maleth_hallo) && (KAPITEL < 3) && (hero.guild == GIL_NONE))
+	if(Npc_KnowsInfo(other,DIA_Maleth_Hallo) && (Kapitel < 3) && (hero.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maleth_equipment_info()
+func void DIA_Maleth_Equipment_Info()
 {
 	AI_Output(other,self,"DIA_Maleth_Equipment_15_00");	//Potrzebujê lepszego wyposa¿enia!
 	AI_Output(self,other,"DIA_Maleth_Equipment_08_01");	//Mogê ci powiedzieæ od razu, ¿e nie mamy nic do oddania.
-	if(!Npc_IsDead(lobart))
+	if(!Npc_IsDead(Lobart))
 	{
 		AI_Output(self,other,"DIA_Maleth_Equipment_08_02");	//Jeœli ciê na to staæ, mo¿esz coœ kupiæ od Lobarta.
 		AI_Output(self,other,"DIA_Maleth_Equipment_08_03");	//Mo¿esz te¿ zapytaæ go, czy znajdzie dla ciebie jak¹œ pracê.
@@ -252,26 +252,26 @@ func void dia_maleth_equipment_info()
 };
 
 
-instance DIA_MALETH_LOBART(C_INFO)
+instance DIA_Maleth_LOBART(C_Info)
 {
-	npc = bau_954_maleth;
+	npc = BAU_954_Maleth;
 	nr = 3;
-	condition = dia_maleth_lobart_condition;
-	information = dia_maleth_lobart_info;
+	condition = DIA_Maleth_LOBART_Condition;
+	information = DIA_Maleth_LOBART_Info;
 	permanent = FALSE;
 	description = "Gdzie znajdê Lobarta?";
 };
 
 
-func int dia_maleth_lobart_condition()
+func int DIA_Maleth_LOBART_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_maleth_equipment) && !Npc_IsDead(lobart) && (hero.guild == GIL_NONE))
+	if(Npc_KnowsInfo(other,DIA_Maleth_Equipment) && !Npc_IsDead(Lobart) && (hero.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maleth_lobart_info()
+func void DIA_Maleth_LOBART_Info()
 {
 	AI_Output(other,self,"DIA_Maleth_LOBART_15_00");	//Gdzie znajdê Lobarta?
 	AI_Output(self,other,"DIA_Maleth_LOBART_08_01");	//Jest gdzieœ na farmie, to chyba oczywiste! W koñcu to jego w³asnoœæ!
@@ -279,74 +279,74 @@ func void dia_maleth_lobart_info()
 };
 
 
-instance DIA_MALETH_KAP3_EXIT(C_INFO)
+instance DIA_Maleth_KAP3_EXIT(C_Info)
 {
-	npc = bau_954_maleth;
+	npc = BAU_954_Maleth;
 	nr = 999;
-	condition = dia_maleth_kap3_exit_condition;
-	information = dia_maleth_kap3_exit_info;
+	condition = DIA_Maleth_KAP3_EXIT_Condition;
+	information = DIA_Maleth_KAP3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_maleth_kap3_exit_condition()
+func int DIA_Maleth_KAP3_EXIT_Condition()
 {
-	if(KAPITEL == 3)
+	if(Kapitel == 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maleth_kap3_exit_info()
+func void DIA_Maleth_KAP3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MALETH_PROBLEME(C_INFO)
+instance DIA_Maleth_PROBLEME(C_Info)
 {
-	npc = bau_954_maleth;
+	npc = BAU_954_Maleth;
 	nr = 30;
-	condition = dia_maleth_probleme_condition;
-	information = dia_maleth_probleme_info;
+	condition = DIA_Maleth_PROBLEME_Condition;
+	information = DIA_Maleth_PROBLEME_Info;
 	description = "Czy w ci¹gu kilku ostatnich dni wydarzy³o siê coœ nowego?";
 };
 
 
-func int dia_maleth_probleme_condition()
+func int DIA_Maleth_PROBLEME_Condition()
 {
-	if(KAPITEL >= 3)
+	if(Kapitel >= 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maleth_probleme_info()
+func void DIA_Maleth_PROBLEME_Info()
 {
 	AI_Output(other,self,"DIA_Maleth_PROBLEME_15_00");	//Czy w ci¹gu kilku ostatnich dni wydarzy³o siê coœ nowego?
 	AI_Output(self,other,"DIA_Maleth_PROBLEME_08_01");	//Po prostu idŸ œcie¿k¹ do miasta.
 	AI_Output(self,other,"DIA_Maleth_PROBLEME_08_02");	//Jeœli natkniesz siê na faceta w czarnej szacie, dowiesz siê, co siê wydarzy³o.
-	Info_ClearChoices(dia_maleth_probleme);
-	Info_AddChoice(dia_maleth_probleme,DIALOG_BACK,dia_maleth_probleme_back);
-	Info_AddChoice(dia_maleth_probleme,"Jak twoje owce?",dia_maleth_probleme_schafe);
-	Info_AddChoice(dia_maleth_probleme,"Czy mê¿czyŸni w czarnych szatach ju¿ tu byli?",dia_maleth_probleme_beidir);
+	Info_ClearChoices(DIA_Maleth_PROBLEME);
+	Info_AddChoice(DIA_Maleth_PROBLEME,Dialog_Back,DIA_Maleth_PROBLEME_Back);
+	Info_AddChoice(DIA_Maleth_PROBLEME,"Jak twoje owce?",DIA_Maleth_PROBLEME_schafe);
+	Info_AddChoice(DIA_Maleth_PROBLEME,"Czy mê¿czyŸni w czarnych szatach ju¿ tu byli?",DIA_Maleth_PROBLEME_beidir);
 };
 
-func void dia_maleth_probleme_beidir()
+func void DIA_Maleth_PROBLEME_beidir()
 {
 	AI_Output(other,self,"DIA_Maleth_PROBLEME_beidir_15_00");	//Czy mê¿czyŸni w czarnych szatach ju¿ tu byli?
 	AI_Output(self,other,"DIA_Maleth_PROBLEME_beidir_08_01");	//Tak. Kr¹¿¹ dooko³a nas od paru dni. Moim zdaniem, przyszli tutaj prosto z piek³a.
 };
 
-func void dia_maleth_probleme_schafe()
+func void DIA_Maleth_PROBLEME_schafe()
 {
 	AI_Output(other,self,"DIA_Maleth_PROBLEME_schafe_15_00");	//Jak twoje owce?
 	AI_Output(self,other,"DIA_Maleth_PROBLEME_schafe_08_01");	//Tak jakby faktycznie ciê to interesowa³o! Masz chyba inne zmartwienia.
-	Info_AddChoice(dia_maleth_probleme,"A co ty mo¿esz wiedzieæ o moich zmartwieniach?",dia_maleth_probleme_schafe_probleme);
+	Info_AddChoice(DIA_Maleth_PROBLEME,"A co ty mo¿esz wiedzieæ o moich zmartwieniach?",DIA_Maleth_PROBLEME_schafe_probleme);
 };
 
-func void dia_maleth_probleme_schafe_probleme()
+func void DIA_Maleth_PROBLEME_schafe_probleme()
 {
 	AI_Output(other,self,"DIA_Maleth_PROBLEME_schafe_probleme_15_00");	//A co ty mo¿esz wiedzieæ o moich zmartwieniach?
 	if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
@@ -361,59 +361,59 @@ func void dia_maleth_probleme_schafe_probleme()
 	{
 		AI_Output(self,other,"DIA_Maleth_PROBLEME_schafe_probleme_08_03");	//Wy, dostojni magowie z klasztoru, chyba powinniœcie wiedzieæ coœ na temat pewnych zakapturzonych postaci.
 	};
-	Info_ClearChoices(dia_maleth_probleme);
-	Info_AddChoice(dia_maleth_probleme,DIALOG_BACK,dia_maleth_probleme_back);
-	Info_AddChoice(dia_maleth_probleme,"Uwa¿aj, co mówisz, kolego.",dia_maleth_probleme_schafe_probleme_drohen);
+	Info_ClearChoices(DIA_Maleth_PROBLEME);
+	Info_AddChoice(DIA_Maleth_PROBLEME,Dialog_Back,DIA_Maleth_PROBLEME_Back);
+	Info_AddChoice(DIA_Maleth_PROBLEME,"Uwa¿aj, co mówisz, kolego.",DIA_Maleth_PROBLEME_schafe_probleme_drohen);
 	if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
 	{
-		Info_AddChoice(dia_maleth_probleme,"W czym problem?",dia_maleth_probleme_schafe_probleme_geldher_auftrag);
+		Info_AddChoice(DIA_Maleth_PROBLEME,"W czym problem?",DIA_Maleth_PROBLEME_schafe_probleme_geldher_auftrag);
 	};
 };
 
-func void dia_maleth_probleme_schafe_probleme_geldher_auftrag()
+func void DIA_Maleth_PROBLEME_schafe_probleme_geldher_auftrag()
 {
 	AI_Output(other,self,"DIA_Maleth_PROBLEME_schafe_probleme_geldher_auftrag_15_00");	//O co ci chodzi?
 	AI_Output(self,other,"DIA_Maleth_PROBLEME_schafe_probleme_geldher_auftrag_08_01");	//Wszystko przez to wstrêtne wiñsko, którym Vino tak strasznie mnie spi³ kilka tygodni temu.
 	AI_Output(self,other,"DIA_Maleth_PROBLEME_schafe_probleme_geldher_auftrag_08_02");	//Nie wiem, jak to siê sta³o, ale zgubi³em wtedy moj¹ laskê.
 	AI_Output(other,self,"DIA_Maleth_PROBLEME_schafe_probleme_geldher_auftrag_15_03");	//I o to tyle zamieszania?
 	AI_Output(self,other,"DIA_Maleth_PROBLEME_schafe_probleme_geldher_auftrag_08_04");	//£atwo ci mówiæ, nie nale¿a³a do ciebie.
-	Log_CreateTopic(TOPIC_MALETHSGEHSTOCK,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_MALETHSGEHSTOCK,LOG_RUNNING);
-	b_logentry(TOPIC_MALETHSGEHSTOCK,"Maleth zgubi³ swoj¹ laskê. By³ wtedy zupe³nie pijany, wiêc nie podejrzewam, ¿eby siê zbytnio oddali³ od farmy Lobarta. Zguba na pewno le¿y gdzieœ w pobli¿u.");
-	Info_ClearChoices(dia_maleth_probleme);
+	Log_CreateTopic(TOPIC_MalethsGehstock,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_MalethsGehstock,LOG_Running);
+	B_LogEntry(TOPIC_MalethsGehstock,"Maleth zgubi³ swoj¹ laskê. By³ wtedy zupe³nie pijany, wiêc nie podejrzewam, ¿eby siê zbytnio oddali³ od farmy Lobarta. Zguba na pewno le¿y gdzieœ w pobli¿u.");
+	Info_ClearChoices(DIA_Maleth_PROBLEME);
 };
 
-func void dia_maleth_probleme_schafe_probleme_drohen()
+func void DIA_Maleth_PROBLEME_schafe_probleme_drohen()
 {
 	AI_Output(other,self,"DIA_Maleth_PROBLEME_schafe_probleme_drohen_15_00");	//Uwa¿aj, co mówisz, kolego.
 	AI_Output(self,other,"DIA_Maleth_PROBLEME_schafe_probleme_drohen_08_01");	//Potrafisz tylko gadaæ. Najlepiej bêdzie, jeœli w ogóle sobie st¹d pójdziesz.
 };
 
-func void dia_maleth_probleme_back()
+func void DIA_Maleth_PROBLEME_Back()
 {
-	Info_ClearChoices(dia_maleth_probleme);
+	Info_ClearChoices(DIA_Maleth_PROBLEME);
 };
 
 
-instance DIA_MALETH_GEHSTOCK(C_INFO)
+instance DIA_Maleth_GEHSTOCK(C_Info)
 {
-	npc = bau_954_maleth;
+	npc = BAU_954_Maleth;
 	nr = 33;
-	condition = dia_maleth_gehstock_condition;
-	information = dia_maleth_gehstock_info;
+	condition = DIA_Maleth_GEHSTOCK_Condition;
+	information = DIA_Maleth_GEHSTOCK_Info;
 	description = "Wydaje mi siê, ¿e ta laska nale¿y do ciebie.";
 };
 
 
-func int dia_maleth_gehstock_condition()
+func int DIA_Maleth_GEHSTOCK_Condition()
 {
-	if(Npc_HasItems(other,itmw_malethsgehstock_mis) && Npc_KnowsInfo(other,dia_maleth_probleme))
+	if(Npc_HasItems(other,ItMw_MalethsGehstock_MIS) && Npc_KnowsInfo(other,DIA_Maleth_PROBLEME))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maleth_gehstock_info()
+func void DIA_Maleth_GEHSTOCK_Info()
 {
 	AI_Output(other,self,"DIA_Maleth_GEHSTOCK_15_00");	//Wydaje mi siê, ¿e ta laska nale¿y do ciebie.
 	AI_Output(self,other,"DIA_Maleth_GEHSTOCK_08_01");	//Niesamowite. Ja...
@@ -422,56 +422,56 @@ func void dia_maleth_gehstock_info()
 	AI_Output(other,self,"DIA_Maleth_GEHSTOCK_15_04");	//Pomyœl o jakiejœ innej formie wynagrodzenia.
 	AI_Output(self,other,"DIA_Maleth_GEHSTOCK_08_05");	//Dobrze. Co powiesz na to? Wczoraj widzia³em tutaj kilku bandytów, uciekaj¹cych ze skradzionym z³otem.
 	AI_Output(self,other,"DIA_Maleth_GEHSTOCK_08_06");	//Jeœli powiem ci, gdzie ukryli swój ³up, czy dostanê z powrotem swoj¹ laskê?
-	TOPIC_END_MALETHSGEHSTOCK = TRUE;
-	b_giveplayerxp(XP_FOUNDMALETHSGEHSTOCK);
-	Info_ClearChoices(dia_maleth_gehstock);
-	Info_AddChoice(dia_maleth_gehstock,"Przykro mi, nie interesuje mnie to. Chcê twojego z³ota.",dia_maleth_gehstock_gold);
-	Info_AddChoice(dia_maleth_gehstock,"W porz¹dku.",dia_maleth_gehstock_ok);
+	TOPIC_END_MalethsGehstock = TRUE;
+	B_GivePlayerXP(XP_FoundMalethsGehstock);
+	Info_ClearChoices(DIA_Maleth_GEHSTOCK);
+	Info_AddChoice(DIA_Maleth_GEHSTOCK,"Przykro mi, nie interesuje mnie to. Chcê twojego z³ota.",DIA_Maleth_GEHSTOCK_gold);
+	Info_AddChoice(DIA_Maleth_GEHSTOCK,"W porz¹dku.",DIA_Maleth_GEHSTOCK_ok);
 };
 
-func void dia_maleth_gehstock_ok()
+func void DIA_Maleth_GEHSTOCK_ok()
 {
 	AI_Output(other,self,"DIA_Maleth_GEHSTOCK_ok_15_00");	//Zgoda.
-	b_giveinvitems(other,self,5792,1);
+	B_GiveInvItems(other,self,ItMw_MalethsGehstock_MIS,1);
 	AI_Output(self,other,"DIA_Maleth_GEHSTOCK_ok_08_01");	//W porz¹dku, s³uchaj uwa¿nie. Najpierw udaj siê na zachód, a¿ dojdziesz do tamtych drzew. Zobaczysz g³êboki jar.
 	AI_Output(self,other,"DIA_Maleth_GEHSTOCK_ok_08_02");	//Jest tam jaskinia, a w niej powinno byæ ukryte coœ ciekawego.
-	b_logentry(TOPIC_MALETHSGEHSTOCK,"Maleth powiedzia³ mi, ¿e w lesie na zachód od farmy Lobarta znajduje siê du¿y obóz bandytów.");
-	CreateInvItems(bdt_1024_malethsbandit,itmi_malethsbanditgold,1);
-	Info_ClearChoices(dia_maleth_gehstock);
+	B_LogEntry(TOPIC_MalethsGehstock,"Maleth powiedzia³ mi, ¿e w lesie na zachód od farmy Lobarta znajduje siê du¿y obóz bandytów.");
+	CreateInvItems(BDT_1024_MalethsBandit,ItMi_MalethsBanditGold,1);
+	Info_ClearChoices(DIA_Maleth_GEHSTOCK);
 	AI_StopProcessInfos(self);
 };
 
-func void dia_maleth_gehstock_gold()
+func void DIA_Maleth_GEHSTOCK_gold()
 {
 	AI_Output(other,self,"DIA_Maleth_GEHSTOCK_gold_15_00");	//Przykro mi, nie interesuje mnie to. Chcê twojego z³ota.
 	AI_Output(self,other,"DIA_Maleth_GEHSTOCK_gold_08_01");	//To wszystko, co mam. Bêdzie musia³o ci wystarczyæ.
-	CreateInvItems(self,itmi_gold,35);
-	b_giveinvitems(self,other,5113,35);
-	b_giveinvitems(other,self,5792,1);
-	Info_ClearChoices(dia_maleth_gehstock);
+	CreateInvItems(self,ItMi_Gold,35);
+	B_GiveInvItems(self,other,ItMi_Gold,35);
+	B_GiveInvItems(other,self,ItMw_MalethsGehstock_MIS,1);
+	Info_ClearChoices(DIA_Maleth_GEHSTOCK);
 };
 
 
-instance DIA_MALETH_PERM3(C_INFO)
+instance DIA_Maleth_PERM3(C_Info)
 {
-	npc = bau_954_maleth;
+	npc = BAU_954_Maleth;
 	nr = 33;
-	condition = dia_maleth_perm3_condition;
-	information = dia_maleth_perm3_info;
+	condition = DIA_Maleth_PERM3_Condition;
+	information = DIA_Maleth_PERM3_Info;
 	permanent = TRUE;
 	description = "Nie przepracowuj siê.";
 };
 
 
-func int dia_maleth_perm3_condition()
+func int DIA_Maleth_PERM3_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_maleth_probleme) && (KAPITEL >= 3))
+	if(Npc_KnowsInfo(other,DIA_Maleth_PROBLEME) && (Kapitel >= 3))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maleth_perm3_info()
+func void DIA_Maleth_PERM3_Info()
 {
 	AI_Output(other,self,"DIA_Maleth_PERM3_15_00");	//Nie przepracowuj siê.
 	AI_Output(self,other,"DIA_Maleth_PERM3_08_01");	//Zje¿d¿aj st¹d.
@@ -479,112 +479,112 @@ func void dia_maleth_perm3_info()
 };
 
 
-instance DIA_MALETH_KAP4_EXIT(C_INFO)
+instance DIA_Maleth_KAP4_EXIT(C_Info)
 {
-	npc = bau_954_maleth;
+	npc = BAU_954_Maleth;
 	nr = 999;
-	condition = dia_maleth_kap4_exit_condition;
-	information = dia_maleth_kap4_exit_info;
+	condition = DIA_Maleth_KAP4_EXIT_Condition;
+	information = DIA_Maleth_KAP4_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_maleth_kap4_exit_condition()
+func int DIA_Maleth_KAP4_EXIT_Condition()
 {
-	if(KAPITEL == 4)
+	if(Kapitel == 4)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maleth_kap4_exit_info()
+func void DIA_Maleth_KAP4_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MALETH_KAP5_EXIT(C_INFO)
+instance DIA_Maleth_KAP5_EXIT(C_Info)
 {
-	npc = bau_954_maleth;
+	npc = BAU_954_Maleth;
 	nr = 999;
-	condition = dia_maleth_kap5_exit_condition;
-	information = dia_maleth_kap5_exit_info;
+	condition = DIA_Maleth_KAP5_EXIT_Condition;
+	information = DIA_Maleth_KAP5_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_maleth_kap5_exit_condition()
+func int DIA_Maleth_KAP5_EXIT_Condition()
 {
-	if(KAPITEL == 5)
+	if(Kapitel == 5)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maleth_kap5_exit_info()
+func void DIA_Maleth_KAP5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MALETH_KAP6_EXIT(C_INFO)
+instance DIA_Maleth_KAP6_EXIT(C_Info)
 {
-	npc = bau_954_maleth;
+	npc = BAU_954_Maleth;
 	nr = 999;
-	condition = dia_maleth_kap6_exit_condition;
-	information = dia_maleth_kap6_exit_info;
+	condition = DIA_Maleth_KAP6_EXIT_Condition;
+	information = DIA_Maleth_KAP6_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_maleth_kap6_exit_condition()
+func int DIA_Maleth_KAP6_EXIT_Condition()
 {
-	if(KAPITEL == 6)
+	if(Kapitel == 6)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_maleth_kap6_exit_info()
+func void DIA_Maleth_KAP6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MALETH_PICKPOCKET(C_INFO)
+instance DIA_Maleth_PICKPOCKET(C_Info)
 {
-	npc = bau_954_maleth;
+	npc = BAU_954_Maleth;
 	nr = 900;
-	condition = dia_maleth_pickpocket_condition;
-	information = dia_maleth_pickpocket_info;
+	condition = DIA_Maleth_PICKPOCKET_Condition;
+	information = DIA_Maleth_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_20;
+	description = Pickpocket_20;
 };
 
 
-func int dia_maleth_pickpocket_condition()
+func int DIA_Maleth_PICKPOCKET_Condition()
 {
-	return c_beklauen(10,10);
+	return C_Beklauen(10,10);
 };
 
-func void dia_maleth_pickpocket_info()
+func void DIA_Maleth_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_maleth_pickpocket);
-	Info_AddChoice(dia_maleth_pickpocket,DIALOG_BACK,dia_maleth_pickpocket_back);
-	Info_AddChoice(dia_maleth_pickpocket,DIALOG_PICKPOCKET,dia_maleth_pickpocket_doit);
+	Info_ClearChoices(DIA_Maleth_PICKPOCKET);
+	Info_AddChoice(DIA_Maleth_PICKPOCKET,Dialog_Back,DIA_Maleth_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Maleth_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Maleth_PICKPOCKET_DoIt);
 };
 
-func void dia_maleth_pickpocket_doit()
+func void DIA_Maleth_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_maleth_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Maleth_PICKPOCKET);
 };
 
-func void dia_maleth_pickpocket_back()
+func void DIA_Maleth_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_maleth_pickpocket);
+	Info_ClearChoices(DIA_Maleth_PICKPOCKET);
 };
 

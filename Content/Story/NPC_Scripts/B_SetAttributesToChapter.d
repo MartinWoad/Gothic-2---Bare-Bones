@@ -1,9 +1,9 @@
 
-func void b_setattributestochapter(var C_NPC slf,var int kapitel)
+func void B_SetAttributesToChapter(var C_Npc slf,var int Kapitel)
 {
-	if(kapitel == 0)
+	if(Kapitel == 0)
 	{
-		if(c_npcisevil(slf) == TRUE)
+		if(C_NpcIsEvil(slf) == TRUE)
 		{
 			slf.level = 5;
 		}
@@ -15,12 +15,12 @@ func void b_setattributestochapter(var C_NPC slf,var int kapitel)
 		slf.attribute[ATR_DEXTERITY] = 10;
 		slf.attribute[ATR_MANA_MAX] = 0;
 		slf.attribute[ATR_MANA] = 0;
-		slf.attribute[ATR_HITPOINTS_MAX] = 50;
+		slf.attribute[ATR_HITPOINTS_MAX] = 40;
 		slf.attribute[ATR_HITPOINTS] = 40;
 	};
-	if(kapitel == 1)
+	if(Kapitel == 1)
 	{
-		if(c_npcisevil(slf) == TRUE)
+		if(C_NpcIsEvil(slf) == TRUE)
 		{
 			slf.level = 8;
 		}
@@ -35,9 +35,9 @@ func void b_setattributestochapter(var C_NPC slf,var int kapitel)
 		slf.attribute[ATR_HITPOINTS_MAX] = 100;
 		slf.attribute[ATR_HITPOINTS] = 100;
 	};
-	if(kapitel == 2)
+	if(Kapitel == 2)
 	{
-		if(c_npcisevil(slf) == TRUE)
+		if(C_NpcIsEvil(slf) == TRUE)
 		{
 			slf.level = 12;
 		}
@@ -52,9 +52,9 @@ func void b_setattributestochapter(var C_NPC slf,var int kapitel)
 		slf.attribute[ATR_HITPOINTS_MAX] = 150;
 		slf.attribute[ATR_HITPOINTS] = 150;
 	};
-	if(kapitel == 3)
+	if(Kapitel == 3)
 	{
-		if(c_npcisevil(slf) == TRUE)
+		if(C_NpcIsEvil(slf) == TRUE)
 		{
 			slf.level = 18;
 		}
@@ -69,9 +69,9 @@ func void b_setattributestochapter(var C_NPC slf,var int kapitel)
 		slf.attribute[ATR_HITPOINTS_MAX] = 200;
 		slf.attribute[ATR_HITPOINTS] = 200;
 	};
-	if(kapitel == 4)
+	if(Kapitel == 4)
 	{
-		if(c_npcisevil(slf) == TRUE)
+		if(C_NpcIsEvil(slf) == TRUE)
 		{
 			slf.level = 24;
 		}
@@ -86,9 +86,9 @@ func void b_setattributestochapter(var C_NPC slf,var int kapitel)
 		slf.attribute[ATR_HITPOINTS_MAX] = 300;
 		slf.attribute[ATR_HITPOINTS] = 300;
 	};
-	if(kapitel == 5)
+	if(Kapitel == 5)
 	{
-		if(c_npcisevil(slf) == TRUE)
+		if(C_NpcIsEvil(slf) == TRUE)
 		{
 			slf.level = 30;
 		}
@@ -103,9 +103,9 @@ func void b_setattributestochapter(var C_NPC slf,var int kapitel)
 		slf.attribute[ATR_HITPOINTS_MAX] = 450;
 		slf.attribute[ATR_HITPOINTS] = 450;
 	};
-	if(kapitel >= 6)
+	if(Kapitel >= 6)
 	{
-		if(c_npcisevil(slf) == TRUE)
+		if(C_NpcIsEvil(slf) == TRUE)
 		{
 			slf.level = 36;
 		}

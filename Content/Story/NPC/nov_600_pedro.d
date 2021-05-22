@@ -1,35 +1,35 @@
 
-instance NOV_600_PEDRO(NPC_DEFAULT)
+instance NOV_600_Pedro(Npc_Default)
 {
 	name[0] = "Pedro";
 	guild = GIL_NOV;
 	id = 600;
 	voice = 9;
 	flags = NPC_FLAG_IMMORTAL;
-	npctype = NPCTYPE_MAIN;
-	b_setattributestochapter(self,2);
-	aivar[AIV_NEWSOVERRIDE] = TRUE;
+	npcType = npctype_main;
+	B_SetAttributesToChapter(self,2);
+	aivar[AIV_NewsOverride] = TRUE;
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_nov_mace);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_PSIONIC",FACE_L_NORMAL_GORNABAR,BODYTEX_L,4842);
+	EquipItem(self,ItMw_1h_Nov_Mace);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_PSIONIC",Face_L_Normal_GorNaBar,BodyTex_L,ItAr_NOV_L);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,30);
-	daily_routine = rtn_start_600;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	daily_routine = Rtn_Start_600;
 };
 
 
-func void rtn_start_600()
+func void Rtn_Start_600()
 {
-	ta_stand_guarding(8,0,23,0,"NW_MONASTERY_MILTEN");
-	ta_stand_guarding(23,0,8,0,"NW_MONASTERY_MILTEN");
+	TA_Stand_Guarding(8,0,23,0,"NW_MONASTERY_MILTEN");
+	TA_Stand_Guarding(23,0,8,0,"NW_MONASTERY_MILTEN");
 };
 
-func void rtn_tot_600()
+func void Rtn_Tot_600()
 {
-	ta_stand_guarding(8,0,23,0,"TOT");
-	ta_stand_guarding(23,0,8,0,"TOT");
+	TA_Stand_Guarding(8,0,23,0,"TOT");
+	TA_Stand_Guarding(23,0,8,0,"TOT");
 };
 

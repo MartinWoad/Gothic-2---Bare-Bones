@@ -1,32 +1,32 @@
 
-var int sc_isobsessed;
-var int sc_obsessioncounter;
+var int SC_IsObsessed;
+var int SC_ObsessionCounter;
 
-func void b_clearscobsession(var C_NPC heiler)
+func void B_ClearSCObsession(var C_Npc heiler)
 {
 	if(Hlp_GetInstanceID(heiler) != Hlp_GetInstanceID(hero))
 	{
 		AI_StopProcessInfos(heiler);
 	};
-	SC_ISOBSESSED = FALSE;
-	SC_OBSESSIONCOUNTER = 0;
-	PrintScreen(PRINT_CLEARSCOBSESSION,-1,-1,FONT_SCREEN,3);
+	SC_IsObsessed = FALSE;
+	SC_ObsessionCounter = 0;
+	PrintScreen(PRINT_ClearSCObsession,-1,-1,FONT_Screen,3);
 };
 
-func void b_scisobsessed(var C_NPC dementor)
+func void B_SCIsObsessed(var C_Npc dementor)
 {
 	if(Hlp_GetInstanceID(dementor) != Hlp_GetInstanceID(hero))
 	{
 		AI_StopProcessInfos(dementor);
 	};
-	if(Npc_HasItems(hero,itam_prot_blackeye_mis) == FALSE)
+	if(Npc_HasItems(hero,ItAm_Prot_BlackEye_Mis) == FALSE)
 	{
-		if(SC_OBSESSIONCOUNTER >= 2)
+		if(SC_ObsessionCounter >= 2)
 		{
-			SC_ISOBSESSED = TRUE;
-			PrintScreen(PRINT_SCISOBSESSED,-1,-1,FONT_SCREEN,3);
+			SC_IsObsessed = TRUE;
+			PrintScreen(PRINT_SCIsObsessed,-1,-1,FONT_Screen,3);
 		};
-		SC_OBSESSIONCOUNTER = SC_OBSESSIONCOUNTER + 1;
+		SC_ObsessionCounter = SC_ObsessionCounter + 1;
 	};
 };
 

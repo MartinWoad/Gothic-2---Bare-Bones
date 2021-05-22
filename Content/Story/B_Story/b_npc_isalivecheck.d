@@ -1,131 +1,131 @@
 
-var int sld_bullco_is_alive;
-var int sld_rod_is_alive;
-var int sld_cipher_is_alive;
-var int sld_gorn_is_alive;
-var int sld_sylvio_is_alive;
-var int gorndjg_is_alive;
-var int djg_angar_is_alive;
-var int diegoow_is_alive;
-var int gornow_is_alive;
-var int vino_isalive_kap3;
-var int malak_isalive_kap3;
+var int SLD_Bullco_is_alive;
+var int SLD_Rod_is_alive;
+var int SLD_Cipher_is_alive;
+var int SLD_Gorn_is_alive;
+var int SLD_Sylvio_is_alive;
+var int GornDJG_is_alive;
+var int DJG_Angar_is_alive;
+var int DiegoOW_is_alive;
+var int GornOw_is_alive;
+var int Vino_isAlive_Kap3;
+var int Malak_isAlive_Kap3;
 
-func void b_npc_isalivecheck(var int zen)
+func void B_NPC_IsAliveCheck(var int Zen)
 {
-	var C_NPC sld_bullco_owcheck;
-	var C_NPC sld_rod_owcheck;
-	var C_NPC sld_821;
-	var C_NPC sld_cipher_owcheck;
-	var C_NPC sld_gorn_owcheck;
-	var C_NPC sld_sylvio_owcheck;
-	var C_NPC gorndjg_nwcheck;
-	var C_NPC djg_angar_nwcheck;
-	if(zen == NEWWORLD_ZEN)
+	var C_Npc SLD_Bullco_OWCheck;
+	var C_Npc SLD_Rod_OWCheck;
+	var C_Npc Sld_821;
+	var C_Npc SLD_Cipher_OWCheck;
+	var C_Npc SLD_Gorn_OWCheck;
+	var C_Npc SLD_Sylvio_OWCheck;
+	var C_Npc GornDJG_NWCheck;
+	var C_Npc DJG_Angar_NWCheck;
+	if(Zen == NEWWORLD_ZEN)
 	{
-		if(KAPITEL >= 2)
+		if(Kapitel >= 2)
 		{
 		};
-		if(KAPITEL >= 3)
+		if(Kapitel >= 3)
 		{
 		};
-		if(MIS_READYFORCHAPTER4 == TRUE)
+		if(MIS_ReadyforChapter4 == TRUE)
 		{
-			sld_bullco_owcheck = Hlp_GetNpc(sld_807_bullco);
-			if(Npc_IsDead(sld_bullco_owcheck))
+			SLD_Bullco_OWCheck = Hlp_GetNpc(Sld_807_Bullco);
+			if(Npc_IsDead(SLD_Bullco_OWCheck))
 			{
-				SLD_BULLCO_IS_ALIVE = FALSE;
+				SLD_Bullco_is_alive = FALSE;
 			}
 			else
 			{
-				SLD_BULLCO_IS_ALIVE = TRUE;
-				b_removenpc(10010);
+				SLD_Bullco_is_alive = TRUE;
+				B_RemoveNpc(SLD_Bullco_OWCheck);
 			};
-			sld_rod_owcheck = Hlp_GetNpc(sld_804_rod);
-			if(Npc_IsDead(sld_rod_owcheck))
+			SLD_Rod_OWCheck = Hlp_GetNpc(Sld_804_Rod);
+			if(Npc_IsDead(SLD_Rod_OWCheck))
 			{
-				SLD_ROD_IS_ALIVE = FALSE;
+				SLD_Rod_is_alive = FALSE;
 			}
 			else
 			{
-				SLD_ROD_IS_ALIVE = TRUE;
-				b_removenpc(10011);
+				SLD_Rod_is_alive = TRUE;
+				B_RemoveNpc(SLD_Rod_OWCheck);
 			};
-			sld_821 = Hlp_GetNpc(sld_821_soeldner);
-			Npc_ExchangeRoutine(sld_821,"RODWEG");
-			sld_cipher_owcheck = Hlp_GetNpc(sld_803_cipher);
-			if(Npc_IsDead(sld_cipher_owcheck))
+			Sld_821 = Hlp_GetNpc(SLD_821_Soeldner);
+			Npc_ExchangeRoutine(Sld_821,"RODWEG");
+			SLD_Cipher_OWCheck = Hlp_GetNpc(Sld_803_Cipher);
+			if(Npc_IsDead(SLD_Cipher_OWCheck))
 			{
-				SLD_CIPHER_IS_ALIVE = FALSE;
+				SLD_Cipher_is_alive = FALSE;
 			}
 			else
 			{
-				SLD_CIPHER_IS_ALIVE = TRUE;
-				b_removenpc(10013);
+				SLD_Cipher_is_alive = TRUE;
+				B_RemoveNpc(SLD_Cipher_OWCheck);
 			};
-			sld_gorn_owcheck = Hlp_GetNpc(pc_fighter_nw_vor_djg);
-			if(Npc_IsDead(sld_gorn_owcheck))
+			SLD_Gorn_OWCheck = Hlp_GetNpc(PC_Fighter_NW_vor_DJG);
+			if(Npc_IsDead(SLD_Gorn_OWCheck))
 			{
-				SLD_GORN_IS_ALIVE = FALSE;
+				SLD_Gorn_is_alive = FALSE;
 			}
 			else
 			{
-				SLD_GORN_IS_ALIVE = TRUE;
-				b_removenpc(10014);
+				SLD_Gorn_is_alive = TRUE;
+				B_RemoveNpc(SLD_Gorn_OWCheck);
 			};
-			sld_sylvio_owcheck = Hlp_GetNpc(sld_806_sylvio);
-			if(Npc_IsDead(sld_sylvio_owcheck))
+			SLD_Sylvio_OWCheck = Hlp_GetNpc(SLD_806_Sylvio);
+			if(Npc_IsDead(SLD_Sylvio_OWCheck))
 			{
-				SLD_SYLVIO_IS_ALIVE = FALSE;
+				SLD_Sylvio_is_alive = FALSE;
 			}
 			else
 			{
-				SLD_SYLVIO_IS_ALIVE = TRUE;
-				b_removenpc(10015);
+				SLD_Sylvio_is_alive = TRUE;
+				B_RemoveNpc(SLD_Sylvio_OWCheck);
 			};
 		};
-		if(KAPITEL >= 5)
+		if(Kapitel >= 5)
 		{
 		};
-		if(KAPITEL >= 6)
+		if(Kapitel >= 6)
 		{
 		};
 	};
-	if(zen == OLDWORLD_ZEN)
+	if(Zen == OldWorld_Zen)
 	{
-		if(KAPITEL >= 2)
+		if(Kapitel >= 2)
 		{
 		};
-		if(KAPITEL >= 3)
+		if(Kapitel >= 3)
 		{
 		};
-		if(KAPITEL >= 4)
+		if(Kapitel >= 4)
 		{
-			gorndjg_nwcheck = Hlp_GetNpc(gorndjg);
-			if(Npc_IsDead(gorndjg))
+			GornDJG_NWCheck = Hlp_GetNpc(GornDJG);
+			if(Npc_IsDead(GornDJG))
 			{
-				GORNDJG_IS_ALIVE = FALSE;
+				GornDJG_is_alive = FALSE;
 			}
 			else
 			{
-				GORNDJG_IS_ALIVE = TRUE;
-				b_removenpc(10016);
+				GornDJG_is_alive = TRUE;
+				B_RemoveNpc(GornDJG_NWCheck);
 			};
-			djg_angar_nwcheck = Hlp_GetNpc(djg_angar);
-			if(Npc_IsDead(djg_angar))
+			DJG_Angar_NWCheck = Hlp_GetNpc(DJG_Angar);
+			if(Npc_IsDead(DJG_Angar))
 			{
-				DJG_ANGAR_IS_ALIVE = FALSE;
+				DJG_Angar_is_alive = FALSE;
 			}
 			else
 			{
-				DJG_ANGAR_IS_ALIVE = TRUE;
-				b_removenpc(10017);
+				DJG_Angar_is_alive = TRUE;
+				B_RemoveNpc(DJG_Angar_NWCheck);
 			};
 		};
-		if(KAPITEL >= 5)
+		if(Kapitel >= 5)
 		{
 		};
-		if(KAPITEL >= 6)
+		if(Kapitel >= 6)
 		{
 		};
 	};

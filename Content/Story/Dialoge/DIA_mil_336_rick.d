@@ -1,43 +1,43 @@
 
-instance DIA_RICK_EXIT(C_INFO)
+instance DIA_Rick_EXIT(C_Info)
 {
-	npc = mil_336_rick;
+	npc = Mil_336_Rick;
 	nr = 999;
-	condition = dia_rick_exit_condition;
-	information = dia_rick_exit_info;
+	condition = DIA_Rick_EXIT_Condition;
+	information = DIA_Rick_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_rick_exit_condition()
+func int DIA_Rick_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_rick_exit_info()
+func void DIA_Rick_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_RICK_HALLO(C_INFO)
+instance DIA_Rick_HALLO(C_Info)
 {
-	npc = mil_336_rick;
+	npc = Mil_336_Rick;
 	nr = 1;
-	condition = dia_rick_hallo_condition;
-	information = dia_rick_hallo_info;
+	condition = DIA_Rick_HALLO_Condition;
+	information = DIA_Rick_HALLO_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_rick_hallo_condition()
+func int DIA_Rick_HALLO_Condition()
 {
 	return TRUE;
 };
 
-func void dia_rick_hallo_info()
+func void DIA_Rick_HALLO_Info()
 {
 	AI_Output(other,self,"DIA_Rick_HALLO_15_00");	//Jak leci?
 	AI_Output(self,other,"DIA_Rick_HALLO_10_01");	//Jeœli chcesz gadaæ, pogadaj z Rumboldem. Ja tu tylko sprz¹tam.
@@ -45,37 +45,37 @@ func void dia_rick_hallo_info()
 };
 
 
-instance DIA_RICK_PICKPOCKET(C_INFO)
+instance DIA_Rick_PICKPOCKET(C_Info)
 {
-	npc = mil_336_rick;
+	npc = Mil_336_Rick;
 	nr = 900;
-	condition = dia_rick_pickpocket_condition;
-	information = dia_rick_pickpocket_info;
+	condition = DIA_Rick_PICKPOCKET_Condition;
+	information = DIA_Rick_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_20;
+	description = Pickpocket_20;
 };
 
 
-func int dia_rick_pickpocket_condition()
+func int DIA_Rick_PICKPOCKET_Condition()
 {
-	return c_beklauen(10,45);
+	return C_Beklauen(10,45);
 };
 
-func void dia_rick_pickpocket_info()
+func void DIA_Rick_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_rick_pickpocket);
-	Info_AddChoice(dia_rick_pickpocket,DIALOG_BACK,dia_rick_pickpocket_back);
-	Info_AddChoice(dia_rick_pickpocket,DIALOG_PICKPOCKET,dia_rick_pickpocket_doit);
+	Info_ClearChoices(DIA_Rick_PICKPOCKET);
+	Info_AddChoice(DIA_Rick_PICKPOCKET,Dialog_Back,DIA_Rick_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Rick_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Rick_PICKPOCKET_DoIt);
 };
 
-func void dia_rick_pickpocket_doit()
+func void DIA_Rick_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_rick_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Rick_PICKPOCKET);
 };
 
-func void dia_rick_pickpocket_back()
+func void DIA_Rick_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_rick_pickpocket);
+	Info_ClearChoices(DIA_Rick_PICKPOCKET);
 };
 

@@ -1,35 +1,35 @@
 
-instance PAL_260_TANDOR(NPC_DEFAULT)
+instance PAL_260_Tandor(Npc_Default)
 {
 	name[0] = "Tandor";
 	guild = GIL_PAL;
 	id = 260;
 	voice = 8;
 	flags = 0;
-	npctype = NPCTYPE_OCMAIN;
-	b_setattributestochapter(self,4);
+	npcType = NPCTYPE_OCMAIN;
+	B_SetAttributesToChapter(self,4);
 	fight_tactic = FAI_HUMAN_STRONG;
-	EquipItem(self,itmw_1h_pal_sword);
-	EquipItem(self,itrw_mil_crossbow);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Fighter",FACE_P_TOUGH_RODRIGUEZ,BODYTEX_P,4828);
+	EquipItem(self,ItMw_1h_Pal_Sword);
+	EquipItem(self,ItRw_Mil_Crossbow);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_P_Tough_Rodriguez,BodyTex_P,ItAr_PAL_M);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,70);
-	daily_routine = rtn_start_260;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,70);
+	daily_routine = Rtn_Start_260;
 };
 
 
-func void rtn_start_260()
+func void Rtn_Start_260()
 {
-	ta_stand_guarding(8,0,23,0,"OC_STAND_TANDOR_01");
-	ta_stand_guarding(23,0,8,0,"OC_STAND_TANDOR_01");
+	TA_Stand_Guarding(8,0,23,0,"OC_STAND_TANDOR_01");
+	TA_Stand_Guarding(23,0,8,0,"OC_STAND_TANDOR_01");
 };
 
-func void rtn_postenverlassen_260()
+func void Rtn_PostenVerlassen_260()
 {
-	ta_practice_sword(8,0,23,0,"OC_CENTER_03");
-	ta_stand_eating(23,0,8,0,"OC_CENTER_03");
+	TA_Practice_Sword(8,0,23,0,"OC_CENTER_03");
+	TA_Stand_Eating(23,0,8,0,"OC_CENTER_03");
 };
 

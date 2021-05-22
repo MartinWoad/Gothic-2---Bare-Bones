@@ -1,44 +1,44 @@
 
-var int harad_itemsgiven_chapter_1;
-var int harad_itemsgiven_chapter_2;
-var int harad_itemsgiven_chapter_3;
-var int harad_itemsgiven_chapter_4;
-var int harad_itemsgiven_chapter_5;
+var int Harad_ItemsGiven_Chapter_1;
+var int Harad_ItemsGiven_Chapter_2;
+var int Harad_ItemsGiven_Chapter_3;
+var int Harad_ItemsGiven_Chapter_4;
+var int Harad_ItemsGiven_Chapter_5;
 var int harad_itemsgiven_chapter_6;
 
-func void b_givetradeinv_harad(var C_NPC slf)
+func void B_GiveTradeInv_Harad(var C_Npc slf)
 {
-	if((KAPITEL >= 1) && (HARAD_ITEMSGIVEN_CHAPTER_1 == FALSE))
+	if((Kapitel >= 1) && (Harad_ItemsGiven_Chapter_1 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,100);
-		HARAD_ITEMSGIVEN_CHAPTER_1 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,100);
+		Harad_ItemsGiven_Chapter_1 = TRUE;
 	};
-	if((KAPITEL >= 2) && (HARAD_ITEMSGIVEN_CHAPTER_2 == FALSE))
+	if((Kapitel >= 2) && (Harad_ItemsGiven_Chapter_2 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,200);
-		HARAD_ITEMSGIVEN_CHAPTER_2 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,200);
+		Harad_ItemsGiven_Chapter_2 = TRUE;
 	};
-	if((KAPITEL >= 3) && (HARAD_ITEMSGIVEN_CHAPTER_3 == FALSE))
+	if((Kapitel >= 3) && (Harad_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,400);
-		HARAD_ITEMSGIVEN_CHAPTER_3 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,400);
+		Harad_ItemsGiven_Chapter_3 = TRUE;
 	};
-	if((KAPITEL >= 4) && (HARAD_ITEMSGIVEN_CHAPTER_4 == FALSE))
+	if((Kapitel >= 4) && (Harad_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,600);
-		CreateInvItems(slf,itmi_nugget,1);
-		HARAD_ITEMSGIVEN_CHAPTER_4 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,600);
+		CreateInvItems(slf,ItMi_Nugget,1);
+		Harad_ItemsGiven_Chapter_4 = TRUE;
 	};
-	if((KAPITEL >= 5) && (HARAD_ITEMSGIVEN_CHAPTER_5 == FALSE))
+	if((Kapitel >= 5) && (Harad_ItemsGiven_Chapter_5 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,1000);
-		CreateInvItems(slf,itmi_nugget,2);
-		HARAD_ITEMSGIVEN_CHAPTER_5 = TRUE;
+		CreateInvItems(slf,ItMi_Gold,1000);
+		CreateInvItems(slf,ItMi_Nugget,2);
+		Harad_ItemsGiven_Chapter_5 = TRUE;
 	};
-	if((KAPITEL >= 6) && (HARAD_ITEMSGIVEN_CHAPTER_6 == FALSE))
+	if((Kapitel >= 6) && (HARAD_ITEMSGIVEN_CHAPTER_6 == FALSE))
 	{
-		CreateInvItems(slf,itmi_gold,300);
-		CreateInvItems(slf,itmi_nugget,1);
+		CreateInvItems(slf,ItMi_Gold,300);
+		CreateInvItems(slf,ItMi_Nugget,1);
 		HARAD_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };

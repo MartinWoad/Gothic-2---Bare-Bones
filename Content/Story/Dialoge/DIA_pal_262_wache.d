@@ -1,42 +1,42 @@
 
-instance DIA_PAL_262_EXIT(C_INFO)
+instance DIA_PAL_262_EXIT(C_Info)
 {
-	npc = pal_262_wache;
+	npc = PAL_262_Wache;
 	nr = 999;
-	condition = dia_pal_262_exit_condition;
-	information = dia_pal_262_exit_info;
+	condition = DIA_PAL_262_EXIT_Condition;
+	information = DIA_PAL_262_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_pal_262_exit_condition()
+func int DIA_PAL_262_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pal_262_exit_info()
+func void DIA_PAL_262_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_PAL_262_GREET(C_INFO)
+instance DIA_PAL_262_GREET(C_Info)
 {
-	npc = pal_262_wache;
+	npc = PAL_262_Wache;
 	nr = 2;
-	condition = dia_pal_262_greet_condition;
-	information = dia_pal_262_greet_info;
+	condition = DIA_PAL_262_GREET_Condition;
+	information = DIA_PAL_262_GREET_Info;
 	important = TRUE;
 };
 
 
-func int dia_pal_262_greet_condition()
+func int DIA_PAL_262_GREET_Condition()
 {
 	return TRUE;
 };
 
-func void dia_pal_262_greet_info()
+func void DIA_PAL_262_GREET_Info()
 {
 	AI_Output(self,other,"DIA_PAL_262_GREET_10_00");	//Zatrzymaj siê - kim jesteœ?
 	AI_Output(other,self,"DIA_PAL_262_GREET_15_01");	//Niewa¿ne kim, wa¿ne sk¹d przychodzê. Niedawno przekroczy³em prze³êcz.
@@ -46,18 +46,18 @@ func void dia_pal_262_greet_info()
 };
 
 
-instance DIA_WACHE_PERM(C_INFO)
+instance DIA_Wache_PERM(C_Info)
 {
-	npc = pal_262_wache;
+	npc = PAL_262_Wache;
 	nr = 3;
-	condition = dia_wache_perm_condition;
-	information = dia_wache_perm_info;
+	condition = DIA_Wache_PERM_Condition;
+	information = DIA_Wache_PERM_Info;
 	permanent = TRUE;
 	description = "Kto tu dowodzi?";
 };
 
 
-func int dia_wache_perm_condition()
+func int DIA_Wache_PERM_Condition()
 {
 	if(Npc_KnowsInfo(hero,dia_pal_262_greet))
 	{
@@ -65,7 +65,7 @@ func int dia_wache_perm_condition()
 	};
 };
 
-func void dia_wache_perm_info()
+func void DIA_Wache_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Wache_PERM_15_00");	//Kto tu dowodzi?
 	AI_Output(self,other,"DIA_Wache_PERM_10_01");	//Kapitan Garond i jego dwóch doradców, paladyni Orik i Parcival.

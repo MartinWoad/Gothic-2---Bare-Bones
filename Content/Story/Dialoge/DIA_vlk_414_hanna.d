@@ -1,72 +1,72 @@
 
-instance DIA_HANNA_EXIT(C_INFO)
+instance DIA_Hanna_EXIT(C_Info)
 {
-	npc = vlk_414_hanna;
+	npc = VLK_414_Hanna;
 	nr = 999;
-	condition = dia_hanna_exit_condition;
-	information = dia_hanna_exit_info;
+	condition = DIA_Hanna_EXIT_Condition;
+	information = DIA_Hanna_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hanna_exit_condition()
+func int DIA_Hanna_EXIT_Condition()
 {
-	if(KAPITEL <= 2)
+	if(Kapitel <= 2)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hanna_exit_info()
+func void DIA_Hanna_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_HANNA_HELLO(C_INFO)
+instance DIA_Hanna_Hello(C_Info)
 {
-	npc = vlk_414_hanna;
+	npc = VLK_414_Hanna;
 	nr = 1;
-	condition = dia_hanna_hello_condition;
-	information = dia_hanna_hello_info;
+	condition = DIA_Hanna_Hello_Condition;
+	information = DIA_Hanna_Hello_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_hanna_hello_condition()
+func int DIA_Hanna_Hello_Condition()
 {
 	return TRUE;
 };
 
-func void dia_hanna_hello_info()
+func void DIA_Hanna_Hello_Info()
 {
 	AI_Output(self,other,"DIA_Hanna_Hello_17_00");	//Ach, klient - co mogê dla ciebie zrobiæ?
 };
 
 
-instance DIA_HANNA_ROOM(C_INFO)
+instance DIA_Hanna_Room(C_Info)
 {
-	npc = vlk_414_hanna;
+	npc = VLK_414_Hanna;
 	nr = 2;
-	condition = dia_hanna_room_condition;
-	information = dia_hanna_room_info;
+	condition = DIA_Hanna_Room_Condition;
+	information = DIA_Hanna_Room_Info;
 	permanent = FALSE;
 	description = "Szukam pokoju.";
 };
 
 
-func int dia_hanna_room_condition()
+func int DIA_Hanna_Room_Condition()
 {
 	return TRUE;
 };
 
-func void dia_hanna_room_info()
+func void DIA_Hanna_Room_Info()
 {
 	AI_Output(other,self,"DIA_Hanna_Room_15_00");	//Szukam pokoju.
 	AI_Output(self,other,"DIA_Hanna_Room_17_01");	//A wiêc trafi³eœ we w³aœciwe miejsce.
-	if(Npc_KnowsInfo(other,dia_lothar_schlafen))
+	if(Npc_KnowsInfo(other,DIA_Lothar_Schlafen))
 	{
 		AI_Output(other,self,"DIA_Hanna_Add_15_03");	//Jeden z paladynów powiedzia³ mi, ¿e mogê tu spêdziæ noc za darmo...
 	}
@@ -83,26 +83,26 @@ func void dia_hanna_room_info()
 };
 
 
-instance DIA_HANNA_WHYPAY(C_INFO)
+instance DIA_Hanna_WhyPay(C_Info)
 {
-	npc = vlk_414_hanna;
+	npc = VLK_414_Hanna;
 	nr = 3;
-	condition = dia_hanna_whypay_condition;
-	information = dia_hanna_whypay_info;
+	condition = DIA_Hanna_WhyPay_Condition;
+	information = DIA_Hanna_WhyPay_Info;
 	permanent = FALSE;
 	description = "Czemu paladyni op³acaj¹ noclegi?";
 };
 
 
-func int dia_hanna_whypay_condition()
+func int DIA_Hanna_WhyPay_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_hanna_room))
+	if(Npc_KnowsInfo(other,DIA_Hanna_Room))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hanna_whypay_info()
+func void DIA_Hanna_WhyPay_Info()
 {
 	AI_Output(other,self,"DIA_Hanna_Add_15_12");	//Czemu paladyni op³acaj¹ noclegi?
 	AI_Output(self,other,"DIA_Hanna_Add_17_13");	//Ja te¿ tego nie rozumiem.
@@ -114,26 +114,26 @@ func void dia_hanna_whypay_info()
 };
 
 
-instance DIA_HANNA_WERHIER(C_INFO)
+instance DIA_Hanna_WerHier(C_Info)
 {
-	npc = vlk_414_hanna;
+	npc = VLK_414_Hanna;
 	nr = 4;
-	condition = dia_hanna_werhier_condition;
-	information = dia_hanna_werhier_info;
+	condition = DIA_Hanna_WerHier_Condition;
+	information = DIA_Hanna_WerHier_Info;
 	permanent = TRUE;
 	description = "Kto tu teraz mieszka?";
 };
 
 
-func int dia_hanna_werhier_condition()
+func int DIA_Hanna_WerHier_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_hanna_room))
+	if(Npc_KnowsInfo(other,DIA_Hanna_Room))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hanna_werhier_info()
+func void DIA_Hanna_WerHier_Info()
 {
 	AI_Output(other,self,"DIA_Hanna_Add_15_08");	//Kto tu teraz mieszka?
 	AI_Output(self,other,"DIA_Hanna_Add_17_09");	//Praktycznie wszyscy moi klienci to wêdrowni handlarze.
@@ -142,37 +142,37 @@ func void dia_hanna_werhier_info()
 };
 
 
-instance DIA_HANNA_CITY(C_INFO)
+instance DIA_Hanna_City(C_Info)
 {
-	npc = vlk_414_hanna;
+	npc = VLK_414_Hanna;
 	nr = 5;
-	condition = dia_hanna_city_condition;
-	information = dia_hanna_city_info;
+	condition = DIA_Hanna_City_Condition;
+	information = DIA_Hanna_City_Info;
 	permanent = TRUE;
 	description = "Mam parê pytañ dotycz¹cych miasta…";
 };
 
 
-func int dia_hanna_city_condition()
+func int DIA_Hanna_City_Condition()
 {
 	return TRUE;
 };
 
-func void dia_hanna_city_info()
+func void DIA_Hanna_City_Info()
 {
 	AI_Output(other,self,"DIA_Hanna_City_15_00");	//Mam parê pytañ dotycz¹cych miasta...
-	Info_ClearChoices(dia_hanna_city);
-	Info_AddChoice(dia_hanna_city,DIALOG_BACK,dia_hanna_city_back);
-	Info_AddChoice(dia_hanna_city,"Gdzie mogê tu coœ kupiæ?",dia_hanna_city_buy);
-	Info_AddChoice(dia_hanna_city,"Opowiedz mi o mieœcie.",dia_hanna_city_city);
+	Info_ClearChoices(DIA_Hanna_City);
+	Info_AddChoice(DIA_Hanna_City,Dialog_Back,DIA_Hanna_City_Back);
+	Info_AddChoice(DIA_Hanna_City,"Gdzie mogê tu coœ kupiæ?",DIA_Hanna_City_Buy);
+	Info_AddChoice(DIA_Hanna_City,"Opowiedz mi o mieœcie.",DIA_Hanna_City_City);
 };
 
-func void dia_hanna_city_back()
+func void DIA_Hanna_City_Back()
 {
-	Info_ClearChoices(dia_hanna_city);
+	Info_ClearChoices(DIA_Hanna_City);
 };
 
-func void dia_hanna_city_buy()
+func void DIA_Hanna_City_Buy()
 {
 	AI_Output(other,self,"DIA_Hanna_City_Buy_15_00");	//Gdzie mogê tu coœ kupiæ?
 	AI_Output(self,other,"DIA_Hanna_City_Buy_17_01");	//Targ znajduje siê dok³adnie naprzeciwko drzwi frontowych. Znajdziesz tam wszelkie mo¿liwe towary.
@@ -180,7 +180,7 @@ func void dia_hanna_city_buy()
 	AI_Output(self,other,"DIA_Hanna_City_Buy_17_03");	//Ryby mo¿esz kupiæ w dzielnicy portowej. Sklep rybny znajdziesz tam bez trudu.
 };
 
-func void dia_hanna_city_city()
+func void DIA_Hanna_City_City()
 {
 	AI_Output(other,self,"DIA_Hanna_City_City_15_00");	//Opowiedz mi o mieœcie.
 	AI_Output(self,other,"DIA_Hanna_City_City_17_01");	//Khorinis to jedno z najbogatszych miast w królestwie, choæ mo¿e w tym momencie trudno w to uwierzyæ.
@@ -190,238 +190,238 @@ func void dia_hanna_city_city()
 };
 
 
-instance DIA_HANNA_KAP3_EXIT(C_INFO)
+instance DIA_Hanna_Kap3_EXIT(C_Info)
 {
-	npc = vlk_414_hanna;
+	npc = VLK_414_Hanna;
 	nr = 999;
-	condition = dia_hanna_kap3_exit_condition;
-	information = dia_hanna_kap3_exit_info;
+	condition = DIA_Hanna_Kap3_EXIT_Condition;
+	information = DIA_Hanna_Kap3_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_hanna_kap3_exit_condition()
+func int DIA_Hanna_Kap3_EXIT_Condition()
 {
-	if(KAPITEL >= 3)
+	if(Kapitel >= 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hanna_kap3_exit_info()
+func void DIA_Hanna_Kap3_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-var int hanna_priceforletter;
+var int Hanna_PriceForLetter;
 
-instance DIA_HANNA_ANYNEWS(C_INFO)
+instance DIA_Hanna_AnyNews(C_Info)
 {
-	npc = vlk_414_hanna;
+	npc = VLK_414_Hanna;
 	nr = 31;
-	condition = dia_hanna_anynews_condition;
-	information = dia_hanna_anynews_info;
+	condition = DIA_Hanna_AnyNews_Condition;
+	information = DIA_Hanna_AnyNews_Info;
 	permanent = FALSE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_hanna_anynews_condition()
+func int DIA_Hanna_AnyNews_Condition()
 {
-	if(KAPITEL >= 3)
+	if(Kapitel >= 3)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hanna_anynews_info()
+func void DIA_Hanna_AnyNews_Info()
 {
 	AI_Output(other,self,"DIA_Hanna_AnyNews_15_00");	//Jak ci idzie?
 	AI_Output(self,other,"DIA_Hanna_AnyNews_17_01");	//Nie wygl¹dasz na osobê, która przejmuje siê cudzymi zmartwieniami.
-	Info_ClearChoices(dia_hanna_anynews);
-	Info_AddChoice(dia_hanna_anynews,"Jasne, oczywiœcie.",dia_hanna_anynews_yes);
-	Info_AddChoice(dia_hanna_anynews,"To zale¿y.",dia_hanna_anynews_depends);
-	Info_AddChoice(dia_hanna_anynews,"Nie.",dia_hanna_anynews_no);
+	Info_ClearChoices(DIA_Hanna_AnyNews);
+	Info_AddChoice(DIA_Hanna_AnyNews,"Jasne, oczywiœcie.",DIA_Hanna_AnyNews_Yes);
+	Info_AddChoice(DIA_Hanna_AnyNews,"To zale¿y.",DIA_Hanna_AnyNews_Depends);
+	Info_AddChoice(DIA_Hanna_AnyNews,"Nie.",DIA_Hanna_AnyNews_No);
 };
 
-func void dia_hanna_anynews_no()
+func void DIA_Hanna_AnyNews_No()
 {
 	AI_Output(other,self,"DIA_Hanna_AnyNews_No_15_00");	//Niezupe³nie.
 	AI_Output(self,other,"DIA_Hanna_AnyNews_No_17_01");	//No widzisz, o tym w³aœnie mówiê. Ka¿dy teraz myœli tylko o sobie. Czego chcesz?
-	MIS_HANNARETRIEVELETTER = LOG_FAILED;
-	Info_ClearChoices(dia_hanna_anynews);
+	MIS_HannaRetrieveLetter = LOG_FAILED;
+	Info_ClearChoices(DIA_Hanna_AnyNews);
 };
 
-func void dia_hanna_anynews_depends()
+func void DIA_Hanna_AnyNews_Depends()
 {
 	AI_Output(other,self,"DIA_Hanna_AnyNews_Depends_15_00");	//To zale¿y.
 	AI_Output(self,other,"DIA_Hanna_AnyNews_Depends_17_01");	//To zale¿y, ile mo¿na na tym zarobiæ, to chcesz powiedzieæ.
 	AI_Output(self,other,"DIA_Hanna_AnyNews_Depends_17_02");	//Nie znoszê takich jak ty.
-	MIS_HANNARETRIEVELETTER = LOG_FAILED;
-	Info_ClearChoices(dia_hanna_anynews);
+	MIS_HannaRetrieveLetter = LOG_FAILED;
+	Info_ClearChoices(DIA_Hanna_AnyNews);
 };
 
-func void dia_hanna_anynews_yes()
+func void DIA_Hanna_AnyNews_Yes()
 {
 	AI_Output(other,self,"DIA_Hanna_AnyNews_Yes_15_00");	//Tak, pewnie. Nie ma problemu.
 	AI_Output(self,other,"DIA_Hanna_AnyNews_Yes_17_01");	//Wiesz, ¿ycie jest pe³ne niespodzianek. Ostatnio robi³am porz¹dek w moich rzeczach i znalaz³am parê starych map, które sprzeda³am kartografowi Brahimowi z portu.
 	AI_Output(self,other,"DIA_Hanna_AnyNews_Yes_17_02");	//Niestety, nied³ugo potem zauwa¿y³am, ¿e brakuje mi pewnego dokumentu.
 	AI_Output(self,other,"DIA_Hanna_AnyNews_Yes_17_03");	//Przypuszczam, ¿e jakimœ cudem dosta³ siê pomiêdzy mapy.
 	AI_Output(self,other,"DIA_Hanna_AnyNews_Yes_17_04");	//Czy móg³byœ go dla mnie odzyskaæ?
-	MIS_HANNARETRIEVELETTER = LOG_RUNNING;
-	Log_CreateTopic(TOPIC_HANNARETRIEVELETTER,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_HANNARETRIEVELETTER,LOG_RUNNING);
-	b_logentry(TOPIC_HANNARETRIEVELETTER,"Hanna zgubi³a pewien dokument. Najprawdopodobniej znajduje siê on w dzielnicy portowej, gdzie mieœci siê siedziba kartografa Brahima.");
-	Info_ClearChoices(dia_hanna_anynews);
-	Info_AddChoice(dia_hanna_anynews,"Nie jestem ch³opcem na posy³ki.",dia_hanna_anynews_yes_footboy);
-	Info_AddChoice(dia_hanna_anynews,"A co JA bêdê z tego mia³?",dia_hanna_anynews_yes_reward);
-	Info_AddChoice(dia_hanna_anynews,"Zobaczê, co da siê zrobiæ.",dia_hanna_anynews_yes_willsee);
+	MIS_HannaRetrieveLetter = LOG_Running;
+	Log_CreateTopic(TOPIC_HannaRetrieveLetter,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_HannaRetrieveLetter,LOG_Running);
+	B_LogEntry(TOPIC_HannaRetrieveLetter,"Hanna zgubi³a pewien dokument. Najprawdopodobniej znajduje siê on w dzielnicy portowej, gdzie mieœci siê siedziba kartografa Brahima.");
+	Info_ClearChoices(DIA_Hanna_AnyNews);
+	Info_AddChoice(DIA_Hanna_AnyNews,"Nie jestem ch³opcem na posy³ki.",DIA_Hanna_AnyNews_Yes_Footboy);
+	Info_AddChoice(DIA_Hanna_AnyNews,"A co JA bêdê z tego mia³?",DIA_Hanna_AnyNews_Yes_Reward);
+	Info_AddChoice(DIA_Hanna_AnyNews,"Zobaczê, co da siê zrobiæ.",DIA_Hanna_AnyNews_Yes_WillSee);
 };
 
-func void dia_hanna_anynews_yes_footboy()
+func void DIA_Hanna_AnyNews_Yes_Footboy()
 {
 	AI_Output(other,self,"DIA_Hanna_AnyNews_Yes_Footboy_15_00");	//Nie jestem ch³opcem na posy³ki.
 	AI_Output(self,other,"DIA_Hanna_AnyNews_Yes_Footboy_17_01");	//Rozumiem - problemy prostej kobiety nic dla ciebie nie znacz¹. Widzê, ¿e sama bêdê musia³a siê tym zaj¹æ.
-	Info_ClearChoices(dia_hanna_anynews);
+	Info_ClearChoices(DIA_Hanna_AnyNews);
 };
 
-func void dia_hanna_anynews_yes_reward()
+func void DIA_Hanna_AnyNews_Yes_Reward()
 {
 	AI_Output(other,self,"DIA_Hanna_AnyNews_Yes_Reward_15_00");	//A co z tego bêdê mia³?
 	AI_Output(self,other,"DIA_Hanna_AnyNews_Yes_Reward_17_01");	//Aha, wiedzia³am. Niczym siê nie ró¿nisz od tej ho³oty mieszkaj¹cej w porcie.
 	AI_Output(self,other,"DIA_Hanna_AnyNews_Yes_Reward_17_02");	//Wiêc czego chcesz ode mnie, biednej kobiety?
-	Info_ClearChoices(dia_hanna_anynews);
-	Info_AddChoice(dia_hanna_anynews,"Niewa¿ne.",dia_hanna_anynews_yes_reward_ok);
-	Info_AddChoice(dia_hanna_anynews,"Mog³abyœ byæ dla mnie nieco milsza…",dia_hanna_anynews_yes_reward_benice);
-	Info_AddChoice(dia_hanna_anynews,"Z³ota.",dia_hanna_anynews_yes_reward_gold);
+	Info_ClearChoices(DIA_Hanna_AnyNews);
+	Info_AddChoice(DIA_Hanna_AnyNews,"Niewa¿ne.",DIA_Hanna_AnyNews_Yes_Reward_OK);
+	Info_AddChoice(DIA_Hanna_AnyNews,"Mog³abyœ byæ dla mnie nieco milsza…",DIA_Hanna_AnyNews_Yes_Reward_BeNice);
+	Info_AddChoice(DIA_Hanna_AnyNews,"Z³ota.",DIA_Hanna_AnyNews_Yes_Reward_Gold);
 };
 
-func void dia_hanna_anynews_yes_reward_ok()
+func void DIA_Hanna_AnyNews_Yes_Reward_OK()
 {
 	AI_Output(other,self,"DIA_Hanna_AnyNews_Yes_Reward_OK_15_00");	//Niewa¿ne.
 	AI_Output(self,other,"DIA_Hanna_AnyNews_Yes_Reward_OK_17_01");	//Widzê, ¿e jednak pozosta³a ci krztyna przyzwoitoœci. Jeœli odzyskasz ten dokument, dostaniesz ode mnie 75 sztuk z³ota.
-	HANNA_PRICEFORLETTER = 75;
-	Info_ClearChoices(dia_hanna_anynews);
+	Hanna_PriceForLetter = 75;
+	Info_ClearChoices(DIA_Hanna_AnyNews);
 };
 
-func void dia_hanna_anynews_yes_reward_benice()
+func void DIA_Hanna_AnyNews_Yes_Reward_BeNice()
 {
 	AI_Output(other,self,"DIA_Hanna_AnyNews_Yes_Reward_BeNice_15_00");	//Mog³abyœ byæ dla mnie nieco milsza...
 	AI_Output(self,other,"DIA_Hanna_AnyNews_Yes_Reward_BeNice_17_01");	//To oburzaj¹ce. Wy...wynoœ siê st¹d! Ty wieprzu!
-	MIS_HANNARETRIEVELETTER = LOG_FAILED;
+	MIS_HannaRetrieveLetter = LOG_FAILED;
 	AI_StopProcessInfos(self);
 };
 
-func void dia_hanna_anynews_yes_reward_gold()
+func void DIA_Hanna_AnyNews_Yes_Reward_Gold()
 {
 	AI_Output(other,self,"DIA_Hanna_AnyNews_Yes_Reward_Gold_15_00");	//Z³ota.
 	AI_Output(self,other,"DIA_Hanna_AnyNews_Yes_Reward_Gold_17_01");	//Mogê ci za to daæ 50 sztuk z³ota, nie wiêcej.
 	AI_Output(self,other,"DIA_Hanna_AnyNews_Yes_Reward_Gold_17_02");	//Jeœli zdo³asz odzyskaæ dokument, dostaniesz ode mnie 50 sztuk z³ota.
-	HANNA_PRICEFORLETTER = 50;
-	Info_ClearChoices(dia_hanna_anynews);
+	Hanna_PriceForLetter = 50;
+	Info_ClearChoices(DIA_Hanna_AnyNews);
 };
 
-func void dia_hanna_anynews_yes_willsee()
+func void DIA_Hanna_AnyNews_Yes_WillSee()
 {
 	AI_Output(other,self,"DIA_Hanna_AnyNews_Yes_WillSee_15_00");	//Zobaczê, co da siê zrobiæ.
 	AI_Output(self,other,"DIA_Hanna_AnyNews_Yes_WillSee_17_01");	//Jesteœ taki s³odki. Powodzenia!
 	AI_Output(self,other,"DIA_Hanna_AnyNews_Yes_WillSee_17_02");	//Jeœli przyniesiesz mi ten dokument, dostaniesz ode mnie nagrodê.
-	HANNA_PRICEFORLETTER = 200;
-	Info_ClearChoices(dia_hanna_anynews);
+	Hanna_PriceForLetter = 200;
+	Info_ClearChoices(DIA_Hanna_AnyNews);
 };
 
 
-instance DIA_HANNA_THISLETTER(C_INFO)
+instance DIA_Hanna_ThisLetter(C_Info)
 {
-	npc = vlk_414_hanna;
+	npc = VLK_414_Hanna;
 	nr = 31;
-	condition = dia_hanna_thisletter_condition;
-	information = dia_hanna_thisletter_info;
+	condition = DIA_Hanna_ThisLetter_Condition;
+	information = DIA_Hanna_ThisLetter_Info;
 	permanent = FALSE;
 	description = "Czy chodzi³o o ten dokument?";
 };
 
 
-func int dia_hanna_thisletter_condition()
+func int DIA_Hanna_ThisLetter_Condition()
 {
-	if((MIS_HANNARETRIEVELETTER == LOG_RUNNING) && (Npc_HasItems(other,itwr_shatteredgolem_mis) >= 1))
+	if((MIS_HannaRetrieveLetter == LOG_Running) && (Npc_HasItems(other,ItWr_ShatteredGolem_MIS) >= 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hanna_thisletter_info()
+func void DIA_Hanna_ThisLetter_Info()
 {
 	AI_Output(other,self,"DIA_Hanna_ThisLetter_15_00");	//Czy chodzi³o o ten dokument?
 	AI_Output(self,other,"DIA_Hanna_ThisLetter_17_01");	//Tak, w³aœnie o ten. Dziêkujê ci.
 	AI_Output(other,self,"DIA_Hanna_ThisLetter_15_02");	//Gdzie moja nagroda?
 	AI_Output(self,other,"DIA_Hanna_ThisLetter_17_03");	//Nie tak szybko. Oto twoje pieni¹dze.
-	CreateInvItems(self,itmi_gold,HANNA_PRICEFORLETTER);
-	b_giveinvitems(self,other,5113,HANNA_PRICEFORLETTER);
-	MIS_HANNARETRIEVELETTER = LOG_SUCCESS;
-	b_giveplayerxp(XP_HANNARETRIEVELETTER);
+	CreateInvItems(self,ItMi_Gold,Hanna_PriceForLetter);
+	B_GiveInvItems(self,other,ItMi_Gold,Hanna_PriceForLetter);
+	MIS_HannaRetrieveLetter = LOG_SUCCESS;
+	B_GivePlayerXP(XP_HannaRetrieveLetter);
 };
 
 
-instance DIA_HANNA_PICKPOCKET(C_INFO)
+instance DIA_Hanna_PICKPOCKET(C_Info)
 {
-	npc = vlk_414_hanna;
+	npc = VLK_414_Hanna;
 	nr = 900;
-	condition = dia_hanna_pickpocket_condition;
-	information = dia_hanna_pickpocket_info;
+	condition = DIA_Hanna_PICKPOCKET_Condition;
+	information = DIA_Hanna_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60_FEMALE;
+	description = Pickpocket_60_Female;
 };
 
 
-func int dia_hanna_pickpocket_condition()
+func int DIA_Hanna_PICKPOCKET_Condition()
 {
-	return c_beklauen(45,25);
+	return C_Beklauen(45,25);
 };
 
-func void dia_hanna_pickpocket_info()
+func void DIA_Hanna_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_hanna_pickpocket);
-	Info_AddChoice(dia_hanna_pickpocket,DIALOG_BACK,dia_hanna_pickpocket_back);
-	Info_AddChoice(dia_hanna_pickpocket,DIALOG_PICKPOCKET,dia_hanna_pickpocket_doit);
+	Info_ClearChoices(DIA_Hanna_PICKPOCKET);
+	Info_AddChoice(DIA_Hanna_PICKPOCKET,Dialog_Back,DIA_Hanna_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Hanna_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Hanna_PICKPOCKET_DoIt);
 };
 
-func void dia_hanna_pickpocket_doit()
+func void DIA_Hanna_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_hanna_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Hanna_PICKPOCKET);
 };
 
-func void dia_hanna_pickpocket_back()
+func void DIA_Hanna_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_hanna_pickpocket);
+	Info_ClearChoices(DIA_Hanna_PICKPOCKET);
 };
 
 
-instance DIA_HANNA_AUSKELLER(C_INFO)
+instance DIA_Hanna_AusKeller(C_Info)
 {
-	npc = vlk_414_hanna;
+	npc = VLK_414_Hanna;
 	nr = 11;
-	condition = dia_hanna_auskeller_condition;
-	information = dia_hanna_auskeller_info;
+	condition = DIA_Hanna_AusKeller_Condition;
+	information = DIA_Hanna_AusKeller_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_hanna_auskeller_condition()
+func int DIA_Hanna_AusKeller_Condition()
 {
-	if(Npc_HasItems(other,itke_thiefguildkey_hotel_mis) >= 1)
+	if(Npc_HasItems(other,ItKe_ThiefGuildKey_Hotel_MIS) >= 1)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hanna_auskeller_info()
+func void DIA_Hanna_AusKeller_Info()
 {
-	if((cassia.aivar[AIV_KILLEDBYPLAYER] == TRUE) || (jesper.aivar[AIV_KILLEDBYPLAYER] == TRUE) || (ramirez.aivar[AIV_KILLEDBYPLAYER] == TRUE))
+	if((Cassia.aivar[AIV_KilledByPlayer] == TRUE) || (Jesper.aivar[AIV_KilledByPlayer] == TRUE) || (Ramirez.aivar[AIV_KilledByPlayer] == TRUE))
 	{
 		AI_Output(self,other,"DIA_Hanna_Add_17_27");	//Sk¹d... wracasz?
 		AI_Output(other,self,"DIA_Hanna_Add_15_28");	//Znalaz³em ciekaw¹ rzecz w twojej piwnicy...
@@ -442,26 +442,26 @@ func void dia_hanna_auskeller_info()
 };
 
 
-instance DIA_HANNA_SCHULDENBUCH(C_INFO)
+instance DIA_Hanna_Schuldenbuch(C_Info)
 {
-	npc = vlk_414_hanna;
+	npc = VLK_414_Hanna;
 	nr = 1;
-	condition = dia_hanna_schuldenbuch_condition;
-	information = dia_hanna_schuldenbuch_info;
+	condition = DIA_Hanna_Schuldenbuch_Condition;
+	information = DIA_Hanna_Schuldenbuch_Info;
 	permanent = FALSE;
 	description = "Zobacz, jak¹ ksi¹¿kê znalaz³em!";
 };
 
 
-func int dia_hanna_schuldenbuch_condition()
+func int DIA_Hanna_Schuldenbuch_Condition()
 {
-	if(Npc_HasItems(other,itwr_schuldenbuch) >= 1)
+	if(Npc_HasItems(other,ItWr_Schuldenbuch) >= 1)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hanna_schuldenbuch_info()
+func void DIA_Hanna_Schuldenbuch_Info()
 {
 	AI_Output(other,self,"DIA_Hanna_Add_15_41");	//Zobacz, jak¹ ksi¹¿kê znalaz³em!
 	AI_Output(self,other,"DIA_Hanna_Add_17_42");	//To ksiêga rachunkowa Lehmara. Sk¹d j¹ masz?
@@ -470,39 +470,39 @@ func void dia_hanna_schuldenbuch_info()
 };
 
 
-instance DIA_HANNA_GIVESCHULDENBUCH(C_INFO)
+instance DIA_Hanna_GiveSchuldenbuch(C_Info)
 {
-	npc = vlk_414_hanna;
+	npc = VLK_414_Hanna;
 	nr = 1;
-	condition = dia_hanna_giveschuldenbuch_condition;
-	information = dia_hanna_giveschuldenbuch_info;
+	condition = DIA_Hanna_GiveSchuldenbuch_Condition;
+	information = DIA_Hanna_GiveSchuldenbuch_Info;
 	permanent = FALSE;
 	description = "Proszê - weŸ tê ksiêgê.";
 };
 
 
-func int dia_hanna_giveschuldenbuch_condition()
+func int DIA_Hanna_GiveSchuldenbuch_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_hanna_schuldenbuch) && (Npc_HasItems(other,itwr_schuldenbuch) >= 1))
+	if(Npc_KnowsInfo(other,DIA_Hanna_Schuldenbuch) && (Npc_HasItems(other,ItWr_Schuldenbuch) >= 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_hanna_giveschuldenbuch_info()
+func void DIA_Hanna_GiveSchuldenbuch_Info()
 {
 	AI_Output(other,self,"DIA_Hanna_Add_15_45");	//Proszê - weŸ tê ksiêgê.
-	b_giveinvitems(other,self,5721,1);
-	Npc_RemoveInvItems(self,itwr_schuldenbuch,1);
+	B_GiveInvItems(other,self,ItWr_Schuldenbuch,1);
+	Npc_RemoveInvItems(self,ItWr_Schuldenbuch,1);
 	AI_Output(self,other,"DIA_Hanna_Add_17_46");	//Dziêkujê.
 	AI_Output(self,other,"DIA_Hanna_Add_17_47");	//Przyjmij to w nagrodê.
-	b_giveinvitems(self,other,5608,1);
-	b_giveplayerxp(XP_SCHULDENBUCH);
+	B_GiveInvItems(self,other,ItSe_HannasBeutel,1);
+	B_GivePlayerXP(XP_Schuldenbuch);
 	AI_Output(other,self,"DIA_Hanna_Add_15_49");	//Co to jest?
 	AI_Output(self,other,"DIA_Hanna_Add_17_48");	//To klucz do bram bogactwa.
 };
 
-func void hanna_blubb()
+func void Hanna_Blubb()
 {
 	AI_Output(other,self,"DIA_Hanna_Add_15_37");	//Wszystko w porz¹dku w kryjówce?
 	AI_Output(self,other,"DIA_Hanna_Add_17_39");	//Nie by³am tam ju¿ od d³u¿szego czasu.

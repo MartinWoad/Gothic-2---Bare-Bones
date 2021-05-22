@@ -1,26 +1,26 @@
 
-func void b_stopmagicsleep()
+func void B_StopMagicSleep()
 {
 	Npc_PercDisable(self,PERC_ASSESSDAMAGE);
-	b_say_overlay(self,other,"$WHATWASSTHAT");
+	B_Say_Overlay(self,other,"$WHATWASSTHAT");
 	AI_PlayAni(self,"T_VICTIM_SLE_2_STAND");
 };
 
-func void b_assessmagicsleeptalk()
+func void B_AssessMagicSleepTalk()
 {
-	b_say(self,other,"$YOUDISTURBEDMYSLUMBER");
-	AI_StartState(self,zs_observeplayer,1,"");
+	B_Say(self,other,"$YOUDISTURBEDMYSLUMBER");
+	AI_StartState(self,ZS_ObservePlayer,1,"");
 };
 
-func void zs_magicsleep()
+func void ZS_MagicSleep()
 {
-	Npc_PercEnable(self,PERC_ASSESSDAMAGE,b_stopmagicsleep);
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
-	Npc_PercEnable(self,PERC_ASSESSTALK,b_assessmagicsleeptalk);
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_NONE;
+	Npc_PercEnable(self,PERC_ASSESSDAMAGE,B_StopMagicSleep);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
+	Npc_PercEnable(self,PERC_ASSESSTALK,B_AssessMagicSleepTalk);
+	self.aivar[AIV_Guardpassage_Status] = GP_NONE;
 	Npc_SetRefuseTalk(self,0);
 	Npc_SetTempAttitude(self,Npc_GetPermAttitude(self,hero));
-	b_stoplookat(self);
+	B_StopLookAt(self);
 	AI_StopPointAt(self);
 	if(!Npc_HasBodyFlag(self,BS_FLAG_INTERRUPTABLE))
 	{
@@ -33,37 +33,37 @@ func void zs_magicsleep()
 	AI_PlayAniBS(self,"T_STAND_2_VICTIM_SLE",BS_LIE);
 };
 
-func int zs_magicsleep_loop()
+func int ZS_MagicSleep_Loop()
 {
-	if(Npc_GetStateTime(self) > SPL_TIME_SLEEP)
+	if(Npc_GetStateTime(self) > SPL_TIME_Sleep)
 	{
 		Npc_ClearAIQueue(self);
-		b_stopmagicsleep();
+		B_StopMagicSleep();
 		return LOOP_END;
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_magicsleep_end()
+func void ZS_MagicSleep_End()
 {
 };
 
-func void b_stopmagicflee()
+func void B_StopMagicFlee()
 {
 	Npc_PercDisable(self,PERC_ASSESSDAMAGE);
 	Npc_SetTarget(self,other);
-	AI_StartState(self,zs_flee,0,"");
+	AI_StartState(self,ZS_Flee,0,"");
 };
 
-func void zs_magicflee()
+func void ZS_MagicFlee()
 {
 	var int randy;
-	Npc_PercEnable(self,PERC_ASSESSDAMAGE,b_stopmagicflee);
-	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_assessmagic);
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_NONE;
+	Npc_PercEnable(self,PERC_ASSESSDAMAGE,B_StopMagicFlee);
+	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
+	self.aivar[AIV_Guardpassage_Status] = GP_NONE;
 	Npc_SetRefuseTalk(self,0);
 	Npc_SetTempAttitude(self,Npc_GetPermAttitude(self,hero));
-	b_stoplookat(self);
+	B_StopLookAt(self);
 	AI_StopPointAt(self);
 	if(!Npc_HasBodyFlag(self,BS_FLAG_INTERRUPTABLE))
 	{
@@ -91,18 +91,18 @@ func void zs_magicflee()
 	};
 };
 
-func int zs_magicflee_loop()
+func int ZS_MagicFlee_Loop()
 {
-	if(Npc_GetStateTime(self) > SPL_TIME_FEAR)
+	if(Npc_GetStateTime(self) > SPL_TIME_Fear)
 	{
 		Npc_ClearAIQueue(self);
-		b_stopmagicflee();
+		B_StopMagicFlee();
 		return LOOP_END;
 	};
 	return LOOP_CONTINUE;
 };
 
-func void zs_magicflee_end()
+func void ZS_MagicFlee_End()
 {
 };
 

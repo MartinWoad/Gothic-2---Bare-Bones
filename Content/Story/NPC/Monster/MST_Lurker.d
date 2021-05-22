@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_LURKER(C_NPC)
+prototype Mst_Default_Lurker(C_Npc)
 {
 	name[0] = "Topielec";
 	guild = GIL_LURKER;
@@ -21,72 +21,72 @@ prototype MST_DEFAULT_LURKER(C_NPC)
 	fight_tactic = FAI_LURKER;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_THREATENBEFOREATTACK] = TRUE;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = TRUE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_ROAMSTART] = ONLYROUTINE;
-	bodystateinterruptableoverride = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = TRUE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
+	bodyStateInterruptableOverride = TRUE;
 };
 
-func void b_setvisuals_lurker()
+func void B_SetVisuals_Lurker()
 {
 	Mdl_SetVisual(self,"Lurker.mds");
 	Mdl_SetVisualBody(self,"Lur_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance LURKER(MST_DEFAULT_LURKER)
+instance Lurker(Mst_Default_Lurker)
 {
-	b_setvisuals_lurker();
+	B_SetVisuals_Lurker();
 	Npc_SetToFistMode(self);
 };
 
-instance KERVO_LURKER1(MST_DEFAULT_LURKER)
+instance Kervo_Lurker1(Mst_Default_Lurker)
 {
-	b_setvisuals_lurker();
+	B_SetVisuals_Lurker();
 	Npc_SetToFistMode(self);
-	aivar[AIV_MAXDISTTOWP] = 500;
-	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_LURKER;
+	aivar[AIV_MaxDistToWp] = 500;
+	aivar[AIV_OriginalFightTactic] = FAI_LURKER;
 };
 
-instance KERVO_LURKER2(MST_DEFAULT_LURKER)
+instance Kervo_Lurker2(Mst_Default_Lurker)
 {
-	b_setvisuals_lurker();
+	B_SetVisuals_Lurker();
 	Npc_SetToFistMode(self);
-	aivar[AIV_MAXDISTTOWP] = 500;
-	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_LURKER;
+	aivar[AIV_MaxDistToWp] = 500;
+	aivar[AIV_OriginalFightTactic] = FAI_LURKER;
 };
 
-instance KERVO_LURKER3(MST_DEFAULT_LURKER)
+instance Kervo_Lurker3(Mst_Default_Lurker)
 {
-	b_setvisuals_lurker();
+	B_SetVisuals_Lurker();
 	Npc_SetToFistMode(self);
-	aivar[AIV_MAXDISTTOWP] = 500;
-	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_LURKER;
+	aivar[AIV_MaxDistToWp] = 500;
+	aivar[AIV_OriginalFightTactic] = FAI_LURKER;
 };
 
-instance KERVO_LURKER4(MST_DEFAULT_LURKER)
+instance Kervo_Lurker4(Mst_Default_Lurker)
 {
-	b_setvisuals_lurker();
+	B_SetVisuals_Lurker();
 	Npc_SetToFistMode(self);
-	aivar[AIV_MAXDISTTOWP] = 500;
-	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_LURKER;
+	aivar[AIV_MaxDistToWp] = 500;
+	aivar[AIV_OriginalFightTactic] = FAI_LURKER;
 };
 
-instance KERVO_LURKER5(MST_DEFAULT_LURKER)
+instance Kervo_Lurker5(Mst_Default_Lurker)
 {
-	b_setvisuals_lurker();
+	B_SetVisuals_Lurker();
 	Npc_SetToFistMode(self);
-	aivar[AIV_MAXDISTTOWP] = 500;
-	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_LURKER;
+	aivar[AIV_MaxDistToWp] = 500;
+	aivar[AIV_OriginalFightTactic] = FAI_LURKER;
 };
 
-instance KERVO_LURKER6(MST_DEFAULT_LURKER)
+instance Kervo_Lurker6(Mst_Default_Lurker)
 {
-	b_setvisuals_lurker();
+	B_SetVisuals_Lurker();
 	Npc_SetToFistMode(self);
-	aivar[AIV_MAXDISTTOWP] = 500;
-	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_LURKER;
+	aivar[AIV_MaxDistToWp] = 500;
+	aivar[AIV_OriginalFightTactic] = FAI_LURKER;
 };
 

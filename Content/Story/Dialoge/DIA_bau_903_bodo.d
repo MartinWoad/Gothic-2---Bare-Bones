@@ -1,43 +1,43 @@
 
-instance DIA_BODO_EXIT(C_INFO)
+instance DIA_Bodo_EXIT(C_Info)
 {
-	npc = bau_903_bodo;
+	npc = Bau_903_Bodo;
 	nr = 999;
-	condition = dia_bodo_exit_condition;
-	information = dia_bodo_exit_info;
+	condition = DIA_Bodo_EXIT_Condition;
+	information = DIA_Bodo_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_bodo_exit_condition()
+func int DIA_Bodo_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bodo_exit_info()
+func void DIA_Bodo_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_BODO_HALLO(C_INFO)
+instance DIA_Bodo_Hallo(C_Info)
 {
-	npc = bau_903_bodo;
+	npc = Bau_903_Bodo;
 	nr = 1;
-	condition = dia_bodo_hallo_condition;
-	information = dia_bodo_hallo_info;
+	condition = DIA_Bodo_Hallo_Condition;
+	information = DIA_Bodo_Hallo_Info;
 	permanent = TRUE;
 	description = "Co s³ychaæ?";
 };
 
 
-func int dia_bodo_hallo_condition()
+func int DIA_Bodo_Hallo_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bodo_hallo_info()
+func void DIA_Bodo_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Bodo_Hallo_15_00");	//Jak leci?
 	if(other.guild == GIL_NONE)
@@ -61,23 +61,23 @@ func void dia_bodo_hallo_info()
 };
 
 
-instance DIA_BODO_BAUERNAUFSTAND(C_INFO)
+instance DIA_Bodo_Bauernaufstand(C_Info)
 {
-	npc = bau_903_bodo;
+	npc = Bau_903_Bodo;
 	nr = 2;
-	condition = dia_bodo_bauernaufstand_condition;
-	information = dia_bodo_bauernaufstand_info;
+	condition = DIA_Bodo_Bauernaufstand_Condition;
+	information = DIA_Bodo_Bauernaufstand_Info;
 	permanent = FALSE;
 	description = "W mieœcie mówi¹, ¿e ch³opi siê buntuj¹!";
 };
 
 
-func int dia_bodo_bauernaufstand_condition()
+func int DIA_Bodo_Bauernaufstand_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bodo_bauernaufstand_info()
+func void DIA_Bodo_Bauernaufstand_Info()
 {
 	AI_Output(other,self,"DIA_Bodo_Bauernaufstand_15_00");	//W mieœcie mówi¹, ¿e ch³opi siê buntuj¹!
 	AI_Output(self,other,"DIA_Bodo_Bauernaufstand_12_01");	//Bzdury. Po prostu bronimy tego, na co ciê¿ko pracowaliœmy.
@@ -85,23 +85,23 @@ func void dia_bodo_bauernaufstand_info()
 };
 
 
-instance DIA_BODO_BETT(C_INFO)
+instance DIA_Bodo_Bett(C_Info)
 {
-	npc = bau_903_bodo;
+	npc = Bau_903_Bodo;
 	nr = 3;
-	condition = dia_bodo_bett_condition;
-	information = dia_bodo_bett_info;
+	condition = DIA_Bodo_Bett_Condition;
+	information = DIA_Bodo_Bett_Info;
 	permanent = FALSE;
 	description = "Mogê gdzieœ tu odpocz¹æ?";
 };
 
 
-func int dia_bodo_bett_condition()
+func int DIA_Bodo_Bett_Condition()
 {
 	return TRUE;
 };
 
-func void dia_bodo_bett_info()
+func void DIA_Bodo_Bett_Info()
 {
 	AI_Output(other,self,"DIA_Bodo_Bett_15_00");	//Mogê gdzieœ tu odpocz¹æ?
 	AI_Output(self,other,"DIA_Bodo_Bett_12_01");	//Jeœli chcesz siê gdzieœ przespaæ, idŸ do stodo³y. Tylko nie po³ó¿ siê przez pomy³kê w ³ó¿ku jakiegoœ najemnika.
@@ -109,26 +109,26 @@ func void dia_bodo_bett_info()
 };
 
 
-instance DIA_BODO_CIPHER(C_INFO)
+instance DIA_Bodo_Cipher(C_Info)
 {
-	npc = bau_903_bodo;
+	npc = Bau_903_Bodo;
 	nr = 4;
-	condition = dia_bodo_cipher_condition;
-	information = dia_bodo_cipher_info;
+	condition = DIA_Bodo_Cipher_Condition;
+	information = DIA_Bodo_Cipher_Info;
 	permanent = FALSE;
 	description = "Cipher powiedzia³, ¿e ktoœ mu ukrad³ paczkê bagiennego ziela...";
 };
 
 
-func int dia_bodo_cipher_condition()
+func int DIA_Bodo_Cipher_Condition()
 {
-	if((MIS_CIPHER_BRINGWEED == LOG_RUNNING) || (MIS_CIPHER_PAKET == LOG_RUNNING))
+	if((MIS_Cipher_BringWeed == LOG_Running) || (MIS_Cipher_Paket == LOG_Running))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bodo_cipher_info()
+func void DIA_Bodo_Cipher_Info()
 {
 	AI_Output(other,self,"DIA_Bodo_Cipher_15_00");	//Cipher powiedzia³, ¿e ktoœ mu ukrad³ paczkê bagiennego ziela...
 	AI_Output(self,other,"DIA_Bodo_Cipher_12_01");	//I co?
@@ -139,30 +139,30 @@ func void dia_bodo_cipher_info()
 };
 
 
-instance DIA_BODO_WEEDORELSE(C_INFO)
+instance DIA_Bodo_WeedOrElse(C_Info)
 {
-	npc = bau_903_bodo;
+	npc = Bau_903_Bodo;
 	nr = 5;
-	condition = dia_bodo_weedorelse_condition;
-	information = dia_bodo_weedorelse_info;
+	condition = DIA_Bodo_WeedOrElse_Condition;
+	information = DIA_Bodo_WeedOrElse_Info;
 	permanent = FALSE;
 	description = "Dawaj mi to ziele, albo po¿a³ujesz!";
 };
 
 
-func int dia_bodo_weedorelse_condition()
+func int DIA_Bodo_WeedOrElse_Condition()
 {
-	if((MIS_CIPHER_BRINGWEED == LOG_RUNNING) && Npc_KnowsInfo(other,dia_bodo_cipher))
+	if((MIS_Cipher_BringWeed == LOG_Running) && Npc_KnowsInfo(other,DIA_Bodo_Cipher))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bodo_weedorelse_info()
+func void DIA_Bodo_WeedOrElse_Info()
 {
 	AI_Output(other,self,"DIA_Bodo_WeedOrElse_15_00");	//Dawaj mi to ziele, albo po¿a³ujesz!
 	AI_Output(self,other,"DIA_Bodo_WeedOrElse_12_01");	//S³uchaj, mam tylko jednego skrêta. WeŸ go i zostaw mnie w spokoju.
-	b_giveinvitems(self,other,5106,1);
+	B_GiveInvItems(self,other,ItMi_Joint,1);
 	if(other.guild == GIL_NONE)
 	{
 		AI_Output(self,other,"DIA_Bodo_WeedOrElse_12_02");	//Wiesz, ¿e najemnicy Onara nas chroni¹, co?
@@ -171,63 +171,63 @@ func void dia_bodo_weedorelse_info()
 };
 
 
-instance DIA_BODO_WEEDPERM(C_INFO)
+instance DIA_Bodo_WeedPERM(C_Info)
 {
-	npc = bau_903_bodo;
+	npc = Bau_903_Bodo;
 	nr = 6;
-	condition = dia_bodo_weedperm_condition;
-	information = dia_bodo_weedperm_info;
+	condition = DIA_Bodo_WeedPERM_Condition;
+	information = DIA_Bodo_WeedPERM_Info;
 	permanent = TRUE;
 	description = "Nie wierzê w ani jedno twoje s³owo! Dawaj bagienne ziele!";
 };
 
 
-func int dia_bodo_weedperm_condition()
+func int DIA_Bodo_WeedPERM_Condition()
 {
-	if((MIS_CIPHER_BRINGWEED == LOG_RUNNING) && Npc_KnowsInfo(other,dia_bodo_weedorelse))
+	if((MIS_Cipher_BringWeed == LOG_Running) && Npc_KnowsInfo(other,DIA_Bodo_WeedOrElse))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_bodo_weedperm_info()
+func void DIA_Bodo_WeedPERM_Info()
 {
 	AI_Output(other,self,"DIA_Bodo_WeedPERM_15_00");	//Nie wierzê w ani jedno twoje s³owo! Dawaj bagienne ziele!
 	AI_Output(self,other,"DIA_Bodo_WeedPERM_12_01");	//Nie mam go. Mówiê prawdê.
 };
 
 
-instance DIA_BODO_PICKPOCKET(C_INFO)
+instance DIA_Bodo_PICKPOCKET(C_Info)
 {
-	npc = bau_903_bodo;
+	npc = Bau_903_Bodo;
 	nr = 900;
-	condition = dia_bodo_pickpocket_condition;
-	information = dia_bodo_pickpocket_info;
+	condition = DIA_Bodo_PICKPOCKET_Condition;
+	information = DIA_Bodo_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_bodo_pickpocket_condition()
+func int DIA_Bodo_PICKPOCKET_Condition()
 {
-	return c_beklauen(30,60);
+	return C_Beklauen(30,60);
 };
 
-func void dia_bodo_pickpocket_info()
+func void DIA_Bodo_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_bodo_pickpocket);
-	Info_AddChoice(dia_bodo_pickpocket,DIALOG_BACK,dia_bodo_pickpocket_back);
-	Info_AddChoice(dia_bodo_pickpocket,DIALOG_PICKPOCKET,dia_bodo_pickpocket_doit);
+	Info_ClearChoices(DIA_Bodo_PICKPOCKET);
+	Info_AddChoice(DIA_Bodo_PICKPOCKET,Dialog_Back,DIA_Bodo_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Bodo_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Bodo_PICKPOCKET_DoIt);
 };
 
-func void dia_bodo_pickpocket_doit()
+func void DIA_Bodo_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_bodo_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Bodo_PICKPOCKET);
 };
 
-func void dia_bodo_pickpocket_back()
+func void DIA_Bodo_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_bodo_pickpocket);
+	Info_ClearChoices(DIA_Bodo_PICKPOCKET);
 };
 

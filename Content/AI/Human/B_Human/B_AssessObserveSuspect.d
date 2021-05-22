@@ -1,5 +1,5 @@
 
-func void b_assessobservesuspect()
+func void B_AssessObserveSuspect()
 {
 };
 

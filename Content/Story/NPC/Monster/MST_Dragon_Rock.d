@@ -1,11 +1,11 @@
 
-prototype MST_DEFAULT_DRAGON_ROCK(C_NPC)
+prototype Mst_Default_Dragon_Rock(C_Npc)
 {
 	name[0] = "Kamienny Smok";
 	guild = GIL_DRAGON;
 	aivar[AIV_MM_REAL_ID] = ID_DRAGON_ROCK;
 	level = 400;
-	bodystateinterruptableoverride = TRUE;
+	bodyStateInterruptableOverride = TRUE;
 	attribute[ATR_STRENGTH] = 130;
 	attribute[ATR_DEXTERITY] = 100;
 	attribute[ATR_HITPOINTS_MAX] = 2000;
@@ -22,26 +22,26 @@ prototype MST_DEFAULT_DRAGON_ROCK(C_NPC)
 	fight_tactic = FAI_DRAGON;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_DRAGON_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	aivar[AIV_MAXDISTTOWP] = 1000;
-	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_DRAGON;
-	start_aistate = zs_mm_rtn_dragonrest;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar[AIV_MaxDistToWp] = 1000;
+	aivar[AIV_OriginalFightTactic] = FAI_DRAGON;
+	start_aistate = ZS_MM_Rtn_DragonRest;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-func void b_setvisuals_dragon_rock()
+func void B_SetVisuals_Dragon_Rock()
 {
 	Mdl_SetVisual(self,"Dragon.mds");
 	Mdl_SetVisualBody(self,"Dragon_Rock_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 
 
-instance DRAGON_ROCK(MST_DEFAULT_DRAGON_ROCK)
+instance Dragon_Rock(Mst_Default_Dragon_Rock)
 {
 	name[0] = "Pedrakhan";
 	flags = NPC_FLAG_IMMORTAL;
-	b_setvisuals_dragon_rock();
+	B_SetVisuals_Dragon_Rock();
 	Npc_SetToFistMode(self);
 };
 

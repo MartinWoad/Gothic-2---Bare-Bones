@@ -1,42 +1,42 @@
 
-func void b_assesstalk()
+func void B_AssessTalk()
 {
-	var C_NPC pcl;
-	var C_NPC pcr;
+	var C_Npc pcl;
+	var C_Npc pcr;
 	var int rnd;
-	pcl = Hlp_GetNpc(pc_levelinspektor);
-	pcr = Hlp_GetNpc(pc_rockefeller);
+	pcl = Hlp_GetNpc(PC_Levelinspektor);
+	pcr = Hlp_GetNpc(PC_Rockefeller);
 	if((Hlp_GetInstanceID(other) == Hlp_GetInstanceID(pcl)) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(pcr)))
 	{
-		PrintScreen(ConcatStrings("Stimme: ",IntToString(self.voice)),-1,70,FONT_SCREEN,2);
-		PrintScreen("KEIN HERO!",-1,-1,FONT_SCREEN,2);
-		if(c_npcisinquarter(self) == Q_KASERNE)
+		PrintScreen(ConcatStrings("Stimme: ",IntToString(self.voice)),-1,70,FONT_Screen,2);
+		PrintScreen("KEIN HERO!",-1,-1,FONT_Screen,2);
+		if(C_NpcIsInQuarter(self) == Q_KASERNE)
 		{
-			PrintScreen("Q_KASERNE",-1,30,FONT_SCREEN,2);
+			PrintScreen("Q_KASERNE",-1,30,FONT_Screen,2);
 		};
-		if(c_npcisinquarter(self) == Q_GALGEN)
+		if(C_NpcIsInQuarter(self) == Q_GALGEN)
 		{
-			PrintScreen("Q_GALGEN",-1,30,FONT_SCREEN,2);
+			PrintScreen("Q_GALGEN",-1,30,FONT_Screen,2);
 		};
-		if(c_npcisinquarter(self) == Q_MARKT)
+		if(C_NpcIsInQuarter(self) == Q_MARKT)
 		{
-			PrintScreen("Q_MARKT",-1,30,FONT_SCREEN,2);
+			PrintScreen("Q_MARKT",-1,30,FONT_Screen,2);
 		};
-		if(c_npcisinquarter(self) == Q_TEMPEL)
+		if(C_NpcIsInQuarter(self) == Q_TEMPEL)
 		{
-			PrintScreen("Q_TEMPEL",-1,30,FONT_SCREEN,2);
+			PrintScreen("Q_TEMPEL",-1,30,FONT_Screen,2);
 		};
-		if(c_npcisinquarter(self) == Q_UNTERSTADT)
+		if(C_NpcIsInQuarter(self) == Q_UNTERSTADT)
 		{
-			PrintScreen("Q_UNTERSTADT",-1,30,FONT_SCREEN,2);
+			PrintScreen("Q_UNTERSTADT",-1,30,FONT_Screen,2);
 		};
-		if(c_npcisinquarter(self) == Q_HAFEN)
+		if(C_NpcIsInQuarter(self) == Q_HAFEN)
 		{
-			PrintScreen("Q_HAFEN",-1,30,FONT_SCREEN,2);
+			PrintScreen("Q_HAFEN",-1,30,FONT_Screen,2);
 		};
-		if(c_npcisinquarter(self) == Q_OBERSTADT)
+		if(C_NpcIsInQuarter(self) == Q_OBERSTADT)
 		{
-			PrintScreen("Q_OBERSTADT",-1,30,FONT_SCREEN,2);
+			PrintScreen("Q_OBERSTADT",-1,30,FONT_Screen,2);
 		};
 		return;
 	};
@@ -52,53 +52,53 @@ func void b_assesstalk()
 	};
 	if(self.guild < GIL_SEPERATOR_HUM)
 	{
-		if(b_assessenemy())
+		if(B_AssessEnemy())
 		{
 			return;
 		};
-		if((b_getplayercrime(self) == CRIME_MURDER) && c_wanttoattackmurder(self,other))
+		if((B_GetPlayerCrime(self) == CRIME_MURDER) && C_WantToAttackMurder(self,other))
 		{
-			b_attack(self,other,AR_HUMANMURDEREDHUMAN,0);
+			B_Attack(self,other,AR_HumanMurderedHuman,0);
 			return;
 		};
-		if(c_refusetalk(self))
+		if(C_RefuseTalk(self))
 		{
-			b_say(self,other,"$NOTNOW");
+			B_Say(self,other,"$NOTNOW");
 			return;
 		};
 	};
-	if(self.aivar[AIV_NPCSTARTEDTALK] == FALSE)
+	if(self.aivar[AIV_NpcStartedTalk] == FALSE)
 	{
-		if(c_bodystatecontains(self,BS_WALK) || c_bodystatecontains(self,BS_RUN))
+		if(C_BodyStateContains(self,BS_WALK) || C_BodyStateContains(self,BS_RUN))
 		{
-			b_say(other,self,"$SC_HEYWAITASECOND");
+			B_Say(other,self,"$SC_HEYWAITASECOND");
 		}
 		else if(!Npc_CanSeeNpc(self,other))
 		{
 			rnd = Hlp_Random(100);
 			if(rnd <= 25)
 			{
-				b_say(other,self,"$SC_HEYTURNAROUND");
+				B_Say(other,self,"$SC_HEYTURNAROUND");
 			}
 			else if(rnd <= 50)
 			{
-				b_say(other,self,"$SC_HEYTURNAROUND02");
+				B_Say(other,self,"$SC_HEYTURNAROUND02");
 			}
 			else if(rnd <= 75)
 			{
-				b_say(other,self,"$SC_HEYTURNAROUND03");
+				B_Say(other,self,"$SC_HEYTURNAROUND03");
 			}
 			else if(rnd <= 99)
 			{
-				b_say(other,self,"$SC_HEYTURNAROUND04");
+				B_Say(other,self,"$SC_HEYTURNAROUND04");
 			};
 		};
 	};
 	Npc_ClearAIQueue(self);
-	b_clearperceptions(self);
-	if(c_bodystatecontains(self,BS_SIT))
+	B_ClearPerceptions(self);
+	if(C_BodyStateContains(self,BS_SIT))
 	{
-		if(self.aivar[AIV_NPCSTARTEDTALK] == TRUE)
+		if(self.aivar[AIV_NpcStartedTalk] == TRUE)
 		{
 			AI_StandupQuick(other);
 		}
@@ -108,21 +108,21 @@ func void b_assesstalk()
 		};
 		if(Npc_CanSeeNpc(self,other))
 		{
-			AI_StartState(self,zs_talk,0,"");
+			AI_StartState(self,ZS_Talk,0,"");
 		}
 		else
 		{
-			if(Npc_IsInState(self,zs_observeplayer))
+			if(Npc_IsInState(self,ZS_ObservePlayer))
 			{
 				AI_Standup(self);
 			};
-			AI_StartState(self,zs_talk,1,"");
+			AI_StartState(self,ZS_Talk,1,"");
 		};
 		return;
 	}
 	else
 	{
-		if(self.aivar[AIV_NPCSTARTEDTALK] == TRUE)
+		if(self.aivar[AIV_NpcStartedTalk] == TRUE)
 		{
 			AI_StandupQuick(self);
 			AI_StandupQuick(other);
@@ -132,7 +132,7 @@ func void b_assesstalk()
 			AI_Standup(self);
 			AI_Standup(other);
 		};
-		AI_StartState(self,zs_talk,0,"");
+		AI_StartState(self,ZS_Talk,0,"");
 		return;
 	};
 };

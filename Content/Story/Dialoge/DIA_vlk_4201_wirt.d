@@ -1,97 +1,97 @@
 
 var int wirt_beer_day;
 
-instance DIA_WIRT_EXIT(C_INFO)
+instance DIA_Wirt_EXIT(C_Info)
 {
-	npc = vlk_4201_wirt;
+	npc = VLK_4201_Wirt;
 	nr = 999;
-	condition = dia_wirt_exit_condition;
-	information = dia_wirt_exit_info;
+	condition = DIA_Wirt_EXIT_Condition;
+	information = DIA_Wirt_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_wirt_exit_condition()
+func int DIA_Wirt_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_wirt_exit_info()
+func void DIA_Wirt_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_WIRT_PICKPOCKET(C_INFO)
+instance DIA_Wirt_PICKPOCKET(C_Info)
 {
-	npc = vlk_4201_wirt;
+	npc = VLK_4201_Wirt;
 	nr = 900;
-	condition = dia_wirt_pickpocket_condition;
-	information = dia_wirt_pickpocket_info;
+	condition = DIA_Wirt_PICKPOCKET_Condition;
+	information = DIA_Wirt_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_60;
+	description = Pickpocket_60;
 };
 
 
-func int dia_wirt_pickpocket_condition()
+func int DIA_Wirt_PICKPOCKET_Condition()
 {
-	return c_beklauen(60,65);
+	return C_Beklauen(60,65);
 };
 
-func void dia_wirt_pickpocket_info()
+func void DIA_Wirt_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_wirt_pickpocket);
-	Info_AddChoice(dia_wirt_pickpocket,DIALOG_BACK,dia_wirt_pickpocket_back);
-	Info_AddChoice(dia_wirt_pickpocket,DIALOG_PICKPOCKET,dia_wirt_pickpocket_doit);
+	Info_ClearChoices(DIA_Wirt_PICKPOCKET);
+	Info_AddChoice(DIA_Wirt_PICKPOCKET,Dialog_Back,DIA_Wirt_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Wirt_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Wirt_PICKPOCKET_DoIt);
 };
 
-func void dia_wirt_pickpocket_doit()
+func void DIA_Wirt_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_wirt_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Wirt_PICKPOCKET);
 };
 
-func void dia_wirt_pickpocket_back()
+func void DIA_Wirt_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_wirt_pickpocket);
+	Info_ClearChoices(DIA_Wirt_PICKPOCKET);
 };
 
 
-instance DIA_WIRT_HALLO(C_INFO)
+instance DIA_Wirt_Hallo(C_Info)
 {
-	npc = vlk_4201_wirt;
+	npc = VLK_4201_Wirt;
 	nr = 2;
-	condition = dia_wirt_hallo_condition;
-	information = dia_wirt_hallo_info;
+	condition = DIA_Wirt_Hallo_Condition;
+	information = DIA_Wirt_Hallo_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_wirt_hallo_condition()
+func int DIA_Wirt_Hallo_Condition()
 {
-	if(Npc_IsInState(self,zs_talk))
+	if(Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_wirt_hallo_info()
+func void DIA_Wirt_Hallo_Info()
 {
 	var int randy;
 	randy = Hlp_Random(2);
 	AI_Output(self,other,"DIA_Wirt_Hallo_14_00");	//Hej, podejdŸ bli¿ej. Zrób sobie przerwê i napij siê ch³odnego piwka.
-	if(self.aivar[AIV_TALKEDTOPLAYER] == FALSE)
+	if(self.aivar[AIV_TalkedToPlayer] == FALSE)
 	{
 		AI_Output(self,other,"DIA_Wirt_Hallo_14_01");	//Lord Andre stawia kilka bary³ek przedniego piwa.
-		b_giveinvitems(self,other,4920,1);
+		B_GiveInvItems(self,other,ItFo_Beer,1);
 		AI_StopProcessInfos(self);
 	}
 	else if(WIRT_BEER_DAY != Wld_GetDay())
 	{
 		AI_Output(self,other,"DIA_Wirt_Hallo_14_03");	//Paladyni wszystkim siê zajm¹. Nalej sobie jeszcze jednego i baw siê dobrze.
-		b_giveinvitems(self,other,4920,1);
+		B_GiveInvItems(self,other,ItFo_Beer,1);
 		WIRT_BEER_DAY = Wld_GetDay();
 		AI_StopProcessInfos(self);
 	}

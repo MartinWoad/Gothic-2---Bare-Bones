@@ -1,129 +1,129 @@
 
-instance DIA_MIL_325_MILIZ_EXIT(C_INFO)
+instance DIA_Mil_325_Miliz_EXIT(C_Info)
 {
-	npc = mil_325_miliz;
+	npc = Mil_325_Miliz;
 	nr = 999;
-	condition = dia_mil_325_miliz_exit_condition;
-	information = dia_mil_325_miliz_exit_info;
+	condition = DIA_Mil_325_Miliz_EXIT_Condition;
+	information = DIA_Mil_325_Miliz_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_mil_325_miliz_exit_condition()
+func int DIA_Mil_325_Miliz_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_mil_325_miliz_exit_info()
+func void DIA_Mil_325_Miliz_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-const string MIL_325_CHECKPOINT = "NW_CITY_MERCHANT_PATH_03";
+const string Mil_325_Checkpoint = "NW_CITY_MERCHANT_PATH_03";
 
-instance DIA_MIL_325_MILIZ_FIRSTWARN(C_INFO)
+instance DIA_Mil_325_Miliz_FirstWarn(C_Info)
 {
-	npc = mil_325_miliz;
+	npc = Mil_325_Miliz;
 	nr = 1;
-	condition = dia_mil_325_miliz_firstwarn_condition;
-	information = dia_mil_325_miliz_firstwarn_info;
+	condition = DIA_Mil_325_Miliz_FirstWarn_Condition;
+	information = DIA_Mil_325_Miliz_FirstWarn_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_mil_325_miliz_firstwarn_condition()
+func int DIA_Mil_325_Miliz_FirstWarn_Condition()
 {
-	if((self.aivar[AIV_GUARDPASSAGE_STATUS] == GP_NONE) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_RefuseTalk(self) == FALSE))
+	if((self.aivar[AIV_Guardpassage_Status] == GP_NONE) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_RefuseTalk(self) == FALSE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mil_325_miliz_firstwarn_info()
+func void DIA_Mil_325_Miliz_FirstWarn_Info()
 {
 	AI_Output(self,other,"DIA_Mil_325_Miliz_FirstWarn_12_00");	//STÓJ!
 	AI_Output(self,other,"DIA_Mil_325_Miliz_FirstWarn_12_01");	//Nikt nie mo¿e wejœæ do magazynu.
 	AI_GotoWP(other,"NW_CITY_MERCHANT_PATH_01");
 	AI_TurnToNPC(other,self);
-	other.aivar[AIV_LASTDISTTOWP] = Npc_GetDistToWP(other,MIL_325_CHECKPOINT);
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_FIRSTWARNGIVEN;
+	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,Mil_325_Checkpoint);
+	self.aivar[AIV_Guardpassage_Status] = GP_FirstWarnGiven;
 };
 
 
-instance DIA_MIL_325_MILIZ_SECONDWARN(C_INFO)
+instance DIA_Mil_325_Miliz_SecondWarn(C_Info)
 {
-	npc = mil_325_miliz;
+	npc = Mil_325_Miliz;
 	nr = 2;
-	condition = dia_mil_325_miliz_secondwarn_condition;
-	information = dia_mil_325_miliz_secondwarn_info;
+	condition = DIA_Mil_325_Miliz_SecondWarn_Condition;
+	information = DIA_Mil_325_Miliz_SecondWarn_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_mil_325_miliz_secondwarn_condition()
+func int DIA_Mil_325_Miliz_SecondWarn_Condition()
 {
-	if((self.aivar[AIV_GUARDPASSAGE_STATUS] == GP_FIRSTWARNGIVEN) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,MIL_325_CHECKPOINT) < (other.aivar[AIV_LASTDISTTOWP] - 50)))
+	if((self.aivar[AIV_Guardpassage_Status] == GP_FirstWarnGiven) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,Mil_325_Checkpoint) < (other.aivar[AIV_LastDistToWP] - 50)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mil_325_miliz_secondwarn_info()
+func void DIA_Mil_325_Miliz_SecondWarn_Info()
 {
 	AI_Output(self,other,"DIA_Mil_325_Miliz_SecondWarn_12_00");	//G³uchy jesteœ? Jeden krok dalej, a posiekam ciê na kawa³ki.
 	AI_GotoWP(other,"NW_CITY_MERCHANT_PATH_01");
 	AI_TurnToNPC(other,self);
-	other.aivar[AIV_LASTDISTTOWP] = Npc_GetDistToWP(other,MIL_325_CHECKPOINT);
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_SECONDWARNGIVEN;
+	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,Mil_325_Checkpoint);
+	self.aivar[AIV_Guardpassage_Status] = GP_SecondWarnGiven;
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MIL_325_MILIZ_ATTACK(C_INFO)
+instance DIA_Mil_325_Miliz_Attack(C_Info)
 {
-	npc = mil_325_miliz;
+	npc = Mil_325_Miliz;
 	nr = 3;
-	condition = dia_mil_325_miliz_attack_condition;
-	information = dia_mil_325_miliz_attack_info;
+	condition = DIA_Mil_325_Miliz_Attack_Condition;
+	information = DIA_Mil_325_Miliz_Attack_Info;
 	permanent = TRUE;
 	important = TRUE;
 };
 
 
-func int dia_mil_325_miliz_attack_condition()
+func int DIA_Mil_325_Miliz_Attack_Condition()
 {
-	if((self.aivar[AIV_GUARDPASSAGE_STATUS] == GP_SECONDWARNGIVEN) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,MIL_325_CHECKPOINT) < (other.aivar[AIV_LASTDISTTOWP] - 50)))
+	if((self.aivar[AIV_Guardpassage_Status] == GP_SecondWarnGiven) && (self.aivar[AIV_PASSGATE] == FALSE) && (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp) == TRUE) && (Npc_GetDistToWP(other,Mil_325_Checkpoint) < (other.aivar[AIV_LastDistToWP] - 50)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_mil_325_miliz_attack_info()
+func void DIA_Mil_325_Miliz_Attack_Info()
 {
-	other.aivar[AIV_LASTDISTTOWP] = 0;
-	self.aivar[AIV_GUARDPASSAGE_STATUS] = GP_NONE;
+	other.aivar[AIV_LastDistToWP] = 0;
+	self.aivar[AIV_Guardpassage_Status] = GP_NONE;
 	AI_Output(self,other,"DIA_Mil_325_Miliz_Attack_12_00");	//To by³ b³¹d!
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_GUARDSTOPSINTRUDER,0);
+	B_Attack(self,other,AR_GuardStopsIntruder,0);
 };
 
 
-instance DIA_MIL_325_MILIZ_PASS(C_INFO)
+instance DIA_Mil_325_Miliz_Pass(C_Info)
 {
-	npc = mil_325_miliz;
+	npc = Mil_325_Miliz;
 	nr = 5;
-	condition = dia_mil_325_miliz_pass_condition;
-	information = dia_mil_325_miliz_pass_info;
+	condition = DIA_Mil_325_Miliz_Pass_Condition;
+	information = DIA_Mil_325_Miliz_Pass_Info;
 	permanent = FALSE;
 	description = "Nale¿ê do armii królewskiej. Potrzebujê wyposa¿enia!";
 };
 
 
-func int dia_mil_325_miliz_pass_condition()
+func int DIA_Mil_325_Miliz_Pass_Condition()
 {
 	if((self.aivar[AIV_PASSGATE] == FALSE) && ((other.guild == GIL_MIL) || (other.guild == GIL_PAL)))
 	{
@@ -131,50 +131,50 @@ func int dia_mil_325_miliz_pass_condition()
 	};
 };
 
-func void dia_mil_325_miliz_pass_info()
+func void DIA_Mil_325_Miliz_Pass_Info()
 {
 	AI_Output(other,self,"DIA_Mil_325_Miliz_Pass_15_00");	//Nale¿ê do armii królewskiej. Potrzebujê wyposa¿enia!
 	AI_Output(self,other,"DIA_Mil_325_Miliz_Pass_12_01");	//Masz na to jakieœ potwierdzenie?
-	Info_ClearChoices(dia_mil_325_miliz_pass);
-	Info_AddChoice(dia_mil_325_miliz_pass,"Nie.",dia_mil_325_miliz_pass_no);
-	Info_AddChoice(dia_mil_325_miliz_pass,"Jasne.",dia_mil_325_miliz_pass_yes);
+	Info_ClearChoices(DIA_Mil_325_Miliz_Pass);
+	Info_AddChoice(DIA_Mil_325_Miliz_Pass,"Nie.",DIA_Mil_325_Miliz_Pass_No);
+	Info_AddChoice(DIA_Mil_325_Miliz_Pass,"Jasne.",DIA_Mil_325_Miliz_Pass_Yes);
 };
 
-func void dia_mil_325_miliz_pass_yes()
+func void DIA_Mil_325_Miliz_Pass_Yes()
 {
 	AI_Output(other,self,"DIA_Mil_325_Miliz_Pass_Yes_15_00");	//Oczywiœcie.
 	AI_Output(self,other,"DIA_Mil_325_Miliz_Pass_Yes_12_01");	//W porz¹dku, mo¿esz wejœæ!
 	self.aivar[AIV_PASSGATE] = TRUE;
-	Info_ClearChoices(dia_mil_325_miliz_pass);
+	Info_ClearChoices(DIA_Mil_325_Miliz_Pass);
 	AI_StopProcessInfos(self);
 };
 
-func void dia_mil_325_miliz_pass_no()
+func void DIA_Mil_325_Miliz_Pass_No()
 {
 	AI_Output(other,self,"DIA_Mil_325_Miliz_Pass_No_15_00");	//Nie.
 	AI_Output(self,other,"DIA_Mil_325_Miliz_Pass_No_12_01");	//W takim razie wynoœ siê.
-	Info_ClearChoices(dia_mil_325_miliz_pass);
+	Info_ClearChoices(DIA_Mil_325_Miliz_Pass);
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_MIL_325_MILIZ_PERM(C_INFO)
+instance DIA_Mil_325_Miliz_PERM(C_Info)
 {
-	npc = mil_325_miliz;
+	npc = Mil_325_Miliz;
 	nr = 5;
-	condition = dia_mil_325_miliz_perm_condition;
-	information = dia_mil_325_miliz_perm_info;
+	condition = DIA_Mil_325_Miliz_PERM_Condition;
+	information = DIA_Mil_325_Miliz_PERM_Info;
 	permanent = TRUE;
 	description = "Dlaczego nikt nie mo¿e wejœæ do magazynu?";
 };
 
 
-func int dia_mil_325_miliz_perm_condition()
+func int DIA_Mil_325_Miliz_PERM_Condition()
 {
 	return TRUE;
 };
 
-func void dia_mil_325_miliz_perm_info()
+func void DIA_Mil_325_Miliz_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Mil_325_Miliz_PERM_15_00");	//Dlaczego nikt nie mo¿e wejœæ do magazynu?
 	AI_Output(self,other,"DIA_Mil_325_Miliz_PERM_12_01");	//Mi³oœciwy Lord Hagen skonfiskowa³ wszystko na potrzeby armii królewskiej.

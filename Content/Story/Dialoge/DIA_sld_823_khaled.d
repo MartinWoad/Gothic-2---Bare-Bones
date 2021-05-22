@@ -1,56 +1,56 @@
 
-instance DIA_KHALED_EXIT(C_INFO)
+instance DIA_Khaled_EXIT(C_Info)
 {
-	npc = sld_823_khaled;
+	npc = SLD_823_Khaled;
 	nr = 999;
-	condition = dia_khaled_exit_condition;
-	information = dia_khaled_exit_info;
+	condition = DIA_Khaled_EXIT_Condition;
+	information = DIA_Khaled_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_khaled_exit_condition()
+func int DIA_Khaled_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_khaled_exit_info()
+func void DIA_Khaled_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-var int khaled_weiter;
+var int Khaled_weiter;
 
-instance DIA_KHALED_HALLO(C_INFO)
+instance DIA_Khaled_Hallo(C_Info)
 {
-	npc = sld_823_khaled;
+	npc = SLD_823_Khaled;
 	nr = 1;
-	condition = dia_khaled_hallo_condition;
-	information = dia_khaled_hallo_info;
+	condition = DIA_Khaled_Hallo_Condition;
+	information = DIA_Khaled_Hallo_Info;
 	permanent = TRUE;
 	description = "Jak leci?";
 };
 
 
-func int dia_khaled_hallo_condition()
+func int DIA_Khaled_Hallo_Condition()
 {
-	if(KHALED_WEITER == FALSE)
+	if(Khaled_weiter == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_khaled_hallo_info()
+func void DIA_Khaled_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Khaled_Hallo_15_00");	//Jak leci?
-	if(Npc_KnowsInfo(other,dia_lee_wannajoin))
+	if(Npc_KnowsInfo(other,DIA_Lee_WannaJoin))
 	{
 		AI_Output(self,other,"DIA_Khaled_Hallo_11_01");	//A zatem chcesz siê do nas przy³¹czyæ? Masz jak¹œ przyzwoit¹ broñ?
-		KHALED_WEITER = TRUE;
-		Log_CreateTopic(TOPIC_SOLDIERTRADER,LOG_NOTE);
-		b_logentry(TOPIC_SOLDIERTRADER,"Khaled sprzedaje broñ.");
+		Khaled_weiter = TRUE;
+		Log_CreateTopic(Topic_SoldierTrader,LOG_NOTE);
+		B_LogEntry(Topic_SoldierTrader,"Khaled sprzedaje broñ.");
 	}
 	else
 	{
@@ -60,58 +60,58 @@ func void dia_khaled_hallo_info()
 };
 
 
-instance DIA_KHALED_TRADE(C_INFO)
+instance DIA_Khaled_TRADE(C_Info)
 {
-	npc = sld_823_khaled;
+	npc = SLD_823_Khaled;
 	nr = 700;
-	condition = dia_khaled_trade_condition;
-	information = dia_khaled_trade_info;
+	condition = DIA_Khaled_TRADE_Condition;
+	information = DIA_Khaled_TRADE_Info;
 	permanent = TRUE;
 	description = "Jak¹ broñ mo¿esz mi zaoferowaæ?";
 	trade = TRUE;
 };
 
 
-func int dia_khaled_trade_condition()
+func int DIA_Khaled_TRADE_Condition()
 {
-	if(KHALED_WEITER == TRUE)
+	if(Khaled_weiter == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_khaled_trade_info()
+func void DIA_Khaled_TRADE_Info()
 {
 	AI_Output(other,self,"DIA_Khaled_TRADE_15_00");	//Jak¹ broñ mo¿esz mi zaoferowaæ?
-	b_givetradeinv(self);
+	B_GiveTradeInv(self);
 	AI_Output(self,other,"DIA_Khaled_TRADE_11_01");	//Najlepsz¹. Tylko popatrz.
 };
 
 
-instance DIA_KHALED_WANNAJOIN(C_INFO)
+instance DIA_Khaled_WannaJoin(C_Info)
 {
-	npc = sld_823_khaled;
+	npc = SLD_823_Khaled;
 	nr = 10;
-	condition = dia_khaled_wannajoin_condition;
-	information = dia_khaled_wannajoin_info;
+	condition = DIA_Khaled_WannaJoin_Condition;
+	information = DIA_Khaled_WannaJoin_Info;
 	permanent = TRUE;
 	description = "Czy móg³bym siê do was przy³¹czyæ?";
 };
 
 
-func int dia_khaled_wannajoin_condition()
+func int DIA_Khaled_WannaJoin_Condition()
 {
-	if((KHALED_WEITER == TRUE) && (other.guild == GIL_NONE))
+	if((Khaled_weiter == TRUE) && (other.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_khaled_wannajoin_info()
+func void DIA_Khaled_WannaJoin_Info()
 {
 	AI_Output(other,self,"DIA_Khaled_WannaJoin_15_00");	//Czy móg³bym siê do was przy³¹czyæ?
 	AI_Output(self,other,"DIA_Khaled_WannaJoin_11_01");	//Jeœli przejdziesz próbê, zyskasz moje poparcie.
-	if((MIS_TORLOF_HOLPACHTVONSEKOB == LOG_SUCCESS) || (MIS_TORLOF_BENGARMILIZKLATSCHEN == LOG_SUCCESS))
+	if((MIS_Torlof_HolPachtVonSekob == LOG_SUCCESS) || (MIS_Torlof_BengarMilizKlatschen == LOG_SUCCESS))
 	{
 		AI_Output(other,self,"DIA_Khaled_WannaJoin_15_02");	//Ju¿ j¹ przeszed³em.
 		AI_Output(self,other,"DIA_Khaled_WannaJoin_11_03");	//Dobrze, jeœli tak, to w porz¹dku.
@@ -119,78 +119,78 @@ func void dia_khaled_wannajoin_info()
 };
 
 
-instance DIA_KHALED_WOHER(C_INFO)
+instance DIA_Khaled_Woher(C_Info)
 {
-	npc = sld_823_khaled;
+	npc = SLD_823_Khaled;
 	nr = 3;
-	condition = dia_khaled_woher_condition;
-	information = dia_khaled_woher_info;
+	condition = DIA_Khaled_Woher_Condition;
+	information = DIA_Khaled_Woher_Info;
 	permanent = FALSE;
 	description = "Jak trafi³eœ do najemników?";
 };
 
 
-func int dia_khaled_woher_condition()
+func int DIA_Khaled_Woher_Condition()
 {
-	if(KHALED_WEITER == TRUE)
+	if(Khaled_weiter == TRUE)
 	{
 		return TRUE;
 	};
 };
 
-func void dia_khaled_woher_info()
+func void DIA_Khaled_Woher_Info()
 {
 	AI_Output(other,self,"DIA_Khaled_Woher_15_00");	//Jak trafi³eœ do najemników?
 	AI_Output(self,other,"DIA_Khaled_Woher_11_01");	//Przyby³em tu wraz z Sylviem z po³udnia. Nale¿eliœmy do armii najemników, którzy walczyli z orkami.
 };
 
 
-instance DIA_KHALED_ABOUTSYLVIO(C_INFO)
+instance DIA_Khaled_AboutSylvio(C_Info)
 {
-	npc = sld_823_khaled;
+	npc = SLD_823_Khaled;
 	nr = 4;
-	condition = dia_khaled_aboutsylvio_condition;
-	information = dia_khaled_aboutsylvio_info;
+	condition = DIA_Khaled_AboutSylvio_Condition;
+	information = DIA_Khaled_AboutSylvio_Info;
 	permanent = FALSE;
 	description = "Jaka jest twoja opinia na temat Sylvia?";
 };
 
 
-func int dia_khaled_aboutsylvio_condition()
+func int DIA_Khaled_AboutSylvio_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_khaled_woher))
+	if(Npc_KnowsInfo(other,DIA_Khaled_Woher))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_khaled_aboutsylvio_info()
+func void DIA_Khaled_AboutSylvio_Info()
 {
 	AI_Output(other,self,"DIA_Khaled_AboutSylvio_15_00");	//Jaka jest twoja opinia na temat Sylvia?
 	AI_Output(self,other,"DIA_Khaled_AboutSylvio_11_01");	//To bardzo niebezpieczny cz³owiek! I ma pos³uch wœród wielu najemników. Lepiej z nim nie zadzieraæ.
 };
 
 
-instance DIA_KHALED_ABOUTLEE(C_INFO)
+instance DIA_Khaled_AboutLee(C_Info)
 {
-	npc = sld_823_khaled;
+	npc = SLD_823_Khaled;
 	nr = 5;
-	condition = dia_khaled_aboutlee_condition;
-	information = dia_khaled_aboutlee_info;
+	condition = DIA_Khaled_AboutLee_Condition;
+	information = DIA_Khaled_AboutLee_Info;
 	permanent = FALSE;
 	description = "Jaka jest twoja opinia o Lee?";
 };
 
 
-func int dia_khaled_aboutlee_condition()
+func int DIA_Khaled_AboutLee_Condition()
 {
-	if(Npc_KnowsInfo(other,dia_khaled_woher))
+	if(Npc_KnowsInfo(other,DIA_Khaled_Woher))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_khaled_aboutlee_info()
+func void DIA_Khaled_AboutLee_Info()
 {
 	AI_Output(other,self,"DIA_Khaled_AboutLee_15_00");	//Jaka jest twoja opinia o Lee?
 	AI_Output(self,other,"DIA_Khaled_AboutLee_11_01");	//S¹dzê, ¿e nie interesuje go nic poza wydostaniem siê z tej wyspy.
@@ -200,37 +200,37 @@ func void dia_khaled_aboutlee_info()
 };
 
 
-instance DIA_KHALED_PICKPOCKET(C_INFO)
+instance DIA_Khaled_PICKPOCKET(C_Info)
 {
-	npc = sld_823_khaled;
+	npc = SLD_823_Khaled;
 	nr = 900;
-	condition = dia_khaled_pickpocket_condition;
-	information = dia_khaled_pickpocket_info;
+	condition = DIA_Khaled_PICKPOCKET_Condition;
+	information = DIA_Khaled_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_80;
+	description = Pickpocket_80;
 };
 
 
-func int dia_khaled_pickpocket_condition()
+func int DIA_Khaled_PICKPOCKET_Condition()
 {
-	return c_beklauen(78,85);
+	return C_Beklauen(78,85);
 };
 
-func void dia_khaled_pickpocket_info()
+func void DIA_Khaled_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_khaled_pickpocket);
-	Info_AddChoice(dia_khaled_pickpocket,DIALOG_BACK,dia_khaled_pickpocket_back);
-	Info_AddChoice(dia_khaled_pickpocket,DIALOG_PICKPOCKET,dia_khaled_pickpocket_doit);
+	Info_ClearChoices(DIA_Khaled_PICKPOCKET);
+	Info_AddChoice(DIA_Khaled_PICKPOCKET,Dialog_Back,DIA_Khaled_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Khaled_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Khaled_PICKPOCKET_DoIt);
 };
 
-func void dia_khaled_pickpocket_doit()
+func void DIA_Khaled_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_khaled_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Khaled_PICKPOCKET);
 };
 
-func void dia_khaled_pickpocket_back()
+func void DIA_Khaled_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_khaled_pickpocket);
+	Info_ClearChoices(DIA_Khaled_PICKPOCKET);
 };
 

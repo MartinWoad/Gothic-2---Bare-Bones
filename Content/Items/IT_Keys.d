@@ -1,67 +1,67 @@
 
-const int VALUE_LOCKPICK = 10;
-const int VALUE_KEY_01 = 3;
-const int VALUE_KEY_02 = 3;
-const int VALUE_KEY_03 = 3;
+const int Value_Lockpick = 10;
+const int Value_Key_01 = 3;
+const int Value_Key_02 = 3;
+const int Value_Key_03 = 3;
 
-instance ITKE_LOCKPICK(C_ITEM)
+instance ItKE_lockpick(C_Item)
 {
 	name = "Wytrych";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
-	value = VALUE_LOCKPICK;
+	value = Value_Lockpick;
 	visual = "ItKe_Lockpick.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITKE_KEY_01(C_ITEM)
+instance ItKe_Key_01(C_Item)
 {
 	name = "Klucz";
 	mainflag = ITEM_KAT_NONE;
 	flags = 0;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITKE_KEY_02(C_ITEM)
+instance ItKe_Key_02(C_Item)
 {
 	name = "Klucz";
 	mainflag = ITEM_KAT_NONE;
 	flags = 0;
-	value = VALUE_KEY_02;
+	value = Value_Key_02;
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITKE_KEY_03(C_ITEM)
+instance ItKe_Key_03(C_Item)
 {
 	name = "Klucz";
 	mainflag = ITEM_KAT_NONE;
 	flags = 0;
-	value = VALUE_KEY_03;
+	value = Value_Key_03;
 	visual = "ItKe_Key_03.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[5] = NAME_VALUE;
+	text[5] = NAME_Value;
 	count[5] = value;
 };
 
-instance ITKE_CITY_TOWER_01(C_ITEM)
+instance ItKe_City_Tower_01(C_Item)
 {
 	name = "Klucz do Wie퓓";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -69,12 +69,12 @@ instance ITKE_CITY_TOWER_01(C_ITEM)
 	text[3] = "";
 };
 
-instance ITKE_CITY_TOWER_02(C_ITEM)
+instance ItKe_City_Tower_02(C_Item)
 {
 	name = "Klucz do wie퓓";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -82,12 +82,12 @@ instance ITKE_CITY_TOWER_02(C_ITEM)
 	text[3] = "";
 };
 
-instance ITKE_CITY_TOWER_03(C_ITEM)
+instance ItKe_City_Tower_03(C_Item)
 {
 	name = "Klucz do Wie퓓";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -95,12 +95,12 @@ instance ITKE_CITY_TOWER_03(C_ITEM)
 	text[3] = "";
 };
 
-instance ITKE_CITY_TOWER_04(C_ITEM)
+instance ItKe_City_Tower_04(C_Item)
 {
 	name = "Klucz do Wie퓓";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -108,12 +108,12 @@ instance ITKE_CITY_TOWER_04(C_ITEM)
 	text[3] = "";
 };
 
-instance ITKE_CITY_TOWER_05(C_ITEM)
+instance ItKe_City_Tower_05(C_Item)
 {
 	name = "Klucz do Wie퓓";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;
@@ -121,12 +121,12 @@ instance ITKE_CITY_TOWER_05(C_ITEM)
 	text[3] = "";
 };
 
-instance ITKE_CITY_TOWER_06(C_ITEM)
+instance ItKe_City_Tower_06(C_Item)
 {
 	name = "Klucz do Wie퓓";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
-	value = VALUE_KEY_01;
+	value = Value_Key_01;
 	visual = "ItKe_Key_01.3ds";
 	material = MAT_METAL;
 	description = name;

@@ -1,93 +1,93 @@
 
-const int VALUE_WEED = 0;
-const int VALUE_BEET = 3;
-const int HP_BEET = 2;
-const int VALUE_SWAMPHERB = 10;
-const int VALUE_MANA_HERB_01 = 10;
-const int MANA_MANA_HERB_01 = 10;
-const int VALUE_MANA_HERB_02 = 20;
-const int MANA_MANA_HERB_02 = 15;
-const int VALUE_MANA_HERB_03 = 40;
-const int MANA_MANA_HERB_03 = 20;
-const int VALUE_HEALTH_HERB_01 = 20;
-const int HP_HEALTH_HERB_01 = 10;
-const int VALUE_HEALTH_HERB_02 = 40;
-const int HP_HEALTH_HERB_02 = 20;
-const int VALUE_HEALTH_HERB_03 = 60;
-const int HP_HEALTH_HERB_03 = 30;
-const int VALUE_DEX_HERB_01 = 250;
-const int VALUE_STRENGTH_HERB_01 = 500;
-const int VALUE_SPEED_HERB_01 = 100;
-const int SPEED_BOOST = 15000;
-const int VALUE_MUSHROOM_01 = 5;
-const int HP_MUSHROOM_01 = 5;
-const int VALUE_MUSHROOM_02 = 10;
-const int HP_MUSHROOM_02 = 15;
-const int VALUE_FORESTBERRY = 10;
-const int HP_FORESTBERRY = 5;
-const int VALUE_BLUEPLANT = 10;
-const int HP_BLUEPLANT = 5;
-const int MANA_BLUEPLANT = 1;
-const int VALUE_PLANEBERRY = 10;
-const int HP_PLANEBERRY = 5;
-const int VALUE_TEMP_HERB = 100;
-const int HP_TEMP_HERB = 5;
-const int VALUE_PERM_HERB = 500;
-const int HP_PERM_HERB = 5;
+const int Value_Weed = 0;
+const int Value_Beet = 3;
+const int HP_Beet = 2;
+const int Value_SwampHerb = 10;
+const int Value_Mana_Herb_01 = 10;
+const int Mana_Mana_Herb_01 = 10;
+const int Value_Mana_Herb_02 = 20;
+const int Mana_Mana_Herb_02 = 15;
+const int Value_Mana_Herb_03 = 40;
+const int Mana_Mana_Herb_03 = 20;
+const int Value_Health_Herb_01 = 20;
+const int HP_Health_Herb_01 = 10;
+const int Value_Health_Herb_02 = 40;
+const int HP_Health_Herb_02 = 20;
+const int Value_Health_Herb_03 = 60;
+const int HP_Health_Herb_03 = 30;
+const int Value_Dex_Herb_01 = 250;
+const int Value_Strength_Herb_01 = 500;
+const int Value_Speed_Herb_01 = 100;
+const int Speed_Boost = 15000;
+const int Value_Mushroom_01 = 5;
+const int HP_Mushroom_01 = 5;
+const int Value_Mushroom_02 = 10;
+const int HP_Mushroom_02 = 15;
+const int Value_Forestberry = 10;
+const int HP_Forestberry = 5;
+const int Value_Blueplant = 10;
+const int HP_Blueplant = 5;
+const int Mana_Blueplant = 1;
+const int Value_Planeberry = 10;
+const int HP_Planeberry = 5;
+const int Value_Temp_Herb = 100;
+const int HP_Temp_Herb = 5;
+const int Value_Perm_Herb = 500;
+const int HP_Perm_Herb = 5;
 
-instance ITPL_WEED(C_ITEM)
+instance ItPl_Weed(C_Item)
 {
 	name = "Chwasty";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_WEED;
+	value = Value_Weed;
 	visual = "ItPl_Weed.3ds";
 	material = MAT_LEATHER;
-	scemename = "FOOD";
+	scemeName = "FOOD";
 	description = name;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_WEED;
+	text[5] = NAME_Value;
+	count[5] = Value_Weed;
 };
 
-instance ITPL_BEET(C_ITEM)
+instance ItPl_Beet(C_Item)
 {
 	name = "Rzepa";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_BEET;
+	value = Value_Beet;
 	visual = "ItPl_Beet.3ds";
 	material = MAT_LEATHER;
-	on_state[0] = use_beet;
-	scemename = "FOOD";
+	on_state[0] = Use_Beet;
+	scemeName = "FOOD";
 	description = name;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_BEET;
+	text[5] = NAME_Value;
+	count[5] = Value_Beet;
 };
 
 
-func void use_beet()
+func void Use_Beet()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_BEET);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Beet);
 };
 
 
-instance ITPL_SWAMPHERB(C_ITEM)
+instance ItPl_SwampHerb(C_Item)
 {
 	name = "Bagienne Ziele";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_SWAMPHERB;
+	value = Value_SwampHerb;
 	visual = "ItPl_SwampHerb.3ds";
 	material = MAT_LEATHER;
-	on_state[0] = use_swampherb;
-	scemename = "FOOD";
+	on_state[0] = Use_SwampHerb;
+	scemeName = "FOOD";
 	description = name;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_SWAMPHERB;
+	text[5] = NAME_Value;
+	count[5] = Value_SwampHerb;
 };
 
 
-func void use_swampherb()
+func void Use_SwampHerb()
 {
 	if(Npc_IsPlayer(self))
 	{
@@ -96,398 +96,398 @@ func void use_swampherb()
 };
 
 
-instance ITPL_MANA_HERB_01(C_ITEM)
+instance ItPl_Mana_Herb_01(C_Item)
 {
 	name = "Ognista Pokrzywa";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_MANA_HERB_01;
+	value = Value_Mana_Herb_01;
 	visual = "ItPl_Mana_Herb_01.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = use_mana_herb_01;
-	scemename = "FOOD";
+	on_state[0] = Use_Mana_Herb_01;
+	scemeName = "FOOD";
 	description = name;
-	text[1] = NAME_BONUS_MANA;
-	count[1] = MANA_MANA_HERB_01;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_MANA_HERB_01;
+	text[1] = NAME_Bonus_Mana;
+	count[1] = Mana_Mana_Herb_01;
+	text[5] = NAME_Value;
+	count[5] = Value_Mana_Herb_01;
 };
 
 
-func void use_mana_herb_01()
+func void Use_Mana_Herb_01()
 {
-	Npc_ChangeAttribute(self,ATR_MANA,MANA_MANA_HERB_01);
+	Npc_ChangeAttribute(self,ATR_MANA,Mana_Mana_Herb_01);
 };
 
 
-instance ITPL_MANA_HERB_02(C_ITEM)
+instance ItPl_Mana_Herb_02(C_Item)
 {
 	name = "Ogniste Ziele";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_MANA_HERB_02;
+	value = Value_Mana_Herb_02;
 	visual = "ItPl_Mana_Herb_02.3ds";
 	material = MAT_LEATHER;
-	on_state[0] = use_mana_herb_02;
-	scemename = "FOOD";
+	on_state[0] = Use_Mana_Herb_02;
+	scemeName = "FOOD";
 	description = name;
-	text[1] = NAME_BONUS_MANA;
-	count[1] = MANA_MANA_HERB_02;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_MANA_HERB_02;
+	text[1] = NAME_Bonus_Mana;
+	count[1] = Mana_Mana_Herb_02;
+	text[5] = NAME_Value;
+	count[5] = Value_Mana_Herb_02;
 };
 
 
-func void use_mana_herb_02()
+func void Use_Mana_Herb_02()
 {
-	Npc_ChangeAttribute(self,ATR_MANA,MANA_MANA_HERB_02);
+	Npc_ChangeAttribute(self,ATR_MANA,Mana_Mana_Herb_02);
 };
 
 
-instance ITPL_MANA_HERB_03(C_ITEM)
+instance ItPl_Mana_Herb_03(C_Item)
 {
 	name = "Ognisty Korzeñ";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_MANA_HERB_03;
+	value = Value_Mana_Herb_03;
 	visual = "ItPl_Mana_Herb_03.3ds";
 	material = MAT_LEATHER;
-	on_state[0] = use_mana_herb_03;
-	scemename = "FOOD";
+	on_state[0] = Use_Mana_Herb_03;
+	scemeName = "FOOD";
 	description = name;
-	text[1] = NAME_BONUS_MANA;
-	count[1] = MANA_MANA_HERB_03;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_MANA_HERB_03;
+	text[1] = NAME_Bonus_Mana;
+	count[1] = Mana_Mana_Herb_03;
+	text[5] = NAME_Value;
+	count[5] = Value_Mana_Herb_03;
 };
 
 
-func void use_mana_herb_03()
+func void Use_Mana_Herb_03()
 {
-	Npc_ChangeAttribute(self,ATR_MANA,MANA_MANA_HERB_03);
+	Npc_ChangeAttribute(self,ATR_MANA,Mana_Mana_Herb_03);
 };
 
 
-instance ITPL_HEALTH_HERB_01(C_ITEM)
+instance ItPl_Health_Herb_01(C_Item)
 {
 	name = "Roœlina Lecznicza";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_HEALTH_HERB_01;
+	value = Value_Health_Herb_01;
 	visual = "ItPl_Health_Herb_01.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = use_health_herb_01;
-	scemename = "FOOD";
+	on_state[0] = Use_Health_Herb_01;
+	scemeName = "FOOD";
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_HEALTH_HERB_01;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_HEALTH_HERB_01;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Health_Herb_01;
+	text[5] = NAME_Value;
+	count[5] = Value_Health_Herb_01;
 };
 
 
-func void use_health_herb_01()
+func void Use_Health_Herb_01()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_HEALTH_HERB_01);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Health_Herb_01);
 };
 
 
-instance ITPL_HEALTH_HERB_02(C_ITEM)
+instance ItPl_Health_Herb_02(C_Item)
 {
 	name = "Ziele Lecznicze";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_HEALTH_HERB_02;
+	value = Value_Health_Herb_02;
 	visual = "ItPl_Health_Herb_02.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = use_health_herb_02;
-	scemename = "FOOD";
+	on_state[0] = Use_Health_Herb_02;
+	scemeName = "FOOD";
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_HEALTH_HERB_02;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_HEALTH_HERB_02;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Health_Herb_02;
+	text[5] = NAME_Value;
+	count[5] = Value_Health_Herb_02;
 };
 
 
-func void use_health_herb_02()
+func void Use_Health_Herb_02()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_HEALTH_HERB_02);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Health_Herb_02);
 };
 
 
-instance ITPL_HEALTH_HERB_03(C_ITEM)
+instance ItPl_Health_Herb_03(C_Item)
 {
 	name = "Korzeñ Leczniczy";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_HEALTH_HERB_03;
+	value = Value_Health_Herb_03;
 	visual = "ItPl_Health_Herb_03.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = use_health_herb_03;
-	scemename = "FOOD";
+	on_state[0] = Use_Health_Herb_03;
+	scemeName = "FOOD";
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_HEALTH_HERB_03;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_HEALTH_HERB_03;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Health_Herb_03;
+	text[5] = NAME_Value;
+	count[5] = Value_Health_Herb_03;
 };
 
 
-func void use_health_herb_03()
+func void Use_Health_Herb_03()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_HEALTH_HERB_03);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Health_Herb_03);
 };
 
 
-instance ITPL_DEX_HERB_01(C_ITEM)
+instance ItPl_Dex_Herb_01(C_Item)
 {
 	name = "Goblinie Jagody";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_DEX_HERB_01;
+	value = Value_Dex_Herb_01;
 	visual = "ItPl_Dex_Herb_01.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = use_dex_herb_01;
-	scemename = "FOOD";
+	on_state[0] = Use_Dex_Herb_01;
+	scemeName = "FOOD";
 	description = name;
-	text[1] = NAME_BONUS_DEX;
+	text[1] = NAME_Bonus_Dex;
 	count[1] = 1;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_DEX_HERB_01;
+	text[5] = NAME_Value;
+	count[5] = Value_Dex_Herb_01;
 };
 
 
-func void use_dex_herb_01()
+func void Use_Dex_Herb_01()
 {
-	b_raiseattribute(self,ATR_DEXTERITY,1,TRUE,FALSE);
+	B_RaiseAttribute(self,ATR_DEXTERITY,1,TRUE,FALSE);
 };
 
 
-instance ITPL_STRENGTH_HERB_01(C_ITEM)
+instance ItPl_Strength_Herb_01(C_Item)
 {
 	name = "Smoczy Korzeñ";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_STRENGTH_HERB_01;
+	value = Value_Strength_Herb_01;
 	visual = "ItPl_Strength_Herb_01.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = use_strength_herb_01;
-	scemename = "FOOD";
+	on_state[0] = Use_Strength_Herb_01;
+	scemeName = "FOOD";
 	description = name;
-	text[1] = NAME_BONUS_STR;
+	text[1] = NAME_Bonus_Str;
 	count[1] = 1;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_STRENGTH_HERB_01;
+	text[5] = NAME_Value;
+	count[5] = Value_Strength_Herb_01;
 };
 
 
-func void use_strength_herb_01()
+func void Use_Strength_Herb_01()
 {
-	b_raiseattribute(self,ATR_STRENGTH,1,TRUE,FALSE);
+	B_RaiseAttribute(self,ATR_STRENGTH,1,TRUE,FALSE);
 };
 
 
-instance ITPL_SPEED_HERB_01(C_ITEM)
+instance ItPl_Speed_Herb_01(C_Item)
 {
 	name = "Zêbate Ziele";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_SPEED_HERB_01;
+	value = Value_Speed_Herb_01;
 	visual = "ItPl_Speed_Herb_01.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = use_speed_herb_01;
-	scemename = "FOOD";
-	text[3] = NAME_SEC_DURATION;
-	count[3] = SPEED_BOOST / 1000;
+	on_state[0] = Use_Speed_Herb_01;
+	scemeName = "FOOD";
+	text[3] = NAME_Sec_Duration;
+	count[3] = Speed_Boost / 1000;
 	description = name;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_SPEED_HERB_01;
+	text[5] = NAME_Value;
+	count[5] = Value_Speed_Herb_01;
 };
 
 
-func void use_speed_herb_01()
+func void Use_Speed_Herb_01()
 {
-	Mdl_ApplyOverlayMdsTimed(self,"HUMANS_SPRINT.MDS",SPEED_BOOST);
+	Mdl_ApplyOverlayMdsTimed(self,"HUMANS_SPRINT.MDS",Speed_Boost);
 };
 
 
-instance ITPL_MUSHROOM_01(C_ITEM)
+instance ItPl_Mushroom_01(C_Item)
 {
 	name = "Ciemny Grzyb";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_MUSHROOM_01;
+	value = Value_Mushroom_01;
 	visual = "ItPl_Mushroom_01.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = use_mushroom_01;
-	scemename = "FOOD";
+	on_state[0] = Use_Mushroom_01;
+	scemeName = "FOOD";
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_MUSHROOM_01;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_MUSHROOM_01;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Mushroom_01;
+	text[5] = NAME_Value;
+	count[5] = Value_Mushroom_01;
 };
 
 
-func void use_mushroom_01()
+func void Use_Mushroom_01()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_MUSHROOM_01);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Mushroom_01);
 	if(Npc_IsPlayer(self))
 	{
-		DUNKELPILZ_BONUS = DUNKELPILZ_BONUS + 1;
-		if(DUNKELPILZ_BONUS == 50)
+		Dunkelpilz_Bonus = Dunkelpilz_Bonus + 1;
+		if(Dunkelpilz_Bonus == 50)
 		{
-			b_raiseattribute(self,ATR_MANA_MAX,5,TRUE,FALSE);
+			B_RaiseAttribute(self,ATR_MANA_MAX,5,TRUE,FALSE);
 			Npc_ChangeAttribute(self,ATR_MANA,5);
 		};
 	};
 };
 
 
-instance ITPL_MUSHROOM_02(C_ITEM)
+instance ItPl_Mushroom_02(C_Item)
 {
 	name = "Miêso Kopacza";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_MUSHROOM_02;
+	value = Value_Mushroom_02;
 	visual = "ItPl_Mushroom_02.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = use_mushroom_02;
-	scemename = "FOOD";
+	on_state[0] = Use_Mushroom_02;
+	scemeName = "FOOD";
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_MUSHROOM_02;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_MUSHROOM_02;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Mushroom_02;
+	text[5] = NAME_Value;
+	count[5] = Value_Mushroom_02;
 };
 
 
-func void use_mushroom_02()
+func void Use_Mushroom_02()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_MUSHROOM_02);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Mushroom_02);
 };
 
 
-instance ITPL_BLUEPLANT(C_ITEM)
+instance ItPl_Blueplant(C_Item)
 {
 	name = "Niebieski Bez";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_BLUEPLANT;
+	value = Value_Blueplant;
 	visual = "ItPl_Blueplant.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = use_blueplant;
-	scemename = "FOOD";
+	on_state[0] = Use_Blueplant;
+	scemeName = "FOOD";
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_BLUEPLANT;
-	text[2] = NAME_BONUS_MANA;
-	count[2] = MANA_BLUEPLANT;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_BLUEPLANT;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Blueplant;
+	text[2] = NAME_Bonus_Mana;
+	count[2] = Mana_Blueplant;
+	text[5] = NAME_Value;
+	count[5] = Value_Blueplant;
 };
 
 
-func void use_blueplant()
+func void Use_Blueplant()
 {
-	Npc_ChangeAttribute(self,ATR_MANA,MANA_BLUEPLANT);
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_BLUEPLANT);
+	Npc_ChangeAttribute(self,ATR_MANA,Mana_Blueplant);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Blueplant);
 };
 
 
-instance ITPL_FORESTBERRY(C_ITEM)
+instance ItPl_Forestberry(C_Item)
 {
 	name = "Leœna Jagoda";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_FORESTBERRY;
+	value = Value_Forestberry;
 	visual = "ItPl_Forestberry.3DS";
 	material = MAT_LEATHER;
-	scemename = "FOOD";
-	on_state[0] = use_forestberry;
+	scemeName = "FOOD";
+	on_state[0] = Use_Forestberry;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_FORESTBERRY;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_FORESTBERRY;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Forestberry;
+	text[5] = NAME_Value;
+	count[5] = Value_Forestberry;
 };
 
 
-func void use_forestberry()
+func void Use_Forestberry()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_FORESTBERRY);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Forestberry);
 };
 
 
-instance ITPL_PLANEBERRY(C_ITEM)
+instance ItPl_Planeberry(C_Item)
 {
 	name = "Polna Jagoda";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
-	value = VALUE_PLANEBERRY;
+	value = Value_Planeberry;
 	visual = "ItPl_Planeberry.3DS";
 	material = MAT_LEATHER;
-	scemename = "FOOD";
-	on_state[0] = use_planeberry;
+	scemeName = "FOOD";
+	on_state[0] = Use_Planeberry;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_PLANEBERRY;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_PLANEBERRY;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Planeberry;
+	text[5] = NAME_Value;
+	count[5] = Value_Planeberry;
 };
 
 
-func void use_planeberry()
+func void Use_Planeberry()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_PLANEBERRY);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Planeberry);
 };
 
 
-instance ITPL_TEMP_HERB(C_ITEM)
+instance ItPl_Temp_Herb(C_Item)
 {
 	name = "Rdest Polny";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
-	value = VALUE_TEMP_HERB;
+	value = Value_Temp_Herb;
 	visual = "ItPl_Temp_Herb.3ds";
 	material = MAT_LEATHER;
-	scemename = "FOOD";
-	on_state[0] = use_temp_herb;
+	scemeName = "FOOD";
+	on_state[0] = Use_Temp_Herb;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_TEMP_HERB;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_TEMP_HERB;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Temp_Herb;
+	text[5] = NAME_Value;
+	count[5] = Value_Temp_Herb;
 };
 
 
-func void use_temp_herb()
+func void Use_Temp_Herb()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_TEMP_HERB);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Temp_Herb);
 };
 
 
-instance ITPL_PERM_HERB(C_ITEM)
+instance ItPl_Perm_Herb(C_Item)
 {
 	name = "Szczaw Królewski";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI | ITEM_MISSION;
-	value = VALUE_PERM_HERB;
+	value = Value_Perm_Herb;
 	visual = "ItPl_Perm_Herb.3ds";
 	material = MAT_LEATHER;
-	scemename = "FOOD";
-	on_state[0] = use_perm_herb;
+	scemeName = "FOOD";
+	on_state[0] = Use_Perm_Herb;
 	description = name;
-	text[1] = NAME_BONUS_HP;
-	count[1] = HP_PERM_HERB;
-	text[5] = NAME_VALUE;
-	count[5] = VALUE_PERM_HERB;
+	text[1] = NAME_Bonus_HP;
+	count[1] = HP_Perm_Herb;
+	text[5] = NAME_Value;
+	count[5] = Value_Perm_Herb;
 };
 
 
-func void use_perm_herb()
+func void Use_Perm_Herb()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_PERM_HERB);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Perm_Herb);
 };
 

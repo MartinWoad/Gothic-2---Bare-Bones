@@ -1,7 +1,7 @@
 
-func void b_mm_assessbody()
+func void B_MM_AssessBody()
 {
-	var C_NPC stoerenfried;
+	var C_Npc stoerenfried;
 	if(self.guild > GIL_SEPERATOR_ORC)
 	{
 		return;
@@ -14,11 +14,11 @@ func void b_mm_assessbody()
 	{
 		return;
 	};
-	if(!c_wanttoeat(self,other))
+	if(!C_WantToEat(self,other))
 	{
 		return;
 	};
-	if(Npc_IsInState(self,zs_mm_attack))
+	if(Npc_IsInState(self,ZS_MM_Attack))
 	{
 		stoerenfried = Hlp_GetNpc(self.aivar[AIV_LASTTARGET]);
 		if(Npc_GetDistToNpc(stoerenfried,other) <= FIGHT_DIST_MONSTER_ATTACKRANGE)
@@ -27,7 +27,7 @@ func void b_mm_assessbody()
 		};
 	};
 	Npc_ClearAIQueue(self);
-	b_clearperceptions(self);
-	AI_StartState(self,zs_mm_eatbody,0,"");
+	B_ClearPerceptions(self);
+	AI_StartState(self,ZS_MM_EatBody,0,"");
 };
 

@@ -1,38 +1,38 @@
 
-instance DIA_ULF_EXIT(C_INFO)
+instance DIA_Ulf_EXIT(C_Info)
 {
-	npc = nov_602_ulf;
+	npc = NOV_602_Ulf;
 	nr = 999;
-	condition = dia_ulf_exit_condition;
-	information = dia_ulf_exit_info;
+	condition = DIA_Ulf_EXIT_Condition;
+	information = DIA_Ulf_EXIT_Info;
 	permanent = TRUE;
-	description = DIALOG_ENDE;
+	description = Dialog_Ende;
 };
 
 
-func int dia_ulf_exit_condition()
+func int DIA_Ulf_EXIT_Condition()
 {
 	return TRUE;
 };
 
-func void dia_ulf_exit_info()
+func void DIA_Ulf_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
 
 
-instance DIA_ULF_HALLO(C_INFO)
+instance DIA_Ulf_Hallo(C_Info)
 {
-	npc = nov_602_ulf;
+	npc = NOV_602_Ulf;
 	nr = 2;
-	condition = dia_ulf_hallo_condition;
-	information = dia_ulf_hallo_info;
+	condition = DIA_Ulf_Hallo_Condition;
+	information = DIA_Ulf_Hallo_Info;
 	permanent = FALSE;
 	description = "Co tu porabiasz?";
 };
 
 
-func int dia_ulf_hallo_condition()
+func int DIA_Ulf_Hallo_Condition()
 {
 	if((hero.guild != GIL_NOV) && (hero.guild != GIL_KDF) && (MIS_SCHNITZELJAGD == FALSE))
 	{
@@ -40,7 +40,7 @@ func int dia_ulf_hallo_condition()
 	};
 };
 
-func void dia_ulf_hallo_info()
+func void DIA_Ulf_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Ulf_Hallo_15_00");	//Co tu porabiasz?
 	if(hero.guild == GIL_KDF)
@@ -55,26 +55,26 @@ func void dia_ulf_hallo_info()
 };
 
 
-instance DIA_ULF_WIRTE(C_INFO)
+instance DIA_Ulf_Wirte(C_Info)
 {
-	npc = nov_602_ulf;
+	npc = NOV_602_Ulf;
 	nr = 3;
-	condition = dia_ulf_wirte_condition;
-	information = dia_ulf_wirte_info;
+	condition = DIA_Ulf_Wirte_Condition;
+	information = DIA_Ulf_Wirte_Info;
 	permanent = FALSE;
 	description = "Kim s¹ w³aœciciele trzech knajp?";
 };
 
 
-func int dia_ulf_wirte_condition()
+func int DIA_Ulf_Wirte_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_ulf_hallo) && (hero.guild != GIL_KDF) && (hero.guild != GIL_NOV))
+	if(Npc_KnowsInfo(hero,DIA_Ulf_Hallo) && (hero.guild != GIL_KDF) && (hero.guild != GIL_NOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ulf_wirte_info()
+func void DIA_Ulf_Wirte_Info()
 {
 	AI_Output(other,self,"DIA_Ulf_Wirte_15_00");	//Kim s¹ ci trzej karczmarze?
 	AI_Output(self,other,"DIA_Ulf_Wirte_03_01");	//Jednym z nich jest ten mi³y cz³owiek za barem.
@@ -82,26 +82,26 @@ func void dia_ulf_wirte_info()
 };
 
 
-instance DIA_ULF_KLOSTER(C_INFO)
+instance DIA_Ulf_Kloster(C_Info)
 {
-	npc = nov_602_ulf;
+	npc = NOV_602_Ulf;
 	nr = 3;
-	condition = dia_ulf_kloster_condition;
-	information = dia_ulf_kloster_info;
+	condition = DIA_Ulf_Kloster_Condition;
+	information = DIA_Ulf_Kloster_Info;
 	permanent = FALSE;
 	description = "Co mo¿esz mi powiedzieæ o klasztorze?";
 };
 
 
-func int dia_ulf_kloster_condition()
+func int DIA_Ulf_Kloster_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_ulf_hallo) && (hero.guild != GIL_KDF) && (hero.guild != GIL_NOV))
+	if(Npc_KnowsInfo(hero,DIA_Ulf_Hallo) && (hero.guild != GIL_KDF) && (hero.guild != GIL_NOV))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ulf_kloster_info()
+func void DIA_Ulf_Kloster_Info()
 {
 	AI_Output(other,self,"DIA_Ulf_Kloster_15_00");	//Co mo¿esz mi powiedzieæ o klasztorze?
 	AI_Output(self,other,"DIA_Ulf_Kloster_03_01");	//My, nowicjusze, poszukujemy oœwiecenia w modlitwie do Innosa, pod nadzorem magów przyswajamy te¿ podstawy wiary.
@@ -109,26 +109,26 @@ func void dia_ulf_kloster_info()
 };
 
 
-instance DIA_ULF_BRINGEN(C_INFO)
+instance DIA_Ulf_Bringen(C_Info)
 {
-	npc = nov_602_ulf;
+	npc = NOV_602_Ulf;
 	nr = 4;
-	condition = dia_ulf_bringen_condition;
-	information = dia_ulf_bringen_info;
+	condition = DIA_Ulf_Bringen_Condition;
+	information = DIA_Ulf_Bringen_Info;
 	permanent = FALSE;
 	description = "Zabierz mnie do klasztoru.";
 };
 
 
-func int dia_ulf_bringen_condition()
+func int DIA_Ulf_Bringen_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_ulf_hallo) && (hero.guild != GIL_KDF) && (hero.guild != GIL_NOV) && (hero.guild != GIL_PAL))
+	if(Npc_KnowsInfo(hero,DIA_Ulf_Hallo) && (hero.guild != GIL_KDF) && (hero.guild != GIL_NOV) && (hero.guild != GIL_PAL))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ulf_bringen_info()
+func void DIA_Ulf_Bringen_Info()
 {
 	AI_Output(other,self,"DIA_Ulf_Bringen_15_00");	//Zabierz mnie do klasztoru.
 	AI_Output(self,other,"DIA_Ulf_Bringen_03_01");	//Nie ma szans. Nie wiesz chyba, z iloma stworzeniami musia³em sobie poradziæ, zanim tutaj dotar³em.
@@ -139,111 +139,111 @@ func void dia_ulf_bringen_info()
 };
 
 
-instance DIA_ULF_AUFNAHME(C_INFO)
+instance DIA_Ulf_Aufnahme(C_Info)
 {
-	npc = nov_602_ulf;
+	npc = NOV_602_Ulf;
 	nr = 3;
-	condition = dia_ulf_aufnahme_condition;
-	information = dia_ulf_aufnahme_info;
+	condition = DIA_Ulf_Aufnahme_Condition;
+	information = DIA_Ulf_Aufnahme_Info;
 	permanent = FALSE;
 	description = "Jak mogê zostaæ nowicjuszem?";
 };
 
 
-func int dia_ulf_aufnahme_condition()
+func int DIA_Ulf_Aufnahme_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_ulf_bringen) && (hero.guild == GIL_NONE))
+	if(Npc_KnowsInfo(hero,DIA_Ulf_Bringen) && (hero.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ulf_aufnahme_info()
+func void DIA_Ulf_Aufnahme_Info()
 {
 	AI_Output(other,self,"DIA_Ulf_Aufnahme_15_00");	//Jak mogê zostaæ nowicjuszem?
 	AI_Output(self,other,"DIA_Ulf_Aufnahme_03_01");	//Kiedy cz³owiek czuje g³êbok¹ wewnêtrzn¹ potrzebê...
 	AI_Output(other,self,"DIA_Ulf_Aufnahme_15_02");	//Hej - powiedz mi tylko, jakie muszê spe³niæ warunki!
 	AI_Output(self,other,"DIA_Ulf_Aufnahme_03_03");	//Potrzebujesz darów. Owcy i ...
-	b_say_gold(self,other,SUMME_KLOSTER);
-	Log_CreateTopic(TOPIC_KLOSTER,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_KLOSTER,LOG_RUNNING);
-	b_logentry(TOPIC_KLOSTER,"Aby zostaæ nowicjuszem w klasztorze Innosa, bêdê potrzebowa³ owcy i 1000 sztuk z³ota.");
+	B_Say_Gold(self,other,Summe_Kloster);
+	Log_CreateTopic(Topic_Kloster,LOG_MISSION);
+	Log_SetTopicStatus(Topic_Kloster,LOG_Running);
+	B_LogEntry(Topic_Kloster,"Aby zostaæ nowicjuszem w klasztorze Innosa, bêdê potrzebowa³ owcy i 1000 sztuk z³ota.");
 };
 
 
-instance DIA_ULF_GOLD(C_INFO)
+instance DIA_Ulf_Gold(C_Info)
 {
-	npc = nov_602_ulf;
+	npc = NOV_602_Ulf;
 	nr = 8;
-	condition = dia_ulf_gold_condition;
-	information = dia_ulf_gold_info;
+	condition = DIA_Ulf_Gold_Condition;
+	information = DIA_Ulf_Gold_Info;
 	permanent = FALSE;
 	description = "Sk¹d mam wzi¹æ tyle z³ota?";
 };
 
 
-func int dia_ulf_gold_condition()
+func int DIA_Ulf_Gold_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_ulf_aufnahme) && (hero.guild == GIL_NONE))
+	if(Npc_KnowsInfo(hero,DIA_Ulf_Aufnahme) && (hero.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ulf_gold_info()
+func void DIA_Ulf_Gold_Info()
 {
 	AI_Output(other,self,"DIA_Ulf_Gold_15_00");	//Sk¹d mam wzi¹æ tyle z³ota?
 	AI_Output(self,other,"DIA_Ulf_Gold_03_01");	//Jak mniemam, nie znasz nikogo, kto by za ciebie zap³aci³. Zatem bêdziesz je musia³ zarobiæ.
 };
 
 
-instance DIA_ULF_SCHAF(C_INFO)
+instance DIA_Ulf_Schaf(C_Info)
 {
-	npc = nov_602_ulf;
+	npc = NOV_602_Ulf;
 	nr = 9;
-	condition = dia_ulf_schaf_condition;
-	information = dia_ulf_schaf_info;
+	condition = DIA_Ulf_Schaf_Condition;
+	information = DIA_Ulf_Schaf_Info;
 	permanent = FALSE;
 	description = "Sk¹d mogê wzi¹æ owcê?";
 };
 
 
-func int dia_ulf_schaf_condition()
+func int DIA_Ulf_Schaf_Condition()
 {
-	if(Npc_KnowsInfo(hero,dia_ulf_aufnahme) && (hero.guild == GIL_NONE))
+	if(Npc_KnowsInfo(hero,DIA_Ulf_Aufnahme) && (hero.guild == GIL_NONE))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ulf_schaf_info()
+func void DIA_Ulf_Schaf_Info()
 {
 	AI_Output(other,self,"DIA_Ulf_Schaf_15_00");	//Sk¹d mogê wzi¹æ owcê?
 	AI_Output(self,other,"DIA_Ulf_Schaf_03_01");	//Od farmerów, oczywiœcie. Nie dostaniesz jej jednak za darmo.
-	b_logentry(TOPIC_KLOSTER,"Owcê mogê zdobyæ u farmerów.");
+	B_LogEntry(Topic_Kloster,"Owcê mogê zdobyæ u farmerów.");
 };
 
 
-instance DIA_ULF_SUCHE(C_INFO)
+instance DIA_Ulf_Suche(C_Info)
 {
-	npc = nov_602_ulf;
+	npc = NOV_602_Ulf;
 	nr = 9;
-	condition = dia_ulf_suche_condition;
-	information = dia_ulf_suche_info;
+	condition = DIA_Ulf_Suche_Condition;
+	information = DIA_Ulf_Suche_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_ulf_suche_condition()
+func int DIA_Ulf_Suche_Condition()
 {
-	if((MIS_SCHNITZELJAGD == LOG_RUNNING) && (other.guild == GIL_NOV) && (Npc_GetDistToWP(self,"NW_TROLLAREA_PATH_42") <= 1000))
+	if((MIS_SCHNITZELJAGD == LOG_Running) && (other.guild == GIL_NOV) && (Npc_GetDistToWP(self,"NW_TROLLAREA_PATH_42") <= 1000))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ulf_suche_info()
+func void DIA_Ulf_Suche_Info()
 {
 	AI_Output(self,other,"DIA_Ulf_Suche_03_00");	//Hej, nie zgadniesz, co siê sta³o.
 	AI_Output(other,self,"DIA_Ulf_Suche_15_01");	//Zosta³eœ wybrañcem.
@@ -255,26 +255,26 @@ func void dia_ulf_suche_info()
 };
 
 
-instance DIA_ULF_RAUSGEFUNDEN(C_INFO)
+instance DIA_Ulf_Rausgefunden(C_Info)
 {
-	npc = nov_602_ulf;
+	npc = NOV_602_Ulf;
 	nr = 9;
-	condition = dia_ulf_rausgefunden_condition;
-	information = dia_ulf_rausgefunden_info;
+	condition = DIA_Ulf_Rausgefunden_Condition;
+	information = DIA_Ulf_Rausgefunden_Info;
 	permanent = FALSE;
 	description = "I co, znalaz³eœ ju¿ coœ?";
 };
 
 
-func int dia_ulf_rausgefunden_condition()
+func int DIA_Ulf_Rausgefunden_Condition()
 {
-	if((MIS_SCHNITZELJAGD == LOG_RUNNING) && (other.guild == GIL_NOV) && (Npc_GetDistToWP(self,"NW_TROLLAREA_PATH_42") <= 1000))
+	if((MIS_SCHNITZELJAGD == LOG_Running) && (other.guild == GIL_NOV) && (Npc_GetDistToWP(self,"NW_TROLLAREA_PATH_42") <= 1000))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ulf_rausgefunden_info()
+func void DIA_Ulf_Rausgefunden_Info()
 {
 	AI_Output(other,self,"DIA_Ulf_Rausgefunden_15_00");	//I co, znalaz³eœ ju¿ coœ?
 	AI_Output(self,other,"DIA_Ulf_Rausgefunden_03_01");	//Có¿, œledzi³em Agona - ale w pewnym momencie znikn¹³ mi z oczu.
@@ -285,26 +285,26 @@ func void dia_ulf_rausgefunden_info()
 };
 
 
-instance DIA_ULF_FOLGEN(C_INFO)
+instance DIA_Ulf_Folgen(C_Info)
 {
-	npc = nov_602_ulf;
+	npc = NOV_602_Ulf;
 	nr = 9;
-	condition = dia_ulf_folgen_condition;
-	information = dia_ulf_folgen_info;
+	condition = DIA_Ulf_Folgen_Condition;
+	information = DIA_Ulf_Folgen_Info;
 	permanent = FALSE;
 	description = "Hej, czy ty mnie œledzisz?";
 };
 
 
-func int dia_ulf_folgen_condition()
+func int DIA_Ulf_Folgen_Condition()
 {
-	if((MIS_SCHNITZELJAGD == LOG_RUNNING) && (other.guild == GIL_NOV) && Npc_KnowsInfo(other,dia_ulf_rausgefunden))
+	if((MIS_SCHNITZELJAGD == LOG_Running) && (other.guild == GIL_NOV) && Npc_KnowsInfo(other,DIA_Ulf_Rausgefunden))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ulf_folgen_info()
+func void DIA_Ulf_Folgen_Info()
 {
 	AI_Output(other,self,"DIA_Ulf_Folgen_15_00");	//Hej, czy ty mnie œledzisz?
 	AI_Output(self,other,"DIA_Ulf_Folgen_03_01");	//Nonsens. Zmierzam po prostu w tym samym kierunku.
@@ -312,26 +312,26 @@ func void dia_ulf_folgen_info()
 };
 
 
-instance DIA_ULF_STOP(C_INFO)
+instance DIA_Ulf_Stop(C_Info)
 {
-	npc = nov_602_ulf;
+	npc = NOV_602_Ulf;
 	nr = 9;
-	condition = dia_ulf_stop_condition;
-	information = dia_ulf_stop_info;
+	condition = DIA_Ulf_Stop_Condition;
+	information = DIA_Ulf_Stop_Info;
 	permanent = FALSE;
 	description = "Przestañ za mn¹ ³aziæ.";
 };
 
 
-func int dia_ulf_stop_condition()
+func int DIA_Ulf_Stop_Condition()
 {
-	if((MIS_SCHNITZELJAGD == LOG_RUNNING) && (other.guild == GIL_NOV) && Npc_KnowsInfo(other,dia_ulf_folgen))
+	if((MIS_SCHNITZELJAGD == LOG_Running) && (other.guild == GIL_NOV) && Npc_KnowsInfo(other,DIA_Ulf_Folgen))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ulf_stop_info()
+func void DIA_Ulf_Stop_Info()
 {
 	AI_Output(other,self,"DIA_Ulf_Stop_15_00");	//Przestañ za mn¹ ³aziæ.
 	AI_Output(self,other,"DIA_Ulf_Stop_03_01");	//Nie ³a¿ê za tob¹. Ale proszê, jeœli to ma ciê uspokoiæ, pójdê inn¹ œcie¿k¹.
@@ -340,86 +340,86 @@ func void dia_ulf_stop_info()
 };
 
 
-instance DIA_ULF_ABRECHNUNG(C_INFO)
+instance DIA_Ulf_Abrechnung(C_Info)
 {
-	npc = nov_602_ulf;
+	npc = NOV_602_Ulf;
 	nr = 9;
-	condition = dia_ulf_abrechnung_condition;
-	information = dia_ulf_abrechnung_info;
+	condition = DIA_Ulf_Abrechnung_Condition;
+	information = DIA_Ulf_Abrechnung_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_ulf_abrechnung_condition()
+func int DIA_Ulf_Abrechnung_Condition()
 {
-	if((MIS_SCHNITZELJAGD == LOG_RUNNING) && (other.guild == GIL_NOV) && (Npc_HasItems(other,itmi_runeblank) >= 1))
+	if((MIS_SCHNITZELJAGD == LOG_Running) && (other.guild == GIL_NOV) && (Npc_HasItems(other,ItMi_RuneBlank) >= 1))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ulf_abrechnung_info()
+func void DIA_Ulf_Abrechnung_Info()
 {
 	AI_Output(self,other,"DIA_Ulf_Abrechnung_03_00");	//Wiêc znowu siê spotykamy. Ostatnio sporo rozmyœla³em. Odczuwam siln¹ chêæ zostania magiem.
 	AI_Output(other,self,"DIA_Ulf_Abrechnung_15_01");	//Cz³owieku - nie rób tego...
 	AI_Output(self,other,"DIA_Ulf_Abrechnung_03_02");	//Nie mam wyboru. ¯ycie nowicjusza - to nie dla mnie.
 	AI_Output(self,other,"DIA_Ulf_Abrechnung_03_03");	//Muszê zostaæ magiem. Wtedy wszystko zacznie siê uk³adaæ. Teraz zaœ odbiorê to, co mi siê nale¿y.
 	AI_Output(self,other,"DIA_Ulf_Abrechnung_03_04");	//Masz jakieœ ostatnie ¿yczenie?
-	Info_ClearChoices(dia_ulf_abrechnung);
-	Info_AddChoice(dia_ulf_abrechnung,"Daj spokój, nie chcê ciê zabijaæ.",dia_ulf_abrechnung_lass);
-	Info_AddChoice(dia_ulf_abrechnung,"Koniec gadania - muszê wracaæ do klasztoru.",dia_ulf_abrechnung_schnell);
-	Info_AddChoice(dia_ulf_abrechnung,"Masz coœ do palenia?",dia_ulf_abrechnung_rauch);
+	Info_ClearChoices(DIA_Ulf_Abrechnung);
+	Info_AddChoice(DIA_Ulf_Abrechnung,"Daj spokój, nie chcê ciê zabijaæ.",DIA_Ulf_Abrechnung_Lass);
+	Info_AddChoice(DIA_Ulf_Abrechnung,"Koniec gadania - muszê wracaæ do klasztoru.",DIA_Ulf_Abrechnung_Schnell);
+	Info_AddChoice(DIA_Ulf_Abrechnung,"Masz coœ do palenia?",DIA_Ulf_Abrechnung_Rauch);
 };
 
-func void dia_ulf_abrechnung_lass()
+func void DIA_Ulf_Abrechnung_Lass()
 {
 	AI_Output(other,self,"DIA_Ulf_Abrechnung_Lass_15_00");	//Daj spokój, nie chcê ciê zabijaæ.
 	AI_Output(self,other,"DIA_Ulf_Abrechnung_Lass_03_01");	//Gadaj zdrów. Zdajesz sobie chyba sprawê z tego, ¿e nie masz ze mn¹ szans.
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_KILL,0);
+	B_Attack(self,other,AR_KILL,0);
 };
 
-func void dia_ulf_abrechnung_schnell()
+func void DIA_Ulf_Abrechnung_Schnell()
 {
 	AI_Output(other,self,"DIA_Ulf_Abrechnung_Schnell_15_00");	//Koniec gadania - muszê wracaæ do klasztoru.
 	AI_Output(self,other,"DIA_Ulf_Abrechnung_Schnell_03_01");	//Nigdzie nie pójdziesz!
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_KILL,0);
+	B_Attack(self,other,AR_KILL,0);
 };
 
-func void dia_ulf_abrechnung_rauch()
+func void DIA_Ulf_Abrechnung_Rauch()
 {
 	AI_Output(other,self,"DIA_Ulf_Abrechnung_Rauch_15_00");	//Masz coœ do palenia?
 	AI_Output(self,other,"DIA_Ulf_Abrechnung_Rauch_03_01");	//Masz szczêœcie. Tak siê sk³ada, ¿e akurat mam coœ przy sobie.
-	b_giveinvitems(self,other,5106,1);
-	b_useitem(other,5106);
+	B_GiveInvItems(self,other,ItMi_Joint,1);
+	B_UseItem(other,ItMi_Joint);
 	AI_Output(self,other,"DIA_Ulf_Abrechnung_Rauch_03_02");	//Miejmy to ju¿ za sob¹.
 	AI_StopProcessInfos(self);
-	b_attack(self,other,AR_KILL,0);
+	B_Attack(self,other,AR_KILL,0);
 };
 
 
-instance DIA_ULF_TROLL(C_INFO)
+instance DIA_Ulf_Troll(C_Info)
 {
-	npc = nov_602_ulf;
+	npc = NOV_602_Ulf;
 	nr = 9;
-	condition = dia_ulf_troll_condition;
-	information = dia_ulf_troll_info;
+	condition = DIA_Ulf_Troll_Condition;
+	information = DIA_Ulf_Troll_Info;
 	permanent = FALSE;
 	important = TRUE;
 };
 
 
-func int dia_ulf_troll_condition()
+func int DIA_Ulf_Troll_Condition()
 {
-	if((MIS_SCHNITZELJAGD == LOG_RUNNING) && (other.guild == GIL_NOV) && Npc_KnowsInfo(other,dia_ulf_rausgefunden) && ((Npc_GetDistToWP(self,"NW_TROLLAREA_PATH_14") <= 1000) || (Npc_GetDistToWP(self,"NW_TROLLAREA_PATH_15") <= 1000)))
+	if((MIS_SCHNITZELJAGD == LOG_Running) && (other.guild == GIL_NOV) && Npc_KnowsInfo(other,DIA_Ulf_Rausgefunden) && ((Npc_GetDistToWP(self,"NW_TROLLAREA_PATH_14") <= 1000) || (Npc_GetDistToWP(self,"NW_TROLLAREA_PATH_15") <= 1000)))
 	{
 		return TRUE;
 	};
 };
 
-func void dia_ulf_troll_info()
+func void DIA_Ulf_Troll_Info()
 {
 	AI_Output(self,other,"DIA_Ulf_Troll_03_00");	//Hej, jesteœ pewien, ¿e idziemy we w³aœciwym kierunku? Podobno gdzieœ tam mieszka troll.
 	AI_Output(self,other,"DIA_Ulf_Troll_03_01");	//Chyba lepiej udaæ siê w innym kierunku.
@@ -428,37 +428,37 @@ func void dia_ulf_troll_info()
 };
 
 
-instance DIA_ULF_PICKPOCKET(C_INFO)
+instance DIA_Ulf_PICKPOCKET(C_Info)
 {
-	npc = nov_602_ulf;
+	npc = NOV_602_Ulf;
 	nr = 900;
-	condition = dia_ulf_pickpocket_condition;
-	information = dia_ulf_pickpocket_info;
+	condition = DIA_Ulf_PICKPOCKET_Condition;
+	information = DIA_Ulf_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = PICKPOCKET_40;
+	description = Pickpocket_40;
 };
 
 
-func int dia_ulf_pickpocket_condition()
+func int DIA_Ulf_PICKPOCKET_Condition()
 {
-	return c_beklauen(34,50);
+	return C_Beklauen(34,50);
 };
 
-func void dia_ulf_pickpocket_info()
+func void DIA_Ulf_PICKPOCKET_Info()
 {
-	Info_ClearChoices(dia_ulf_pickpocket);
-	Info_AddChoice(dia_ulf_pickpocket,DIALOG_BACK,dia_ulf_pickpocket_back);
-	Info_AddChoice(dia_ulf_pickpocket,DIALOG_PICKPOCKET,dia_ulf_pickpocket_doit);
+	Info_ClearChoices(DIA_Ulf_PICKPOCKET);
+	Info_AddChoice(DIA_Ulf_PICKPOCKET,Dialog_Back,DIA_Ulf_PICKPOCKET_BACK);
+	Info_AddChoice(DIA_Ulf_PICKPOCKET,DIALOG_PICKPOCKET,DIA_Ulf_PICKPOCKET_DoIt);
 };
 
-func void dia_ulf_pickpocket_doit()
+func void DIA_Ulf_PICKPOCKET_DoIt()
 {
-	b_beklauen();
-	Info_ClearChoices(dia_ulf_pickpocket);
+	B_Beklauen();
+	Info_ClearChoices(DIA_Ulf_PICKPOCKET);
 };
 
-func void dia_ulf_pickpocket_back()
+func void DIA_Ulf_PICKPOCKET_BACK()
 {
-	Info_ClearChoices(dia_ulf_pickpocket);
+	Info_ClearChoices(DIA_Ulf_PICKPOCKET);
 };
 

@@ -1,5 +1,5 @@
 
-prototype MST_DEFAULT_SKELETON_MAGE(C_NPC)
+prototype Mst_Default_Skeleton_Mage(C_Npc)
 {
 	name[0] = "Szkielet Mag";
 	guild = GIL_SKELETON_MAGE;
@@ -21,13 +21,13 @@ prototype MST_DEFAULT_SKELETON_MAGE(C_NPC)
 	fight_tactic = FAI_HUMAN_STRONG;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
-	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
-	start_aistate = zs_mm_allscheduler;
-	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FollowInWater] = FALSE;
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
 
-func void b_setvisuals_skeleton_mage()
+func void B_SetVisuals_Skeleton_Mage()
 {
 	Mdl_SetVisual(self,"HumanS.mds");
 	Mdl_ApplyOverlayMds(self,"humans_skeleton_fly.mds");
@@ -35,20 +35,20 @@ func void b_setvisuals_skeleton_mage()
 };
 
 
-instance SKELETONMAGE(MST_DEFAULT_SKELETON_MAGE)
+instance SkeletonMage(Mst_Default_Skeleton_Mage)
 {
-	b_setvisuals_skeleton_mage();
+	B_SetVisuals_Skeleton_Mage();
 };
 
-instance SKELETONMAGE_ANGAR(MST_DEFAULT_SKELETON_MAGE)
+instance SkeletonMage_Angar(Mst_Default_Skeleton_Mage)
 {
-	b_setvisuals_skeleton_mage();
-	CreateInvItems(self,itam_mana_angar_mis,1);
-	CreateInvItems(self,itpo_perm_mana,1);
+	B_SetVisuals_Skeleton_Mage();
+	CreateInvItems(self,ItAm_Mana_Angar_MIS,1);
+	CreateInvItems(self,ItPo_Perm_Mana,1);
 };
 
-instance SECRETLIBRARYSKELETON(MST_DEFAULT_SKELETON_MAGE)
+instance SecretLibrarySkeleton(Mst_Default_Skeleton_Mage)
 {
-	b_setvisuals_skeleton_mage();
+	B_SetVisuals_Skeleton_Mage();
 };
 

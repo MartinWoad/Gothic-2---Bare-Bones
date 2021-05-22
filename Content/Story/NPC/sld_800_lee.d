@@ -1,53 +1,53 @@
 
-instance SLD_800_LEE(NPC_DEFAULT)
+instance SLD_800_Lee(Npc_Default)
 {
 	name[0] = "Lee";
 	guild = GIL_SLD;
 	id = 800;
 	voice = 4;
 	flags = NPC_FLAG_IMMORTAL;
-	npctype = NPCTYPE_FRIEND;
-	aivar[AIV_TOUGHGUY] = TRUE;
-	aivar[AIV_TOUGHGUYNEWSOVERRIDE] = TRUE;
-	aivar[AIV_IGNORE_MURDER] = TRUE;
-	aivar[AIV_IGNORE_THEFT] = TRUE;
-	aivar[AIV_IGNORE_SHEEPKILLER] = TRUE;
-	b_setattributestochapter(self,5);
+	npcType = NPCTYPE_FRIEND;
+	aivar[AIV_ToughGuy] = TRUE;
+	aivar[AIV_ToughGuyNewsOverride] = TRUE;
+	aivar[AIV_IGNORE_Murder] = TRUE;
+	aivar[AIV_IGNORE_Theft] = TRUE;
+	aivar[AIV_IGNORE_Sheepkiller] = TRUE;
+	B_SetAttributesToChapter(self,5);
 	fight_tactic = FAI_HUMAN_MASTER;
-	EquipItem(self,itmw_2h_sld_sword);
-	b_createambientinv(self);
-	b_setnpcvisual(self,MALE,"Hum_Head_Pony",FACE_N_LEE,BODYTEX_N,4836);
+	EquipItem(self,ItMw_2h_Sld_Sword);
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Pony",Face_N_Lee,BodyTex_N,ItAr_Sld_H);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
-	b_givenpctalents(self);
-	b_setfightskills(self,70);
-	daily_routine = rtn_start_800;
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,70);
+	daily_routine = Rtn_Start_800;
 };
 
 
-func void rtn_start_800()
+func void Rtn_Start_800()
 {
-	ta_stand_guarding(8,0,19,0,"NW_BIGFARM_HOUSE_LEE_GUARDING");
-	ta_sit_chair(19,0,22,0,"NW_BIGFARM_HOUSE_UP2_05");
-	ta_sleep(22,0,8,0,"NW_BIGFARM_HOUSE_UP2_04");
+	TA_Stand_Guarding(8,0,19,0,"NW_BIGFARM_HOUSE_LEE_GUARDING");
+	TA_Sit_Chair(19,0,22,0,"NW_BIGFARM_HOUSE_UP2_05");
+	TA_Sleep(22,0,8,0,"NW_BIGFARM_HOUSE_UP2_04");
 };
 
-func void rtn_waitforship_800()
+func void Rtn_WaitForShip_800()
 {
-	ta_stand_guarding(8,0,19,0,"NW_WAITFOR_SHIP_01");
-	ta_stand_guarding(19,0,8,0,"NW_WAITFOR_SHIP_01");
+	TA_Stand_Guarding(8,0,19,0,"NW_WAITFOR_SHIP_01");
+	TA_Stand_Guarding(19,0,8,0,"NW_WAITFOR_SHIP_01");
 };
 
-func void rtn_shipoff_800()
+func void Rtn_ShipOff_800()
 {
-	ta_stand_guarding(8,0,19,0,"NW_BIGFARM_HOUSE_LEE_GUARDING");
-	ta_sit_chair(19,0,22,0,"NW_BIGFARM_HOUSE_UP2_05");
-	ta_sleep(22,0,8,0,"NW_BIGFARM_HOUSE_UP2_04");
+	TA_Stand_Guarding(8,0,19,0,"NW_BIGFARM_HOUSE_LEE_GUARDING");
+	TA_Sit_Chair(19,0,22,0,"NW_BIGFARM_HOUSE_UP2_05");
+	TA_Sleep(22,0,8,0,"NW_BIGFARM_HOUSE_UP2_04");
 };
 
-func void rtn_ship_800()
+func void Rtn_Ship_800()
 {
-	ta_stand_guarding(8,0,23,0,"SHIP_CREW_01");
-	ta_sleep(23,0,8,0,"SHIP_IN_06");
+	TA_Stand_Guarding(8,0,23,0,"SHIP_CREW_01");
+	TA_Sleep(23,0,8,0,"SHIP_IN_06");
 };
 

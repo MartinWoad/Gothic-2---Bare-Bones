@@ -1,5 +1,5 @@
 
-func void b_say_attackreason()
+func void B_Say_AttackReason()
 {
 	var int rnd;
 	if((Wld_GetGuildAttitude(self.guild,other.guild) != ATT_HOSTILE) && (Npc_GetAttitude(self,other) == ATT_HOSTILE))
@@ -8,10 +8,10 @@ func void b_say_attackreason()
 		{
 			return;
 		};
-		b_say_overlay(self,other,"$IGETYOUSTILL");
+		B_Say_Overlay(self,other,"$IGETYOUSTILL");
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_GUILDENEMY)
+	if(self.aivar[AIV_ATTACKREASON] == AR_GuildEnemy)
 	{
 		if(self.aivar[AIV_PARTYMEMBER] == TRUE)
 		{
@@ -23,97 +23,97 @@ func void b_say_attackreason()
 		};
 		if(other.guild < GIL_SEPERATOR_HUM)
 		{
-			b_say_overlay(self,other,"$DIEENEMY");
+			B_Say_Overlay(self,other,"$DIEENEMY");
 			Npc_SendPassivePerc(self,PERC_ASSESSFIGHTSOUND,self,other);
 		}
 		else
 		{
-			b_say_overlay(self,other,"$DIEMONSTER");
+			B_Say_Overlay(self,other,"$DIEMONSTER");
 			Npc_SendPassivePerc(self,PERC_ASSESSFIGHTSOUND,self,other);
 		};
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_THEFT)
+	if(self.aivar[AIV_ATTACKREASON] == AR_Theft)
 	{
-		b_say_overlay(self,other,"$DIRTYTHIEF");
+		B_Say_Overlay(self,other,"$DIRTYTHIEF");
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_USEMOB)
+	if(self.aivar[AIV_ATTACKREASON] == AR_UseMob)
 	{
-		b_say_overlay(self,other,"$HANDSOFF");
+		B_Say_Overlay(self,other,"$HANDSOFF");
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_SHEEPKILLER)
+	if(self.aivar[AIV_ATTACKREASON] == AR_SheepKiller)
 	{
 		if(other.guild < GIL_SEPERATOR_HUM)
 		{
-			b_say_overlay(self,other,"$SHEEPKILLER");
+			B_Say_Overlay(self,other,"$SHEEPKILLER");
 		}
 		else
 		{
-			b_say_overlay(self,other,"$SHEEPKILLERMONSTER");
+			B_Say_Overlay(self,other,"$SHEEPKILLERMONSTER");
 		};
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_HUMANMURDEREDHUMAN)
+	if(self.aivar[AIV_ATTACKREASON] == AR_HumanMurderedHuman)
 	{
-		b_say_overlay(self,other,"$YOUMURDERER");
+		B_Say_Overlay(self,other,"$YOUMURDERER");
 		Npc_SendPassivePerc(self,PERC_ASSESSFIGHTSOUND,self,other);
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_MONSTERMURDEREDHUMAN)
+	if(self.aivar[AIV_ATTACKREASON] == AR_MonsterMurderedHuman)
 	{
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_MONSTERVSHUMAN)
+	if(self.aivar[AIV_ATTACKREASON] == AR_MonsterVsHuman)
 	{
-		b_say_overlay(self,other,"$DIEMONSTER");
+		B_Say_Overlay(self,other,"$DIEMONSTER");
 		Npc_SendPassivePerc(self,PERC_ASSESSFIGHTSOUND,self,other);
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_MONSTERCLOSETOGATE)
+	if(self.aivar[AIV_ATTACKREASON] == AR_MonsterCloseToGate)
 	{
-		b_say_overlay(self,other,"$DIESTUPIDBEAST");
+		B_Say_Overlay(self,other,"$DIESTUPIDBEAST");
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_REACTTODAMAGE)
+	if(self.aivar[AIV_ATTACKREASON] == AR_ReactToDamage)
 	{
 		if(other.guild > GIL_SEPERATOR_HUM)
 		{
-			b_say_overlay(self,other,"$YOUASKEDFORIT");
+			B_Say_Overlay(self,other,"$YOUASKEDFORIT");
 			return;
 		}
 		else
 		{
-			b_say_overlay(self,other,"$YOUDAREHITME");
+			B_Say_Overlay(self,other,"$YOUDAREHITME");
 			return;
 		};
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_REACTTOWEAPON)
+	if(self.aivar[AIV_ATTACKREASON] == AR_ReactToWeapon)
 	{
-		b_say_overlay(self,other,"$YOUASKEDFORIT");
+		B_Say_Overlay(self,other,"$YOUASKEDFORIT");
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_CLEARROOM)
+	if(self.aivar[AIV_ATTACKREASON] == AR_ClearRoom)
 	{
-		b_say_overlay(self,other,"$THENIBEATYOUOUTOFHERE");
+		B_Say_Overlay(self,other,"$THENIBEATYOUOUTOFHERE");
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_LEFTPORTALROOM)
+	if(self.aivar[AIV_ATTACKREASON] == AR_LeftPortalRoom)
 	{
-		b_say_overlay(self,other,"$WHATDIDYOUDOINTHERE");
+		B_Say_Overlay(self,other,"$WHATDIDYOUDOINTHERE");
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_GUARDSTOPSFIGHT)
+	if(self.aivar[AIV_ATTACKREASON] == AR_GuardStopsFight)
 	{
-		b_say_overlay(self,other,"$WILLYOUSTOPFIGHTING");
+		B_Say_Overlay(self,other,"$WILLYOUSTOPFIGHTING");
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_GUARDCALLEDTOTHIEF)
+	if(self.aivar[AIV_ATTACKREASON] == AR_GuardCalledToThief)
 	{
 		return;
 	};
-	if(self.aivar[AIV_ATTACKREASON] == AR_GUARDCALLEDTOROOM)
+	if(self.aivar[AIV_ATTACKREASON] == AR_GuardCalledToRoom)
 	{
 		return;
 	};
