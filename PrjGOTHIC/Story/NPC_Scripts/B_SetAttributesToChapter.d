@@ -15,7 +15,7 @@ func void b_setattributestochapter(var C_NPC slf,var int kapitel)
 		slf.attribute[ATR_DEXTERITY] = 10;
 		slf.attribute[ATR_MANA_MAX] = 0;
 		slf.attribute[ATR_MANA] = 0;
-		slf.attribute[ATR_HITPOINTS_MAX] = 40;
+		slf.attribute[ATR_HITPOINTS_MAX] = 50;
 		slf.attribute[ATR_HITPOINTS] = 40;
 	};
 	if(kapitel == 1)

@@ -283,7 +283,7 @@ instance ITAM_HP_01(C_ITEM)
 func void equip_itam_hp_01()
 {
 	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] + AM_HP;
-	self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + AM_HP;
+	//self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + AM_HP;
 };
 
 func void unequip_itam_hp_01()
@@ -323,7 +323,7 @@ instance ITAM_MANA_01(C_ITEM)
 func void equip_itam_mana_01()
 {
 	b_raiseattribute(self,ATR_MANA_MAX,AM_MANA,FALSE,TRUE);
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] + AM_MANA;
+	//self.attribute[ATR_MANA] = self.attribute[ATR_MANA] + AM_MANA;
 };
 
 func void unequip_itam_mana_01()
@@ -399,7 +399,7 @@ instance ITAM_HP_MANA_01(C_ITEM)
 
 func void equip_itam_hp_mana_01()
 {
-	self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + AM_HPMANA_HP;
+	//self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + AM_HPMANA_HP;
 	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] + AM_HPMANA_HP;
 	b_raiseattribute(self,ATR_MANA_MAX,AM_HPMANA_MANA,FALSE,TRUE);
 	self.attribute[ATR_MANA_MAX] = self.attribute[ATR_MANA_MAX] + AM_HPMANA_MANA;

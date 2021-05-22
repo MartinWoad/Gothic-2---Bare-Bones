@@ -14,8 +14,8 @@ instance PC_HERO(NPC_DEFAULT)
 	attribute[ATR_DEXTERITY] = 10;
 	attribute[ATR_MANA_MAX] = 10;
 	attribute[ATR_MANA] = 10;
-	attribute[ATR_HITPOINTS_MAX] = 40;
-	attribute[ATR_HITPOINTS] = 40;
+	attribute[ATR_HITPOINTS_MAX] = 50;
+	attribute[ATR_HITPOINTS] = 50;
 	Mdl_SetVisual(self,"HUMANS.MDS");
 	Mdl_SetVisualBody(self,"hum_body_Naked0",9,0,"Hum_Head_Pony",FACE_N_PLAYER,0,NO_ARMOR);
 	b_setfightskills(self,0);
