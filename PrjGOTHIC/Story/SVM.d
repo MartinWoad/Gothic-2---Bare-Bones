@@ -1,0 +1,3102 @@
+
+class C_SVM
+{
+	var string milgreetings;
+	var string palgreetings;
+	var string weather;
+	var string igetyoustill;
+	var string dieenemy;
+	var string diemonster;
+	var string addon_diemonster;
+	var string addon_diemonster2;
+	var string dirtythief;
+	var string handsoff;
+	var string sheepkiller;
+	var string sheepkillermonster;
+	var string youmurderer;
+	var string diestupidbeast;
+	var string youdarehitme;
+	var string youaskedforit;
+	var string thenibeatyououtofhere;
+	var string whatdidyoudointhere;
+	var string willyoustopfighting;
+	var string killenemy;
+	var string enemykilled;
+	var string monsterkilled;
+	var string addon_monsterkilled;
+	var string addon_monsterkilled2;
+	var string thiefdown;
+	var string rumfummlerdown;
+	var string sheepattackerdown;
+	var string killmurderer;
+	var string stupidbeastkilled;
+	var string neverhitmeagain;
+	var string youbettershouldhavelistened;
+	var string getupandbegone;
+	var string neverenterroomagain;
+	var string thereisnofightinghere;
+	var string spareme;
+	var string runaway;
+	var string alarm;
+	var string guards;
+	var string help;
+	var string goodmonsterkill;
+	var string goodkill;
+	var string notnow;
+	var string runcoward;
+	var string getoutofhere;
+	var string whyareyouinhere;
+	var string yesgooutofhere;
+	var string whatsthissupposedtobe;
+	var string youdisturbedmyslumber;
+	var string itookyourgold;
+	var string shitnogold;
+	var string itakeyourweapon;
+	var string whatareyoudoing;
+	var string lookingfortroubleagain;
+	var string stopmagic;
+	var string isaidstopmagic;
+	var string weapondown;
+	var string isaidweapondown;
+	var string wisemove;
+	var string nexttimeyoureinforit;
+	var string ohmyhead;
+	var string theresafight;
+	var string ohmygoditsafight;
+	var string goodvictory;
+	var string notbad;
+	var string ohmygodhesdown;
+	var string cheerfriend01;
+	var string cheerfriend02;
+	var string cheerfriend03;
+	var string ooh01;
+	var string ooh02;
+	var string ooh03;
+	var string whatwasthat;
+	var string getoutofmybed;
+	var string awake;
+	var string abs_commander;
+	var string abs_monastery;
+	var string abs_farm;
+	var string abs_good;
+	var string sheepkiller_crime;
+	var string attack_crime;
+	var string theft_crime;
+	var string murder_crime;
+	var string pal_city_crime;
+	var string mil_city_crime;
+	var string city_crime;
+	var string mona_crime;
+	var string farm_crime;
+	var string oc_crime;
+	var string toughguy_attacklost;
+	var string toughguy_attackwon;
+	var string toughguy_playerattack;
+	var string gold_1000;
+	var string gold_950;
+	var string gold_900;
+	var string gold_850;
+	var string gold_800;
+	var string gold_750;
+	var string gold_700;
+	var string gold_650;
+	var string gold_600;
+	var string gold_550;
+	var string gold_500;
+	var string gold_450;
+	var string gold_400;
+	var string gold_350;
+	var string gold_300;
+	var string gold_250;
+	var string gold_200;
+	var string gold_150;
+	var string gold_100;
+	var string gold_90;
+	var string gold_80;
+	var string gold_70;
+	var string gold_60;
+	var string gold_50;
+	var string gold_40;
+	var string gold_30;
+	var string gold_20;
+	var string gold_10;
+	var string smalltalk01;
+	var string smalltalk02;
+	var string smalltalk03;
+	var string smalltalk04;
+	var string smalltalk05;
+	var string smalltalk06;
+	var string smalltalk07;
+	var string smalltalk08;
+	var string smalltalk09;
+	var string smalltalk10;
+	var string smalltalk11;
+	var string smalltalk12;
+	var string smalltalk13;
+	var string smalltalk14;
+	var string smalltalk15;
+	var string smalltalk16;
+	var string smalltalk17;
+	var string smalltalk18;
+	var string smalltalk19;
+	var string smalltalk20;
+	var string smalltalk21;
+	var string smalltalk22;
+	var string smalltalk23;
+	var string smalltalk24;
+	var string smalltalk25;
+	var string smalltalk26;
+	var string smalltalk27;
+	var string smalltalk28;
+	var string smalltalk29;
+	var string smalltalk30;
+	var string nolearnnopoints;
+	var string nolearnoverpersonalmax;
+	var string nolearnyourebetter;
+	var string youlearnedsomething;
+	var string unterstadt;
+	var string oberstadt;
+	var string tempel;
+	var string markt;
+	var string galgen;
+	var string kaserne;
+	var string hafen;
+	var string whereto;
+	var string oberstadt_2_unterstadt;
+	var string unterstadt_2_oberstadt;
+	var string unterstadt_2_tempel;
+	var string unterstadt_2_hafen;
+	var string tempel_2_unterstadt;
+	var string tempel_2_markt;
+	var string tempel_2_galgen;
+	var string markt_2_tempel;
+	var string markt_2_kaserne;
+	var string markt_2_galgen;
+	var string galgen_2_tempel;
+	var string galgen_2_markt;
+	var string galgen_2_kaserne;
+	var string kaserne_2_markt;
+	var string kaserne_2_galgen;
+	var string hafen_2_unterstadt;
+	var string dead;
+	var string aargh_1;
+	var string aargh_2;
+	var string aargh_3;
+	var string addon_wrongarmor;
+	var string addon_wrongarmor_sld;
+	var string addon_wrongarmor_mil;
+	var string addon_wrongarmor_kdf;
+	var string addon_noarmor_bdt;
+	var string addon_diebandit;
+	var string addon_dirtypirate;
+	var string sc_heyturnaround;
+	var string sc_heyturnaround02;
+	var string sc_heyturnaround03;
+	var string sc_heyturnaround04;
+	var string sc_heywaitasecond;
+	var string doesntwork;
+	var string pickbroke;
+	var string needkey;
+	var string nomorepicks;
+	var string nopicklocktalent;
+	var string nosweeping;
+	var string picklockorkeymissing;
+	var string keymissing;
+	var string picklockmissing;
+	var string neveropen;
+	var string missingitem;
+	var string dontknow;
+	var string nothingtoget;
+	var string nothingtoget02;
+	var string nothingtoget03;
+	var string healshrine;
+	var string heallastshrine;
+	var string irdoraththereyouare;
+	var string scopensirdorathbook;
+	var string scopenslastdoor;
+	var string trade_1;
+	var string trade_2;
+	var string trade_3;
+	var string verstehe;
+	var string foundtreasure;
+	var string cantunderstandthis;
+	var string cantreadthis;
+	var string stoneplate_1;
+	var string stoneplate_2;
+	var string stoneplate_3;
+	var string cough;
+	var string hui;
+	var string addon_thislittlebastard;
+	var string addon_openadanostemple;
+	var string attentat_addon_description;
+	var string attentat_addon_description2;
+	var string attentat_addon_pro;
+	var string attentat_addon_contra;
+	var string mine_addon_description;
+	var string addon_summonancientghost;
+	var string addon_ancientghost_notnear;
+	var string addon_gold_description;
+};
+
+instance SVM_0(C_SVM)
+{
+};
+
+instance SVM_1(C_SVM)
+{
+	milgreetings = "SVM_1_MILGreetings";	//Niech ¿yje Król!
+	palgreetings = "SVM_1_PALGreetings";	//Chwa³a Innosowi!
+	weather = "SVM_1_Weather";	//Beznadziejna pogoda!
+	igetyoustill = "SVM_1_IGetYouStill";	//A jednak mi siê nie wymkniesz!
+	dieenemy = "SVM_1_DieEnemy";	//Doigra³eœ siê!
+	diemonster = "SVM_1_DieMonster";	//Znowu jedna z tych g³upich bestii!
+	dirtythief = "SVM_1_DirtyThief";	//Czekaj tylko, ty parszywy z³odzieju!
+	handsoff = "SVM_1_HandsOff";	//£apy precz!
+	sheepkiller = "SVM_1_SheepKiller";	//Ten bydlak szlachtuje nasze owce!
+	sheepkillermonster = "SVM_1_SheepKillerMonster";	//Ta przeklêta bestia po¿era nasze owce!
+	youmurderer = "SVM_1_YouMurderer";	//Morderca!
+	diestupidbeast = "SVM_1_DieStupidBeast";	//¯adne bestie nie maj¹ tu prawa wstêpu!
+	youdarehitme = "SVM_1_YouDareHitMe";	//Czekaj tylko, bydlaku!
+	youaskedforit = "SVM_1_YouAskedForIt";	//Sam tego chcia³eœ!
+	thenibeatyououtofhere = "SVM_1_ThenIBeatYouOutOfHere";	//W takim razie bêdê musia³ ciê st¹d wykopaæ!
+	whatdidyoudointhere = "SVM_1_WhatDidYouDoInThere";	//A czego TY tam szuka³eœ, hê?!
+	willyoustopfighting = "SVM_1_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	killenemy = "SVM_1_KillEnemy";	//Giñ, gnido!
+	enemykilled = "SVM_1_EnemyKilled";	//To ju¿ koniec, œmieciu!
+	monsterkilled = "SVM_1_MonsterKilled";	//Jedna bestia mniej!
+	thiefdown = "SVM_1_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okradaæ!
+	rumfummlerdown = "SVM_1_rumfummlerDown";	//W przysz³oœci trzymaj ³apska z dala od cudzych spraw.
+	sheepattackerdown = "SVM_1_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To NASZE owce!
+	killmurderer = "SVM_1_KillMurderer";	//Giñ, morderco!
+	stupidbeastkilled = "SVM_1_StupidBeastKilled";	//Co za g³upia bestia!
+	neverhitmeagain = "SVM_1_NeverHitMeAgain";	//Nigdy wiêcej nie próbuj siê ze mn¹ mierzyæ!
+	youbettershouldhavelistened = "SVM_1_YouBetterShouldHaveListened";	//Trzeba by³o mnie s³uchaæ!
+	getupandbegone = "SVM_1_GetUpAndBeGone";	//A teraz zmywaj siê st¹d!
+	neverenterroomagain = "SVM_1_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
+	thereisnofightinghere = "SVM_1_ThereIsNoFightingHere";	//Tu siê nie walczy, jasne?! Niech to bêdzie dla ciebie nauczk¹!
+	spareme = "SVM_1_SpareMe";	//Zostaw mnie w spokoju!
+	runaway = "SVM_1_RunAway";	//A niech to! Trzeba wiaæ!
+	alarm = "SVM_1_Alarm";	//ALARM!
+	guards = "SVM_1_Guards";	//STRA¯!
+	help = "SVM_1_Help";	//Pomocy!
+	goodmonsterkill = "SVM_1_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
+	goodkill = "SVM_1_GoodKill";	//Dobrze! Wykoñcz œwiniê!
+	notnow = "SVM_1_NOTNOW";	//Zostaw mnie w spokoju!
+	runcoward = "SVM_1_RunCoward";	//Stój, œmieciu!
+	getoutofhere = "SVM_1_GetOutOfHere";	//Wynocha!
+	whyareyouinhere = "SVM_1_WhyAreYouInHere";	//Czego tu szukasz? OdejdŸ!
+	yesgooutofhere = "SVM_1_YesGoOutOfHere";	//No, wynoœ siê!
+	whatsthissupposedtobe = "SVM_1_WhatsThisSupposedToBe";	//Ej ty! Co ty tu robisz?
+	youdisturbedmyslumber = "SVM_1_YouDisturbedMySlumber";	//Cholera, co siê dzieje?
+	itookyourgold = "SVM_1_ITookYourGold";	//Z³oto! Zaopiekujê siê nim...
+	shitnogold = "SVM_1_ShitNoGold";	//Ten frajer nie ma nawet z³ota.
+	itakeyourweapon = "SVM_1_ITakeYourWeapon";	//Zajmê siê twoj¹ broni¹...
+	whatareyoudoing = "SVM_1_WhatAreYouDoing";	//Ej! Uwa¿aj!
+	lookingfortroubleagain = "SVM_1_LookingForTroubleAgain";	//Ci¹gle ci ma³o?!
+	stopmagic = "SVM_1_StopMagic";	//Zabieraj siê z t¹ swoj¹ magi¹!
+	isaidstopmagic = "SVM_1_ISaidStopMagic";	//Powiedzia³em: KONIEC z magi¹! Og³uch³eœ, czy co?!
+	weapondown = "SVM_1_WeaponDown";	//Od³ó¿ broñ!
+	isaidweapondown = "SVM_1_ISaidWeaponDown";	//Og³uch³eœ? Od³ó¿ tê broñ!
+	wisemove = "SVM_1_WiseMove";	//No proszê, jednak mo¿na!
+	nexttimeyoureinforit = "SVM_1_NextTimeYoureInForIt";	//Jeszcze zobaczymy...
+	ohmyhead = "SVM_1_OhMyHead";	//Och, moja g³owa...
+	theresafight = "SVM_1_TheresAFight";	//Wreszcie coœ siê dzieje...
+	ohmygoditsafight = "SVM_1_OhMyGodItsAFight";	//Oni zrobi¹ sobie krzywdê...
+	goodvictory = "SVM_1_GoodVictory";	//Zas³u¿y³ sobie na to!
+	notbad = "SVM_1_NotBad";	//NieŸle... Ca³kiem nieŸle.
+	ohmygodhesdown = "SVM_1_OhMyGodHesDown";	//Co za brutal...
+	cheerfriend01 = "SVM_1_CheerFriend01";	//Dobrze, tak trzymaj!
+	cheerfriend02 = "SVM_1_CheerFriend02";	//No, dalej!
+	cheerfriend03 = "SVM_1_CheerFriend03";	//Mocniej!
+	ooh01 = "SVM_1_Ooh01";	//Nie pozwól na to!
+	ooh02 = "SVM_1_Ooh02";	//Dasz sobie radê!
+	ooh03 = "SVM_1_Ooh03";	//A niech to!
+	whatwasthat = "SVM_1_WhatWasThat";	//Co TO by³o!?
+	getoutofmybed = "SVM_1_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	awake = "SVM_1_Awake";	//(rozkoszne ziewniêcie)
+	abs_commander = "SVM_1_ABS_COMMANDER";	//Powiadaj¹, ¿e by³eœ u kapitana i za³atwi³eœ sprawê.
+	abs_monastery = "SVM_1_ABS_MONASTERY";	//Ponoæ by³eœ u Ojca Parlana i wyspowiada³eœ siê ze swych grzechów?
+	abs_farm = "SVM_1_ABS_FARM";	//S³ysza³em, ¿e by³eœ u Lee i doprowadzi³eœ sprawê do porz¹dku.
+	abs_good = "SVM_1_ABS_GOOD";	//Dobre.
+	sheepkiller_crime = "SVM_1_SHEEPKILLER_CRIME";	//Tak po prostu zaszlachtowaæ nasze owce... Wynoœ siê!
+	attack_crime = "SVM_1_ATTACK_CRIME";	//Z takimi jak ty nie bêdê rozmawiaæ!
+	theft_crime = "SVM_1_THEFT_CRIME";	//ZejdŸ mi z oczu, parszywy z³odzieju!
+	pal_city_crime = "SVM_1_PAL_CITY_CRIME";	//Jesteœ zaka³¹ swojego zakonu! Lord Hagen bêdzie wœciek³y!
+	mil_city_crime = "SVM_1_MIL_CITY_CRIME";	//Jesteœ zaka³¹ stra¿y miejskiej! Lord Andre na pewno da ci nauczkê!
+	city_crime = "SVM_1_CITY_CRIME";	//Lord Andre dowie siê o wszystkim!
+	mona_crime = "SVM_1_MONA_CRIME";	//Twoje czyny z pewnoœci¹ nie uciesz¹ Ojca Parlana!
+	farm_crime = "SVM_1_FARM_CRIME";	//Dostanie ci siê za to od Lee! I na co ci to by³o?!
+	oc_crime = "SVM_1_OC_CRIME";	//Kapitan Garond rozliczy ciê z tego!
+	toughguy_attacklost = "SVM_1_TOUGHGUY_ATTACKLOST";	//No ju¿ dobrze, wygra³eœ. Czego ode mnie chcesz?
+	toughguy_attackwon = "SVM_1_TOUGHGUY_ATTACKWON";	//Mam ci jeszcze raz pokazaæ, kto tu rz¹dzi?
+	toughguy_playerattack = "SVM_1_TOUGHGUY_PLAYERATTACK";	//Chcesz siê jeszcze raz ze mn¹ spróbowaæ?
+	gold_1000 = "SVM_1_GOLD_1000";	//1000 sztuk z³ota.
+	gold_950 = "SVM_1_GOLD_950";	//950 sztuk z³ota.
+	gold_900 = "SVM_1_GOLD_900";	//900 sztuk z³ota.
+	gold_850 = "SVM_1_GOLD_850";	//850 sztuk z³ota.
+	gold_800 = "SVM_1_GOLD_800";	//800 sztuk z³ota.
+	gold_750 = "SVM_1_GOLD_750";	//750 sztuk z³ota.
+	gold_700 = "SVM_1_GOLD_700";	//700 sztuk z³ota.
+	gold_650 = "SVM_1_GOLD_650";	//650 sztuk z³ota.
+	gold_600 = "SVM_1_GOLD_600";	//600 sztuk z³ota.
+	gold_550 = "SVM_1_GOLD_550";	//550 sztuk z³ota.
+	gold_500 = "SVM_1_GOLD_500";	//500 sztuk z³ota.
+	gold_450 = "SVM_1_GOLD_450";	//450 sztuk z³ota.
+	gold_400 = "SVM_1_GOLD_400";	//400 sztuk z³ota.
+	gold_350 = "SVM_1_GOLD_350";	//350 sztuk z³ota.
+	gold_300 = "SVM_1_GOLD_300";	//300 sztuk z³ota.
+	gold_250 = "SVM_1_GOLD_250";	//250 sztuk z³ota.
+	gold_200 = "SVM_1_GOLD_200";	//200 sztuk z³ota.
+	gold_150 = "SVM_1_GOLD_150";	//150 sztuk z³ota.
+	gold_100 = "SVM_1_GOLD_100";	//100 sztuk z³ota.
+	gold_90 = "SVM_1_GOLD_90";	//90 sztuk z³ota.
+	gold_80 = "SVM_1_GOLD_80";	//80 sztuk z³ota.
+	gold_70 = "SVM_1_GOLD_70";	//70 sztuk z³ota.
+	gold_60 = "SVM_1_GOLD_60";	//60 sztuk z³ota.
+	gold_50 = "SVM_1_GOLD_50";	//50 sztuk z³ota.
+	gold_40 = "SVM_1_GOLD_40";	//40 sztuk z³ota.
+	gold_30 = "SVM_1_GOLD_30";	//30 sztuk z³ota.
+	gold_20 = "SVM_1_GOLD_20";	//20 sztuk z³ota.
+	gold_10 = "SVM_1_GOLD_10";	//10 sztuk z³ota.
+	smalltalk01 = "SVM_1_Smalltalk01";	//...naprawdê s¹dzisz...
+	smalltalk02 = "SVM_1_Smalltalk02";	//...wszystko jest mo¿liwe...
+	smalltalk03 = "SVM_1_Smalltalk03";	//...powinien by³ wiedzieæ lepiej...
+	smalltalk04 = "SVM_1_Smalltalk04";	//...tak jakby brakowa³o mi zmartwieñ...
+	smalltalk05 = "SVM_1_Smalltalk05";	//...kto opowiada takie rzeczy...
+	smalltalk06 = "SVM_1_Smalltalk06";	//...przez to bêdzie jeszcze wiêcej k³opotów...
+	smalltalk07 = "SVM_1_Smalltalk07";	//...wiesz, mówi siê o tym i o tamtym...
+	smalltalk08 = "SVM_1_Smalltalk08";	//...ja bym tego nie zrobi³...
+	smalltalk09 = "SVM_1_Smalltalk09";	//...to wszystko tylko pog³oski...
+	smalltalk10 = "SVM_1_Smalltalk10";	//...trzeba uwa¿aæ na to, co siê mówi...
+	smalltalk11 = "SVM_1_Smalltalk11";	//...mog³em ci powiedzieæ wczeœniej...
+	smalltalk12 = "SVM_1_Smalltalk12";	//...mnie i tak nikt nie pyta...
+	smalltalk13 = "SVM_1_Smalltalk13";	//...w³aœciwie mo¿e byæ go tylko ¿al...
+	smalltalk14 = "SVM_1_Smalltalk14";	//...to przecie¿ nic nowego...
+	smalltalk15 = "SVM_1_Smalltalk15";	//...to przecie¿ oczywiste...
+	smalltalk16 = "SVM_1_Smalltalk16";	//...mnie nie musisz o to pytaæ...
+	smalltalk17 = "SVM_1_Smalltalk17";	//...to nie mo¿e byæ tak dalej...
+	smalltalk18 = "SVM_1_Smalltalk18";	//...znasz ju¿ moje zdanie...
+	smalltalk19 = "SVM_1_Smalltalk19";	//...powiedzia³em dok³adnie to samo...
+	smalltalk20 = "SVM_1_Smalltalk20";	//...nic siê nie zmieni...
+	smalltalk21 = "SVM_1_Smalltalk21";	//...dlaczego dowiadujê siê o tym dopiero teraz...
+	smalltalk22 = "SVM_1_Smalltalk22";	//...po prostu trzeba odczekaæ....
+	smalltalk23 = "SVM_1_Smalltalk23";	//...niektóre problemy same siê rozwi¹zuj¹...
+	smalltalk24 = "SVM_1_Smalltalk24";	//...nie chcê ju¿ o tym s³uchaæ...
+	smalltalk25 = "SVM_1_Smalltalk25";	//...by³ w sztok pijany...
+	smalltalk26 = "SVM_1_Smalltalk26";	//...nie ze mn¹ te numery...
+	smalltalk27 = "SVM_1_Smalltalk27";	//...pouciekali jak zaj¹ce, by³em zupe³nie sam...
+	smalltalk28 = "SVM_1_Smalltalk28";	//...tak jest napisane w œwiêtych pismach...
+	smalltalk29 = "SVM_1_Smalltalk29";	//...w swych dzia³aniach kierujê siê wol¹ Innosa...
+	smalltalk30 = "SVM_1_Smalltalk30";	//...nie wolno wystêpowaæ przeciwko boskiemu porz¹dkowi...
+	nolearnnopoints = "SVM_1_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
+	nolearnoverpersonalmax = "SVM_1_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	nolearnyourebetter = "SVM_1_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	youlearnedsomething = "SVM_1_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	unterstadt = "SVM_1_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
+	oberstadt = "SVM_1_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
+	tempel = "SVM_1_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
+	markt = "SVM_1_MARKT";	//Jesteœ teraz na targowisku.
+	galgen = "SVM_1_GALGEN";	//Jesteœ teraz na placu wisielców.
+	kaserne = "SVM_1_KASERNE";	//To s¹ koszary.
+	hafen = "SVM_1_HAFEN";	//Jesteœ teraz w dzielnicy portowej.
+	whereto = "SVM_1_WHERETO";	//A gdzie siê wybierasz?
+	oberstadt_2_unterstadt = "SVM_1_OBERSTADT_2_UNTERSTADT";	//PrzejdŸ przez wewnêtrzn¹ bramê, a dojdziesz do dolnej czêœci miasta.
+	unterstadt_2_oberstadt = "SVM_1_UNTERSTADT_2_OBERSTADT";	//Przy po³udniowej bramie znajduj¹ siê schody, które prowadz¹ do bramy wewnêtrznej. Za ni¹ zaczyna siê górne miasto.
+	unterstadt_2_tempel = "SVM_1_UNTERSTADT_2_TEMPEL";	//IdŸ od strony kuŸni przez przejœcie, a dojdziesz do placu œwi¹tynnego.
+	unterstadt_2_hafen = "SVM_1_UNTERSTADT_2_HAFEN";	//IdŸ od strony kuŸni w dó³ ulic¹ portow¹, a dojdziesz do portu.
+	tempel_2_unterstadt = "SVM_1_TEMPEL_2_UNTERSTADT";	//Od placu œwi¹tynnego odchodzi przejœcie prowadz¹ce do dolnej czêœci miasta.
+	tempel_2_markt = "SVM_1_TEMPEL_2_MARKT";	//Kiedy bêdziesz przed œwi¹tyni¹, skrêæ w lewo i idŸ wzd³u¿ murów miejskich, a dojdziesz do targowiska.
+	tempel_2_galgen = "SVM_1_TEMPEL_2_GALGEN";	//Je¿eli id¹c od strony œwi¹tyni, skrêcisz przy knajpie w lewo, dojdziesz do placu wisielców.
+	markt_2_tempel = "SVM_1_MARKT_2_TEMPEL";	//Je¿eli pójdziesz wzd³u¿ murów miejskich od strony targowiska, to dojdziesz do œwi¹tyni.
+	markt_2_kaserne = "SVM_1_MARKT_2_KASERNE";	//Koszary to ten wielki budynek. Dostaniesz siê do nich po schodach naprzeciwko gospody.
+	markt_2_galgen = "SVM_1_MARKT_2_GALGEN";	//Po prostu przejdŸ obok koszar, a dojdziesz do placu wisielców.
+	galgen_2_tempel = "SVM_1_GALGEN_2_TEMPEL";	//IdŸ od strony placu wisielców w dó³ uliczk¹, a dojdziesz do placu œwi¹tynnego.
+	galgen_2_markt = "SVM_1_GALGEN_2_MARKT";	//Po prostu przejdŸ obok koszar, a dojdziesz do targowiska.
+	galgen_2_kaserne = "SVM_1_GALGEN_2_KASERNE";	//Koszary to ten wielki budynek. Dostaniesz siê do niego po schodach.
+	kaserne_2_markt = "SVM_1_KASERNE_2_MARKT";	//Po prostu zejdŸ po schodach na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
+	kaserne_2_galgen = "SVM_1_KASERNE_2_GALGEN";	//Po prostu zejdŸ po schodach na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
+	hafen_2_unterstadt = "SVM_1_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nabrze¿u w górê ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
+	dead = "SVM_1_Dead";	//Aaaaarhhh!
+	aargh_1 = "SVM_1_Aargh_1";	//Aargh
+	aargh_2 = "SVM_1_Aargh_2";	//Aargh
+	aargh_3 = "SVM_1_Aargh_3";	//Aargh
+	addon_wrongarmor = "SVM_1_Addon_WrongArmor";	//
+	addon_wrongarmor_sld = "SVM_1_ADDON_WRONGARMOR_SLD";	//
+	addon_wrongarmor_mil = "SVM_1_ADDON_WRONGARMOR_MIL";	//
+	addon_wrongarmor_kdf = "SVM_1_ADDON_WRONGARMOR_KDF";	//
+	addon_noarmor_bdt = "SVM_1_ADDON_ADDON_NOARMOR_BDT";	//
+	addon_diebandit = "SVM_1_ADDON_DIEBANDIT";	//
+	addon_dirtypirate = "SVM_1_ADDON_DIRTYPIRATE";	//
+};
+
+instance SVM_2(C_SVM)
+{
+};
+
+instance SVM_3(C_SVM)
+{
+	milgreetings = "SVM_3_MILGreetings";	//Niech ¿yje Król!
+	palgreetings = "SVM_3_PALGreetings";	//Chwa³a Innosowi!
+	weather = "SVM_3_Weather";	//Ale nêdzna pogoda...
+	igetyoustill = "SVM_3_IGetYouStill";	//Teraz ciê dorwê!
+	dieenemy = "SVM_3_DieEnemy";	//Zaraz ciê za³atwiê!
+	diemonster = "SVM_3_DieMonster";	//Znowu jedna z tych g³upich bestii!
+	dirtythief = "SVM_3_DirtyThief";	//Czekaj tylko, ty parszywy z³odzieju!
+	handsoff = "SVM_3_HandsOff";	//£apy precz!
+	sheepkiller = "SVM_3_SheepKiller";	//Ten bydlak szlachtuje nasze owce!
+	sheepkillermonster = "SVM_3_SheepKillerMonster";	//Ta przeklêta bestia z¿era nasze owce!
+	youmurderer = "SVM_3_YouMurderer";	//Morderca!
+	diestupidbeast = "SVM_3_DieStupidBeast";	//¯adne stwory nie maj¹ tu prawa wstêpu!
+	youdarehitme = "SVM_3_YouDareHitMe";	//Czekaj tylko, ty gnido!
+	youaskedforit = "SVM_3_YouAskedForIt";	//Sam tego chcia³eœ!
+	thenibeatyououtofhere = "SVM_3_ThenIBeatYouOutOfHere";	//Nie chcesz iœæ? Dobrze!
+	whatdidyoudointhere = "SVM_3_WhatDidYouDoInThere";	//Czego tam szuka³eœ?
+	willyoustopfighting = "SVM_3_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	killenemy = "SVM_3_KillEnemy";	//Giñ, gnido!
+	enemykilled = "SVM_3_EnemyKilled";	//Zas³u¿y³eœ sobie na to, bydlaku!
+	monsterkilled = "SVM_3_MonsterKilled";	//Jedna bestia mniej!
+	thiefdown = "SVM_3_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
+	rumfummlerdown = "SVM_3_rumfummlerDown";	//Na przysz³oœæ trzymaj siê z dala od cudzej w³asnoœci!
+	sheepattackerdown = "SVM_3_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To s¹ nasze owce!
+	killmurderer = "SVM_3_KillMurderer";	//Giñ, morderco!
+	stupidbeastkilled = "SVM_3_StupidBeastKilled";	//Ale g³upia bestia!
+	neverhitmeagain = "SVM_3_NeverHitMeAgain";	//Nigdy wiêcej nie próbuj siê ze mn¹ mierzyæ!
+	youbettershouldhavelistened = "SVM_3_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
+	getupandbegone = "SVM_3_GetUpAndBeGone";	//A teraz zmywaj siê st¹d!
+	neverenterroomagain = "SVM_3_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
+	thereisnofightinghere = "SVM_3_ThereIsNoFightingHere";	//Tu siê nie walczy, jasne?! Niech to bêdzie dla ciebie nauczka!
+	spareme = "SVM_3_SpareMe";	//Nie rób mi krzywdy!
+	runaway = "SVM_3_RunAway";	//O cholera!
+	alarm = "SVM_3_Alarm";	//ALARM!
+	guards = "SVM_3_Guards";	//STRA¯!
+	help = "SVM_3_Help";	//Pomocy!
+	goodmonsterkill = "SVM_3_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
+	goodkill = "SVM_3_GoodKill";	//No, wykoñcz œwiniê!
+	notnow = "SVM_3_NOTNOW";	//Zostaw mnie w spokoju!
+	runcoward = "SVM_3_RunCoward";	//No, biegnij! Najszybciej jak potrafisz!
+	getoutofhere = "SVM_3_GetOutOfHere";	//Wynoœ siê st¹d!
+	whyareyouinhere = "SVM_3_WhyAreYouInHere";	//Czego tu szukasz? OdejdŸ!
+	yesgooutofhere = "SVM_3_YesGoOutOfHere";	//No, wynoœ siê!
+	whatsthissupposedtobe = "SVM_3_WhatsThisSupposedToBe";	//Ej ty! Co ty tu robisz?
+	youdisturbedmyslumber = "SVM_3_YouDisturbedMySlumber";	//Cholera, co siê dzieje?
+	itookyourgold = "SVM_3_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
+	shitnogold = "SVM_3_ShitNoGold";	//Ty frajerze, nawet nie masz z³ota!
+	itakeyourweapon = "SVM_3_ITakeYourWeapon";	//Lepiej zaopiekujê siê twoj¹ broni¹...
+	whatareyoudoing = "SVM_3_WhatAreYouDoing";	//Lepiej uwa¿aj! Nastêpnym razem ci przy³o¿ê.
+	lookingfortroubleagain = "SVM_3_LookingForTroubleAgain";	//Ci¹gle ci ma³o?!
+	stopmagic = "SVM_3_StopMagic";	//Skoñcz wreszcie z tym czarowaniem!
+	isaidstopmagic = "SVM_3_ISaidStopMagic";	//Chcesz dostaæ? Natychmiast przestañ!
+	weapondown = "SVM_3_WeaponDown";	//Od³ó¿ broñ!
+	isaidweapondown = "SVM_3_ISaidWeaponDown";	//Od³ó¿ wreszcie tê cholern¹ broñ!
+	wisemove = "SVM_3_WiseMove";	//Spryciarz!
+	nexttimeyoureinforit = "SVM_3_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
+	ohmyhead = "SVM_3_OhMyHead";	//Och, moja g³owa...
+	theresafight = "SVM_3_TheresAFight";	//Aach, walka..
+	ohmygoditsafight = "SVM_3_OhMyGodItsAFight";	//O rany, walka!
+	goodvictory = "SVM_3_GoodVictory";	//Ale mu pokaza³eœ!
+	notbad = "SVM_3_NotBad";	//NieŸle...
+	ohmygodhesdown = "SVM_3_OhMyGodHesDown";	//Na bogów! Jak brutalnie...
+	cheerfriend01 = "SVM_3_CheerFriend01";	//Wal!
+	cheerfriend02 = "SVM_3_CheerFriend02";	//Daj z siebie wszystko!
+	cheerfriend03 = "SVM_3_CheerFriend03";	//Poka¿ mu!
+	ooh01 = "SVM_3_Ooh01";	//Trzymaj siê!
+	ooh02 = "SVM_3_Ooh02";	//Uwaga!
+	ooh03 = "SVM_3_Ooh03";	//O! To musia³o boleæ!
+	whatwasthat = "SVM_3_WhatWasThat";	//Co TO by³o!?
+	getoutofmybed = "SVM_3_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	awake = "SVM_3_Awake";	//(rozkoszne ziewniêcie)
+	abs_commander = "SVM_3_ABS_COMMANDER";	//By³eœ zatem u kapitana i doprowadzi³eœ wszystko do porz¹dku.
+	abs_monastery = "SVM_3_ABS_MONASTERY";	//By³eœ zatem u Ojca Parlana i wyspowiada³eœ siê ze swoich grzechów.
+	abs_farm = "SVM_3_ABS_FARM";	//By³eœ wiêc u Lee i wyjaœni³eœ sprawê.
+	abs_good = "SVM_3_ABS_GOOD";	//Dobrze.
+	sheepkiller_crime = "SVM_3_SHEEPKILLER_CRIME";	//Tak po prostu zaszlachtowaæ nasze owce!
+	attack_crime = "SVM_3_ATTACK_CRIME";	//Zostaw mnie w spokoju, bydlaku!
+	theft_crime = "SVM_3_THEFT_CRIME";	//Zostaw mnie w spokoju, ty parszywy z³odzieju!
+	pal_city_crime = "SVM_3_PAL_CITY_CRIME";	//Jesteœ hañb¹ dla swojego zakonu! Poczekaj tylko, a¿ Lord Hagen siê o tym dowie!
+	mil_city_crime = "SVM_3_MIL_CITY_CRIME";	//Hañbisz dobre imiê stra¿y miejskiej! Poczekaj, a¿ dowie siê o tym Lord Andre!
+	city_crime = "SVM_3_CITY_CRIME";	//Poczekaj tylko, a¿ Lord Andre siê o tym dowie.
+	mona_crime = "SVM_3_MONA_CRIME";	//Poczekaj tylko, a¿ dowie siê o tym Ojciec Parlan!
+	farm_crime = "SVM_3_FARM_CRIME";	//Poczekaj tylko, a¿ Lee siê o tym dowie...
+	oc_crime = "SVM_3_OC_CRIME";	//Poczekaj, a¿ dowie siê o tym kapitan Garond!
+	toughguy_attacklost = "SVM_3_TOUGHGUY_ATTACKLOST";	//Dobrze, dobrze. Jesteœ lepszy ode mnie. Czego chcesz?
+	toughguy_attackwon = "SVM_3_TOUGHGUY_ATTACKWON";	//Wiesz ju¿ chyba, który z nas jest tym silniejszym... Czego chcesz?
+	toughguy_playerattack = "SVM_3_TOUGHGUY_PLAYERATTACK";	//Myœla³em, ¿e chcesz siê ze mn¹ zmierzyæ. Zmieni³eœ zdanie? Wolisz jednak ROZMAWIAÆ, co?
+	gold_1000 = "SVM_3_GOLD_1000";	//1000 sztuk z³ota.
+	gold_950 = "SVM_3_GOLD_950";	//950 sztuk z³ota.
+	gold_900 = "SVM_3_GOLD_900";	//900 sztuk z³ota.
+	gold_850 = "SVM_3_GOLD_850";	//850 sztuk z³ota.
+	gold_800 = "SVM_3_GOLD_800";	//800 sztuk z³ota.
+	gold_750 = "SVM_3_GOLD_750";	//750 sztuk z³ota.
+	gold_700 = "SVM_3_GOLD_700";	//700 sztuk z³ota.
+	gold_650 = "SVM_3_GOLD_650";	//650 sztuk z³ota.
+	gold_600 = "SVM_3_GOLD_600";	//600 sztuk z³ota.
+	gold_550 = "SVM_3_GOLD_550";	//550 sztuk z³ota.
+	gold_500 = "SVM_3_GOLD_500";	//500 sztuk z³ota.
+	gold_450 = "SVM_3_GOLD_450";	//450 sztuk z³ota.
+	gold_400 = "SVM_3_GOLD_400";	//400 sztuk z³ota.
+	gold_350 = "SVM_3_GOLD_350";	//350 sztuk z³ota.
+	gold_300 = "SVM_3_GOLD_300";	//300 sztuk z³ota.
+	gold_250 = "SVM_3_GOLD_250";	//250 sztuk z³ota.
+	gold_200 = "SVM_3_GOLD_200";	//200 sztuk z³ota.
+	gold_150 = "SVM_3_GOLD_150";	//150 sztuk z³ota.
+	gold_100 = "SVM_3_GOLD_100";	//100 sztuk z³ota.
+	gold_90 = "SVM_3_GOLD_90";	//90 sztuk z³ota.
+	gold_80 = "SVM_3_GOLD_80";	//80 sztuk z³ota.
+	gold_70 = "SVM_3_GOLD_70";	//70 sztuk z³ota.
+	gold_60 = "SVM_3_GOLD_60";	//60 sztuk z³ota.
+	gold_50 = "SVM_3_GOLD_50";	//50 sztuk z³ota.
+	gold_40 = "SVM_3_GOLD_40";	//40 sztuk z³ota.
+	gold_30 = "SVM_3_GOLD_30";	//30 sztuk z³ota.
+	gold_20 = "SVM_3_GOLD_20";	//20 sztuk z³ota.
+	gold_10 = "SVM_3_GOLD_10";	//10 sztuk z³ota.
+	smalltalk01 = "SVM_3_Smalltalk01";	//...naprawdê myœlisz...
+	smalltalk02 = "SVM_3_Smalltalk02";	//...wszystko jest mo¿liwe...
+	smalltalk03 = "SVM_3_Smalltalk03";	//...powinien byæ m¹drzejszy...
+	smalltalk04 = "SVM_3_Smalltalk04";	//...tak jakbym nie mia³ wystarczaj¹co du¿o problemów...
+	smalltalk05 = "SVM_3_Smalltalk05";	//...kto ci to powiedzia³...
+	smalltalk06 = "SVM_3_Smalltalk06";	//...z tego wyniknie tylko jeszcze wiêcej k³opotów...
+	smalltalk07 = "SVM_3_Smalltalk07";	//...kr¹¿¹ ostatnio ró¿ne plotki...
+	smalltalk08 = "SVM_3_Smalltalk08";	//...nigdy by mi nie przysz³o do g³owy...
+	smalltalk09 = "SVM_3_Smalltalk09";	//...to przecie¿ tylko pog³oski...
+	smalltalk10 = "SVM_3_Smalltalk10";	//...trzeba uwa¿aæ na to, co siê mówi...
+	smalltalk11 = "SVM_3_Smalltalk11";	//...mog³em ci powiedzieæ wczeœniej...
+	smalltalk12 = "SVM_3_Smalltalk12";	//...mnie i tak nikt nie pyta...
+	smalltalk13 = "SVM_3_Smalltalk13";	//...biedakowi mo¿na tylko wspó³czuæ...
+	smalltalk14 = "SVM_3_Smalltalk14";	//...to przecie¿ nic nowego...
+	smalltalk15 = "SVM_3_Smalltalk15";	//...to przecie¿ oczywiste...
+	smalltalk16 = "SVM_3_Smalltalk16";	//...mnie nie musisz o to pytaæ...
+	smalltalk17 = "SVM_3_Smalltalk17";	//...tak dalej byæ nie mo¿e...
+	smalltalk18 = "SVM_3_Smalltalk18";	//...znasz ju¿ moje zdanie...
+	smalltalk19 = "SVM_3_Smalltalk19";	//...dok³adnie to samo powiedzia³em...
+	smalltalk20 = "SVM_3_Smalltalk20";	//...nic tego nie zmieni...
+	smalltalk21 = "SVM_3_Smalltalk21";	//...czemu dowiadujê siê o tym dopiero teraz...
+	smalltalk22 = "SVM_3_Smalltalk22";	//...poczekajmy, co z tego wyniknie...
+	smalltalk23 = "SVM_3_Smalltalk23";	//...niektóre problemy same siê rozwi¹zuj¹...
+	smalltalk24 = "SVM_3_Smalltalk24";	//...ju¿ nie chce mi siê o tym s³uchaæ...
+	smalltalk25 = "SVM_3_Smalltalk25";	//...przecie¿ on by³ w sztok pijany...
+	smalltalk26 = "SVM_3_Smalltalk26";	//...nie pozwolê siê tak traktowaæ...
+	smalltalk27 = "SVM_3_Smalltalk27";	//...wszyscy uciekali jak zaj¹ce, by³em zupe³nie sam...
+	smalltalk28 = "SVM_3_Smalltalk28";	//...tak jest napisane w œwiêtych pismach...
+	smalltalk29 = "SVM_3_Smalltalk29";	//...dzia³am zawsze w imieniu Innosa...
+	smalltalk30 = "SVM_3_Smalltalk30";	//...nikt nie mo¿e wystêpowaæ przeciwko boskiemu porz¹dkowi...
+	nolearnnopoints = "SVM_3_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
+	nolearnoverpersonalmax = "SVM_3_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	nolearnyourebetter = "SVM_3_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	youlearnedsomething = "SVM_3_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	unterstadt = "SVM_3_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
+	oberstadt = "SVM_3_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
+	tempel = "SVM_3_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
+	markt = "SVM_3_MARKT";	//Jesteœ teraz na targowisku.
+	galgen = "SVM_3_GALGEN";	//Znajdujesz siê teraz na placu wisielców.
+	kaserne = "SVM_3_KASERNE";	//To s¹ koszary.
+	hafen = "SVM_3_HAFEN";	//Jesteœ teraz w dzielnicy portowej.
+	whereto = "SVM_3_WHERETO";	//Dok¹d to?
+	oberstadt_2_unterstadt = "SVM_3_OBERSTADT_2_UNTERSTADT";	//PrzejdŸ przez wewnêtrzn¹ bramê, a dojdziesz do dolnej czêœci miasta.
+	unterstadt_2_oberstadt = "SVM_3_UNTERSTADT_2_OBERSTADT";	//Przy po³udniowej bramie znajduj¹ siê schody, które prowadz¹ do bramy wewnêtrznej. Za ni¹ zaczyna siê górne miasto.
+	unterstadt_2_tempel = "SVM_3_UNTERSTADT_2_TEMPEL";	//Id¹c od kowala, miñ przejœcie, a dojdziesz do placu œwi¹tynnego.
+	unterstadt_2_hafen = "SVM_3_UNTERSTADT_2_HAFEN";	//IdŸ od kowala ulic¹ portow¹, a dojdziesz do przystani.
+	tempel_2_unterstadt = "SVM_3_TEMPEL_2_UNTERSTADT";	//Od placu œwi¹tynnego odchodzi przejœcie prowadz¹ce do dolnej czêœci miasta.
+	tempel_2_markt = "SVM_3_TEMPEL_2_MARKT";	//Kiedy znajdziesz siê przed œwi¹tyni¹, skrêæ w lewo i idŸ potem wzd³u¿ murów miejskich, a dojdziesz do targowiska.
+	tempel_2_galgen = "SVM_3_TEMPEL_2_GALGEN";	//Je¿eli id¹c od strony œwi¹tyni, skrêcisz przy knajpie w lewo, dojdziesz do placu wisielców.
+	markt_2_tempel = "SVM_3_MARKT_2_TEMPEL";	//Je¿eli bêdziesz szed³ od strony targowiska wzd³u¿ murów miejskich, dojdziesz do œwi¹tyni.
+	markt_2_kaserne = "SVM_3_MARKT_2_KASERNE";	//Koszary to ten wielki budynek. WejdŸ po schodach naprzeciwko gospody.
+	markt_2_galgen = "SVM_3_MARKT_2_GALGEN";	//Udaj siê drog¹ obok koszar, a dojdziesz do placu wisielców.
+	galgen_2_tempel = "SVM_3_GALGEN_2_TEMPEL";	//IdŸ w dó³ uliczk¹ odchodz¹c¹ od placu wisielców, a dojdziesz do placu œwi¹tynnego.
+	galgen_2_markt = "SVM_3_GALGEN_2_MARKT";	//PrzejdŸ obok koszar, a dojdziesz do targowiska.
+	galgen_2_kaserne = "SVM_3_GALGEN_2_KASERNE";	//Koszary to ten wielki budynek. Wystarczy wejœæ po schodach.
+	kaserne_2_markt = "SVM_3_KASERNE_2_MARKT";	//ZejdŸ po schodach znajduj¹cych siê na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
+	kaserne_2_galgen = "SVM_3_KASERNE_2_GALGEN";	//ZejdŸ po schodach znajduj¹cych siê na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
+	hafen_2_unterstadt = "SVM_3_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nabrze¿u w górê ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
+	dead = "SVM_3_Dead";	//Aaarrrhhh!
+	aargh_1 = "SVM_3_Aargh_1";	//Aargh
+	aargh_2 = "SVM_3_Aargh_2";	//Aargh
+	aargh_3 = "SVM_3_Aargh_3";	//Aargh
+	addon_wrongarmor = "SVM_3_Addon_WrongArmor";	//
+	addon_wrongarmor_sld = "SVM_3_ADDON_WRONGARMOR_SLD";	//
+	addon_wrongarmor_mil = "SVM_3_ADDON_WRONGARMOR_MIL";	//
+	addon_wrongarmor_kdf = "SVM_3_ADDON_WRONGARMOR_KDF";	//
+	addon_noarmor_bdt = "SVM_3_ADDON_ADDON_NOARMOR_BDT";	//
+	addon_diebandit = "SVM_3_ADDON_DIEBANDIT";	//
+	addon_dirtypirate = "SVM_3_ADDON_DIRTYPIRATE";	//
+};
+
+instance SVM_4(C_SVM)
+{
+	milgreetings = "SVM_4_MILGreetings";	//Niech ¿yje Król!
+	palgreetings = "SVM_4_PALGreetings";	//Chwa³a Innosowi!
+	weather = "SVM_4_Weather";	//Beznadziejna pogoda!
+	igetyoustill = "SVM_4_IGetYouStill";	//To znowu TY!
+	dieenemy = "SVM_4_DieEnemy";	//Za³atwiê ciê!
+	diemonster = "SVM_4_DieMonster";	//Znowu jedna z tych g³upich bestii!
+	dirtythief = "SVM_4_DirtyThief";	//Ty ma³y, parszywy z³odzieju!
+	handsoff = "SVM_4_HandsOff";	//Zabieraj ³apy!
+	sheepkiller = "SVM_4_SheepKiller";	//Hej! Zostaw nasze owce w spokoju!
+	sheepkillermonster = "SVM_4_SheepKillerMonster";	//Ta bestia z¿era nasze owce!
+	youmurderer = "SVM_4_YouMurderer";	//Morderca!
+	diestupidbeast = "SVM_4_DieStupidBeast";	//A TEN stwór czego tu chce?!
+	youdarehitme = "SVM_4_YouDareHitMe";	//No, teraz to mnie wkurzy³eœ!
+	youaskedforit = "SVM_4_YouAskedForIt";	//Sam tego chcia³eœ!
+	thenibeatyououtofhere = "SVM_4_ThenIBeatYouOutOfHere";	//Kto nie chce s³uchaæ, musi poczuæ...
+	whatdidyoudointhere = "SVM_4_WhatDidYouDoInThere";	//Czego tam szuka³eœ, co?!
+	willyoustopfighting = "SVM_4_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	killenemy = "SVM_4_KillEnemy";	//Giñ!
+	enemykilled = "SVM_4_EnemyKilled";	//Cholerny bydlak...
+	monsterkilled = "SVM_4_MonsterKilled";	//No, koniec z tob¹, bestio!
+	thiefdown = "SVM_4_ThiefDown";	//Trzymaj na przysz³oœæ ³apy z dala od moich rzeczy, jasne?
+	rumfummlerdown = "SVM_4_rumfummlerDown";	//Trzymaj na przysz³oœæ ³apy przy sobie!
+	sheepattackerdown = "SVM_4_SheepAttackerDown";	//Nie podnoœ nigdy wiêcej rêki na nasze owce!
+	killmurderer = "SVM_4_KillMurderer";	//Giñ, morderco!
+	stupidbeastkilled = "SVM_4_StupidBeastKilled";	//G³upie stworzenie!
+	neverhitmeagain = "SVM_4_NeverHitMeAgain";	//Nie próbuj tego jeszcze raz, ch³opczyku!
+	youbettershouldhavelistened = "SVM_4_YouBetterShouldHaveListened";	//Niech to bêdzie dla ciebie nauczka.
+	getupandbegone = "SVM_4_GetUpAndBeGone";	//Wstawaj i wynoœ siê st¹d!
+	neverenterroomagain = "SVM_4_NeverEnterRoomAgain";	//Nie chcê ciê wiêcej tam widzieæ, zrozumiano?
+	thereisnofightinghere = "SVM_4_ThereIsNoFightingHere";	//Je¿eli ktoœ tu rozdziela ciosy, to jestem to ja, zrozumiano?!
+	spareme = "SVM_4_SpareMe";	//Zostaw mnie w spokoju!
+	runaway = "SVM_4_RunAway";	//Cholera! Trzeba uciekaæ!
+	alarm = "SVM_4_Alarm";	//ALARM!
+	guards = "SVM_4_Guards";	//STRA¯!
+	help = "SVM_4_Help";	//Pomocy!
+	goodmonsterkill = "SVM_4_GoodMonsterKill";	//No! Tak nale¿y obchodziæ siê z bestiami!
+	goodkill = "SVM_4_GoodKill";	//Zas³uguje na to!
+	notnow = "SVM_4_NOTNOW";	//Zostaw mnie w spokoju!
+	runcoward = "SVM_4_RunCoward";	//Jeszcze siê spotkamy!
+	getoutofhere = "SVM_4_GetOutOfHere";	//Wynoœ siê!
+	whyareyouinhere = "SVM_4_WhyAreYouInHere";	//Czego tu szukasz?!
+	yesgooutofhere = "SVM_4_YesGoOutOfHere";	//Zabieraj siê st¹d!
+	whatsthissupposedtobe = "SVM_4_WhatsThisSupposedToBe";	//Co ty tu robisz?
+	youdisturbedmyslumber = "SVM_4_YouDisturbedMySlumber";	//Co siê dzieje?
+	itookyourgold = "SVM_4_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
+	shitnogold = "SVM_4_ShitNoGold";	//Ty frajerze, nawet z³ota nie masz!
+	itakeyourweapon = "SVM_4_ITakeYourWeapon";	//Wezmê sobie twoj¹ broñ.
+	whatareyoudoing = "SVM_4_WhatAreYouDoing";	//Lepiej uwa¿aj! Nastêpnym razem ci przy³o¿ê.
+	lookingfortroubleagain = "SVM_4_LookingForTroubleAgain";	//Znowu chcesz w mordê?
+	stopmagic = "SVM_4_StopMagic";	//Skoñcz wreszcie z tym czarowaniem!
+	isaidstopmagic = "SVM_4_ISaidStopMagic";	//Chcesz dostaæ? Natychmiast przestañ!
+	weapondown = "SVM_4_WeaponDown";	//Od³ó¿ broñ!
+	isaidweapondown = "SVM_4_ISaidWeaponDown";	//Od³ó¿ wreszcie tê cholern¹ broñ!
+	wisemove = "SVM_4_WiseMove";	//Spryciarz!
+	nexttimeyoureinforit = "SVM_4_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
+	ohmyhead = "SVM_4_OhMyHead";	//O rany, moja g³owa...
+	theresafight = "SVM_4_TheresAFight";	//Aach, walka...
+	ohmygoditsafight = "SVM_4_OhMyGodItsAFight";	//O rany, walka!
+	goodvictory = "SVM_4_GoodVictory";	//Ale mu pokaza³eœ!
+	notbad = "SVM_4_NotBad";	//NieŸle...
+	ohmygodhesdown = "SVM_4_OhMyGodHesDown";	//Bogowie! Jak ostro...
+	cheerfriend01 = "SVM_4_CheerFriend01";	//Wal z ca³ej si³y!
+	cheerfriend02 = "SVM_4_CheerFriend02";	//Poka¿ mu!
+	cheerfriend03 = "SVM_4_CheerFriend03";	//Wykoñcz go!
+	ooh01 = "SVM_4_Ooh01";	//Broñ siê!
+	ooh02 = "SVM_4_Ooh02";	//Oddaj cios!
+	ooh03 = "SVM_4_Ooh03";	//Uuu, to musia³o boleæ!
+	whatwasthat = "SVM_4_WhatWasThat";	//Cholera, co TO by³o!?
+	getoutofmybed = "SVM_4_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	awake = "SVM_4_Awake";	//(rozkoszne ziewniêcie)
+	abs_commander = "SVM_4_ABS_COMMANDER";	//Za³atwi³eœ zatem sprawê z kapitanem.
+	abs_monastery = "SVM_4_ABS_MONASTERY";	//Opowiedzia³eœ zatem Ojcu Parlanowi o swych czynach.
+	abs_farm = "SVM_4_ABS_FARM";	//Mówi¹, ¿e Lee za³atwi³ ca³¹ sprawê.
+	abs_good = "SVM_4_ABS_GOOD";	//Dobrze.
+	sheepkiller_crime = "SVM_4_SHEEPKILLER_CRIME";	//Szlachtowanie owiec to ju¿ przesada! Wynoœ siê!
+	attack_crime = "SVM_4_ATTACK_CRIME";	//Jesteœ jakimœ oprychem - lepiej st¹d odejdŸ!
+	theft_crime = "SVM_4_THEFT_CRIME";	//Przeklêty z³odziej! Gardzê takimi jak ty!
+	pal_city_crime = "SVM_4_PAL_CITY_CRIME";	//Wydawa³o mi siê, ¿e od paladyna mo¿na spodziewaæ siê czegoœ wiêcej. Lord Hagen bêdzie niepocieszony.
+	mil_city_crime = "SVM_4_MIL_CITY_CRIME";	//¯e takich jak ty w ogóle przyjmuj¹ do stra¿y miejskiej! Odpowiesz za to przed Lordem Andre!
+	city_crime = "SVM_4_CITY_CRIME";	//Lord Andre dowie siê o twoim zachowaniu!
+	mona_crime = "SVM_4_MONA_CRIME";	//Ojciec Parlan bêdzie wœciek³y!
+	farm_crime = "SVM_4_FARM_CRIME";	//Odpowiesz za to przed Lee!
+	oc_crime = "SVM_4_OC_CRIME";	//Kapitan Garond nie bêdzie zadowolony, kiedy o tym us³yszy! Zap³acisz za to!
+	toughguy_attacklost = "SVM_4_TOUGHGUY_ATTACKLOST";	//Masz ca³kiem niez³e uderzenie... Czego ode mnie chcesz?
+	toughguy_attackwon = "SVM_4_TOUGHGUY_ATTACKWON";	//Jeszcze jakieœ pytania?
+	toughguy_playerattack = "SVM_4_TOUGHGUY_PLAYERATTACK";	//To znowu ty!
+	gold_1000 = "SVM_4_GOLD_1000";	//1000 sztuk z³ota.
+	gold_950 = "SVM_4_GOLD_950";	//950 sztuk z³ota.
+	gold_900 = "SVM_4_GOLD_900";	//900 sztuk z³ota.
+	gold_850 = "SVM_4_GOLD_850";	//850 sztuk z³ota.
+	gold_800 = "SVM_4_GOLD_800";	//800 sztuk z³ota.
+	gold_750 = "SVM_4_GOLD_750";	//750 sztuk z³ota.
+	gold_700 = "SVM_4_GOLD_700";	//700 sztuk z³ota.
+	gold_650 = "SVM_4_GOLD_650";	//650 sztuk z³ota.
+	gold_600 = "SVM_4_GOLD_600";	//600 sztuk z³ota.
+	gold_550 = "SVM_4_GOLD_550";	//550 sztuk z³ota.
+	gold_500 = "SVM_4_GOLD_500";	//500 sztuk z³ota.
+	gold_450 = "SVM_4_GOLD_450";	//450 sztuk z³ota.
+	gold_400 = "SVM_4_GOLD_400";	//400 sztuk z³ota.
+	gold_350 = "SVM_4_GOLD_350";	//350 sztuk z³ota.
+	gold_300 = "SVM_4_GOLD_300";	//300 sztuk z³ota.
+	gold_250 = "SVM_4_GOLD_250";	//250 sztuk z³ota.
+	gold_200 = "SVM_4_GOLD_200";	//200 sztuk z³ota.
+	gold_150 = "SVM_4_GOLD_150";	//150 sztuk z³ota.
+	gold_100 = "SVM_4_GOLD_100";	//100 sztuk z³ota.
+	gold_90 = "SVM_4_GOLD_90";	//90 sztuk z³ota.
+	gold_80 = "SVM_4_GOLD_80";	//80 sztuk z³ota.
+	gold_70 = "SVM_4_GOLD_70";	//70 sztuk z³ota.
+	gold_60 = "SVM_4_GOLD_60";	//60 sztuk z³ota.
+	gold_50 = "SVM_4_GOLD_50";	//50 sztuk z³ota.
+	gold_40 = "SVM_4_GOLD_40";	//40 sztuk z³ota.
+	gold_30 = "SVM_4_GOLD_30";	//30 sztuk z³ota.
+	gold_20 = "SVM_4_GOLD_20";	//20 sztuk z³ota.
+	gold_10 = "SVM_4_GOLD_10";	//10 sztuk z³ota.
+	smalltalk01 = "SVM_4_Smalltalk01";	//...to rzeczywiœcie prawda...
+	smalltalk02 = "SVM_4_Smalltalk02";	//...s³ysza³em coœ innego...
+	smalltalk03 = "SVM_4_Smalltalk03";	//...nie mów, ¿e o tym nie wiedzia³eœ...
+	smalltalk04 = "SVM_4_Smalltalk04";	//...cz³owiek nie wie, komu wierzyæ...
+	smalltalk05 = "SVM_4_Smalltalk05";	//...to tylko gadanie...
+	smalltalk06 = "SVM_4_Smalltalk06";	//...no widzisz, ju¿ mi lepiej...
+	smalltalk07 = "SVM_4_Smalltalk07";	//...mnie to ju¿ nic nie dziwi...
+	smalltalk08 = "SVM_4_Smalltalk08";	//...to naprawdê nie mój problem...
+	smalltalk09 = "SVM_4_Smalltalk09";	//...naprawdê w to wierzysz...
+	smalltalk10 = "SVM_4_Smalltalk10";	//...ode mnie nie us³ysz¹ nawet s³ówka...
+	smalltalk11 = "SVM_4_Smalltalk11";	//...to by³o oczywiste od dawna...
+	smalltalk12 = "SVM_4_Smalltalk12";	//...pos³ucha³ niew³aœciwych ludzi...
+	smalltalk13 = "SVM_4_Smalltalk13";	//...je¿eli on sam tego nie widzi, to nie mogê mu pomóc...
+	smalltalk14 = "SVM_4_Smalltalk14";	//...nie mówiê przecie¿ niczego nowego...
+	smalltalk15 = "SVM_4_Smalltalk15";	//...sam by na to nie wpad³...
+	smalltalk16 = "SVM_4_Smalltalk16";	//...przecie¿ wiadomo o tym od dawna...
+	smalltalk17 = "SVM_4_Smalltalk17";	//...nieprzyjemna sprawa...
+	smalltalk18 = "SVM_4_Smalltalk18";	//...zrobi³bym to inaczej...
+	smalltalk19 = "SVM_4_Smalltalk19";	//...ca³kowicie siê z tob¹ zgadzam...
+	smalltalk20 = "SVM_4_Smalltalk20";	//...czy to siê kiedykolwiek zmieni...
+	smalltalk21 = "SVM_4_Smalltalk21";	//...nikt mi o tym nie mówi³...
+	smalltalk22 = "SVM_4_Smalltalk22";	//...i tak nic nie zmienisz...
+	smalltalk23 = "SVM_4_Smalltalk23";	//...wcale mnie to nie dziwi...
+	smalltalk24 = "SVM_4_Smalltalk24";	//...ale on zawsze wie lepiej...
+	smalltalk25 = "SVM_4_Smalltalk25";	//...i tak liczy siê tylko si³a, wiêc nie mów mi takich rzeczy...
+	smalltalk26 = "SVM_4_Smalltalk26";	//...on nawet nie wie, jak siê trzyma miecz...
+	smalltalk27 = "SVM_4_Smalltalk27";	//...tak, naprawdê tak powiedzia³...
+	smalltalk28 = "SVM_4_Smalltalk28";	//...ktoœ za to odpowie...
+	smalltalk29 = "SVM_4_Smalltalk29";	//...Innos oœwieca wszystkich tych, którzy widz¹ jego m¹droœæ...
+	smalltalk30 = "SVM_4_Smalltalk30";	//...w koñcu musi wygraæ sprawiedliwoœæ...
+	nolearnnopoints = "SVM_4_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
+	nolearnoverpersonalmax = "SVM_4_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	nolearnyourebetter = "SVM_4_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	youlearnedsomething = "SVM_4_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	unterstadt = "SVM_4_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
+	oberstadt = "SVM_4_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
+	tempel = "SVM_4_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
+	markt = "SVM_4_MARKT";	//Jesteœ teraz na targowisku.
+	galgen = "SVM_4_GALGEN";	//Jesteœ teraz na placu wisielców.
+	kaserne = "SVM_4_KASERNE";	//To s¹ koszary.
+	hafen = "SVM_4_HAFEN";	//Jesteœ w dzielnicy portowej.
+	whereto = "SVM_4_WHERETO";	//Gdzie chcesz siê dostaæ?
+	oberstadt_2_unterstadt = "SVM_4_OBERSTADT_2_UNTERSTADT";	//PrzejdŸ przez wewnêtrzn¹ bramê, a dojdziesz do dolnej czêœci miasta.
+	unterstadt_2_oberstadt = "SVM_4_UNTERSTADT_2_OBERSTADT";	//Przy po³udniowej bramie znajduj¹ siê schody, które prowadz¹ do bramy wewnêtrznej. Za ni¹ zaczyna siê górne miasto.
+	unterstadt_2_tempel = "SVM_4_UNTERSTADT_2_TEMPEL";	//IdŸ od strony kowala przez przejœcie, a dojdziesz do placu œwi¹tynnego.
+	unterstadt_2_hafen = "SVM_4_UNTERSTADT_2_HAFEN";	//IdŸ od strony kowala w dó³ ulic¹ portow¹, a dojdziesz do portu.
+	tempel_2_unterstadt = "SVM_4_TEMPEL_2_UNTERSTADT";	//Od placu œwi¹tynnego odchodzi przejœcie prowadz¹ce do dolnej czêœci miasta.
+	tempel_2_markt = "SVM_4_TEMPEL_2_MARKT";	//Kiedy bêdziesz przed œwi¹tyni¹, skrêæ w lewo i idŸ wzd³u¿ murów miejskich, a dojdziesz do targowiska.
+	tempel_2_galgen = "SVM_4_TEMPEL_2_GALGEN";	//Je¿eli id¹c od strony œwi¹tyni, skrêcisz przy knajpie w lewo, dojdziesz do placu wisielców.
+	markt_2_tempel = "SVM_4_MARKT_2_TEMPEL";	//Je¿eli pójdziesz wzd³u¿ murów miejskich od strony targowiska, to dojdziesz do œwi¹tyni.
+	markt_2_kaserne = "SVM_4_MARKT_2_KASERNE";	//Koszary to ten wielki budynek. WejdŸ po prostu po schodach naprzeciwko gospody.
+	markt_2_galgen = "SVM_4_MARKT_2_GALGEN";	//Po prostu przejdŸ obok koszar, a dojdziesz do placu wisielców.
+	galgen_2_tempel = "SVM_4_GALGEN_2_TEMPEL";	//IdŸ od strony placu wisielców w dó³ uliczk¹, a dojdziesz do placu œwi¹tynnego.
+	galgen_2_markt = "SVM_4_GALGEN_2_MARKT";	//Po prostu przejdŸ obok koszar, a dojdziesz do targowiska.
+	galgen_2_kaserne = "SVM_4_GALGEN_2_KASERNE";	//Koszary to ten wielki budynek. Dostaniesz siê tam po schodach.
+	kaserne_2_markt = "SVM_4_KASERNE_2_MARKT";	//Po prostu zejdŸ po schodach na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
+	kaserne_2_galgen = "SVM_4_KASERNE_2_GALGEN";	//Po prostu zejdŸ po schodach na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
+	hafen_2_unterstadt = "SVM_4_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nadbrze¿u w górê ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
+	dead = "SVM_4_Dead";	//Aaaaarhhh!
+	aargh_1 = "SVM_4_Aargh_1";	//Aargh
+	aargh_2 = "SVM_4_Aargh_2";	//Aargh
+	aargh_3 = "SVM_4_Aargh_3";	//Aargh
+	addon_wrongarmor = "SVM_4_Addon_WrongArmor";	//
+	addon_wrongarmor_sld = "SVM_4_ADDON_WRONGARMOR_SLD";	//
+	addon_wrongarmor_mil = "SVM_4_ADDON_WRONGARMOR_MIL";	//
+	addon_wrongarmor_kdf = "SVM_4_ADDON_WRONGARMOR_KDF";	//
+	addon_noarmor_bdt = "SVM_4_ADDON_ADDON_NOARMOR_BDT";	//
+	addon_diebandit = "SVM_4_ADDON_DIEBANDIT";	//
+	addon_dirtypirate = "SVM_4_ADDON_DIRTYPIRATE";	//
+};
+
+instance SVM_5(C_SVM)
+{
+	milgreetings = "SVM_5_MILGreetings";	//Niech ¿yje Król!
+	palgreetings = "SVM_5_PALGreetings";	//Chwa³a Innosowi!
+	weather = "SVM_5_Weather";	//Ale beznadziejna pogoda...
+	igetyoustill = "SVM_5_IGetYouStill";	//A jednak ciê mam!
+	dieenemy = "SVM_5_DieEnemy";	//Teraz ciê za³atwiê!
+	diemonster = "SVM_5_DieMonster";	//Znowu jedna z tych przeklêtych bestii!
+	dirtythief = "SVM_5_DirtyThief";	//Czekaj tylko, parszywy z³odzieju!
+	handsoff = "SVM_5_HandsOff";	//£apy precz!
+	sheepkiller = "SVM_5_SheepKiller";	//Ten bydlak szlachtuje nasze owce!
+	sheepkillermonster = "SVM_5_SheepKillerMonster";	//Ta przeklêta bestia z¿era nasze owce!
+	youmurderer = "SVM_5_YouMurderer";	//Morderca!
+	diestupidbeast = "SVM_5_DieStupidBeast";	//¯adne stwory nie maj¹ tu prawa wstêpu!
+	youdarehitme = "SVM_5_YouDareHitMe";	//No, teraz ci siê dostanie, bydlaku!
+	youaskedforit = "SVM_5_YouAskedForIt";	//Sam tego chcia³eœ!
+	thenibeatyououtofhere = "SVM_5_ThenIBeatYouOutOfHere";	//Bêdê ciê wiêc musia³ wyrzuciæ si³¹!
+	whatdidyoudointhere = "SVM_5_WhatDidYouDoInThere";	//Czego TY tam szuka³eœ?
+	willyoustopfighting = "SVM_5_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	killenemy = "SVM_5_KillEnemy";	//Giñ, gnido!
+	enemykilled = "SVM_5_EnemyKilled";	//Ju¿ po tobie, œmieciu.
+	monsterkilled = "SVM_5_MonsterKilled";	//Jedna cholerna bestia mniej!
+	thiefdown = "SVM_5_ThiefDown";	//Nie próbuj nigdy wiêcej mnie okradaæ!
+	rumfummlerdown = "SVM_5_rumfummlerDown";	//Na przysz³oœæ trzymaj ³apy z dala od nieswoich rzeczy!
+	sheepattackerdown = "SVM_5_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To s¹ nasze owce!
+	killmurderer = "SVM_5_KillMurderer";	//Giñ, morderco!
+	stupidbeastkilled = "SVM_5_StupidBeastKilled";	//G³upia bestia!
+	neverhitmeagain = "SVM_5_NeverHitMeAgain";	//Nigdy wiêcej nie próbuj siê ze mn¹ mierzyæ!
+	youbettershouldhavelistened = "SVM_5_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
+	getupandbegone = "SVM_5_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
+	neverenterroomagain = "SVM_5_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
+	thereisnofightinghere = "SVM_5_ThereIsNoFightingHere";	//Tutaj siê nie walczy, jasne?! Niech to bêdzie dla ciebie nauczka!
+	spareme = "SVM_5_SpareMe";	//Zostaw mnie w spokoju!
+	runaway = "SVM_5_RunAway";	//Cholera! Trzeba uciekaæ!
+	alarm = "SVM_5_Alarm";	//ALARM!
+	guards = "SVM_5_Guards";	//STRA¯!
+	help = "SVM_5_Help";	//Pomocy!
+	goodmonsterkill = "SVM_5_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
+	goodkill = "SVM_5_GoodKill";	//Dobrze, za³atw drania!
+	notnow = "SVM_5_NOTNOW";	//Zostaw mnie w spokoju!
+	runcoward = "SVM_5_RunCoward";	//Stój, œmieciu!
+	getoutofhere = "SVM_5_GetOutOfHere";	//Wynoœ siê!
+	whyareyouinhere = "SVM_5_WhyAreYouInHere";	//Czego tu szukasz?! OdejdŸ!
+	yesgooutofhere = "SVM_5_YesGoOutOfHere";	//No, zabieraj siê st¹d!
+	whatsthissupposedtobe = "SVM_5_WhatsThisSupposedToBe";	//Ej ty! Co ty tu robisz?
+	youdisturbedmyslumber = "SVM_5_YouDisturbedMySlumber";	//Cholera, co siê dzieje?
+	itookyourgold = "SVM_5_ITookYourGold";	//Z³oto! Teraz nale¿y do mnie...
+	shitnogold = "SVM_5_ShitNoGold";	//Nie masz nawet z³ota?
+	itakeyourweapon = "SVM_5_ITakeYourWeapon";	//Wezmê twoj¹ broñ na przechowanie...
+	whatareyoudoing = "SVM_5_WhatAreYouDoing";	//Hej, uwa¿aj!
+	lookingfortroubleagain = "SVM_5_LookingForTroubleAgain";	//Jeszcze ci ma³o?!
+	stopmagic = "SVM_5_StopMagic";	//Trzymaj siê z dala ode mnie z t¹ twoj¹ magi¹!
+	isaidstopmagic = "SVM_5_ISaidStopMagic";	//Skoñcz z t¹ magi¹! Masz problem ze s³uchem?!
+	weapondown = "SVM_5_WeaponDown";	//Od³ó¿ broñ!
+	isaidweapondown = "SVM_5_ISaidWeaponDown";	//G³uchy jesteœ? Od³ó¿ wreszcie tê broñ!
+	wisemove = "SVM_5_WiseMove";	//Widzisz, to nie by³o takie trudne!
+	nexttimeyoureinforit = "SVM_5_NextTimeYoureInForIt";	//Jeszcze raz, a siê doigrasz...
+	ohmyhead = "SVM_5_OhMyHead";	//Och, moja g³owa...
+	theresafight = "SVM_5_TheresAFight";	//Wreszcie coœ siê dzieje...
+	ohmygoditsafight = "SVM_5_OhMyGodItsAFight";	//Porozwalaj¹ sobie ³by...
+	goodvictory = "SVM_5_GoodVictory";	//Zas³u¿y³ sobie na to!
+	notbad = "SVM_5_NotBad";	//NieŸle...
+	ohmygodhesdown = "SVM_5_OhMyGodHesDown";	//Ale brutal...
+	cheerfriend01 = "SVM_5_CheerFriend01";	//Tak, dobrze tak!
+	cheerfriend02 = "SVM_5_CheerFriend02";	//No, dalej!
+	cheerfriend03 = "SVM_5_CheerFriend03";	//Mocniej, mocniej!
+	ooh01 = "SVM_5_Ooh01";	//Nie pozwalaj na to!
+	ooh02 = "SVM_5_Ooh02";	//Poka¿, kto tu rz¹dzi!
+	ooh03 = "SVM_5_Ooh03";	//To przecie¿ niemo¿liwe!
+	whatwasthat = "SVM_5_WhatWasThat";	//Co to by³o!?
+	getoutofmybed = "SVM_5_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	awake = "SVM_5_Awake";	//(rozkoszne ziewniêcie)
+	abs_commander = "SVM_5_ABS_COMMANDER";	//Mówi¹, ¿e by³eœ u kapitana i za³atwi³eœ ca³¹ sprawê.
+	abs_monastery = "SVM_5_ABS_MONASTERY";	//Ponoæ by³eœ u Ojca Parlana i wyspowiada³eœ siê ze swych grzechów?
+	abs_farm = "SVM_5_ABS_FARM";	//By³eœ zatem u Lee i wyjaœni³eœ sprawê.
+	abs_good = "SVM_5_ABS_GOOD";	//Dobre.
+	sheepkiller_crime = "SVM_5_SHEEPKILLER_CRIME";	//Tak po prostu szlachtowaæ nasze owce! Zabieraj siê st¹d!
+	attack_crime = "SVM_5_ATTACK_CRIME";	//Nie rozmawiam z takimi opryszkami jak ty!
+	theft_crime = "SVM_5_THEFT_CRIME";	//ZejdŸ mi z oczu, parszywy z³odzieju!
+	pal_city_crime = "SVM_5_PAL_CITY_CRIME";	//Hañbisz dobre imiê swojego zakonu! Lord Hagen bêdzie wœciek³y!
+	mil_city_crime = "SVM_5_MIL_CITY_CRIME";	//Jesteœ hañb¹ dla stra¿y miejskiej! Lord Andre teraz ci poka¿e!
+	city_crime = "SVM_5_CITY_CRIME";	//Lord Andre dowie siê o twoim czynie!
+	mona_crime = "SVM_5_MONA_CRIME";	//Ojciec Parlan bêdzie niepocieszony!
+	farm_crime = "SVM_5_FARM_CRIME";	//Lee siê z tob¹ rozprawi! Zobaczysz, czy by³o warto!
+	oc_crime = "SVM_5_OC_CRIME";	//Kapitan Garond ciê z tego rozliczy!
+	toughguy_attacklost = "SVM_5_TOUGHGUY_ATTACKLOST";	//No ju¿ dobrze, wygra³eœ. Czego ode mnie chcesz?
+	toughguy_attackwon = "SVM_5_TOUGHGUY_ATTACKWON";	//Mam ci jeszcze raz pokazaæ, kto tu rz¹dzi?
+	toughguy_playerattack = "SVM_5_TOUGHGUY_PLAYERATTACK";	//Chcesz siê jeszcze raz ze mn¹ spróbowaæ?
+	gold_1000 = "SVM_5_GOLD_1000";	//1000 sztuk z³ota.
+	gold_950 = "SVM_5_GOLD_950";	//950 sztuk z³ota.
+	gold_900 = "SVM_5_GOLD_900";	//900 sztuk z³ota.
+	gold_850 = "SVM_5_GOLD_850";	//850 sztuk z³ota.
+	gold_800 = "SVM_5_GOLD_800";	//800 sztuk z³ota.
+	gold_750 = "SVM_5_GOLD_750";	//750 sztuk z³ota.
+	gold_700 = "SVM_5_GOLD_700";	//700 sztuk z³ota.
+	gold_650 = "SVM_5_GOLD_650";	//650 sztuk z³ota.
+	gold_600 = "SVM_5_GOLD_600";	//600 sztuk z³ota.
+	gold_550 = "SVM_5_GOLD_550";	//550 sztuk z³ota.
+	gold_500 = "SVM_5_GOLD_500";	//500 sztuk z³ota.
+	gold_450 = "SVM_5_GOLD_450";	//450 sztuk z³ota.
+	gold_400 = "SVM_5_GOLD_400";	//400 sztuk z³ota.
+	gold_350 = "SVM_5_GOLD_350";	//350 sztuk z³ota.
+	gold_300 = "SVM_5_GOLD_300";	//300 sztuk z³ota.
+	gold_250 = "SVM_5_GOLD_250";	//250 sztuk z³ota.
+	gold_200 = "SVM_5_GOLD_200";	//200 sztuk z³ota.
+	gold_150 = "SVM_5_GOLD_150";	//150 sztuk z³ota.
+	gold_100 = "SVM_5_GOLD_100";	//100 sztuk z³ota.
+	gold_90 = "SVM_5_GOLD_90";	//90 sztuk z³ota.
+	gold_80 = "SVM_5_GOLD_80";	//80 sztuk z³ota.
+	gold_70 = "SVM_5_GOLD_70";	//70 sztuk z³ota.
+	gold_60 = "SVM_5_GOLD_60";	//60 sztuk z³ota.
+	gold_50 = "SVM_5_GOLD_50";	//50 sztuk z³ota.
+	gold_40 = "SVM_5_GOLD_40";	//40 sztuk z³ota.
+	gold_30 = "SVM_5_GOLD_30";	//30 sztuk z³ota.
+	gold_20 = "SVM_5_GOLD_20";	//20 sztuk z³ota.
+	gold_10 = "SVM_5_GOLD_10";	//10 sztuk z³ota.
+	smalltalk01 = "SVM_5_Smalltalk01";	//...naprawdê s¹dzisz...
+	smalltalk02 = "SVM_5_Smalltalk02";	//...wszystko jest mo¿liwe...
+	smalltalk03 = "SVM_5_Smalltalk03";	//...powinien byæ m¹drzejszy...
+	smalltalk04 = "SVM_5_Smalltalk04";	//...jakby by³o ma³o problemów...
+	smalltalk05 = "SVM_5_Smalltalk05";	//...kto ci to powiedzia³...
+	smalltalk06 = "SVM_5_Smalltalk06";	//...z tego bêdzie jeszcze wiêcej k³opotów...
+	smalltalk07 = "SVM_5_Smalltalk07";	//...ludzie gadaj¹ o tym i o tamtym...
+	smalltalk08 = "SVM_5_Smalltalk08";	//...lepiej tego nie robiæ...
+	smalltalk09 = "SVM_5_Smalltalk09";	//...to wszystko tylko plotki...
+	smalltalk10 = "SVM_5_Smalltalk10";	//...trzeba uwa¿aæ, co siê komu mówi...
+	smalltalk11 = "SVM_5_Smalltalk11";	//...trzeba by³o mnie spytaæ wczeœniej...
+	smalltalk12 = "SVM_5_Smalltalk12";	//...mnie i tak nikt nie pyta...
+	smalltalk13 = "SVM_5_Smalltalk13";	//...¿al mi tego biedaka...
+	smalltalk14 = "SVM_5_Smalltalk14";	//...to przecie¿ nic nowego...
+	smalltalk15 = "SVM_5_Smalltalk15";	//...to przecie¿ oczywiste...
+	smalltalk16 = "SVM_5_Smalltalk16";	//...mnie nie musisz o to pytaæ...
+	smalltalk17 = "SVM_5_Smalltalk17";	//...tak dalej byæ nie mo¿e...
+	smalltalk18 = "SVM_5_Smalltalk18";	//...moje zdanie ju¿ znasz...
+	smalltalk19 = "SVM_5_Smalltalk19";	//...moja reakcja by³a taka sama...
+	smalltalk20 = "SVM_5_Smalltalk20";	//...nic siê w tej sprawie nie zmieni...
+	smalltalk21 = "SVM_5_Smalltalk21";	//...czemu dowiadujê siê o tym dopiero teraz...
+	smalltalk22 = "SVM_5_Smalltalk22";	//...poczekajmy, co z tego wyniknie...
+	smalltalk23 = "SVM_5_Smalltalk23";	//...niektóre problemy same siê rozwi¹zuj¹...
+	smalltalk24 = "SVM_5_Smalltalk24";	//...ju¿ nie mogê tego s³uchaæ...
+	smalltalk25 = "SVM_5_Smalltalk25";	//...by³ w sztok pijany...
+	smalltalk26 = "SVM_5_Smalltalk26";	//...nie pozwolê, ¿eby mnie tak traktowano...
+	smalltalk27 = "SVM_5_Smalltalk27";	//...wszyscy uciekali jak zaj¹ce, by³em zupe³nie sam...
+	smalltalk28 = "SVM_5_Smalltalk28";	//...tak jest napisane w œwiêtych pismach...
+	smalltalk29 = "SVM_5_Smalltalk29";	//...dzia³am w imieniu Innosa...
+	smalltalk30 = "SVM_5_Smalltalk30";	//...nie wolno naruszaæ boskiego porz¹dku...
+	nolearnnopoints = "SVM_5_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
+	nolearnoverpersonalmax = "SVM_5_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	nolearnyourebetter = "SVM_5_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	youlearnedsomething = "SVM_5_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	unterstadt = "SVM_5_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
+	oberstadt = "SVM_5_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
+	tempel = "SVM_5_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
+	markt = "SVM_5_MARKT";	//Jesteœ teraz na targowisku.
+	galgen = "SVM_5_GALGEN";	//Jesteœ teraz na placu wisielców.
+	kaserne = "SVM_5_KASERNE";	//To s¹ koszary.
+	hafen = "SVM_5_HAFEN";	//Jesteœ teraz w dzielnicy portowej.
+	whereto = "SVM_5_WHERETO";	//Dok¹d siê wybierasz?
+	oberstadt_2_unterstadt = "SVM_5_OBERSTADT_2_UNTERSTADT";	//PrzejdŸ przez wewnêtrzn¹ bramê, a dojdziesz do dolnej czêœci miasta.
+	unterstadt_2_oberstadt = "SVM_5_UNTERSTADT_2_OBERSTADT";	//Przy po³udniowej bramie znajduj¹ siê schody, które prowadz¹ do bramy wewnêtrznej. Za ni¹ zaczyna siê górne miasto.
+	unterstadt_2_tempel = "SVM_5_UNTERSTADT_2_TEMPEL";	//IdŸ od kowala przejœciem, a dojdziesz do placu œwi¹tynnego.
+	unterstadt_2_hafen = "SVM_5_UNTERSTADT_2_HAFEN";	//IdŸ od kowala w dó³ ulic¹ portow¹, a dojdziesz do przystani.
+	tempel_2_unterstadt = "SVM_5_TEMPEL_2_UNTERSTADT";	//Od placu œwi¹tynnego odchodzi przejœcie prowadz¹ce do dolnej czêœci miasta.
+	tempel_2_markt = "SVM_5_TEMPEL_2_MARKT";	//Kiedy znajdziesz siê przed œwi¹tyni¹, pójdŸ w lewo i potem wzd³u¿ murów, a dojdziesz do targowiska.
+	tempel_2_galgen = "SVM_5_TEMPEL_2_GALGEN";	//Id¹c od strony œwi¹tyni, mijasz knajpê po lewej i dochodzisz do placu wisielców.
+	markt_2_tempel = "SVM_5_MARKT_2_TEMPEL";	//Je¿eli id¹c od strony targowiska, bêdziesz szed³ wzd³u¿ murów miejskich, dojdziesz do œwi¹tyni.
+	markt_2_kaserne = "SVM_5_MARKT_2_KASERNE";	//Koszary to ten wielki budynek. WejdŸ po schodach naprzeciwko gospody.
+	markt_2_galgen = "SVM_5_MARKT_2_GALGEN";	//IdŸ wzd³u¿ koszar, a dojdziesz do placu wisielców.
+	galgen_2_tempel = "SVM_5_GALGEN_2_TEMPEL";	//IdŸ od strony placu wisielców w dó³ uliczk¹, a dojdziesz do placu œwi¹tynnego.
+	galgen_2_markt = "SVM_5_GALGEN_2_MARKT";	//IdŸ wzd³u¿ koszar, a dojdziesz do targowiska.
+	galgen_2_kaserne = "SVM_5_GALGEN_2_KASERNE";	//Koszary to ten wielki budynek. Wystarczy wejœæ po schodach.
+	kaserne_2_markt = "SVM_5_KASERNE_2_MARKT";	//ZejdŸ po schodach na lewo od g³ównego wejœcia, to dojdziesz do targowiska.
+	kaserne_2_galgen = "SVM_5_KASERNE_2_GALGEN";	//ZejdŸ po schodach na prawo od g³ównego wejœcia, to dojdziesz do placu wisielców.
+	hafen_2_unterstadt = "SVM_5_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nabrze¿u w górê ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
+	dead = "SVM_5_Dead";	//Aaaarhhhh!
+	aargh_1 = "SVM_5_Aargh_1";	//Aargh
+	aargh_2 = "SVM_5_Aargh_2";	//Aargh
+	aargh_3 = "SVM_5_Aargh_3";	//Aargh
+	addon_wrongarmor = "SVM_5_Addon_WrongArmor";	//
+	addon_wrongarmor_sld = "SVM_5_ADDON_WRONGARMOR_SLD";	//
+	addon_wrongarmor_mil = "SVM_5_ADDON_WRONGARMOR_MIL";	//
+	addon_wrongarmor_kdf = "SVM_5_ADDON_WRONGARMOR_KDF";	//
+	addon_noarmor_bdt = "SVM_5_ADDON_ADDON_NOARMOR_BDT";	//
+	addon_diebandit = "SVM_5_ADDON_DIEBANDIT";	//
+	addon_dirtypirate = "SVM_5_ADDON_DIRTYPIRATE";	//
+};
+
+instance SVM_6(C_SVM)
+{
+	milgreetings = "SVM_6_MILGreetings";	//Niech ¿yje Król!
+	palgreetings = "SVM_6_PALGreetings";	//Chwa³a Innosowi!
+	weather = "SVM_6_Weather";	//Pieska pogoda...
+	igetyoustill = "SVM_6_IGetYouStill";	//Teraz ciê dorwê!
+	dieenemy = "SVM_6_DieEnemy";	//Nie powinieneœ tu przychodziæ!
+	diemonster = "SVM_6_DieMonster";	//No chodŸ!
+	dirtythief = "SVM_6_DirtyThief";	//Z³odziej! Czekaj no...
+	handsoff = "SVM_6_HandsOff";	//Zabieraj ³apy!
+	sheepkiller = "SVM_6_SheepKiller";	//Zostaw nasze owce w spokoju!
+	sheepkillermonster = "SVM_6_SheepKillerMonster";	//OdejdŸ od naszych owiec, bestio!
+	youmurderer = "SVM_6_YouMurderer";	//Morderca!
+	diestupidbeast = "SVM_6_DieStupidBeast";	//¯adna bestia tu nie wejdzie!
+	youdarehitme = "SVM_6_YouDareHitMe";	//Po¿a³ujesz tego!
+	youaskedforit = "SVM_6_YouAskedForIt";	//Ostrzega³em ciê...
+	thenibeatyououtofhere = "SVM_6_ThenIBeatYouOutOfHere";	//Hej, WYNOŒ SIÊ!
+	whatdidyoudointhere = "SVM_6_WhatDidYouDoInThere";	//Hej! Czego tam szuka³eœ?
+	willyoustopfighting = "SVM_6_WillYouStopFighting";	//Przestaæ! Natychmiast!
+	killenemy = "SVM_6_KillEnemy";	//Teraz ciê wypatroszê!
+	enemykilled = "SVM_6_EnemyKilled";	//Tyle na ten temat...
+	monsterkilled = "SVM_6_MonsterKilled";	//Hej! Ci¹gle to potrafiê!
+	thiefdown = "SVM_6_ThiefDown";	//Ostrzegam ciê! Nie próbuj tego ponownie, ty przeklêty z³odzieju!
+	rumfummlerdown = "SVM_6_rumfummlerDown";	//Trzymaj ³apy z dala od cudzej w³asnoœci!
+	sheepattackerdown = "SVM_6_SheepAttackerDown";	//I trzymaj siê na przysz³oœæ z dala od naszych owiec!
+	killmurderer = "SVM_6_KillMurderer";	//Giñ, morderco!
+	stupidbeastkilled = "SVM_6_StupidBeastKilled";	//G³upia bestia!
+	neverhitmeagain = "SVM_6_NeverHitMeAgain";	//Nie wa¿ siê nigdy wiêcej mnie atakowaæ!
+	youbettershouldhavelistened = "SVM_6_YouBetterShouldHaveListened";	//Ostrzega³em ciê...
+	getupandbegone = "SVM_6_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
+	neverenterroomagain = "SVM_6_NeverEnterRoomAgain";	//Nie chcê ciê ju¿ tam wiêcej widzieæ, jasne?
+	thereisnofightinghere = "SVM_6_ThereIsNoFightingHere";	//Tu siê nie walczy, niech to bêdzie dla ciebie nauczka.
+	spareme = "SVM_6_SpareMe";	//Nie rób g³upstw!
+	runaway = "SVM_6_RunAway";	//Zmywam siê st¹d!
+	alarm = "SVM_6_Alarm";	//ALARM!
+	guards = "SVM_6_Guards";	//STRA¯!
+	help = "SVM_6_Help";	//Pomocy!
+	goodmonsterkill = "SVM_6_GoodMonsterKill";	//Daj im wycisk!
+	goodkill = "SVM_6_GoodKill";	//No, poka¿ draniowi!
+	notnow = "SVM_6_NOTNOW";	//Zostaw mnie w spokoju!
+	runcoward = "SVM_6_RunCoward";	//Jeszcze ciê dorwê!
+	getoutofhere = "SVM_6_GetOutOfHere";	//Wynoœ siê st¹d!
+	whyareyouinhere = "SVM_6_WhyAreYouInHere";	//Nie masz tu czego szukaæ!
+	yesgooutofhere = "SVM_6_YesGoOutOfHere";	//No, wynoœ siê!
+	whatsthissupposedtobe = "SVM_6_WhatsThisSupposedToBe";	//Co to ma byæ? Co ty tutaj robisz?
+	youdisturbedmyslumber = "SVM_6_YouDisturbedMySlumber";	//Cholera, czego chcesz?
+	itookyourgold = "SVM_6_ITookYourGold";	//No, przynajmniej masz jakieœ z³oto...
+	shitnogold = "SVM_6_ShitNoGold";	//Eeee... Nawet z³ota nie ma...
+	itakeyourweapon = "SVM_6_ITakeYourWeapon";	//Zajmê siê twoj¹ broni¹...
+	whatareyoudoing = "SVM_6_WhatAreYouDoing";	//Nie próbuj tego ponownie, ch³opcze!
+	lookingfortroubleagain = "SVM_6_LookingForTroubleAgain";	//Znowu szukasz guza?
+	stopmagic = "SVM_6_StopMagic";	//Przestañ z t¹ magi¹!
+	isaidstopmagic = "SVM_6_ISaidStopMagic";	//Ostatnie ostrze¿enie! Skoñcz z tym czarowaniem!
+	weapondown = "SVM_6_WeaponDown";	//Od³ó¿ broñ!
+	isaidweapondown = "SVM_6_ISaidWeaponDown";	//Od³ó¿ to albo ci przy³o¿ê!
+	wisemove = "SVM_6_WiseMove";	//Nie jesteœ wcale taki g³upi, na jakiego wygl¹dasz!
+	nexttimeyoureinforit = "SVM_6_NextTimeYoureInForIt";	//Nie próbuj tego ponownie...
+	ohmyhead = "SVM_6_OhMyHead";	//Och, moja g³owa...
+	theresafight = "SVM_6_TheresAFight";	//Teraz bêdzie zabawnie...
+	ohmygoditsafight = "SVM_6_OhMyGodItsAFight";	//O bogowie...
+	goodvictory = "SVM_6_GoodVictory";	//To bêdzie dla niego nauczka...
+	notbad = "SVM_6_NotBad";	//HA! To by³o niez³e!
+	ohmygodhesdown = "SVM_6_OhMyGodHesDown";	//Brutalny drañ!
+	cheerfriend01 = "SVM_6_CheerFriend01";	//Wal!
+	cheerfriend02 = "SVM_6_CheerFriend02";	//Nie przestawaj!
+	cheerfriend03 = "SVM_6_CheerFriend03";	//Za³atw go!
+	ooh01 = "SVM_6_Ooh01";	//Uwa¿aj!
+	ooh02 = "SVM_6_Ooh02";	//Paruj!
+	ooh03 = "SVM_6_Ooh03";	//Cholera, to bola³o!
+	whatwasthat = "SVM_6_WhatWasThat";	//Co ty tutaj robisz?
+	getoutofmybed = "SVM_6_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	awake = "SVM_6_Awake";	//(rozkoszne ziewniêcie)
+	abs_commander = "SVM_6_ABS_COMMANDER";	//Kapitan wyjaœni³ wiêc z tob¹ ca³¹ sprawê.
+	abs_monastery = "SVM_6_ABS_MONASTERY";	//Ojciec Parlan uwolni³ ciê od twoich grzechów.
+	abs_farm = "SVM_6_ABS_FARM";	//By³eœ zatem u Lee i wyjaœni³eœ sprawê.
+	abs_good = "SVM_6_ABS_GOOD";	//Dobrze.
+	sheepkiller_crime = "SVM_6_SHEEPKILLER_CRIME";	//Atakujesz owce? Bardziej bezbronnej ofiary nie mog³eœ sobie pewnie znaleŸæ?!
+	attack_crime = "SVM_6_ATTACK_CRIME";	//Z takimi jak ty nie chcê mieæ nic wspólnego!
+	theft_crime = "SVM_6_THEFT_CRIME";	//Ze z³odziejami nie chcê mieæ nic wspólnego!
+	pal_city_crime = "SVM_6_PAL_CITY_CRIME";	//I ty chcesz byæ paladynem? Ciekawe, co na to Lord Hagen!
+	mil_city_crime = "SVM_6_MIL_CITY_CRIME";	//Naprawdê nale¿ysz do stra¿y miejskiej? Lordowi Andre siê to nie spodoba!
+	city_crime = "SVM_6_CITY_CRIME";	//IdŸ do Lorda Andre, póki jeszcze mo¿esz.
+	mona_crime = "SVM_6_MONA_CRIME";	//IdŸ do Ojca Parlana. Otrzymasz od niego pokutê!
+	farm_crime = "SVM_6_FARM_CRIME";	//Lee siê o tym dowie... Zap³acisz za to!
+	oc_crime = "SVM_6_OC_CRIME";	//Kapitanowi Garondowi wcale to siê nie spodoba. Porozmawiaj z nim, póki jeszcze mo¿esz!
+	toughguy_attacklost = "SVM_6_TOUGHGUY_ATTACKLOST";	//Dobrze - wygra³eœ. Czego ode mnie chcesz?
+	toughguy_attackwon = "SVM_6_TOUGHGUY_ATTACKWON";	//S¹dzê, ¿e wiesz ju¿, kogo masz przed sob¹. Czego chcesz?
+	toughguy_playerattack = "SVM_6_TOUGHGUY_PLAYERATTACK";	//Znowu ty? Chcesz siê znowu ze mn¹ zmierzyæ czy jak?
+	gold_1000 = "SVM_6_GOLD_1000";	//1000 sztuk z³ota.
+	gold_950 = "SVM_6_GOLD_950";	//950 sztuk z³ota.
+	gold_900 = "SVM_6_GOLD_900";	//900 sztuk z³ota.
+	gold_850 = "SVM_6_GOLD_850";	//850 sztuk z³ota.
+	gold_800 = "SVM_6_GOLD_800";	//800 sztuk z³ota.
+	gold_750 = "SVM_6_GOLD_750";	//750 sztuk z³ota.
+	gold_700 = "SVM_6_GOLD_700";	//700 sztuk z³ota.
+	gold_650 = "SVM_6_GOLD_650";	//650 sztuk z³ota.
+	gold_600 = "SVM_6_GOLD_600";	//600 sztuk z³ota.
+	gold_550 = "SVM_6_GOLD_550";	//550 sztuk z³ota.
+	gold_500 = "SVM_6_GOLD_500";	//500 sztuk z³ota.
+	gold_450 = "SVM_6_GOLD_450";	//450 sztuk z³ota.
+	gold_400 = "SVM_6_GOLD_400";	//400 sztuk z³ota.
+	gold_350 = "SVM_6_GOLD_350";	//350 sztuk z³ota.
+	gold_300 = "SVM_6_GOLD_300";	//300 sztuk z³ota.
+	gold_250 = "SVM_6_GOLD_250";	//250 sztuk z³ota.
+	gold_200 = "SVM_6_GOLD_200";	//200 sztuk z³ota.
+	gold_150 = "SVM_6_GOLD_150";	//150 sztuk z³ota.
+	gold_100 = "SVM_6_GOLD_100";	//100 sztuk z³ota.
+	gold_90 = "SVM_6_GOLD_90";	//90 sztuk z³ota.
+	gold_80 = "SVM_6_GOLD_80";	//80 sztuk z³ota.
+	gold_70 = "SVM_6_GOLD_70";	//70 sztuk z³ota.
+	gold_60 = "SVM_6_GOLD_60";	//60 sztuk z³ota.
+	gold_50 = "SVM_6_GOLD_50";	//50 sztuk z³ota.
+	gold_40 = "SVM_6_GOLD_40";	//40 sztuk z³ota.
+	gold_30 = "SVM_6_GOLD_30";	//30 sztuk z³ota.
+	gold_20 = "SVM_6_GOLD_20";	//20 sztuk z³ota.
+	gold_10 = "SVM_6_GOLD_10";	//10 sztuk z³ota.
+	smalltalk01 = "SVM_6_Smalltalk01";	//...trudno mi w to uwierzyæ...
+	smalltalk02 = "SVM_6_Smalltalk02";	//...trudno byæ tego pewnym...
+	smalltalk03 = "SVM_6_Smalltalk03";	//...przecie¿ wiedzia³ o tym wczeœniej...
+	smalltalk04 = "SVM_6_Smalltalk04";	//...nie wiem ju¿, w co wierzyæ...
+	smalltalk05 = "SVM_6_Smalltalk05";	//...nie wiem, czym on siê tak denerwuje...
+	smalltalk06 = "SVM_6_Smalltalk06";	//...nie trzeba mi wiêcej k³opotów...
+	smalltalk07 = "SVM_6_Smalltalk07";	//...mówi¹ to i owo...
+	smalltalk08 = "SVM_6_Smalltalk08";	//...bêdê siê lepiej trzymaæ od tego z daleka...
+	smalltalk09 = "SVM_6_Smalltalk09";	//...nie mo¿na wierzyæ we wszystko, co siê s³yszy...
+	smalltalk10 = "SVM_6_Smalltalk10";	//...ode mnie tego nie dosta³...
+	smalltalk11 = "SVM_6_Smalltalk11";	//...przysz³o mi to do g³owy...
+	smalltalk12 = "SVM_6_Smalltalk12";	//...moje zdanie i tak nikogo nie obchodzi...
+	smalltalk13 = "SVM_6_Smalltalk13";	//...nie zas³u¿y³ sobie na to...
+	smalltalk14 = "SVM_6_Smalltalk14";	//...nie mów, ¿e o tym nie wiesz...
+	smalltalk15 = "SVM_6_Smalltalk15";	//...to by³o oczywiste...
+	smalltalk16 = "SVM_6_Smalltalk16";	//...sk¹d ty to znowu masz...
+	smalltalk17 = "SVM_6_Smalltalk17";	//...nie mo¿e tak dalej byæ...
+	smalltalk18 = "SVM_6_Smalltalk18";	//...mam swoje zdanie na ten temat...
+	smalltalk19 = "SVM_6_Smalltalk19";	//...by³o dok³adnie tak, jak mówisz...
+	smalltalk20 = "SVM_6_Smalltalk20";	//...nie s¹dzê, ¿eby coœ siê zmieni³o...
+	smalltalk21 = "SVM_6_Smalltalk21";	//...s³yszê o tym po raz pierwszy...
+	smalltalk22 = "SVM_6_Smalltalk22";	//...mo¿emy jedynie przeczekaæ...
+	smalltalk23 = "SVM_6_Smalltalk23";	//...musia³y pojawiæ siê problemy...
+	smalltalk24 = "SVM_6_Smalltalk24";	//...czemu nikt mnie nie s³ucha...
+	smalltalk25 = "SVM_6_Smalltalk25";	//...ucieka³, jakby goni³ go sam Beliar...
+	smalltalk26 = "SVM_6_Smalltalk26";	//...w koñcu i tak go oczywiœcie dorwaliœmy...
+	smalltalk27 = "SVM_6_Smalltalk27";	//...trzeba silnie uderzyæ w sam œrodek...
+	smalltalk28 = "SVM_6_Smalltalk28";	//...niektórzy nie zdaj¹ sobie w ogóle sprawy ze swoich grzechów...
+	smalltalk29 = "SVM_6_Smalltalk29";	//...taka jest bowiem wola Innosa...
+	smalltalk30 = "SVM_6_Smalltalk30";	//...jego czyny by³y sprawiedliwe...
+	nolearnnopoints = "SVM_6_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
+	nolearnoverpersonalmax = "SVM_6_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	nolearnyourebetter = "SVM_6_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	youlearnedsomething = "SVM_6_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	unterstadt = "SVM_6_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
+	oberstadt = "SVM_6_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
+	tempel = "SVM_6_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
+	markt = "SVM_6_MARKT";	//Jesteœ teraz na targowisku.
+	galgen = "SVM_6_GALGEN";	//Jesteœ teraz na placu wisielców.
+	kaserne = "SVM_6_KASERNE";	//To s¹ koszary.
+	hafen = "SVM_6_HAFEN";	//Jesteœ teraz w dzielnicy portowej.
+	whereto = "SVM_6_WHERETO";	//Dok¹d to?
+	oberstadt_2_unterstadt = "SVM_6_OBERSTADT_2_UNTERSTADT";	//PrzejdŸ przez wewnêtrzn¹ bramê, a dojdziesz do dolnej czêœci miasta.
+	unterstadt_2_oberstadt = "SVM_6_UNTERSTADT_2_OBERSTADT";	//Przy po³udniowej bramie znajduj¹ siê schody, które prowadz¹ do bramy wewnêtrznej. Za ni¹ zaczyna siê górne miasto.
+	unterstadt_2_tempel = "SVM_6_UNTERSTADT_2_TEMPEL";	//IdŸ od kowala przejœciem, a dojdziesz do placu œwi¹tynnego.
+	unterstadt_2_hafen = "SVM_6_UNTERSTADT_2_HAFEN";	//IdŸ od kowala w dó³ ulic¹ portow¹, a dojdziesz do przystani.
+	tempel_2_unterstadt = "SVM_6_TEMPEL_2_UNTERSTADT";	//Od placu œwi¹tynnego odchodzi przejœcie prowadz¹ce do dolnej czêœci miasta.
+	tempel_2_markt = "SVM_6_TEMPEL_2_MARKT";	//Kiedy znajdziesz siê przed œwi¹tyni¹, pójdŸ w lewo i potem wzd³u¿ murów, a dojdziesz do targowiska.
+	tempel_2_galgen = "SVM_6_TEMPEL_2_GALGEN";	//Je¿eli id¹c od strony œwi¹tyni, skrêcisz przy knajpie w lewo, dojdziesz do placu wisielców.
+	markt_2_tempel = "SVM_6_MARKT_2_TEMPEL";	//Je¿eli id¹c od strony targowiska, bêdziesz szed³ wzd³u¿ murów miejskich, dojdziesz do œwi¹tyni.
+	markt_2_kaserne = "SVM_6_MARKT_2_KASERNE";	//Koszary to ten wielki budynek. WejdŸ po prostu po schodach naprzeciwko gospody.
+	markt_2_galgen = "SVM_6_MARKT_2_GALGEN";	//IdŸ po prostu wzd³u¿ koszar, a dojdziesz do placu wisielców.
+	galgen_2_tempel = "SVM_6_GALGEN_2_TEMPEL";	//IdŸ od strony placu wisielców w dó³ uliczk¹, a dojdziesz do placu œwi¹tynnego.
+	galgen_2_markt = "SVM_6_GALGEN_2_MARKT";	//IdŸ wzd³u¿ koszar, a dojdziesz do targowiska.
+	galgen_2_kaserne = "SVM_6_GALGEN_2_KASERNE";	//Koszary to ten wielki budynek. Wystarczy wejœæ po schodach.
+	kaserne_2_markt = "SVM_6_KASERNE_2_MARKT";	//ZejdŸ po schodach na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
+	kaserne_2_galgen = "SVM_6_KASERNE_2_GALGEN";	//ZejdŸ po schodach na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
+	hafen_2_unterstadt = "SVM_6_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nadbrze¿u w górê ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
+	dead = "SVM_6_Dead";	//Aaaaarhhh!
+	aargh_1 = "SVM_6_Aargh_1";	//Aargh
+	aargh_2 = "SVM_6_Aargh_2";	//Aargh
+	aargh_3 = "SVM_6_Aargh_3";	//Aargh
+	addon_wrongarmor = "SVM_6_Addon_WrongArmor";	//
+	addon_wrongarmor_sld = "SVM_6_ADDON_WRONGARMOR_SLD";	//
+	addon_wrongarmor_mil = "SVM_6_ADDON_WRONGARMOR_MIL";	//
+	addon_wrongarmor_kdf = "SVM_6_ADDON_WRONGARMOR_KDF";	//
+	addon_noarmor_bdt = "SVM_6_ADDON_ADDON_NOARMOR_BDT";	//
+	addon_diebandit = "SVM_6_ADDON_DIEBANDIT";	//
+	addon_dirtypirate = "SVM_6_ADDON_DIRTYPIRATE";	//
+};
+
+instance SVM_7(C_SVM)
+{
+	milgreetings = "SVM_7_MILGreetings";	//Niech ¿yje Król!
+	palgreetings = "SVM_7_PALGreetings";	//Chwa³a Innosowi!
+	weather = "SVM_7_Weather";	//Kiepska pogoda...
+	igetyoustill = "SVM_7_IGetYouStill";	//Znowu TY?!
+	dieenemy = "SVM_7_DieEnemy";	//Rozerwê ciê na kawa³ki!
+	diemonster = "SVM_7_DieMonster";	//Znowu jedno z tych przeklêtych stworzeñ!
+	dirtythief = "SVM_7_DirtyThief";	//Ty ma³y, nêdzny z³odzieju!
+	handsoff = "SVM_7_HandsOff";	//Trzymaj ³apy z daleka!
+	sheepkiller = "SVM_7_SheepKiller";	//Hej! Zostaw nasze owce w spokoju!
+	sheepkillermonster = "SVM_7_SheepKillerMonster";	//Ten potwór z¿era nasze owce!
+	youmurderer = "SVM_7_YouMurderer";	//Morderca!
+	diestupidbeast = "SVM_7_DieStupidBeast";	//A TA bestia co tu robi?
+	youdarehitme = "SVM_7_YouDareHitMe";	//Teraz mnie wkurzy³eœ!
+	youaskedforit = "SVM_7_YouAskedForIt";	//Sam tego chcia³eœ!
+	thenibeatyououtofhere = "SVM_7_ThenIBeatYouOutOfHere";	//Kto nie chce s³uchaæ, musi poczuæ...
+	whatdidyoudointhere = "SVM_7_WhatDidYouDoInThere";	//Co tam robi³eœ, co?!
+	willyoustopfighting = "SVM_7_WillYouStopFighting";	//Przestaniecie z tym?!
+	killenemy = "SVM_7_KillEnemy";	//Giñ!
+	enemykilled = "SVM_7_EnemyKilled";	//G³upi dureñ...
+	monsterkilled = "SVM_7_MonsterKilled";	//Tyle na ten temat...
+	thiefdown = "SVM_7_ThiefDown";	//Trzymaj na przysz³oœæ ³apy z dala od moich rzeczy, zrozumiano?!
+	rumfummlerdown = "SVM_7_rumfummlerDown";	//Trzymaj ³apy przy sobie!
+	sheepattackerdown = "SVM_7_SheepAttackerDown";	//Trzymaj ³apska z dala od naszych owiec!
+	killmurderer = "SVM_7_KillMurderer";	//Giñ, morderco!
+	stupidbeastkilled = "SVM_7_StupidBeastKilled";	//G³upia bestia!
+	neverhitmeagain = "SVM_7_NeverHitMeAgain";	//Nie próbuj tego ponownie, brachu!
+	youbettershouldhavelistened = "SVM_7_YouBetterShouldHaveListened";	//Niech to bêdzie dla ciebie nauczka.
+	getupandbegone = "SVM_7_GetUpAndBeGone";	//Wstawaj i zabieraj siê st¹d!
+	neverenterroomagain = "SVM_7_NeverEnterRoomAgain";	//Nie chcê ciê ju¿ tam wiêcej widzieæ, jasne?
+	thereisnofightinghere = "SVM_7_ThereIsNoFightingHere";	//To ja tutaj rozdajê ciosy, zrozumiano?
+	spareme = "SVM_7_SpareMe";	//Po prostu zostaw mnie w spokoju!
+	runaway = "SVM_7_RunAway";	//Cholera! Wynoszê siê st¹d!
+	alarm = "SVM_7_Alarm";	//ALARM!
+	guards = "SVM_7_Guards";	//STRA¯!
+	help = "SVM_7_Help";	//Pomocy!
+	goodmonsterkill = "SVM_7_GoodMonsterKill";	//Tak trzeba z nimi postêpowaæ!
+	goodkill = "SVM_7_GoodKill";	//Dobrze, poka¿ œwini!
+	notnow = "SVM_7_NOTNOW";	//Zostaw mnie w spokoju!
+	runcoward = "SVM_7_RunCoward";	//Jeszcze ciê dorwê!
+	getoutofhere = "SVM_7_GetOutOfHere";	//Wynoœ siê!
+	whyareyouinhere = "SVM_7_WhyAreYouInHere";	//Czego tu szukasz?!
+	yesgooutofhere = "SVM_7_YesGoOutOfHere";	//No, wynocha!
+	whatsthissupposedtobe = "SVM_7_WhatsThisSupposedToBe";	//Co ty tam robisz?
+	youdisturbedmyslumber = "SVM_7_YouDisturbedMySlumber";	//Co jest?
+	itookyourgold = "SVM_7_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
+	shitnogold = "SVM_7_ShitNoGold";	//Ty frajerze, nawet z³ota nie masz!
+	itakeyourweapon = "SVM_7_ITakeYourWeapon";	//Lepiej zaopiekujê siê twoj¹ broni¹...
+	whatareyoudoing = "SVM_7_WhatAreYouDoing";	//Uwa¿aj! Nastêpnym razem ci przy³o¿ê.
+	lookingfortroubleagain = "SVM_7_LookingForTroubleAgain";	//Chcesz jeszcze raz dostaæ w mordê?
+	stopmagic = "SVM_7_StopMagic";	//Przestañ natychmiast z tym czarowaniem!
+	isaidstopmagic = "SVM_7_ISaidStopMagic";	//Chcesz dostaæ? Przestañ w tej chwili!
+	weapondown = "SVM_7_WeaponDown";	//Od³ó¿ broñ!
+	isaidweapondown = "SVM_7_ISaidWeaponDown";	//Od³o¿ysz wreszcie tê przeklêt¹ broñ?!
+	wisemove = "SVM_7_WiseMove";	//M¹dra decyzja!
+	nexttimeyoureinforit = "SVM_7_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
+	ohmyhead = "SVM_7_OhMyHead";	//Och, moja g³owa...
+	theresafight = "SVM_7_TheresAFight";	//Ach, walka...
+	ohmygoditsafight = "SVM_7_OhMyGodItsAFight";	//O bogowie, walka!
+	goodvictory = "SVM_7_GoodVictory";	//Pokaza³eœ mu, kto tu rz¹dzi!
+	notbad = "SVM_7_NotBad";	//Hmm. NieŸle...
+	ohmygodhesdown = "SVM_7_OhMyGodHesDown";	//Bogowie! Jak ostro...
+	cheerfriend01 = "SVM_7_CheerFriend01";	//No, do³ó¿ mu!
+	cheerfriend02 = "SVM_7_CheerFriend02";	//Poka¿ mu!
+	cheerfriend03 = "SVM_7_CheerFriend03";	//Niech ma, czego chcia³!
+	ooh01 = "SVM_7_Ooh01";	//Broñ siê!
+	ooh02 = "SVM_7_Ooh02";	//Nie daj siê!
+	ooh03 = "SVM_7_Ooh03";	//Oj! To musia³o boleæ!
+	whatwasthat = "SVM_7_WhatWasThat";	//Cholera, co TO by³o!?
+	getoutofmybed = "SVM_7_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	awake = "SVM_7_Awake";	//(rozkoszne ziewniêcie)
+	abs_commander = "SVM_7_ABS_COMMANDER";	//Powiadaj¹, ¿e kapitan wyprostowa³ ca³¹ sprawê.
+	abs_monastery = "SVM_7_ABS_MONASTERY";	//Zatem wyspowiada³eœ siê Ojcu Parlanowi ze swoich grzechów.
+	abs_farm = "SVM_7_ABS_FARM";	//Mówi¹, ¿e Lee za³atwi³ dla ciebie ca³¹ sprawê.
+	abs_good = "SVM_7_ABS_GOOD";	//Dobrze.
+	sheepkiller_crime = "SVM_7_SHEEPKILLER_CRIME";	//Szlachtowanie owiec to ju¿ szczyt szczytów! Wynoœ siê!
+	attack_crime = "SVM_7_ATTACK_CRIME";	//Jesteœ jakimœ oprychem - lepiej st¹d odejdŸ!
+	theft_crime = "SVM_7_THEFT_CRIME";	//Przeklêty z³odziej! Gardzê takimi jak ty!
+	pal_city_crime = "SVM_7_PAL_CITY_CRIME";	//Wydawa³o mi siê, ¿e od paladyna mo¿na spodziewaæ siê czegoœ wiêcej. Lord Hagen bêdzie niepocieszony.
+	mil_city_crime = "SVM_7_MIL_CITY_CRIME";	//Jak ty siê w ogóle dosta³eœ do stra¿y?! Odpowiesz za to przed Lordem Andre!
+	city_crime = "SVM_7_CITY_CRIME";	//Lord Andre dowie siê o twoim zachowaniu!
+	mona_crime = "SVM_7_MONA_CRIME";	//Ojciec Parlan bêdzie wœciek³y!
+	farm_crime = "SVM_7_FARM_CRIME";	//Lee na pewno ci nie daruje!
+	oc_crime = "SVM_7_OC_CRIME";	//Kapitan Garond nie bêdzie zadowolony, kiedy o tym us³yszy! Zap³acisz za to!
+	toughguy_attacklost = "SVM_7_TOUGHGUY_ATTACKLOST";	//Masz ca³kiem niez³y cios... Czego chcesz ode mnie?
+	toughguy_attackwon = "SVM_7_TOUGHGUY_ATTACKWON";	//Jeszcze jakieœ pytania?
+	toughguy_playerattack = "SVM_7_TOUGHGUY_PLAYERATTACK";	//To znowu ty!
+	gold_1000 = "SVM_7_GOLD_1000";	//1000 sztuk z³ota.
+	gold_950 = "SVM_7_GOLD_950";	//950 sztuk z³ota.
+	gold_900 = "SVM_7_GOLD_900";	//900 sztuk z³ota.
+	gold_850 = "SVM_7_GOLD_850";	//850 sztuk z³ota.
+	gold_800 = "SVM_7_GOLD_800";	//800 sztuk z³ota.
+	gold_750 = "SVM_7_GOLD_750";	//750 sztuk z³ota.
+	gold_700 = "SVM_7_GOLD_700";	//700 sztuk z³ota.
+	gold_650 = "SVM_7_GOLD_650";	//650 sztuk z³ota.
+	gold_600 = "SVM_7_GOLD_600";	//600 sztuk z³ota.
+	gold_550 = "SVM_7_GOLD_550";	//550 sztuk z³ota.
+	gold_500 = "SVM_7_GOLD_500";	//500 sztuk z³ota.
+	gold_450 = "SVM_7_GOLD_450";	//450 sztuk z³ota.
+	gold_400 = "SVM_7_GOLD_400";	//400 sztuk z³ota.
+	gold_350 = "SVM_7_GOLD_350";	//350 sztuk z³ota.
+	gold_300 = "SVM_7_GOLD_300";	//300 sztuk z³ota.
+	gold_250 = "SVM_7_GOLD_250";	//250 sztuk z³ota.
+	gold_200 = "SVM_7_GOLD_200";	//200 sztuk z³ota.
+	gold_150 = "SVM_7_GOLD_150";	//150 sztuk z³ota.
+	gold_100 = "SVM_7_GOLD_100";	//100 sztuk z³ota.
+	gold_90 = "SVM_7_GOLD_90";	//90 sztuk z³ota.
+	gold_80 = "SVM_7_GOLD_80";	//80 sztuk z³ota.
+	gold_70 = "SVM_7_GOLD_70";	//70 sztuk z³ota.
+	gold_60 = "SVM_7_GOLD_60";	//60 sztuk z³ota.
+	gold_50 = "SVM_7_GOLD_50";	//50 sztuk z³ota.
+	gold_40 = "SVM_7_GOLD_40";	//40 sztuk z³ota.
+	gold_30 = "SVM_7_GOLD_30";	//30 sztuk z³ota.
+	gold_20 = "SVM_7_GOLD_20";	//20 sztuk z³ota.
+	gold_10 = "SVM_7_GOLD_10";	//10 sztuk z³ota.
+	smalltalk01 = "SVM_7_Smalltalk01";	//...to rzeczywiœcie prawda...
+	smalltalk02 = "SVM_7_Smalltalk02";	//...mnie mówili co innego...
+	smalltalk03 = "SVM_7_Smalltalk03";	//...nie mów, ¿e o tym nie wiesz...
+	smalltalk04 = "SVM_7_Smalltalk04";	//...nie wiadomo ju¿, komu mo¿na ufaæ...
+	smalltalk05 = "SVM_7_Smalltalk05";	//...to tylko plotki...
+	smalltalk06 = "SVM_7_Smalltalk06";	//...myœlisz, ¿e ja mam lepiej...
+	smalltalk07 = "SVM_7_Smalltalk07";	//...nic mnie ju¿ nie dziwi...
+	smalltalk08 = "SVM_7_Smalltalk08";	//...to naprawdê nie mój problem...
+	smalltalk09 = "SVM_7_Smalltalk09";	//...naprawdê w to wierzysz...
+	smalltalk10 = "SVM_7_Smalltalk10";	//...ode mnie nikt siê niczego nie dowie...
+	smalltalk11 = "SVM_7_Smalltalk11";	//...to by³o oczywiste...
+	smalltalk12 = "SVM_7_Smalltalk12";	//...pos³ucha³ niew³aœciwych ludzi...
+	smalltalk13 = "SVM_7_Smalltalk13";	//...je¿eli on tego nie widzi, to przecie¿ nie mogê mu pomagaæ wbrew jego woli...
+	smalltalk14 = "SVM_7_Smalltalk14";	//...nie mówiê ci przecie¿ nic nowego...
+	smalltalk15 = "SVM_7_Smalltalk15";	//...sam by na to nie wpad³...
+	smalltalk16 = "SVM_7_Smalltalk16";	//...to by³o wiadomo od dawna...
+	smalltalk17 = "SVM_7_Smalltalk17";	//...kiepska sprawa...
+	smalltalk18 = "SVM_7_Smalltalk18";	//...inaczej bym siê do tego zabra³...
+	smalltalk19 = "SVM_7_Smalltalk19";	//...zupe³nie siê z tob¹ zgadzam...
+	smalltalk20 = "SVM_7_Smalltalk20";	//...czy coœ siê w koñcu zmieni...
+	smalltalk21 = "SVM_7_Smalltalk21";	//...nie dosz³o do mnie nic na ten temat...
+	smalltalk22 = "SVM_7_Smalltalk22";	//...nic nie mogê na to poradziæ...
+	smalltalk23 = "SVM_7_Smalltalk23";	//...to mnie wcale nie dziwi...
+	smalltalk24 = "SVM_7_Smalltalk24";	//...nie, ale on oczywiœcie wie wszystko lepiej...
+	smalltalk25 = "SVM_7_Smalltalk25";	//...i tak liczy siê tylko si³a, wiêc nie mów mi takich rzeczy...
+	smalltalk26 = "SVM_7_Smalltalk26";	//...on nawet nie wie, jak siê trzyma miecz...
+	smalltalk27 = "SVM_7_Smalltalk27";	//...tak, naprawdê tak powiedzia³...
+	smalltalk28 = "SVM_7_Smalltalk28";	//...ktoœ bêdzie musia³ za to zap³aciæ...
+	smalltalk29 = "SVM_7_Smalltalk29";	//...Innos przyœwieca tym wszystkim, którzy potrafi¹ zg³êbiæ jego m¹droœæ...
+	smalltalk30 = "SVM_7_Smalltalk30";	//...na koñcu i tak zwyciê¿y sprawiedliwoœæ...
+	nolearnnopoints = "SVM_7_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz wiêcej doœwiadczenia.
+	nolearnoverpersonalmax = "SVM_7_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	nolearnyourebetter = "SVM_7_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	youlearnedsomething = "SVM_7_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	unterstadt = "SVM_7_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
+	oberstadt = "SVM_7_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
+	tempel = "SVM_7_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
+	markt = "SVM_7_MARKT";	//Jesteœ teraz na targowisku.
+	galgen = "SVM_7_GALGEN";	//Jesteœ teraz na placu wisielców.
+	kaserne = "SVM_7_KASERNE";	//To s¹ koszary.
+	hafen = "SVM_7_HAFEN";	//Jesteœ teraz w dzielnicy portowej.
+	whereto = "SVM_7_WHERETO";	//Gdzie chcesz siê dostaæ?
+	oberstadt_2_unterstadt = "SVM_7_OBERSTADT_2_UNTERSTADT";	//PrzejdŸ przez wewnêtrzn¹ bramê, a dojdziesz do dolnej czêœci miasta.
+	unterstadt_2_oberstadt = "SVM_7_UNTERSTADT_2_OBERSTADT";	//Przy po³udniowej bramie znajduj¹ siê schody, które prowadz¹ do bramy wewnêtrznej. Za ni¹ zaczyna siê górne miasto.
+	unterstadt_2_tempel = "SVM_7_UNTERSTADT_2_TEMPEL";	//IdŸ od strony kowala przez przejœcie, a dojdziesz do placu œwi¹tynnego.
+	unterstadt_2_hafen = "SVM_7_UNTERSTADT_2_HAFEN";	//IdŸ od strony kowala w dó³ ulic¹ portow¹, a dojdziesz do portu.
+	tempel_2_unterstadt = "SVM_7_TEMPEL_2_UNTERSTADT";	//Od placu œwi¹tynnego odchodzi przejœcie prowadz¹ce do dolnej czêœci miasta.
+	tempel_2_markt = "SVM_7_TEMPEL_2_MARKT";	//Kiedy bêdziesz staæ przed œwi¹tyni¹, skrêæ w lewo i idŸ wzd³u¿ murów miejskich, a dojdziesz do targowiska.
+	tempel_2_galgen = "SVM_7_TEMPEL_2_GALGEN";	//Je¿eli id¹c od strony œwi¹tyni, miniesz knajpê po lewej, dojdziesz do placu wisielców.
+	markt_2_tempel = "SVM_7_MARKT_2_TEMPEL";	//Je¿eli pójdziesz wzd³u¿ murów miejskich od strony targowiska, to dojdziesz do œwi¹tyni.
+	markt_2_kaserne = "SVM_7_MARKT_2_KASERNE";	//Koszary to ten wielki budynek. WejdŸ po schodach naprzeciwko gospody.
+	markt_2_galgen = "SVM_7_MARKT_2_GALGEN";	//PrzejdŸ obok koszar, a dojdziesz do placu wisielców.
+	galgen_2_tempel = "SVM_7_GALGEN_2_TEMPEL";	//IdŸ od strony placu wisielców w dó³ uliczk¹, a dojdziesz do placu œwi¹tynnego.
+	galgen_2_markt = "SVM_7_GALGEN_2_MARKT";	//PrzejdŸ obok koszar, a dojdziesz do targowiska.
+	galgen_2_kaserne = "SVM_7_GALGEN_2_KASERNE";	//Koszary to ten wielki budynek. Dostaniesz siê do niego po schodach.
+	kaserne_2_markt = "SVM_7_KASERNE_2_MARKT";	//ZejdŸ po schodach na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
+	kaserne_2_galgen = "SVM_7_KASERNE_2_GALGEN";	//ZejdŸ po schodach na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
+	hafen_2_unterstadt = "SVM_7_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nabrze¿u w górê ulic¹ portow¹, a dojdziesz do dolnego miasta.
+	dead = "SVM_7_Dead";	//Aaaaarhhh!
+	aargh_1 = "SVM_7_Aargh_1";	//Aargh
+	aargh_2 = "SVM_7_Aargh_2";	//Aargh
+	aargh_3 = "SVM_7_Aargh_3";	//Aargh
+	addon_wrongarmor = "SVM_7_Addon_WrongArmor";	//
+	addon_wrongarmor_sld = "SVM_7_ADDON_WRONGARMOR_SLD";	//
+	addon_wrongarmor_mil = "SVM_7_ADDON_WRONGARMOR_MIL";	//
+	addon_wrongarmor_kdf = "SVM_7_ADDON_WRONGARMOR_KDF";	//
+	addon_noarmor_bdt = "SVM_7_ADDON_ADDON_NOARMOR_BDT";	//
+	addon_diebandit = "SVM_7_ADDON_DIEBANDIT";	//
+	addon_dirtypirate = "SVM_7_ADDON_DIRTYPIRATE";	//
+};
+
+instance SVM_8(C_SVM)
+{
+	milgreetings = "SVM_8_MILGreetings";	//Niech ¿yje Król!
+	palgreetings = "SVM_8_PALGreetings";	//Chwa³a Innosowi!
+	weather = "SVM_8_Weather";	//Beznadziejna pogoda!
+	igetyoustill = "SVM_8_IGetYouStill";	//No, teraz to ciê dorwê!
+	dieenemy = "SVM_8_DieEnemy";	//Wykoñczê ciê!
+	diemonster = "SVM_8_DieMonster";	//Znowu jedno z tych przeklêtych stworzeñ!
+	dirtythief = "SVM_8_DirtyThief";	//Czekaj tylko, parszywy z³odzieju!
+	handsoff = "SVM_8_HandsOff";	//£apy precz!
+	sheepkiller = "SVM_8_SheepKiller";	//Ten drañ szlachtuje nasze owce!
+	sheepkillermonster = "SVM_8_SheepKillerMonster";	//Ta przeklêta bestia z¿era nasze owce!
+	youmurderer = "SVM_8_YouMurderer";	//Morderca!
+	diestupidbeast = "SVM_8_DieStupidBeast";	//¯adne bestie nie maj¹ tu czego szukaæ!
+	youdarehitme = "SVM_8_YouDareHitMe";	//Teraz jestem naprawdê wkurzony!
+	youaskedforit = "SVM_8_YouAskedForIt";	//Sam tego chcia³eœ!
+	thenibeatyououtofhere = "SVM_8_ThenIBeatYouOutOfHere";	//Nie chcesz iœæ? Dobrze!
+	whatdidyoudointhere = "SVM_8_WhatDidYouDoInThere";	//Czego tam szuka³eœ?
+	willyoustopfighting = "SVM_8_WillYouStopFighting";	//Mo¿esz przestaæ!?
+	killenemy = "SVM_8_KillEnemy";	//Giñ, bydlaku!
+	enemykilled = "SVM_8_EnemyKilled";	//Zas³u¿y³eœ sobie na to, bydlaku!
+	monsterkilled = "SVM_8_MonsterKilled";	//Jedna bestia mniej!
+	thiefdown = "SVM_8_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
+	rumfummlerdown = "SVM_8_rumfummlerDown";	//Trzymaj siê na przysz³oœæ z dala od nieswoich rzeczy!
+	sheepattackerdown = "SVM_8_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To s¹ nasze owce!
+	killmurderer = "SVM_8_KillMurderer";	//Giñ, morderco!
+	stupidbeastkilled = "SVM_8_StupidBeastKilled";	//Co za g³upie bestie!
+	neverhitmeagain = "SVM_8_NeverHitMeAgain";	//Nigdy wiêcej nie próbuj siê ze mn¹ mierzyæ!
+	youbettershouldhavelistened = "SVM_8_YouBetterShouldHaveListened";	//Szkoda, ¿e mnie nie pos³ucha³eœ!
+	getupandbegone = "SVM_8_GetUpAndBeGone";	//A teraz znikaj st¹d!
+	neverenterroomagain = "SVM_8_NeverEnterRoomAgain";	//Lepiej, ¿ebym ciê ju¿ tam nigdy nie przy³apa³!
+	thereisnofightinghere = "SVM_8_ThereIsNoFightingHere";	//Tutaj siê nie walczy, zrozumiano!? Niech to bêdzie dla ciebie nauczk¹!
+	spareme = "SVM_8_SpareMe";	//Nie rób mi krzywdy!
+	runaway = "SVM_8_RunAway";	//O cholera!
+	alarm = "SVM_8_Alarm";	//ALARM!
+	guards = "SVM_8_Guards";	//STRA¯!
+	help = "SVM_8_Help";	//Pomocy!
+	goodmonsterkill = "SVM_8_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
+	goodkill = "SVM_8_GoodKill";	//No, wykoñcz œwiniê!
+	notnow = "SVM_8_NOTNOW";	//Zostaw mnie w spokoju!
+	runcoward = "SVM_8_RunCoward";	//Tak, uciekaj! Najszybciej jak potrafisz!
+	getoutofhere = "SVM_8_GetOutOfHere";	//Wynoœ siê!
+	whyareyouinhere = "SVM_8_WhyAreYouInHere";	//Czego tu szukasz!? IdŸ sobie!
+	yesgooutofhere = "SVM_8_YesGoOutOfHere";	//No, wynoœ siê!
+	whatsthissupposedtobe = "SVM_8_WhatsThisSupposedToBe";	//Ej ty... Co ty tutaj robisz?
+	youdisturbedmyslumber = "SVM_8_YouDisturbedMySlumber";	//Co siê tu u diab³a dzieje?
+	itookyourgold = "SVM_8_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
+	shitnogold = "SVM_8_ShitNoGold";	//Biedaku, nawet z³ota nie masz...
+	itakeyourweapon = "SVM_8_ITakeYourWeapon";	//Zaopiekujê siê twoj¹ broni¹...
+	whatareyoudoing = "SVM_8_WhatAreYouDoing";	//Uwa¿aj! Nastêpnym razem ci przy³o¿ê.
+	lookingfortroubleagain = "SVM_8_LookingForTroubleAgain";	//Ci¹gle ci za ma³o!?
+	stopmagic = "SVM_8_StopMagic";	//Przestañ z t¹ cholern¹ magi¹!
+	isaidstopmagic = "SVM_8_ISaidStopMagic";	//Szukasz k³opotów!? Przestañ natychmiast!
+	weapondown = "SVM_8_WeaponDown";	//Od³ó¿ tê broñ!
+	isaidweapondown = "SVM_8_ISaidWeaponDown";	//Od³ó¿ wreszcie tê przeklêt¹ broñ!
+	wisemove = "SVM_8_WiseMove";	//Sprytnie!
+	nexttimeyoureinforit = "SVM_8_NextTimeYoureInForIt";	//Proszê... Zobaczymy nastêpnym razem...
+	ohmyhead = "SVM_8_OhMyHead";	//O rany, moja g³owa...
+	theresafight = "SVM_8_TheresAFight";	//Ach, walka...
+	ohmygoditsafight = "SVM_8_OhMyGodItsAFight";	//Na bogów, walka!
+	goodvictory = "SVM_8_GoodVictory";	//Da³eœ mu niez³y wycisk...
+	notbad = "SVM_8_NotBad";	//NieŸle...
+	ohmygodhesdown = "SVM_8_OhMyGodHesDown";	//Bogowie! Jak brutalnie...
+	cheerfriend01 = "SVM_8_CheerFriend01";	//Uderz go!
+	cheerfriend02 = "SVM_8_CheerFriend02";	//Daj z siebie wszystko!
+	cheerfriend03 = "SVM_8_CheerFriend03";	//Poka¿ mu!
+	ooh01 = "SVM_8_Ooh01";	//Trzymaj siê!
+	ooh02 = "SVM_8_Ooh02";	//Uwaga!
+	ooh03 = "SVM_8_Ooh03";	//A³! Ten by³ celny...
+	whatwasthat = "SVM_8_WhatWasThat";	//Co TO by³o!?
+	getoutofmybed = "SVM_8_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	awake = "SVM_8_Awake";	//(rozkoszne ziewniêcie)
+	abs_commander = "SVM_8_ABS_COMMANDER";	//By³eœ wiêc u kapitana i wyjaœni³eœ sprawê.
+	abs_monastery = "SVM_8_ABS_MONASTERY";	//By³eœ zatem u Ojca Parlana i opowiedzia³eœ mu o swoich grzechach.
+	abs_farm = "SVM_8_ABS_FARM";	//By³eœ zatem u Lee i doprowadzi³eœ wszystko do porz¹dku.
+	abs_good = "SVM_8_ABS_GOOD";	//Dobre.
+	sheepkiller_crime = "SVM_8_SHEEPKILLER_CRIME";	//Tak po prostu szlachtowaæ nasze owce!
+	attack_crime = "SVM_8_ATTACK_CRIME";	//Zostaw mnie w spokoju, draniu!
+	theft_crime = "SVM_8_THEFT_CRIME";	//Zostaw mnie w spokoju, ty parszywy z³odzieju!
+	pal_city_crime = "SVM_8_PAL_CITY_CRIME";	//Jesteœ zaka³¹ swojego zakonu! Poczekaj tylko, a¿ dowie siê o tym Lord Hagen!
+	mil_city_crime = "SVM_8_MIL_CITY_CRIME";	//Okrywasz hañb¹ ca³¹ stra¿ miejsk¹! Czekaj tylko, a¿ dowie siê o tym Lord Andre!
+	city_crime = "SVM_8_CITY_CRIME";	//Poczekaj, a¿ dowie siê o tym Lord Andre.
+	mona_crime = "SVM_8_MONA_CRIME";	//Poczekaj tylko, a¿ us³yszy o tym Ojciec Parlan!
+	farm_crime = "SVM_8_FARM_CRIME";	//Poczekaj, a¿ Lee siê o tym dowie...
+	oc_crime = "SVM_8_OC_CRIME";	//Poczekaj tylko, a¿ dowie siê o tym kapitan Garond!
+	toughguy_attacklost = "SVM_8_TOUGHGUY_ATTACKLOST";	//Dobrze ju¿, dobrze, jesteœ lepszy ode mnie! Czego chcesz?
+	toughguy_attackwon = "SVM_8_TOUGHGUY_ATTACKWON";	//S¹dzê, ¿e wiesz ju¿, który z nas jest tym silniejszym... czego chcesz?
+	toughguy_playerattack = "SVM_8_TOUGHGUY_PLAYERATTACK";	//Myœla³em, ¿e chcesz siê ze mn¹ spróbowaæ. Zmieni³eœ zdanie? Mo¿e wolisz ROZMAWIAÆ? Jasne.
+	gold_1000 = "SVM_8_GOLD_1000";	//1000 sztuk z³ota.
+	gold_950 = "SVM_8_GOLD_950";	//950 sztuk z³ota.
+	gold_900 = "SVM_8_GOLD_900";	//900 sztuk z³ota.
+	gold_850 = "SVM_8_GOLD_850";	//850 sztuk z³ota.
+	gold_800 = "SVM_8_GOLD_800";	//800 sztuk z³ota.
+	gold_750 = "SVM_8_GOLD_750";	//750 sztuk z³ota.
+	gold_700 = "SVM_8_GOLD_700";	//700 sztuk z³ota.
+	gold_650 = "SVM_8_GOLD_650";	//650 sztuk z³ota.
+	gold_600 = "SVM_8_GOLD_600";	//600 sztuk z³ota.
+	gold_550 = "SVM_8_GOLD_550";	//550 sztuk z³ota.
+	gold_500 = "SVM_8_GOLD_500";	//500 sztuk z³ota.
+	gold_450 = "SVM_8_GOLD_450";	//450 sztuk z³ota.
+	gold_400 = "SVM_8_GOLD_400";	//400 sztuk z³ota.
+	gold_350 = "SVM_8_GOLD_350";	//350 sztuk z³ota.
+	gold_300 = "SVM_8_GOLD_300";	//300 sztuk z³ota.
+	gold_250 = "SVM_8_GOLD_250";	//250 sztuk z³ota.
+	gold_200 = "SVM_8_GOLD_200";	//200 sztuk z³ota.
+	gold_150 = "SVM_8_GOLD_150";	//150 sztuk z³ota.
+	gold_100 = "SVM_8_GOLD_100";	//100 sztuk z³ota.
+	gold_90 = "SVM_8_GOLD_90";	//90 sztuk z³ota.
+	gold_80 = "SVM_8_GOLD_80";	//80 sztuk z³ota.
+	gold_70 = "SVM_8_GOLD_70";	//70 sztuk z³ota.
+	gold_60 = "SVM_8_GOLD_60";	//60 sztuk z³ota.
+	gold_50 = "SVM_8_GOLD_50";	//50 sztuk z³ota.
+	gold_40 = "SVM_8_GOLD_40";	//40 sztuk z³ota.
+	gold_30 = "SVM_8_GOLD_30";	//30 sztuk z³ota.
+	gold_20 = "SVM_8_GOLD_20";	//20 sztuk z³ota.
+	gold_10 = "SVM_8_GOLD_10";	//10 sztuk z³ota.
+	smalltalk01 = "SVM_8_Smalltalk01";	//...to rzeczywiœcie prawda...
+	smalltalk02 = "SVM_8_Smalltalk02";	//...mnie mówili co innego...
+	smalltalk03 = "SVM_8_Smalltalk03";	//...tylko nie mów, ¿e o tym nie wiesz...
+	smalltalk04 = "SVM_8_Smalltalk04";	//...nie wiadomo ju¿, komu mo¿na ufaæ...
+	smalltalk05 = "SVM_8_Smalltalk05";	//...a tam, to tylko gadanie...
+	smalltalk06 = "SVM_8_Smalltalk06";	//...no popatrz, ju¿ mi lepiej...
+	smalltalk07 = "SVM_8_Smalltalk07";	//...mnie to i tak nikt nie s³ucha...
+	smalltalk08 = "SVM_8_Smalltalk08";	//...to naprawdê nie mój problem...
+	smalltalk09 = "SVM_8_Smalltalk09";	//...naprawdê w to wierzysz...
+	smalltalk10 = "SVM_8_Smalltalk10";	//...ode mnie nikt siê tego nie dowie...
+	smalltalk11 = "SVM_8_Smalltalk11";	//...o tym by³o wiadomo od dawna...
+	smalltalk12 = "SVM_8_Smalltalk12";	//...pos³ucha³ niew³aœciwych ludzi...
+	smalltalk13 = "SVM_8_Smalltalk13";	//...je¿eli on tego nie widzi, to przecie¿ nie mogê mu pomagaæ wbrew jego woli...
+	smalltalk14 = "SVM_8_Smalltalk14";	//...nie mówiê ci przecie¿ nic nowego...
+	smalltalk15 = "SVM_8_Smalltalk15";	//...sam by na to nie wpad³...
+	smalltalk16 = "SVM_8_Smalltalk16";	//...to przecie¿ wiadomo od dawna...
+	smalltalk17 = "SVM_8_Smalltalk17";	//...to niedobrze...
+	smalltalk18 = "SVM_8_Smalltalk18";	//...mo¿na to by³o zrobiæ zupe³nie inaczej...
+	smalltalk19 = "SVM_8_Smalltalk19";	//...w zupe³noœci siê z tob¹ zgadzam...
+	smalltalk20 = "SVM_8_Smalltalk20";	//...czy coœ siê w koñcu zmieni...
+	smalltalk21 = "SVM_8_Smalltalk21";	//...nic o tym nie wiem...
+	smalltalk22 = "SVM_8_Smalltalk22";	//...i tak tego nie zmienisz...
+	smalltalk23 = "SVM_8_Smalltalk23";	//...wcale mnie to nie dziwi...
+	smalltalk24 = "SVM_8_Smalltalk24";	//...powinien wiedzieæ lepiej...
+	smalltalk25 = "SVM_8_Smalltalk25";	//...liczy siê przecie¿ tylko si³a, wiêc nie opowiadaj mi tu takich rzeczy...
+	smalltalk26 = "SVM_8_Smalltalk26";	//...przecie¿ on nawet nie wie, jak siê trzyma miecz...
+	smalltalk27 = "SVM_8_Smalltalk27";	//...tak, naprawdê tak powiedzia³...
+	smalltalk28 = "SVM_8_Smalltalk28";	//...ktoœ bêdzie musia³ za to zap³aciæ...
+	smalltalk29 = "SVM_8_Smalltalk29";	//...Innos przyœwieca tym wszystkim, którzy potrafi¹ zg³êbiæ jego m¹droœæ...
+	smalltalk30 = "SVM_8_Smalltalk30";	//...w koñcu zwyciê¿y sprawiedliwoœæ...
+	nolearnnopoints = "SVM_8_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
+	nolearnoverpersonalmax = "SVM_8_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	nolearnyourebetter = "SVM_8_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	youlearnedsomething = "SVM_8_YouLearnedSomething";	//Widzisz, nauczy³eœ siê czegoœ nowego...
+	unterstadt = "SVM_8_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
+	oberstadt = "SVM_8_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
+	tempel = "SVM_8_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
+	markt = "SVM_8_MARKT";	//Jesteœ teraz na targowisku.
+	galgen = "SVM_8_GALGEN";	//Jesteœ teraz na placu wisielców.
+	kaserne = "SVM_8_KASERNE";	//To s¹ koszary.
+	hafen = "SVM_8_HAFEN";	//Jesteœ teraz w dzielnicy portowej.
+	whereto = "SVM_8_WHERETO";	//A ty dok¹d?
+	oberstadt_2_unterstadt = "SVM_8_OBERSTADT_2_UNTERSTADT";	//PrzejdŸ przez wewnêtrzn¹ bramê, a dojdziesz do dolnej czêœci miasta.
+	unterstadt_2_oberstadt = "SVM_8_UNTERSTADT_2_OBERSTADT";	//Przy po³udniowej bramie znajduj¹ siê schody, które prowadz¹ do bramy wewnêtrznej. Za ni¹ zaczyna siê górne miasto.
+	unterstadt_2_tempel = "SVM_8_UNTERSTADT_2_TEMPEL";	//Kiedy bêdziesz szed³ od kuŸni, przejdŸ do³em przez przejœcie. Dojdziesz wtedy do placu œwi¹tynnego.
+	unterstadt_2_hafen = "SVM_8_UNTERSTADT_2_HAFEN";	//IdŸ od kuŸni w dó³ ulic¹ portow¹, a dojdziesz do portu.
+	tempel_2_unterstadt = "SVM_8_TEMPEL_2_UNTERSTADT";	//Od strony placu œwi¹tynnego biegnie przejœcie, które prowadzi do dolnej czêœci miasta.
+	tempel_2_markt = "SVM_8_TEMPEL_2_MARKT";	//Kiedy bêdziesz przed œwi¹tyni¹, skrêæ w lewo i idŸ wzd³u¿ murów miejskich, a dojdziesz do targowiska.
+	tempel_2_galgen = "SVM_8_TEMPEL_2_GALGEN";	//Je¿eli stoj¹c plecami do œwi¹tyni, pójdziesz w lewo obok knajpy, dojdziesz do placu wisielców.
+	markt_2_tempel = "SVM_8_MARKT_2_TEMPEL";	//IdŸ od strony targowiska, wzd³u¿ murów miejskich, a dojdziesz do œwi¹tyni.
+	markt_2_kaserne = "SVM_8_MARKT_2_KASERNE";	//Koszary to ten du¿y budynek. WejdŸ po prostu po schodach naprzeciwko hotelu.
+	markt_2_galgen = "SVM_8_MARKT_2_GALGEN";	//IdŸ po prostu wzd³u¿ koszar, a powinieneœ dojœæ do placu wisielców.
+	galgen_2_tempel = "SVM_8_GALGEN_2_TEMPEL";	//IdŸ uliczk¹ odchodz¹c¹ od placu wisielców, to dojdziesz do placu œwi¹tynnego.
+	galgen_2_markt = "SVM_8_GALGEN_2_MARKT";	//IdŸ po prostu wzd³u¿ koszar, a powinieneœ dojœæ do targowiska.
+	galgen_2_kaserne = "SVM_8_GALGEN_2_KASERNE";	//Koszary to ten du¿y budynek. WejdŸ po prostu po schodach.
+	kaserne_2_markt = "SVM_8_KASERNE_2_MARKT";	//ZejdŸ po prostu po schodach znajduj¹cych siê na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
+	kaserne_2_galgen = "SVM_8_KASERNE_2_GALGEN";	//ZejdŸ po prostu po schodach znajduj¹cych siê na prawo od g³ównego wejœcia. Dojdziesz nimi do placu wisielców.
+	hafen_2_unterstadt = "SVM_8_HAFEN_2_UNTERSTADT";	//IdŸ od strony murów portowych ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
+	dead = "SVM_8_Dead";	//Aaaaarrrhhhh!
+	aargh_1 = "SVM_8_Aargh_1";	//Aargh
+	aargh_2 = "SVM_8_Aargh_2";	//Aargh
+	aargh_3 = "SVM_8_Aargh_3";	//Aargh
+	addon_wrongarmor = "SVM_8_Addon_WrongArmor";	//
+	addon_wrongarmor_sld = "SVM_8_ADDON_WRONGARMOR_SLD";	//
+	addon_wrongarmor_mil = "SVM_8_ADDON_WRONGARMOR_MIL";	//
+	addon_wrongarmor_kdf = "SVM_8_ADDON_WRONGARMOR_KDF";	//
+	addon_noarmor_bdt = "SVM_8_ADDON_ADDON_NOARMOR_BDT";	//
+	addon_diebandit = "SVM_8_ADDON_DIEBANDIT";	//
+	addon_dirtypirate = "SVM_8_ADDON_DIRTYPIRATE";	//
+};
+
+instance SVM_9(C_SVM)
+{
+	milgreetings = "SVM_9_MILGreetings";	//Niech ¿yje Król!
+	palgreetings = "SVM_9_PALGreetings";	//Chwa³a Innosowi!
+	weather = "SVM_9_Weather";	//Ale nêdzna pogoda...
+	igetyoustill = "SVM_9_IGetYouStill";	//Teraz ciê mam!
+	dieenemy = "SVM_9_DieEnemy";	//Lepiej by³o tu nie przychodziæ!
+	diemonster = "SVM_9_DieMonster";	//ChodŸ tu, bydlaku!
+	addon_diemonster = "SVM_9_Addon_DieMonster";	//
+	addon_diemonster2 = "SVM_9_Addon_DieMonster2";	//
+	dirtythief = "SVM_9_DirtyThief";	//Parszywy z³odziej!
+	handsoff = "SVM_9_HandsOff";	//£apy precz!
+	sheepkiller = "SVM_9_SheepKiller";	//Zostaw nasze owce w spokoju!
+	sheepkillermonster = "SVM_9_SheepKillerMonster";	//Zostaw nasze owce, ty potworze!
+	youmurderer = "SVM_9_YouMurderer";	//Morderca!
+	diestupidbeast = "SVM_9_DieStupidBeast";	//Tu nie ma miejsca dla bestii!
+	youdarehitme = "SVM_9_YouDareHitMe";	//Po¿a³ujesz tego!
+	youaskedforit = "SVM_9_YouAskedForIt";	//Ostrzegano ciê...
+	thenibeatyououtofhere = "SVM_9_ThenIBeatYouOutOfHere";	//Powiedzia³em WYNOCHA!
+	whatdidyoudointhere = "SVM_9_WhatDidYouDoInThere";	//Hej! Czego tam szuka³eœ?
+	willyoustopfighting = "SVM_9_WillYouStopFighting";	//Przestañ! Natychmiast!
+	killenemy = "SVM_9_KillEnemy";	//Teraz siê zabawimy, gnido!
+	enemykilled = "SVM_9_EnemyKilled";	//I po sprawie...
+	addon_monsterkilled = "SVM_9_Addon_MonsterKilled";	//
+	addon_monsterkilled2 = "SVM_9_Addon_MonsterKilled2";	//
+	monsterkilled = "SVM_9_MonsterKilled";	//To mnie krêci!
+	thiefdown = "SVM_9_ThiefDown";	//Ostrzegam ciê! Nie próbuj tego ponownie, ty przeklêty z³odzieju!
+	rumfummlerdown = "SVM_9_rumfummlerDown";	//Trzymaj rêce z dala od rzeczy, które do ciebie nie nale¿¹!
+	sheepattackerdown = "SVM_9_SheepAttackerDown";	//I trzymaj siê na przysz³oœæ z dala od naszych owiec!
+	killmurderer = "SVM_9_KillMurderer";	//Giñ, morderco!
+	stupidbeastkilled = "SVM_9_StupidBeastKilled";	//G³upie bydlê!
+	neverhitmeagain = "SVM_9_NeverHitMeAgain";	//Nie wa¿ siê nigdy wiêcej mnie atakowaæ!
+	youbettershouldhavelistened = "SVM_9_YouBetterShouldHaveListened";	//Ostrzegano ciê...
+	getupandbegone = "SVM_9_GetUpAndBeGone";	//A teraz wynoœ siê!
+	neverenterroomagain = "SVM_9_NeverEnterRoomAgain";	//Nie chcê ciê ju¿ tam nigdy wiêcej widzieæ!
+	thereisnofightinghere = "SVM_9_ThereIsNoFightingHere";	//Tutaj siê nie walczy, zapamiêtaj to sobie!
+	spareme = "SVM_9_SpareMe";	//Nie zrób czegoœ g³upiego!
+	runaway = "SVM_9_RunAway";	//Zmywam siê!
+	alarm = "SVM_9_Alarm";	//ALARM!
+	guards = "SVM_9_Guards";	//STRA¯!
+	help = "SVM_9_Help";	//Pomocy!
+	goodmonsterkill = "SVM_9_GoodMonsterKill";	//Poka¿ tym potworom...!
+	goodkill = "SVM_9_GoodKill";	//Taa... Poka¿ mu!
+	notnow = "SVM_9_NOTNOW";	//Zostaw mnie w spokoju!
+	runcoward = "SVM_9_RunCoward";	//Jeszcze ciê dorwê!
+	getoutofhere = "SVM_9_GetOutOfHere";	//Won!
+	whyareyouinhere = "SVM_9_WhyAreYouInHere";	//Nie masz tu czego szukaæ!
+	yesgooutofhere = "SVM_9_YesGoOutOfHere";	//No, wynoœ siê!
+	whatsthissupposedtobe = "SVM_9_WhatsThisSupposedToBe";	//Co to ma byæ? Co ty tutaj robisz?
+	youdisturbedmyslumber = "SVM_9_YouDisturbedMySlumber";	//Czego u diab³a chcesz?
+	itookyourgold = "SVM_9_ITookYourGold";	//Dobrze, ¿e przynajmniej masz jakieœ z³oto!
+	shitnogold = "SVM_9_ShitNoGold";	//Ha! Nawet z³ota nie ma...
+	itakeyourweapon = "SVM_9_ITakeYourWeapon";	//Twoja broñ mo¿e mi siê przydaæ.
+	whatareyoudoing = "SVM_9_WhatAreYouDoing";	//Lepiej nie próbuj tego po raz drugi!
+	lookingfortroubleagain = "SVM_9_LookingForTroubleAgain";	//Znowu szukasz guza?
+	stopmagic = "SVM_9_StopMagic";	//Tylko bez magii!
+	isaidstopmagic = "SVM_9_ISaidStopMagic";	//Ostrzegam po raz ostatni!
+	weapondown = "SVM_9_WeaponDown";	//Od³ó¿ broñ!
+	isaidweapondown = "SVM_9_ISaidWeaponDown";	//Od³ó¿ to albo ci przy³o¿ê.
+	wisemove = "SVM_9_WiseMove";	//Nie jesteœ wcale taki g³upi, na jakiego wygl¹dasz!
+	nexttimeyoureinforit = "SVM_9_NextTimeYoureInForIt";	//Lepiej nie próbuj tego po raz drugi!
+	ohmyhead = "SVM_9_OhMyHead";	//Aaach! Mój ³eb...
+	theresafight = "SVM_9_TheresAFight";	//Teraz bêdzie zabawnie...
+	ohmygoditsafight = "SVM_9_OhMyGodItsAFight";	//O rany...
+	goodvictory = "SVM_9_GoodVictory";	//Bêdzie mia³ nauczkê...
+	notbad = "SVM_9_NotBad";	//To by³o dobre!
+	ohmygodhesdown = "SVM_9_OhMyGodHesDown";	//Brutal!
+	cheerfriend01 = "SVM_9_CheerFriend01";	//Wal!
+	cheerfriend02 = "SVM_9_CheerFriend02";	//No, dalej!
+	cheerfriend03 = "SVM_9_CheerFriend03";	//Wykoñcz go!
+	ooh01 = "SVM_9_Ooh01";	//Uwa¿aj!
+	ooh02 = "SVM_9_Ooh02";	//Paruj!
+	ooh03 = "SVM_9_Ooh03";	//Cholera, to bola³o!
+	whatwasthat = "SVM_9_WhatWasThat";	//Co TO by³o!?
+	getoutofmybed = "SVM_9_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	awake = "SVM_9_Awake";	//(rozkoszne ziewniêcie)
+	abs_commander = "SVM_9_ABS_COMMANDER";	//Wyjaœni³eœ zatem sprawê z dowódc¹.
+	abs_monastery = "SVM_9_ABS_MONASTERY";	//Ojciec Parlan uwolni³ ciê od twoich grzechów.
+	abs_farm = "SVM_9_ABS_FARM";	//Odwiedzi³eœ zatem Lee i za³atwi³eœ sprawê.
+	abs_good = "SVM_9_ABS_GOOD";	//Dobrze.
+	sheepkiller_crime = "SVM_9_SHEEPKILLER_CRIME";	//Podnosisz broñ na owce? Pewnie trudno ci by³o o bardziej bezbronne stworzenie!?
+	attack_crime = "SVM_9_ATTACK_CRIME";	//Z takimi jak ty nie chcê mieæ nic wspólnego!
+	theft_crime = "SVM_9_THEFT_CRIME";	//Nie chcê mieæ nic wspólnego ze z³odziejami!
+	pal_city_crime = "SVM_9_PAL_CITY_CRIME";	//I ty chcesz byæ paladynem? Ciekawe, co na to Lord Hagen!
+	mil_city_crime = "SVM_9_MIL_CITY_CRIME";	//Naprawdê nale¿ysz do stra¿y miejskiej? Lordowi Andre siê to nie spodoba!
+	city_crime = "SVM_9_CITY_CRIME";	//IdŸ do Lorda Andre, póki jeszcze mo¿esz.
+	mona_crime = "SVM_9_MONA_CRIME";	//Udaj siê do Ojca Parlana. Otrzymasz od niego pokutê!
+	farm_crime = "SVM_9_FARM_CRIME";	//Lee siê o tym dowie... Zap³acisz za to!
+	oc_crime = "SVM_9_OC_CRIME";	//Kapitan Garond bêdzie bardzo niezadowolony. Lepiej z nim porozmawiaj, zanim stanie siê coœ jeszcze gorszego.
+	toughguy_attacklost = "SVM_9_TOUGHGUY_ATTACKLOST";	//Dobrze - wygra³eœ zatem. Czego ode mnie chcesz?
+	toughguy_attackwon = "SVM_9_TOUGHGUY_ATTACKWON";	//S¹dzê, ¿e wiesz ju¿, kogo masz przed sob¹. Czego chcesz?
+	toughguy_playerattack = "SVM_9_TOUGHGUY_PLAYERATTACK";	//To znowu ty? Chcesz jeszcze raz siê ze mn¹ spróbowaæ, czy jak?
+	gold_1000 = "SVM_9_GOLD_1000";	//1000 sztuk z³ota.
+	gold_950 = "SVM_9_GOLD_950";	//950 sztuk z³ota.
+	gold_900 = "SVM_9_GOLD_900";	//900 sztuk z³ota.
+	gold_850 = "SVM_9_GOLD_850";	//850 sztuk z³ota.
+	gold_800 = "SVM_9_GOLD_800";	//800 sztuk z³ota.
+	gold_750 = "SVM_9_GOLD_750";	//750 sztuk z³ota.
+	gold_700 = "SVM_9_GOLD_700";	//700 sztuk z³ota.
+	gold_650 = "SVM_9_GOLD_650";	//650 sztuk z³ota.
+	gold_600 = "SVM_9_GOLD_600";	//600 sztuk z³ota.
+	gold_550 = "SVM_9_GOLD_550";	//550 sztuk z³ota.
+	gold_500 = "SVM_9_GOLD_500";	//500 sztuk z³ota.
+	gold_450 = "SVM_9_GOLD_450";	//450 sztuk z³ota.
+	gold_400 = "SVM_9_GOLD_400";	//400 sztuk z³ota.
+	gold_350 = "SVM_9_GOLD_350";	//350 sztuk z³ota.
+	gold_300 = "SVM_9_GOLD_300";	//300 sztuk z³ota.
+	gold_250 = "SVM_9_GOLD_250";	//250 sztuk z³ota.
+	gold_200 = "SVM_9_GOLD_200";	//200 sztuk z³ota.
+	gold_150 = "SVM_9_GOLD_150";	//150 sztuk z³ota.
+	gold_100 = "SVM_9_GOLD_100";	//100 sztuk z³ota.
+	gold_90 = "SVM_9_GOLD_90";	//90 sztuk z³ota.
+	gold_80 = "SVM_9_GOLD_80";	//80 sztuk z³ota.
+	gold_70 = "SVM_9_GOLD_70";	//70 sztuk z³ota.
+	gold_60 = "SVM_9_GOLD_60";	//60 sztuk z³ota.
+	gold_50 = "SVM_9_GOLD_50";	//50 sztuk z³ota.
+	gold_40 = "SVM_9_GOLD_40";	//40 sztuk z³ota.
+	gold_30 = "SVM_9_GOLD_30";	//30 sztuk z³ota.
+	gold_20 = "SVM_9_GOLD_20";	//20 sztuk z³ota.
+	gold_10 = "SVM_9_GOLD_10";	//10 sztuk z³ota.
+	smalltalk01 = "SVM_9_Smalltalk01";	//...trudno mi w to uwierzyæ...
+	smalltalk02 = "SVM_9_Smalltalk02";	//...nie wiem, czy mo¿na byæ tego pewnym...
+	smalltalk03 = "SVM_9_Smalltalk03";	//...przecie¿ on wiedzia³ ju¿ o tym wczeœniej...
+	smalltalk04 = "SVM_9_Smalltalk04";	//...ju¿ nie wiem, w co mam wierzyæ...
+	smalltalk05 = "SVM_9_Smalltalk05";	//...nie rozumiem w ogóle, czym on siê tak przejmuje...
+	smalltalk06 = "SVM_9_Smalltalk06";	//...nie potrzebujê jeszcze wiêcej k³opotów...
+	smalltalk07 = "SVM_9_Smalltalk07";	//...dosz³o do mnie to i owo...
+	smalltalk08 = "SVM_9_Smalltalk08";	//...lepiej zostawiê to w spokoju...
+	smalltalk09 = "SVM_9_Smalltalk09";	//...nie mo¿na wierzyæ we wszystko, co siê s³yszy...
+	smalltalk10 = "SVM_9_Smalltalk10";	//...ode mnie tego nie dosta³...
+	smalltalk11 = "SVM_9_Smalltalk11";	//...tak mi siê w³aœnie wydawa³o...
+	smalltalk12 = "SVM_9_Smalltalk12";	//...mnie i tak nikt nie s³ucha...
+	smalltalk13 = "SVM_9_Smalltalk13";	//...nie zas³u¿y³ na coœ takiego...
+	smalltalk14 = "SVM_9_Smalltalk14";	//...nie mów, ¿e o tym nie wiesz...
+	smalltalk15 = "SVM_9_Smalltalk15";	//...to by³o przecie¿ jasne...
+	smalltalk16 = "SVM_9_Smalltalk16";	//...sk¹d ty to masz...
+	smalltalk17 = "SVM_9_Smalltalk17";	//...tak dalej byæ nie mo¿e...
+	smalltalk18 = "SVM_9_Smalltalk18";	//...mam w³asne zdanie na ten temat...
+	smalltalk19 = "SVM_9_Smalltalk19";	//...by³o dok³adnie tak, jak mówisz...
+	smalltalk20 = "SVM_9_Smalltalk20";	//...nie s¹dzê, ¿eby w tej sprawie coœ siê zmieni³o...
+	smalltalk21 = "SVM_9_Smalltalk21";	//...s³yszê o tym po raz pierwszy...
+	smalltalk22 = "SVM_9_Smalltalk22";	//...mo¿emy jedynie przeczekaæ...
+	smalltalk23 = "SVM_9_Smalltalk23";	//...wiedzia³em, ¿e pojawi¹ siê problemy...
+	smalltalk24 = "SVM_9_Smalltalk24";	//...czemu nikt mnie nie s³ucha...
+	smalltalk25 = "SVM_9_Smalltalk25";	//...ucieka³, jakby goni³ go sam Beliar...
+	smalltalk26 = "SVM_9_Smalltalk26";	//...w koñcu i tak go oczywiœcie dorwaliœmy...
+	smalltalk27 = "SVM_9_Smalltalk27";	//...trzeba zdecydowanie i silnie uderzyæ w sam œrodek...
+	smalltalk28 = "SVM_9_Smalltalk28";	//...niektórzy nie zdaj¹ sobie w ogóle sprawy ze swoich grzechów...
+	smalltalk29 = "SVM_9_Smalltalk29";	//...taka jest bowiem wola Innosa
+	smalltalk30 = "SVM_9_Smalltalk30";	//...jego czyny by³y sprawiedliwe...
+	nolearnnopoints = "SVM_9_NoLearnNoPoints";	//Wróæ do mnie, kiedy nabierzesz wiêcej doœwiadczenia.
+	nolearnoverpersonalmax = "SVM_9_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	nolearnyourebetter = "SVM_9_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	youlearnedsomething = "SVM_9_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	unterstadt = "SVM_9_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
+	oberstadt = "SVM_9_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
+	tempel = "SVM_9_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
+	markt = "SVM_9_MARKT";	//Znajdujesz siê teraz na targowisku.
+	galgen = "SVM_9_GALGEN";	//Znajdujesz siê teraz przed koszarami na placu wisielców.
+	kaserne = "SVM_9_KASERNE";	//To s¹ koszary.
+	hafen = "SVM_9_HAFEN";	//Znajdujesz siê w dzielnicy portowej.
+	whereto = "SVM_9_WHERETO";	//Dok¹d to?
+	oberstadt_2_unterstadt = "SVM_9_OBERSTADT_2_UNTERSTADT";	//PrzejdŸ przez wewnêtrzn¹ bramê, a dojdziesz do dolnej czêœci miasta.
+	unterstadt_2_oberstadt = "SVM_9_UNTERSTADT_2_OBERSTADT";	//Przy po³udniowej bramie znajduj¹ siê schody, które prowadz¹ do bramy wewnêtrznej. Za ni¹ zaczyna siê górne miasto.
+	unterstadt_2_tempel = "SVM_9_UNTERSTADT_2_TEMPEL";	//IdŸ od kowala przez przejœcie, a dojdziesz do placu œwi¹tynnego.
+	unterstadt_2_hafen = "SVM_9_UNTERSTADT_2_HAFEN";	//IdŸ od kowala w dó³ ulic¹ portow¹, a dojdziesz do portu.
+	tempel_2_unterstadt = "SVM_9_TEMPEL_2_UNTERSTADT";	//Od placu œwi¹tynnego odchodzi przejœcie, które prowadzi do dolnej czêœci miasta.
+	tempel_2_markt = "SVM_9_TEMPEL_2_MARKT";	//Kiedy bêdziesz przed œwi¹tyni¹, skrêæ w lewo i idŸ potem wzd³u¿ murów miejskich, a dojdziesz do targowiska.
+	tempel_2_galgen = "SVM_9_TEMPEL_2_GALGEN";	//Je¿eli staniesz plecami do œwi¹tyni i potem pójdziesz w lewo obok knajpy, dojdziesz do placu wisielców.
+	markt_2_tempel = "SVM_9_MARKT_2_TEMPEL";	//IdŸ od strony targowiska, wzd³u¿ murów miejskich, a dojdziesz do œwi¹tyni.
+	markt_2_kaserne = "SVM_9_MARKT_2_KASERNE";	//Koszary znajduj¹ siê w tym du¿ym budynku. WejdŸ po prostu po schodach naprzeciwko gospody.
+	markt_2_galgen = "SVM_9_MARKT_2_GALGEN";	//PrzejdŸ po prostu obok koszar, a powinieneœ dojœæ do placu wisielców.
+	galgen_2_tempel = "SVM_9_GALGEN_2_TEMPEL";	//IdŸ od strony placu wisielców w dó³ uliczk¹, a dojdziesz do placu œwi¹tynnego.
+	galgen_2_markt = "SVM_9_GALGEN_2_MARKT";	//PrzejdŸ po prostu wzd³u¿ koszar, a powinieneœ dojœæ do targowiska.
+	galgen_2_kaserne = "SVM_9_GALGEN_2_KASERNE";	//Koszary to ten du¿y budynek. WejdŸ po prostu po schodach.
+	kaserne_2_markt = "SVM_9_KASERNE_2_MARKT";	//ZejdŸ po schodach na lewo od g³ównego wejœcia, to dojdziesz do targowiska.
+	kaserne_2_galgen = "SVM_9_KASERNE_2_GALGEN";	//ZejdŸ po schodach na prawo od g³ównego wejœcia, to dojdziesz do placu wisielców.
+	hafen_2_unterstadt = "SVM_9_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nabrze¿u ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
+	dead = "SVM_9_Dead";	//Aaaaaaaahrrrrrr!
+	aargh_1 = "SVM_9_Aargh_1";	//Aargh
+	aargh_2 = "SVM_9_Aargh_2";	//Aargh
+	aargh_3 = "SVM_9_Aargh_3";	//Aargh
+	addon_wrongarmor = "SVM_9_Addon_WrongArmor";	//
+	addon_wrongarmor_sld = "SVM_9_ADDON_WRONGARMOR_SLD";	//
+	addon_wrongarmor_mil = "SVM_9_ADDON_WRONGARMOR_MIL";	//
+	addon_wrongarmor_kdf = "SVM_9_ADDON_WRONGARMOR_KDF";	//
+	addon_noarmor_bdt = "SVM_9_ADDON_ADDON_NOARMOR_BDT";	//
+	addon_diebandit = "SVM_9_ADDON_DIEBANDIT";	//
+	addon_dirtypirate = "SVM_9_ADDON_DIRTYPIRATE";	//
+};
+
+instance SVM_10(C_SVM)
+{
+	milgreetings = "SVM_10_MILGreetings";	//Niech ¿yje Król!
+	palgreetings = "SVM_10_PALGreetings";	//Chwa³a Innosowi!
+	weather = "SVM_10_Weather";	//Beznadziejna pogoda!
+	igetyoustill = "SVM_10_IGetYouStill";	//To znowu TY!
+	dieenemy = "SVM_10_DieEnemy";	//Za³atwiê ciê!
+	diemonster = "SVM_10_DieMonster";	//Znowu jedna z tych g³upich bestii!
+	dirtythief = "SVM_10_DirtyThief";	//Ty ma³y, parszywy z³odzieju!
+	handsoff = "SVM_10_HandsOff";	//Zabieraj ³apy!
+	sheepkiller = "SVM_10_SheepKiller";	//Hej! Zostaw nasze owce w spokoju!
+	sheepkillermonster = "SVM_10_SheepKillerMonster";	//Ta bestia z¿era nasze owce!
+	youmurderer = "SVM_10_YouMurderer";	//Morderca!
+	diestupidbeast = "SVM_10_DieStupidBeast";	//A ten stwór czego tu chce?!
+	youdarehitme = "SVM_10_YouDareHitMe";	//No, teraz to mnie wkurzy³eœ!
+	youaskedforit = "SVM_10_YouAskedForIt";	//Sam tego chcia³eœ!
+	thenibeatyououtofhere = "SVM_10_ThenIBeatYouOutOfHere";	//Z niektórymi po prostu nie mo¿na siê dogadaæ w normalny sposób...
+	whatdidyoudointhere = "SVM_10_WhatDidYouDoInThere";	//Czego tam szuka³eœ, co?!
+	willyoustopfighting = "SVM_10_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	killenemy = "SVM_10_KillEnemy";	//Giñ!
+	enemykilled = "SVM_10_EnemyKilled";	//Cholerny bydlak...
+	monsterkilled = "SVM_10_MonsterKilled";	//No, koniec z tob¹, bestio!
+	thiefdown = "SVM_10_ThiefDown";	//Trzymaj na przysz³oœæ ³apy z dala od moich rzeczy, jasne?
+	rumfummlerdown = "SVM_10_rumfummlerDown";	//Na przysz³oœæ trzymaj ³apy przy sobie!
+	sheepattackerdown = "SVM_10_SheepAttackerDown";	//Nigdy wiêcej nie podnoœ rêki na nasze owce!
+	killmurderer = "SVM_10_KillMurderer";	//Giñ, morderco!
+	stupidbeastkilled = "SVM_10_StupidBeastKilled";	//G³upie stworzenie!
+	neverhitmeagain = "SVM_10_NeverHitMeAgain";	//Nie próbuj tego jeszcze raz, ch³opczyku!
+	youbettershouldhavelistened = "SVM_10_YouBetterShouldHaveListened";	//Niech to bêdzie dla ciebie nauczka.
+	getupandbegone = "SVM_10_GetUpAndBeGone";	//Wstawaj i wynoœ siê st¹d!
+	neverenterroomagain = "SVM_10_NeverEnterRoomAgain";	//Nie chcê ciê wiêcej tam widzieæ, zrozumiano?
+	thereisnofightinghere = "SVM_10_ThereIsNoFightingHere";	//Je¿eli ktoœ tu rozdziela ciosy, to jestem to ja, zrozumiano?!
+	spareme = "SVM_10_SpareMe";	//Zostaw mnie w spokoju!
+	runaway = "SVM_10_RunAway";	//Cholera! Trzeba uciekaæ!
+	alarm = "SVM_10_Alarm";	//ALARM!
+	guards = "SVM_10_Guards";	//STRA¯!
+	help = "SVM_10_Help";	//Pomocy!
+	goodmonsterkill = "SVM_10_GoodMonsterKill";	//No! Tak nale¿y obchodziæ siê z bestiami!
+	goodkill = "SVM_10_GoodKill";	//Zas³uguje na to!
+	notnow = "SVM_10_NOTNOW";	//Zostaw mnie w spokoju!
+	runcoward = "SVM_10_RunCoward";	//Jeszcze siê spotkamy!
+	getoutofhere = "SVM_10_GetOutOfHere";	//Wynoœ siê!
+	whyareyouinhere = "SVM_10_WhyAreYouInHere";	//Czego tu szukasz?!
+	yesgooutofhere = "SVM_10_YesGoOutOfHere";	//Zabieraj siê st¹d!
+	whatsthissupposedtobe = "SVM_10_WhatsThisSupposedToBe";	//Co ty tu robisz?
+	youdisturbedmyslumber = "SVM_10_YouDisturbedMySlumber";	//Co siê dzieje?
+	itookyourgold = "SVM_10_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
+	shitnogold = "SVM_10_ShitNoGold";	//Ty frajerze, nawet z³ota nie masz!
+	itakeyourweapon = "SVM_10_ITakeYourWeapon";	//Wezmê twoj¹ broñ na przechowanie.
+	whatareyoudoing = "SVM_10_WhatAreYouDoing";	//Lepiej uwa¿aj! Nastêpnym razem ci przy³o¿ê.
+	lookingfortroubleagain = "SVM_10_LookingForTroubleAgain";	//Znowu chcesz w mordê?
+	stopmagic = "SVM_10_StopMagic";	//Skoñcz wreszcie z tym czarowaniem!
+	isaidstopmagic = "SVM_10_ISaidStopMagic";	//Chcesz dostaæ? Natychmiast przestañ!
+	weapondown = "SVM_10_WeaponDown";	//Od³ó¿ broñ!
+	isaidweapondown = "SVM_10_ISaidWeaponDown";	//Od³ó¿ wreszcie tê cholern¹ broñ!
+	wisemove = "SVM_10_WiseMove";	//Spryciarz!
+	nexttimeyoureinforit = "SVM_10_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
+	ohmyhead = "SVM_10_OhMyHead";	//O rany, moja g³owa...
+	theresafight = "SVM_10_TheresAFight";	//Aach, walka...
+	ohmygoditsafight = "SVM_10_OhMyGodItsAFight";	//O rany, walka!
+	goodvictory = "SVM_10_GoodVictory";	//Ale mu pokaza³eœ!
+	notbad = "SVM_10_NotBad";	//NieŸle...
+	ohmygodhesdown = "SVM_10_OhMyGodHesDown";	//Bogowie! Co za brutal...
+	cheerfriend01 = "SVM_10_CheerFriend01";	//Wal z ca³ej si³y!
+	cheerfriend02 = "SVM_10_CheerFriend02";	//Poka¿ mu!
+	cheerfriend03 = "SVM_10_CheerFriend03";	//Wykoñcz go!
+	ooh01 = "SVM_10_Ooh01";	//Broñ siê!
+	ooh02 = "SVM_10_Ooh02";	//Oddaj cios!
+	ooh03 = "SVM_10_Ooh03";	//Uuu, to musia³o boleæ!
+	whatwasthat = "SVM_10_WhatWasThat";	//Cholera, co to by³o!?
+	getoutofmybed = "SVM_10_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	awake = "SVM_10_Awake";	//(rozkoszne ziewniêcie)
+	abs_commander = "SVM_10_ABS_COMMANDER";	//Za³atwi³eœ zatem sprawê z kapitanem.
+	abs_monastery = "SVM_10_ABS_MONASTERY";	//Opowiedzia³eœ zatem Ojcu Parlanowi o swych czynach.
+	abs_farm = "SVM_10_ABS_FARM";	//Mówi¹, ¿e Lee uda³o siê za³atwiæ ca³¹ sprawê.
+	abs_good = "SVM_10_ABS_GOOD";	//Dobrze.
+	sheepkiller_crime = "SVM_10_SHEEPKILLER_CRIME";	//Szlachtowanie owiec to ju¿ po prostu szczyt wszystkiego! Wynoœ siê!
+	attack_crime = "SVM_10_ATTACK_CRIME";	//Jesteœ jakimœ oprychem - lepiej st¹d znikaj!
+	theft_crime = "SVM_10_THEFT_CRIME";	//Przeklêty z³odziej! Gardzê takimi jak ty!
+	pal_city_crime = "SVM_10_PAL_CITY_CRIME";	//Wydawa³o mi siê, ¿e od paladyna mo¿na oczekiwaæ czegoœ wiêcej. Lord Hagen bêdzie niepocieszony.
+	mil_city_crime = "SVM_10_MIL_CITY_CRIME";	//¯e takich jak ty w ogóle przyjmuj¹ do stra¿y miejskiej! Odpowiesz za to przed Lordem Andre!
+	city_crime = "SVM_10_CITY_CRIME";	//Lord Andre dowie siê o twoim zachowaniu!
+	mona_crime = "SVM_10_MONA_CRIME";	//Ojciec Parlan bêdzie wœciek³y!
+	farm_crime = "SVM_10_FARM_CRIME";	//Odpowiesz za to przed Lee!
+	oc_crime = "SVM_10_OC_CRIME";	//Kapitan Garond nie bêdzie zadowolony, kiedy o tym us³yszy! Zap³acisz za to!
+	toughguy_attacklost = "SVM_10_TOUGHGUY_ATTACKLOST";	//Masz ca³kiem niez³e uderzenie... Czego ode mnie chcesz?
+	toughguy_attackwon = "SVM_10_TOUGHGUY_ATTACKWON";	//Jeszcze jakieœ pytania?
+	toughguy_playerattack = "SVM_10_TOUGHGUY_PLAYERATTACK";	//To znowu ty!
+	gold_1000 = "SVM_10_GOLD_1000";	//1000 sztuk z³ota.
+	gold_950 = "SVM_10_GOLD_950";	//950 sztuk z³ota.
+	gold_900 = "SVM_10_GOLD_900";	//900 sztuk z³ota.
+	gold_850 = "SVM_10_GOLD_850";	//850 sztuk z³ota.
+	gold_800 = "SVM_10_GOLD_800";	//800 sztuk z³ota.
+	gold_750 = "SVM_10_GOLD_750";	//750 sztuk z³ota.
+	gold_700 = "SVM_10_GOLD_700";	//700 sztuk z³ota.
+	gold_650 = "SVM_10_GOLD_650";	//650 sztuk z³ota.
+	gold_600 = "SVM_10_GOLD_600";	//600 sztuk z³ota.
+	gold_550 = "SVM_10_GOLD_550";	//550 sztuk z³ota.
+	gold_500 = "SVM_10_GOLD_500";	//500 sztuk z³ota.
+	gold_450 = "SVM_10_GOLD_450";	//450 sztuk z³ota.
+	gold_400 = "SVM_10_GOLD_400";	//400 sztuk z³ota.
+	gold_350 = "SVM_10_GOLD_350";	//350 sztuk z³ota.
+	gold_300 = "SVM_10_GOLD_300";	//300 sztuk z³ota.
+	gold_250 = "SVM_10_GOLD_250";	//250 sztuk z³ota.
+	gold_200 = "SVM_10_GOLD_200";	//200 sztuk z³ota.
+	gold_150 = "SVM_10_GOLD_150";	//150 sztuk z³ota.
+	gold_100 = "SVM_10_GOLD_100";	//100 sztuk z³ota.
+	gold_90 = "SVM_10_GOLD_90";	//90 sztuk z³ota.
+	gold_80 = "SVM_10_GOLD_80";	//80 sztuk z³ota.
+	gold_70 = "SVM_10_GOLD_70";	//70 sztuk z³ota.
+	gold_60 = "SVM_10_GOLD_60";	//60 sztuk z³ota.
+	gold_50 = "SVM_10_GOLD_50";	//50 sztuk z³ota.
+	gold_40 = "SVM_10_GOLD_40";	//40 sztuk z³ota.
+	gold_30 = "SVM_10_GOLD_30";	//30 sztuk z³ota.
+	gold_20 = "SVM_10_GOLD_20";	//20 sztuk z³ota.
+	gold_10 = "SVM_10_GOLD_10";	//10 sztuk z³ota.
+	smalltalk01 = "SVM_10_Smalltalk01";	//...tak jakby mnie to cokolwiek obchodzi³o...
+	smalltalk02 = "SVM_10_Smalltalk02";	//...nikt nie chce o tym s³yszeæ...
+	smalltalk03 = "SVM_10_Smalltalk03";	//...w koñcu to by³a jego decyzja...
+	smalltalk04 = "SVM_10_Smalltalk04";	//...nie wiem, ty mi powiedz...
+	smalltalk05 = "SVM_10_Smalltalk05";	//...trzymam siê od tego z daleka...
+	smalltalk06 = "SVM_10_Smalltalk06";	//...nie mam czasu na takie rzeczy...
+	smalltalk07 = "SVM_10_Smalltalk07";	//...du¿o by mnie to kosztowa³o...
+	smalltalk08 = "SVM_10_Smalltalk08";	//...nie musisz mi tego mówiæ...
+	smalltalk09 = "SVM_10_Smalltalk09";	//...widzi i s³yszy siê to, i owo...
+	smalltalk10 = "SVM_10_Smalltalk10";	//...mogê ci opowiedzieæ takich rzeczach...
+	smalltalk11 = "SVM_10_Smalltalk11";	//...nie mo¿na na tym polegaæ...
+	smalltalk12 = "SVM_10_Smalltalk12";	//...sam tak mówi³em...
+	smalltalk13 = "SVM_10_Smalltalk13";	//...tego jest wiêcej, wierz mi...
+	smalltalk14 = "SVM_10_Smalltalk14";	//...ci¹gle to samo...
+	smalltalk15 = "SVM_10_Smalltalk15";	//...nie mów, ¿e to nieprawda...
+	smalltalk16 = "SVM_10_Smalltalk16";	//...wczeœniej czy póŸniej musia³o siê tak zdarzyæ...
+	smalltalk17 = "SVM_10_Smalltalk17";	//...powinien byæ m¹drzejszy...
+	smalltalk18 = "SVM_10_Smalltalk18";	//...to siê nigdy nie zmieni...
+	smalltalk19 = "SVM_10_Smalltalk19";	//...to ¿adna tajemnica...
+	smalltalk20 = "SVM_10_Smalltalk20";	//...¿adna wielka sprawa...
+	smalltalk21 = "SVM_10_Smalltalk21";	//...on myœli, ¿e to takie ³atwe...
+	smalltalk22 = "SVM_10_Smalltalk22";	//...nikt nie chce tego s³uchaæ...
+	smalltalk23 = "SVM_10_Smalltalk23";	//...i to jest prawda...
+	smalltalk24 = "SVM_10_Smalltalk24";	//...trzeba po prostu s³uchaæ...
+	smalltalk25 = "SVM_10_Smalltalk25";	//...gdyby to zale¿a³o od nas, sprawy potoczy³yby siê inaczej...
+	smalltalk26 = "SVM_10_Smalltalk26";	//...musi po prostu wiêcej æwiczyæ...
+	smalltalk27 = "SVM_10_Smalltalk27";	//...co on wie o s³u¿bie...
+	smalltalk28 = "SVM_10_Smalltalk28";	//...Innos karze sprawiedliwie...
+	smalltalk29 = "SVM_10_Smalltalk29";	//...œcie¿ka cnoty jest d³uga i kamienista...
+	smalltalk30 = "SVM_10_Smalltalk30";	//...tylko Innos wie, co jest dobre, a co z³e...
+	nolearnnopoints = "SVM_10_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
+	nolearnoverpersonalmax = "SVM_10_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	nolearnyourebetter = "SVM_10_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	youlearnedsomething = "SVM_10_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	unterstadt = "SVM_10_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
+	oberstadt = "SVM_10_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
+	tempel = "SVM_10_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
+	markt = "SVM_10_MARKT";	//Jesteœ teraz na targowisku.
+	galgen = "SVM_10_GALGEN";	//Jesteœ teraz na placu wisielców.
+	kaserne = "SVM_10_KASERNE";	//To s¹ koszary.
+	hafen = "SVM_10_HAFEN";	//Jesteœ teraz w dzielnicy portowej.
+	whereto = "SVM_10_WHERETO";	//Dok¹d to?
+	oberstadt_2_unterstadt = "SVM_10_OBERSTADT_2_UNTERSTADT";	//PrzejdŸ przez wewnêtrzn¹ bramê, a dojdziesz do dolnej czêœci miasta.
+	unterstadt_2_oberstadt = "SVM_10_UNTERSTADT_2_OBERSTADT";	//Przy po³udniowej bramie znajduj¹ siê schody, które prowadz¹ do bramy wewnêtrznej. Za ni¹ zaczyna siê górne miasto.
+	unterstadt_2_tempel = "SVM_10_UNTERSTADT_2_TEMPEL";	//IdŸ od kowala przejœciem, a dojdziesz do placu œwi¹tynnego.
+	unterstadt_2_hafen = "SVM_10_UNTERSTADT_2_HAFEN";	//IdŸ od kowala w dó³ ulic¹ portow¹, a dojdziesz do przystani.
+	tempel_2_unterstadt = "SVM_10_TEMPEL_2_UNTERSTADT";	//Od placu œwi¹tynnego odchodzi przejœcie prowadz¹ce do dolnej czêœci miasta.
+	tempel_2_markt = "SVM_10_TEMPEL_2_MARKT";	//Kiedy znajdziesz siê przed œwi¹tyni¹, pójdŸ w lewo i potem wzd³u¿ murów, a dojdziesz do targowiska.
+	tempel_2_galgen = "SVM_10_TEMPEL_2_GALGEN";	//Je¿eli id¹c od strony œwi¹tyni, skrêcisz przy knajpie w lewo, dojdziesz do placu wisielców.
+	markt_2_tempel = "SVM_10_MARKT_2_TEMPEL";	//Je¿eli id¹c od strony targowiska, bêdziesz szed³ wzd³u¿ murów miejskich, dojdziesz do œwi¹tyni.
+	markt_2_kaserne = "SVM_10_MARKT_2_KASERNE";	//Koszary to ten wielki budynek. WejdŸ po schodach naprzeciwko gospody.
+	markt_2_galgen = "SVM_10_MARKT_2_GALGEN";	//IdŸ wzd³u¿ koszar, a dojdziesz do placu wisielców.
+	galgen_2_tempel = "SVM_10_GALGEN_2_TEMPEL";	//IdŸ od strony placu wisielców w dó³ uliczk¹, a dojdziesz do placu œwi¹tynnego.
+	galgen_2_markt = "SVM_10_GALGEN_2_MARKT";	//IdŸ po prostu wzd³u¿ koszar, a dojdziesz do targowiska.
+	galgen_2_kaserne = "SVM_10_GALGEN_2_KASERNE";	//Koszary to ten wielki budynek. Wystarczy wejœæ po schodach.
+	kaserne_2_markt = "SVM_10_KASERNE_2_MARKT";	//ZejdŸ po schodach na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
+	kaserne_2_galgen = "SVM_10_KASERNE_2_GALGEN";	//ZejdŸ po schodach na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
+	hafen_2_unterstadt = "SVM_10_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nadbrze¿u w górê ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
+	dead = "SVM_10_Dead";	//Aaaarhhh!
+	aargh_1 = "SVM_10_Aargh_1";	//Aargh
+	aargh_2 = "SVM_10_Aargh_2";	//Aargh
+	aargh_3 = "SVM_10_Aargh_3";	//Aargh
+	addon_wrongarmor = "SVM_10_Addon_WrongArmor";	//
+	addon_wrongarmor_sld = "SVM_10_ADDON_WRONGARMOR_SLD";	//
+	addon_wrongarmor_mil = "SVM_10_ADDON_WRONGARMOR_MIL";	//
+	addon_wrongarmor_kdf = "SVM_10_ADDON_WRONGARMOR_KDF";	//
+	addon_noarmor_bdt = "SVM_10_ADDON_ADDON_NOARMOR_BDT";	//
+	addon_diebandit = "SVM_10_ADDON_DIEBANDIT";	//
+	addon_dirtypirate = "SVM_10_ADDON_DIRTYPIRATE";	//
+};
+
+instance SVM_11(C_SVM)
+{
+	sc_heywaitasecond = "SVM_11_Addon_HeyWaitASecond";	//
+	milgreetings = "SVM_11_MILGreetings";	//Niech ¿yje Król!
+	palgreetings = "SVM_11_PALGreetings";	//Chwa³a Innosowi!
+	weather = "SVM_11_Weather";	//Nêdzna pogoda...
+	igetyoustill = "SVM_11_IGetYouStill";	//Wiêc w koñcu i tak ciê dorwa³em!
+	dieenemy = "SVM_11_DieEnemy";	//Teraz kolej na ciebie!
+	diemonster = "SVM_11_DieMonster";	//Znowu jedna z tych cholernych bestii!
+	dirtythief = "SVM_11_DirtyThief";	//Parszywy z³odziej! Czekaj tylko...
+	handsoff = "SVM_11_HandsOff";	//Zabieraj ³apy!
+	sheepkiller = "SVM_11_SheepKiller";	//To cholerne bydlê zarzyna nasze owce!
+	sheepkillermonster = "SVM_11_SheepKillerMonster";	//Ten przeklêty potwór z¿era nasze owce!
+	youmurderer = "SVM_11_YouMurderer";	//Morderca!
+	diestupidbeast = "SVM_11_DieStupidBeast";	//Bestie nie maj¹ tu prawa wstêpu!
+	youdarehitme = "SVM_11_YouDareHitMe";	//Czekaj tylko, ty draniu!
+	youaskedforit = "SVM_11_YouAskedForIt";	//Sam siê o to prosi³eœ!
+	thenibeatyououtofhere = "SVM_11_ThenIBeatYouOutOfHere";	//Wiêc bêdê ciê musia³ st¹d WYKOPAÆ!
+	whatdidyoudointhere = "SVM_11_WhatDidYouDoInThere";	//Co ty tam robi³eœ, co?!
+	willyoustopfighting = "SVM_11_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	killenemy = "SVM_11_KillEnemy";	//Giñ, bydlaku!
+	enemykilled = "SVM_11_EnemyKilled";	//Koniec z tob¹, paskudo!
+	monsterkilled = "SVM_11_MonsterKilled";	//Jedna bestia mniej!
+	thiefdown = "SVM_11_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
+	rumfummlerdown = "SVM_11_rumfummlerDown";	//Na przysz³oœæ trzymaj siê z dala od cudzej w³asnoœci!
+	sheepattackerdown = "SVM_11_SheepAttackerDown";	//Nie rób tego nigdy wiêcej! To s¹ nasze owce!
+	killmurderer = "SVM_11_KillMurderer";	//Giñ, morderco!
+	stupidbeastkilled = "SVM_11_StupidBeastKilled";	//G³upia bestia!
+	neverhitmeagain = "SVM_11_NeverHitMeAgain";	//Nigdy wiêcej ze mn¹ nie zaczynaj!
+	youbettershouldhavelistened = "SVM_11_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
+	getupandbegone = "SVM_11_GetUpAndBeGone";	//A teraz wynoœ siê!
+	neverenterroomagain = "SVM_11_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
+	thereisnofightinghere = "SVM_11_ThereIsNoFightingHere";	//Tu siê nie walczy, zrozumiano? Niech to bêdzie dla ciebie nauczka!
+	spareme = "SVM_11_SpareMe";	//Zostaw mnie w spokoju!
+	runaway = "SVM_11_RunAway";	//Cholera! Znikam st¹d!
+	alarm = "SVM_11_Alarm";	//ALARM!
+	guards = "SVM_11_Guards";	//STRA¯!
+	help = "SVM_11_Help";	//Pomocy!
+	goodmonsterkill = "SVM_11_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
+	goodkill = "SVM_11_GoodKill";	//No, daj œwini na co zas³uguje!
+	notnow = "SVM_11_NOTNOW";	//Zostaw mnie w spokoju!
+	runcoward = "SVM_11_RunCoward";	//Stój, padalcu!
+	getoutofhere = "SVM_11_GetOutOfHere";	//Wynoœ siê st¹d!
+	whyareyouinhere = "SVM_11_WhyAreYouInHere";	//Czego tu chcesz?! OdejdŸ!
+	yesgooutofhere = "SVM_11_YesGoOutOfHere";	//No, zmywaj siê!
+	whatsthissupposedtobe = "SVM_11_WhatsThisSupposedToBe";	//Ej ty! Czego tam szukasz!
+	youdisturbedmyslumber = "SVM_11_YouDisturbedMySlumber";	//Czego u diab³a chcesz?
+	itookyourgold = "SVM_11_ITookYourGold";	//Z³oto! Przyda mi siê...
+	shitnogold = "SVM_11_ShitNoGold";	//Nie masz z³ota?!
+	itakeyourweapon = "SVM_11_ITakeYourWeapon";	//Wezmê twoj¹ broñ na przechowanie.
+	whatareyoudoing = "SVM_11_WhatAreYouDoing";	//Hej! Uwa¿aj!
+	lookingfortroubleagain = "SVM_11_LookingForTroubleAgain";	//Ci¹gle ci ma³o?
+	stopmagic = "SVM_11_StopMagic";	//Trzymaj siê ode mnie z daleka z t¹ swoj¹ magi¹!
+	isaidstopmagic = "SVM_11_ISaidStopMagic";	//Skoñcz z tymi czarami! Coœ nie tak z twoim s³uchem?!
+	weapondown = "SVM_11_WeaponDown";	//Od³ó¿ broñ!
+	isaidweapondown = "SVM_11_ISaidWeaponDown";	//Og³uch³eœ czy co?! Powtarzam: od³ó¿ broñ!
+	wisemove = "SVM_11_WiseMove";	//Widzisz, to nie by³o takie trudne.
+	nexttimeyoureinforit = "SVM_11_NextTimeYoureInForIt";	//Jeszcze zobaczymy...
+	ohmyhead = "SVM_11_OhMyHead";	//O rany, moja g³owa...
+	theresafight = "SVM_11_TheresAFight";	//Ach, wreszcie coœ siê dzieje!
+	ohmygoditsafight = "SVM_11_OhMyGodItsAFight";	//Porozwalaj¹ sobie ³by...
+	goodvictory = "SVM_11_GoodVictory";	//Zas³u¿y³ sobie na to!
+	notbad = "SVM_11_NotBad";	//Ca³kiem nieŸle...
+	ohmygodhesdown = "SVM_11_OhMyGodHesDown";	//Ale brutal...
+	cheerfriend01 = "SVM_11_CheerFriend01";	//Tak to siê powinno robiæ!
+	cheerfriend02 = "SVM_11_CheerFriend02";	//Na co czekasz?
+	cheerfriend03 = "SVM_11_CheerFriend03";	//I o to chodzi!
+	ooh01 = "SVM_11_Ooh01";	//Nie daj mu siê!
+	ooh02 = "SVM_11_Ooh02";	//Poka¿ mu, kto tu rz¹dzi!
+	ooh03 = "SVM_11_Ooh03";	//O cholera!
+	whatwasthat = "SVM_11_WhatWasThat";	//Co TO by³o!?
+	getoutofmybed = "SVM_11_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	awake = "SVM_11_Awake";	//(rozkoszne ziewniêcie)
+	abs_commander = "SVM_11_ABS_COMMANDER";	//Podobno by³eœ u kapitana i wszystko za³atwi³eœ.
+	abs_monastery = "SVM_11_ABS_MONASTERY";	//Ponoæ poszed³eœ do Ojca Parlana, by odkupiæ swe grzechy.
+	abs_farm = "SVM_11_ABS_FARM";	//Mówi¹, ¿e by³eœ u Lee i wszystko za³atwi³eœ.
+	abs_good = "SVM_11_ABS_GOOD";	//Dobre.
+	sheepkiller_crime = "SVM_11_SHEEPKILLER_CRIME";	//Tak po prostu szlachtowaæ nasze owce! Spadaj st¹d, gnido!
+	attack_crime = "SVM_11_ATTACK_CRIME";	//Nie gadam z takimi jak ty!
+	theft_crime = "SVM_11_THEFT_CRIME";	//ZejdŸ mi z oczu, parszywy z³odzieju!
+	pal_city_crime = "SVM_11_PAL_CITY_CRIME";	//Jesteœ zaka³¹ swojego zakonu! Lord Hagen bêdzie wœciek³y!
+	mil_city_crime = "SVM_11_MIL_CITY_CRIME";	//Hañbisz dobre imiê stra¿y miejskiej! Lord Andre da ci nauczkê!
+	city_crime = "SVM_11_CITY_CRIME";	//Lord Andre dowie siê o twoich czynach!
+	mona_crime = "SVM_11_MONA_CRIME";	//Ojciec Parlan nie bêdzie zbyt szczêœliwy, gdy siê o tym dowie!
+	farm_crime = "SVM_11_FARM_CRIME";	//Lee da ci popaliæ! I na co ci to by³o?
+	oc_crime = "SVM_11_OC_CRIME";	//Kapitan Garond na pewno za¿¹da od ciebie wyjaœnieñ!
+	toughguy_attacklost = "SVM_11_TOUGHGUY_ATTACKLOST";	//Dobrze ju¿, dobrze, wygra³eœ. Czego ode mnie chcesz?
+	toughguy_attackwon = "SVM_11_TOUGHGUY_ATTACKWON";	//Mam ci znowu pokazaæ, kto tu jest szefem?
+	toughguy_playerattack = "SVM_11_TOUGHGUY_PLAYERATTACK";	//Chyba chcesz mnie znowu sprowokowaæ...
+	gold_1000 = "SVM_11_GOLD_1000";	//1000 sztuk z³ota.
+	gold_950 = "SVM_11_GOLD_950";	//950 sztuk z³ota.
+	gold_900 = "SVM_11_GOLD_900";	//900 sztuk z³ota.
+	gold_850 = "SVM_11_GOLD_850";	//850 sztuk z³ota.
+	gold_800 = "SVM_11_GOLD_800";	//800 sztuk z³ota.
+	gold_750 = "SVM_11_GOLD_750";	//750 sztuk z³ota.
+	gold_700 = "SVM_11_GOLD_700";	//700 sztuk z³ota.
+	gold_650 = "SVM_11_GOLD_650";	//650 sztuk z³ota.
+	gold_600 = "SVM_11_GOLD_600";	//600 sztuk z³ota.
+	gold_550 = "SVM_11_GOLD_550";	//550 sztuk z³ota.
+	gold_500 = "SVM_11_GOLD_500";	//500 sztuk z³ota.
+	gold_450 = "SVM_11_GOLD_450";	//450 sztuk z³ota.
+	gold_400 = "SVM_11_GOLD_400";	//400 sztuk z³ota.
+	gold_350 = "SVM_11_GOLD_350";	//350 sztuk z³ota.
+	gold_300 = "SVM_11_GOLD_300";	//300 sztuk z³ota.
+	gold_250 = "SVM_11_GOLD_250";	//250 sztuk z³ota.
+	gold_200 = "SVM_11_GOLD_200";	//200 sztuk z³ota.
+	gold_150 = "SVM_11_GOLD_150";	//150 sztuk z³ota.
+	gold_100 = "SVM_11_GOLD_100";	//100 sztuk z³ota.
+	gold_90 = "SVM_11_GOLD_90";	//90 sztuk z³ota.
+	gold_80 = "SVM_11_GOLD_80";	//80 sztuk z³ota.
+	gold_70 = "SVM_11_GOLD_70";	//70 sztuk z³ota.
+	gold_60 = "SVM_11_GOLD_60";	//60 sztuk z³ota.
+	gold_50 = "SVM_11_GOLD_50";	//50 sztuk z³ota.
+	gold_40 = "SVM_11_GOLD_40";	//40 sztuk z³ota.
+	gold_30 = "SVM_11_GOLD_30";	//30 sztuk z³ota.
+	gold_20 = "SVM_11_GOLD_20";	//20 sztuk z³ota.
+	gold_10 = "SVM_11_GOLD_10";	//10 sztuk z³ota.
+	smalltalk01 = "SVM_11_Smalltalk01";	//...naprawdê tak myœlisz...
+	smalltalk02 = "SVM_11_Smalltalk02";	//...wszystko jest mo¿liwe...
+	smalltalk03 = "SVM_11_Smalltalk03";	//...powinien byæ m¹drzejszy...
+	smalltalk04 = "SVM_11_Smalltalk04";	//...jakbyœmy mieli nie doœæ problemów...
+	smalltalk05 = "SVM_11_Smalltalk05";	//...kto ci to powiedzia³...
+	smalltalk06 = "SVM_11_Smalltalk06";	//...przez to bêdzie jeszcze wiêcej k³opotów...
+	smalltalk07 = "SVM_11_Smalltalk07";	//...ludzie mówi¹ ró¿ne rzeczy...
+	smalltalk08 = "SVM_11_Smalltalk08";	//...ja bym tego nie zrobi³...
+	smalltalk09 = "SVM_11_Smalltalk09";	//...to wszystko tylko plotki...
+	smalltalk10 = "SVM_11_Smalltalk10";	//...lepiej uwa¿aæ, co siê komu mówi...
+	smalltalk11 = "SVM_11_Smalltalk11";	//...mog³em ci to powiedzieæ wczeœniej...
+	smalltalk12 = "SVM_11_Smalltalk12";	//...nikt mnie nigdy nie pyta o zdanie...
+	smalltalk13 = "SVM_11_Smalltalk13";	//...¿al biedaka...
+	smalltalk14 = "SVM_11_Smalltalk14";	//...to nic nowego...
+	smalltalk15 = "SVM_11_Smalltalk15";	//...to przecie¿ oczywiste...
+	smalltalk16 = "SVM_11_Smalltalk16";	//...nie musisz mnie o to pytaæ...
+	smalltalk17 = "SVM_11_Smalltalk17";	//...tak nie mo¿e dalej byæ...
+	smalltalk18 = "SVM_11_Smalltalk18";	//...i tak wiesz, co o tym s¹dzê...
+	smalltalk19 = "SVM_11_Smalltalk19";	//...to dok³adnie moje s³owa...
+	smalltalk20 = "SVM_11_Smalltalk20";	//...nic siê w zwi¹zku z tym nie zmieni...
+	smalltalk21 = "SVM_11_Smalltalk21";	//...czemu nie dosz³o to do mnie wczeœniej...
+	smalltalk22 = "SVM_11_Smalltalk22";	//...poczekajmy, co siê stanie...
+	smalltalk23 = "SVM_11_Smalltalk23";	//...niektóre problemy rozwi¹zuj¹ siê same...
+	smalltalk24 = "SVM_11_Smalltalk24";	//...nie chcê o tym s³uchaæ...
+	smalltalk25 = "SVM_11_Smalltalk25";	//...by³ w sztok pijany...
+	smalltalk26 = "SVM_11_Smalltalk26";	//...nie pozwolê siê tak traktowaæ...
+	smalltalk27 = "SVM_11_Smalltalk27";	//...wszyscy uciekali jak zaj¹ce, by³em zupe³nie sam...
+	smalltalk28 = "SVM_11_Smalltalk28";	//...tak mówi¹ pisma...
+	smalltalk29 = "SVM_11_Smalltalk29";	//...zawsze dzia³am w imieniu Innosa...
+	smalltalk30 = "SVM_11_Smalltalk30";	//...nie wolno naruszaæ boskiego porz¹dku...
+	nolearnnopoints = "SVM_11_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
+	nolearnoverpersonalmax = "SVM_11_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	nolearnyourebetter = "SVM_11_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	youlearnedsomething = "SVM_11_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	unterstadt = "SVM_11_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
+	oberstadt = "SVM_11_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
+	tempel = "SVM_11_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
+	markt = "SVM_11_MARKT";	//Jesteœ teraz na targowisku.
+	galgen = "SVM_11_GALGEN";	//Jesteœ teraz na placu wisielców.
+	kaserne = "SVM_11_KASERNE";	//To s¹ koszary.
+	hafen = "SVM_11_HAFEN";	//Jesteœ teraz w dzielnicy portowej.
+	whereto = "SVM_11_WHERETO";	//Dok¹d chcesz siê udaæ?
+	oberstadt_2_unterstadt = "SVM_11_OBERSTADT_2_UNTERSTADT";	//PrzejdŸ przez wewnêtrzn¹ bramê, a dojdziesz do dolnej czêœci miasta.
+	unterstadt_2_oberstadt = "SVM_11_UNTERSTADT_2_OBERSTADT";	//Przy po³udniowej bramie znajduj¹ siê schody, które prowadz¹ do bramy wewnêtrznej. Za ni¹ zaczyna siê górne miasto.
+	unterstadt_2_tempel = "SVM_11_UNTERSTADT_2_TEMPEL";	//IdŸ od kowala przez przejœcie, a dojdziesz do placu œwi¹tynnego.
+	unterstadt_2_hafen = "SVM_11_UNTERSTADT_2_HAFEN";	//IdŸ od kowala w dó³ ulic¹ portow¹, a dojdziesz do portu.
+	tempel_2_unterstadt = "SVM_11_TEMPEL_2_UNTERSTADT";	//Od placu œwi¹tynnego odchodzi przejœcie, które prowadzi do dolnej czêœci miasta.
+	tempel_2_markt = "SVM_11_TEMPEL_2_MARKT";	//Kiedy znajdziesz siê przed œwi¹tyni¹, skrêæ w lewo i idŸ wzd³u¿ murów miejskich, a dojdziesz do targowiska.
+	tempel_2_galgen = "SVM_11_TEMPEL_2_GALGEN";	//Id¹c od strony œwi¹tyni, skrêæ w lewo ko³o knajpy, a dojdziesz do placu wisielców.
+	markt_2_tempel = "SVM_11_MARKT_2_TEMPEL";	//Id¹c wzd³u¿ murów miejskich od strony targowiska, dojdziesz do œwi¹tyni.
+	markt_2_kaserne = "SVM_11_MARKT_2_KASERNE";	//Koszary to ten du¿y budynek. Wystarczy wejœæ po schodach naprzeciwko gospody.
+	markt_2_galgen = "SVM_11_MARKT_2_GALGEN";	//PrzejdŸ obok koszar, a dojdziesz do placu wisielców.
+	galgen_2_tempel = "SVM_11_GALGEN_2_TEMPEL";	//IdŸ w dó³ uliczk¹ odchodz¹c¹ od placu wisielców, to dojdziesz do placu œwi¹tynnego.
+	galgen_2_markt = "SVM_11_GALGEN_2_MARKT";	//PrzejdŸ obok koszar, to dostaniesz siê na targowisko.
+	galgen_2_kaserne = "SVM_11_GALGEN_2_KASERNE";	//Koszary to ten du¿y budynek. Dostaniesz siê do niego po schodach.
+	kaserne_2_markt = "SVM_11_KASERNE_2_MARKT";	//ZejdŸ po schodach na lewo od g³ównego wejœcia, to dojdziesz do targowiska.
+	kaserne_2_galgen = "SVM_11_KASERNE_2_GALGEN";	//ZejdŸ po schodach na prawo od g³ównego wejœcia, to dojdziesz do placu wisielców.
+	hafen_2_unterstadt = "SVM_11_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nabrze¿u, w górê ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
+	dead = "SVM_11_Dead";	//Aaaaarhhh!
+	aargh_1 = "SVM_11_Aargh_1";	//Aargh
+	aargh_2 = "SVM_11_Aargh_2";	//Aargh
+	aargh_3 = "SVM_11_Aargh_3";	//Aargh
+	addon_wrongarmor = "SVM_11_Addon_WrongArmor";	//
+	addon_wrongarmor_sld = "SVM_11_ADDON_WRONGARMOR_SLD";	//
+	addon_wrongarmor_mil = "SVM_11_ADDON_WRONGARMOR_MIL";	//
+	addon_wrongarmor_kdf = "SVM_11_ADDON_WRONGARMOR_KDF";	//
+	addon_noarmor_bdt = "SVM_11_ADDON_ADDON_NOARMOR_BDT";	//
+	addon_diebandit = "SVM_11_ADDON_DIEBANDIT";	//
+	addon_dirtypirate = "SVM_11_ADDON_DIRTYPIRATE";	//
+};
+
+instance SVM_12(C_SVM)
+{
+	milgreetings = "SVM_12_MILGreetings";	//Niech ¿yje Król!
+	palgreetings = "SVM_12_PALGreetings";	//Chwa³a Innosowi!
+	weather = "SVM_12_Weather";	//Kiepska pogoda...
+	igetyoustill = "SVM_12_IGetYouStill";	//Teraz ciê mam!
+	dieenemy = "SVM_12_DieEnemy";	//Trzeba by³o tu nie przychodziæ!
+	diemonster = "SVM_12_DieMonster";	//No chodŸ, parszywa bestio!
+	dirtythief = "SVM_12_DirtyThief";	//Czekaj tylko, ty œmierdz¹cy z³odzieju!
+	handsoff = "SVM_12_HandsOff";	//Zabieraj st¹d ³apy!
+	sheepkiller = "SVM_12_SheepKiller";	//Zostaw nasze owce w spokoju!
+	sheepkillermonster = "SVM_12_SheepKillerMonster";	//OdejdŸ od naszych owiec, ty przeklêta bestio!
+	youmurderer = "SVM_12_YouMurderer";	//Morderca!
+	diestupidbeast = "SVM_12_DieStupidBeast";	//Tu nie ma miejsca dla bestii!
+	youdarehitme = "SVM_12_YouDareHitMe";	//Po¿a³ujesz tego!
+	youaskedforit = "SVM_12_YouAskedForIt";	//Ostrzega³em ciê!
+	thenibeatyououtofhere = "SVM_12_ThenIBeatYouOutOfHere";	//Powiedzia³em WON!
+	whatdidyoudointhere = "SVM_12_WhatDidYouDoInThere";	//Hej! Co ty tam robi³eœ?
+	willyoustopfighting = "SVM_12_WillYouStopFighting";	//Przestaæ! Natychmiast!
+	killenemy = "SVM_12_KillEnemy";	//Rozerwê ciê na strzêpy!
+	enemykilled = "SVM_12_EnemyKilled";	//Koniec z tob¹...
+	monsterkilled = "SVM_12_MonsterKilled";	//To mnie krêci!
+	addon_monsterkilled = "SVM_12_Addon_MonsterKilled";	//
+	thiefdown = "SVM_12_ThiefDown";	//Ostrzegam ciê! Nie próbuj tego ponownie, ty przeklêty z³odzieju!
+	rumfummlerdown = "SVM_12_rumfummlerDown";	//Trzymaj w przysz³oœci ³apy z dala od rzeczy, które do ciebie nie nale¿¹!
+	sheepattackerdown = "SVM_12_SheepAttackerDown";	//I trzymaj siê z dala od naszych owiec!
+	killmurderer = "SVM_12_KillMurderer";	//Giñ, morderco!
+	stupidbeastkilled = "SVM_12_StupidBeastKilled";	//Przeklêty potwór!
+	neverhitmeagain = "SVM_12_NeverHitMeAgain";	//Nigdy nie wa¿ siê mnie atakowaæ!
+	youbettershouldhavelistened = "SVM_12_YouBetterShouldHaveListened";	//Ostrzega³em ciê!
+	getupandbegone = "SVM_12_GetUpAndBeGone";	//A teraz wynoœ siê!
+	neverenterroomagain = "SVM_12_NeverEnterRoomAgain";	//Nie chcê ciê tu wiêcej widzieæ, jasne?
+	thereisnofightinghere = "SVM_12_ThereIsNoFightingHere";	//Tu siê nie walczy, zapamiêtaj to sobie dobrze!
+	spareme = "SVM_12_SpareMe";	//Nie zrób czegoœ g³upiego!
+	runaway = "SVM_12_RunAway";	//Wynoszê siê st¹d!
+	alarm = "SVM_12_Alarm";	//ALARM!
+	guards = "SVM_12_Guards";	//STRA¯!
+	help = "SVM_12_Help";	//Pomocy!
+	goodmonsterkill = "SVM_12_GoodMonsterKill";	//Odeœlemy te bestie do otch³ani!
+	goodkill = "SVM_12_GoodKill";	//Dobrze! Poka¿ draniowi!
+	notnow = "SVM_12_NOTNOW";	//Zostaw mnie w spokoju!
+	runcoward = "SVM_12_RunCoward";	//Dorwê ciê jeszcze!
+	getoutofhere = "SVM_12_GetOutOfHere";	//Wynoœ siê st¹d!
+	whyareyouinhere = "SVM_12_WhyAreYouInHere";	//Nie masz tu nic do roboty!
+	yesgooutofhere = "SVM_12_YesGoOutOfHere";	//No, wynocha!
+	whatsthissupposedtobe = "SVM_12_WhatsThisSupposedToBe";	//Co ty kombinujesz? Czego tam szukasz?
+	youdisturbedmyslumber = "SVM_12_YouDisturbedMySlumber";	//Czego u diab³a chcesz?
+	itookyourgold = "SVM_12_ITookYourGold";	//Dobrze, ¿e masz przy sobie przynajmniej trochê z³ota...
+	shitnogold = "SVM_12_ShitNoGold";	//Nawet z³ota nie ma?!
+	itakeyourweapon = "SVM_12_ITakeYourWeapon";	//Chyba wezmê sobie twoj¹ broñ.
+	whatareyoudoing = "SVM_12_WhatAreYouDoing";	//Nie próbuj tego ponownie, ch³opcze!
+	lookingfortroubleagain = "SVM_12_LookingForTroubleAgain";	//Ci¹gle ci ma³o?
+	stopmagic = "SVM_12_StopMagic";	//Przestañ z tymi czarami!
+	isaidstopmagic = "SVM_12_ISaidStopMagic";	//Ostatnie ostrze¿enie - skoñcz z t¹ magi¹!
+	weapondown = "SVM_12_WeaponDown";	//Od³ó¿ broñ!
+	isaidweapondown = "SVM_12_ISaidWeaponDown";	//Od³ó¿ to, albo pogadamy inaczej!
+	wisemove = "SVM_12_WiseMove";	//Hej, nie jesteœ wcale taki g³upi, na jakiego wygl¹dasz!
+	nexttimeyoureinforit = "SVM_12_NextTimeYoureInForIt";	//Nie próbuj tego ponownie...
+	ohmyhead = "SVM_12_OhMyHead";	//Och, moja g³owa...
+	theresafight = "SVM_12_TheresAFight";	//Teraz bêdzie zabawa...
+	ohmygoditsafight = "SVM_12_OhMyGodItsAFight";	//O bogowie...
+	goodvictory = "SVM_12_GoodVictory";	//Niech to bêdzie dla niego nauczka...
+	notbad = "SVM_12_NotBad";	//To by³o dobre!
+	ohmygodhesdown = "SVM_12_OhMyGodHesDown";	//Cholerny brutal!
+	cheerfriend01 = "SVM_12_CheerFriend01";	//R¹bnij go!
+	cheerfriend02 = "SVM_12_CheerFriend02";	//Nie przestawaj!
+	cheerfriend03 = "SVM_12_CheerFriend03";	//Wykoñcz go!
+	ooh01 = "SVM_12_Ooh01";	//Uwa¿aj!
+	ooh02 = "SVM_12_Ooh02";	//Paruj! Paruj!
+	ooh03 = "SVM_12_Ooh03";	//Cholera, to bola³o!
+	whatwasthat = "SVM_12_WhatWasThat";	//Co to by³o!?
+	getoutofmybed = "SVM_12_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	awake = "SVM_12_Awake";	//(rozkoszne ziewniêcie)
+	abs_commander = "SVM_12_ABS_COMMANDER";	//Zatem kapitan wyjaœni³ sprawê.
+	abs_monastery = "SVM_12_ABS_MONASTERY";	//Ojciec Parlan uwolni³ ciê wiêc od twoich grzechów.
+	abs_farm = "SVM_12_ABS_FARM";	//Widzia³eœ siê zatem z Lee i zaj¹³eœ siê spraw¹.
+	abs_good = "SVM_12_ABS_GOOD";	//Dobrze.
+	sheepkiller_crime = "SVM_12_SHEEPKILLER_CRIME";	//Mordujesz owce? Przypuszczam, ¿e bardziej bezbronnej ofiary nie mog³eœ sobie znaleŸæ?!
+	attack_crime = "SVM_12_ATTACK_CRIME";	//Z takimi jak ty nie chcê mieæ nic wspólnego!
+	theft_crime = "SVM_12_THEFT_CRIME";	//Nie zadajê siê ze z³odziejami!
+	pal_city_crime = "SVM_12_PAL_CITY_CRIME";	//I ty chcesz byæ paladynem? Ciekawe, co na to Lord Hagen!
+	mil_city_crime = "SVM_12_MIL_CITY_CRIME";	//Naprawdê nale¿ysz do stra¿y miejskiej? Lordowi Andre siê to nie spodoba!
+	city_crime = "SVM_12_CITY_CRIME";	//IdŸ do Lorda Andre, póki jeszcze mo¿esz.
+	mona_crime = "SVM_12_MONA_CRIME";	//IdŸ do Ojca Parlana. Pomo¿e ci zmazaæ twoje grzechy!
+	farm_crime = "SVM_12_FARM_CRIME";	//Lee o tym us³yszy, a wtedy bêdziesz musia³ zap³aciæ...
+	oc_crime = "SVM_12_OC_CRIME";	//Kapitan Garond nie bêdzie zadowolony. Lepiej z nim porozmawiaj, zanim bêdzie jeszcze gorzej!
+	toughguy_attacklost = "SVM_12_TOUGHGUY_ATTACKLOST";	//Dobrze - wygra³eœ. Czego ode mnie chcesz?
+	toughguy_attackwon = "SVM_12_TOUGHGUY_ATTACKWON";	//Chyba ju¿ wiesz, z kim masz do czynienia. Czego chcesz?
+	toughguy_playerattack = "SVM_12_TOUGHGUY_PLAYERATTACK";	//To znowu ty? Chcesz jeszcze siê raz ze mn¹ spróbowaæ, czy jak?
+	gold_1000 = "SVM_12_GOLD_1000";	//1000 sztuk z³ota.
+	gold_950 = "SVM_12_GOLD_950";	//950 sztuk z³ota.
+	gold_900 = "SVM_12_GOLD_900";	//900 sztuk z³ota.
+	gold_850 = "SVM_12_GOLD_850";	//850 sztuk z³ota.
+	gold_800 = "SVM_12_GOLD_800";	//800 sztuk z³ota.
+	gold_750 = "SVM_12_GOLD_750";	//750 sztuk z³ota.
+	gold_700 = "SVM_12_GOLD_700";	//700 sztuk z³ota.
+	gold_650 = "SVM_12_GOLD_650";	//650 sztuk z³ota.
+	gold_600 = "SVM_12_GOLD_600";	//600 sztuk z³ota.
+	gold_550 = "SVM_12_GOLD_550";	//550 sztuk z³ota.
+	gold_500 = "SVM_12_GOLD_500";	//500 sztuk z³ota.
+	gold_450 = "SVM_12_GOLD_450";	//450 sztuk z³ota.
+	gold_400 = "SVM_12_GOLD_400";	//400 sztuk z³ota.
+	gold_350 = "SVM_12_GOLD_350";	//350 sztuk z³ota.
+	gold_300 = "SVM_12_GOLD_300";	//300 sztuk z³ota.
+	gold_250 = "SVM_12_GOLD_250";	//250 sztuk z³ota.
+	gold_200 = "SVM_12_GOLD_200";	//200 sztuk z³ota.
+	gold_150 = "SVM_12_GOLD_150";	//150 sztuk z³ota.
+	gold_100 = "SVM_12_GOLD_100";	//100 sztuk z³ota.
+	gold_90 = "SVM_12_GOLD_90";	//90 sztuk z³ota.
+	gold_80 = "SVM_12_GOLD_80";	//80 sztuk z³ota.
+	gold_70 = "SVM_12_GOLD_70";	//70 sztuk z³ota.
+	gold_60 = "SVM_12_GOLD_60";	//60 sztuk z³ota.
+	gold_50 = "SVM_12_GOLD_50";	//50 sztuk z³ota.
+	gold_40 = "SVM_12_GOLD_40";	//40 sztuk z³ota.
+	gold_30 = "SVM_12_GOLD_30";	//30 sztuk z³ota.
+	gold_20 = "SVM_12_GOLD_20";	//20 sztuk z³ota.
+	gold_10 = "SVM_12_GOLD_10";	//10 sztuk z³ota.
+	smalltalk01 = "SVM_12_Smalltalk01";	//...tak jakby mnie to cokolwiek obchodzi³o...
+	smalltalk02 = "SVM_12_Smalltalk02";	//...nikt nie chce wiedzieæ...
+	smalltalk03 = "SVM_12_Smalltalk03";	//...w koñcu to by³a jego decyzja...
+	smalltalk04 = "SVM_12_Smalltalk04";	//...nie wiem, ty mi powiedz...
+	smalltalk05 = "SVM_12_Smalltalk05";	//...trzymam siê od tego z daleka...
+	smalltalk06 = "SVM_12_Smalltalk06";	//...nie mam czasu na takie rzeczy...
+	smalltalk07 = "SVM_12_Smalltalk07";	//...du¿o by mnie to kosztowa³o...
+	smalltalk08 = "SVM_12_Smalltalk08";	//...nie musisz mi tego mówiæ...
+	smalltalk09 = "SVM_12_Smalltalk09";	//...widzi i s³yszy siê to, i owo...
+	smalltalk10 = "SVM_12_Smalltalk10";	//...mogê ci opowiedzieæ o takich rzeczach...
+	smalltalk11 = "SVM_12_Smalltalk11";	//...nie mo¿na na to liczyæ...
+	smalltalk12 = "SVM_12_Smalltalk12";	//...sam tak mówi³em...
+	smalltalk13 = "SVM_12_Smalltalk13";	//...tego jest wiêcej, wierz mi...
+	smalltalk14 = "SVM_12_Smalltalk14";	//...ci¹gle to samo...
+	smalltalk15 = "SVM_12_Smalltalk15";	//...nie mów, ¿e to nieprawda...
+	smalltalk16 = "SVM_12_Smalltalk16";	//...wczeœniej czy póŸniej musia³o siê tak zdarzyæ...
+	smalltalk17 = "SVM_12_Smalltalk17";	//...powinien byæ m¹drzejszy...
+	smalltalk18 = "SVM_12_Smalltalk18";	//...to siê nigdy nie zmieni...
+	smalltalk19 = "SVM_12_Smalltalk19";	//...to ¿adna tajemnica...
+	smalltalk20 = "SVM_12_Smalltalk20";	//...¿adna wielka sprawa...
+	smalltalk21 = "SVM_12_Smalltalk21";	//...on myœli, ¿e to takie ³atwe...
+	smalltalk22 = "SVM_12_Smalltalk22";	//...nikt nie chce tego s³uchaæ...
+	smalltalk23 = "SVM_12_Smalltalk23";	//...i to jest prawda...
+	smalltalk24 = "SVM_12_Smalltalk24";	//...trzeba po prostu s³uchaæ...
+	smalltalk25 = "SVM_12_Smalltalk25";	//...gdyby to zale¿a³o od nas, sprawy potoczy³yby siê inaczej...
+	smalltalk26 = "SVM_12_Smalltalk26";	//...musi po prostu wiêcej æwiczyæ...
+	smalltalk27 = "SVM_12_Smalltalk27";	//...co on wie o s³u¿bie...
+	smalltalk28 = "SVM_12_Smalltalk28";	//...Innos karze sprawiedliwie...
+	smalltalk29 = "SVM_12_Smalltalk29";	//...œcie¿ka cnoty jest d³uga i kamienista...
+	smalltalk30 = "SVM_12_Smalltalk30";	//...tylko Innos wie, co jest dobre, a co z³e...
+	nolearnnopoints = "SVM_12_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
+	nolearnoverpersonalmax = "SVM_12_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	nolearnyourebetter = "SVM_12_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	youlearnedsomething = "SVM_12_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	unterstadt = "SVM_12_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
+	oberstadt = "SVM_12_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
+	tempel = "SVM_12_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
+	markt = "SVM_12_MARKT";	//Jesteœ teraz na targowisku.
+	galgen = "SVM_12_GALGEN";	//Jesteœ teraz na placu wisielców.
+	kaserne = "SVM_12_KASERNE";	//To s¹ koszary.
+	hafen = "SVM_12_HAFEN";	//Jesteœ teraz w dzielnicy portowej.
+	whereto = "SVM_12_WHERETO";	//Dok¹d to?
+	oberstadt_2_unterstadt = "SVM_12_OBERSTADT_2_UNTERSTADT";	//PrzejdŸ przez wewnêtrzn¹ bramê, a dojdziesz do dolnej czêœci miasta.
+	unterstadt_2_oberstadt = "SVM_12_UNTERSTADT_2_OBERSTADT";	//Przy po³udniowej bramie znajduj¹ siê schody, które prowadz¹ do bramy wewnêtrznej. Za ni¹ zaczyna siê górne miasto.
+	unterstadt_2_tempel = "SVM_12_UNTERSTADT_2_TEMPEL";	//IdŸ od kowala przejœciem, a dojdziesz do placu œwi¹tynnego.
+	unterstadt_2_hafen = "SVM_12_UNTERSTADT_2_HAFEN";	//IdŸ od kowala w dó³ ulic¹ portow¹, a dojdziesz do przystani.
+	tempel_2_unterstadt = "SVM_12_TEMPEL_2_UNTERSTADT";	//Od placu œwi¹tynnego odchodzi przejœcie prowadz¹ce do dolnej czêœci miasta.
+	tempel_2_markt = "SVM_12_TEMPEL_2_MARKT";	//Kiedy znajdziesz siê przed œwi¹tyni¹, pójdŸ w lewo i potem wzd³u¿ murów, a dojdziesz do targowiska.
+	tempel_2_galgen = "SVM_12_TEMPEL_2_GALGEN";	//Je¿eli id¹c od strony œwi¹tyni, skrêcisz przy knajpie w lewo, dojdziesz do placu wisielców.
+	markt_2_tempel = "SVM_12_MARKT_2_TEMPEL";	//Je¿eli id¹c od strony targowiska, bêdziesz szed³ wzd³u¿ murów miejskich, dojdziesz do œwi¹tyni.
+	markt_2_kaserne = "SVM_12_MARKT_2_KASERNE";	//Koszary to ten wielki budynek. WejdŸ po prostu po schodach naprzeciwko gospody.
+	markt_2_galgen = "SVM_12_MARKT_2_GALGEN";	//IdŸ po prostu wzd³u¿ koszar, a dojdziesz do placu wisielców.
+	galgen_2_tempel = "SVM_12_GALGEN_2_TEMPEL";	//IdŸ od strony placu wisielców w dó³ uliczk¹, a dojdziesz do placu œwi¹tynnego.
+	galgen_2_markt = "SVM_12_GALGEN_2_MARKT";	//IdŸ po prostu wzd³u¿ koszar, a dojdziesz do targowiska.
+	galgen_2_kaserne = "SVM_12_GALGEN_2_KASERNE";	//Koszary to ten wielki budynek. Wystarczy wejœæ po schodach.
+	kaserne_2_markt = "SVM_12_KASERNE_2_MARKT";	//ZejdŸ po schodach na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
+	kaserne_2_galgen = "SVM_12_KASERNE_2_GALGEN";	//ZejdŸ po schodach na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
+	hafen_2_unterstadt = "SVM_12_HAFEN_2_UNTERSTADT";	//IdŸ od strony muru przy nadbrze¿u w górê ulic¹ portow¹, a dojdziesz do dolnej czêœci miasta.
+	dead = "SVM_12_Dead";	//Aaaaarhhh!
+	aargh_1 = "SVM_12_Aargh_1";	//Aargh
+	aargh_2 = "SVM_12_Aargh_2";	//Aargh
+	aargh_3 = "SVM_12_Aargh_3";	//Aargh
+	addon_wrongarmor = "SVM_12_Addon_WrongArmor";	//
+	addon_wrongarmor_sld = "SVM_12_ADDON_WRONGARMOR_SLD";	//
+	addon_wrongarmor_mil = "SVM_12_ADDON_WRONGARMOR_MIL";	//
+	addon_wrongarmor_kdf = "SVM_12_ADDON_WRONGARMOR_KDF";	//
+	addon_noarmor_bdt = "SVM_12_ADDON_ADDON_NOARMOR_BDT";	//
+	addon_diebandit = "SVM_12_ADDON_DIEBANDIT";	//
+	addon_dirtypirate = "SVM_12_ADDON_DIRTYPIRATE";	//
+};
+
+instance SVM_13(C_SVM)
+{
+	milgreetings = "SVM_13_MILGreetings";	//Niech ¿yje Król!
+	palgreetings = "SVM_13_PALGreetings";	//Chwa³a Innosowi!
+	weather = "SVM_13_Weather";	//Jakaœ nêdzna ta pogoda...
+	igetyoustill = "SVM_13_IGetYouStill";	//Teraz ciê dorwê!
+	dieenemy = "SVM_13_DieEnemy";	//Rozerwê ciê na kawa³ki!
+	diemonster = "SVM_13_DieMonster";	//Znowu jedna z tych cholernych bestii!
+	dirtythief = "SVM_13_DirtyThief";	//Parszywy z³odziej! Czekaj tylko...
+	handsoff = "SVM_13_HandsOff";	//Zabieraj ³apy!
+	sheepkiller = "SVM_13_SheepKiller";	//To cholerne bydlê zarzyna nasze owce!
+	sheepkillermonster = "SVM_13_SheepKillerMonster";	//Ten przeklêty potwór z¿era nasze owce!
+	youmurderer = "SVM_13_YouMurderer";	//Morderca!
+	diestupidbeast = "SVM_13_DieStupidBeast";	//Dobra bestia to martwa bestia!
+	youdarehitme = "SVM_13_YouDareHitMe";	//Czekaj tylko, ty draniu!
+	youaskedforit = "SVM_13_YouAskedForIt";	//Sam tego chcia³eœ!
+	thenibeatyououtofhere = "SVM_13_ThenIBeatYouOutOfHere";	//Nie chcesz iœæ? Dobrze!
+	whatdidyoudointhere = "SVM_13_WhatDidYouDoInThere";	//Czego tam szuka³eœ?
+	willyoustopfighting = "SVM_13_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	killenemy = "SVM_13_KillEnemy";	//Giñ, bydlaku!
+	enemykilled = "SVM_13_EnemyKilled";	//Zas³u¿y³eœ na to, gnido!
+	monsterkilled = "SVM_13_MonsterKilled";	//Jedna bestia mniej!
+	thiefdown = "SVM_13_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
+	rumfummlerdown = "SVM_13_rumfummlerDown";	//Od tej chwili trzymaj ³apy z dala od rzeczy, które do ciebie nie nale¿¹!
+	sheepattackerdown = "SVM_13_SheepAttackerDown";	//Nie rób tego nigdy wiêcej! To s¹ nasze owce!
+	killmurderer = "SVM_13_KillMurderer";	//Giñ, morderco!
+	stupidbeastkilled = "SVM_13_StupidBeastKilled";	//G³upi potwór!
+	neverhitmeagain = "SVM_13_NeverHitMeAgain";	//Nigdy wiêcej ze mn¹ nie zaczynaj!
+	youbettershouldhavelistened = "SVM_13_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
+	getupandbegone = "SVM_13_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
+	neverenterroomagain = "SVM_13_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
+	thereisnofightinghere = "SVM_13_ThereIsNoFightingHere";	//Tu siê nie walczy, zrozumiano? Niech to bêdzie dla ciebie nauczka!
+	spareme = "SVM_13_SpareMe";	//Nie rób mi krzywdy!
+	runaway = "SVM_13_RunAway";	//O cholera!
+	alarm = "SVM_13_Alarm";	//ALARM!
+	guards = "SVM_13_Guards";	//STRA¯!
+	help = "SVM_13_Help";	//Pomocy!
+	goodmonsterkill = "SVM_13_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
+	goodkill = "SVM_13_GoodKill";	//No, daj œwini na co zas³uguje!
+	notnow = "SVM_13_NOTNOW";	//Zostaw mnie w spokoju!
+	runcoward = "SVM_13_RunCoward";	//Uciekaj, najszybciej jak tylko potrafisz!
+	getoutofhere = "SVM_13_GetOutOfHere";	//Wynoœ siê st¹d!
+	whyareyouinhere = "SVM_13_WhyAreYouInHere";	//Czego tu chcesz?! OdejdŸ!
+	yesgooutofhere = "SVM_13_YesGoOutOfHere";	//No, wynoœ siê!
+	whatsthissupposedtobe = "SVM_13_WhatsThisSupposedToBe";	//Ej ty! Czego tam szukasz!
+	youdisturbedmyslumber = "SVM_13_YouDisturbedMySlumber";	//Czego u diab³a chcesz?
+	itookyourgold = "SVM_13_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
+	shitnogold = "SVM_13_ShitNoGold";	//Ty biedny frajerze, nawet z³ota nie masz!
+	itakeyourweapon = "SVM_13_ITakeYourWeapon";	//Wezmê twoj¹ broñ na przechowanie.
+	whatareyoudoing = "SVM_13_WhatAreYouDoing";	//Uwa¿aj! Nastêpnym razem ci przy³o¿ê.
+	lookingfortroubleagain = "SVM_13_LookingForTroubleAgain";	//Ci¹gle ci ma³o?!
+	stopmagic = "SVM_13_StopMagic";	//Skoñcz z t¹ magi¹!
+	isaidstopmagic = "SVM_13_ISaidStopMagic";	//Chcesz dostaæ! Przestañ w tej chwili!
+	weapondown = "SVM_13_WeaponDown";	//Od³ó¿ broñ!
+	isaidweapondown = "SVM_13_ISaidWeaponDown";	//Od³o¿ysz wreszcie tê przeklêt¹ broñ?!
+	wisemove = "SVM_13_WiseMove";	//Dobra decyzja!
+	nexttimeyoureinforit = "SVM_13_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
+	ohmyhead = "SVM_13_OhMyHead";	//O rany, moja g³owa...
+	theresafight = "SVM_13_TheresAFight";	//Ach, walka...
+	ohmygoditsafight = "SVM_13_OhMyGodItsAFight";	//O bogowie, walka!
+	goodvictory = "SVM_13_GoodVictory";	//Pokaza³eœ mu, kto tu rz¹dzi!
+	notbad = "SVM_13_NotBad";	//NieŸle...
+	ohmygodhesdown = "SVM_13_OhMyGodHesDown";	//Bogowie! Jak ostro...
+	cheerfriend01 = "SVM_13_CheerFriend01";	//No, wal!
+	cheerfriend02 = "SVM_13_CheerFriend02";	//Daj z siebie wszystko!
+	cheerfriend03 = "SVM_13_CheerFriend03";	//Poka¿ mu!
+	ooh01 = "SVM_13_Ooh01";	//Trzymaj siê!
+	ooh02 = "SVM_13_Ooh02";	//Uwa¿aj!
+	ooh03 = "SVM_13_Ooh03";	//Oj! To by³o mocne!
+	whatwasthat = "SVM_13_WhatWasThat";	//Co TO by³o!?
+	getoutofmybed = "SVM_13_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	awake = "SVM_13_Awake";	//(rozkoszne ziewniêcie)
+	abs_commander = "SVM_13_ABS_COMMANDER";	//Poszed³eœ wiêc do kapitana i wszystko za³atwi³eœ.
+	abs_monastery = "SVM_13_ABS_MONASTERY";	//By³eœ wiêc u Ojca Parlana i opowiedzia³eœ mu o swych przewinieniach.
+	abs_farm = "SVM_13_ABS_FARM";	//Zobaczy³eœ siê zatem z Lee i wyjaœni³eœ sprawê.
+	abs_good = "SVM_13_ABS_GOOD";	//Dobre.
+	sheepkiller_crime = "SVM_13_SHEEPKILLER_CRIME";	//Tak po prostu szlachtowaæ nasze owce!
+	attack_crime = "SVM_13_ATTACK_CRIME";	//Zostaw mnie w spokoju, ty parszywa gnido!
+	theft_crime = "SVM_13_THEFT_CRIME";	//Zostaw mnie, ty ma³y, nêdzny z³odzieju!
+	pal_city_crime = "SVM_13_PAL_CITY_CRIME";	//Jesteœ hañb¹ dla swego zakonu! Czekaj tylko, a¿ dowie siê o tym Lord Hagen!
+	mil_city_crime = "SVM_13_MIL_CITY_CRIME";	//Hañbisz dobre imiê stra¿y miejskiej! Lord Andre na pewno siê o tym dowie!
+	city_crime = "SVM_13_CITY_CRIME";	//Czekaj, a¿ Lord Andre siê o tym dowie!
+	mona_crime = "SVM_13_MONA_CRIME";	//Czekaj, a¿ dowie siê o tym Ojciec Parlan!
+	farm_crime = "SVM_13_FARM_CRIME";	//Lee na pewno o tym us³yszy...
+	oc_crime = "SVM_13_OC_CRIME";	//Kapitan Garond na pewno siê o tym dowie!
+	toughguy_attacklost = "SVM_13_TOUGHGUY_ATTACKLOST";	//Dobrze ju¿, dobrze, jesteœ lepszy ode mnie! Czego chcesz?
+	toughguy_attackwon = "SVM_13_TOUGHGUY_ATTACKWON";	//Przypuszczam, ¿e teraz ju¿ wiesz, który z nas jest tym silniejszym... Czego chcesz?
+	toughguy_playerattack = "SVM_13_TOUGHGUY_PLAYERATTACK";	//Wydawa³o mi siê, ¿e chcesz mnie sprowokowaæ. Zmieni³eœ zdanie? Wolisz jednak POGADAÆ, co?
+	gold_1000 = "SVM_13_GOLD_1000";	//1000 sztuk z³ota.
+	gold_950 = "SVM_13_GOLD_950";	//950 sztuk z³ota.
+	gold_900 = "SVM_13_GOLD_900";	//900 sztuk z³ota.
+	gold_850 = "SVM_13_GOLD_850";	//850 sztuk z³ota.
+	gold_800 = "SVM_13_GOLD_800";	//800 sztuk z³ota.
+	gold_750 = "SVM_13_GOLD_750";	//750 sztuk z³ota.
+	gold_700 = "SVM_13_GOLD_700";	//700 sztuk z³ota.
+	gold_650 = "SVM_13_GOLD_650";	//650 sztuk z³ota.
+	gold_600 = "SVM_13_GOLD_600";	//600 sztuk z³ota.
+	gold_550 = "SVM_13_GOLD_550";	//550 sztuk z³ota.
+	gold_500 = "SVM_13_GOLD_500";	//500 sztuk z³ota.
+	gold_450 = "SVM_13_GOLD_450";	//450 sztuk z³ota.
+	gold_400 = "SVM_13_GOLD_400";	//400 sztuk z³ota.
+	gold_350 = "SVM_13_GOLD_350";	//350 sztuk z³ota.
+	gold_300 = "SVM_13_GOLD_300";	//300 sztuk z³ota.
+	gold_250 = "SVM_13_GOLD_250";	//250 sztuk z³ota.
+	gold_200 = "SVM_13_GOLD_200";	//200 sztuk z³ota.
+	gold_150 = "SVM_13_GOLD_150";	//150 sztuk z³ota.
+	gold_100 = "SVM_13_GOLD_100";	//100 sztuk z³ota.
+	gold_90 = "SVM_13_GOLD_90";	//90 sztuk z³ota.
+	gold_80 = "SVM_13_GOLD_80";	//80 sztuk z³ota.
+	gold_70 = "SVM_13_GOLD_70";	//70 sztuk z³ota.
+	gold_60 = "SVM_13_GOLD_60";	//60 sztuk z³ota.
+	gold_50 = "SVM_13_GOLD_50";	//50 sztuk z³ota.
+	gold_40 = "SVM_13_GOLD_40";	//40 sztuk z³ota.
+	gold_30 = "SVM_13_GOLD_30";	//30 sztuk z³ota.
+	gold_20 = "SVM_13_GOLD_20";	//20 sztuk z³ota.
+	gold_10 = "SVM_13_GOLD_10";	//10 sztuk z³ota.
+	smalltalk01 = "SVM_13_Smalltalk01";	//...tak jakby mnie to cokolwiek obchodzi³o...
+	smalltalk02 = "SVM_13_Smalltalk02";	//...nikt nie chce wiedzieæ...
+	smalltalk03 = "SVM_13_Smalltalk03";	//...w koñcu to by³a jego decyzja...
+	smalltalk04 = "SVM_13_Smalltalk04";	//...nie wiem, ty mi powiedz...
+	smalltalk05 = "SVM_13_Smalltalk05";	//...trzymam siê od tego z daleka...
+	smalltalk06 = "SVM_13_Smalltalk06";	//...nie mam czasu na takie rzeczy...
+	smalltalk07 = "SVM_13_Smalltalk07";	//...du¿o by mnie to kosztowa³o...
+	smalltalk08 = "SVM_13_Smalltalk08";	//...nie musisz mi tego mówiæ...
+	smalltalk09 = "SVM_13_Smalltalk09";	//...widzi i s³yszy siê to i owo...
+	smalltalk10 = "SVM_13_Smalltalk10";	//...mogê ci opowiedzieæ o takich rzeczach...
+	smalltalk11 = "SVM_13_Smalltalk11";	//...nie mo¿na na tym polegaæ...
+	smalltalk12 = "SVM_13_Smalltalk12";	//...sam tak mówi³em...
+	smalltalk13 = "SVM_13_Smalltalk13";	//...tego jest wiêcej, wierz mi...
+	smalltalk14 = "SVM_13_Smalltalk14";	//...ci¹gle to samo...
+	smalltalk15 = "SVM_13_Smalltalk15";	//...nie mów, ¿e to nieprawda...
+	smalltalk16 = "SVM_13_Smalltalk16";	//...wczeœniej czy póŸniej musia³o siê to zdarzyæ...
+	smalltalk17 = "SVM_13_Smalltalk17";	//...powinien by³ wiedzieæ lepiej...
+	smalltalk18 = "SVM_13_Smalltalk18";	//...to siê nigdy nie zmieni...
+	smalltalk19 = "SVM_13_Smalltalk19";	//...to ¿adna tajemnica...
+	smalltalk20 = "SVM_13_Smalltalk20";	//...¿adna wielka sprawa...
+	smalltalk21 = "SVM_13_Smalltalk21";	//...on myœli, ¿e to takie ³atwe...
+	smalltalk22 = "SVM_13_Smalltalk22";	//...nikt nie chce tego s³uchaæ...
+	smalltalk23 = "SVM_13_Smalltalk23";	//...i to jest prawda...
+	smalltalk24 = "SVM_13_Smalltalk24";	//...trzeba po prostu s³uchaæ...
+	smalltalk25 = "SVM_13_Smalltalk25";	//...gdyby to zale¿a³o od nas, sprawy potoczy³yby siê inaczej...
+	smalltalk26 = "SVM_13_Smalltalk26";	//...musi po prostu wiêcej æwiczyæ...
+	smalltalk27 = "SVM_13_Smalltalk27";	//...co on wie o s³u¿bie...
+	smalltalk28 = "SVM_13_Smalltalk28";	//...Innos karze sprawiedliwie...
+	smalltalk29 = "SVM_13_Smalltalk29";	//...œcie¿ka cnoty jest d³uga i kamienista...
+	smalltalk30 = "SVM_13_Smalltalk30";	//...tylko Innos wie, co jest dobre, a co z³e...
+	nolearnnopoints = "SVM_13_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
+	nolearnoverpersonalmax = "SVM_13_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	nolearnyourebetter = "SVM_13_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	youlearnedsomething = "SVM_13_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	unterstadt = "SVM_13_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
+	oberstadt = "SVM_13_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
+	tempel = "SVM_13_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
+	markt = "SVM_13_MARKT";	//Jesteœ teraz na targowisku.
+	galgen = "SVM_13_GALGEN";	//Jesteœ teraz na placu wisielców.
+	kaserne = "SVM_13_KASERNE";	//To s¹ koszary.
+	hafen = "SVM_13_HAFEN";	//Jesteœ teraz w dzielnicy portowej.
+	whereto = "SVM_13_WHERETO";	//Dok¹d chcesz siê udaæ?
+	oberstadt_2_unterstadt = "SVM_13_OBERSTADT_2_UNTERSTADT";	//PrzejdŸ przez wewnêtrzn¹ bramê, a dojdziesz do dolnej czêœci miasta.
+	unterstadt_2_oberstadt = "SVM_13_UNTERSTADT_2_OBERSTADT";	//Przy po³udniowej bramie znajduj¹ siê schody, które prowadz¹ do bramy wewnêtrznej. Za ni¹ zaczyna siê górne miasto.
+	unterstadt_2_tempel = "SVM_13_UNTERSTADT_2_TEMPEL";	//IdŸ od kowala przez przejœcie, a dojdziesz do placu œwi¹tynnego.
+	unterstadt_2_hafen = "SVM_13_UNTERSTADT_2_HAFEN";	//IdŸ od kowala w dó³ ulic¹ portow¹, a dojdziesz do portu.
+	tempel_2_unterstadt = "SVM_13_TEMPEL_2_UNTERSTADT";	//Od placu œwi¹tynnego odchodzi przejœcie, które prowadzi do dolnej czêœci miasta.
+	tempel_2_markt = "SVM_13_TEMPEL_2_MARKT";	//Stañ przed œwi¹tyni¹, idŸ na lewo wzd³u¿ murów miejskich, a dojdziesz do targowiska.
+	tempel_2_galgen = "SVM_13_TEMPEL_2_GALGEN";	//Id¹c od strony œwi¹tyni, skrêæ w lewo ko³o knajpy, a dojdziesz do placu wisielców.
+	markt_2_tempel = "SVM_13_MARKT_2_TEMPEL";	//Id¹c od strony targowiska, wzd³u¿ murów miejskich, dojdziesz do œwi¹tyni.
+	markt_2_kaserne = "SVM_13_MARKT_2_KASERNE";	//Koszary to ten du¿y budynek. Dostaniesz siê do niego po schodach naprzeciwko gospody.
+	markt_2_galgen = "SVM_13_MARKT_2_GALGEN";	//PrzejdŸ po prostu obok koszar, a powinieneœ dojœæ do placu wisielców.
+	galgen_2_tempel = "SVM_13_GALGEN_2_TEMPEL";	//IdŸ w dó³ uliczk¹ odchodz¹c¹ od placu wisielców, to dojdziesz do placu œwi¹tynnego.
+	galgen_2_markt = "SVM_13_GALGEN_2_MARKT";	//PrzejdŸ obok koszar, a dojdziesz do targowiska.
+	galgen_2_kaserne = "SVM_13_GALGEN_2_KASERNE";	//Koszary to ten du¿y budynek. WejdŸ po prostu po schodach.
+	kaserne_2_markt = "SVM_13_KASERNE_2_MARKT";	//Po prostu zejdŸ po schodach na lewo od g³ównego wejœcia, to dojdziesz do targowiska.
+	kaserne_2_galgen = "SVM_13_KASERNE_2_GALGEN";	//Po prostu zejdŸ po schodach na prawo od g³ównego wejœcia, to dojdziesz do placu wisielców.
+	hafen_2_unterstadt = "SVM_13_HAFEN_2_UNTERSTADT";	//Id¹c od strony muru przy nadbrze¿u, w górê ulic¹ portow¹, dojdziesz do dolnej czêœci miasta.
+	dead = "SVM_13_Dead";	//Aaarhhhh!
+	aargh_1 = "SVM_13_Aargh_1";	//Aargh
+	aargh_2 = "SVM_13_Aargh_2";	//Aargh
+	aargh_3 = "SVM_13_Aargh_3";	//Aargh
+	addon_wrongarmor = "SVM_13_Addon_WrongArmor";	//
+	addon_wrongarmor_sld = "SVM_13_ADDON_WRONGARMOR_SLD";	//
+	addon_wrongarmor_mil = "SVM_13_ADDON_WRONGARMOR_MIL";	//
+	addon_wrongarmor_kdf = "SVM_13_ADDON_WRONGARMOR_KDF";	//
+	addon_noarmor_bdt = "SVM_13_ADDON_ADDON_NOARMOR_BDT";	//
+	addon_diebandit = "SVM_13_ADDON_DIEBANDIT";	//
+	addon_dirtypirate = "SVM_13_ADDON_DIRTYPIRATE";	//
+};
+
+instance SVM_14(C_SVM)
+{
+	milgreetings = "SVM_14_MILGreetings";	//Niech ¿yje Król!
+	palgreetings = "SVM_14_PALGreetings";	//Chwa³a Innosowi!
+	weather = "SVM_14_Weather";	//Nêdzna pogoda...
+	igetyoustill = "SVM_14_IGetYouStill";	//W koñcu ciê dopad³em!
+	dieenemy = "SVM_14_DieEnemy";	//Nadszed³ twój czas!
+	diemonster = "SVM_14_DieMonster";	//Znowu jedna z tych cholernych bestii!
+	dirtythief = "SVM_14_DirtyThief";	//Czekaj tylko, ty ma³y z³odzieju!
+	handsoff = "SVM_14_HandsOff";	//£apy precz!
+	sheepkiller = "SVM_14_SheepKiller";	//To bydlê zarzyna nasze owce!
+	sheepkillermonster = "SVM_14_SheepKillerMonster";	//Ten przeklêty potwór z¿era nasze owce!
+	youmurderer = "SVM_14_YouMurderer";	//Morderca!
+	diestupidbeast = "SVM_14_DieStupidBeast";	//Tu nie ma miejsca dla bestii!
+	youdarehitme = "SVM_14_YouDareHitMe";	//Czekaj tylko, ty gnido!
+	youaskedforit = "SVM_14_YouAskedForIt";	//Sam tego chcia³eœ!
+	thenibeatyououtofhere = "SVM_14_ThenIBeatYouOutOfHere";	//Wiêc bêdê ciê musia³ st¹d WYKOPAÆ!
+	whatdidyoudointhere = "SVM_14_WhatDidYouDoInThere";	//Co ty tam robi³eœ, co?!
+	willyoustopfighting = "SVM_14_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	killenemy = "SVM_14_KillEnemy";	//Giñ, bydlaku!
+	enemykilled = "SVM_14_EnemyKilled";	//To twój koniec, padalcu!
+	monsterkilled = "SVM_14_MonsterKilled";	//Jedna bestia mniej!
+	thiefdown = "SVM_14_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
+	rumfummlerdown = "SVM_14_rumfummlerDown";	//Trzymaj siê w przysz³oœci z dala od rzeczy, które nie powinny ciê interesowaæ!
+	sheepattackerdown = "SVM_14_SheepAttackerDown";	//Nie rób tego nigdy wiêcej! To s¹ nasze owce!
+	killmurderer = "SVM_14_KillMurderer";	//Giñ, morderco!
+	stupidbeastkilled = "SVM_14_StupidBeastKilled";	//G³upia bestia!
+	neverhitmeagain = "SVM_14_NeverHitMeAgain";	//Nigdy wiêcej ze mn¹ nie zaczynaj!
+	youbettershouldhavelistened = "SVM_14_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
+	getupandbegone = "SVM_14_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
+	neverenterroomagain = "SVM_14_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³!
+	thereisnofightinghere = "SVM_14_ThereIsNoFightingHere";	//Tu siê nie walczy, zrozumiano? Niech to bêdzie dla ciebie nauczka!
+	spareme = "SVM_14_SpareMe";	//Zostaw mnie, proszê!
+	runaway = "SVM_14_RunAway";	//Cholera! Znikam st¹d!
+	alarm = "SVM_14_Alarm";	//ALARM!
+	guards = "SVM_14_Guards";	//STRA¯!
+	help = "SVM_14_Help";	//Pomocy!
+	goodmonsterkill = "SVM_14_GoodMonsterKill";	//Dobra robota - jedna bestia mniej!
+	goodkill = "SVM_14_GoodKill";	//No, daj œwini na co zas³uguje!
+	notnow = "SVM_14_NOTNOW";	//Zostaw mnie w spokoju!
+	runcoward = "SVM_14_RunCoward";	//Stój, gnido!
+	getoutofhere = "SVM_14_GetOutOfHere";	//Wynoœ siê st¹d!
+	whyareyouinhere = "SVM_14_WhyAreYouInHere";	//Czego tutaj szukasz? OdejdŸ!
+	yesgooutofhere = "SVM_14_YesGoOutOfHere";	//No, zmywaj siê!
+	whatsthissupposedtobe = "SVM_14_WhatsThisSupposedToBe";	//Ej ty? Co ty tam robisz, co?
+	youdisturbedmyslumber = "SVM_14_YouDisturbedMySlumber";	//Cholera, co jest?
+	itookyourgold = "SVM_14_ITookYourGold";	//Z³oto! Dobrze... Przyda mi siê.
+	shitnogold = "SVM_14_ShitNoGold";	//Nawet nie masz z³ota?
+	itakeyourweapon = "SVM_14_ITakeYourWeapon";	//Wezmê sobie twoj¹ broñ.
+	whatareyoudoing = "SVM_14_WhatAreYouDoing";	//Hej, uwa¿aj!
+	lookingfortroubleagain = "SVM_14_LookingForTroubleAgain";	//Ci¹gle ci ma³o?
+	stopmagic = "SVM_14_StopMagic";	//Trzymaj siê ode mnie z daleka z t¹ swoj¹ magi¹!
+	isaidstopmagic = "SVM_14_ISaidStopMagic";	//Przestañ z tymi czarami! Masz coœ nie tak z uszami?!
+	weapondown = "SVM_14_WeaponDown";	//Od³ó¿ broñ!
+	isaidweapondown = "SVM_14_ISaidWeaponDown";	//Nie s³yszysz mnie? Powtarzam: od³ó¿ broñ!
+	wisemove = "SVM_14_WiseMove";	//Widzisz, to nie by³o takie trudne.
+	nexttimeyoureinforit = "SVM_14_NextTimeYoureInForIt";	//Jeszcze o tym pogadamy...
+	ohmyhead = "SVM_14_OhMyHead";	//O rany, moja g³owa...
+	theresafight = "SVM_14_TheresAFight";	//Wreszcie coœ siê dzieje!
+	ohmygoditsafight = "SVM_14_OhMyGodItsAFight";	//Porozwalaj¹ sobie ³by...
+	goodvictory = "SVM_14_GoodVictory";	//Pokaza³eœ mu, kto tu rz¹dzi!
+	notbad = "SVM_14_NotBad";	//Ca³kiem nieŸle...
+	ohmygodhesdown = "SVM_14_OhMyGodHesDown";	//Co za brutal...
+	cheerfriend01 = "SVM_14_CheerFriend01";	//Tak trzymaj!
+	cheerfriend02 = "SVM_14_CheerFriend02";	//Na co czekasz?!
+	cheerfriend03 = "SVM_14_CheerFriend03";	//Tak trzeba!
+	ooh01 = "SVM_14_Ooh01";	//Nie daj siê!
+	ooh02 = "SVM_14_Ooh02";	//Poka¿ mu, kto tu jest szefem!
+	ooh03 = "SVM_14_Ooh03";	//O cholera!
+	whatwasthat = "SVM_14_WhatWasThat";	//Co TO by³o!?
+	getoutofmybed = "SVM_14_GetOutOfMyBed";	//Wynocha z mojego ³ó¿ka!
+	awake = "SVM_14_Awake";	//(rozkoszne ziewniêcie)
+	abs_commander = "SVM_14_ABS_COMMANDER";	//Ponoæ by³eœ u kapitana i wszystko wyjaœni³eœ.
+	abs_monastery = "SVM_14_ABS_MONASTERY";	//By³eœ zatem u Ojca Parlana i wyzna³eœ mu swoje grzechy.
+	abs_farm = "SVM_14_ABS_FARM";	//Mówi¹, ¿e poszed³eœ do Lee i za³atwi³eœ sprawê.
+	abs_good = "SVM_14_ABS_GOOD";	//Dobre.
+	sheepkiller_crime = "SVM_14_SHEEPKILLER_CRIME";	//Tak po prostu zarzynaæ nasze owce! Spadaj st¹d, gnido!
+	attack_crime = "SVM_14_ATTACK_CRIME";	//Nie gadam z takimi jak ty!
+	theft_crime = "SVM_14_THEFT_CRIME";	//ZejdŸ mi z oczu, parszywy z³odzieju!
+	pal_city_crime = "SVM_14_PAL_CITY_CRIME";	//Jesteœ zaka³¹ swego zakonu! Lord Hagen bêdzie wœciek³y!
+	mil_city_crime = "SVM_14_MIL_CITY_CRIME";	//Hañbisz dobre imiê stra¿y miejskiej! Lord Andre da ci nauczkê!
+	city_crime = "SVM_14_CITY_CRIME";	//Lord Andre dowie siê o twoich czynach!
+	mona_crime = "SVM_14_MONA_CRIME";	//Ojciec Parlan bêdzie bardzo niezadowolony!
+	farm_crime = "SVM_14_FARM_CRIME";	//Ju¿ Lee ciê nauczy... I po co ci to by³o?
+	oc_crime = "SVM_14_OC_CRIME";	//Kapitan Garond bêdzie ¿¹da³ wyjaœnieñ!
+	toughguy_attacklost = "SVM_14_TOUGHGUY_ATTACKLOST";	//Dobrze ju¿, dobrze, jesteœ lepszy ode mnie! Czego chcesz?
+	toughguy_attackwon = "SVM_14_TOUGHGUY_ATTACKWON";	//Mam ci jeszcze raz pokazaæ, kto tu jest szefem?
+	toughguy_playerattack = "SVM_14_TOUGHGUY_PLAYERATTACK";	//Znowu chcesz siê ze mn¹ zmierzyæ?
+	gold_1000 = "SVM_14_GOLD_1000";	//1000 sztuk z³ota.
+	gold_950 = "SVM_14_GOLD_950";	//950 sztuk z³ota.
+	gold_900 = "SVM_14_GOLD_900";	//900 sztuk z³ota.
+	gold_850 = "SVM_14_GOLD_850";	//850 sztuk z³ota.
+	gold_800 = "SVM_14_GOLD_800";	//800 sztuk z³ota.
+	gold_750 = "SVM_14_GOLD_750";	//750 sztuk z³ota.
+	gold_700 = "SVM_14_GOLD_700";	//700 sztuk z³ota.
+	gold_650 = "SVM_14_GOLD_650";	//650 sztuk z³ota.
+	gold_600 = "SVM_14_GOLD_600";	//600 sztuk z³ota.
+	gold_550 = "SVM_14_GOLD_550";	//550 sztuk z³ota.
+	gold_500 = "SVM_14_GOLD_500";	//500 sztuk z³ota.
+	gold_450 = "SVM_14_GOLD_450";	//450 sztuk z³ota.
+	gold_400 = "SVM_14_GOLD_400";	//400 sztuk z³ota.
+	gold_350 = "SVM_14_GOLD_350";	//350 sztuk z³ota.
+	gold_300 = "SVM_14_GOLD_300";	//300 sztuk z³ota.
+	gold_250 = "SVM_14_GOLD_250";	//250 sztuk z³ota.
+	gold_200 = "SVM_14_GOLD_200";	//200 sztuk z³ota.
+	gold_150 = "SVM_14_GOLD_150";	//150 sztuk z³ota.
+	gold_100 = "SVM_14_GOLD_100";	//100 sztuk z³ota.
+	gold_90 = "SVM_14_GOLD_90";	//90 sztuk z³ota.
+	gold_80 = "SVM_14_GOLD_80";	//80 sztuk z³ota.
+	gold_70 = "SVM_14_GOLD_70";	//70 sztuk z³ota.
+	gold_60 = "SVM_14_GOLD_60";	//60 sztuk z³ota.
+	gold_50 = "SVM_14_GOLD_50";	//50 sztuk z³ota.
+	gold_40 = "SVM_14_GOLD_40";	//40 sztuk z³ota.
+	gold_30 = "SVM_14_GOLD_30";	//30 sztuk z³ota.
+	gold_20 = "SVM_14_GOLD_20";	//20 sztuk z³ota.
+	gold_10 = "SVM_14_GOLD_10";	//10 sztuk z³ota.
+	smalltalk01 = "SVM_14_Smalltalk01";	//...nie wierzê...
+	smalltalk02 = "SVM_14_Smalltalk02";	//...nie mo¿na byæ tego pewnym...
+	smalltalk03 = "SVM_14_Smalltalk03";	//...ale on o tym wiedzia³...
+	smalltalk04 = "SVM_14_Smalltalk04";	//...ju¿ nie wiem, komu ufaæ...
+	smalltalk05 = "SVM_14_Smalltalk05";	//...nie wiem, czym on siê tak denerwuje...
+	smalltalk06 = "SVM_14_Smalltalk06";	//...i tak mam wystarczaj¹co k³opotów...
+	smalltalk07 = "SVM_14_Smalltalk07";	//...a, s³ysza³em to i owo...
+	smalltalk08 = "SVM_14_Smalltalk08";	//...nie chcê mieæ z tym nic wspólnego...
+	smalltalk09 = "SVM_14_Smalltalk09";	//...nie wolno wierzyæ we wszystko, co siê s³yszy...
+	smalltalk10 = "SVM_14_Smalltalk10";	//...ode mnie tego nie dosta³...
+	smalltalk11 = "SVM_14_Smalltalk11";	//...ju¿ o tym myœla³em...
+	smalltalk12 = "SVM_14_Smalltalk12";	//...nikt mnie nie pyta o zdanie...
+	smalltalk13 = "SVM_14_Smalltalk13";	//...naprawdê na to nie zas³u¿y³...
+	smalltalk14 = "SVM_14_Smalltalk14";	//...nie mów, ¿e o tym nie wiesz...
+	smalltalk15 = "SVM_14_Smalltalk15";	//...to by³o oczywiste...
+	smalltalk16 = "SVM_14_Smalltalk16";	//...sk¹d to zatem masz...
+	smalltalk17 = "SVM_14_Smalltalk17";	//...nie mo¿e tak dalej byæ...
+	smalltalk18 = "SVM_14_Smalltalk18";	//...mam w³asne zdanie na ten temat...
+	smalltalk19 = "SVM_14_Smalltalk19";	//...by³o tak, jak mówisz...
+	smalltalk20 = "SVM_14_Smalltalk20";	//...nie s¹dzê, ¿eby coœ siê zmieni³o...
+	smalltalk21 = "SVM_14_Smalltalk21";	//...s³yszê o tym po raz pierwszy...
+	smalltalk22 = "SVM_14_Smalltalk22";	//...mo¿emy tylko siedzieæ i czekaæ...
+	smalltalk23 = "SVM_14_Smalltalk23";	//...wiedzia³em, ¿e bêdzie z tym problem...
+	smalltalk24 = "SVM_14_Smalltalk24";	//...wiêc czemu nie chc¹ mnie s³uchaæ...
+	smalltalk25 = "SVM_14_Smalltalk25";	//...ucieka³, jakby goni³ go sam Beliar...
+	smalltalk26 = "SVM_14_Smalltalk26";	//...w koñcu i tak go oczywiœcie dorwaliœmy...
+	smalltalk27 = "SVM_14_Smalltalk27";	//...trzeba siê tym zaj¹æ i uporz¹dkowaæ sprawy...
+	smalltalk28 = "SVM_14_Smalltalk28";	//...niektórzy nawet nie wiedz¹, jak bardzo grzesz¹...
+	smalltalk29 = "SVM_14_Smalltalk29";	//...taka jest bowiem wola Innosa...
+	smalltalk30 = "SVM_14_Smalltalk30";	//...jego czyny by³y sprawiedliwe...
+	nolearnnopoints = "SVM_14_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
+	nolearnoverpersonalmax = "SVM_14_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	nolearnyourebetter = "SVM_14_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ za dobry.
+	youlearnedsomething = "SVM_14_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	unterstadt = "SVM_14_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
+	oberstadt = "SVM_14_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
+	tempel = "SVM_14_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
+	markt = "SVM_14_MARKT";	//Jesteœ teraz na targowisku.
+	galgen = "SVM_14_GALGEN";	//Jesteœ teraz na placu wisielców.
+	kaserne = "SVM_14_KASERNE";	//To s¹ koszary.
+	hafen = "SVM_14_HAFEN";	//Jesteœ teraz w dzielnicy portowej.
+	whereto = "SVM_14_WHERETO";	//Dok¹d chcesz siê udaæ?
+	oberstadt_2_unterstadt = "SVM_14_OBERSTADT_2_UNTERSTADT";	//PrzejdŸ przez wewnêtrzn¹ bramê, a dojdziesz do dolnej czêœci miasta.
+	unterstadt_2_oberstadt = "SVM_14_UNTERSTADT_2_OBERSTADT";	//Przy po³udniowej bramie znajduj¹ siê schody, które prowadz¹ do bramy wewnêtrznej. Za ni¹ zaczyna siê górne miasto.
+	unterstadt_2_tempel = "SVM_14_UNTERSTADT_2_TEMPEL";	//IdŸ od kuŸni przez przejœcie, a dojdziesz do placu œwi¹tynnego.
+	unterstadt_2_hafen = "SVM_14_UNTERSTADT_2_HAFEN";	//IdŸ od kuŸni w dó³ ulic¹ portow¹, a dojdziesz do przystani.
+	tempel_2_unterstadt = "SVM_14_TEMPEL_2_UNTERSTADT";	//Od placu œwi¹tynnego odchodzi przejœcie, które prowadzi do dolnej czêœci miasta.
+	tempel_2_markt = "SVM_14_TEMPEL_2_MARKT";	//Stoj¹c przed œwi¹tyni¹, idŸ na lewo wzd³u¿ murów miejskich, a dojdziesz do targowiska.
+	tempel_2_galgen = "SVM_14_TEMPEL_2_GALGEN";	//Id¹c od strony œwi¹tyni, skrêæ w lewo ko³o knajpy, a dojdziesz do placu wisielców.
+	markt_2_tempel = "SVM_14_MARKT_2_TEMPEL";	//Id¹c od targowiska wzd³u¿ murów miejskich, dojdziesz do œwi¹tyni.
+	markt_2_kaserne = "SVM_14_MARKT_2_KASERNE";	//Koszary to ten du¿y budynek. WejdŸ po prostu po schodach naprzeciwko gospody.
+	markt_2_galgen = "SVM_14_MARKT_2_GALGEN";	//PrzejdŸ po prostu obok koszar, a powinieneœ dojœæ do placu wisielców.
+	galgen_2_tempel = "SVM_14_GALGEN_2_TEMPEL";	//Id¹c w dó³ uliczk¹ odchodz¹c¹ od placu wisielców, dojdziesz do placu œwi¹tynnego.
+	galgen_2_markt = "SVM_14_GALGEN_2_MARKT";	//PrzejdŸ obok koszar, a dojdziesz do targowiska.
+	galgen_2_kaserne = "SVM_14_GALGEN_2_KASERNE";	//Koszary to ten du¿y budynek. WejdŸ po prostu po schodach.
+	kaserne_2_markt = "SVM_14_KASERNE_2_MARKT";	//Jeœli zejdziesz po schodach na lewo od g³ównego wejœcia, to dojdziesz do targowiska.
+	kaserne_2_galgen = "SVM_14_KASERNE_2_GALGEN";	//Schodz¹c po schodach na prawo od g³ównego wejœcia, dojdziesz do placu wisielców.
+	hafen_2_unterstadt = "SVM_14_HAFEN_2_UNTERSTADT";	//Id¹c od strony muru wzd³u¿ nabrze¿a w górê ulic¹ portow¹, dojdziesz do dolnej czêœci miasta.
+	dead = "SVM_14_Dead";	//Aaaaarhhh!
+	aargh_1 = "SVM_14_Aargh_1";	//Aargh
+	aargh_2 = "SVM_14_Aargh_2";	//Aargh
+	aargh_3 = "SVM_14_Aargh_3";	//Aargh
+	addon_wrongarmor = "SVM_14_Addon_WrongArmor";	//
+	addon_wrongarmor_sld = "SVM_14_ADDON_WRONGARMOR_SLD";	//
+	addon_wrongarmor_mil = "SVM_14_ADDON_WRONGARMOR_MIL";	//
+	addon_wrongarmor_kdf = "SVM_14_ADDON_WRONGARMOR_KDF";	//
+	addon_noarmor_bdt = "SVM_14_ADDON_ADDON_NOARMOR_BDT";	//
+	addon_diebandit = "SVM_14_ADDON_DIEBANDIT";	//
+	addon_dirtypirate = "SVM_14_ADDON_DIRTYPIRATE";	//
+};
+
+instance SVM_15(C_SVM)
+{
+	sc_heyturnaround = "SVM_15_SC_HeyTurnAround";	//Hej, ty!
+	sc_heyturnaround02 = "SVM_15_SC_HeyTurnAround02";	//Hej, ty!
+	sc_heyturnaround03 = "SVM_15_SC_HeyTurnAround03";	//Hej!
+	sc_heyturnaround04 = "SVM_15_SC_HeyTurnAround04";	//Hej!
+	sc_heywaitasecond = "SVM_15_SC_HeyWaitASecond";	//Chwila!
+	doesntwork = "SVM_15_DoesntWork";	//Nie dzia³a.
+	pickbroke = "SVM_15_PickBroke";	//Hm, z³ama³ siê...
+	needkey = "SVM_15_NeedKey";	//Potrzebujê do tego klucza...
+	nomorepicks = "SVM_15_NoMorePicks";	//Nie mam ju¿ wytrychów...
+	nopicklocktalent = "SVM_15_NoPickLockTalent";	//Nie znam siê na otwieraniu zamków.
+	nosweeping = "SVM_15_NoSweeping";	//Posprz¹tanie wszystkich komnat zajmie wieki!
+	picklockorkeymissing = "SVM_15_PICKLOCKORKEYMISSING";	//Hm... Nie mam ani klucza, ani wytrychu.
+	keymissing = "SVM_15_KEYMISSING";	//Bez w³aœciwego klucza nigdy tego nie otworzê!
+	picklockmissing = "SVM_15_PICKLOCKMISSING";	//Przyda³oby siê parê wytrychów!
+	neveropen = "SVM_15_NEVEROPEN";	//Nigdy tego nie otworzê!
+	missingitem = "SVM_15_MISSINGITEM";	//Czym?
+	dontknow = "SVM_15_DONTKNOW";	//Hm... Nie...
+	nothingtoget = "SVM_15_NOTHINGTOGET";	//Niczego tu nie znajdê...
+	nothingtoget02 = "SVM_15_NOTHINGTOGET02";	//Nic tu nie ma...
+	nothingtoget03 = "SVM_15_NOTHINGTOGET03";	//Nie ma czego pl¹drowaæ...
+	aargh_1 = "SVM_15_Aargh_1";	//Aargh
+	aargh_2 = "SVM_15_Aargh_2";	//Aargh
+	aargh_3 = "SVM_15_Aargh_3";	//Aargh
+	dead = "SVM_15_Dead";	//Aaaarhhh!
+	awake = "SVM_15_Awake";	//(budzi siê)
+	irdoraththereyouare = "SVM_15_IRDORATHTHEREYOUARE";	//Hm... A wiêc tam jest twoja kryjówka. Cholernie daleko. Chyba bêdê potrzebowaæ statku...
+	healshrine = "SVM_15_HEALSHRINE";	//Innosie, obdarz mnie sw¹ ³ask¹ i oczyœæ tê kapliczkê.
+	heallastshrine = "SVM_15_HEALLASTSHRINE";	//Innosie, obdarz mnie sw¹ ³ask¹ i tak dalej... No, to chyba ostatni raz.
+	scopensirdorathbook = "SVM_15_SCOPENSIRDORATHBOOK";	//XARAK BENDARDO! Ach... Ksiêga zosta³a otwarta. W œrodku jest klucz i jakiœ list.
+	scopenslastdoor = "SVM_15_SCOPENSLASTDOOR";	//KHADOSH EMEM KADAR! Otwórz siê!
+	trade_1 = "SVM_15_Addon_TRADE_1";	//
+	trade_2 = "SVM_15_Addon_TRADE_2";	//
+	trade_3 = "SVM_15_Addon_TRADE_3";	//
+	verstehe = "SVM_15_Addon_VERSTEHE";	//
+	foundtreasure = "SVM_15_Addon_FOUNDTREASURE";	//
+	cantunderstandthis = "SVM_15_Addon_CANTUNDERSTANDTHIS";	//
+	cantreadthis = "SVM_15_Addon_CANTREADTHIS";	//
+	stoneplate_1 = "SVM_15_Addon_STONEPLATE_1";	//
+	stoneplate_2 = "SVM_15_Addon_STONEPLATE_2";	//
+	stoneplate_3 = "SVM_15_Addon_STONEPLATE_3";	//
+	cough = "SVM_15_Addon_COUGH";	//
+	hui = "SVM_15_Addon_HUI";	//
+	attentat_addon_description = "SVM_15_ATTENTAT_ADDON_DESCRIPTION";	//
+	attentat_addon_description2 = "SVM_15_ATTENTAT_ADDON_DESCRIPTION2";	//
+	attentat_addon_pro = "SVM_15_ATTENTAT_ADDON_PRO";	//
+	attentat_addon_contra = "SVM_15_ATTENTAT_ADDON_CONTRA";	//
+	mine_addon_description = "SVM_15_MINE_ADDON_DESCRIPTION";	//
+	addon_summonancientghost = "SVM_15_ADDON_SUMMONANCIENTGHOST";	//
+	addon_ancientghost_notnear = "SVM_15_ADDON_ANCIENTGHOST_NOTNEAR";	//
+	addon_gold_description = "SVM_15_ADDON_GOLD_DESCRIPTION";	//
+	addon_thislittlebastard = "SVM_15_Addon_ThisLittleBastard";	//
+	addon_openadanostemple = "SVM_15_Addon_OPENADANOSTEMPLE";	//
+};
+
+instance SVM_16(C_SVM)
+{
+	milgreetings = "SVM_16_MILGreetings";	//Niech ¿yje Król!
+	palgreetings = "SVM_16_PALGreetings";	//Chwa³a Innosowi!
+	weather = "SVM_16_Weather";	//Nêdzna pogoda...
+	igetyoustill = "SVM_16_IGetYouStill";	//W koñcu i tak ciê dorwê!
+	dieenemy = "SVM_16_DieEnemy";	//Wybi³a twoja godzina!
+	diemonster = "SVM_16_DieMonster";	//Znowu jedna z tych przeklêtych bestii!
+	dirtythief = "SVM_16_DirtyThief";	//Parszywy z³odziej! Czekaj tylko...
+	handsoff = "SVM_16_HandsOff";	//£apy precz!
+	sheepkiller = "SVM_16_SheepKiller";	//To bydlê zarzyna nasze owce!
+	sheepkillermonster = "SVM_16_SheepKillerMonster";	//Ten cholerny potwór po¿era nasze owce!
+	youmurderer = "SVM_16_YouMurderer";	//Morderca!
+	diestupidbeast = "SVM_16_DieStupidBeast";	//Tu nie ma miejsca dla bestii!
+	youdarehitme = "SVM_16_YouDareHitMe";	//Czekaj tylko, gnido!
+	youaskedforit = "SVM_16_YouAskedForIt";	//Sam tego chcia³eœ!
+	thenibeatyououtofhere = "SVM_16_ThenIBeatYouOutOfHere";	//Zatem bêdê musia³a ciê st¹d WYKOPAÆ!
+	whatdidyoudointhere = "SVM_16_WhatDidYouDoInThere";	//Co ty tam robi³eœ, co?!
+	willyoustopfighting = "SVM_16_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	killenemy = "SVM_16_KillEnemy";	//Giñ, bydlaku!
+	enemykilled = "SVM_16_EnemyKilled";	//To twój koniec, padalcu!
+	monsterkilled = "SVM_16_MonsterKilled";	//Jedna bestia mniej!
+	thiefdown = "SVM_16_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
+	rumfummlerdown = "SVM_16_rumfummlerDown";	//Na przysz³oœæ trzymaj siê z dala od rzeczy, które nie powinny ciê interesowaæ!
+	sheepattackerdown = "SVM_16_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To s¹ nasze owce!
+	killmurderer = "SVM_16_KillMurderer";	//Giñ, morderco!
+	stupidbeastkilled = "SVM_16_StupidBeastKilled";	//G³upia bestia!
+	neverhitmeagain = "SVM_16_NeverHitMeAgain";	//Nigdy wiêcej ze mn¹ nie zaczynaj!
+	youbettershouldhavelistened = "SVM_16_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
+	getupandbegone = "SVM_16_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
+	neverenterroomagain = "SVM_16_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³a!
+	thereisnofightinghere = "SVM_16_ThereIsNoFightingHere";	//Tu siê nie walczy, zrozumiano? Niech to bêdzie dla ciebie nauczka!
+	spareme = "SVM_16_SpareMe";	//Nie rób mi krzywdy!
+	runaway = "SVM_16_RunAway";	//Wynoszê siê st¹d!
+	alarm = "SVM_16_Alarm";	//ALARM!
+	guards = "SVM_16_Guards";	//STRA¯!
+	help = "SVM_16_Help";	//Pomocy!
+	goodmonsterkill = "SVM_16_GoodMonsterKill";	//Dobra robota!
+	goodkill = "SVM_16_GoodKill";	//No, daj œwini na co zas³uguje!
+	notnow = "SVM_16_NOTNOW";	//Zostaw mnie w spokoju!
+	runcoward = "SVM_16_RunCoward";	//(wo³aj¹c) Stój, tchórzu!
+	getoutofhere = "SVM_16_GetOutOfHere";	//Wynoœ siê st¹d!
+	whyareyouinhere = "SVM_16_WhyAreYouInHere";	//Czego tutaj szukasz? OdejdŸ!
+	yesgooutofhere = "SVM_16_YesGoOutOfHere";	//No, zabieraj siê!
+	whatsthissupposedtobe = "SVM_16_WhatsThisSupposedToBe";	//Hej ty! Czego ty tam szukasz?
+	youdisturbedmyslumber = "SVM_16_YouDisturbedMySlumber";	//Co jest?
+	itookyourgold = "SVM_16_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
+	shitnogold = "SVM_16_ShitNoGold";	//Ty biedny frajerze, nawet z³ota nie masz!
+	itakeyourweapon = "SVM_16_ITakeYourWeapon";	//Lepiej zaopiekujê siê twoj¹ broni¹.
+	whatareyoudoing = "SVM_16_WhatAreYouDoing";	//Hej, uwa¿aj! Jeszcze raz i ci przy³o¿ê!
+	lookingfortroubleagain = "SVM_16_LookingForTroubleAgain";	//Ci¹gle ci ma³o?!
+	stopmagic = "SVM_16_StopMagic";	//Przestañ z tymi czarami!
+	isaidstopmagic = "SVM_16_ISaidStopMagic";	//Chcesz dostaæ? Przestañ w tej chwili!
+	weapondown = "SVM_16_WeaponDown";	//Od³ó¿ broñ!
+	isaidweapondown = "SVM_16_ISaidWeaponDown";	//Od³o¿ysz w koñcu tê cholern¹ broñ?!
+	wisemove = "SVM_16_WiseMove";	//M¹dra decyzja...
+	nexttimeyoureinforit = "SVM_16_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
+	ohmyhead = "SVM_16_OhMyHead";	//O bogowie, moja g³owa...
+	theresafight = "SVM_16_TheresAFight";	//Aach, walka...
+	ohmygoditsafight = "SVM_16_OhMyGodItsAFight";	//O bogowie, walka!
+	goodvictory = "SVM_16_GoodVictory";	//Pokaza³eœ mu, kto tu rz¹dzi!
+	notbad = "SVM_16_NotBad";	//NieŸle...
+	ohmygodhesdown = "SVM_16_OhMyGodHesDown";	//Bogowie! Jak brutalnie...
+	cheerfriend01 = "SVM_16_CheerFriend01";	//Rozwal go!
+	cheerfriend02 = "SVM_16_CheerFriend02";	//Poka¿ mu!
+	cheerfriend03 = "SVM_16_CheerFriend03";	//Daj mu popaliæ!
+	ooh01 = "SVM_16_Ooh01";	//Oddaj mu!
+	ooh02 = "SVM_16_Ooh02";	//Uwa¿aj!
+	ooh03 = "SVM_16_Ooh03";	//Och! To musia³o boleæ!
+	whatwasthat = "SVM_16_WhatWasThat";	//Co TO by³o!?
+	getoutofmybed = "SVM_16_GetOutOfMyBed";	//Wynoœ siê z mojego ³ó¿ka!
+	awake = "SVM_16_Awake";	//(rozkoszne ziewniêcie)
+	abs_commander = "SVM_16_ABS_COMMANDER";	//Poszed³eœ wiêc do kapitana i oczyœci³eœ siê z zarzutów.
+	abs_monastery = "SVM_16_ABS_MONASTERY";	//By³eœ zatem u Ojca Parlana i wyzna³eœ mu swoje grzechy.
+	abs_farm = "SVM_16_ABS_FARM";	//Lee rozwi¹za³ ten problem.
+	abs_good = "SVM_16_ABS_GOOD";	//Dobre.
+	sheepkiller_crime = "SVM_16_SHEEPKILLER_CRIME";	//Nie mo¿esz tak po prostu zabijaæ naszych owiec! OdejdŸ!
+	attack_crime = "SVM_16_ATTACK_CRIME";	//Jesteœ brutalnym oprychem. Nie chcê mieæ z tob¹ nic wspólnego.
+	theft_crime = "SVM_16_THEFT_CRIME";	//Nie rozmawiam ze z³odziejami - a teraz odejdŸ st¹d!
+	pal_city_crime = "SVM_16_PAL_CITY_CRIME";	//Twoje zachowanie nie jest zbyt honorowe. Lordowi Hagenowi to siê nie spodoba!
+	mil_city_crime = "SVM_16_MIL_CITY_CRIME";	//Twe zachowanie hañbi dobre imiê stra¿y miejskiej! Lord Andre za¿¹da wyjaœnieñ!
+	city_crime = "SVM_16_CITY_CRIME";	//Lord Andre dowie siê o twoich czynach!
+	mona_crime = "SVM_16_MONA_CRIME";	//Post¹pi³eœ niew³aœciwie. IdŸ do Ojca Parlana i ¿a³uj za swoje grzechy!
+	farm_crime = "SVM_16_FARM_CRIME";	//Lee siê o tym dowie. Zostaniesz ukarany!
+	oc_crime = "SVM_16_OC_CRIME";	//Kapitan Garond za¿¹da wyjaœnieñ!
+	gold_1000 = "SVM_16_GOLD_1000";	//1000 sztuk z³ota.
+	gold_950 = "SVM_16_GOLD_950";	//950 sztuk z³ota.
+	gold_900 = "SVM_16_GOLD_900";	//900 sztuk z³ota.
+	gold_850 = "SVM_16_GOLD_850";	//850 sztuk z³ota.
+	gold_800 = "SVM_16_GOLD_800";	//800 sztuk z³ota.
+	gold_750 = "SVM_16_GOLD_750";	//750 sztuk z³ota.
+	gold_700 = "SVM_16_GOLD_700";	//700 sztuk z³ota.
+	gold_650 = "SVM_16_GOLD_650";	//650 sztuk z³ota.
+	gold_600 = "SVM_16_GOLD_600";	//600 sztuk z³ota.
+	gold_550 = "SVM_16_GOLD_550";	//550 sztuk z³ota.
+	gold_500 = "SVM_16_GOLD_500";	//500 sztuk z³ota.
+	gold_450 = "SVM_16_GOLD_450";	//450 sztuk z³ota.
+	gold_400 = "SVM_16_GOLD_400";	//400 sztuk z³ota.
+	gold_350 = "SVM_16_GOLD_350";	//350 sztuk z³ota.
+	gold_300 = "SVM_16_GOLD_300";	//300 sztuk z³ota.
+	gold_250 = "SVM_16_GOLD_250";	//250 sztuk z³ota.
+	gold_200 = "SVM_16_GOLD_200";	//200 sztuk z³ota.
+	gold_150 = "SVM_16_GOLD_150";	//150 sztuk z³ota.
+	gold_100 = "SVM_16_GOLD_100";	//100 sztuk z³ota.
+	gold_90 = "SVM_16_GOLD_90";	//90 sztuk z³ota.
+	gold_80 = "SVM_16_GOLD_80";	//80 sztuk z³ota.
+	gold_70 = "SVM_16_GOLD_70";	//70 sztuk z³ota.
+	gold_60 = "SVM_16_GOLD_60";	//60 sztuk z³ota.
+	gold_50 = "SVM_16_GOLD_50";	//50 sztuk z³ota.
+	gold_40 = "SVM_16_GOLD_40";	//40 sztuk z³ota.
+	gold_30 = "SVM_16_GOLD_30";	//30 sztuk z³ota.
+	gold_20 = "SVM_16_GOLD_20";	//20 sztuk z³ota.
+	gold_10 = "SVM_16_GOLD_10";	//10 sztuk z³ota.
+	smalltalk01 = "SVM_16_Smalltalk01";	//...doprawdy? To interesuj¹ce...
+	smalltalk02 = "SVM_16_Smalltalk02";	//...nie wierzê w to...
+	smalltalk03 = "SVM_16_Smalltalk03";	//...mój m¹¿ uwa¿a inaczej...
+	smalltalk04 = "SVM_16_Smalltalk04";	//...daj spokój, nie opowiadaj mi takich rzeczy...
+	smalltalk05 = "SVM_16_Smalltalk05";	//...naprawdê, sama widzia³am...
+	smalltalk06 = "SVM_16_Smalltalk06";	//...nie mów...
+	smalltalk07 = "SVM_16_Smalltalk07";	//...nikomu tego nie powtarzaj...
+	smalltalk08 = "SVM_16_Smalltalk08";	//...przysz³o nam ¿yæ w niedobrych czasach...
+	smalltalk09 = "SVM_16_Smalltalk09";	//...kto to opowiada takie rzeczy...
+	smalltalk10 = "SVM_16_Smalltalk10";	//...gdybym sama tego nie widzia³a...
+	smalltalk11 = "SVM_16_Smalltalk11";	//...ktoœ musi pracowaæ...
+	smalltalk12 = "SVM_16_Smalltalk12";	//...s³ysza³am co innego...
+	smalltalk13 = "SVM_16_Smalltalk13";	//...tak, to bardzo typowe...
+	smalltalk14 = "SVM_16_Smalltalk14";	//...nie potrafi niczego zatrzymaæ dla siebie...
+	smalltalk15 = "SVM_16_Smalltalk15";	//...lepiej by by³o, gdyby siê przymkn¹³...
+	smalltalk16 = "SVM_16_Smalltalk16";	//...i pracuje niemal przez ca³y dzieñ...
+	smalltalk17 = "SVM_16_Smalltalk17";	//...nie mogê zajmowaæ siê wszystkim i wszystkimi...
+	smalltalk18 = "SVM_16_Smalltalk18";	//...on po prostu za du¿o gada...
+	smalltalk19 = "SVM_16_Smalltalk19";	//...tajemnica, o której wszyscy wiedz¹...
+	smalltalk20 = "SVM_16_Smalltalk20";	//...teraz ka¿dy ju¿ o tym wie...
+	smalltalk21 = "SVM_16_Smalltalk21";	//...niczego jej ju¿ nie powiem...
+	smalltalk22 = "SVM_16_Smalltalk22";	//...a bêdzie jeszcze gorzej...
+	smalltalk23 = "SVM_16_Smalltalk23";	//...to przecie¿ okropne...
+	smalltalk24 = "SVM_16_Smalltalk24";	//...zawsze to powtarza³am...
+	nolearnnopoints = "SVM_16_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
+	nolearnoverpersonalmax = "SVM_16_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	nolearnyourebetter = "SVM_16_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ ju¿ zbyt dobry.
+	youlearnedsomething = "SVM_16_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	unterstadt = "SVM_16_UNTERSTADT";	//Jesteœ teraz w ni¿szej czêœci miasta.
+	oberstadt = "SVM_16_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
+	tempel = "SVM_16_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
+	markt = "SVM_16_MARKT";	//Jesteœ teraz na targowisku.
+	galgen = "SVM_16_GALGEN";	//Jesteœ teraz na placu wisielców.
+	kaserne = "SVM_16_KASERNE";	//To s¹ koszary.
+	hafen = "SVM_16_HAFEN";	//Jesteœ teraz w dzielnicy portowej.
+	whereto = "SVM_16_WHERETO";	//Dok¹d chcesz siê udaæ?
+	oberstadt_2_unterstadt = "SVM_16_OBERSTADT_2_UNTERSTADT";	//PrzejdŸ przez wewnêtrzn¹ bramê, a dojdziesz do dolnej czêœci miasta.
+	unterstadt_2_oberstadt = "SVM_16_UNTERSTADT_2_OBERSTADT";	//Przy po³udniowej bramie znajduj¹ siê schody, które prowadz¹ do bramy wewnêtrznej. Za ni¹ zaczyna siê górne miasto.
+	unterstadt_2_tempel = "SVM_16_UNTERSTADT_2_TEMPEL";	//Id¹c od kuŸni przez przejœcie, dojdziesz do placu œwi¹tynnego.
+	unterstadt_2_hafen = "SVM_16_UNTERSTADT_2_HAFEN";	//Id¹c od kuŸni w dó³ ulic¹ portow¹, dojdziesz do portu.
+	tempel_2_unterstadt = "SVM_16_TEMPEL_2_UNTERSTADT";	//Od placu œwi¹tynnego odchodzi przejœcie, które prowadzi do dolnej czêœci miasta.
+	tempel_2_markt = "SVM_16_TEMPEL_2_MARKT";	//Jesteœ przed œwi¹tyni¹, idŸ na lewo wzd³u¿ murów miejskich, a dojdziesz do targowiska.
+	tempel_2_galgen = "SVM_16_TEMPEL_2_GALGEN";	//Id¹c od strony œwi¹tyni, skrêæ w lewo ko³o knajpy, a dojdziesz do placu wisielców.
+	markt_2_tempel = "SVM_16_MARKT_2_TEMPEL";	//Id¹c od strony targowiska, wzd³u¿ murów miejskich, dojdziesz do œwi¹tyni.
+	markt_2_kaserne = "SVM_16_MARKT_2_KASERNE";	//Koszary to ten du¿y budynek. WejdŸ po prostu po schodach naprzeciwko gospody.
+	markt_2_galgen = "SVM_16_MARKT_2_GALGEN";	//PrzejdŸ po prostu obok koszar, a dojdziesz do placu wisielców.
+	galgen_2_tempel = "SVM_16_GALGEN_2_TEMPEL";	//IdŸ w dó³ uliczk¹ odchodz¹c¹ od placu wisielców, a dojdziesz do placu œwi¹tynnego.
+	galgen_2_markt = "SVM_16_GALGEN_2_MARKT";	//PrzejdŸ po prostu obok koszar, a dojdziesz do targowiska.
+	galgen_2_kaserne = "SVM_16_GALGEN_2_KASERNE";	//Ten du¿y budynek to koszary. WejdŸ po prostu po schodach.
+	kaserne_2_markt = "SVM_16_KASERNE_2_MARKT";	//ZejdŸ w dó³ po schodach na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
+	kaserne_2_galgen = "SVM_16_KASERNE_2_GALGEN";	//ZejdŸ w dó³ po schodach na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
+	hafen_2_unterstadt = "SVM_16_HAFEN_2_UNTERSTADT";	//Id¹c w górê ulic¹ portow¹, od strony muru przy nadbrze¿u, dojdziesz do dolnej czêœci miasta.
+	dead = "SVM_16_Dead";	//Aaaarhhh!
+	aargh_1 = "SVM_16_Aargh_1";	//Aargh
+	aargh_2 = "SVM_16_Aargh_2";	//Aargh
+	aargh_3 = "SVM_16_Aargh_3";	//Aargh
+	addon_wrongarmor = "SVM_16_Addon_WrongArmor";	//
+	addon_diebandit = "SVM_16_ADDON_DIEBANDIT";	//
+	addon_dirtypirate = "SVM_16_ADDON_DIRTYPIRATE";	//
+};
+
+instance SVM_17(C_SVM)
+{
+	milgreetings = "SVM_17_MILGreetings";	//Niech ¿yje Król!
+	palgreetings = "SVM_17_PALGreetings";	//Chwa³a Innosowi!
+	weather = "SVM_17_Weather";	//Nêdzna pogoda...
+	igetyoustill = "SVM_17_IGetYouStill";	//W koñcu ciê dopad³am!
+	dieenemy = "SVM_17_DieEnemy";	//Wybi³a twoja godzina!
+	diemonster = "SVM_17_DieMonster";	//Znowu jedna z tych cholernych bestii!
+	dirtythief = "SVM_17_DirtyThief";	//Parszywy z³odziej! Czekaj tylko...
+	handsoff = "SVM_17_HandsOff";	//£apy precz!
+	sheepkiller = "SVM_17_SheepKiller";	//Ten bydlak zarzyna nasze owce!
+	sheepkillermonster = "SVM_17_SheepKillerMonster";	//Ten cholerny potwór z¿era nasze owce!
+	youmurderer = "SVM_17_YouMurderer";	//Morderca!
+	diestupidbeast = "SVM_17_DieStupidBeast";	//Tu nie ma miejsca dla bestii!
+	youdarehitme = "SVM_17_YouDareHitMe";	//Czekaj tylko, gnido!
+	youaskedforit = "SVM_17_YouAskedForIt";	//Sam tego chcia³eœ!
+	thenibeatyououtofhere = "SVM_17_ThenIBeatYouOutOfHere";	//Zatem bêdê musia³a ciê st¹d WYKOPAÆ!
+	whatdidyoudointhere = "SVM_17_WhatDidYouDoInThere";	//Co TY tam robi³eœ, co?!
+	willyoustopfighting = "SVM_17_WillYouStopFighting";	//Przestaniecie w koñcu?!
+	killenemy = "SVM_17_KillEnemy";	//Giñ, bydlaku!
+	enemykilled = "SVM_17_EnemyKilled";	//To twój koniec, padalcu!
+	monsterkilled = "SVM_17_MonsterKilled";	//Jedna bestia mniej!
+	thiefdown = "SVM_17_ThiefDown";	//Nigdy wiêcej nie próbuj mnie okraœæ!
+	rumfummlerdown = "SVM_17_rumfummlerDown";	//Na przysz³oœci trzymaj siê z dala od rzeczy, które nie powinny ciê interesowaæ!
+	sheepattackerdown = "SVM_17_SheepAttackerDown";	//Nigdy wiêcej tego nie rób! To s¹ nasze owce!
+	killmurderer = "SVM_17_KillMurderer";	//Giñ, morderco!
+	stupidbeastkilled = "SVM_17_StupidBeastKilled";	//G³upia bestia!
+	neverhitmeagain = "SVM_17_NeverHitMeAgain";	//Nigdy wiêcej ze mn¹ nie zaczynaj!
+	youbettershouldhavelistened = "SVM_17_YouBetterShouldHaveListened";	//Trzeba by³o mnie pos³uchaæ!
+	getupandbegone = "SVM_17_GetUpAndBeGone";	//A teraz zabieraj siê st¹d!
+	neverenterroomagain = "SVM_17_NeverEnterRoomAgain";	//I ¿ebym ciê ju¿ nigdy wiêcej tam nie przy³apa³a!
+	thereisnofightinghere = "SVM_17_ThereIsNoFightingHere";	//Tu siê nie walczy, zrozumiano? Niech to bêdzie dla ciebie nauczka!
+	spareme = "SVM_17_SpareMe";	//Nie rób mi krzywdy!
+	runaway = "SVM_17_RunAway";	//Wynoszê siê st¹d!
+	alarm = "SVM_17_Alarm";	//ALARM!
+	guards = "SVM_17_Guards";	//STRA¯!
+	help = "SVM_17_Help";	//Pomocy!
+	goodmonsterkill = "SVM_17_GoodMonsterKill";	//Dobra robota!
+	goodkill = "SVM_17_GoodKill";	//No, daj œwini na co zas³uguje!
+	notnow = "SVM_17_NOTNOW";	//Zostaw mnie w spokoju!
+	runcoward = "SVM_17_RunCoward";	//Stój, tchórzu!
+	getoutofhere = "SVM_17_GetOutOfHere";	//Wynoœ siê st¹d!
+	whyareyouinhere = "SVM_17_WhyAreYouInHere";	//Czego tutaj szukasz? OdejdŸ!
+	yesgooutofhere = "SVM_17_YesGoOutOfHere";	//No, zabieraj siê!
+	whatsthissupposedtobe = "SVM_17_WhatsThisSupposedToBe";	//Hej ty! Czego ty tam szukasz?
+	youdisturbedmyslumber = "SVM_17_YouDisturbedMySlumber";	//Co jest
+	itookyourgold = "SVM_17_ITookYourGold";	//Dziêki za z³oto, mój ty bohaterze!
+	shitnogold = "SVM_17_ShitNoGold";	//Ty biedny frajerze, nawet z³ota nie masz!
+	itakeyourweapon = "SVM_17_ITakeYourWeapon";	//Lepiej zaopiekujê siê twoj¹ broni¹.
+	whatareyoudoing = "SVM_17_WhatAreYouDoing";	//Hej, uwa¿aj! Jeszcze raz i ci przy³o¿ê!
+	lookingfortroubleagain = "SVM_17_LookingForTroubleAgain";	//Ci¹gle ci ma³o?!
+	stopmagic = "SVM_17_StopMagic";	//Przestañ z tymi czarami!
+	isaidstopmagic = "SVM_17_ISaidStopMagic";	//Chcesz dostaæ? Przestañ w tej chwili!
+	weapondown = "SVM_17_WeaponDown";	//Od³ó¿ broñ!
+	isaidweapondown = "SVM_17_ISaidWeaponDown";	//Od³o¿ysz w koñcu tê cholern¹ broñ?!
+	wisemove = "SVM_17_WiseMove";	//M¹dra decyzja...
+	nexttimeyoureinforit = "SVM_17_NextTimeYoureInForIt";	//Zobaczymy nastêpnym razem...
+	ohmyhead = "SVM_17_OhMyHead";	//O bogowie, moja g³owa...
+	theresafight = "SVM_17_TheresAFight";	//Aach, walka...
+	ohmygoditsafight = "SVM_17_OhMyGodItsAFight";	//O bogowie, walka!
+	goodvictory = "SVM_17_GoodVictory";	//Pokaza³eœ mu, kto tu rz¹dzi!
+	notbad = "SVM_17_NotBad";	//NieŸle...
+	ohmygodhesdown = "SVM_17_OhMyGodHesDown";	//Bogowie! Jak brutalnie...
+	cheerfriend01 = "SVM_17_CheerFriend01";	//Rozwal go!
+	cheerfriend02 = "SVM_17_CheerFriend02";	//Poka¿ mu!
+	cheerfriend03 = "SVM_17_CheerFriend03";	//Daj mu popaliæ!
+	ooh01 = "SVM_17_Ooh01";	//Oddaj mu!
+	ooh02 = "SVM_17_Ooh02";	//Uwa¿aj!
+	ooh03 = "SVM_17_Ooh03";	//Och! To bola³o!
+	whatwasthat = "SVM_17_WhatWasThat";	//Co TO by³o!?
+	getoutofmybed = "SVM_17_GetOutOfMyBed";	//Wynoœ siê z mojego ³ó¿ka!
+	awake = "SVM_17_Awake";	//(rozkoszne ziewniêcie)
+	abs_commander = "SVM_17_ABS_COMMANDER";	//Poszed³eœ wiêc do kapitana i oczyœci³eœ siê z zarzutów.
+	abs_monastery = "SVM_17_ABS_MONASTERY";	//By³eœ zatem u Ojca Parlana i wyzna³eœ mu o swoje grzechy.
+	abs_farm = "SVM_17_ABS_FARM";	//Lee rozwi¹za³ tê sprawê dla ciebie.
+	abs_good = "SVM_17_ABS_GOOD";	//Dobre.
+	sheepkiller_crime = "SVM_17_SHEEPKILLER_CRIME";	//Nie mo¿esz tak po prostu zabijaæ naszych owiec! OdejdŸ!
+	attack_crime = "SVM_17_ATTACK_CRIME";	//Jesteœ brutalnym oprychem. Nie chcê mieæ z tob¹ nic wspólnego.
+	theft_crime = "SVM_17_THEFT_CRIME";	//Nie rozmawiam ze z³odziejami - wynocha!
+	pal_city_crime = "SVM_17_PAL_CITY_CRIME";	//Twoje zachowanie nie jest zbyt honorowe. Lordowi Hagenowi to siê nie spodoba!
+	mil_city_crime = "SVM_17_MIL_CITY_CRIME";	//Twoje zachowanie hañbi dobre imiê stra¿y miejskiej! Lord Andre za¿¹da wyjaœnieñ!
+	city_crime = "SVM_17_CITY_CRIME";	//Lord Andre dowie siê o twych czynach!
+	mona_crime = "SVM_17_MONA_CRIME";	//Post¹pi³eœ niew³aœciwie. IdŸ do Ojca Parlana i ¿a³uj za swoje grzechy!
+	farm_crime = "SVM_17_FARM_CRIME";	//Lee siê o tym dowie. Zostaniesz ukarany!
+	oc_crime = "SVM_17_OC_CRIME";	//Kapitan Garond za¿¹da wyjaœnieñ!
+	gold_1000 = "SVM_17_GOLD_1000";	//1000 sztuk z³ota.
+	gold_950 = "SVM_17_GOLD_950";	//950 sztuk z³ota.
+	gold_900 = "SVM_17_GOLD_900";	//900 sztuk z³ota.
+	gold_850 = "SVM_17_GOLD_850";	//850 sztuk z³ota.
+	gold_800 = "SVM_17_GOLD_800";	//800 sztuk z³ota.
+	gold_750 = "SVM_17_GOLD_750";	//750 sztuk z³ota.
+	gold_700 = "SVM_17_GOLD_700";	//700 sztuk z³ota.
+	gold_650 = "SVM_17_GOLD_650";	//650 sztuk z³ota.
+	gold_600 = "SVM_17_GOLD_600";	//600 sztuk z³ota.
+	gold_550 = "SVM_17_GOLD_550";	//550 sztuk z³ota.
+	gold_500 = "SVM_17_GOLD_500";	//500 sztuk z³ota.
+	gold_450 = "SVM_17_GOLD_450";	//450 sztuk z³ota.
+	gold_400 = "SVM_17_GOLD_400";	//400 sztuk z³ota.
+	gold_350 = "SVM_17_GOLD_350";	//350 sztuk z³ota.
+	gold_300 = "SVM_17_GOLD_300";	//300 sztuk z³ota.
+	gold_250 = "SVM_17_GOLD_250";	//250 sztuk z³ota.
+	gold_200 = "SVM_17_GOLD_200";	//200 sztuk z³ota.
+	gold_150 = "SVM_17_GOLD_150";	//150 sztuk z³ota.
+	gold_100 = "SVM_17_GOLD_100";	//100 sztuk z³ota.
+	gold_90 = "SVM_17_GOLD_90";	//90 sztuk z³ota.
+	gold_80 = "SVM_17_GOLD_80";	//80 sztuk z³ota.
+	gold_70 = "SVM_17_GOLD_70";	//70 sztuk z³ota.
+	gold_60 = "SVM_17_GOLD_60";	//60 sztuk z³ota.
+	gold_50 = "SVM_17_GOLD_50";	//50 sztuk z³ota.
+	gold_40 = "SVM_17_GOLD_40";	//40 sztuk z³ota.
+	gold_30 = "SVM_17_GOLD_30";	//30 sztuk z³ota.
+	gold_20 = "SVM_17_GOLD_20";	//20 sztuk z³ota.
+	gold_10 = "SVM_17_GOLD_10";	//10 sztuk z³ota.
+	smalltalk01 = "SVM_17_Smalltalk01";	//...doprawdy? To interesuj¹ce...
+	smalltalk02 = "SVM_17_Smalltalk02";	//...nie wierzê w to...
+	smalltalk03 = "SVM_17_Smalltalk03";	//...mój m¹¿ uwa¿a inaczej...
+	smalltalk04 = "SVM_17_Smalltalk04";	//...daj spokój, nie opowiadaj mi takich rzeczy...
+	smalltalk05 = "SVM_17_Smalltalk05";	//...naprawdê, sama widzia³am...
+	smalltalk06 = "SVM_17_Smalltalk06";	//...nie mów...
+	smalltalk07 = "SVM_17_Smalltalk07";	//...nikomu tego nie powtarzaj...
+	smalltalk08 = "SVM_17_Smalltalk08";	//...przysz³o nam ¿yæ w niedobrych czasach...
+	smalltalk09 = "SVM_17_Smalltalk09";	//...kto to opowiada takie rzeczy...
+	smalltalk10 = "SVM_17_Smalltalk10";	//...gdybym sama tego nie widzia³a...
+	smalltalk11 = "SVM_17_Smalltalk11";	//...ktoœ musi pracowaæ...
+	smalltalk12 = "SVM_17_Smalltalk12";	//...s³ysza³am co innego...
+	smalltalk13 = "SVM_17_Smalltalk13";	//...tak, to bardzo typowe...
+	smalltalk14 = "SVM_17_Smalltalk14";	//...nie potrafi niczego zatrzymaæ dla siebie...
+	smalltalk15 = "SVM_17_Smalltalk15";	//...lepiej by by³o, gdyby siê przymkn¹³...
+	smalltalk16 = "SVM_17_Smalltalk16";	//...i pracuje niemal przez ca³y dzieñ...
+	smalltalk17 = "SVM_17_Smalltalk17";	//...nie mogê siê zajmowaæ wszystkim i wszystkimi...
+	smalltalk18 = "SVM_17_Smalltalk18";	//...on po prostu za du¿o gada...
+	smalltalk19 = "SVM_17_Smalltalk19";	//...tajemnica, o której wszyscy wiedz¹...
+	smalltalk20 = "SVM_17_Smalltalk20";	//...teraz ka¿dy ju¿ o tym wie...
+	smalltalk21 = "SVM_17_Smalltalk21";	//...niczego jej ju¿ nie powiem...
+	smalltalk22 = "SVM_17_Smalltalk22";	//...a bêdzie jeszcze gorzej...
+	smalltalk23 = "SVM_17_Smalltalk23";	//...to przecie¿ okropne...
+	smalltalk24 = "SVM_17_Smalltalk24";	//...zawsze to powtarza³am...
+	nolearnnopoints = "SVM_17_NoLearnNoPoints";	//Wróæ, kiedy nabierzesz trochê wiêcej doœwiadczenia.
+	nolearnoverpersonalmax = "SVM_17_NoLearnOverPersonalMAX";	//Wymagasz ode mnie wiêcej, ni¿ mogê ciê nauczyæ.
+	nolearnyourebetter = "SVM_17_NoLearnYoureBetter";	//Nie mogê ciê ju¿ niczego nauczyæ. Jesteœ zbyt dobry.
+	youlearnedsomething = "SVM_17_YouLearnedSomething";	//Widzisz, ju¿ siê czegoœ nauczy³eœ...
+	unterstadt = "SVM_17_UNTERSTADT";	//Jesteœ teraz w dolnej czêœci miasta.
+	oberstadt = "SVM_17_OBERSTADT";	//Jesteœ teraz w górnym mieœcie.
+	tempel = "SVM_17_TEMPEL";	//Jesteœ teraz przy œwi¹tyni.
+	markt = "SVM_17_MARKT";	//Jesteœ teraz na targowisku.
+	galgen = "SVM_17_GALGEN";	//Jesteœ teraz na placu wisielców.
+	kaserne = "SVM_17_KASERNE";	//To s¹ koszary.
+	hafen = "SVM_17_HAFEN";	//Jesteœ teraz w dzielnicy portowej.
+	whereto = "SVM_17_WHERETO";	//Dok¹d chcesz siê udaæ?
+	oberstadt_2_unterstadt = "SVM_17_OBERSTADT_2_UNTERSTADT";	//PrzejdŸ przez wewnêtrzn¹ bramê, a dojdziesz do dolnej czêœci miasta.
+	unterstadt_2_oberstadt = "SVM_17_UNTERSTADT_2_OBERSTADT";	//Przy po³udniowej bramie znajduj¹ siê schody, które prowadz¹ do bramy wewnêtrznej. Za ni¹ zaczyna siê górne miasto.
+	unterstadt_2_tempel = "SVM_17_UNTERSTADT_2_TEMPEL";	//Id¹c od ku¿ni przez przejœcie, dojdziesz do placu œwi¹tynnego.
+	unterstadt_2_hafen = "SVM_17_UNTERSTADT_2_HAFEN";	//Id¹c od kuŸni w dó³ ulic¹ portow¹, dojdziesz do portu.
+	tempel_2_unterstadt = "SVM_17_TEMPEL_2_UNTERSTADT";	//Od placu œwi¹tynnego odchodzi przejœcie, które prowadzi do dolnej czêœci miasta.
+	tempel_2_markt = "SVM_17_TEMPEL_2_MARKT";	//Jesteœ przed œwi¹tyni¹, idŸ na lewo wzd³u¿ murów miejskich, a dojdziesz do targowiska.
+	tempel_2_galgen = "SVM_17_TEMPEL_2_GALGEN";	//Id¹c od strony œwi¹tyni, skrêæ w lewo ko³o knajpy, a dojdziesz do placu wisielców.
+	markt_2_tempel = "SVM_17_MARKT_2_TEMPEL";	//Id¹c od strony targowiska, wzd³u¿ murów miejskich, dojdziesz do œwi¹tyni.
+	markt_2_kaserne = "SVM_17_MARKT_2_KASERNE";	//Ten du¿y budynek to koszary. WejdŸ po schodach naprzeciwko hotelu.
+	markt_2_galgen = "SVM_17_MARKT_2_GALGEN";	//PrzejdŸ obok koszar, a dojdziesz do placu wisielców.
+	galgen_2_tempel = "SVM_17_GALGEN_2_TEMPEL";	//IdŸ w dó³ uliczk¹ odchodz¹c¹ od placu wisielców, a dojdziesz do placu œwi¹tynnego.
+	galgen_2_markt = "SVM_17_GALGEN_2_MARKT";	//PrzejdŸ obok koszar, a dojdziesz do targowiska.
+	galgen_2_kaserne = "SVM_17_GALGEN_2_KASERNE";	//Ten du¿y budynek to koszary. WejdŸ po schodach.
+	kaserne_2_markt = "SVM_17_KASERNE_2_MARKT";	//ZejdŸ po schodach na lewo od g³ównego wejœcia, a dojdziesz do targowiska.
+	kaserne_2_galgen = "SVM_17_KASERNE_2_GALGEN";	//ZejdŸ po schodach na prawo od g³ównego wejœcia, a dojdziesz do placu wisielców.
+	hafen_2_unterstadt = "SVM_17_HAFEN_2_UNTERSTADT";	//Id¹c w górê ulic¹ portow¹ od strony muru przy nabrze¿u, dojdziesz do dolnej czêœci miasta.
+	dead = "SVM_17_Dead";	//Aaaarhhh!
+	aargh_1 = "SVM_17_Aargh_1";	//Aargh
+	aargh_2 = "SVM_17_Aargh_2";	//Aargh
+	aargh_3 = "SVM_17_Aargh_3";	//Aargh
+};
+
+instance SVM_18(C_SVM)
+{
+};
+
+instance SVM_19(C_SVM)
+{
+	dieenemy = "SVM_19_DieEnemy";	//Tam jesssssst!
+	runcoward = "SVM_19_RunCoward";	//Nie wymkniessssz ssssiê nam!
+	dead = "SVM_19_Dead";	//Aaaaarhhh!
+	aargh_1 = "SVM_19_Aargh_1";	//Aargh
+	aargh_2 = "SVM_19_Aargh_2";	//Aargh
+	aargh_3 = "SVM_19_Aargh_3";	//Aargh
+};
+
+
+const int SVM_MODULES = 20;
