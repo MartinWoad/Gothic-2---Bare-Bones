@@ -7,6 +7,7 @@ func void startup_global()
 func void init_global()
 {
 	Game_InitGerman();
+	LeGo_Init (LeGo_All);
 };
 
 func void STARTUP_Testlevel()
@@ -2893,4 +2894,3 @@ func void init_orcgraveyard()
 	B_InitMonsterAttitudes();
 	B_InitGuildAttitudes();
 };
-
