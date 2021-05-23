@@ -664,9 +664,13 @@ const string KapWechsel_5_Text = "Rozstanie";
 const string KapWechsel_6 = "Rozdzia³ 6";
 const string KapWechsel_6_Text = "Dwór Irdorath";
 
-const string NAME_Toxicity = "Toksycznoœæ";
+const string NAME_Toxicity = "Toksycznoœæ (%)";
+
+const string PRINT_ToxicityLevel0 = "Nie odczuwasz ju¿ objawów zatrucia.";
 
 const string PRINT_ToxicityLevel1 = "Zaczynasz odczuwaæ lekkie objawy zatrucia.";
 const string PRINT_ToxicityLevel2 = "Zaczynasz odczuwaæ umiarkowane objawy zatrucia.";
 const string PRINT_ToxicityLevel3 = "Zaczynasz odczuwaæ ciê¿kie objawy zatrucia.";
 const string PRINT_ToxicityLevel4 = "Zaczynasz odczuwaæ krytyczne objawy zatrucia.";
+
+const string PRINT_ToxicityLevelMax = "Jesteœ zatruty.";
