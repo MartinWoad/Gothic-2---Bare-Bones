@@ -673,4 +673,4 @@ const string PRINT_ToxicityLevel2 = "Zaczynasz odczuwaæ umiarkowane objawy zatru
 const string PRINT_ToxicityLevel3 = "Zaczynasz odczuwaæ ciê¿kie objawy zatrucia.";
 const string PRINT_ToxicityLevel4 = "Zaczynasz odczuwaæ krytyczne objawy zatrucia.";
 
-const string PRINT_ToxicityLevelMax = "Jesteœ zatruty.";
+const string PRINT_ToxicityLevelMax = "Jesteœ bardzo zatruty.";

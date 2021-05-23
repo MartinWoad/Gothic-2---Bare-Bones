@@ -18,7 +18,7 @@ const int HP_Health_Herb_03 = 30;
 const int Value_Dex_Herb_01 = 250;
 const int Value_Strength_Herb_01 = 500;
 const int Value_Speed_Herb_01 = 100;
-const int Speed_Boost = 15000;
+const int Speed_Boost = 5000;
 const int Value_Mushroom_01 = 5;
 const int HP_Mushroom_01 = 5;
 const int Value_Mushroom_02 = 10;
@@ -34,6 +34,24 @@ const int Value_Temp_Herb = 100;
 const int HP_Temp_Herb = 5;
 const int Value_Perm_Herb = 500;
 const int HP_Perm_Herb = 5;
+
+const int Toxicity_Blueplant = 1;
+const int Toxicity_Mushroom_01 = 2;
+const int Toxicity_SwampHerb = 10;
+
+const int Toxicity_Mana_Herb_01 = 4;
+const int Toxicity_Mana_Herb_02 = 5;
+const int Toxicity_Mana_Herb_03 = 6;
+
+const int Toxicity_Health_Herb_01 = 2;
+const int Toxicity_Health_Herb_02 = 3;
+const int Toxicity_Health_Herb_03 = 4;
+
+const int Toxicity_Temp_Herb = 5;
+const int Toxicity_Perm_Herb = 10;
+const int Toxicity_Dex_Herb_01 = 15;
+const int Toxicity_Strength_Herb_01 = 20;
+const int Toxicity_Speed_Herb_01 = 10;
 
 instance ItPl_Weed(C_Item)
 {
@@ -82,6 +100,9 @@ instance ItPl_SwampHerb(C_Item)
 	on_state[0] = Use_SwampHerb;
 	scemeName = "FOOD";
 	description = name;
+	text[1] = "Tymczasowo zwiêksza twoj¹ szybkoœæ.";
+	text[2] = NAME_Toxicity;
+	count[2] = Toxicity_SwampHerb;
 	text[5] = NAME_Value;
 	count[5] = Value_SwampHerb;
 };
@@ -89,6 +110,7 @@ instance ItPl_SwampHerb(C_Item)
 
 func void Use_SwampHerb()
 {
+	ChangeToxicity(self, Toxicity_SwampHerb);
 	if(Npc_IsPlayer(self))
 	{
 		Wld_PlayEffect("SLOW_TIME",self,self,0,0,0,FALSE);
@@ -109,6 +131,8 @@ instance ItPl_Mana_Herb_01(C_Item)
 	description = name;
 	text[1] = NAME_Bonus_Mana;
 	count[1] = Mana_Mana_Herb_01;
+	text[2] = NAME_Toxicity;
+	count[2] = Toxicity_Mana_Herb_01;
 	text[5] = NAME_Value;
 	count[5] = Value_Mana_Herb_01;
 };
@@ -116,7 +140,13 @@ instance ItPl_Mana_Herb_01(C_Item)
 
 func void Use_Mana_Herb_01()
 {
-	Npc_ChangeAttribute(self,ATR_MANA,Mana_Mana_Herb_01);
+	ChangeToxicity(self, Toxicity_Mana_Herb_01);
+
+	if(CheckToxicity(self))
+	{
+		Npc_ChangeAttribute(self,ATR_MANA,Mana_Mana_Herb_01);
+	};
+
 };
 
 
@@ -133,6 +163,8 @@ instance ItPl_Mana_Herb_02(C_Item)
 	description = name;
 	text[1] = NAME_Bonus_Mana;
 	count[1] = Mana_Mana_Herb_02;
+	text[2] = NAME_Toxicity;
+	count[2] = Toxicity_Mana_Herb_02;
 	text[5] = NAME_Value;
 	count[5] = Value_Mana_Herb_02;
 };
@@ -140,7 +172,12 @@ instance ItPl_Mana_Herb_02(C_Item)
 
 func void Use_Mana_Herb_02()
 {
-	Npc_ChangeAttribute(self,ATR_MANA,Mana_Mana_Herb_02);
+	ChangeToxicity(self, Toxicity_Mana_Herb_02);
+
+	if(CheckToxicity(self))
+	{
+		Npc_ChangeAttribute(self,ATR_MANA,Mana_Mana_Herb_02);
+	};
 };
 
 
@@ -157,6 +194,8 @@ instance ItPl_Mana_Herb_03(C_Item)
 	description = name;
 	text[1] = NAME_Bonus_Mana;
 	count[1] = Mana_Mana_Herb_03;
+	text[2] = NAME_Toxicity;
+	count[2] = Toxicity_Mana_Herb_03;
 	text[5] = NAME_Value;
 	count[5] = Value_Mana_Herb_03;
 };
@@ -164,7 +203,13 @@ instance ItPl_Mana_Herb_03(C_Item)
 
 func void Use_Mana_Herb_03()
 {
-	Npc_ChangeAttribute(self,ATR_MANA,Mana_Mana_Herb_03);
+	ChangeToxicity(self, Toxicity_Mana_Herb_03);
+
+	if(CheckToxicity(self))
+	{
+		Npc_ChangeAttribute(self,ATR_MANA,Mana_Mana_Herb_03);
+	};
+
 };
 
 
@@ -181,6 +226,8 @@ instance ItPl_Health_Herb_01(C_Item)
 	description = name;
 	text[1] = NAME_Bonus_HP;
 	count[1] = HP_Health_Herb_01;
+	text[2] = NAME_Toxicity;
+	count[2] = Toxicity_Health_Herb_01;
 	text[5] = NAME_Value;
 	count[5] = Value_Health_Herb_01;
 };
@@ -188,7 +235,14 @@ instance ItPl_Health_Herb_01(C_Item)
 
 func void Use_Health_Herb_01()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Health_Herb_01);
+
+	ChangeToxicity(self, Toxicity_Health_Herb_01);
+
+	if(CheckToxicity(self))
+	{
+		Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Health_Herb_01);
+	};
+
 };
 
 
@@ -205,6 +259,8 @@ instance ItPl_Health_Herb_02(C_Item)
 	description = name;
 	text[1] = NAME_Bonus_HP;
 	count[1] = HP_Health_Herb_02;
+	text[2] = NAME_Toxicity;
+	count[2] = Toxicity_Health_Herb_02;
 	text[5] = NAME_Value;
 	count[5] = Value_Health_Herb_02;
 };
@@ -212,7 +268,13 @@ instance ItPl_Health_Herb_02(C_Item)
 
 func void Use_Health_Herb_02()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Health_Herb_02);
+	ChangeToxicity(self, Toxicity_Health_Herb_02);
+
+	if(CheckToxicity(self))
+	{
+		Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Health_Herb_02);
+	};
+
 };
 
 
@@ -229,6 +291,8 @@ instance ItPl_Health_Herb_03(C_Item)
 	description = name;
 	text[1] = NAME_Bonus_HP;
 	count[1] = HP_Health_Herb_03;
+	text[2] = NAME_Toxicity;
+	count[2] = Toxicity_Health_Herb_03;
 	text[5] = NAME_Value;
 	count[5] = Value_Health_Herb_03;
 };
@@ -236,7 +300,12 @@ instance ItPl_Health_Herb_03(C_Item)
 
 func void Use_Health_Herb_03()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Health_Herb_03);
+	ChangeToxicity(self, Toxicity_Health_Herb_03);
+
+	if(CheckToxicity(self))
+	{
+		Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Health_Herb_03);
+	};
 };
 
 
@@ -253,6 +322,8 @@ instance ItPl_Dex_Herb_01(C_Item)
 	description = name;
 	text[1] = NAME_Bonus_Dex;
 	count[1] = 1;
+	text[2] = NAME_Toxicity;
+	count[2] = Toxicity_Dex_Herb_01;
 	text[5] = NAME_Value;
 	count[5] = Value_Dex_Herb_01;
 };
@@ -260,6 +331,7 @@ instance ItPl_Dex_Herb_01(C_Item)
 
 func void Use_Dex_Herb_01()
 {
+	ChangeToxicity(self, Toxicity_Dex_Herb_01);
 	B_RaiseAttribute(self,ATR_DEXTERITY,1,TRUE,FALSE);
 };
 
@@ -277,6 +349,8 @@ instance ItPl_Strength_Herb_01(C_Item)
 	description = name;
 	text[1] = NAME_Bonus_Str;
 	count[1] = 1;
+	text[2] = NAME_Toxicity;
+	count[2] = Toxicity_Strength_Herb_01;
 	text[5] = NAME_Value;
 	count[5] = Value_Strength_Herb_01;
 };
@@ -284,6 +358,7 @@ instance ItPl_Strength_Herb_01(C_Item)
 
 func void Use_Strength_Herb_01()
 {
+	ChangeToxicity(self, Toxicity_Strength_Herb_01);
 	B_RaiseAttribute(self,ATR_STRENGTH,1,TRUE,FALSE);
 };
 
@@ -298,6 +373,8 @@ instance ItPl_Speed_Herb_01(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = Use_Speed_Herb_01;
 	scemeName = "FOOD";
+	text[2] = NAME_Toxicity;
+	count[2] = Toxicity_Speed_Herb_01;
 	text[3] = NAME_Sec_Duration;
 	count[3] = Speed_Boost / 1000;
 	description = name;
@@ -308,6 +385,7 @@ instance ItPl_Speed_Herb_01(C_Item)
 
 func void Use_Speed_Herb_01()
 {
+	ChangeToxicity(self, Toxicity_SwampHerb);
 	Mdl_ApplyOverlayMdsTimed(self,"HUMANS_SPRINT.MDS",Speed_Boost);
 };
 
@@ -325,6 +403,8 @@ instance ItPl_Mushroom_01(C_Item)
 	description = name;
 	text[1] = NAME_Bonus_HP;
 	count[1] = HP_Mushroom_01;
+	text[2] = NAME_Toxicity;
+	count[2] = Toxicity_Mushroom_01;
 	text[5] = NAME_Value;
 	count[5] = Value_Mushroom_01;
 };
@@ -332,14 +412,38 @@ instance ItPl_Mushroom_01(C_Item)
 
 func void Use_Mushroom_01()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Mushroom_01);
+	ChangeToxicity(self, Toxicity_Mushroom_01);
+	if(CheckToxicity(self))
+	{
+		Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Mushroom_01);
+	};
 	if(Npc_IsPlayer(self))
 	{
 		Dunkelpilz_Bonus = Dunkelpilz_Bonus + 1;
+		if(Dunkelpilz_Bonus == 10)
+		{
+			B_RaiseAttribute(self,ATR_MANA_MAX,1,TRUE,FALSE);
+			Npc_ChangeAttribute(self,ATR_MANA,1);
+		};
+		if(Dunkelpilz_Bonus == 20)
+		{
+			B_RaiseAttribute(self,ATR_MANA_MAX,1,TRUE,FALSE);
+			Npc_ChangeAttribute(self,ATR_MANA,1);
+		};
+		if(Dunkelpilz_Bonus == 30)
+		{
+			B_RaiseAttribute(self,ATR_MANA_MAX,1,TRUE,FALSE);
+			Npc_ChangeAttribute(self,ATR_MANA,1);
+		};
+		if(Dunkelpilz_Bonus == 40)
+		{
+			B_RaiseAttribute(self,ATR_MANA_MAX,1,TRUE,FALSE);
+			Npc_ChangeAttribute(self,ATR_MANA,1);
+		};
 		if(Dunkelpilz_Bonus == 50)
 		{
-			B_RaiseAttribute(self,ATR_MANA_MAX,5,TRUE,FALSE);
-			Npc_ChangeAttribute(self,ATR_MANA,5);
+			B_RaiseAttribute(self,ATR_MANA_MAX,1,TRUE,FALSE);
+			Npc_ChangeAttribute(self,ATR_MANA,1);
 		};
 	};
 };
@@ -384,6 +488,8 @@ instance ItPl_Blueplant(C_Item)
 	count[1] = HP_Blueplant;
 	text[2] = NAME_Bonus_Mana;
 	count[2] = Mana_Blueplant;
+	text[3] = NAME_Toxicity;
+	count[3] = Toxicity_Blueplant;
 	text[5] = NAME_Value;
 	count[5] = Value_Blueplant;
 };
@@ -391,8 +497,12 @@ instance ItPl_Blueplant(C_Item)
 
 func void Use_Blueplant()
 {
-	Npc_ChangeAttribute(self,ATR_MANA,Mana_Blueplant);
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Blueplant);
+	ChangeToxicity(self, Toxicity_Blueplant);
+	if(CheckToxicity(self))
+	{
+		Npc_ChangeAttribute(self,ATR_MANA,Mana_Blueplant);
+		Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Blueplant);
+	};
 };
 
 
@@ -457,6 +567,8 @@ instance ItPl_Temp_Herb(C_Item)
 	description = name;
 	text[1] = NAME_Bonus_HP;
 	count[1] = HP_Temp_Herb;
+	text[2] = NAME_Toxicity;
+	count[2] = Toxicity_Temp_Herb;
 	text[5] = NAME_Value;
 	count[5] = Value_Temp_Herb;
 };
@@ -464,7 +576,11 @@ instance ItPl_Temp_Herb(C_Item)
 
 func void Use_Temp_Herb()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Temp_Herb);
+	ChangeToxicity(self, Toxicity_Temp_Herb);
+	if(CheckToxicity(self))
+	{
+		Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Temp_Herb);
+	};
 };
 
 
@@ -481,6 +597,8 @@ instance ItPl_Perm_Herb(C_Item)
 	description = name;
 	text[1] = NAME_Bonus_HP;
 	count[1] = HP_Perm_Herb;
+	text[2] = NAME_Toxicity;
+	count[2] = Toxicity_Perm_Herb;
 	text[5] = NAME_Value;
 	count[5] = Value_Perm_Herb;
 };
@@ -488,6 +606,9 @@ instance ItPl_Perm_Herb(C_Item)
 
 func void Use_Perm_Herb()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Perm_Herb);
+	ChangeToxicity(self, Toxicity_Perm_Herb);
+	if(CheckToxicity(self))
+	{
+		Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Perm_Herb);
+	};
 };
-

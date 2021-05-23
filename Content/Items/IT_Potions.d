@@ -22,7 +22,7 @@ const int ManaMax_Elixier = 2;
 const int Value_MegaDrink = 1800;
 const int STRorDEX_MegaDrink = 5;
 const int Value_Speed = 200;
-const int Time_Speed = 300000;
+const int Time_Speed = 60000;
 
 const int ToxicityLevel1 = 25;
 const int ToxicityLevel2 = 50;
@@ -39,11 +39,11 @@ const int Toxicity_ManaExtrakt = 10;
 const int Toxicity_HpElixier = 6;
 const int Toxicity_ManaElixier = 12;
 
-const int Toxicity_HpMaxElixier = 20;
-const int Toxicity_ManaMaxElixier = 20;
+const int Toxicity_HpMaxElixier = 10;
+const int Toxicity_ManaMaxElixier = 10;
 
-const int Toxicity_StrElixier = 35;
-const int Toxicity_DexElixier = 35;
+const int Toxicity_StrElixier = 20;
+const int Toxicity_DexElixier = 15;
 
 const int Toxicity_Speed = 15;
 
@@ -63,11 +63,11 @@ func void ChangeToxicity(var C_NPC slf, var int percent)
 			{
 				toxicity = ToxicityLevelMax;
 			};
-			
+
 			if(toxicity == ToxicityLevelMax)
 			{
 				AI_OutputSVM_Overlay(slf,slf,"$Aargh_1");
-				
+
 				if(slf.attribute[ATR_HITPOINTS] > percent + 1)
 				{
 					slf.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - percent;
@@ -76,7 +76,7 @@ func void ChangeToxicity(var C_NPC slf, var int percent)
 				{
 					slf.attribute[ATR_HITPOINTS] = 0;
 				};
-				
+
 				if(slf.attribute[ATR_MANA] > percent)
 				{
 					slf.attribute[ATR_MANA] = self.attribute[ATR_MANA] - percent;
@@ -109,7 +109,7 @@ func void ChangeToxicity(var C_NPC slf, var int percent)
 			{
 				toxicity = 0;
 			};
-			
+
 			if(toxicity < ToxicityLevel1 && toxicity - percent >= ToxicityLevel1)
 			{
 				PrintScreen(PRINT_ToxicityLevel0,-1,YPOS_LevelUp,FONT_Screen,2);
@@ -120,7 +120,7 @@ func void ChangeToxicity(var C_NPC slf, var int percent)
 
 func int CheckToxicity(var C_NPC slf)
 {
-	
+
 	if(Npc_IsPlayer(slf))
 	{
 		if(toxicity == ToxicityLevelMax)
@@ -128,7 +128,7 @@ func int CheckToxicity(var C_NPC slf)
 			return FALSE;
 		};
 	};
-	
+
 	return TRUE;
 };
 
@@ -155,7 +155,7 @@ instance ItPo_Mana_01(C_Item)
 func void UseItPo_Mana_01()
 {
 	ChangeToxicity(self, Toxicity_ManaEssenz);
-	
+
 	if(CheckToxicity(self))
 	{
 		Npc_ChangeAttribute(self,ATR_MANA,Mana_Essenz);
@@ -186,12 +186,12 @@ instance ItPo_Mana_02(C_Item)
 func void UseItPo_Mana_02()
 {
 	ChangeToxicity(self, Toxicity_ManaExtrakt);
-	
+
 	if(CheckToxicity(self))
 	{
 		Npc_ChangeAttribute(self,ATR_MANA,Mana_Extrakt);
 	};
-	
+
 };
 
 
@@ -218,7 +218,7 @@ instance ItPo_Mana_03(C_Item)
 func void UseItPo_Mana_03()
 {
 	ChangeToxicity(self, Toxicity_ManaElixier);
-	
+
 	if(CheckToxicity(self))
 	{
 		Npc_ChangeAttribute(self,ATR_MANA,Mana_Elixier);
@@ -249,7 +249,7 @@ instance ItPo_Health_01(C_Item)
 func void UseItPo_Health_01()
 {
 	ChangeToxicity(self, Toxicity_HpEssenz);
-	
+
 	if(CheckToxicity(self))
 	{
 		Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Essenz);
@@ -280,7 +280,7 @@ instance ItPo_Health_02(C_Item)
 func void UseItPo_Health_02()
 {
 	ChangeToxicity(self, Toxicity_HpExtrakt);
-	
+
 	if(CheckToxicity(self))
 	{
 		Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Extrakt);
@@ -310,9 +310,9 @@ instance ItPo_Health_03(C_Item)
 
 func void UseItPo_Health_03()
 {
-	
+
 	ChangeToxicity(self, Toxicity_HpElixier);
-	
+
 	if(CheckToxicity(self))
 	{
 		Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Elixier);
@@ -489,5 +489,3 @@ func void UseItPo_MegaDrink()
 	ChangeToxicity(self, Toxicity_MegaDrink);
 	Snd_Play("DEM_Warn");
 };
-
-
