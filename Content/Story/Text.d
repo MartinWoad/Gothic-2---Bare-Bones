@@ -516,6 +516,7 @@ const string PRINT_LearnCrossBow5 = "Kusze +5";
 const string PRINT_SleepOver = "Po porz¹dnym œnie czujesz siê wypoczêty.";
 const string PRINT_SleepOverObsessed = "Koszmary senne nie pozwalaj¹ ci zasn¹æ.";
 const string PRINT_SLEEPOVERRESTED = "Nie mo¿esz zasn¹æ. Jesteœ zbyt wypoczêty.";
+const string PRINT_SleepOverToxic = "Po porz¹dnym œnie czujesz siê oczyszczony i wypoczêty.";
 const string PRINT_SmithSuccess = "Stworzy³eœ broñ!";
 const string PRINT_RuneSuccess = "Stworzy³eœ runê!";
 const string PRINT_AlchemySuccess = "Uwarzy³eœ miksturê!";
@@ -662,3 +663,10 @@ const string KapWechsel_5 = "Rozdzia³ 5";
 const string KapWechsel_5_Text = "Rozstanie";
 const string KapWechsel_6 = "Rozdzia³ 6";
 const string KapWechsel_6_Text = "Dwór Irdorath";
+
+const string NAME_Toxicity = "Toksycznoœæ";
+
+const string PRINT_ToxicityLevel1 = "Zaczynasz odczuwaæ lekkie objawy zatrucia.";
+const string PRINT_ToxicityLevel2 = "Zaczynasz odczuwaæ umiarkowane objawy zatrucia.";
+const string PRINT_ToxicityLevel3 = "Zaczynasz odczuwaæ ciê¿kie objawy zatrucia.";
+const string PRINT_ToxicityLevel4 = "Zaczynasz odczuwaæ krytyczne objawy zatrucia.";

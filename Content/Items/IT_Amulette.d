@@ -283,12 +283,13 @@ instance ItAm_Hp_01(C_Item)
 func void Equip_ItAm_Hp_01()
 {
 	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] + Am_Hp;
-	self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + Am_Hp;
+	//self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + Am_Hp;
 };
 
 func void UnEquip_ItAm_Hp_01()
 {
 	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - Am_Hp;
+	/*
 	if(self.attribute[ATR_HITPOINTS] > (Am_Hp + 2))
 	{
 		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - Am_Hp;
@@ -296,7 +297,7 @@ func void UnEquip_ItAm_Hp_01()
 	else
 	{
 		self.attribute[ATR_HITPOINTS] = 2;
-	};
+	};*/
 };
 
 
@@ -323,12 +324,13 @@ instance ItAm_Mana_01(C_Item)
 func void Equip_ItAm_Mana_01()
 {
 	B_RaiseAttribute(self,ATR_MANA_MAX,Am_Mana,FALSE,TRUE);
-	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] + Am_Mana;
+	//self.attribute[ATR_MANA] = self.attribute[ATR_MANA] + Am_Mana;
 };
 
 func void UnEquip_ItAm_Mana_01()
 {
 	b_removeitemattribute(self,ATR_MANA_MAX,Am_Mana);
+	/*
 	if(self.attribute[ATR_MANA] > Am_Mana)
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - Am_Mana;
@@ -336,7 +338,7 @@ func void UnEquip_ItAm_Mana_01()
 	else
 	{
 		self.attribute[ATR_MANA] = 0;
-	};
+	};*/
 };
 
 
@@ -399,7 +401,7 @@ instance ItAm_Hp_Mana_01(C_Item)
 
 func void Equip_ItAm_Hp_Mana_01()
 {
-	self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + Am_HpMana_Hp;
+	//self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + Am_HpMana_Hp;
 	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] + Am_HpMana_Hp;
 	B_RaiseAttribute(self,ATR_MANA_MAX,Am_HpMana_Mana,FALSE,TRUE);
 	self.attribute[ATR_MANA_MAX] = self.attribute[ATR_MANA_MAX] + Am_HpMana_Mana;
@@ -410,7 +412,8 @@ func void UnEquip_ItAm_Hp_Mana_01()
 	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - Am_HpMana_Mana;
 	b_removeitemattribute(self,ATR_MANA_MAX,Am_HpMana_Mana);
 	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - Am_HpMana_Hp;
-	if(self.attribute[ATR_HITPOINTS] > (Am_HpMana_Hp + 1))
+	
+	/*if(self.attribute[ATR_HITPOINTS] > (Am_HpMana_Hp + 1))
 	{
 		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - Am_HpMana_Hp;
 	}
@@ -424,7 +427,7 @@ func void UnEquip_ItAm_Hp_Mana_01()
 	}
 	else
 	{
-		self.attribute[ATR_HITPOINTS] = 0;
-	};
+		self.attribute[ATR_MANA] = 0;
+	};*/
 };
 

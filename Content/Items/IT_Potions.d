@@ -24,6 +24,66 @@ const int STRorDEX_MegaDrink = 5;
 const int Value_Speed = 200;
 const int Time_Speed = 300000;
 
+const int ToxicityLevel1 = 20;
+const int ToxicityLevel2 = 40;
+const int ToxicityLevel3 = 60;
+const int ToxicityLevel4 = 80;
+const int ToxicityLevelMax = 100;
+
+const int Toxicity_HpEssenz = 3;
+const int Toxicity_ManaEssenz = 5;
+
+func void ChangeToxicity(var C_NPC slf, var int percent)
+{
+	if(Npc_IsPlayer(slf))
+	{
+		if(percent > 0)
+		{
+			if(toxicity + percent < ToxicityLevelMax)
+			{
+				toxicity = toxicity + percent;
+			}
+			else
+			{
+				toxicity = ToxicityLevelMax;
+			};
+			
+			if(toxicity == ToxicityLevelMax)
+			{
+				slf.attribute[ATR_HITPOINTS] = 0;
+			}
+			else if(toxicity >= ToxicityLevel4 && toxicity - percent < ToxicityLevel4)
+			{
+				PrintScreen(PRINT_ToxicityLevel4,-1,YPOS_XPGained,FONT_ScreenSmall,2);
+				slf.attribute[ATR_MANA] = 0;
+			}
+			else if(toxicity >= ToxicityLevel3 && toxicity - percent < ToxicityLevel3)
+			{
+				PrintScreen(PRINT_ToxicityLevel3,-1,YPOS_XPGained,FONT_ScreenSmall,2);
+			}
+			else if(toxicity >= ToxicityLevel2 && toxicity - percent < ToxicityLevel2)
+			{
+				PrintScreen(PRINT_ToxicityLevel2,-1,YPOS_XPGained,FONT_ScreenSmall,2);
+			}
+			else if(toxicity >= ToxicityLevel1 && toxicity - percent < ToxicityLevel1)
+			{
+				PrintScreen(PRINT_ToxicityLevel1,-1,YPOS_XPGained,FONT_ScreenSmall,2);
+			};
+		}
+		else if (percent < 0)
+		{
+			if(toxicity + percent > 0)
+			{
+				toxicity = toxicity + percent;
+			}
+			else
+			{
+				toxicity = 0;
+			};
+		};
+	};
+};
+
 instance ItPo_Mana_01(C_Item)
 {
 	name = NAME_Trank;
@@ -37,6 +97,8 @@ instance ItPo_Mana_01(C_Item)
 	description = "Esencja Many";
 	text[1] = NAME_Bonus_Mana;
 	count[1] = Mana_Essenz;
+	text[2] = NAME_Toxicity;
+	count[2] = Toxicity_ManaEssenz;
 	text[5] = NAME_Value;
 	count[5] = Value_ManaEssenz;
 };
@@ -45,6 +107,7 @@ instance ItPo_Mana_01(C_Item)
 func void UseItPo_Mana_01()
 {
 	Npc_ChangeAttribute(self,ATR_MANA,Mana_Essenz);
+	ChangeToxicity(self, Toxicity_ManaEssenz);
 };
 
 
@@ -321,4 +384,5 @@ func void UseItPo_MegaDrink()
 	Npc_ChangeAttribute(self,ATR_MANA,-ATR_MANA);
 	Snd_Play("DEM_Warn");
 };
+
 

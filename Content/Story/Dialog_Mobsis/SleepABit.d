@@ -30,7 +30,17 @@ func void PC_Sleep(var int t)
 	}
 	else
 	{
-		PrintScreen(PRINT_SleepOver,-1,-1,FONT_Screen,3);
+		if(toxicity < ToxicityLevel3)
+		{
+			PrintScreen(PRINT_SleepOver,-1,-1,FONT_Screen,3);
+		}
+		else
+		{
+			PrintScreen(PRINT_SleepOverToxic,-1,-1,FONT_Screen,3);
+		};
+		
+		toxicity = 0;
+		
 		LAST_SLEEP_TIME = t;
 		LAST_SLEEP_DAY = Wld_GetDay();
 	};

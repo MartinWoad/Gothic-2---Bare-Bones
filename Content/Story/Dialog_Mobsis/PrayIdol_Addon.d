@@ -110,7 +110,7 @@ func void pc_prayidol_end_info()
 };
 
 
-instance PC_PRAYIDOL_PRAYIDOL(C_INFO)
+/*instance PC_PRAYIDOL_PRAYIDOL(C_INFO)
 {
 	npc = pc_hero;
 	nr = 2;
@@ -118,7 +118,7 @@ instance PC_PRAYIDOL_PRAYIDOL(C_INFO)
 	information = pc_prayidol_prayidol_info;
 	permanent = TRUE;
 	description = NAME_ADDON_BETEN;
-};
+};*/
 
 
 func int pc_prayidol_prayidol_condition()
@@ -238,7 +238,7 @@ func void pc_prayidol_prayidol_manapay()
 };
 
 
-instance PC_PRAYSHRINE_UPGRATEBELIARSWEAPON(C_INFO)
+/*instance PC_PRAYSHRINE_UPGRATEBELIARSWEAPON(C_INFO)
 {
 	npc = pc_hero;
 	nr = 2;
@@ -261,5 +261,5 @@ func void pc_prayshrine_upgratebeliarsweapon_info()
 {
 	b_clearbeliarsweapon();
 	b_upgratebeliarsweapon();
-};
+};*/
 
