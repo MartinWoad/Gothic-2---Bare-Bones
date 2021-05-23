@@ -4,6 +4,13 @@
 _Intern\Constants.d
 _Intern\Classes.d
 AI\AI_Intern\AI_Constants.d
+
+_INTERN\IKARUS_CONST_G2.D
+_INTERN\ENGINECLASSES_G2\*.D
+_INTERN\IKARUS.D
+_INTERN\float.D
+LeGo\Header_G2.src
+
 AI\AI_Intern\BodyStates.d
 AI\AI_Intern\Focus.d
 AI\AI_Intern\Npc_SetToMad.d
