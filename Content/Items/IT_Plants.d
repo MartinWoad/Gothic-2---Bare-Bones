@@ -100,7 +100,6 @@ instance ItPl_SwampHerb(C_Item)
 	on_state[0] = Use_SwampHerb;
 	scemeName = "FOOD";
 	description = name;
-	text[1] = "Tymczasowo zwiêksza twoj¹ szybkoœæ.";
 	text[2] = NAME_Toxicity;
 	count[2] = Toxicity_SwampHerb;
 	text[5] = NAME_Value;
@@ -373,6 +372,7 @@ instance ItPl_Speed_Herb_01(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = Use_Speed_Herb_01;
 	scemeName = "FOOD";
+	text[1] = "Tymczasowo zwiêksza twoj¹ szybkoœæ.";
 	text[2] = NAME_Toxicity;
 	count[2] = Toxicity_Speed_Herb_01;
 	text[3] = NAME_Sec_Duration;

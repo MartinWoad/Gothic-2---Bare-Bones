@@ -306,6 +306,7 @@ func void PC_PrayShrine_Pray_SmallPay()
 	{
 		hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
 		hero.attribute[ATR_MANA] = hero.attribute[ATR_MANA_MAX];
+		toxicity = 0;
 		PrintScreen(Print_BlessMana_Hit,-1,-1,FONT_Screen,2);
 	}
 	else if(hero.guild == GIL_KDF)
@@ -349,6 +350,7 @@ func void PC_PrayShrine_Pray_MediumPay()
 	else
 	{
 		B_BlessAttribute(hero,ATR_HITPOINTS,5);
+		toxicity = 0;
 	};
 	PrayDay = Wld_GetDay();
 	Info_ClearChoices(PC_PrayShrine_Pray);
@@ -405,11 +407,13 @@ func void PC_PrayShrine_Pray_BigPay()
 	{
 		hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
 		hero.attribute[ATR_MANA] = hero.attribute[ATR_MANA_MAX];
+		toxicity = 0;
 		PrintScreen(Print_BlessMana_Hit,-1,-1,FONT_Screen,2);
 	}
 	else
 	{
 		B_BlessAttribute(hero,ATR_HITPOINTS,5);
+		toxicity = 0;
 	};
 	PrayDay = Wld_GetDay();
 	Info_ClearChoices(PC_PrayShrine_Pray);
@@ -525,4 +529,3 @@ func void PC_PrayShrine_BlessSword_Final_Info()
 		AI_PrintScreen(PRINT_NoInnosTears,-1,YPOS_GoldGiven,FONT_ScreenSmall,2);
 	};
 };
-
