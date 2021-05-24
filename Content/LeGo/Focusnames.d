@@ -3,7 +3,7 @@
 \***********************************/
 
 func int Focusnames_Color_Friendly() {
-    return RGBA(0,   255, 0,   255); // Grün
+    return RGBA(100,   255, 100,   255); // Grün
 };
 
 func int Focusnames_Color_Neutral() {
@@ -11,13 +11,16 @@ func int Focusnames_Color_Neutral() {
 };
 
 func int Focusnames_Color_Angry() {
-    return RGBA(255, 180, 0,   255); // Orange
+    return RGBA(255, 180, 100,   255); // Orange
 };
 
 func int Focusnames_Color_Hostile() {
-    return RGBA(255, 0,   0,   255); // Rot
+    return RGBA(255, 100,   100,   255); // Rot
 };
 
+func int Focusnames_Color_Dead() {
+    return RGBA(150, 150, 150, 255); // Weiß
+};
 
 //========================================
 // [intern] Färben der Namen
@@ -29,13 +32,18 @@ func void _Focusnames() {
 	if(Hlp_Is_oCNpc(her.focus_vob)) {
 		var c_npc oth; oth = MEM_PtrToInst(her.focus_vob);
 		var int att; att = Npc_GetPermAttitude(hero, oth);
-		if     (att == ATT_FRIENDLY) { col = Focusnames_Color_Friendly(); }
+    if(Npc_IsDead(oth))
+    {
+      col = Focusnames_Color_Dead();
+    }
+		else if     (att == ATT_FRIENDLY) { col = Focusnames_Color_Friendly(); }
 		else if(att == ATT_NEUTRAL)  { col = Focusnames_Color_Neutral();  }
 		else if(att == ATT_ANGRY)    { col = Focusnames_Color_Angry();    }
 		else if(att == ATT_HOSTILE)  { col = Focusnames_Color_Hostile();  };
 	}
 	else if(Hlp_Is_oCItem(her.focus_vob)) {
 		var c_item itm; itm = MEM_PtrToInst(her.focus_vob);
+
 	// Setze col = RGBA(.., .., .., ..); um die Farbe einzustellen
 	}
 	else {

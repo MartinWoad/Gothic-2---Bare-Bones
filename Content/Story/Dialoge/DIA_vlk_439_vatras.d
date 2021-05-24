@@ -579,7 +579,7 @@ func void DIA_Vatras_HEAL_Info()
 			VATRAS_HEAL_DAY = Wld_GetDay();
 			AI_Output(self,other,"DIA_Vatras_HEAL_05_01");	//Adanosie, pob³ogos³aw to cia³o, uwolnij je od ran i tchnij w nie nowe ¿ycie!
 			hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-			toxicity = 0;
+			PurgeToxicity(other);
 			PrintScreen(PRINT_FullyHealed,-1,-1,FONT_Screen,2);
 		};
 	}
