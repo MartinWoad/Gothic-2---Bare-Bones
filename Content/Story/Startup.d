@@ -8,7 +8,12 @@ func void init_global()
 {
 	Game_InitGerman();
 	LeGo_Init (LeGo_All);
-	toxicityBarHandle = Bar_Create(ToxicityBar);
+	
+	if(toxicityBarHandle == 0)
+	{
+		toxicityBarHandle = Bar_Create(ToxicityBar);
+	};
+
 	UpdateToxicityBar();
 };
 
