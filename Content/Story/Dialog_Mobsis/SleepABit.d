@@ -39,7 +39,9 @@ func void PC_Sleep(var int t)
 			PrintScreen(PRINT_SleepOverToxic,-1,-1,FONT_Screen,3);
 		};
 
-		PurgeToxicity(Hlp_GetNpc(PC_Hero));
+		var C_Npc her;
+		her = Hlp_GetNpc(PC_Hero);
+		PurgeToxicity(her);
 
 		LAST_SLEEP_TIME = t;
 		LAST_SLEEP_DAY = Wld_GetDay();
