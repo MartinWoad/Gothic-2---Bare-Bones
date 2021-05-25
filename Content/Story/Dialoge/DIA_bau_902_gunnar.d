@@ -70,7 +70,7 @@ instance DIA_Gunnar_Everywhere(C_Info)
 	nr = 2;
 	condition = DIA_Gunnar_Everywhere_Condition;
 	information = DIA_Gunnar_Everywhere_Info;
-	permanent = TRUE;
+	permanent = FALSE;
 	description = "Najemnicy przybywaj¹ ze wszystkich stron?";
 };
 
@@ -207,4 +207,3 @@ func void DIA_Gunnar_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Gunnar_PICKPOCKET);
 };
-

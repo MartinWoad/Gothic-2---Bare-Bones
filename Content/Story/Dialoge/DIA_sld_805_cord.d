@@ -120,7 +120,7 @@ func void DIA_Cord_WannaJoin_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Cord_WannaJoin_14_12");	//Innymi s³owy, jesteœ cholernym amatorem!
+		//AI_Output(self,other,"DIA_Cord_WannaJoin_14_12");	//Innymi s³owy, jesteœ cholernym amatorem!
 		AI_Output(self,other,"DIA_Cord_WannaJoin_14_13");	//Ka¿dy najemnik musi wiedzieæ, ¿e mo¿e polegaæ na swoich kompanach. Od tego zale¿y nasze ¿ycie.
 		B_Cord_BeBetter();
 		Log_CreateTopic(TOPIC_CordProve,LOG_MISSION);
@@ -216,15 +216,10 @@ func void DIA_Cord_Teach_Info()
 	var C_Item heroArmor;
 	heroArmor = Npc_GetEquippedArmor(other);
 	AI_Output(other,self,"DIA_Cord_Teach_15_00");	//Naucz mnie walczyæ!
-	if((hero.guild == GIL_DJG) || (hero.guild == GIL_PAL) || (Hlp_IsItem(heroArmor,ItAr_Sld_H) == TRUE) || (Hlp_IsItem(heroArmor,ITAR_DJG_Crawler) == TRUE) || ((hero.guild == GIL_KDF) && (MIS_RitualInnosEyeRepair == LOG_SUCCESS)))
+	if(CORD_TEACH == FALSE)
 	{
-		if(CORD_TEACH == FALSE)
-		{
-			Log_CreateTopic(Topic_SoldierTeacher,LOG_NOTE);
-			B_LogEntry(Topic_SoldierTeacher,"Cord mo¿e mnie szkoliæ w zakresie walki orê¿em jedno- i dwurêcznym.");
-			CORD_TEACH = TRUE;
-		}
-		else
+		AI_Output(self,other,"DIA_Cord_ExplainWeapons_14_05");	//Dobre wyszkolenie wymaga sporo wysi³ku.
+		if((hero.guild == GIL_DJG) || (hero.guild == GIL_PAL) || (Hlp_IsItem(heroArmor,ItAr_Sld_H) == TRUE) || (Hlp_IsItem(heroArmor,ITAR_DJG_Crawler) == TRUE) || ((hero.guild == GIL_KDF) && Kapitel >= 4))
 		{
 			if(Cord_SchonmalGefragt == FALSE)
 			{
@@ -261,53 +256,47 @@ func void DIA_Cord_Teach_Info()
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Cord_Teach_14_03");	//Nie marnujê czasu na amatorów.
+				AI_Output(self,other,"DIA_Cord_WannaJoin_14_12");	//Innymi s³owy, jesteœ cholernym amatorem!
 			};
-		};
-		if(CORD_TEACH == TRUE)
+		}
+		else
 		{
-			if((Npc_GetTalentSkill(other,NPC_TALENT_1H) > 0) && (Npc_GetTalentSkill(other,NPC_TALENT_2H) > 0))
-			{
-				AI_Output(self,other,"DIA_Cord_Teach_14_01");	//Mogê ciê nauczyæ walki ka¿d¹ broni¹. Od czego zaczniemy?
-			}
-			else if(Npc_GetTalentSkill(other,NPC_TALENT_1H) > 0)
-			{
-				AI_Output(self,other,"DIA_Cord_Teach_14_02");	//Mogê ciê nauczyæ walki mieczem jednorêcznym. Do dwurêcznego brakuje ci jeszcze umiejêtnoœci.
-				B_Cord_Zeitverschwendung();
-			}
-			else if(Npc_GetTalentSkill(other,NPC_TALENT_2H) > 0)
-			{
-				AI_Output(self,other,"DIA_Cord_Teach_14_04");	//Jeœli chodzi o miecz jednorêczny, to jesteœ jeszcze cholernie zielony! Natomiast z mieczem dwurêcznym idzie ci znacznie lepiej.
-				AI_Output(self,other,"DIA_Cord_Teach_14_05");	//Jeœli potrzebujesz szkolenia w zakresie walki broni¹ jednorêczn¹, musisz znaleŸæ innego nauczyciela.
-			}
-			else
-			{
-				B_Cord_Zeitverschwendung();
-				B_Cord_BeBetter();
-			};
-			if(Cord_Approved == TRUE)
-			{
-				Info_ClearChoices(DIA_Cord_Teach);
-				Info_AddChoice(DIA_Cord_Teach,Dialog_Back,DIA_Cord_Teach_Back);
-				if(Npc_GetTalentSkill(other,NPC_TALENT_2H) > 0)
-				{
-					Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Cord_Teach_2H_1);
-					Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Cord_Teach_2H_5);
-				};
-				if(Npc_GetTalentSkill(other,NPC_TALENT_1H) > 0)
-				{
-					Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Cord_Teach_1H_1);
-					Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cord_Teach_1H_5);
-				};
-				Cord_Merke_1h = other.HitChance[NPC_TALENT_1H];
-				Cord_Merke_2h = other.HitChance[NPC_TALENT_2H];
-			};
+			AI_Output(self,other,"DIA_Cord_Teach_14_03");	//Nie marnujê czasu na amatorów.
 		};
-	}
-	else
+	};
+	if(CORD_TEACH == TRUE)
 	{
-		AI_Output(self,other,"DIA_Cord_ExplainWeapons_14_05");	//Dobre wyszkolenie wymaga sporo wysi³ku.
-		AI_Output(self,other,"DIA_Cord_Teach_14_03");	//Nie marnujê czasu na amatorów.
+		if((Npc_GetTalentSkill(other,NPC_TALENT_1H) > 0) && (Npc_GetTalentSkill(other,NPC_TALENT_2H) > 0))
+		{
+			AI_Output(self,other,"DIA_Cord_Teach_14_01");	//Mogê ciê nauczyæ walki ka¿d¹ broni¹. Od czego zaczniemy?
+		}
+		else if(Npc_GetTalentSkill(other,NPC_TALENT_1H) > 0)
+		{
+			AI_Output(self,other,"DIA_Cord_Teach_14_02");	//Mogê ciê nauczyæ walki mieczem jednorêcznym. Do dwurêcznego brakuje ci jeszcze umiejêtnoœci.
+		}
+		else if(Npc_GetTalentSkill(other,NPC_TALENT_2H) > 0)
+		{
+			AI_Output(self,other,"DIA_Cord_Teach_14_04");	//Jeœli chodzi o miecz jednorêczny, to jesteœ jeszcze cholernie zielony! Natomiast z mieczem dwurêcznym idzie ci znacznie lepiej.
+			AI_Output(self,other,"DIA_Cord_Teach_14_05");	//Jeœli potrzebujesz szkolenia w zakresie walki broni¹ jednorêczn¹, musisz znaleŸæ innego nauczyciela.
+		}
+		else
+		{
+			AI_Output(self,other,"DIA_Cord_Teach_14_03");	//Nie marnujê czasu na amatorów.
+		};
+		Info_ClearChoices(DIA_Cord_Teach);
+		Info_AddChoice(DIA_Cord_Teach,Dialog_Back,DIA_Cord_Teach_Back);
+		if(Npc_GetTalentSkill(other,NPC_TALENT_2H) > 0)
+		{
+			Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Cord_Teach_2H_1);
+			Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Cord_Teach_2H_5);
+		};
+		if(Npc_GetTalentSkill(other,NPC_TALENT_1H) > 0)
+		{
+			Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Cord_Teach_1H_1);
+			Info_AddChoice(DIA_Cord_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cord_Teach_1H_5);
+		};
+		Cord_Merke_1h = other.HitChance[NPC_TALENT_1H];
+		Cord_Merke_2h = other.HitChance[NPC_TALENT_2H];
 	};
 };
 
@@ -450,4 +439,3 @@ func void DIA_Cord_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Cord_PICKPOCKET);
 };
-
