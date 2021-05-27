@@ -6,8 +6,8 @@ prototype Mst_Default_OrcElite(C_Npc)
 	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
 	voice = 18;
 	level = 35;
-	attribute[ATR_STRENGTH] = 150;
-	attribute[ATR_DEXTERITY] = 150;
+	attribute[ATR_STRENGTH] = 100;
+	attribute[ATR_DEXTERITY] = 100;
 	attribute[ATR_HITPOINTS_MAX] = 400;
 	attribute[ATR_HITPOINTS] = 400;
 	attribute[ATR_MANA_MAX] = 0;
@@ -164,4 +164,3 @@ instance OrcElite_DIOberst3_Rest(Mst_Default_OrcElite)
 	start_aistate = ZS_MM_AllScheduler;
 	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
-

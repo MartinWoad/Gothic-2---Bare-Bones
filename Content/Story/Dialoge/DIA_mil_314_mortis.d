@@ -197,7 +197,7 @@ func void DIA_Mortis_Teach_Info()
 
 func void DIA_Mortis_Teach_BACK()
 {
-	if((other.attribute[ATR_STRENGTH] - ATTRIBUTEBONUS[4] - ATTRIBUTEFROMEQUIPMENT[4]) >= 40)
+	if((other.attribute[ATR_STRENGTH] - ATTRIBUTEBONUS[4] - ATTRIBUTEFROMEQUIPMENT[4]) >= 50)
 	{
 		AI_Output(self,other,"DIA_Mortis_Teach_13_00");	//Ju¿ jesteœ silny. Jeœli potrzebujesz dalszego treningu, bêdziesz sobie musia³ poszukaæ innego nauczyciela.
 		DIA_MORTIS_TEACH_PERMANENT = TRUE;
@@ -209,7 +209,7 @@ func void DIA_Mortis_Teach_1()
 {
 	if(Kapitel >= 3)
 	{
-		B_TeachAttributePoints(self,other,ATR_STRENGTH,1,40);
+		B_TeachAttributePoints(self,other,ATR_STRENGTH,1,50);
 	}
 	else
 	{
@@ -271,4 +271,3 @@ func void DIA_Mortis_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Mortis_PICKPOCKET);
 };
-

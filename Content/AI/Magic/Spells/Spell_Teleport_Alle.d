@@ -1,5 +1,5 @@
 
-const int SPL_Cost_Teleport = 5;
+const int SPL_Cost_Teleport = 10;
 
 func void B_PrintTeleportTooFarAway(var int level)
 {
@@ -235,4 +235,3 @@ func void Spell_Cast_Teleport()
 		Spell_Cast_TeleportTaverne();
 	};
 };
-

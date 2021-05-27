@@ -11,9 +11,9 @@ prototype Mst_Default_Icewolf(C_Npc)
 	attribute[ATR_HITPOINTS] = 350;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
-	protection[PROT_BLUNT] = 120;
-	protection[PROT_EDGE] = 120;
-	protection[PROT_POINT] = 120;
+	protection[PROT_BLUNT] = 100;
+	protection[PROT_EDGE] = 100;
+	protection[PROT_POINT] = 100;
 	protection[PROT_FIRE] = 40;
 	protection[PROT_FLY] = 120;
 	protection[PROT_MAGIC] = 120;
@@ -43,4 +43,3 @@ instance Icewolf(Mst_Default_Icewolf)
 	Npc_SetToFistMode(self);
 	CreateInvItems(self,ItFoMuttonRaw,1);
 };
-

@@ -210,6 +210,7 @@ instance ItRu_TeleportSeaport(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportSeaport;
 	description = NAME_SPL_TeleportSeaport;
+	mag_circle = 2;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -226,6 +227,7 @@ instance ItRu_TeleportMonastery(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportMonastery;
 	description = NAME_SPL_TeleportMonastery;
+	mag_circle = 2;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -242,6 +244,7 @@ instance ItRu_TeleportFarm(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportFarm;
 	description = NAME_SPL_TeleportFarm;
+	mag_circle = 2;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -258,6 +261,7 @@ instance ItRu_TeleportXardas(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportXardas;
 	description = NAME_SPL_TeleportXardas;
+	mag_circle = 2;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -274,6 +278,7 @@ instance ItRu_TeleportPassNW(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportPassNW;
 	description = NAME_SPL_TeleportPassNW;
+	mag_circle = 2;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -290,6 +295,7 @@ instance ItRu_TeleportPassOW(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportPassOW;
 	description = NAME_SPL_TeleportPassOW;
+	mag_circle = 2;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -306,6 +312,7 @@ instance ItRu_TeleportOC(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportOC;
 	description = NAME_SPL_TeleportOC;
+	mag_circle = 2;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -322,6 +329,7 @@ instance ItRu_TeleportOWDemonTower(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportOWDemonTower;
 	description = NAME_SPL_TeleportOWDemonTower;
+	mag_circle = 2;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -338,6 +346,7 @@ instance ItRu_TeleportTaverne(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportTaverne;
 	description = NAME_SPL_TeleportTaverne;
+	mag_circle = 2;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -354,6 +363,7 @@ instance ItRu_Teleport_3(C_Item)
 	material = MAT_STONE;
 	spell = SPL_Teleport_3;
 	description = NAME_SPL_Teleport_3;
+	mag_circle = 2;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -492,7 +502,8 @@ instance ItRu_Icebolt(C_Item)
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
 	value = Value_Ru_Icebolt;
-	visual = "ItRu_Icebolt.3ds";
+	//visual = "ItRu_Icebolt.3ds";
+	visual = "ItRu_Water04.3DS";
 	material = MAT_STONE;
 	spell = SPL_Icebolt;
 	mag_circle = 2;
@@ -1046,4 +1057,3 @@ instance ItRu_Concussionbolt(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 };
-

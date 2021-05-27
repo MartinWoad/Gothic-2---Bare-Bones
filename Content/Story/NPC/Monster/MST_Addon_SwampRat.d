@@ -1,7 +1,7 @@
 
 prototype MST_DEFAULT_SWAMPRAT(C_NPC)
 {
-	name[0] = "Bagienny szczur";
+	name[0] = "Bagienny Szczur";
 	guild = GIL_MOLERAT;
 	aivar[AIV_MM_REAL_ID] = ID_SWAMPRAT;
 	level = 12;
@@ -40,4 +40,3 @@ instance SWAMPRAT(MST_DEFAULT_SWAMPRAT)
 	Npc_SetToFistMode(self);
 	CreateInvItems(self,itfomuttonraw,2);
 };
-

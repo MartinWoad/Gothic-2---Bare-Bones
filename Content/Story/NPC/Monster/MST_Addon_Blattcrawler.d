@@ -1,7 +1,7 @@
 
 prototype MST_DEFAULT_BLATTCRAWLER(C_NPC)
 {
-	name[0] = "Polny pe³zacz";
+	name[0] = "Polny Pe³zacz";
 	guild = GIL_MINECRAWLER;
 	aivar[AIV_MM_REAL_ID] = ID_BLATTCRAWLER;
 	level = 15;
@@ -40,4 +40,3 @@ instance BLATTCRAWLER(MST_DEFAULT_BLATTCRAWLER)
 	b_setvisuals_blattcrawler();
 	Npc_SetToFistMode(self);
 };
-

@@ -1,5 +1,5 @@
 
-const string Name_PaladinScroll = "Paladin Zauber";
+const string Name_PaladinScroll = "Magia Paladyna";
 
 const int Value_Sc_PalLight = 5;
 const int Value_Sc_PalLightHeal = 35;
@@ -1039,4 +1039,3 @@ instance ItSc_TrfDragonSnapper(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 };
-

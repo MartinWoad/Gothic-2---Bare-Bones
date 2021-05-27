@@ -1,22 +1,22 @@
 
 prototype MST_DEFAULT_GOBBO_WARRIOR(C_NPC)
 {
-	name[0] = "Gobliñski wojownik";
+	name[0] = "Gobliñski Wojownik";
 	guild = GIL_GOBBO;
 	aivar[AIV_MM_REAL_ID] = ID_GOBBO_BLACK;
 	level = 15;
 	attribute[ATR_STRENGTH] = 75;
 	attribute[ATR_DEXTERITY] = 75;
-	attribute[ATR_HITPOINTS_MAX] = 75;
-	attribute[ATR_HITPOINTS] = 75;
+	attribute[ATR_HITPOINTS_MAX] = 80;
+	attribute[ATR_HITPOINTS] = 80;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
 	protection[PROT_BLUNT] = 75;
 	protection[PROT_EDGE] = 75;
 	protection[PROT_POINT] = 75;
-	protection[PROT_FIRE] = 75;
+	protection[PROT_FIRE] = 55;
 	protection[PROT_FLY] = 75;
-	protection[PROT_MAGIC] = 0;
+	protection[PROT_MAGIC] = 15;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_GOBBO;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
@@ -55,4 +55,3 @@ instance GOBBO_WARRIOR_VISIR(MST_DEFAULT_GOBBO_WARRIOR)
 	Npc_SetToFightMode(self,itmw_1h_misc_axe);
 	Mdl_SetModelScale(self,1.15,1.15,1.15);
 };
-

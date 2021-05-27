@@ -1,7 +1,7 @@
 
 prototype MST_DEFAULT_SWAMPDRONE(C_NPC)
 {
-	name[0] = "Bagienny truteñ";
+	name[0] = "Bagienny Truteñ";
 	guild = GIL_BLOODFLY;
 	aivar[AIV_MM_REAL_ID] = ID_SWAMPDRONE;
 	level = 10;
@@ -41,4 +41,3 @@ instance SWAMPDRONE(MST_DEFAULT_SWAMPDRONE)
 	b_setvisuals_swampdrone();
 	Npc_SetToFistMode(self);
 };
-

@@ -11,12 +11,12 @@ prototype Mst_Skeleton_Lord(C_Npc)
 	attribute[ATR_HITPOINTS] = 400;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
-	protection[PROT_BLUNT] = 40;
-	protection[PROT_EDGE] = 50;
+	protection[PROT_BLUNT] = 20;
+	protection[PROT_EDGE] = 40;
 	protection[PROT_POINT] = 1000;
-	protection[PROT_FIRE] = 40;
-	protection[PROT_FLY] = 40;
-	protection[PROT_MAGIC] = 40;
+	protection[PROT_FIRE] = 20;
+	protection[PROT_FLY] = 20;
+	protection[PROT_MAGIC] = 20;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_HUMAN_STRONG;
 	EquipItem(self,ItMw_Zweihaender2);
@@ -60,8 +60,8 @@ instance Skeleton_Lord_Archol(Mst_Skeleton_Lord)
 	level = 60;
 	attribute[ATR_STRENGTH] = 180;
 	attribute[ATR_DEXTERITY] = 180;
-	attribute[ATR_HITPOINTS_MAX] = 400;
-	attribute[ATR_HITPOINTS] = 400;
+	attribute[ATR_HITPOINTS_MAX] = 500;
+	attribute[ATR_HITPOINTS] = 500;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
 	protection[PROT_BLUNT] = 20;
@@ -74,4 +74,3 @@ instance Skeleton_Lord_Archol(Mst_Skeleton_Lord)
 	CreateInvItems(self,ItMi_Gold,650);
 	CreateInvItems(self,ItKe_EVT_UNDEAD_01,1);
 };
-

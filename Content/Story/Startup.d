@@ -8,13 +8,27 @@ func void init_global()
 {
 	Game_InitGerman();
 	LeGo_Init (LeGo_All);
-	
+
 	if(toxicityBarHandle == 0)
 	{
 		toxicityBarHandle = Bar_Create(ToxicityBar);
 	};
+	if(satietyBarHandle == 0)
+	{
+		satietyBarHandle = Bar_Create(SatietyBar);
+	};
 
 	UpdateToxicityBar();
+	UpdateSatietyBar();
+	FF_ApplyOnceExtGT(Hunger, HungerTime, -1);
+
+};
+
+func void NewGame_BB()
+{
+	satiety = 100;
+	UpdateSatietyBar();
+
 };
 
 func void STARTUP_Testlevel()
@@ -2787,6 +2801,8 @@ func void STARTUP_NewWorld()
 	STARTUP_NewWorld_Part_Pass_To_OW_01();
 	Kapitel = 1;
 	PlayVideo("INTRO.BIK");
+
+	NewGame_BB(); //Mod startup
 };
 
 func void INIT_NewWorld()

@@ -6,8 +6,8 @@ prototype Mst_Default_OrcShaman(C_Npc)
 	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
 	voice = 18;
 	level = 30;
-	attribute[ATR_STRENGTH] = 80;
-	attribute[ATR_DEXTERITY] = 80;
+	attribute[ATR_STRENGTH] = 50;
+	attribute[ATR_DEXTERITY] = 50;
 	attribute[ATR_HITPOINTS_MAX] = 200;
 	attribute[ATR_HITPOINTS] = 200;
 	attribute[ATR_MANA_MAX] = 100;
@@ -54,4 +54,3 @@ instance OrcShaman_Hosh_Pak(Mst_Default_OrcShaman)
 	start_aistate = ZS_MM_AllScheduler;
 	aivar[AIV_MM_OrcSitStart] = OnlyRoutine;
 };
-

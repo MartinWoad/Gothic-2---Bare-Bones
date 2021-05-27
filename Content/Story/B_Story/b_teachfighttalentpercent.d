@@ -28,21 +28,21 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 	};
 	if(realHitChance >= teacherMAX)
 	{
-		concatText = ConcatStrings(PRINT_NoLearnOverPersonalMAX,IntToString(teacherMAX));
-		PrintScreen(concatText,-1,-1,FONT_Screen,2);
+		//concatText = ConcatStrings(PRINT_NoLearnOverPersonalMAX,IntToString(teacherMAX));
+		//PrintScreen(concatText,-1,-1,FONT_Screen,2);
 		B_Say(slf,oth,"$NOLEARNYOUREBETTER");
 		return FALSE;
 	};
 	if((realHitChance + percent) > teacherMAX)
 	{
-		concatText = ConcatStrings(PRINT_NoLearnOverPersonalMAX,IntToString(teacherMAX));
-		PrintScreen(concatText,-1,-1,FONT_Screen,2);
+		//concatText = ConcatStrings(PRINT_NoLearnOverPersonalMAX,IntToString(teacherMAX));
+		//PrintScreen(concatText,-1,-1,FONT_Screen,2);
 		B_Say(slf,oth,"$NOLEARNOVERPERSONALMAX");
 		return FALSE;
 	};
 	if(oth.lp < kosten)
 	{
-		PrintScreen(PRINT_NotEnoughLP,-1,-1,FONT_Screen,2);
+		//PrintScreen(PRINT_NotEnoughLP,-1,-1,FONT_Screen,2);
 		B_Say(slf,oth,"$NOLEARNNOPOINTS");
 		return FALSE;
 	};
@@ -72,4 +72,3 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 		return TRUE;
 	};
 };
-

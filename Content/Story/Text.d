@@ -516,6 +516,7 @@ const string PRINT_LearnCrossBow5 = "Kusze +5";
 const string PRINT_SleepOver = "Po porz¹dnym œnie czujesz siê wypoczêty.";
 const string PRINT_SleepOverObsessed = "Koszmary senne nie pozwalaj¹ ci zasn¹æ.";
 const string PRINT_SLEEPOVERRESTED = "Nie mo¿esz zasn¹æ. Jesteœ zbyt wypoczêty.";
+const string PRINT_SLEEPOVERHUNGRY = "Nie mo¿esz zasn¹æ. Jesteœ zbyt g³odny.";
 const string PRINT_SleepOverToxic = "Po porz¹dnym œnie czujesz siê oczyszczony i wypoczêty.";
 const string PRINT_SmithSuccess = "Stworzy³eœ broñ!";
 const string PRINT_RuneSuccess = "Stworzy³eœ runê!";
@@ -674,3 +675,5 @@ const string PRINT_ToxicityLevel3 = "Zaczynasz odczuwaæ ciê¿kie objawy zatrucia.
 const string PRINT_ToxicityLevel4 = "Zaczynasz odczuwaæ krytyczne objawy zatrucia.";
 
 const string PRINT_ToxicityLevelMax = "Jesteœ bardzo zatruty.";
+
+const string NAME_Bonus_Satiety = "Sytoœæ:";

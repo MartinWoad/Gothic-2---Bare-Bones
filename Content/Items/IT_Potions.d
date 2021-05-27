@@ -51,14 +51,16 @@ const int Toxicity_MegaDrink = 50;
 
 instance ToxicityBar (GothicBar)
 {
-    x = Print_Screen[PS_X] / 2;
-    y = Print_Screen[PS_Y] - 20;
+    //x = Print_Screen[PS_X] / 2;
+    x = 100;
+    y = Print_Screen[PS_Y] - 60;
     barTop = MEMINT_SwitchG1G2(2, 3);
     barLeft = 7;
     width = 180;
     height = 20;
     backTex = "Bar_Back.tga";
-    barTex = "Bar_Misc.tga";
+    barTex = "Bar_Tox.tga";
+    //barTex = "Bar_Misc.tga";
     value = 0;
     valueMax = ToxicityLevelMax;
 };

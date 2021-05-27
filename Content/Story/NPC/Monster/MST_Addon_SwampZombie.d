@@ -1,7 +1,7 @@
 
 prototype MST_DEFAULT_SWAMPZOMBIE(C_NPC)
 {
-	name[0] = "Bagienny zombie";
+	name[0] = "Bagienny Zombie";
 	guild = GIL_ZOMBIE;
 	aivar[AIV_MM_REAL_ID] = ID_ZOMBIE;
 	level = 15;
@@ -39,4 +39,3 @@ instance SWAMPZOMBIE(MST_DEFAULT_SWAMPZOMBIE)
 	b_setvisuals_swampzombie();
 	Npc_SetToFistMode(self);
 };
-

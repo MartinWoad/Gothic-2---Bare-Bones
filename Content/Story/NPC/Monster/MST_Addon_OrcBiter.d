@@ -11,12 +11,12 @@ prototype MST_DEFAULT_ORCBITER(C_NPC)
 	attribute[ATR_HITPOINTS] = 120;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
-	protection[PROT_BLUNT] = 60;
+	protection[PROT_BLUNT] = 50;
 	protection[PROT_EDGE] = 60;
 	protection[PROT_POINT] = 60;
 	protection[PROT_FIRE] = 60;
 	protection[PROT_FLY] = 60;
-	protection[PROT_MAGIC] = 0;
+	protection[PROT_MAGIC] = 20;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_SCAVENGER;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
@@ -41,4 +41,3 @@ instance ORCBITER(MST_DEFAULT_ORCBITER)
 	Npc_SetToFistMode(self);
 	CreateInvItems(self,itfomuttonraw,2);
 };
-

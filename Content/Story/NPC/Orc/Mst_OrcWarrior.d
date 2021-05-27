@@ -6,8 +6,8 @@ prototype Mst_Default_OrcWarrior(C_Npc)
 	aivar[AIV_MM_REAL_ID] = ID_ORCWARRIOR;
 	voice = 18;
 	level = 25;
-	attribute[ATR_STRENGTH] = 100;
-	attribute[ATR_DEXTERITY] = 100;
+	attribute[ATR_STRENGTH] = 60;
+	attribute[ATR_DEXTERITY] = 60;
 	attribute[ATR_HITPOINTS_MAX] = 200;
 	attribute[ATR_HITPOINTS] = 200;
 	attribute[ATR_MANA_MAX] = 0;
@@ -110,4 +110,3 @@ instance OrcWarrior_Lobart6(Mst_Default_OrcWarrior)
 	start_aistate = ZS_MM_AllScheduler;
 	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
-
