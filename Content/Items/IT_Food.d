@@ -90,9 +90,35 @@ func void ChangeSatiety(var C_NPC slf, var int percent)
 			{
 				satiety = satiety + percent;
 			}
+			else if(satiety + percent == 0)
+			{
+				satiety = 0;
+			}
+			else if(satiety + percent < 0 && satiety >= 0)
+			{
+				AI_Output(slf,slf,"DIA_Thekla_Hunger_15_00");
+
+				satiety = 0;
+				if(self.attribute[ATR_HITPOINTS] > percent)
+				{
+					self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - percent;
+				}
+				else
+				{
+					self.attribute[ATR_HITPOINTS] = 1;
+				};
+			}
 			else
 			{
 				satiety = 0;
+				if(self.attribute[ATR_HITPOINTS] > percent)
+				{
+					self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - percent;
+				}
+				else
+				{
+					self.attribute[ATR_HITPOINTS] = 1;
+				};
 			};
 		};
 		UpdateSatietyBar();
@@ -481,8 +507,8 @@ instance ItFo_Water(C_Item)
 	scemeName = "POTION";
 	on_state[0] = Use_Water;
 	description = name;
-	text[2] = NAME_Toxicity;
-	count[2] = Toxicity_Water;
+	text[2] = NAME_AntiToxicity;
+	count[2] = -Toxicity_Water;
 	//text[1] = NAME_Bonus_Satiety;
 	//count[1] = HP_Water;
 	text[5] = NAME_Value;
@@ -540,8 +566,8 @@ instance ItFo_Booze(C_Item)
 	scemeName = "POTION";
 	on_state[0] = Use_Booze;
 	description = name;
-	//text[1] = NAME_Bonus_Satiety;
-	//count[1] = HP_Booze;
+	text[1] = NAME_Bonus_Satiety;
+	count[1] = HP_Booze;
 	text[2] = NAME_Toxicity;
 	count[2] = Toxicity_Booze;
 	//text[2] = NAME_Bonus_Mana;
@@ -554,6 +580,7 @@ instance ItFo_Booze(C_Item)
 func void Use_Booze()
 {
 	ChangeToxicity(self, Toxicity_Booze);
+	ChangeSatiety(self, HP_Booze);
 	//Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Booze);
 	//Npc_ChangeAttribute(self,ATR_MANA,Mana_Booze);
 };
@@ -603,8 +630,8 @@ instance ItFo_Milk(C_Item)
 	description = name;
 	text[1] = NAME_Bonus_Satiety;
 	count[1] = HP_Milk;
-	text[2] = NAME_Toxicity;
-	count[2] = Toxicity_Milk;
+	text[2] = NAME_AntiToxicity;
+	count[2] = -Toxicity_Milk;
 	//text[2] = NAME_Bonus_Mana;
 	//count[2] = Mana_Milk;
 	text[5] = NAME_Value;

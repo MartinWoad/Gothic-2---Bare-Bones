@@ -437,9 +437,11 @@ const string NAME_Prot_Edge = "Obrona przed ostrzami:";
 const string NAME_Prot_Point = "Obrona przed strza³ami:";
 const string NAME_Prot_Fire = "Obrona przed ogniem:";
 const string NAME_Prot_Magic = "Obrona przed magi¹:";
-const string NAME_Bonus_HP = "Premia punktów trafieñ:";
+//const string NAME_Bonus_HP = "Premia punktów trafieñ:";
+const string NAME_Bonus_HP = "Uleczenie:";
 const string NAME_Bonus_Mana = "Premia many:";
-const string NAME_Bonus_HpMax = "Premia do maks. punktów trafieñ:";
+//const string NAME_Bonus_HpMax = "Premia do maks. punktów trafieñ:";
+const string NAME_Bonus_HpMax = "Premia do maks. ¿ycia:";
 const string NAME_Bonus_ManaMax = "Premia do maks. many:";
 const string NAME_Bonus_Dex = "Premia do zrêcznoœci:";
 const string NAME_Bonus_Str = "Premia do si³y:";
@@ -666,6 +668,7 @@ const string KapWechsel_6 = "Rozdzia³ 6";
 const string KapWechsel_6_Text = "Dwór Irdorath";
 
 const string NAME_Toxicity = "Toksycznoœæ (%)";
+const string NAME_AntiToxicity = "Oczyszczenie (%)";
 
 const string PRINT_ToxicityLevel0 = "Nie odczuwasz ju¿ objawów zatrucia.";
 

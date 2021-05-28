@@ -89,6 +89,11 @@ func void ChangeToxicity(var C_NPC slf, var int percent)
 			{
 				toxicity = toxicity + percent;
 			}
+      else if(toxicity + percent >= ToxicityLevelMax && toxicity < ToxicityLevelMax)
+      {
+        AI_OutputSVM_Overlay(slf,slf,"$Aargh_1");
+        toxicity = ToxicityLevelMax;
+      }
 			else
 			{
 				toxicity = ToxicityLevelMax;
@@ -96,15 +101,14 @@ func void ChangeToxicity(var C_NPC slf, var int percent)
 
 			if(toxicity == ToxicityLevelMax)
 			{
-				AI_OutputSVM_Overlay(slf,slf,"$Aargh_1");
 
-				if(slf.attribute[ATR_HITPOINTS] > percent + 1)
+				if(slf.attribute[ATR_HITPOINTS] > percent)
 				{
 					slf.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - percent;
 				}
 				else
 				{
-					slf.attribute[ATR_HITPOINTS] = 0;
+					slf.attribute[ATR_HITPOINTS] = 1;
 				};
 
 				if(slf.attribute[ATR_MANA] > percent)
