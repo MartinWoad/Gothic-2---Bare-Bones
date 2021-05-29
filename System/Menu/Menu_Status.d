@@ -183,7 +183,7 @@ instance MENU_ITEM_LEARN_TITLE(C_MENU_ITEM_DEF)
 {
 	posx = STAT_A_X1;
 	posy = STAT_PLY_Y + (STAT_DY * 4);
-	text[0] = "Punkty nauki";
+	text[0] = "Punkty Nauki";
 	fontname = STAT_FONT_DEFAULT;
 	flags = flags & ~IT_SELECTABLE;
 };
@@ -262,7 +262,7 @@ instance MENU_ITEM_ATTRIBUTE_4_TITLE(C_MENU_ITEM_DEF)
 {
 	posx = STAT_A_X1;
 	posy = STAT_ATR_Y + (STAT_DY * 3);
-	text[0] = "Punkty trafieñ";
+	text[0] = "¯ycie";
 	fontname = STAT_FONT_DEFAULT;
 	flags = flags & ~IT_SELECTABLE;
 };
@@ -290,7 +290,7 @@ instance MENU_ITEM_ARMOR_1_TITLE(C_MENU_ITEM_DEF)
 {
 	posx = STAT_A_X1;
 	posy = STAT_ARM_Y + (STAT_DY * 0);
-	text[0] = "Broñ";
+	text[0] = "Obuchy";
 	fontname = STAT_FONT_DEFAULT;
 	flags = flags & ~IT_SELECTABLE;
 };
@@ -307,7 +307,7 @@ instance MENU_ITEM_ARMOR_2_TITLE(C_MENU_ITEM_DEF)
 {
 	posx = STAT_A_X1;
 	posy = STAT_ARM_Y + (STAT_DY * 1);
-	text[0] = "Pociski";
+	text[0] = "K³ute";
 	fontname = STAT_FONT_DEFAULT;
 	flags = flags & ~IT_SELECTABLE;
 };
@@ -341,7 +341,7 @@ instance MENU_ITEM_ARMOR_4_TITLE(C_MENU_ITEM_DEF)
 {
 	posx = STAT_A_X1;
 	posy = STAT_ARM_Y + (STAT_DY * 3);
-	text[0] = "Magia";
+	text[0] = "Energia i Lód";
 	fontname = STAT_FONT_DEFAULT;
 	flags = flags & ~IT_SELECTABLE;
 };
@@ -572,4 +572,3 @@ instance MENU_ITEM_TALENT_16_SKILL(C_MENU_ITEM_DEF)
 	fontname = STAT_FONT_DEFAULT;
 	flags = flags & ~IT_SELECTABLE;
 };
-

@@ -366,18 +366,18 @@ func void DIA_Vatras_Spende_100()
 };
 
 
-instance DIA_VATRAS_DI_VATRASMURDERER(C_Info)
+instance DIA_VATRAS_VATRASMURDERER(C_Info)
 {
-	npc = VLK_439_Vatras_DI;
+	npc = VLK_439_Vatras;
 	nr = 1;
-	condition = dia_vatras_di_vatrasmurderer_condition;
-	information = dia_vatras_di_vatrasmurderer_info;
+	condition = dia_vatras_vatrasmurderer_condition;
+	information = dia_vatras_vatrasmurderer_info;
 	important = TRUE;
 	permanent = TRUE;
 };
 
 
-func int dia_vatras_di_vatrasmurderer_condition()
+func int dia_vatras_vatrasmurderer_condition()
 {
 	if(Npc_IsInState(self,ZS_Talk) && ((PETZCOUNTER_OldCamp_Murder > 0) || (PETZCOUNTER_City_Murder > 0) || (PETZCOUNTER_Monastery_Murder > 0) || (PETZCOUNTER_Farm_Murder > 0)))
 	{
@@ -385,7 +385,7 @@ func int dia_vatras_di_vatrasmurderer_condition()
 	};
 };
 
-func void dia_vatras_di_vatrasmurderer_info()
+func void dia_vatras_vatrasmurderer_info()
 {
 	AI_Output(self,other,"DIA_Vatras_DI_VatrasSucked_05_00");	//ZejdŸ mi z oczu, morderco. Na moj¹ pomoc nie masz co liczyæ.
 	AI_StopProcessInfos(self);

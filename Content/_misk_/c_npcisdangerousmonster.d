@@ -28,11 +28,10 @@ func int C_WantToFlee(var C_Npc slf,var C_Npc oth)
 	}
 	else if(((self.guild == GIL_BAU) || (self.guild == GIL_VLK) || (self.guild == GIL_OUT) || (self.guild == GIL_BDT) || (self.guild == GIL_NOV) || (self.guild == GIL_STRF) || (self.guild == GIL_SLD) || (self.guild == GIL_MIL)) && (self.attribute[ATR_HITPOINTS_MAX] < 300))
 	{
-		if(c_npcisdeadlymonster(oth) || (C_NpcIsEvil(oth) && (oth.guild != GIL_GOBBO_SKELETON) && (oth.guild != GIL_SUMMONED_GOBBO_SKELETON)))
+		if(c_npcisdeadlymonster(oth) || (C_NpcIsEvil(oth) && (slf.guild != GIL_BDT) && (oth.guild != GIL_GOBBO_SKELETON) && (oth.guild != GIL_SUMMONED_GOBBO_SKELETON)))
 		{
 			return TRUE;
 		};
 	};
 	return FALSE;
 };
-

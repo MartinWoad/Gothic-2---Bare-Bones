@@ -177,8 +177,8 @@ instance ItAt_CrawlerMandibles(C_Item)
 	description = name;
 	text[0] = "Mo¿na je otworzyæ w celu";
 	text[1] = "wypicia zawartej w nich wydzieliny,";
-	text[2] = "która pozwala zregenerowaæ manê.";
-	text[3] = "Efekt z czasem przemija.";
+	text[2] = "która pozwala zregenerowaæ energiê magiczn¹.";
+	text[3] = "Bardzo truj¹ce.";
 	text[5] = NAME_Value;
 	count[5] = value;
 };
@@ -186,14 +186,14 @@ instance ItAt_CrawlerMandibles(C_Item)
 
 func void Use_Mandibles()
 {
-	if(Mandibles_Bonus <= 9)
+	if(Npc_IsPlayer(self)) //(Mandibles_Bonus <= 9)
 	{
-		Npc_ChangeAttribute(self,ATR_MANA,self.attribute[ATR_MANA_MAX]);
-		Mandibles_Bonus = Mandibles_Bonus + 1;
-	}
-	else
-	{
-		PrintScreen(PRINT_Mandibles,-1,YPOS_LevelUp,FONT_ScreenSmall,2);
+		if(CheckToxicity(self))
+		{
+			Npc_ChangeAttribute(self,ATR_MANA,self.attribute[ATR_MANA_MAX]);
+		};
+		ChangeToxicity(self, 75);
+		//Mandibles_Bonus = Mandibles_Bonus + 1;
 	};
 };
 
@@ -237,26 +237,31 @@ instance ItAt_Sting(C_Item)
 
 func void Use_Sting()
 {
-	if(Knows_Bloodfly == TRUE)
+	if(Knows_Bloodfly == TRUE && Npc_IsPlayer(self))
 	{
-		if(Bloodfly_Bonus <= 10)
-		{
-			Npc_ChangeAttribute(self,ATR_HITPOINTS,self.attribute[ATR_HITPOINTS_MAX]);
-			Print(PRINT_FullyHealed);
-			Bloodfly_Bonus = Bloodfly_Bonus + 1;
-		}
-		else
-		{
-			Print(PRINT_Mandibles);
-		};
+			if(CheckToxicity(self))
+			{
+				Npc_ChangeAttribute(self,ATR_HITPOINTS,self.attribute[ATR_HITPOINTS_MAX]);
+			};
+			ChangeToxicity(self, 50);
+			//Print(PRINT_FullyHealed);
+			//Bloodfly_Bonus = Bloodfly_Bonus + 1;
+
+		//if(Bloodfly_Bonus <= 10)
+	//	{
+		//	Npc_ChangeAttribute(self,ATR_HITPOINTS,self.attribute[ATR_HITPOINTS_MAX]);
+			//Print(PRINT_FullyHealed);
+			//Bloodfly_Bonus = Bloodfly_Bonus + 1;
+		//}
+		//else
+		//{
+			//Print(PRINT_Mandibles);
+		//};
 	}
-	else
+	else if(Npc_IsPlayer(self))
 	{
-		Print(PRINT_Bloodfly);
-		if(self.attribute[ATR_HITPOINTS] > 1)
-		{
-			self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - 1;
-		};
+		//Print(PRINT_Bloodfly);
+		ChangeToxicity(self, 50);
 	};
 };
 
@@ -688,4 +693,3 @@ instance ItAt_DragonScale(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 };
-

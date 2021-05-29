@@ -10,9 +10,9 @@ const int HP_Bread = 10;
 const int Value_Fish = 15;
 const int HP_Fish = 5;
 const int Value_Rawmeat = 3;
-const int HP_RawMeat = 6;
-const int Value_Meat = 6;
-const int HP_Meat = 12;
+const int HP_RawMeat = 3;
+const int Value_Meat = 3;
+const int HP_Meat = 6;
 const int Value_Stew = 8;
 const int HP_Stew = 20;
 const int Value_FishSoup = 20;
@@ -43,9 +43,12 @@ const int Toxicity_Booze = 3;
 const int Toxicity_Milk = -2;
 const int Toxicity_Wine = 2;
 
+const int Toxicity_RawMeat = 3;
+
 const int SatietyLevelMax = 100;
 
 const int HungerPercent = -1;
+const int SleepHungerMultiplier = 2;
 const int HungerTime = 100000; // 1 min = 60s = 60000ms
 
 instance SatietyBar (GothicBar)
@@ -295,6 +298,8 @@ instance ItFoMuttonRaw(C_Item)
 	description = name;
 	text[1] = NAME_Bonus_Satiety;
 	count[1] = HP_RawMeat;
+	text[2] = NAME_Toxicity;
+	count[2] = Toxicity_RawMeat;
 	text[5] = NAME_Value;
 	count[5] = Value_Rawmeat;
 };
@@ -303,6 +308,7 @@ instance ItFoMuttonRaw(C_Item)
 func void Use_RawMeat()
 {
 	//Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_RawMeat);
+	ChangeToxicity(self, Toxicity_RawMeat);
 	ChangeSatiety(self, HP_RawMeat);
 };
 

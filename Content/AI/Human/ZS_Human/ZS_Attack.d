@@ -17,6 +17,16 @@ func void ZS_Attack()
 		Npc_SetTarget(self,other);
 		AI_StartState(self,ZS_Flee,0,"");
 		return;
+	}
+	else if(((self.guild == GIL_BAU) || (self.guild == GIL_OUT)) && (self.attribute[ATR_HITPOINTS_MAX] <= 200))
+	{
+		B_Say_Overlay(self,other,"$HELP");
+		Npc_SendPassivePerc(self,PERC_ASSESSFIGHTSOUND,self,other);
+	}
+	else if((self.guild == GIL_VLK) && (self.attribute[ATR_HITPOINTS_MAX] <= 200))
+	{
+		B_Say_Overlay(self,other,"$GUARDS");
+		Npc_SendPassivePerc(self,PERC_ASSESSFIGHTSOUND,self,other);
 	};
 	if(self.aivar[AIV_LOADGAME] == FALSE)
 	{
@@ -226,4 +236,3 @@ func void ZS_Attack_End()
 	};
 	AI_StartState(self,ZS_HealSelf,0,"");
 };
-

@@ -4,6 +4,16 @@ func void startup_global()
 	Game_InitGerman();
 };
 
+func void SaveGameFix()
+{
+	Bar_SetBarTexture(toxicityBarHandle, "Bar_Tox.tga");
+	Bar_MoveToPxl(toxicityBarHandle, 100, Print_Screen[PS_Y] - 60);
+
+	Bar_SetBarTexture(satietyBarHandle, "Bar_Food.tga");
+	Bar_MoveToPxl(satietyBarHandle, 100, Print_Screen[PS_Y] - 40);
+
+};
+
 func void init_global()
 {
 	Game_InitGerman();
@@ -21,6 +31,7 @@ func void init_global()
 	UpdateToxicityBar();
 	UpdateSatietyBar();
 	FF_ApplyOnceExtGT(Hunger, HungerTime, -1);
+	SaveGameFix();
 
 };
 
