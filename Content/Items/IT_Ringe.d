@@ -92,7 +92,7 @@ instance ItRi_Prot_Fire_02(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Prot_Fire_02;
 	on_unequip = UnEquip_ItRi_Prot_Fire_02;
-	description = "Pierœcieñ Wiecznego Ognia";
+	description = "Pierœcieñ Wewnêtrznego Ognia";
 	text[2] = NAME_Prot_Fire;
 	count[2] = Ri_ProtFire02;
 	text[5] = NAME_Value;
@@ -261,7 +261,7 @@ instance ItRi_Prot_Mage_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Prot_Mage_01;
 	on_unequip = UnEquip_ItRi_Prot_Mage_01;
-	description = "Pierœcieñ Zas³ony przed Magi¹";
+	description = "Pierœcieñ Wody";
 	text[2] = NAME_Prot_Magic;
 	count[2] = Ri_ProtMage;
 	text[5] = NAME_Value;
@@ -294,7 +294,7 @@ instance ItRi_Prot_Mage_02(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Prot_Mage_02;
 	on_unequip = UnEquip_ItRi_Prot_Mage_02;
-	description = "Pierœcieñ Ochrony przed Magi¹";
+	description = "Pierœcieñ Wzburzonej Wody";
 	text[2] = NAME_Prot_Magic;
 	count[2] = Ri_ProtMage02;
 	text[5] = NAME_Value;
@@ -327,7 +327,7 @@ instance ItRi_Prot_Total_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Prot_Total_01;
 	on_unequip = UnEquip_ItRi_Prot_Total_01;
-	description = "Pierœcieñ Wiecznych Zwyciêstw";
+	description = "Pierœcieñ Zwyciêstw";
 	text[1] = NAME_Prot_Magic;
 	count[1] = Ri_TProtMage;
 	text[2] = NAME_Prot_Fire;
@@ -374,7 +374,7 @@ instance ItRi_Prot_Total_02(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Prot_Total_02;
 	on_unequip = UnEquip_ItRi_Prot_Total_02;
-	description = "Pierœcieñ Nietykalnoœci";
+	description = "Pierœcieñ Wiecznych Zwyciêstw";
 	text[1] = NAME_Prot_Magic;
 	count[1] = Ri_TProtMage02;
 	text[2] = NAME_Prot_Fire;
@@ -421,7 +421,7 @@ instance ItRi_Dex_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Dex_01;
 	on_unequip = UnEquip_ItRi_Dex_01;
-	description = "Pierœcieñ Zdolnoœci";
+	description = "Pierœcieñ Zrêcznoœci";
 	text[2] = NAME_Bonus_Dex;
 	count[2] = Ri_Dex;
 	text[5] = NAME_Value;
@@ -454,7 +454,7 @@ instance ItRi_Dex_02(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Dex_02;
 	on_unequip = UnEquip_ItRi_Dex_02;
-	description = "Pierœcieñ Zrêcznoœci";
+	description = "Pierœcieñ Wielkiej Zrêcznoœci";
 	text[2] = NAME_Bonus_Dex;
 	count[2] = Ri_Dex02;
 	text[5] = NAME_Value;
@@ -530,7 +530,7 @@ instance ItRi_Hp_02(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Hp_02;
 	on_unequip = UnEquip_ItRi_Hp_02;
-	description = "Pierœcieñ ¯ywotnoœci";
+	description = "Pierœcieñ Pe³ni ¯ycia";
 	text[2] = NAME_Bonus_HP;
 	count[2] = Ri_Hp02;
 	text[5] = NAME_Value;
@@ -573,7 +573,7 @@ instance ItRi_Str_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Str_01;
 	on_unequip = UnEquip_ItRi_Str_01;
-	description = "Pierœcieñ Mocy";
+	description = "Pierœcieñ Si³y";
 	text[2] = NAME_Bonus_Str;
 	count[2] = Ri_Strg;
 	text[5] = NAME_Value;
@@ -606,7 +606,7 @@ instance ItRi_Str_02(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Str_02;
 	on_unequip = UnEquip_ItRi_Str_02;
-	description = "Pierœcieñ Si³y";
+	description = "Pierœcieñ Wielkiej Si³y";
 	text[2] = NAME_Bonus_Str;
 	count[2] = Ri_Strg02;
 	text[5] = NAME_Value;
@@ -639,7 +639,7 @@ instance ItRi_Mana_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Mana_01;
 	on_unequip = UnEquip_ItRi_Mana_01;
-	description = "Pierœcieñ Magii";
+	description = "Pierœcieñ Mocy";
 	text[2] = NAME_Bonus_Mana;
 	count[2] = Ri_Mana;
 	text[5] = NAME_Value;
@@ -780,7 +780,7 @@ instance ItRi_Dex_Strg_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Dex_Strg_01;
 	on_unequip = UnEquip_ItRi_Dex_Strg_01;
-	description = "Pierœcieñ Kondycji";
+	description = "Pierœcieñ Sprawnoœci";
 	text[2] = NAME_Bonus_Str;
 	count[2] = 4;
 	text[3] = NAME_Bonus_Dex;
@@ -804,4 +804,3 @@ func void UnEquip_ItRi_Dex_Strg_01()
 	b_removeitemattribute(self,ATR_STRENGTH,Ri_DexStrg_Strg);
 	b_removeitemattribute(self,ATR_DEXTERITY,Ri_DexStrg_Dex);
 };
-

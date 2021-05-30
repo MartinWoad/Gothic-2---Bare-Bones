@@ -1,12 +1,12 @@
 
-const int SPL_COST_ICELANCE = 20;
+const int SPL_COST_ICELANCE = 7;
 const int SPL_DAMAGE_ICELANCE = 100;
 
 instance SPELL_ICELANCE(C_SPELL_PROTO)
 {
 	time_per_mana = 0;
 	damage_per_level = SPL_DAMAGE_ICELANCE;
-	damagetype = DAM_MAGIC;
+	damagetype = DAM_POINT;
 };
 
 
@@ -38,4 +38,3 @@ func void spell_cast_icelance()
 	};
 	self.aivar[AIV_SELECTSPELL] += 1;
 };
-

@@ -133,7 +133,7 @@ instance ItAm_Prot_Mage_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItAm_Prot_Mage_01;
 	on_unequip = UnEquip_ItAm_Prot_Mage_01;
-	description = "Amulet Duchowej Si³y";
+	description = "Amulet Wody";
 	text[2] = NAME_Prot_Magic;
 	count[2] = Am_ProtMage;
 	text[5] = NAME_Value;
@@ -164,7 +164,7 @@ instance ItAm_Prot_Total_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_Value_Am_ProtTotal;
 	on_unequip = UnEquip_Value_Am_ProtTotal;
-	description = "Amulet Magicznego Pancerza";
+	description = "Amulet Zwyciêstw";
 	text[1] = NAME_Prot_Fire;
 	count[1] = Am_TProtFire;
 	text[2] = NAME_Prot_Magic;
@@ -209,7 +209,7 @@ instance ItAm_Dex_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItAm_Dex_01;
 	on_unequip = UnEquip_ItAm_Dex_01;
-	description = "Amulet Zwinnoœci";
+	description = "Amulet Zrêcznoœci";
 	text[2] = NAME_Bonus_Dex;
 	count[2] = Am_Dex;
 	text[5] = NAME_Value;
@@ -312,7 +312,7 @@ instance ItAm_Mana_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItAm_Mana_01;
 	on_unequip = UnEquip_ItAm_Mana_01;
-	description = "Amulet Magii";
+	description = "Amulet Mocy";
 	text[2] = NAME_Bonus_Mana;
 	count[2] = 10;
 	text[5] = NAME_Value;
@@ -353,7 +353,7 @@ instance ItAm_Dex_Strg_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItAm_Dex_Strg_01;
 	on_unequip = UnEquip_ItAm_Dex_Strg_01;
-	description = "Amulet Potêgi";
+	description = "Amulet Sprawnoœci";
 	text[2] = NAME_Bonus_Dex;
 	count[2] = Am_DexStrg_Dex;
 	text[3] = NAME_Bonus_Str;
@@ -412,7 +412,7 @@ func void UnEquip_ItAm_Hp_Mana_01()
 	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - Am_HpMana_Mana;
 	b_removeitemattribute(self,ATR_MANA_MAX,Am_HpMana_Mana);
 	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - Am_HpMana_Hp;
-	
+
 	/*if(self.attribute[ATR_HITPOINTS] > (Am_HpMana_Hp + 1))
 	{
 		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - Am_HpMana_Hp;
@@ -430,4 +430,3 @@ func void UnEquip_ItAm_Hp_Mana_01()
 		self.attribute[ATR_MANA] = 0;
 	};*/
 };
-

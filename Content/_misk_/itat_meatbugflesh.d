@@ -47,8 +47,8 @@ instance ItAt_Meatbugflesh(C_Item)
 	on_state[0] = Use_Meatbugflesh;
 	description = name;
 	text[0] = "";
-	text[1] = NAME_Bonus_HP;
-	count[1] = 10;
+	text[1] = NAME_Bonus_Satiety;
+	count[1] = 3;
 	text[2] = "";
 	text[3] = "";
 	text[5] = NAME_Value;
@@ -58,7 +58,7 @@ instance ItAt_Meatbugflesh(C_Item)
 
 func void Use_Meatbugflesh()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,10);
+	ChangeSatiety(self,3);
 };
 
 

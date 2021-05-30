@@ -348,7 +348,7 @@ const int HP_Hering = 20;
 instance ItFo_SmellyFish(C_Item)
 {
 	name = "åledü";
-	mainflag = ITEM_KAT_NONE;
+	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MISSION;
 	value = 0;
 	visual = "ItFo_Fish.3DS";
@@ -356,7 +356,7 @@ instance ItFo_SmellyFish(C_Item)
 	scemeName = "FOOD";
 	on_state[0] = Use_SmellyFish;
 	description = name;
-	text[1] = NAME_Bonus_HP;
+	text[1] = NAME_Bonus_Satiety;
 	count[1] = HP_Hering;
 	text[5] = NAME_Value;
 	count[5] = Value_Fish;
@@ -365,7 +365,8 @@ instance ItFo_SmellyFish(C_Item)
 
 func void Use_SmellyFish()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Hering);
+	//Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Hering);
+	ChangeSatiety(self, HP_Hering);
 };
 
 
@@ -1196,4 +1197,3 @@ instance ItRw_DragomirsArmbrust_MIS(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 };
-

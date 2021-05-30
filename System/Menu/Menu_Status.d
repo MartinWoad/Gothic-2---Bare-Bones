@@ -341,7 +341,7 @@ instance MENU_ITEM_ARMOR_4_TITLE(C_MENU_ITEM_DEF)
 {
 	posx = STAT_A_X1;
 	posy = STAT_ARM_Y + (STAT_DY * 3);
-	text[0] = "Energia i Lód";
+	text[0] = "Energia";
 	fontname = STAT_FONT_DEFAULT;
 	flags = flags & ~IT_SELECTABLE;
 };

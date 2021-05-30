@@ -450,7 +450,7 @@ const string spellFxInstanceNames[100] =
 	"Teleport",
 	"Light",
 	"Firebolt",
-	"Icebolt",
+	"IceLance",
 	"Heal",
 	"SummonGoblinSkeleton",
 	"InstantFireball",

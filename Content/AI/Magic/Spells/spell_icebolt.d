@@ -6,6 +6,7 @@ instance Spell_IceBolt(C_Spell_Proto)
 {
 	time_per_mana = 0;
 	damage_per_level = SPL_DAMAGE_Icebolt;
+	damagetype = DAM_POINT;
 };
 
 
@@ -27,3 +28,14 @@ func void Spell_Cast_IceBolt()
 	self.aivar[AIV_SelectSpell] = self.aivar[AIV_SelectSpell] + 1;
 };
 
+instance SPELL_ICELANCE(C_SPELL_PROTO)
+{
+	time_per_mana = 0;
+	damage_per_level = SPL_DAMAGE_ICEBOLT;
+};
+
+func void spell_cast_icelance()
+{
+	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_Icebolt;
+	self.aivar[AIV_SelectSpell] = self.aivar[AIV_SelectSpell] + 1;
+};
