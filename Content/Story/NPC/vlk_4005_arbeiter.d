@@ -7,7 +7,7 @@ instance VLK_4005_Arbeiter(Npc_Default)
 	voice = 6;
 	flags = 0;
 	npcType = NPCTYPE_AMBIENT;
-	B_SetAttributesToChapter(self,3);
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
 	EquipItem(self,ItMw_1h_Bau_Mace);
 	B_CreateAmbientInv(self);
@@ -32,4 +32,3 @@ func void Rtn_Start_4005()
 	TA_Sit_Bench(21,0,0,4,"NW_CITY_UPTOWN_PATH_24_B");
 	TA_Sit_Campfire(0,4,6,33,"NW_CITY_SMALLTALK_05");
 };
-

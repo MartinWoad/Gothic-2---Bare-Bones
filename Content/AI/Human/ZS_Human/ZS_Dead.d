@@ -5,6 +5,15 @@ func void ZS_Dead()
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
 	B_StopLookAt(self);
 	AI_StopPointAt(self);
+
+	if(Npc_IsPlayer(other) || ((other.aivar[AIV_PARTYMEMBER] == TRUE) && (other.aivar[AIV_MM_REAL_ID] == ID_SUMMONED_DEMON) || (other.aivar[AIV_MM_REAL_ID] == ID_SUMMONED_SKELETON) || (other.aivar[AIV_MM_REAL_ID] == ID_SUMMONED_GOLEM) || (other.aivar[AIV_MM_REAL_ID] == ID_SUMMONED_WOLF)))
+	{
+		if(self.guild < GIL_SEPERATOR_HUM && self.guild != GIL_BDT && self.guild != GIL_DMT && self.aivar[AIV_ATTACKREASON] != AR_KILL && self.aivar[AIV_ATTACKREASON] != AR_GuildEnemy)
+		{
+			heroMurders += 1;
+		};
+	};
+
 	if(Npc_IsPlayer(other) && (self.aivar[AIV_VictoryXPGiven] == FALSE))
 	{
 		B_GivePlayerXP(self.level * XP_PER_VICTORY);
@@ -15,6 +24,7 @@ func void ZS_Dead()
 		B_GivePlayerXP(self.level * XP_PER_VICTORY);
 		self.aivar[AIV_VictoryXPGiven] = TRUE;
 	};
+
 	if(Npc_IsPlayer(other))
 	{
 		self.aivar[AIV_KilledByPlayer] = TRUE;
@@ -31,4 +41,3 @@ func void ZS_Dead()
 	AI_UnequipWeapons(self);
 	B_DragonKillCounter(self);
 };
-

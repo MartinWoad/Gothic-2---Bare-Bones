@@ -19,7 +19,15 @@ func int c_npcisdeadlymonster(var C_Npc slf)
 
 func int C_WantToFlee(var C_Npc slf,var C_Npc oth)
 {
-	if(((self.guild == GIL_BAU) || (self.guild == GIL_VLK) || (self.guild == GIL_OUT) || (self.guild == GIL_BDT) || (self.guild == GIL_NOV) || (self.guild == GIL_STRF)) && (self.attribute[ATR_HITPOINTS_MAX] < 200))
+	if(((self.guild == GIL_BAU) || (self.guild == GIL_VLK) || (self.guild == GIL_OUT) || (self.guild == GIL_NOV)) && (self.attribute[ATR_HITPOINTS_MAX] < 200))
+	{
+		if(oth.guild == GIL_SLD || oth.guild == GIL_DJG || ((oth.guild == GIL_MIL || oth.guild == GIL_PAL || oth.guild == GIL_KDF) && Npc_IsPlayer(oth) && slf.aivar[AIV_NpcSawPlayerCommit] >= CRIME_MURDER))
+		{
+			return TRUE;
+		};
+	}
+
+	if(((self.guild == GIL_BAU) || (self.guild == GIL_VLK) || (self.guild == GIL_OUT) || (self.guild == GIL_NOV) || (self.guild == GIL_STRF)) && (self.attribute[ATR_HITPOINTS_MAX] < 200))
 	{
 		if(c_npcisdangerousmonster(oth) || C_NpcIsEvil(oth))
 		{

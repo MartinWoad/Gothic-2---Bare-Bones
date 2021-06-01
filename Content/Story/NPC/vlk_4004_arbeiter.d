@@ -7,7 +7,7 @@ instance VLK_4004_Arbeiter(Npc_Default)
 	voice = 6;
 	flags = 0;
 	npcType = NPCTYPE_AMBIENT;
-	B_SetAttributesToChapter(self,3);
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
 	B_CreateAmbientInv(self);
 	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_B_Cavalorn,BodyTex_B,ITAR_Bau_L);
@@ -31,4 +31,3 @@ func void Rtn_Start_4004()
 	TA_Sit_Bench(21,0,0,5,"NW_CITY_UPTOWN_PATH_24");
 	TA_Sit_Campfire(0,5,6,35,"NW_CITY_UPTOWN_PATH_20_B");
 };
-

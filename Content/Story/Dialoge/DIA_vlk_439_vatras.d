@@ -348,6 +348,16 @@ func void DIA_Vatras_Spende_50()
 	AI_Output(other,self,"DIA_Vatras_Spende_50_15_00");	//Mam 50 sztuk z³ota...
 	AI_Output(self,other,"DIA_Vatras_Spende_50_05_01");	//Dziêkujê ci w imieniu Adanosa, mój synu. Twoje z³oto zostanie przekazane potrzebuj¹cym.
 	B_GiveInvItems(other,self,ItMi_Gold,50);
+
+	if(heroThefts >= 50)
+	{
+		heroThefts -= 50;
+	}
+	else
+	{
+		heroThefts = 0;
+	};
+
 	Info_ClearChoices(DIA_Vatras_Spende);
 };
 
@@ -357,6 +367,16 @@ func void DIA_Vatras_Spende_100()
 	AI_Output(self,other,"DIA_Vatras_Spende_100_05_01");	//B¹dŸ b³ogos³awiony, mój synu! Dziêki ci za tw¹ hojnoœæ.
 	AI_Output(self,other,"DIA_Vatras_Spende_100_05_02");	//Niech Adanos strze¿e ciê zawsze od z³ej przygody.
 	B_GiveInvItems(other,self,ItMi_Gold,100);
+
+	if(heroThefts >= 100)
+	{
+		heroThefts -= 100;
+	}
+	else
+	{
+		heroThefts = 0;
+	};
+
 	Vatras_Segen = TRUE;
 	Info_ClearChoices(DIA_Vatras_Spende);
 	if(MIS_Thorben_GetBlessings == LOG_Running)

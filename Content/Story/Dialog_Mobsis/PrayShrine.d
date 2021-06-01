@@ -257,7 +257,23 @@ func void PC_PrayShrine_Pray_NoPay()
 {
 	var int zufall;
 	zufall = Hlp_Random(4);
-	if(PrayDay == Wld_GetDay())
+	if(heroMurders != 0)
+	{
+		PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+	}
+	else if(heroUnforgivableCrime == TRUE)
+	{
+		PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+	}
+	else if(heroThefts != 0)
+	{
+		PrintScreen(Print_InnosThief,-1,-1,FONT_Screen,2);
+	}
+	else if((PETZCOUNTER_OldCamp_Attack > 0) || (PETZCOUNTER_OldCamp_Sheepkiller > 0) || (PETZCOUNTER_City_Attack > 0) || (PETZCOUNTER_City_Sheepkiller > 0) || (PETZCOUNTER_Monastery_Attack > 0) || (PETZCOUNTER_Monastery_Sheepkiller > 0) ||  (PETZCOUNTER_Farm_Attack > 0) ||  (PETZCOUNTER_Farm_Sheepkiller > 0))
+	{
+		PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+	}
+	else if(PrayDay == Wld_GetDay())
 	{
 		PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
 	}
@@ -298,7 +314,31 @@ func void PC_PrayShrine_Pray_NoPay()
 func void PC_PrayShrine_Pray_SmallPay()
 {
 	Npc_RemoveInvItems(hero,ItMi_Gold,10);
-	if(PrayDay == Wld_GetDay())
+	if(heroMurders != 0)
+	{
+		PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+	}
+	else if(heroUnforgivableCrime == TRUE)
+	{
+		PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+	}
+	else if(heroThefts != 0)
+	{
+		PrintScreen(Print_InnosStolenGold,-1,-1,FONT_Screen,2);
+		if(heroThefts >= 10)
+		{
+			heroThefts -= 10;
+		}
+		else
+		{
+			heroThefts = 0;
+		};
+	}
+	else if((PETZCOUNTER_OldCamp_Attack > 0) || (PETZCOUNTER_OldCamp_Sheepkiller > 0) || (PETZCOUNTER_City_Attack > 0) || (PETZCOUNTER_City_Sheepkiller > 0) || (PETZCOUNTER_Monastery_Attack > 0) || (PETZCOUNTER_Monastery_Sheepkiller > 0) ||  (PETZCOUNTER_Farm_Attack > 0) ||  (PETZCOUNTER_Farm_Sheepkiller > 0))
+	{
+		PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+	}
+	else if(PrayDay == Wld_GetDay())
 	{
 		PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
 	}
@@ -326,7 +366,31 @@ func void PC_PrayShrine_Pray_MediumPay()
 	var int zufall;
 	zufall = Hlp_Random(4);
 	Npc_RemoveInvItems(hero,ItMi_Gold,50);
-	if(PrayDay == Wld_GetDay())
+	if(heroMurders != 0)
+	{
+		PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+	}
+	else if(heroUnforgivableCrime == TRUE)
+	{
+		PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+	}
+	else if(heroThefts != 0)
+	{
+		PrintScreen(Print_InnosStolenGold,-1,-1,FONT_Screen,2);
+		if(heroThefts >= 50)
+		{
+			heroThefts -= 50;
+		}
+		else
+		{
+			heroThefts = 0;
+		};
+	}
+	else if((PETZCOUNTER_OldCamp_Attack > 0) || (PETZCOUNTER_OldCamp_Sheepkiller > 0) || (PETZCOUNTER_City_Attack > 0) || (PETZCOUNTER_City_Sheepkiller > 0) || (PETZCOUNTER_Monastery_Attack > 0) || (PETZCOUNTER_Monastery_Sheepkiller > 0) ||  (PETZCOUNTER_Farm_Attack > 0) ||  (PETZCOUNTER_Farm_Sheepkiller > 0))
+	{
+		PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+	}
+	else if(PrayDay == Wld_GetDay())
 	{
 		PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
 	}
@@ -361,7 +425,31 @@ func void PC_PrayShrine_Pray_BigPay()
 	var int zufall;
 	zufall = Hlp_Random(4);
 	Npc_RemoveInvItems(hero,ItMi_Gold,100);
-	if(PrayDay == Wld_GetDay())
+	if(heroMurders != 0)
+	{
+		PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+	}
+	else if(heroUnforgivableCrime == TRUE)
+	{
+		PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+	}
+	else if(heroThefts != 0)
+	{
+		PrintScreen(Print_InnosStolenGold,-1,-1,FONT_Screen,2);
+		if(heroThefts >= 100)
+		{
+			heroThefts -= 100;
+		}
+		else
+		{
+			heroThefts = 0;
+		};
+	}
+	else if((PETZCOUNTER_OldCamp_Attack > 0) || (PETZCOUNTER_OldCamp_Sheepkiller > 0) || (PETZCOUNTER_City_Attack > 0) || (PETZCOUNTER_City_Sheepkiller > 0) || (PETZCOUNTER_Monastery_Attack > 0) || (PETZCOUNTER_Monastery_Sheepkiller > 0) ||  (PETZCOUNTER_Farm_Attack > 0) ||  (PETZCOUNTER_Farm_Sheepkiller > 0))
+	{
+		PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+	}
+	else if(PrayDay == Wld_GetDay())
 	{
 		PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
 	}
@@ -447,6 +535,22 @@ func void PC_PrayShrine_BlessSword_Info()
 		PrintScreen(PRINT_SCIsObsessed,-1,-1,FONT_Screen,3);
 		Snd_Play("DEM_Die");
 	}
+	else if(heroMurders != 0)
+	{
+		PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+	}
+	else if(heroUnforgivableCrime == TRUE)
+	{
+		PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+	}
+	else if(heroThefts != 0)
+	{
+		PrintScreen(Print_InnosThief,-1,-1,FONT_Screen,2);
+	}
+	else if((PETZCOUNTER_OldCamp_Attack > 0) || (PETZCOUNTER_OldCamp_Sheepkiller > 0) || (PETZCOUNTER_City_Attack > 0) || (PETZCOUNTER_City_Sheepkiller > 0) || (PETZCOUNTER_Monastery_Attack > 0) || (PETZCOUNTER_Monastery_Sheepkiller > 0) ||  (PETZCOUNTER_Farm_Attack > 0) ||  (PETZCOUNTER_Farm_Sheepkiller > 0))
+	{
+		PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+	}
 	else if(Npc_HasItems(hero,ItMi_Gold) >= Gold_BlessSword)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Gold,Gold_BlessSword);
@@ -502,6 +606,22 @@ func void PC_PrayShrine_BlessSword_Final_Info()
 		SC_IsObsessed = TRUE;
 		PrintScreen(PRINT_SCIsObsessed,-1,-1,FONT_Screen,3);
 		Snd_Play("DEM_Die");
+	}
+	else if(heroMurders != 0)
+	{
+		PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+	}
+	else if(heroUnforgivableCrime == TRUE)
+	{
+		PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+	}
+	else if(heroThefts != 0)
+	{
+		PrintScreen(Print_InnosThief,-1,-1,FONT_Screen,2);
+	}
+	else if((PETZCOUNTER_OldCamp_Attack > 0) || (PETZCOUNTER_OldCamp_Sheepkiller > 0) || (PETZCOUNTER_City_Attack > 0) || (PETZCOUNTER_City_Sheepkiller > 0) || (PETZCOUNTER_Monastery_Attack > 0) || (PETZCOUNTER_Monastery_Sheepkiller > 0) ||  (PETZCOUNTER_Farm_Attack > 0) ||  (PETZCOUNTER_Farm_Sheepkiller > 0))
+	{
+		PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
 	}
 	else if((Npc_HasItems(hero,ItPo_PotionOfDeath_01_Mis) >= 1) || (Npc_HasItems(hero,ItPo_PotionOfDeath_02_Mis) >= 1))
 	{

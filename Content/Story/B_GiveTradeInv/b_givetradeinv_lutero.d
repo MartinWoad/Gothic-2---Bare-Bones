@@ -22,6 +22,7 @@ func void B_GiveTradeInv_Lutero(var C_Npc slf)
 		CreateInvItems(slf,ItMi_Coal,1);
 		CreateInvItems(slf,ItMi_ApfelTabak,1);
 		CreateInvItems(slf,ItAt_CrawlerMandibles,1);
+		CreateInvItems(slf,ItRi_Prot_Point_01,1);
 		Lutero_ItemsGiven_Chapter_1 = TRUE;
 	};
 	if((Kapitel >= 2) && (Lutero_ItemsGiven_Chapter_2 == FALSE))
@@ -81,4 +82,3 @@ func void B_GiveTradeInv_Lutero(var C_Npc slf)
 		LUTERO_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };
-

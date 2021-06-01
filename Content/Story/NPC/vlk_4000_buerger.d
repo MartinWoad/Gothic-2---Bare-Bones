@@ -7,7 +7,7 @@ instance VLK_4000_Buerger(Npc_Default)
 	voice = 6;
 	flags = 0;
 	npcType = NPCTYPE_AMBIENT;
-	B_SetAttributesToChapter(self,3);
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
 	EquipItem(self,ItMw_1h_Vlk_Mace);
 	B_CreateAmbientInv(self);
@@ -29,4 +29,3 @@ func void Rtn_Start_4000()
 	TA_Sit_Bench(18,0,20,0,"NW_CITY_GUARD_01");
 	TA_Sit_Bench(20,0,22,0,"NW_CITY_UPTOWN_PATH_27");
 };
-

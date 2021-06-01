@@ -487,8 +487,8 @@ instance ItFo_Honey(C_Item)
 	description = name;
 	text[1] = NAME_Bonus_Satiety;
 	count[1] = HP_Honey;
-	text[2] = NAME_Toxicity;
-	count[2] = Toxicity_Honey;
+	text[2] = NAME_AntiToxicity;
+	count[2] = -Toxicity_Honey;
 	text[5] = NAME_Value;
 	count[5] = Value_Honey;
 };

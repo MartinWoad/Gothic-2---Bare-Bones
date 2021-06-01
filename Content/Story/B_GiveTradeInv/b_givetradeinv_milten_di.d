@@ -23,7 +23,7 @@ func void B_GiveTradeInv_Milten_DI(var C_Npc slf)
 		CreateInvItems(slf,ItPo_Mana_01,40);
 		CreateInvItems(slf,ItPo_Mana_02,20);
 		CreateInvItems(slf,ItMi_RuneBlank,1);
+		CreateInvItems(slf,ItAm_Prot_Fire_01,1);
 		MILTEN_DI_ITEMSGIVEN = TRUE;
 	};
 };
-

@@ -756,7 +756,7 @@ instance DIA_BENNET_DRAGONS(C_Info)
 
 func int dia_bennet_dragons_condition()
 {
-	if((Kapitel == 4) && (other.guild == GIL_SLD) && Npc_KnowsInfo(other,DIA_Bennet_ThankYou))
+	if((Kapitel == 4) && (other.guild == GIL_SLD || other.guild == GIL_NONE) && Npc_KnowsInfo(other,DIA_Bennet_ThankYou))
 	{
 		return TRUE;
 	};
@@ -1471,4 +1471,3 @@ func void DIA_Bennet_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Bennet_PICKPOCKET);
 };
-

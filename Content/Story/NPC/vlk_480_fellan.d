@@ -9,7 +9,7 @@ instance VLK_480_Fellan(Npc_Default)
 	npcType = npctype_main;
 	aivar[AIV_ToughGuy] = TRUE;
 	aivar[AIV_ToughGuyNewsOverride] = TRUE;
-	B_SetAttributesToChapter(self,0);
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_STRONG;
 	EquipItem(self,ItMw_ShortSword2);
 	B_CreateAmbientInv(self);
@@ -37,4 +37,3 @@ func void Rtn_OhneHammer_480()
 	TA_Sit_Bench(6,0,23,0,"NW_CITY_HABOUR_REPAIR_03");
 	TA_Sleep(23,0,6,0,"NW_CITY_HABOUR_HUT_05_BED_01");
 };
-

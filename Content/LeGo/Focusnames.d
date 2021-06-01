@@ -19,7 +19,7 @@ func int Focusnames_Color_Hostile() {
 };
 
 func int Focusnames_Color_Dead() {
-    return RGBA(150, 150, 150, 255); // Weiß
+    return RGBA(150, 150, 150, 255); // Gray
 };
 
 //========================================
@@ -28,10 +28,12 @@ func int Focusnames_Color_Dead() {
 func void _Focusnames() {
     var int col; col = -1; // Stupid pseudo-locals
     var oCNpc her; her = Hlp_GetNpc(hero);
-
-	if(Hlp_Is_oCNpc(her.focus_vob)) {
+    var int portalguild; portalguild = Wld_GetPlayerPortalGuild();
+	if(Hlp_Is_oCNpc(her.focus_vob))
+  {
 		var c_npc oth; oth = MEM_PtrToInst(her.focus_vob);
 		var int att; att = Npc_GetPermAttitude(hero, oth);
+
     if(Npc_IsDead(oth))
     {
       col = Focusnames_Color_Dead();
@@ -40,13 +42,28 @@ func void _Focusnames() {
 		else if(att == ATT_NEUTRAL)  { col = Focusnames_Color_Neutral();  }
 		else if(att == ATT_ANGRY)    { col = Focusnames_Color_Angry();    }
 		else if(att == ATT_HOSTILE)  { col = Focusnames_Color_Hostile();  };
+
 	}
 	else if(Hlp_Is_oCItem(her.focus_vob)) {
 		var c_item itm; itm = MEM_PtrToInst(her.focus_vob);
+  	if(portalguild > GIL_NONE && her.guild != portalguild && Wld_GetGuildAttitude(her.guild,portalguild) != ATT_FRIENDLY && ((itm.flags & ITEM_DROPPED) != ITEM_DROPPED))
+  	{
+  		col = Focusnames_Color_Hostile();
+  	};
 
 	// Setze col = RGBA(.., .., .., ..); um die Farbe einzustellen
 	}
-	else {
+  else if(Hlp_Is_oCMobContainer(her.focus_vob))
+  {
+    var oCMobContainer container; container = MEM_PtrToInst(her.focus_vob);
+    //container._oCMob_owner != 0 ||
+    if((portalguild > GIL_NONE && her.guild != portalguild && Wld_GetGuildAttitude(her.guild,portalguild) != ATT_FRIENDLY))
+    {
+      col = Focusnames_Color_Hostile();
+    };
+  }
+	else
+  {
 		col = Focusnames_Color_Neutral();
 	};
 

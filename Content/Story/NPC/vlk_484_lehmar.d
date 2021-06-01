@@ -8,8 +8,8 @@ instance VLK_484_Lehmar(Npc_Default)
 	flags = 0;
 	npcType = npctype_main;
 	aivar[AIV_ToughGuy] = TRUE;
-	B_SetAttributesToChapter(self,3);
-	fight_tactic = FAI_HUMAN_STRONG;
+	B_SetAttributesToChapter(self,4);
+	fight_tactic = FAI_HUMAN_MASTER;
 	EquipItem(self,ItMw_1h_Sld_Sword);
 	B_CreateAmbientInv(self);
 	CreateInvItems(self,ItWr_Schuldenbuch,1);
@@ -27,4 +27,3 @@ func void Rtn_Start_484()
 	TA_Sit_Throne(6,30,0,30,"NW_CITY_HABOUR_HUT_08_IN_C");
 	TA_Sleep(0,30,6,30,"NW_CITY_HABOUR_HUT_08_BED_02");
 };
-

@@ -31,6 +31,9 @@ func void init_global()
 	UpdateToxicityBar();
 	UpdateSatietyBar();
 	FF_ApplyOnceExtGT(Hunger, HungerTime, -1);
+	Hook_oCNpc__DoTakeVob();
+	Hook_oCItemContainer__Remove();
+	Hook_oCItemContainer__Insert();
 	SaveGameFix();
 
 };

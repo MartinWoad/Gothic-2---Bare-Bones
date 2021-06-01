@@ -781,7 +781,7 @@ instance ITAR_DJG_H(C_Item)
 	name = "Ciê¿ki Pancerz £owcy Smoków";
 	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
-	protection[PROT_EDGE] = 45;
+	protection[PROT_EDGE] = 40;
 	protection[PROT_BLUNT] = 45;
 	protection[PROT_POINT] = 50;
 	protection[PROT_FIRE] = 50;
@@ -843,8 +843,8 @@ instance ItAr_NOV_L(C_Item)
 	name = "Strój Nowicjusza";
 	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
-	protection[PROT_EDGE] = 5;
-	protection[PROT_BLUNT] = 10;
+	protection[PROT_EDGE] = 10;
+	protection[PROT_BLUNT] = 5;
 	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 20;
 	protection[PROT_MAGIC] = 5;
@@ -872,8 +872,8 @@ instance ItAr_KDF_L(C_Item)
 	name = "Szata Ognia";
 	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
-	protection[PROT_EDGE] = 15;
-	protection[PROT_BLUNT] = 20;
+	protection[PROT_EDGE] = 20;
+	protection[PROT_BLUNT] = 15;
 	protection[PROT_POINT] = 15;
 	protection[PROT_FIRE] = 30;
 	protection[PROT_MAGIC] = 10;
@@ -901,8 +901,8 @@ instance ItAr_KDF_H(C_Item)
 	name = "Zdobiona Szata Ognia";
 	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
-	protection[PROT_EDGE] = 20;
-	protection[PROT_BLUNT] = 30;
+	protection[PROT_EDGE] = 30;
+	protection[PROT_BLUNT] = 20;
 	protection[PROT_POINT] = 20;
 	protection[PROT_FIRE] = 40;
 	protection[PROT_MAGIC] = 20;
@@ -960,12 +960,12 @@ instance ITAR_Leather_L(C_Item)
 
 instance ItAr_BDT_M(C_Item)
 {
-	name = "Œredni Pancerz Bandyty";
+	name = "Lekki Strój Szkodnika";
 	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
 	protection[PROT_EDGE] = 20;
 	protection[PROT_BLUNT] = 20;
-	protection[PROT_POINT] = 5;
+	protection[PROT_POINT] = 15;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_MAGIC] = 0;
 	value = value_itar_bdt_m;
@@ -993,12 +993,12 @@ instance ItAr_BDT_M(C_Item)
 
 instance ItAr_BDT_H(C_Item)
 {
-	name = "Ciê¿ki Pancerz Bandyty";
+	name = "Œredni Strój Szkodnika";
 	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
 	protection[PROT_EDGE] = 35;
 	protection[PROT_BLUNT] = 30;
-	protection[PROT_POINT] = 15;
+	protection[PROT_POINT] = 25;
 	protection[PROT_FIRE] = 5;
 	protection[PROT_MAGIC] = 0;
 	value = value_itar_bdt_h;
@@ -1029,8 +1029,8 @@ instance ITAR_Xardas(C_Item)
 	name = "Szata Mrocznej Magii";
 	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
-	protection[PROT_EDGE] = 20;
-	protection[PROT_BLUNT] = 30;
+	protection[PROT_EDGE] = 30;
+	protection[PROT_BLUNT] = 20;
 	protection[PROT_POINT] = 20;
 	protection[PROT_FIRE] = 10;
 	protection[PROT_MAGIC] = 50;
@@ -1157,11 +1157,11 @@ instance ITAR_Dementor(C_Item)
 	name = "Mroczny P³aszcz";
 	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
-	protection[PROT_EDGE] = 20;
-	protection[PROT_BLUNT] = 30;
-	protection[PROT_POINT] = 50;
-	protection[PROT_FIRE] = 50;
-	protection[PROT_MAGIC] = 50;
+	protection[PROT_EDGE] = 30;
+	protection[PROT_BLUNT] = 20;
+	protection[PROT_POINT] = 20;
+	protection[PROT_FIRE] = 20;
+	protection[PROT_MAGIC] = 40;
 	value = VALUE_ITAR_Dementor;
 	wear = WEAR_TORSO;
 	visual = "ItAr_Xardas.3ds";
@@ -1238,4 +1238,3 @@ instance ITAR_Prisoner(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 };
-

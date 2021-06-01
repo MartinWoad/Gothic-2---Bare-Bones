@@ -15,7 +15,7 @@ prototype Mst_Default_Gobbo_Skeleton(C_Npc)
 	protection[PROT_EDGE] = 55;
 	protection[PROT_POINT] = 1000;
 	protection[PROT_FIRE] = 50;
-	protection[PROT_FLY] = 55;
+	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 55;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_GOBBO;
@@ -59,4 +59,3 @@ instance Gobbo_SkeletonOWDemonTower(Mst_Default_Gobbo_Skeleton)
 	B_SetVisuals_Gobbo_Skeleton();
 	Npc_SetToFightMode(self,ItMw_1h_Bau_Mace);
 };
-

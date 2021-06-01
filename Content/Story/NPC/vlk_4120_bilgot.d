@@ -7,7 +7,7 @@ instance VLK_4120_Bilgot(Npc_Default)
 	voice = 5;
 	flags = 0;
 	npcType = npctype_main;
-	B_SetAttributesToChapter(self,1);
+	B_SetAttributesToChapter(self,2);
 	fight_tactic = FAI_HUMAN_COWARD;
 	EquipItem(self,ItMw_1h_Mil_Sword);
 	B_CreateAmbientInv(self);
@@ -30,8 +30,8 @@ func void Rtn_Start_4120()
 
 func void Rtn_FollowToOCBridge_4120()
 {
-	TA_Follow_Player(8,0,23,0,"START");
-	TA_Follow_Player(23,0,8,0,"START");
+	TA_Follow_Player(8,0,23,0,"OW_NEWMINE_11");
+	TA_Follow_Player(23,0,8,0,"OW_NEWMINE_11");
 };
 
 func void Rtn_FleeOutOfOW_4120()
@@ -45,4 +45,3 @@ func void Rtn_Tot_4120()
 	TA_Sit_Campfire(8,0,23,0,"TOT");
 	TA_Sit_Campfire(23,0,8,0,"TOT");
 };
-

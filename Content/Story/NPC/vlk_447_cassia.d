@@ -2,7 +2,7 @@
 instance VLK_447_Cassia(Npc_Default)
 {
 	name[0] = "Cassia";
-	guild = GIL_OUT;
+	guild = GIL_BDT;
 	id = 447;
 	voice = 16;
 	flags = 0;
@@ -10,7 +10,7 @@ instance VLK_447_Cassia(Npc_Default)
 	aivar[AIV_DropDeadAndKill] = TRUE;
 	aivar[AIV_EnemyOverride] = TRUE;
 	B_SetAttributesToChapter(self,5);
-	fight_tactic = FAI_HUMAN_STRONG;
+	fight_tactic = FAI_HUMAN_MASTER;
 	EquipItem(self,ItMw_Meisterdegen);
 	B_CreateAmbientInv(self);
 	CreateInvItems(self,ItKe_ThiefGuildKey_Hotel_MIS,1);
@@ -29,4 +29,3 @@ func void Rtn_Start_447()
 	TA_Read_Bookstand(7,0,23,0,"NW_CITY_KANAL_ROOM_05_02");
 	TA_Sleep(23,0,7,0,"NW_CITY_KANAL_ROOM_05_BED_01");
 };
-

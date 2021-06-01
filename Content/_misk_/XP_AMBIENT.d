@@ -203,3 +203,7 @@ var int toxicityBarHandle;
 
 var int satiety;
 var int satietyBarHandle;
+
+var int heroMurders;
+var int heroThefts;
+var int heroUnforgivableCrime;

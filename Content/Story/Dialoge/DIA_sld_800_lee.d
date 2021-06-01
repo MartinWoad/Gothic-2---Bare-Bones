@@ -12,10 +12,11 @@ instance DIA_Lee_EXIT(C_Info)
 
 func int DIA_Lee_EXIT_Condition()
 {
-	if(Kapitel < 3)
-	{
-		return TRUE;
-	};
+	//if(Kapitel < 3)
+	//{
+		//return TRUE;
+	//};
+	return FALSE;
 };
 
 func void DIA_Lee_EXIT_Info()
@@ -1875,4 +1876,3 @@ func void DIA_Lee_KAP6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
-

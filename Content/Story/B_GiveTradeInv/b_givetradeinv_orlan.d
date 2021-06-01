@@ -37,10 +37,16 @@ func void B_GiveTradeInv_Orlan(var C_Npc slf)
 	if((Kapitel >= 3) && (Orlan_ItemsGiven_Chapter_3 == FALSE))
 	{
 		CreateInvItems(slf,ItMi_Gold,100);
+		CreateInvItems(slf,ItFo_Water,2);
+		CreateInvItems(slf,ItFo_Beer,5);
+		CreateInvItems(slf,ItFo_Bread,2);
+		CreateInvItems(slf,ItFo_Milk,2);
+		CreateInvItems(slf,ItFo_Wine,1);
+		CreateInvItems(slf,ItFo_Bacon,1);
 		CreateInvItems(slf,ItMw_Orkschlaechter,1);
 		CreateInvItems(slf,ItMw_Schlachtaxt,1);
 		CreateInvItems(slf,ItMw_Barbarenstreitaxt,1);
-		CreateInvItems(slf,ItRu_TeleportTaverne,1);
+		//CreateInvItems(slf,ItRu_TeleportTaverne,1);
 		CreateInvItems(slf,ItRw_Arrow,120);
 		CreateInvItems(slf,ItRw_Bolt,115);
 		Orlan_ItemsGiven_Chapter_3 = TRUE;
@@ -55,6 +61,12 @@ func void B_GiveTradeInv_Orlan(var C_Npc slf)
 	if((Kapitel >= 5) && (Orlan_ItemsGiven_Chapter_5 == FALSE))
 	{
 		CreateInvItems(slf,ItMi_Gold,300);
+		CreateInvItems(slf,ItFo_Water,2);
+		CreateInvItems(slf,ItFo_Beer,5);
+		CreateInvItems(slf,ItFo_Bread,2);
+		CreateInvItems(slf,ItFo_Milk,2);
+		CreateInvItems(slf,ItFo_Wine,1);
+		CreateInvItems(slf,ItFo_Bacon,1);
 		CreateInvItems(slf,ItRw_Arrow,120);
 		CreateInvItems(slf,ItRw_Bolt,115);
 		Orlan_ItemsGiven_Chapter_5 = TRUE;
@@ -65,4 +77,3 @@ func void B_GiveTradeInv_Orlan(var C_Npc slf)
 		ORLAN_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };
-

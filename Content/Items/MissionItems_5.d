@@ -393,7 +393,7 @@ instance ItPo_PotionOfDeath_01_Mis(C_Item)
 
 func void UseItPo_PotionOfDeath()
 {
-	if(hero.guild == GIL_KDF)
+	if(hero.guild == GIL_KDF && heroMurders == 0 && heroUnforgivableCrime == FALSE)
 	{
 		Wld_PlayEffect("spellFX_LIGHTSTAR_BLUE",hero,hero,0,0,0,FALSE);
 		Snd_Play("SFX_HealObsession");
@@ -501,4 +501,3 @@ func void Use_HealRandolph()
 {
 	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Essenz);
 };
-

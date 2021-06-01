@@ -211,6 +211,8 @@ instance ItRu_TeleportSeaport(C_Item)
 	spell = SPL_TeleportSeaport;
 	description = NAME_SPL_TeleportSeaport;
 	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -228,6 +230,8 @@ instance ItRu_TeleportMonastery(C_Item)
 	spell = SPL_TeleportMonastery;
 	description = NAME_SPL_TeleportMonastery;
 	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -245,6 +249,8 @@ instance ItRu_TeleportFarm(C_Item)
 	spell = SPL_TeleportFarm;
 	description = NAME_SPL_TeleportFarm;
 	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -262,6 +268,8 @@ instance ItRu_TeleportXardas(C_Item)
 	spell = SPL_TeleportXardas;
 	description = NAME_SPL_TeleportXardas;
 	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -279,6 +287,8 @@ instance ItRu_TeleportPassNW(C_Item)
 	spell = SPL_TeleportPassNW;
 	description = NAME_SPL_TeleportPassNW;
 	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -296,6 +306,8 @@ instance ItRu_TeleportPassOW(C_Item)
 	spell = SPL_TeleportPassOW;
 	description = NAME_SPL_TeleportPassOW;
 	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -313,6 +325,8 @@ instance ItRu_TeleportOC(C_Item)
 	spell = SPL_TeleportOC;
 	description = NAME_SPL_TeleportOC;
 	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -330,6 +344,8 @@ instance ItRu_TeleportOWDemonTower(C_Item)
 	spell = SPL_TeleportOWDemonTower;
 	description = NAME_SPL_TeleportOWDemonTower;
 	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -347,6 +363,8 @@ instance ItRu_TeleportTaverne(C_Item)
 	spell = SPL_TeleportTaverne;
 	description = NAME_SPL_TeleportTaverne;
 	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -364,6 +382,8 @@ instance ItRu_Teleport_3(C_Item)
 	spell = SPL_Teleport_3;
 	description = NAME_SPL_Teleport_3;
 	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
