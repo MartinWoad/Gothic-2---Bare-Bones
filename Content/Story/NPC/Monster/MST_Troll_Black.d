@@ -5,14 +5,14 @@ prototype Mst_Default_Troll_Black(C_Npc)
 	guild = GIL_TROLL;
 	aivar[AIV_MM_REAL_ID] = ID_TROLL_BLACK;
 	level = 100;
-	attribute[ATR_STRENGTH] = 200;
-	attribute[ATR_DEXTERITY] = 200;
+	attribute[ATR_STRENGTH] = 100;
+	attribute[ATR_DEXTERITY] = 100;
 	attribute[ATR_HITPOINTS_MAX] = 2000;
 	attribute[ATR_HITPOINTS] = 2000;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
-	protection[PROT_BLUNT] = 300;
-	protection[PROT_EDGE] = 150;
+	protection[PROT_BLUNT] = 170;
+	protection[PROT_EDGE] = 120;
 	protection[PROT_POINT] = IMMUNE;
 	protection[PROT_FIRE] = 280;
 	protection[PROT_FLY] = IMMUNE;
@@ -43,4 +43,3 @@ instance Troll_Black(Mst_Default_Troll_Black)
 	B_SetVisuals_Troll_Black();
 	Npc_SetToFistMode(self);
 };
-

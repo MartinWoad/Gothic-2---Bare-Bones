@@ -119,7 +119,8 @@ func void PC_PrayShrine_HEALSHRINE_Info()
 		B_Say(self,self,"$HEALSHRINE");
 		ShrinesLeft = IntToString(7 - ShrinesHealed);
 		ShrinesText = ConcatStrings(ShrinesLeft,PRINT_NumberLeft);
-		AI_PrintScreen(ShrinesText,-1,YPOS_GoldGiven,FONT_ScreenSmall,3);
+		//AI_PrintScreen(ShrinesText,-1,YPOS_GoldGiven,FONT_ScreenSmall,3);
+		PrintS_Ext(ShrinesText, Green());
 	}
 	else
 	{
@@ -194,10 +195,14 @@ func int PC_PrayShrine_Paladine_Condition()
 
 func void PC_PrayShrine_Paladine_Info()
 {
-	PrintScreen(Pray_Paladin1,-1,33,FONT_ScreenSmall,4);
-	PrintScreen(Pray_Paladin2,-1,36,FONT_ScreenSmall,5);
-	PrintScreen(Pray_Paladin3,-1,39,FONT_ScreenSmall,6);
-	PrintScreen(Pray_Paladin4,-1,42,FONT_ScreenSmall,7);
+	//PrintScreen(Pray_Paladin1,-1,33,FONT_ScreenSmall,4);
+	PrintS_Ext(Pray_Paladin4, White());
+	//PrintScreen(Pray_Paladin2,-1,36,FONT_ScreenSmall,5);
+	PrintS_Ext(Pray_Paladin3, White());
+	//PrintScreen(Pray_Paladin3,-1,39,FONT_ScreenSmall,6);
+	PrintS_Ext(Pray_Paladin2, White());
+	//PrintScreen(Pray_Paladin4,-1,42,FONT_ScreenSmall,7);
+	PrintS_Ext(Pray_Paladin1, White());
 };
 
 
@@ -259,23 +264,28 @@ func void PC_PrayShrine_Pray_NoPay()
 	zufall = Hlp_Random(4);
 	if(heroMurders != 0)
 	{
-		PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosMurderer, RGBA(255, 100, 100, 255));
 	}
 	else if(heroUnforgivableCrime == TRUE)
 	{
-		PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosUnforgivableCriminal, RGBA(255, 100, 100, 255));
 	}
-	else if(heroThefts != 0)
+	else if(heroThefts > 0)
 	{
-		PrintScreen(Print_InnosThief,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosThief,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosThief, RGBA(255, 180, 100, 255));
 	}
-	else if((PETZCOUNTER_OldCamp_Attack > 0) || (PETZCOUNTER_OldCamp_Sheepkiller > 0) || (PETZCOUNTER_City_Attack > 0) || (PETZCOUNTER_City_Sheepkiller > 0) || (PETZCOUNTER_Monastery_Attack > 0) || (PETZCOUNTER_Monastery_Sheepkiller > 0) ||  (PETZCOUNTER_Farm_Attack > 0) ||  (PETZCOUNTER_Farm_Sheepkiller > 0))
+	else if(B_GetGreatestPlayerCrime() > CRIME_NONE)
 	{
-		PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosCriminal, RGBA(255, 180, 100, 255));
 	}
 	else if(PrayDay == Wld_GetDay())
 	{
-		PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_BlessNone, RGBA(255, 255, 255, 255));
 	}
 	else if(hero.guild == GIL_PAL)
 	{
@@ -289,7 +299,8 @@ func void PC_PrayShrine_Pray_NoPay()
 		}
 		else
 		{
-			PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
+			//PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
+			PrintS_Ext(Print_BlessNone, RGBA(255, 255, 255, 255));
 		};
 	}
 	else if(hero.guild == GIL_KDF)
@@ -300,12 +311,14 @@ func void PC_PrayShrine_Pray_NoPay()
 		}
 		else
 		{
-			PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
+			//PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
+			PrintS_Ext(Print_BlessNone, RGBA(255, 255, 255, 255));
 		};
 	}
 	else
 	{
-		PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_BlessNone, RGBA(255, 255, 255, 255));
 	};
 	PrayDay = Wld_GetDay();
 	Info_ClearChoices(PC_PrayShrine_Pray);
@@ -316,38 +329,37 @@ func void PC_PrayShrine_Pray_SmallPay()
 	Npc_RemoveInvItems(hero,ItMi_Gold,10);
 	if(heroMurders != 0)
 	{
-		PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosMurderer, RGBA(255, 100, 100, 255));
 	}
 	else if(heroUnforgivableCrime == TRUE)
 	{
-		PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosUnforgivableCriminal, RGBA(255, 100, 100, 255));
 	}
-	else if(heroThefts != 0)
+	else if(heroThefts > 0)
 	{
-		PrintScreen(Print_InnosStolenGold,-1,-1,FONT_Screen,2);
-		if(heroThefts >= 10)
-		{
-			heroThefts -= 10;
-		}
-		else
-		{
-			heroThefts = 0;
-		};
+		//PrintScreen(Print_InnosStolenGold,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosStolenGold, RGBA(255, 180, 100, 255));
+		CreateInvItems(hero,ItMi_Gold,10);
 	}
-	else if((PETZCOUNTER_OldCamp_Attack > 0) || (PETZCOUNTER_OldCamp_Sheepkiller > 0) || (PETZCOUNTER_City_Attack > 0) || (PETZCOUNTER_City_Sheepkiller > 0) || (PETZCOUNTER_Monastery_Attack > 0) || (PETZCOUNTER_Monastery_Sheepkiller > 0) ||  (PETZCOUNTER_Farm_Attack > 0) ||  (PETZCOUNTER_Farm_Sheepkiller > 0))
+	else if(B_GetGreatestPlayerCrime() > CRIME_NONE)
 	{
-		PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosCriminal, RGBA(255, 180, 100, 255));
 	}
 	else if(PrayDay == Wld_GetDay())
 	{
-		PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_BlessNone, RGBA(255, 255, 255, 255));
 	}
 	else if(hero.guild == GIL_PAL)
 	{
 		hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
 		hero.attribute[ATR_MANA] = hero.attribute[ATR_MANA_MAX];
 		PurgeToxicity(other);
-		PrintScreen(Print_BlessMana_Hit,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_BlessMana_Hit,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_BlessMana_Hit, White());
 	}
 	else if(hero.guild == GIL_KDF)
 	{
@@ -355,7 +367,8 @@ func void PC_PrayShrine_Pray_SmallPay()
 	}
 	else
 	{
-		PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_BlessNone, RGBA(255, 255, 255, 255));
 	};
 	PrayDay = Wld_GetDay();
 	Info_ClearChoices(PC_PrayShrine_Pray);
@@ -368,31 +381,29 @@ func void PC_PrayShrine_Pray_MediumPay()
 	Npc_RemoveInvItems(hero,ItMi_Gold,50);
 	if(heroMurders != 0)
 	{
-		PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosMurderer, RGBA(255, 100, 100, 255));
 	}
 	else if(heroUnforgivableCrime == TRUE)
 	{
-		PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosUnforgivableCriminal, RGBA(255, 100, 100, 255));
 	}
-	else if(heroThefts != 0)
+	else if(heroThefts > 0)
 	{
-		PrintScreen(Print_InnosStolenGold,-1,-1,FONT_Screen,2);
-		if(heroThefts >= 50)
-		{
-			heroThefts -= 50;
-		}
-		else
-		{
-			heroThefts = 0;
-		};
+		//PrintScreen(Print_InnosStolenGold,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosStolenGold, RGBA(255, 180, 100, 255));
+		CreateInvItems(hero,ItMi_Gold,50);
 	}
-	else if((PETZCOUNTER_OldCamp_Attack > 0) || (PETZCOUNTER_OldCamp_Sheepkiller > 0) || (PETZCOUNTER_City_Attack > 0) || (PETZCOUNTER_City_Sheepkiller > 0) || (PETZCOUNTER_Monastery_Attack > 0) || (PETZCOUNTER_Monastery_Sheepkiller > 0) ||  (PETZCOUNTER_Farm_Attack > 0) ||  (PETZCOUNTER_Farm_Sheepkiller > 0))
+	else if(B_GetGreatestPlayerCrime() > CRIME_NONE)
 	{
-		PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosCriminal, RGBA(255, 180, 100, 255));
 	}
 	else if(PrayDay == Wld_GetDay())
 	{
-		PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_BlessNone, RGBA(255, 255, 255, 255));
 	}
 	else if((((hero.guild == GIL_PAL) && (hero.attribute[ATR_STRENGTH] <= 99)) || ((hero.guild == GIL_KDF) && (hero.attribute[ATR_MANA_MAX] <= 248))) && (FAITHFULSPECIALBLESS < (Kapitel * 2)))
 	{
@@ -427,31 +438,29 @@ func void PC_PrayShrine_Pray_BigPay()
 	Npc_RemoveInvItems(hero,ItMi_Gold,100);
 	if(heroMurders != 0)
 	{
-		PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosMurderer, RGBA(255, 100, 100, 255));
 	}
 	else if(heroUnforgivableCrime == TRUE)
 	{
-		PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosUnforgivableCriminal, RGBA(255, 100, 100, 255));
 	}
-	else if(heroThefts != 0)
+	else if(heroThefts > 0)
 	{
-		PrintScreen(Print_InnosStolenGold,-1,-1,FONT_Screen,2);
-		if(heroThefts >= 100)
-		{
-			heroThefts -= 100;
-		}
-		else
-		{
-			heroThefts = 0;
-		};
+		//PrintScreen(Print_InnosStolenGold,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosStolenGold, RGBA(255, 180, 100, 255));
+		CreateInvItems(hero,ItMi_Gold,100);
 	}
-	else if((PETZCOUNTER_OldCamp_Attack > 0) || (PETZCOUNTER_OldCamp_Sheepkiller > 0) || (PETZCOUNTER_City_Attack > 0) || (PETZCOUNTER_City_Sheepkiller > 0) || (PETZCOUNTER_Monastery_Attack > 0) || (PETZCOUNTER_Monastery_Sheepkiller > 0) ||  (PETZCOUNTER_Farm_Attack > 0) ||  (PETZCOUNTER_Farm_Sheepkiller > 0))
+	else if(B_GetGreatestPlayerCrime() > CRIME_NONE)
 	{
-		PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosCriminal, RGBA(255, 180, 100, 255));
 	}
 	else if(PrayDay == Wld_GetDay())
 	{
-		PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_BlessNone, RGBA(255, 255, 255, 255));
 	}
 	else if((((hero.guild == GIL_PAL) && (hero.attribute[ATR_STRENGTH] <= 99)) || ((hero.guild == GIL_KDF) && (hero.attribute[ATR_MANA_MAX] <= 248))) && (FAITHFULSPECIALBLESS < 10))
 	{
@@ -496,7 +505,8 @@ func void PC_PrayShrine_Pray_BigPay()
 		hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
 		hero.attribute[ATR_MANA] = hero.attribute[ATR_MANA_MAX];
 		PurgeToxicity(other);
-		PrintScreen(Print_BlessMana_Hit,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_BlessMana_Hit,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_BlessMana_Hit, White());
 	}
 	else
 	{
@@ -532,30 +542,36 @@ func void PC_PrayShrine_BlessSword_Info()
 	if(ShrineIsObsessed == TRUE)
 	{
 		SC_IsObsessed = TRUE;
-		PrintScreen(PRINT_SCIsObsessed,-1,-1,FONT_Screen,3);
+		//PrintScreen(PRINT_SCIsObsessed,-1,-1,FONT_Screen,3);
+		PrintS_Ext(Print_SCIsObsessed, RGBA(255, 100, 100, 255));
 		Snd_Play("DEM_Die");
 	}
 	else if(heroMurders != 0)
 	{
-		PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosMurderer, RGBA(255, 100, 100, 255));
 	}
 	else if(heroUnforgivableCrime == TRUE)
 	{
-		PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosUnforgivableCriminal, RGBA(255, 100, 100, 255));
 	}
-	else if(heroThefts != 0)
+	else if(heroThefts > 0)
 	{
-		PrintScreen(Print_InnosThief,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosThief,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosThief, RGBA(255, 180, 100, 255));
 	}
-	else if((PETZCOUNTER_OldCamp_Attack > 0) || (PETZCOUNTER_OldCamp_Sheepkiller > 0) || (PETZCOUNTER_City_Attack > 0) || (PETZCOUNTER_City_Sheepkiller > 0) || (PETZCOUNTER_Monastery_Attack > 0) || (PETZCOUNTER_Monastery_Sheepkiller > 0) ||  (PETZCOUNTER_Farm_Attack > 0) ||  (PETZCOUNTER_Farm_Sheepkiller > 0))
+	else if(B_GetGreatestPlayerCrime() > CRIME_NONE)
 	{
-		PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosCriminal, RGBA(255, 180, 100, 255));
 	}
 	else if(Npc_HasItems(hero,ItMi_Gold) >= Gold_BlessSword)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Gold,Gold_BlessSword);
 		concatDonation = ConcatStrings(IntToString(Gold_BlessSword),PRINT_GoldGegeben);
-		AI_PrintScreen(concatDonation,-1,YPOS_GoldGiven,FONT_ScreenSmall,2);
+		//AI_PrintScreen(concatDonation,-1,YPOS_GoldGiven,FONT_ScreenSmall,2);
+		PrintS_Ext(concatDonation, White());
 		if(Npc_HasItems(hero,ItMw_2H_Blessed_01) >= 1)
 		{
 			Npc_RemoveInvItems(hero,ItMw_2H_Blessed_01,1);
@@ -575,7 +591,8 @@ func void PC_PrayShrine_BlessSword_Info()
 	}
 	else
 	{
-		AI_PrintScreen(Print_NotEnoughGold,-1,YPOS_GoldGiven,FONT_ScreenSmall,2);
+		//AI_PrintScreen(Print_NotEnoughGold,-1,YPOS_GoldGiven,FONT_ScreenSmall,2);
+		PrintS_Ext(Print_NotEnoughGold, RGBA(255, 255, 255, 255));
 	};
 };
 
@@ -604,24 +621,29 @@ func void PC_PrayShrine_BlessSword_Final_Info()
 	if(ShrineIsObsessed == TRUE)
 	{
 		SC_IsObsessed = TRUE;
-		PrintScreen(PRINT_SCIsObsessed,-1,-1,FONT_Screen,3);
+		//PrintScreen(PRINT_SCIsObsessed,-1,-1,FONT_Screen,3);
+		PrintS_Ext(PRINT_SCIsObsessed, Orange());
 		Snd_Play("DEM_Die");
 	}
 	else if(heroMurders != 0)
 	{
-		PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosMurderer,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosMurderer, RGBA(255, 100, 100, 255));
 	}
 	else if(heroUnforgivableCrime == TRUE)
 	{
-		PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosUnforgivableCriminal,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosUnforgivableCriminal, RGBA(255, 100, 100, 255));
 	}
-	else if(heroThefts != 0)
+	else if(heroThefts > 0)
 	{
-		PrintScreen(Print_InnosThief,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosThief,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosThief, RGBA(255, 180, 100, 255));
 	}
-	else if((PETZCOUNTER_OldCamp_Attack > 0) || (PETZCOUNTER_OldCamp_Sheepkiller > 0) || (PETZCOUNTER_City_Attack > 0) || (PETZCOUNTER_City_Sheepkiller > 0) || (PETZCOUNTER_Monastery_Attack > 0) || (PETZCOUNTER_Monastery_Sheepkiller > 0) ||  (PETZCOUNTER_Farm_Attack > 0) ||  (PETZCOUNTER_Farm_Sheepkiller > 0))
+	else if(B_GetGreatestPlayerCrime() > CRIME_NONE)
 	{
-		PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+		//PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
+		PrintS_Ext(Print_InnosCriminal, RGBA(255, 180, 100, 255));
 	}
 	else if((Npc_HasItems(hero,ItPo_PotionOfDeath_01_Mis) >= 1) || (Npc_HasItems(hero,ItPo_PotionOfDeath_02_Mis) >= 1))
 	{
@@ -646,6 +668,7 @@ func void PC_PrayShrine_BlessSword_Final_Info()
 	}
 	else
 	{
-		AI_PrintScreen(PRINT_NoInnosTears,-1,YPOS_GoldGiven,FONT_ScreenSmall,2);
+		//AI_PrintScreen(PRINT_NoInnosTears,-1,YPOS_GoldGiven,FONT_ScreenSmall,2);
+		PrintS_Ext(PRINT_NoInnosTears, RGBA(255, 255, 255, 255));
 	};
 };

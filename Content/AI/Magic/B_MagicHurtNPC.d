@@ -6,9 +6,10 @@ func void B_MagicHurtNpc(var C_Npc attacker,var int damage)
 	{
 		if(Npc_IsPlayer(other))
 		{
-			if(self.guild < GIL_SEPERATOR_HUM && self.guild != GIL_BDT && self.guild != GIL_DMT && self.aivar[AIV_ATTACKREASON] != AR_KILL && self.aivar[AIV_ATTACKREASON] != AR_GuildEnemy)
+			if(self.guild < GIL_SEPERATOR_HUM && self.guild != GIL_BDT && self.guild != GIL_DMT && self.aivar[AIV_ATTACKREASON] != AR_KILL && self.aivar[AIV_ATTACKREASON] != AR_GuildEnemy && Hlp_GetInstanceID(Cornelius) != Hlp_GetInstanceID(self))
 			{
 				heroMurders += 1;
+				PrintS_Ext("Zamordowa³eœ niewinnego cz³owieka!", RGBA(255, 100, 100, 255));
 			};
 		};
 

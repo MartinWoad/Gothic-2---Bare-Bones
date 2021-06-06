@@ -21,7 +21,7 @@ func void B_DaronSegen()
 	{
 		other.lp = other.lp + 1;
 		concatText = ConcatStrings(PRINT_LearnLP,IntToString(1));
-		PrintScreen(concatText,-1,-1,FONT_Screen,1);
+		//PrintScreen(concatText,-1,-1,FONT_Screen,1);
 		Bonus_3 = TRUE;
 	}
 	else
@@ -29,7 +29,7 @@ func void B_DaronSegen()
 		if(other.attribute[ATR_HITPOINTS] < other.attribute[ATR_HITPOINTS_MAX])
 		{
 			other.attribute[ATR_HITPOINTS] = other.attribute[ATR_HITPOINTS_MAX];
-			PrintScreen(PRINT_FullyHealed,-1,-1,FONT_Screen,2);
+			//PrintScreen(PRINT_FullyHealed,-1,-1,FONT_Screen,2);
 		};
 		if(other.attribute[ATR_MANA] < other.attribute[ATR_MANA_MAX])
 		{
@@ -192,47 +192,20 @@ func void DIA_Daron_Spenden_Info()
 		{
 			AI_Output(self,other,"DIA_Daron_Spenden_10_04");	//No có¿, bogaczem to ty nie jesteœ, ale nie nale¿ysz te¿ do biedaków. 10 sztuk z³ota w zupe³noœci wystarczy - ¿yjemy skromnie.
 			B_GiveInvItems(other,self,ItMi_Gold,10);
-
-			if(heroThefts >= 10)
-			{
-				heroThefts -= 10;
-			}
-			else
-			{
-				heroThefts = 0;
-			};
-
+			heroThefts -= 10;
 		}
 		else if(Npc_HasItems(other,ItMi_Gold) < 100)
 		{
 			AI_Output(self,other,"DIA_Daron_Spenden_10_05");	//Masz ponad 50 monet. Oddaj 25 Innosowi, a otrzymasz jego b³ogos³awieñstwo.
 			B_GiveInvItems(other,self,ItMi_Gold,25);
-
-			if(heroThefts >= 25)
-			{
-				heroThefts -= 25;
-			}
-			else
-			{
-				heroThefts = 0;
-			};
-
+			heroThefts -= 25;
 		}
 		else
 		{
 			AI_Output(self,other,"DIA_Daron_Spenden_10_06");	//Masz ponad 100 sztuk z³ota - nasz Pan powiada: dzielcie siê, jeœli macie czym.
 			AI_Output(self,other,"DIA_Daron_Spenden_10_07");	//Koœció³ przyjmuje twoj¹ jak¿e hojn¹ ofiarê.
 			B_GiveInvItems(other,self,ItMi_Gold,50);
-
-			if(heroThefts >= 50)
-			{
-				heroThefts -= 50;
-			}
-			else
-			{
-				heroThefts = 0;
-			};
-
+			heroThefts -= 50;
 		};
 		AI_Output(self,other,"DIA_Daron_Spenden_10_08");	//B³ogos³awiê ciê w imieniu Innosa. Albowiem on jest œwiat³em i sprawiedliwoœci¹.
 		Daron_Segen = TRUE;

@@ -1,7 +1,7 @@
 
 instance BDT_1000_Bandit_L(Npc_Default)
 {
-	name[0] = "Leñ";
+	name[0] = "Bandyta";
 	guild = GIL_BDT;
 	id = 1000;
 	voice = 1;
@@ -18,4 +18,3 @@ instance BDT_1000_Bandit_L(Npc_Default)
 	B_SetFightSkills(self,30);
 	start_aistate = ZS_Bandit;
 };
-

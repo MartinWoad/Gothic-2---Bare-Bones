@@ -11,7 +11,7 @@ prototype MST_DEFAULT_ADDON_SWAMPGOLEM(C_NPC)
 	attribute[ATR_HITPOINTS] = 250;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
-	protection[PROT_BLUNT] = 90;
+	protection[PROT_BLUNT] = 80;
 	protection[PROT_EDGE] = 110;
 	protection[PROT_POINT] = 250;
 	protection[PROT_FIRE] = 70;

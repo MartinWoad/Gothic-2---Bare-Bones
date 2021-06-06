@@ -205,9 +205,9 @@ func void DIA_Edda_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 20)
 	{
-		B_GiveInvItems(self,other,ItMi_EddasStatue,1);
+		B_StealInvItems(self,other,ItMi_EddasStatue,1);
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
-		B_GivePlayerXP(XP_Ambient);
+		//B_GivePlayerXP(XP_Ambient);
 		Info_ClearChoices(DIA_Edda_PICKPOCKET);
 	}
 	else
@@ -221,4 +221,3 @@ func void DIA_Edda_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Edda_PICKPOCKET);
 };
-

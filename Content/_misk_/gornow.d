@@ -231,6 +231,7 @@ var C_Npc Onar;
 var C_Npc Bodo;
 var C_Npc Pepe;
 var C_Npc Garwig;
+var C_Npc Zuris;
 
 func void B_InitNpcGlobals()
 {
@@ -316,6 +317,7 @@ func void B_InitNpcGlobals()
 	Mario = Hlp_GetNpc(None_101_Mario);
 	Mario_DI = Hlp_GetNpc(None_101_Mario_DI);
 	Ignaz = Hlp_GetNpc(VLK_498_Ignaz);
+	Zuris = Hlp_GetNpc(VLK_409_Zuris);
 	Jack = Hlp_GetNpc(VLK_444_Jack);
 	Jack_DI = Hlp_GetNpc(VLK_444_Jack_DI);
 	Jorgen_DI = Hlp_GetNpc(VLK_4250_Jorgen_DI);
@@ -471,4 +473,3 @@ func void B_InitNpcGlobals()
 	Bodo = Hlp_GetNpc(Bau_903_Bodo);
 	Pepe = Hlp_GetNpc(Bau_912_Pepe);
 };
-

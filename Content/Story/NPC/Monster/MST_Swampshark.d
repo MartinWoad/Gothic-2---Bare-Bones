@@ -11,9 +11,9 @@ prototype Mst_Default_Swampshark(C_Npc)
 	attribute[ATR_HITPOINTS] = 500;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
-	protection[PROT_BLUNT] = 120;
-	protection[PROT_EDGE] = 100;
-	protection[PROT_POINT] = 120;
+	protection[PROT_BLUNT] = 110;
+	protection[PROT_EDGE] = 90;
+	protection[PROT_POINT] = 110;
 	protection[PROT_FIRE] = 100;
 	protection[PROT_FLY] = 1000;
 	protection[PROT_MAGIC] = 120;
@@ -41,4 +41,3 @@ instance Swampshark(Mst_Default_Swampshark)
 	B_SetVisuals_Swampshark();
 	Npc_SetToFistMode(self);
 };
-

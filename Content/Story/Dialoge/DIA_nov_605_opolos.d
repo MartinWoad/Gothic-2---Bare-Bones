@@ -45,8 +45,8 @@ func int DIA_Opolos_Hello_Condition()
 
 func void DIA_Opolos_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Opolos_Hello_12_00");	//Witaj, a wiêc to ty jesteœ ten nowy.
-	AI_Output(self,other,"DIA_Opolos_Hello_12_01");	//Jestem Opolos. Zajmujê siê owcami.
+	AI_Output(self,other,"DIA_Opolos_Hello_12_00");	//Witaj, a wiï¿½c to ty jesteï¿½ ten nowy.
+	AI_Output(self,other,"DIA_Opolos_Hello_12_01");	//Jestem Opolos. Zajmujï¿½ siï¿½ owcami.
 };
 
 
@@ -57,7 +57,7 @@ instance DIA_Opolos_Wurst(C_Info)
 	condition = DIA_Opolos_Wurst_Condition;
 	information = DIA_Opolos_Wurst_Info;
 	permanent = FALSE;
-	description = "Mam tu kie³basê z baraniny...";
+	description = "Mam tu kieï¿½basï¿½ z baraniny...";
 };
 
 
@@ -73,15 +73,15 @@ func void DIA_Opolos_Wurst_Info()
 {
 	var string NovizeText;
 	var string NovizeLeft;
-	AI_Output(other,self,"DIA_Opolos_Wurst_15_00");	//Mam tu kie³basê z baraniny...
-	AI_Output(self,other,"DIA_Opolos_Wurst_12_01");	//To fantastycznie. Uwielbiam kie³basê z baraniny.
+	AI_Output(other,self,"DIA_Opolos_Wurst_15_00");	//Mam tu kieï¿½basï¿½ z baraniny...
+	AI_Output(self,other,"DIA_Opolos_Wurst_12_01");	//To fantastycznie. Uwielbiam kieï¿½basï¿½ z baraniny.
 	B_GiveInvItems(other,self,ItFo_Schafswurst,1);
 	Wurst_Gegeben = Wurst_Gegeben + 1;
 	CreateInvItems(self,ItFo_Sausage,1);
 	B_UseItem(self,ItFo_Sausage);
 	NovizeLeft = IntToString(13 - Wurst_Gegeben);
 	NovizeText = ConcatStrings(NovizeLeft,PRINT_NovizenLeft);
-	AI_PrintScreen(NovizeText,-1,YPOS_GoldGiven,FONT_ScreenSmall,3);
+	PrintS_Ext(NovizeText, White());
 };
 
 
@@ -92,7 +92,7 @@ instance DIA_Opolos_HowLong(C_Info)
 	condition = DIA_Opolos_HowLong_Condition;
 	information = DIA_Opolos_HowLong_Info;
 	permanent = FALSE;
-	description = "Od jak dawna jesteœ w klasztorze?";
+	description = "Od jak dawna jesteï¿½ w klasztorze?";
 };
 
 
@@ -106,15 +106,15 @@ func int DIA_Opolos_HowLong_Condition()
 
 func void DIA_Opolos_HowLong_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_HowLong_15_00");	//Od jak dawna jesteœ w klasztorze?
-	AI_Output(self,other,"DIA_Opolos_HowLong_12_01");	//Mieszkam tu ju¿ trzy lata. Ale, choæ bardzo bym tego chcia³, nie zacz¹³em jeszcze nauki.
+	AI_Output(other,self,"DIA_Opolos_HowLong_15_00");	//Od jak dawna jesteï¿½ w klasztorze?
+	AI_Output(self,other,"DIA_Opolos_HowLong_12_01");	//Mieszkam tu juï¿½ trzy lata. Ale, choï¿½ bardzo bym tego chciaï¿½, nie zaczï¿½ï¿½em jeszcze nauki.
 	AI_Output(other,self,"DIA_Opolos_HowLong_15_02");	//Dlaczego?
-	AI_Output(self,other,"DIA_Opolos_HowLong_12_03");	//Zajmujê siê pilnowaniem owiec, a nie studiowaniem manuskryptów.
-	AI_Output(self,other,"DIA_Opolos_HowLong_12_04");	//Dopóki Mistrz Parlan nie zwolni mnie z tych obowi¹zków, nie mogê korzystaæ z biblioteki.
+	AI_Output(self,other,"DIA_Opolos_HowLong_12_03");	//Zajmujï¿½ siï¿½ pilnowaniem owiec, a nie studiowaniem manuskryptï¿½w.
+	AI_Output(self,other,"DIA_Opolos_HowLong_12_04");	//Dopï¿½ki Mistrz Parlan nie zwolni mnie z tych obowiï¿½zkï¿½w, nie mogï¿½ korzystaï¿½ z biblioteki.
 	MIS_HelpOpolos = LOG_Running;
 	Log_CreateTopic(Topic_OpolosStudy,LOG_MISSION);
 	Log_SetTopicStatus(Topic_OpolosStudy,LOG_Running);
-	B_LogEntry(Topic_OpolosStudy,"Opolos strze¿e owiec. Bardzo chcia³by móc studiowaæ pisma w bibliotece.");
+	B_LogEntry(Topic_OpolosStudy,"Opolos strzeï¿½e owiec. Bardzo chciaï¿½by mï¿½c studiowaï¿½ pisma w bibliotece.");
 };
 
 
@@ -125,7 +125,7 @@ instance DIA_Opolos_Monastery(C_Info)
 	condition = DIA_Opolos_Monastery_Condition;
 	information = DIA_Opolos_Monastery_Info;
 	permanent = FALSE;
-	description = "Jak mam siê zachowywaæ w klasztorze?";
+	description = "Jak mam siï¿½ zachowywaï¿½ w klasztorze?";
 };
 
 
@@ -139,10 +139,10 @@ func int DIA_Opolos_Monastery_Condition()
 
 func void DIA_Opolos_Monastery_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_Monastery_15_00");	//Jak mam siê zachowywaæ w klasztorze?
-	AI_Output(self,other,"DIA_Opolos_Monastery_12_01");	//Nigdy nie ok³amuj magów. Nie knuj tak¿e przeciwko braciom.
-	AI_Output(self,other,"DIA_Opolos_Monastery_12_02");	//Zawsze szanuj w³asnoœæ zgromadzenia. Jeœli z³amiesz któr¹œ z tych zasad, bêdziesz musia³ zap³aciæ grzywnê Mistrzowi Parlanowi.
-	AI_Output(self,other,"DIA_Opolos_Monastery_12_03");	//Trzymaj siê te¿ z dala od Agona, inaczej skoñczysz jak Babo.
+	AI_Output(other,self,"DIA_Opolos_Monastery_15_00");	//Jak mam siï¿½ zachowywaï¿½ w klasztorze?
+	AI_Output(self,other,"DIA_Opolos_Monastery_12_01");	//Nigdy nie okï¿½amuj magï¿½w. Nie knuj takï¿½e przeciwko braciom.
+	AI_Output(self,other,"DIA_Opolos_Monastery_12_02");	//Zawsze szanuj wï¿½asnoï¿½ï¿½ zgromadzenia. Jeï¿½li zï¿½amiesz ktï¿½rï¿½ï¿½ z tych zasad, bï¿½dziesz musiaï¿½ zapï¿½aciï¿½ grzywnï¿½ Mistrzowi Parlanowi.
+	AI_Output(self,other,"DIA_Opolos_Monastery_12_03");	//Trzymaj siï¿½ teï¿½ z dala od Agona, inaczej skoï¿½czysz jak Babo.
 };
 
 
@@ -153,7 +153,7 @@ instance DIA_Opolos_beibringen(C_Info)
 	condition = DIA_Opolos_beibringen_Condition;
 	information = DIA_Opolos_beibringen_Info;
 	permanent = FALSE;
-	description = "Czy móg³byœ mnie czegoœ nauczyæ?";
+	description = "Czy mï¿½gï¿½byï¿½ mnie czegoï¿½ nauczyï¿½?";
 };
 
 
@@ -167,15 +167,15 @@ func int DIA_Opolos_beibringen_Condition()
 
 func void DIA_Opolos_beibringen_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_beibringen_15_00");	//Czy móg³byœ mnie czegoœ nauczyæ?
-	AI_Output(self,other,"DIA_Opolos_beibringen_12_01");	//Jasne, zawsze by³em dobry w bitce. Mogê ci pokazaæ, jak wzmocniæ miêœnie ramion.
-	AI_Output(self,other,"DIA_Opolos_beibringen_12_02");	//Chcia³bym siê jednak dowiedzieæ czegoœ o miksturach, szczególnie tych magicznych.
-	AI_Output(other,self,"DIA_Opolos_beibringen_15_03");	//Jak móg³bym ci w tym pomóc?
-	AI_Output(self,other,"DIA_Opolos_beibringen_12_04");	//Có¿, móg³byœ 'po¿yczyæ' od Neorasa na chwilê któr¹œ z jego receptur.
-	AI_Output(self,other,"DIA_Opolos_beibringen_12_05");	//Jeœli mi j¹ przyniesiesz, bêdê ciê trenowa³.
+	AI_Output(other,self,"DIA_Opolos_beibringen_15_00");	//Czy mï¿½gï¿½byï¿½ mnie czegoï¿½ nauczyï¿½?
+	AI_Output(self,other,"DIA_Opolos_beibringen_12_01");	//Jasne, zawsze byï¿½em dobry w bitce. Mogï¿½ ci pokazaï¿½, jak wzmocniï¿½ miï¿½nie ramion.
+	AI_Output(self,other,"DIA_Opolos_beibringen_12_02");	//Chciaï¿½bym siï¿½ jednak dowiedzieï¿½ czegoï¿½ o miksturach, szczegï¿½lnie tych magicznych.
+	AI_Output(other,self,"DIA_Opolos_beibringen_15_03");	//Jak mï¿½gï¿½bym ci w tym pomï¿½c?
+	AI_Output(self,other,"DIA_Opolos_beibringen_12_04");	//Cï¿½, mï¿½gï¿½byï¿½ 'poï¿½yczyï¿½' od Neorasa na chwilï¿½ ktï¿½rï¿½ï¿½ z jego receptur.
+	AI_Output(self,other,"DIA_Opolos_beibringen_12_05");	//Jeï¿½li mi jï¿½ przyniesiesz, bï¿½dï¿½ ciï¿½ trenowaï¿½.
 	Log_CreateTopic(Topic_OpolosRezept,LOG_MISSION);
 	Log_SetTopicStatus(Topic_OpolosRezept,LOG_Running);
-	B_LogEntry(Topic_OpolosRezept,"Opolos chce rzuciæ okiem na recepturê mikstury many. Pracuj¹c dla Neorasa, móg³bym j¹ po¿yczyæ.");
+	B_LogEntry(Topic_OpolosRezept,"Opolos chce rzuciï¿½ okiem na recepturï¿½ mikstury many. Pracujï¿½c dla Neorasa, mï¿½gï¿½bym jï¿½ poï¿½yczyï¿½.");
 };
 
 
@@ -204,32 +204,32 @@ func void DIA_Opolos_rezept_Info()
 {
 	if(Npc_HasItems(other,ItWr_ManaRezept) >= 1)
 	{
-		AI_Output(other,self,"DIA_Opolos_rezept_15_00");	//Mam tu recepturê, o któr¹ prosi³eœ.
-		AI_Output(self,other,"DIA_Opolos_rezept_12_01");	//Dobrze, niech na ni¹ spojrzê.
+		AI_Output(other,self,"DIA_Opolos_rezept_15_00");	//Mam tu recepturï¿½, o ktï¿½rï¿½ prosiï¿½eï¿½.
+		AI_Output(self,other,"DIA_Opolos_rezept_12_01");	//Dobrze, niech na niï¿½ spojrzï¿½.
 		B_UseFakeScroll();
 		AI_Output(self,other,"DIA_Opolos_rezept_12_02");	//Aha... hm... tak... rozumiem... no, no...
 		B_UseFakeScroll();
-		AI_Output(self,other,"DIA_Opolos_rezept_12_03");	//Doskonale, wielkie dziêki. Jeœli chcesz, mo¿emy razem potrenowaæ.
+		AI_Output(self,other,"DIA_Opolos_rezept_12_03");	//Doskonale, wielkie dziï¿½ki. Jeï¿½li chcesz, moï¿½emy razem potrenowaï¿½.
 		DIA_Opolos_rezept_permanent = TRUE;
 		Opolos_TeachSTR = TRUE;
 		Opolos_Rezept = LOG_SUCCESS;
 		B_GivePlayerXP(XP_Ambient);
 		Log_CreateTopic(Topic_KlosterTeacher,LOG_NOTE);
-		B_LogEntry(Topic_KlosterTeacher,"Opolos mo¿e mi pokazaæ, jak staæ siê silniejszym.");
+		B_LogEntry(Topic_KlosterTeacher,"Opolos moï¿½e mi pokazaï¿½, jak staï¿½ siï¿½ silniejszym.");
 	}
 	else if(MIS_NeorasRezept == LOG_SUCCESS)
 	{
-		AI_Output(other,self,"DIA_Opolos_rezept_15_04");	//Odnios³em ju¿ recepturê Neorasowi.
-		AI_Output(self,other,"DIA_Opolos_rezept_12_05");	//O cholera - chyba nigdy niczego siê tu nie nauczê. Niewa¿ne. Pomogê ci mimo to.
+		AI_Output(other,self,"DIA_Opolos_rezept_15_04");	//Odniosï¿½em juï¿½ recepturï¿½ Neorasowi.
+		AI_Output(self,other,"DIA_Opolos_rezept_12_05");	//O cholera - chyba nigdy niczego siï¿½ tu nie nauczï¿½. Niewaï¿½ne. Pomogï¿½ ci mimo to.
 		Opolos_Rezept = LOG_FAILED;
 		DIA_Opolos_rezept_permanent = TRUE;
 		Opolos_TeachSTR = TRUE;
 		Log_CreateTopic(Topic_KlosterTeacher,LOG_NOTE);
-		B_LogEntry(Topic_KlosterTeacher,"Opolos mo¿e mi pokazaæ, jak staæ siê silniejszym.");
+		B_LogEntry(Topic_KlosterTeacher,"Opolos moï¿½e mi pokazaï¿½, jak staï¿½ siï¿½ silniejszym.");
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Opolos_rezept_15_06");	//Wrócimy do tego póŸniej.
+		AI_Output(other,self,"DIA_Opolos_rezept_15_06");	//Wrï¿½cimy do tego pï¿½niej.
 	};
 };
 
@@ -241,7 +241,7 @@ instance DIA_Opolos_TEACH_STR(C_Info)
 	condition = DIA_Opolos_TEACH_STR_Condition;
 	information = DIA_Opolos_TEACH_STR_Info;
 	permanent = TRUE;
-	description = "Chcê byæ silniejszy.";
+	description = "Chcï¿½ byï¿½ silniejszy.";
 };
 
 
@@ -255,7 +255,7 @@ func int DIA_Opolos_TEACH_STR_Condition()
 
 func void DIA_Opolos_TEACH_STR_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_TEACH_STR_15_00");	//Chcia³bym staæ siê silniejszy.
+	AI_Output(other,self,"DIA_Opolos_TEACH_STR_15_00");	//Chciaï¿½bym staï¿½ siï¿½ silniejszy.
 	Info_ClearChoices(DIA_Opolos_TEACH_STR);
 	Info_AddChoice(DIA_Opolos_TEACH_STR,Dialog_Back,DIA_Opolos_TEACH_STR_BACK);
 	Info_AddChoice(DIA_Opolos_TEACH_STR,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Opolos_TEACH_STR_1);
@@ -266,7 +266,7 @@ func void DIA_Opolos_TEACH_STR_BACK()
 {
 	if((other.attribute[ATR_STRENGTH] - ATTRIBUTEBONUS[4] - ATTRIBUTEFROMEQUIPMENT[4]) >= 25)
 	{
-		AI_Output(self,other,"DIA_Opolos_TEACH_STR_12_00");	//Jesteœ ju¿ doœæ silny. Niczego wiêcej nie mogê ciê nauczyæ.
+		AI_Output(self,other,"DIA_Opolos_TEACH_STR_12_00");	//Jesteï¿½ juï¿½ doï¿½ï¿½ silny. Niczego wiï¿½cej nie mogï¿½ ciï¿½ nauczyï¿½.
 	};
 	Info_ClearChoices(DIA_Opolos_TEACH_STR);
 };
@@ -297,7 +297,7 @@ instance DIA_Opolos_Agon(C_Info)
 	condition = DIA_Opolos_Agon_Condition;
 	information = DIA_Opolos_Agon_Info;
 	permanent = FALSE;
-	description = "Kim s¹ Agon i Babo?";
+	description = "Kim sï¿½ Agon i Babo?";
 };
 
 
@@ -311,12 +311,12 @@ func int DIA_Opolos_Agon_Condition()
 
 func void DIA_Opolos_Agon_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_Agon_15_00");	//Kim s¹ Agon i Babo?
-	AI_Output(self,other,"DIA_Opolos_Agon_12_01");	//Agon opiekuje siê ogrodem z zio³ami. Jest jeszcze nowicjuszem, ale zachowuje siê tak, jakby by³ przynajmniej wybrañcem.
-	AI_Output(self,other,"DIA_Opolos_Agon_12_02");	//Babo przyby³ do klasztoru na krótko przed tob¹. Na pocz¹tku pomaga³ Agonowi w ogrodzie.
-	AI_Output(self,other,"DIA_Opolos_Agon_12_03");	//Musieli siê chyba pok³óciæ. Od tamtego czasu Babo zamiata dziedziniec.
-	AI_Output(other,self,"DIA_Opolos_Agon_15_04");	//Wiesz, co siê sta³o?
-	AI_Output(self,other,"DIA_Opolos_Agon_12_05");	//Nie do koñca. Musisz sam ich zapytaæ. Jednak s³owa Agona znacz¹ tu wiêcej ni¿ s³owa innych nowicjuszy - jest siostrzeñcem gubernatora.
+	AI_Output(other,self,"DIA_Opolos_Agon_15_00");	//Kim sï¿½ Agon i Babo?
+	AI_Output(self,other,"DIA_Opolos_Agon_12_01");	//Agon opiekuje siï¿½ ogrodem z zioï¿½ami. Jest jeszcze nowicjuszem, ale zachowuje siï¿½ tak, jakby byï¿½ przynajmniej wybraï¿½cem.
+	AI_Output(self,other,"DIA_Opolos_Agon_12_02");	//Babo przybyï¿½ do klasztoru na krï¿½tko przed tobï¿½. Na poczï¿½tku pomagaï¿½ Agonowi w ogrodzie.
+	AI_Output(self,other,"DIA_Opolos_Agon_12_03");	//Musieli siï¿½ chyba pokï¿½ï¿½ciï¿½. Od tamtego czasu Babo zamiata dziedziniec.
+	AI_Output(other,self,"DIA_Opolos_Agon_15_04");	//Wiesz, co siï¿½ staï¿½o?
+	AI_Output(self,other,"DIA_Opolos_Agon_12_05");	//Nie do koï¿½ca. Musisz sam ich zapytaï¿½. Jednak sï¿½owa Agona znaczï¿½ tu wiï¿½cej niï¿½ sï¿½owa innych nowicjuszy - jest siostrzeï¿½cem gubernatora.
 };
 
 
@@ -327,7 +327,7 @@ instance DIA_Opolos_LIESEL(C_Info)
 	condition = DIA_Opolos_LIESEL_Condition;
 	information = DIA_Opolos_LIESEL_Info;
 	permanent = TRUE;
-	description = "Spójrz, przyprowadzi³em Betsy.";
+	description = "Spï¿½jrz, przyprowadziï¿½em Betsy.";
 };
 
 
@@ -341,7 +341,7 @@ func int DIA_Opolos_LIESEL_Condition()
 
 func void DIA_Opolos_LIESEL_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_LIESEL_15_00");	//Spójrz, przyprowadzi³em Betsy. Zaopiekujesz siê ni¹?
+	AI_Output(other,self,"DIA_Opolos_LIESEL_15_00");	//Spï¿½jrz, przyprowadziï¿½em Betsy. Zaopiekujesz siï¿½ niï¿½?
 	Npc_PerceiveAll(self);
 	if(Wld_DetectNpc(self,Follow_Sheep,NOFUNC,-1) && (Npc_GetDistToNpc(self,other) < 800))
 	{
@@ -350,12 +350,12 @@ func void DIA_Opolos_LIESEL_Info()
 		other.wp = "FP_ROAM_MONASTERY_04";
 		other.start_aistate = ZS_MM_AllScheduler;
 		Liesel_Giveaway = TRUE;
-		AI_Output(self,hero,"DIA_Opolos_LIESEL_12_01");	//Oczywiœcie. Bardzo ³adne zwierzê. Dobrze siê ni¹ zajmê.
+		AI_Output(self,hero,"DIA_Opolos_LIESEL_12_01");	//Oczywiï¿½cie. Bardzo ï¿½adne zwierzï¿½. Dobrze siï¿½ niï¿½ zajmï¿½.
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Opolos_Add_15_00");	//Hm... Gdzieœ mi siê chyba zapodzia³a. Wrócê póŸniej.
+		AI_Output(other,self,"DIA_Opolos_Add_15_00");	//Hm... Gdzieï¿½ mi siï¿½ chyba zapodziaï¿½a. Wrï¿½cï¿½ pï¿½niej.
 	};
 };
 
@@ -367,7 +367,7 @@ instance DIA_Opolos_Biblothek(C_Info)
 	condition = DIA_Opolos_Biblothek_Condition;
 	information = DIA_Opolos_Biblothek_Info;
 	permanent = TRUE;
-	description = "Jeœli chodzi o bibliotekê...";
+	description = "Jeï¿½li chodzi o bibliotekï¿½...";
 };
 
 
@@ -381,16 +381,16 @@ func int DIA_Opolos_Biblothek_Condition()
 
 func void DIA_Opolos_Biblothek_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_Biblothek_15_00");	//Jeœli chodzi o bibliotekê...
+	AI_Output(other,self,"DIA_Opolos_Biblothek_15_00");	//Jeï¿½li chodzi o bibliotekï¿½...
 	if(Parlan_Erlaubnis == FALSE)
 	{
-		AI_Output(self,other,"DIA_Opolos_Biblothek_12_01");	//To ta zamkniêta sala na lewo, obok bramy.
-		AI_Output(self,other,"DIA_Opolos_Biblothek_12_02");	//Klucz do niej dostaniesz jednak tylko wtedy, kiedy Mistrz Parlan uzna, ¿e mo¿esz rozpocz¹æ nauki.
+		AI_Output(self,other,"DIA_Opolos_Biblothek_12_01");	//To ta zamkniï¿½ta sala na lewo, obok bramy.
+		AI_Output(self,other,"DIA_Opolos_Biblothek_12_02");	//Klucz do niej dostaniesz jednak tylko wtedy, kiedy Mistrz Parlan uzna, ï¿½e moï¿½esz rozpoczï¿½ï¿½ nauki.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Opolos_Biblothek_12_03");	//Szczêœciarzu! Masz klucz do biblioteki, mimo ¿e jesteœ tu tak krótko.
-		AI_Output(self,other,"DIA_Opolos_Biblothek_12_04");	//Wykorzystaj swoj¹ szansê, poczytaj dok³adnie stare manuskrypty.
+		AI_Output(self,other,"DIA_Opolos_Biblothek_12_03");	//Szczï¿½ciarzu! Masz klucz do biblioteki, mimo ï¿½e jesteï¿½ tu tak krï¿½tko.
+		AI_Output(self,other,"DIA_Opolos_Biblothek_12_04");	//Wykorzystaj swojï¿½ szansï¿½, poczytaj dokï¿½adnie stare manuskrypty.
 	};
 	AI_StopProcessInfos(self);
 };
@@ -417,8 +417,8 @@ func int DIA_Opolos_HelloAgain_Condition()
 
 func void DIA_Opolos_HelloAgain_Info()
 {
-	AI_Output(self,other,"DIA_Opolos_HelloAgain_12_00");	//Witam. Dziêkujê za pomoc. Postaram siê skorzystaæ z szansy, jak¹ otrzyma³em, i nauczyæ siê jak najwiêcej.
-	AI_Output(self,other,"DIA_Opolos_HelloAgain_12_01");	//Nie masz pewnie czasu, ¿eby rozmawiaæ ze zwyk³ym nowicjuszem, Mistrzu.
+	AI_Output(self,other,"DIA_Opolos_HelloAgain_12_00");	//Witam. Dziï¿½kujï¿½ za pomoc. Postaram siï¿½ skorzystaï¿½ z szansy, jakï¿½ otrzymaï¿½em, i nauczyï¿½ siï¿½ jak najwiï¿½cej.
+	AI_Output(self,other,"DIA_Opolos_HelloAgain_12_01");	//Nie masz pewnie czasu, ï¿½eby rozmawiaï¿½ ze zwykï¿½ym nowicjuszem, Mistrzu.
 	B_GivePlayerXP(XP_Ambient);
 	AI_StopProcessInfos(self);
 };
@@ -431,7 +431,7 @@ instance DIA_Opolos_HowIsIt(C_Info)
 	condition = DIA_Opolos_HowIsIt_Condition;
 	information = DIA_Opolos_HowIsIt_Info;
 	permanent = TRUE;
-	description = "Co s³ychaæ?";
+	description = "Co sï¿½ychaï¿½?";
 };
 
 
@@ -448,12 +448,12 @@ func void DIA_Opolos_HowIsIt_Info()
 	AI_Output(other,self,"DIA_Opolos_HowIsIt_15_00");	//Jak leci?
 	if(MIS_HelpOpolos == LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_Opolos_HowIsIt_12_01");	//Wspaniale. Odk¹d mogê siê uczyæ, wszystko jest w jak najlepszym porz¹dku.
+		AI_Output(self,other,"DIA_Opolos_HowIsIt_12_01");	//Wspaniale. Odkï¿½d mogï¿½ siï¿½ uczyï¿½, wszystko jest w jak najlepszym porzï¿½dku.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Opolos_HowIsIt_12_02");	//Lojalnie wype³niam zlecone mi zadania, Mistrzu.
-		AI_Output(self,other,"DIA_Opolos_HowIsIt_12_03");	//Co dzieñ Innos stawia przede mn¹ nowe wyzwania. Bêdê nadal pracowa³ nad doskonaleniem siebie.
+		AI_Output(self,other,"DIA_Opolos_HowIsIt_12_02");	//Lojalnie wypeï¿½niam zlecone mi zadania, Mistrzu.
+		AI_Output(self,other,"DIA_Opolos_HowIsIt_12_03");	//Co dzieï¿½ Innos stawia przede mnï¿½ nowe wyzwania. Bï¿½dï¿½ nadal pracowaï¿½ nad doskonaleniem siebie.
 	};
 	AI_StopProcessInfos(self);
 };
@@ -531,15 +531,15 @@ func int DIA_Opolos_Kap3_PERM_Condition()
 func void DIA_Opolos_Kap3_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_15_00");	//Jak tam owce?
-	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_12_01");	//A jak ci siê wydaje? Chodz¹ sobie i skubi¹ trawê.
-	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_12_02");	//Zastanawiam siê, co siê dzieje na zewn¹trz. Magowie wydaj¹ siê niespokojni.
+	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_12_01");	//A jak ci siï¿½ wydaje? Chodzï¿½ sobie i skubiï¿½ trawï¿½.
+	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_12_02");	//Zastanawiam siï¿½, co siï¿½ dzieje na zewnï¿½trz. Magowie wydajï¿½ siï¿½ niespokojni.
 	Info_ClearChoices(DIA_Opolos_Kap3_PERM);
 	Info_AddChoice(DIA_Opolos_Kap3_PERM,Dialog_Back,DIA_Opolos_Kap3_PERM_BACK);
-	Info_AddChoice(DIA_Opolos_Kap3_PERM,"W Górniczej Dolinie pojawi³y siê smoki.",DIA_Opolos_Kap3_PERM_DRAGONS);
-	Info_AddChoice(DIA_Opolos_Kap3_PERM,"Po kraju wêdruj¹ dziwni przybysze w czarnych szatach.",DIA_Opolos_Kap3_PERM_DMT);
+	Info_AddChoice(DIA_Opolos_Kap3_PERM,"W Gï¿½rniczej Dolinie pojawiï¿½y siï¿½ smoki.",DIA_Opolos_Kap3_PERM_DRAGONS);
+	Info_AddChoice(DIA_Opolos_Kap3_PERM,"Po kraju wï¿½drujï¿½ dziwni przybysze w czarnych szatach.",DIA_Opolos_Kap3_PERM_DMT);
 	if(MIS_NovizenChase == LOG_Running)
 	{
-		Info_AddChoice(DIA_Opolos_Kap3_PERM,"Pedro nas zdradzi³.",DIA_Opolos_Kap3_PERM_PEDRO);
+		Info_AddChoice(DIA_Opolos_Kap3_PERM,"Pedro nas zdradziï¿½.",DIA_Opolos_Kap3_PERM_PEDRO);
 	};
 };
 
@@ -553,10 +553,10 @@ var int Opolos_Dragons;
 
 func void DIA_Opolos_Kap3_PERM_DRAGONS()
 {
-	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DRAGONS_15_00");	//W Górniczej Dolinie pojawi³y siê smoki. Wraz z armi¹ orków oblegaj¹ oddzia³y królewskie.
-	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_DRAGONS_12_01");	//Smoki - zawsze myœla³em, ¿e istniej¹ jedynie w strasznych opowieœciach.
-	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DRAGONS_15_02");	//S¹ prawdziwe, uwierz mi.
-	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_DRAGONS_12_03");	//Królewscy paladyni chyba sobie z nimi poradz¹, prawda?
+	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DRAGONS_15_00");	//W Gï¿½rniczej Dolinie pojawiï¿½y siï¿½ smoki. Wraz z armiï¿½ orkï¿½w oblegajï¿½ oddziaï¿½y krï¿½lewskie.
+	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_DRAGONS_12_01");	//Smoki - zawsze myï¿½laï¿½em, ï¿½e istniejï¿½ jedynie w strasznych opowieï¿½ciach.
+	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DRAGONS_15_02");	//Sï¿½ prawdziwe, uwierz mi.
+	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_DRAGONS_12_03");	//Krï¿½lewscy paladyni chyba sobie z nimi poradzï¿½, prawda?
 	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DRAGONS_15_04");	//Zobaczymy.
 	if(Opolos_Dragons == FALSE)
 	{
@@ -570,11 +570,11 @@ var int Opolos_DMT;
 
 func void DIA_Opolos_Kap3_PERM_DMT()
 {
-	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DMT_15_00");	//Po kraju wêdruj¹ dziwni przybysze w czarnych szatach.
-	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_DMT_12_01");	//Co masz na myœli? Jacy przybysze?
-	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DMT_15_02");	//Nikt nie wie, sk¹d siê wziêli. Nosz¹ d³ugie, czarne szaty i zakrywaj¹ sobie twarze.
-	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DMT_15_03");	//Wygl¹da na to, ¿e s¹ jakiegoœ rodzaju magami. A przynajmniej znaj¹ czary.
-	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_DMT_12_04");	//To brzmi niepokoj¹co. Mam jednak nadziejê, ¿e Najwy¿sza Rada poradzi sobie z tym problemem.
+	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DMT_15_00");	//Po kraju wï¿½drujï¿½ dziwni przybysze w czarnych szatach.
+	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_DMT_12_01");	//Co masz na myï¿½li? Jacy przybysze?
+	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DMT_15_02");	//Nikt nie wie, skï¿½d siï¿½ wziï¿½li. Noszï¿½ dï¿½ugie, czarne szaty i zakrywajï¿½ sobie twarze.
+	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_DMT_15_03");	//Wyglï¿½da na to, ï¿½e sï¿½ jakiegoï¿½ rodzaju magami. A przynajmniej znajï¿½ czary.
+	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_DMT_12_04");	//To brzmi niepokojï¿½co. Mam jednak nadziejï¿½, ï¿½e Najwyï¿½sza Rada poradzi sobie z tym problemem.
 	if(Opolos_DMT == FALSE)
 	{
 		B_GivePlayerXP(XP_Ambient);
@@ -587,10 +587,10 @@ var int Opolos_Pedro;
 
 func void DIA_Opolos_Kap3_PERM_PEDRO()
 {
-	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_PEDRO_15_00");	//Pedro nas zdradzi³.
-	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_PEDRO_12_01");	//S³ysza³em, nie wiedzia³em jednak, ¿e i ty o tym wiesz. Dlatego w³aœnie nic nie mówi³em.
-	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_PEDRO_12_02");	//Czy wróg jest silniejszy od nas - to znaczy, czy mo¿emy go jakoœ pokonaæ?
-	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_PEDRO_15_03");	//Wszystko jest mo¿liwe. Póki ¿ycia, póty nadziei.
+	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_PEDRO_15_00");	//Pedro nas zdradziï¿½.
+	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_PEDRO_12_01");	//Sï¿½yszaï¿½em, nie wiedziaï¿½em jednak, ï¿½e i ty o tym wiesz. Dlatego wï¿½aï¿½nie nic nie mï¿½wiï¿½em.
+	AI_Output(self,other,"DIA_Opolos_Kap3_PERM_PEDRO_12_02");	//Czy wrï¿½g jest silniejszy od nas - to znaczy, czy moï¿½emy go jakoï¿½ pokonaï¿½?
+	AI_Output(other,self,"DIA_Opolos_Kap3_PERM_PEDRO_15_03");	//Wszystko jest moï¿½liwe. Pï¿½ki ï¿½ycia, pï¿½ty nadziei.
 	if(Opolos_Pedro == FALSE)
 	{
 		B_GivePlayerXP(XP_Ambient);

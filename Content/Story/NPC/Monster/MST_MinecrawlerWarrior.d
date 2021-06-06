@@ -5,8 +5,8 @@ prototype Mst_Default_MinecrawlerWarrior(C_Npc)
 	guild = GIL_MINECRAWLER;
 	aivar[AIV_MM_REAL_ID] = ID_MINECRAWLERWARRIOR;
 	level = 20;
-	attribute[ATR_STRENGTH] = 120;
-	attribute[ATR_DEXTERITY] = 120;
+	attribute[ATR_STRENGTH] = 100;
+	attribute[ATR_DEXTERITY] = 100;
 	attribute[ATR_HITPOINTS_MAX] = 200;
 	attribute[ATR_HITPOINTS] = 200;
 	attribute[ATR_MANA_MAX] = 0;
@@ -41,4 +41,3 @@ instance MinecrawlerWarrior(Mst_Default_MinecrawlerWarrior)
 	B_SetVisuals_MinecrawlerWarrior();
 	Npc_SetToFistMode(self);
 };
-

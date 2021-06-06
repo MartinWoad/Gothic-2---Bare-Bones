@@ -55,9 +55,9 @@ func void DIA_Gorax_PICKPOCKET_DoIt()
 	if(other.attribute[ATR_DEXTERITY] >= 80)
 	{
 		CreateInvItems(self,ItKe_KlosterSchatz,1);
-		B_GiveInvItems(self,other,ItKe_KlosterSchatz,1);
+		B_StealInvItems(self,other,ItKe_KlosterSchatz,1);
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
-		B_GivePlayerXP(XP_Ambient);
+		//B_GivePlayerXP(XP_Ambient);
 		Info_ClearChoices(DIA_Gorax_PICKPOCKET);
 	}
 	else
@@ -569,4 +569,3 @@ func void DIA_Gorax_Kap5_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
-

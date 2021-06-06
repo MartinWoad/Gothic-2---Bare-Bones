@@ -57,10 +57,10 @@ func void DIA_Salandril_PICKPOCKET_DoIt()
 	if(other.attribute[ATR_DEXTERITY] >= 30)
 	{
 		CreateInvItems(self,ItKe_Salandril,1);
-		B_GiveInvItems(self,other,ItKe_Salandril,1);
+		B_StealInvItems(self,other,ItKe_Salandril,1);
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
 		DIA_Salandril_PICKPOCKET_perm = TRUE;
-		B_GivePlayerXP(XP_Ambient);
+		//B_GivePlayerXP(XP_Ambient);
 		Info_ClearChoices(DIA_Salandril_PICKPOCKET);
 	}
 	else
@@ -358,4 +358,3 @@ func void DIA_Salandril_KAP6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
-

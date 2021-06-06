@@ -10,6 +10,7 @@ _INTERN\ENGINECLASSES_G2\*.D
 _INTERN\IKARUS.D
 _INTERN\float.D
 LeGo\Header_G2.src
+BareBones\Functions\Colors.d
 
 AI\AI_Intern\BodyStates.d
 AI\AI_Intern\Focus.d
@@ -1305,7 +1306,7 @@ Story\Events\evt_undeaddragon_trap_01_func.d
 Story\Events\evt_vinoskellerei_func_s1.d
 Story\Events\Parse_It.d
 Story\B_Story\B_Enter_DragonIsland.d
-
+Story\Dialog_Mobsis\B_OnHotkey.d
 BareBones\Hooks\oCNpc_Hooks.d
 BareBones\Hooks\oCItemContainer_Hooks.d
 

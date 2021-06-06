@@ -55,10 +55,9 @@ func int B_TeachPlayerTalentSmith(var C_Npc slf,var C_Npc oth,var int waffe)
 	if(waffe == WEAPON_2H_Special_04)
 	{
 		PLAYER_TALENT_SMITH[WEAPON_2H_Special_04] = TRUE;
-		B_LogEntry(TOPIC_TalentSmith,"Gdy otrzymam 5 bry³ek rudy i 5 porcji smoczej krwi, zrobiê ´DU¯E OSTRZE Z RUDY NA SMOKI´.");
+		B_LogEntry(TOPIC_TalentSmith,"Gdy otrzymam 5 bry³ek rudy i 5 porcji smoczej krwi, zrobiê ´WIELKIE OSTRZE Z RUDY NA SMOKI´.");
 	};
 	PrintScreen(PRINT_LearnSmith,-1,-1,FONT_Screen,2);
 	Npc_SetTalentSkill(oth,NPC_TALENT_SMITH,1);
 	return TRUE;
 };
-

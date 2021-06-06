@@ -52,9 +52,9 @@ func void DIA_Zuris_PICKPOCKET_DoIt()
 	if(other.attribute[ATR_DEXTERITY] >= 40)
 	{
 		CreateInvItems(self,ItPo_Health_03,1);
-		B_GiveInvItems(self,other,ItPo_Health_03,1);
+		B_StealInvItems(self,other,ItPo_Health_03,1);
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
-		B_GivePlayerXP(XP_Ambient);
+		//B_GivePlayerXP(XP_Ambient);
 		Info_ClearChoices(DIA_Zuris_PICKPOCKET);
 	}
 	else
@@ -327,4 +327,3 @@ func void DIA_Zuris_Minenanteil_Info()
 	AI_Output(self,other,"DIA_Zuris_Minenanteil_14_01");	//Tak, choæ sam nie wiem dlaczego. Ostatni raz da³em siê wpl¹taæ w interes tak w¹tpliwej natury.
 	B_GivePlayerXP(XP_Ambient);
 };
-

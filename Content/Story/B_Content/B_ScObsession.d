@@ -10,7 +10,8 @@ func void B_ClearSCObsession(var C_Npc heiler)
 	};
 	SC_IsObsessed = FALSE;
 	SC_ObsessionCounter = 0;
-	PrintScreen(PRINT_ClearSCObsession,-1,-1,FONT_Screen,3);
+	//PrintScreen(PRINT_ClearSCObsession,-1,-1,FONT_Screen,3);
+	PrintS_Ext(PRINT_ClearSCObsession, Orange());
 };
 
 func void B_SCIsObsessed(var C_Npc dementor)
@@ -24,9 +25,9 @@ func void B_SCIsObsessed(var C_Npc dementor)
 		if(SC_ObsessionCounter >= 2)
 		{
 			SC_IsObsessed = TRUE;
-			PrintScreen(PRINT_SCIsObsessed,-1,-1,FONT_Screen,3);
+			//PrintScreen(PRINT_SCIsObsessed,-1,-1,FONT_Screen,3);
+			PrintS_Ext(PRINT_SCIsObsessed, Orange());
 		};
 		SC_ObsessionCounter = SC_ObsessionCounter + 1;
 	};
 };
-

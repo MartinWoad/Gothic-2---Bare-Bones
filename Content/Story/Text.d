@@ -405,7 +405,7 @@ const string NAME_Fluechtling = "Uciekinier";
 const string Dialog_Ende = "KONIEC";
 const string Dialog_Back = "WRÓÆ";
 const string DIALOG_TRADE = "(Handel)";
-const string DIALOG_PICKPOCKET = "(Kradzie¿ kiesz.)";
+const string DIALOG_PICKPOCKET = "(Kradzie¿ kieszonkowa)";
 const string NAME_Ring = "Pierœcieñ";
 const string NAME_Amulett = "Amulet";
 const string NAME_Trank = "Mikstura";
@@ -465,7 +465,7 @@ const string NAME_ItMw_2H_Special_02 = "Ciê¿ki Magiczny Miecz Dwurêczny";
 const string NAME_ItMw_1H_Special_03 = "Magiczne ostrze bojowe";
 const string NAME_ItMw_2H_Special_03 = "Ciê¿kie Magiczne Ostrze Bojowe";
 const string NAME_ItMw_1H_Special_04 = "Magiczne Ostrze Na Smoki";
-const string NAME_ItMw_2H_Special_04 = "Du¿e Magiczne Ostrze na Smoki";
+const string NAME_ItMw_2H_Special_04 = "Wielkie Magiczne Ostrze na Smoki";
 const string PRINT_GoldGegeben = " szt. z³ota dano";
 const string PRINT_ItemGegeben = " przedmiot(y/ów) dano";
 const string PRINT_ItemsGegeben = " przedmiot(y/ów) dano";
@@ -686,8 +686,17 @@ const string PRINT_ToxicityLevelMax = "Jesteœ bardzo zatruty.";
 
 const string NAME_Bonus_Satiety = "Sytoœæ:";
 
-const string Print_InnosStolenGold = "Innos gardzi kradzionym z³otem.";
+const string Print_InnosStolenGold = "Innos gardzi kradzionym z³otem. Oddaj je potrzebuj¹cym.";
 const string Print_InnosUnforgivableCriminal = "Innos wyrzeka siê twoich haniebnych czynów.";
-const string Print_InnosThief = "Innos potêpia twoje kradzie¿e.";
-const string Print_InnosCriminal = "Innos potêpia twoje przestêpstwa.";
+const string Print_InnosThief = "Innos potêpia twoje kradzie¿e. Oddaj z³oto potrzebuj¹cym.";
+const string Print_InnosCriminal = "Innos potêpia twoje przestêpstwa. Odpowiedz za swoje czyny.";
 const string Print_InnosMurderer = "Innos wyrzeka siê morderców.";
+
+const string Print_ItemPlaced = "Od³o¿y³eœ: ";
+const string Print_ItemStolen = "Ukrad³eœ: ";
+const string Print_ItemPickedUp = "Podnios³eœ: ";
+const string Print_ItemReceived = "Otrzyma³eœ: ";
+const string Print_ItemGiven = "Odda³eœ: ";
+const string Print_GoldCoins = " sztuk z³ota";
+
+const string PRINT_TooEarlyToLearn = "Nie jesteœ jeszcze gotowy.";

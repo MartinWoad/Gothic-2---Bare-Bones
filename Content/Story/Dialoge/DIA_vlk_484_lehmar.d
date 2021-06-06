@@ -316,7 +316,7 @@ instance DIA_Lehmar_PICKPOCKET(C_Info)
 
 func int DIA_Lehmar_PICKPOCKET_Condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_HasItems(self,ItWr_Schuldenbuch) >= 1) && (other.attribute[ATR_DEXTERITY] >= (20 - Theftdiff)))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (other.attribute[ATR_DEXTERITY] >= (60 - Theftdiff)))
 	{
 		return TRUE;
 	};
@@ -331,11 +331,12 @@ func void DIA_Lehmar_PICKPOCKET_Info()
 
 func void DIA_Lehmar_PICKPOCKET_DoIt()
 {
-	if(other.attribute[ATR_DEXTERITY] >= 20)
+	if(other.attribute[ATR_DEXTERITY] >= 60)
 	{
-		B_GiveInvItems(self,other,ItWr_Schuldenbuch,1);
+		CreateInvItems(self,ItWr_Schuldenbuch,1);
+		B_StealInvItems(self,other,ItWr_Schuldenbuch,1);
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
-		B_GivePlayerXP(10);
+		//B_GivePlayerXP(10);
 		Info_ClearChoices(DIA_Lehmar_PICKPOCKET);
 	}
 	else
@@ -378,4 +379,3 @@ func void DIA_Lehmar_BuchWeg_Info()
 	AI_Output(self,other,"DIA_Lehmar_Add_09_03");	//Tak, tak, oczywiœcie. A teraz wynoœ siê st¹d.
 	AI_StopProcessInfos(self);
 };
-

@@ -544,9 +544,6 @@ instance ItFo_Beer(C_Item)
 	count[1] = HP_Beer;
 	text[2] = NAME_Toxicity;
 	count[2] = Toxicity_Beer;
-	//text[2] = NAME_Bonus_Mana;
-	//count[2] = Mana_Beer;
-	//text[4] = "Mroczny Paladyn";
 	text[5] = NAME_Value;
 	count[5] = Value_Beer;
 };
@@ -576,8 +573,6 @@ instance ItFo_Booze(C_Item)
 	count[1] = HP_Booze;
 	text[2] = NAME_Toxicity;
 	count[2] = Toxicity_Booze;
-	//text[2] = NAME_Bonus_Mana;
-	//count[2] = Mana_Booze;
 	text[5] = NAME_Value;
 	count[5] = Value_Booze;
 };

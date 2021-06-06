@@ -46,8 +46,9 @@ func void _Focusnames() {
 	}
 	else if(Hlp_Is_oCItem(her.focus_vob)) {
 		var c_item itm; itm = MEM_PtrToInst(her.focus_vob);
-  	if(portalguild > GIL_NONE && her.guild != portalguild && Wld_GetGuildAttitude(her.guild,portalguild) != ATT_FRIENDLY && ((itm.flags & ITEM_DROPPED) != ITEM_DROPPED))
-  	{
+  	//if(portalguild > GIL_NONE && her.guild != portalguild && Wld_GetGuildAttitude(her.guild,portalguild) != ATT_FRIENDLY && ((itm.flags & ITEM_DROPPED) != ITEM_DROPPED))
+    if(portalguild > GIL_NONE && ((itm.flags & ITEM_DROPPED) != ITEM_DROPPED))
+    {
   		col = Focusnames_Color_Hostile();
   	};
 
@@ -57,7 +58,8 @@ func void _Focusnames() {
   {
     var oCMobContainer container; container = MEM_PtrToInst(her.focus_vob);
     //container._oCMob_owner != 0 ||
-    if((portalguild > GIL_NONE && her.guild != portalguild && Wld_GetGuildAttitude(her.guild,portalguild) != ATT_FRIENDLY))
+    //if((portalguild > GIL_NONE && her.guild != portalguild && Wld_GetGuildAttitude(her.guild,portalguild) != ATT_FRIENDLY))
+    if(portalguild > GIL_NONE)
     {
       col = Focusnames_Color_Hostile();
     };

@@ -12,9 +12,9 @@ prototype Mst_Default_Dragon_Ice(C_Npc)
 	attribute[ATR_HITPOINTS] = 4000;
 	attribute[ATR_MANA_MAX] = 1000;
 	attribute[ATR_MANA] = 1000;
-	protection[PROT_BLUNT] = 130;
-	protection[PROT_EDGE] = 130;
-	protection[PROT_POINT] = 150;
+	protection[PROT_BLUNT] = 110;
+	protection[PROT_EDGE] = 110;
+	protection[PROT_POINT] = 110;
 	protection[PROT_FIRE] = 100;
 	protection[PROT_FLY] = IMMUNE;
 	protection[PROT_MAGIC] = 150;
@@ -44,4 +44,3 @@ instance Dragon_Ice(Mst_Default_Dragon_Ice)
 	B_SetVisuals_Dragon_Ice();
 	Npc_SetToFistMode(self);
 };
-

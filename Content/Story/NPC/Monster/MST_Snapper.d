@@ -12,8 +12,8 @@ prototype Mst_Default_Snapper(C_Npc)
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
 	protection[PROT_BLUNT] = 80;
-	protection[PROT_EDGE] = 80;
-	protection[PROT_POINT] = 80;
+	protection[PROT_EDGE] = 75;
+	protection[PROT_POINT] = 75;
 	protection[PROT_FIRE] = 55;
 	protection[PROT_FLY] = 60;
 	protection[PROT_MAGIC] = 35;
@@ -128,4 +128,3 @@ instance Grimbald_Snapper3(Mst_Default_Snapper)
 	B_SetVisuals_Snapper();
 	Npc_SetToFistMode(self);
 };
-

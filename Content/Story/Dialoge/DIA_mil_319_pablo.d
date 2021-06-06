@@ -51,9 +51,9 @@ func void DIA_Pablo_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 20)
 	{
-		B_GiveInvItems(self,other,ItKe_City_Tower_01,1);
+		B_StealInvItems(self,other,ItKe_City_Tower_01,1);
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
-		B_GivePlayerXP(XP_Ambient);
+		//B_GivePlayerXP(XP_Ambient);
 		Info_ClearChoices(DIA_Pablo_PICKPOCKET);
 	}
 	else
@@ -292,4 +292,3 @@ func void DIA_Pablo_Perm_Info()
 		AI_Output(self,other,"DIA_Pablo_Perm_12_11");	//W tej chwili panuje tu spokój. Jedynie bandyci spoza miasta sprawiaj¹ pewne problemy.
 	};
 };
-

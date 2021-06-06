@@ -4,19 +4,19 @@ prototype Mst_Default_Shadowbeast(C_Npc)
 	name[0] = "Cieniostwór";
 	guild = GIL_SHADOWBEAST;
 	aivar[AIV_MM_REAL_ID] = ID_SHADOWBEAST;
-	level = 20;
+	level = 30;
 	attribute[ATR_STRENGTH] = 120;
 	attribute[ATR_DEXTERITY] = 120;
 	attribute[ATR_HITPOINTS_MAX] = 500;
 	attribute[ATR_HITPOINTS] = 500;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
-	protection[PROT_BLUNT] = 120;
-	protection[PROT_EDGE] = 120;
-	protection[PROT_POINT] = 100;
-	protection[PROT_FIRE] = 100;
-	protection[PROT_FLY] = 120;
-	protection[PROT_MAGIC] = 120;
+	protection[PROT_BLUNT] = 110;
+	protection[PROT_EDGE] = 110;
+	protection[PROT_POINT] = 90;
+	protection[PROT_FIRE] = 90;
+	protection[PROT_FLY] = 110;
+	protection[PROT_MAGIC] = 110;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_SHADOWBEAST;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
@@ -44,4 +44,3 @@ instance Shadowbeast(Mst_Default_Shadowbeast)
 	B_SetVisuals_Shadowbeast();
 	Npc_SetToFistMode(self);
 };
-

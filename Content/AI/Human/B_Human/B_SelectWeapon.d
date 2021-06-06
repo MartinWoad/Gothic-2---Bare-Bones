@@ -2,6 +2,8 @@
 func void B_SelectWeapon(var C_Npc slf,var C_Npc oth)
 {
 	var C_Item weapon;
+	var C_Item ammo;
+
 	if(C_BodyStateContains(slf,BS_FALL) || C_BodyStateContains(slf,BS_SWIM) || C_BodyStateContains(slf,BS_DIVE))
 	{
 		return;
@@ -19,10 +21,10 @@ func void B_SelectWeapon(var C_Npc slf,var C_Npc oth)
 		AI_ReadyMeleeWeapon(slf);
 		return;
 	};
-	weapon = Npc_GetEquippedArmor(slf);
+	//weapon = Npc_Get(slf);
 	if(Npc_IsInFightMode(slf,FMODE_FAR))
 	{
-		if(((Npc_GetDistToNpc(slf,oth) > FIGHT_DIST_RANGED_INNER) || !Npc_HasEquippedMeleeWeapon(slf)) && (Npc_HasItems(slf,weapon.munition) > 0))
+		if(((Npc_GetDistToNpc(slf,oth) > FIGHT_DIST_RANGED_INNER) || !Npc_HasEquippedMeleeWeapon(slf)) && ((Npc_HasItems(slf,ItRw_Bolt) > 0) || (Npc_HasItems(slf,ItRw_Arrow) > 0)))
 		{
 			return;
 		};
@@ -43,7 +45,7 @@ func void B_SelectWeapon(var C_Npc slf,var C_Npc oth)
 		AI_ReadyMeleeWeapon(slf);
 		return;
 	};
-	if(Npc_HasEquippedRangedWeapon(slf) && (Npc_GetDistToNpc(slf,oth) > FIGHT_DIST_RANGED_INNER) && C_NpcHasAttackReasonToKill(slf) && (Npc_HasItems(slf,weapon.munition) > 0))
+	if(Npc_HasEquippedRangedWeapon(slf) && (Npc_GetDistToNpc(slf,oth) > FIGHT_DIST_RANGED_INNER) && C_NpcHasAttackReasonToKill(slf) && ((Npc_HasItems(slf,ItRw_Bolt) > 0) || (Npc_HasItems(slf,ItRw_Arrow) > 0)))
 	{
 		if(!Npc_IsInFightMode(slf,FMODE_NONE))
 		{
@@ -68,4 +70,3 @@ func void B_SelectWeapon(var C_Npc slf,var C_Npc oth)
 		return;
 	};
 };
-

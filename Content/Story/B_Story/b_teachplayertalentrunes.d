@@ -21,13 +21,13 @@ func int B_TeachPlayerTalentRunes(var C_Npc slf,var C_Npc oth,var int spell)
 	{
 		ScrollTrader = Hlp_GetNpc(Isgaroth);
 	}
-	else if(Npc_IsDead(Engor) == FALSE)
+	else if(Npc_IsDead(Zuris) == FALSE)
 	{
-		ScrollTrader = Hlp_GetNpc(Engor);
+		ScrollTrader = Hlp_GetNpc(Zuris);
 	}
-	else if(Npc_IsDead(Orlan) == FALSE)
+	else if(Npc_IsDead(Ignaz) == FALSE)
 	{
-		ScrollTrader = Hlp_GetNpc(Orlan);
+		ScrollTrader = Hlp_GetNpc(Ignaz);
 	};
 	if(spell == SPL_PalLight)
 	{
@@ -267,4 +267,3 @@ func int B_TeachPlayerTalentRunes(var C_Npc slf,var C_Npc oth,var int spell)
 	Npc_SetTalentSkill(oth,NPC_TALENT_RUNES,1);
 	return TRUE;
 };
-

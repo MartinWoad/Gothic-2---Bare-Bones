@@ -144,7 +144,7 @@ func void DIA_NOV_3_Wurst_Info()
 	B_UseItem(self,ItFo_Sausage);
 	NovizeLeft = IntToString(13 - Wurst_Gegeben);
 	NovizeText = ConcatStrings(NovizeLeft,PRINT_NovizenLeft);
-	AI_PrintScreen(NovizeText,-1,YPOS_GoldGiven,FONT_ScreenSmall,3);
+	PrintS_Ext(NovizeText, White());
 };
 
 
@@ -294,4 +294,3 @@ func void B_AssignAmbientInfos_NOV_3(var C_Npc slf)
 	DIA_NOV_3_Fegen.npc = Hlp_GetInstanceID(slf);
 	DIA_NOV_3_Wurst.npc = Hlp_GetInstanceID(slf);
 };
-

@@ -28,7 +28,7 @@ instance DIA_Garwig_Wurst(C_Info)
 	condition = DIA_Garwig_Wurst_Condition;
 	information = DIA_Garwig_Wurst_Info;
 	permanent = FALSE;
-	description = "Chcesz spróbowaæ kie³basy?";
+	description = "Chcesz sprï¿½bowaï¿½ kieï¿½basy?";
 };
 
 
@@ -44,15 +44,15 @@ func void DIA_Garwig_Wurst_Info()
 {
 	var string NovizeText;
 	var string NovizeLeft;
-	AI_Output(other,self,"DIA_Garwig_Wurst_15_00");	//Chcesz spróbowaæ kie³basy?
-	AI_Output(self,other,"DIA_Garwig_Wurst_06_01");	//Jest pyszna. Bardzo dziêkujê, Bracie.
+	AI_Output(other,self,"DIA_Garwig_Wurst_15_00");	//Chcesz sprï¿½bowaï¿½ kieï¿½basy?
+	AI_Output(self,other,"DIA_Garwig_Wurst_06_01");	//Jest pyszna. Bardzo dziï¿½kujï¿½, Bracie.
 	B_GiveInvItems(other,self,ItFo_Schafswurst,1);
 	Wurst_Gegeben = Wurst_Gegeben + 1;
 	CreateInvItems(self,ItFo_Sausage,1);
 	B_UseItem(self,ItFo_Sausage);
 	NovizeLeft = IntToString(13 - Wurst_Gegeben);
 	NovizeText = ConcatStrings(NovizeLeft,PRINT_NovizenLeft);
-	AI_PrintScreen(NovizeText,-1,YPOS_GoldGiven,FONT_ScreenSmall,3);
+	PrintS_Ext(NovizeText, White());
 };
 
 
@@ -77,9 +77,9 @@ func int DIA_Garwig_Hello_Condition()
 
 func void DIA_Garwig_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Garwig_Hello_06_00");	//Niech Innos bêdzie z tob¹. Nie znam ciê, jesteœ tu nowy?
-	AI_Output(other,self,"DIA_Garwig_Hello_15_01");	//Tak, dopiero siê do was przy³¹czy³em.
-	AI_Output(self,other,"DIA_Garwig_Hello_06_02");	//W takim wypadku mam nadziejê, ¿e prêdko siê tutaj zadomowisz. Daj mi znaæ, jeœli bêdê móg³ ci w czymœ pomóc.
+	AI_Output(self,other,"DIA_Garwig_Hello_06_00");	//Niech Innos bï¿½dzie z tobï¿½. Nie znam ciï¿½, jesteï¿½ tu nowy?
+	AI_Output(other,self,"DIA_Garwig_Hello_15_01");	//Tak, dopiero siï¿½ do was przyï¿½ï¿½czyï¿½em.
+	AI_Output(self,other,"DIA_Garwig_Hello_06_02");	//W takim wypadku mam nadziejï¿½, ï¿½e prï¿½dko siï¿½ tutaj zadomowisz. Daj mi znaï¿½, jeï¿½li bï¿½dï¿½ mï¿½gï¿½ ci w czymï¿½ pomï¿½c.
 };
 
 
@@ -102,9 +102,9 @@ func int DIA_Garwig_Room_Condition()
 func void DIA_Garwig_Room_Info()
 {
 	AI_Output(other,self,"DIA_Garwig_Room_15_00");	//Co to za pomieszczenie?
-	AI_Output(self,other,"DIA_Garwig_Room_06_01");	//Tutaj przechowywane s¹ klasztorne relikwie.
+	AI_Output(self,other,"DIA_Garwig_Room_06_01");	//Tutaj przechowywane sï¿½ klasztorne relikwie.
 	AI_Output(other,self,"DIA_Garwig_Room_15_02");	//Jakie relikwie?
-	AI_Output(self,other,"DIA_Garwig_Room_06_03");	//Tu spoczywa M³ot Innosa oraz Tarcza Ognia, najwa¿niejsze relikwie Koœcio³a Innosa poza stolic¹ królestwa.
+	AI_Output(self,other,"DIA_Garwig_Room_06_03");	//Tu spoczywa Mï¿½ot Innosa oraz Tarcza Ognia, najwaï¿½niejsze relikwie Koï¿½cioï¿½a Innosa poza stolicï¿½ krï¿½lestwa.
 };
 
 
@@ -115,7 +115,7 @@ instance DIA_Garwig_Hammer(C_Info)
 	condition = DIA_Garwig_Hammer_Condition;
 	information = DIA_Garwig_Hammer_Info;
 	permanent = TRUE;
-	description = "Opowiedz mi o tym M³ocie.";
+	description = "Opowiedz mi o tym Mï¿½ocie.";
 };
 
 
@@ -129,10 +129,10 @@ func int DIA_Garwig_Hammer_Condition()
 
 func void DIA_Garwig_Hammer_Info()
 {
-	AI_Output(other,self,"DIA_Garwig_Hammer_15_00");	//Opowiedz mi o tym M³ocie.
-	AI_Output(self,other,"DIA_Garwig_Hammer_06_01");	//Oto œwiêty M³ot Innosa. To w³aœnie nim Œwiêty Rhobar zabi³ Kamiennego Stra¿nika.
-	AI_Output(self,other,"DIA_Garwig_Hammer_06_02");	//Œwiête Pisma twierdz¹, ¿e Kamienny Stra¿nik by³ niezniszczalny. Broñ wyszczerbia³a siê na jego kamiennej skórze, nie czyni¹c mu ¿adnej krzywdy.
-	AI_Output(self,other,"DIA_Garwig_Hammer_06_03");	//Z imieniem Innosa na ustach Rhobar rzuci³ siê na potwora i zmia¿d¿y³ go jednym potê¿nym ciosem m³ota.
+	AI_Output(other,self,"DIA_Garwig_Hammer_15_00");	//Opowiedz mi o tym Mï¿½ocie.
+	AI_Output(self,other,"DIA_Garwig_Hammer_06_01");	//Oto ï¿½wiï¿½ty Mï¿½ot Innosa. To wï¿½aï¿½nie nim ï¿½wiï¿½ty Rhobar zabiï¿½ Kamiennego Straï¿½nika.
+	AI_Output(self,other,"DIA_Garwig_Hammer_06_02");	//ï¿½wiï¿½te Pisma twierdzï¿½, ï¿½e Kamienny Straï¿½nik byï¿½ niezniszczalny. Broï¿½ wyszczerbiaï¿½a siï¿½ na jego kamiennej skï¿½rze, nie czyniï¿½c mu ï¿½adnej krzywdy.
+	AI_Output(self,other,"DIA_Garwig_Hammer_06_03");	//Z imieniem Innosa na ustach Rhobar rzuciï¿½ siï¿½ na potwora i zmiaï¿½dï¿½yï¿½ go jednym potï¿½nym ciosem mï¿½ota.
 };
 
 
@@ -158,8 +158,8 @@ func int DIA_Garwig_Shield_Condition()
 func void DIA_Garwig_Shield_Info()
 {
 	AI_Output(other,self,"DIA_Garwig_Shield_15_00");	//Opowiedz mi o tej Tarczy.
-	AI_Output(self,other,"DIA_Garwig_Shield_06_01");	//Tarcza Ognia zosta³a u¿yta przez Dominique w czasie bitwy na Po³udniowych Wyspach.
-	AI_Output(self,other,"DIA_Garwig_Shield_06_02");	//Nikt nie ma prawa korzystaæ z jej mocy - dlatego przybiliœmy j¹ do œciany.
+	AI_Output(self,other,"DIA_Garwig_Shield_06_01");	//Tarcza Ognia zostaï¿½a uï¿½yta przez Dominique w czasie bitwy na Poï¿½udniowych Wyspach.
+	AI_Output(self,other,"DIA_Garwig_Shield_06_02");	//Nikt nie ma prawa korzystaï¿½ z jej mocy - dlatego przybiliï¿½my jï¿½ do ï¿½ciany.
 };
 
 
@@ -170,7 +170,7 @@ instance DIA_Garwig_Auge(C_Info)
 	condition = DIA_Garwig_Auge_Condition;
 	information = DIA_Garwig_Auge_Info;
 	permanent = FALSE;
-	description = "Czy znajduje siê tutaj tak¿e Oko Innosa?";
+	description = "Czy znajduje siï¿½ tutaj takï¿½e Oko Innosa?";
 };
 
 
@@ -184,8 +184,8 @@ func int DIA_Garwig_Auge_Condition()
 
 func void DIA_Garwig_Auge_Info()
 {
-	AI_Output(other,self,"DIA_Garwig_Auge_15_00");	//Czy znajduje siê tutaj tak¿e Oko Innosa?
-	AI_Output(self,other,"DIA_Garwig_Auge_06_01");	//Oczywiœcie, ¿e nie. Co za dziwaczny pomys³. Nikt nie wie, gdzie siê znajduje najœwiêtszy artefakt.
+	AI_Output(other,self,"DIA_Garwig_Auge_15_00");	//Czy znajduje siï¿½ tutaj takï¿½e Oko Innosa?
+	AI_Output(self,other,"DIA_Garwig_Auge_06_01");	//Oczywiï¿½cie, ï¿½e nie. Co za dziwaczny pomysï¿½. Nikt nie wie, gdzie siï¿½ znajduje najï¿½wiï¿½tszy artefakt.
 };
 
 
@@ -210,12 +210,12 @@ func int DIA_Garwig_SLEEP_Condition()
 
 func void DIA_Garwig_SLEEP_Info()
 {
-	AI_Output(other,self,"DIA_Garwig_SLEEP_15_00");	//Czym siê tu zajmujesz?
-	AI_Output(self,other,"DIA_Garwig_SLEEP_06_01");	//Jestem stra¿nikiem œwiêtych artefaktów.
+	AI_Output(other,self,"DIA_Garwig_SLEEP_15_00");	//Czym siï¿½ tu zajmujesz?
+	AI_Output(self,other,"DIA_Garwig_SLEEP_06_01");	//Jestem straï¿½nikiem ï¿½wiï¿½tych artefaktï¿½w.
 	Info_ClearChoices(DIA_Garwig_SLEEP);
 	Info_AddChoice(DIA_Garwig_SLEEP,Dialog_Back,DIA_Garwig_SLEEP_BACK);
-	Info_AddChoice(DIA_Garwig_SLEEP,"Chcesz, ¿ebym na moment ciê zast¹pi³?",DIA_Garwig_SLEEP_EXCHANGE);
-	Info_AddChoice(DIA_Garwig_SLEEP,"Czemu te artefakty s¹ tak pilnie strze¿one?",DIA_Garwig_SLEEP_THIEF);
+	Info_AddChoice(DIA_Garwig_SLEEP,"Chcesz, ï¿½ebym na moment ciï¿½ zastï¿½piï¿½?",DIA_Garwig_SLEEP_EXCHANGE);
+	Info_AddChoice(DIA_Garwig_SLEEP,"Czemu te artefakty sï¿½ tak pilnie strzeï¿½one?",DIA_Garwig_SLEEP_THIEF);
 	Info_AddChoice(DIA_Garwig_SLEEP,"Czy ty nigdy nie sypiasz?",DIA_Garwig_SLEEP_NEVER);
 };
 
@@ -226,32 +226,32 @@ func void DIA_Garwig_SLEEP_BACK()
 
 func void DIA_Garwig_SLEEP_EXCHANGE()
 {
-	AI_Output(other,self,"DIA_Garwig_SLEEP_EXCHANGE_15_00");	//Chcesz, ¿ebym na moment ciê zast¹pi³?
-	AI_Output(self,other,"DIA_Garwig_SLEEP_EXCHANGE_06_01");	//Czy to jakaœ próba? Magowie ciê tu przys³ali, abyœ wystawi³ mnie na próbê, prawda? Och - wiedzia³em od pocz¹tku!
-	AI_Output(self,other,"DIA_Garwig_SLEEP_EXCHANGE_06_02");	//Ale ja siê nie ugnê. Powiedz swoim magom, ¿e stojê tu na stra¿y niewzruszony niczym kamienny pos¹g, opieraj¹c siê wszelkim pokusom, albowiem jestem godny tej zaszczytnej misji.
+	AI_Output(other,self,"DIA_Garwig_SLEEP_EXCHANGE_15_00");	//Chcesz, ï¿½ebym na moment ciï¿½ zastï¿½piï¿½?
+	AI_Output(self,other,"DIA_Garwig_SLEEP_EXCHANGE_06_01");	//Czy to jakaï¿½ prï¿½ba? Magowie ciï¿½ tu przysï¿½ali, abyï¿½ wystawiï¿½ mnie na prï¿½bï¿½, prawda? Och - wiedziaï¿½em od poczï¿½tku!
+	AI_Output(self,other,"DIA_Garwig_SLEEP_EXCHANGE_06_02");	//Ale ja siï¿½ nie ugnï¿½. Powiedz swoim magom, ï¿½e stojï¿½ tu na straï¿½y niewzruszony niczym kamienny posï¿½g, opierajï¿½c siï¿½ wszelkim pokusom, albowiem jestem godny tej zaszczytnej misji.
 };
 
 func void DIA_Garwig_SLEEP_THIEF()
 {
-	AI_Output(other,self,"DIA_Garwig_SLEEP_THIEF_15_00");	//Czemu te artefakty s¹ tak pilnie strze¿one? Czy istnieje jakieœ niebezpieczeñstwo, ¿e ktoœ chcia³by je ukraœæ?
-	AI_Output(self,other,"DIA_Garwig_SLEEP_THIEF_06_01");	//Co za niezwyk³y pomys³. Czemu ktoœ mia³by je ukraœæ?
-	AI_Output(self,other,"DIA_Garwig_SLEEP_THIEF_06_02");	//Tylko s³udzy Innosa maj¹ wstêp do klasztoru. Zapewniam ciê, ¿e ¿aden wyznawca nie odwa¿y³by siê na takie œwiêtokradztwo.
+	AI_Output(other,self,"DIA_Garwig_SLEEP_THIEF_15_00");	//Czemu te artefakty sï¿½ tak pilnie strzeï¿½one? Czy istnieje jakieï¿½ niebezpieczeï¿½stwo, ï¿½e ktoï¿½ chciaï¿½by je ukraï¿½ï¿½?
+	AI_Output(self,other,"DIA_Garwig_SLEEP_THIEF_06_01");	//Co za niezwykï¿½y pomysï¿½. Czemu ktoï¿½ miaï¿½by je ukraï¿½ï¿½?
+	AI_Output(self,other,"DIA_Garwig_SLEEP_THIEF_06_02");	//Tylko sï¿½udzy Innosa majï¿½ wstï¿½p do klasztoru. Zapewniam ciï¿½, ï¿½e ï¿½aden wyznawca nie odwaï¿½yï¿½by siï¿½ na takie ï¿½wiï¿½tokradztwo.
 };
 
 func void DIA_Garwig_SLEEP_NEVER()
 {
-	AI_Output(other,self,"DIA_Garwig_SLEEP_NEVER_15_00");	//Nigdy nie œpisz?
-	AI_Output(self,other,"DIA_Garwig_SLEEP_NEVER_06_01");	//Co za dziwne pytanie. Oczywiœcie, ¿e nigdy nie sypiam. Innos sprawia, ¿e nie potrzebujê snu.
-	AI_Output(self,other,"DIA_Garwig_SLEEP_NEVER_06_02");	//Jak inaczej móg³bym pe³niæ moje œwiête powo³anie stra¿nika?
+	AI_Output(other,self,"DIA_Garwig_SLEEP_NEVER_15_00");	//Nigdy nie ï¿½pisz?
+	AI_Output(self,other,"DIA_Garwig_SLEEP_NEVER_06_01");	//Co za dziwne pytanie. Oczywiï¿½cie, ï¿½e nigdy nie sypiam. Innos sprawia, ï¿½e nie potrzebujï¿½ snu.
+	AI_Output(self,other,"DIA_Garwig_SLEEP_NEVER_06_02");	//Jak inaczej mï¿½gï¿½bym peï¿½niï¿½ moje ï¿½wiï¿½te powoï¿½anie straï¿½nika?
 	Info_ClearChoices(DIA_Garwig_SLEEP);
-	Info_AddChoice(DIA_Garwig_SLEEP,"Naprawdê NIGDY nie sypiasz?",DIA_Garwig_SLEEP_AGAIN);
+	Info_AddChoice(DIA_Garwig_SLEEP,"Naprawdï¿½ NIGDY nie sypiasz?",DIA_Garwig_SLEEP_AGAIN);
 };
 
 func void DIA_Garwig_SLEEP_AGAIN()
 {
-	AI_Output(other,self,"DIA_Garwig_SLEEP_AGAIN_15_00");	//Naprawdê NIGDY nie sypiasz?
-	AI_Output(self,other,"DIA_Garwig_SLEEP_AGAIN_06_01");	//Nie. Jeœli stra¿nik zapada w sen, oznacza to jego ca³kowit¹ pora¿kê.
-	AI_Output(self,other,"DIA_Garwig_SLEEP_AGAIN_06_02");	//Ale ja nie zawiodê, albowiem Innos zapewnia mi si³ê i wytrwa³oœæ, abym móg³ wiecznie trwaæ na posterunku.
+	AI_Output(other,self,"DIA_Garwig_SLEEP_AGAIN_15_00");	//Naprawdï¿½ NIGDY nie sypiasz?
+	AI_Output(self,other,"DIA_Garwig_SLEEP_AGAIN_06_01");	//Nie. Jeï¿½li straï¿½nik zapada w sen, oznacza to jego caï¿½kowitï¿½ poraï¿½kï¿½.
+	AI_Output(self,other,"DIA_Garwig_SLEEP_AGAIN_06_02");	//Ale ja nie zawiodï¿½, albowiem Innos zapewnia mi siï¿½ï¿½ i wytrwaï¿½oï¿½ï¿½, abym mï¿½gï¿½ wiecznie trwaï¿½ na posterunku.
 };
 
 
@@ -278,13 +278,13 @@ func void DIA_Garwig_THIEF_Info()
 {
 	if(Hammer_Taken == TRUE)
 	{
-		AI_Output(self,other,"DIA_Garwig_THIEF_06_00");	//Z³odzieju! Zniewa¿y³eœ nie tylko mnie i siebie, lecz równie¿ ca³y ten klasztor!
-		AI_Output(self,other,"DIA_Garwig_THIEF_06_01");	//Odpokutujesz za to œwiêtokradztwo. Ale przede wszystkim - ODDAJ MI TEN M£OT!!!
+		AI_Output(self,other,"DIA_Garwig_THIEF_06_00");	//Zï¿½odzieju! Zniewaï¿½yï¿½eï¿½ nie tylko mnie i siebie, lecz rï¿½wnieï¿½ caï¿½y ten klasztor!
+		AI_Output(self,other,"DIA_Garwig_THIEF_06_01");	//Odpokutujesz za to ï¿½wiï¿½tokradztwo. Ale przede wszystkim - ODDAJ MI TEN Mï¿½OT!!!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Garwig_THIEF_06_02");	//M³ot znikn¹³ - jak to siê mog³o staæ?
-		AI_Output(self,other,"DIA_Garwig_THIEF_06_03");	//Zawiod³em, i kara Innosa mnie nie ominie!
+		AI_Output(self,other,"DIA_Garwig_THIEF_06_02");	//Mï¿½ot zniknï¿½ï¿½ - jak to siï¿½ mogï¿½o staï¿½?
+		AI_Output(self,other,"DIA_Garwig_THIEF_06_03");	//Zawiodï¿½em, i kara Innosa mnie nie ominie!
 	};
 };
 
@@ -296,7 +296,7 @@ instance DIA_Garwig_Abgeben(C_Info)
 	condition = DIA_Garwig_Abgeben_Condition;
 	information = DIA_Garwig_Abgeben_Info;
 	permanent = TRUE;
-	description = "Przyszed³em oddaæ ci twój M³ot.";
+	description = "Przyszedï¿½em oddaï¿½ ci twï¿½j Mï¿½ot.";
 };
 
 
@@ -310,16 +310,16 @@ func int DIA_Garwig_Abgeben_Condition()
 
 func void DIA_Garwig_Abgeben_Info()
 {
-	AI_Output(other,self,"DIA_Garwig_Abgeben_15_00");	//Przyszed³em oddaæ ci twój M³ot.
+	AI_Output(other,self,"DIA_Garwig_Abgeben_15_00");	//Przyszedï¿½em oddaï¿½ ci twï¿½j Mï¿½ot.
 	if(Hammer_Taken == TRUE)
 	{
-		AI_Output(self,other,"DIA_Garwig_Abgeben_06_01");	//Ty wstrêtny z³odzieju!
+		AI_Output(self,other,"DIA_Garwig_Abgeben_06_01");	//Ty wstrï¿½tny zï¿½odzieju!
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Garwig_Abgeben_06_02");	//A wiêc to ty mnie okrad³eœ...
+		AI_Output(self,other,"DIA_Garwig_Abgeben_06_02");	//A wiï¿½c to ty mnie okradï¿½eï¿½...
 	};
-	AI_Output(self,other,"DIA_Garwig_Abgeben_06_03");	//Jednak nie mnie s¹dziæ twoje czyny. Innos bêdzie twym sêdzi¹ i zeœle na ciebie sprawiedliw¹ karê!
+	AI_Output(self,other,"DIA_Garwig_Abgeben_06_03");	//Jednak nie mnie sï¿½dziï¿½ twoje czyny. Innos bï¿½dzie twym sï¿½dziï¿½ i zeï¿½le na ciebie sprawiedliwï¿½ karï¿½!
 	B_GiveInvItems(other,self,Holy_Hammer_MIS,1);
 	Hammer_Taken = FALSE;
 };

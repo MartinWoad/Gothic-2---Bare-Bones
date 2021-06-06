@@ -11,8 +11,8 @@ prototype Mst_Default_Troll(C_Npc)
 	attribute[ATR_HITPOINTS] = 1000;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
-	protection[PROT_BLUNT] = 200;
-	protection[PROT_EDGE] = 125;
+	protection[PROT_BLUNT] = 170;
+	protection[PROT_EDGE] = 110;
 	protection[PROT_POINT] = IMMUNE;
 	protection[PROT_FIRE] = 250;
 	protection[PROT_FLY] = IMMUNE;
@@ -58,4 +58,3 @@ instance Troll_DI(Mst_Default_Troll)
 	B_SetVisuals_Troll();
 	Npc_SetToFistMode(self);
 };
-

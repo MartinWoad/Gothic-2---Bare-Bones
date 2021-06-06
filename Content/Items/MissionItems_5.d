@@ -401,7 +401,8 @@ func void UseItPo_PotionOfDeath()
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA_MAX];
 		B_RaiseAttribute(self,ATR_STRENGTH,5,TRUE,FALSE);
 		B_RaiseAttribute(self,ATR_DEXTERITY,5,TRUE,FALSE);
-		PrintScreen(PRINT_FullyHealed,-1,65,FONT_Screen,4);
+		//PrintScreen(PRINT_FullyHealed,-1,65,FONT_Screen,4);
+		PrintS_Ext(PRINT_FullyHealed, Green());
 		Mdl_ApplyOverlayMdsTimed(self,"HUMANS_SPRINT.MDS",Time_Speed);
 	}
 	else
@@ -499,5 +500,5 @@ instance ItPo_HealRandolph_MIS(C_Item)
 
 func void Use_HealRandolph()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Essenz);
+	//Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Essenz);
 };

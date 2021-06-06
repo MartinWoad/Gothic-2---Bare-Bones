@@ -1,3 +1,15 @@
+var int playermapinstance;
+
+func int b_getplayermap()
+{
+	return PLAYERMAPINSTANCE;
+};
+
+func int b_setplayermap(var int mapinstance)
+{
+	PLAYERMAPINSTANCE = mapinstance;
+	return PLAYERMAPINSTANCE;
+};
 
 func int b_getbestplayermap()
 {
@@ -14,14 +26,6 @@ func int b_getbestplayermap()
 		else if(Npc_HasItems(hero,itwr_map_caves_mis) >= 1)
 		{
 			return itwr_map_caves_mis;
-		}
-		else if(Npc_HasItems(hero,itwr_map_newworld_ornaments_addon) >= 1)
-		{
-			return itwr_map_newworld_ornaments_addon;
-		}
-		else if(Npc_HasItems(hero,itwr_map_newworld_dexter) >= 1)
-		{
-			return itwr_map_newworld_dexter;
 		}
 		else if(Npc_HasItems(hero,itwr_shatteredgolem_mis) >= 1)
 		{
@@ -49,17 +53,6 @@ func int b_getbestplayermap()
 	}
 	else if(CURRENTLEVEL == DRAGONISLAND_ZEN)
 	{
-	}
-	else if(CURRENTLEVEL == ADDONWORLD_ZEN)
-	{
-		if(Npc_HasItems(hero,itwr_map_addonworld) >= 1)
-		{
-			return itwr_map_addonworld;
-		}
-		else if(Npc_HasItems(hero,itwr_addon_treasuremap) >= 1)
-		{
-			return itwr_addon_treasuremap;
-		};
 	};
 	return 0;
 };
@@ -77,14 +70,6 @@ func int b_getanyplayermap()
 	else if(Npc_HasItems(hero,itwr_map_caves_mis) >= 1)
 	{
 		return itwr_map_caves_mis;
-	}
-	else if(Npc_HasItems(hero,itwr_map_newworld_ornaments_addon) >= 1)
-	{
-		return itwr_map_newworld_ornaments_addon;
-	}
-	else if(Npc_HasItems(hero,itwr_map_newworld_dexter) >= 1)
-	{
-		return itwr_map_newworld_dexter;
 	}
 	else if(Npc_HasItems(hero,itwr_shatteredgolem_mis) >= 1)
 	{
@@ -105,14 +90,6 @@ func int b_getanyplayermap()
 	else if(Npc_HasItems(hero,itwr_map_oldworld_oremines_mis) >= 1)
 	{
 		return itwr_map_oldworld_oremines_mis;
-	}
-	else if(Npc_HasItems(hero,itwr_map_addonworld) >= 1)
-	{
-		return itwr_map_addonworld;
-	}
-	else if(Npc_HasItems(hero,itwr_addon_treasuremap) >= 1)
-	{
-		return itwr_addon_treasuremap;
 	};
 	return 0;
 };
@@ -130,7 +107,7 @@ func int player_hotkey_screen_map()
 	newinstance = oldinstance;
 	if(CURRENTLEVEL != NEWWORLD_ZEN)
 	{
-		if((oldinstance == itwr_map_caves_mis) || (oldinstance == itwr_map_newworld) || (oldinstance == itwr_map_newworld_city) || (oldinstance == itwr_map_newworld_dexter) || (oldinstance == itwr_map_newworld_ornaments_addon) || (oldinstance == itwr_map_orcelite_mis) || (oldinstance == itwr_map_shrine_mis) || (oldinstance == itwr_shatteredgolem_mis))
+		if((oldinstance == itwr_map_caves_mis) || (oldinstance == itwr_map_newworld) || (oldinstance == itwr_map_newworld_city) || (oldinstance == itwr_map_orcelite_mis) || (oldinstance == itwr_map_shrine_mis) || (oldinstance == itwr_shatteredgolem_mis))
 		{
 			newinstance = 0;
 		};
@@ -144,13 +121,6 @@ func int player_hotkey_screen_map()
 	};
 	if(CURRENTLEVEL != DRAGONISLAND_ZEN)
 	{
-	};
-	if(CURRENTLEVEL != ADDONWORLD_ZEN)
-	{
-		if((oldinstance == itwr_map_addonworld) || (oldinstance == itwr_addon_treasuremap))
-		{
-			newinstance = 0;
-		};
 	};
 	if(newinstance <= 0)
 	{
@@ -170,117 +140,3 @@ func int player_hotkey_screen_map()
 		return oldinstance;
 	};
 };
-
-func void b_lameschlork()
-{
-	Snd_Play("DRINKBOTTLE");
-};
-
-func void player_hotkey_lame_potion()
-{
-	if(Npc_IsInState(hero,zs_dead) == FALSE)
-	{
-		if(Npc_HasItems(hero,itpo_mana_03) && ((hero.attribute[ATR_MANA_MAX] - hero.attribute[ATR_MANA]) >= MANA_ELIXIER))
-		{
-			Npc_ChangeAttribute(hero,ATR_MANA,MANA_ELIXIER);
-			Npc_RemoveInvItem(hero,itpo_mana_03);
-			b_lameschlork();
-		}
-		else if(Npc_HasItems(hero,itpo_mana_02) && ((hero.attribute[ATR_MANA_MAX] - hero.attribute[ATR_MANA]) >= MANA_EXTRAKT))
-		{
-			Npc_ChangeAttribute(hero,ATR_MANA,MANA_EXTRAKT);
-			Npc_RemoveInvItem(hero,itpo_mana_02);
-			b_lameschlork();
-		}
-		else if(Npc_HasItems(hero,itpo_mana_01) && ((hero.attribute[ATR_MANA_MAX] - hero.attribute[ATR_MANA]) >= MANA_ESSENZ))
-		{
-			Npc_ChangeAttribute(hero,ATR_MANA,MANA_ESSENZ);
-			Npc_RemoveInvItem(hero,itpo_mana_01);
-			b_lameschlork();
-		}
-		else if(hero.attribute[ATR_MANA_MAX] != hero.attribute[ATR_MANA])
-		{
-			if(Npc_HasItems(hero,itpo_mana_01))
-			{
-				Npc_ChangeAttribute(hero,ATR_MANA,MANA_ESSENZ);
-				Npc_RemoveInvItem(hero,itpo_mana_01);
-				b_lameschlork();
-			}
-			else if(Npc_HasItems(hero,itpo_mana_02))
-			{
-				Npc_ChangeAttribute(hero,ATR_MANA,MANA_EXTRAKT);
-				Npc_RemoveInvItem(hero,itpo_mana_02);
-				b_lameschlork();
-			}
-			else if(Npc_HasItems(hero,itpo_mana_03))
-			{
-				Npc_ChangeAttribute(hero,ATR_MANA,MANA_ELIXIER);
-				Npc_RemoveInvItem(hero,itpo_mana_03);
-				b_lameschlork();
-			}
-			else
-			{
-				Print("Brak mikstur many!");
-			};
-		}
-		else
-		{
-			Print("Maksymalny mo¿liwy poziom many!");
-		};
-	};
-};
-
-func void player_hotkey_lame_heal()
-{
-	if(Npc_IsInState(hero,zs_dead) == FALSE)
-	{
-		if(Npc_HasItems(hero,itpo_health_03) && ((hero.attribute[ATR_HITPOINTS_MAX] - hero.attribute[ATR_HITPOINTS]) >= HP_ELIXIER))
-		{
-			Npc_ChangeAttribute(hero,ATR_HITPOINTS,HP_ELIXIER);
-			Npc_RemoveInvItem(hero,itpo_health_03);
-			b_lameschlork();
-		}
-		else if(Npc_HasItems(hero,itpo_health_02) && ((hero.attribute[ATR_HITPOINTS_MAX] - hero.attribute[ATR_HITPOINTS]) >= HP_EXTRAKT))
-		{
-			Npc_ChangeAttribute(hero,ATR_HITPOINTS,HP_EXTRAKT);
-			Npc_RemoveInvItem(hero,itpo_health_02);
-			b_lameschlork();
-		}
-		else if(Npc_HasItems(hero,itpo_health_01) && ((hero.attribute[ATR_HITPOINTS_MAX] - hero.attribute[ATR_HITPOINTS]) >= HP_ESSENZ))
-		{
-			Npc_ChangeAttribute(hero,ATR_HITPOINTS,HP_ESSENZ);
-			Npc_RemoveInvItem(hero,itpo_health_01);
-			b_lameschlork();
-		}
-		else if(hero.attribute[ATR_HITPOINTS_MAX] != hero.attribute[ATR_HITPOINTS])
-		{
-			if(Npc_HasItems(hero,itpo_health_01))
-			{
-				Npc_ChangeAttribute(hero,ATR_HITPOINTS,HP_ESSENZ);
-				Npc_RemoveInvItem(hero,itpo_health_01);
-				b_lameschlork();
-			}
-			else if(Npc_HasItems(hero,itpo_health_02))
-			{
-				Npc_ChangeAttribute(hero,ATR_HITPOINTS,HP_EXTRAKT);
-				Npc_RemoveInvItem(hero,itpo_health_02);
-				b_lameschlork();
-			}
-			else if(Npc_HasItems(hero,itpo_health_03))
-			{
-				Npc_ChangeAttribute(hero,ATR_HITPOINTS,HP_ELIXIER);
-				Npc_RemoveInvItem(hero,itpo_health_03);
-				b_lameschlork();
-			}
-			else
-			{
-				Print("Brak mikstur leczniczych!");
-			};
-		}
-		else
-		{
-			Print("Maksymalna mo¿liwa liczba punktów trafieñ!");
-		};
-	};
-};
-

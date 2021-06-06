@@ -56,8 +56,8 @@ func void dia_franco_pickpocket_doit()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 60)
 	{
-		b_giveinvitems(self,other,itam_addon_franco,1);
-		b_giveplayerxp(XP_AMBIENT);
+		b_stealinvitems(self,other,itam_addon_franco,1);
+		//b_giveplayerxp(XP_AMBIENT);
 		Info_ClearChoices(dia_franco_pickpocket);
 		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
 		self.attribute[ATR_HITPOINTS_MAX] = 196;
@@ -487,4 +487,3 @@ func void dia_addon_franco_pig_info()
 	AI_StopProcessInfos(self);
 	b_attack(self,other,AR_NONE,1);
 };
-

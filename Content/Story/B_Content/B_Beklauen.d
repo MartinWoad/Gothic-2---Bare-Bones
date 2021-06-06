@@ -23,7 +23,8 @@ func void B_Beklauen()
 {
 	if(other.attribute[ATR_DEXTERITY] >= TheftDexGlob)
 	{
-		B_GiveInvItems(self,other,ItMi_Gold,TheftGoldGlob);
+		B_StealInvItems(self,other,ItMi_Gold,TheftGoldGlob);
+
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
 		Snd_Play("Geldbeutel");
 	}
@@ -33,4 +34,3 @@ func void B_Beklauen()
 		B_Attack(self,other,AR_Theft,1);
 	};
 };
-

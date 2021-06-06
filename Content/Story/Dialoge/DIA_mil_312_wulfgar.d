@@ -412,7 +412,8 @@ func void DIA_Wulfgar_Bonus_Info()
 		AI_Output(self,other,"DIA_Wulfgar_Bonus_04_01");	//S³uchaj wiêc uwa¿nie. Mo¿esz wyprowadziæ swych przeciwników w pole, unikaj¹c ich ciosów i atakuj¹c w odpowiednim momencie.
 		AI_Output(self,other,"DIA_Wulfgar_Bonus_04_02");	//Pamiêtaj o tym podczas kolejnej walki.
 		B_AddFightSkill(other,NPC_TALENT_1H,1,TRUE);
-		PrintScreen(PRINT_Learn1H,-1,-1,FONT_ScreenSmall,2);
+		//PrintScreen(PRINT_Learn1H,-1,-1,FONT_ScreenSmall,2);
+		PrintS_Ext(PRINT_Learn1H, White());
 	};
 };
 
@@ -450,4 +451,3 @@ func void DIA_Wulfgar_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Wulfgar_PICKPOCKET);
 };
-

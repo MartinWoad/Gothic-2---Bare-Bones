@@ -19,8 +19,9 @@ func void EVT_NpcTakeVob()
 	};
 	if (Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(hero))
 	{
-  	if(portalguild > GIL_NONE && her.guild != portalguild && Wld_GetGuildAttitude(her.guild,portalguild) != ATT_FRIENDLY && ((itm.flags & ITEM_DROPPED) != ITEM_DROPPED))
-  	{
+  	//if(portalguild > GIL_NONE && her.guild != portalguild && Wld_GetGuildAttitude(her.guild,portalguild) != ATT_FRIENDLY && ((itm.flags & ITEM_DROPPED) != ITEM_DROPPED))
+		if(portalguild > GIL_NONE && ((itm.flags & ITEM_DROPPED) != ITEM_DROPPED))
+		{
       // Add to stolen goods if an item is owner by someone
   		heroThefts += itm.value;
       //PrintScreen(ConcatStrings("Ukrad³eœ ", itm.name), -1, -1, FONT_ScreenSmall, 2);

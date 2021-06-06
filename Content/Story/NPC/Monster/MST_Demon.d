@@ -5,18 +5,18 @@ prototype Mst_Default_Demon(C_Npc)
 	guild = GIL_DEMON;
 	aivar[AIV_MM_REAL_ID] = ID_DEMON;
 	level = 60;
-	attribute[ATR_STRENGTH] = 200;
-	attribute[ATR_DEXTERITY] = 200;
+	attribute[ATR_STRENGTH] = 120;
+	attribute[ATR_DEXTERITY] = 120;
 	attribute[ATR_HITPOINTS_MAX] = 400;
 	attribute[ATR_HITPOINTS] = 400;
 	attribute[ATR_MANA_MAX] = 100;
 	attribute[ATR_MANA] = 100;
-	protection[PROT_BLUNT] = 150;
-	protection[PROT_EDGE] = 150;
-	protection[PROT_POINT] = 150;
+	protection[PROT_BLUNT] = 115;
+	protection[PROT_EDGE] = 115;
+	protection[PROT_POINT] = 115;
 	protection[PROT_FIRE] = IMMUNE;
-	protection[PROT_FLY] = 150;
-	protection[PROT_MAGIC] = 125;
+	protection[PROT_FLY] = 115;
+	protection[PROT_MAGIC] = 115;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_DEMON;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
@@ -84,4 +84,3 @@ instance Xardas_DT_Demon5(Mst_Default_Demon)
 	B_SetVisuals_Demon();
 	Npc_SetToFistMode(self);
 };
-

@@ -12,11 +12,11 @@ prototype Mst_Default_OrcShaman(C_Npc)
 	attribute[ATR_HITPOINTS] = 200;
 	attribute[ATR_MANA_MAX] = 100;
 	attribute[ATR_MANA] = 100;
-	protection[PROT_BLUNT] = 100;
-	protection[PROT_EDGE] = 100;
-	protection[PROT_POINT] = 100;
-	protection[PROT_FIRE] = 100;
-	protection[PROT_FLY] = 100;
+	protection[PROT_BLUNT] = 90;
+	protection[PROT_EDGE] = 90;
+	protection[PROT_POINT] = 90;
+	protection[PROT_FIRE] = 90;
+	protection[PROT_FLY] = 90;
 	protection[PROT_MAGIC] = 80;
 	HitChance[NPC_TALENT_1H] = 100;
 	HitChance[NPC_TALENT_2H] = 100;

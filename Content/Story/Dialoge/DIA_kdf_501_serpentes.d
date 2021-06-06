@@ -541,7 +541,8 @@ func void DIA_Serpentes_MinenAnteileBringen_Info()
 	SalandrilMinenAnteil_MAINCounter = SalandrilMinenAnteil_MAINCounter - SerpentesMinenAnteilCount;
 	MinenAnteilLeft = IntToString(SalandrilMinenAnteil_MAINCounter);
 	MinenAnteilText = ConcatStrings(MinenAnteilLeft,PRINT_NumberLeft);
-	AI_PrintScreen(MinenAnteilText,-1,YPOS_GoldGiven,FONT_ScreenSmall,4);
+	//AI_PrintScreen(MinenAnteilText,-1,YPOS_GoldGiven,FONT_ScreenSmall,4);
+	PrintS_Ext(MinenAnteilText, White());
 	if(SerpentesMinenAnteilCounter < SalandrilVerteilteMinenAnteil)
 	{
 		AI_Output(self,other,"DIA_Serpentes_MinenAnteileBringen_10_02");	//Doskonale. Nale¿y je jak najszybciej wycofaæ z obiegu. Przynieœ je wszystkie do mnie.

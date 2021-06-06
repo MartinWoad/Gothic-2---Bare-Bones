@@ -291,7 +291,10 @@ func void DIA_Parlan_WELCOME_Info()
 	AI_Output(self,other,"DIA_Parlan_WELCOME_05_06");	//Najpierw musisz wype³niæ zadania nowicjusza. Bêdziesz pracowa³ i s³u¿y³ klasztorowi.
 
 	heroMurders = 0;
-	heroThefts = 0;
+	if(heroThefts > 0)
+	{
+		heroThefts = 0;
+	};
 	heroUnforgivableCrime = FALSE;
 
 	B_GrantAbsolution(LOC_ALL);

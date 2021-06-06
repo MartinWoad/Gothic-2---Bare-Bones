@@ -206,7 +206,7 @@ func int DIA_Albrecht_TEACHPalRunes_PalLightHeal()
 {
 	if(other.lp < CostForPAlSpells)
 	{
-		PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
+		//PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
 		B_Say(self,other,"$NOLEARNNOPOINTS");
 		return FALSE;
 	};
@@ -222,7 +222,7 @@ func int DIA_Albrecht_TEACHPalRunes_PalMediumHeal()
 {
 	if(other.lp < CostForPAlSpells)
 	{
-		PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
+		//PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
 		B_Say(self,other,"$NOLEARNNOPOINTS");
 		return FALSE;
 	};
@@ -237,7 +237,7 @@ func int DIA_Albrecht_TEACHPalRunes_PalHolyBolt()
 {
 	if(other.lp < CostForPAlSpells)
 	{
-		PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
+		//PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
 		B_Say(self,other,"$NOLEARNNOPOINTS");
 		return FALSE;
 	};
@@ -252,7 +252,7 @@ func int DIA_Albrecht_TEACHPalRunes_PalRepelEvil()
 {
 	if(other.lp < CostForPAlSpells)
 	{
-		PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
+		//PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
 		B_Say(self,other,"$NOLEARNNOPOINTS");
 		return FALSE;
 	};
@@ -353,4 +353,3 @@ func void DIA_Albrecht_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Albrecht_PICKPOCKET);
 };
-

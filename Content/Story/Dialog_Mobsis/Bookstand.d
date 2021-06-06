@@ -73,7 +73,8 @@ func void Use_FINALDRAGONEQUIPMENT_S1()
 		{
 			PAL_KnowsAbout_FINAL_BLESSING = TRUE;
 			PLAYER_TALENT_RUNES[SPL_PalTeleportSecret] = TRUE;
-			PrintScreen(PRINT_LearnPalTeleportSecret,-1,-1,FONT_Screen,2);
+			//PrintScreen(PRINT_LearnPalTeleportSecret,-1,-1,FONT_Screen,2);
+			PrintS_Ext(PRINT_LearnPalTeleportSecret, White());
 			Log_CreateTopic(TOPIC_TalentRunes,LOG_NOTE);
 			B_LogEntry(TOPIC_TalentRunes,"Tworzenie run wymaga u¿ycia odpowiednich sk³adników. Ca³y proces wymaga jeszcze odpowiedniego sto³u i pustego kamienia runicznego.");
 			B_LogEntry(TOPIC_TalentRunes,"Sk³adniki runy 'Tajny teleport': 1 porcja ³ez Innosa");
@@ -105,4 +106,3 @@ func void Use_FINALDRAGONEQUIPMENT_S1()
 		};
 	};
 };
-

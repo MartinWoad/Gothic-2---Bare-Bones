@@ -5,7 +5,15 @@ func int B_TeachPlayerTalentAlchemy(var C_Npc slf,var C_Npc oth,var int potion)
 	kosten = B_GetLearnCostTalent(oth,NPC_TALENT_ALCHEMY);
 	if(oth.lp < kosten)
 	{
-		PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
+		//PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
+		//PrintS_Ext(PRINT_NotEnoughLearnPoints, White());
+		B_Say(slf,oth,"$NOLEARNNOPOINTS");
+		return FALSE;
+	};
+	if((potion == POTION_Perm_STR || potion == POTION_Perm_DEX ||potion == POTION_Perm_Health || potion == POTION_Perm_Mana) && Kapitel <= 3)
+	{
+		//PrintScreen(PRINT_NotEnoughLearnPoints,-1,-1,FONT_ScreenSmall,2);
+		//PrintS_Ext(PRINT_TooEarlyToLearn, White());
 		B_Say(slf,oth,"$NOLEARNNOPOINTS");
 		return FALSE;
 	};
@@ -67,8 +75,8 @@ func int B_TeachPlayerTalentAlchemy(var C_Npc slf,var C_Npc oth,var int potion)
 		PLAYER_TALENT_ALCHEMY[POTION_Perm_Health] = TRUE;
 		B_LogEntry(TOPIC_TalentAlchemy,"Sk³adniki ´ELIKSIRU ¯YCIA´: 1 korzeñ leczniczy i 1 szczaw królewski.");
 	};
-	PrintScreen(PRINT_LearnAlchemy,-1,-1,FONT_Screen,2);
+	//PrintScreen(PRINT_LearnAlchemy,-1,-1,FONT_Screen,2);
+	PrintS_Ext(PRINT_LearnAlchemy, White());
 	Npc_SetTalentSkill(oth,NPC_TALENT_ALCHEMY,1);
 	return TRUE;
 };
-

@@ -5,8 +5,8 @@ prototype Mst_Default_Skeleton_Mage(C_Npc)
 	guild = GIL_SKELETON_MAGE;
 	aivar[AIV_MM_REAL_ID] = ID_SKELETON_MAGE;
 	level = 24;
-	attribute[ATR_STRENGTH] = 120;
-	attribute[ATR_DEXTERITY] = 120;
+	attribute[ATR_STRENGTH] = 100;
+	attribute[ATR_DEXTERITY] = 100;
 	attribute[ATR_HITPOINTS_MAX] = 240;
 	attribute[ATR_HITPOINTS] = 240;
 	attribute[ATR_MANA_MAX] = 100;
@@ -51,4 +51,3 @@ instance SecretLibrarySkeleton(Mst_Default_Skeleton_Mage)
 {
 	B_SetVisuals_Skeleton_Mage();
 };
-

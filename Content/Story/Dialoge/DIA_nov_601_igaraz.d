@@ -87,7 +87,7 @@ func void DIA_Igaraz_Wurst_Info()
 	B_UseItem(self,ItFo_Sausage);
 	NovizeLeft = IntToString(13 - Wurst_Gegeben);
 	NovizeText = ConcatStrings(NovizeLeft,PRINT_NovizenLeft);
-	AI_PrintScreen(NovizeText,-1,YPOS_GoldGiven,FONT_ScreenSmall,3);
+	PrintS_Ext(NovizeText, White());
 };
 
 
@@ -630,9 +630,9 @@ func void DIA_Igaraz_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 40)
 	{
-		B_GiveInvItems(self,other,ItKe_IgarazChest_Mis,1);
+		B_StealInvItems(self,other,ItKe_IgarazChest_Mis,1);
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
-		B_GivePlayerXP(XP_Ambient);
+		//B_GivePlayerXP(XP_Ambient);
 		Info_ClearChoices(DIA_Igaraz_PICKPOCKET);
 	}
 	else
@@ -723,4 +723,3 @@ func void DIA_Igaraz_Perm_Info()
 	AI_Output(self,other,"DIA_Igaranz_Perm_13_01");	//Ehm... nie.
 	AI_StopProcessInfos(self);
 };
-

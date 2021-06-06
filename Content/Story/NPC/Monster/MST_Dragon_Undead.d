@@ -12,8 +12,8 @@ prototype Mst_Default_Dragon_Undead(C_Npc)
 	attribute[ATR_HITPOINTS] = 10000;
 	attribute[ATR_MANA_MAX] = 5000;
 	attribute[ATR_MANA] = 5000;
-	protection[PROT_BLUNT] = 160;
-	protection[PROT_EDGE] = 180;
+	protection[PROT_BLUNT] = 100;
+	protection[PROT_EDGE] = 130;
 	protection[PROT_POINT] = IMMUNE;
 	protection[PROT_FIRE] = 280;
 	protection[PROT_FLY] = IMMUNE;
@@ -43,4 +43,3 @@ instance Dragon_Undead(Mst_Default_Dragon_Undead)
 	flags = NPC_FLAG_IMMORTAL;
 	Npc_SetToFistMode(self);
 };
-
