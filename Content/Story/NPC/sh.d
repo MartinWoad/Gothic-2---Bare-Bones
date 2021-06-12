@@ -199,7 +199,8 @@ func void StoryHelper_KAPITEL4ANFANG()
 	B_NPC_IsAliveCheck(OldWorld_Zen);
 	B_Kapitelwechsel(3,NEWWORLD_ZEN);
 	PLAYER_TALENT_ALCHEMY[CHARGE_Innoseye] = TRUE;
-	PrintScreen(PRINT_LearnAlchemyInnosEye,-1,-1,FONT_Screen,2);
+	//PrintScreen(PRINT_LearnAlchemyInnosEye,-1,-1,FONT_Screen,2);
+	PrintS_Ext(PRINT_LearnAlchemyInnosEye, White());
 	CreateInvItems(self,ItMi_InnosEye_MIS,1);
 	MIS_ReadyforChapter4 = TRUE;
 	B_NPC_IsAliveCheck(NEWWORLD_ZEN);
@@ -247,7 +248,8 @@ func void StoryHelper_KAPITEL5ANFANG()
 	B_NPC_IsAliveCheck(OldWorld_Zen);
 	B_Kapitelwechsel(3,NEWWORLD_ZEN);
 	PLAYER_TALENT_ALCHEMY[CHARGE_Innoseye] = TRUE;
-	PrintScreen(PRINT_LearnAlchemyInnosEye,-1,-1,FONT_Screen,2);
+	//PrintScreen(PRINT_LearnAlchemyInnosEye,-1,-1,FONT_Screen,2);
+	PrintS_Ext(PRINT_LearnAlchemyInnosEye, White());
 	CreateInvItems(hero,ItMi_InnosEye_MIS,1);
 	MIS_ReadyforChapter4 = TRUE;
 	B_NPC_IsAliveCheck(NEWWORLD_ZEN);
@@ -294,4 +296,3 @@ func void StoryHelper_KAPITEL6ANFANG()
 	Info_ClearChoices(StoryHelper_INFO6);
 	AI_StopProcessInfos(self);
 };
-

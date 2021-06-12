@@ -1,5 +1,5 @@
 
-const string Name_PaladinScroll = "Paladin Zauber";
+const string Name_PaladinScroll = "Poœwiêcony Zwój";
 
 const int Value_Sc_PalLight = 5;
 const int Value_Sc_PalLightHeal = 35;
@@ -234,7 +234,7 @@ instance ItSc_Firebolt(C_Item)
 	text[0] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Firebolt;
-	text[2] = NAME_Dam_Magic;
+	text[2] = NAME_Dam_Fire;
 	count[2] = SPL_Damage_Firebolt;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -246,7 +246,8 @@ instance ItSc_Icebolt(C_Item)
 	mainflag = ITEM_KAT_RUNE;
 	flags = ITEM_MULTI;
 	value = Value_Sc_Icebolt;
-	visual = "ItSc_Icebolt.3DS";
+	//visual = "ItSc_Icebolt.3ds";
+	visual = "ItSc_Water04.3DS";
 	material = MAT_LEATHER;
 	spell = SPL_Icebolt;
 	cond_atr[2] = ATR_MANA_MAX;
@@ -255,7 +256,7 @@ instance ItSc_Icebolt(C_Item)
 	text[0] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_Icebolt;
-	text[2] = NAME_Dam_Magic;
+	text[2] = NAME_Dam_Point;
 	count[2] = SPL_DAMAGE_Icebolt;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -316,7 +317,7 @@ instance ItSc_InstantFireball(C_Item)
 	text[0] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_COST_InstantFireball;
-	text[2] = NAME_Dam_Magic;
+	text[2] = NAME_Dam_Fire;
 	count[2] = SPL_DAMAGE_InstantFireball;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -335,7 +336,7 @@ instance ItSc_Zap(C_Item)
 	text[0] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_Zap;
-	text[2] = NAME_Dam_Magic;
+	text[2] = NAME_Dam_Energy;
 	count[2] = SPL_Damage_Zap;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -375,7 +376,7 @@ instance ItSc_Windfist(C_Item)
 	text[0] = NAME_MageScroll;
 	text[1] = NAME_ManakostenMax;
 	count[1] = SPL_Cost_WindFist;
-	text[2] = NAME_Damage_Max;
+	text[2] = NAME_Dam_Fly;
 	count[2] = SPL_Damage_Windfist * 3;
 	text[4] = NAME_ManaPerSec;
 	count[4] = 1000 / 200;
@@ -459,7 +460,7 @@ instance ItSc_LightningFlash(C_Item)
 	text[0] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_LightningFlash;
-	text[2] = NAME_Dam_Magic;
+	text[2] = NAME_Dam_Energy;
 	count[2] = SPL_Damage_LightningFlash;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -480,7 +481,7 @@ instance ItSc_ChargeFireBall(C_Item)
 	text[0] = NAME_MageScroll;
 	text[1] = NAME_ManakostenMax;
 	count[1] = SPL_COST_ChargeFireball;
-	text[2] = NAME_Damage_Max;
+	text[2] = NAME_Dam_Fire;
 	count[2] = SPL_Damage_ChargeFireball * 3;
 	text[4] = NAME_ManaPerSec;
 	count[4] = 1000 / 120;
@@ -541,7 +542,7 @@ instance ItSc_IceCube(C_Item)
 	text[0] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_IceCube;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Frost;
 	count[2] = SPL_FREEZE_DAMAGE;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -562,7 +563,7 @@ instance ItSc_ThunderBall(C_Item)
 	text[0] = NAME_MageScroll;
 	text[1] = NAME_ManakostenMax;
 	count[1] = SPL_COST_ChargeZap;
-	text[2] = NAME_Damage_Max;
+	text[2] = NAME_Dam_Energy;
 	count[2] = SPL_Damage_ChargeZap * 3;
 	text[4] = NAME_ManaPerSec;
 	count[4] = 1000 / 100;
@@ -604,7 +605,7 @@ instance ItSc_HarmUndead(C_Item)
 	text[0] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_DESTROYUNDEAD;
-	text[2] = NAME_Dam_Magic;
+	text[2] = NAME_Dam_Energy;
 	count[2] = SPL_Damage_DESTROYUNDEAD;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -625,7 +626,7 @@ instance ItSc_Pyrokinesis(C_Item)
 	text[0] = NAME_MageScroll;
 	text[1] = NAME_ManakostenMax;
 	count[1] = SPL_COST_Firestorm;
-	text[2] = NAME_Damage_Max;
+	text[2] = NAME_Dam_Fire;
 	count[2] = SPL_Damage_Firestorm * 3;
 	text[4] = NAME_ManaPerSec;
 	count[4] = 1000 / 120;
@@ -648,7 +649,7 @@ instance ItSc_Firestorm(C_Item)
 	text[0] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_InstantFireStorm;
-	text[2] = NAME_Dam_Magic;
+	text[2] = NAME_Dam_Fire;
 	count[2] = SPL_Damage_InstantFireStorm;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -669,7 +670,7 @@ instance ItSc_IceWave(C_Item)
 	text[0] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_IceWave;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Frost;
 	count[2] = SPL_FREEZE_DAMAGE;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -749,7 +750,7 @@ instance ItSc_BreathOfDeath(C_Item)
 	text[0] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_BreathOfDeath;
-	text[2] = NAME_Dam_Magic;
+	text[2] = NAME_Dam_Energy;
 	count[2] = SPL_Damage_BreathOfDeath;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -768,7 +769,7 @@ instance ItSc_MassDeath(C_Item)
 	text[0] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
 	count[1] = SPL_Cost_MassDeath;
-	text[2] = NAME_Dam_Magic;
+	text[2] = NAME_Dam_Energy;
 	count[2] = SPL_Damage_MassDeath;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -1039,4 +1040,3 @@ instance ItSc_TrfDragonSnapper(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 };
-

@@ -758,7 +758,7 @@ instance DIA_Constantino_NewRecipes(C_Info)
 
 func int DIA_Constantino_NewRecipes_Condition()
 {
-	if((Player_IsApprentice != APP_Constantino) && (Player_IsApprentice > APP_NONE) && (Npc_GetTalentSkill(other,NPC_TALENT_ALCHEMY) > 0))
+	if((Player_IsApprentice != APP_Constantino) && (Player_IsApprentice > APP_NONE) && (Npc_GetTalentSkill(other,NPC_TALENT_ALCHEMY) > 0) && Kapitel >= 3)
 	{
 		return TRUE;
 	};
@@ -912,4 +912,3 @@ func void DIA_Constantino_TEACH_PermSTR()
 	};
 	Info_ClearChoices(DIA_Constantino_TEACH);
 };
-

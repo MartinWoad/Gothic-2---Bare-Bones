@@ -1,7 +1,7 @@
 
 prototype MST_ADDON_STONEGUARDIAN(C_NPC)
 {
-	name[0] = "Kamienny stra¿nik";
+	name[0] = "Kamienny Stra¿nik";
 	guild = GIL_STONEGUARDIAN;
 	aivar[AIV_MM_REAL_ID] = ID_STONEGUARDIAN;
 	level = 18;
@@ -357,4 +357,3 @@ instance STONEGUARDIAN_RHADEMES_14F(MST_ADDON_STONEGUARDIAN)
 	aivar[AIV_ENEMYOVERRIDE] = TRUE;
 	b_setvisuals_stoneguardian();
 };
-

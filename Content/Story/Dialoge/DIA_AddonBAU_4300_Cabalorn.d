@@ -60,9 +60,9 @@ func void dia_addon_cavalorn_pickpocket_doit()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 25)
 	{
-		b_giveinvitems(self,other,itrw_arrow,44);
+		b_stealinvitems(self,other,itrw_arrow,44);
 		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
-		b_giveplayerxp(XP_AMBIENT);
+		//b_giveplayerxp(XP_AMBIENT);
 		Info_ClearChoices(dia_addon_cavalorn_pickpocket);
 	}
 	else
@@ -995,4 +995,3 @@ func void dia_addon_cavalorn_teach_back()
 	};
 	Info_ClearChoices(dia_addon_cavalorn_teach);
 };
-

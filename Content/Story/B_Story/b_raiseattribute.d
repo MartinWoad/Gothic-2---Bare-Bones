@@ -23,7 +23,8 @@ func void B_RaiseAttribute(var C_Npc oth,var int attrib,var int points,var int i
 			concatText = ConcatStrings(PRINT_LearnSTR,IntToString(points));
 			if(isfromequipment == FALSE)
 			{
-				PrintScreen(concatText,-1,-1,FONT_Screen,2);
+				//PrintScreen(concatText,-1,-1,FONT_Screen,2);
+				PrintS_Ext(concatText, White());
 			};
 			oth.attribute[ATR_HITPOINTS_MAX] = oth.attribute[ATR_HITPOINTS_MAX] + points;
 		}
@@ -40,7 +41,8 @@ func void B_RaiseAttribute(var C_Npc oth,var int attrib,var int points,var int i
 			oth.attribute[ATR_STRENGTH] = 100;
 			if(isfromequipment == FALSE)
 			{
-				PrintScreen("Osi¹gniêto limit si³y!",-1,-1,FONT_Screen,2);
+				//PrintScreen("Osi¹gniêto limit si³y!",-1,-1,FONT_Screen,2);
+				PrintS_Ext("Osi¹gniêto limit si³y!", White());
 			};
 		};
 		if(oth.attribute[ATR_STRENGTH] > 100)
@@ -65,7 +67,8 @@ func void B_RaiseAttribute(var C_Npc oth,var int attrib,var int points,var int i
 			concatText = ConcatStrings(PRINT_LearnDEX,IntToString(points));
 			if(isfromequipment == FALSE)
 			{
-				PrintScreen(concatText,-1,-1,FONT_Screen,2);
+				//PrintScreen(concatText,-1,-1,FONT_Screen,2);
+				PrintS_Ext(concatText, White());
 			};
 		}
 		else
@@ -84,7 +87,8 @@ func void B_RaiseAttribute(var C_Npc oth,var int attrib,var int points,var int i
 			oth.attribute[ATR_DEXTERITY] = 100;
 			if(isfromequipment == FALSE)
 			{
-				PrintScreen("Osi¹gniêto limit zrêcznoœci!",-1,-1,FONT_Screen,2);
+				//PrintScreen("Osi¹gniêto limit zrêcznoœci!",-1,-1,FONT_Screen,2);
+				PrintS_Ext("Osi¹gniêto limit zrêcznoœci!", White());
 			};
 		};
 		if(oth.attribute[ATR_DEXTERITY] > 100)
@@ -109,7 +113,8 @@ func void B_RaiseAttribute(var C_Npc oth,var int attrib,var int points,var int i
 			concatText = ConcatStrings(PRINT_LearnMANA_MAX,IntToString(points));
 			if(isfromequipment == FALSE)
 			{
-				PrintScreen(concatText,-1,-1,FONT_Screen,2);
+				//PrintScreen(concatText,-1,-1,FONT_Screen,2);
+				PrintS_Ext(concatText, White());
 			};
 		}
 		else
@@ -128,7 +133,8 @@ func void B_RaiseAttribute(var C_Npc oth,var int attrib,var int points,var int i
 			oth.attribute[ATR_MANA_MAX] = 250;
 			if(isfromequipment == FALSE)
 			{
-				PrintScreen("Osi¹gniêto limit energii magicznej!",-1,-1,FONT_Screen,2);
+				//PrintScreen("Osi¹gniêto limit energii magicznej!",-1,-1,FONT_Screen,2);
+				PrintS_Ext("Osi¹gniêto limit energii magicznej!", White());
 			};
 		};
 		if(oth.attribute[ATR_MANA_MAX] > 250)
@@ -143,8 +149,8 @@ func void B_RaiseAttribute(var C_Npc oth,var int attrib,var int points,var int i
 		concatText = ConcatStrings(PRINT_Learnhitpoints_MAX,IntToString(points));
 		if(isfromequipment == FALSE)
 		{
-			PrintScreen(concatText,-1,-1,FONT_Screen,2);
+			//PrintScreen(concatText,-1,-1,FONT_Screen,2);
+			PrintS_Ext(concatText, White());
 		};
 	};
 };
-

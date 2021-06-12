@@ -413,7 +413,7 @@ func void B_ENTER_OLDWORLD_Kapitel_4()
 	else if(Talbin_FollowsThroughPass == LOG_SUCCESS)
 	{
 		B_RemoveNpc(VLK_4130_Talbin);
-		Talbin_FollowsThroughPass = LOG_FAILED;
+		//Talbin_FollowsThroughPass = LOG_FAILED;
 	};
 };
 
@@ -498,4 +498,3 @@ func void b_enter_oldworld()
 		MIS_RescueBilgot = LOG_FAILED;
 	};
 };
-

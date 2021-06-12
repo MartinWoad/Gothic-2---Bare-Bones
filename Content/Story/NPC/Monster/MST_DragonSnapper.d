@@ -4,16 +4,16 @@ prototype Mst_Default_DragonSnapper(C_Npc)
 	name[0] = "Smoczy Zêbacz";
 	guild = GIL_SNAPPER;
 	aivar[AIV_MM_REAL_ID] = ID_DRAGONSNAPPER;
-	level = 20;
+	level = 25;
 	attribute[ATR_STRENGTH] = 150;
 	attribute[ATR_DEXTERITY] = 150;
 	attribute[ATR_HITPOINTS_MAX] = 400;
 	attribute[ATR_HITPOINTS] = 400;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
-	protection[PROT_BLUNT] = 120;
-	protection[PROT_EDGE] = 120;
-	protection[PROT_POINT] = 120;
+	protection[PROT_BLUNT] = 100;
+	protection[PROT_EDGE] = 100;
+	protection[PROT_POINT] = 100;
 	protection[PROT_FIRE] = 150;
 	protection[PROT_FLY] = 160;
 	protection[PROT_MAGIC] = 100;
@@ -49,4 +49,3 @@ instance Gaans_Snapper(Mst_Default_DragonSnapper)
 	B_SetVisuals_DragonSnapper();
 	Npc_SetToFistMode(self);
 };
-

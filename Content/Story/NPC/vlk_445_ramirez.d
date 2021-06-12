@@ -2,7 +2,7 @@
 instance VLK_445_Ramirez(Npc_Default)
 {
 	name[0] = "Ramirez";
-	guild = GIL_OUT;
+	guild = GIL_BDT;
 	id = 445;
 	voice = 14;
 	flags = 0;
@@ -10,7 +10,7 @@ instance VLK_445_Ramirez(Npc_Default)
 	aivar[AIV_DropDeadAndKill] = TRUE;
 	aivar[AIV_EnemyOverride] = TRUE;
 	B_SetAttributesToChapter(self,4);
-	fight_tactic = FAI_HUMAN_STRONG;
+	fight_tactic = FAI_HUMAN_MASTER;
 	EquipItem(self,ItMw_Meisterdegen);
 	B_CreateAmbientInv(self);
 	B_SetNpcVisual(self,MALE,"Hum_Head_Pony",Face_N_Tough_Okyl,BodyTex_N,ITAR_Vlk_M);
@@ -27,4 +27,3 @@ func void Rtn_Start_445()
 	TA_Stand_ArmsCrossed(7,0,23,0,"NW_CITY_KANAL_ROOM_04_01");
 	TA_Sit_Throne(23,0,7,0,"NW_CITY_KANAL_ROOM_05_02");
 };
-

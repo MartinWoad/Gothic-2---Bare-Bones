@@ -321,7 +321,7 @@ func void DIA_DiegoNW_DeliveredLetter_Info()
 	AI_Output(self,other,"DIA_DiegoNW_DeliveredLetter_11_03");	//No, ja myœlê.
 	AI_Output(self,other,"DIA_DiegoNW_DeliveredLetter_11_04");	//Obawiam siê, ¿e muszê najpierw poœwiêciæ trochê czasu na urz¹dzenie mojego nowego domu. Jeœli dobrze pamiêtam, Gerbrandt ma fatalny gust.
 	B_GivePlayerXP(XP_DiegoHasANewHome);
-	Wld_AssignRoomToGuild("reich01",GIL_PUBLIC);
+	Wld_AssignRoomToGuild("reich01",GIL_NONE);
 	Info_ClearChoices(DIA_DiegoNW_DeliveredLetter);
 	Info_AddChoice(DIA_DiegoNW_DeliveredLetter,"Jak tego dokona³eœ?",DIA_DiegoNW_DeliveredLetter_YourTrick);
 	Info_AddChoice(DIA_DiegoNW_DeliveredLetter,"A wiêc dom jest twój?",DIA_DiegoNW_DeliveredLetter_YourHouse);
@@ -677,4 +677,3 @@ func void DIA_Thief_NW_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Thief_NW_PICKPOCKET);
 };
-

@@ -296,9 +296,12 @@ func void DIA_Lester_BACKINTOWN_Info()
 	AI_Output(other,self,"DIA_Lester_BACKINTOWN_15_01");	//W to akurat ³atwo mi uwierzyæ.
 	AI_Output(self,other,"DIA_Lester_BACKINTOWN_13_02");	//Od twojej ostatniej wizyty rozpêta³o siê prawdziwe piek³o.
 	AI_Output(self,other,"DIA_Lester_BACKINTOWN_13_03");	//Porozmawiaj z Xardasem. Czeka ju¿ na ciebie!
-	AI_Output(self,other,"DIA_Lester_BACKINTOWN_13_04");	//Xardas kaza³ mi przekazaæ ci tê runê. Dziêki niej szybciej do niego wrócisz. Spotkamy siê na miejscu.
-	CreateInvItems(self,ItRu_TeleportXardas,1);
-	B_GiveInvItems(self,other,ItRu_TeleportXardas,1);
+	if(hero.guild == GIL_KDF || hero.guild == GIL_NOV)
+	{
+		AI_Output(self,other,"DIA_Lester_BACKINTOWN_13_04");	//Xardas kaza³ mi przekazaæ ci tê runê. Dziêki niej szybciej do niego wrócisz. Spotkamy siê na miejscu.
+		CreateInvItems(self,ItRu_TeleportXardas,1);
+		B_GiveInvItems(self,other,ItRu_TeleportXardas,1);
+	};
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"START");
 };
@@ -329,27 +332,24 @@ var int DIA_Lester_PERM3_OneTime;
 func void DIA_Lester_PERM3_Info()
 {
 	AI_Output(other,self,"DIA_Lester_PERM3_15_00");	//Nie wygl¹dasz najlepiej.
-	if(hero.guild == GIL_KDF)
+	if(hero.guild == GIL_KDF && DIA_Lester_PERM3_OneTime == FALSE)
 	{
-		if(DIA_Lester_PERM3_OneTime == FALSE)
+		AI_Output(self,other,"DIA_Lester_PERM3_13_01");	//I nie najlepiej siê czujê. Jestem zupe³nie wycieñczony i ci¹gle mam ten ból g³owy.
+		AI_Output(self,other,"DIA_Lester_PERM3_13_02");	//Za ka¿dym razem, gdy pojawi¹ siê tu te czarne kaptury, jest jeszcze gorzej!
+		if(SC_KnowsMadPsi == TRUE)
 		{
-			AI_Output(self,other,"DIA_Lester_PERM3_13_01");	//I nie najlepiej siê czujê. Jestem zupe³nie wycieñczony i ci¹gle mam ten ból g³owy.
-			AI_Output(self,other,"DIA_Lester_PERM3_13_02");	//Za ka¿dym razem, gdy pojawi¹ siê tu te czarne kaptury, jest jeszcze gorzej!
-			if(SC_KnowsMadPsi == TRUE)
-			{
-				AI_Output(other,self,"DIA_Lester_PERM3_15_03");	//Mogê ci nawet powiedzieæ, dlaczego tak siê dzieje.
-				AI_Output(self,other,"DIA_Lester_PERM3_13_04");	//Tak? Chyba nie chcê tego wiedzieæ...
-				AI_Output(other,self,"DIA_Lester_PERM3_15_05");	//Te czarne kaptury, czy Poszukiwacze, jak nazywaj¹ ich magowie, byli kiedyœ wyznawcami potê¿nego demona. Mówi ci to coœ?
-				AI_Output(self,other,"DIA_Lester_PERM3_13_06");	//Mmm... No nie. Chyba ¿e chcesz powiedzieæ...
-				AI_Output(other,self,"DIA_Lester_PERM3_15_07");	//W³aœnie tak. Poszukiwacze byli kiedyœ wyznawcami Œni¹cego. Utworzyli w Kolonii w³asn¹ sektê, osiedlaj¹c siê na tamtejszych bagnach.
-				AI_Output(other,self,"DIA_Lester_PERM3_15_08");	//To twoi dawni kompani, Lester. Dawne Bractwo Œni¹cego. Coœ zmieni³o ich w bezduszne narzêdzia Z³a.
-				AI_Output(self,other,"DIA_Lester_PERM3_13_09");	//Podejrzewa³em to, ale mia³em nadziejê, ¿e siê mylê. Czy to znaczy, ¿e ON powróci³? Czy Œni¹cy znów jest w naszym œwiecie?
-				AI_Output(other,self,"DIA_Lester_PERM3_15_10");	//Dobre pytanie. Wiem tylko, ¿e trzeba za wszelk¹ cenê powstrzymaæ Poszukiwaczy, nim stan¹ siê zbyt potê¿ni.
-				AI_Output(self,other,"DIA_Lester_PERM3_13_11");	//Nie podoba mi siê to wszystko, ale chyba masz racjê. Przepraszam... Mo¿na przez to wszystko oszaleæ.
-				B_LogEntry(TOPIC_DEMENTOREN,"Moje podejrzenia potwierdzi³y siê. Nawet Lester nie ma ¿adnych w¹tpliwoœci, ¿e Poszukiwacze i wyznawcy œni¹cego przychodz¹ ze starego obozowiska na mokrad³ach.");
-				B_GivePlayerXP(XP_Lester_KnowsMadPsi);
-				DIA_Lester_PERM3_OneTime = TRUE;
-			};
+			AI_Output(other,self,"DIA_Lester_PERM3_15_03");	//Mogê ci nawet powiedzieæ, dlaczego tak siê dzieje.
+			AI_Output(self,other,"DIA_Lester_PERM3_13_04");	//Tak? Chyba nie chcê tego wiedzieæ...
+			AI_Output(other,self,"DIA_Lester_PERM3_15_05");	//Te czarne kaptury, czy Poszukiwacze, jak nazywaj¹ ich magowie, byli kiedyœ wyznawcami potê¿nego demona. Mówi ci to coœ?
+			AI_Output(self,other,"DIA_Lester_PERM3_13_06");	//Mmm... No nie. Chyba ¿e chcesz powiedzieæ...
+			AI_Output(other,self,"DIA_Lester_PERM3_15_07");	//W³aœnie tak. Poszukiwacze byli kiedyœ wyznawcami Œni¹cego. Utworzyli w Kolonii w³asn¹ sektê, osiedlaj¹c siê na tamtejszych bagnach.
+			AI_Output(other,self,"DIA_Lester_PERM3_15_08");	//To twoi dawni kompani, Lester. Dawne Bractwo Œni¹cego. Coœ zmieni³o ich w bezduszne narzêdzia Z³a.
+			AI_Output(self,other,"DIA_Lester_PERM3_13_09");	//Podejrzewa³em to, ale mia³em nadziejê, ¿e siê mylê. Czy to znaczy, ¿e ON powróci³? Czy Œni¹cy znów jest w naszym œwiecie?
+			AI_Output(other,self,"DIA_Lester_PERM3_15_10");	//Dobre pytanie. Wiem tylko, ¿e trzeba za wszelk¹ cenê powstrzymaæ Poszukiwaczy, nim stan¹ siê zbyt potê¿ni.
+			AI_Output(self,other,"DIA_Lester_PERM3_13_11");	//Nie podoba mi siê to wszystko, ale chyba masz racjê. Przepraszam... Mo¿na przez to wszystko oszaleæ.
+			B_LogEntry(TOPIC_DEMENTOREN,"Moje podejrzenia potwierdzi³y siê. Nawet Lester nie ma ¿adnych w¹tpliwoœci, ¿e Poszukiwacze i wyznawcy œni¹cego przychodz¹ ze starego obozowiska na mokrad³ach.");
+			B_GivePlayerXP(XP_Lester_KnowsMadPsi);
+			DIA_Lester_PERM3_OneTime = TRUE;
 		};
 	}
 	else if(Lester_IsOnBoard == LOG_SUCCESS)
@@ -658,4 +658,3 @@ func void DIA_PC_Psionic_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_PC_Psionic_PICKPOCKET);
 };
-

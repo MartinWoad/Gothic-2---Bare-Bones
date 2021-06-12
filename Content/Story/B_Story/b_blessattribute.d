@@ -9,7 +9,8 @@ func void B_BlessAttribute(var C_Npc oth,var int attrib,var int points)
 			oth.attribute[ATR_STRENGTH] = oth.attribute[ATR_STRENGTH] + points;
 			ATTRIBUTEBONUS[4] = ATTRIBUTEBONUS[4] + points;
 			concatText = ConcatStrings(PRINT_BlessSTR,IntToString(points));
-			PrintScreen(concatText,-1,-1,FONT_Screen,1);
+			//PrintScreen(concatText,-1,-1,FONT_Screen,1);
+			PrintS_Ext(concatText, RGBA(100, 255, 100, 255));
 			oth.attribute[ATR_HITPOINTS_MAX] = oth.attribute[ATR_HITPOINTS_MAX] + points;
 		}
 		else
@@ -20,7 +21,8 @@ func void B_BlessAttribute(var C_Npc oth,var int attrib,var int points)
 				ATTRIBUTEBONUS[4] = (ATTRIBUTEBONUS[4] + 100) - oth.attribute[ATR_STRENGTH];
 			};
 			oth.attribute[ATR_STRENGTH] = 100;
-			PrintScreen("Osi¹gniêto limit si³y!",-1,-1,FONT_Screen,2);
+			//PrintScreen("Osi¹gniêto limit si³y!",-1,-1,FONT_Screen,2);
+			PrintS_Ext("Osi¹gniêto limit si³y!", RGBA(255, 255, 255, 255));
 		};
 		if(oth.attribute[ATR_STRENGTH] > 100)
 		{
@@ -35,7 +37,8 @@ func void B_BlessAttribute(var C_Npc oth,var int attrib,var int points)
 			oth.attribute[ATR_DEXTERITY] = oth.attribute[ATR_DEXTERITY] + points;
 			ATTRIBUTEBONUS[5] = ATTRIBUTEBONUS[5] + points;
 			concatText = ConcatStrings(PRINT_BlessDEX,IntToString(points));
-			PrintScreen(concatText,-1,-1,FONT_Screen,1);
+			//PrintScreen(concatText,-1,-1,FONT_Screen,1);
+			PrintS_Ext(concatText, RGBA(100, 255, 100, 255));
 		}
 		else
 		{
@@ -44,7 +47,8 @@ func void B_BlessAttribute(var C_Npc oth,var int attrib,var int points)
 				ATTRIBUTEBONUS[5] = (ATTRIBUTEBONUS[5] + 100) - oth.attribute[ATR_DEXTERITY];
 			};
 			oth.attribute[ATR_DEXTERITY] = 100;
-			PrintScreen("Osi¹gniêto limit zrêcznoœci!",-1,-1,FONT_Screen,2);
+			//PrintScreen("Osi¹gniêto limit zrêcznoœci!",-1,-1,FONT_Screen,2);
+			PrintS_Ext("Osi¹gniêto limit zrêcznoœci!", RGBA(255, 255, 255, 255));
 		};
 	};
 	if(attrib == ATR_MANA_MAX)
@@ -55,7 +59,8 @@ func void B_BlessAttribute(var C_Npc oth,var int attrib,var int points)
 			ATTRIBUTEBONUS[3] = ATTRIBUTEBONUS[3] + points;
 			oth.attribute[ATR_MANA] = oth.attribute[ATR_MANA_MAX];
 			concatText = ConcatStrings(PRINT_BlessMANA_MAX,IntToString(points));
-			PrintScreen(concatText,-1,-1,FONT_Screen,1);
+			//PrintScreen(concatText,-1,-1,FONT_Screen,1);
+			PrintS_Ext(concatText, RGBA(100, 255, 100, 255));
 		}
 		else
 		{
@@ -65,7 +70,8 @@ func void B_BlessAttribute(var C_Npc oth,var int attrib,var int points)
 			};
 			oth.attribute[ATR_MANA_MAX] = 250;
 			oth.attribute[ATR_MANA] = oth.attribute[ATR_MANA_MAX];
-			PrintScreen("Osi¹gniêto limit energii magicznej!",-1,-1,FONT_Screen,2);
+			//PrintScreen("Osi¹gniêto limit energii magicznej!",-1,-1,FONT_Screen,2);
+			PrintS_Ext("Osi¹gniêto limit energii magicznej!", RGBA(255, 255, 255, 255));
 		};
 	};
 	if(attrib == ATR_HITPOINTS_MAX)
@@ -73,17 +79,19 @@ func void B_BlessAttribute(var C_Npc oth,var int attrib,var int points)
 		oth.attribute[ATR_HITPOINTS_MAX] = oth.attribute[ATR_HITPOINTS_MAX] + points;
 		oth.attribute[ATR_HITPOINTS] = oth.attribute[ATR_HITPOINTS_MAX];
 		concatText = ConcatStrings(PRINT_BlessHitpoints_MAX,IntToString(points));
-		PrintScreen(concatText,-1,-1,FONT_Screen,1);
+		//PrintScreen(concatText,-1,-1,FONT_Screen,1);
+		PrintS_Ext(concatText, RGBA(100, 255, 100, 255));
 	};
 	if(attrib == ATR_HITPOINTS)
 	{
 		oth.attribute[ATR_HITPOINTS] = oth.attribute[ATR_HITPOINTS_MAX];
-		PrintScreen(PRINT_BlessHitpoints,-1,-1,FONT_Screen,1);
+		//PrintScreen(PRINT_BlessHitpoints,-1,-1,FONT_Screen,1);
+		PrintS_Ext(PRINT_BlessHitpoints, RGBA(100, 255, 100, 255));
 	};
 	if(attrib == ATR_MANA)
 	{
 		oth.attribute[ATR_MANA] = oth.attribute[ATR_MANA_MAX];
-		PrintScreen(PRINT_BlessMANA,-1,-1,FONT_Screen,1);
+		//PrintScreen(PRINT_BlessMANA,-1,-1,FONT_Screen,1);
+		PrintS_Ext(PRINT_BlessHitpoints, RGBA(100, 255, 100, 255));
 	};
 };
-

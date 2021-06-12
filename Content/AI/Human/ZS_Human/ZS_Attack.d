@@ -226,4 +226,3 @@ func void ZS_Attack_End()
 	};
 	AI_StartState(self,ZS_HealSelf,0,"");
 };
-

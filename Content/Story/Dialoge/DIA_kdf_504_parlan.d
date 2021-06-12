@@ -289,6 +289,14 @@ func void DIA_Parlan_WELCOME_Info()
 	AI_Output(self,other,"DIA_Parlan_WELCOME_05_04");	//Niech Innos b³ogos³awi i oczyœci grzechy tego, który wstêpuje doñ na s³u¿bê.
 	AI_Output(other,self,"DIA_Parlan_WELCOME_15_05");	//Co teraz?
 	AI_Output(self,other,"DIA_Parlan_WELCOME_05_06");	//Najpierw musisz wype³niæ zadania nowicjusza. Bêdziesz pracowa³ i s³u¿y³ klasztorowi.
+
+	heroMurders = 0;
+	if(heroThefts > 0)
+	{
+		heroThefts = 0;
+	};
+	heroUnforgivableCrime = FALSE;
+
 	B_GrantAbsolution(LOC_ALL);
 	Snd_Play("LEVELUP");
 	Log_CreateTopic(Topic_Gemeinschaft,LOG_MISSION);
@@ -1287,4 +1295,3 @@ func void DIA_Parlan_Kap5_EXIT_Info()
 	};
 	AI_StopProcessInfos(self);
 };
-

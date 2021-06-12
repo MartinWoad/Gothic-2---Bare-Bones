@@ -1,7 +1,7 @@
 
 prototype MST_DEFAULT_MUD(C_NPC)
 {
-	name[0] = "B³otniak";
+	name[0] = "Wrzód";
 	guild = GIL_ZOMBIE;
 	aivar[AIV_MM_REAL_ID] = ID_ZOMBIE;
 	level = 0;
@@ -54,4 +54,3 @@ instance SUMMONED_MUD(MST_DEFAULT_MUD)
 	b_createinvitems_mud();
 	Npc_SetToFistMode(self);
 };
-

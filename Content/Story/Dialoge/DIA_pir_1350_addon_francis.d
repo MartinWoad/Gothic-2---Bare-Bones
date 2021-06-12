@@ -297,9 +297,9 @@ func void dia_francis_pickpocket_doit()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 40)
 	{
-		b_giveinvitems(self,other,itke_greg_addon_mis,1);
+		b_stealinvitems(self,other,itke_greg_addon_mis,1);
 		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
-		b_giveplayerxp(XP_AMBIENT);
+		//b_giveplayerxp(XP_AMBIENT);
 		Info_ClearChoices(dia_francis_pickpocket);
 	}
 	else
@@ -344,4 +344,3 @@ func void dia_francis_ausgeschissen_info()
 	AI_Output(self,other,"DIA_Addon_Francis_Ausgeschissen_13_01");	//Idü sobie!
 	AI_StopProcessInfos(self);
 };
-

@@ -59,9 +59,8 @@ instance YGiant_Rat(Mst_Default_Giant_Rat)
 	protection[PROT_FIRE] = 0;
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 0;
-	fight_tactic = FAI_MONSTER_COWARD;
+	//fight_tactic = FAI_MONSTER_COWARD;
 	B_SetVisuals_Giant_Rat();
 	Mdl_SetModelScale(self,0.9,0.9,0.9);
 	Npc_SetToFistMode(self);
 };
-

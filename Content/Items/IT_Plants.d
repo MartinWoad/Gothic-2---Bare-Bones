@@ -24,16 +24,16 @@ const int HP_Mushroom_01 = 5;
 const int Value_Mushroom_02 = 10;
 const int HP_Mushroom_02 = 15;
 const int Value_Forestberry = 10;
-const int HP_Forestberry = 5;
+const int HP_Forestberry = 2;
 const int Value_Blueplant = 10;
-const int HP_Blueplant = 5;
+const int HP_Blueplant = 3;
 const int Mana_Blueplant = 1;
 const int Value_Planeberry = 10;
-const int HP_Planeberry = 5;
+const int HP_Planeberry = 2;
 const int Value_Temp_Herb = 100;
 const int HP_Temp_Herb = 5;
 const int Value_Perm_Herb = 500;
-const int HP_Perm_Herb = 5;
+const int HP_Perm_Herb = 10;
 
 const int Toxicity_Blueplant = 1;
 const int Toxicity_Mushroom_01 = 2;
@@ -85,7 +85,8 @@ instance ItPl_Beet(C_Item)
 
 func void Use_Beet()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Beet);
+	//Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Beet);
+	ChangeSatiety(self, HP_Beet);
 };
 
 
@@ -100,7 +101,6 @@ instance ItPl_SwampHerb(C_Item)
 	on_state[0] = Use_SwampHerb;
 	scemeName = "FOOD";
 	description = name;
-	text[1] = "Tymczasowo zwiêksza twoj¹ szybkoœæ.";
 	text[2] = NAME_Toxicity;
 	count[2] = Toxicity_SwampHerb;
 	text[5] = NAME_Value;
@@ -373,6 +373,7 @@ instance ItPl_Speed_Herb_01(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = Use_Speed_Herb_01;
 	scemeName = "FOOD";
+	text[1] = "Tymczasowo zwiêksza twoj¹ szybkoœæ.";
 	text[2] = NAME_Toxicity;
 	count[2] = Toxicity_Speed_Herb_01;
 	text[3] = NAME_Sec_Duration;
@@ -401,7 +402,7 @@ instance ItPl_Mushroom_01(C_Item)
 	on_state[0] = Use_Mushroom_01;
 	scemeName = "FOOD";
 	description = name;
-	text[1] = NAME_Bonus_HP;
+	text[1] = NAME_Bonus_Satiety;
 	count[1] = HP_Mushroom_01;
 	text[2] = NAME_Toxicity;
 	count[2] = Toxicity_Mushroom_01;
@@ -413,10 +414,7 @@ instance ItPl_Mushroom_01(C_Item)
 func void Use_Mushroom_01()
 {
 	ChangeToxicity(self, Toxicity_Mushroom_01);
-	if(CheckToxicity(self))
-	{
-		Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Mushroom_01);
-	};
+	ChangeSatiety(self, HP_Mushroom_01);
 	if(Npc_IsPlayer(self))
 	{
 		Dunkelpilz_Bonus = Dunkelpilz_Bonus + 1;
@@ -451,7 +449,7 @@ func void Use_Mushroom_01()
 
 instance ItPl_Mushroom_02(C_Item)
 {
-	name = "Miêso Kopacza";
+	name = "Miêsny Grzyb";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
 	value = Value_Mushroom_02;
@@ -460,7 +458,7 @@ instance ItPl_Mushroom_02(C_Item)
 	on_state[0] = Use_Mushroom_02;
 	scemeName = "FOOD";
 	description = name;
-	text[1] = NAME_Bonus_HP;
+	text[1] = NAME_Bonus_Satiety;
 	count[1] = HP_Mushroom_02;
 	text[5] = NAME_Value;
 	count[5] = Value_Mushroom_02;
@@ -469,7 +467,8 @@ instance ItPl_Mushroom_02(C_Item)
 
 func void Use_Mushroom_02()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Mushroom_02);
+	//Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Mushroom_02);
+	ChangeSatiety(self, HP_Mushroom_02);
 };
 
 
@@ -484,7 +483,7 @@ instance ItPl_Blueplant(C_Item)
 	on_state[0] = Use_Blueplant;
 	scemeName = "FOOD";
 	description = name;
-	text[1] = NAME_Bonus_HP;
+	text[1] = NAME_Bonus_Satiety;
 	count[1] = HP_Blueplant;
 	text[2] = NAME_Bonus_Mana;
 	count[2] = Mana_Blueplant;
@@ -498,10 +497,11 @@ instance ItPl_Blueplant(C_Item)
 func void Use_Blueplant()
 {
 	ChangeToxicity(self, Toxicity_Blueplant);
+	ChangeSatiety(self, HP_Blueplant);
 	if(CheckToxicity(self))
 	{
 		Npc_ChangeAttribute(self,ATR_MANA,Mana_Blueplant);
-		Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Blueplant);
+		//Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Blueplant);
 	};
 };
 
@@ -517,7 +517,7 @@ instance ItPl_Forestberry(C_Item)
 	scemeName = "FOOD";
 	on_state[0] = Use_Forestberry;
 	description = name;
-	text[1] = NAME_Bonus_HP;
+	text[1] = NAME_Bonus_Satiety;
 	count[1] = HP_Forestberry;
 	text[5] = NAME_Value;
 	count[5] = Value_Forestberry;
@@ -526,7 +526,8 @@ instance ItPl_Forestberry(C_Item)
 
 func void Use_Forestberry()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Forestberry);
+	//Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Forestberry);
+	ChangeSatiety(self, HP_Forestberry);
 };
 
 
@@ -541,7 +542,7 @@ instance ItPl_Planeberry(C_Item)
 	scemeName = "FOOD";
 	on_state[0] = Use_Planeberry;
 	description = name;
-	text[1] = NAME_Bonus_HP;
+	text[1] = NAME_Bonus_Satiety;
 	count[1] = HP_Planeberry;
 	text[5] = NAME_Value;
 	count[5] = Value_Planeberry;
@@ -550,7 +551,8 @@ instance ItPl_Planeberry(C_Item)
 
 func void Use_Planeberry()
 {
-	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Planeberry);
+	//Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Planeberry);
+	ChangeSatiety(self, HP_Planeberry);
 };
 
 

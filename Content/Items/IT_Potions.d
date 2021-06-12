@@ -49,6 +49,36 @@ const int Toxicity_Speed = 15;
 
 const int Toxicity_MegaDrink = 50;
 
+instance ToxicityBar (GothicBar)
+{
+    //x = Print_Screen[PS_X] / 2;
+    x = 100;
+    y = Print_Screen[PS_Y] - 60;
+    barTop = MEMINT_SwitchG1G2(2, 3);
+    barLeft = 7;
+    width = 180;
+    height = 20;
+    backTex = "Bar_Back.tga";
+    barTex = "Bar_Tox.tga";
+    //barTex = "Bar_Misc.tga";
+    value = 0;
+    valueMax = ToxicityLevelMax;
+};
+
+func void UpdateToxicityBar()
+{
+	Bar_SetValue(toxicityBarHandle, toxicity);
+	if(toxicity > 0)
+	{
+		Bar_Show(toxicityBarHandle);
+	}
+	else
+	{
+		Bar_Hide(toxicityBarHandle);
+	};
+
+};
+
 func void ChangeToxicity(var C_NPC slf, var int percent)
 {
 	if(Npc_IsPlayer(slf))
@@ -59,6 +89,11 @@ func void ChangeToxicity(var C_NPC slf, var int percent)
 			{
 				toxicity = toxicity + percent;
 			}
+      else if(toxicity + percent >= ToxicityLevelMax && toxicity < ToxicityLevelMax)
+      {
+        AI_OutputSVM_Overlay(slf,slf,"$Aargh_1");
+        toxicity = ToxicityLevelMax;
+      }
 			else
 			{
 				toxicity = ToxicityLevelMax;
@@ -66,15 +101,14 @@ func void ChangeToxicity(var C_NPC slf, var int percent)
 
 			if(toxicity == ToxicityLevelMax)
 			{
-				AI_OutputSVM_Overlay(slf,slf,"$Aargh_1");
 
-				if(slf.attribute[ATR_HITPOINTS] > percent + 1)
+				if(slf.attribute[ATR_HITPOINTS] > percent)
 				{
 					slf.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - percent;
 				}
 				else
 				{
-					slf.attribute[ATR_HITPOINTS] = 0;
+					slf.attribute[ATR_HITPOINTS] = 1;
 				};
 
 				if(slf.attribute[ATR_MANA] > percent)
@@ -88,15 +122,15 @@ func void ChangeToxicity(var C_NPC slf, var int percent)
 			}
 			else if(toxicity >= ToxicityLevel3 && toxicity - percent < ToxicityLevel3)
 			{
-				PrintScreen(PRINT_ToxicityLevel3,-1,YPOS_LevelUp,FONT_Screen,2);
+				//PrintScreen(PRINT_ToxicityLevel3,-1,YPOS_LevelUp,FONT_Screen,2);
 			}
 			else if(toxicity >= ToxicityLevel2 && toxicity - percent < ToxicityLevel2)
 			{
-				PrintScreen(PRINT_ToxicityLevel2,-1,YPOS_LevelUp,FONT_Screen,2);
+				//PrintScreen(PRINT_ToxicityLevel2,-1,YPOS_LevelUp,FONT_Screen,2);
 			}
 			else if(toxicity >= ToxicityLevel1 && toxicity - percent < ToxicityLevel1)
 			{
-				PrintScreen(PRINT_ToxicityLevel1,-1,YPOS_LevelUp,FONT_Screen,2);
+				//PrintScreen(PRINT_ToxicityLevel1,-1,YPOS_LevelUp,FONT_Screen,2);
 			};
 		}
 		else if (percent < 0)
@@ -112,9 +146,19 @@ func void ChangeToxicity(var C_NPC slf, var int percent)
 
 			if(toxicity < ToxicityLevel1 && toxicity - percent >= ToxicityLevel1)
 			{
-				PrintScreen(PRINT_ToxicityLevel0,-1,YPOS_LevelUp,FONT_Screen,2);
+				//PrintScreen(PRINT_ToxicityLevel0,-1,YPOS_LevelUp,FONT_Screen,2);
 			};
 		};
+		 UpdateToxicityBar();
+	};
+};
+
+func int PurgeToxicity(var C_NPC slf)
+{
+	if(Npc_IsPlayer(slf))
+	{
+		toxicity = 0;
+		UpdateToxicityBar();
 	};
 };
 

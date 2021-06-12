@@ -7,7 +7,7 @@ instance VLK_413_Bosper(Npc_Default)
 	voice = 11;
 	flags = NPC_FLAG_IMMORTAL;
 	npcType = npctype_main;
-	B_SetAttributesToChapter(self,2);
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
 	EquipItem(self,ItMw_1h_Vlk_Dagger);
 	EquipItem(self,ItRw_Sld_Bow);
@@ -25,4 +25,3 @@ func void Rtn_Start_413()
 	TA_Stand_Guarding(5,0,0,0,"NW_CITY_MERCHANT_SHOP01_IN_02");
 	TA_Sleep(0,0,5,0,"NW_CITY_BED_GRITTA");
 };
-

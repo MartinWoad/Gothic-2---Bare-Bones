@@ -6,17 +6,17 @@ prototype Mst_Default_OrcElite(C_Npc)
 	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
 	voice = 18;
 	level = 35;
-	attribute[ATR_STRENGTH] = 150;
-	attribute[ATR_DEXTERITY] = 150;
+	attribute[ATR_STRENGTH] = 100;
+	attribute[ATR_DEXTERITY] = 100;
 	attribute[ATR_HITPOINTS_MAX] = 400;
 	attribute[ATR_HITPOINTS] = 400;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
-	protection[PROT_BLUNT] = 120;
-	protection[PROT_EDGE] = 120;
-	protection[PROT_POINT] = 120;
-	protection[PROT_FIRE] = 100;
-	protection[PROT_FLY] = 120;
+	protection[PROT_BLUNT] = 110;
+	protection[PROT_EDGE] = 110;
+	protection[PROT_POINT] = 110;
+	protection[PROT_FIRE] = 90;
+	protection[PROT_FLY] = 110;
 	protection[PROT_MAGIC] = 100;
 	HitChance[NPC_TALENT_1H] = 100;
 	HitChance[NPC_TALENT_2H] = 100;
@@ -164,4 +164,3 @@ instance OrcElite_DIOberst3_Rest(Mst_Default_OrcElite)
 	start_aistate = ZS_MM_AllScheduler;
 	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
-

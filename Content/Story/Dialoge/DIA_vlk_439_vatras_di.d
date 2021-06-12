@@ -55,7 +55,8 @@ func void DIA_Vatras_DI_HEAL_Info()
 			VATRAS_HEAL_DAY = Wld_GetDay();
 			AI_Output(self,other,"DIA_Vatras_DI_HEAL_05_01");	//Adanosie, pob³ogos³aw to cia³o i uwolnij je od ran, by mog³o przywróciæ równowagê temu œwiatu!
 			hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
-			PrintScreen(PRINT_FullyHealed,-1,-1,FONT_Screen,2);
+			//PrintScreen(PRINT_FullyHealed,-1,-1,FONT_Screen,2);
+			PrintS_Ext(PRINT_FullyHealed, Green());
 		};
 	}
 	else
@@ -550,4 +551,3 @@ func void DIA_Vatras_DI_UndeadDragonDead_Info()
 	};
 	AI_Output(self,other,"DIA_Vatras_DI_UndeadDragonDead_05_09");	//Powiedz kapitanowi, by podnosi³ kotwicê. Ta cisza i spokój mog¹ byæ tylko z³udne.
 };
-

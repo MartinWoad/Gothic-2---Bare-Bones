@@ -28,21 +28,21 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 	};
 	if(realHitChance >= teacherMAX)
 	{
-		concatText = ConcatStrings(PRINT_NoLearnOverPersonalMAX,IntToString(teacherMAX));
-		PrintScreen(concatText,-1,-1,FONT_Screen,2);
+		//concatText = ConcatStrings(PRINT_NoLearnOverPersonalMAX,IntToString(teacherMAX));
+		//PrintScreen(concatText,-1,-1,FONT_Screen,2);
 		B_Say(slf,oth,"$NOLEARNYOUREBETTER");
 		return FALSE;
 	};
 	if((realHitChance + percent) > teacherMAX)
 	{
-		concatText = ConcatStrings(PRINT_NoLearnOverPersonalMAX,IntToString(teacherMAX));
-		PrintScreen(concatText,-1,-1,FONT_Screen,2);
+		//concatText = ConcatStrings(PRINT_NoLearnOverPersonalMAX,IntToString(teacherMAX));
+		//PrintScreen(concatText,-1,-1,FONT_Screen,2);
 		B_Say(slf,oth,"$NOLEARNOVERPERSONALMAX");
 		return FALSE;
 	};
 	if(oth.lp < kosten)
 	{
-		PrintScreen(PRINT_NotEnoughLP,-1,-1,FONT_Screen,2);
+		//PrintScreen(PRINT_NotEnoughLP,-1,-1,FONT_Screen,2);
 		B_Say(slf,oth,"$NOLEARNNOPOINTS");
 		return FALSE;
 	};
@@ -50,26 +50,29 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 	if(talent == NPC_TALENT_1H)
 	{
 		B_AddFightSkill(oth,NPC_TALENT_1H,percent,FALSE);
-		PrintScreen(PRINT_Learn1H,-1,-1,FONT_Screen,2);
+		//PrintScreen(PRINT_Learn1H,-1,-1,FONT_Screen,2);
+		PrintS_Ext(PRINT_Learn1H, White());
 		return TRUE;
 	};
 	if(talent == NPC_TALENT_2H)
 	{
 		B_AddFightSkill(oth,NPC_TALENT_2H,percent,FALSE);
-		PrintScreen(PRINT_Learn2H,-1,-1,FONT_Screen,2);
+		//PrintScreen(PRINT_Learn2H,-1,-1,FONT_Screen,2);
+		PrintS_Ext(PRINT_Learn2H, White());
 		return TRUE;
 	};
 	if(talent == NPC_TALENT_BOW)
 	{
 		B_AddFightSkill(oth,NPC_TALENT_BOW,percent,FALSE);
-		PrintScreen(PRINT_LearnBow,-1,-1,FONT_Screen,2);
+		//PrintScreen(PRINT_LearnBow,-1,-1,FONT_Screen,2);
+		PrintS_Ext(PRINT_LearnBow, White());
 		return TRUE;
 	};
 	if(talent == NPC_TALENT_CROSSBOW)
 	{
 		B_AddFightSkill(oth,NPC_TALENT_CROSSBOW,percent,FALSE);
-		PrintScreen(PRINT_LearnCrossbow,-1,-1,FONT_Screen,2);
+		//PrintScreen(PRINT_LearnCrossbow,-1,-1,FONT_Screen,2);
+		PrintS_Ext(PRINT_LearnCrossbow, White());
 		return TRUE;
 	};
 };
-

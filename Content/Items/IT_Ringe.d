@@ -1,50 +1,50 @@
 
-const int Value_Ri_ProtFire = 100;
+const int Value_Ri_ProtFire = 200;
 const int Ri_ProtFire = 2;
-const int Value_Ri_ProtEdge = 100;
+const int Value_Ri_ProtEdge = 200;
 const int Ri_ProtEdge = 1;
-const int Value_Ri_ProtMage = 100;
+const int Value_Ri_ProtMage = 200;
 const int Ri_ProtMage = 2;
-const int Value_Ri_ProtPoint = 100;
+const int Value_Ri_ProtPoint = 200;
 const int Ri_ProtPoint = 1;
-const int Value_Ri_ProtFire02 = 200;
+const int Value_Ri_ProtFire02 = 500;
 const int Ri_ProtFire02 = 4;
-const int Value_Ri_ProtEdge02 = 200;
+const int Value_Ri_ProtEdge02 = 500;
 const int Ri_ProtEdge02 = 2;
-const int Value_Ri_ProtMage02 = 200;
+const int Value_Ri_ProtMage02 = 500;
 const int Ri_ProtMage02 = 4;
-const int Value_Ri_ProtPoint02 = 200;
+const int Value_Ri_ProtPoint02 = 500;
 const int Ri_ProtPoint02 = 2;
-const int Value_Ri_ProtTotal = 250;
-const int Ri_TProtFire = 2;
+const int Value_Ri_ProtTotal = 500;
+const int Ri_TProtFire = 1;
 const int Ri_TProtEdge = 1;
-const int Ri_TProtMage = 2;
+const int Ri_TProtMage = 1;
 const int Ri_TProtPoint = 1;
-const int Value_Ri_ProtTotal02 = 500;
-const int Ri_TProtFire02 = 4;
-const int Ri_TProtEdge02 = 2;
-const int Ri_TProtMage02 = 4;
-const int Ri_TProtPoint02 = 2;
-const int Value_Ri_Dex = 100;
+const int Value_Ri_ProtTotal02 = 1000;
+const int Ri_TProtFire02 = 2;
+const int Ri_TProtEdge02 = 1;
+const int Ri_TProtMage02 = 2;
+const int Ri_TProtPoint02 = 1;
+const int Value_Ri_Dex = 500;
 const int Ri_Dex = 1;
-const int Value_Ri_Dex02 = 200;
+const int Value_Ri_Dex02 = 1000;
 const int Ri_Dex02 = 2;
-const int Value_Ri_Mana = 100;
+const int Value_Ri_Mana = 500;
 const int Ri_Mana = 2;
-const int Value_Ri_Mana02 = 200;
+const int Value_Ri_Mana02 = 1000;
 const int Ri_Mana02 = 4;
-const int Value_Ri_Strg = 100;
+const int Value_Ri_Strg = 500;
 const int Ri_Strg = 1;
-const int Value_Ri_Strg02 = 200;
+const int Value_Ri_Strg02 = 1000;
 const int Ri_Strg02 = 2;
-const int Value_Ri_Hp = 100;
+const int Value_Ri_Hp = 500;
 const int Ri_Hp = 5;
-const int Value_Ri_Hp02 = 200;
+const int Value_Ri_Hp02 = 1000;
 const int Ri_Hp02 = 10;
-const int Value_Ri_HpMana = 250;
+const int Value_Ri_HpMana = 1000;
 const int Ri_HpMana_Hp = 5;
 const int Ri_HpMana_Mana = 2;
-const int Value_Ri_DexStrg = 250;
+const int Value_Ri_DexStrg = 1000;
 const int Ri_DexStrg_Dex = 1;
 const int Ri_DexStrg_Strg = 1;
 
@@ -125,9 +125,11 @@ instance ItRi_Prot_Point_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Prot_Point_01;
 	on_unequip = UnEquip_ItRi_Prot_Point_01;
-	description = "Pierœcieñ Drewnianej Skóry";
-	text[2] = NAME_Prot_Point;
+	description = "Pierœcieñ Dêbowej Skóry";
+	text[2] = NAME_Prot_Edge;
 	count[2] = Ri_ProtPoint;
+	text[3] = NAME_Prot_Point;
+	count[3] = Ri_ProtPoint;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
@@ -139,11 +141,13 @@ instance ItRi_Prot_Point_01(C_Item)
 func void Equip_ItRi_Prot_Point_01()
 {
 	self.protection[PROT_POINT] += Ri_ProtPoint;
+	self.protection[PROT_EDGE] += Ri_ProtPoint;
 };
 
 func void UnEquip_ItRi_Prot_Point_01()
 {
 	self.protection[PROT_POINT] -= Ri_ProtPoint;
+	self.protection[PROT_EDGE] -= Ri_ProtPoint;
 };
 
 
@@ -159,8 +163,10 @@ instance ItRi_Prot_Point_02(C_Item)
 	on_equip = Equip_ItRi_Prot_Point_02;
 	on_unequip = UnEquip_ItRi_Prot_Point_02;
 	description = "Pierœcieñ Kamiennej Skóry";
-	text[2] = NAME_Prot_Point;
-	count[2] = Ri_ProtPoint02;
+	text[2] = NAME_Prot_Edge;
+	count[2] = Ri_ProtPoint;
+	text[3] = NAME_Prot_Point;
+	count[3] = Ri_ProtPoint02;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
@@ -172,11 +178,13 @@ instance ItRi_Prot_Point_02(C_Item)
 func void Equip_ItRi_Prot_Point_02()
 {
 	self.protection[PROT_POINT] += Ri_ProtPoint02;
+	self.protection[PROT_EDGE] += Ri_ProtPoint;
 };
 
 func void UnEquip_ItRi_Prot_Point_02()
 {
 	self.protection[PROT_POINT] -= Ri_ProtPoint02;
+	self.protection[PROT_EDGE] -= Ri_ProtPoint;
 };
 
 
@@ -194,6 +202,8 @@ instance ItRi_Prot_Edge_01(C_Item)
 	description = "Pierœcieñ ¯elaznej Skóry";
 	text[2] = NAME_Prot_Edge;
 	count[2] = Ri_ProtEdge;
+	text[3] = NAME_Prot_Blunt;
+	count[3] = Ri_ProtEdge;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
@@ -226,9 +236,11 @@ instance ItRi_Prot_Edge_02(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Prot_Edge_02;
 	on_unequip = UnEquip_ItRi_Prot_Edge_02;
-	description = "Pierœcieñ Magicznej Skóry";
+	description = "Pierœcieñ Stalowej Skóry";
 	text[2] = NAME_Prot_Edge;
 	count[2] = Ri_ProtEdge02;
+	text[3] = NAME_Prot_Blunt;
+	count[3] = Ri_ProtEdge;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
@@ -240,13 +252,13 @@ instance ItRi_Prot_Edge_02(C_Item)
 func void Equip_ItRi_Prot_Edge_02()
 {
 	self.protection[PROT_EDGE] += Ri_ProtEdge02;
-	self.protection[PROT_BLUNT] += Ri_ProtEdge02;
+	self.protection[PROT_BLUNT] += Ri_ProtEdge;
 };
 
 func void UnEquip_ItRi_Prot_Edge_02()
 {
 	self.protection[PROT_EDGE] -= Ri_ProtEdge02;
-	self.protection[PROT_BLUNT] -= Ri_ProtEdge02;
+	self.protection[PROT_BLUNT] -= Ri_ProtEdge;
 };
 
 
@@ -261,7 +273,7 @@ instance ItRi_Prot_Mage_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Prot_Mage_01;
 	on_unequip = UnEquip_ItRi_Prot_Mage_01;
-	description = "Pierœcieñ Zas³ony przed Magi¹";
+	description = "Pierœcieñ Wody";
 	text[2] = NAME_Prot_Magic;
 	count[2] = Ri_ProtMage;
 	text[5] = NAME_Value;
@@ -294,7 +306,7 @@ instance ItRi_Prot_Mage_02(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Prot_Mage_02;
 	on_unequip = UnEquip_ItRi_Prot_Mage_02;
-	description = "Pierœcieñ Ochrony przed Magi¹";
+	description = "Pierœcieñ Wzburzonej Wody";
 	text[2] = NAME_Prot_Magic;
 	count[2] = Ri_ProtMage02;
 	text[5] = NAME_Value;
@@ -327,15 +339,15 @@ instance ItRi_Prot_Total_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Prot_Total_01;
 	on_unequip = UnEquip_ItRi_Prot_Total_01;
-	description = "Pierœcieñ Wiecznych Zwyciêstw";
+	description = "Pierœcieñ Zwyciêstw";
 	text[1] = NAME_Prot_Magic;
 	count[1] = Ri_TProtMage;
 	text[2] = NAME_Prot_Fire;
 	count[2] = Ri_TProtFire;
-	text[3] = NAME_Prot_Point;
+	text[3] = NAME_Prot_Weapon;
 	count[3] = Ri_TProtPoint;
-	text[4] = NAME_Prot_Edge;
-	count[4] = Ri_TProtEdge;
+	//text[4] = NAME_Prot_Edge;
+	//count[4] = Ri_TProtEdge;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
@@ -374,15 +386,15 @@ instance ItRi_Prot_Total_02(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Prot_Total_02;
 	on_unequip = UnEquip_ItRi_Prot_Total_02;
-	description = "Pierœcieñ Nietykalnoœci";
+	description = "Pierœcieñ Wielkich Zwyciêstw";
 	text[1] = NAME_Prot_Magic;
 	count[1] = Ri_TProtMage02;
 	text[2] = NAME_Prot_Fire;
 	count[2] = Ri_TProtFire02;
-	text[3] = NAME_Prot_Point;
+	text[3] = NAME_Prot_Weapon;
 	count[3] = Ri_TProtPoint02;
-	text[4] = NAME_Prot_Edge;
-	count[4] = Ri_TProtEdge02;
+	//text[4] = NAME_Prot_Edge;
+	//count[4] = Ri_TProtEdge02;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
@@ -421,7 +433,7 @@ instance ItRi_Dex_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Dex_01;
 	on_unequip = UnEquip_ItRi_Dex_01;
-	description = "Pierœcieñ Zdolnoœci";
+	description = "Pierœcieñ Zrêcznoœci";
 	text[2] = NAME_Bonus_Dex;
 	count[2] = Ri_Dex;
 	text[5] = NAME_Value;
@@ -454,7 +466,7 @@ instance ItRi_Dex_02(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Dex_02;
 	on_unequip = UnEquip_ItRi_Dex_02;
-	description = "Pierœcieñ Zrêcznoœci";
+	description = "Pierœcieñ Wielkiej Zrêcznoœci";
 	text[2] = NAME_Bonus_Dex;
 	count[2] = Ri_Dex02;
 	text[5] = NAME_Value;
@@ -530,7 +542,7 @@ instance ItRi_Hp_02(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Hp_02;
 	on_unequip = UnEquip_ItRi_Hp_02;
-	description = "Pierœcieñ ¯ywotnoœci";
+	description = "Pierœcieñ Pe³ni ¯ycia";
 	text[2] = NAME_Bonus_HP;
 	count[2] = Ri_Hp02;
 	text[5] = NAME_Value;
@@ -573,7 +585,7 @@ instance ItRi_Str_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Str_01;
 	on_unequip = UnEquip_ItRi_Str_01;
-	description = "Pierœcieñ Mocy";
+	description = "Pierœcieñ Si³y";
 	text[2] = NAME_Bonus_Str;
 	count[2] = Ri_Strg;
 	text[5] = NAME_Value;
@@ -606,7 +618,7 @@ instance ItRi_Str_02(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Str_02;
 	on_unequip = UnEquip_ItRi_Str_02;
-	description = "Pierœcieñ Si³y";
+	description = "Pierœcieñ Wielkiej Si³y";
 	text[2] = NAME_Bonus_Str;
 	count[2] = Ri_Strg02;
 	text[5] = NAME_Value;
@@ -639,7 +651,7 @@ instance ItRi_Mana_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Mana_01;
 	on_unequip = UnEquip_ItRi_Mana_01;
-	description = "Pierœcieñ Magii";
+	description = "Pierœcieñ Mocy";
 	text[2] = NAME_Bonus_Mana;
 	count[2] = Ri_Mana;
 	text[5] = NAME_Value;
@@ -780,7 +792,7 @@ instance ItRi_Dex_Strg_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItRi_Dex_Strg_01;
 	on_unequip = UnEquip_ItRi_Dex_Strg_01;
-	description = "Pierœcieñ Kondycji";
+	description = "Pierœcieñ Sprawnoœci";
 	text[2] = NAME_Bonus_Str;
 	count[2] = 4;
 	text[3] = NAME_Bonus_Dex;
@@ -804,4 +816,3 @@ func void UnEquip_ItRi_Dex_Strg_01()
 	b_removeitemattribute(self,ATR_STRENGTH,Ri_DexStrg_Strg);
 	b_removeitemattribute(self,ATR_DEXTERITY,Ri_DexStrg_Dex);
 };
-

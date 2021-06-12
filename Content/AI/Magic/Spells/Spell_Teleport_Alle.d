@@ -1,11 +1,12 @@
 
-const int SPL_Cost_Teleport = 5;
+const int SPL_Cost_Teleport = 10;
 
 func void B_PrintTeleportTooFarAway(var int level)
 {
 	if(level != CurrentLevel)
 	{
-		PrintScreen(PRINT_TeleportTooFarAway,-1,YPOS_LevelUp,FONT_ScreenSmall,2);
+		//PrintScreen(PRINT_TeleportTooFarAway,-1,YPOS_LevelUp,FONT_ScreenSmall,2);
+		PrintS_Ext(PRINT_TeleportTooFarAway,White());
 	};
 };
 
@@ -235,4 +236,3 @@ func void Spell_Cast_Teleport()
 		Spell_Cast_TeleportTaverne();
 	};
 };
-

@@ -39,7 +39,7 @@ instance ItRw_Mil_Crossbow(C_Item)
 	cond_value[2] = Condition_MilArmbrust;
 	visual = "ItRw_Mil_Crossbow.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -61,7 +61,7 @@ instance ItRw_Sld_Bow(C_Item)
 	cond_value[2] = Condition_SldBogen;
 	visual = "ItRw_Bow_L_01.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -83,7 +83,7 @@ instance ItRw_Bow_L_01(C_Item)
 	cond_value[2] = Condition_Kurzbogen;
 	visual = "ItRw_Bow_L_01.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -105,7 +105,7 @@ instance ItRw_Bow_L_02(C_Item)
 	cond_value[2] = Condition_Weidenbogen;
 	visual = "ItRw_Bow_L_02.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -127,7 +127,7 @@ instance ItRw_Bow_L_03(C_Item)
 	cond_value[2] = Condition_Jagdbogen;
 	visual = "ItRw_Bow_L_03.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -149,7 +149,7 @@ instance ItRw_Bow_L_04(C_Item)
 	cond_value[2] = Condition_Ulmenbogen;
 	visual = "ItRw_Bow_L_04.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -171,7 +171,7 @@ instance ItRw_Bow_M_01(C_Item)
 	cond_value[2] = Condition_Kompositbogen;
 	visual = "ItRw_Bow_M_01.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -193,7 +193,7 @@ instance ItRw_Bow_M_02(C_Item)
 	cond_value[2] = Condition_Eschenbogen;
 	visual = "ItRw_Bow_M_02.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -215,7 +215,7 @@ instance ItRw_Bow_M_03(C_Item)
 	cond_value[2] = Condition_Langbogen;
 	visual = "ItRw_Bow_M_03.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -237,7 +237,7 @@ instance ItRw_Bow_M_04(C_Item)
 	cond_value[2] = Condition_Buchenbogen;
 	visual = "ItRw_Bow_M_04.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -259,7 +259,7 @@ instance ItRw_Bow_H_01(C_Item)
 	cond_value[2] = Condition_Knochenbogen;
 	visual = "ItRw_Bow_H_01.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -281,7 +281,7 @@ instance ItRw_Bow_H_02(C_Item)
 	cond_value[2] = Condition_Eichenbogen;
 	visual = "ItRw_Bow_H_02.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -303,7 +303,7 @@ instance ItRw_Bow_H_03(C_Item)
 	cond_value[2] = Condition_Kriegsbogen;
 	visual = "ItRw_Bow_H_03.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -325,7 +325,7 @@ instance ItRw_Bow_H_04(C_Item)
 	cond_value[2] = Condition_Drachenbogen;
 	visual = "ItRw_Bow_H_04.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -347,7 +347,7 @@ instance ItRw_Crossbow_L_01(C_Item)
 	cond_value[2] = Condition_Jagdarmbrust;
 	visual = "ItRw_Crossbow_L_01.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -369,7 +369,7 @@ instance ItRw_Crossbow_L_02(C_Item)
 	cond_value[2] = Condition_LeichteArmbrust;
 	visual = "ItRw_Crossbow_L_02.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -391,7 +391,7 @@ instance ItRw_Crossbow_M_01(C_Item)
 	cond_value[2] = Condition_Armbrust;
 	visual = "ItRw_Crossbow_M_01.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -413,7 +413,7 @@ instance ItRw_Crossbow_M_02(C_Item)
 	cond_value[2] = Condition_Kriegsarmbrust;
 	visual = "ItRw_Crossbow_M_02.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -435,7 +435,7 @@ instance ItRw_Crossbow_H_01(C_Item)
 	cond_value[2] = Condition_SchwereArmbrust;
 	visual = "ItRw_Crossbow_H_01.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -457,11 +457,10 @@ instance ItRw_Crossbow_H_02(C_Item)
 	cond_value[2] = Condition_Drachenjaegerarmbrust;
 	visual = "ItRw_Crossbow_H_02.mms";
 	description = name;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
 	text[5] = NAME_Value;
 	count[5] = value;
 };
-

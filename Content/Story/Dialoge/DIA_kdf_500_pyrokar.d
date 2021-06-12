@@ -937,8 +937,11 @@ func void DIA_Pyrokar_BACKFROMOW_Info()
 		PyrokarToldKarrasToResearchDMT = TRUE;
 		B_LogEntry(TOPIC_DEMENTOREN,"Karras otrzyma³ od Pyrokara polecenie zlikwidowania zagro¿enia ze strony Poszukiwaczy.");
 	};
-	AI_Output(self,other,"DIA_Pyrokar_Add_11_00");	//WeŸ to. Gdybyœ potrzebowa³ pomocy, ta runa przeniesie ciê prosto do klasztoru.
-	B_GiveInvItems(self,other,ItRu_TeleportMonastery,1);
+	if(hero.guild == GIL_KDF || hero.guild == GIL_NOV)
+	{
+		AI_Output(self,other,"DIA_Pyrokar_Add_11_00");	//WeŸ to. Gdybyœ potrzebowa³ pomocy, ta runa przeniesie ciê prosto do klasztoru.
+		B_GiveInvItems(self,other,ItRu_TeleportMonastery,1);
+	};
 	AI_Output(self,other,"DIA_Pyrokar_BACKFROMOW_11_10");	//Pamiêtaj: od twojej silnej woli zale¿¹ teraz losy nas wszystkich.
 };
 
@@ -2093,4 +2096,3 @@ func void DIA_Pyrokar_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Pyrokar_PICKPOCKET);
 };
-

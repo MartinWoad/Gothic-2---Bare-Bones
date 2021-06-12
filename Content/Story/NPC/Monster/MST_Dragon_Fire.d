@@ -12,9 +12,9 @@ prototype Mst_Default_Dragon_Fire(C_Npc)
 	attribute[ATR_HITPOINTS] = 3000;
 	attribute[ATR_MANA_MAX] = 1000;
 	attribute[ATR_MANA] = 1000;
-	protection[PROT_BLUNT] = 125;
-	protection[PROT_EDGE] = 125;
-	protection[PROT_POINT] = 150;
+	protection[PROT_BLUNT] = 105;
+	protection[PROT_EDGE] = 105;
+	protection[PROT_POINT] = 105;
 	protection[PROT_FIRE] = IMMUNE;
 	protection[PROT_FLY] = IMMUNE;
 	protection[PROT_MAGIC] = 100;
@@ -52,4 +52,3 @@ instance Dragon_Fire_Island(Mst_Default_Dragon_Fire)
 	B_SetVisuals_Dragon_Fire();
 	Npc_SetToFistMode(self);
 };
-

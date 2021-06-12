@@ -210,7 +210,7 @@ func void DIA_Orlan_TRADE_Info()
 	{
 		AI_Output(self,other,"DIA_Orlan_TRADE_05_01");	//Oczywiœcie. To dla mnie zaszczyt, goœciæ tu kogoœ takiego.
 	}
-	else if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG) || (hero.guild == GIL_MIL))
+	else if((hero.guild == GIL_DJG) || (hero.guild == GIL_MIL))
 	{
 		AI_Output(self,other,"DIA_Orlan_TRADE_05_02");	//Oczywiœcie, Panie.
 	}
@@ -564,4 +564,3 @@ func void DIA_Orlan_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Orlan_PICKPOCKET);
 };
-

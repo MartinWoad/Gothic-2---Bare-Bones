@@ -756,7 +756,7 @@ instance DIA_BENNET_DRAGONS(C_Info)
 
 func int dia_bennet_dragons_condition()
 {
-	if((Kapitel == 4) && (other.guild == GIL_SLD) && Npc_KnowsInfo(other,DIA_Bennet_ThankYou))
+	if((MIS_RitualInnosEyeRepair == LOG_SUCCESS) && (other.guild == GIL_SLD || other.guild == GIL_NONE) && Npc_KnowsInfo(other,DIA_Bennet_ThankYou))
 	{
 		return TRUE;
 	};
@@ -1032,7 +1032,8 @@ func void DIA_Bennet_GiveInnosEye_Info()
 	AI_Output(self,other,"DIA_Bennet_GiveInnosEye_06_01");	//W porz¹dku. Do jutra zrobiê now¹ oprawê.
 	AI_Output(self,other,"DIA_Bennet_GiveInnosEye_06_02");	//Mo¿esz do mnie wtedy przyjœæ i go odebraæ.
 	Npc_RemoveInvItems(other,ItMi_InnosEye_Broken_Mis,1);
-	AI_PrintScreen(Print_InnoseyeGiven,-1,YPOS_ItemGiven,FONT_ScreenSmall,2);
+	//AI_PrintScreen(Print_InnoseyeGiven,-1,YPOS_ItemGiven,FONT_ScreenSmall,2);
+	PrintS_Ext(Print_InnoseyeGiven, White());
 	Bennet_RepairDay = Wld_GetDay();
 };
 
@@ -1064,7 +1065,8 @@ func void DIA_Bennet_GetInnosEye_Info()
 		AI_Output(self,other,"DIA_Bennet_GetInnosEye_06_01");	//Tak, proszê.
 		TEXT_Innoseye_Setting = TEXT_Innoseye_Setting_Repaired;
 		CreateInvItems(other,ItMi_InnosEye_Broken_Mis,1);
-		AI_PrintScreen(Print_InnosEyeGet,-1,YPOS_ItemGiven,FONT_ScreenSmall,2);
+		//AI_PrintScreen(Print_InnosEyeGet,-1,YPOS_ItemGiven,FONT_ScreenSmall,2);
+		PrintS_Ext(Print_InnosEyeGet, White());
 		AI_Output(self,other,"DIA_Bennet_GetInnosEye_06_02");	//Musia³em zrobiæ now¹ oprawê dla kamienia.
 		AI_Output(self,other,"DIA_Bennet_GetInnosEye_06_03");	//Pracowa³em przez ca³¹ noc. Wygl¹da jak nowy.
 		B_LogEntry(TOPIC_INNOSEYE,"Bennet naprawi³ oprawê amuletu.");
@@ -1138,7 +1140,8 @@ func void DIA_Bennet_DRACHENEIER_Info()
 		AI_Output(self,other,"DIA_Bennet_DRACHENEIER_06_03");	//Poka¿.
 	};
 	Npc_RemoveInvItems(other,ItAt_DragonEgg_MIS,1);
-	AI_PrintScreen(PRINT_ItemGegeben,-1,YPOS_ItemGiven,FONT_ScreenSmall,2);
+	//AI_PrintScreen(PRINT_ItemGegeben,-1,YPOS_ItemGiven,FONT_ScreenSmall,2);
+	PrintS_Ext(PRINT_ItemGegeben, White());
 	if(DRACHENEIER_angebotenXP_OneTime == FALSE)
 	{
 		AI_Output(self,other,"DIA_Bennet_DRACHENEIER_06_04");	//Hmmm. Bardzo twardy materia³. Idealny do wykoñczenia zbroi. To znaczy, gdyby komuœ uda³o siê je rozbiæ.
@@ -1202,7 +1205,8 @@ func void DIA_Bennet_DRACHENEIER_nein()
 	AI_Output(other,self,"DIA_Bennet_DRACHENEIER_nein_15_00");	//Zachowaj wiêc swoje z³oto. Myœlê, ¿e je zatrzymam.
 	AI_Output(self,other,"DIA_Bennet_DRACHENEIER_nein_06_01");	//Powiedz, jeœli zmienisz zdanie.
 	CreateInvItems(other,ItAt_DragonEgg_MIS,1);
-	AI_PrintScreen(PRINT_ItemErhalten,-1,YPOS_ItemTaken,FONT_ScreenSmall,2);
+	//AI_PrintScreen(PRINT_ItemErhalten,-1,YPOS_ItemTaken,FONT_ScreenSmall,2);
+	PrintS_Ext(PRINT_ItemErhalten, White());
 	BennetsDragonEggOffer = 0;
 	Info_ClearChoices(DIA_Bennet_DRACHENEIER);
 };
@@ -1252,7 +1256,8 @@ func void DIA_Bennet_EierBringen_Info()
 		AI_Output(other,self,"DIA_Bennet_EierBringen_15_03");	//Mam tu kilka.
 		Npc_RemoveInvItems(other,ItAt_DragonEgg_MIS,DragonEggCount);
 		concatText = ConcatStrings(IntToString(DragonEggCount),PRINT_ItemsGegeben);
-		AI_PrintScreen(concatText,-1,YPOS_ItemGiven,FONT_ScreenSmall,2);
+		//AI_PrintScreen(concatText,-1,YPOS_ItemGiven,FONT_ScreenSmall,2);
+		PrintS_Ext(concatText, White());
 		XP_DJG_BringDragonEggs = DragonEggCount * XP_DJG_BringDragonEgg;
 		DragonEggCounter = DragonEggCounter + DragonEggCount;
 		B_GivePlayerXP(XP_DJG_BringDragonEggs);
@@ -1471,4 +1476,3 @@ func void DIA_Bennet_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Bennet_PICKPOCKET);
 };
-

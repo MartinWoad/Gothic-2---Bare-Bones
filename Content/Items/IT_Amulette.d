@@ -1,29 +1,29 @@
 
-const int Value_Am_ProtFire = 250;
+const int Value_Am_ProtFire = 1000;
 const int Am_ProtFire = 6;
-const int Value_Am_ProtEdge = 250;
+const int Value_Am_ProtEdge = 1000;
 const int Am_ProtEdge = 3;
-const int Value_Am_ProtMage = 250;
+const int Value_Am_ProtMage = 1000;
 const int Am_ProtMage = 6;
-const int Value_Am_ProtPoint = 250;
+const int Value_Am_ProtPoint = 1000;
 const int Am_ProtPoint = 3;
-const int Value_Am_ProtTotal = 750;
+const int Value_Am_ProtTotal = 2500;
 const int Am_TProtFire = 3;
 const int AM_TProtEdge = 3;
 const int Am_TProtMage = 3;
 const int Am_TProtPoint = 3;
-const int Value_Am_Dex = 300;
+const int Value_Am_Dex = 1500;
 const int Am_Dex = 3;
-const int Value_Am_Mana = 300;
+const int Value_Am_Mana = 1500;
 const int Am_Mana = 6;
-const int Value_Am_Strg = 300;
+const int Value_Am_Strg = 1500;
 const int Am_Strg = 3;
-const int Value_Am_Hp = 300;
+const int Value_Am_Hp = 1500;
 const int Am_Hp = 15;
-const int Value_Am_HpMana = 500;
+const int Value_Am_HpMana = 2000;
 const int Am_HpMana_Hp = 10;
 const int Am_HpMana_Mana = 4;
-const int Value_Am_DexStrg = 500;
+const int Value_Am_DexStrg = 2000;
 const int Am_DexStrg_Dex = 2;
 const int Am_DexStrg_Strg = 2;
 
@@ -72,6 +72,8 @@ instance ItAm_Prot_Edge_01(C_Item)
 	description = "Amulet Stalowej Skóry";
 	text[2] = NAME_Prot_Edge;
 	count[2] = Am_ProtEdge;
+	text[3] = NAME_Prot_Blunt;
+	count[3] = Am_ProtEdge - 2;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
@@ -81,13 +83,13 @@ instance ItAm_Prot_Edge_01(C_Item)
 func void Equip_ItAm_Prot_Edge_01()
 {
 	self.protection[PROT_EDGE] += Am_ProtEdge;
-	self.protection[PROT_BLUNT] += Am_ProtEdge;
+	self.protection[PROT_BLUNT] += (Am_ProtEdge - 2);
 };
 
 func void UnEquip_ItAm_Prot_Edge_01()
 {
 	self.protection[PROT_EDGE] -= Am_ProtEdge;
-	self.protection[PROT_BLUNT] -= Am_ProtEdge;
+	self.protection[PROT_BLUNT] -= (Am_ProtEdge - 2);
 };
 
 
@@ -102,9 +104,11 @@ instance ItAm_Prot_Point_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItAm_Prot_Point_01;
 	on_unequip = UnEquip_ItAm_Prot_Point_01;
-	description = "Amulet Dêbowej Skóry";
-	text[2] = NAME_Prot_Point;
-	count[2] = Am_ProtPoint;
+	description = "Amulet Kamiennej Skóry";
+	text[2] = NAME_Prot_Edge;
+	count[2] = (Am_ProtPoint - 1);
+	text[3] = NAME_Prot_Point;
+	count[3] = Am_ProtPoint;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
@@ -114,11 +118,14 @@ instance ItAm_Prot_Point_01(C_Item)
 func void Equip_ItAm_Prot_Point_01()
 {
 	self.protection[PROT_POINT] += Am_ProtPoint;
+	self.protection[PROT_EDGE] += (Am_ProtPoint - 1);
 };
 
 func void UnEquip_ItAm_Prot_Point_01()
 {
 	self.protection[PROT_POINT] -= Am_ProtPoint;
+	self.protection[PROT_EDGE] -= (Am_ProtPoint - 1);
+
 };
 
 
@@ -133,7 +140,7 @@ instance ItAm_Prot_Mage_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItAm_Prot_Mage_01;
 	on_unequip = UnEquip_ItAm_Prot_Mage_01;
-	description = "Amulet Duchowej Si³y";
+	description = "Amulet Wody";
 	text[2] = NAME_Prot_Magic;
 	count[2] = Am_ProtMage;
 	text[5] = NAME_Value;
@@ -164,15 +171,15 @@ instance ItAm_Prot_Total_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_Value_Am_ProtTotal;
 	on_unequip = UnEquip_Value_Am_ProtTotal;
-	description = "Amulet Magicznego Pancerza";
+	description = "Amulet Zwyciêstw";
 	text[1] = NAME_Prot_Fire;
 	count[1] = Am_TProtFire;
 	text[2] = NAME_Prot_Magic;
 	count[2] = Am_TProtMage;
-	text[3] = NAME_Prot_Point;
+	text[3] = NAME_Prot_Weapon;
 	count[3] = Am_TProtPoint;
-	text[4] = NAME_Prot_Edge;
-	count[4] = AM_TProtEdge;
+	//text[4] = NAME_Prot_Edge;
+	//count[4] = AM_TProtEdge;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
@@ -209,7 +216,7 @@ instance ItAm_Dex_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItAm_Dex_01;
 	on_unequip = UnEquip_ItAm_Dex_01;
-	description = "Amulet Zwinnoœci";
+	description = "Amulet Zrêcznoœci";
 	text[2] = NAME_Bonus_Dex;
 	count[2] = Am_Dex;
 	text[5] = NAME_Value;
@@ -312,9 +319,9 @@ instance ItAm_Mana_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItAm_Mana_01;
 	on_unequip = UnEquip_ItAm_Mana_01;
-	description = "Amulet Magii";
+	description = "Amulet Mocy";
 	text[2] = NAME_Bonus_Mana;
-	count[2] = 10;
+	count[2] = Am_Mana;
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
@@ -353,7 +360,7 @@ instance ItAm_Dex_Strg_01(C_Item)
 	material = MAT_METAL;
 	on_equip = Equip_ItAm_Dex_Strg_01;
 	on_unequip = UnEquip_ItAm_Dex_Strg_01;
-	description = "Amulet Potêgi";
+	description = "Amulet Sprawnoœci";
 	text[2] = NAME_Bonus_Dex;
 	count[2] = Am_DexStrg_Dex;
 	text[3] = NAME_Bonus_Str;
@@ -412,7 +419,7 @@ func void UnEquip_ItAm_Hp_Mana_01()
 	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - Am_HpMana_Mana;
 	b_removeitemattribute(self,ATR_MANA_MAX,Am_HpMana_Mana);
 	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - Am_HpMana_Hp;
-	
+
 	/*if(self.attribute[ATR_HITPOINTS] > (Am_HpMana_Hp + 1))
 	{
 		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - Am_HpMana_Hp;
@@ -430,4 +437,3 @@ func void UnEquip_ItAm_Hp_Mana_01()
 		self.attribute[ATR_MANA] = 0;
 	};*/
 };
-

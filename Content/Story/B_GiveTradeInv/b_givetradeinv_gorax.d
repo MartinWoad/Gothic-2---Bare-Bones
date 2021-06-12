@@ -98,6 +98,7 @@ func void B_GiveTradeInv_Gorax(var C_Npc slf)
 		CreateInvItems(slf,ItSc_HarmUndead,2);
 		CreateInvItems(slf,ItSc_ChargeFireBall,3);
 		CreateInvItems(slf,ItMi_RuneBlank,2);
+		CreateInvItems(slf,ItAm_Mana_01,1);
 		Gorax_ItemsGiven_Chapter_4 = TRUE;
 	};
 	if((Kapitel >= 5) && (Gorax_ItemsGiven_Chapter_5 == FALSE))
@@ -134,4 +135,3 @@ func void B_GiveTradeInv_Gorax(var C_Npc slf)
 		GORAX_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };
-

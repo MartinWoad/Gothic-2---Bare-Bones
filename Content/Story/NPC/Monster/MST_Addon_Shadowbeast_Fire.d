@@ -1,20 +1,20 @@
 
 prototype MST_DEFAULT_SHADOWBEAST_ADDON_FIRE(C_NPC)
 {
-	name[0] = "Ognisty demon";
+	name[0] = "Ognisty Demon";
 	guild = GIL_GARGOYLE;
 	aivar[AIV_MM_REAL_ID] = ID_GARGOYLE;
 	level = 30;
 	attribute[ATR_STRENGTH] = 150;
 	attribute[ATR_DEXTERITY] = 150;
-	attribute[ATR_HITPOINTS_MAX] = 300;
-	attribute[ATR_HITPOINTS] = 300;
+	attribute[ATR_HITPOINTS_MAX] = 500;
+	attribute[ATR_HITPOINTS] = 500;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
 	protection[PROT_BLUNT] = 150;
 	protection[PROT_EDGE] = 150;
 	protection[PROT_POINT] = 200;
-	protection[PROT_FIRE] = 150;
+	protection[PROT_FIRE] = IMMUNE;
 	protection[PROT_FLY] = 150;
 	protection[PROT_MAGIC] = 75;
 	damagetype = DAM_EDGE;
@@ -56,4 +56,3 @@ instance SHADOWBEAST_ADDON_FIRE_CANYONLIB(MST_DEFAULT_SHADOWBEAST_ADDON_FIRE)
 	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_GARGOYLE;
 	effect = "SPELLFX_FIREARMOR";
 };
-

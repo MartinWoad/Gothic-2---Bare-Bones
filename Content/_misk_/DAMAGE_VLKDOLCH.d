@@ -1,10 +1,10 @@
 
-const int Damage_VLKDolch = 5;
-const int Condition_VLKDolch = 5;
+const int Damage_VLKDolch = 10;
+const int Condition_VLKDolch = 10;
 const int Range_VLKDolch = 50;
 const int Value_VLKDolch = 6;
-const int Damage_Schuerhaken = 5;
-const int Condition_Schuerhaken = 5;
+const int Damage_Schuerhaken = 10;
+const int Condition_Schuerhaken = 10;
 const int Range_Schuerhaken = 50;
 const int Value_Schuerhaken = 5;
 const int Damage_BauAxe = 7;
@@ -348,7 +348,7 @@ const int Condition_Drachenschneide = 80;
 const int Range_Drachenschneide = 120;
 const int Value_Drachenschneide = 3000;
 const int Damage_Special_1H_4 = 90;
-const int Condition_Special_1H_4 = 80;
+const int Condition_Special_1H_4 = 90;
 const int Range_Special_1H_4 = 100;
 const int Value_Special_1H_4 = 2200;
 const int Damage_Special_2H_4 = 110;

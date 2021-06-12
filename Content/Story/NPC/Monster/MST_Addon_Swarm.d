@@ -1,7 +1,7 @@
 
 prototype MST_DEFAULT_SWARM(C_NPC)
 {
-	name[0] = "Lataj¹cy rój";
+	name[0] = "Lataj¹cy Rój";
 	guild = GIL_BLOODFLY;
 	aivar[AIV_MM_REAL_ID] = ID_BLOODFLY;
 	level = 6;
@@ -56,4 +56,3 @@ instance SWARM_DETECTOR(MST_DEFAULT_SWARM)
 	aivar[AIV_NOFIGHTPARKER] = TRUE;
 	start_aistate = zs_mm_rtn_summoned;
 };
-

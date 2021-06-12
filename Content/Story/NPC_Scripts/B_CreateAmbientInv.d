@@ -416,45 +416,45 @@ func void B_CreateAmbientInv_DMT(var int InventorySet)
 {
 	if(InventorySet == 1)
 	{
-		CreateInvItems(self,ItPo_Mana_01,1);
-		CreateInvItems(self,ItMi_Pitch,1);
-		CreateInvItems(self,ItMi_Gold,42);
+		//CreateInvItems(self,ItPo_Mana_01,1);
+		//CreateInvItems(self,ItMi_Pitch,1);
+		//CreateInvItems(self,ItMi_Gold,42);
 	}
 	else if(InventorySet == 2)
 	{
-		CreateInvItems(self,ItPo_Mana_02,1);
-		CreateInvItems(self,ItMi_Gold,35);
-		CreateInvItems(self,ItMi_Aquamarine,1);
+		//CreateInvItems(self,ItPo_Mana_02,1);
+		//CreateInvItems(self,ItMi_Gold,35);
+		//CreateInvItems(self,ItMi_Aquamarine,1);
 	}
 	else if(InventorySet == 3)
 	{
-		CreateInvItems(self,ItMi_Sulfur,1);
-		CreateInvItems(self,ItMi_Gold,23);
-		CreateInvItems(self,ItPo_Mana_01,1);
+		//CreateInvItems(self,ItMi_Sulfur,1);
+		//CreateInvItems(self,ItMi_Gold,23);
+		//CreateInvItems(self,ItPo_Mana_01,1);
 	}
 	else if(InventorySet == 4)
 	{
-		CreateInvItems(self,ItMi_Rockcrystal,1);
-		CreateInvItems(self,ItPo_Health_01,1);
-		CreateInvItems(self,ItMi_Gold,46);
+		//CreateInvItems(self,ItMi_Rockcrystal,1);
+		//CreateInvItems(self,ItPo_Health_01,1);
+		//CreateInvItems(self,ItMi_Gold,46);
 	}
 	else if(InventorySet == 5)
 	{
-		CreateInvItems(self,ItMi_Quartz,1);
-		CreateInvItems(self,ItMi_Gold,43);
-		CreateInvItems(self,ItPo_Health_02,1);
+		//CreateInvItems(self,ItMi_Quartz,1);
+		//CreateInvItems(self,ItMi_Gold,43);
+		//CreateInvItems(self,ItPo_Health_02,1);
 	}
 	else if(InventorySet == 6)
 	{
-		CreateInvItems(self,ItPo_Speed,1);
-		CreateInvItems(self,ItMi_Coal,1);
-		CreateInvItems(self,ItMi_Gold,37);
+		//CreateInvItems(self,ItPo_Speed,1);
+		//CreateInvItems(self,ItMi_Coal,1);
+		//CreateInvItems(self,ItMi_Gold,37);
 	}
 	else if(InventorySet == 0)
 	{
-		CreateInvItems(self,ItMi_Rockcrystal,1);
-		CreateInvItems(self,ItPo_Health_01,1);
-		CreateInvItems(self,ItMi_Gold,40);
+		//CreateInvItems(self,ItMi_Rockcrystal,1);
+		//CreateInvItems(self,ItPo_Health_01,1);
+		//CreateInvItems(self,ItMi_Gold,40);
 	};
 };
 
@@ -539,4 +539,3 @@ func void B_CreateAmbientInv(var C_Npc slf)
 		B_CreateAmbientInv_BAU(zufall);
 	};
 };
-

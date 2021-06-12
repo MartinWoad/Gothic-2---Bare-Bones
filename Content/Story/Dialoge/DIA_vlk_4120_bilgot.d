@@ -173,7 +173,7 @@ instance DIA_Bilgot_TAKEYOUWITHME(C_Info)
 	condition = DIA_Bilgot_TAKEYOUWITHME_Condition;
 	information = DIA_Bilgot_TAKEYOUWITHME_Info;
 	permanent = FALSE;
-	description = "(Dotrzymaj obietnicy)";
+	description = "Pora ruszaæ, Bilgot! Pakuj manatki.";
 };
 
 
@@ -348,4 +348,3 @@ func void DIA_Bilgot_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Bilgot_PICKPOCKET);
 };
-

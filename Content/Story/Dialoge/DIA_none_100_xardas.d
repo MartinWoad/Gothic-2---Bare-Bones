@@ -696,6 +696,7 @@ func void DIA_Xardas_PYROWILLNICHT_Info()
 	AI_Output(self,other,"DIA_Xardas_PYROWILLNICHT_14_02");	//Czy¿by? Pyrokar, tak? To ciekawe.
 	AI_Output(self,other,"DIA_Xardas_PYROWILLNICHT_14_03");	//Ten stary cap zaczyna mnie irytowaæ. Ale chyba mam tu coœ, co mo¿e go przekonaæ.
 	AI_Output(self,other,"DIA_Xardas_PYROWILLNICHT_14_04");	//Opuszczaj¹c Zakon Magów Ognia, zabra³em ze sob¹ kilka drobiazgów.
+	AI_Output(self,other,"DIA_Xardas_PYROWILLNICHT_14_05");	//Teraz, gdy moja wie¿a znajduje siê tak blisko miasta, muszê byæ bardziej ostro¿ny. W ka¿dej chwili ktoœ mo¿e zacz¹æ ich szukaæ.
 	AI_Output(self,other,"DIA_Xardas_PYROWILLNICHT_14_06");	//Nie chcê, by oddzia³ paladynów i magów przetrz¹sn¹³ moj¹ wie¿ê i znalaz³ te rzeczy.
 	AI_Output(self,other,"DIA_Xardas_PYROWILLNICHT_14_07");	//Dlatego ukry³em je w bezpiecznym miejscu, w którym magowie nigdy nie bêd¹ ich szukaæ.
 	AI_Output(other,self,"DIA_Xardas_PYROWILLNICHT_15_08");	//Gdzie dok³adnie?
@@ -882,4 +883,3 @@ func void DIA_Xardas_KAP6_EXIT_Info()
 {
 	AI_StopProcessInfos(self);
 };
-

@@ -1,7 +1,7 @@
 
 instance PAL_200_Hagen(Npc_Default)
 {
-	name[0] = "Lord Hagen";
+	name[0] = "Hagen";
 	guild = GIL_PAL;
 	id = 200;
 	voice = 4;
@@ -36,4 +36,3 @@ func void Rtn_ShipFree_200()
 	TA_Stand_Guarding(8,0,23,0,"NW_CITY_UPTOWNPARADE_HAGEN");
 	TA_Stand_Guarding(23,0,8,0,"NW_CITY_UPTOWNPARADE_HAGEN");
 };
-

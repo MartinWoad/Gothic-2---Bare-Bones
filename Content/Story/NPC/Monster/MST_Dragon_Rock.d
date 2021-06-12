@@ -12,8 +12,8 @@ prototype Mst_Default_Dragon_Rock(C_Npc)
 	attribute[ATR_HITPOINTS] = 2000;
 	attribute[ATR_MANA_MAX] = 1000;
 	attribute[ATR_MANA] = 1000;
-	protection[PROT_BLUNT] = 100;
-	protection[PROT_EDGE] = 200;
+	protection[PROT_BLUNT] = 90;
+	protection[PROT_EDGE] = 110;
 	protection[PROT_POINT] = IMMUNE;
 	protection[PROT_FIRE] = IMMUNE;
 	protection[PROT_FLY] = IMMUNE;
@@ -44,4 +44,3 @@ instance Dragon_Rock(Mst_Default_Dragon_Rock)
 	B_SetVisuals_Dragon_Rock();
 	Npc_SetToFistMode(self);
 };
-

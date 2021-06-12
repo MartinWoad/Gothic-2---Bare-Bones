@@ -5,8 +5,8 @@ prototype MST_DEFAULT_KEILER(C_NPC)
 	guild = GIL_WOLF;
 	aivar[AIV_MM_REAL_ID] = ID_KEILER;
 	level = 6;
-	attribute[ATR_STRENGTH] = 50;
-	attribute[ATR_DEXTERITY] = 50;
+	attribute[ATR_STRENGTH] = 60;
+	attribute[ATR_DEXTERITY] = 60;
 	attribute[ATR_HITPOINTS_MAX] = 100;
 	attribute[ATR_HITPOINTS] = 100;
 	attribute[ATR_MANA_MAX] = 0;
@@ -42,4 +42,3 @@ instance KEILER(MST_DEFAULT_KEILER)
 	Npc_SetToFistMode(self);
 	CreateInvItems(self,itfomuttonraw,1);
 };
-

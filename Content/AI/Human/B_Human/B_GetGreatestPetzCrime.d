@@ -80,3 +80,71 @@ func int B_GetGreatestPetzCrime(var C_Npc slf)
 	return CRIME_NONE;
 };
 
+func int B_GetGreatestPlayerCrime()
+{
+	if(PETZCOUNTER_OldCamp_Murder > 0)
+	{
+		return CRIME_MURDER;
+	};
+	if(PETZCOUNTER_City_Murder > 0)
+	{
+		return CRIME_MURDER;
+	};
+	if(PETZCOUNTER_Monastery_Murder > 0)
+	{
+		return CRIME_MURDER;
+	};
+	if(PETZCOUNTER_Farm_Murder > 0)
+	{
+		return CRIME_MURDER;
+	};
+	if(PETZCOUNTER_OldCamp_Theft > 0)
+	{
+		return CRIME_THEFT;
+	};
+	if(PETZCOUNTER_City_Theft > 0)
+	{
+		return CRIME_THEFT;
+	};
+	if(PETZCOUNTER_Monastery_Theft > 0)
+	{
+		return CRIME_THEFT;
+	};
+	if(PETZCOUNTER_Farm_Theft > 0)
+	{
+		return CRIME_THEFT;
+	};
+	if(PETZCOUNTER_OldCamp_Attack > 0)
+	{
+		return CRIME_ATTACK;
+	};
+	if(PETZCOUNTER_City_Attack > 0)
+	{
+		return CRIME_ATTACK;
+	};
+	if(PETZCOUNTER_Monastery_Attack > 0)
+	{
+		return CRIME_ATTACK;
+	};
+	if(PETZCOUNTER_Farm_Attack > 0)
+	{
+		return CRIME_ATTACK;
+	};
+	if(PETZCOUNTER_OldCamp_Sheepkiller > 0)
+	{
+		return CRIME_SHEEPKILLER;
+	};
+	if(PETZCOUNTER_City_Sheepkiller > 0)
+	{
+		return CRIME_SHEEPKILLER;
+	};
+	if(PETZCOUNTER_Monastery_Sheepkiller > 0)
+	{
+		return CRIME_SHEEPKILLER;
+	};
+	if(PETZCOUNTER_Farm_Sheepkiller > 0)
+	{
+		return CRIME_SHEEPKILLER;
+	};
+	return CRIME_NONE;
+};

@@ -8,14 +8,14 @@ instance PC_Hero(Npc_Default)
 	level = 0;
 	npcType = npctype_main;
 	exp = 0;
-	exp_next = 500;
+	exp_next = 400;
 	lp = 0;
 	attribute[ATR_STRENGTH] = 10;
 	attribute[ATR_DEXTERITY] = 10;
 	attribute[ATR_MANA_MAX] = 10;
 	attribute[ATR_MANA] = 10;
-	attribute[ATR_HITPOINTS_MAX] = 40;
-	attribute[ATR_HITPOINTS] = 40;
+	attribute[ATR_HITPOINTS_MAX] = 50;
+	attribute[ATR_HITPOINTS] = 50;
 	Mdl_SetVisual(self,"HUMANS.MDS");
 	Mdl_SetVisualBody(self,"hum_body_Naked0",9,0,"Hum_Head_Pony",Face_N_Player,0,NO_ARMOR);
 	B_SetFightSkills(self,0);
@@ -393,4 +393,3 @@ instance PC_E3Paladin(Npc_Default)
 	CreateInvItems(self,ItPo_Health_03,1);
 	CreateInvItems(self,ItPo_Speed,5);
 };
-

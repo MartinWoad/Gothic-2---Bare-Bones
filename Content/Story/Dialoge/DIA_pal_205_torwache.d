@@ -79,7 +79,7 @@ func void DIA_PAL_205_Torwache_FirstWarn_Info()
 	};
 	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,PAL_205_Checkpoint);
 	self.aivar[AIV_Guardpassage_Status] = GP_FirstWarnGiven;
-	PrintScreen("",-1,-1,FONT_Screen,0);
+	//PrintScreen("",-1,-1,FONT_Screen,0);
 };
 
 
@@ -295,4 +295,3 @@ func void DIA_PAL_205_Torwache_PERM_Info()
 	};
 	AI_StopProcessInfos(self);
 };
-

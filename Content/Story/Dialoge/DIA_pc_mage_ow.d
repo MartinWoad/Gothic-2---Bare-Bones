@@ -627,9 +627,9 @@ func void DIA_MiltenOW_PICKPOCKET_DoIt()
 	if(other.attribute[ATR_DEXTERITY] >= 80)
 	{
 		CreateInvItems(self,ItPo_Perm_Mana,1);
-		B_GiveInvItems(self,other,ItPo_Perm_Mana,1);
+		B_StealInvItems(self,other,ItPo_Perm_Mana,1);
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
-		B_GivePlayerXP(XP_Ambient);
+		//B_GivePlayerXP(XP_Ambient);
 		Info_ClearChoices(DIA_MiltenOW_PICKPOCKET);
 	}
 	else
@@ -643,4 +643,3 @@ func void DIA_MiltenOW_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_MiltenOW_PICKPOCKET);
 };
-

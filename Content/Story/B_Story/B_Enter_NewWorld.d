@@ -107,8 +107,8 @@ func void B_ENTER_NEWWORLD_Kapitel_3()
 		B_StartOtherRoutine(Peck,"STORAGE");
 		B_RemoveNpc(PAL_203_Lothar);
 		Wld_InsertNpc(Wolf,"NW_PATH_TO_MONASTER_AREA_10");
-		Wld_InsertNpc(Warg,"NW_XARDAS_GOBBO_01");
-		Wld_InsertNpc(Warg,"NW_XARDAS_GOBBO_01");
+		Wld_InsertNpc(Wolf,"NW_XARDAS_GOBBO_01");
+		Wld_InsertNpc(Wolf,"NW_XARDAS_GOBBO_01");
 		Wld_InsertNpc(Zombie02,"NW_FARM4_WOOD_MONSTER_MORE_02");
 		Wld_InsertNpc(Zombie01,"NW_FARM4_WOOD_MONSTER_MORE_02");
 		Wld_InsertNpc(Zombie02,"NW_BIGFARM_LAKE_03_MOVEMENT5");
@@ -117,15 +117,15 @@ func void B_ENTER_NEWWORLD_Kapitel_3()
 		Wld_InsertNpc(Giant_Bug,"NW_FARM4_WOOD_MONSTER_N_1_MONSTER");
 		Wld_InsertNpc(Giant_Bug,"NW_FARM4_WOOD_MONSTER_N_3");
 		Wld_InsertNpc(Shadowbeast,"NW_FARM4_WOOD_MONSTER_05");
-		Wld_InsertNpc(DragonSnapper,"NW_FARM4_WOOD_MONSTER_05");
-		Wld_InsertNpc(DragonSnapper,"NW_FARM4_WOOD_MONSTER_05");
-		Wld_InsertNpc(DragonSnapper,"NW_CASTLEMINE_TROLL_02");
-		Wld_InsertNpc(DragonSnapper,"NW_CASTLEMINE_TROLL_02");
-		Wld_InsertNpc(DragonSnapper,"NW_FARM3_PATH_11_SMALLRIVER_10");
-		Wld_InsertNpc(DragonSnapper,"NW_FARM3_PATH_11_SMALLRIVER_10");
-		Wld_InsertNpc(DragonSnapper,"NW_FARM3_MOUNTAINLAKE_03");
-		Wld_InsertNpc(DragonSnapper,"NW_FARM3_BIGWOOD_03_C");
-		Wld_InsertNpc(DragonSnapper,"NW_FARM3_BIGWOOD_03_C");
+		Wld_InsertNpc(Snapper,"NW_FARM4_WOOD_MONSTER_05");
+		Wld_InsertNpc(Snapper,"NW_FARM4_WOOD_MONSTER_05");
+		Wld_InsertNpc(Snapper,"NW_CASTLEMINE_TROLL_02");
+		Wld_InsertNpc(Snapper,"NW_CASTLEMINE_TROLL_02");
+		Wld_InsertNpc(Snapper,"NW_FARM3_PATH_11_SMALLRIVER_10");
+		Wld_InsertNpc(Snapper,"NW_FARM3_PATH_11_SMALLRIVER_10");
+		Wld_InsertNpc(Snapper,"NW_FARM3_MOUNTAINLAKE_03");
+		Wld_InsertNpc(Snapper,"NW_FARM3_BIGWOOD_03_C");
+		Wld_InsertNpc(Snapper,"NW_FARM3_BIGWOOD_03_C");
 		Wld_InsertNpc(DMT_DementorAmbientSpeaker,"NW_CITY_TO_FARM2_03");
 		Wld_InsertNpc(DMT_DementorAmbient,"FP_ROAM_NW_BIGFARM_FELDREUBER11");
 		Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_02");
@@ -681,4 +681,3 @@ func void b_enter_newworld()
 	CurrentLevel = NEWWORLD_ZEN;
 	B_InitNpcGlobals();
 };
-

@@ -13,5 +13,5 @@ func void B_GiveTradeInv_Vatras_DI(var C_Npc slf)
 	CreateInvItems(slf,ItPo_Health_03,30);
 	CreateInvItems(slf,ItPo_Mana_02,30);
 	CreateInvItems(slf,ItPo_Mana_03,20);
+	CreateInvItems(slf,ItAm_Prot_Mage_01,1);
 };
-

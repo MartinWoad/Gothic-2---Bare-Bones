@@ -11,12 +11,12 @@ prototype Mst_Default_FireWaran(C_Npc)
 	attribute[ATR_HITPOINTS] = 210;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
-	protection[PROT_BLUNT] = 120;
-	protection[PROT_EDGE] = 120;
-	protection[PROT_POINT] = 120;
+	protection[PROT_BLUNT] = 75;
+	protection[PROT_EDGE] = 75;
+	protection[PROT_POINT] = 85;
 	protection[PROT_FIRE] = 150;
 	protection[PROT_FLY] = 150;
-	protection[PROT_MAGIC] = 100;
+	protection[PROT_MAGIC] = 60;
 	damagetype = DAM_FIRE;
 	fight_tactic = FAI_WARAN;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
@@ -42,4 +42,3 @@ instance FireWaran(Mst_Default_FireWaran)
 	B_Setvisuals_FireWaran();
 	Npc_SetToFistMode(self);
 };
-

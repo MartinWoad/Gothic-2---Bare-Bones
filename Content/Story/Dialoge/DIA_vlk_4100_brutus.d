@@ -269,7 +269,7 @@ func void DIA_Brutus_Teach_Back()
 
 func void DIA_Brutus_Teach_STR_1()
 {
-	B_TeachAttributePoints(self,other,ATR_STRENGTH,1,40);
+	B_TeachAttributePoints(self,other,ATR_STRENGTH,1,45);
 	Info_ClearChoices(DIA_Brutus_Teach);
 	Info_AddChoice(DIA_Brutus_Teach,Dialog_Back,DIA_Brutus_Teach_Back);
 	Info_AddChoice(DIA_Brutus_Teach,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Brutus_Teach_STR_1);
@@ -278,7 +278,7 @@ func void DIA_Brutus_Teach_STR_1()
 
 func void DIA_Brutus_Teach_STR_5()
 {
-	B_TeachAttributePoints(self,other,ATR_STRENGTH,5,40);
+	B_TeachAttributePoints(self,other,ATR_STRENGTH,5,45);
 	Info_ClearChoices(DIA_Brutus_Teach);
 	Info_AddChoice(DIA_Brutus_Teach,Dialog_Back,DIA_Brutus_Teach_Back);
 	Info_AddChoice(DIA_Brutus_Teach,B_BuildLearnString(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Brutus_Teach_STR_1);
@@ -567,4 +567,3 @@ func void DIA_Brutus_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Brutus_PICKPOCKET);
 };
-

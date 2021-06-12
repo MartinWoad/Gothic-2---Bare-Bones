@@ -17,7 +17,7 @@ instance PAL_297_Ritter(Npc_Default)
 	EquipItem(self,ItRw_Mil_Crossbow);
 	CreateInvItems(self,ItRw_Bolt,11);
 	B_CreateAmbientInv(self);
-	CreateInvItems(self,ItRu_TeleportPassNW,1);
+	//CreateInvItems(self,ItRu_TeleportPassNW,1);
 	B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_P_Normal01,BodyTex_N,ItAr_PAL_M);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
@@ -32,4 +32,3 @@ func void Rtn_Start_297()
 	TA_Stand_Guarding(8,0,22,0,"NW_PASS_GATEGUARD_02");
 	TA_Stand_Guarding(22,0,8,0,"NW_PASS_GATEGUARD_02");
 };
-

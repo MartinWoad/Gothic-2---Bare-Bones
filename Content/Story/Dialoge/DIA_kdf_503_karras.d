@@ -672,7 +672,8 @@ func void DIA_Karras_HaveBook_Info()
 	AI_Output(other,self,"DIA_Karras_HaveBook_15_00");	//Mam tutaj almanach Opêtanych. Mo¿e ci siê przydaæ.
 	AI_Output(self,other,"DIA_Karras_HaveBook_10_01");	//Poka¿ go.
 	Npc_RemoveInvItems(other,ITWR_DementorObsessionBook_MIS,1);
-	AI_PrintScreen(PRINT_ItemGegeben,-1,YPOS_ItemGiven,FONT_ScreenSmall,2);
+	//AI_PrintScreen(PRINT_ItemGegeben,-1,YPOS_ItemGiven,FONT_ScreenSmall,2);
+	PrintS_Ext(PRINT_ItemGegeben, White());
 	AI_Output(self,other,"DIA_Karras_HaveBook_10_02");	//Tak, to mo¿e byæ to, czego szukamy. Zbadam tê ksiêgê.
 	AI_Output(self,other,"DIA_Karras_HaveBook_10_03");	//W tej chwili jestem pewien tylko jednej rzeczy.
 	AI_Output(self,other,"DIA_Karras_HaveBook_10_04");	//Poszukiwacze s¹ form¹ ¿ycia stworzon¹ przez Beliara.
@@ -723,7 +724,8 @@ func void DIA_Karras_ResearchDMTEnd_Info()
 		AI_Output(self,other,"DIA_Karras_ResearchDMTEnd_10_11");	//Mam nadziejê, ¿e wiesz, na co siê porywasz. Uwa¿aj na siebie, Bracie.
 		AI_Output(self,other,"DIA_Karras_ResearchDMTEnd_10_12");	//A... twój almanach. Nie bêdê go ju¿ potrzebowa³.
 		CreateInvItems(other,ITWR_DementorObsessionBook_MIS,1);
-		AI_PrintScreen(PRINT_ItemErhalten,-1,YPOS_ItemTaken,FONT_ScreenSmall,2);
+		//AI_PrintScreen(PRINT_ItemErhalten,-1,YPOS_ItemTaken,FONT_ScreenSmall,2);
+		PrintS_Ext(PRINT_ItemErhalten, White());
 		SC_KnowsMadPsi = TRUE;
 		B_LogEntry(TOPIC_DEMENTOREN,"Badania Karrasa zosta³y uwieñczone sukcesem. Miêdzy Bractwem œni¹cego a Poszukiwaczami istnieje jakieœ powi¹zanie.");
 		B_GivePlayerXP(XP_SC_KnowsMadPsi);
@@ -935,4 +937,3 @@ func void DIA_Karras_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Karras_PICKPOCKET);
 };
-

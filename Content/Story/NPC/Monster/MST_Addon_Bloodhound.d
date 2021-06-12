@@ -1,7 +1,7 @@
 
 prototype MST_DEFAULT_BLOODHOUND(C_NPC)
 {
-	name[0] = "Krwawy ogar";
+	name[0] = "Krwawy Ogar";
 	guild = GIL_SHADOWBEAST;
 	aivar[AIV_MM_REAL_ID] = ID_BLOODHOUND;
 	level = 22;
@@ -39,4 +39,3 @@ instance BLOODHOUND(MST_DEFAULT_BLOODHOUND)
 	set_bloodhound_visuals();
 	Npc_SetToFistMode(self);
 };
-

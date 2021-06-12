@@ -50,9 +50,13 @@ func void DIA_SylvioDJG_HelloAgain_Info()
 	{
 		AI_Output(self,other,"DIA_SylvioDJG_HelloAgain_09_02");	//Hej, ty! Magowie strasznie mnie wkurzaj¹! Spadaj st¹d! Nie masz tu czego szukaæ.
 	}
-	else
+	else if(other.guild == GIL_PAL)
 	{
 		AI_Output(self,other,"DIA_SylvioDJG_HelloAgain_09_03");	//Hej, ty, paladyn! Wracaj do swojej kopalni rudy. Nic tu po tobie.
+	}
+	else
+	{
+		AI_Output(self,other,"DIA_SylvioDJG_HelloAgain_09_01");	//S³uchaj no, jeœli myœlisz, ¿e tu zarobisz, to jesteœ w b³êdzie. Ja by³em pierwszy.
 	};
 	AI_Output(other,self,"DIA_SylvioDJG_HelloAgain_15_04");	//Rozumiem. Nikt nie lubi dzieliæ siê ³upem.
 	AI_Output(self,other,"DIA_SylvioDJG_HelloAgain_09_05");	//Ty to powiedzia³eœ. Teraz znikaj.
@@ -451,4 +455,3 @@ func void DIA_Sylvio_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Sylvio_PICKPOCKET);
 };
-

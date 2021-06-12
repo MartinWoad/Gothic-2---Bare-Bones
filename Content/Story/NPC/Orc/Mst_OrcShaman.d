@@ -6,17 +6,17 @@ prototype Mst_Default_OrcShaman(C_Npc)
 	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
 	voice = 18;
 	level = 30;
-	attribute[ATR_STRENGTH] = 80;
-	attribute[ATR_DEXTERITY] = 80;
+	attribute[ATR_STRENGTH] = 50;
+	attribute[ATR_DEXTERITY] = 50;
 	attribute[ATR_HITPOINTS_MAX] = 200;
 	attribute[ATR_HITPOINTS] = 200;
 	attribute[ATR_MANA_MAX] = 100;
 	attribute[ATR_MANA] = 100;
-	protection[PROT_BLUNT] = 100;
-	protection[PROT_EDGE] = 100;
-	protection[PROT_POINT] = 100;
-	protection[PROT_FIRE] = 100;
-	protection[PROT_FLY] = 100;
+	protection[PROT_BLUNT] = 90;
+	protection[PROT_EDGE] = 90;
+	protection[PROT_POINT] = 90;
+	protection[PROT_FIRE] = 90;
+	protection[PROT_FLY] = 90;
 	protection[PROT_MAGIC] = 80;
 	HitChance[NPC_TALENT_1H] = 100;
 	HitChance[NPC_TALENT_2H] = 100;
@@ -54,4 +54,3 @@ instance OrcShaman_Hosh_Pak(Mst_Default_OrcShaman)
 	start_aistate = ZS_MM_AllScheduler;
 	aivar[AIV_MM_OrcSitStart] = OnlyRoutine;
 };
-

@@ -56,6 +56,7 @@ func void B_GiveTradeInv_Isgaroth(var C_Npc slf)
 		CreateInvItems(slf,ItSc_Fear,2);
 		CreateInvItems(slf,ItSc_IceCube,3);
 		CreateInvItems(slf,ItSc_ThunderBall,5);
+		CreateInvItems(slf,ItRi_Hp_Mana_01,1);
 		if((hero.guild != GIL_NONE) && (hero.guild != GIL_NOV))
 		{
 			CreateInvItems(slf,ItMi_RuneBlank,1);
@@ -120,4 +121,3 @@ func void B_GiveTradeInv_Isgaroth(var C_Npc slf)
 		ISGAROTH_ITEMSGIVEN_CHAPTER_6 = TRUE;
 	};
 };
-

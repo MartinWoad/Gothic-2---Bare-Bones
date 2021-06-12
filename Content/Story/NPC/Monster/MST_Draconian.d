@@ -5,18 +5,18 @@ prototype Mst_Default_Draconian(C_Npc)
 	guild = GIL_DRACONIAN;
 	aivar[AIV_MM_REAL_ID] = ID_DRACONIAN;
 	level = 35;
-	attribute[ATR_STRENGTH] = 130;
-	attribute[ATR_DEXTERITY] = 130;
+	attribute[ATR_STRENGTH] = 75;
+	attribute[ATR_DEXTERITY] = 100;
 	attribute[ATR_HITPOINTS_MAX] = 250;
 	attribute[ATR_HITPOINTS] = 250;
 	attribute[ATR_MANA_MAX] = 100;
 	attribute[ATR_MANA] = 100;
-	protection[PROT_BLUNT] = 110;
-	protection[PROT_EDGE] = 110;
-	protection[PROT_POINT] = 110;
+	protection[PROT_BLUNT] = 90;
+	protection[PROT_EDGE] = 100;
+	protection[PROT_POINT] = 90;
 	protection[PROT_FIRE] = IMMUNE;
 	protection[PROT_FLY] = 70;
-	protection[PROT_MAGIC] = 120;
+	protection[PROT_MAGIC] = 100;
 	HitChance[NPC_TALENT_1H] = 80;
 	HitChance[NPC_TALENT_2H] = 80;
 	HitChance[NPC_TALENT_BOW] = 80;
@@ -44,4 +44,3 @@ instance Draconian(Mst_Default_Draconian)
 	start_aistate = ZS_MM_AllScheduler;
 	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };
-

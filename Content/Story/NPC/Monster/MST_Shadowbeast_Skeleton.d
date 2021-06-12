@@ -12,7 +12,7 @@ prototype Mst_Default_Shadowbeast_Skeleton(C_Npc)
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
 	protection[PROT_BLUNT] = 100;
-	protection[PROT_EDGE] = 140;
+	protection[PROT_EDGE] = 130;
 	protection[PROT_POINT] = 1000;
 	protection[PROT_FIRE] = 120;
 	protection[PROT_FLY] = 120;
@@ -46,4 +46,3 @@ instance Shadowbeast_Skeleton_Angar(Mst_Default_Shadowbeast_Skeleton)
 	B_SetVisuals_Shadowbeast_Skeleton();
 	Npc_SetToFistMode(self);
 };
-

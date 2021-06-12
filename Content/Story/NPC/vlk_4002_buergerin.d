@@ -7,7 +7,7 @@ instance VLK_4002_Buergerin(Npc_Default)
 	voice = 17;
 	flags = 0;
 	npcType = NPCTYPE_AMBIENT;
-	B_SetAttributesToChapter(self,3);
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
 	B_CreateAmbientInv(self);
 	B_SetNpcVisual(self,FEMALE,"Hum_Head_Babe1",FaceBabe_N_Anne,BodyTex_N,ITAR_VlkBabe_H);
@@ -30,4 +30,3 @@ func void Rtn_Start_4002()
 	TA_Sit_Throne(20,0,23,0,"NW_CITY_UPTOWN_JUDGE_THRONE_01");
 	TA_Sleep(23,0,6,0,"NW_CITY_RICHTER_BED_WEIB");
 };
-

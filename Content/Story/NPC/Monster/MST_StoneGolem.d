@@ -5,8 +5,8 @@ prototype Mst_Default_StoneGolem(C_Npc)
 	guild = GIL_STONEGOLEM;
 	aivar[AIV_MM_REAL_ID] = ID_STONEGOLEM;
 	level = 18;
-	attribute[ATR_STRENGTH] = 120;
-	attribute[ATR_DEXTERITY] = 120;
+	attribute[ATR_STRENGTH] = 100;
+	attribute[ATR_DEXTERITY] = 100;
 	attribute[ATR_HITPOINTS_MAX] = 300;
 	attribute[ATR_HITPOINTS] = 300;
 	attribute[ATR_MANA_MAX] = 100;
@@ -123,4 +123,3 @@ instance MagicGolem(Mst_Default_StoneGolem)
 	B_SetVisuals_StoneGolem();
 	Npc_SetToFistMode(self);
 };
-

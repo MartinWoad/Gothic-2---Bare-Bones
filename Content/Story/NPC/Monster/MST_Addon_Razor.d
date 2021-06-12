@@ -14,9 +14,9 @@ prototype MST_DEFAULT_RAZOR(C_NPC)
 	protection[PROT_BLUNT] = 90;
 	protection[PROT_EDGE] = 90;
 	protection[PROT_POINT] = 90;
-	protection[PROT_FIRE] = 90;
-	protection[PROT_FLY] = 90;
-	protection[PROT_MAGIC] = 0;
+	protection[PROT_FIRE] = 65;
+	protection[PROT_FLY] = 70;
+	protection[PROT_MAGIC] = 35;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_SNAPPER;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
@@ -99,4 +99,3 @@ instance CANYONRAZOR10(MST_DEFAULT_RAZOR)
 	set_razor_visuals();
 	Npc_SetToFistMode(self);
 };
-

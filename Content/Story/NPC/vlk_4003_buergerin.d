@@ -7,7 +7,7 @@ instance VLK_4003_Buergerin(Npc_Default)
 	voice = 17;
 	flags = 0;
 	npcType = NPCTYPE_AMBIENT;
-	B_SetAttributesToChapter(self,3);
+	B_SetAttributesToChapter(self,1);
 	fight_tactic = FAI_HUMAN_COWARD;
 	B_CreateAmbientInv(self);
 	B_SetNpcVisual(self,FEMALE,"Hum_Head_Babe1",FaceBabe_N_OldBrown,BodyTex_N,ITAR_VlkBabe_M);
@@ -30,4 +30,3 @@ func void Rtn_Start_4003()
 	TA_Stand_Sweeping(18,0,19,0,"NW_CITY_REICH02_SIT");
 	TA_Smalltalk(19,0,22,0,"NW_CITY_SMALLTALK_02");
 };
-

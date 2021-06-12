@@ -5,12 +5,15 @@ func void ZS_Flee()
 	B_ValidateOther();
 	if(self.aivar[AIV_LOADGAME] == FALSE)
 	{
-		if((self.guild == GIL_BAU) || (self.guild == GIL_VLK))
+		if((self.guild == GIL_BAU) || (self.guild == GIL_VLK) || (self.guild == GIL_OUT))
 		{
 			B_Say_Overlay(self,other,"$HELP");
 			Npc_SendPassivePerc(self,PERC_ASSESSFIGHTSOUND,self,other);
+		}
+		else
+		{
+			B_Say_Overlay(self,other,"$RUNAWAY");
 		};
-		B_Say_Overlay(self,other,"$RUNAWAY");
 	};
 	AI_RemoveWeapon(self);
 	AI_SetWalkMode(self,NPC_RUN);
@@ -40,4 +43,3 @@ func void ZS_Flee_End()
 	AI_Standup(self);
 	AI_StartState(self,ZS_HealSelf,1,"");
 };
-

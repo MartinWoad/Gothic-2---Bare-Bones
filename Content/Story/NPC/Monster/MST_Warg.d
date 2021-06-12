@@ -13,7 +13,7 @@ prototype Mst_Default_Warg(C_Npc)
 	attribute[ATR_MANA] = 0;
 	protection[PROT_BLUNT] = 90;
 	protection[PROT_EDGE] = 80;
-	protection[PROT_POINT] = 90;
+	protection[PROT_POINT] = 80;
 	protection[PROT_FIRE] = 30;
 	protection[PROT_FLY] = 100;
 	protection[PROT_MAGIC] = 30;
@@ -69,4 +69,3 @@ instance BlackWolf(Mst_Default_Warg)
 	B_SetVisuals_BLACKWOLF();
 	Npc_SetToFistMode(self);
 };
-

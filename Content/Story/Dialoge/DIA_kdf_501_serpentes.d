@@ -541,7 +541,8 @@ func void DIA_Serpentes_MinenAnteileBringen_Info()
 	SalandrilMinenAnteil_MAINCounter = SalandrilMinenAnteil_MAINCounter - SerpentesMinenAnteilCount;
 	MinenAnteilLeft = IntToString(SalandrilMinenAnteil_MAINCounter);
 	MinenAnteilText = ConcatStrings(MinenAnteilLeft,PRINT_NumberLeft);
-	AI_PrintScreen(MinenAnteilText,-1,YPOS_GoldGiven,FONT_ScreenSmall,4);
+	//AI_PrintScreen(MinenAnteilText,-1,YPOS_GoldGiven,FONT_ScreenSmall,4);
+	PrintS_Ext(MinenAnteilText, White());
 	if(SerpentesMinenAnteilCounter < SalandrilVerteilteMinenAnteil)
 	{
 		AI_Output(self,other,"DIA_Serpentes_MinenAnteileBringen_10_02");	//Doskonale. Nale¿y je jak najszybciej wycofaæ z obiegu. Przynieœ je wszystkie do mnie.
@@ -552,8 +553,8 @@ func void DIA_Serpentes_MinenAnteileBringen_Info()
 		AI_Output(other,self,"DIA_Serpentes_MinenAnteileBringen_15_04");	//Myœlê, ¿e to ju¿ wszystkie.
 		AI_Output(self,other,"DIA_Serpentes_MinenAnteileBringen_10_05");	//Doskonale, zas³u¿y³eœ na nagrodê.
 		AI_Output(self,other,"DIA_Serpentes_MinenAnteileBringen_10_06");	//WeŸ ten ochronny amulet. Na pewno przyda ci siê w twoich dalszych wyprawach.
-		CreateInvItems(self,ItAm_Prot_Mage_01,1);
-		B_GiveInvItems(self,other,ItAm_Prot_Mage_01,1);
+		CreateInvItems(self,ItAm_Prot_Fire_01,1);
+		B_GiveInvItems(self,other,ItAm_Prot_Fire_01,1);
 	}
 	else
 	{
@@ -745,4 +746,3 @@ func void DIA_Serpentes_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Serpentes_PICKPOCKET);
 };
-

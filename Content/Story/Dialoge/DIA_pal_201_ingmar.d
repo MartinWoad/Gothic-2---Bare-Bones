@@ -427,9 +427,9 @@ func void DIA_Ingmar_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 90)
 	{
-		B_GiveInvItems(self,other,ItWr_Manowar,1);
+		B_StealInvItems(self,other,ItWr_Manowar,1);
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
-		B_GivePlayerXP(XP_Ambient * 2);
+		//B_GivePlayerXP(XP_Ambient * 2);
 		Info_ClearChoices(DIA_Ingmar_PICKPOCKET);
 	}
 	else
@@ -443,4 +443,3 @@ func void DIA_Ingmar_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Ingmar_PICKPOCKET);
 };
-

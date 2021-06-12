@@ -6,6 +6,7 @@ func void B_DaronSegen()
 	var int Bonus_2;
 	var int Bonus_3;
 	Daron_Segen = TRUE;
+	/*
 	if((Daron_Spende < 250) && (Bonus_1 == FALSE))
 	{
 		B_RaiseAttribute(other,ATR_HITPOINTS_MAX,5,TRUE,FALSE);
@@ -20,7 +21,7 @@ func void B_DaronSegen()
 	{
 		other.lp = other.lp + 1;
 		concatText = ConcatStrings(PRINT_LearnLP,IntToString(1));
-		PrintScreen(concatText,-1,-1,FONT_Screen,1);
+		//PrintScreen(concatText,-1,-1,FONT_Screen,1);
 		Bonus_3 = TRUE;
 	}
 	else
@@ -28,13 +29,13 @@ func void B_DaronSegen()
 		if(other.attribute[ATR_HITPOINTS] < other.attribute[ATR_HITPOINTS_MAX])
 		{
 			other.attribute[ATR_HITPOINTS] = other.attribute[ATR_HITPOINTS_MAX];
-			PrintScreen(PRINT_FullyHealed,-1,-1,FONT_Screen,2);
+			//PrintScreen(PRINT_FullyHealed,-1,-1,FONT_Screen,2);
 		};
 		if(other.attribute[ATR_MANA] < other.attribute[ATR_MANA_MAX])
 		{
 			other.attribute[ATR_MANA] = other.attribute[ATR_MANA_MAX];
 		};
-	};
+	};*/
 };
 
 
@@ -143,7 +144,7 @@ func void DIA_Daron_AboutSegen_Info()
 	if(Daron_Segen == TRUE)
 	{
 		AI_Output(self,other,"DIA_Daron_AboutSegen_10_03");	//Ju¿ dosta³eœ moje b³ogos³awieñstwo, synu.
-		AI_Output(self,other,"DIA_Daron_AboutSegen_10_04");	//Niech ciê Innos prowadzi, synu!
+		//AI_Output(self,other,"DIA_Daron_AboutSegen_10_04");	//Niech ciê Innos prowadzi, synu!
 	}
 	else
 	{
@@ -191,17 +192,20 @@ func void DIA_Daron_Spenden_Info()
 		{
 			AI_Output(self,other,"DIA_Daron_Spenden_10_04");	//No có¿, bogaczem to ty nie jesteœ, ale nie nale¿ysz te¿ do biedaków. 10 sztuk z³ota w zupe³noœci wystarczy - ¿yjemy skromnie.
 			B_GiveInvItems(other,self,ItMi_Gold,10);
+			heroThefts -= 10;
 		}
 		else if(Npc_HasItems(other,ItMi_Gold) < 100)
 		{
 			AI_Output(self,other,"DIA_Daron_Spenden_10_05");	//Masz ponad 50 monet. Oddaj 25 Innosowi, a otrzymasz jego b³ogos³awieñstwo.
 			B_GiveInvItems(other,self,ItMi_Gold,25);
+			heroThefts -= 25;
 		}
 		else
 		{
 			AI_Output(self,other,"DIA_Daron_Spenden_10_06");	//Masz ponad 100 sztuk z³ota - nasz Pan powiada: dzielcie siê, jeœli macie czym.
 			AI_Output(self,other,"DIA_Daron_Spenden_10_07");	//Koœció³ przyjmuje twoj¹ jak¿e hojn¹ ofiarê.
 			B_GiveInvItems(other,self,ItMi_Gold,50);
+			heroThefts -= 50;
 		};
 		AI_Output(self,other,"DIA_Daron_Spenden_10_08");	//B³ogos³awiê ciê w imieniu Innosa. Albowiem on jest œwiat³em i sprawiedliwoœci¹.
 		Daron_Segen = TRUE;
@@ -257,7 +261,7 @@ instance DIA_Daron_Innos(C_Info)
 
 func int DIA_Daron_Innos_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Daron_Woher) && (other.guild != GIL_KDF) && (other.guild != GIL_DJG))
+	if(Npc_KnowsInfo(other,DIA_Daron_Woher) && (other.guild != GIL_KDF))
 	{
 		return TRUE;
 	};
@@ -383,9 +387,9 @@ func void DIA_Daron_Spende_Info()
 	if(Daron_Spende < 1000)
 	{
 		Info_AddChoice(DIA_Daron_Spende,"Ale nie przynios³em doœæ z³ota... (POWRÓT)",DIA_Daron_Spende_BACK);
-		Info_AddChoice(DIA_Daron_Spende,"(50 sztuk z³ota)",DIA_Daron_Spende_50);
-		Info_AddChoice(DIA_Daron_Spende,"(100 sztuk z³ota)",DIA_Daron_Spende_100);
-		Info_AddChoice(DIA_Daron_Spende,"(200 sztuk z³ota)",DIA_Daron_Spende_200);
+		Info_AddChoice(DIA_Daron_Spende,"50 sztuk z³ota.",DIA_Daron_Spende_50);
+		Info_AddChoice(DIA_Daron_Spende,"100 sztuk z³ota.",DIA_Daron_Spende_100);
+		Info_AddChoice(DIA_Daron_Spende,"200 sztuk z³ota.",DIA_Daron_Spende_200);
 	}
 	else
 	{
@@ -414,6 +418,16 @@ func void DIA_Daron_Spende_50()
 		Daron_Spende = Daron_Spende + 50;
 		B_DaronSegen();
 		Daron_Segen = TRUE;
+
+		if(heroThefts >= 50)
+		{
+			heroThefts -= 50;
+		}
+		else
+		{
+			heroThefts = 0;
+		};
+
 		if(MIS_Thorben_GetBlessings == LOG_Running)
 		{
 			B_LogEntry(TOPIC_Thorben,"Daron, Mag Ognia, udzieli³ mi b³ogos³awieñstwa.");
@@ -435,6 +449,16 @@ func void DIA_Daron_Spende_100()
 		Daron_Spende = Daron_Spende + 100;
 		B_DaronSegen();
 		Daron_Segen = TRUE;
+
+		if(heroThefts >= 100)
+		{
+			heroThefts -= 100;
+		}
+		else
+		{
+			heroThefts = 0;
+		};
+
 		if(MIS_Thorben_GetBlessings == LOG_Running)
 		{
 			B_LogEntry(TOPIC_Thorben,"Daron, Mag Ognia, udzieli³ mi b³ogos³awieñstwa.");
@@ -456,6 +480,16 @@ func void DIA_Daron_Spende_200()
 		Daron_Spende = Daron_Spende + 200;
 		B_DaronSegen();
 		Daron_Segen = TRUE;
+
+		if(heroThefts >= 200)
+		{
+			heroThefts -= 200;
+		}
+		else
+		{
+			heroThefts = 0;
+		};
+
 		if(MIS_Thorben_GetBlessings == LOG_Running)
 		{
 			B_LogEntry(TOPIC_Thorben,"Daron, Mag Ognia, udzieli³ mi b³ogos³awieñstwa.");
@@ -502,4 +536,3 @@ func void DIA_Daron_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Daron_PICKPOCKET);
 };
-

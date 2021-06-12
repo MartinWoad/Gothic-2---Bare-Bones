@@ -51,9 +51,9 @@ func void DIA_Ruga_PICKPOCKET_DoIt()
 {
 	if(other.attribute[ATR_DEXTERITY] >= 40)
 	{
-		B_GiveInvItems(self,other,ItKe_City_Tower_03,1);
+		B_StealInvItems(self,other,ItKe_City_Tower_03,1);
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
-		B_GivePlayerXP(XP_Ambient);
+		//B_GivePlayerXP(XP_Ambient);
 		Info_ClearChoices(DIA_Ruga_PICKPOCKET);
 	}
 	else
@@ -284,4 +284,3 @@ func void DIA_Ruga_TEACHDEX_5()
 	Info_AddChoice(DIA_Ruga_TEACHDEX,B_BuildLearnString(PRINT_LearnDEX1,B_GetLearnCostAttribute(other,ATR_DEXTERITY)),DIA_Ruga_TEACHDEX_1);
 	Info_AddChoice(DIA_Ruga_TEACHDEX,B_BuildLearnString(PRINT_LearnDEX5,B_GetLearnCostAttribute(other,ATR_DEXTERITY) * 5),DIA_Ruga_TEACHDEX_5);
 };
-

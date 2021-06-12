@@ -9,15 +9,15 @@ instance ItMw_1h_Vlk_Dagger(C_Item)
 	damageTotal = Damage_VLKDolch;
 	damagetype = DAM_EDGE;
 	range = Range_VLKDolch;
-	cond_atr[2] = ATR_STRENGTH;
+	cond_atr[2] = ATR_DEXTERITY;
 	cond_value[2] = Condition_VLKDolch;
 	visual = "Itmw_005_1h_dagger_01.3DS";
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
-	text[3] = NAME_Str_needed;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
 	text[4] = NAME_OneHanded;
 	text[5] = NAME_Value;
@@ -32,7 +32,7 @@ instance ItMw_1H_Mace_L_01(C_Item)
 	material = MAT_WOOD;
 	value = Value_Schuerhaken;
 	damageTotal = Damage_Schuerhaken;
-	damagetype = DAM_EDGE;
+	damagetype = DAM_POINT;
 	range = Range_Schuerhaken;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = Condition_Schuerhaken;
@@ -40,7 +40,7 @@ instance ItMw_1H_Mace_L_01(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Point;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -65,7 +65,7 @@ instance ItMw_1h_Bau_Axe(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -90,7 +90,7 @@ instance ItMw_1h_Vlk_Mace(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -115,7 +115,7 @@ instance ItMw_1H_Mace_L_03(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -140,7 +140,7 @@ instance ItMw_1h_Bau_Mace(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -165,7 +165,7 @@ instance ItMw_1h_Vlk_Axe(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -190,7 +190,7 @@ instance ItMw_1H_Mace_L_04(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -215,7 +215,7 @@ instance ItMw_ShortSword1(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -240,7 +240,7 @@ instance ItMw_Nagelknueppel(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -265,7 +265,7 @@ instance ItMw_1H_Sword_L_03(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -290,7 +290,7 @@ instance ItMw_ShortSword2(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -315,7 +315,7 @@ instance ItMw_Sense(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -340,7 +340,7 @@ instance ItMw_1h_Vlk_Sword(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -365,7 +365,7 @@ instance ItMw_1h_Nov_Mace(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -390,7 +390,7 @@ instance ItMw_2h_Bau_Axe(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -407,7 +407,7 @@ instance ItMw_2H_Axe_L_01(C_Item)
 	material = MAT_METAL;
 	value = Value_Spitzhacke;
 	damageTotal = Damage_Spitzhacke;
-	damagetype = DAM_EDGE;
+	damagetype = DAM_BLUNT;
 	range = Range_Spitzhacke;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = Condition_Spitzhacke;
@@ -415,7 +415,7 @@ instance ItMw_2H_Axe_L_01(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -440,7 +440,7 @@ instance ItMw_1h_MISC_Sword(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -465,7 +465,7 @@ instance ItMw_1h_Misc_Axe(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -490,7 +490,7 @@ instance ItMw_2H_Sword_M_01(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -515,7 +515,7 @@ instance ItMw_1h_Mil_Sword(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -540,7 +540,7 @@ instance ItMw_1h_Sld_Axe(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -565,7 +565,7 @@ instance ItMw_1h_Sld_Sword(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -590,7 +590,7 @@ instance ItMw_2h_Sld_Axe(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -615,7 +615,7 @@ instance ItMw_2h_Sld_Sword(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -640,7 +640,7 @@ instance ItMw_1h_Pal_Sword(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -665,7 +665,7 @@ instance ItMw_2h_Pal_Sword(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -690,7 +690,7 @@ instance ItMw_2H_OrcAxe_01(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -715,7 +715,7 @@ instance ItMw_2H_OrcAxe_02(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -740,7 +740,7 @@ instance ItMw_2H_OrcAxe_03(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -765,7 +765,7 @@ instance ItMw_2H_OrcAxe_04(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -790,7 +790,7 @@ instance ItMw_2H_OrcSword_01(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -815,7 +815,7 @@ instance ItMw_2H_OrcSword_02(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -840,7 +840,7 @@ instance ItMw_ShortSword3(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -865,7 +865,7 @@ instance ItMw_Nagelkeule(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -890,7 +890,7 @@ instance ItMw_ShortSword4(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -915,7 +915,7 @@ instance ItMw_Kriegskeule(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -940,7 +940,7 @@ instance ItMw_Richtstab(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -965,7 +965,7 @@ instance ItMw_ShortSword5(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -990,7 +990,7 @@ instance ItMw_Kriegshammer1(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1015,7 +1015,7 @@ instance ItMw_Hellebarde(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1040,7 +1040,7 @@ instance ItMw_Nagelkeule2(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1065,7 +1065,7 @@ instance ItMw_Schiffsaxt(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1090,7 +1090,7 @@ instance ItMw_Piratensaebel(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1115,7 +1115,7 @@ instance ItMw_Schwert(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1140,7 +1140,7 @@ instance ItMw_1H_Common_01(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1165,7 +1165,7 @@ instance ItMw_Stabkeule(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1190,7 +1190,7 @@ instance ItMw_Zweihaender1(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1215,7 +1215,7 @@ instance ItMw_Steinbrecher(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1240,7 +1240,7 @@ instance ItMw_Spicker(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1265,7 +1265,7 @@ instance ItMw_Streitaxt1(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1290,7 +1290,7 @@ instance ItMw_Schwert1(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1315,7 +1315,7 @@ instance ItMw_Schwert2(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1340,7 +1340,7 @@ instance ItMw_Doppelaxt(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1365,7 +1365,7 @@ instance ItMw_Bartaxt(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1390,7 +1390,7 @@ instance ItMw_Morgenstern(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1415,7 +1415,7 @@ instance ItMw_Schwert3(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1440,7 +1440,7 @@ instance ItMw_Schwert4(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1465,7 +1465,7 @@ instance ItMw_1H_Special_01(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1490,7 +1490,7 @@ instance ItMw_2H_Special_01(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1515,7 +1515,7 @@ instance ItMw_Rapier(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -1540,7 +1540,7 @@ instance ItMw_Rubinklinge(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1565,7 +1565,7 @@ instance ItMw_Streitkolben(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1590,7 +1590,7 @@ instance ItMw_Zweihaender2(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1615,7 +1615,7 @@ instance ItMw_Runenschwert(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1640,7 +1640,7 @@ instance ItMw_Rabenschnabel(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1665,7 +1665,7 @@ instance ItMw_Schwert5(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1682,7 +1682,7 @@ instance ItMw_Inquisitor(C_Item)
 	material = MAT_METAL;
 	value = Value_Inquisitor;
 	damageTotal = Damage_Inquisitor;
-	damagetype = DAM_EDGE;
+	damagetype = DAM_BLUNT;
 	range = Range_Inquisitor;
 	cond_atr[2] = ATR_STRENGTH;
 	cond_value[2] = Condition_Inquisitor;
@@ -1690,7 +1690,7 @@ instance ItMw_Inquisitor(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1715,7 +1715,7 @@ instance ItMw_Streitaxt2(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1740,7 +1740,7 @@ instance ItMw_Zweihaender3(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1765,7 +1765,7 @@ instance ItMw_1H_Special_02(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1790,7 +1790,7 @@ instance ItMw_2H_Special_02(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1815,7 +1815,7 @@ instance ItMw_ElBastardo(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1840,7 +1840,7 @@ instance ItMw_Kriegshammer2(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Blunt;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1865,7 +1865,7 @@ instance ItMw_Meisterdegen(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
@@ -1890,7 +1890,7 @@ instance ItMw_Folteraxt(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1915,7 +1915,7 @@ instance ItMw_Orkschlaechter(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1940,7 +1940,7 @@ instance ItMw_Zweihaender4(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1965,7 +1965,7 @@ instance ItMw_Schlachtaxt(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -1990,7 +1990,7 @@ instance ItMw_Krummschwert(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -2015,7 +2015,7 @@ instance ItMw_Barbarenstreitaxt(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -2040,7 +2040,7 @@ instance ItMw_Sturmbringer(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -2065,7 +2065,7 @@ instance ItMw_1H_Special_03(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -2090,7 +2090,7 @@ instance ItMw_2H_Special_03(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -2115,7 +2115,7 @@ instance ItMw_Berserkeraxt(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -2140,7 +2140,7 @@ instance ItMw_Drachenschneide(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -2165,7 +2165,7 @@ instance ItMw_1H_Special_04(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -2190,7 +2190,7 @@ instance ItMw_2H_Special_04(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -2215,13 +2215,27 @@ instance ItMw_1H_Blessed_01(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
 	text[4] = NAME_OneHanded;
 	text[5] = NAME_Value;
 	count[5] = value;
+};
+
+func void BlessedSwordEquip()
+{
+	if(Npc_IsPlayer(self) && (hero.guild != GIL_KDF || hero.guild != GIL_PAL || heroMurders != 0 && heroUnforgivableCrime == TRUE))
+	{
+		AI_Wait(hero,3);
+		AI_PlayAni(self,"S_FIRE_VICTIM");
+		Wld_PlayEffect("VOB_MAGICBURN",hero,hero,0,0,0,FALSE);
+		B_Say(self,self,"$Dead");
+		AI_StopFX(self,"VOB_MAGICBURN");
+		Npc_ChangeAttribute(self,ATR_HITPOINTS,-self.attribute[ATR_HITPOINTS_MAX]);
+		Npc_StopAni(self,"S_FIRE_VICTIM");
+	};
 };
 
 instance ItMw_1H_Blessed_02(C_Item)
@@ -2238,9 +2252,10 @@ instance ItMw_1H_Blessed_02(C_Item)
 	cond_value[2] = Condition_Blessed_1H_2;
 	visual = "ItMw_030_1h_PAL_sword_bastard_RAW_01.3DS";
 	description = name;
+	on_equip = BlessedSwordEquip;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -2263,9 +2278,10 @@ instance ItMw_1H_Blessed_03(C_Item)
 	cond_value[2] = Condition_Blessed_1H_3;
 	visual = "ItMw_030_1h_PAL_sword_bastard_RAW_01.3DS";
 	description = name;
+	on_equip = BlessedSwordEquip;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -2290,7 +2306,7 @@ instance ItMw_2H_Blessed_01(C_Item)
 	description = name;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -2301,7 +2317,7 @@ instance ItMw_2H_Blessed_01(C_Item)
 
 instance ItMw_2H_Blessed_02(C_Item)
 {
-	name = "Miecz Zakonu";
+	name = "B³ogos³awione Ostrze Magiczne";
 	mainflag = ITEM_KAT_NF;
 	flags = ITEM_2HD_SWD;
 	material = MAT_METAL;
@@ -2313,9 +2329,10 @@ instance ItMw_2H_Blessed_02(C_Item)
 	cond_value[2] = Condition_Blessed_2H_2;
 	visual = "ItMw_040_2h_PAL_sword_heavy_RAW_01.3DS";
 	description = name;
+	on_equip = BlessedSwordEquip;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -2338,9 +2355,10 @@ instance ItMw_2H_Blessed_03(C_Item)
 	cond_value[2] = Condition_Blessed_2H_3;
 	visual = "ItMw_040_2h_PAL_sword_heavy_RAW_01.3DS";
 	description = name;
+	on_equip = BlessedSwordEquip;
 	text[1] = NAME_RANGE;
 	count[1] = range;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
 	text[3] = NAME_Str_needed;
 	count[3] = cond_value[2];
@@ -2348,4 +2366,3 @@ instance ItMw_2H_Blessed_03(C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 };
-

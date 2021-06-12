@@ -236,7 +236,7 @@ instance DIA_Dobar_PICKPOCKET(C_Info)
 
 func int DIA_Dobar_PICKPOCKET_Condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_HasItems(self,ItMi_Nugget) >= 1) && (other.attribute[ATR_DEXTERITY] >= (79 - Theftdiff)))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_HasItems(self,ItMi_Nugget) >= 1) && (other.attribute[ATR_DEXTERITY] >= (40 - Theftdiff)))
 	{
 		return TRUE;
 	};
@@ -251,11 +251,11 @@ func void DIA_Dobar_PICKPOCKET_Info()
 
 func void DIA_Dobar_PICKPOCKET_DoIt()
 {
-	if(other.attribute[ATR_DEXTERITY] >= 79)
+	if(other.attribute[ATR_DEXTERITY] >= 40)
 	{
-		B_GiveInvItems(self,other,ItMi_Nugget,1);
+		B_StealInvItems(self,other,ItMi_Nugget,1);
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
-		B_GivePlayerXP(XP_Ambient);
+		//B_GivePlayerXP(XP_Ambient);
 		Info_ClearChoices(DIA_Dobar_PICKPOCKET);
 	}
 	else
@@ -269,4 +269,3 @@ func void DIA_Dobar_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Dobar_PICKPOCKET);
 };
-

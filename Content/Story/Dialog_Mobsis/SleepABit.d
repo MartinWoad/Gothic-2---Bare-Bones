@@ -7,26 +7,24 @@ func void PC_Sleep(var int t)
 	AI_StopProcessInfos(self);
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	self.aivar[AIV_INVINCIBLE] = FALSE;
-	if((Wld_IsTime(0,0,LAST_SLEEP_TIME,0) && (LAST_SLEEP_DAY == Wld_GetDay())) || (SC_IsObsessed == TRUE))
-	{
-	}
-	else if(Wld_IsTime(0,0,t,0))
-	{
-		Wld_SetTime(t,0);
-	}
-	else
+
+	if(Wld_IsTime(0,0,t,0) == FALSE)
 	{
 		t = t + 24;
-		Wld_SetTime(t,0);
 	};
+
 	Wld_StopEffect("DEMENTOR_FX");
 	if(SC_IsObsessed == TRUE)
 	{
 		PrintScreen(PRINT_SleepOverObsessed,-1,-1,FONT_Screen,3);
 	}
-	else if(Wld_IsTime(0,0,LAST_SLEEP_TIME,0) && (LAST_SLEEP_DAY == Wld_GetDay()))
+	else if(Wld_IsTime(0,0,Math_Max(LAST_SLEEP_TIME - 12, 0),0) && (LAST_SLEEP_DAY == Wld_GetDay() - 1) || (Wld_IsTime(0,0,Math_Min(LAST_SLEEP_TIME + 11, 23),59) && (LAST_SLEEP_DAY == Wld_GetDay())))
 	{
 		PrintScreen(PRINT_SLEEPOVERRESTED,-1,-1,FONT_Screen,3);
+	}
+	else if(satiety - (16 * SleepHungerMultiplier * HungerTime/300000) < 0)
+	{
+		PrintScreen(PRINT_SLEEPOVERHUNGRY,-1,-1,FONT_Screen,3);
 	}
 	else
 	{
@@ -38,9 +36,14 @@ func void PC_Sleep(var int t)
 		{
 			PrintScreen(PRINT_SleepOverToxic,-1,-1,FONT_Screen,3);
 		};
-		
-		toxicity = 0;
-		
+
+		var C_Npc her;
+		her = Hlp_GetNpc(PC_Hero);
+		PurgeToxicity(her);
+		ChangeSatiety(her, -8 * SleepHungerMultiplier * HungerTime/300000);
+
+		Wld_SetTime(t,0);
+		t = t % 24;
 		LAST_SLEEP_TIME = t;
 		LAST_SLEEP_DAY = Wld_GetDay();
 	};
@@ -194,4 +197,3 @@ func void PC_SleepTime_Midnight_Info()
 {
 	PC_Sleep(0);
 };
-

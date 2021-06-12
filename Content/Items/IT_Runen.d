@@ -1,5 +1,5 @@
 
-const string Name_PaladinSpell = "Paladin Zauber";
+const string Name_PaladinSpell = "Runa Paladyna";
 
 const int Value_Ru_PalLight = 50;
 const int Value_Ru_PalLightHeal = 50;
@@ -210,6 +210,9 @@ instance ItRu_TeleportSeaport(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportSeaport;
 	description = NAME_SPL_TeleportSeaport;
+	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -226,6 +229,9 @@ instance ItRu_TeleportMonastery(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportMonastery;
 	description = NAME_SPL_TeleportMonastery;
+	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -242,6 +248,9 @@ instance ItRu_TeleportFarm(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportFarm;
 	description = NAME_SPL_TeleportFarm;
+	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -258,6 +267,9 @@ instance ItRu_TeleportXardas(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportXardas;
 	description = NAME_SPL_TeleportXardas;
+	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -274,6 +286,9 @@ instance ItRu_TeleportPassNW(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportPassNW;
 	description = NAME_SPL_TeleportPassNW;
+	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -290,6 +305,9 @@ instance ItRu_TeleportPassOW(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportPassOW;
 	description = NAME_SPL_TeleportPassOW;
+	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -306,6 +324,9 @@ instance ItRu_TeleportOC(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportOC;
 	description = NAME_SPL_TeleportOC;
+	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -322,6 +343,9 @@ instance ItRu_TeleportOWDemonTower(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportOWDemonTower;
 	description = NAME_SPL_TeleportOWDemonTower;
+	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -338,6 +362,9 @@ instance ItRu_TeleportTaverne(C_Item)
 	material = MAT_STONE;
 	spell = SPL_TeleportTaverne;
 	description = NAME_SPL_TeleportTaverne;
+	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -354,6 +381,9 @@ instance ItRu_Teleport_3(C_Item)
 	material = MAT_STONE;
 	spell = SPL_Teleport_3;
 	description = NAME_SPL_Teleport_3;
+	mag_circle = 2;
+	text[0] = NAME_Mag_Circle;
+	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_Teleport;
 	text[5] = NAME_Value;
@@ -492,7 +522,8 @@ instance ItRu_Icebolt(C_Item)
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
 	value = Value_Ru_Icebolt;
-	visual = "ItRu_Icebolt.3ds";
+	//visual = "ItRu_Icebolt.3ds";
+	visual = "ItRu_Water04.3DS";
 	material = MAT_STONE;
 	spell = SPL_Icebolt;
 	mag_circle = 2;
@@ -501,7 +532,7 @@ instance ItRu_Icebolt(C_Item)
 	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_COST_Icebolt;
-	text[2] = NAME_Dam_Magic;
+	text[2] = NAME_Dam_Point;
 	count[2] = SPL_DAMAGE_Icebolt;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -541,7 +572,7 @@ instance ItRu_Windfist(C_Item)
 	count[0] = mag_circle;
 	text[1] = NAME_ManakostenMax;
 	count[1] = SPL_Cost_WindFist;
-	text[2] = NAME_Damage_Max;
+	text[2] = NAME_Dam_Fly;
 	count[2] = SPL_Damage_Windfist * 3;
 	text[4] = NAME_ManaPerSec;
 	count[4] = 1000 / 200;
@@ -606,7 +637,7 @@ instance ItRu_LightningFlash(C_Item)
 	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_LightningFlash;
-	text[2] = NAME_Dam_Magic;
+	text[2] = NAME_Dam_Energy;
 	count[2] = SPL_Damage_LightningFlash;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -627,7 +658,7 @@ instance ItRu_ChargeFireball(C_Item)
 	count[0] = mag_circle;
 	text[1] = NAME_ManakostenMax;
 	count[1] = SPL_COST_ChargeFireball;
-	text[2] = NAME_Damage_Max;
+	text[2] = NAME_Dam_Fire;
 	count[2] = SPL_Damage_ChargeFireball * 3;
 	text[4] = NAME_ManaPerSec;
 	count[4] = 1000 / 120;
@@ -688,7 +719,7 @@ instance ItRu_IceCube(C_Item)
 	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_IceCube;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Frost;
 	count[2] = SPL_FREEZE_DAMAGE;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -709,7 +740,7 @@ instance ItRu_ThunderBall(C_Item)
 	count[0] = mag_circle;
 	text[1] = NAME_ManakostenMax;
 	count[1] = SPL_COST_ChargeZap;
-	text[2] = NAME_Damage_Max;
+	text[2] = NAME_Dam_Energy;
 	count[2] = SPL_Damage_ChargeZap * 3;
 	text[4] = NAME_ManaPerSec;
 	count[4] = 1000 / 100;
@@ -751,7 +782,7 @@ instance ItRu_HarmUndead(C_Item)
 	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_DESTROYUNDEAD;
-	text[2] = NAME_Dam_Magic;
+	text[2] = NAME_Dam_Energy;
 	count[2] = SPL_Damage_DESTROYUNDEAD;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -772,7 +803,7 @@ instance ItRu_Pyrokinesis(C_Item)
 	count[0] = mag_circle;
 	text[1] = NAME_ManakostenMax;
 	count[1] = SPL_COST_Firestorm;
-	text[2] = NAME_Damage_Max;
+	text[2] = NAME_Dam_Fire;
 	count[2] = SPL_Damage_Firestorm * 3;
 	text[4] = NAME_ManaPerSec;
 	count[4] = 1000 / 120;
@@ -816,7 +847,7 @@ instance ItRu_IceWave(C_Item)
 	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_IceWave;
-	text[2] = NAME_Damage;
+	text[2] = NAME_Dam_Frost;
 	count[2] = SPL_FREEZE_DAMAGE;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -898,7 +929,7 @@ instance ItRu_BreathOfDeath(C_Item)
 	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_BreathOfDeath;
-	text[2] = NAME_Dam_Magic;
+	text[2] = NAME_Dam_Energy;
 	count[2] = SPL_Damage_BreathOfDeath;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -919,7 +950,7 @@ instance ItRu_MassDeath(C_Item)
 	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_Cost_MassDeath;
-	text[2] = NAME_Dam_Magic;
+	text[2] = NAME_Dam_Energy;
 	count[2] = SPL_Damage_MassDeath;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -940,7 +971,7 @@ instance ItRu_MasterOfDisaster(C_Item)
 	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_COST_MasterOfDisaster;
-	text[2] = NAME_Dam_Magic;
+	text[2] = NAME_Dam_Energy;
 	count[2] = SPL_DAMAGE_MasterOfDisaster;
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -1036,14 +1067,13 @@ instance ItRu_Concussionbolt(C_Item)
 	material = MAT_STONE;
 	spell = SPL_ConcussionBolt;
 	mag_circle = 6;
-	description = "Pocisk Nieprzytomnoœci";
+	description = "Pocisk Og³uszaj¹cy";
 	text[0] = NAME_Mag_Circle;
 	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_COST_Concussionbolt;
-	text[2] = NAME_Dam_Magic;
+	text[2] = NAME_Dam_Energy;
 	count[2] = SPL_DAMAGE_Concussionbolt;
 	text[5] = NAME_Value;
 	count[5] = value;
 };
-

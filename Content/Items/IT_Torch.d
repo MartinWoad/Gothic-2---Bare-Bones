@@ -17,7 +17,7 @@ instance ItLsTorch(C_Item)
 
 instance ItLsTorchburning(C_Item)
 {
-	name = "P³on¹ca pochodnia";
+	name = "P³on¹ca Pochodnia";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_TORCH;
 	value = 0;
@@ -52,4 +52,3 @@ instance ItLsTorchFirespit(C_Item)
 	text[4] = NAME_Value;
 	count[4] = value;
 };
-

@@ -9,7 +9,7 @@ instance VLK_4100_Brutus(Npc_Default)
 	npcType = NPCTYPE_OCMAIN;
 	aivar[AIV_ToughGuy] = TRUE;
 	aivar[AIV_ToughGuyNewsOverride] = TRUE;
-	B_SetAttributesToChapter(self,2);
+	B_SetAttributesToChapter(self,3);
 	fight_tactic = FAI_HUMAN_STRONG;
 	EquipItem(self,ItMw_1h_Vlk_Dagger);
 	B_CreateAmbientInv(self);
@@ -33,4 +33,3 @@ func void Rtn_Meatbugs_4100()
 	TA_Guard_Passage(8,0,23,0,"OC_BRUTUS_MEATBUGS");
 	TA_Guard_Passage(23,0,8,0,"OC_BRUTUS_MEATBUGS");
 };
-

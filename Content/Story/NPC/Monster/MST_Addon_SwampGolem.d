@@ -1,7 +1,7 @@
 
 prototype MST_DEFAULT_ADDON_SWAMPGOLEM(C_NPC)
 {
-	name[0] = "Bagienny golem";
+	name[0] = "Bagienny Golem";
 	guild = GIL_SWAMPGOLEM;
 	aivar[AIV_MM_REAL_ID] = ID_SWAMPGOLEM;
 	level = 25;
@@ -11,10 +11,10 @@ prototype MST_DEFAULT_ADDON_SWAMPGOLEM(C_NPC)
 	attribute[ATR_HITPOINTS] = 250;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
-	protection[PROT_BLUNT] = 125;
-	protection[PROT_EDGE] = 125;
+	protection[PROT_BLUNT] = 80;
+	protection[PROT_EDGE] = 110;
 	protection[PROT_POINT] = 250;
-	protection[PROT_FIRE] = 125;
+	protection[PROT_FIRE] = 70;
 	protection[PROT_FLY] = 125;
 	protection[PROT_MAGIC] = 125;
 	damagetype = DAM_FLY;
@@ -47,4 +47,3 @@ instance SWAMPGOLEM_VALLEY(MST_DEFAULT_ADDON_SWAMPGOLEM)
 	aivar[AIV_MAXDISTTOWP] = 1500;
 	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGOLEM;
 };
-

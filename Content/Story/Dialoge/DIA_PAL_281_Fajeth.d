@@ -134,7 +134,7 @@ func void DIA_Fajeth_Hallo_Tun()
 	Log_SetTopicStatus(TOPIC_FajethKillSnapper,LOG_Running);
 	B_LogEntry(TOPIC_FajethKillSnapper,"Fajeth kaza³ mi siê zaj¹æ zêbaczami, które ju¿ od jakiegoœ czasu kr¹¿¹ w okolicach obozu.");
 	Info_ClearChoices(DIA_Fajeth_Hallo);
-	PrintScreen("",-1,-1,FONT_Screen,0);
+	//PrintScreen("",-1,-1,FONT_Screen,0);
 };
 
 func void DIA_Fajeth_Hallo_KDFNein()
@@ -398,4 +398,3 @@ func void DIA_Fajeth_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Fajeth_PICKPOCKET);
 };
-

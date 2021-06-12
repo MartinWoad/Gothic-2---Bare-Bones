@@ -48,6 +48,6 @@ func void evt_oc_maingate_func_s1()
 		Brutus.flags = NPC_FLAG_IMMORTAL;
 		PlayVideo("ORCATTACK.BIK");
 		MIS_OCGateOpen = TRUE;
+		heroUnforgivableCrime = TRUE;
 	};
 };
-

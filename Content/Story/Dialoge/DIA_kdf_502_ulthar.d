@@ -346,8 +346,8 @@ func void DIA_Ulthar_SchreineGeheilt_Info()
 	AI_Output(other,self,"DIA_Ulthar_SchreineGeheilt_15_00");	//Uda³o mi siê oczyœciæ wszystkie kapliczki.
 	AI_Output(self,other,"DIA_Ulthar_SchreineGeheilt_05_01");	//Œwietna robota. Jestem z ciebie dumny, moje dziecko. Niech Innos ciê b³ogos³awi.
 	AI_Output(self,other,"DIA_Ulthar_SchreineGeheilt_05_02");	//W podziêce weŸ ten amulet si³y. Jestem pewien, ¿e oka¿e siê pomocny w walce z wrogiem.
-	CreateInvItems(self,ItAm_Dex_Strg_01,1);
-	B_GiveInvItems(self,other,ItAm_Dex_Strg_01,1);
+	CreateInvItems(self,ItAm_Strg_01,1);
+	B_GiveInvItems(self,other,ItAm_Strg_01,1);
 	B_GivePlayerXP(XP_Ulthar_SchreineGereinigt);
 	AI_StopProcessInfos(self);
 };
@@ -487,4 +487,3 @@ func void DIA_Ulthar_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Ulthar_PICKPOCKET);
 };
-

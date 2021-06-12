@@ -4,9 +4,45 @@ func void startup_global()
 	Game_InitGerman();
 };
 
+func void SaveGameFix()
+{
+	Bar_SetBarTexture(toxicityBarHandle, "Bar_Tox.tga");
+	Bar_MoveToPxl(toxicityBarHandle, 100, Print_Screen[PS_Y] - 60);
+
+	Bar_SetBarTexture(satietyBarHandle, "Bar_Food.tga");
+	Bar_MoveToPxl(satietyBarHandle, 100, Print_Screen[PS_Y] - 40);
+
+};
+
 func void init_global()
 {
 	Game_InitGerman();
+	LeGo_Init (LeGo_All);
+
+	if(toxicityBarHandle == 0)
+	{
+		toxicityBarHandle = Bar_Create(ToxicityBar);
+	};
+	if(satietyBarHandle == 0)
+	{
+		satietyBarHandle = Bar_Create(SatietyBar);
+	};
+
+	UpdateToxicityBar();
+	UpdateSatietyBar();
+	FF_ApplyOnceExtGT(Hunger, HungerTime, -1);
+	Hook_oCNpc__DoTakeVob();
+	Hook_oCItemContainer__Remove();
+	Hook_oCItemContainer__Insert();
+	SaveGameFix();
+
+};
+
+func void NewGame_BB()
+{
+	satiety = 100;
+	UpdateSatietyBar();
+
 };
 
 func void STARTUP_Testlevel()
@@ -2779,6 +2815,8 @@ func void STARTUP_NewWorld()
 	STARTUP_NewWorld_Part_Pass_To_OW_01();
 	Kapitel = 1;
 	PlayVideo("INTRO.BIK");
+
+	NewGame_BB(); //Mod startup
 };
 
 func void INIT_NewWorld()
@@ -2893,4 +2931,3 @@ func void init_orcgraveyard()
 	B_InitMonsterAttitudes();
 	B_InitGuildAttitudes();
 };
-

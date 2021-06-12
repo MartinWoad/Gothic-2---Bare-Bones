@@ -12,9 +12,9 @@ prototype Mst_Default_Dragon_Swamp(C_Npc)
 	attribute[ATR_HITPOINTS] = 1000;
 	attribute[ATR_MANA_MAX] = 1000;
 	attribute[ATR_MANA] = 1000;
-	protection[PROT_BLUNT] = 110;
-	protection[PROT_EDGE] = 110;
-	protection[PROT_POINT] = 150;
+	protection[PROT_BLUNT] = 100;
+	protection[PROT_EDGE] = 100;
+	protection[PROT_POINT] = 100;
 	protection[PROT_FIRE] = 130;
 	protection[PROT_FLY] = IMMUNE;
 	protection[PROT_MAGIC] = 170;
@@ -45,4 +45,3 @@ instance Dragon_Swamp(Mst_Default_Dragon_Swamp)
 	Npc_SetToFistMode(self);
 	bodyStateInterruptableOverride = TRUE;
 };
-

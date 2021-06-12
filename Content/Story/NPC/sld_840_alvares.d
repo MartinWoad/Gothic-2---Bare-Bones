@@ -10,7 +10,7 @@ instance SLD_840_Alvares(Npc_Default)
 	B_SetAttributesToChapter(self,3);
 	level = 8;
 	aivar[AIV_EnemyOverride] = TRUE;
-	fight_tactic = FAI_HUMAN_MASTER;
+	fight_tactic = FAI_HUMAN_STRONG;
 	EquipItem(self,ItMw_2h_Sld_Axe);
 	B_CreateAmbientInv(self);
 	B_SetNpcVisual(self,MALE,"Hum_Head_FatBald",Face_B_Tough_Silas,BodyTex_B,ItAr_Sld_L);
@@ -39,4 +39,3 @@ func void Rtn_Bigfarm_840()
 	TA_Smalltalk(8,0,22,0,"NW_BIGFARM_HOUSE_OUT_05");
 	TA_Sit_Chair(22,0,8,0,"NW_BIGFARM_HOUSE_12");
 };
-

@@ -665,7 +665,7 @@ func int DIA_Lord_Hagen_Knight_Condition()
 func void DIA_Lord_Hagen_Knight_Info()
 {
 	AI_Output(other,self,"DIA_Lord_Hagen_Knight_15_00");	//Chcia³bym wst¹piæ do waszego zakonu.
-	if((MIS_RitualInnosEyeRepair == LOG_SUCCESS) && (Kapitel >= 4))
+	if(MIS_RitualInnosEyeRepair == LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Lord_Hagen_Knight_04_02");	//Twoje czyny œwiadcz¹, ¿e jesteœ cz³owiekiem honoru.
 		AI_Output(self,other,"DIA_Lord_Hagen_Knight_04_03");	//Jeœli takie jest twoje ¿yczenie, chêtnie powitam ciê w naszym zakonie.
@@ -1418,4 +1418,3 @@ func void DIA_Lord_Hagen_Perm5_Info()
 		AI_Output(self,other,"DIA_Lord_Hagen_Add_04_28");	//Ale to tylko nieznacznie opóŸni nasz wymarsz.
 	};
 };
-
