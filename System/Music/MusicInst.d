@@ -377,7 +377,8 @@ instance MOO_DAY_STD(C_MUSICTHEME_STANDARD)
 
 instance MOI_DAY_STD(C_MUSICTHEME_STANDARD)
 {
-	file = "mi_daystd.sgt";
+	//file = "mi_daystd.sgt";
+	file = "mo_daystd.sgt";
 };
 
 instance MOD_DAY_STD(C_MUSICTHEME_STANDARD)
@@ -444,4 +445,3 @@ instance XAR_DAY_THR(C_MUSICTHEME_THREAT)
 {
 	file = "xt_daystd.sgt";
 };
-

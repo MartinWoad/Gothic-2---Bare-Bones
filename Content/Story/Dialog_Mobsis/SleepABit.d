@@ -18,11 +18,11 @@ func void PC_Sleep(var int t)
 	{
 		PrintScreen(PRINT_SleepOverObsessed,-1,-1,FONT_Screen,3);
 	}
-	else if(Wld_IsTime(0,0,Math_Min(LAST_SLEEP_TIME - 8, 0),0) && (LAST_SLEEP_DAY == Wld_GetDay() - 1) || (Wld_IsTime(0,0,Math_Min(LAST_SLEEP_TIME + 16, 23),59) && (LAST_SLEEP_DAY == Wld_GetDay())))
+	else if(Wld_IsTime(0,0,Math_Max(LAST_SLEEP_TIME - 12, 0),0) && (LAST_SLEEP_DAY == Wld_GetDay() - 1) || (Wld_IsTime(0,0,Math_Min(LAST_SLEEP_TIME + 11, 23),59) && (LAST_SLEEP_DAY == Wld_GetDay())))
 	{
 		PrintScreen(PRINT_SLEEPOVERRESTED,-1,-1,FONT_Screen,3);
 	}
-	else if(satiety - (8 * SleepHungerMultiplier * HungerTime/300000) < 0)
+	else if(satiety - (16 * SleepHungerMultiplier * HungerTime/300000) < 0)
 	{
 		PrintScreen(PRINT_SLEEPOVERHUNGRY,-1,-1,FONT_Screen,3);
 	}

@@ -756,7 +756,7 @@ instance DIA_BENNET_DRAGONS(C_Info)
 
 func int dia_bennet_dragons_condition()
 {
-	if((Kapitel == 4) && (other.guild == GIL_SLD || other.guild == GIL_NONE) && Npc_KnowsInfo(other,DIA_Bennet_ThankYou))
+	if((MIS_RitualInnosEyeRepair == LOG_SUCCESS) && (other.guild == GIL_SLD || other.guild == GIL_NONE) && Npc_KnowsInfo(other,DIA_Bennet_ThankYou))
 	{
 		return TRUE;
 	};
