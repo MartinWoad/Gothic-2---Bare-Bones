@@ -18,6 +18,7 @@ func void init_global()
 {
 	Game_InitGerman();
 	LeGo_Init (LeGo_All);
+	InitDamage();
 
 	if(toxicityBarHandle == 0)
 	{

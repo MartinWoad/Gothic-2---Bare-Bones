@@ -60,7 +60,6 @@ instance YBloodfly(Mst_Default_Bloodfly)
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 0;
 	B_SetVisuals_Bloodfly();
-	Mdl_SetModelScale(self,0.9,0.9,0.9);
+	Mdl_SetModelScale(self,0.8,0.8,0.8);
 	Npc_SetToFistMode(self);
 };
-

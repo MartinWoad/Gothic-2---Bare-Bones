@@ -654,24 +654,54 @@ func int DIA_Alrik_Teach_Condition()
 func void DIA_Alrik_Teach_Info()
 {
 	AI_Output(other,self,"DIA_Alrik_Teach_15_00");	//Wyszkol mnie we w³adaniu mieczem!
-	Alrik_Merke_1h = other.HitChance[NPC_TALENT_1H];
+	Alrik_Merke_1h = GetHeroFightTechniqueLevel(NPC_TALENT_1H);
 	Info_ClearChoices(DIA_Alrik_Teach);
 	Info_AddChoice(DIA_Alrik_Teach,Dialog_Back,DIA_Alrik_Teach_Back);
-	Info_AddChoice(DIA_Alrik_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Alrik_Teach_1H_1);
-	Info_AddChoice(DIA_Alrik_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Alrik_Teach_1H_5);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 0)
+	{
+		Info_AddChoice(DIA_Alrik_Teach,B_BuildLearnString(PRINT_Learn1hBasic1,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Alrik_Teach_1HBasic1);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 1)
+	{
+		Info_AddChoice(DIA_Alrik_Teach,B_BuildLearnString(PRINT_Learn1hBasic2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Alrik_Teach_1HBasic2);
+	};
+
+	//Info_AddChoice(DIA_Alrik_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Alrik_Teach_1H_1);
+	//Info_AddChoice(DIA_Alrik_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Alrik_Teach_1H_5);
 };
 
 func void DIA_Alrik_Teach_Back()
 {
-	if(other.HitChance[NPC_TALENT_1H] >= 30)
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_1H) >= 2)
 	{
 		AI_Output(self,other,"DIA_Alrik_Teach_Back_09_00");	//Ju¿ nie jesteœ pocz¹tkuj¹cy!
 	}
-	else if(other.HitChance[NPC_TALENT_1H] > Alrik_Merke_1h)
+	else if(GetHeroFightTechniqueLevel(NPC_TALENT_1H) > Alrik_Merke_1h)
 	{
 		AI_Output(self,other,"DIA_Alrik_Teach_Back_09_01");	//Jesteœ ju¿ lepszy. Nied³ugo staniesz siê prawdziwym wojownikiem!
 	};
 	Info_ClearChoices(DIA_Alrik_Teach);
+};
+
+func void DIA_Alrik_Teach_1HBasic1()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_1H, 1);
+	Info_ClearChoices(DIA_Alrik_Teach);
+	Info_AddChoice(DIA_Alrik_Teach,Dialog_Back,DIA_Alrik_Teach_Back);
+
+	if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 1)
+	{
+		Info_AddChoice(DIA_Alrik_Teach,B_BuildLearnString(PRINT_Learn1hBasic2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Alrik_Teach_1HBasic2);
+	};
+};
+
+func void DIA_Alrik_Teach_1HBasic2()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_1H, 2);
+	Info_ClearChoices(DIA_Alrik_Teach);
+	Info_AddChoice(DIA_Alrik_Teach,Dialog_Back,DIA_Alrik_Teach_Back);
+	DIA_Alrik_Teach_Back();
 };
 
 func void DIA_Alrik_Teach_1H_1()
@@ -705,4 +735,3 @@ func void DIA_Alrik_Teach_1H_5()
 	Info_AddChoice(DIA_Alrik_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Alrik_Teach_1H_1);
 	Info_AddChoice(DIA_Alrik_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Alrik_Teach_1H_5);
 };
-

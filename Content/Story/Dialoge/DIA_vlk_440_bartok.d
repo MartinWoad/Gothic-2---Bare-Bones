@@ -249,24 +249,54 @@ func void DIA_Bartok_Teach_Info()
 {
 	AI_Output(other,self,"DIA_Bartok_TeachBow_15_00");	//Chcia³bym lepiej strzelaæ z ³uku.
 	AI_Output(self,other,"DIA_Bartok_TeachBow_04_01");	//W porz¹dku, zobaczymy, czy uda mi siê ciebie czegoœ nauczyæ...
-	Bosper_MerkeBow = other.HitChance[NPC_TALENT_BOW];
+	Bosper_MerkeBow = GetHeroFightTechniqueLevel(NPC_TALENT_BOW);
 	Info_ClearChoices(DIA_Bartok_Teach);
 	Info_AddChoice(DIA_Bartok_Teach,Dialog_Back,DIA_Bartok_Teach_Back);
-	Info_AddChoice(DIA_Bartok_Teach,B_BuildLearnString(PRINT_LearnBow1,B_GetLearnCostTalent(other,NPC_TALENT_BOW)),DIA_Bartok_Teach_BOW_1);
-	Info_AddChoice(DIA_Bartok_Teach,B_BuildLearnString(PRINT_LearnBow5,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Bartok_Teach_BOW_5);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 0)
+	{
+		Info_AddChoice(DIA_Bartok_Teach,B_BuildLearnString(PRINT_LearnBowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Bartok_Teach_BowBasic1);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
+	{
+		Info_AddChoice(DIA_Bartok_Teach,B_BuildLearnString(PRINT_LearnBowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Bartok_Teach_BowBasic2);
+	};
+
+	//Info_AddChoice(DIA_Bartok_Teach,B_BuildLearnString(PRINT_LearnBow1,B_GetLearnCostTalent(other,NPC_TALENT_BOW)),DIA_Bartok_Teach_BOW_1);
+	//Info_AddChoice(DIA_Bartok_Teach,B_BuildLearnString(PRINT_LearnBow5,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Bartok_Teach_BOW_5);
 };
 
 func void DIA_Bartok_Teach_Back()
 {
-	if(other.HitChance[NPC_TALENT_BOW] >= 20)
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_BOW) >= 2)
 	{
 		AI_Output(self,other,"DIA_Bartok_TeachBow_BACK_04_00");	//Teraz powinieneœ poszukaæ kogoœ, kto zna siê na tym lepiej ni¿ ja.
 	}
-	else if(Bosper_MerkeBow < other.HitChance[NPC_TALENT_BOW])
+	else if(Bosper_MerkeBow < GetHeroFightTechniqueLevel(NPC_TALENT_BOW))
 	{
 		AI_Output(self,other,"DIA_Bartok_TeachBow_BACK_04_01");	//W porz¹dku, twoja celnoœæ ju¿ siê poprawi³a.
 	};
 	Info_ClearChoices(DIA_Bartok_Teach);
+};
+
+func void DIA_Bartok_Teach_BowBasic1()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_BOW, 1);
+	Info_ClearChoices(DIA_Bartok_Teach);
+	Info_AddChoice(DIA_Bartok_Teach,Dialog_Back,DIA_Bartok_Teach_Back);
+
+	if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
+	{
+		Info_AddChoice(DIA_Bartok_Teach,B_BuildLearnString(PRINT_LearnBowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Bartok_Teach_BowBasic2);
+	};
+};
+
+func void DIA_Bartok_Teach_BowBasic2()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_BOW, 2);
+	Info_ClearChoices(DIA_Bartok_Teach);
+	Info_AddChoice(DIA_Bartok_Teach,Dialog_Back,DIA_Bartok_Teach_Back);
+	DIA_Bartok_Teach_Back();
 };
 
 func void DIA_Bartok_Teach_BOW_1()

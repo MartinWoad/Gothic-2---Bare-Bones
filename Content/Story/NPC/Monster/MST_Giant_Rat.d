@@ -49,8 +49,8 @@ instance YGiant_Rat(Mst_Default_Giant_Rat)
 	level = 2;
 	attribute[ATR_STRENGTH] = 15;
 	attribute[ATR_DEXTERITY] = 15;
-	attribute[ATR_HITPOINTS_MAX] = 20;
-	attribute[ATR_HITPOINTS] = 20;
+	attribute[ATR_HITPOINTS_MAX] = 10;
+	attribute[ATR_HITPOINTS] = 10;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
 	protection[PROT_BLUNT] = 0;
@@ -61,6 +61,6 @@ instance YGiant_Rat(Mst_Default_Giant_Rat)
 	protection[PROT_MAGIC] = 0;
 	//fight_tactic = FAI_MONSTER_COWARD;
 	B_SetVisuals_Giant_Rat();
-	Mdl_SetModelScale(self,0.9,0.9,0.9);
+	Mdl_SetModelScale(self,0.7,0.7,0.7);
 	Npc_SetToFistMode(self);
 };

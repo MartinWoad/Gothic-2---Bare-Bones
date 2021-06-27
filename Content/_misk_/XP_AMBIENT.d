@@ -207,3 +207,39 @@ var int satietyBarHandle;
 var int heroMurders;
 var int heroThefts;
 var int heroUnforgivableCrime;
+
+var int hero1hExp;
+var int hero1hExp_NextLevel;
+
+var int hero2hExp;
+var int hero2hExp_NextLevel;
+
+var int heroBowExp;
+var int heroBowExp_NextLevel;
+
+var int heroCrossbowExp;
+var int heroCrossbowExp_NextLevel;
+
+var int heroKnows1hBasic1;
+var int heroKnows1hBasic2;
+var int heroKnows1hAdvanced1;
+var int heroKnows1hAdvanced2;
+var int heroKnows1hMaster;
+
+var int heroKnows2hBasic1;
+var int heroKnows2hBasic2;
+var int heroKnows2hAdvanced1;
+var int heroKnows2hAdvanced2;
+var int heroKnows2hMaster;
+
+var int heroKnowsBowBasic1;
+var int heroKnowsBowBasic2;
+var int heroKnowsBowAdvanced1;
+var int heroKnowsBowAdvanced2;
+var int heroKnowsBowMaster;
+
+var int heroKnowsCrossbowBasic1;
+var int heroKnowsCrossbowBasic2;
+var int heroKnowsCrossbowAdvanced1;
+var int heroKnowsCrossbowAdvanced2;
+var int heroKnowsCrossbowMaster;

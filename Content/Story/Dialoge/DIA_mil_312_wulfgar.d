@@ -271,10 +271,29 @@ func void DIA_Wulfgar_Teach_Info()
 		};
 		Info_ClearChoices(DIA_Wulfgar_Teach);
 		Info_AddChoice(DIA_Wulfgar_Teach,Dialog_Back,DIA_Wulfgar_Teach_Back);
-		Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Wulfgar_Teach_2H_1);
-		Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Wulfgar_Teach_2H_5);
-		Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Wulfgar_Teach_1H_1);
-		Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Wulfgar_Teach_1H_5);
+
+		if(GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 0)
+		{
+			Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn1hBasic1,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Wulfgar_Teach_1HBasic1);
+		}
+		else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 1)
+		{
+			Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn1hBasic2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Wulfgar_Teach_1HBasic2);
+		};
+
+		if(GetHeroFightTechniqueLevel(NPC_TALENT_2H) == 0)
+		{
+			Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn2hBasic1,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Wulfgar_Teach_2HBasic1);
+		}
+		else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_2H) == 1)
+		{
+			Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn2hBasic2,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Wulfgar_Teach_2HBasic2);
+		};
+
+		//Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Wulfgar_Teach_2H_1);
+		//Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Wulfgar_Teach_2H_5);
+		//Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Wulfgar_Teach_1H_1);
+		//Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Wulfgar_Teach_1H_5);
 	};
 };
 
@@ -313,10 +332,87 @@ func void DIA_Wulfgar_Teach_1H_5()
 	};
 	Info_ClearChoices(DIA_Wulfgar_Teach);
 	Info_AddChoice(DIA_Wulfgar_Teach,Dialog_Back,DIA_Wulfgar_Teach_Back);
+
 	Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H)),DIA_Wulfgar_Teach_2H_1);
 	Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn2h5,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Wulfgar_Teach_2H_5);
 	Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Wulfgar_Teach_1H_1);
 	Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Wulfgar_Teach_1H_5);
+};
+
+func void DIA_Wulfgar_Teach_1HBasic1()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_1H, 1);
+	Info_ClearChoices(DIA_Wulfgar_Teach);
+	Info_AddChoice(DIA_Wulfgar_Teach,Dialog_Back,DIA_Wulfgar_Teach_Back);
+
+	if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 1)
+	{
+		Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn1hBasic2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Wulfgar_Teach_1HBasic2);
+	};
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_2H) == 0)
+	{
+		Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn2hBasic1,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Wulfgar_Teach_2HBasic1);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_2H) == 1)
+	{
+		Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn2hBasic2,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Wulfgar_Teach_2HBasic2);
+	};
+};
+
+func void DIA_Wulfgar_Teach_1HBasic2()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_1H, 2);
+	Info_ClearChoices(DIA_Wulfgar_Teach);
+	Info_AddChoice(DIA_Wulfgar_Teach,Dialog_Back,DIA_Wulfgar_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_2H) == 0)
+	{
+		Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn2hBasic1,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Wulfgar_Teach_2HBasic1);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_2H) == 1)
+	{
+		Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn2hBasic2,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Wulfgar_Teach_2HBasic2);
+	};
+
+};
+
+func void DIA_Wulfgar_Teach_2HBasic1()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_2H, 1);
+	Info_ClearChoices(DIA_Wulfgar_Teach);
+	Info_AddChoice(DIA_Wulfgar_Teach,Dialog_Back,DIA_Wulfgar_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 0)
+	{
+		Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn1hBasic1,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Wulfgar_Teach_1HBasic1);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 1)
+	{
+		Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn1hBasic2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Wulfgar_Teach_1HBasic2);
+	};
+
+	if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_2H) == 1)
+	{
+		Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn2hBasic2,B_GetLearnCostTalent(other,NPC_TALENT_2H) * 5),DIA_Wulfgar_Teach_2HBasic2);
+	};
+};
+
+func void DIA_Wulfgar_Teach_2HBasic2()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_2H, 2);
+	Info_ClearChoices(DIA_Wulfgar_Teach);
+	Info_AddChoice(DIA_Wulfgar_Teach,Dialog_Back,DIA_Wulfgar_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 0)
+	{
+		Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn1hBasic1,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Wulfgar_Teach_1HBasic1);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 1)
+	{
+		Info_AddChoice(DIA_Wulfgar_Teach,B_BuildLearnString(PRINT_Learn1hBasic2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Wulfgar_Teach_1HBasic2);
+	};
+
 };
 
 func void DIA_Wulfgar_Teach_2H_1()

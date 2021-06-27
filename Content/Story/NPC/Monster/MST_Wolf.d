@@ -74,8 +74,8 @@ instance YWolf(Mst_Default_Wolf)
 	name[0] = "M這dy Wilk";
 	attribute[ATR_STRENGTH] = 25;
 	attribute[ATR_DEXTERITY] = 25;
-	attribute[ATR_HITPOINTS_MAX] = 20;
-	attribute[ATR_HITPOINTS] = 20;
+	attribute[ATR_HITPOINTS_MAX] = 45;
+	attribute[ATR_HITPOINTS] = 45;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
 	protection[PROT_BLUNT] = 0;
@@ -84,8 +84,9 @@ instance YWolf(Mst_Default_Wolf)
 	protection[PROT_FIRE] = 0;
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 0;
-	fight_tactic = FAI_MONSTER_COWARD;
+	//fight_tactic = FAI_MONSTER_COWARD;
 	B_SetVisuals_Wolf();
+	Mdl_SetModelScale(self,0.9,0.9,0.9);
 	Npc_SetToFistMode(self);
 };
 
@@ -95,8 +96,8 @@ instance PEPES_YWolf1(Mst_Default_Wolf)
 	level = 3;
 	attribute[ATR_STRENGTH] = 25;
 	attribute[ATR_DEXTERITY] = 25;
-	attribute[ATR_HITPOINTS_MAX] = 40;
-	attribute[ATR_HITPOINTS] = 40;
+	attribute[ATR_HITPOINTS_MAX] = 45;
+	attribute[ATR_HITPOINTS] = 45;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
 	protection[PROT_BLUNT] = 0;
@@ -106,17 +107,18 @@ instance PEPES_YWolf1(Mst_Default_Wolf)
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 0;
 	B_SetVisuals_Wolf();
+	Mdl_SetModelScale(self,0.9,0.9,0.9);
 	Npc_SetToFistMode(self);
 };
 
 instance PEPES_YWolf2(Mst_Default_Wolf)
 {
 	level = 3;
-	name[0] = "M這dy wilk";
+	name[0] = "M這dy Wilk";
 	attribute[ATR_STRENGTH] = 25;
 	attribute[ATR_DEXTERITY] = 25;
-	attribute[ATR_HITPOINTS_MAX] = 40;
-	attribute[ATR_HITPOINTS] = 40;
+	attribute[ATR_HITPOINTS_MAX] = 45;
+	attribute[ATR_HITPOINTS] = 45;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
 	protection[PROT_BLUNT] = 5;
@@ -126,6 +128,7 @@ instance PEPES_YWolf2(Mst_Default_Wolf)
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 0;
 	B_SetVisuals_Wolf();
+	Mdl_SetModelScale(self,0.9,0.9,0.9);
 	Npc_SetToFistMode(self);
 };
 
@@ -135,8 +138,8 @@ instance PEPES_YWolf3(Mst_Default_Wolf)
 	name[0] = "M這dy Wilk";
 	attribute[ATR_STRENGTH] = 25;
 	attribute[ATR_DEXTERITY] = 25;
-	attribute[ATR_HITPOINTS_MAX] = 40;
-	attribute[ATR_HITPOINTS] = 40;
+	attribute[ATR_HITPOINTS_MAX] = 45;
+	attribute[ATR_HITPOINTS] = 45;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
 	protection[PROT_BLUNT] = 5;
@@ -146,6 +149,7 @@ instance PEPES_YWolf3(Mst_Default_Wolf)
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 0;
 	B_SetVisuals_Wolf();
+	Mdl_SetModelScale(self,0.9,0.9,0.9);
 	Npc_SetToFistMode(self);
 };
 
@@ -155,8 +159,8 @@ instance PEPES_YWolf4(Mst_Default_Wolf)
 	name[0] = "M這dy Wilk";
 	attribute[ATR_STRENGTH] = 25;
 	attribute[ATR_DEXTERITY] = 25;
-	attribute[ATR_HITPOINTS_MAX] = 40;
-	attribute[ATR_HITPOINTS] = 40;
+	attribute[ATR_HITPOINTS_MAX] = 45;
+	attribute[ATR_HITPOINTS] = 45;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
 	protection[PROT_BLUNT] = 5;
@@ -166,6 +170,6 @@ instance PEPES_YWolf4(Mst_Default_Wolf)
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 0;
 	B_SetVisuals_Wolf();
+	Mdl_SetModelScale(self,0.9,0.9,0.9);
 	Npc_SetToFistMode(self);
 };
-

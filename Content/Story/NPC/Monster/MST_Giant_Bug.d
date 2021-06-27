@@ -52,13 +52,13 @@ instance YGiant_Bug(Mst_Default_Giant_Bug)
 	attribute[ATR_HITPOINTS] = 40;
 	protection[PROT_BLUNT] = 0;
 	protection[PROT_EDGE] = 0;
-	protection[PROT_POINT] = 0;
+	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_FLY] = 100;
 	protection[PROT_MAGIC] = 0;
 	fight_tactic = FAI_GIANT_BUG;
 	B_SetVisuals_Giant_Bug();
-	Mdl_SetModelScale(self,0.9,0.9,0.9);
+	Mdl_SetModelScale(self,0.8,0.8,0.8);
 	Npc_SetToFistMode(self);
 };
 
@@ -72,7 +72,7 @@ instance YGiant_Bug_VinoRitual1(Mst_Default_Giant_Bug)
 	attribute[ATR_HITPOINTS] = 40;
 	protection[PROT_BLUNT] = 0;
 	protection[PROT_EDGE] = 0;
-	protection[PROT_POINT] = 0;
+	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_FLY] = 100;
 	protection[PROT_MAGIC] = 0;
@@ -92,7 +92,7 @@ instance YGiant_Bug_VinoRitual2(Mst_Default_Giant_Bug)
 	attribute[ATR_HITPOINTS] = 40;
 	protection[PROT_BLUNT] = 0;
 	protection[PROT_EDGE] = 0;
-	protection[PROT_POINT] = 0;
+	protection[PROT_POINT] = 5;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_FLY] = 100;
 	protection[PROT_MAGIC] = 0;
@@ -143,4 +143,3 @@ instance Lobarts_Giant_Bug7(Mst_Default_Giant_Bug)
 	B_SetVisuals_Giant_Bug();
 	Npc_SetToFistMode(self);
 };
-

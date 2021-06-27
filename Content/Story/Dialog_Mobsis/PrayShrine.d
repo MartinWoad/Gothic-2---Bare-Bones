@@ -276,11 +276,13 @@ func void PC_PrayShrine_Pray_NoPay()
 	{
 		//PrintScreen(Print_InnosThief,-1,-1,FONT_Screen,2);
 		PrintS_Ext(Print_InnosThief, RGBA(255, 180, 100, 255));
+		PrintS_Ext(Print_InnosGoldCharity, RGBA(255, 180, 100, 255));
 	}
 	else if(B_GetGreatestPlayerCrime() > CRIME_NONE)
 	{
 		//PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
 		PrintS_Ext(Print_InnosCriminal, RGBA(255, 180, 100, 255));
+		PrintS_Ext(Print_InnosJustice, RGBA(255, 180, 100, 255));
 	}
 	else if(PrayDay == Wld_GetDay())
 	{
@@ -341,12 +343,14 @@ func void PC_PrayShrine_Pray_SmallPay()
 	{
 		//PrintScreen(Print_InnosStolenGold,-1,-1,FONT_Screen,2);
 		PrintS_Ext(Print_InnosStolenGold, RGBA(255, 180, 100, 255));
+		PrintS_Ext(Print_InnosCharity, RGBA(255, 180, 100, 255));
 		CreateInvItems(hero,ItMi_Gold,10);
 	}
 	else if(B_GetGreatestPlayerCrime() > CRIME_NONE)
 	{
 		//PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
 		PrintS_Ext(Print_InnosCriminal, RGBA(255, 180, 100, 255));
+		PrintS_Ext(Print_InnosJustice, RGBA(255, 180, 100, 255));
 	}
 	else if(PrayDay == Wld_GetDay())
 	{
@@ -393,12 +397,14 @@ func void PC_PrayShrine_Pray_MediumPay()
 	{
 		//PrintScreen(Print_InnosStolenGold,-1,-1,FONT_Screen,2);
 		PrintS_Ext(Print_InnosStolenGold, RGBA(255, 180, 100, 255));
+		PrintS_Ext(Print_InnosCharity, RGBA(255, 180, 100, 255));
 		CreateInvItems(hero,ItMi_Gold,50);
 	}
 	else if(B_GetGreatestPlayerCrime() > CRIME_NONE)
 	{
 		//PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
 		PrintS_Ext(Print_InnosCriminal, RGBA(255, 180, 100, 255));
+		PrintS_Ext(Print_InnosJustice, RGBA(255, 180, 100, 255));
 	}
 	else if(PrayDay == Wld_GetDay())
 	{
@@ -450,12 +456,14 @@ func void PC_PrayShrine_Pray_BigPay()
 	{
 		//PrintScreen(Print_InnosStolenGold,-1,-1,FONT_Screen,2);
 		PrintS_Ext(Print_InnosStolenGold, RGBA(255, 180, 100, 255));
+		PrintS_Ext(Print_InnosCharity, RGBA(255, 180, 100, 255));
 		CreateInvItems(hero,ItMi_Gold,100);
 	}
 	else if(B_GetGreatestPlayerCrime() > CRIME_NONE)
 	{
 		//PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
 		PrintS_Ext(Print_InnosCriminal, RGBA(255, 180, 100, 255));
+		PrintS_Ext(Print_InnosJustice, RGBA(255, 180, 100, 255));
 	}
 	else if(PrayDay == Wld_GetDay())
 	{
@@ -560,11 +568,13 @@ func void PC_PrayShrine_BlessSword_Info()
 	{
 		//PrintScreen(Print_InnosThief,-1,-1,FONT_Screen,2);
 		PrintS_Ext(Print_InnosThief, RGBA(255, 180, 100, 255));
+		PrintS_Ext(Print_InnosGoldCharity, RGBA(255, 180, 100, 255));
 	}
 	else if(B_GetGreatestPlayerCrime() > CRIME_NONE)
 	{
 		//PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
 		PrintS_Ext(Print_InnosCriminal, RGBA(255, 180, 100, 255));
+		PrintS_Ext(Print_InnosJustice, RGBA(255, 180, 100, 255));
 	}
 	else if(Npc_HasItems(hero,ItMi_Gold) >= Gold_BlessSword)
 	{
@@ -639,11 +649,13 @@ func void PC_PrayShrine_BlessSword_Final_Info()
 	{
 		//PrintScreen(Print_InnosThief,-1,-1,FONT_Screen,2);
 		PrintS_Ext(Print_InnosThief, RGBA(255, 180, 100, 255));
+		PrintS_Ext(Print_InnosGoldCharity, RGBA(255, 180, 100, 255));
 	}
 	else if(B_GetGreatestPlayerCrime() > CRIME_NONE)
 	{
 		//PrintScreen(Print_InnosCriminal,-1,-1,FONT_Screen,2);
 		PrintS_Ext(Print_InnosCriminal, RGBA(255, 180, 100, 255));
+		PrintS_Ext(Print_InnosJustice, RGBA(255, 180, 100, 255));
 	}
 	else if((Npc_HasItems(hero,ItPo_PotionOfDeath_01_Mis) >= 1) || (Npc_HasItems(hero,ItPo_PotionOfDeath_02_Mis) >= 1))
 	{

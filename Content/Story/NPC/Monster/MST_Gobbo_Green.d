@@ -47,20 +47,20 @@ instance YGobbo_Green(Mst_Default_Gobbo_Green)
 {
 	level = 3;
 	name[0] = "M³ody Goblin";
-	attribute[ATR_STRENGTH] = 15;
-	attribute[ATR_DEXTERITY] = 15;
+	attribute[ATR_STRENGTH] = 10;
+	attribute[ATR_DEXTERITY] = 10;
 	attribute[ATR_HITPOINTS_MAX] = 20;
 	attribute[ATR_HITPOINTS] = 20;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
-	protection[PROT_BLUNT] = 0;
-	protection[PROT_EDGE] = 0;
+	protection[PROT_BLUNT] = 5;
+	protection[PROT_EDGE] = 5;
 	protection[PROT_POINT] = 0;
 	protection[PROT_FIRE] = 0;
-	protection[PROT_FLY] = 0;
+	protection[PROT_FLY] = 5;
 	protection[PROT_MAGIC] = 0;
 	//fight_tactic = FAI_MONSTER_COWARD;
 	B_SetVisuals_Gobbo_Green();
-	Mdl_SetModelScale(self,0.9,0.9,0.9);
+	Mdl_SetModelScale(self,0.8,0.8,0.8);
 	Npc_SetToFightMode(self,ItMw_1h_Bau_Mace);
 };

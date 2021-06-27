@@ -957,6 +957,7 @@ Story\G_Functions\G_PickLock.d
 Story\B_Story\B_GetLearnCostTalent.d
 Story\B_Story\B_GetLearnCostAttribute.d
 Story\B_Story\B_BuildLearnString.d
+BareBones\Functions\TeachFightTechnique.d
 Story\B_Story\B_KillNpc.d
 Story\B_Story\B_RemoveNpc.d
 Story\B_Story\B_TeachAttributePoints.d
@@ -1309,5 +1310,8 @@ Story\B_Story\B_Enter_DragonIsland.d
 Story\Dialog_Mobsis\B_OnHotkey.d
 BareBones\Hooks\oCNpc_Hooks.d
 BareBones\Hooks\oCItemContainer_Hooks.d
+BareBones\Hooks\OnDmg_Hooks.d
+
+
 
 Story\Startup.d

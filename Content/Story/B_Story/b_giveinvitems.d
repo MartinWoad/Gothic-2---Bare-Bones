@@ -1,7 +1,8 @@
-func int B_GiveInvItems(var C_Npc giver,var C_Npc taker,var C_Item item,var int amount)
+func int B_GiveInvItems(var C_Npc giver,var C_Npc taker,var int itemInstance,var int amount)
 {
 	var string concatText;
-	var int itemInstance; itemInstance = Hlp_GetInstanceID(item);
+	//var int itemInstance; itemInstance = Hlp_GetInstanceID(item);
+
 	if(Npc_IsPlayer(giver))
 	{
 		if(amount > Npc_HasItems(giver,itemInstance))
@@ -9,6 +10,7 @@ func int B_GiveInvItems(var C_Npc giver,var C_Npc taker,var C_Item item,var int 
 			return FALSE;
 		};
 	};
+	Npc_GetInvItem(giver, itemInstance);
 	Npc_RemoveInvItems(giver,itemInstance,amount);
 	CreateInvItems(taker,itemInstance,amount);
 	if(Npc_IsPlayer(giver))
@@ -69,10 +71,9 @@ func int B_GiveInvItems(var C_Npc giver,var C_Npc taker,var C_Item item,var int 
 	return TRUE;
 };
 
-func int B_StealInvItems(var C_Npc giver,var C_Npc taker,var C_Item item,var int amount)
+func int B_StealInvItems(var C_Npc giver,var C_Npc taker,var int itemInstance,var int amount)
 {
 	var string concatText;
-	var int itemInstance; itemInstance = Hlp_GetInstanceID(item);
 	if(Npc_IsPlayer(giver))
 	{
 		if(amount > Npc_HasItems(giver,itemInstance))
@@ -80,6 +81,7 @@ func int B_StealInvItems(var C_Npc giver,var C_Npc taker,var C_Item item,var int
 			return FALSE;
 		};
 	};
+	Npc_GetInvItem(giver, itemInstance);
 	Npc_RemoveInvItems(giver,itemInstance,amount);
 	CreateInvItems(taker,itemInstance,amount);
 	heroThefts -= item.value * amount;
