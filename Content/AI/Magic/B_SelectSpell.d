@@ -61,9 +61,9 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 		}
 		else if((Kapitel < 6) && (Npc_GetDistToNpc(oth,slf) >= 1000))
 		{
-			if(Npc_HasItems(slf,ItRu_Deathbolt) == 0)
+			if(Npc_HasItems(slf,ItRu_Deathball) == 0)
 			{
-				CreateInvItems(slf,ItRu_Deathbolt,1);
+				CreateInvItems(slf,ItRu_Deathball,1);
 			};
 			B_ReadySpell(slf,SPL_Deathbolt,SPL_COST_Deathbolt);
 		}
@@ -75,13 +75,21 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 			};
 			B_ReadySpell(slf,SPL_BreathOfDeath,SPL_Cost_BreathOfDeath);
 		}
-		else
+		else if(Npc_GetDistToNpc(oth,slf) >= 1000)
 		{
 			if(Npc_HasItems(slf,ItRu_Deathbolt) == 0)
 			{
 				CreateInvItems(slf,ItRu_Deathbolt,1);
 			};
 			B_ReadySpell(slf,SPL_Deathbolt,SPL_COST_Deathbolt);
+		}
+		else
+		{
+			if(Npc_HasItems(slf,ItRu_BreathOfDeath) == 0)
+			{
+				CreateInvItems(slf,ItRu_BreathOfDeath,1);
+			};
+			B_ReadySpell(slf,SPL_BreathOfDeath,SPL_Cost_BreathOfDeath);
 		};
 		return TRUE;
 	};
@@ -349,4 +357,3 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 	};
 	return FALSE;
 };
-

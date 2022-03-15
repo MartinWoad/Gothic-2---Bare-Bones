@@ -166,18 +166,148 @@ func void DIA_Ruga_Teach_Info()
 	AI_Output(other,self,"DIA_Ruga_Teach_15_00");	//Poka¿ mi proszê, jak u¿ywaæ kuszy.
 	Info_ClearChoices(DIA_Ruga_Teach);
 	Info_AddChoice(DIA_Ruga_Teach,Dialog_Back,DIA_Ruga_Teach_Back);
-	Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossBow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),DIA_Ruga_Teach_1H_1);
-	Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossBow5,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_1H_5);
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 0)
+	{
+		Info_AddChoice(DIA_Ruga_TEACH,B_BuildLearnString(PRINT_LearnCrossbowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 1)
+	{
+		Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowBasic2);
+	};
+	//Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),DIA_Ruga_Teach_1H_1);
+	//Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbow5,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_1H_5);
 };
 
 func void DIA_Ruga_Teach_Back()
 {
-	if(other.HitChance[NPC_TALENT_CROSSBOW] >= 30)
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) >= 2)
 	{
 		AI_Output(self,other,"DIA_Ruga_Teach_11_00");	//Niczego wiecej ju¿ ciê nie nauczê. Czas, byœ znalaz³ sobie innego nauczyciela.
 		DIA_Ruga_Teach_permanent = TRUE;
 	};
 	Info_ClearChoices(DIA_Ruga_Teach);
+};
+
+func void DIA_Ruga_Teach_CrossbowBasic1()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_CROSSBOW, 1);
+	Info_ClearChoices(DIA_Ruga_Teach);
+	Info_AddChoice(DIA_Ruga_Teach,Dialog_Back,DIA_Ruga_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 0)
+	{
+		Info_AddChoice(DIA_Ruga_TEACH,B_BuildLearnString(PRINT_LearnCrossbowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 1)
+	{
+		Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowBasic2);
+	};
+
+
+};
+
+func void DIA_Ruga_Teach_CrossbowBasic2()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_CROSSBOW, 2);
+	Info_ClearChoices(DIA_Ruga_Teach);
+	Info_AddChoice(DIA_Ruga_Teach,Dialog_Back,DIA_Ruga_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 0)
+	{
+		Info_AddChoice(DIA_Ruga_TEACH,B_BuildLearnString(PRINT_LearnCrossbowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 1)
+	{
+		Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowBasic2);
+	};
+
+};
+
+func void DIA_Ruga_Teach_CrossbowAdvanced1()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_CROSSBOW, 3);
+	Info_ClearChoices(DIA_Ruga_Teach);
+	Info_AddChoice(DIA_Ruga_Teach,Dialog_Back,DIA_Ruga_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 0)
+	{
+		Info_AddChoice(DIA_Ruga_TEACH,B_BuildLearnString(PRINT_LearnCrossbowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 1)
+	{
+		Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 2)
+	{
+		Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 3)
+	{
+		Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 4)
+	{
+		Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbowMaster,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowMaster);
+	};
+
+};
+
+func void DIA_Ruga_Teach_CrossbowAdvanced2()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_CROSSBOW, 4);
+	Info_ClearChoices(DIA_Ruga_Teach);
+	Info_AddChoice(DIA_Ruga_Teach,Dialog_Back,DIA_Ruga_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 0)
+	{
+		Info_AddChoice(DIA_Ruga_TEACH,B_BuildLearnString(PRINT_LearnCrossbowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 1)
+	{
+		Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 2)
+	{
+		Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 3)
+	{
+		Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 4)
+	{
+		Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbowMaster,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowMaster);
+	};
+
+};
+
+func void DIA_Ruga_Teach_CrossbowMaster()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_CROSSBOW, 5);
+	Info_ClearChoices(DIA_Ruga_Teach);
+	Info_AddChoice(DIA_Ruga_Teach,Dialog_Back,DIA_Ruga_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 0)
+	{
+		Info_AddChoice(DIA_Ruga_TEACH,B_BuildLearnString(PRINT_LearnCrossbowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 1)
+	{
+		Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 2)
+	{
+		Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 3)
+	{
+		Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 4)
+	{
+		Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbowMaster,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_CrossbowMaster);
+	};
+
 };
 
 func void DIA_Ruga_Teach_1H_1()
@@ -192,8 +322,8 @@ func void DIA_Ruga_Teach_1H_1()
 	};
 	Info_ClearChoices(DIA_Ruga_Teach);
 	Info_AddChoice(DIA_Ruga_Teach,Dialog_Back,DIA_Ruga_Teach_Back);
-	Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossBow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),DIA_Ruga_Teach_1H_1);
-	Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossBow5,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_1H_5);
+	Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),DIA_Ruga_Teach_1H_1);
+	Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbow5,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_1H_5);
 };
 
 func void DIA_Ruga_Teach_1H_5()
@@ -208,8 +338,8 @@ func void DIA_Ruga_Teach_1H_5()
 	};
 	Info_ClearChoices(DIA_Ruga_Teach);
 	Info_AddChoice(DIA_Ruga_Teach,Dialog_Back,DIA_Ruga_Teach_Back);
-	Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossBow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),DIA_Ruga_Teach_1H_1);
-	Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossBow5,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_1H_5);
+	Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),DIA_Ruga_Teach_1H_1);
+	Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossbow5,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Ruga_Teach_1H_5);
 };
 
 

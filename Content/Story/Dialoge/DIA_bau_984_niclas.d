@@ -189,7 +189,7 @@ func int DIA_Niclas_Teach_Condition()
 func void DIA_Niclas_Teach_Info()
 {
 	AI_Output(other,self,"DIA_Niclas_Teach_15_00");	//Poka¿ mi proszê, jak siê pos³ugiwaæ ³ukiem.
-	if(other.HitChance[NPC_TALENT_BOW] >= 30)
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_BOW) >= 30)
 	{
 		AI_Output(self,other,"DIA_Niclas_Teach_03_01");	//Nauczy³em ciê ju¿ wszystkiego, co sam umia³em. Musisz sobie poszukaæ innego nauczyciela.
 	}
@@ -197,14 +197,141 @@ func void DIA_Niclas_Teach_Info()
 	{
 		Info_ClearChoices(DIA_Niclas_Teach);
 		Info_AddChoice(DIA_Niclas_Teach,Dialog_Back,DIA_Niclas_Teach_Back);
-		Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBow1,B_GetLearnCostTalent(other,NPC_TALENT_BOW)),DIA_Niclas_Teach_BOW_1);
-		Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBow5,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BOW_5);
+		if(GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 0)
+		{
+			Info_AddChoice(DIA_Niclas_TEACH,B_BuildLearnString(PRINT_LearnBowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowBasic1);
+		}
+		else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
+		{
+			Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowBasic2);
+		}
+		else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 2)
+		{
+			Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowAdvanced1);
+		};
+		//Info_ClearChoices(DIA_Niclas_Teach);
+		//Info_AddChoice(DIA_Niclas_Teach,Dialog_Back,DIA_Niclas_Teach_Back);
+		//Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBow1,B_GetLearnCostTalent(other,NPC_TALENT_BOW)),DIA_Niclas_Teach_BOW_1);
+		//Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBow5,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BOW_5);
 	};
+};
+
+func void DIA_Niclas_Teach_BowBasic1()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_BOW, 1);
+	Info_ClearChoices(DIA_Niclas_Teach);
+	Info_AddChoice(DIA_Niclas_Teach,Dialog_Back,DIA_Niclas_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 0)
+	{
+		Info_AddChoice(DIA_Niclas_TEACH,B_BuildLearnString(PRINT_LearnBowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
+	{
+		Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 2)
+	{
+		Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowAdvanced1);
+	};
+
+};
+
+func void DIA_Niclas_Teach_BowBasic2()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_BOW, 2);
+	Info_ClearChoices(DIA_Niclas_Teach);
+	Info_AddChoice(DIA_Niclas_Teach,Dialog_Back,DIA_Niclas_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 0)
+	{
+		Info_AddChoice(DIA_Niclas_TEACH,B_BuildLearnString(PRINT_LearnBowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
+	{
+		Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 2)
+	{
+		Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowAdvanced1);
+	};
+
+};
+
+func void DIA_Niclas_Teach_BowAdvanced1()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_BOW, 3);
+	Info_ClearChoices(DIA_Niclas_Teach);
+	Info_AddChoice(DIA_Niclas_Teach,Dialog_Back,DIA_Niclas_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 0)
+	{
+		Info_AddChoice(DIA_Niclas_TEACH,B_BuildLearnString(PRINT_LearnBowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
+	{
+		Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 2)
+	{
+		Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowAdvanced1);
+	};
+
+};
+
+func void DIA_Niclas_Teach_BowAdvanced2()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_BOW, 4);
+	Info_ClearChoices(DIA_Niclas_Teach);
+	Info_AddChoice(DIA_Niclas_Teach,Dialog_Back,DIA_Niclas_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 0)
+	{
+		Info_AddChoice(DIA_Niclas_TEACH,B_BuildLearnString(PRINT_LearnBowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
+	{
+		Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 2)
+	{
+		Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowAdvanced1);
+	};
+
+};
+
+func void DIA_Niclas_Teach_BowMaster()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_BOW, 5);
+	Info_ClearChoices(DIA_Niclas_Teach);
+	Info_AddChoice(DIA_Niclas_Teach,Dialog_Back,DIA_Niclas_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 0)
+	{
+		Info_AddChoice(DIA_Niclas_TEACH,B_BuildLearnString(PRINT_LearnBowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
+	{
+		Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 2)
+	{
+		Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 3)
+	{
+		Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 4)
+	{
+		Info_AddChoice(DIA_Niclas_Teach,B_BuildLearnString(PRINT_LearnBowMaster,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Niclas_Teach_BowMaster);
+	};
+
 };
 
 func void DIA_Niclas_Teach_Back()
 {
-	if(other.HitChance[NPC_TALENT_BOW] >= 30)
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_BOW) >= 3)
 	{
 		AI_Output(self,other,"DIA_Niclas_Teach_03_00");	//Niczego wiêcej nie mogê ciê ju¿ nauczyæ.
 	};
@@ -263,4 +390,3 @@ func void DIA_Niclas_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Niclas_PICKPOCKET);
 };
-

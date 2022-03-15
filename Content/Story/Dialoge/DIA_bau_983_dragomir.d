@@ -263,8 +263,28 @@ func void DIA_Dragomir_Teach_Info()
 	AI_Output(other,self,"DIA_Dragomir_Teach_15_00");	//Naucz mnie czegoœ.
 	Info_ClearChoices(DIA_Dragomir_Teach);
 	Info_AddChoice(DIA_Dragomir_Teach,Dialog_Back,DIA_Dragomir_Teach_Back);
-	Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossBow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),DIA_Dragomir_Teach_1H_1);
-	Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossBow5,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_1H_5);
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 0)
+	{
+		Info_AddChoice(DIA_Dragomir_TEACH,B_BuildLearnString(PRINT_LearnCrossbowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 1)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 2)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 3)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 4)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowMaster,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowMaster);
+	};
+	//Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossBow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),DIA_Dragomir_Teach_1H_1);
+	//Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossBow5,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_1H_5);
 };
 
 func void DIA_Dragomir_Teach_Back()
@@ -274,6 +294,151 @@ func void DIA_Dragomir_Teach_Back()
 		DIA_Dragomir_Teach_permanent = TRUE;
 	};
 	Info_ClearChoices(DIA_Dragomir_Teach);
+};
+
+func void DIA_Dragomir_Teach_CrossbowBasic1()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_CROSSBOW, 1);
+	Info_ClearChoices(DIA_Dragomir_Teach);
+	Info_AddChoice(DIA_Dragomir_Teach,Dialog_Back,DIA_Dragomir_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 0)
+	{
+		Info_AddChoice(DIA_Dragomir_TEACH,B_BuildLearnString(PRINT_LearnCrossbowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 1)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 2)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 3)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 4)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowMaster,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowMaster);
+	};
+
+};
+
+func void DIA_Dragomir_Teach_CrossbowBasic2()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_CROSSBOW, 2);
+	Info_ClearChoices(DIA_Dragomir_Teach);
+	Info_AddChoice(DIA_Dragomir_Teach,Dialog_Back,DIA_Dragomir_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 0)
+	{
+		Info_AddChoice(DIA_Dragomir_TEACH,B_BuildLearnString(PRINT_LearnCrossbowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 1)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 2)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 3)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 4)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowMaster,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowMaster);
+	};
+
+};
+
+func void DIA_Dragomir_Teach_CrossbowAdvanced1()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_CROSSBOW, 3);
+	Info_ClearChoices(DIA_Dragomir_Teach);
+	Info_AddChoice(DIA_Dragomir_Teach,Dialog_Back,DIA_Dragomir_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 0)
+	{
+		Info_AddChoice(DIA_Dragomir_TEACH,B_BuildLearnString(PRINT_LearnCrossbowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 1)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 2)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 3)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 4)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowMaster,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowMaster);
+	};
+
+};
+
+func void DIA_Dragomir_Teach_CrossbowAdvanced2()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_CROSSBOW, 4);
+	Info_ClearChoices(DIA_Dragomir_Teach);
+	Info_AddChoice(DIA_Dragomir_Teach,Dialog_Back,DIA_Dragomir_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 0)
+	{
+		Info_AddChoice(DIA_Dragomir_TEACH,B_BuildLearnString(PRINT_LearnCrossbowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 1)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 2)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 3)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 4)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowMaster,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowMaster);
+	};
+
+};
+
+func void DIA_Dragomir_Teach_CrossbowMaster()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_CROSSBOW, 5);
+	Info_ClearChoices(DIA_Dragomir_Teach);
+	Info_AddChoice(DIA_Dragomir_Teach,Dialog_Back,DIA_Dragomir_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 0)
+	{
+		Info_AddChoice(DIA_Dragomir_TEACH,B_BuildLearnString(PRINT_LearnCrossbowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 1)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 2)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 3)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 4)
+	{
+		Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbowMaster,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_CrossbowMaster);
+	};
+
 };
 
 func void DIA_Dragomir_Teach_1H_1()
@@ -296,7 +461,7 @@ func void DIA_Dragomir_Teach_1H_1()
 	};
 	Info_ClearChoices(DIA_Dragomir_Teach);
 	Info_AddChoice(DIA_Dragomir_Teach,Dialog_Back,DIA_Dragomir_Teach_Back);
-	Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossBow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),DIA_Dragomir_Teach_1H_1);
+	Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossbow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),DIA_Dragomir_Teach_1H_1);
 	Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossBow5,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Dragomir_Teach_1H_5);
 };
 
@@ -358,4 +523,3 @@ func void DIA_Dragomir_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Dragomir_PICKPOCKET);
 };
-

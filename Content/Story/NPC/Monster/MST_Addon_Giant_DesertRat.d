@@ -1,7 +1,7 @@
 
 prototype MST_DEFAULT_GIANT_DESERTRAT(C_NPC)
 {
-	name[0] = "Pustynny Szczur";
+	name[0] = "Piaskowy Szczur";
 	guild = GIL_GIANT_RAT;
 	aivar[AIV_MM_REAL_ID] = ID_GIANT_RAT;
 	level = 10;

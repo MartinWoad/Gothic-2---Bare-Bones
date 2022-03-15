@@ -19,8 +19,8 @@ instance MENU_STATUS(C_MENU_DEF)
 	items[15] = "MENU_ITEM_ATTRIBUTE_2_TITLE";
 	items[16] = "MENU_ITEM_ATTRIBUTE_3_TITLE";
 	items[17] = "MENU_ITEM_ATTRIBUTE_4_TITLE";
-	items[18] = "MENU_ITEM_ATTRIBUTE_1";
-	items[19] = "MENU_ITEM_ATTRIBUTE_2";
+	items[18] = "MENU_ITEM_ATTRIBUTE_1_DETAILED";
+	items[19] = "MENU_ITEM_ATTRIBUTE_2_DETAILED";
 	items[20] = "MENU_ITEM_ATTRIBUTE_3";
 	items[21] = "MENU_ITEM_ATTRIBUTE_4";
 	items[22] = "MENU_ITEM_ARMOR_HEADING";
@@ -34,16 +34,16 @@ instance MENU_STATUS(C_MENU_DEF)
 	items[30] = "MENU_ITEM_ARMOR_4";
 	items[31] = "MENU_ITEM_TALENTS_HEADING";
 	items[32] = "MENU_ITEM_TALENT_1_TITLE";
-	items[33] = "MENU_ITEM_TALENT_1_SKILL";
+	items[33] = "MENU_ITEM_TALENT_1_RANK";
 	items[34] = "MENU_ITEM_TALENT_1";
 	items[35] = "MENU_ITEM_TALENT_2_TITLE";
-	items[36] = "MENU_ITEM_TALENT_2_SKILL";
+	items[36] = "MENU_ITEM_TALENT_2_RANK";
 	items[37] = "MENU_ITEM_TALENT_2";
 	items[38] = "MENU_ITEM_TALENT_3_TITLE";
-	items[39] = "MENU_ITEM_TALENT_3_SKILL";
+	items[39] = "MENU_ITEM_TALENT_3_RANK";
 	items[40] = "MENU_ITEM_TALENT_3";
 	items[41] = "MENU_ITEM_TALENT_4_TITLE";
-	items[42] = "MENU_ITEM_TALENT_4_SKILL";
+	items[42] = "MENU_ITEM_TALENT_4_RANK";
 	items[43] = "MENU_ITEM_TALENT_4";
 	items[44] = "MENU_ITEM_TALENT_8_TITLE";
 	items[45] = "MENU_ITEM_TALENT_8_SKILL";
@@ -224,6 +224,14 @@ instance MENU_ITEM_ATTRIBUTE_1(C_MENU_ITEM_DEF)
 	flags = flags & ~IT_SELECTABLE;
 };
 
+instance MENU_ITEM_ATTRIBUTE_1_DETAILED(C_MENU_ITEM_DEF)
+{
+	posx = STAT_A_X2;
+	posy = STAT_ATR_Y + (STAT_DY * 0);
+	fontname = STAT_FONT_DEFAULT;
+	flags = flags & ~IT_SELECTABLE;
+};
+
 instance MENU_ITEM_ATTRIBUTE_2_TITLE(C_MENU_ITEM_DEF)
 {
 	posx = STAT_A_X1;
@@ -234,6 +242,14 @@ instance MENU_ITEM_ATTRIBUTE_2_TITLE(C_MENU_ITEM_DEF)
 };
 
 instance MENU_ITEM_ATTRIBUTE_2(C_MENU_ITEM_DEF)
+{
+	posx = STAT_A_X2;
+	posy = STAT_ATR_Y + (STAT_DY * 1);
+	fontname = STAT_FONT_DEFAULT;
+	flags = flags & ~IT_SELECTABLE;
+};
+
+instance MENU_ITEM_ATTRIBUTE_2_DETAILED(C_MENU_ITEM_DEF)
 {
 	posx = STAT_A_X2;
 	posy = STAT_ATR_Y + (STAT_DY * 1);
@@ -381,6 +397,14 @@ instance MENU_ITEM_TALENT_1_SKILL(C_MENU_ITEM_DEF)
 	flags = flags & ~IT_SELECTABLE;
 };
 
+instance MENU_ITEM_TALENT_1_RANK(C_MENU_ITEM_DEF)
+{
+	posx = STAT_B_X2;
+	posy = STAT_TAL_Y + (0 * STAT_DY);
+	fontname = STAT_FONT_DEFAULT;
+	flags = flags & ~IT_SELECTABLE;
+};
+
 instance MENU_ITEM_TALENT_1(C_MENU_ITEM_DEF)
 {
 	posx = STAT_B_X3;
@@ -398,6 +422,14 @@ instance MENU_ITEM_TALENT_2_TITLE(C_MENU_ITEM_DEF)
 };
 
 instance MENU_ITEM_TALENT_2_SKILL(C_MENU_ITEM_DEF)
+{
+	posx = STAT_B_X2;
+	posy = STAT_TAL_Y + (1 * STAT_DY);
+	fontname = STAT_FONT_DEFAULT;
+	flags = flags & ~IT_SELECTABLE;
+};
+
+instance MENU_ITEM_TALENT_2_RANK(C_MENU_ITEM_DEF)
 {
 	posx = STAT_B_X2;
 	posy = STAT_TAL_Y + (1 * STAT_DY);
@@ -429,6 +461,14 @@ instance MENU_ITEM_TALENT_3_SKILL(C_MENU_ITEM_DEF)
 	flags = flags & ~IT_SELECTABLE;
 };
 
+instance MENU_ITEM_TALENT_3_RANK(C_MENU_ITEM_DEF)
+{
+	posx = STAT_B_X2;
+	posy = STAT_TAL_Y + (2 * STAT_DY);
+	fontname = STAT_FONT_DEFAULT;
+	flags = flags & ~IT_SELECTABLE;
+};
+
 instance MENU_ITEM_TALENT_3(C_MENU_ITEM_DEF)
 {
 	posx = STAT_B_X3;
@@ -446,6 +486,14 @@ instance MENU_ITEM_TALENT_4_TITLE(C_MENU_ITEM_DEF)
 };
 
 instance MENU_ITEM_TALENT_4_SKILL(C_MENU_ITEM_DEF)
+{
+	posx = STAT_B_X2;
+	posy = STAT_TAL_Y + (3 * STAT_DY);
+	fontname = STAT_FONT_DEFAULT;
+	flags = flags & ~IT_SELECTABLE;
+};
+
+instance MENU_ITEM_TALENT_4_RANK(C_MENU_ITEM_DEF)
 {
 	posx = STAT_B_X2;
 	posy = STAT_TAL_Y + (3 * STAT_DY);

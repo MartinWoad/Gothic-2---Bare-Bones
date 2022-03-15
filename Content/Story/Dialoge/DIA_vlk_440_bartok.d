@@ -257,7 +257,7 @@ func void DIA_Bartok_Teach_Info()
 	{
 		Info_AddChoice(DIA_Bartok_Teach,B_BuildLearnString(PRINT_LearnBowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Bartok_Teach_BowBasic1);
 	}
-	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
 	{
 		Info_AddChoice(DIA_Bartok_Teach,B_BuildLearnString(PRINT_LearnBowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Bartok_Teach_BowBasic2);
 	};
@@ -285,7 +285,7 @@ func void DIA_Bartok_Teach_BowBasic1()
 	Info_ClearChoices(DIA_Bartok_Teach);
 	Info_AddChoice(DIA_Bartok_Teach,Dialog_Back,DIA_Bartok_Teach_Back);
 
-	if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
+	if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
 	{
 		Info_AddChoice(DIA_Bartok_Teach,B_BuildLearnString(PRINT_LearnBowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Bartok_Teach_BowBasic2);
 	};

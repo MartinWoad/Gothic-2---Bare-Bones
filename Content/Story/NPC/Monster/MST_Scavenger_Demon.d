@@ -1,7 +1,7 @@
 
 prototype Mst_Default_Scavenger_Demon(C_Npc)
 {
-	name[0] = "Œcierwojad";
+	name[0] = "Leœny Œcierwojad";
 	guild = GIL_SCAVENGER;
 	aivar[AIV_MM_REAL_ID] = ID_SCAVENGER_DEMON;
 	level = 12;
@@ -44,4 +44,3 @@ instance Scavenger_Demon(Mst_Default_Scavenger_Demon)
 	B_SetVisuals_Scavenger_Demon();
 	Npc_SetToFistMode(self);
 };
-

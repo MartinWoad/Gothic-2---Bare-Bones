@@ -154,11 +154,29 @@ func int DIA_Udar_Teach_Condition()
 func void DIA_Udar_Teach_Info()
 {
 	AI_Output(other,self,"DIA_Udar_Teach_15_00");	//Chcê siê od ciebie uczyæ.
-	AI_Output(self,other,"DIA_Udar_Teach_09_01");	//Dobra, strzelaj.
-	Info_ClearChoices(DIA_Udar_Teach);
-	Info_AddChoice(DIA_Udar_Teach,Dialog_Back,DIA_Udar_Teach_Back);
-	Info_AddChoice(DIA_Udar_Teach,B_BuildLearnString(PRINT_LearnCrossBow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),DIA_Udar_Teach_CROSSBOW_1);
-	Info_AddChoice(DIA_Udar_Teach,B_BuildLearnString(PRINT_LearnCrossBow5,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Udar_Teach_CROSSBOW_5);
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) <= 1)
+	{
+
+		AI_Output(self,other,"DIA_Udar_Teach_09_01");	//Dobra, strzelaj.
+		Info_ClearChoices(DIA_Udar_Teach);
+		Info_AddChoice(DIA_Udar_Teach,Dialog_Back,DIA_Udar_Teach_Back);
+		if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 0)
+		{
+			Info_AddChoice(DIA_Udar_TEACH,B_BuildLearnString(PRINT_LearnCrossbowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Udar_Teach_CrossbowBasic1);
+		}
+		else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 1)
+		{
+			Info_AddChoice(DIA_Udar_Teach,B_BuildLearnString(PRINT_LearnCrossbowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Udar_Teach_CrossbowBasic2);
+		};
+
+		//Info_AddChoice(DIA_Udar_Teach,B_BuildLearnString(PRINT_LearnCrossBow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW)),DIA_Udar_Teach_CROSSBOW_1);
+		//Info_AddChoice(DIA_Udar_Teach,B_BuildLearnString(PRINT_LearnCrossBow5,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Udar_Teach_CROSSBOW_5);
+	}
+	else
+	{
+		AI_Output(self,other,"B_Udar_TeachNoMore1_09_00");	//Znasz ju¿ podstawy. Nie mamy czasu na wiêcej.
+		Udar_TeachPlayer = FALSE;
+	};
 };
 
 func void DIA_Udar_Teach_Back()
@@ -174,6 +192,41 @@ func void B_Udar_TeachNoMore1()
 func void B_Udar_TeachNoMore2()
 {
 	AI_Output(self,other,"B_Udar_TeachNoMore2_09_00");	//Aby sprawniej w³adaæ broni¹, musisz znaleŸæ odpowiedniego nauczyciela.
+};
+
+func void DIA_Udar_Teach_CrossbowBasic1()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_CROSSBOW, 1);
+	Info_ClearChoices(DIA_Udar_Teach);
+	Info_AddChoice(DIA_Udar_Teach,Dialog_Back,DIA_Udar_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 0)
+	{
+		Info_AddChoice(DIA_Udar_TEACH,B_BuildLearnString(PRINT_LearnCrossbowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Udar_Teach_CrossbowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 1)
+	{
+		Info_AddChoice(DIA_Udar_Teach,B_BuildLearnString(PRINT_LearnCrossbowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Udar_Teach_CrossbowBasic2);
+	};
+
+
+};
+
+func void DIA_Udar_Teach_CrossbowBasic2()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_CROSSBOW, 2);
+	Info_ClearChoices(DIA_Udar_Teach);
+	Info_AddChoice(DIA_Udar_Teach,Dialog_Back,DIA_Udar_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 0)
+	{
+		Info_AddChoice(DIA_Udar_TEACH,B_BuildLearnString(PRINT_LearnCrossbowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Udar_Teach_CrossbowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_CROSSBOW) == 1)
+	{
+		Info_AddChoice(DIA_Udar_Teach,B_BuildLearnString(PRINT_LearnCrossbowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW) * 5),DIA_Udar_Teach_CrossbowBasic2);
+	};
+
 };
 
 func void DIA_Udar_Teach_CROSSBOW_1()
@@ -500,4 +553,3 @@ func void DIA_Udar_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Udar_PICKPOCKET);
 };
-

@@ -46,12 +46,12 @@ instance GOBBO_WARRIOR(MST_DEFAULT_GOBBO_WARRIOR)
 {
 	b_setvisuals_gobbo_warrior();
 	Npc_SetToFightMode(self,itmw_1h_misc_sword);
-	Mdl_SetModelScale(self,1.15,1.15,1.15);
+	Mdl_SetModelScale(self,1,1,1);
 };
 
 instance GOBBO_WARRIOR_VISIR(MST_DEFAULT_GOBBO_WARRIOR)
 {
 	b_setvisuals_gobbo_warrior_visir();
 	Npc_SetToFightMode(self,itmw_1h_misc_axe);
-	Mdl_SetModelScale(self,1.15,1.15,1.15);
+	Mdl_SetModelScale(self,1,1,1);
 };

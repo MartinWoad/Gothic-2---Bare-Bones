@@ -164,21 +164,188 @@ func void DIA_Wolf_TEACH_Info()
 {
 	AI_Output(other,self,"DIA_Wolf_TEACH_15_00");	//Chcê siê nauczyæ czegoœ o ³ucznictwie.
 	AI_Output(self,other,"DIA_Wolf_TEACH_08_01");	//Czego mogê ciê nauczyæ?
-	Wolf_Merke_Bow = other.HitChance[NPC_TALENT_BOW];
+	Wolf_Merke_Bow = GetHeroFightTechniqueLevel(NPC_TALENT_BOW);
 	Info_ClearChoices(DIA_Wolf_TEACH);
 	Info_AddChoice(DIA_Wolf_TEACH,Dialog_Back,DIA_Wolf_Teach_Back);
-	Info_AddChoice(DIA_Wolf_TEACH,B_BuildLearnString(PRINT_LearnBow1,B_GetLearnCostTalent(other,NPC_TALENT_BOW)),DIA_Wolf_Teach_Bow_1);
-	Info_AddChoice(DIA_Wolf_TEACH,B_BuildLearnString(PRINT_LearnBow5,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_Bow_5);
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 0)
+	{
+		Info_AddChoice(DIA_Wolf_TEACH,B_BuildLearnString(PRINT_LearnBowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 2)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 3)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 4)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowMaster,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowMaster);
+	};
+	//Info_AddChoice(DIA_Wolf_TEACH,B_BuildLearnString(PRINT_LearnBow1,B_GetLearnCostTalent(other,NPC_TALENT_BOW)),DIA_Wolf_Teach_Bow_1);
+	//Info_AddChoice(DIA_Wolf_TEACH,B_BuildLearnString(PRINT_LearnBow5,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_Bow_5);
 };
 
-func void DIA_Wolf_Teach_Back()
+func void DIA_Wolf_TEACH_Back()
 {
-	if(Wolf_Merke_Bow < other.HitChance[NPC_TALENT_BOW])
+	if(Wolf_Merke_Bow < GetHeroFightTechniqueLevel(NPC_TALENT_BOW))
 	{
 		AI_Output(self,other,"DIA_Wolf_Teach_BACK_08_00");	//No i proszê. Od razu poprawi³a siê twoja celnoœæ.
 	};
 	Info_ClearChoices(DIA_Wolf_TEACH);
 };
+
+func void DIA_Wolf_Teach_BowBasic1()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_BOW, 1);
+	Info_ClearChoices(DIA_Wolf_Teach);
+	Info_AddChoice(DIA_Wolf_Teach,Dialog_Back,DIA_Wolf_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 0)
+	{
+		Info_AddChoice(DIA_Wolf_TEACH,B_BuildLearnString(PRINT_LearnBowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 2)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 3)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 4)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowMaster,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowMaster);
+	};
+
+};
+
+func void DIA_Wolf_Teach_BowBasic2()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_BOW, 2);
+	Info_ClearChoices(DIA_Wolf_Teach);
+	Info_AddChoice(DIA_Wolf_Teach,Dialog_Back,DIA_Wolf_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 0)
+	{
+		Info_AddChoice(DIA_Wolf_TEACH,B_BuildLearnString(PRINT_LearnBowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 2)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 3)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 4)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowMaster,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowMaster);
+	};
+
+};
+
+func void DIA_Wolf_Teach_BowAdvanced1()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_BOW, 3);
+	Info_ClearChoices(DIA_Wolf_Teach);
+	Info_AddChoice(DIA_Wolf_Teach,Dialog_Back,DIA_Wolf_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 0)
+	{
+		Info_AddChoice(DIA_Wolf_TEACH,B_BuildLearnString(PRINT_LearnBowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 2)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 3)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 4)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowMaster,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowMaster);
+	};
+
+};
+
+func void DIA_Wolf_Teach_BowAdvanced2()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_BOW, 4);
+	Info_ClearChoices(DIA_Wolf_Teach);
+	Info_AddChoice(DIA_Wolf_Teach,Dialog_Back,DIA_Wolf_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 0)
+	{
+		Info_AddChoice(DIA_Wolf_TEACH,B_BuildLearnString(PRINT_LearnBowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 2)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 3)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 4)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowMaster,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowMaster);
+	};
+
+};
+
+func void DIA_Wolf_Teach_BowMaster()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_BOW, 5);
+	Info_ClearChoices(DIA_Wolf_Teach);
+	Info_AddChoice(DIA_Wolf_Teach,Dialog_Back,DIA_Wolf_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 0)
+	{
+		Info_AddChoice(DIA_Wolf_TEACH,B_BuildLearnString(PRINT_LearnBowBasic1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 1)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowBasic2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 2)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 3)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_BOW) == 4)
+	{
+		Info_AddChoice(DIA_Wolf_Teach,B_BuildLearnString(PRINT_LearnBowMaster,B_GetLearnCostTalent(other,NPC_TALENT_BOW) * 5),DIA_Wolf_Teach_BowMaster);
+	};
+
+};
+
+
 
 func void DIA_Wolf_Teach_Bow_1()
 {
@@ -827,4 +994,3 @@ func void DIA_Wolf_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Wolf_PICKPOCKET);
 };
-

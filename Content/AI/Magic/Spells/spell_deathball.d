@@ -1,6 +1,6 @@
 
 const int SPL_COST_Deathball = 5;
-const int SPL_DAMAGE_Deathball = 100;
+const int SPL_DAMAGE_Deathball = 80;
 
 instance Spell_Deathball(C_Spell_Proto)
 {
@@ -26,4 +26,3 @@ func void Spell_Cast_Deathball()
 {
 	self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_COST_Deathball;
 };
-

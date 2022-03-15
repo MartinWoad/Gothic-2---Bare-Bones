@@ -2,7 +2,7 @@
 prototype MST_DEFAULT_ORCBITER(C_NPC)
 {
 	name[0] = "K¹sacz";
-	guild = GIL_SCAVENGER;
+	guild = GIL_WOLF;
 	aivar[AIV_MM_REAL_ID] = ID_ORCBITER;
 	level = 12;
 	attribute[ATR_STRENGTH] = 60;

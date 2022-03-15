@@ -13,7 +13,7 @@ prototype MST_DEFAULT_KEILER(C_NPC)
 	attribute[ATR_MANA] = 0;
 	protection[PROT_BLUNT] = 50;
 	protection[PROT_EDGE] = 50;
-	protection[PROT_POINT] = 0;
+	protection[PROT_POINT] = 50;
 	protection[PROT_FIRE] = 50;
 	protection[PROT_FLY] = 50;
 	protection[PROT_MAGIC] = 0;

@@ -147,6 +147,10 @@ func int C_CanNpcCollideWithSpell(var int spellType)
 	{
 		if(C_NpcIsEvil(self) && (self.guild != GIL_BDT) && (self.guild != GIL_ORC) && (self.guild != GIL_ORC) && (self.guild != GIL_DRACONIAN))
 		{
+			if(self.aivar[AIV_MM_REAL_ID] == ID_DRAGON_UNDEAD)
+			{
+				return COLL_APPLYHALVEDAMAGE;
+			};
 			if((self.guild == GIL_DRAGON) || (self.aivar[AIV_MM_REAL_ID] == ID_DRAGONSNAPPER) || (self.aivar[AIV_MM_REAL_ID] == ID_WARG))
 			{
 				return COLL_APPLYHALVEDAMAGE;
@@ -160,4 +164,3 @@ func int C_CanNpcCollideWithSpell(var int spellType)
 	};
 	return COLL_DOEVERYTHING;
 };
-

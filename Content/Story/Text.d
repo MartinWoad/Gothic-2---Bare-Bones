@@ -715,25 +715,40 @@ const string PRINT_RequiredSkill = "Wymaga umiejêtnoœci pos³ugiwania broni¹ na p
 
 
 const string PRINT_Learn1hBasic1 = "Podstawy broni jednorêcznych";
-const string PRINT_Learn1hBasic2 = "Rozszerzone podstawy broni jednorêcznych";
+const string PRINT_Learn1hBasic2 = "Rozszerzone bronie jednorêczne";
 const string PRINT_Learn1hAdvanced1 = "Zaawansowane bronie jednorêczne";
-const string PRINT_Learn1hAdvanced2 = "Rozszerzone zaawansowane bronie jednorêczne";
+const string PRINT_Learn1hAdvanced2 = "Eksperckie bronie jednorêczne";
 const string PRINT_Learn1hMaster = "Mistrzostwo broni jednorêcznych";
 
 const string PRINT_Learn2hBasic1 = "Podstawy broni dwurêcznych";
-const string PRINT_Learn2hBasic2 = "Rozszerzone podstawy broni dwurêcznych";
+const string PRINT_Learn2hBasic2 = "Rozszerzone bronie dwurêczne";
 const string PRINT_Learn2hAdvanced1 = "Zaawansowane bronie dwurêczne";
-const string PRINT_Learn2hAdvanced2 = "Rozszerzone zaawansowane bronie dwurêczne";
+const string PRINT_Learn2hAdvanced2 = "Eksperckie bronie dwurêczne";
 const string PRINT_Learn2hMaster = "Mistrzostwo broni dwurêcznych";
 
 const string PRINT_LearnBowBasic1 = "Podstawy ³ucznictwa";
-const string PRINT_LearnBowBasic2 = "Rozszerzone podstawy ³ucznictwa";
+const string PRINT_LearnBowBasic2 = "Rozszerzone ³ucznictwo";
 const string PRINT_LearnBowAdvanced1 = "Zaawansowane ³ucznictwo";
-const string PRINT_LearnBowAdvanced2 = "Rozszerzone zaawansowane ³ucznictwo";
+const string PRINT_LearnBowAdvanced2 = "Wyborowe ³ucznictwo";
 const string PRINT_LearnBowMaster = "Mistrzowskie ³ucznictwo";
 
 const string PRINT_LearnCrossbowBasic1 = "Podstawy kusznictwa";
-const string PRINT_LearnCrossbowBasic2 = "Rozszerzone podstawy kusznictwa";
+const string PRINT_LearnCrossbowBasic2 = "Rozszerzone kusznictwo";
 const string PRINT_LearnCrossbowAdvanced1 = "Zaawansowane kusznictwo";
-const string PRINT_LearnCrossbowAdvanced2 = "Rozszerzone zaawansowane kusznictwo";
+const string PRINT_LearnCrossbowAdvanced2 = "Wyborowe kusznictwo";
 const string PRINT_LearnCrossbowMaster = "Mistrzowskie kusznictwo";
+
+const string NAME_CombatSkill_Title_None = "Brak";
+
+const string NAME_CombatSkill_Title_Amateur = "Amator";
+
+const string NAME_CombatSkill_Title_Adept = "Adept";
+
+const string NAME_CombatSkill_Title_Warrior = "Wojownik";
+const string NAME_CombatSkill_Title_Fencer = "Szermierz";
+const string NAME_CombatSkill_Title_Bowman = "£ucznik";
+const string NAME_CombatSkill_Title_Crossbowman = "Kusznik";
+
+const string NAME_CombatSkill_Title_Expert = "Ekspert";
+
+const string NAME_CombatSkill_Title_Master = "Mistrz";

@@ -18,12 +18,12 @@ prototype Mst_Default_OrcElite(C_Npc)
 	protection[PROT_FIRE] = 90;
 	protection[PROT_FLY] = 110;
 	protection[PROT_MAGIC] = 100;
-	HitChance[NPC_TALENT_1H] = 100;
-	HitChance[NPC_TALENT_2H] = 100;
-	HitChance[NPC_TALENT_BOW] = 100;
-	HitChance[NPC_TALENT_CROSSBOW] = 100;
+	HitChance[NPC_TALENT_1H] = 80;
+	HitChance[NPC_TALENT_2H] = 80;
+	HitChance[NPC_TALENT_BOW] = 80;
+	HitChance[NPC_TALENT_CROSSBOW] = 80;
 	damagetype = DAM_EDGE;
-	fight_tactic = FAI_ORC;
+	fight_tactic = FAI_HUMAN_MASTER;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
@@ -57,12 +57,12 @@ instance OrcElite_Rest(Mst_Default_OrcElite)
 instance OrkElite_AntiPaladinOrkOberst(Mst_Default_OrcElite)
 {
 	name[0] = "Ork Pu³kownik";
-	attribute[ATR_STRENGTH] = 180;
-	attribute[ATR_DEXTERITY] = 180;
+	attribute[ATR_STRENGTH] = 100;
+	attribute[ATR_DEXTERITY] = 100;
 	attribute[ATR_HITPOINTS_MAX] = 500;
 	attribute[ATR_HITPOINTS] = 500;
 	B_SetVisuals_OrcElite();
-	EquipItem(self,ItMw_Schlachtaxt);
+	EquipItem(self,ItMw_2H_OrcAxe_04);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
 	CreateInvItems(self,ItWr_Map_Orcelite_MIS,1);
 	CreateInvItems(self,ItRu_PalFullHeal,1);
@@ -125,8 +125,8 @@ instance OrcElite_AntiPaladin3(Mst_Default_OrcElite)
 instance OrkElite_AntiPaladinOrkOberst_DI(Mst_Default_OrcElite)
 {
 	name[0] = "Ork Pu³kownik";
-	attribute[ATR_STRENGTH] = 180;
-	attribute[ATR_DEXTERITY] = 180;
+	attribute[ATR_STRENGTH] = 100;
+	attribute[ATR_DEXTERITY] = 100;
 	attribute[ATR_HITPOINTS_MAX] = 500;
 	attribute[ATR_HITPOINTS] = 500;
 	B_SetVisuals_OrcElite();

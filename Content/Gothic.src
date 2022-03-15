@@ -11,6 +11,7 @@ _INTERN\IKARUS.D
 _INTERN\float.D
 LeGo\Header_G2.src
 BareBones\Functions\Colors.d
+BareBones\Functions\UpdateMenu.d
 
 AI\AI_Intern\BodyStates.d
 AI\AI_Intern\Focus.d

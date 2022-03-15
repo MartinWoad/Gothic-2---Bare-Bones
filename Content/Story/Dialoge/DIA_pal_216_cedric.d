@@ -105,7 +105,7 @@ func int DIA_Cedric_Teach_Condition()
 func void DIA_Cedric_Teach_Info()
 {
 	AI_Output(other,self,"DIA_Cedric_Teach_15_00");	//Chcê siê wyszkoliæ.
-	if(other.HitChance[NPC_TALENT_1H] >= 60)
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_1H) >= 4)
 	{
 		AI_Output(self,other,"DIA_DIA_Cedric_Teach_12_01");	//Wiesz ju¿ wszystko o walce mieczem. Nie potrafiê ci przekazaæ nic wiêcej.
 	}
@@ -113,9 +113,171 @@ func void DIA_Cedric_Teach_Info()
 	{
 		Info_ClearChoices(DIA_Cedric_Teach);
 		Info_AddChoice(DIA_Cedric_Teach,Dialog_Back,DIA_Cedric_Teach_Back);
-		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Cedric_Teach_2H_1);
-		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_2H_5);
+		if(GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 0)
+		{
+			Info_AddChoice(DIA_Cedric_TEACH,B_BuildLearnString(PRINT_Learn1HBasic1,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HBasic1);
+		}
+		else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 1)
+		{
+			Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HBasic2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HBasic2);
+		}
+		else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 2)
+		{
+			Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HAdvanced1);
+		}
+		else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 3)
+		{
+			Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HAdvanced2);
+		};
+
+		//Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H)),DIA_Cedric_Teach_2H_1);
+		//Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1h5,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_2H_5);
 	};
+};
+
+func void DIA_Cedric_Teach_1HBasic1()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_1H, 1);
+	Info_ClearChoices(DIA_Cedric_Teach);
+	Info_AddChoice(DIA_Cedric_Teach,Dialog_Back,DIA_Cedric_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 0)
+	{
+		Info_AddChoice(DIA_Cedric_TEACH,B_BuildLearnString(PRINT_Learn1HBasic1,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 1)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HBasic2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 2)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 3)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 4)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HMaster,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HMaster);
+	};
+
+};
+
+func void DIA_Cedric_Teach_1HBasic2()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_1H, 2);
+	Info_ClearChoices(DIA_Cedric_Teach);
+	Info_AddChoice(DIA_Cedric_Teach,Dialog_Back,DIA_Cedric_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 0)
+	{
+		Info_AddChoice(DIA_Cedric_TEACH,B_BuildLearnString(PRINT_Learn1HBasic1,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 1)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HBasic2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 2)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 3)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 4)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HMaster,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HMaster);
+	};
+
+};
+
+func void DIA_Cedric_Teach_1HAdvanced1()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_1H, 3);
+	Info_ClearChoices(DIA_Cedric_Teach);
+	Info_AddChoice(DIA_Cedric_Teach,Dialog_Back,DIA_Cedric_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 0)
+	{
+		Info_AddChoice(DIA_Cedric_TEACH,B_BuildLearnString(PRINT_Learn1HBasic1,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 1)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HBasic2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 2)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 3)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 4)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HMaster,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HMaster);
+	};
+
+};
+
+func void DIA_Cedric_Teach_1HAdvanced2()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_1H, 4);
+	Info_ClearChoices(DIA_Cedric_Teach);
+	Info_AddChoice(DIA_Cedric_Teach,Dialog_Back,DIA_Cedric_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 0)
+	{
+		Info_AddChoice(DIA_Cedric_TEACH,B_BuildLearnString(PRINT_Learn1HBasic1,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 1)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HBasic2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 2)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 3)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 4)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HMaster,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HMaster);
+	};
+
+};
+
+func void DIA_Cedric_Teach_1HMaster()
+{
+	TeachFightTechnique(self,other, NPC_TALENT_1H, 5);
+	Info_ClearChoices(DIA_Cedric_Teach);
+	Info_AddChoice(DIA_Cedric_Teach,Dialog_Back,DIA_Cedric_Teach_Back);
+
+	if(GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 0)
+	{
+		Info_AddChoice(DIA_Cedric_TEACH,B_BuildLearnString(PRINT_Learn1HBasic1,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HBasic1);
+	}
+	else if(Kapitel >= 2 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 1)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HBasic2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HBasic2);
+	}
+	else if(Kapitel >= 3 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 2)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HAdvanced1,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HAdvanced1);
+	}
+	else if(Kapitel >= 4 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 3)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HAdvanced2,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HAdvanced2);
+	}
+	else if(Kapitel >= 5 && GetHeroFightTechniqueLevel(NPC_TALENT_1H) == 4)
+	{
+		Info_AddChoice(DIA_Cedric_Teach,B_BuildLearnString(PRINT_Learn1HMaster,B_GetLearnCostTalent(other,NPC_TALENT_1H) * 5),DIA_Cedric_Teach_1HMaster);
+	};
+
 };
 
 func void DIA_Cedric_Teach_Back()
@@ -189,4 +351,3 @@ func void DIA_Cedric_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Cedric_PICKPOCKET);
 };
-

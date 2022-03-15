@@ -93,7 +93,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg, var int 
 
 
 
-
+	var int DamageRoll;	DamageRoll = r_Max(99)+1;
 
 	if (Npc_HasReadiedMeleeWeapon(attackerNpc))
 	{
@@ -108,16 +108,14 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg, var int 
 		else if tmpItm.damagetype == DAM_BLUNT 	{ armRes = victimNpc.protection[PROT_BLUNT]; }
 		else if tmpItm.damagetype == DAM_POINT 	{ armRes = victimNpc.protection[PROT_POINT]; };
 
-		var int DamageRoll;	DamageRoll = r_Max(99)+1;
-
 		if (Weapon_Attack_Count_Damage.flags & ITEM_2HD_AXE || Weapon_Attack_Count_Damage.flags & ITEM_2HD_SWD)
 		{
-			dmg = (wpnDmg + attackerNpc.attribute[ATR_STRENGTH]*95/100 + attackerNpc.attribute[ATR_DEXTERITY]*5/100);
-			DamageRoll += attackerNpc.attribute[ATR_DEXTERITY]/20;
+			dmg = (wpnDmg + attackerNpc.attribute[ATR_STRENGTH]);
+			DamageRoll += attackerNpc.attribute[ATR_DEXTERITY]/10;
 		}
 		else ///Einhand
 		{
-			dmg = (wpnDmg + attackerNpc.attribute[ATR_STRENGTH]*9/10 + attackerNpc.attribute[ATR_DEXTERITY]*1/10);
+			dmg = (wpnDmg + attackerNpc.attribute[ATR_STRENGTH]);
 			DamageRoll += attackerNpc.attribute[ATR_DEXTERITY]/10;
 		};
 
@@ -125,32 +123,87 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg, var int 
 
 		if (Weapon_Attack_Count_Damage.flags & ITEM_2HD_AXE || Weapon_Attack_Count_Damage.flags & ITEM_2HD_SWD)
 		{
-			if(DamageRoll < (100 - attackerNpc.HitChance[NPC_TALENT_2H])/2)
+			if(DamageRoll > (50 + attackerNpc.HitChance[NPC_TALENT_2H]/2))
 			{
 				dmg = dmg/10;
 			}
-			else if(DamageRoll <= (100 - attackerNpc.HitChance[NPC_TALENT_2H]))
+			else if(DamageRoll > (attackerNpc.HitChance[NPC_TALENT_2H]))
 			{
 				dmg = dmg/5;
 			}
-			else if(DamageRoll < (100 - attackerNpc.HitChance[NPC_TALENT_2H]/2))
+			else if(DamageRoll > (attackerNpc.HitChance[NPC_TALENT_2H]/2))
 			{
 				dmg = dmg/2;
+
+				if(dmg >= 1 && dmg < 5)
+				{
+						dmg = 5;
+				};
+
+			}
+			else
+			{
+				if(dmg >= 1 && dmg < 10)
+				{
+						dmg = 10;
+				};
 			};
 		}
 		else
 		{
-			if(DamageRoll < (100 - attackerNpc.HitChance[NPC_TALENT_1H])/2)
+			if(DamageRoll > (50 + attackerNpc.HitChance[NPC_TALENT_1H])/2)
 			{
 				dmg = dmg/10;
 			}
-			else if(DamageRoll <= (100 - attackerNpc.HitChance[NPC_TALENT_1H]))
+			else if(DamageRoll > (attackerNpc.HitChance[NPC_TALENT_1H]))
 			{
 				dmg = dmg/5;
 			}
-			else if(DamageRoll < (100 - attackerNpc.HitChance[NPC_TALENT_1H]/2))
+			else if(DamageRoll > (attackerNpc.HitChance[NPC_TALENT_1H]/2))
 			{
 				dmg = dmg/2;
+
+				if(dmg >= 1 && dmg < 5)
+				{
+						dmg = 5;
+				};
+			}
+			else
+			{
+				if(dmg >= 1 && dmg < 10)
+				{
+						dmg = 10;
+				};
+			};
+		};
+
+	}
+	else if(attackerNpc.guild > GIL_SEPERATOR_HUM)
+	{
+
+		if(DamageRoll > 75)
+		{
+			dmg = dmg/10;
+		}
+		else if(DamageRoll > 50)
+		{
+			dmg = dmg/5;
+		}
+		else if(DamageRoll > 25)
+		{
+			dmg = dmg/2;
+
+			if(dmg >= 1 && dmg < 5)
+			{
+					dmg = 5;
+			};
+
+		}
+		else
+		{
+			if(dmg >= 1 && dmg < 10)
+			{
+					dmg = 10;
 			};
 		};
 

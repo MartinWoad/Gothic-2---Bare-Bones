@@ -18,7 +18,7 @@ prototype Mst_Skeleton_Lord(C_Npc)
 	protection[PROT_FLY] = 0;
 	protection[PROT_MAGIC] = 0;
 	damagetype = DAM_EDGE;
-	fight_tactic = FAI_HUMAN_STRONG;
+	fight_tactic = FAI_HUMAN_MASTER;
 	EquipItem(self,ItMw_Zweihaender2);
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
