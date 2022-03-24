@@ -62,6 +62,13 @@ func void dia_franco_pickpocket_doit()
 		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
 		self.attribute[ATR_HITPOINTS_MAX] = 196;
 		self.attribute[ATR_HITPOINTS] = 196;
+
+		if(hero.attribute[ATR_DEXTERITY] - ATTRIBUTEFROMEQUIPMENT[ATR_DEXTERITY] < attributepotential[ATR_DEXTERITY])
+		{
+			heroDexterityExp += 600;
+			CheckWeaponLevelUp();
+		};
+
 	}
 	else
 	{

@@ -1,18 +1,18 @@
 //#################################################################
 //
-//  32 bit IEEE 754 floats (kurz: Gleitkommazahlen) für Daedalus:
-//      Ursprüngliches Skript vom 26.11.2008:
+//  32 bit IEEE 754 floats (kurz: Gleitkommazahlen) fï¿½r Daedalus:
+//      Ursprï¿½ngliches Skript vom 26.11.2008:
 //        http://forum.worldofplayers.de/forum/threads/500080-Instrumentarium-Floats
 //
-//  Diese Version behält das ursprüngliche Interface bei,
-//  nutzt aber tatsächliche Floating-Point Instruktionen.
+//  Diese Version behï¿½lt das ursprï¿½ngliche Interface bei,
+//  nutzt aber tatsï¿½chliche Floating-Point Instruktionen.
 //  Diese Version ist daher schneller und genauer.
 //
-//  Benötigt wird Ikarus.
+//  Benï¿½tigt wird Ikarus.
 //
 //  Fertigstellung am 6.4.2012:
 //      - Umstellung auf Ikarus
-//      - Ergänzung von castFromIntf und castToIntf
+//      - Ergï¿½nzung von castFromIntf und castToIntf
 //
 //#################################################################
 
@@ -21,28 +21,28 @@
 //####################################
 
 //*********************
-//  Grundsätzliches
+//  Grundsï¿½tzliches
 //*********************
 
-Die Funktionen in diesem Skript sind in der Lage Floating Point Operationen auszuführen. Als Behältnis für die Gleitkommadaten dient hierbei ein gewöhnlicher 32-bit Integer.
-Hintergrund ein syntaktische Unterscheidung zwischen Integern und Floats nicht mehr vorzunehmen ist, dass syntaktische Floats wesentlichen Einschränkung seitens des Gothic Parsers unterworfen sind.
-Es ist daher von Nutzerseite darauf zu achten, Floats und integer trotz des formal gleichen Datentyps penibel zu unterscheiden. Wenn eine Zahl in Floatdarstellung mit einer Zahl in Integerdarstellung verrechnet wird, oder Funktionen auf integer angewendet werden, die eigentlich für floats gedacht sind oder umgekehrt kommt Blödsinn heraus.
+Die Funktionen in diesem Skript sind in der Lage Floating Point Operationen auszufï¿½hren. Als Behï¿½ltnis fï¿½r die Gleitkommadaten dient hierbei ein gewï¿½hnlicher 32-bit Integer.
+Hintergrund ein syntaktische Unterscheidung zwischen Integern und Floats nicht mehr vorzunehmen ist, dass syntaktische Floats wesentlichen Einschrï¿½nkung seitens des Gothic Parsers unterworfen sind.
+Es ist daher von Nutzerseite darauf zu achten, Floats und integer trotz des formal gleichen Datentyps penibel zu unterscheiden. Wenn eine Zahl in Floatdarstellung mit einer Zahl in Integerdarstellung verrechnet wird, oder Funktionen auf integer angewendet werden, die eigentlich fï¿½r floats gedacht sind oder umgekehrt kommt Blï¿½dsinn heraus.
 
 //************************************
 //  Das Instrumentarium
 //************************************
 
-Um mit floats rechnen zu können, müssen diese zunächst erzeugt werden. Dazu gibt es die Funktionen mkf und fracf, die eine Integer Ganzzahl bzw. einen Bruch mit ganzzahligem Zähler und Nenner in einen float umwandeln.
-Floats können untereinander addiert, subtrahiert, multipliziert und dividiert werden. Eine Wurzelfunktion ist ebenfalls definiert.
-Um den Wert der floats intepretieren zu können, sind die Ordnungsrelationen >=, >, <, <= mit den Funktionen ge, g, l, le gegeben.
-Ferner können Floats mit der truncf und roundf Funktion zurück in einen Integer konvertiert werden.
+Um mit floats rechnen zu kï¿½nnen, mï¿½ssen diese zunï¿½chst erzeugt werden. Dazu gibt es die Funktionen mkf und fracf, die eine Integer Ganzzahl bzw. einen Bruch mit ganzzahligem Zï¿½hler und Nenner in einen float umwandeln.
+Floats kï¿½nnen untereinander addiert, subtrahiert, multipliziert und dividiert werden. Eine Wurzelfunktion ist ebenfalls definiert.
+Um den Wert der floats intepretieren zu kï¿½nnen, sind die Ordnungsrelationen >=, >, <, <= mit den Funktionen ge, g, l, le gegeben.
+Ferner kï¿½nnen Floats mit der truncf und roundf Funktion zurï¿½ck in einen Integer konvertiert werden.
 
 //************************************
-//  Die Funktionen im Überblick:
+//  Die Funktionen im ï¿½berblick:
 //************************************
 
-"func float" und "var float" wie hier angegeben gibt es nicht wirklich (für Gothic sind alles integer). Diese Notation soll hier nur zur Veranschaulichung dienen.
-Um sich die Funktionsnamen merken zu können hilft vielleicht folgende Liste, die die Abkürzungen erklärt:
+"func float" und "var float" wie hier angegeben gibt es nicht wirklich (fï¿½r Gothic sind alles integer). Diese Notation soll hier nur zur Veranschaulichung dienen.
+Um sich die Funktionsnamen merken zu kï¿½nnen hilft vielleicht folgende Liste, die die Abkï¿½rzungen erklï¿½rt:
 
 mkf    = make float
 truncf = truncate float
@@ -63,46 +63,46 @@ printf = print float
 
 **************** Umwandlung *******************
 func float mkf (var int x) //Erzeugt die Floatdarstellung aus einer Ganzzahl.
-func int truncf (var float x) //reduziert einen float auf seinen Ganzzahlanteil, wobei alle Nachkommastellen verworfen werden. Der Ergebnistyp ist Integer. (-1.5 würde zu -1.0, nicht zu -2)
-func int roundf (var float x) //reduziert einen float auf die nächstgelegende Ganzzahl. Der Ergebnistyp ist Integer.
+func int truncf (var float x) //reduziert einen float auf seinen Ganzzahlanteil, wobei alle Nachkommastellen verworfen werden. Der Ergebnistyp ist Integer. (-1.5 wï¿½rde zu -1.0, nicht zu -2)
+func int roundf (var float x) //reduziert einen float auf die nï¿½chstgelegende Ganzzahl. Der Ergebnistyp ist Integer.
 
 **************** Addition *********************
-func float addf (var float x, var float y) //addiert x und y und gibt das Ergebnis zurück.
-func float subf (var float x, var float y) //subtrahiert y von x und gibt das Ergebnis zurück.
-func float negf (var float x) //Gibt das additive Inverse von x (also -x) zurück.
+func float addf (var float x, var float y) //addiert x und y und gibt das Ergebnis zurï¿½ck.
+func float subf (var float x, var float y) //subtrahiert y von x und gibt das Ergebnis zurï¿½ck.
+func float negf (var float x) //Gibt das additive Inverse von x (also -x) zurï¿½ck.
 
 **************** Multiplikation ***************
-func float mulf (var float x, var float y) //multipliziert x und y miteinander und gibt das Ergebnis zurück.
-func float divf (var float x, var float y) //dividiert x durch y und gibt das Ergebnis zurück.
-func float invf (var float x) //Gibt das multiplikative Inverse des floats x, also 1/x zurück.
-func float fracf (var int p, var int p) //Gibt den Bruch p/q als float zurück. Äquivalent zu divf(mkf(p), mkf(q))
+func float mulf (var float x, var float y) //multipliziert x und y miteinander und gibt das Ergebnis zurï¿½ck.
+func float divf (var float x, var float y) //dividiert x durch y und gibt das Ergebnis zurï¿½ck.
+func float invf (var float x) //Gibt das multiplikative Inverse des floats x, also 1/x zurï¿½ck.
+func float fracf (var int p, var int p) //Gibt den Bruch p/q als float zurï¿½ck. ï¿½quivalent zu divf(mkf(p), mkf(q))
 
 **************** Ordnungsrelationen ***********
-func int gf  (var float x, var float y) //gibt für x >  y TRUE zurück, sonst FALSE
-func int gef (var float x, var float y) //gibt für x >= y TRUE zurück, sonst FALSE
-func int lef (var float x, var float y) //gibt für x <= y TRUE zurück, sonst FALSE
-func int lf  (var float x, var float y) //gibt für x <  y TRUE zurück, sonst FALSE
+func int gf  (var float x, var float y) //gibt fï¿½r x >  y TRUE zurï¿½ck, sonst FALSE
+func int gef (var float x, var float y) //gibt fï¿½r x >= y TRUE zurï¿½ck, sonst FALSE
+func int lef (var float x, var float y) //gibt fï¿½r x <= y TRUE zurï¿½ck, sonst FALSE
+func int lf  (var float x, var float y) //gibt fï¿½r x <  y TRUE zurï¿½ck, sonst FALSE
 
 **************** Verschiedene *****************
-func float sqrf  (var float x) //gibt das Quadrat des floats x zurück.
-func float sqrtf (var float x) //gibt die Wurzel des floats x zurück.
+func float sqrf  (var float x) //gibt das Quadrat des floats x zurï¿½ck.
+func float sqrtf (var float x) //gibt die Wurzel des floats x zurï¿½ck.
 func string toStringf(var float x) //Erzeugt eine Stringdarstellung von x, z.B. "12.345"
 
 **************** Casts ************************
-Daedalus kennt seine eigenen, sehr eingeschränkten "var float".
+Daedalus kennt seine eigenen, sehr eingeschrï¿½nkten "var float".
 Um floats im Sinne dieses Skripts in Floats im Sinne von Daedalus umzuwandeln und umgekehrt gibt es folgende zwei Funktionen.
 
 func float castFromIntf(var int   f) //Wandle Float im Sinne dieses Pakets in Daedalus Float um.
 func int   castToIntf  (var float f) //Wandle Daedalus Float in einen Float im Sinne dieses Pakets um.
 
-Beide Funktionen machen letzendlich überhaupt nichts. Sie "schummeln" lediglich eine Änderung des Datentyps am Parser vorbei.
-Parameter und Rückgabewert von beiden Funktionen sind in Wirklichkeit in beiden Fällen vom Typ float.
+Beide Funktionen machen letzendlich ï¿½berhaupt nichts. Sie "schummeln" lediglich eine ï¿½nderung des Datentyps am Parser vorbei.
+Parameter und Rï¿½ckgabewert von beiden Funktionen sind in Wirklichkeit in beiden Fï¿½llen vom Typ float.
 
 //************************************
 //  Sonstiges
 //************************************
 
-Es sind fünf float Konstanten definiert, die genutzt werden können, ohne dass sie erst berechnet/erzeugt werden müssen:
+Es sind fï¿½nf float Konstanten definiert, die genutzt werden kï¿½nnen, ohne dass sie erst berechnet/erzeugt werden mï¿½ssen:
 
 FLOATNULL = 0.0
 FLOATEINS = 1.0
@@ -114,7 +114,7 @@ E = 2.7182...
 //  Beispiele
 //************************************
 
-Folgende Funktion soll das Volumen eines Zylinders in cm³ berechnen und gerundet zurückgeben.
+Folgende Funktion soll das Volumen eines Zylinders in cmï¿½ berechnen und gerundet zurï¿½ckgeben.
 Hierbei sind die Parameter als Ganzzahlen gegeben (Einheit cm).
 
 func int Zylindervolumen (var int radius, var int hoehe) {
@@ -122,7 +122,7 @@ func int Zylindervolumen (var int radius, var int hoehe) {
     radiusf = mkf (radius);
     hoehef = mkf (hoehe);
 
-    //Volumen = r² * PI * h
+    //Volumen = rï¿½ * PI * h
 
     var int ergebnisf;
     ergebnisf = mulf (radiusf, radiusf);
@@ -140,7 +140,7 @@ func void antwort () {
     foo = mulf (mkf (1337), PI);
     printf (divf (foo, mkf (100)));
 
-    //(1337*PI)/100 ist verblüffend genau 42. ;-)
+    //(1337*PI)/100 ist verblï¿½ffend genau 42. ;-)
 };
 
 Folgende Funktion macht ein paar Vergleiche. Es wird in keinem Fall "FEHLER" ausgegeben.
@@ -169,17 +169,17 @@ func void floattest()
 };
 
 //************************************
-//  Beschränkungen und Fallen
+//  Beschrï¿½nkungen und Fallen
 //************************************
 
 ***********  Nutzerfehler ************
-Es sollten unter keinen Umständen die Operatoren +, -, * oder / auf floats angewendet werden. Sie haben dort keine sinnvolle Anwendung. Bestensfalls kommt einfach nur Blödsinn heraus. Wie oben beschrieben sind addf, subf, mulf und divf anzuwenden.
-Wer versteht wie ein float intern aufgebaut ist, kann zum Beispiel innerhalb der positiven Zahlen die Ordnungsrealtionen (>, <, <= >=) benutzen. Wer sich nicht sicher ist, sollte auf die gegebenen Funktionen zurückgreifen.
-Natürlich sind umgekehrt die Floatfunktionen für Integer unbrauchbar. Der Ausdruck sqrtf(4) ist nicht 2 sondern einfach nur falsch, da 4 ein Integer ist! Wer die Wurzel von 4 ziehen will und als Integer haben möchte kann das so tun: roundf(sqrtf(mkf(4))). Hier kommt 2 heraus.
+Es sollten unter keinen Umstï¿½nden die Operatoren +, -, * oder / auf floats angewendet werden. Sie haben dort keine sinnvolle Anwendung. Bestensfalls kommt einfach nur Blï¿½dsinn heraus. Wie oben beschrieben sind addf, subf, mulf und divf anzuwenden.
+Wer versteht wie ein float intern aufgebaut ist, kann zum Beispiel innerhalb der positiven Zahlen die Ordnungsrealtionen (>, <, <= >=) benutzen. Wer sich nicht sicher ist, sollte auf die gegebenen Funktionen zurï¿½ckgreifen.
+Natï¿½rlich sind umgekehrt die Floatfunktionen fï¿½r Integer unbrauchbar. Der Ausdruck sqrtf(4) ist nicht 2 sondern einfach nur falsch, da 4 ein Integer ist! Wer die Wurzel von 4 ziehen will und als Integer haben mï¿½chte kann das so tun: roundf(sqrtf(mkf(4))). Hier kommt 2 heraus.
 
 *********** Float-Fehler *************
-Die Genauigkeit der floats ist begrenzt, ab etwa 7 Dezimalstellen ist mit Rundungsfehlern zu rechnen. Dafür können sehr große und sehr kleine Zahlen dargestellt werden.
-Es gelten die gewöhnlichen Einschränkungen und Empfehlungen für floats. Zum Beispiel ist es selten sinnvoll floats auf Gleichheit zu überprüfen, da es durch Rundungsfehler wahrscheinlich ist, dass auch zwei floats, die eigentlich gleich sein müssten kleine Abweichungen zueinander aufweisen. Es sollte in einem solchen Fall besser geprüft werden, ob die Differenz der beiden floats einen (im Verhältnis zur Problemstellung) kleinen Wert unterschreitet.
+Die Genauigkeit der floats ist begrenzt, ab etwa 7 Dezimalstellen ist mit Rundungsfehlern zu rechnen. Dafï¿½r kï¿½nnen sehr groï¿½e und sehr kleine Zahlen dargestellt werden.
+Es gelten die gewï¿½hnlichen Einschrï¿½nkungen und Empfehlungen fï¿½r floats. Zum Beispiel ist es selten sinnvoll floats auf Gleichheit zu ï¿½berprï¿½fen, da es durch Rundungsfehler wahrscheinlich ist, dass auch zwei floats, die eigentlich gleich sein mï¿½ssten kleine Abweichungen zueinander aufweisen. Es sollte in einem solchen Fall besser geprï¿½ft werden, ob die Differenz der beiden floats einen (im Verhï¿½ltnis zur Problemstellung) kleinen Wert unterschreitet.
 
 */
 
@@ -289,7 +289,7 @@ func int sqrf(var int f) {
 func int sqrtf(var int f) {
     const int sqrtf_G1 = 7757593; //0x765F19
     const int sqrtf_G2 = 8123917; //0x7BF60D
-    
+
     const int code = 0;
     if (!code) {
         code = _FLT_Build_Func(MEMINT_SwitchG1G2(sqrtf_G1, sqrtf_G2),
@@ -302,7 +302,7 @@ func int sqrtf(var int f) {
 
 //************************************
 //  Es lassen sich vier kleine
-//  nützliche Hilfsfunktionen
+//  nï¿½tzliche Hilfsfunktionen
 //  definieren:
 //************************************
 
@@ -389,8 +389,7 @@ func string toStringf(var int x) {
     return FloatToString(f);
 };
 
-/* schlechter Name, aus Kompatibilitätsgründen trotzdem drin. */
+/* schlechter Name, aus Kompatibilitï¿½tsgrï¿½nden trotzdem drin. */
 func void printf(var int x) {
     Print(toStringf(x));
 };
-

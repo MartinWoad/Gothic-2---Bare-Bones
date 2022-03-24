@@ -208,6 +208,13 @@ func void DIA_Bromor_PICKPOCKET_DoIt()
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
 		//B_GivePlayerXP(XP_Ambient);
 		Info_ClearChoices(DIA_Bromor_PICKPOCKET);
+
+		if(hero.attribute[ATR_DEXTERITY] - ATTRIBUTEFROMEQUIPMENT[ATR_DEXTERITY] < attributepotential[ATR_DEXTERITY])
+		{
+			heroDexterityExp += 500;
+			CheckWeaponLevelUp();
+		};
+
 	}
 	else
 	{

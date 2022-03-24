@@ -8,6 +8,6 @@ func void PrintPlus(var string txt)
 	zufallTxt = IntToString(zufall);
 	ausgabe = ConcatStrings(txt," ");
 	ausgabe = ConcatStrings(ausgabe,zufallTxt);
-	Print(ausgabe);
+	PrintS(ausgabe);
 };
 

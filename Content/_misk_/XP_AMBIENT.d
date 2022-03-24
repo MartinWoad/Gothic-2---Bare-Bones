@@ -220,6 +220,15 @@ var int heroBowExp_NextLevel;
 var int heroCrossbowExp;
 var int heroCrossbowExp_NextLevel;
 
+var int heroStrengthExp;
+var int heroStrengthExp_NextLevel;
+
+var int heroDexterityExp;
+var int heroDexterityExp_NextLevel;
+
+var int heroPowerExp;
+var int heroPowerExp_NextLevel;
+
 var int heroKnows1hBasic1;
 var int heroKnows1hBasic2;
 var int heroKnows1hAdvanced1;

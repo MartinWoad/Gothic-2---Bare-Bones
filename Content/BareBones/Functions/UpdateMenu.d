@@ -212,14 +212,27 @@ func void Update_Character_Menu() {
     };
 
     var string strength;
-    strength = ConcatStrings(IntToString(hero.attribute[ATR_STRENGTH] - ATTRIBUTEBONUS[ATR_STRENGTH] - ATTRIBUTEFROMEQUIPMENT[ATR_STRENGTH]), "/");
-    strength = ConcatStrings(strength, IntToString(hero.attribute[ATR_STRENGTH]));
+    //strength = ConcatStrings(IntToString(hero.attribute[ATR_STRENGTH] - ATTRIBUTEBONUS[ATR_STRENGTH] - ATTRIBUTEFROMEQUIPMENT[ATR_STRENGTH]), "/");
+    //strength = ConcatStrings(strength, IntToString(hero.attribute[ATR_STRENGTH]));
+    strength = ConcatStrings(IntToString(hero.attribute[ATR_STRENGTH]), "/");
+    strength = ConcatStrings(strength, IntToString(attributepotential[ATR_STRENGTH]));
 
     var string dexterity;
-    dexterity = ConcatStrings(IntToString(hero.attribute[ATR_DEXTERITY] - ATTRIBUTEBONUS[ATR_DEXTERITY] - ATTRIBUTEFROMEQUIPMENT[ATR_DEXTERITY]), "/");
-    dexterity = ConcatStrings(dexterity, IntToString(hero.attribute[ATR_DEXTERITY]));
+    //dexterity = ConcatStrings(IntToString(hero.attribute[ATR_DEXTERITY] - ATTRIBUTEBONUS[ATR_DEXTERITY] - ATTRIBUTEFROMEQUIPMENT[ATR_DEXTERITY]), "/");
+    //dexterity = ConcatStrings(dexterity, IntToString(hero.attribute[ATR_DEXTERITY]));
+    dexterity = ConcatStrings(IntToString(hero.attribute[ATR_DEXTERITY]), "/");
+    dexterity = ConcatStrings(dexterity, IntToString(attributepotential[ATR_DEXTERITY]));
+
+    var string power;
+    //dexterity = ConcatStrings(IntToString(hero.attribute[ATR_DEXTERITY] - ATTRIBUTEBONUS[ATR_DEXTERITY] - ATTRIBUTEFROMEQUIPMENT[ATR_DEXTERITY]), "/");
+    //dexterity = ConcatStrings(dexterity, IntToString(hero.attribute[ATR_DEXTERITY]));
+    power = ConcatStrings(IntToString(hero.attribute[ATR_MANA_MAX]), "/");
+    power = ConcatStrings(power, IntToString(attributepotential[ATR_MANA_MAX]));
+
+
 
     Update_Menu_Item("MENU_ITEM_ATTRIBUTE_1_DETAILED", strength);
     Update_Menu_Item("MENU_ITEM_ATTRIBUTE_2_DETAILED", dexterity);
+    Update_Menu_Item("MENU_ITEM_ATTRIBUTE_3_DETAILED", power);
 
 };

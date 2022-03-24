@@ -10,19 +10,19 @@ func void startup_newworld_part_dragon_island_01()
 	Wld_InsertItem(ItWr_ZugBruecke_MIS,"FP_ITEM_DI_ENTER_09");
 	Wld_InsertNpc(OrcWarrior_Rest,"FP_ROAM_DI_ORK_01");
 	Wld_InsertNpc(OrcWarrior_Rest,"FP_ROAM_DI_ORK_02");
-	Wld_InsertNpc(Warg,"FP_ROAM_DI_ORK_03");
+	Wld_InsertNpc(OrcBiter,"FP_ROAM_DI_ORK_03");
 	Wld_InsertNpc(OrcElite_Rest,"FP_ROAM_DI_ORK_04");
 	Wld_InsertNpc(OrcShaman_Sit,"FP_ROAM_DI_ORK_05");
-	Wld_InsertNpc(Warg,"FP_ROAM_DI_ORK_06");
+	Wld_InsertNpc(OrcBiter,"FP_ROAM_DI_ORK_06");
 	Wld_InsertNpc(OrcWarrior_Rest,"FP_ROAM_DI_ORK_07");
 	Wld_InsertNpc(OrcElite_Rest,"FP_ROAM_DI_ORK_08");
 	Wld_InsertNpc(OrcWarrior_Rest,"FP_ROAM_DI_ORK_09");
-	Wld_InsertNpc(Warg,"FP_ROAM_DI_ORK_11");
+	Wld_InsertNpc(OrcBiter,"FP_ROAM_DI_ORK_11");
 	Wld_InsertNpc(OrcElite_Rest,"FP_ROAM_DI_ORK_14");
 	Wld_InsertNpc(OrcShaman_Sit,"FP_ROAM_DI_ORK_15");
 	Wld_InsertNpc(OrcElite_Rest,"FP_ROAM_DI_ORK_16");
-	Wld_InsertNpc(Warg,"FP_ROAM_DI_ORK_17");
-	Wld_InsertNpc(Warg,"FP_ROAM_DI_ORK_18");
+	Wld_InsertNpc(OrcBiter,"FP_ROAM_DI_ORK_17");
+	Wld_InsertNpc(OrcBiter,"FP_ROAM_DI_ORK_18");
 	Wld_InsertNpc(OrcWarrior_Rest,"FP_ROAM_DI_ORK_19");
 	Wld_InsertNpc(OrcShaman_Sit,"FP_ROAM_DI_ORK_20");
 	Wld_InsertNpc(OrcElite_Rest,"FP_ROAM_DI_ORK_21");
@@ -34,7 +34,7 @@ func void startup_newworld_part_dragon_island_01()
 	Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_DI_ORK_33");
 	Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_DI_ORK_34");
 	Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_DI_ORK_35");
-	Wld_InsertNpc(Warg,"FP_ROAM_DI_ORK_12");
+	Wld_InsertNpc(OrcBiter,"FP_ROAM_DI_ORK_12");
 	Wld_InsertNpc(OrcShaman_Sit,"FP_ROAM_DI_ORK_13");
 	Wld_InsertNpc(OrkElite_AntiPaladinOrkOberst_DI,"DI_ORKOBERST");
 	Wld_InsertNpc(OrcElite_DIOberst1_Rest,"FP_ROAM_DI_ORK_24");
@@ -253,4 +253,3 @@ func void init_dragonisland()
 	};
 	B_InitNpcGlobals();
 };
-

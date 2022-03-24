@@ -5,8 +5,8 @@ prototype MST_DEFAULT_SWAMPDRONE(C_NPC)
 	guild = GIL_BLOODFLY;
 	aivar[AIV_MM_REAL_ID] = ID_SWAMPDRONE;
 	level = 10;
-	attribute[ATR_STRENGTH] = 50;
-	attribute[ATR_DEXTERITY] = 50;
+	attribute[ATR_STRENGTH] = 55;
+	attribute[ATR_DEXTERITY] = 55;
 	attribute[ATR_HITPOINTS_MAX] = 100;
 	attribute[ATR_HITPOINTS] = 100;
 	attribute[ATR_MANA_MAX] = 0;

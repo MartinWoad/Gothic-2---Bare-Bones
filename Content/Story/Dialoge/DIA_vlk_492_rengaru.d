@@ -334,7 +334,8 @@ func void DIA_Rengaru_Zeichen_Info()
 	{
 		AI_Output(self,other,"DIA_Rengaru_Zeichen_07_02");	//Te psubraty nieŸle pilnuj¹ swojego towaru. Dam ci jednak wskazówkê.
 		AI_Output(self,other,"DIA_Rengaru_Zeichen_07_03");	//Kiedy bêdziesz ³apa³ przedmiot, który chcesz ukraœæ, jedn¹ rêk¹, machaj drug¹. To ich rozprasza.
-		B_RaiseAttribute(other,ATR_DEXTERITY,1,FALSE,FALSE);
+		attributepotential[ATR_DEXTERITY] += 1;
+		PrintS(PRINT_LearnDEX1);
+		//B_RaiseAttribute(other,ATR_DEXTERITY,1,FALSE,FALSE);
 	};
 };
-

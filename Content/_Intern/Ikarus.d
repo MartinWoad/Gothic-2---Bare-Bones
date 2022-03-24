@@ -364,7 +364,7 @@ func string MEM_ReadString (var int address) {
 func void MEMINT_OldWriteInt (var int address, var int val) {
     /* other = address - MEM_NpcID_Offset */
     MEM_Helper.enemy = address - MEM_NpcID_Offset;
-    /* res wird nicht gebraucht, müllt aber sonst den Stack zu! */
+    /* res wird nicht gebraucht, mï¿½llt aber sonst den Stack zu! */
     var int res; res = Npc_GetTarget (MEM_Helper);
 
     /* *(other + oCNpc_idx_offset) = val */
@@ -372,9 +372,9 @@ func void MEMINT_OldWriteInt (var int address, var int val) {
 };
 
 func void MEMINT_PrepareAssignments() {
-    /* sorgt dafür, dass MEMINT_Assign und MEMINT_StrAssign
+    /* sorgt dafï¿½r, dass MEMINT_Assign und MEMINT_StrAssign
      * genau die Funktion von zPAR_OP_IS bzw. zPAR_TOK_ASSIGNSTR
-     * erfüllen.
+     * erfï¿½llen.
      * Diese Funktion wird nach Start von Gothic genau einmal aufgerufen. */
 
     var int symTab; var int MEMINT_Assign_Sym; var int MEMINT_Assign_StackPos; var int stackStart;
@@ -390,13 +390,13 @@ func void MEMINT_PrepareAssignments() {
     var C_NPC othBak;
     othBak = Hlp_GetNpc (other);
 
-    //Code überschreiben. Vorsicht: Der erste Aufruf soll auch klappen!
+    //Code ï¿½berschreiben. Vorsicht: Der erste Aufruf soll auch klappen!
     MEMINT_OldWriteInt (stackStart + MEMINT_Assign_StackPos     , (zPAR_OP_IS          << 0) | (zPAR_TOK_RET       << 8) | (zPAR_TOK_RET << 16) | (zPAR_TOK_RET << 24));
     MEMINT_OldWriteInt (stackStart + MEMINT_Assign_StackPos +  4, (zPAR_TOK_RET        << 0) | (zPAR_OP_IS         << 8) | (zPAR_TOK_RET << 16) | (zPAR_TOK_RET << 24));
     MEMINT_OldWriteInt (stackStart + MEMINT_Assign_StackPos +  8, (zPAR_TOK_ASSIGNSTR  << 0) | (zPAR_TOK_RET       << 8) | (zPAR_TOK_RET << 16) | (zPAR_TOK_RET << 24));
     MEMINT_OldWriteInt (stackStart + MEMINT_Assign_StackPos + 12, (zPAR_TOK_RET        << 0) | (zPAR_TOK_ASSIGNSTR << 8) | (zPAR_TOK_RET << 16) | (zPAR_TOK_RET << 24));
 
-    //alte Lesemethode muss aufräumen
+    //alte Lesemethode muss aufrï¿½umen
     MEM_Helper.enemy = 0;
     other = Hlp_GetNpc (othBak);
 };
@@ -571,7 +571,7 @@ func void MEM_AssignInst (var int inst, var int ptr) {
     };
 
     if (ptr == 0 && !MEM_AssignInstSuppressNullWarning) {
-		/* Instanzen die Null sind, will man eigentlich nicht, die machen nur Ärger. */
+		/* Instanzen die Null sind, will man eigentlich nicht, die machen nur ï¿½rger. */
 		MEM_Warn ("MEM_AssignInst: ptr is NULL. Use MEM_AssignInstNull if that's what you want.");
     };
 
@@ -581,7 +581,7 @@ func void MEM_AssignInst (var int inst, var int ptr) {
 };
 
 func void MEM_AssignInstNull (var int inst) {
-    /* Normalerweise will man Instanzen nicht zurück auf 0 setzen.
+    /* Normalerweise will man Instanzen nicht zurï¿½ck auf 0 setzen.
      * Oft wird es ein Fehler sein. Daher wird oben eine Warnung ausgegeben.
      * Um die nicht zu bekommen gibt es hier die explizite Funktion */
     MEM_AssignInstSuppressNullWarning = true;
@@ -597,7 +597,7 @@ func MEMINT_HelperClass MEM_PtrToInst (var int ptr) {
     };
 
     if (ptr == 0 && !MEM_AssignInstSuppressNullWarning ) {
-		/* Instanzen die Null sind, will man eigentlich nicht, die machen nur Ärger. */
+		/* Instanzen die Null sind, will man eigentlich nicht, die machen nur ï¿½rger. */
 		MEM_Warn ("MEM_PtrToInst: ptr is NULL. Use MEM_NullToInst if that's what you want.");
 		MEM_WriteInt(hlpOffsetPtr, 0);
     } else {
@@ -661,18 +661,18 @@ func int MEM_InstToPtr(var int inst) {
     return MEM_ReadInt (symb + zCParSymbol_offset_offset);
 };
 
-//Abwärtskompatibilität
+//Abwï¿½rtskompatibilitï¿½t
 func int MEM_InstGetOffset (var int inst) {
     return MEM_InstToPtr(inst);
 };
 
 //--------------------------------------
-// Unsinnig. Nur zur Abwärtskompatibilität
-// überhaupt noch drin. Google sagt,
+// Unsinnig. Nur zur Abwï¿½rtskompatibilitï¿½t
+// ï¿½berhaupt noch drin. Google sagt,
 // Lehona hat es mal irgendwo benutzt.
 //--------------------------------------
 
-//Lässt currParserSymb auf das Symbol mit Instanz inst zeigen.
+//Lï¿½sst currParserSymb auf das Symbol mit Instanz inst zeigen.
 INSTANCE currParserSymb (zCPar_Symbol);
 func void MEM_SetCurrParserSymb (var int inst) {
     if (inst <= 0) {
@@ -688,7 +688,7 @@ func void MEM_SetCurrParserSymb (var int inst) {
 };
 
 //************************************************
-//   Sprünge
+//   Sprï¿½nge
 //************************************************
 
 /* Es sieht einfach aus, gell? Aber das das funktioniert ist
@@ -1010,11 +1010,11 @@ func int MEM_Alloc (var int amount) {
     /* aus den As Nuller machen, weil ich genullten Speicher will */
     MEM_WriteInt (zstr.ptr, 0);
 
-    /* string mit sich selbst konkatenieren bis groß genug */
+    /* string mit sich selbst konkatenieren bis groï¿½ genug */
     var int size; size = 4;
 
     //VORSICHT! mindestens einmal muss die Schleife durchlaufen werden.
-    //sonst kommt (vermutlich, nicht genau überprüft) statisch die Adrese von der Parserkonstanten "AAAA" zurück!
+    //sonst kommt (vermutlich, nicht genau ï¿½berprï¿½ft) statisch die Adrese von der Parserkonstanten "AAAA" zurï¿½ck!
     //Und das ist ein richtig mieser Fehler.
     var int loopStart; loopStart = MEM_StackPos.position;
     /* do */
@@ -1024,7 +1024,7 @@ func int MEM_Alloc (var int amount) {
 
     /* Speicher ist jetzt reserviert. Dem String die Referenz wieder wegnehmen. */
     /* Vorsicht: ptr in Strings zeigt auf das Byte nach dem ersten Reservierten!
-     * Strings haben Referenzzähler! */
+     * Strings haben Referenzzï¿½hler! */
     var int res; res = zstr.ptr - 1;
 
     zstr.ptr = 0;
@@ -1048,7 +1048,7 @@ func void MEM_Free (var int ptr) {
     };
 
     /* Vorsicht: ptr in Strings zeigt auf das Byte nach dem ersten Reservierten!
-     * Strings haben Referenzzähler! Den Nullen! */
+     * Strings haben Referenzzï¿½hler! Den Nullen! */
 
     MEM_WriteByte(ptr, 0); ptr += 1;
 
@@ -1595,7 +1595,7 @@ func void CALLINT_makecall (var int adr, var int cleanStack) {
 
     /* default: return value is not a float
      * and has default location */
-    CALLINT_RetValIsFloat = false; //fürs nächste mal muss neugeschaltet werden.
+    CALLINT_RetValIsFloat = false; //fï¿½rs nï¿½chste mal muss neugeschaltet werden.
     CALLINT_PutRetValTo   = 0;
 
     /* __cdecl has to clean the stack here: */
@@ -1695,7 +1695,7 @@ func void MEM_CopyWords (var int src, var int dst, var int wordcount) {
     MEM_CopyBytes (src, dst, wordcount * 4);
 };
 
-//alias, Abwärtskompatibilität
+//alias, Abwï¿½rtskompatibilitï¿½t
 func void MEM_Copy (var int src, var int dst, var int wordcount) {
     MEM_CopyBytes (src, dst, wordcount * 4);
 };
@@ -2179,7 +2179,7 @@ func void MEM_ArrayRemoveIndex (var int zCArray_ptr, var int index) {
         return;
     };
 
-    //letzten Wert in die Lücke schieben
+    //letzten Wert in die Lï¿½cke schieben
     array.numInArray -= 1;
     MEM_WriteIntArray (array.array, index, MEM_ReadIntArray (array.array, array.numInArray));
 };
@@ -2355,7 +2355,7 @@ func int STR_GetCharAt (var string str, var int pos) {
 };
 
 //--------------------------------------
-// Länge eines Strings
+// Lï¿½nge eines Strings
 //--------------------------------------
 
 func int STR_Len (var string str) {
@@ -2415,7 +2415,7 @@ func string STR_SubStr (var string str, var int start, var int count) {
         return "";
     };
 
-    /* Hole Adressen von zwei Strings, Source und Destination (für Kopieroperation) */
+    /* Hole Adressen von zwei Strings, Source und Destination (fï¿½r Kopieroperation) */
     var zString zStrSrc;
     var zString zStrDst; var string dstStr; dstStr = "";
 
@@ -2448,7 +2448,7 @@ func string STR_SubStr (var string str, var int start, var int count) {
     return dstStr;
 };
 
-//Von früher:
+//Von frï¿½her:
 func string STR_Prefix (var string str, var int len) {
     return STR_SubStr(str, 0, len);
 };
@@ -2592,9 +2592,9 @@ func int STR_IndexOf(var string str, var string tok) {
 // STR_Split
 //************************************************
 
-/* ursprünglicher Code von Gottfried */
+/* ursprï¿½nglicher Code von Gottfried */
 
-/* STRINT_SplitArray enthält folgendes:
+/* STRINT_SplitArray enthï¿½lt folgendes:
  *
  *    struct TStringInfo {
  *        int length;
@@ -2761,13 +2761,13 @@ func string STR_Lower(var string str) {
 //   Zeiger auf 8KB holen. Jeder darf drauf
 //   schreiben, niemand darf sich drauf
 //   verlassen, dass irgendjemand ihn
-//   unangetastet lässt.
+//   unangetastet lï¿½sst.
 //
-//   Zur Vermeidung temporärer kleiner
+//   Zur Vermeidung temporï¿½rer kleiner
 //   MEM_Alloc anfragen.
 //--------------------------------------
 
-/* Weiß nicht ob ich das mit hätte reinnehmen sollen...
+/* Weiï¿½ nicht ob ich das mit hï¿½tte reinnehmen sollen...
  * Aber warum nicht? */
 
 func int MEMINT_GetBuf_8K_Sub() {
@@ -2838,8 +2838,8 @@ func int MEM_GetSymbolByIndex(var int id) {
 //************************************************
 
 //--------------------------------------
-//  Parameter übergeben,
-//  Rückgabewerte verwenden.
+//  Parameter ï¿½bergeben,
+//  Rï¿½ckgabewerte verwenden.
 //  Nochmal explizit
 //--------------------------------------
 
@@ -2859,7 +2859,7 @@ func void MEM_PushInstParam (var int inst) {
 };
 
 /* wie MEMINT_PushString, aber eigene statische Strings
- * ging nämlich schief, weil STR_Compare oft string auf den Stack
+ * ging nï¿½mlich schief, weil STR_Compare oft string auf den Stack
  * schieben will! */
 func string MEMINT_PushStringParamSub (var string str) {
     var int n; n += 1; if (n == 10) { n = 0; };
@@ -3078,7 +3078,7 @@ func int MEMINT_GetESP() {
 func int MEMINT_IsFrameBoundary(var int ESP) {
     const int retAdr = 0;
     if (!retAdr) {
-        /* Wenn DoStack sich selbst aufruft, steht diese Rücksprungaddresse auf dem Stack: */
+        /* Wenn DoStack sich selbst aufruft, steht diese Rï¿½cksprungaddresse auf dem Stack: */
         retAdr = MEMINT_SwitchG1G2(7246244 /* 0x6E91A4 */, 7939332 /*0x792504 */);
     };
 
@@ -3679,11 +3679,11 @@ func int MEMINT_RepeatRedoCheck(var int loopData) {
 //######################################################
 
 /*
-    Leider werden manche Menüs jedesmal neu erzeugt (vom Script aus),
+    Leider werden manche Menï¿½s jedesmal neu erzeugt (vom Script aus),
     andere dagegen werden beim ersten mal nach dem Spielstart erzeugt und dann behalten.
-    Abhängig davon und von dem, was man eigentlich tun will, kann es nötig sein
-    in den Menüscripten Änderungen einzubringen (indem man
-    in den Variablen dort schreibt) oder es ist nötig sich das Menü
+    Abhï¿½ngig davon und von dem, was man eigentlich tun will, kann es nï¿½tig sein
+    in den Menï¿½scripten ï¿½nderungen einzubringen (indem man
+    in den Variablen dort schreibt) oder es ist nï¿½tig sich das Menï¿½
     als Objekt zu holen und in dem fertigen Objekt selbst herumzuschmieren.
 */
 
@@ -3718,7 +3718,7 @@ func int MEM_GetMenuByString (var string menuName) {
 // MenuItem Zugriff
 //--------------------------------------
 
-/* Selbe Bemerkung wie zu Menüs */
+/* Selbe Bemerkung wie zu Menï¿½s */
 
 func int MEM_GetMenuItemByString (var string menuItemName) {
     var zCArray menuItems;
@@ -3945,7 +3945,7 @@ func int MEM_GetClassDef (var int objPtr) {
         return 0;
     };
 
-    //In obj._vtbl[0] steht die Adresse der Funktion, die ClassDef zurückgibt.
+    //In obj._vtbl[0] steht die Adresse der Funktion, die ClassDef zurï¿½ckgibt.
     //Diese Funktion besteht aus einem einfachen "mov eax" (1 byte), der Adresse (4 byte) und einem "retn" (1 byte).
 
     //obj._vtbl[0] contains the address of a virtual function that returns
@@ -3969,7 +3969,7 @@ func string MEM_GetClassName (var int objPtr) {
 //    Create and delete Vobs
 //************************************************
 
-/* Danke an Gottfried für die Entdeckung von Wld_InsertObject! */
+/* Danke an Gottfried fï¿½r die Entdeckung von Wld_InsertObject! */
 func int MEM_InsertVob(var string vis, var string wp) {
     /* oCMob von Gothic konstruieren lassen */
     const int oCNpc__player_G1 = 9288624; //0x8DBBB0
@@ -4210,18 +4210,18 @@ func void MEM_UntriggerVob (var int vobPtr) {
 //
 //######################################################
 
-//Rückgabewerte
+//Rï¿½ckgabewerte
 const int KEY_UP = 0;
 const int KEY_PRESSED = 1;
 const int KEY_HOLD = 2;
 const int KEY_RELEASED = 3;
 
 //--------------------------------------
-//  Grundlage: Ist die Taste gedrückt?
+//  Grundlage: Ist die Taste gedrï¿½ckt?
 //--------------------------------------
 
-//etwas ungeschickt, dass die Methode, die auf KEY_HOLD prüft KeyPressed heißt... :-(
-//aber jetzt ist es so und ich wills nicht ändern.
+//etwas ungeschickt, dass die Methode, die auf KEY_HOLD prï¿½ft KeyPressed heiï¿½t... :-(
+//aber jetzt ist es so und ich wills nicht ï¿½ndern.
 
 func int MEM_KeyPressed(var int key) {
     return MEM_ReadInt (MEMINT_KeyEvent_Offset + key) & 255;
@@ -4229,11 +4229,11 @@ func int MEM_KeyPressed(var int key) {
 
 //--------------------------------------
 //  Darauf aufbauend: Erkennung
-//  wann das erste mal gedrückt
+//  wann das erste mal gedrï¿½ckt
 //  und wann gehalten
 //--------------------------------------
 
-//Hier merke ich mir die Zustände seit der letzten Abfrage:
+//Hier merke ich mir die Zustï¿½nde seit der letzten Abfrage:
 var int MEMINT_KeyState[1024]; //lieber mal etwas mehr, gibt noch JoystickButtons usw.
 
 func int MEM_KeyState(var int key) {
@@ -4272,28 +4272,28 @@ func int MEM_KeyState(var int key) {
 
     //Neuen State merken
     MEM_WriteInt (adr, keyState);
-    return keyState; //zurückgeben.
+    return keyState; //zurï¿½ckgeben.
 };
 
 //--------------------------------------
-//  Key-Event einfügen
+//  Key-Event einfï¿½gen
 //--------------------------------------
 
-/* Problematisch, vielleicht gibt es irgendwann eine bessere Lösung.
+/* Problematisch, vielleicht gibt es irgendwann eine bessere Lï¿½sung.
  * Aber einiges kann man damit schon machen.
  * Beispiel:
- *   -Inventar öffnen.
+ *   -Inventar ï¿½ffnen.
  *   -Quicksave
- *   -Charaktermenü öffnen
+ *   -Charaktermenï¿½ ï¿½ffnen
  *   -Pause togglen (Marvin Modus)
- *   -Log-Öffnen
- *   -Hauptmenü öffnen (ESC)
+ *   -Log-ï¿½ffnen
+ *   -Hauptmenï¿½ ï¿½ffnen (ESC)
  *   ...
  *
  * An anderen Stellen will die Engine aber, dass der Key "getoggled"
  * wurde, das wird anderweitig verwaltet und ist hiervon nicht betroffen.
  * Daher kann man zum Beispiel das Inventar mit Hilfe dieser Funktion
- * nicht wieder schließen. */
+ * nicht wieder schlieï¿½en. */
 
 func void MEM_InsertKeyEvent(var int key) {
     MEM_ArrayInsert (MEMINT_KeyBuffer_offset, key);
@@ -4319,7 +4319,7 @@ var zCOptionEntry MEMINT_OPT_Entry;
 
 /* Search the current section for an entry */
 func int MEMINT_OPT_FindEntry(var string optname) {
-    //Anzahl Einträge == 0 ausschließen (weil nur do-while schleife möglich, keine while-do).
+    //Anzahl Eintrï¿½ge == 0 ausschlieï¿½en (weil nur do-while schleife mï¿½glich, keine while-do).
     if (!MEMINT_OPT_Section.entryList_numInArray) {
         return FALSE;
     };
@@ -4344,7 +4344,7 @@ func int MEMINT_OPT_FindEntry(var string optname) {
 
 /* Search the current option set for a section */
 func int MEMINT_OPT_FindSection (var string sectname) {
-    //Anzahl Sektionen == 0 ausschließen (weil nur do-while schleife möglich, keine while-do).
+    //Anzahl Sektionen == 0 ausschlieï¿½en (weil nur do-while schleife mï¿½glich, keine while-do).
     if (!MEMINT_OPT_Set.sectionList_numInArray) {
         return FALSE;
     };
@@ -4895,8 +4895,8 @@ func void MEMINT_PrintStackTrace_Implementation() {
      * from here, because I am further down in the stack: */
     ESP += MEMINT_DoStackFrameSize;
 
-    /* sehr ungünstig: Im Stackframe der Funktion steht gar nicht die
-     * aktuelle PopPos, die steht nur im Stackframe desjenigen obendrüber
+    /* sehr ungï¿½nstig: Im Stackframe der Funktion steht gar nicht die
+     * aktuelle PopPos, die steht nur im Stackframe desjenigen obendrï¿½ber
      * wo der sie eben grade pushen wollte: */
     var int passedMySelf; passedMySelf = 0;
     var int mySelf; mySelf = MEM_GetFuncID(MEMINT_PrintStackTrace_Implementation);
@@ -5149,7 +5149,7 @@ func void MEMINT_InitFasterReadWrite() {
         MEMINT_OfTok   (zPAR_TOK_RET);
 
     /* Vorsicht, MEM_ReplaceFunc(MEM_WriteInt, MEM_WriteInt_);
-     * kann so nicht funktionieren, schließlich wird MEM_WriteInt dazu gebraucht */
+     * kann so nicht funktionieren, schlieï¿½lich wird MEM_WriteInt dazu gebraucht */
     var int buf; buf = MEM_Alloc(5);
     MEM_WriteByte(buf    , zPAR_TOK_JUMP);
     MEM_WriteInt (buf + 1, MEM_GetFuncOffset(MEM_WriteInt_));
@@ -5257,7 +5257,7 @@ func void MEMINT_VersionError() {
     } else {
         str = ConcatStrings(str, G2);
     };
-    str = ConcatStrings(str, ", da sie Funktionalität aus dem Skriptpaket 'Ikarus' verwendet. Es ist wahrscheinlich, dass Gothic unmittelbar nach dieser Fehlermeldung abstürzt. Die genannte Version von Gothic steht zum Beispiel auf worldofgothic.de zum Download bereit. Der merkwürdige Charakter dieser Fehlermeldung ist leider nicht zu vermeiden. ### This mod only works with ");
+    str = ConcatStrings(str, ", da sie Funktionalitï¿½t aus dem Skriptpaket 'Ikarus' verwendet. Es ist wahrscheinlich, dass Gothic unmittelbar nach dieser Fehlermeldung abstï¿½rzt. Die genannte Version von Gothic steht zum Beispiel auf worldofgothic.de zum Download bereit. Der merkwï¿½rdige Charakter dieser Fehlermeldung ist leider nicht zu vermeiden. ### This mod only works with ");
     if (GOTHIC_BASE_VERSION == 1) {
         str = ConcatStrings(str, G1);
     } else {

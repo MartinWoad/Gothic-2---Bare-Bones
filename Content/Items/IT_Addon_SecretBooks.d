@@ -20,7 +20,7 @@ func void uselpbook(var int constanze)
 		Snd_Play("Levelup");
 		self.lp = self.lp + constanze;
 		concattext = ConcatStrings(PRINT_LEARNLP,IntToString(constanze));
-		Print(concattext);
+		PrintS(concattext);
 	};
 };
 
@@ -35,14 +35,14 @@ func void usexpbook(var int constanze)
 		Snd_Play("Levelup");
 		self.exp = self.exp + constanze;
 		concattext = ConcatStrings(PRINT_XPGAINED,IntToString(constanze));
-		Print(concattext);
+		PrintS(concattext);
 	};
 };
 
 
 prototype ITWR_ADDON_XPBOOK(C_ITEM)
 {
-	name = "Zebrane doœwiadczenie";
+	name = "Zebrane doï¿½wiadczenie";
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	visual = "ItWr_Book_02_01.3ds";
@@ -100,7 +100,7 @@ func void usebookxp1000()
 
 prototype ITWR_ADDON_LPBOOK(C_ITEM)
 {
-	name = "Ksiêga wiedzy";
+	name = "Ksiï¿½ga wiedzy";
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	visual = "ItWr_Book_02_02.3ds";

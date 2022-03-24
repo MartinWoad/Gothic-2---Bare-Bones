@@ -1,13 +1,14 @@
 
-func int B_TeachAttributePoints(var C_Npc slf,var C_Npc oth,var int attrib,var int points,var int teacherMAX)
+/*func int B_TeachAttributePoints(var C_Npc slf,var C_Npc oth,var int attrib,var int points,var int teacherMAX)
 {
 	var string concatText;
 	var int kosten;
 	var int realAttribute;
+	var int attribute;
 	kosten = B_GetLearnCostAttribute(oth,attrib) * points;
 	if((attrib != ATR_STRENGTH) && (attrib != ATR_DEXTERITY) && (attrib != ATR_MANA_MAX))
 	{
-		Print("*** ERROR: Wrong Parameter ***");
+		PrintS("*** ERROR: Wrong Parameter ***");
 		return FALSE;
 	};
 	if(attrib == ATR_STRENGTH)
@@ -34,12 +35,13 @@ func int B_TeachAttributePoints(var C_Npc slf,var C_Npc oth,var int attrib,var i
 			realAttribute = 250;
 		};
 	};
-	if(realAttribute >= teacherMAX)
+
+	if(attribute >= teacherMAX)
 	{
 		B_Say(slf,oth,"$NOLEARNYOUREBETTER");
 		return FALSE;
 	};
-	if((realAttribute + points) > teacherMAX)
+	if((attribute + points) > teacherMAX)
 	{
 		B_Say(slf,oth,"$NOLEARNOVERPERSONALMAX");
 		return FALSE;
@@ -50,7 +52,71 @@ func int B_TeachAttributePoints(var C_Npc slf,var C_Npc oth,var int attrib,var i
 		return FALSE;
 	};
 	oth.lp = oth.lp - kosten;
-	B_RaiseAttribute(oth,attrib,points,FALSE,FALSE);
+	//B_RaiseAttribute(oth,attrib,points,FALSE,FALSE);
+	attributepotential[attrib] = attributepotential[attrib] + points;
+	return TRUE;
+};*/
+
+func int B_TeachAttributePoints(var C_Npc slf,var C_Npc oth,var int attrib,var int points,var int teacherMAX)
+{
+	var string concatText;
+	var int kosten;
+	var int realAttribute;
+	var int attribute;
+	kosten = B_GetLearnCostAttribute(oth,attrib) * points;
+	if((attrib != ATR_STRENGTH) && (attrib != ATR_DEXTERITY) && (attrib != ATR_MANA_MAX))
+	{
+		PrintS("*** ERROR: Wrong Parameter ***");
+		return FALSE;
+	};
+	if(attrib == ATR_STRENGTH)
+	{
+		attribute = attributepotential[ATR_STRENGTH];
+	}
+	else if(attrib == ATR_DEXTERITY)
+	{
+		attribute = attributepotential[ATR_DEXTERITY];
+	}
+	else if(attrib == ATR_MANA_MAX)
+	{
+		attribute = attributepotential[ATR_MANA_MAX];
+	};
+
+	if(attribute >= teacherMAX)
+	{
+		B_Say(slf,oth,"$NOLEARNYOUREBETTER");
+		return FALSE;
+	};
+	if((attribute + points) > teacherMAX)
+	{
+		B_Say(slf,oth,"$NOLEARNOVERPERSONALMAX");
+		return FALSE;
+	};
+	if(oth.lp < kosten)
+	{
+		B_Say(slf,oth,"$NOLEARNNOPOINTS");
+		return FALSE;
+	};
+	oth.lp = oth.lp - kosten;
+	//B_RaiseAttribute(oth,attrib,points,FALSE,FALSE);
+
+	if(attrib == ATR_STRENGTH)
+	{
+		attributepotential[ATR_STRENGTH] = attributepotential[ATR_STRENGTH] + points;
+		concatText = ConcatStrings(PRINT_LearnSTRPotential,IntToString(points));
+		PrintS_Ext(concatText, White());
+	}
+	else if(attrib == ATR_DEXTERITY)
+	{
+		attributepotential[ATR_DEXTERITY] = attributepotential[ATR_DEXTERITY] + points;
+		concatText = ConcatStrings(PRINT_LearnDEXPotential,IntToString(points));
+		PrintS_Ext(concatText, White());
+	}
+	else if(attrib == ATR_MANA_MAX)
+	{
+		attributepotential[ATR_MANA_MAX] = attributepotential[ATR_MANA_MAX] + points;
+		concatText = ConcatStrings(PRINT_LearnMANA_MAXPotential,IntToString(points));
+		PrintS_Ext(concatText, White());
+	};
 	return TRUE;
 };
-

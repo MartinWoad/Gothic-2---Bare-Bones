@@ -48,12 +48,12 @@ func void player_hotkey_lame_potion()
 			}
 			else
 			{
-				Print("Brak mikstur many!");
+				PrintS("Brak mikstur many!");
 			};
 		}
 		else
 		{
-			Print("Maksymalny mo¿liwy poziom many!");
+			PrintS("Maksymalny moï¿½liwy poziom many!");
 		};
 	};
 };
@@ -102,12 +102,12 @@ func void player_hotkey_lame_heal()
 			}
 			else
 			{
-				Print("Brak mikstur leczniczych!");
+				PrintS("Brak mikstur leczniczych!");
 			};
 		}
 		else
 		{
-			Print("Maksymalna mo¿liwa liczba punktów trafieñ!");
+			PrintS("Maksymalna moï¿½liwa liczba punktï¿½w trafieï¿½!");
 		};
 	};
 };

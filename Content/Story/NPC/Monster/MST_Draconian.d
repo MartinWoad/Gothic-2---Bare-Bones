@@ -17,10 +17,10 @@ prototype Mst_Default_Draconian(C_Npc)
 	protection[PROT_FIRE] = IMMUNE;
 	protection[PROT_FLY] = 70;
 	protection[PROT_MAGIC] = 100;
-	HitChance[NPC_TALENT_1H] = 80;
-	HitChance[NPC_TALENT_2H] = 80;
-	HitChance[NPC_TALENT_BOW] = 80;
-	HitChance[NPC_TALENT_CROSSBOW] = 80;
+	HitChance[NPC_TALENT_1H] = 60;
+	HitChance[NPC_TALENT_2H] = 60;
+	HitChance[NPC_TALENT_BOW] = 60;
+	HitChance[NPC_TALENT_CROSSBOW] = 60;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_ORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;

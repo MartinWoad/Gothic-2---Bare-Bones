@@ -1,7 +1,7 @@
 
 instance ITWR_SATURASFIRSTMESSAGE_ADDON_SEALED(C_ITEM)
 {
-	name = "Zapieczêtowana wiadomoœæ";
+	name = "Zapieczï¿½towana wiadomoï¿½ï¿½";
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 0;
@@ -10,7 +10,7 @@ instance ITWR_SATURASFIRSTMESSAGE_ADDON_SEALED(C_ITEM)
 	on_state[0] = use_saturasfirstmessage_sealed;
 	scemename = "MAPSEALED";
 	description = name;
-	text[2] = "Ta wiadomoœæ zosta³a dok³adnie zapieczêtowana.";
+	text[2] = "Ta wiadomoï¿½ï¿½ zostaï¿½a dokï¿½adnie zapieczï¿½towana.";
 };
 
 
@@ -25,15 +25,15 @@ func void use_saturasfirstmessage()
 	Doc_SetFont(ndocid,-1,FONT_BOOK);
 	Doc_SetMargins(ndocid,-1,50,50,50,50,1);
 	Doc_PrintLine(ndocid,0,"Szanowny Vatrasie,");
-	Doc_PrintLines(ndocid,0,"Dotarliœmy do portalu. Mia³eœ racjê.");
-	Doc_PrintLines(ndocid,0,"S¹ znaki wskazuj¹ce na to, ¿e naprawdê czcili Adanosa. SprawdŸ, proszê, moje notatki i potwierdŸ nasze ustalenia.");
-	Doc_PrintLines(ndocid,0,"Od kilku dni nie widzieliœmy tych dziwnych kamiennych istot.");
-	Doc_PrintLines(ndocid,0,"Ziemia wci¹¿ trzêsie siê z niewiadomych powodów.");
-	Doc_PrintLines(ndocid,0,"S¹dzê, ¿e nasze badania wkrótce wska¿¹ nam, co mo¿e byæ tego przyczyn¹.");
-	Doc_PrintLines(ndocid,0,"Znaleziony przez nas ornament ma wiêksze znaczenie, ni¿ wczeœniej s¹dziliœmy. Wydaje nam siê, ¿e jest to jakiœ klucz-artefakt. Niestety, nie jest kompletny. Musimy go dok³adniej zbadaæ.");
-	Doc_PrintLines(ndocid,0,"Wyœlij jednego z cz³onków Wodnego Krêgu, by nam go dostarczy³. Jeœli to mo¿liwe, nie przysy³aj Cavalorna.");
-	Doc_PrintLines(ndocid,0,"Poprosi³em go ju¿ o dostarczenie Ci tego listu. Wydaje mi siê, ¿e ju¿ wystarczaj¹co nam pomóg³.");
-	Doc_PrintLines(ndocid,0,"Mam nadziejê, ¿e postêpujemy w³aœciwie.");
+	Doc_PrintLines(ndocid,0,"Dotarliï¿½my do portalu. Miaï¿½eï¿½ racjï¿½.");
+	Doc_PrintLines(ndocid,0,"Sï¿½ znaki wskazujï¿½ce na to, ï¿½e naprawdï¿½ czcili Adanosa. Sprawdï¿½, proszï¿½, moje notatki i potwierdï¿½ nasze ustalenia.");
+	Doc_PrintLines(ndocid,0,"Od kilku dni nie widzieliï¿½my tych dziwnych kamiennych istot.");
+	Doc_PrintLines(ndocid,0,"Ziemia wciï¿½ï¿½ trzï¿½sie siï¿½ z niewiadomych powodï¿½w.");
+	Doc_PrintLines(ndocid,0,"Sï¿½dzï¿½, ï¿½e nasze badania wkrï¿½tce wskaï¿½ï¿½ nam, co moï¿½e byï¿½ tego przyczynï¿½.");
+	Doc_PrintLines(ndocid,0,"Znaleziony przez nas ornament ma wiï¿½ksze znaczenie, niï¿½ wczeï¿½niej sï¿½dziliï¿½my. Wydaje nam siï¿½, ï¿½e jest to jakiï¿½ klucz-artefakt. Niestety, nie jest kompletny. Musimy go dokï¿½adniej zbadaï¿½.");
+	Doc_PrintLines(ndocid,0,"Wyï¿½lij jednego z czï¿½onkï¿½w Wodnego Krï¿½gu, by nam go dostarczyï¿½. Jeï¿½li to moï¿½liwe, nie przysyï¿½aj Cavalorna.");
+	Doc_PrintLines(ndocid,0,"Poprosiï¿½em go juï¿½ o dostarczenie Ci tego listu. Wydaje mi siï¿½, ï¿½e juï¿½ wystarczajï¿½co nam pomï¿½gï¿½.");
+	Doc_PrintLines(ndocid,0,"Mam nadziejï¿½, ï¿½e postï¿½pujemy wï¿½aï¿½ciwie.");
 	Doc_PrintLine(ndocid,0,"");
 	Doc_PrintLine(ndocid,0,"Saturas");
 	Doc_Show(ndocid);
@@ -41,20 +41,20 @@ func void use_saturasfirstmessage()
 	{
 		Log_CreateTopic(TOPIC_ADDON_KDW,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_ADDON_KDW,LOG_RUNNING);
-		b_logentry(TOPIC_ADDON_KDW,"Zabra³em bandycie wiadomoœæ, któr¹ Cavalorn mia³ dostarczyæ Vatrasowi, Magowi Wody. To teraz moje zadanie.");
+		b_logentry(TOPIC_ADDON_KDW,"Zabraï¿½em bandycie wiadomoï¿½ï¿½, ktï¿½rï¿½ Cavalorn miaï¿½ dostarczyï¿½ Vatrasowi, Magowi Wody. To teraz moje zadanie.");
 		use_saturasfirstmessage_onetime = TRUE;
 	};
 	if(SC_KNOWSRANGER == FALSE)
 	{
 		Log_CreateTopic(TOPIC_ADDON_RINGOFWATER,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_ADDON_RINGOFWATER,LOG_RUNNING);
-		Log_AddEntry(TOPIC_ADDON_RINGOFWATER,"Istnieje stowarzyszenie zw¹ce siê Wodnym Krêgiem. Wygl¹da na to, ¿e rz¹dz¹ nim Magowie Wody.");
+		Log_AddEntry(TOPIC_ADDON_RINGOFWATER,"Istnieje stowarzyszenie zwï¿½ce siï¿½ Wodnym Krï¿½giem. Wyglï¿½da na to, ï¿½e rzï¿½dzï¿½ nim Magowie Wody.");
 	};
 	if(SC_ISRANGER == FALSE)
 	{
 		Log_CreateTopic(TOPIC_ADDON_RINGOFWATER,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_ADDON_RINGOFWATER,LOG_RUNNING);
-		Log_AddEntry(TOPIC_ADDON_RINGOFWATER,"Cavalorn nale¿y do Wodnego Krêgu.");
+		Log_AddEntry(TOPIC_ADDON_RINGOFWATER,"Cavalorn naleï¿½y do Wodnego Krï¿½gu.");
 	};
 	SC_KNOWSRANGER = TRUE;
 };
@@ -69,7 +69,7 @@ func void use_saturasfirstmessage_sealed()
 
 instance ITWR_SATURASFIRSTMESSAGE_ADDON(C_ITEM)
 {
-	name = "Otwarta wiadomoœæ";
+	name = "Otwarta wiadomoï¿½ï¿½";
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 0;
@@ -90,7 +90,7 @@ instance ITMI_ORNAMENT_ADDON(C_ITEM)
 	visual = "ItMi_PortalRing_05.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[0] = "Fragment du¿ego, ozdobnego pierœcienia";
+	text[0] = "Fragment duï¿½ego, ozdobnego pierï¿½cienia";
 	inv_zbias = INVCAM_ENTF_MISC5_STANDARD;
 };
 
@@ -103,7 +103,7 @@ instance ITMI_ORNAMENT_ADDON_VATRAS(C_ITEM)
 	visual = "ItMi_PortalRing_05.3DS";
 	material = MAT_METAL;
 	description = name;
-	text[0] = "Fragment du¿ego, ozdobnego pierœcienia";
+	text[0] = "Fragment duï¿½ego, ozdobnego pierï¿½cienia";
 	inv_zbias = INVCAM_ENTF_MISC5_STANDARD;
 };
 
@@ -119,7 +119,7 @@ instance ITWR_MAP_NEWWORLD_ORNAMENTS_ADDON(C_ITEM)
 	on_state[0] = use_map_newworld_ornaments;
 	description = name;
 	text[0] = "Na mapie zaznaczono miejsca,";
-	text[1] = "gdzie wed³ug Nefariusa znajduj¹ siê brakuj¹ce ornamenty.";
+	text[1] = "gdzie wedï¿½ug Nefariusa znajdujï¿½ siï¿½ brakujï¿½ce ornamenty.";
 	text[2] = "";
 	text[5] = NAME_VALUE;
 	count[5] = value;
@@ -145,7 +145,7 @@ func void use_map_newworld_ornaments()
 
 instance ITWR_MAP_NEWWORLD_DEXTER(C_ITEM)
 {
-	name = "Mapa terenów Khorinis";
+	name = "Mapa terenï¿½w Khorinis";
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION | ITEM_MULTI;
 	value = 210;
@@ -154,8 +154,8 @@ instance ITWR_MAP_NEWWORLD_DEXTER(C_ITEM)
 	scemename = "MAP";
 	on_state[0] = use_map_newworld_dexter;
 	description = name;
-	text[0] = "Skip zaznaczy³ miejsce,";
-	text[1] = "gdzie mogê znaleŸæ szefa bandytów,";
+	text[0] = "Skip zaznaczyï¿½ miejsce,";
+	text[1] = "gdzie mogï¿½ znaleï¿½ï¿½ szefa bandytï¿½w,";
 	text[2] = "Dextera.";
 	text[5] = NAME_VALUE;
 	count[5] = value;
@@ -180,7 +180,7 @@ func void use_map_newworld_dexter()
 
 prototype RANGERRING_PROTOTYPE(C_ITEM)
 {
-	name = "Pierœcieñ z akwamarynem";
+	name = "Pierï¿½cieï¿½ z akwamarynem";
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING | ITEM_MISSION;
 	value = VALUE_RI_HPMANA;
@@ -189,7 +189,7 @@ prototype RANGERRING_PROTOTYPE(C_ITEM)
 	material = MAT_METAL;
 	on_equip = equip_itri_ranger_addon;
 	on_unequip = unequip_itri_ranger_addon;
-	description = "Symbol przynale¿noœci do Wodnego Krêgu";
+	description = "Symbol przynaleï¿½noï¿½ci do Wodnego Krï¿½gu";
 	text[5] = NAME_VALUE;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_RING_STANDARD;
@@ -209,7 +209,7 @@ func void equip_itri_ranger_addon()
 			};
 		};
 		SCISWEARINGRANGERRING = TRUE;
-		Print(PRINT_ADDON_SCISWEARINGRANGERRING);
+		PrintS(PRINT_ADDON_SCISWEARINGRANGERRING);
 	};
 };
 
@@ -228,34 +228,34 @@ func void unequip_itri_ranger_addon()
 
 instance ITRI_RANGER_LARES_ADDON(RANGERRING_PROTOTYPE)
 {
-	text[1] = "Ten pierœcieñ nale¿y do Laresa.";
+	text[1] = "Ten pierï¿½cieï¿½ naleï¿½y do Laresa.";
 };
 
 instance ITRI_RANGER_ADDON(RANGERRING_PROTOTYPE)
 {
-	text[1] = "To mój pierœcieñ.";
+	text[1] = "To mï¿½j pierï¿½cieï¿½.";
 };
 
 instance ITRI_LANCERING(RANGERRING_PROTOTYPE)
 {
-	text[1] = "Ten pierœcieñ nale¿y do Lance'a.";
+	text[1] = "Ten pierï¿½cieï¿½ naleï¿½y do Lance'a.";
 };
 
 instance ITMI_PORTALRING_ADDON(C_ITEM)
 {
-	name = "Ozdobny pierœcieñ";
+	name = "Ozdobny pierï¿½cieï¿½";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 0;
 	visual = "ItMi_PortalRing_01.3DS";
 	material = MAT_STONE;
-	description = "Ten pierœcieñ otwiera portal";
+	description = "Ten pierï¿½cieï¿½ otwiera portal";
 	inv_zbias = INVCAM_ENTF_MISC3_STANDARD;
 };
 
 instance ITWR_MARTIN_MILIZEMPFEHLUNG_ADDON(C_ITEM)
 {
-	name = "List polecaj¹cy od Martina";
+	name = "List polecajï¿½cy od Martina";
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 0;
@@ -263,9 +263,9 @@ instance ITWR_MARTIN_MILIZEMPFEHLUNG_ADDON(C_ITEM)
 	material = MAT_LEATHER;
 	on_state[0] = use_martinmilizempfehlung_addon;
 	scemename = "MAP";
-	description = "List polecaj¹cy dla Lorda Andre";
-	text[2] = "powinien mi umo¿liwiæ";
-	text[3] = "wst¹pienie w szeregi stra¿y.";
+	description = "List polecajï¿½cy dla Lorda Andre";
+	text[2] = "powinien mi umoï¿½liwiï¿½";
+	text[3] = "wstï¿½pienie w szeregi straï¿½y.";
 };
 
 
@@ -282,10 +282,10 @@ func void use_martinmilizempfehlung_addon()
 	Doc_PrintLine(ndocid,0,"");
 	Doc_PrintLines(ndocid,0,"Drogi Lordzie Andre,");
 	Doc_PrintLines(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Wraz z tym listem przysy³am Ci nowego rekruta do naszej stra¿y.");
-	Doc_PrintLines(ndocid,0,"Udowodni³ swoj¹ przydatnoœæ, wykonuj¹c trudne i odpowiedzialne zadania.");
-	Doc_PrintLines(ndocid,0,"Jestem pewien, ¿e bêdzie siê dobrze spisywa³, broni¹c króla oraz mieszkañców tego miasta.");
-	Doc_PrintLine(ndocid,0,"Innosie, chroñ króla.");
+	Doc_PrintLines(ndocid,0,"Wraz z tym listem przysyï¿½am Ci nowego rekruta do naszej straï¿½y.");
+	Doc_PrintLines(ndocid,0,"Udowodniï¿½ swojï¿½ przydatnoï¿½ï¿½, wykonujï¿½c trudne i odpowiedzialne zadania.");
+	Doc_PrintLines(ndocid,0,"Jestem pewien, ï¿½e bï¿½dzie siï¿½ dobrze spisywaï¿½, broniï¿½c krï¿½la oraz mieszkaï¿½cï¿½w tego miasta.");
+	Doc_PrintLine(ndocid,0,"Innosie, chroï¿½ krï¿½la.");
 	Doc_PrintLine(ndocid,0,"");
 	Doc_PrintLine(ndocid,0,"     Kwatermistrz Martin");
 	Doc_Show(ndocid);
@@ -303,7 +303,7 @@ instance ITWR_RAVENSKIDNAPPERMISSION_ADDON(C_ITEM)
 	on_state[0] = use_ravenskidnappermission_addon;
 	scemename = "MAP";
 	description = name;
-	text[2] = "Zabra³em ten list";
+	text[2] = "Zabraï¿½em ten list";
 	text[3] = "bandycie Dexterowi.";
 };
 
@@ -317,7 +317,7 @@ func void use_ravenskidnappermission_addon()
 	{
 		Log_CreateTopic(TOPIC_ADDON_WHOSTOLEPEOPLE,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_ADDON_WHOSTOLEPEOPLE,LOG_RUNNING);
-		b_logentry(TOPIC_ADDON_WHOSTOLEPEOPLE,"Teraz mam to na piœmie. Kruk, dawny magnat, stoi za porwaniami mieszkañców Khorinis. Jego kryjówka znajduje siê gdzieœ za górami, w pó³nocno-wschodniej czêœci Khorinis. Vatras powinien zobaczyæ ten dokument.");
+		b_logentry(TOPIC_ADDON_WHOSTOLEPEOPLE,"Teraz mam to na piï¿½mie. Kruk, dawny magnat, stoi za porwaniami mieszkaï¿½cï¿½w Khorinis. Jego kryjï¿½wka znajduje siï¿½ gdzieï¿½ za gï¿½rami, w pï¿½nocno-wschodniej czï¿½ci Khorinis. Vatras powinien zobaczyï¿½ ten dokument.");
 		use_ravenskidnappermission_addon_onetime = TRUE;
 	};
 	SCKNOWSMISSINGPEOPLEAREINADDONWORLD = TRUE;
@@ -328,12 +328,12 @@ func void use_ravenskidnappermission_addon()
 	Doc_SetMargins(ndocid,-1,50,50,50,50,1);
 	Doc_PrintLines(ndocid,0,"Dexter, ty draniu!");
 	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Kiedy jeszcze by³em magnatem, mo¿na by³o bardziej na tobie polegaæ.");
-	Doc_PrintLines(ndocid,0,"Jeœli nie zdo³asz porwaæ wiêcej ludzi z miasta i przys³aæ ich do mnie, to bêdziemy mieli niez³y problem z ch³opakami w naszej kryjówce.");
-	Doc_PrintLines(ndocid,0,"Potrzebujê tu wiêcej niewolników albo ch³opaki zaczn¹ siê buntowaæ. Chyba nie muszê ci mówiæ, co to znaczy, prawda?");
-	Doc_PrintLines(ndocid,0,"Jestem bardzo bliski dostania siê do œwi¹tyni. Nie mogê sobie pozwoliæ na ¿adne, absolutnie ¿adne k³opoty.");
+	Doc_PrintLines(ndocid,0,"Kiedy jeszcze byï¿½em magnatem, moï¿½na byï¿½o bardziej na tobie polegaï¿½.");
+	Doc_PrintLines(ndocid,0,"Jeï¿½li nie zdoï¿½asz porwaï¿½ wiï¿½cej ludzi z miasta i przysï¿½aï¿½ ich do mnie, to bï¿½dziemy mieli niezï¿½y problem z chï¿½opakami w naszej kryjï¿½wce.");
+	Doc_PrintLines(ndocid,0,"Potrzebujï¿½ tu wiï¿½cej niewolnikï¿½w albo chï¿½opaki zacznï¿½ siï¿½ buntowaï¿½. Chyba nie muszï¿½ ci mï¿½wiï¿½, co to znaczy, prawda?");
+	Doc_PrintLines(ndocid,0,"Jestem bardzo bliski dostania siï¿½ do ï¿½wiï¿½tyni. Nie mogï¿½ sobie pozwoliï¿½ na ï¿½adne, absolutnie ï¿½adne kï¿½opoty.");
 	Doc_PrintLines(ndocid,0,"A, jest jeszcze jeden problem:");
-	Doc_PrintLines(ndocid,0,"Prêdzej czy póŸniej bêdziemy musieli znaleŸæ drogê przez wysokie góry w pó³nocno-wschodnim Khorinis. Piraci nie zapewni¹ nam transportu, kiedy przestaniemy im p³aciæ.");
+	Doc_PrintLines(ndocid,0,"Prï¿½dzej czy pï¿½niej bï¿½dziemy musieli znaleï¿½ï¿½ drogï¿½ przez wysokie gï¿½ry w pï¿½nocno-wschodnim Khorinis. Piraci nie zapewniï¿½ nam transportu, kiedy przestaniemy im pï¿½aciï¿½.");
 	Doc_PrintLine(ndocid,0,"");
 	Doc_PrintLine(ndocid,0,"     Kruk");
 	Doc_Show(ndocid);
@@ -342,7 +342,7 @@ func void use_ravenskidnappermission_addon()
 
 instance ITWR_VATRAS_KDFEMPFEHLUNG_ADDON(C_ITEM)
 {
-	name = "List polecaj¹cy od Vatrasa";
+	name = "List polecajï¿½cy od Vatrasa";
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 0;
@@ -350,10 +350,10 @@ instance ITWR_VATRAS_KDFEMPFEHLUNG_ADDON(C_ITEM)
 	material = MAT_LEATHER;
 	on_state[0] = use_vatraskdfempfehlung_addon;
 	scemename = "MAP";
-	description = "List polecaj¹cy od Vatrasa";
-	text[2] = "powinien pomóc mi";
-	text[3] = "wejœæ do klasztoru Magów Ognia";
-	text[4] = "bez zap³aty.";
+	description = "List polecajï¿½cy od Vatrasa";
+	text[2] = "powinien pomï¿½c mi";
+	text[3] = "wejï¿½ï¿½ do klasztoru Magï¿½w Ognia";
+	text[4] = "bez zapï¿½aty.";
 };
 
 
@@ -370,8 +370,8 @@ func void use_vatraskdfempfehlung_addon()
 	Doc_PrintLine(ndocid,0,"");
 	Doc_PrintLines(ndocid,0,"Bracia Ognia");
 	Doc_PrintLines(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"W³aœnie poinformowano mnie, ¿e aby do³¹czyæ do waszego stowarzyszenia, trzeba wnieœæ op³atê.");
-	Doc_PrintLines(ndocid,0,"List ten dostarczy oddany cz³owiek, który chcia³by zostaæ nowicjuszem w waszych szeregach.");
+	Doc_PrintLines(ndocid,0,"Wï¿½aï¿½nie poinformowano mnie, ï¿½e aby doï¿½ï¿½czyï¿½ do waszego stowarzyszenia, trzeba wnieï¿½ï¿½ opï¿½atï¿½.");
+	Doc_PrintLines(ndocid,0,"List ten dostarczy oddany czï¿½owiek, ktï¿½ry chciaï¿½by zostaï¿½ nowicjuszem w waszych szeregach.");
 	Doc_PrintLine(ndocid,0,"");
 	Doc_PrintLine(ndocid,0,"     Vatras");
 	Doc_Show(ndocid);
@@ -380,7 +380,7 @@ func void use_vatraskdfempfehlung_addon()
 
 instance ITMI_LOSTINNOSSTATUE_DARON(C_ITEM)
 {
-	name = "Cenny pos¹¿ek Innosa";
+	name = "Cenny posï¿½ï¿½ek Innosa";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = VALUE_INNOSSTATUE;
@@ -393,7 +393,7 @@ instance ITMI_LOSTINNOSSTATUE_DARON(C_ITEM)
 
 instance ITWR_LUCIASLOVELETTER_ADDON(C_ITEM)
 {
-	name = "List po¿egnalny Lucii";
+	name = "List poï¿½egnalny Lucii";
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 0;
@@ -410,7 +410,7 @@ func void use_luciasloveletter_addon()
 	var int ndocid;
 	Log_CreateTopic(TOPIC_ADDON_LUCIA,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ADDON_LUCIA,LOG_RUNNING);
-	b_logentry(TOPIC_ADDON_LUCIA,"Lucia napisa³a list po¿egnalny dla Elvricha. Z pewnoœci¹ bêdzie chcia³ go przeczytaæ.");
+	b_logentry(TOPIC_ADDON_LUCIA,"Lucia napisaï¿½a list poï¿½egnalny dla Elvricha. Z pewnoï¿½ciï¿½ bï¿½dzie chciaï¿½ go przeczytaï¿½.");
 	MIS_LUCIASLETTER = LOG_RUNNING;
 	ndocid = Doc_Create();
 	Doc_SetPages(ndocid,1);
@@ -420,11 +420,11 @@ func void use_luciasloveletter_addon()
 	Doc_PrintLine(ndocid,0,"");
 	Doc_PrintLine(ndocid,0,"");
 	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Najdro¿szy Elvrichu,");
+	Doc_PrintLines(ndocid,0,"Najdroï¿½szy Elvrichu,");
 	Doc_PrintLines(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"¯adne s³owa nie oddadz¹ tego, jak mi przykro.");
-	Doc_PrintLines(ndocid,0,"Wiem, ¿e ciê¿ko bêdzie ci to zrozumieæ. Dosz³am jednak do wniosku, ¿e lepiej bêdzie dla nas obojga, jeœli znajdziesz sobie porz¹dniejsz¹ dziewczynê.");
-	Doc_PrintLines(ndocid,0,"Udajê siê w miejsce, z którego ju¿ nie wrócê. Zapomnij o mnie. Nieprzyzwoita dziewczyna jak ja nie zas³uguje na takiego dobrego ch³opaka. ¯egnaj.");
+	Doc_PrintLines(ndocid,0,"ï¿½adne sï¿½owa nie oddadzï¿½ tego, jak mi przykro.");
+	Doc_PrintLines(ndocid,0,"Wiem, ï¿½e ciï¿½ko bï¿½dzie ci to zrozumieï¿½. Doszï¿½am jednak do wniosku, ï¿½e lepiej bï¿½dzie dla nas obojga, jeï¿½li znajdziesz sobie porzï¿½dniejszï¿½ dziewczynï¿½.");
+	Doc_PrintLines(ndocid,0,"Udajï¿½ siï¿½ w miejsce, z ktï¿½rego juï¿½ nie wrï¿½cï¿½. Zapomnij o mnie. Nieprzyzwoita dziewczyna jak ja nie zasï¿½uguje na takiego dobrego chï¿½opaka. ï¿½egnaj.");
 	Doc_PrintLine(ndocid,0,"");
 	Doc_PrintLine(ndocid,0,"     Lucia");
 	Doc_Show(ndocid);
@@ -433,7 +433,7 @@ func void use_luciasloveletter_addon()
 
 prototype EFFECTITEMPROTOTYPE_ADDON(C_ITEM)
 {
-	name = "Kamieñ";
+	name = "Kamieï¿½";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = VALUE_COAL;
@@ -485,14 +485,14 @@ func void use_rake()
 
 instance ITRI_ADDON_BANDITTRADER(C_ITEM)
 {
-	name = "Pierœcieñ gildii";
+	name = "Pierï¿½cieï¿½ gildii";
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING;
 	value = 5;
 	visual = "ItRi_Prot_Point_02.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
-	description = "RzeŸbiony pierœcieñ";
+	description = "Rzeï¿½biony pierï¿½cieï¿½";
 	text[2] = "zamorskiej gildii Araxos";
 	text[5] = NAME_VALUE;
 	count[5] = value;
@@ -512,8 +512,8 @@ instance ITWR_ADDON_BANDITTRADER(C_ITEM)
 	on_state[0] = use_itwr_addon_bandittrader;
 	scemename = "MAP";
 	description = name;
-	text[2] = "Zabra³em ten list bandytom";
-	text[3] = "za farm¹ Sekoba.";
+	text[2] = "Zabraï¿½em ten list bandytom";
+	text[3] = "za farmï¿½ Sekoba.";
 };
 
 
@@ -530,19 +530,19 @@ func void use_itwr_addon_bandittrader()
 	Doc_SetMargins(ndocid,-1,50,50,50,50,1);
 	Doc_PrintLines(ndocid,0,"");
 	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"15 krótkich mieczy");
-	Doc_PrintLines(ndocid,0,"20 pa³aszy");
-	Doc_PrintLines(ndocid,0,"25 bochenków chleba");
+	Doc_PrintLines(ndocid,0,"15 krï¿½tkich mieczy");
+	Doc_PrintLines(ndocid,0,"20 paï¿½aszy");
+	Doc_PrintLines(ndocid,0,"25 bochenkï¿½w chleba");
 	Doc_PrintLines(ndocid,0,"15 butelek wina");
 	Doc_PrintLines(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"To ju¿ ostatni raz.");
-	Doc_PrintLines(ndocid,0,"Zaczyna robiæ siê za gor¹co.");
+	Doc_PrintLines(ndocid,0,"To juï¿½ ostatni raz.");
+	Doc_PrintLines(ndocid,0,"Zaczyna robiï¿½ siï¿½ za gorï¿½co.");
 	Doc_PrintLines(ndocid,0,"");
 	Doc_PrintLine(ndocid,0,"     Fernando");
 	Doc_Show(ndocid);
 	if((MIS_VATRAS_FINDTHEBANDITTRADER != 0) && (use_itwr_addon_bandittrader_onetime == FALSE))
 	{
-		b_logentry(TOPIC_ADDON_BANDITTRADER,"Znalaz³em dokument potwierdzaj¹cy, ¿e Fernando jest handlarzem broni¹, którego szukam.");
+		b_logentry(TOPIC_ADDON_BANDITTRADER,"Znalazï¿½em dokument potwierdzajï¿½cy, ï¿½e Fernando jest handlarzem broniï¿½, ktï¿½rego szukam.");
 		use_itwr_addon_bandittrader_onetime = TRUE;
 	};
 };
@@ -550,7 +550,7 @@ func void use_itwr_addon_bandittrader()
 
 instance ITWR_VATRAS2SATURAS_FINDRAVEN(C_ITEM)
 {
-	name = "Przesy³ka";
+	name = "Przesyï¿½ka";
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 0;
@@ -559,7 +559,7 @@ instance ITWR_VATRAS2SATURAS_FINDRAVEN(C_ITEM)
 	on_state[0] = use_vatras2saturas_findraven_sealed;
 	scemename = "MAPSEALED";
 	description = name;
-	text[2] = "Wiadomoœæ Vatrasa dla Saturasa";
+	text[2] = "Wiadomoï¿½ï¿½ Vatrasa dla Saturasa";
 };
 
 
@@ -573,11 +573,11 @@ func void use_vatras2saturas_findraven()
 	Doc_SetMargins(ndocid,-1,50,50,50,50,1);
 	Doc_PrintLine(ndocid,0,"Szanowny Saturasie,");
 	Doc_PrintLines(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Mam nadziejê, ¿e zbli¿asz siê do koñca. Sytuacja w mieœcie ostatnio siê uspokoi³a. Jednak obawiam siê, ¿e to cisza przed burz¹. Pospiesz siê, proszê. Potrzebujê ciê tutaj.");
-	Doc_PrintLines(ndocid,0,"Przestudiowa³em zapiski i potwierdzam twoje podejrzenia. Symbole rzeczywiœcie wskazuj¹ na kulturê, która czci³a Adanosa. Dlatego musimy pozostaæ czujni i nie daæ siê zaœlepiæ s³owom fa³szywych proroków.");
-	Doc_PrintLines(ndocid,0,"Zaginieni mieszkañcy zostali porwani przez Kruka, by³ego magnata. S¹ w rejonie, do którego z pewnoœci¹ zaprowadzi nas portal.");
-	Doc_PrintLines(ndocid,0,"Jeszcze jedno – przysy³am Ci pomocnika. Osoba, która przyniesie ten list, jest doœæ wyj¹tkowa. Za ka¿dym razem, gdy na ciebie spogl¹da, ma w oku ten charakterystyczny b³ysk. Nie jestem jeszcze tego ca³kiem pewien, ale mo¿liwe, ¿e to ON, nawet jeœli inaczej go sobie wyobra¿aliœmy.");
-	Doc_PrintLines(ndocid,0,"SprawdŸ go. Wierzê, ¿e mam racjê.");
+	Doc_PrintLines(ndocid,0,"Mam nadziejï¿½, ï¿½e zbliï¿½asz siï¿½ do koï¿½ca. Sytuacja w mieï¿½cie ostatnio siï¿½ uspokoiï¿½a. Jednak obawiam siï¿½, ï¿½e to cisza przed burzï¿½. Pospiesz siï¿½, proszï¿½. Potrzebujï¿½ ciï¿½ tutaj.");
+	Doc_PrintLines(ndocid,0,"Przestudiowaï¿½em zapiski i potwierdzam twoje podejrzenia. Symbole rzeczywiï¿½cie wskazujï¿½ na kulturï¿½, ktï¿½ra czciï¿½a Adanosa. Dlatego musimy pozostaï¿½ czujni i nie daï¿½ siï¿½ zaï¿½lepiï¿½ sï¿½owom faï¿½szywych prorokï¿½w.");
+	Doc_PrintLines(ndocid,0,"Zaginieni mieszkaï¿½cy zostali porwani przez Kruka, byï¿½ego magnata. Sï¿½ w rejonie, do ktï¿½rego z pewnoï¿½ciï¿½ zaprowadzi nas portal.");
+	Doc_PrintLines(ndocid,0,"Jeszcze jedno ï¿½ przysyï¿½am Ci pomocnika. Osoba, ktï¿½ra przyniesie ten list, jest doï¿½ï¿½ wyjï¿½tkowa. Za kaï¿½dym razem, gdy na ciebie spoglï¿½da, ma w oku ten charakterystyczny bï¿½ysk. Nie jestem jeszcze tego caï¿½kiem pewien, ale moï¿½liwe, ï¿½e to ON, nawet jeï¿½li inaczej go sobie wyobraï¿½aliï¿½my.");
+	Doc_PrintLines(ndocid,0,"Sprawdï¿½ go. Wierzï¿½, ï¿½e mam racjï¿½.");
 	Doc_PrintLine(ndocid,0,"");
 	Doc_PrintLine(ndocid,0,"     Vatras");
 	Doc_Show(ndocid);
@@ -593,7 +593,7 @@ func void use_vatras2saturas_findraven_sealed()
 
 instance ITWR_VATRAS2SATURAS_FINDRAVEN_OPENED(C_ITEM)
 {
-	name = "Otwarta przesy³ka";
+	name = "Otwarta przesyï¿½ka";
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 0;
@@ -602,7 +602,7 @@ instance ITWR_VATRAS2SATURAS_FINDRAVEN_OPENED(C_ITEM)
 	on_state[0] = use_vatras2saturas_findraven;
 	scemename = "MAP";
 	description = name;
-	text[2] = "Wiadomoœæ Vatrasa dla Saturasa";
+	text[2] = "Wiadomoï¿½ï¿½ Vatrasa dla Saturasa";
 };
 
 instance ITAM_ADDON_WISPDETECTOR(C_ITEM)
@@ -618,7 +618,7 @@ instance ITAM_ADDON_WISPDETECTOR(C_ITEM)
 	material = MAT_METAL;
 	on_equip = equip_wispdetector;
 	on_unequip = unequip_wispdetector;
-	description = "Amulet szukaj¹cego ognika";
+	description = "Amulet szukajï¿½cego ognika";
 	text[5] = NAME_VALUE;
 	count[5] = value;
 	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
@@ -659,7 +659,7 @@ func void unequip_wispdetector()
 
 instance ITFO_ADDON_KROKOFLEISCH_MISSION(C_ITEM)
 {
-	name = "Miêso bagiennego szczura";
+	name = "Miï¿½so bagiennego szczura";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_RAWMEAT;
@@ -674,7 +674,7 @@ instance ITFO_ADDON_KROKOFLEISCH_MISSION(C_ITEM)
 
 instance ITRI_ADDON_MORGANSRING_MISSION(C_ITEM)
 {
-	name = "Pierœcieñ Morgana";
+	name = "Pierï¿½cieï¿½ Morgana";
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_RING | ITEM_MISSION;
 	value = 500;
@@ -685,7 +685,7 @@ instance ITRI_ADDON_MORGANSRING_MISSION(C_ITEM)
 	wear = WEAR_EFFECT;
 	effect = "SPELLFX_ITEMGLIMMER";
 	description = name;
-	text[1] = "Pierœcieñ zdobiony jest mnóstwem piêknych run.";
+	text[1] = "Pierï¿½cieï¿½ zdobiony jest mnï¿½stwem piï¿½knych run.";
 	text[2] = NAME_ADDON_BONUS_1H;
 	count[2] = 10;
 	text[5] = NAME_VALUE;
@@ -709,7 +709,7 @@ func void unequip_morgansring()
 
 instance ITMI_FOCUS(C_ITEM)
 {
-	name = "Kamieñ ogniskuj¹cy";
+	name = "Kamieï¿½ ogniskujï¿½cy";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = 0;
@@ -729,8 +729,8 @@ instance ITMI_ADDON_STEEL_PAKET(C_ITEM)
 	visual = "ItMi_Packet.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "Ta paczka jest NAPRAWDÊ ciê¿ka.";
-	text[3] = "Zawiera spor¹ bry³ê stali.";
+	text[2] = "Ta paczka jest NAPRAWDï¿½ ciï¿½ka.";
+	text[3] = "Zawiera sporï¿½ bryï¿½ï¿½ stali.";
 	text[5] = NAME_VALUE;
 	count[5] = value;
 };
@@ -767,13 +767,13 @@ func void use_stoneplatecommon()
 		Doc_SetFont(ndocid,-1,FONT_BOOK);
 		Doc_SetMargins(ndocid,-1,70,50,90,50,1);
 		Doc_PrintLine(ndocid,0,"");
-		Doc_PrintLines(ndocid,0,"Kasta wojowników wywo³a³a gniew naszego boga.");
+		Doc_PrintLines(ndocid,0,"Kasta wojownikï¿½w wywoï¿½aï¿½a gniew naszego boga.");
 		Doc_PrintLine(ndocid,0,"");
-		Doc_PrintLines(ndocid,0,"RADEMES, nastêpca QUARHODRONA, zosta³ wypêdzony. Ale jego z³owroga moc dotar³a do nas nawet z jego miejsca wygnania.");
+		Doc_PrintLines(ndocid,0,"RADEMES, nastï¿½pca QUARHODRONA, zostaï¿½ wypï¿½dzony. Ale jego zï¿½owroga moc dotarï¿½a do nas nawet z jego miejsca wygnania.");
 		Doc_PrintLine(ndocid,0,"");
-		Doc_PrintLines(ndocid,0,"Byliœmy wobec niej bezsilni.");
+		Doc_PrintLines(ndocid,0,"Byliï¿½my wobec niej bezsilni.");
 		Doc_PrintLine(ndocid,0,"");
-		Doc_PrintLines(ndocid,0,"Na JARKENDAR spad³ gniew ADANOSA!");
+		Doc_PrintLines(ndocid,0,"Na JARKENDAR spadï¿½ gniew ADANOSA!");
 	}
 	else
 	{
@@ -819,7 +819,7 @@ func void use_addon_stone_01()
 	Doc_PrintLine(ndocid,0,"");
 	if(PLAYER_TALENT_FOREIGNLANGUAGE[LANGUAGE_1] == TRUE)
 	{
-		Doc_PrintLines(ndocid,0,"My, trzej pozostali przywódcy Rady Piêciu, za³o¿yliœmy pu³apki w œwi¹tyni i zapieczêtowaliœmy jej wejœcie. Oby miecz na zawsze ju¿ pozosta³ w mroku.");
+		Doc_PrintLines(ndocid,0,"My, trzej pozostali przywï¿½dcy Rady Piï¿½ciu, zaï¿½oï¿½yliï¿½my puï¿½apki w ï¿½wiï¿½tyni i zapieczï¿½towaliï¿½my jej wejï¿½cie. Oby miecz na zawsze juï¿½ pozostaï¿½ w mroku.");
 	}
 	else
 	{
@@ -833,7 +833,7 @@ func void use_addon_stone_01()
 
 instance ITMI_ADDON_STONE_05(C_ITEM)
 {
-	name = "¯ó³ta kamienna tablica";
+	name = "ï¿½ï¿½ta kamienna tablica";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 0;
@@ -847,7 +847,7 @@ instance ITMI_ADDON_STONE_05(C_ITEM)
 	inv_roty = 0;
 	inv_rotz = 0;
 	description = name;
-	text[2] = "¯ó³ta kamienna tablica";
+	text[2] = "ï¿½ï¿½ta kamienna tablica";
 	text[3] = "";
 };
 
@@ -863,7 +863,7 @@ func void use_addon_stone_05()
 	Doc_PrintLine(ndocid,0,"");
 	if(PLAYER_TALENT_FOREIGNLANGUAGE[LANGUAGE_1] == TRUE)
 	{
-		Doc_PrintLines(ndocid,0,"Ja, który sprzeciwi³em siê rozkazom trójki, zbudowa³em pierwsz¹ pu³apkê. I tylko ja znam w³aœciwe wrota.");
+		Doc_PrintLines(ndocid,0,"Ja, ktï¿½ry sprzeciwiï¿½em siï¿½ rozkazom trï¿½jki, zbudowaï¿½em pierwszï¿½ puï¿½apkï¿½. I tylko ja znam wï¿½aï¿½ciwe wrota.");
 	}
 	else
 	{
@@ -907,7 +907,7 @@ func void use_addon_stone_03()
 	Doc_PrintLine(ndocid,0,"");
 	if(PLAYER_TALENT_FOREIGNLANGUAGE[LANGUAGE_1] == TRUE)
 	{
-		Doc_PrintLines(ndocid,0,"KHARDIMON przygotowa³ drug¹ pu³apkê. Tylko ten, kto nie zejdzie ze œcie¿ki œwiat³a, dotrze do trzeciej komnaty.");
+		Doc_PrintLines(ndocid,0,"KHARDIMON przygotowaï¿½ drugï¿½ puï¿½apkï¿½. Tylko ten, kto nie zejdzie ze ï¿½cieï¿½ki ï¿½wiatï¿½a, dotrze do trzeciej komnaty.");
 	}
 	else
 	{
@@ -953,7 +953,7 @@ func void use_addon_stone_04()
 	Doc_PrintLine(ndocid,0,"");
 	if(PLAYER_TALENT_FOREIGNLANGUAGE[LANGUAGE_1] == TRUE)
 	{
-		Doc_PrintLines(ndocid,0,"Trzecia pu³apka zosta³a zbudowana przez QUARHODRONA i jedynie on wie, jak otworzyæ bramê.");
+		Doc_PrintLines(ndocid,0,"Trzecia puï¿½apka zostaï¿½a zbudowana przez QUARHODRONA i jedynie on wie, jak otworzyï¿½ bramï¿½.");
 	}
 	else
 	{
@@ -997,11 +997,11 @@ func void use_addon_stone_02()
 	Doc_PrintLine(ndocid,0,"");
 	if(PLAYER_TALENT_FOREIGNLANGUAGE[LANGUAGE_1] == TRUE)
 	{
-		Doc_PrintLines(ndocid,0,"QUARHODRON by³ te¿ tym, który z pomoc¹ KHARDIMONA zapieczêtowa³ zewnêtrzn¹ bramê œwi¹tyni. ¯aden z nich nie prze¿y³ tego rytua³u.");
+		Doc_PrintLines(ndocid,0,"QUARHODRON byï¿½ teï¿½ tym, ktï¿½ry z pomocï¿½ KHARDIMONA zapieczï¿½towaï¿½ zewnï¿½trznï¿½ bramï¿½ ï¿½wiï¿½tyni. ï¿½aden z nich nie przeï¿½yï¿½ tego rytuaï¿½u.");
 		Doc_PrintLine(ndocid,0,"");
-		Doc_PrintLines(ndocid,0,"Jedynie ja pozosta³em, aby byæ œwiadkiem tych wydarzeñ.");
+		Doc_PrintLines(ndocid,0,"Jedynie ja pozostaï¿½em, aby byï¿½ ï¿½wiadkiem tych wydarzeï¿½.");
 		Doc_PrintLine(ndocid,0,"");
-		Doc_PrintLines(ndocid,0,"Oby RADEMES przez ca³¹ wiecznoœæ gni³ wewn¹trz œwi¹tyni!");
+		Doc_PrintLines(ndocid,0,"Oby RADEMES przez caï¿½ï¿½ wiecznoï¿½ï¿½ gniï¿½ wewnï¿½trz ï¿½wiï¿½tyni!");
 	}
 	else
 	{
@@ -1019,7 +1019,7 @@ func void use_addon_stone_02()
 
 instance ITMI_ADDON_KOMPASS_MIS(C_ITEM)
 {
-	name = "Z³oty kompas";
+	name = "Zï¿½oty kompas";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 500;
@@ -1039,7 +1039,7 @@ instance ITSE_ADDON_FRANCISCHEST(C_ITEM)
 	material = MAT_LEATHER;
 	on_state[0] = francischest;
 	description = "Skrzynia ze skarbem";
-	text[0] = "Skrzynia jest dosyæ ciê¿ka.";
+	text[0] = "Skrzynia jest dosyï¿½ ciï¿½ka.";
 	text[1] = "";
 	text[2] = "";
 	text[3] = "";
@@ -1058,7 +1058,7 @@ func void francischest()
 	CreateInvItems(hero,itmi_silvernecklace,1);
 	CreateInvItems(hero,itwr_addon_francisabrechnung_mis,1);
 	Snd_Play("Geldbeutel");
-	Print("Zdoby³em stertê ró¿nych rzeczy.");
+	PrintS("Zdobyï¿½em stertï¿½ rï¿½nych rzeczy.");
 };
 
 
@@ -1090,29 +1090,29 @@ func void usefrancisabrechnung_mis()
 	Doc_PrintLine(ndocid,0,"");
 	Doc_PrintLine(ndocid,0,"Statek kupiecki 'Syrena'");
 	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"Suma ³upów: 14560");
+	Doc_PrintLine(ndocid,0,"Suma ï¿½upï¿½w: 14560");
 	Doc_PrintLine(ndocid,0,"-----------------------");
 	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"Za³oga       : 9840");
+	Doc_PrintLine(ndocid,0,"Zaï¿½oga       : 9840");
 	Doc_PrintLine(ndocid,0,"Oficerowie   : 2500");
 	Doc_PrintLine(ndocid,0,"Kapitan      : 1200");
 	Doc_PrintLine(ndocid,0,"----------------------------");
 	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"moja dzia³ka  : 2220");
+	Doc_PrintLine(ndocid,0,"moja dziaï¿½ka  : 2220");
 	Doc_PrintLine(ndocid,0,"");
 	Doc_PrintLine(ndocid,0,"");
 	Doc_PrintLine(ndocid,0,"");
 	Doc_PrintLine(ndocid,0,"Fregata 'Miriam'");
 	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"Suma ³upów: 4890");
+	Doc_PrintLine(ndocid,0,"Suma ï¿½upï¿½w: 4890");
 	Doc_PrintLine(ndocid,0,"----------------------------");
 	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"Za³oga       : 2390");
+	Doc_PrintLine(ndocid,0,"Zaï¿½oga       : 2390");
 	Doc_PrintLine(ndocid,0,"Oficerowie   : 500");
 	Doc_PrintLine(ndocid,0,"Kapitan      : 500");
 	Doc_PrintLine(ndocid,0,"----------------------------");
 	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLine(ndocid,0,"moja dzia³ka  : 1000");
+	Doc_PrintLine(ndocid,0,"moja dziaï¿½ka  : 1000");
 	Doc_PrintLine(ndocid,0,"");
 	Doc_SetMargins(ndocid,-1,30,20,275,20,1);
 	Doc_SetFont(ndocid,1,FONT_BOOK);
@@ -1120,28 +1120,28 @@ func void usefrancisabrechnung_mis()
 	Doc_PrintLine(ndocid,1,"Statek handlowy 'Nico'");
 	Doc_SetFont(ndocid,1,FONT_BOOK);
 	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLine(ndocid,1,"Suma ³upów: 9970");
+	Doc_PrintLine(ndocid,1,"Suma ï¿½upï¿½w: 9970");
 	Doc_PrintLine(ndocid,1,"----------------------------");
 	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLine(ndocid,1,"Za³oga       : 5610");
+	Doc_PrintLine(ndocid,1,"Zaï¿½oga       : 5610");
 	Doc_PrintLine(ndocid,1,"Oficerowie   : 1500");
 	Doc_PrintLine(ndocid,1,"Kapitan      : 1000");
 	Doc_PrintLine(ndocid,1,"----------------------------");
 	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLine(ndocid,1,"moja dzia³ka  : 1860");
+	Doc_PrintLine(ndocid,1,"moja dziaï¿½ka  : 1860");
 	Doc_PrintLine(ndocid,1,"");
 	Doc_PrintLine(ndocid,1,"");
 	Doc_PrintLine(ndocid,1,"Statek kupiecki 'Maria'");
 	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLine(ndocid,1,"Suma ³upów: 7851");
+	Doc_PrintLine(ndocid,1,"Suma ï¿½upï¿½w: 7851");
 	Doc_PrintLine(ndocid,1,"----------------------------");
 	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLine(ndocid,1,"Za³oga       : 4000");
+	Doc_PrintLine(ndocid,1,"Zaï¿½oga       : 4000");
 	Doc_PrintLine(ndocid,1,"Oficerowie   : 750");
 	Doc_PrintLine(ndocid,1,"Kapitan      : 1000");
 	Doc_PrintLine(ndocid,1,"----------------------------");
 	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLine(ndocid,1,"moja dzia³ka  : 1701");
+	Doc_PrintLine(ndocid,1,"moja dziaï¿½ka  : 1701");
 	Doc_PrintLine(ndocid,1,"");
 	FRANCIS_HASPROOF = TRUE;
 	Doc_Show(ndocid);
@@ -1174,16 +1174,16 @@ func void usegregslogbuch()
 	Doc_SetPage(ndocid,1,"Book_Brown_R.tga",0);
 	Doc_SetMargins(ndocid,0,275,20,30,20,1);
 	Doc_SetFont(ndocid,0,FONT_BOOK);
-	Doc_PrintLines(ndocid,0,"Mam ju¿ doœæ tej pla¿y! Wokó³ tylko piasek. Nie mogê nawet spaæ, bo mnie wszêdzie swêdzi. Czas, ¿eby Kruk w koñcu sypn¹³ z³otem za wiêŸniów i ¿ebyœmy w koñcu st¹d odp³ynêli. Coœ mi siê zdaje, ¿e muszê powa¿nie pogadaæ z tym bufonem.");
+	Doc_PrintLines(ndocid,0,"Mam juï¿½ doï¿½ï¿½ tej plaï¿½y! Wokï¿½ tylko piasek. Nie mogï¿½ nawet spaï¿½, bo mnie wszï¿½dzie swï¿½dzi. Czas, ï¿½eby Kruk w koï¿½cu sypnï¿½ï¿½ zï¿½otem za wiï¿½niï¿½w i ï¿½ebyï¿½my w koï¿½cu stï¿½d odpï¿½ynï¿½li. Coï¿½ mi siï¿½ zdaje, ï¿½e muszï¿½ powaï¿½nie pogadaï¿½ z tym bufonem.");
 	Doc_PrintLine(ndocid,0,"");
-	Doc_PrintLines(ndocid,0,"Co ten pacan sobie wyobra¿a? Kaza³ odprawiæ mnie z kwitkiem swoim œmierdz¹cym najemnikom. Wkrótce siê dowie, z kim ma do czynienia. Na pocz¹tek za³atwiê tego s³u¿alca Bloodwyna.");
-	Doc_PrintLines(ndocid,0,"Jeœli wkrótce nie zap³aci, bêdê musia³ zrobiæ siê naprawdê niemi³y.");
+	Doc_PrintLines(ndocid,0,"Co ten pacan sobie wyobraï¿½a? Kazaï¿½ odprawiï¿½ mnie z kwitkiem swoim ï¿½mierdzï¿½cym najemnikom. Wkrï¿½tce siï¿½ dowie, z kim ma do czynienia. Na poczï¿½tek zaï¿½atwiï¿½ tego sï¿½uï¿½alca Bloodwyna.");
+	Doc_PrintLines(ndocid,0,"Jeï¿½li wkrï¿½tce nie zapï¿½aci, bï¿½dï¿½ musiaï¿½ zrobiï¿½ siï¿½ naprawdï¿½ niemiï¿½y.");
 	Doc_SetMargins(ndocid,-1,30,20,275,20,1);
 	Doc_SetFont(ndocid,1,FONT_BOOK);
-	Doc_PrintLines(ndocid,1,"Bandyci siê rozzuchwalili. Wci¹¿ nie zap³acili za ostatni transport. Po prostu za ma³o wiemy. Muszê wybadaæ, co planuje Kruk.");
+	Doc_PrintLines(ndocid,1,"Bandyci siï¿½ rozzuchwalili. Wciï¿½ï¿½ nie zapï¿½acili za ostatni transport. Po prostu za maï¿½o wiemy. Muszï¿½ wybadaï¿½, co planuje Kruk.");
 	Doc_PrintLine(ndocid,1,"");
-	Doc_PrintLines(ndocid,1,"Wezmê wiêkszoœæ za³ogi na kontynent i zabezpieczymy rudê. Francis zostanie z paroma ludŸmi i ufortyfikuje obóz.");
-	Doc_PrintLines(ndocid,1,"Aby mieæ pewnoœæ, ¿e ka¿dy ma zajêcie, da³em Bonesowi zbrojê. Przekradnie siê w niej do obozu bandytów i dowie siê, co knuje Kruk.");
+	Doc_PrintLines(ndocid,1,"Wezmï¿½ wiï¿½kszoï¿½ï¿½ zaï¿½ogi na kontynent i zabezpieczymy rudï¿½. Francis zostanie z paroma ludï¿½mi i ufortyfikuje obï¿½z.");
+	Doc_PrintLines(ndocid,1,"Aby mieï¿½ pewnoï¿½ï¿½, ï¿½e kaï¿½dy ma zajï¿½cie, daï¿½em Bonesowi zbrojï¿½. Przekradnie siï¿½ w niej do obozu bandytï¿½w i dowie siï¿½, co knuje Kruk.");
 	GREG_GAVEARMORTOBONES = TRUE;
 	Doc_Show(ndocid);
 };
@@ -1212,7 +1212,7 @@ instance ITKE_ADDON_HEILER(C_ITEM)
 	value = VALUE_KEY_01;
 	visual = "ItKe_Key_02.3ds";
 	material = MAT_METAL;
-	description = "Klucz kamiennego stra¿nika";
+	description = "Klucz kamiennego straï¿½nika";
 	text[2] = "Pasuje do skrzyni";
 	text[3] = "w dziwnym budynku na bagnie";
 	text[5] = NAME_VALUE;
@@ -1229,7 +1229,7 @@ instance ITMI_TEMPELTORKEY(C_ITEM)
 	material = MAT_STONE;
 	scemename = "MAP";
 	on_state[0] = use_tempeltorkey;
-	text[2] = "Klucz do œwi¹tyni Adanosa";
+	text[2] = "Klucz do ï¿½wiï¿½tyni Adanosa";
 };
 
 
@@ -1251,7 +1251,7 @@ func void use_tempeltorkey()
 
 instance ITMI_ADDON_BLOODWYN_KOPF(C_ITEM)
 {
-	name = "G³owa Bloodwyna";
+	name = "Gï¿½owa Bloodwyna";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 0;
@@ -1276,7 +1276,7 @@ instance ITWR_ADDON_TREASUREMAP(C_ITEM)
 	on_state[0] = use_treasuremap;
 	description = name;
 	text[0] = "";
-	text[1] = "Na mapie s¹ zaznaczone jakieœ miejsca.";
+	text[1] = "Na mapie sï¿½ zaznaczone jakieï¿½ miejsca.";
 	text[5] = NAME_VALUE;
 	count[5] = value;
 };
@@ -1300,7 +1300,7 @@ func void use_treasuremap()
 
 instance ITMI_ADDON_GREGSTREASUREBOTTLE_MIS(C_ITEM)
 {
-	name = "Wiadomoœæ w butelce";
+	name = "Wiadomoï¿½ï¿½ w butelce";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 0;
@@ -1309,7 +1309,7 @@ instance ITMI_ADDON_GREGSTREASUREBOTTLE_MIS(C_ITEM)
 	on_state[0] = use_gregsbottle;
 	scemename = "MAPSEALED";
 	description = name;
-	text[2] = "W œrodku jest kawa³ek papieru";
+	text[2] = "W ï¿½rodku jest kawaï¿½ek papieru";
 };
 
 
@@ -1321,7 +1321,7 @@ func void use_gregsbottle()
 
 instance ITMI_EROLSKELCH(C_ITEM)
 {
-	name = "Pêkniêta srebrna misa";
+	name = "Pï¿½kniï¿½ta srebrna misa";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = 125;

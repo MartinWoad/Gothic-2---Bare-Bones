@@ -5,8 +5,8 @@ func void B_Kapitelwechsel(var int neues_Kapitel,var int aktuelles_Level_Zen)
 	if(neues_Kapitel == 1)
 	{
 		IntroduceChapter(KapWechsel_1,KapWechsel_1_Text,"chapter1.tga","chapter_01.wav",6000);
-		PC_Hero.attribute[ATR_MANA_MAX] = 0;
-		PC_Hero.attribute[ATR_MANA] = 0;
+		//PC_Hero.attribute[ATR_MANA_MAX] = 0;
+		//PC_Hero.attribute[ATR_MANA] = 0;
 	}
 	else if(neues_Kapitel == 2)
 	{
@@ -63,4 +63,3 @@ func void B_Kapitelwechsel(var int neues_Kapitel,var int aktuelles_Level_Zen)
 		XP_Ambient = XP_AmbientKap6;
 	};
 };
-

@@ -259,7 +259,7 @@ instance ItMw_1H_Sword_L_03(C_Item)
 	damageTotal = Damage_Wolfsmesser;
 	damagetype = DAM_EDGE;
 	range = Range_Wolfsmesser;
-	cond_atr[2] = ATR_STRENGTH;
+	cond_atr[2] = ATR_DEXTERITY;
 	cond_value[2] = Condition_Wolfsmesser;
 	visual = "ItMw_012_1h_Knife_02.3DS";
 	description = name;
@@ -267,7 +267,7 @@ instance ItMw_1H_Sword_L_03(C_Item)
 	count[1] = range;
 	text[2] = NAME_Dam_Edge;
 	count[2] = damageTotal;
-	text[3] = NAME_Str_needed;
+	text[3] = NAME_Dex_needed;
 	count[3] = cond_value[2];
 	text[4] = NAME_OneHanded;
 	text[5] = NAME_Value;

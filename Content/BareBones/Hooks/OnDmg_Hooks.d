@@ -44,43 +44,6 @@ class oSDamageDescriptor
 	var int visualFX;			// zCVisualFX* 0x110
 };
 
-func void CheckWeaponLevelUp()
-{
-	var oCNpc her; her = Hlp_GetNpc(hero);
-	if(hero1hExp >= hero1hExp_NextLevel && hero.hitChance[NPC_TALENT_1H] < 60)
-	{
-
-		hero.hitChance[NPC_TALENT_1H] += 1;
-		PrintS_Ext(PRINT_Learn1H1, White());
-		hero1hExp_NextLevel += (hero.hitChance[NPC_TALENT_1H] + 1) * 50;
-	};
-
-	if(hero2hExp >= hero2hExp_NextLevel && hero.hitChance[NPC_TALENT_2H] < 60)
-	{
-
-		hero.hitChance[NPC_TALENT_2H] += 1;
-		PrintS_Ext(PRINT_Learn2H1, White());
-		hero2hExp_NextLevel += (hero.hitChance[NPC_TALENT_2H] + 1) * 50;
-	};
-
-	if(heroBowExp >= heroBowExp_NextLevel && hero.hitChance[NPC_TALENT_BOW] < 60)
-	{
-
-		hero.hitChance[NPC_TALENT_BOW] += 1;
-		PrintS_Ext(PRINT_LearnBow1, White());
-		heroBowExp_NextLevel += (hero.hitChance[NPC_TALENT_BOW] + 1) * 50;
-	};
-
-	if(heroCrossbowExp >= heroCrossbowExp_NextLevel && hero.hitChance[NPC_TALENT_CROSSBOW] < 60)
-	{
-
-		hero.hitChance[NPC_TALENT_CROSSBOW] += 1;
-		PrintS_Ext(PRINT_LearnCrossbow1, White());
-		heroCrossbowExp_NextLevel += (hero.hitChance[NPC_TALENT_CROSSBOW] + 1) * 50;
-	};
-
-};
-
 func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg, var int dmgDescriptorPtr)
 {
 	var oSDamageDescriptor dmgDesc; dmgDesc = _^(dmgDescriptorPtr);
@@ -89,9 +52,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg, var int 
 
 	var c_item c_item_Weapon_Attack_Count_Damage;	c_item_Weapon_Attack_Count_Damage 	= Npc_GetReadiedWeapon(attackerNpc);
 	var oCItem Weapon_Attack_Count_Damage;		Weapon_Attack_Count_Damage 		= _^(MEM_InstToPtr(c_item_Weapon_Attack_Count_Damage));
-
-
-
+	var int penetrated;
 
 	var int DamageRoll;	DamageRoll = r_Max(99)+1;
 
@@ -111,41 +72,51 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg, var int 
 		if (Weapon_Attack_Count_Damage.flags & ITEM_2HD_AXE || Weapon_Attack_Count_Damage.flags & ITEM_2HD_SWD)
 		{
 			dmg = (wpnDmg + attackerNpc.attribute[ATR_STRENGTH]);
-			DamageRoll += attackerNpc.attribute[ATR_DEXTERITY]/10;
+			DamageRoll += attackerNpc.attribute[ATR_DEXTERITY]/5;
 		}
 		else ///Einhand
 		{
 			dmg = (wpnDmg + attackerNpc.attribute[ATR_STRENGTH]);
-			DamageRoll += attackerNpc.attribute[ATR_DEXTERITY]/10;
+			DamageRoll += attackerNpc.attribute[ATR_DEXTERITY]/5;
 		};
 
 		dmg -= armRes;
+		penetrated = dmg;
 
 		if (Weapon_Attack_Count_Damage.flags & ITEM_2HD_AXE || Weapon_Attack_Count_Damage.flags & ITEM_2HD_SWD)
 		{
-			if(DamageRoll > (50 + attackerNpc.HitChance[NPC_TALENT_2H]/2))
+			if(DamageRoll > (50 + attackerNpc.HitChance[NPC_TALENT_2H])/2)
 			{
 				dmg = dmg/10;
+
+				if(penetrated > 0 && dmg < 5)
+				{
+						dmg = 5;
+				};
 			}
 			else if(DamageRoll > (attackerNpc.HitChance[NPC_TALENT_2H]))
 			{
 				dmg = dmg/5;
+
+				if(penetrated > 0 && dmg < 10)
+				{
+						dmg = 10;
+				};
 			}
 			else if(DamageRoll > (attackerNpc.HitChance[NPC_TALENT_2H]/2))
 			{
 				dmg = dmg/2;
 
-				if(dmg >= 1 && dmg < 5)
+				if(penetrated > 0 && dmg < 15)
 				{
-						dmg = 5;
+						dmg = 15;
 				};
-
 			}
 			else
 			{
-				if(dmg >= 1 && dmg < 10)
+				if(penetrated > 0 && dmg < 20)
 				{
-						dmg = 10;
+						dmg = 20;
 				};
 			};
 		}
@@ -154,25 +125,35 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg, var int 
 			if(DamageRoll > (50 + attackerNpc.HitChance[NPC_TALENT_1H])/2)
 			{
 				dmg = dmg/10;
+
+				if(penetrated > 0 && dmg < 5)
+				{
+						dmg = 5;
+				};
 			}
 			else if(DamageRoll > (attackerNpc.HitChance[NPC_TALENT_1H]))
 			{
 				dmg = dmg/5;
+
+				if(penetrated > 0 && dmg < 10)
+				{
+						dmg = 10;
+				};
 			}
 			else if(DamageRoll > (attackerNpc.HitChance[NPC_TALENT_1H]/2))
 			{
 				dmg = dmg/2;
 
-				if(dmg >= 1 && dmg < 5)
+				if(penetrated > 0 && dmg < 15)
 				{
-						dmg = 5;
+						dmg = 15;
 				};
 			}
 			else
 			{
-				if(dmg >= 1 && dmg < 10)
+				if(penetrated > 0 && dmg < 20)
 				{
-						dmg = 10;
+						dmg = 20;
 				};
 			};
 		};
@@ -184,26 +165,36 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg, var int 
 		if(DamageRoll > 75)
 		{
 			dmg = dmg/10;
+
+			if(penetrated > 0 && dmg < 5)
+			{
+					dmg = 5;
+			};
 		}
 		else if(DamageRoll > 50)
 		{
 			dmg = dmg/5;
+
+			if(penetrated > 0 && dmg < 10)
+			{
+					dmg = 10;
+			};
 		}
 		else if(DamageRoll > 25)
 		{
 			dmg = dmg/2;
 
-			if(dmg >= 1 && dmg < 5)
+			if(penetrated > 0 && dmg < 15)
 			{
-					dmg = 5;
+					dmg = 15;
 			};
 
 		}
 		else
 		{
-			if(dmg >= 1 && dmg < 10)
+			if(penetrated > 0 && dmg < 20)
 			{
-					dmg = 10;
+					dmg = 20;
 			};
 		};
 
@@ -245,6 +236,40 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg, var int 
 				{
 					hero1hExp += dmg;
 				};
+
+				if(Weapon_Attack_Count_Damage.flags & ITEM_AXE)
+				{
+					if(attackerNpc.attribute[ATR_STRENGTH] - ATTRIBUTEFROMEQUIPMENT[ATR_STRENGTH] < attributepotential[ATR_STRENGTH])
+					{
+						heroStrengthExp += dmg;
+					};
+				}
+				else if (Weapon_Attack_Count_Damage.cond_atr[2] == ATR_STRENGTH)
+				{
+					//PrintS("Uderzenie mieczem pod si³ê!");
+					if(attackerNpc.attribute[ATR_STRENGTH] - ATTRIBUTEFROMEQUIPMENT[ATR_STRENGTH] < attributepotential[ATR_STRENGTH])
+					{
+						heroStrengthExp += 3*dmg/4;
+					};
+					if(attackerNpc.attribute[ATR_DEXTERITY] - ATTRIBUTEFROMEQUIPMENT[ATR_DEXTERITY] < attributepotential[ATR_DEXTERITY])
+					{
+						heroDexterityExp += dmg/4;
+					};
+				}
+				else if(Weapon_Attack_Count_Damage.cond_atr[2] == ATR_DEXTERITY)
+				{
+					//PrintS("Uderzenie mieczem pod zrêcznoœæ!");
+					if(attackerNpc.attribute[ATR_STRENGTH] - ATTRIBUTEFROMEQUIPMENT[ATR_STRENGTH] < attributepotential[ATR_STRENGTH])
+					{
+						heroStrengthExp += dmg/2;
+					};
+					if(attackerNpc.attribute[ATR_DEXTERITY] - ATTRIBUTEFROMEQUIPMENT[ATR_DEXTERITY] < attributepotential[ATR_DEXTERITY])
+					{
+						heroDexterityExp += dmg/2;
+					};
+				};
+
+
 				/*
 				if(secondaryWeaponPercentage < 10)
 				{
@@ -302,6 +327,11 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg, var int 
 				{
 					hero2hExp += dmg;
 				};
+
+				if(attackerNpc.attribute[ATR_STRENGTH] - ATTRIBUTEFROMEQUIPMENT[ATR_STRENGTH] < attributepotential[ATR_STRENGTH])
+				{
+					heroStrengthExp += dmg;
+				};
 				/*
 				if(secondaryWeaponPercentage < 10)
 				{
@@ -356,6 +386,11 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg, var int 
 				else if(weaponPercentage < 60 && heroKnowsBowMaster)
 				{
 					heroBowExp += dmg;
+				};
+
+				if(attackerNpc.attribute[ATR_DEXTERITY] - ATTRIBUTEFROMEQUIPMENT[ATR_DEXTERITY] < attributepotential[ATR_DEXTERITY])
+				{
+					heroDexterityExp += dmg;
 				};
 				/*
 				if(secondaryWeaponPercentage < 10)
@@ -412,6 +447,11 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg, var int 
 				{
 					heroCrossbowExp += dmg;
 				};
+
+				if(attackerNpc.attribute[ATR_DEXTERITY] - ATTRIBUTEFROMEQUIPMENT[ATR_DEXTERITY] < attributepotential[ATR_DEXTERITY])
+				{
+					heroDexterityExp += dmg;
+				};
 				/*
 				if(secondaryWeaponPercentage < 10)
 				{
@@ -438,7 +478,12 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg, var int 
 					heroBowExp += dmg/3;
 				};
 				*/
+			}
+			else if(dmgDesc.spellID > 0 && attackerNpc.attribute[ATR_MANA_MAX] - ATTRIBUTEFROMEQUIPMENT[ATR_MANA_MAX] < attributepotential[ATR_MANA_MAX])
+			{
+				heroPowerExp += dmg;
 			};
+
 			CheckWeaponLevelUp();
 		};
 	};
@@ -467,22 +512,37 @@ func void InitDamage()
 
 	if(!hero1hExp_NextLevel)
 	{
-		hero1hExp_NextLevel = 20;
+		hero1hExp_NextLevel = 50;
 	};
 
 	if(!hero2hExp_NextLevel)
 	{
-		hero2hExp_NextLevel = 20;
+		hero2hExp_NextLevel = 50;
 	};
 
 	if(!heroBowExp_NextLevel)
 	{
-		heroBowExp_NextLevel = 20;
+		heroBowExp_NextLevel = 50;
 	};
 
 	if(!heroCrossbowExp_NextLevel)
 	{
-		 heroCrossbowExp_NextLevel = 20;
+		 heroCrossbowExp_NextLevel = 50;
+	};
+
+	if(!heroStrengthExp_NextLevel)
+	{
+		 heroStrengthExp_NextLevel = 50;
+	};
+
+	if(!heroDexterityExp_NextLevel)
+	{
+		 heroDexterityExp_NextLevel = 50;
+	};
+
+	if(!heroPowerExp_NextLevel)
+	{
+		 heroPowerExp_NextLevel = 50;
 	};
 
 	const int dmg = 0;

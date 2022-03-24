@@ -341,7 +341,7 @@ func int Print_TextFieldPxl(var int x, var int y, var string text, var string fo
 class gCPrintS {
     var int a8_Alpha;    // Anim8(h)
     var int a8_Movement; // Anim8(h)
-    var int tv_Text;     // Print(h)
+    var int tv_Text;     // PrintS(h)
     var int vr_Pos;
     var int vr_Offs;
 };

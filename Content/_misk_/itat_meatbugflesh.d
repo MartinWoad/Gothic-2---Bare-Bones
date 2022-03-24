@@ -175,10 +175,10 @@ instance ItAt_CrawlerMandibles(C_Item)
 	scemeName = "FOOD";
 	on_state[0] = Use_Mandibles;
 	description = name;
-	text[0] = "Mo¿na je otworzyæ w celu";
+	text[0] = "Mo¿na je otworzyæ½ w celu";
 	text[1] = "wypicia zawartej w nich wydzieliny,";
-	text[2] = "która pozwala zregenerowaæ energiê magiczn¹.";
-	text[3] = "Bardzo truj¹ce.";
+	text[2] = "która pozwala zregenerowaæ energiê magiczn¹½";
+	text[3] = "Bardzo truj¹ce";
 	text[5] = NAME_Value;
 	count[5] = value;
 };
@@ -228,7 +228,7 @@ instance ItAt_Sting(C_Item)
 	description = name;
 	text[0] = "";
 	text[1] = "Zawiera";
-	text[2] = "truj¹c¹ wydzielinê.";
+	text[2] = "truj¹c¹ wydzielinê";
 	text[3] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -244,23 +244,23 @@ func void Use_Sting()
 				Npc_ChangeAttribute(self,ATR_HITPOINTS,self.attribute[ATR_HITPOINTS_MAX]);
 			};
 			ChangeToxicity(self, 50);
-			//Print(PRINT_FullyHealed);
+			//PrintS(PRINT_FullyHealed);
 			//Bloodfly_Bonus = Bloodfly_Bonus + 1;
 
 		//if(Bloodfly_Bonus <= 10)
 	//	{
 		//	Npc_ChangeAttribute(self,ATR_HITPOINTS,self.attribute[ATR_HITPOINTS_MAX]);
-			//Print(PRINT_FullyHealed);
+			//PrintS(PRINT_FullyHealed);
 			//Bloodfly_Bonus = Bloodfly_Bonus + 1;
 		//}
 		//else
 		//{
-			//Print(PRINT_Mandibles);
+			//PrintS(PRINT_Mandibles);
 		//};
 	}
 	else if(Npc_IsPlayer(self))
 	{
-		//Print(PRINT_Bloodfly);
+		//PrintS(PRINT_Bloodfly);
 		ChangeToxicity(self, 50);
 	};
 };
@@ -319,7 +319,7 @@ instance ItAt_DrgSnapperHorn(C_Item)
 
 instance ItAt_CrawlerPlate(C_Item)
 {
-	name = "P³yty Pancerza Pe³zacza";
+	name = "P³yta Pancerza Pe³zacza";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = Value_CrawlerPlate;
@@ -575,7 +575,7 @@ instance ItAt_DemonHeart(C_Item)
 
 instance ItAt_UndeadDragonSoulStone(C_Item)
 {
-	name = "Kamieñ Duszy Nieumar³ego Smoka";
+	name = "Kamieñ Duszy Nieuma³ego Smoka";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = Value_UndeadDragonSoulStone;

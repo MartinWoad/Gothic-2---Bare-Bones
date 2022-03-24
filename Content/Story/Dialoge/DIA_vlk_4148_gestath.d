@@ -124,7 +124,7 @@ func void DIA_Gestath_Drachen_Info()
 	var C_Item heroArmor;
 	AI_Output(other,self,"DIA_Gestath_Drachen_15_00");	//Potrafisz oprawiaæ smoki?
 	heroArmor = Npc_GetEquippedArmor(other);
-	if(Kapitel >= 4)
+	if(Kapitel < 4)
 	{
 		AI_Output(self,other,"DIA_Gestath_Drachen_09_01");	//Kiedyœ, kiedy nabierzesz doœwiadczenia, mo¿e nawet nauczê ciê tej sztuki!
 	}
@@ -300,4 +300,3 @@ func void DIA_Gestath_PICKPOCKET_BACK()
 {
 	Info_ClearChoices(DIA_Gestath_PICKPOCKET);
 };
-

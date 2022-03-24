@@ -77,12 +77,14 @@ func void B_AssessPlayer()
 		if(C_NpcIsGateGuard(self))
 		{
 			self.aivar[AIV_NpcStartedTalk] = TRUE;
+			StopStrafing();
 			B_AssessTalk();
 			return;
 		}
 		else if(!C_BodyStateContains(other,BS_FALL) && !C_BodyStateContains(other,BS_SWIM) && !C_BodyStateContains(other,BS_DIVE) && (B_GetPlayerCrime(self) == CRIME_NONE) && (C_RefuseTalk(self) == FALSE))
 		{
 			self.aivar[AIV_NpcStartedTalk] = TRUE;
+			StopStrafing();
 			B_AssessTalk();
 			return;
 		};
@@ -99,4 +101,3 @@ func void B_AssessPlayer()
 		self.aivar[AIV_Guardpassage_Status] = GP_NONE;
 	};
 };
-

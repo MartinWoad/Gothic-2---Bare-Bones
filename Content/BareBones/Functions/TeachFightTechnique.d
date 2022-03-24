@@ -107,7 +107,7 @@ func int TeachFightTechnique(var C_Npc slf,var C_Npc oth,var int talent,var int 
 	kosten = B_GetLearnCostTalent(oth,talent) * 5;
 	if((talent != NPC_TALENT_1H) && (talent != NPC_TALENT_2H) && (talent != NPC_TALENT_BOW) && (talent != NPC_TALENT_CROSSBOW))
 	{
-		Print("*** ERROR: Wrong Parameter ***");
+		PrintS("*** ERROR: Wrong Parameter ***");
 		return FALSE;
 	};
   if(level > 5 || level < 1)

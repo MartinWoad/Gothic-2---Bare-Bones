@@ -132,8 +132,8 @@ func void B_AssessTalk()
 			AI_Standup(self);
 			AI_Standup(other);
 		};
+
 		AI_StartState(self,ZS_Talk,0,"");
 		return;
 	};
 };
-

@@ -7,7 +7,7 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 	kosten = B_GetLearnCostTalent(oth,talent) * percent;
 	if((talent != NPC_TALENT_1H) && (talent != NPC_TALENT_2H) && (talent != NPC_TALENT_BOW) && (talent != NPC_TALENT_CROSSBOW))
 	{
-		Print("*** ERROR: Wrong Parameter ***");
+		PrintS("*** ERROR: Wrong Parameter ***");
 		return FALSE;
 	};
 	if(talent == NPC_TALENT_1H)

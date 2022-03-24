@@ -27,6 +27,13 @@ func void B_Beklauen()
 
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
 		Snd_Play("Geldbeutel");
+
+		if(hero.attribute[ATR_DEXTERITY] - ATTRIBUTEFROMEQUIPMENT[ATR_DEXTERITY] < attributepotential[ATR_DEXTERITY])
+		{
+			heroDexterityExp += TheftDexGlob * 10;
+			CheckWeaponLevelUp();
+		};
+
 	}
 	else
 	{

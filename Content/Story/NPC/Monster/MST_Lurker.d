@@ -11,9 +11,9 @@ prototype Mst_Default_Lurker(C_Npc)
 	attribute[ATR_HITPOINTS] = 100;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
-	protection[PROT_BLUNT] = 50;
-	protection[PROT_EDGE] = 50;
-	protection[PROT_POINT] = 50;
+	protection[PROT_BLUNT] = 40;
+	protection[PROT_EDGE] = 40;
+	protection[PROT_POINT] = 40;
 	protection[PROT_FIRE] = 0;
 	protection[PROT_FLY] = 60;
 	protection[PROT_MAGIC] = 0;
@@ -89,4 +89,3 @@ instance Kervo_Lurker6(Mst_Default_Lurker)
 	aivar[AIV_MaxDistToWp] = 500;
 	aivar[AIV_OriginalFightTactic] = FAI_LURKER;
 };
-

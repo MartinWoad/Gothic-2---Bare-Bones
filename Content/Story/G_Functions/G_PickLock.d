@@ -7,18 +7,25 @@ func void G_PickLock(var int bSuccess,var int bBrokenOpen)
 		if(bBrokenOpen)
 		{
 			Snd_Play3d(self,"PICKLOCK_UNLOCK");
-			Print(PRINT_PICKLOCK_UNLOCK);
+			PrintS(PRINT_PICKLOCK_UNLOCK);
 		}
 		else
 		{
 			Snd_Play3d(self,"PICKLOCK_SUCCESS");
-			Print(PRINT_PICKLOCK_SUCCESS);
+			PrintS(PRINT_PICKLOCK_SUCCESS);
+
+			if(hero.attribute[ATR_DEXTERITY] - ATTRIBUTEFROMEQUIPMENT[ATR_DEXTERITY] < attributepotential[ATR_DEXTERITY])
+			{
+				heroDexterityExp += 200;
+				CheckWeaponLevelUp();
+			};
+
 		};
 	}
 	else if(bBrokenOpen)
 	{
 		Snd_Play3d(self,"PICKLOCK_BROKEN");
-		Print(PRINT_PICKLOCK_BROKEN);
+		PrintS(PRINT_PICKLOCK_BROKEN);
 		rnd = Hlp_Random(100);
 		if(rnd <= 25)
 		{
@@ -28,7 +35,6 @@ func void G_PickLock(var int bSuccess,var int bBrokenOpen)
 	else
 	{
 		Snd_Play3d(self,"PICKLOCK_FAILURE");
-		Print(PRINT_PICKLOCK_FAILURE);
+		PrintS(PRINT_PICKLOCK_FAILURE);
 	};
 };
-

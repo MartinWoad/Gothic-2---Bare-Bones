@@ -21,7 +21,7 @@ instance MENU_STATUS(C_MENU_DEF)
 	items[17] = "MENU_ITEM_ATTRIBUTE_4_TITLE";
 	items[18] = "MENU_ITEM_ATTRIBUTE_1_DETAILED";
 	items[19] = "MENU_ITEM_ATTRIBUTE_2_DETAILED";
-	items[20] = "MENU_ITEM_ATTRIBUTE_3";
+	items[20] = "MENU_ITEM_ATTRIBUTE_3_DETAILED";
 	items[21] = "MENU_ITEM_ATTRIBUTE_4";
 	items[22] = "MENU_ITEM_ARMOR_HEADING";
 	items[23] = "MENU_ITEM_ARMOR_1_TITLE";
@@ -261,12 +261,20 @@ instance MENU_ITEM_ATTRIBUTE_3_TITLE(C_MENU_ITEM_DEF)
 {
 	posx = STAT_A_X1;
 	posy = STAT_ATR_Y + (STAT_DY * 2);
-	text[0] = "Mana";
+	text[0] = "Moc";
 	fontname = STAT_FONT_DEFAULT;
 	flags = flags & ~IT_SELECTABLE;
 };
 
 instance MENU_ITEM_ATTRIBUTE_3(C_MENU_ITEM_DEF)
+{
+	posx = STAT_A_X2;
+	posy = STAT_ATR_Y + (STAT_DY * 2);
+	fontname = STAT_FONT_DEFAULT;
+	flags = flags & ~IT_SELECTABLE;
+};
+
+instance MENU_ITEM_ATTRIBUTE_3_DETAILED(C_MENU_ITEM_DEF)
 {
 	posx = STAT_A_X2;
 	posy = STAT_ATR_Y + (STAT_DY * 2);

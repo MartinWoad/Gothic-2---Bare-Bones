@@ -301,6 +301,13 @@ func void dia_francis_pickpocket_doit()
 		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
 		//b_giveplayerxp(XP_AMBIENT);
 		Info_ClearChoices(dia_francis_pickpocket);
+
+		if(hero.attribute[ATR_DEXTERITY] - ATTRIBUTEFROMEQUIPMENT[ATR_DEXTERITY] < attributepotential[ATR_DEXTERITY])
+		{
+			heroDexterityExp += 400;
+			CheckWeaponLevelUp();
+		};
+
 	}
 	else
 	{

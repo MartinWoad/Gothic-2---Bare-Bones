@@ -6,6 +6,7 @@ func void G_CanNotUse(var int bIsPlayer,var int nAttribute,var int nValue)
 	var int nAttributeValue;
 	var int nDifference;
 	var string strDifference;
+	var string strValue;
 	if(nAttribute == ATR_HITPOINTS)
 	{
 		strAttributeMissing = PRINT_HITPOINTS_MISSING;
@@ -43,12 +44,12 @@ func void G_CanNotUse(var int bIsPlayer,var int nAttribute,var int nValue)
 	};
 	nDifference = nValue - nAttributeValue;
 	strDifference = IntToString(nDifference);
-	strMessage = strDifference;
-	strMessage = ConcatStrings(strMessage," ");
-	strMessage = ConcatStrings(strMessage,strAttributeMissing);
+	strValue = IntToString(nValue);
+	strMessage = strValue;
+	//strMessage = ConcatStrings(strMessage," ");
+	strMessage = ConcatStrings(strAttributeMissing, strMessage);
 	if(bIsPlayer)
 	{
-		Print(strMessage);
+		PrintS(strMessage);
 	};
 };
-

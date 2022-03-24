@@ -18,10 +18,10 @@ prototype Mst_Default_OrcShaman(C_Npc)
 	protection[PROT_FIRE] = 90;
 	protection[PROT_FLY] = 90;
 	protection[PROT_MAGIC] = 80;
-	HitChance[NPC_TALENT_1H] = 60;
-	HitChance[NPC_TALENT_2H] = 60;
-	HitChance[NPC_TALENT_BOW] = 60;
-	HitChance[NPC_TALENT_CROSSBOW] = 60;
+	HitChance[NPC_TALENT_1H] = 40;
+	HitChance[NPC_TALENT_2H] = 40;
+	HitChance[NPC_TALENT_BOW] = 40;
+	HitChance[NPC_TALENT_CROSSBOW] = 40;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_ORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;

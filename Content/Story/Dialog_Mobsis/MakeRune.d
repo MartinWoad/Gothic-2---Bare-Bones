@@ -44,7 +44,7 @@ instance PC_Circle_01(C_Info)
 	condition = PC_Circle_01_Condition;
 	information = PC_Circle_01_Info;
 	permanent = TRUE;
-	description = "Twórz runy pierwszego krêgu";
+	description = "Twï¿½rz runy pierwszego krï¿½gu";
 };
 
 
@@ -94,7 +94,7 @@ instance PC_Circle_02(C_Info)
 	condition = PC_Circle_02_Condition;
 	information = PC_Circle_02_Info;
 	permanent = TRUE;
-	description = "Twórz runy drugiego krêgu";
+	description = "Twï¿½rz runy drugiego krï¿½gu";
 };
 
 
@@ -144,7 +144,7 @@ instance PC_Circle_03(C_Info)
 	condition = PC_Circle_03_Condition;
 	information = PC_Circle_03_Info;
 	permanent = TRUE;
-	description = "Twórz runy trzeciego krêgu";
+	description = "Twï¿½rz runy trzeciego krï¿½gu";
 };
 
 
@@ -198,7 +198,7 @@ instance PC_Circle_04(C_Info)
 	condition = PC_Circle_04_Condition;
 	information = PC_Circle_04_Info;
 	permanent = TRUE;
-	description = "Twórz runy czwartego krêgu";
+	description = "Twï¿½rz runy czwartego krï¿½gu";
 };
 
 
@@ -244,7 +244,7 @@ instance PC_Circle_05(C_Info)
 	condition = PC_Circle_05_Condition;
 	information = PC_Circle_05_Info;
 	permanent = TRUE;
-	description = "Twórz runy pi¹tego krêgu";
+	description = "Twï¿½rz runy piï¿½tego krï¿½gu";
 };
 
 
@@ -290,7 +290,7 @@ instance PC_Circle_06(C_Info)
 	condition = PC_Circle_06_Condition;
 	information = PC_Circle_06_Info;
 	permanent = TRUE;
-	description = "Twórz runy szóstego krêgu";
+	description = "Twï¿½rz runy szï¿½stego krï¿½gu";
 };
 
 
@@ -373,11 +373,11 @@ func void PC_SPL_MasterOfDisaster_Create()
 	{
 		Npc_RemoveInvItems(hero,ItMi_HolyWater,1);
 		CreateInvItems(hero,ItRu_MasterOfDisaster,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -390,7 +390,7 @@ instance PC_SPL_PalTeleportSecret(C_Info)
 	condition = PC_SPL_PalTeleportSecret_Condition;
 	information = PC_SPL_PalTeleportSecret_Info;
 	permanent = TRUE;
-	description = "Twórz runê teleportacyjn¹";
+	description = "Twï¿½rz runï¿½ teleportacyjnï¿½";
 };
 
 
@@ -423,11 +423,11 @@ func void PC_SPL_PalTeleportSecret_Create()
 	{
 		Npc_RemoveInvItems(hero,ItMi_HolyWater,1);
 		CreateInvItems(hero,ItRu_PalTeleportSecret,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -440,11 +440,11 @@ func void PC_ItRu_Light_Info()
 		Npc_RemoveInvItems(hero,ItSc_Light,1);
 		Npc_RemoveInvItems(hero,ItMi_Gold,1);
 		CreateInvItems(hero,ItRu_Light,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -457,11 +457,11 @@ func void PC_ItRu_Firebolt_Info()
 		Npc_RemoveInvItems(hero,ItSc_Firebolt,1);
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 		CreateInvItems(hero,ItRu_FireBolt,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -474,11 +474,11 @@ func void PC_ItRu_LightHeal_Info()
 		Npc_RemoveInvItems(hero,ItSc_LightHeal,1);
 		Npc_RemoveInvItems(hero,ItPl_Health_Herb_01,1);
 		CreateInvItems(hero,ItRu_LightHeal,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -491,11 +491,11 @@ func void PC_ItRu_SumGobSkel_Info()
 		Npc_RemoveInvItems(hero,ItSc_SumGobSkel,1);
 		Npc_RemoveInvItems(hero,ItAt_GoblinBone,1);
 		CreateInvItems(hero,ItRu_SumGobSkel,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -508,11 +508,11 @@ func void PC_ItRu_Zap_Info()
 		Npc_RemoveInvItems(hero,ItSc_Zap,1);
 		Npc_RemoveInvItems(hero,ItMi_Rockcrystal,1);
 		CreateInvItems(hero,ItRu_Zap,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -525,11 +525,11 @@ func void PC_ItRu_InstFireball_Info()
 		Npc_RemoveInvItems(hero,ItSc_InstantFireball,1);
 		Npc_RemoveInvItems(hero,ItMi_Pitch,1);
 		CreateInvItems(hero,ItRu_InstantFireball,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -542,11 +542,11 @@ func void PC_ItRu_Icebolt_Info()
 		Npc_RemoveInvItems(hero,ItSc_Icebolt,1);
 		Npc_RemoveInvItems(hero,ItMi_Quartz,1);
 		CreateInvItems(hero,ItRu_Icebolt,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -559,11 +559,11 @@ func void PC_ItRu_SumWolf_Info()
 		Npc_RemoveInvItems(hero,ItSc_SumWolf,1);
 		Npc_RemoveInvItems(hero,ItAt_WolfFur,1);
 		CreateInvItems(hero,ItRu_SumWolf,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -576,11 +576,11 @@ func void PC_ItRu_Windfist_Info()
 		Npc_RemoveInvItems(hero,ItSc_Windfist,1);
 		Npc_RemoveInvItems(hero,ItMi_Coal,1);
 		CreateInvItems(hero,ItRu_Windfist,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -593,11 +593,11 @@ func void PC_ItRu_Sleep_Info()
 		Npc_RemoveInvItems(hero,ItSc_Sleep,1);
 		Npc_RemoveInvItems(hero,ItPl_SwampHerb,1);
 		CreateInvItems(hero,ItRu_Sleep,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -610,11 +610,11 @@ func void PC_ItRu_MediumHeal_Info()
 		Npc_RemoveInvItems(hero,ItSc_MediumHeal,1);
 		Npc_RemoveInvItems(hero,ItPl_Health_Herb_02,1);
 		CreateInvItems(hero,ItRu_MediumHeal,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -628,11 +628,11 @@ func void PC_ItRu_LightningFlash_Info()
 		Npc_RemoveInvItems(hero,ItMi_Rockcrystal,1);
 		Npc_RemoveInvItems(hero,ItMi_Quartz,1);
 		CreateInvItems(hero,ItRu_LightningFlash,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -646,11 +646,11 @@ func void PC_ItRu_ChargeFireball_Info()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 		Npc_RemoveInvItems(hero,ItMi_Pitch,1);
 		CreateInvItem(hero,ItRu_ChargeFireball);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -663,11 +663,11 @@ func void PC_ItRu_SumSkel_Info()
 		Npc_RemoveInvItems(hero,ItSc_SumSkel,1);
 		Npc_RemoveInvItems(hero,ItAt_SkeletonBone,1);
 		CreateInvItems(hero,ItRu_SumSkel,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -680,11 +680,11 @@ func void PC_ItRu_Fear_Info()
 		Npc_RemoveInvItems(hero,ItSc_Fear,1);
 		Npc_RemoveInvItems(hero,ItMi_DarkPearl,1);
 		CreateInvItems(hero,ItRu_Fear,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -698,11 +698,11 @@ func void PC_ItRu_IceCube_Info()
 		Npc_RemoveInvItems(hero,ItMi_Quartz,1);
 		Npc_RemoveInvItems(hero,ItMi_Aquamarine,1);
 		CreateInvItems(hero,ItRu_IceCube,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 	};
 	b_endproductiondialog();
 };
@@ -715,11 +715,11 @@ func void PC_ItRu_ThunderBall_Info()
 		Npc_RemoveInvItems(hero,ItMi_Rockcrystal,1);
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 		CreateInvItems(hero,ItRu_ThunderBall,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -732,11 +732,11 @@ func void PC_ItRu_SumGol_Info()
 		Npc_RemoveInvItems(hero,ItSc_SumGol,1);
 		Npc_RemoveInvItems(hero,ItAt_StoneGolemHeart,1);
 		CreateInvItems(hero,ItRu_SumGol,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -749,11 +749,11 @@ func void PC_ItRu_HarmUndead_Info()
 		Npc_RemoveInvItems(hero,ItSc_HarmUndead,1);
 		Npc_RemoveInvItems(hero,ItMi_HolyWater,1);
 		CreateInvItems(hero,ItRu_HarmUndead,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 	};
 	b_endproductiondialog();
 };
@@ -766,11 +766,11 @@ func void PC_ItRu_Pyrokinesis_Info()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 		Npc_RemoveInvItems(hero,ItAt_WaranFiretongue,1);
 		CreateInvItems(hero,ItRu_Pyrokinesis,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -784,11 +784,11 @@ func void PC_ItRu_Firestorm_Info()
 		Npc_RemoveInvItems(hero,ItMi_Pitch,1);
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 		CreateInvItems(hero,ItRu_Firestorm,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -802,11 +802,11 @@ func void PC_ItRu_IceWave_Info()
 		Npc_RemoveInvItems(hero,ItMi_Quartz,1);
 		Npc_RemoveInvItems(hero,ItMi_Aquamarine,1);
 		CreateInvItems(hero,ItRu_IceWave,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -819,11 +819,11 @@ func void PC_ItRu_SumDemon_Info()
 		Npc_RemoveInvItems(hero,ItSc_SumDemon,1);
 		Npc_RemoveInvItems(hero,ItAt_DemonHeart,1);
 		CreateInvItems(hero,ItRu_SumDemon,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -836,11 +836,11 @@ func void PC_ItRu_FullHeal_Info()
 		Npc_RemoveInvItems(hero,ItSc_FullHeal,1);
 		Npc_RemoveInvItems(hero,ItPl_Health_Herb_03,1);
 		CreateInvItems(hero,ItRu_FullHeal,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -854,11 +854,11 @@ func void PC_ItRu_Firerain_Info()
 		Npc_RemoveInvItems(hero,ItMi_Pitch,1);
 		Npc_RemoveInvItems(hero,ItAt_WaranFiretongue,1);
 		CreateInvItems(hero,ItRu_Firerain,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -872,11 +872,11 @@ func void PC_ItRu_BreathOfDeath_Info()
 		Npc_RemoveInvItems(hero,ItMi_Coal,1);
 		Npc_RemoveInvItems(hero,ItMi_DarkPearl,1);
 		CreateInvItems(hero,ItRu_BreathOfDeath,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -890,11 +890,11 @@ func void PC_ItRu_MassDeath_Info()
 		Npc_RemoveInvItems(hero,ItAt_SkeletonBone,1);
 		Npc_RemoveInvItems(hero,ItMi_DarkPearl,1);
 		CreateInvItems(hero,ItRu_MassDeath,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -910,11 +910,11 @@ func void PC_ItRu_ArmyOfDarkness_Info()
 		Npc_RemoveInvItems(hero,ItAt_StoneGolemHeart,1);
 		Npc_RemoveInvItems(hero,ItAt_DemonHeart,1);
 		CreateInvItems(hero,ItRu_ArmyOfDarkness,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();
@@ -928,11 +928,11 @@ func void PC_ItRu_Shrink_Info()
 		Npc_RemoveInvItems(hero,ItAt_GoblinBone,1);
 		Npc_RemoveInvItems(hero,ItAt_TrollTooth,1);
 		CreateInvItems(hero,ItRu_Shrink,1);
-		Print(PRINT_RuneSuccess);
+		PrintS(PRINT_RuneSuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
 	b_endproductiondialog();

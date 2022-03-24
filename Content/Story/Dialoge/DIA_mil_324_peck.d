@@ -55,6 +55,13 @@ func void DIA_Peck_PICKPOCKET_DoIt()
 		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
 		//B_GivePlayerXP(XP_Ambient);
 		Info_ClearChoices(DIA_Peck_PICKPOCKET);
+
+		if(hero.attribute[ATR_DEXTERITY] - ATTRIBUTEFROMEQUIPMENT[ATR_DEXTERITY] < attributepotential[ATR_DEXTERITY])
+		{
+			heroDexterityExp += 600;
+			CheckWeaponLevelUp();
+		};
+
 	}
 	else
 	{

@@ -30,6 +30,39 @@ func void init_global()
 		satietyBarHandle = Bar_Create(SatietyBar);
 	};
 
+	if(attributepotential[ATR_STRENGTH] == 0)
+	{
+		attributepotential[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH] + 5;
+
+		if(attributepotential[ATR_STRENGTH] > 100)
+		{
+			attributepotential[ATR_STRENGTH] = 100;
+		};
+
+	};
+
+	if(attributepotential[ATR_DEXTERITY] == 0)
+	{
+		attributepotential[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY] + 5;
+
+		if(attributepotential[ATR_DEXTERITY] > 100)
+		{
+			attributepotential[ATR_DEXTERITY] = 100;
+		};
+
+	};
+
+	if(attributepotential[ATR_MANA_MAX] == 0)
+	{
+		attributepotential[ATR_MANA_MAX] = hero.attribute[ATR_MANA_MAX] - ATTRIBUTEFROMEQUIPMENT[ATR_MANA_MAX] + 5;
+
+		if(attributepotential[ATR_MANA_MAX] > 100)
+		{
+			attributepotential[ATR_MANA_MAX] = 100;
+		};
+
+	};
+
 	UpdateToxicityBar();
 	UpdateSatietyBar();
 	FF_ApplyOnceExtGT(Hunger, HungerTime, -1);
@@ -37,12 +70,17 @@ func void init_global()
 	Hook_oCItemContainer__Remove();
 	Hook_oCItemContainer__Insert();
 	SaveGameFix();
+	//StopStrafing();
+	//attributepotential[ATR_MANA_MAX] = 15;
 
 };
 
 func void NewGame_BB()
 {
 	satiety = 100;
+	attributepotential[ATR_STRENGTH] = 10;
+	attributepotential[ATR_DEXTERITY] = 10;
+	attributepotential[ATR_MANA_MAX] = 10;
 	UpdateSatietyBar();
 
 };
@@ -745,12 +783,12 @@ func void Startup_Surface()
 	Wld_InsertNpc(Giant_Rat,"OW_SPAWN_TRACK_LEICHE_01");
 	Wld_InsertNpc(Gobbo_Black,"OW_MOLERAT_CAVE_SPAWN");
 	Wld_InsertNpc(Gobbo_Black,"OW_MOLERAT_CAVE_SPAWN");
-	Wld_InsertNpc(Gobbo_Black,"OW_MOLERAT_CAVE_SPAWN");
+	Wld_InsertNpc(Gobbo_Warrior,"OW_MOLERAT_CAVE_SPAWN");
 	Wld_InsertNpc(Gobbo_Black,"OW_MOLERAT_CAVE_SPAWN");
 	Wld_InsertNpc(Gobbo_Black,"OW_MOLERAT_CAVE_SPAWN");
 	Wld_InsertNpc(Gobbo_Black,"OW_MOLERAT_FORCAVE_SPAWN");
 	Wld_InsertNpc(Gobbo_Black,"OW_MOLERAT_FORCAVE_SPAWN");
-	Wld_InsertNpc(Gobbo_Black,"OW_MOLERAT_FORCAVE_SPAWN");
+	Wld_InsertNpc(Gobbo_Warrior,"OW_MOLERAT_FORCAVE_SPAWN");
 	Wld_InsertNpc(Gobbo_Black,"OW_MOLERAT_FORCAVE_SPAWN");
 	Wld_InsertNpc(Giant_Bug,"OW_SCAVENGER_COAST_NEWCAMP_SPAWN");
 	Wld_InsertNpc(Giant_Bug,"OW_SCAVENGER_COAST_NEWCAMP_SPAWN");
@@ -815,17 +853,17 @@ func void Startup_Surface()
 	Wld_InsertNpc(Giant_Bug,"SPAWN_OW_SMALLCAVE01_MOLERAT");
 	Wld_InsertNpc(Giant_Bug,"SPAWN_OW_SMALLCAVE01_MOLERAT");
 	Wld_InsertNpc(Giant_Bug,"SPAWN_OW_SMALLCAVE01_MOLERAT");
-	Wld_InsertNpc(Warg,"SPAWN_OW_MOLERAT_OCWOOD_OC2");
-	Wld_InsertNpc(Warg,"SPAWN_OW_MOLERAT_OCWOOD_OC2");
+	Wld_InsertNpc(OrcBiter,"SPAWN_OW_MOLERAT_OCWOOD_OC2");
+	Wld_InsertNpc(OrcBiter,"SPAWN_OW_MOLERAT_OCWOOD_OC2");
 	Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_OW_MOLERAT_OLDWOOD1_M");
-	Wld_InsertNpc(Warg,"SPAWN_OW_MOLERAT_OCWOOD_OLDMINE3");
+	Wld_InsertNpc(OrcBiter,"SPAWN_OW_MOLERAT_OCWOOD_OLDMINE3");
 	Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_OW_MOLERAT_OCWOOD_OLDMINE3");
 	Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_OW_WOLF_WOOD05_02");
-	Wld_InsertNpc(Warg,"FP_ROAM_OW_WOLF_08_08");
+	Wld_InsertNpc(OrcBiter,"FP_ROAM_OW_WOLF_08_08");
 	Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_OW_WOLF_08_08");
 	Wld_InsertNpc(OrcWarrior_Roam,"OW_DEADWOOD_WOLF_SPAWN01");
 	Wld_InsertNpc(OrcWarrior_Roam,"OW_DEADWOOD_WOLF_SPAWN01");
-	Wld_InsertNpc(Warg,"OW_DEADWOOD_WOLF_SPAWN01");
+	Wld_InsertNpc(OrcBiter,"OW_DEADWOOD_WOLF_SPAWN01");
 	Wld_InsertNpc(OrcWarrior_Roam,"OW_DEADWOOD_WOLF_SPAWN01");
 	Wld_InsertNpc(Lurker,"FP_ROAM_OW_BLOODFLY_04_02_02");
 	Wld_InsertNpc(Bloodfly,"OW_LAKE_NC_BLOODFLY_SPAWN01");
@@ -902,8 +940,8 @@ func void Startup_Surface()
 	Wld_InsertNpc(OrcWarrior_Roam,"OW_WATERFALL_GOBBO10");
 	Wld_InsertNpc(OrcWarrior_Roam,"OW_WATERFALL_GOBBO10");
 	Wld_InsertNpc(OrcWarrior_Roam,"OW_WATERFALL_GOBBO10");
-	Wld_InsertNpc(Gobbo_Black,"SPAWN_OW_MOLERAT_06_CAVE_GUARD3");
-	Wld_InsertNpc(Gobbo_Black,"SPAWN_OW_MOLERAT_06_CAVE_GUARD3");
+	Wld_InsertNpc(Gobbo_Warrior,"SPAWN_OW_MOLERAT_06_CAVE_GUARD3");
+	Wld_InsertNpc(Gobbo_Warrior_Visir,"SPAWN_OW_MOLERAT_06_CAVE_GUARD3");
 	Wld_InsertNpc(Gobbo_Black,"SPAWN_OW_MOLERAT_WOODOLDMINE2");
 	Wld_InsertNpc(DragonSnapper,"SPAWN_OW_SNAPPER_WOOD05_05");
 	Wld_InsertNpc(DragonSnapper,"SPAWN_OW_SNAPPER_WOOD05_05");
@@ -1168,11 +1206,11 @@ func void Startup_Surface()
 	Wld_InsertNpc(Snapper,"SPAWN_CAES_DRAGONSNAPPER3");
 	Wld_InsertNpc(Snapper,"SPAWN_CAES_DRAGONSNAPPER3");
 	Wld_InsertNpc(Gobbo_Black,"SPAWN_CAES_GOBLIN1");
-	Wld_InsertNpc(Gobbo_Black,"SPAWN_CAES_GOBLIN1");
+	Wld_InsertNpc(Gobbo_Warrior_Visir,"SPAWN_CAES_GOBLIN1");
 	Wld_InsertNpc(Gobbo_Black,"SPAWN_CAES_GOBLIN2");
 	Wld_InsertNpc(Gobbo_Black,"SPAWN_CAES_GOBLIN2");
-	Wld_InsertNpc(Gobbo_Black,"SPAWN_CAES_GOBLIN3");
-	Wld_InsertNpc(Gobbo_Black,"SPAWN_CAES_GOBLIN3");
+	Wld_InsertNpc(Gobbo_Warrior,"SPAWN_CAES_GOBLIN3");
+	Wld_InsertNpc(Gobbo_Warrior,"SPAWN_CAES_GOBLIN3");
 	Wld_InsertNpc(Gobbo_Black,"SPAWN_CAES_GOBLIN3");
 	Wld_InsertNpc(Harpie,"SPAWN_CAES_GOBLIN4");
 	Wld_InsertNpc(Harpie,"SPAWN_CAES_GOBLIN4");
@@ -1218,32 +1256,32 @@ func void Startup_Surface()
 	Wld_InsertNpc(OrcWarrior_Rest,"SPAWN_CAES_ORKCAMP2");
 	Wld_InsertNpc(OrcElite_Roam,"SPAWN_CAES_ORKCAMP2");
 	Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_CAES_ORKCAMP3");
-	Wld_InsertNpc(Warg,"SPAWN_CAES_ORKCAMP3");
+	Wld_InsertNpc(OrcBiter,"SPAWN_CAES_ORKCAMP3");
 	Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_CAES_ORKCAMP4");
-	Wld_InsertNpc(Warg,"SPAWN_CAES_ORKCAMP4");
-	Wld_InsertNpc(Warg,"SPAWN_CAES_ORKCAMP4");
+	Wld_InsertNpc(OrcBiter,"SPAWN_CAES_ORKCAMP4");
+	Wld_InsertNpc(OrcBiter,"SPAWN_CAES_ORKCAMP4");
 	Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_CAES_ORKCAMP5");
 	Wld_InsertNpc(OrcWarrior_Rest,"SPAWN_CAES_ORKCAMP6");
 	Wld_InsertNpc(OrcElite_Roam,"SPAWN_CAES_ORKCAMP6");
-	Wld_InsertNpc(Warg,"SPAWN_CAES_ORKCAMP6");
+	Wld_InsertNpc(OrcBiter,"SPAWN_CAES_ORKCAMP6");
 	Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_CAES_ORKCAMP7");
 	Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_CAES_ORKCAMP7");
-	Wld_InsertNpc(Warg,"SPAWN_CAES_ORKCAMP7");
-	Wld_InsertNpc(Warg,"SPAWN_CAES_ORKCAMP7");
+	Wld_InsertNpc(OrcBiter,"SPAWN_CAES_ORKCAMP7");
+	Wld_InsertNpc(OrcBiter,"SPAWN_CAES_ORKCAMP7");
 	Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_CAES_BIGFORESTORK1");
-	Wld_InsertNpc(Warg,"SPAWN_CAES_BIGFORESTORK1");
+	Wld_InsertNpc(OrcBiter,"SPAWN_CAES_BIGFORESTORK1");
 	Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_CAES_BIGFORESTORK2");
 	Wld_InsertNpc(OrcShaman_Sit,"SPAWN_CAES_BIGFORESTORK2");
 	Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_CAES_BIGFORESTORK2");
 	Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_CAES_BIGFORESTORK3");
-	Wld_InsertNpc(Warg,"SPAWN_CAES_BIGFORESTORK3");
+	Wld_InsertNpc(OrcBiter,"SPAWN_CAES_BIGFORESTORK3");
 	Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_CAES_BIGFORESTORK4");
-	Wld_InsertNpc(Warg,"SPAWN_CAES_BIGFORESTORK4");
-	Wld_InsertNpc(Warg,"SPAWN_CAES_BIGFORESTORK4");
+	Wld_InsertNpc(OrcBiter,"SPAWN_CAES_BIGFORESTORK4");
+	Wld_InsertNpc(OrcBiter,"SPAWN_CAES_BIGFORESTORK4");
 	Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_CAES_BIGFORESTORK5");
 	Wld_InsertNpc(OrcShaman_Sit,"SPAWN_CAES_BIGFORESTORK5");
 	Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_CAES_BIGFORESTORK6");
-	Wld_InsertNpc(Warg,"SPAWN_CAES_BIGFORESTORK6");
+	Wld_InsertNpc(OrcBiter,"SPAWN_CAES_BIGFORESTORK6");
 	Wld_InsertNpc(Wolf,"SPAWN_CAES_BIGFOREST1");
 	Wld_InsertNpc(Wolf,"SPAWN_CAES_BIGFOREST1");
 	Wld_InsertNpc(Wolf,"SPAWN_CAES_BIGFOREST1");
@@ -1393,15 +1431,15 @@ func void Startup_Surface()
 	Wld_InsertNpc(Wisp,"CAES_NC_MAGES_9");
 	Wld_InsertNpc(Wisp,"CAES_NC_MAGES_35");
 	Wld_InsertNpc(Gobbo_Black,"CAES_GOBBO_MASTERCAVE_14");
-	Wld_InsertNpc(Gobbo_Black,"CAES_GOBBO_MASTERCAVE_12");
+	Wld_InsertNpc(Gobbo_Warrior,"CAES_GOBBO_MASTERCAVE_12");
 	Wld_InsertNpc(Gobbo_Black,"CAES_GOBBO_MASTERCAVE_12");
 	Wld_InsertNpc(Gobbo_Black,"CAES_GOBBO_MASTERCAVE_7");
 	Wld_InsertNpc(Gobbo_Black,"CAES_GOBBO_MASTERCAVE_7");
 	Wld_InsertNpc(Gobbo_Black,"CAES_GOBBO_MASTERCAVE_8");
-	Wld_InsertNpc(Gobbo_Black,"CAES_GOBBO_MASTERCAVE_8");
+	Wld_InsertNpc(Gobbo_Warrior,"CAES_GOBBO_MASTERCAVE_8");
 	Wld_InsertNpc(Gobbo_Black,"CAES_GOBBO_MASTERCAVE_9");
 	Wld_InsertNpc(Gobbo_Black,"CAES_GOBBO_MASTERCAVE_2");
-	Wld_InsertNpc(Gobbo_Black,"CAES_GOBBO_MASTERCAVE_2");
+	Wld_InsertNpc(Gobbo_Warrior_Visir,"CAES_GOBBO_MASTERCAVE_2");
 	Wld_InsertNpc(Gobbo_Black,"CAES_GOBBO_MASTERCAVE_5");
 	Wld_InsertNpc(Scavenger,"SPAWN_CAES_SCAVENGER1");
 	Wld_InsertNpc(Scavenger,"SPAWN_CAES_SCAVENGER1");
@@ -2910,21 +2948,21 @@ func void startup_orcgraveyard()
 	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_015");
 	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_019B");
 	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_019D");
-	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_020B");
+	Wld_InsertNpc(OrcShaman_Sit,"GRYD_020B");
 	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_048");
-	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_048");
+	Wld_InsertNpc(OrcShaman_Sit,"GRYD_048");
 	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_043");
 	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_031");
 	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_032");
-	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_037");
+	Wld_InsertNpc(OrcShaman_Sit,"GRYD_037");
 	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_040");
 	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_047");
 	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_047");
 	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_061");
 	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_062");
-	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_058");
+	Wld_InsertNpc(OrcShaman_Sit,"GRYD_058");
 	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_068");
-	Wld_InsertNpc(OrcWarrior_Roam,"GRYD_055");
+	Wld_InsertNpc(OrcShaman_Sit,"GRYD_055");
 };
 
 func void init_orcgraveyard()

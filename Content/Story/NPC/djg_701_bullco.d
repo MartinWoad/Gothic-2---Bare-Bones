@@ -56,4 +56,3 @@ func void Rtn_Follow_701()
 	TA_Follow_Player(0,0,23,0,"SPAWN_OW_BLACKGOBBO_A1");
 	TA_Follow_Player(23,0,24,0,"SPAWN_OW_BLACKGOBBO_A1");
 };
-

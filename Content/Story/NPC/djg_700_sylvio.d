@@ -18,7 +18,7 @@ instance DJG_700_Sylvio(Npc_Default)
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
 	B_GiveNpcTalents(self);
-	B_SetFightSkills(self,60);
+	B_SetFightSkills(self,70);
 	daily_routine = Rtn_Start_700;
 };
 
@@ -46,4 +46,3 @@ func void Rtn_IceDragon_700()
 	TA_Stand_Guarding(0,0,23,0,"OW_ICEDRAGON_01");
 	TA_Stand_Guarding(23,0,24,0,"OW_ICEDRAGON_01");
 };
-

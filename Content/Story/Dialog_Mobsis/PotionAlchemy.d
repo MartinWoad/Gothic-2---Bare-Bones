@@ -45,7 +45,7 @@ instance PC_Charge_InnosEye(C_Info)
 	condition = PC_Charge_InnosEye_Condition;
 	information = PC_Charge_InnosEye_Info;
 	permanent = TRUE;
-	description = "Ponowne na³aduj Oko Innosa";
+	description = "Ponowne naï¿½aduj Oko Innosa";
 };
 
 
@@ -79,11 +79,11 @@ func void PC_Charge_InnosEye_Info()
 		};
 		Npc_RemoveInvItems(hero,ItMi_InnosEye_Discharged_Mis,1);
 		CreateInvItems(hero,ItMi_InnosEye_MIS,1);
-		Print(PRINT_AlchemySuccessInnoseye);
+		PrintS(PRINT_AlchemySuccessInnoseye);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_Flask,1);
 	};
 	b_endproductiondialog();
@@ -116,11 +116,11 @@ func void PC_ItPo_Mana_01_Info()
 		Npc_RemoveInvItems(hero,ItPl_Mana_Herb_01,2);
 		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
 		CreateInvItems(hero,ItPo_Mana_01,1);
-		Print(PRINT_AlchemySuccess);
+		PrintS(PRINT_AlchemySuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_Flask,1);
 	};
 	b_endproductiondialog();
@@ -153,11 +153,11 @@ func void PC_ItPo_Mana_02_Info()
 		Npc_RemoveInvItems(hero,ItPl_Mana_Herb_02,2);
 		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
 		CreateInvItems(hero,ItPo_Mana_02,1);
-		Print(PRINT_AlchemySuccess);
+		PrintS(PRINT_AlchemySuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_Flask,1);
 	};
 	b_endproductiondialog();
@@ -190,11 +190,11 @@ func void PC_ItPo_Mana_03_Info()
 		Npc_RemoveInvItems(hero,ItPl_Mana_Herb_03,2);
 		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
 		CreateInvItems(hero,ItPo_Mana_03,1);
-		Print(PRINT_AlchemySuccess);
+		PrintS(PRINT_AlchemySuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_Flask,1);
 	};
 	b_endproductiondialog();
@@ -208,7 +208,7 @@ instance PC_ItPo_Health_01(C_Info)
 	condition = PC_ItPo_Health_01_Condition;
 	information = PC_ItPo_Health_01_Info;
 	permanent = TRUE;
-	description = "Esencja lecznicza (2 roœliny lecznicze, 1 rdest polny)";
+	description = "Esencja lecznicza (2 roï¿½liny lecznicze, 1 rdest polny)";
 };
 
 
@@ -227,11 +227,11 @@ func void PC_ItPo_Health_01_Info()
 		Npc_RemoveInvItems(hero,ItPl_Health_Herb_01,2);
 		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
 		CreateInvItem(hero,ItPo_Health_01);
-		Print(PRINT_AlchemySuccess);
+		PrintS(PRINT_AlchemySuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_Flask,1);
 	};
 	b_endproductiondialog();
@@ -264,11 +264,11 @@ func void PC_ItPo_Health_02_Info()
 		Npc_RemoveInvItems(hero,ItPl_Health_Herb_02,2);
 		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
 		CreateInvItems(hero,ItPo_Health_02,1);
-		Print(PRINT_AlchemySuccess);
+		PrintS(PRINT_AlchemySuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_Flask,1);
 	};
 	b_endproductiondialog();
@@ -301,11 +301,11 @@ func void PC_ItPo_Health_03_Info()
 		Npc_RemoveInvItems(hero,ItPl_Health_Herb_03,2);
 		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
 		CreateInvItems(hero,ItPo_Health_03,1);
-		Print(PRINT_AlchemySuccess);
+		PrintS(PRINT_AlchemySuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_Flask,1);
 	};
 	b_endproductiondialog();
@@ -319,7 +319,7 @@ instance PC_ItPo_Perm_Health(C_Info)
 	condition = PC_ItPo_Perm_Health_Condition;
 	information = PC_ItPo_Perm_Health_Info;
 	permanent = TRUE;
-	description = "Eliksir ¿ycia (1 korzeñ leczniczy, 1 szczaw królewski)";
+	description = "Eliksir ï¿½ycia (1 korzeï¿½ leczniczy, 1 szczaw krï¿½lewski)";
 };
 
 
@@ -338,11 +338,11 @@ func void PC_ItPo_Perm_Health_Info()
 		Npc_RemoveInvItems(hero,ItPl_Health_Herb_03,1);
 		Npc_RemoveInvItems(hero,ItPl_Perm_Herb,1);
 		CreateInvItems(hero,ItPo_Perm_Health,1);
-		Print(PRINT_AlchemySuccess);
+		PrintS(PRINT_AlchemySuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_Flask,1);
 	};
 	b_endproductiondialog();
@@ -356,7 +356,7 @@ instance PC_ItPo_Perm_Mana(C_Info)
 	condition = PC_ItPo_Perm_Mana_Condition;
 	information = PC_ItPo_Perm_Mana_Info;
 	permanent = TRUE;
-	description = "Eliksir ducha (1 ognisty korzeñ, 1 szczaw królewski)";
+	description = "Eliksir ducha (1 ognisty korzeï¿½, 1 szczaw krï¿½lewski)";
 };
 
 
@@ -375,11 +375,11 @@ func void PC_ItPo_Perm_Mana_Info()
 		Npc_RemoveInvItems(hero,ItPl_Mana_Herb_03,1);
 		Npc_RemoveInvItems(hero,ItPl_Perm_Herb,1);
 		CreateInvItems(hero,ItPo_Perm_Mana,1);
-		Print(PRINT_AlchemySuccess);
+		PrintS(PRINT_AlchemySuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_Flask,1);
 	};
 	b_endproductiondialog();
@@ -393,7 +393,7 @@ instance PC_ItPo_Dex(C_Info)
 	condition = PC_ItPo_Dex_Condition;
 	information = PC_ItPo_Dex_Info;
 	permanent = TRUE;
-	description = "Mikstura zrêcznoœci (1 porcja goblinich jagód, 1 szczaw królewski)";
+	description = "Mikstura zrï¿½cznoï¿½ci (1 porcja goblinich jagï¿½d, 1 szczaw krï¿½lewski)";
 };
 
 
@@ -412,11 +412,11 @@ func void PC_ItPo_Dex_Info()
 		Npc_RemoveInvItems(hero,ItPl_Dex_Herb_01,1);
 		Npc_RemoveInvItems(hero,ItPl_Perm_Herb,1);
 		CreateInvItems(hero,ItPo_Perm_DEX,1);
-		Print(PRINT_AlchemySuccess);
+		PrintS(PRINT_AlchemySuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_Flask,1);
 	};
 	b_endproductiondialog();
@@ -430,7 +430,7 @@ instance PC_ItPo_Strg(C_Info)
 	condition = PC_ItPo_Strg_Condition;
 	information = PC_ItPo_Strg_Info;
 	permanent = TRUE;
-	description = "Mikstura si³y (1 smoczy korzeñ, 1 szczaw królewski)";
+	description = "Mikstura siï¿½y (1 smoczy korzeï¿½, 1 szczaw krï¿½lewski)";
 };
 
 
@@ -449,11 +449,11 @@ func void PC_ItPo_Strg_Info()
 		Npc_RemoveInvItems(hero,ItPl_Strength_Herb_01,1);
 		Npc_RemoveInvItems(hero,ItPl_Perm_Herb,1);
 		CreateInvItems(hero,ItPo_Perm_STR,1);
-		Print(PRINT_AlchemySuccess);
+		PrintS(PRINT_AlchemySuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_Flask,1);
 	};
 	b_endproductiondialog();
@@ -467,7 +467,7 @@ instance PC_ItPo_Speed(C_Info)
 	condition = PC_ItPo_Speed_Condition;
 	information = PC_ItPo_Speed_Info;
 	permanent = TRUE;
-	description = "Mikstura szybkoœci (1 zêbate ziele, 1 rdest polny)";
+	description = "Mikstura szybkoï¿½ci (1 zï¿½bate ziele, 1 rdest polny)";
 };
 
 
@@ -486,11 +486,11 @@ func void PC_ItPo_Speed_Info()
 		Npc_RemoveInvItems(hero,ItPl_Speed_Herb_01,1);
 		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
 		CreateInvItems(hero,ItPo_Speed,1);
-		Print(PRINT_AlchemySuccess);
+		PrintS(PRINT_AlchemySuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_Flask,1);
 	};
 	b_endproductiondialog();
@@ -504,7 +504,7 @@ instance PC_ItMi_Joint(C_Info)
 	condition = PC_ItMi_Joint_Condition;
 	information = PC_ItMi_Joint_Info;
 	permanent = TRUE;
-	description = "Przekszta³cenie bagiennego ziela (1 ³odyga)";
+	description = "Przeksztaï¿½cenie bagiennego ziela (1 ï¿½odyga)";
 };
 
 
@@ -520,7 +520,7 @@ func void PC_ItMi_Joint_Info()
 {
 	Npc_RemoveInvItems(hero,ItPl_SwampHerb,1);
 	CreateInvItems(hero,ItMi_Joint,1);
-	Print(PRINT_JointSuccess);
+	PrintS(PRINT_JointSuccess);
 	b_endproductiondialog();
 };
 
@@ -559,7 +559,7 @@ func void PC_ItMi_Tabak_Info()
 	};
 	if(Npc_HasItems(hero,ItPl_Mushroom_01) >= 1)
 	{
-		Info_AddChoice(PC_ItMi_Tabak,"... z mu³owym grzybem",PC_ItMi_Tabak_Mushroom_01);
+		Info_AddChoice(PC_ItMi_Tabak,"... z muï¿½owym grzybem",PC_ItMi_Tabak_Mushroom_01);
 	};
 };
 
@@ -571,21 +571,21 @@ func void PC_ItMi_Tabak_BACK()
 func void PC_ItMi_Tabak_Honey()
 {
 	CreateInvItems(hero,ItMi_Honigtabak,1);
-	Print(PRINT_TabakSuccess);
+	PrintS(PRINT_TabakSuccess);
 	b_endproductiondialog();
 };
 
 func void PC_ItMi_Tabak_Swampherb()
 {
 	CreateInvItems(hero,ItMi_SumpfTabak,1);
-	Print(PRINT_TabakSuccess);
+	PrintS(PRINT_TabakSuccess);
 	b_endproductiondialog();
 };
 
 func void PC_ItMi_Tabak_Mushroom_01()
 {
 	CreateInvItems(hero,ItMi_PilzTabak,1);
-	Print(PRINT_TabakSuccess);
+	PrintS(PRINT_TabakSuccess);
 	b_endproductiondialog();
 };
 
@@ -597,7 +597,7 @@ instance PC_ItPo_MegaDrink(C_Info)
 	condition = PC_ItPo_MegaDrink_Condition;
 	information = PC_ItPo_MegaDrink_Info;
 	permanent = TRUE;
-	description = "Mikstura ze smoczych jaj (10 smoczych jaj, 1 czarna per³a, 1 porcja siarki)";
+	description = "Mikstura ze smoczych jaj (10 smoczych jaj, 1 czarna perï¿½a, 1 porcja siarki)";
 };
 
 
@@ -617,11 +617,11 @@ func void PC_ItPo_MegaDrink_Info()
 		Npc_RemoveInvItems(hero,ItMi_DarkPearl,1);
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 		CreateInvItems(hero,ItPo_MegaDrink,1);
-		Print(PRINT_AlchemySuccess);
+		PrintS(PRINT_AlchemySuccess);
 	}
 	else
 	{
-		Print(PRINT_ProdItemsMissing);
+		PrintS(PRINT_ProdItemsMissing);
 		CreateInvItems(self,ItMi_Flask,1);
 	};
 	b_endproductiondialog();

@@ -5,7 +5,7 @@ const int VALUE_ADDON_JOINT_01 = 60;
 
 instance ITMI_GOLDNUGGET_ADDON(C_ITEM)
 {
-	name = "Bry³ka z³ota";
+	name = "Bryï¿½ka zï¿½ota";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = VALUE_GOLDNUGGET;
@@ -19,7 +19,7 @@ instance ITMI_GOLDNUGGET_ADDON(C_ITEM)
 
 instance ITMI_ADDON_WHITEPEARL(C_ITEM)
 {
-	name = "Per³a";
+	name = "Perï¿½a";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = VALUE_WHITEPEARL;
@@ -73,8 +73,8 @@ instance ITMI_BALTRAMPAKET(C_ITEM)
 	visual = "ItMi_Packet.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "Ciê¿ka paczka";
-	text[3] = "pe³na dobrych rzeczy";
+	text[2] = "Ciï¿½ka paczka";
+	text[3] = "peï¿½na dobrych rzeczy";
 	text[4] = "od farmera Akila.";
 };
 
@@ -87,14 +87,14 @@ instance ITMI_PACKET_BALTRAM4SKIP_ADDON(C_ITEM)
 	visual = "ItMi_Packet.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "Ta ciê¿ka paczka";
-	text[3] = "pe³na dobrych rzeczy";
-	text[4] = "ma trafiæ do pirata Skipa.";
+	text[2] = "Ta ciï¿½ka paczka";
+	text[3] = "peï¿½na dobrych rzeczy";
+	text[4] = "ma trafiï¿½ do pirata Skipa.";
 };
 
 instance ITMI_BROMORSGELD_ADDON(C_ITEM)
 {
-	name = "Z³ota misa Bromora";
+	name = "Zï¿½ota misa Bromora";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_NUGGET;
@@ -102,15 +102,15 @@ instance ITMI_BROMORSGELD_ADDON(C_ITEM)
 	material = MAT_METAL;
 	description = name;
 	text[2] = "Na dnie misy";
-	text[3] = "ostrym narzêdziem ";
-	text[4] = "wydrapano imiê 'Bromor'.";
+	text[3] = "ostrym narzï¿½dziem ";
+	text[4] = "wydrapano imiï¿½ 'Bromor'.";
 	text[5] = NAME_VALUE;
 	count[5] = value;
 };
 
 instance ITSE_ADDON_CAVALORNSBEUTEL(C_ITEM)
 {
-	name = "Skórzana torba Cavalorna";
+	name = "Skï¿½rzana torba Cavalorna";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = VALUE_NUGGET;
@@ -120,9 +120,9 @@ instance ITSE_ADDON_CAVALORNSBEUTEL(C_ITEM)
 	on_state[0] = use_cavalornsbeutel;
 	description = name;
 	text[0] = "";
-	text[1] = "Przywi¹zana jest do niej wywieszka";
+	text[1] = "Przywiï¿½zana jest do niej wywieszka";
 	text[2] = "z imieniem 'Cavalorn',";
-	text[3] = "a w œrodku jest bry³a rudy.";
+	text[3] = "a w ï¿½rodku jest bryï¿½a rudy.";
 	text[4] = "";
 	text[5] = NAME_VALUE;
 	count[5] = value;
@@ -132,11 +132,11 @@ instance ITSE_ADDON_CAVALORNSBEUTEL(C_ITEM)
 func void use_cavalornsbeutel()
 {
 	CreateInvItems(hero,itmi_nugget,1);
-	Print(PRINT_FOUNDORENUGGET);
+	PrintS(PRINT_FOUNDORENUGGET);
 	SC_OPENEDCAVALORNSBEUTEL = TRUE;
 	Log_CreateTopic(TOPIC_ADDON_CAVALORNTHEHUT,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ADDON_CAVALORNTHEHUT,LOG_RUNNING);
-	b_logentry(TOPIC_ADDON_CAVALORNTHEHUT,"W chacie Cavalorna w Górniczej Dolinie znalaz³em torbê z bry³k¹ rudy. Ten stary drañ na pewno o niej zapomnia³.");
+	b_logentry(TOPIC_ADDON_CAVALORNTHEHUT,"W chacie Cavalorna w Gï¿½rniczej Dolinie znalazï¿½em torbï¿½ z bryï¿½kï¿½ rudy. Ten stary draï¿½ na pewno o niej zapomniaï¿½.");
 };
 
 
@@ -183,7 +183,7 @@ instance ITMI_IECELLOBOW(C_ITEM)
 
 instance ITMI_IEDRUM(C_ITEM)
 {
-	name = "Bêben";
+	name = "Bï¿½ben";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = 1;
@@ -202,7 +202,7 @@ func void use_drum()
 
 instance ITMI_IEDRUMSCHEIT(C_ITEM)
 {
-	name = "Tr¹ba";
+	name = "Trï¿½ba";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = 1;
@@ -221,7 +221,7 @@ func void use_drumscheit()
 
 instance ITMI_IEDRUMSTICK(C_ITEM)
 {
-	name = "Pa³eczka";
+	name = "Paï¿½eczka";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = 1;
@@ -251,7 +251,7 @@ func void use_dudel()
 
 instance ITMI_IEDUDELGELB(C_ITEM)
 {
-	name = "¯ó³te dudy";
+	name = "ï¿½ï¿½te dudy";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = 1;
@@ -302,7 +302,7 @@ func void use_laute()
 
 instance ITMI_ADDON_LENNAR_PAKET(C_ITEM)
 {
-	name = "Brzêcz¹ca paczka";
+	name = "Brzï¿½czï¿½ca paczka";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	value = 300;
@@ -311,8 +311,8 @@ instance ITMI_ADDON_LENNAR_PAKET(C_ITEM)
 	on_state[0] = use_lennarpaket;
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "W œrodku s¹ wytrychy,";
-	text[3] = "du¿o wytrychów.";
+	text[2] = "W ï¿½rodku sï¿½ wytrychy,";
+	text[3] = "duï¿½o wytrychï¿½w.";
 	text[4] = " ";
 	text[5] = NAME_VALUE;
 	count[5] = value;
@@ -340,7 +340,7 @@ instance ITMI_ZEITSPALT_ADDON(C_ITEM)
 	wear = WEAR_EFFECT;
 	effect = "SPELLFX_WEAKGLIMMER";
 	description = name;
-	text[3] = "Dzia³anie nieznane.";
+	text[3] = "Dziaï¿½anie nieznane.";
 	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
 };
 

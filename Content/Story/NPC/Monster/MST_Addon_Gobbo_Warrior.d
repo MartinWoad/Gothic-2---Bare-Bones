@@ -1,7 +1,7 @@
 
 prototype MST_DEFAULT_GOBBO_WARRIOR(C_NPC)
 {
-	name[0] = "Gobliñski Wojownik";
+	name[0] = "Goblin Wojownik";
 	guild = GIL_GOBBO;
 	aivar[AIV_MM_REAL_ID] = ID_GOBBO_BLACK;
 	level = 15;

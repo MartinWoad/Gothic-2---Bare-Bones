@@ -10,7 +10,7 @@ func int B_TeachMagicCircle(var C_Npc slf,var C_Npc oth,var int circle)
 	};
 	if(oth.lp < kosten)
 	{
-		//PrintScreen(PRINT_NotEnoughLP,-1,-1,FONT_Screen,2);
+		AI_PrintS(oth, PRINT_NotEnoughLP);
 		B_Say(slf,oth,"$NOLEARNNOPOINTS");
 		return FALSE;
 	};
@@ -21,43 +21,43 @@ func int B_TeachMagicCircle(var C_Npc slf,var C_Npc oth,var int circle)
 	if(circle == 1)
 	{
 		//PrintScreen(PRINT_LearnCircle_1,-1,-1,FONT_Screen,2);
-		PrintS_Ext(PRINT_LearnCircle_1, White());
-		B_LogEntry(TOPIC_TalentMagicCircle,"Zaklêcia z pierwszego krêgu to: Œwiat³o, Ognista strza³a, Pora¿enie, Leczenie lekkich ran i Przyzwanie szkieletu-goblina.");
+		AI_PrintS(oth, PRINT_LearnCircle_1);
+		B_LogEntrySilent(TOPIC_TalentMagicCircle,"Zaklêcia z pierwszego krêgu to: Œwiat³o, Ognista strza³a, Pora¿enie, Leczenie lekkich ran i Przyzwanie szkieletu-goblina.");
 		return TRUE;
 	};
 	if(circle == 2)
 	{
 		//PrintScreen(PRINT_LearnCircle_2,-1,-1,FONT_Screen,2);
-		PrintS_Ext(PRINT_LearnCircle_2, White());
-		B_LogEntry(TOPIC_TalentMagicCircle,"Zaklêcia z drugiego krêgu to: Kula ognia, Lodowa strza³a, Przyzwanie wilka, Piêœæ wichru i Sen.");
+		AI_PrintS(oth, PRINT_LearnCircle_2);
+		B_LogEntrySilent(TOPIC_TalentMagicCircle,"Zaklêcia z drugiego krêgu to: Kula ognia, Lodowa strza³a, Przyzwanie wilka, Piêœæ wichru i Sen.");
 		return TRUE;
 	};
 	if(circle == 3)
 	{
 		//PrintScreen(PRINT_LearnCircle_3,-1,-1,FONT_Screen,2);
-		PrintS_Ext(PRINT_LearnCircle_3, White());
-		B_LogEntry(TOPIC_TalentMagicCircle,"Zaklêcia z trzeciego krêgu to: Leczenie œrednich ran, Piorun kulisty, Ma³a burza ognista, Tworzenie szkieletu, Strach i Bry³a lodu.");
+		AI_PrintS(oth, PRINT_LearnCircle_3);
+		B_LogEntrySilent(TOPIC_TalentMagicCircle,"Zaklêcia z trzeciego krêgu to: Leczenie œrednich ran, Piorun kulisty, Ma³a burza ognista, Tworzenie szkieletu, Strach i Bry³a lodu.");
 		return TRUE;
 	};
 	if(circle == 4)
 	{
 		//PrintScreen(PRINT_LearnCircle_4,-1,-1,FONT_Screen,2);
-		PrintS_Ext(PRINT_LearnCircle_4, White());
-		B_LogEntry(TOPIC_TalentMagicCircle,"Zaklêcia z czwartego krêgu to: B³yskawica, Tworzenie kamiennego golema, Zniszczenie o¿ywieñca i Du¿a kula ognia.");
+		AI_PrintS(oth, PRINT_LearnCircle_4);
+		B_LogEntrySilent(TOPIC_TalentMagicCircle,"Zaklêcia z czwartego krêgu to: B³yskawica, Tworzenie kamiennego golema, Zniszczenie o¿ywieñca i Du¿a kula ognia.");
 		return TRUE;
 	};
 	if(circle == 5)
 	{
 		//PrintScreen(PRINT_LearnCircle_5,-1,-1,FONT_Screen,2);
-		PrintS_Ext(PRINT_LearnCircle_5, White());
-		B_LogEntry(TOPIC_TalentMagicCircle,"Zaklêcia z pi¹tego krêgu to: Du¿a burza ognista, Lodowa fala, Przyzwanie demona i Leczenie ciê¿kich ran.");
+		AI_PrintS(oth, PRINT_LearnCircle_5);
+		B_LogEntrySilent(TOPIC_TalentMagicCircle,"Zaklêcia z pi¹tego krêgu to: Du¿a burza ognista, Lodowa fala, Przyzwanie demona i Leczenie ciê¿kich ran.");
 		return TRUE;
 	};
 	if(circle == 6)
 	{
 		//PrintScreen(PRINT_LearnCircle_6,-1,-1,FONT_Screen,2);
-		PrintS_Ext(PRINT_LearnCircle_6, White());
-		B_LogEntry(TOPIC_TalentMagicCircle,"Zaklêcia z szóstego krêgu to: Deszcz ognia, Tchnienie œmierci, Œmiertelna fala, Armia ciemnoœci i Zmniejszenie potwora.");
+		AI_PrintS(oth, PRINT_LearnCircle_6);
+		B_LogEntrySilent(TOPIC_TalentMagicCircle,"Zaklêcia z szóstego krêgu to: Deszcz ognia, Tchnienie œmierci, Œmiertelna fala, Armia ciemnoœci i Zmniejszenie potwora.");
 		return TRUE;
 	};
 };

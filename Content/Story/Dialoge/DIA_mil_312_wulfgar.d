@@ -509,7 +509,7 @@ func void DIA_Wulfgar_Bonus_Info()
 		AI_Output(self,other,"DIA_Wulfgar_Bonus_04_02");	//Pamiêtaj o tym podczas kolejnej walki.
 		B_AddFightSkill(other,NPC_TALENT_1H,1,TRUE);
 		//PrintScreen(PRINT_Learn1H,-1,-1,FONT_ScreenSmall,2);
-		PrintS_Ext(PRINT_Learn1H, White());
+		PrintS_Ext(PRINT_Learn1H1, White());
 	};
 };
 

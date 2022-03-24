@@ -64,6 +64,13 @@ func void dia_addon_cavalorn_pickpocket_doit()
 		self.aivar[AIV_PLAYERHASPICKEDMYPOCKET] = TRUE;
 		//b_giveplayerxp(XP_AMBIENT);
 		Info_ClearChoices(dia_addon_cavalorn_pickpocket);
+
+		if(hero.attribute[ATR_DEXTERITY] - ATTRIBUTEFROMEQUIPMENT[ATR_DEXTERITY] < attributepotential[ATR_DEXTERITY])
+		{
+			heroDexterityExp += 250;
+			CheckWeaponLevelUp();
+		};
+
 	}
 	else
 	{

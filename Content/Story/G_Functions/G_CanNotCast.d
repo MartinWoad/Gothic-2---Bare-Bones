@@ -3,15 +3,15 @@ func void G_CanNotCast(var int bIsPlayer,var int nCircleNeeded,var int nCirclePo
 {
 	var string strMessage;
 	var int nDifference;
-	var string strDifference;
+	var string strCircleNeeded;
 	nDifference = nCircleNeeded - nCirclePossessed;
-	strDifference = IntToString(nDifference);
-	strMessage = ConcatStrings(strMessage,strDifference);
-	strMessage = ConcatStrings(strMessage," ");
+	strCircleNeeded = IntToString(nCircleNeeded);
 	strMessage = ConcatStrings(strMessage,PRINT_MAGCIRCLES_MISSING);
+	strMessage = ConcatStrings(strMessage," ");
+	strMessage = ConcatStrings(strMessage,strCircleNeeded);
 	if(bIsPlayer)
 	{
-		Print(strMessage);
+		PrintS(strMessage);
 	};
+	strMessage = "";
 };
-

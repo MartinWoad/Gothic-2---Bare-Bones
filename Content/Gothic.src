@@ -12,6 +12,9 @@ _INTERN\float.D
 LeGo\Header_G2.src
 BareBones\Functions\Colors.d
 BareBones\Functions\UpdateMenu.d
+BareBones\Functions\Strafing.d
+
+
 
 AI\AI_Intern\BodyStates.d
 AI\AI_Intern\Focus.d
@@ -32,6 +35,7 @@ Story\B_Story\C_NpcIsInQuarter.d
 Story\B_Story\B_AddFightSkill.d
 Story\NPC_Scripts\B_SetFightSkills.d
 Story\B_Story\B_RaiseAttribute.d
+BareBones\Functions\CheckLevelUp.d
 Story\B_Story\b_removeitemattribute.d
 Story\B_Story\B_LogEntry.d
 Story\B_Story\B_GetDayPlus.d
@@ -892,6 +896,10 @@ Story\NPC\Monster\MST_Wisp.d
 Story\NPC\Monster\MST_Wolf.d
 Story\NPC\Monster\MST_Zombie.d
 Story\NPC\Monster\MST_Addon_IceWolf.d
+Story\NPC\Monster\MST_Addon_Gobbo_Warrior.d
+Story\NPC\Monster\MST_Addon_SwampRat.d
+Story\NPC\Monster\MST_Addon_OrcBiter.d
+Story\NPC\Monster\MST_Addon_Giant_DesertRat.d
 Story\NPC\Orc\Mst_OrcElite.d
 Story\NPC\Orc\Mst_OrcShaman.d
 Story\NPC\Orc\Mst_OrcWarrior.d

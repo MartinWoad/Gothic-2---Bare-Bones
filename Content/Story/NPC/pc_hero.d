@@ -10,10 +10,10 @@ instance PC_Hero(Npc_Default)
 	exp = 0;
 	exp_next = 400;
 	lp = 0;
-	attribute[ATR_STRENGTH] = 10;
-	attribute[ATR_DEXTERITY] = 10;
-	attribute[ATR_MANA_MAX] = 10;
-	attribute[ATR_MANA] = 10;
+	attribute[ATR_STRENGTH] = 5;
+	attribute[ATR_DEXTERITY] = 5;
+	attribute[ATR_MANA_MAX] = 5;
+	attribute[ATR_MANA] = 5;
 	attribute[ATR_HITPOINTS_MAX] = 50;
 	attribute[ATR_HITPOINTS] = 50;
 	Mdl_SetVisual(self,"HUMANS.MDS");
